@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "targets": {
+    ".NETFramework,Version=v4.6.1": {},
+    ".NETFramework,Version=v4.6.1/win-x64": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "": [],
+    ".NETFramework,Version=v4.6.1": []
+  },
+  "packageFolders": {
+    "C:\\Users\\Alpha\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "restore": {
+      "projectUniqueName": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\MefGeneric-master\\MEFGeneric Preview 9\\src\\ComponentModel.Composition.Hosting.Extension\\ComponentModel.Composition.Hosting.Extension.csproj",
+      "projectName": "ComponentModel.Composition.Hosting.Extension",
+      "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\MefGeneric-master\\MEFGeneric Preview 9\\src\\ComponentModel.Composition.Hosting.Extension\\ComponentModel.Composition.Hosting.Extension.csproj",
+      "projectJsonPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\MefGeneric-master\\MEFGeneric Preview 9\\src\\ComponentModel.Composition.Hosting.Extension\\project.json",
+      "projectStyle": "ProjectJson"
+    },
+    "frameworks": {
+      "net461": {}
+    },
+    "runtimes": {
+      "win-x64": {
+        "#import": []
+      }
+    }
+  }
+}

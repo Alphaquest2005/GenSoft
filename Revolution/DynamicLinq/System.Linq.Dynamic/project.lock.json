@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "targets": {
+    ".NETFramework,Version=v4.5.2": {},
+    ".NETFramework,Version=v4.5.2/win-x64": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "": [],
+    ".NETFramework,Version=v4.5.2": []
+  },
+  "packageFolders": {
+    "C:\\Users\\Alpha\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "restore": {
+      "projectUniqueName": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\DynamicLinq\\System.Linq.Dynamic\\System.Linq.Dynamic.csproj",
+      "projectName": "System.Linq.Dynamic",
+      "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\DynamicLinq\\System.Linq.Dynamic\\System.Linq.Dynamic.csproj",
+      "projectJsonPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\DynamicLinq\\System.Linq.Dynamic\\project.json",
+      "projectStyle": "ProjectJson"
+    },
+    "frameworks": {
+      "net452": {}
+    },
+    "runtimes": {
+      "win-x64": {
+        "#import": []
+      }
+    }
+  }
+}

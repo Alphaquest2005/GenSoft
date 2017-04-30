@@ -1,0 +1,17 @@
+C:\Prism\Clients\Revolution\ReactiveUI\ReactiveUI\obj\Debug\Net45\GeneratedInternalTypeHelper.g.cs
+C:\Prism\Clients\Revolution\ReactiveUI\ReactiveUI\obj\Debug\Net45\ReactiveUI_MarkupCompile.cache
+C:\Prism\Clients\Revolution\ReactiveUI\ReactiveUI\obj\Debug\Net45\ReactiveUI_MarkupCompile.lref
+C:\Prism\Clients\Revolution\ReactiveUI\ReactiveUI\obj\Debug\Net45\ReactiveUI_Net45.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Revolution\ReactiveUI\ReactiveUI\bin\Debug\Net45\ReactiveUI.dll
+C:\Prism\Clients\Revolution\ReactiveUI\ReactiveUI\bin\Debug\Net45\ReactiveUI.pdb
+C:\Prism\Clients\Revolution\ReactiveUI\ReactiveUI\bin\Debug\Net45\Splat.dll
+C:\Prism\Clients\Revolution\ReactiveUI\ReactiveUI\bin\Debug\Net45\Splat.pdb
+C:\Prism\Clients\Revolution\ReactiveUI\ReactiveUI\bin\Debug\Net45\System.Reactive.Core.dll
+C:\Prism\Clients\Revolution\ReactiveUI\ReactiveUI\bin\Debug\Net45\System.Reactive.Interfaces.dll
+C:\Prism\Clients\Revolution\ReactiveUI\ReactiveUI\bin\Debug\Net45\System.Reactive.Linq.dll
+C:\Prism\Clients\Revolution\ReactiveUI\ReactiveUI\bin\Debug\Net45\System.Reactive.PlatformServices.dll
+C:\Prism\Clients\Revolution\ReactiveUI\ReactiveUI\bin\Debug\Net45\System.Reactive.Windows.Threading.dll
+C:\Prism\Clients\Revolution\ReactiveUI\ReactiveUI\obj\Debug\Net45\Themes\Generic.baml
+C:\Prism\Clients\Revolution\ReactiveUI\ReactiveUI\obj\Debug\Net45\ReactiveUI.g.resources
+C:\Prism\Clients\Revolution\ReactiveUI\ReactiveUI\obj\Debug\Net45\ReactiveUI.dll
+C:\Prism\Clients\Revolution\ReactiveUI\ReactiveUI\obj\Debug\Net45\ReactiveUI.pdb

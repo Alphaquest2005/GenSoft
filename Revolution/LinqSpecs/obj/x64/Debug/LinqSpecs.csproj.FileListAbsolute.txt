@@ -1,0 +1,6 @@
+C:\Prism\GitRepositiory\MRManager\Revolution\LinqSpecs\bin\x64\Debug\LinqSpecs.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\LinqSpecs\bin\x64\Debug\LinqSpecs.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\LinqSpecs\bin\x64\Debug\LinqSpecs.XML
+C:\Prism\GitRepositiory\MRManager\Revolution\LinqSpecs\obj\x64\Debug\LinqSpecs.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager\Revolution\LinqSpecs\obj\x64\Debug\LinqSpecs.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\LinqSpecs\obj\x64\Debug\LinqSpecs.pdb

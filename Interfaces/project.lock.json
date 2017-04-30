@@ -1,0 +1,57 @@
+{
+  "version": 2,
+  "targets": {
+    ".NETFramework,Version=v4.6.1": {
+      "SystemInterfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1"
+      }
+    },
+    ".NETFramework,Version=v4.6.1/win-x64": {
+      "SystemInterfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1"
+      }
+    }
+  },
+  "libraries": {
+    "SystemInterfaces/1.0.0": {
+      "type": "project",
+      "path": "../Revolution/SystemInterfaces/project.json",
+      "msbuildProject": "../Revolution/SystemInterfaces/SystemInterfaces.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [],
+    ".NETFramework,Version=v4.6.1": []
+  },
+  "packageFolders": {
+    "C:\\Users\\Alpha\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "restore": {
+      "projectUniqueName": "C:\\Prism\\GitRepositiory\\GenSoft\\Interfaces\\Interfaces.csproj",
+      "projectName": "Interfaces",
+      "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Interfaces\\Interfaces.csproj",
+      "projectJsonPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Interfaces\\project.json",
+      "projectStyle": "ProjectJson",
+      "frameworks": {
+        "net461": {
+          "projectReferences": {
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj"
+            }
+          }
+        }
+      }
+    },
+    "frameworks": {
+      "net461": {}
+    },
+    "runtimes": {
+      "win-x64": {
+        "#import": []
+      }
+    }
+  }
+}

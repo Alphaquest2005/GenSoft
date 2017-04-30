@@ -1,0 +1,13 @@
+C:\Prism\GitRepositiory\MRManager\Revolution\Actor.Interfaces\bin\Debug\Actor.Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Actor.Interfaces\bin\Debug\Actor.Interfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Actor.Interfaces\bin\Debug\Akka.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Actor.Interfaces\bin\Debug\CommonMessages.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Actor.Interfaces\bin\Debug\System.Collections.Immutable.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Actor.Interfaces\bin\Debug\SystemInterfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Actor.Interfaces\bin\Debug\CommonMessages.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Actor.Interfaces\bin\Debug\SystemInterfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Actor.Interfaces\bin\Debug\Akka.xml
+C:\Prism\GitRepositiory\MRManager\Revolution\Actor.Interfaces\bin\Debug\System.Collections.Immutable.xml
+C:\Prism\GitRepositiory\MRManager\Revolution\Actor.Interfaces\obj\Debug\Actor.Interfaces.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager\Revolution\Actor.Interfaces\obj\Debug\Actor.Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Actor.Interfaces\obj\Debug\Actor.Interfaces.pdb

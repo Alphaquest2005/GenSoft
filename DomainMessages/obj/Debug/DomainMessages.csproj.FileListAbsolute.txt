@@ -1,0 +1,13 @@
+C:\Prism\GitRepositiory\MRManager\DomainMessages\bin\Debug\DomainMessages.dll
+C:\Prism\GitRepositiory\MRManager\DomainMessages\bin\Debug\DomainMessages.pdb
+C:\Prism\GitRepositiory\MRManager\DomainMessages\bin\Debug\CommonMessages.dll
+C:\Prism\GitRepositiory\MRManager\DomainMessages\bin\Debug\Domain.Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\DomainMessages\bin\Debug\Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\DomainMessages\bin\Debug\SystemInterfaces.dll
+C:\Prism\GitRepositiory\MRManager\DomainMessages\bin\Debug\Domain.Interfaces.pdb
+C:\Prism\GitRepositiory\MRManager\DomainMessages\bin\Debug\Interfaces.pdb
+C:\Prism\GitRepositiory\MRManager\DomainMessages\bin\Debug\CommonMessages.pdb
+C:\Prism\GitRepositiory\MRManager\DomainMessages\bin\Debug\SystemInterfaces.pdb
+C:\Prism\GitRepositiory\MRManager\DomainMessages\obj\Debug\DomainMessages.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager\DomainMessages\obj\Debug\DomainMessages.dll
+C:\Prism\GitRepositiory\MRManager\DomainMessages\obj\Debug\DomainMessages.pdb

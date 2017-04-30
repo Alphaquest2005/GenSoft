@@ -1,0 +1,28 @@
+C:\prism\Clients\SAMS-MRManager\MRManager\DataInterfaces\bin\Debug\DataInterfaces.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\DataInterfaces\bin\Debug\DataInterfaces.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\DataInterfaces\bin\Debug\Iesi.Collections.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\DataInterfaces\bin\Debug\NHibernate.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\DataInterfaces\bin\Debug\Iesi.Collections.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\DataInterfaces\bin\Debug\NHibernate.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\DataInterfaces\obj\Debug\DataInterfaces.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\DataInterfaces\obj\Debug\DataInterfaces.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\DataInterfaces\obj\Debug\DataInterfaces.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Revolution\DataInterfaces\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Revolution\DataInterfaces\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Revolution\DataInterfaces\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Revolution\DataInterfaces\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Revolution\DataInterfaces\obj\Debug\DataInterfaces.dll
+C:\Prism\Clients\Revolution\DataInterfaces\obj\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\DataInterfaces\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\DataInterfaces\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\DataInterfaces\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\DataInterfaces\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\DataInterfaces\obj\Debug\DataInterfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\DataInterfaces\obj\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\DataInterfaces\obj\Debug\DataInterfaces.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager\Revolution\DataInterfaces\bin\Debug\DataInterfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\DataInterfaces\bin\Debug\DataInterfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\DataInterfaces\bin\Debug\Iesi.Collections.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\DataInterfaces\bin\Debug\NHibernate.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\DataInterfaces\obj\Debug\DataInterfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\DataInterfaces\obj\Debug\DataInterfaces.pdb

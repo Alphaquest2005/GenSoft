@@ -1,0 +1,8 @@
+C:\Prism\Clients\Amoeba\Amoeba\StateMachines\bin\Debug\StateMachines.dll
+C:\Prism\Clients\Amoeba\Amoeba\StateMachines\bin\Debug\StateMachines.pdb
+C:\Prism\Clients\Amoeba\Amoeba\StateMachines\bin\Debug\Stateless.dll
+C:\Prism\Clients\Amoeba\Amoeba\StateMachines\bin\Debug\Stateless.pdb
+C:\Prism\Clients\Amoeba\Amoeba\StateMachines\bin\Debug\Stateless.xml
+C:\Prism\Clients\Amoeba\Amoeba\StateMachines\obj\Debug\StateMachines.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba\Amoeba\StateMachines\obj\Debug\StateMachines.dll
+C:\Prism\Clients\Amoeba\Amoeba\StateMachines\obj\Debug\StateMachines.pdb

@@ -1,0 +1,3 @@
+C:\Prism\GitRepositiory\MRManager\Revolution\MefGeneric-master\MEFGeneric Preview 9\src\ComponentModel\obj\Debug\ComponentModel.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager\Revolution\MefGeneric-master\MEFGeneric Preview 9\src\ComponentModel\obj\Debug\Microsoft.Internal.Strings.resources
+C:\Prism\GitRepositiory\MRManager\Revolution\MefGeneric-master\MEFGeneric Preview 9\src\ComponentModel\obj\Debug\ComponentModel.csproj.GenerateResource.Cache

@@ -1,0 +1,10 @@
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemInterfaces\bin\x64\Debug\SystemInterfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemInterfaces\bin\x64\Debug\SystemInterfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemInterfaces\obj\x64\Debug\SystemInterfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemInterfaces\obj\x64\Debug\SystemInterfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemInterfaces\obj\x64\Debug\SystemInterfaces.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\SystemInterfaces\bin\x64\Debug\SystemInterfaces.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\SystemInterfaces\bin\x64\Debug\SystemInterfaces.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\SystemInterfaces\obj\x64\Debug\SystemInterfaces.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\SystemInterfaces\obj\x64\Debug\SystemInterfaces.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\SystemInterfaces\obj\x64\Debug\SystemInterfaces.pdb

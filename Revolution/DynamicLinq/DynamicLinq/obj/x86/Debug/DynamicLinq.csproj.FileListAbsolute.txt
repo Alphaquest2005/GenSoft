@@ -1,0 +1,1 @@
+C:\prism\DynamicLinq\DynamicLinq\DynamicLinq\bin\Debug\DynamicLinq.exe.config

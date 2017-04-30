@@ -1,0 +1,5 @@
+C:\Prism\GitRepositiory\MRManager\Revolution\MefGeneric-master\MEFGeneric Preview 9\src\ComponentModel.Composition.Hosting.Extension\bin\Debug\ComponentModel.Composition.Hosting.Extension.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\MefGeneric-master\MEFGeneric Preview 9\src\ComponentModel.Composition.Hosting.Extension\bin\Debug\ComponentModel.Composition.Hosting.Extension.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\MefGeneric-master\MEFGeneric Preview 9\src\ComponentModel.Composition.Hosting.Extension\obj\Debug\ComponentModel.Composition.Hosting.Extension.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager\Revolution\MefGeneric-master\MEFGeneric Preview 9\src\ComponentModel.Composition.Hosting.Extension\obj\Debug\ComponentModel.Composition.Hosting.Extension.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\MefGeneric-master\MEFGeneric Preview 9\src\ComponentModel.Composition.Hosting.Extension\obj\Debug\ComponentModel.Composition.Hosting.Extension.pdb

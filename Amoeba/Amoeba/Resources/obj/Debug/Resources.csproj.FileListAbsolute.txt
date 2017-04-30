@@ -1,0 +1,134 @@
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\Resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\Resources.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\Core.Common.UI.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\DataTemplates.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\ReactiveUI.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\FluentValidation.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\EventMessages.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\JB.Common.Collections.Reactive.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\CommonMessages.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\Common.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\EventAggregator.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\System.Reactive.Interfaces.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\System.Reactive.Linq.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\System.Reactive.Core.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\Utilities.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\Splat.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\JB.Common.Collections.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\JB.Common.Reactive.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\Reactive.EventAggregator.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\Logging.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\log4net.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\Core.Common.UI.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\DataTemplates.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\FluentValidation.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\EventMessages.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\CommonMessages.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\Common.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\EventAggregator.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\Utilities.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\Splat.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\Logging.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\cs\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\da\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\de\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\es\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\fa\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\fi\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\fr\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\it\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\ko\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\mk\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\nl\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\pl\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\pt\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\ru\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\sv\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\tr\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\zh-CN\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba\Amoeba\Resources\obj\Debug\Styles\DataGridCustomizations.baml
+C:\Prism\Clients\Amoeba\Amoeba\Resources\obj\Debug\Styles\non-DataGridCustomizations.baml
+C:\Prism\Clients\Amoeba\Amoeba\Resources\obj\Debug\Styles\Non-Theme.baml
+C:\Prism\Clients\Amoeba\Amoeba\Resources\obj\Debug\Styles\Theme.baml
+C:\Prism\Clients\Amoeba\Amoeba\Resources\obj\Debug\Resources_MarkupCompile.cache
+C:\Prism\Clients\Amoeba\Amoeba\Resources\obj\Debug\Resources.g.resources
+C:\Prism\Clients\Amoeba\Amoeba\Resources\obj\Debug\Resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\obj\Debug\Resources.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\obj\Debug\Styles\DataGridCustomizations.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\obj\Debug\Styles\non-DataGridCustomizations.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\obj\Debug\Styles\Non-Theme.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\obj\Debug\Styles\Theme.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\obj\Debug\Resources_MarkupCompile.cache
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\obj\Debug\Resources.g.resources
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\Resources.dll.config
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\Resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\Resources.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\FluentValidation.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\FluentValidation.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\cs\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\da\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\de\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\es\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\fa\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\fi\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\fr\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\it\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\ko\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\mk\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\nl\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\pl\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\pt\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\ru\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\sv\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\tr\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\zh-CN\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\log4net.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\Reactive.EventAggregator.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\ReactiveUI.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\System.Reactive.Core.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\System.Reactive.Interfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\System.Reactive.Linq.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\System.Reactive.PlatformServices.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\System.Reactive.Windows.Threading.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\Splat.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\Splat.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\Core.Common.UI.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\DataTemplates.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\EventMessages.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\JB.Common.Collections.Reactive.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\CommonMessages.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\Common.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\EventAggregator.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\Utilities.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\JB.Common.Collections.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\JB.Common.Reactive.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\Logging.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\Core.Common.UI.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\DataTemplates.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\EventMessages.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\CommonMessages.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\Common.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\EventAggregator.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\Utilities.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\Logging.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\obj\Debug\Resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\obj\Debug\Resources.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\JB.Common.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\Interfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Resources\bin\Debug\Interfaces.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\Resources.dll.config
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\JB.Common.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\System.Reactive.PlatformServices.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\System.Reactive.Windows.Threading.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\Interfaces.dll
+C:\Prism\Clients\Amoeba\Amoeba\Resources\bin\Debug\Interfaces.pdb

@@ -1,0 +1,8 @@
+C:\Prism\Clients\Revolution\Reactive.EventAggregator\bin\Net40\Debug\Reactive.EventAggregator.dll.config
+C:\Prism\Clients\Revolution\Reactive.EventAggregator\bin\Net40\Debug\Reactive.EventAggregator.dll
+C:\Prism\Clients\Revolution\Reactive.EventAggregator\bin\Net40\Debug\Reactive.EventAggregator.pdb
+C:\Prism\Clients\Revolution\Reactive.EventAggregator\bin\Net40\Debug\System.Reactive.Core.dll
+C:\Prism\Clients\Revolution\Reactive.EventAggregator\bin\Net40\Debug\System.Reactive.Interfaces.dll
+C:\Prism\Clients\Revolution\Reactive.EventAggregator\bin\Net40\Debug\System.Reactive.Linq.dll
+C:\Prism\Clients\Revolution\Reactive.EventAggregator\obj\Debug\Reactive.EventAggregator.dll
+C:\Prism\Clients\Revolution\Reactive.EventAggregator\obj\Debug\Reactive.EventAggregator.pdb

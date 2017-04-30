@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "targets": {
+    ".NETFramework,Version=v4.5.2": {},
+    ".NETFramework,Version=v4.5.2/win-x64": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "": [],
+    ".NETFramework,Version=v4.5.2": []
+  },
+  "packageFolders": {
+    "C:\\Users\\Alpha\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "restore": {
+      "projectUniqueName": "C:\\Prism\\GitRepositiory\\GenSoft\\Amoeba-MRManager\\Amoeba-MRManager.csproj",
+      "projectName": "Amoeba-MRManager",
+      "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Amoeba-MRManager\\Amoeba-MRManager.csproj",
+      "projectJsonPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Amoeba-MRManager\\project.json",
+      "projectStyle": "ProjectJson"
+    },
+    "frameworks": {
+      "net452": {}
+    },
+    "runtimes": {
+      "win-x64": {
+        "#import": []
+      }
+    }
+  }
+}

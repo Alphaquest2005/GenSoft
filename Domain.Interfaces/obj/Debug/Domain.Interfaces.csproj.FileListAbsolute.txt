@@ -1,0 +1,9 @@
+C:\Prism\GitRepositiory\MRManager\Domain.Interfaces\bin\Debug\Domain.Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\Domain.Interfaces\bin\Debug\Domain.Interfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Domain.Interfaces\bin\Debug\Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\Domain.Interfaces\bin\Debug\SystemInterfaces.dll
+C:\Prism\GitRepositiory\MRManager\Domain.Interfaces\bin\Debug\Interfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Domain.Interfaces\bin\Debug\SystemInterfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Domain.Interfaces\obj\Debug\Domain.Interfaces.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager\Domain.Interfaces\obj\Debug\Domain.Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\Domain.Interfaces\obj\Debug\Domain.Interfaces.pdb

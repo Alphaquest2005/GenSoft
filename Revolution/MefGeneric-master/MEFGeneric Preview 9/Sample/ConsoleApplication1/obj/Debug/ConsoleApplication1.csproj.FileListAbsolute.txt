@@ -1,0 +1,8 @@
+C:\Prism\GitRepositiory\MRManager\Revolution\MefGeneric-master\MEFGeneric Preview 9\Sample\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Prism\GitRepositiory\MRManager\Revolution\MefGeneric-master\MEFGeneric Preview 9\Sample\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Prism\GitRepositiory\MRManager\Revolution\MefGeneric-master\MEFGeneric Preview 9\Sample\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\MefGeneric-master\MEFGeneric Preview 9\Sample\ConsoleApplication1\bin\Debug\ComponentModel.Composition.Hosting.Extension.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\MefGeneric-master\MEFGeneric Preview 9\Sample\ConsoleApplication1\bin\Debug\ComponentModel.Composition.Hosting.Extension.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\MefGeneric-master\MEFGeneric Preview 9\Sample\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager\Revolution\MefGeneric-master\MEFGeneric Preview 9\Sample\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Prism\GitRepositiory\MRManager\Revolution\MefGeneric-master\MEFGeneric Preview 9\Sample\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

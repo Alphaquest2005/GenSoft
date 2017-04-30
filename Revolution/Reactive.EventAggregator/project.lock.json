@@ -1,0 +1,142 @@
+{
+  "locked": false,
+  "version": 2,
+  "targets": {
+    ".NETFramework,Version=v4.6.1": {
+      "System.Reactive.Core/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.Interfaces": "3.0.0"
+        },
+        "compile": {
+          "lib/net46/System.Reactive.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Reactive.Core.dll": {}
+        }
+      },
+      "System.Reactive.Interfaces/3.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/System.Reactive.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Interfaces.dll": {}
+        }
+      },
+      "System.Reactive.Linq/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.Core": "3.0.0",
+          "System.Reactive.Interfaces": "3.0.0"
+        },
+        "compile": {
+          "lib/net46/System.Reactive.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Reactive.Linq.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.6.1/win": {
+      "System.Reactive.Core/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.Interfaces": "3.0.0"
+        },
+        "compile": {
+          "lib/net46/System.Reactive.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Reactive.Core.dll": {}
+        }
+      },
+      "System.Reactive.Interfaces/3.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/System.Reactive.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Interfaces.dll": {}
+        }
+      },
+      "System.Reactive.Linq/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.Core": "3.0.0",
+          "System.Reactive.Interfaces": "3.0.0"
+        },
+        "compile": {
+          "lib/net46/System.Reactive.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Reactive.Linq.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "System.Reactive.Core/3.0.0": {
+      "sha512": "1mnBTTNzTDaKYu2fYA0fcbWmWspwXheV9eFR0ynWd0nFjBwgSW0ZUAxe7dfvU5imv+K9QlfhV+pEKGOlJVZ8+w==",
+      "type": "package",
+      "files": [
+        "System.Reactive.Core.3.0.0.nupkg.sha512",
+        "System.Reactive.Core.nuspec",
+        "lib/net45/System.Reactive.Core.dll",
+        "lib/net45/System.Reactive.Core.xml",
+        "lib/net46/System.Reactive.Core.dll",
+        "lib/net46/System.Reactive.Core.xml",
+        "lib/netcore451/System.Reactive.Core.dll",
+        "lib/netcore451/System.Reactive.Core.xml",
+        "lib/netcoreapp1.0/System.Reactive.Core.dll",
+        "lib/netcoreapp1.0/System.Reactive.Core.xml",
+        "lib/netstandard1.0/System.Reactive.Core.dll",
+        "lib/netstandard1.0/System.Reactive.Core.xml",
+        "lib/netstandard1.1/System.Reactive.Core.dll",
+        "lib/netstandard1.1/System.Reactive.Core.xml",
+        "lib/netstandard1.3/System.Reactive.Core.dll",
+        "lib/netstandard1.3/System.Reactive.Core.xml",
+        "lib/uap10.0/System.Reactive.Core.dll",
+        "lib/uap10.0/System.Reactive.Core.xml",
+        "lib/wpa81/System.Reactive.Core.dll",
+        "lib/wpa81/System.Reactive.Core.xml"
+      ]
+    },
+    "System.Reactive.Interfaces/3.0.0": {
+      "sha512": "MuLvWYegIrhvUVe3MRMIBxFGx4kiz0FEzN3TTvhX+m3WmJCi5+OE4J7yPWtZjGGTUh5wysGyaF9thcnCzx/J3w==",
+      "type": "package",
+      "files": [
+        "System.Reactive.Interfaces.3.0.0.nupkg.sha512",
+        "System.Reactive.Interfaces.nuspec",
+        "lib/net45/System.Reactive.Interfaces.dll",
+        "lib/net45/System.Reactive.Interfaces.xml",
+        "lib/netstandard1.0/System.Reactive.Interfaces.dll",
+        "lib/netstandard1.0/System.Reactive.Interfaces.xml"
+      ]
+    },
+    "System.Reactive.Linq/3.0.0": {
+      "sha512": "CmQ+WpeOFzwYlDKafLQLT5McvR1TWCi3UudeBnajguvi/8ZGHDoQ2MPTo401EKkSvW48uTsJyvcKXN/C7g91Qg==",
+      "type": "package",
+      "files": [
+        "System.Reactive.Linq.3.0.0.nupkg.sha512",
+        "System.Reactive.Linq.nuspec",
+        "lib/net45/System.Reactive.Linq.dll",
+        "lib/net45/System.Reactive.Linq.xml",
+        "lib/net46/System.Reactive.Linq.dll",
+        "lib/net46/System.Reactive.Linq.xml",
+        "lib/netstandard1.0/System.Reactive.Linq.dll",
+        "lib/netstandard1.0/System.Reactive.Linq.xml",
+        "lib/netstandard1.1/System.Reactive.Linq.dll",
+        "lib/netstandard1.1/System.Reactive.Linq.xml",
+        "lib/netstandard1.3/System.Reactive.Linq.dll",
+        "lib/netstandard1.3/System.Reactive.Linq.xml"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "System.Reactive.Linq >= 3.0.0"
+    ],
+    ".NETFramework,Version=v4.6.1": []
+  }
+}

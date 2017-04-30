@@ -1,0 +1,374 @@
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\Core.Common.UI.dll.config
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\Core.Common.UI.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\Core.Common.UI.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\EventAggregator.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\EventMessages.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\Newtonsoft.Json.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\PresentationCore.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\Reactive.EventAggregator.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\System.Reactive.Core.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\System.Reactive.Interfaces.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\System.Reactive.Linq.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\System.Windows.Interactivity.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\Logging.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\DataInterfaces.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\Model.Interfaces.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\log4net.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\NHibernate.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\Iesi.Collections.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\EventAggregator.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\EventMessages.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\Newtonsoft.Json.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\System.Reactive.Core.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\System.Reactive.Interfaces.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\System.Reactive.Linq.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\Logging.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\DataInterfaces.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\Model.Interfaces.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\log4net.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\NHibernate.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\Iesi.Collections.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\de\Microsoft.Expression.Interactions.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\en\Microsoft.Expression.Interactions.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\es\Microsoft.Expression.Interactions.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\fr\Microsoft.Expression.Interactions.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\it\Microsoft.Expression.Interactions.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\ja\Microsoft.Expression.Interactions.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\ko\Microsoft.Expression.Interactions.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\ru\Microsoft.Expression.Interactions.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\zh-Hans\Microsoft.Expression.Interactions.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\zh-Hant\Microsoft.Expression.Interactions.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\obj\Debug\Core.Common.UI.csprojResolveAssemblyReference.cache
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\obj\Debug\Virtualization\LoadingAnimationBlock.baml
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\obj\Debug\Virtualization\LoadingAnimation.g.cs
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\obj\Debug\Virtualization\LoadingAnimationBlock.g.cs
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\obj\Debug\Core.Common.UI_MarkupCompile.cache
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\obj\Debug\Core.Common.UI_MarkupCompile.lref
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\obj\Debug\Virtualization\LoadingAnimation.baml
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\obj\Debug\Core.Common.UI.g.resources
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\obj\Debug\Core.Common.UI.UIResources.resources
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\obj\Debug\Core.Common.UI.csproj.GenerateResource.Cache
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\obj\Debug\Core.Common.UI.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\obj\Debug\Core.Common.UI.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\FluentValidation.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\FluentValidation.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\FluentValidation.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\cs\FluentValidation.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\da\FluentValidation.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\de\FluentValidation.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\es\FluentValidation.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\fa\FluentValidation.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\fi\FluentValidation.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\fr\FluentValidation.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\it\FluentValidation.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\ko\FluentValidation.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\mk\FluentValidation.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\nl\FluentValidation.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\pl\FluentValidation.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\pt\FluentValidation.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\ru\FluentValidation.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\sv\FluentValidation.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\tr\FluentValidation.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\zh-CN\FluentValidation.resources.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\CommonMessages.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Core.Common.UI\bin\Debug\CommonMessages.pdb
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\Core.Common.UI.dll.config
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\Core.Common.UI.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\Core.Common.UI.pdb
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\CommonMessages.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\DataInterfaces.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\EventAggregator.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\EventMessages.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\FluentValidation.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\Microsoft.Expression.Interactions.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\Model.Interfaces.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\Newtonsoft.Json.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\PresentationCore.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\Reactive.EventAggregator.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\SimpleMvvmToolkit-Common.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\SimpleMvvmToolkit-WPF.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\System.Reactive.Core.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\System.Reactive.Interfaces.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\System.Reactive.Linq.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\System.Windows.Interactivity.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\NHibernate.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\Logging.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\Iesi.Collections.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\log4net.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\CommonMessages.pdb
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\DataInterfaces.pdb
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\EventAggregator.pdb
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\Model.Interfaces.pdb
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\EventMessages.pdb
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\FluentValidation.pdb
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\FluentValidation.xml
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\Microsoft.Expression.Interactions.xml
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\Newtonsoft.Json.xml
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\SimpleMvvmToolkit-Common.pdb
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\SimpleMvvmToolkit-Common.xml
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\SimpleMvvmToolkit-WPF.pdb
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\SimpleMvvmToolkit-WPF.xml
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\System.Reactive.Core.xml
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\System.Reactive.Interfaces.xml
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\System.Reactive.Linq.xml
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\System.Windows.Interactivity.xml
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\NHibernate.xml
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\Logging.pdb
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\Iesi.Collections.xml
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\log4net.xml
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\cs\FluentValidation.resources.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\da\FluentValidation.resources.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\de\FluentValidation.resources.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\es\FluentValidation.resources.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\fa\FluentValidation.resources.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\fi\FluentValidation.resources.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\fr\FluentValidation.resources.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\it\FluentValidation.resources.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\ko\FluentValidation.resources.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\mk\FluentValidation.resources.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\nl\FluentValidation.resources.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\pl\FluentValidation.resources.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\pt\FluentValidation.resources.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\ru\FluentValidation.resources.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\sv\FluentValidation.resources.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\tr\FluentValidation.resources.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\zh-CN\FluentValidation.resources.dll
+D:\prism\Clients\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI.csprojResolveAssemblyReference.cache
+D:\prism\Clients\Revolution\Core.Common.UI\obj\Debug\Virtualization\LoadingAnimationBlock.baml
+D:\prism\Clients\Revolution\Core.Common.UI\obj\Debug\Virtualization\LoadingAnimation.g.cs
+D:\prism\Clients\Revolution\Core.Common.UI\obj\Debug\Virtualization\LoadingAnimationBlock.g.cs
+D:\prism\Clients\Revolution\Core.Common.UI\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\prism\Clients\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI_MarkupCompile.cache
+D:\prism\Clients\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI_MarkupCompile.lref
+D:\prism\Clients\Revolution\Core.Common.UI\obj\Debug\Virtualization\LoadingAnimation.baml
+D:\prism\Clients\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI.g.resources
+D:\prism\Clients\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI.UIResources.resources
+D:\prism\Clients\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI.csproj.GenerateResource.Cache
+D:\prism\Clients\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI.dll
+D:\prism\Clients\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI.pdb
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\JB.Common.Collections.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\JB.Common.Collections.Reactive.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\JB.Common.Reactive.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\ReactiveUI.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\Splat.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\System.Reactive.PlatformServices.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\System.Reactive.Windows.Threading.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\Utilities.dll
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\Utilities.pdb
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\JB.Common.Collections.xml
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\JB.Common.Collections.Reactive.xml
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\JB.Common.Reactive.xml
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\ReactiveUI.xml
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\Splat.pdb
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\System.Reactive.PlatformServices.xml
+D:\prism\Clients\Revolution\Core.Common.UI\bin\Debug\System.Reactive.Windows.Threading.xml
+C:\Prism\Clients\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Revolution\Core.Common.UI\obj\Debug\Virtualization\LoadingAnimationBlock.baml
+C:\Prism\Clients\Revolution\Core.Common.UI\obj\Debug\Virtualization\LoadingAnimation.g.cs
+C:\Prism\Clients\Revolution\Core.Common.UI\obj\Debug\Virtualization\LoadingAnimationBlock.g.cs
+C:\Prism\Clients\Revolution\Core.Common.UI\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Prism\Clients\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI_MarkupCompile.cache
+C:\Prism\Clients\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI_MarkupCompile.lref
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\Core.Common.UI.dll.config
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\Core.Common.UI.dll
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\Core.Common.UI.pdb
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\FluentValidation.dll
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\JB.Common.dll
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\JB.Common.Collections.dll
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\JB.Common.Collections.Reactive.dll
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\JB.Common.Reactive.dll
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\log4net.dll
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\Reactive.EventAggregator.dll
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\ReactiveUI.dll
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\System.Reactive.Core.dll
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\System.Reactive.Interfaces.dll
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\System.Reactive.Linq.dll
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\System.Reactive.PlatformServices.dll
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\System.Reactive.Windows.Threading.dll
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\Splat.dll
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\Splat.pdb
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\Common.dll
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\CommonMessages.dll
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\EventAggregator.dll
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\EventMessages.dll
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\Interfaces.dll
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\PresentationCore.dll
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\SystemInterfaces.dll
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\SystemMessages.dll
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\Utilities.dll
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\ViewModel.Interfaces.dll
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\Logging.dll
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\RevolutionEntities.dll
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\Interfaces.pdb
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\CommonMessages.pdb
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\Common.pdb
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\EventAggregator.pdb
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\EventMessages.pdb
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\SystemInterfaces.pdb
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\SystemMessages.pdb
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\Utilities.pdb
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\ViewModel.Interfaces.pdb
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\Logging.pdb
+C:\Prism\Clients\Revolution\Core.Common.UI\bin\Debug\RevolutionEntities.pdb
+C:\Prism\Clients\Revolution\Core.Common.UI\obj\Debug\Virtualization\LoadingAnimation.baml
+C:\Prism\Clients\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI.g.resources
+C:\Prism\Clients\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI.UIResources.resources
+C:\Prism\Clients\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI.csproj.GenerateResource.Cache
+C:\Prism\Clients\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI.dll
+C:\Prism\Clients\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\Core.Common.UI.dll.config
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\Core.Common.UI.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\Core.Common.UI.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\FluentValidation.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\JB.Common.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\JB.Common.Collections.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\JB.Common.Collections.Reactive.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\JB.Common.Reactive.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\log4net.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\Reactive.EventAggregator.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\ReactiveUI.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\System.Reactive.Core.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\System.Reactive.Interfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\System.Reactive.Linq.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\System.Reactive.PlatformServices.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\System.Reactive.Windows.Threading.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\Splat.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\Splat.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\Common.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\CommonMessages.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\EventAggregator.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\EventMessages.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\Interfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\PresentationCore.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\SystemInterfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\SystemMessages.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\Utilities.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\ViewModel.Interfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\Logging.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\RevolutionEntities.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\Interfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\CommonMessages.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\Common.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\EventAggregator.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\EventMessages.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\SystemInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\SystemMessages.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\Utilities.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\ViewModel.Interfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\Logging.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\bin\Debug\RevolutionEntities.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\obj\Debug\Virtualization\LoadingAnimationBlock.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\obj\Debug\Virtualization\LoadingAnimation.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\obj\Debug\Virtualization\LoadingAnimationBlock.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI_MarkupCompile.cache
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI_MarkupCompile.lref
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\obj\Debug\Virtualization\LoadingAnimation.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI.g.resources
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI.UIResources.resources
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI.csproj.GenerateResource.Cache
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\Core.Common.UI.dll.config
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\Core.Common.UI.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\Core.Common.UI.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\Akka.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\FluentValidation.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\JB.Common.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\JB.Common.Collections.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\JB.Common.Collections.Reactive.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\JB.Common.Reactive.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\MefContrib.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\MefContrib.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\MoreLinq.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\Newtonsoft.Json.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\Reactive.EventAggregator.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\ReactiveProperty.DataAnnotations.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\ReactiveProperty.DataAnnotations.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\ReactiveProperty.NET46.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\ReactiveProperty.NET46.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\ReactiveProperty.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\ReactiveProperty.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\ReactiveUI.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\System.Reactive.Core.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\System.Reactive.Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\System.Reactive.Linq.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\System.Reactive.PlatformServices.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\System.Reactive.Windows.Threading.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\Splat.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\Splat.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\System.Collections.Immutable.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\BootStrapper.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\Common.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\CommonMessages.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\EventAggregator.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\EventMessages.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\RevolutionData.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\RevolutionEntities.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\SystemInterfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\Utilities.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\ValidationSets.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\ViewModel.Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\ComponentModel.Composition.Hosting.Extension.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\Actor.Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\RevolutionLogger.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\DomainMessages.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\ViewMessages.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\Domain.Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\log4net.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\Interfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\ValidationSets.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\BootStrapper.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\CommonMessages.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\Common.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\EventAggregator.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\EventMessages.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\RevolutionData.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\RevolutionEntities.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\SystemInterfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\Utilities.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\ViewModel.Interfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\ComponentModel.Composition.Hosting.Extension.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\Actor.Interfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\RevolutionLogger.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\DomainMessages.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\ViewMessages.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\Domain.Interfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\log4net.xml
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\obj\Debug\Virtualization\LoadingAnimationBlock.baml
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\obj\Debug\Virtualization\LoadingAnimation.g.cs
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\obj\Debug\Virtualization\LoadingAnimationBlock.g.cs
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI_MarkupCompile.cache
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI_MarkupCompile.lref
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\obj\Debug\Virtualization\LoadingAnimation.baml
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI.g.resources
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI.UIResources.resources
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI.csproj.GenerateResource.Cache
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\EF.Entities.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\EF.Entities.pdb

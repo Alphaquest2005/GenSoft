@@ -1,0 +1,34 @@
+C:\Prism\Clients\Amoeba\Amoeba\NH.Mappings\bin\Debug\NH.Mappings.dll
+C:\Prism\Clients\Amoeba\Amoeba\NH.Mappings\bin\Debug\NH.Mappings.pdb
+C:\Prism\Clients\Amoeba\Amoeba\NH.Mappings\bin\Debug\Common.dll
+C:\Prism\Clients\Amoeba\Amoeba\NH.Mappings\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Amoeba\Amoeba\NH.Mappings\bin\Debug\EF.Entities.dll
+C:\Prism\Clients\Amoeba\Amoeba\NH.Mappings\bin\Debug\FluentNHibernate.dll
+C:\Prism\Clients\Amoeba\Amoeba\NH.Mappings\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Amoeba\Amoeba\NH.Mappings\bin\Debug\Interfaces.dll
+C:\Prism\Clients\Amoeba\Amoeba\NH.Mappings\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Amoeba\Amoeba\NH.Mappings\bin\Debug\Common.pdb
+C:\Prism\Clients\Amoeba\Amoeba\NH.Mappings\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba\Amoeba\NH.Mappings\bin\Debug\EF.Entities.pdb
+C:\Prism\Clients\Amoeba\Amoeba\NH.Mappings\bin\Debug\Interfaces.pdb
+C:\Prism\Clients\Amoeba\Amoeba\NH.Mappings\bin\Debug\FluentNHibernate.pdb
+C:\Prism\Clients\Amoeba\Amoeba\NH.Mappings\obj\Debug\NH.Mappings.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba\Amoeba\NH.Mappings\obj\Debug\NH.Mappings.dll
+C:\Prism\Clients\Amoeba\Amoeba\NH.Mappings\obj\Debug\NH.Mappings.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.Mappings\bin\Debug\NH.Mappings.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.Mappings\bin\Debug\NH.Mappings.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.Mappings\bin\Debug\FluentNHibernate.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.Mappings\bin\Debug\FluentNHibernate.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.Mappings\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.Mappings\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.Mappings\bin\Debug\Common.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.Mappings\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.Mappings\bin\Debug\EF.Entities.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.Mappings\bin\Debug\Interfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.Mappings\bin\Debug\Common.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.Mappings\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.Mappings\bin\Debug\EF.Entities.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.Mappings\bin\Debug\Interfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.Mappings\obj\Debug\NH.Mappings.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.Mappings\obj\Debug\NH.Mappings.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.Mappings\obj\Debug\NH.Mappings.pdb

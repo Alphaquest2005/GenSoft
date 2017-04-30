@@ -1,0 +1,1 @@
+C:\Prism\Clients\Revolution\RevolutionAppInterface\RevolutionAppInterface\bin\Debug\RevolutionAppInterface.exe.config

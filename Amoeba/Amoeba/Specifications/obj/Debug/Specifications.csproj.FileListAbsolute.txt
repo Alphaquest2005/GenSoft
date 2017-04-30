@@ -1,0 +1,5 @@
+C:\Prism\Clients\Amoeba Projects\MRManager\Specifications\bin\Debug\Specifications.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Specifications\bin\Debug\Specifications.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Specifications\obj\Debug\Specifications.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Specifications\obj\Debug\Specifications.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Specifications\obj\Debug\Specifications.csprojResolveAssemblyReference.cache

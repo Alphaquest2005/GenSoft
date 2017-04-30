@@ -1,0 +1,14 @@
+2017-01-13 15:52:46,198 [4] INFO RevolutionLogger.Logger - Caller:ServiceManager | GetEvent : SystemInterfaces.IServiceStarted`1[Actor.Interfaces.IProcessService]
+2017-01-13 15:52:46,375 [12] INFO RevolutionLogger.Logger - Caller:Supervisor:ProcessSupervisor | GetEvent : SystemInterfaces.ISystemProcessCompleted
+2017-01-13 15:52:53,335 [12] INFO RevolutionLogger.Logger - Sender:Supervisor:ProcessSupervisor | PublishEvent : EventMessages.StartSystemProcess
+2017-01-13 15:54:15,983 [12] INFO RevolutionLogger.Logger - Caller:Supervisor:ProcessSupervisor | GetEvent : SystemInterfaces.IProcessSystemMessage
+2017-01-13 15:54:15,991 [16] INFO RevolutionLogger.Logger - Caller:ViewModel:MainWindowViewModel | GetEvent : ViewModel.Interfaces.IViewModelCreated`1[ViewModel.Interfaces.IScreenModel]
+2017-01-13 15:54:16,007 [16] INFO RevolutionLogger.Logger - Sender:ViewModel:MainWindowViewModel | PublishEvent : EventMessages.RequestProcessState
+2017-01-13 15:54:21,424 [13] INFO RevolutionLogger.Logger - Caller:PersistentActorProcessActor | GetEvent : SystemInterfaces.IProcessStateMessage`1[SystemInterfaces.IEntityId]
+2017-01-13 15:54:21,430 [13] INFO RevolutionLogger.Logger - Caller:PersistentActorProcessActor | GetEvent : SystemInterfaces.IRequestProcessState
+2017-01-13 15:54:21,433 [13] INFO RevolutionLogger.Logger - Caller:PersistentActorProcessActor | GetEvent : SystemInterfaces.IRequestProcessLog
+2017-01-13 15:54:21,437 [13] INFO RevolutionLogger.Logger - Caller:PersistentActorProcessActor | GetEvent : SystemInterfaces.IComplexEventLogCreated
+2017-01-13 15:54:21,441 [13] INFO RevolutionLogger.Logger - Caller:PersistentActorProcessActor | GetEvent : SystemInterfaces.IServiceStarted`1[Actor.Interfaces.IComplexEventService]
+2017-01-13 15:54:21,457 [13] INFO RevolutionLogger.Logger - Caller:PersistentActorProcessActor | GetEvent : SystemInterfaces.IProcessSystemMessage
+2017-01-13 15:54:21,464 [13] INFO RevolutionLogger.Logger - Caller:PersistentActorProcessActor | GetEvent : SystemInterfaces.IProcessSystemMessage
+2017-01-13 15:54:21,477 [13] INFO RevolutionLogger.Logger - Caller:PersistentActorProcessActor | GetEvent : SystemInterfaces.IProcessSystemMessage

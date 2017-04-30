@@ -1,0 +1,424 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="RevolutionAppDBDataStore" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="RevolutionAppDBDataStore">
+    <EntitySet Name="ApplicationEntities" EntityType="RevolutionAppDBDataStore.ApplicationEntity" store:Type="Tables" Schema="dbo" Table="ApplicationEntities" />
+    <EntitySet Name="Applications" EntityType="RevolutionAppDBDataStore.Application1" store:Type="Tables" Schema="dbo" Table="Applications" />
+    <EntitySet Name="CalculatedProperties" EntityType="RevolutionAppDBDataStore.CalculatedProperty" store:Type="Tables" Schema="dbo" Table="CalculatedProperties" />
+    <EntitySet Name="DataTypes" EntityType="RevolutionAppDBDataStore.DataType" store:Type="Tables" Schema="dbo" Table="DataTypes" />
+    <EntitySet Name="Entities" EntityType="RevolutionAppDBDataStore.Entity" store:Type="Tables" Schema="dbo" Table="Entities" />
+    <EntitySet Name="EntityParameters" EntityType="RevolutionAppDBDataStore.EntityParameter" store:Type="Tables" Schema="dbo" Table="EntityParameters" />
+    <EntitySet Name="EntityProperties" EntityType="RevolutionAppDBDataStore.EntityProperty" store:Type="Tables" Schema="dbo" Table="EntityProperties" />
+    <EntitySet Name="EntityRelationships" EntityType="RevolutionAppDBDataStore.EntityRelationship" store:Type="Tables" Schema="dbo" Table="EntityRelationships" />
+    <EntitySet Name="FunctionOperations" EntityType="RevolutionAppDBDataStore.FunctionOperation" store:Type="Tables" Schema="dbo" Table="FunctionOperations" />
+    <EntitySet Name="FunctionParameters" EntityType="RevolutionAppDBDataStore.FunctionParameter" store:Type="Tables" Schema="dbo" Table="FunctionParameters" />
+    <EntitySet Name="Functions" EntityType="RevolutionAppDBDataStore.c_Function" store:Type="Tables" Schema="dbo" Table="Functions" />
+    <EntitySet Name="FunctionSets" EntityType="RevolutionAppDBDataStore.FunctionSet" store:Type="Tables" Schema="dbo" Table="FunctionSets" />
+    <EntitySet Name="ModelTypes" EntityType="RevolutionAppDBDataStore.ModelType" store:Type="Tables" Schema="dbo" Table="ModelTypes" />
+    <EntitySet Name="Operators" EntityType="RevolutionAppDBDataStore.c_Operator" store:Type="Tables" Schema="dbo" Table="Operators" />
+    <EntitySet Name="Parameters" EntityType="RevolutionAppDBDataStore.Parameter" store:Type="Tables" Schema="dbo" Table="Parameters" />
+    <AssociationSet Name="FK_ApplicationEntities_Applications" Association="RevolutionAppDBDataStore.FK_ApplicationEntities_Applications">
+      <End Role="Applications" EntitySet="Applications" />
+      <End Role="ApplicationEntities" EntitySet="ApplicationEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ApplicationEntities_Entities" Association="RevolutionAppDBDataStore.FK_ApplicationEntities_Entities">
+      <End Role="Entities" EntitySet="Entities" />
+      <End Role="ApplicationEntities" EntitySet="ApplicationEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CalculatedProperties_EntityProperties" Association="RevolutionAppDBDataStore.FK_CalculatedProperties_EntityProperties">
+      <End Role="EntityProperties" EntitySet="EntityProperties" />
+      <End Role="CalculatedProperties" EntitySet="CalculatedProperties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CalculatedProperties_Functions" Association="RevolutionAppDBDataStore.FK_CalculatedProperties_Functions">
+      <End Role="Functions" EntitySet="Functions" />
+      <End Role="CalculatedProperties" EntitySet="CalculatedProperties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EntityParameters_EntityProperties" Association="RevolutionAppDBDataStore.FK_EntityParameters_EntityProperties">
+      <End Role="EntityProperties" EntitySet="EntityProperties" />
+      <End Role="EntityParameters" EntitySet="EntityParameters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EntityParameters_Parameters" Association="RevolutionAppDBDataStore.FK_EntityParameters_Parameters">
+      <End Role="Parameters" EntitySet="Parameters" />
+      <End Role="EntityParameters" EntitySet="EntityParameters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EntityProperties_DataTypes" Association="RevolutionAppDBDataStore.FK_EntityProperties_DataTypes">
+      <End Role="DataTypes" EntitySet="DataTypes" />
+      <End Role="EntityProperties" EntitySet="EntityProperties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EntityProperties_Entities" Association="RevolutionAppDBDataStore.FK_EntityProperties_Entities">
+      <End Role="Entities" EntitySet="Entities" />
+      <End Role="EntityProperties" EntitySet="EntityProperties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EntityRelationships_Entities" Association="RevolutionAppDBDataStore.FK_EntityRelationships_Entities">
+      <End Role="Entities" EntitySet="Entities" />
+      <End Role="EntityRelationships" EntitySet="EntityRelationships" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EntityRelationships_Entities1" Association="RevolutionAppDBDataStore.FK_EntityRelationships_Entities1">
+      <End Role="Entities" EntitySet="Entities" />
+      <End Role="EntityRelationships" EntitySet="EntityRelationships" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FunctionOperations_Functions" Association="RevolutionAppDBDataStore.FK_FunctionOperations_Functions">
+      <End Role="Functions" EntitySet="Functions" />
+      <End Role="FunctionOperations" EntitySet="FunctionOperations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FunctionOperations_Operators" Association="RevolutionAppDBDataStore.FK_FunctionOperations_Operators">
+      <End Role="Operators" EntitySet="Operators" />
+      <End Role="FunctionOperations" EntitySet="FunctionOperations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FunctionOperations_Parameters" Association="RevolutionAppDBDataStore.FK_FunctionOperations_Parameters">
+      <End Role="Parameters" EntitySet="Parameters" />
+      <End Role="FunctionOperations" EntitySet="FunctionOperations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FunctionParameters_Functions" Association="RevolutionAppDBDataStore.FK_FunctionParameters_Functions">
+      <End Role="Functions" EntitySet="Functions" />
+      <End Role="FunctionParameters" EntitySet="FunctionParameters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FunctionParameters_Parameters" Association="RevolutionAppDBDataStore.FK_FunctionParameters_Parameters">
+      <End Role="Parameters" EntitySet="Parameters" />
+      <End Role="FunctionParameters" EntitySet="FunctionParameters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Parameters_DataTypes" Association="RevolutionAppDBDataStore.FK_Parameters_DataTypes">
+      <End Role="DataTypes" EntitySet="DataTypes" />
+      <End Role="Parameters" EntitySet="Parameters" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ApplicationEntity">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationId" Type="int" Nullable="false" />
+    <Property Name="EntityId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Application1">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ApplicationFolder" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CalculatedProperty">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="FunctionId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DataType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Entity">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="EntityName" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="EntityParameter">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="EntityPropertyId" Type="int" Nullable="false" />
+    <Property Name="ParameterId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EntityProperty">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PropertyName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ModelTypeId" Type="int" Nullable="false" />
+    <Property Name="DataTypeId" Type="int" Nullable="false" />
+    <Property Name="EntityId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EntityRelationship">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IsMultiple" Type="bit" Nullable="false" />
+    <Property Name="ChildEntityId" Type="int" Nullable="false" />
+    <Property Name="ParentEntityId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FunctionOperation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="FunctionId" Type="int" Nullable="false" />
+    <Property Name="OperatorId" Type="int" Nullable="false" />
+    <Property Name="ParameterId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FunctionParameter">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FunctionId" Type="int" Nullable="false" />
+    <Property Name="ParameterId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="c_Function">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="FunctionSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ModelType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="c_Operator">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Parameter">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="DataTypeId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ApplicationEntities_Applications">
+    <End Role="Applications" Type="RevolutionAppDBDataStore.Application1" Multiplicity="1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="ApplicationEntities" Type="RevolutionAppDBDataStore.ApplicationEntity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applications">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ApplicationEntities">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ApplicationEntities_Entities">
+    <End Role="Entities" Type="RevolutionAppDBDataStore.Entity" Multiplicity="1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="ApplicationEntities" Type="RevolutionAppDBDataStore.ApplicationEntity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Entities">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ApplicationEntities">
+        <PropertyRef Name="EntityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CalculatedProperties_EntityProperties">
+    <End Role="EntityProperties" Type="RevolutionAppDBDataStore.EntityProperty" Multiplicity="1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="CalculatedProperties" Type="RevolutionAppDBDataStore.CalculatedProperty" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="EntityProperties">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CalculatedProperties">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CalculatedProperties_Functions">
+    <End Role="Functions" Type="RevolutionAppDBDataStore.c_Function" Multiplicity="1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="CalculatedProperties" Type="RevolutionAppDBDataStore.CalculatedProperty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Functions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CalculatedProperties">
+        <PropertyRef Name="FunctionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EntityParameters_EntityProperties">
+    <End Role="EntityProperties" Type="RevolutionAppDBDataStore.EntityProperty" Multiplicity="1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="EntityParameters" Type="RevolutionAppDBDataStore.EntityParameter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntityProperties">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EntityParameters">
+        <PropertyRef Name="EntityPropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EntityParameters_Parameters">
+    <End Role="Parameters" Type="RevolutionAppDBDataStore.Parameter" Multiplicity="1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="EntityParameters" Type="RevolutionAppDBDataStore.EntityParameter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parameters">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EntityParameters">
+        <PropertyRef Name="ParameterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EntityProperties_DataTypes">
+    <End Role="DataTypes" Type="RevolutionAppDBDataStore.DataType" Multiplicity="1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="EntityProperties" Type="RevolutionAppDBDataStore.EntityProperty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DataTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EntityProperties">
+        <PropertyRef Name="DataTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EntityProperties_Entities">
+    <End Role="Entities" Type="RevolutionAppDBDataStore.Entity" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EntityProperties" Type="RevolutionAppDBDataStore.EntityProperty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Entities">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EntityProperties">
+        <PropertyRef Name="EntityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EntityRelationships_Entities">
+    <End Role="Entities" Type="RevolutionAppDBDataStore.Entity" Multiplicity="1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="EntityRelationships" Type="RevolutionAppDBDataStore.EntityRelationship" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Entities">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EntityRelationships">
+        <PropertyRef Name="ChildEntityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EntityRelationships_Entities1">
+    <End Role="Entities" Type="RevolutionAppDBDataStore.Entity" Multiplicity="1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="EntityRelationships" Type="RevolutionAppDBDataStore.EntityRelationship" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Entities">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EntityRelationships">
+        <PropertyRef Name="ParentEntityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FunctionOperations_Functions">
+    <End Role="Functions" Type="RevolutionAppDBDataStore.c_Function" Multiplicity="1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="FunctionOperations" Type="RevolutionAppDBDataStore.FunctionOperation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Functions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FunctionOperations">
+        <PropertyRef Name="FunctionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FunctionOperations_Operators">
+    <End Role="Operators" Type="RevolutionAppDBDataStore.c_Operator" Multiplicity="1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="FunctionOperations" Type="RevolutionAppDBDataStore.FunctionOperation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Operators">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FunctionOperations">
+        <PropertyRef Name="OperatorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FunctionOperations_Parameters">
+    <End Role="Parameters" Type="RevolutionAppDBDataStore.Parameter" Multiplicity="1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="FunctionOperations" Type="RevolutionAppDBDataStore.FunctionOperation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parameters">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FunctionOperations">
+        <PropertyRef Name="ParameterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FunctionParameters_Functions">
+    <End Role="Functions" Type="RevolutionAppDBDataStore.c_Function" Multiplicity="1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="FunctionParameters" Type="RevolutionAppDBDataStore.FunctionParameter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Functions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FunctionParameters">
+        <PropertyRef Name="FunctionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FunctionParameters_Parameters">
+    <End Role="Parameters" Type="RevolutionAppDBDataStore.Parameter" Multiplicity="1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="FunctionParameters" Type="RevolutionAppDBDataStore.FunctionParameter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parameters">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FunctionParameters">
+        <PropertyRef Name="ParameterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Parameters_DataTypes">
+    <End Role="DataTypes" Type="RevolutionAppDBDataStore.DataType" Multiplicity="1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="Parameters" Type="RevolutionAppDBDataStore.Parameter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DataTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Parameters">
+        <PropertyRef Name="DataTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

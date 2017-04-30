@@ -1,0 +1,10 @@
+C:\Users\Alpha\Downloads\XamlGenericTypes\XamlGenericTypeExtension\bin\Debug\XamlGenericTypeExtension.dll
+C:\Users\Alpha\Downloads\XamlGenericTypes\XamlGenericTypeExtension\bin\Debug\XamlGenericTypeExtension.pdb
+C:\Users\Alpha\Downloads\XamlGenericTypes\XamlGenericTypeExtension\obj\Debug\XamlGenericTypeExtension.csprojResolveAssemblyReference.cache
+C:\Users\Alpha\Downloads\XamlGenericTypes\XamlGenericTypeExtension\obj\Debug\XamlGenericTypeExtension.dll
+C:\Users\Alpha\Downloads\XamlGenericTypes\XamlGenericTypeExtension\obj\Debug\XamlGenericTypeExtension.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\XamlGenericTypeExtension\bin\Debug\XamlGenericTypeExtension.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\XamlGenericTypeExtension\bin\Debug\XamlGenericTypeExtension.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\XamlGenericTypeExtension\obj\Debug\XamlGenericTypeExtension.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager\Revolution\XamlGenericTypeExtension\obj\Debug\XamlGenericTypeExtension.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\XamlGenericTypeExtension\obj\Debug\XamlGenericTypeExtension.pdb

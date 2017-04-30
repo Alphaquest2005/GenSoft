@@ -1,0 +1,2248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application
+  Name="LightSwitchApplication.RevolutionRawInterface.DesktopClient"
+  TargetPlatform="RichClient"
+  Version="1.0.0.0"
+  DefaultNavigationItem="!module/NavigationItems[Tasks]"
+  Shell="Microsoft.LightSwitch.Cosmopolitan:CosmopolitanShell"
+  Theme="Microsoft.LightSwitch.Cosmopolitan:CosmopolitanTheme" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <Application.Attributes>
+    <ModuleNamespace
+      Namespace="LightSwitchApplication" />
+    <Partial
+      IsPrimary="True" />
+  </Application.Attributes>
+  <EntityContainerGroup
+    Name="DataWorkspace">
+    <EntityContainerGroupProperty
+      Name="SecurityData"
+      EntityContainer="Microsoft.LightSwitch.Security:SecurityData">
+      <EntityContainerGroupProperty.Attributes>
+        <Generated />
+        <DisplayName
+          Value="Security Data" />
+        <Description
+          Value="Service that provides access to security-related data." />
+      </EntityContainerGroupProperty.Attributes>
+    </EntityContainerGroupProperty>
+    <EntityContainerGroupProperty
+      Name="RevolutionAppDBData"
+      EntityContainer="RevolutionAppDBData" />
+  </EntityContainerGroup>
+  <GlobalAttributeGroup
+    Name="LightSwitchServiceApplicationGroup">
+    <GlobalAttributeGroup.Attributes>
+      <AutomaticDisplayName
+        Expression="(\p{Ll})(\p{Lu})|_+"
+        Replacement="$1 $2" />
+    </GlobalAttributeGroup.Attributes>
+  </GlobalAttributeGroup>
+  <EntityType
+    Name="ApplicationEntity">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <NavigationProperty
+        Name="Application1"
+        Association="FK_ApplicationEntities_Applications"
+        FromEnd="ApplicationEntities"
+        ToEnd="Applications" />
+      <NavigationProperty
+        Name="Entity"
+        Association="FK_ApplicationEntities_Entities"
+        FromEnd="ApplicationEntities"
+        ToEnd="Entities" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="Application1">
+    <EntityType.Attributes>
+      <DefaultScreen
+        Value="Application1Detail">
+        <DefaultScreen.Attributes>
+          <ScreenParameterMapping
+            KeyProperty="Application1/Properties[Id]"
+            ScreenParameter="Application1Detail/Properties[Application1Id]" />
+        </DefaultScreen.Attributes>
+      </DefaultScreen>
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="ApplicationName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="50" />
+          <AnsiConstraint />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ApplicationFolder"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength />
+          <AnsiConstraint />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="ApplicationEntities"
+        Association="FK_ApplicationEntities_Applications"
+        FromEnd="Applications"
+        ToEnd="ApplicationEntities" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="CalculatedProperty">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <NavigationProperty
+        Name="EntityProperty"
+        Association="FK_CalculatedProperties_EntityProperties"
+        FromEnd="CalculatedProperties"
+        ToEnd="EntityProperties" />
+      <NavigationProperty
+        Name="c_Function"
+        Association="FK_CalculatedProperties_Functions"
+        FromEnd="CalculatedProperties"
+        ToEnd="Functions" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="DataType">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Name"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="50" />
+          <AnsiConstraint />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="EntityProperties"
+        Association="FK_EntityProperties_DataTypes"
+        FromEnd="DataTypes"
+        ToEnd="EntityProperties" />
+      <NavigationProperty
+        Name="Parameters"
+        Association="FK_Parameters_DataTypes"
+        FromEnd="DataTypes"
+        ToEnd="Parameters" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="Entity">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="EntityName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="50" />
+          <AnsiConstraint />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="ApplicationEntities"
+        Association="FK_ApplicationEntities_Entities"
+        FromEnd="Entities"
+        ToEnd="ApplicationEntities" />
+      <NavigationProperty
+        Name="EntityProperties"
+        Association="FK_EntityProperties_Entities"
+        FromEnd="Entities"
+        ToEnd="EntityProperties" />
+      <NavigationProperty
+        Name="EntityRelationships"
+        Association="FK_EntityRelationships_Entities"
+        FromEnd="Entities"
+        ToEnd="EntityRelationships" />
+      <NavigationProperty
+        Name="EntityRelationships1"
+        Association="FK_EntityRelationships_Entities1"
+        FromEnd="Entities"
+        ToEnd="EntityRelationships" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="EntityParameter">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <NavigationProperty
+        Name="EntityProperty"
+        Association="FK_EntityParameters_EntityProperties"
+        FromEnd="EntityParameters"
+        ToEnd="EntityProperties" />
+      <NavigationProperty
+        Name="Parameter"
+        Association="FK_EntityParameters_Parameters"
+        FromEnd="EntityParameters"
+        ToEnd="Parameters" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="EntityProperty">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="PropertyName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="50" />
+          <AnsiConstraint />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ModelTypeId"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="CalculatedProperty"
+        Association="FK_CalculatedProperties_EntityProperties"
+        FromEnd="EntityProperties"
+        ToEnd="CalculatedProperties" />
+      <NavigationProperty
+        Name="EntityParameters"
+        Association="FK_EntityParameters_EntityProperties"
+        FromEnd="EntityProperties"
+        ToEnd="EntityParameters" />
+      <NavigationProperty
+        Name="DataType"
+        Association="FK_EntityProperties_DataTypes"
+        FromEnd="EntityProperties"
+        ToEnd="DataTypes" />
+      <NavigationProperty
+        Name="Entity"
+        Association="FK_EntityProperties_Entities"
+        FromEnd="EntityProperties"
+        ToEnd="Entities" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="EntityRelationship">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="IsMultiple"
+        PropertyType=":Boolean">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="Entity"
+        Association="FK_EntityRelationships_Entities"
+        FromEnd="EntityRelationships"
+        ToEnd="Entities" />
+      <NavigationProperty
+        Name="Entity1"
+        Association="FK_EntityRelationships_Entities1"
+        FromEnd="EntityRelationships"
+        ToEnd="Entities" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="FunctionOperation">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <NavigationProperty
+        Name="c_Function"
+        Association="FK_FunctionOperations_Functions"
+        FromEnd="FunctionOperations"
+        ToEnd="Functions" />
+      <NavigationProperty
+        Name="c_Operator"
+        Association="FK_FunctionOperations_Operators"
+        FromEnd="FunctionOperations"
+        ToEnd="Operators" />
+      <NavigationProperty
+        Name="Parameter"
+        Association="FK_FunctionOperations_Parameters"
+        FromEnd="FunctionOperations"
+        ToEnd="Parameters" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="FunctionParameter">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <NavigationProperty
+        Name="c_Function"
+        Association="FK_FunctionParameters_Functions"
+        FromEnd="FunctionParameters"
+        ToEnd="Functions" />
+      <NavigationProperty
+        Name="Parameter"
+        Association="FK_FunctionParameters_Parameters"
+        FromEnd="FunctionParameters"
+        ToEnd="Parameters" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="c_Function">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Name"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="50" />
+          <AnsiConstraint />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="CalculatedProperties"
+        Association="FK_CalculatedProperties_Functions"
+        FromEnd="Functions"
+        ToEnd="CalculatedProperties" />
+      <NavigationProperty
+        Name="FunctionOperations"
+        Association="FK_FunctionOperations_Functions"
+        FromEnd="Functions"
+        ToEnd="FunctionOperations" />
+      <NavigationProperty
+        Name="FunctionParameters"
+        Association="FK_FunctionParameters_Functions"
+        FromEnd="Functions"
+        ToEnd="FunctionParameters" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="FunctionSet">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="ModelType">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Name"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="50" />
+          <AnsiConstraint />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="c_Operator">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Name"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="50" />
+          <AnsiConstraint />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="FunctionOperations"
+        Association="FK_FunctionOperations_Operators"
+        FromEnd="Operators"
+        ToEnd="FunctionOperations" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="Parameter">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Name"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="50" />
+          <AnsiConstraint />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="EntityParameters"
+        Association="FK_EntityParameters_Parameters"
+        FromEnd="Parameters"
+        ToEnd="EntityParameters" />
+      <NavigationProperty
+        Name="FunctionOperations"
+        Association="FK_FunctionOperations_Parameters"
+        FromEnd="Parameters"
+        ToEnd="FunctionOperations" />
+      <NavigationProperty
+        Name="FunctionParameters"
+        Association="FK_FunctionParameters_Parameters"
+        FromEnd="Parameters"
+        ToEnd="FunctionParameters" />
+      <NavigationProperty
+        Name="DataType"
+        Association="FK_Parameters_DataTypes"
+        FromEnd="Parameters"
+        ToEnd="DataTypes" />
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="FK_ApplicationEntities_Applications">
+    <AssociationEnd
+      Name="Applications"
+      Multiplicity="One"
+      EntityType="Application1">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="ApplicationEntities"
+      Multiplicity="Many"
+      EntityType="ApplicationEntity" />
+  </Association>
+  <Association
+    Name="FK_ApplicationEntities_Entities">
+    <AssociationEnd
+      Name="Entities"
+      Multiplicity="One"
+      EntityType="Entity">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="ApplicationEntities"
+      Multiplicity="Many"
+      EntityType="ApplicationEntity" />
+  </Association>
+  <Association
+    Name="FK_CalculatedProperties_EntityProperties">
+    <AssociationEnd
+      Name="EntityProperties"
+      Multiplicity="One"
+      EntityType="EntityProperty">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="CalculatedProperties"
+      EntityType="CalculatedProperty" />
+  </Association>
+  <Association
+    Name="FK_CalculatedProperties_Functions">
+    <AssociationEnd
+      Name="Functions"
+      Multiplicity="One"
+      EntityType="c_Function">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="CalculatedProperties"
+      Multiplicity="Many"
+      EntityType="CalculatedProperty" />
+  </Association>
+  <Association
+    Name="FK_EntityParameters_EntityProperties">
+    <AssociationEnd
+      Name="EntityProperties"
+      Multiplicity="One"
+      EntityType="EntityProperty">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="EntityParameters"
+      Multiplicity="Many"
+      EntityType="EntityParameter" />
+  </Association>
+  <Association
+    Name="FK_EntityParameters_Parameters">
+    <AssociationEnd
+      Name="Parameters"
+      Multiplicity="One"
+      EntityType="Parameter">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="EntityParameters"
+      Multiplicity="Many"
+      EntityType="EntityParameter" />
+  </Association>
+  <Association
+    Name="FK_EntityProperties_DataTypes">
+    <AssociationEnd
+      Name="DataTypes"
+      Multiplicity="One"
+      EntityType="DataType">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="EntityProperties"
+      Multiplicity="Many"
+      EntityType="EntityProperty" />
+  </Association>
+  <Association
+    Name="FK_EntityProperties_Entities">
+    <AssociationEnd
+      Name="Entities"
+      Multiplicity="One"
+      EntityType="Entity">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Cascade" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="EntityProperties"
+      Multiplicity="Many"
+      EntityType="EntityProperty" />
+  </Association>
+  <Association
+    Name="FK_EntityRelationships_Entities">
+    <AssociationEnd
+      Name="Entities"
+      Multiplicity="One"
+      EntityType="Entity">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="EntityRelationships"
+      Multiplicity="Many"
+      EntityType="EntityRelationship" />
+  </Association>
+  <Association
+    Name="FK_EntityRelationships_Entities1">
+    <AssociationEnd
+      Name="Entities"
+      Multiplicity="One"
+      EntityType="Entity">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="EntityRelationships"
+      Multiplicity="Many"
+      EntityType="EntityRelationship" />
+  </Association>
+  <Association
+    Name="FK_FunctionOperations_Functions">
+    <AssociationEnd
+      Name="Functions"
+      Multiplicity="One"
+      EntityType="c_Function">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="FunctionOperations"
+      Multiplicity="Many"
+      EntityType="FunctionOperation" />
+  </Association>
+  <Association
+    Name="FK_FunctionOperations_Operators">
+    <AssociationEnd
+      Name="Operators"
+      Multiplicity="One"
+      EntityType="c_Operator">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="FunctionOperations"
+      Multiplicity="Many"
+      EntityType="FunctionOperation" />
+  </Association>
+  <Association
+    Name="FK_FunctionOperations_Parameters">
+    <AssociationEnd
+      Name="Parameters"
+      Multiplicity="One"
+      EntityType="Parameter">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="FunctionOperations"
+      Multiplicity="Many"
+      EntityType="FunctionOperation" />
+  </Association>
+  <Association
+    Name="FK_FunctionParameters_Functions">
+    <AssociationEnd
+      Name="Functions"
+      Multiplicity="One"
+      EntityType="c_Function">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="FunctionParameters"
+      Multiplicity="Many"
+      EntityType="FunctionParameter" />
+  </Association>
+  <Association
+    Name="FK_FunctionParameters_Parameters">
+    <AssociationEnd
+      Name="Parameters"
+      Multiplicity="One"
+      EntityType="Parameter">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="FunctionParameters"
+      Multiplicity="Many"
+      EntityType="FunctionParameter" />
+  </Association>
+  <Association
+    Name="FK_Parameters_DataTypes">
+    <AssociationEnd
+      Name="DataTypes"
+      Multiplicity="One"
+      EntityType="DataType">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Parameters"
+      Multiplicity="Many"
+      EntityType="Parameter" />
+  </Association>
+  <EntityContainer
+    Name="RevolutionAppDBData"
+    DataProvider="EntityFrameworkDataProvider">
+    <EntitySet
+      Name="ApplicationEntities"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="ApplicationEntity" />
+    <EntitySet
+      Name="Applications"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="Application1" />
+    <EntitySet
+      Name="CalculatedProperties"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="CalculatedProperty" />
+    <EntitySet
+      Name="DataTypes"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="DataType" />
+    <EntitySet
+      Name="Entities"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="Entity" />
+    <EntitySet
+      Name="EntityParameters"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="EntityParameter" />
+    <EntitySet
+      Name="EntityProperties"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="EntityProperty" />
+    <EntitySet
+      Name="EntityRelationships"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="EntityRelationship" />
+    <EntitySet
+      Name="FunctionOperations"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="FunctionOperation" />
+    <EntitySet
+      Name="FunctionParameters"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="FunctionParameter" />
+    <EntitySet
+      Name="Functions"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="c_Function" />
+    <EntitySet
+      Name="FunctionSets"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="FunctionSet" />
+    <EntitySet
+      Name="ModelTypes"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="ModelType" />
+    <EntitySet
+      Name="Operators"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="c_Operator" />
+    <EntitySet
+      Name="Parameters"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="Parameter" />
+    <AssociationSet
+      Name="FK_ApplicationEntities_Applications"
+      Association="FK_ApplicationEntities_Applications">
+      <AssociationSetEnd
+        Name="Applications"
+        EntitySet="Applications" />
+      <AssociationSetEnd
+        Name="ApplicationEntities"
+        EntitySet="ApplicationEntities" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_ApplicationEntities_Entities"
+      Association="FK_ApplicationEntities_Entities">
+      <AssociationSetEnd
+        Name="Entities"
+        EntitySet="Entities" />
+      <AssociationSetEnd
+        Name="ApplicationEntities"
+        EntitySet="ApplicationEntities" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_CalculatedProperties_EntityProperties"
+      Association="FK_CalculatedProperties_EntityProperties">
+      <AssociationSetEnd
+        Name="EntityProperties"
+        EntitySet="EntityProperties" />
+      <AssociationSetEnd
+        Name="CalculatedProperties"
+        EntitySet="CalculatedProperties" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_CalculatedProperties_Functions"
+      Association="FK_CalculatedProperties_Functions">
+      <AssociationSetEnd
+        Name="Functions"
+        EntitySet="Functions" />
+      <AssociationSetEnd
+        Name="CalculatedProperties"
+        EntitySet="CalculatedProperties" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_EntityParameters_EntityProperties"
+      Association="FK_EntityParameters_EntityProperties">
+      <AssociationSetEnd
+        Name="EntityProperties"
+        EntitySet="EntityProperties" />
+      <AssociationSetEnd
+        Name="EntityParameters"
+        EntitySet="EntityParameters" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_EntityParameters_Parameters"
+      Association="FK_EntityParameters_Parameters">
+      <AssociationSetEnd
+        Name="Parameters"
+        EntitySet="Parameters" />
+      <AssociationSetEnd
+        Name="EntityParameters"
+        EntitySet="EntityParameters" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_EntityProperties_DataTypes"
+      Association="FK_EntityProperties_DataTypes">
+      <AssociationSetEnd
+        Name="DataTypes"
+        EntitySet="DataTypes" />
+      <AssociationSetEnd
+        Name="EntityProperties"
+        EntitySet="EntityProperties" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_EntityProperties_Entities"
+      Association="FK_EntityProperties_Entities">
+      <AssociationSetEnd
+        Name="Entities"
+        EntitySet="Entities" />
+      <AssociationSetEnd
+        Name="EntityProperties"
+        EntitySet="EntityProperties" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_EntityRelationships_Entities"
+      Association="FK_EntityRelationships_Entities">
+      <AssociationSetEnd
+        Name="Entities"
+        EntitySet="Entities" />
+      <AssociationSetEnd
+        Name="EntityRelationships"
+        EntitySet="EntityRelationships" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_EntityRelationships_Entities1"
+      Association="FK_EntityRelationships_Entities1">
+      <AssociationSetEnd
+        Name="Entities"
+        EntitySet="Entities" />
+      <AssociationSetEnd
+        Name="EntityRelationships"
+        EntitySet="EntityRelationships" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_FunctionOperations_Functions"
+      Association="FK_FunctionOperations_Functions">
+      <AssociationSetEnd
+        Name="Functions"
+        EntitySet="Functions" />
+      <AssociationSetEnd
+        Name="FunctionOperations"
+        EntitySet="FunctionOperations" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_FunctionOperations_Operators"
+      Association="FK_FunctionOperations_Operators">
+      <AssociationSetEnd
+        Name="Operators"
+        EntitySet="Operators" />
+      <AssociationSetEnd
+        Name="FunctionOperations"
+        EntitySet="FunctionOperations" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_FunctionOperations_Parameters"
+      Association="FK_FunctionOperations_Parameters">
+      <AssociationSetEnd
+        Name="Parameters"
+        EntitySet="Parameters" />
+      <AssociationSetEnd
+        Name="FunctionOperations"
+        EntitySet="FunctionOperations" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_FunctionParameters_Functions"
+      Association="FK_FunctionParameters_Functions">
+      <AssociationSetEnd
+        Name="Functions"
+        EntitySet="Functions" />
+      <AssociationSetEnd
+        Name="FunctionParameters"
+        EntitySet="FunctionParameters" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_FunctionParameters_Parameters"
+      Association="FK_FunctionParameters_Parameters">
+      <AssociationSetEnd
+        Name="Parameters"
+        EntitySet="Parameters" />
+      <AssociationSetEnd
+        Name="FunctionParameters"
+        EntitySet="FunctionParameters" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_Parameters_DataTypes"
+      Association="FK_Parameters_DataTypes">
+      <AssociationSetEnd
+        Name="DataTypes"
+        EntitySet="DataTypes" />
+      <AssociationSetEnd
+        Name="Parameters"
+        EntitySet="Parameters" />
+    </AssociationSet>
+    <QueryOperation
+      Name="ApplicationEntities_Single"
+      ReturnType="ApplicationEntity">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="ApplicationEntities" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="ApplicationEntities_SingleOrDefault"
+      ReturnType="ApplicationEntity">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="ApplicationEntities" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Applications_Single"
+      ReturnType="Application1">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Applications" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Applications_SingleOrDefault"
+      ReturnType="Application1">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Applications" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="CalculatedProperties_Single"
+      ReturnType="CalculatedProperty">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="CalculatedProperties" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="CalculatedProperties_SingleOrDefault"
+      ReturnType="CalculatedProperty">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="CalculatedProperties" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="DataTypes_Single"
+      ReturnType="DataType">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="DataTypes" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="DataTypes_SingleOrDefault"
+      ReturnType="DataType">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="DataTypes" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Entities_Single"
+      ReturnType="Entity">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Entities" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Entities_SingleOrDefault"
+      ReturnType="Entity">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Entities" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="EntityParameters_Single"
+      ReturnType="EntityParameter">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="EntityParameters" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="EntityParameters_SingleOrDefault"
+      ReturnType="EntityParameter">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="EntityParameters" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="EntityProperties_Single"
+      ReturnType="EntityProperty">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="EntityProperties" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="EntityProperties_SingleOrDefault"
+      ReturnType="EntityProperty">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="EntityProperties" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="EntityRelationships_Single"
+      ReturnType="EntityRelationship">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="EntityRelationships" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="EntityRelationships_SingleOrDefault"
+      ReturnType="EntityRelationship">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="EntityRelationships" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="FunctionOperations_Single"
+      ReturnType="FunctionOperation">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="FunctionOperations" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="FunctionOperations_SingleOrDefault"
+      ReturnType="FunctionOperation">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="FunctionOperations" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="FunctionParameters_Single"
+      ReturnType="FunctionParameter">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="FunctionParameters" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="FunctionParameters_SingleOrDefault"
+      ReturnType="FunctionParameter">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="FunctionParameters" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Functions_Single"
+      ReturnType="c_Function">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Functions" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Functions_SingleOrDefault"
+      ReturnType="c_Function">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Functions" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="FunctionSets_Single"
+      ReturnType="FunctionSet">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="FunctionSets" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="FunctionSets_SingleOrDefault"
+      ReturnType="FunctionSet">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="FunctionSets" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="ModelTypes_Single"
+      ReturnType="ModelType">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="ModelTypes" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="ModelTypes_SingleOrDefault"
+      ReturnType="ModelType">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="ModelTypes" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Operators_Single"
+      ReturnType="c_Operator">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Operators" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Operators_SingleOrDefault"
+      ReturnType="c_Operator">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Operators" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Parameters_Single"
+      ReturnType="Parameter">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Parameters" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Parameters_SingleOrDefault"
+      ReturnType="Parameter">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Parameters" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <SubmitOperation
+      Name="SaveChanges" />
+  </EntityContainer>
+  <Screen
+    Name="Application1Detail">
+    <Screen.Attributes>
+      <SaveChangesTo
+        EntityContainer="RevolutionAppDBData" />
+    </Screen.Attributes>
+    <Screen.RootContentItem>
+      <ContentItem
+        Name="RootContentItem"
+        Kind="Screen"
+        View="Microsoft.LightSwitch.RichClient:Screen">
+        <ContentItem
+          Name="ScreenLayout"
+          Kind="Group">
+          <ContentItem
+            Name="details"
+            Kind="Details"
+            DataType="Application1"
+            View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="Application1Detail/Properties[Application1]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+            <ContentItem
+              Name="left"
+              Kind="Group">
+              <ContentItem
+                Name="ApplicationName"
+                Kind="Value"
+                DataType=":String">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Application1/Properties[ApplicationName]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+            </ContentItem>
+            <ContentItem
+              Name="right"
+              Kind="Group">
+              <ContentItem
+                Name="ApplicationFolder"
+                Kind="Value"
+                DataType=":String">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Application1/Properties[ApplicationFolder]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+            </ContentItem>
+            <ContentItem.PropertySources>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      Value="Top"
+                      ResultType=":String" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+            </ContentItem.PropertySources>
+          </ContentItem>
+          <ContentItem
+            Name="children"
+            Kind="Group">
+            <ContentItem
+              Name="ApplicationEntities"
+              Kind="Collection"
+              DataType="CollectionView$ApplicationEntity">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="Application1Detail/Properties[ApplicationEntities]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                Name="RowTemplate"
+                Kind="Details"
+                DataType="ApplicationEntity">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression />
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  Name="summary"
+                  Kind="Details"
+                  DataType="ApplicationEntity"
+                  View="Microsoft.LightSwitch.RichClient:Summary">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression />
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="Application1"
+                    Kind="Details"
+                    DataType="Application1">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ApplicationEntity/Properties[Application1]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                    <ContentItem
+                      Name="RowTemplate2"
+                      Kind="Details"
+                      DataType="Application1">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression />
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Entity1"
+                    Kind="Details"
+                    DataType="Entity">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ApplicationEntity/Properties[Entity]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                    <ContentItem
+                      Name="RowTemplate3"
+                      Kind="Details"
+                      DataType="Entity">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression />
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
+                  </ContentItem>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[ShowAsLink]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="True"
+                            ResultType=":Boolean" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
+                  Name="Entity"
+                  Kind="Details"
+                  DataType="Entity">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="ApplicationEntity/Properties[Entity]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="RowTemplate1"
+                    Kind="Details"
+                    DataType="Entity">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+              </ContentItem>
+              <ContentItem.CommandItems>
+                <ContentItem
+                  Name="ApplicationEntities_AddAndEditNew"
+                  Kind="Command">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Application1Detail/Properties[ApplicationEntities]" />
+                        <CallExpression
+                          Target="AddAndEditNew" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="ApplicationEntities_EditSelected"
+                  Kind="Command">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Application1Detail/Properties[ApplicationEntities]" />
+                        <CallExpression
+                          Target="EditSelected" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="ApplicationEntities_DeleteSelected"
+                  Kind="Command">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Application1Detail/Properties[ApplicationEntities]" />
+                        <CallExpression
+                          Target="DeleteSelected" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem.CommandItems>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        Value="Stretch"
+                        ResultType=":String" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
+            </ContentItem>
+          </ContentItem>
+          <ContentItem.PropertySources>
+            <ControlPropertySource
+              Property="Microsoft.LightSwitch.RichClient:ScrollableControl/Properties[IsVerticalScrollBarEnabled]">
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <ConstantExpression
+                    Value="True"
+                    ResultType=":Boolean" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ControlPropertySource>
+          </ContentItem.PropertySources>
+        </ContentItem>
+        <ContentItem.CommandItems>
+          <ContentItem
+            Name="Save"
+            Kind="Command">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <CallExpression
+                    Target="Application1Detail/Methods[Save]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+          <ContentItem
+            Name="Refresh"
+            Kind="Command">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <CallExpression
+                    Target="Application1Detail/Methods[Refresh]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+        </ContentItem.CommandItems>
+      </ContentItem>
+    </Screen.RootContentItem>
+    <Screen.Methods>
+      <ScreenMethod
+        Name="Save">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+          <ImageResource
+            ResourceId="Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/Save.png" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+      <ScreenMethod
+        Name="Refresh">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+          <ImageResource
+            ResourceId="Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/Refresh.png" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+      <ScreenMethod
+        Name="Close">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+    </Screen.Methods>
+    <Screen.Properties>
+      <ScreenProperty
+        Name="Application1"
+        PropertyType="Application1">
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="LightSwitchApplication.RevolutionRawInterface.DesktopClient:RevolutionAppDBData/Members[Applications_SingleOrDefault]">
+              <ArgumentExpression
+                Parameter="Id">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="Application1Detail/Properties[Application1Id]" />
+                </ChainExpression>
+              </ArgumentExpression>
+            </CallExpression>
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenProperty>
+      <ScreenProperty
+        Name="Application1Id"
+        PropertyType=":Int32">
+        <ScreenProperty.Attributes>
+          <IsParameter />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
+      <ScreenCollectionProperty
+        Name="ApplicationEntities"
+        PageSize="15"
+        PropertyType="CollectionView$ApplicationEntity">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="ApplicationEntitiesQuery"
+            ReturnType="ApplicationEntity*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="Application1Detail/Properties[Application1]" />
+                  <MemberExpression
+                    Member="ApplicationEntities" />
+                </ChainExpression>
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="Application1Detail/Properties[ApplicationEntities]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+    </Screen.Properties>
+  </Screen>
+  <Application.Methods>
+    <ApplicationMethod
+      Name="ShowApplication1Detail">
+      <ApplicationMethod.Attributes>
+        <ShowScreenMethod
+          TargetScreen="Application1Detail" />
+      </ApplicationMethod.Attributes>
+      <ApplicationMethodParameter
+        Name="Application1Id"
+        ParameterType=":Int32" />
+    </ApplicationMethod>
+  </Application.Methods>
+  <Application.NavigationItems>
+    <ApplicationNavigationGroup
+      Name="Tasks">
+      <ApplicationNavigationGroup.Attributes>
+        <DisplayName
+          Value="Tasks" />
+      </ApplicationNavigationGroup.Attributes>
+    </ApplicationNavigationGroup>
+    <ApplicationNavigationGroup
+      Name="Administration">
+      <ApplicationNavigationGroup.Attributes>
+        <DisplayName
+          Value="Administration" />
+      </ApplicationNavigationGroup.Attributes>
+      <ApplicationNavigationLink
+        Name="RolesScreen"
+        Command="Microsoft.LightSwitch.Security:!module/Commands[ScreenCommandShowRolesScreen]" />
+      <ApplicationNavigationLink
+        Name="UsersScreen"
+        Command="Microsoft.LightSwitch.Security:!module/Commands[ScreenCommandShowUsersScreen]" />
+    </ApplicationNavigationGroup>
+  </Application.NavigationItems>
+</Application>

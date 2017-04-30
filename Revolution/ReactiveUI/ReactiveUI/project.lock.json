@@ -1,0 +1,289 @@
+{
+  "locked": false,
+  "version": 2,
+  "targets": {
+    ".NETFramework,Version=v4.6.1": {
+      "Splat/1.6.2": {
+        "type": "package",
+        "compile": {
+          "lib/Net45/Splat.dll": {}
+        },
+        "runtime": {
+          "lib/Net45/Splat.dll": {}
+        }
+      },
+      "System.Reactive.Core/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.Interfaces": "3.0.0"
+        },
+        "compile": {
+          "lib/net46/System.Reactive.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Reactive.Core.dll": {}
+        }
+      },
+      "System.Reactive.Interfaces/3.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/System.Reactive.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Interfaces.dll": {}
+        }
+      },
+      "System.Reactive.Linq/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.Core": "3.0.0",
+          "System.Reactive.Interfaces": "3.0.0"
+        },
+        "compile": {
+          "lib/net46/System.Reactive.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Reactive.Linq.dll": {}
+        }
+      },
+      "System.Reactive.PlatformServices/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.Core": "3.0.0",
+          "System.Reactive.Interfaces": "3.0.0"
+        },
+        "compile": {
+          "lib/net46/System.Reactive.PlatformServices.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Reactive.PlatformServices.dll": {}
+        }
+      },
+      "System.Reactive.Windows.Threading/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.Core": "3.0.0"
+        },
+        "frameworkAssemblies": [
+          "WindowsBase"
+        ],
+        "compile": {
+          "lib/net45/System.Reactive.Windows.Threading.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Windows.Threading.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.6.1/win": {
+      "Splat/1.6.2": {
+        "type": "package",
+        "compile": {
+          "lib/Net45/Splat.dll": {}
+        },
+        "runtime": {
+          "lib/Net45/Splat.dll": {}
+        }
+      },
+      "System.Reactive.Core/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.Interfaces": "3.0.0"
+        },
+        "compile": {
+          "lib/net46/System.Reactive.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Reactive.Core.dll": {}
+        }
+      },
+      "System.Reactive.Interfaces/3.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/System.Reactive.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Interfaces.dll": {}
+        }
+      },
+      "System.Reactive.Linq/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.Core": "3.0.0",
+          "System.Reactive.Interfaces": "3.0.0"
+        },
+        "compile": {
+          "lib/net46/System.Reactive.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Reactive.Linq.dll": {}
+        }
+      },
+      "System.Reactive.PlatformServices/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.Core": "3.0.0",
+          "System.Reactive.Interfaces": "3.0.0"
+        },
+        "compile": {
+          "lib/net46/System.Reactive.PlatformServices.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Reactive.PlatformServices.dll": {}
+        }
+      },
+      "System.Reactive.Windows.Threading/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.Core": "3.0.0"
+        },
+        "frameworkAssemblies": [
+          "WindowsBase"
+        ],
+        "compile": {
+          "lib/net45/System.Reactive.Windows.Threading.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Windows.Threading.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Splat/1.6.2": {
+      "sha512": "DeH0MxPU+D4JchkIDPYG4vUT+hsWs9S41cFle0/4K5EJMXWurx5DzAkj2366DfK14/XKNhsu6tCl4dZXJ3CD4w==",
+      "type": "package",
+      "files": [
+        "Splat.1.6.2.nupkg.sha512",
+        "Splat.nuspec",
+        "lib/MonoMac/Splat.dll",
+        "lib/MonoMac/Splat.dll.mdb",
+        "lib/Net45/Splat.dll",
+        "lib/Net45/Splat.pdb",
+        "lib/NetCore45/Splat.dll",
+        "lib/NetCore45/Splat.pdb",
+        "lib/NetCore45/Splat.pri",
+        "lib/Portable-Win81+Wpa81/Splat.dll",
+        "lib/Portable-Win81+Wpa81/Splat.pdb",
+        "lib/Portable-Win81+Wpa81/Splat.pri",
+        "lib/Portable-net45+win+wpa81+wp80/Splat.dll",
+        "lib/Xamarin.Mac10/Splat-XamarinMac.csproj.FilesWrittenAbsolute.txt",
+        "lib/Xamarin.Mac10/Splat.dll",
+        "lib/Xamarin.Mac10/Splat.dll.mdb",
+        "lib/Xamarin.iOS10/Splat.dll",
+        "lib/Xamarin.iOS10/Splat.dll.mdb",
+        "lib/monoandroid/Splat.dll",
+        "lib/monoandroid/Splat.dll.mdb",
+        "lib/monotouch/Splat.dll",
+        "lib/monotouch/Splat.dll.mdb",
+        "lib/wp8/Splat.dll",
+        "lib/wp8/Splat.pdb"
+      ]
+    },
+    "System.Reactive.Core/3.0.0": {
+      "sha512": "1mnBTTNzTDaKYu2fYA0fcbWmWspwXheV9eFR0ynWd0nFjBwgSW0ZUAxe7dfvU5imv+K9QlfhV+pEKGOlJVZ8+w==",
+      "type": "package",
+      "files": [
+        "System.Reactive.Core.3.0.0.nupkg.sha512",
+        "System.Reactive.Core.nuspec",
+        "lib/net45/System.Reactive.Core.dll",
+        "lib/net45/System.Reactive.Core.xml",
+        "lib/net46/System.Reactive.Core.dll",
+        "lib/net46/System.Reactive.Core.xml",
+        "lib/netcore451/System.Reactive.Core.dll",
+        "lib/netcore451/System.Reactive.Core.xml",
+        "lib/netcoreapp1.0/System.Reactive.Core.dll",
+        "lib/netcoreapp1.0/System.Reactive.Core.xml",
+        "lib/netstandard1.0/System.Reactive.Core.dll",
+        "lib/netstandard1.0/System.Reactive.Core.xml",
+        "lib/netstandard1.1/System.Reactive.Core.dll",
+        "lib/netstandard1.1/System.Reactive.Core.xml",
+        "lib/netstandard1.3/System.Reactive.Core.dll",
+        "lib/netstandard1.3/System.Reactive.Core.xml",
+        "lib/uap10.0/System.Reactive.Core.dll",
+        "lib/uap10.0/System.Reactive.Core.xml",
+        "lib/wpa81/System.Reactive.Core.dll",
+        "lib/wpa81/System.Reactive.Core.xml"
+      ]
+    },
+    "System.Reactive.Interfaces/3.0.0": {
+      "sha512": "MuLvWYegIrhvUVe3MRMIBxFGx4kiz0FEzN3TTvhX+m3WmJCi5+OE4J7yPWtZjGGTUh5wysGyaF9thcnCzx/J3w==",
+      "type": "package",
+      "files": [
+        "System.Reactive.Interfaces.3.0.0.nupkg.sha512",
+        "System.Reactive.Interfaces.nuspec",
+        "lib/net45/System.Reactive.Interfaces.dll",
+        "lib/net45/System.Reactive.Interfaces.xml",
+        "lib/netstandard1.0/System.Reactive.Interfaces.dll",
+        "lib/netstandard1.0/System.Reactive.Interfaces.xml"
+      ]
+    },
+    "System.Reactive.Linq/3.0.0": {
+      "sha512": "CmQ+WpeOFzwYlDKafLQLT5McvR1TWCi3UudeBnajguvi/8ZGHDoQ2MPTo401EKkSvW48uTsJyvcKXN/C7g91Qg==",
+      "type": "package",
+      "files": [
+        "System.Reactive.Linq.3.0.0.nupkg.sha512",
+        "System.Reactive.Linq.nuspec",
+        "lib/net45/System.Reactive.Linq.dll",
+        "lib/net45/System.Reactive.Linq.xml",
+        "lib/net46/System.Reactive.Linq.dll",
+        "lib/net46/System.Reactive.Linq.xml",
+        "lib/netstandard1.0/System.Reactive.Linq.dll",
+        "lib/netstandard1.0/System.Reactive.Linq.xml",
+        "lib/netstandard1.1/System.Reactive.Linq.dll",
+        "lib/netstandard1.1/System.Reactive.Linq.xml",
+        "lib/netstandard1.3/System.Reactive.Linq.dll",
+        "lib/netstandard1.3/System.Reactive.Linq.xml"
+      ]
+    },
+    "System.Reactive.PlatformServices/3.0.0": {
+      "sha512": "1yYsCsIqrpu228er3iC1naLcCnIpdDRuyFhD78P6C54YyiR84ElDUjWYEMVneUKxrP6PlwrZp2VEf0DHAHX8gw==",
+      "type": "package",
+      "files": [
+        "System.Reactive.PlatformServices.3.0.0.nupkg.sha512",
+        "System.Reactive.PlatformServices.nuspec",
+        "lib/net45/System.Reactive.PlatformServices.dll",
+        "lib/net45/System.Reactive.PlatformServices.xml",
+        "lib/net46/System.Reactive.PlatformServices.dll",
+        "lib/net46/System.Reactive.PlatformServices.xml",
+        "lib/netcore451/System.Reactive.PlatformServices.dll",
+        "lib/netcore451/System.Reactive.PlatformServices.xml",
+        "lib/netcoreapp1.0/System.Reactive.PlatformServices.dll",
+        "lib/netcoreapp1.0/System.Reactive.PlatformServices.xml",
+        "lib/netstandard1.0/System.Reactive.PlatformServices.dll",
+        "lib/netstandard1.0/System.Reactive.PlatformServices.xml",
+        "lib/netstandard1.3/System.Reactive.PlatformServices.dll",
+        "lib/netstandard1.3/System.Reactive.PlatformServices.xml",
+        "lib/uap10.0/System.Reactive.PlatformServices.dll",
+        "lib/uap10.0/System.Reactive.PlatformServices.xml",
+        "lib/wpa81/System.Reactive.PlatformServices.dll",
+        "lib/wpa81/System.Reactive.PlatformServices.xml"
+      ]
+    },
+    "System.Reactive.Windows.Threading/3.0.0": {
+      "sha512": "+JJ1tyTpNUNt5CI6MZfOgU/l5WPz35bTUuCkkP6+KbeCeAhU045dJ2AbP7s7CPw34IWWi6hcafwihL/C0ej97w==",
+      "type": "package",
+      "files": [
+        "System.Reactive.Windows.Threading.3.0.0.nupkg.sha512",
+        "System.Reactive.Windows.Threading.nuspec",
+        "lib/net45/System.Reactive.Windows.Threading.dll",
+        "lib/net45/System.Reactive.Windows.Threading.xml",
+        "lib/netcore451/System.Reactive.Windows.Threading.dll",
+        "lib/netcore451/System.Reactive.Windows.Threading.xml",
+        "lib/uap10.0/System.Reactive.Windows.Threading.dll",
+        "lib/uap10.0/System.Reactive.Windows.Threading.xml",
+        "lib/wpa81/System.Reactive.Windows.Threading.dll",
+        "lib/wpa81/System.Reactive.Windows.Threading.xml"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "Splat >= 1.6.2",
+      "System.Reactive.Linq >= 3.0.0",
+      "System.Reactive.PlatformServices >= 3.0.0",
+      "System.Reactive.Windows.Threading >= 3.0.0"
+    ],
+    ".NETFramework,Version=v4.6.1": []
+  }
+}

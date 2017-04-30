@@ -1,0 +1,5 @@
+C:\Prism\GitRepositiory\MRManager\Specifications\bin\x64\Debug\Specifications.dll
+C:\Prism\GitRepositiory\MRManager\Specifications\bin\x64\Debug\Specifications.pdb
+C:\Prism\GitRepositiory\MRManager\Specifications\obj\x64\Debug\Specifications.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager\Specifications\obj\x64\Debug\Specifications.dll
+C:\Prism\GitRepositiory\MRManager\Specifications\obj\x64\Debug\Specifications.pdb

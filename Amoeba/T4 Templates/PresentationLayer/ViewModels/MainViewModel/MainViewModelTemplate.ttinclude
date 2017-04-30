@@ -1,0 +1,73 @@
+﻿<#@ include file="T4Toolbox.tt" #>
+<#@ assembly name="C:\Prism\GitRepositiory\MRManager\Amoeba\T4 Repository\bin\Debug\T4Entities.dll" #>
+<#@ import namespace="T4Entities" #>
+<#+
+// <copyright file="EFEntityTemplate.tt" company="">
+//  Copyright © . All Rights Reserved.
+// </copyright>
+
+public class MainViewModelTemplate : CSharpTemplate
+{
+
+
+
+	public override string TransformText()
+	{
+		base.TransformText();
+#>
+
+using System;
+using CommonMessages;
+using Core.Common.UI;
+using EventAggregator;
+using EventMessages;
+using Interfaces;
+using ViewMessages;
+
+namespace ViewModels
+{
+	public partial class MainViewModel 
+	{
+		 private static readonly MainViewModel instance;
+		 static MainViewModel()
+		{
+			instance = new MainViewModel();
+		}
+
+		 public static MainViewModel Instance
+		{
+			get { return instance; }
+		}
+
+		public static SliderPanel Slider { get; set; }
+		Source Source => new Source(new MessageSource(this.ToString()), new MachineInfo(Environment.MachineName, Environment.ProcessorCount));
+
+		public MainViewModel()
+		{
+			try
+			{
+				
+				var a = new GetEntityById<IApplicationSetting>(Source);
+				a.Create(1);
+				EventMessageBus.Current.Publish(a,msgSource);
+				EventMessageBus.Current.GetEvent<IApplicationSetting>(Source).Subscribe(handleApplicationSetting);
+				EventMessageBus.Current.GetEvent<ViewNav>(Source).Subscribe(x => Slider.BringIntoView(x.View));
+
+			}
+			catch (Exception)
+			{
+				throw;
+			}
+		}
+
+		private void handleApplicationSetting(IApplicationSetting applicationSetting)
+		{
+			BaseViewModel.CurrentApplicationSetting = applicationSetting;
+		}
+	}
+}
+<#+
+		return this.GenerationEnvironment.ToString();
+	}
+}
+#>

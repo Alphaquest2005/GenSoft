@@ -1,0 +1,130 @@
+C:\prism\Clients\SAMS-MRManager\MRManager\SystemMessages\bin\Debug\SystemMessages.dll.config
+C:\prism\Clients\SAMS-MRManager\MRManager\SystemMessages\bin\Debug\SystemMessages.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\SystemMessages\bin\Debug\SystemMessages.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\SystemMessages\bin\Debug\SystemInterfaces.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\SystemMessages\bin\Debug\SystemInterfaces.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\SystemMessages\obj\Debug\SystemMessages.csprojResolveAssemblyReference.cache
+C:\prism\Clients\SAMS-MRManager\MRManager\SystemMessages\obj\Debug\SystemMessages.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\SystemMessages\obj\Debug\SystemMessages.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\SystemMessages\bin\Debug\CommonMessages.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\SystemMessages\bin\Debug\Model.Interfaces.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\SystemMessages\bin\Debug\CommonMessages.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\SystemMessages\bin\Debug\Model.Interfaces.pdb
+C:\Prism\Clients\Revolution\SystemMessages\bin\Debug\SystemMessages.dll.config
+C:\Prism\Clients\Revolution\SystemMessages\bin\Debug\SystemMessages.dll
+C:\Prism\Clients\Revolution\SystemMessages\bin\Debug\SystemMessages.pdb
+C:\Prism\Clients\Revolution\SystemMessages\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Revolution\SystemMessages\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Revolution\SystemMessages\bin\Debug\CommonMessages.dll
+C:\Prism\Clients\Revolution\SystemMessages\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Revolution\SystemMessages\bin\Debug\RevolutionEntities.dll
+C:\Prism\Clients\Revolution\SystemMessages\bin\Debug\SystemInterfaces.dll
+C:\Prism\Clients\Revolution\SystemMessages\bin\Debug\ViewModel.Interfaces.dll
+C:\Prism\Clients\Revolution\SystemMessages\bin\Debug\Utilities.dll
+C:\Prism\Clients\Revolution\SystemMessages\bin\Debug\Interfaces.dll
+C:\Prism\Clients\Revolution\SystemMessages\bin\Debug\CommonMessages.pdb
+C:\Prism\Clients\Revolution\SystemMessages\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Revolution\SystemMessages\bin\Debug\RevolutionEntities.pdb
+C:\Prism\Clients\Revolution\SystemMessages\bin\Debug\SystemInterfaces.pdb
+C:\Prism\Clients\Revolution\SystemMessages\bin\Debug\ViewModel.Interfaces.pdb
+C:\Prism\Clients\Revolution\SystemMessages\bin\Debug\Utilities.pdb
+C:\Prism\Clients\Revolution\SystemMessages\bin\Debug\Interfaces.pdb
+C:\Prism\Clients\Revolution\SystemMessages\obj\Debug\SystemMessages.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Revolution\SystemMessages\obj\Debug\SystemMessages.dll
+C:\Prism\Clients\Revolution\SystemMessages\obj\Debug\SystemMessages.pdb
+C:\Prism\Clients\Revolution\SystemMessages\bin\Debug\JB.Common.dll
+C:\Prism\Clients\Revolution\SystemMessages\bin\Debug\JB.Common.Collections.dll
+C:\Prism\Clients\Revolution\SystemMessages\bin\Debug\JB.Common.Collections.Reactive.dll
+C:\Prism\Clients\Revolution\SystemMessages\bin\Debug\JB.Common.Reactive.dll
+C:\Prism\Clients\Revolution\SystemMessages\bin\Debug\ReactiveUI.dll
+C:\Prism\Clients\Revolution\SystemMessages\bin\Debug\System.Reactive.Core.dll
+C:\Prism\Clients\Revolution\SystemMessages\bin\Debug\System.Reactive.Interfaces.dll
+C:\Prism\Clients\Revolution\SystemMessages\bin\Debug\System.Reactive.Linq.dll
+C:\Prism\Clients\Revolution\SystemMessages\bin\Debug\System.Reactive.PlatformServices.dll
+C:\Prism\Clients\Revolution\SystemMessages\bin\Debug\System.Reactive.Windows.Threading.dll
+C:\Prism\Clients\Revolution\SystemMessages\bin\Debug\Splat.dll
+C:\Prism\Clients\Revolution\SystemMessages\bin\Debug\Splat.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\bin\Debug\SystemMessages.dll.config
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\bin\Debug\SystemMessages.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\bin\Debug\SystemMessages.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\bin\Debug\JB.Common.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\bin\Debug\JB.Common.Collections.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\bin\Debug\JB.Common.Collections.Reactive.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\bin\Debug\JB.Common.Reactive.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\bin\Debug\ReactiveUI.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\bin\Debug\System.Reactive.Core.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\bin\Debug\System.Reactive.Interfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\bin\Debug\System.Reactive.Linq.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\bin\Debug\System.Reactive.PlatformServices.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\bin\Debug\System.Reactive.Windows.Threading.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\bin\Debug\Splat.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\bin\Debug\Splat.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\bin\Debug\CommonMessages.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\bin\Debug\RevolutionEntities.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\bin\Debug\SystemInterfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\bin\Debug\ViewModel.Interfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\bin\Debug\Utilities.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\bin\Debug\Interfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\bin\Debug\CommonMessages.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\bin\Debug\RevolutionEntities.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\bin\Debug\SystemInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\bin\Debug\ViewModel.Interfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\bin\Debug\Utilities.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\bin\Debug\Interfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\obj\Debug\SystemMessages.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\obj\Debug\SystemMessages.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\SystemMessages\obj\Debug\SystemMessages.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\SystemMessages.dll.config
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\SystemMessages.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\SystemMessages.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\FluentValidation.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\JB.Common.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\JB.Common.Collections.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\JB.Common.Collections.Reactive.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\JB.Common.Reactive.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\MefContrib.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\MefContrib.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\MoreLinq.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\Reactive.EventAggregator.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\ReactiveProperty.DataAnnotations.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\ReactiveProperty.DataAnnotations.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\ReactiveProperty.NET46.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\ReactiveProperty.NET46.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\ReactiveProperty.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\ReactiveProperty.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\ReactiveUI.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\System.Reactive.Core.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\System.Reactive.Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\System.Reactive.Linq.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\System.Reactive.PlatformServices.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\System.Reactive.Windows.Threading.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\Splat.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\Splat.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\System.Collections.Immutable.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\CommonMessages.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\RevolutionEntities.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\SystemInterfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\ViewModel.Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\Actor.Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\Utilities.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\CommonMessages.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\RevolutionEntities.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\SystemInterfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\ViewModel.Interfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\Actor.Interfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\Utilities.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\Interfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\obj\Debug\SystemMessages.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\obj\Debug\SystemMessages.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\obj\Debug\SystemMessages.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\Akka.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\Akka.xml
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\Common.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\BootStrapper.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\Common.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\SystemMessages\bin\Debug\BootStrapper.pdb

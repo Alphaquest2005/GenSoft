@@ -1,0 +1,16 @@
+C:\Prism\GitRepositiory\MRManager\Revolution\EventMessages\bin\Debug\EventMessages.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EventMessages\bin\Debug\EventMessages.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EventMessages\bin\Debug\Akka.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EventMessages\bin\Debug\Newtonsoft.Json.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EventMessages\bin\Debug\System.Collections.Immutable.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EventMessages\bin\Debug\Actor.Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EventMessages\bin\Debug\CommonMessages.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EventMessages\bin\Debug\Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EventMessages\bin\Debug\SystemInterfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EventMessages\bin\Debug\Interfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EventMessages\bin\Debug\Actor.Interfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EventMessages\bin\Debug\CommonMessages.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EventMessages\bin\Debug\SystemInterfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EventMessages\obj\Debug\EventMessages.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager\Revolution\EventMessages\obj\Debug\EventMessages.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EventMessages\obj\Debug\EventMessages.pdb

@@ -1,0 +1,285 @@
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\EFRepository.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\EFRepository.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\Common.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\EF7DataContexts.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\EF7Entities.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\EF7Mappings.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\Logging.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\Microsoft.EntityFrameworkCore.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\Model.Interfaces.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\log4net.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\System.Interactive.Async.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\Remotion.Linq.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\Common.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\EF7DataContexts.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\EF7Entities.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\EF7Mappings.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\Logging.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\Model.Interfaces.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\Microsoft.EntityFrameworkCore.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\Microsoft.EntityFrameworkCore.Relational.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\log4net.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\System.Interactive.Async.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\Remotion.Linq.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\obj\Debug\EFRepository.csprojResolveAssemblyReference.cache
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\obj\Debug\EFRepository.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\obj\Debug\EFRepository.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\EFRepository.dll.config
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\Microsoft.Extensions.Options.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\Microsoft.Extensions.Options.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\EFRepository\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\EFRepository.dll.config
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\EFRepository.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\EFRepository.pdb
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\log4net.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\Microsoft.EntityFrameworkCore.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\Microsoft.Win32.Primitives.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\Remotion.Linq.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\System.AppContext.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\System.Collections.Immutable.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\System.Console.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\System.Globalization.Calendars.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\System.Interactive.Async.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\System.IO.Compression.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\System.IO.Compression.ZipFile.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\System.IO.FileSystem.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\System.IO.FileSystem.Primitives.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\System.Net.Http.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\System.Net.Sockets.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\System.Xml.ReaderWriter.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\Common.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\EF.DBContext.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\EF.Entities.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\Expressions.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\Interfaces.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\Logging.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\TypeMaps.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\Utilities.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\EF.Mappings.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\SystemInterfaces.dll
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\EF.DBContext.pdb
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\EF.Entities.pdb
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\Expressions.pdb
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\Interfaces.pdb
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\TypeMaps.pdb
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\Common.pdb
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\Logging.pdb
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\Utilities.pdb
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\EF.Mappings.pdb
+C:\Prism\Clients\Revolution\EFRepository\bin\Debug\SystemInterfaces.pdb
+C:\Prism\Clients\Revolution\EFRepository\obj\Debug\EFRepository.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Revolution\EFRepository\obj\Debug\EFRepository.dll
+C:\Prism\Clients\Revolution\EFRepository\obj\Debug\EFRepository.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\EFRepository.dll.config
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\EFRepository.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\EFRepository.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\log4net.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\Microsoft.EntityFrameworkCore.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\Microsoft.Win32.Primitives.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\Remotion.Linq.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\System.AppContext.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\System.Collections.Immutable.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\System.Console.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\System.Globalization.Calendars.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\System.Interactive.Async.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\System.IO.Compression.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\System.IO.Compression.ZipFile.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\System.IO.FileSystem.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\System.IO.FileSystem.Primitives.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\System.Net.Http.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\System.Net.Sockets.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\System.Xml.ReaderWriter.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\Common.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\EF.DBContext.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\EF.Entities.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\Expressions.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\Interfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\Logging.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\TypeMaps.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\Utilities.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\EF.Mappings.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\SystemInterfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\EF.DBContext.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\EF.Entities.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\Expressions.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\Interfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\TypeMaps.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\Common.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\Logging.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\Utilities.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\EF.Mappings.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\bin\Debug\SystemInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\obj\Debug\EFRepository.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\obj\Debug\EFRepository.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\EFRepository\obj\Debug\EFRepository.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\EFRepository.dll.config
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\EFRepository.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\EFRepository.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\Akka.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\FluentValidation.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\JB.Common.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\JB.Common.Collections.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\JB.Common.Collections.Reactive.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\JB.Common.Reactive.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\MefContrib.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\MefContrib.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\Microsoft.EntityFrameworkCore.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\Microsoft.Win32.Primitives.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\MoreLinq.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\Newtonsoft.Json.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\Reactive.EventAggregator.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\ReactiveProperty.DataAnnotations.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\ReactiveProperty.DataAnnotations.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\ReactiveProperty.NET46.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\ReactiveProperty.NET46.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\ReactiveProperty.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\ReactiveProperty.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\ReactiveUI.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\Remotion.Linq.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\System.Reactive.Core.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\System.Reactive.Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\System.Reactive.Linq.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\System.Reactive.PlatformServices.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\System.Reactive.Windows.Threading.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\Splat.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\Splat.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\System.AppContext.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\System.Collections.Immutable.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\System.Console.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\System.Globalization.Calendars.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\System.Interactive.Async.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\System.IO.Compression.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\System.IO.Compression.ZipFile.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\System.IO.FileSystem.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\System.IO.FileSystem.Primitives.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\System.Net.Http.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\System.Net.Sockets.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\System.Xml.ReaderWriter.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\Common.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\CommonMessages.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\EF.DBContext.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\EF.Entities.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\EventAggregator.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\EventMessages.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\Expressions.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\RevolutionData.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\RevolutionEntities.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\RevolutionLogger.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\System.Linq.Dynamic.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\SystemInterfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\TypeMaps.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\Utilities.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\EF.Mappings.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\Actor.Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\ViewModel.Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\DomainMessages.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\ViewMessages.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\Domain.Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\BootStrapper.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\log4net.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\ComponentModel.Composition.Hosting.Extension.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\EF.DBContext.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\EF.Entities.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\Expressions.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\Interfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\TypeMaps.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\CommonMessages.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\Common.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\System.Linq.Dynamic.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\EventAggregator.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\EventMessages.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\RevolutionData.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\RevolutionEntities.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\RevolutionLogger.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\SystemInterfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\Utilities.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\EF.Mappings.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\Actor.Interfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\ViewModel.Interfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\DomainMessages.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\ViewMessages.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\Domain.Interfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\BootStrapper.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\log4net.xml
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\ComponentModel.Composition.Hosting.Extension.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\obj\Debug\EFRepository.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\obj\Debug\EFRepository.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\obj\Debug\EFRepository.pdb

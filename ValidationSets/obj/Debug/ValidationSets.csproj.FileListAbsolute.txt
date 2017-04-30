@@ -1,0 +1,57 @@
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\bin\Debug\ValidationSets.dll
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\bin\Debug\ValidationSets.pdb
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\bin\Debug\FluentValidation.dll
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\bin\Debug\Interfaces.dll
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\bin\Debug\Interfaces.pdb
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\bin\Debug\FluentValidation.pdb
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\bin\Debug\FluentValidation.xml
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\bin\Debug\NHibernate.xml
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\bin\Debug\Iesi.Collections.xml
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\bin\Debug\cs\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\bin\Debug\da\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\bin\Debug\de\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\bin\Debug\es\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\bin\Debug\fa\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\bin\Debug\fi\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\bin\Debug\fr\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\bin\Debug\it\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\bin\Debug\ko\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\bin\Debug\mk\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\bin\Debug\nl\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\bin\Debug\pl\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\bin\Debug\pt\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\bin\Debug\ru\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\bin\Debug\sv\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\bin\Debug\tr\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\bin\Debug\zh-CN\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\obj\Debug\ValidationSets.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\obj\Debug\ValidationSets.dll
+C:\Prism\Clients\Amoeba\Amoeba\ValidationSets\obj\Debug\ValidationSets.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\ValidationSets\obj\Debug\ValidationSets.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba Projects\MRManager\ValidationSets\bin\Debug\ValidationSets.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\ValidationSets\bin\Debug\ValidationSets.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\ValidationSets\bin\Debug\FluentValidation.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\ValidationSets\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\ValidationSets\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\ValidationSets\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\ValidationSets\bin\Debug\Interfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\ValidationSets\bin\Debug\SystemInterfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\ValidationSets\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\ValidationSets\bin\Debug\SystemInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\ValidationSets\bin\Debug\Interfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\ValidationSets\obj\Debug\ValidationSets.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\ValidationSets\obj\Debug\ValidationSets.pdb
+C:\Prism\GitRepositiory\MRManager\ValidationSets\bin\Debug\ValidationSets.dll
+C:\Prism\GitRepositiory\MRManager\ValidationSets\bin\Debug\ValidationSets.pdb
+C:\Prism\GitRepositiory\MRManager\ValidationSets\bin\Debug\FluentValidation.dll
+C:\Prism\GitRepositiory\MRManager\ValidationSets\bin\Debug\Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\ValidationSets\bin\Debug\SystemInterfaces.dll
+C:\Prism\GitRepositiory\MRManager\ValidationSets\bin\Debug\Interfaces.pdb
+C:\Prism\GitRepositiory\MRManager\ValidationSets\bin\Debug\SystemInterfaces.pdb
+C:\Prism\GitRepositiory\MRManager\ValidationSets\obj\Debug\ValidationSets.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager\ValidationSets\obj\Debug\ValidationSets.dll
+C:\Prism\GitRepositiory\MRManager\ValidationSets\obj\Debug\ValidationSets.pdb

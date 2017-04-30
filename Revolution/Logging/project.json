@@ -1,0 +1,11 @@
+﻿{
+  "dependencies": {
+    "log4net": "2.0.7"
+  },
+  "frameworks": {
+    "net461": {}
+  },
+  "runtimes": {
+    "win": {}
+  }
+}

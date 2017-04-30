@@ -1,0 +1,2 @@
+C:\Prism\Clients\Revolution\Custom Controls\obj\Debug\CustomControls.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Revolution\Custom Controls\obj\Debug\CustomControls_MarkupCompile.cache

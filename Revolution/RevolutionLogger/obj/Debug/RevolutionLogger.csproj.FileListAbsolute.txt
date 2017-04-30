@@ -1,0 +1,7 @@
+C:\Prism\GitRepositiory\MRManager\Revolution\RevolutionLogger\bin\Debug\RevolutionLogger.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\RevolutionLogger\bin\Debug\RevolutionLogger.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\RevolutionLogger\bin\Debug\log4net.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\RevolutionLogger\bin\Debug\log4net.xml
+C:\Prism\GitRepositiory\MRManager\Revolution\RevolutionLogger\obj\Debug\RevolutionLogger.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager\Revolution\RevolutionLogger\obj\Debug\RevolutionLogger.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\RevolutionLogger\obj\Debug\RevolutionLogger.pdb

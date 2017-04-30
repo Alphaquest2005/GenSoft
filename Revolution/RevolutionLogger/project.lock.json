@@ -1,0 +1,83 @@
+{
+  "version": 2,
+  "targets": {
+    ".NETFramework,Version=v4.6.1": {
+      "log4net/2.0.5": {
+        "type": "package",
+        "compile": {
+          "lib/net45-full/log4net.dll": {}
+        },
+        "runtime": {
+          "lib/net45-full/log4net.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.6.1/win-x64": {
+      "log4net/2.0.5": {
+        "type": "package",
+        "compile": {
+          "lib/net45-full/log4net.dll": {}
+        },
+        "runtime": {
+          "lib/net45-full/log4net.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "log4net/2.0.5": {
+      "sha512": "AEqPZz+v+OikfnR2SqRVdQPnSaLq5y9Iz1CfRQZ9kTKPYCXHG6zYmDHb7wJotICpDLMr/JqokyjiqKAjUKp0ng==",
+      "type": "package",
+      "path": "log4net/2.0.5",
+      "files": [
+        "lib/net10-full/log4net.dll",
+        "lib/net10-full/log4net.xml",
+        "lib/net11-full/log4net.dll",
+        "lib/net11-full/log4net.xml",
+        "lib/net20-full/log4net.dll",
+        "lib/net20-full/log4net.xml",
+        "lib/net35-client/log4net.dll",
+        "lib/net35-client/log4net.xml",
+        "lib/net35-full/log4net.dll",
+        "lib/net35-full/log4net.xml",
+        "lib/net40-client/log4net.dll",
+        "lib/net40-client/log4net.xml",
+        "lib/net40-full/log4net.dll",
+        "lib/net40-full/log4net.xml",
+        "lib/net45-full/log4net.dll",
+        "lib/net45-full/log4net.xml",
+        "log4net.2.0.5.nupkg.sha512",
+        "log4net.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "log4net >= 2.0.5"
+    ],
+    ".NETFramework,Version=v4.6.1": []
+  },
+  "packageFolders": {
+    "C:\\Users\\Alpha\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "restore": {
+      "projectUniqueName": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionLogger\\RevolutionLogger.csproj",
+      "projectName": "RevolutionLogger",
+      "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionLogger\\RevolutionLogger.csproj",
+      "projectJsonPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionLogger\\project.json",
+      "projectStyle": "ProjectJson"
+    },
+    "dependencies": {
+      "log4net": "2.0.5"
+    },
+    "frameworks": {
+      "net461": {}
+    },
+    "runtimes": {
+      "win-x64": {
+        "#import": []
+      }
+    }
+  }
+}

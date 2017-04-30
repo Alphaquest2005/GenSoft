@@ -1,0 +1,112 @@
+{
+  "version": 2,
+  "targets": {
+    ".NETFramework,Version=v4.6.1": {
+      "FluentValidation.Net35/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net35/FluentValidation.dll": {}
+        },
+        "runtime": {
+          "lib/net35/FluentValidation.dll": {}
+        }
+      },
+      "Interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
+      },
+      "SystemInterfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1"
+      }
+    },
+    ".NETFramework,Version=v4.6.1/win-x64": {
+      "FluentValidation.Net35/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net35/FluentValidation.dll": {}
+        },
+        "runtime": {
+          "lib/net35/FluentValidation.dll": {}
+        }
+      },
+      "Interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
+      },
+      "SystemInterfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1"
+      }
+    }
+  },
+  "libraries": {
+    "FluentValidation.Net35/1.0.1": {
+      "sha512": "fNgG7n+vDG55/pGcQtyKQWBhlBGWUavN7YfQwUjytGazAQftHzc1soUtKufcY6TXREBwNm/VOVN/w9u5ndjOeA==",
+      "type": "package",
+      "path": "fluentvalidation.net35/1.0.1",
+      "files": [
+        "FluentValidation.Net35.1.0.1.nupkg.sha512",
+        "FluentValidation.Net35.nuspec",
+        "lib/net35/FluentValidation.dll"
+      ]
+    },
+    "Interfaces/1.0.0": {
+      "type": "project",
+      "path": "../Interfaces/project.json",
+      "msbuildProject": "../Interfaces/Interfaces.csproj"
+    },
+    "SystemInterfaces/1.0.0": {
+      "type": "project",
+      "path": "../Revolution/SystemInterfaces/project.json",
+      "msbuildProject": "../Revolution/SystemInterfaces/SystemInterfaces.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "FluentValidation.Net35 >= 1.0.1"
+    ],
+    ".NETFramework,Version=v4.6.1": []
+  },
+  "packageFolders": {
+    "C:\\Users\\Alpha\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "restore": {
+      "projectUniqueName": "C:\\Prism\\GitRepositiory\\GenSoft\\ValidationSets\\ValidationSets.csproj",
+      "projectName": "ValidationSets",
+      "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\ValidationSets\\ValidationSets.csproj",
+      "projectJsonPath": "C:\\Prism\\GitRepositiory\\GenSoft\\ValidationSets\\project.json",
+      "projectStyle": "ProjectJson",
+      "frameworks": {
+        "net461": {
+          "projectReferences": {
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Interfaces\\Interfaces.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Interfaces\\Interfaces.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj"
+            }
+          }
+        }
+      }
+    },
+    "dependencies": {
+      "FluentValidation.Net35": "1.0.1"
+    },
+    "frameworks": {
+      "net461": {}
+    },
+    "runtimes": {
+      "win-x64": {
+        "#import": []
+      }
+    }
+  }
+}

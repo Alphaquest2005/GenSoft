@@ -1,0 +1,14 @@
+C:\Prism\GitRepositiory\MRManager\Revolution\CommonMessages\bin\x64\Debug\CommonMessages.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\CommonMessages\bin\x64\Debug\CommonMessages.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\CommonMessages\bin\x64\Debug\SystemInterfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\CommonMessages\bin\x64\Debug\SystemInterfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\CommonMessages\obj\x64\Debug\CommonMessages.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager\Revolution\CommonMessages\obj\x64\Debug\CommonMessages.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\CommonMessages\obj\x64\Debug\CommonMessages.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\CommonMessages\bin\x64\Debug\CommonMessages.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\CommonMessages\bin\x64\Debug\CommonMessages.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\CommonMessages\bin\x64\Debug\SystemInterfaces.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\CommonMessages\bin\x64\Debug\SystemInterfaces.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\CommonMessages\obj\x64\Debug\CommonMessages.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\CommonMessages\obj\x64\Debug\CommonMessages.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\CommonMessages\obj\x64\Debug\CommonMessages.pdb

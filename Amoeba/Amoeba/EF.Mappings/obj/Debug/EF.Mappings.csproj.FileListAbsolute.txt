@@ -1,0 +1,64 @@
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\bin\Debug\EF.Mappings.dll.config
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\bin\Debug\EF.Mappings.dll
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\bin\Debug\EF.Mappings.pdb
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\bin\Debug\Common.dll
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\bin\Debug\EF.Entities.dll
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\bin\Debug\EntityFramework.Core.dll
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\bin\Debug\Interfaces.dll
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\bin\Debug\Microsoft.EntityFrameworkCore.dll
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\bin\Debug\Remotion.Linq.dll
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\bin\Debug\System.Collections.Immutable.dll
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\bin\Debug\System.Interactive.Async.dll
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\bin\Debug\Common.pdb
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\bin\Debug\EF.Entities.pdb
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\bin\Debug\Interfaces.pdb
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\bin\Debug\EntityFramework.Core.xml
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\obj\Debug\EF.Mappings.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\obj\Debug\EF.Mappings.dll
+C:\Prism\Clients\Amoeba\Amoeba\EF.Mappings\obj\Debug\EF.Mappings.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\EF.Mappings\bin\Debug\EF.Mappings.dll.config
+C:\Prism\Clients\Amoeba Projects\MRManager\EF.Mappings\bin\Debug\EF.Mappings.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\EF.Mappings\bin\Debug\EF.Mappings.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\EF.Mappings\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\EF.Mappings\bin\Debug\Microsoft.EntityFrameworkCore.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\EF.Mappings\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\EF.Mappings\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\EF.Mappings\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\EF.Mappings\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\EF.Mappings\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\EF.Mappings\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\EF.Mappings\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\EF.Mappings\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\EF.Mappings\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\EF.Mappings\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\EF.Mappings\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\EF.Mappings\bin\Debug\Remotion.Linq.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\EF.Mappings\bin\Debug\System.Collections.Immutable.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\EF.Mappings\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\EF.Mappings\bin\Debug\System.Interactive.Async.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\EF.Mappings\bin\Debug\Common.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\EF.Mappings\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\EF.Mappings\bin\Debug\EF.Entities.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\EF.Mappings\bin\Debug\Interfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\EF.Mappings\bin\Debug\Common.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\EF.Mappings\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\EF.Mappings\bin\Debug\EF.Entities.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\EF.Mappings\bin\Debug\Interfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\EF.Mappings\obj\Debug\EF.Mappings.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba Projects\MRManager\EF.Mappings\obj\Debug\EF.Mappings.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\EF.Mappings\obj\Debug\EF.Mappings.pdb

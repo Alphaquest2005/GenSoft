@@ -1,0 +1,40 @@
+C:\Prism\Clients\Amoeba\Amoeba\NH.DBContext\bin\Debug\NH.DBContext.dll.config
+C:\Prism\Clients\Amoeba\Amoeba\NH.DBContext\bin\Debug\NH.DBContext.dll
+C:\Prism\Clients\Amoeba\Amoeba\NH.DBContext\bin\Debug\NH.DBContext.pdb
+C:\Prism\Clients\Amoeba\Amoeba\NH.DBContext\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Amoeba\Amoeba\NH.DBContext\bin\Debug\FluentNHibernate.dll
+C:\Prism\Clients\Amoeba\Amoeba\NH.DBContext\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Amoeba\Amoeba\NH.DBContext\bin\Debug\NH.Mappings.dll
+C:\Prism\Clients\Amoeba\Amoeba\NH.DBContext\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Amoeba\Amoeba\NH.DBContext\bin\Debug\EF.Entities.dll
+C:\Prism\Clients\Amoeba\Amoeba\NH.DBContext\bin\Debug\Common.dll
+C:\Prism\Clients\Amoeba\Amoeba\NH.DBContext\bin\Debug\Interfaces.dll
+C:\Prism\Clients\Amoeba\Amoeba\NH.DBContext\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba\Amoeba\NH.DBContext\bin\Debug\NH.Mappings.pdb
+C:\Prism\Clients\Amoeba\Amoeba\NH.DBContext\bin\Debug\FluentNHibernate.pdb
+C:\Prism\Clients\Amoeba\Amoeba\NH.DBContext\bin\Debug\EF.Entities.pdb
+C:\Prism\Clients\Amoeba\Amoeba\NH.DBContext\bin\Debug\Common.pdb
+C:\Prism\Clients\Amoeba\Amoeba\NH.DBContext\bin\Debug\Interfaces.pdb
+C:\Prism\Clients\Amoeba\Amoeba\NH.DBContext\obj\Debug\NH.DBContext.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba\Amoeba\NH.DBContext\obj\Debug\NH.DBContext.dll
+C:\Prism\Clients\Amoeba\Amoeba\NH.DBContext\obj\Debug\NH.DBContext.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.DBContext\bin\Debug\NH.DBContext.dll.config
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.DBContext\bin\Debug\NH.DBContext.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.DBContext\bin\Debug\NH.DBContext.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.DBContext\bin\Debug\FluentNHibernate.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.DBContext\bin\Debug\FluentNHibernate.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.DBContext\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.DBContext\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.DBContext\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.DBContext\bin\Debug\NH.Mappings.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.DBContext\bin\Debug\EF.Entities.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.DBContext\bin\Debug\Common.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.DBContext\bin\Debug\Interfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.DBContext\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.DBContext\bin\Debug\NH.Mappings.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.DBContext\bin\Debug\EF.Entities.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.DBContext\bin\Debug\Common.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.DBContext\bin\Debug\Interfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.DBContext\obj\Debug\NH.DBContext.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.DBContext\obj\Debug\NH.DBContext.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\NH.DBContext\obj\Debug\NH.DBContext.pdb

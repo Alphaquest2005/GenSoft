@@ -1,0 +1,12 @@
+C:\Prism\Clients\Amoeba\Amoeba\Repository\bin\Debug\Repository.dll.config
+C:\Prism\Clients\Amoeba\Amoeba\Repository\bin\Debug\Repository.dll
+C:\Prism\Clients\Amoeba\Amoeba\Repository\bin\Debug\Repository.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Repository\bin\Debug\DataLayer.dll
+C:\Prism\Clients\Amoeba\Amoeba\Repository\bin\Debug\EntityFramework.dll
+C:\Prism\Clients\Amoeba\Amoeba\Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Prism\Clients\Amoeba\Amoeba\Repository\bin\Debug\EntityFramework.xml
+C:\Prism\Clients\Amoeba\Amoeba\Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Prism\Clients\Amoeba\Amoeba\Repository\obj\Debug\Repository.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba\Amoeba\Repository\obj\Debug\Repository.dll
+C:\Prism\Clients\Amoeba\Amoeba\Repository\obj\Debug\Repository.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Repository\bin\Debug\DataLayer.pdb

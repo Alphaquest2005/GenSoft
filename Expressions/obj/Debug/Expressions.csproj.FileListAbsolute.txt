@@ -1,0 +1,68 @@
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\Expressions\obj\Debug\Expressions.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\Expressions\bin\Debug\Expressions.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\Expressions\bin\Debug\Expressions.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\Expressions\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\Expressions\bin\Debug\Interfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\Expressions\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\Expressions\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\Expressions\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\Expressions\bin\Debug\Interfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\Expressions\obj\Debug\Expressions.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\Expressions\obj\Debug\Expressions.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Expressions\bin\Debug\Expressions.dll.config
+C:\Prism\Clients\Amoeba Projects\MRManager\Expressions\bin\Debug\Expressions.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Expressions\bin\Debug\Expressions.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Expressions\bin\Debug\Common.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Expressions\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Expressions\bin\Debug\EF.Entities.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Expressions\bin\Debug\Interfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Expressions\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Expressions\bin\Debug\SystemInterfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Expressions\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Expressions\bin\Debug\Common.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Expressions\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Expressions\bin\Debug\EF.Entities.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Expressions\bin\Debug\Interfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Expressions\bin\Debug\SystemInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Expressions\obj\Debug\Expressions.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba Projects\MRManager\Expressions\obj\Debug\Expressions.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Expressions\obj\Debug\Expressions.pdb
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\Expressions.dll.config
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\Expressions.dll
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\Expressions.pdb
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\FluentValidation.dll
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\JB.Common.dll
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\JB.Common.Collections.dll
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\JB.Common.Collections.Reactive.dll
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\JB.Common.Reactive.dll
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\MefContrib.dll
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\MefContrib.pdb
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\MoreLinq.dll
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\Reactive.EventAggregator.dll
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\ReactiveProperty.DataAnnotations.dll
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\ReactiveProperty.DataAnnotations.pdb
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\ReactiveProperty.NET46.dll
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\ReactiveProperty.NET46.pdb
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\ReactiveProperty.dll
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\ReactiveProperty.pdb
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\ReactiveUI.dll
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\System.Reactive.Core.dll
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\System.Reactive.Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\System.Reactive.Linq.dll
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\System.Reactive.PlatformServices.dll
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\System.Reactive.Windows.Threading.dll
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\Splat.dll
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\Splat.pdb
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\Common.dll
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\EF.Entities.dll
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\SystemInterfaces.dll
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\Utilities.dll
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\EF.Entities.pdb
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\Interfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\Common.pdb
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\SystemInterfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\Utilities.pdb
+C:\Prism\GitRepositiory\MRManager\Expressions\obj\Debug\Expressions.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager\Expressions\obj\Debug\Expressions.dll
+C:\Prism\GitRepositiory\MRManager\Expressions\obj\Debug\Expressions.pdb

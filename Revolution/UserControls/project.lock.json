@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "targets": {
+    ".NETFramework,Version=v4.6.1": {},
+    ".NETFramework,Version=v4.6.1/win-x64": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "": [],
+    ".NETFramework,Version=v4.6.1": []
+  },
+  "packageFolders": {
+    "C:\\Users\\Alpha\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "restore": {
+      "projectUniqueName": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\UserControls\\UserControls.csproj",
+      "projectName": "UserControls",
+      "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\UserControls\\UserControls.csproj",
+      "projectJsonPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\UserControls\\project.json",
+      "projectStyle": "ProjectJson"
+    },
+    "frameworks": {
+      "net461": {}
+    },
+    "runtimes": {
+      "win-x64": {
+        "#import": []
+      }
+    }
+  }
+}

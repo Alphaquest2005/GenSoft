@@ -1,0 +1,612 @@
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\Views.dll.config
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\Views.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\Views.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\Common.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\Core.Common.UI.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\DataTemplates.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\EF.Entities.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\Interfaces.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\ReactiveUI.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\Splat.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\System.Reactive.Core.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\System.Reactive.Interfaces.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\System.Reactive.Linq.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\System.Reactive.PlatformServices.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\System.Reactive.Windows.Threading.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\System.Windows.Interactivity.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\ViewModels.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\FluentValidation.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\EventMessages.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\JB.Common.Collections.Reactive.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\CommonMessages.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\EventAggregator.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\Utilities.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\JB.Common.Collections.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\JB.Common.Reactive.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\Reactive.EventAggregator.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\Logging.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\log4net.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\Common.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\Core.Common.UI.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\DataTemplates.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\EF.Entities.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\Interfaces.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\ViewModels.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\Splat.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\FluentValidation.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\EventMessages.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\CommonMessages.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\EventAggregator.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\Utilities.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\Logging.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\de\Microsoft.Expression.Interactions.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\en\Microsoft.Expression.Interactions.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\es\Microsoft.Expression.Interactions.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\fr\Microsoft.Expression.Interactions.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\it\Microsoft.Expression.Interactions.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\ja\Microsoft.Expression.Interactions.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\ko\Microsoft.Expression.Interactions.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\ru\Microsoft.Expression.Interactions.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\zh-Hans\Microsoft.Expression.Interactions.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\zh-Hant\Microsoft.Expression.Interactions.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\cs\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\da\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\de\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\es\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\fa\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\fi\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\fr\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\it\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\ko\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\mk\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\nl\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\pl\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\pt\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\ru\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\sv\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\tr\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\zh-CN\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Views.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Views.Properties.Resources.resources
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Views.csproj.GenerateResource.Cache
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Views.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Views.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Views.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\AddressLinesListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\AddressZipCodesListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ApplicationSettingListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\MainView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\MainWindow_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\AddressLinesListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\AddressZipCodesListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ApplicationSettingListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Views_MarkupCompile.cache
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Views_MarkupCompile.lref
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\Views.dll.config
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\Views.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\Views.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\FluentValidation.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\FluentValidation.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\cs\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\da\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\de\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\es\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\fa\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\fi\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\fr\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\it\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\ko\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\mk\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\nl\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\pl\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\pt\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\ru\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\sv\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\tr\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\zh-CN\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\log4net.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\Reactive.EventAggregator.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\ReactiveUI.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\System.Reactive.Core.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\System.Reactive.Interfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\System.Reactive.Linq.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\System.Reactive.PlatformServices.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\System.Reactive.Windows.Threading.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\Splat.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\Splat.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\Common.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\Core.Common.UI.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\DataTemplates.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\EF.Entities.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\Interfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\System.Windows.Interactivity.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\ViewModels.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\EventMessages.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\JB.Common.Collections.Reactive.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\CommonMessages.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\EventAggregator.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\Utilities.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\ViewModel.Interfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\SystemMessages.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\ViewMessages.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\ValidationSets.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\JB.Common.Collections.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\JB.Common.Reactive.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\Logging.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\SystemInterfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\Common.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\Core.Common.UI.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\DataTemplates.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\EF.Entities.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\Interfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\ViewModels.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\EventMessages.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\CommonMessages.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\EventAggregator.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\Utilities.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\ViewModel.Interfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\SystemMessages.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\ViewMessages.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\ValidationSets.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\Logging.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\SystemInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\de\Microsoft.Expression.Interactions.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\en\Microsoft.Expression.Interactions.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\es\Microsoft.Expression.Interactions.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\fr\Microsoft.Expression.Interactions.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\it\Microsoft.Expression.Interactions.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\ja\Microsoft.Expression.Interactions.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\ko\Microsoft.Expression.Interactions.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\ru\Microsoft.Expression.Interactions.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\zh-Hans\Microsoft.Expression.Interactions.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\zh-Hant\Microsoft.Expression.Interactions.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\MainView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\MainWindow_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Views.g.resources
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Views.Properties.Resources.resources
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Views.csproj.GenerateResource.Cache
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Views.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Views.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\bin\Debug\JB.Common.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Addresses\SummaryListView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\AddressCitiesListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\AddressCountriesListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\AddressesListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\AddressParishesListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\AddressStatesListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\AddressTypesListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\AllergiesListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\AssignedDatingListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Addresses\SummaryListView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Addresses\SummaryViewDetails_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Addresses\SummaryView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\AddressCitiesListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\AddressCountriesListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\AddressesListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\AddressParishesListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\AddressStatesListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\AddressTypesListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\AllergiesListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\AssignedDatingListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Addresses\SummaryViewDetails_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Addresses\SummaryView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\BloodPressureListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\BloodPressureListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\CarePlanListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\CarePlanListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\CarePlan\SummaryListView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Cities\SummaryListView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Countries\SummaryListView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\BoatInfoListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\CarePlanDetailsListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\CarePlanDetailsSuggestedMedicationListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\CitiesListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ComponentsListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\CountriesListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\DefaultImagesListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ExamDetailsListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\CarePlan\SummaryListView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\CarePlan\SummaryViewDetails_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\CarePlan\SummaryView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Cities\SummaryListView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Cities\SummaryViewDetails_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Cities\SummaryView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Countries\SummaryListView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Countries\SummaryViewDetails_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Countries\SummaryView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\BoatInfoListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\CarePlanDetailsListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\CarePlanDetailsSuggestedMedicationListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\CitiesListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ComponentsListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\CountriesListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\DefaultImagesListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ExamDetailsListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\CarePlan\SummaryViewDetails_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\CarePlan\SummaryView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Cities\SummaryViewDetails_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Cities\SummaryView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Countries\SummaryViewDetails_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Countries\SummaryView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Exams\SummaryListView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\MediaTypes\SummaryListView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\MedicalCategory\SummaryListView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ExamResultsListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ExamResults_AnioticFluidListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ExamResults_FetalDatesListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ExamResults_SimpleValuesListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ExamResults_UmbilicalArteryListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ExamsListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ExamTypesListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ForeignAddressesListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ForeignPhoneNumbersListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\HeightListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\InterviewsListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\MaritalStatusListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\MarketingMediumListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\MediaListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\MediaTypesListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\MedicalCategoryListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\NonResidentCompanyInfoListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\NonResidentHotelInfoListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\OccupationsListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\OrganisationAddressListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Exams\SummaryListView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Exams\SummaryViewDetails_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Exams\SummaryView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\MediaTypes\SummaryListView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\MediaTypes\SummaryViewDetails_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\MediaTypes\SummaryView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\MedicalCategory\SummaryListView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\MedicalCategory\SummaryViewDetails_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\MedicalCategory\SummaryView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ExamResultsListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ExamResults_AnioticFluidListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ExamResults_FetalDatesListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ExamResults_SimpleValuesListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ExamResults_UmbilicalArteryListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ExamsListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ExamTypesListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ForeignAddressesListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ForeignPhoneNumbersListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\HeightListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\InterviewsListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\MaritalStatusListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\MarketingMediumListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\MediaListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\MediaTypesListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\MedicalCategoryListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\NonResidentCompanyInfoListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\NonResidentHotelInfoListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\OccupationsListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\OrganisationAddressListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Exams\SummaryViewDetails_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Exams\SummaryView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\MediaTypes\SummaryViewDetails_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\MediaTypes\SummaryView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\MedicalCategory\SummaryViewDetails_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\MedicalCategory\SummaryView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\OrganisationPhoneNumbersListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\OrganisationsListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\Organisations_CompanysListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\Organisations_HotelsListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ParishCitiesListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ParishesListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PatientAllergiesListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PatientDoctorListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PatientReligonListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PatientResponsesListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PatientResultsListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PatientSyntomsListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PatientVisitListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PersonAddressesListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PersonCountryOfResidenceListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PersonEmailAddressListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PersonJobListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PersonMaritalStatusListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PersonMediaListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PersonNamesListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PersonPhoneNumbersListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PersonsListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\Persons_ArrivalDepartureInfoListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\Persons_DoctorListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\Persons_EmergencyContactListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\Persons_NextOfKinListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\Persons_NonResidentPatientListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\Persons_NursesListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\Persons_PatientListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PhaseListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PhoneTypesListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PrimaryPersonAddressListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PrimaryPersonPhoneNumberListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PulseListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\QuestionsListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ReligonsListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\RespirationListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ResponseImagesListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ResponseListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ResponseOptionsListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ResponseSuggestionsListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ResponseSuggestions_CarePlansListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ResponseSuggestions_InterviewsListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ResultFieldNamesListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\SexListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\StatesListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\StudentInfoListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\SyntomsListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\TemperatureListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\UltraSoundGeneralEvaluationListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\UnitsListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\VitalSignsListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\WeightListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ZipCodesListView.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Organisations\SummaryListView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Parishes\SummaryListView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Persons\SummaryListView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Phase\SummaryListView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\PhoneTypes\SummaryListView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\ResultFieldNames\SummaryListView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\States\SummaryListView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Syntoms\SummaryListView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Units\SummaryListView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\ZipCodes\SummaryListView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\OrganisationPhoneNumbersListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\OrganisationsListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\Organisations_CompanysListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\Organisations_HotelsListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ParishCitiesListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ParishesListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PatientAllergiesListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PatientDoctorListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PatientReligonListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PatientResponsesListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PatientResultsListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PatientSyntomsListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PatientVisitListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PersonAddressesListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PersonCountryOfResidenceListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PersonEmailAddressListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PersonJobListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PersonMaritalStatusListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PersonMediaListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PersonNamesListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PersonPhoneNumbersListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PersonsListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\Persons_ArrivalDepartureInfoListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\Persons_DoctorListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\Persons_EmergencyContactListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\Persons_NextOfKinListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\Persons_NonResidentPatientListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\Persons_NursesListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\Persons_PatientListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PhaseListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PhoneTypesListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PrimaryPersonAddressListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PrimaryPersonPhoneNumberListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\PulseListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\QuestionsListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ReligonsListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\RespirationListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ResponseImagesListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ResponseListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ResponseOptionsListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ResponseSuggestionsListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ResponseSuggestions_CarePlansListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ResponseSuggestions_InterviewsListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ResultFieldNamesListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\SexListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\StatesListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\StudentInfoListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\SyntomsListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\TemperatureListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\UltraSoundGeneralEvaluationListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\UnitsListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\VitalSignsListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\WeightListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Model\ZipCodesListView.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Organisations\SummaryListView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Organisations\SummaryViewDetails_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Organisations\SummaryView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Parishes\SummaryListView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Parishes\SummaryViewDetails_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Parishes\SummaryView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Persons\SummaryListView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Persons\SummaryViewDetails_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Persons\SummaryView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Phase\SummaryListView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Phase\SummaryViewDetails_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Phase\SummaryView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\PhoneTypes\SummaryListView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\PhoneTypes\SummaryViewDetails_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\PhoneTypes\SummaryView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\ResultFieldNames\SummaryListView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\ResultFieldNames\SummaryViewDetails_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\ResultFieldNames\SummaryView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\States\SummaryListView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\States\SummaryViewDetails_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\States\SummaryView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Syntoms\SummaryListView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Syntoms\SummaryViewDetails_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Syntoms\SummaryView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Units\SummaryListView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Units\SummaryViewDetails_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Units\SummaryView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\ZipCodes\SummaryListView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\ZipCodes\SummaryViewDetails_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\ZipCodes\SummaryView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Organisations\SummaryViewDetails_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Organisations\SummaryView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Parishes\SummaryViewDetails_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Parishes\SummaryView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Persons\SummaryViewDetails_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Persons\SummaryView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Phase\SummaryViewDetails_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Phase\SummaryView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\PhoneTypes\SummaryViewDetails_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\PhoneTypes\SummaryView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\ResultFieldNames\SummaryViewDetails_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\ResultFieldNames\SummaryView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\States\SummaryViewDetails_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\States\SummaryView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Syntoms\SummaryViewDetails_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Syntoms\SummaryView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Units\SummaryViewDetails_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\Units\SummaryView_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\ZipCodes\SummaryViewDetails_AutoGen.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\Views\obj\Debug\Generated Views\ZipCodes\SummaryView_AutoGen.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\JB.Common.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\ViewModel.Interfaces.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\SystemMessages.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\ViewMessages.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\ValidationSets.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\SystemInterfaces.dll
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\ViewModel.Interfaces.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\SystemMessages.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\ViewMessages.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\ValidationSets.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Views\bin\Debug\SystemInterfaces.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Applications\SummaryListView_AutoGen.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\DataTypes\SummaryListView_AutoGen.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Layers\SummaryListView_AutoGen.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\ModelTypes\SummaryListView_AutoGen.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\ApplicationEntitiesListView.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\ApplicationSettingListView.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\ApplicationsListView.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\DataPropertiesListView.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\DataTypesListView.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\EntitiesListView.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\EntityPropertiesListView.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\EntityRelationshipsListView.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\FunctionParametersListView.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\FunctionSetFunctionsListView.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\FunctionSetsListView.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\FunctionsListView.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\LayersListView.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\ModelTypesListView.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\OperatorsListView.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\ParametersListView.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\PresentationPropertiesListView.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\ProjectsListView.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\RelationshipTypesListView.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\SettingsListView.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\SettingsNamesListView.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\StateMachinesListView.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\StateMachineStatesListView.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\StateMachineTriggersListView.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\StatesListView.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\TriggersListView.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Projects\SummaryListView_AutoGen.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\RelationshipTypes\SummaryListView_AutoGen.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\StateMachines\SummaryListView_AutoGen.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\States\SummaryListView_AutoGen.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Triggers\SummaryListView_AutoGen.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Applications\SummaryListView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Applications\SummaryViewDetails_AutoGen.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Applications\SummaryView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\DataTypes\SummaryListView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\DataTypes\SummaryViewDetails_AutoGen.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\DataTypes\SummaryView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Layers\SummaryListView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Layers\SummaryViewDetails_AutoGen.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Layers\SummaryView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\MainView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\MainWindow_AutoGen.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\ModelTypes\SummaryListView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\ModelTypes\SummaryViewDetails_AutoGen.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\ModelTypes\SummaryView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\ApplicationEntitiesListView.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\ApplicationSettingListView.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\ApplicationsListView.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\DataPropertiesListView.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\DataTypesListView.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\EntitiesListView.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\EntityPropertiesListView.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\EntityRelationshipsListView.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\FunctionParametersListView.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\FunctionSetFunctionsListView.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\FunctionSetsListView.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\FunctionsListView.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\LayersListView.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\ModelTypesListView.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\OperatorsListView.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\ParametersListView.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\PresentationPropertiesListView.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\ProjectsListView.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\RelationshipTypesListView.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\SettingsListView.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\SettingsNamesListView.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\StateMachinesListView.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\StateMachineStatesListView.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\StateMachineTriggersListView.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\StatesListView.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Model\TriggersListView.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Projects\SummaryListView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Projects\SummaryViewDetails_AutoGen.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Projects\SummaryView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\RelationshipTypes\SummaryListView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\RelationshipTypes\SummaryViewDetails_AutoGen.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\RelationshipTypes\SummaryView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\StateMachines\SummaryListView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\StateMachines\SummaryViewDetails_AutoGen.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\StateMachines\SummaryView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\States\SummaryListView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\States\SummaryViewDetails_AutoGen.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\States\SummaryView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Triggers\SummaryListView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Triggers\SummaryViewDetails_AutoGen.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Triggers\SummaryView_AutoGen.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Views_MarkupCompile.cache
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Views_MarkupCompile.lref
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Applications\SummaryViewDetails_AutoGen.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Applications\SummaryView_AutoGen.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\DataTypes\SummaryViewDetails_AutoGen.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\DataTypes\SummaryView_AutoGen.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Layers\SummaryViewDetails_AutoGen.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Layers\SummaryView_AutoGen.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\MainView_AutoGen.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\MainWindow_AutoGen.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\ModelTypes\SummaryViewDetails_AutoGen.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\ModelTypes\SummaryView_AutoGen.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Projects\SummaryViewDetails_AutoGen.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Projects\SummaryView_AutoGen.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\RelationshipTypes\SummaryViewDetails_AutoGen.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\RelationshipTypes\SummaryView_AutoGen.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\StateMachines\SummaryViewDetails_AutoGen.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\StateMachines\SummaryView_AutoGen.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\States\SummaryViewDetails_AutoGen.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\States\SummaryView_AutoGen.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Triggers\SummaryViewDetails_AutoGen.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Generated Views\Triggers\SummaryView_AutoGen.baml
+C:\Prism\Clients\Amoeba\Amoeba\Views\obj\Debug\Views.g.resources

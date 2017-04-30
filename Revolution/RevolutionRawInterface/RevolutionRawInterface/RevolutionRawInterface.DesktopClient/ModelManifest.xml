@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Documents>
+    <Document FullPath="C:\Prism\Clients\Revolution\RevolutionRawInterface\RevolutionRawInterface\RevolutionRawInterface.DesktopClient\Properties\Client.lsml" Checksum="44508E05CFDFCFE6C2DDD0A29A488F5BC9EBC2312CBC7DD79D3207EB02F3E6C2" />
+    <Document FullPath="C:\Prism\Clients\Revolution\RevolutionRawInterface\RevolutionRawInterface\RevolutionRawInterface.DesktopClient\Properties\Proxies.lsml" Checksum="005B998C1C9417F5A06AF6C94CF85472F8274CC4B39DD9AB1F0D83C8BC065376" />
+    <Document FullPath="C:\Prism\Clients\Revolution\RevolutionRawInterface\RevolutionRawInterface\RevolutionRawInterface.DesktopClient\Screens\Application1Detail.lsml" Checksum="429D83CA0878DC746F77B066528AA88DEC5A037136945979E7B50ADC9D65E67D" />
+    <Document FullPath="C:\Prism\Clients\Revolution\RevolutionRawInterface\RevolutionRawInterface\RevolutionRawInterface.DesktopClient\Properties\RevolutionAppDBData\Applications.lsml" Checksum="DF0514BCB65FA601416321F372AE194BEC82D68F89912DF5C3CB48D0B22FF39D" />
+  </Documents>
+</ModelDocumentManifest>

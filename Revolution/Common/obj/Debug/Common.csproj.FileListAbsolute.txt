@@ -1,0 +1,70 @@
+C:\prism\Clients\SAMS-MRManager\MRManager\Common\bin\Debug\Common.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Common\bin\Debug\Common.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\Common\bin\Debug\Model.Interfaces.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Common\bin\Debug\Model.Interfaces.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+C:\prism\Clients\SAMS-MRManager\MRManager\Common\obj\Debug\Common.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Common\obj\Debug\Common.pdb
+C:\Prism\Clients\Revolution\Common\bin\Debug\Common.dll
+C:\Prism\Clients\Revolution\Common\bin\Debug\Common.pdb
+C:\Prism\Clients\Revolution\Common\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Revolution\Common\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Revolution\Common\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Revolution\Common\bin\Debug\JB.Common.Collections.dll
+C:\Prism\Clients\Revolution\Common\bin\Debug\JB.Common.Collections.Reactive.dll
+C:\Prism\Clients\Revolution\Common\bin\Debug\JB.Common.Reactive.dll
+C:\Prism\Clients\Revolution\Common\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Revolution\Common\bin\Debug\JB.Common.Collections.xml
+C:\Prism\Clients\Revolution\Common\bin\Debug\JB.Common.Collections.Reactive.xml
+C:\Prism\Clients\Revolution\Common\bin\Debug\JB.Common.Reactive.xml
+C:\Prism\Clients\Revolution\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Revolution\Common\obj\Debug\Common.dll
+C:\Prism\Clients\Revolution\Common\obj\Debug\Common.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Common\bin\Debug\Common.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Common\bin\Debug\Common.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Common\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Common\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Common\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Common\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Common\obj\Debug\Common.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\Common\obj\Debug\Common.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\Common.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\Common.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\FluentValidation.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\JB.Common.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\JB.Common.Collections.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\JB.Common.Collections.Reactive.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\JB.Common.Reactive.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\MefContrib.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\MefContrib.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\Reactive.EventAggregator.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\ReactiveProperty.DataAnnotations.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\ReactiveProperty.DataAnnotations.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\ReactiveProperty.NET46.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\ReactiveProperty.NET46.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\ReactiveProperty.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\ReactiveProperty.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\ReactiveUI.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\System.Reactive.Core.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\System.Reactive.Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\System.Reactive.Linq.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\System.Reactive.PlatformServices.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\System.Reactive.Windows.Threading.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\Splat.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\Splat.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\BootStrapper.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\SystemInterfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\ComponentModel.Composition.Hosting.Extension.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\Actor.Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\System.Collections.Immutable.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\Akka.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\BootStrapper.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\SystemInterfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\ComponentModel.Composition.Hosting.Extension.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\Actor.Interfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\System.Collections.Immutable.xml
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\Akka.xml
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\obj\Debug\Common.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\Common\obj\Debug\Common.pdb

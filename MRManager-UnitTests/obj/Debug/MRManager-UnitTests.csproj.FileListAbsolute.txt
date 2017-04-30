@@ -1,0 +1,349 @@
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\MRManager-UnitTests.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\MRManager-UnitTests.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Common.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\EF.DBContext.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\EF.Entities.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Interfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.EntityFrameworkCore.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\EF.Mappings.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\System.Interactive.Async.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Common.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\EF.DBContext.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\EF.Entities.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Interfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.EntityFrameworkCore.xml
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\EF.Mappings.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\obj\Debug\MRManager-UnitTests.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\obj\Debug\MRManager-UnitTests.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\obj\Debug\MRManager-UnitTests.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\MRManager-UnitTests.dll.config
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\System.Collections.Immutable.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.EntityFrameworkCore.Relational.xml
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.xml
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\System.Collections.Immutable.xml
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\System.Interactive.Async.xml
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\ExpressionComputations.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Expressions.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Linq.Translations.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\ExpressionComputations.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Expressions.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Z.EntityFramework.Plus.EFCore.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Z.EntityFramework.Plus.QueryDeferred.EF7.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Win32.Primitives.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\System.AppContext.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\System.Console.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\System.Globalization.Calendars.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\System.IO.Compression.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\System.IO.Compression.ZipFile.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\System.IO.FileSystem.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\System.IO.FileSystem.Primitives.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\System.Net.Http.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\System.Net.Sockets.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\System.Xml.ReaderWriter.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\LinqKit.Microsoft.EntityFrameworkCore.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\LinqKit.Microsoft.EntityFrameworkCore.xml
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Remotion.Linq.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager\MRManager-UnitTests\bin\Debug\Remotion.Linq.xml
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\obj\Debug\MRManager-UnitTests.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\MRManager-UnitTests.dll.config
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\MRManager-UnitTests.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\MRManager-UnitTests.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Akka.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Akka.Persistence.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Akka.Persistence.Sql.Common.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Akka.Persistence.SqlServer.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\FluentValidation.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Google.ProtocolBuffers.Serialization.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Google.ProtocolBuffers.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\JB.Common.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\JB.Common.Collections.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\JB.Common.Collections.Reactive.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\JB.Common.Reactive.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\log4net.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.EntityFrameworkCore.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Win32.Primitives.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Newtonsoft.Json.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Reactive.EventAggregator.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\ReactiveUI.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Remotion.Linq.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\System.Reactive.Core.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\System.Reactive.Interfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\System.Reactive.Linq.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\System.Reactive.PlatformServices.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\System.Reactive.Windows.Threading.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Splat.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Splat.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\System.AppContext.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\System.Collections.Immutable.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\System.Console.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\System.Globalization.Calendars.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\System.Interactive.Async.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\System.IO.Compression.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\System.IO.Compression.ZipFile.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\System.IO.FileSystem.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\System.IO.FileSystem.Primitives.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\System.Net.Http.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\System.Net.Sockets.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\System.Xml.ReaderWriter.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Common.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\CommonMessages.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Core.Common.UI.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\DataServices.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\DesignTimeData.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\EF.DBContext.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\EF.Entities.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\EventAggregator.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\EventMessages.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Expressions.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Interfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\RevolutionEntities.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\SystemInterfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\SystemMessages.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Utilities.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\ViewModel.Interfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\ViewModels.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\ViewMessages.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\EFRepository.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\TypeMaps.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Logging.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\EF.Mappings.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\ValidationSets.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\CommonMessages.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Common.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Core.Common.UI.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\DataServices.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\EventAggregator.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\EventMessages.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\RevolutionEntities.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\SystemInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\SystemMessages.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Utilities.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\ViewModel.Interfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\DesignTimeData.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\EF.DBContext.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\EF.Entities.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Interfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Expressions.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\ViewModels.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\ViewMessages.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\EFRepository.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\TypeMaps.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\Logging.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\EF.Mappings.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\bin\Debug\ValidationSets.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\obj\Debug\MRManager-UnitTests.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\MRManager-UnitTests\obj\Debug\MRManager-UnitTests.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\OrderedTest1.orderedtest
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\MRManager-UnitTests.dll.config
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\MRManager-UnitTests.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\MRManager-UnitTests.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Akka.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Akka.Persistence.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Akka.Persistence.Sql.Common.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Akka.Persistence.SqlServer.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\FluentValidation.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Google.ProtocolBuffers.Serialization.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Google.ProtocolBuffers.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\JB.Common.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\JB.Common.Collections.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\JB.Common.Collections.Reactive.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\JB.Common.Reactive.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\log4net.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\MefContrib.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\MefContrib.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.EntityFrameworkCore.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Microsoft.Win32.Primitives.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\MoreLinq.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Newtonsoft.Json.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Reactive.EventAggregator.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\ReactiveProperty.DataAnnotations.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\ReactiveProperty.DataAnnotations.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\ReactiveProperty.NET46.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\ReactiveProperty.NET46.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\ReactiveProperty.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\ReactiveProperty.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\ReactiveUI.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Remotion.Linq.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\System.Reactive.Core.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\System.Reactive.Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\System.Reactive.Linq.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\System.Reactive.PlatformServices.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\System.Reactive.Windows.Threading.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Splat.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Splat.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\System.AppContext.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\System.Collections.Immutable.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\System.Console.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\System.Globalization.Calendars.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\System.Interactive.Async.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\System.IO.Compression.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\System.IO.Compression.ZipFile.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\System.IO.FileSystem.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\System.IO.FileSystem.Primitives.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\System.Net.Http.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\System.Net.Sockets.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\System.Xml.ReaderWriter.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Actor.Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\ActorSystem.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\BootStrapper.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Common.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\CommonMessages.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\ComponentModel.Composition.Hosting.Extension.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Converters.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Core.Common.UI.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\DataServices.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\DataTemplates.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\DesignTimeData.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Domain.Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\DomainMessages.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\EF.DBContext.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\EF.Entities.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\EF.Mappings.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\EFRepository.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\EventAggregator.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\EventMessages.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Expressions.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\LinqSpecs.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\MRManager.exe
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\PropertyExtensions.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Resources.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\RevolutionData.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\RevolutionEntities.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\RevolutionLogger.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Specifications.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\System.Linq.Dynamic.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\System.Windows.Interactivity.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\SystemInterfaces.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\TypeMaps.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\UserControls.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Utilities.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\ValidationSets.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\ViewMessages.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\ViewModel.Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\ViewModels.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Views.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\DataTemplates.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\DesignTimeData.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Domain.Interfaces.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\DomainMessages.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\EF.Mappings.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\EF.DBContext.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\EF.Entities.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Interfaces.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Expressions.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\MRManager.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Resources.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Actor.Interfaces.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\ActorSystem.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\BootStrapper.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\CommonMessages.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Common.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Converters.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Core.Common.UI.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\DataServices.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\System.Linq.Dynamic.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\EFRepository.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\EventAggregator.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\EventMessages.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\LinqSpecs.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\LinqSpecs.xml
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\ComponentModel.Composition.Hosting.Extension.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\PropertyExtensions.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\RevolutionData.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\RevolutionEntities.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\RevolutionLogger.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\SystemInterfaces.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\UserControls.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Utilities.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\ViewMessages.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\ViewModel.Interfaces.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Specifications.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\TypeMaps.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\ValidationSets.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\ViewModels.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\Views.pdb
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\obj\Debug\MRManager-UnitTests.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\obj\Debug\MRManager-UnitTests.dll
+C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\obj\Debug\MRManager-UnitTests.pdb

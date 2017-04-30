@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AD573873-C8E6-4EA3-93F5-0D39A92FC9F6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Interfaces</RootNamespace>
+    <AssemblyName>Interfaces</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Custom Interfaces\ForeignAddressInfo.cs" />
+    <Compile Include="Custom Interfaces\IDoctorInfo.cs" />
+    <Compile Include="Custom Interfaces\IForeignPhoneNumberInfo.cs" />
+    <Compile Include="Custom Interfaces\IInterviewInfo.cs" />
+    <Compile Include="Custom Interfaces\INextOfKinInfo.cs" />
+    <Compile Include="Custom Interfaces\INonResidentInfo.cs" />
+    <Compile Include="Custom Interfaces\IPatientVitalsInfo.cs" />
+    <Compile Include="Custom Interfaces\IPatientDetailsInfo.cs" />
+    <Compile Include="Custom Interfaces\IPatientInfo.cs" />
+    <Compile Include="Custom Interfaces\IPatientResponseInfo.cs" />
+    <Compile Include="Custom Interfaces\IPatientSyntomInfo.cs" />
+    <Compile Include="Custom Interfaces\IPatientVisitInfo.cs" />
+    <Compile Include="Custom Interfaces\IPersonAddressInfo.cs" />
+    <Compile Include="Custom Interfaces\IPersonPhoneNumbersInfo.cs" />
+    <Compile Include="Custom Interfaces\IQuestionResponseOptionInfo.cs" />
+    <Compile Include="Custom Interfaces\IQuestionsInfo.cs" />
+    <Compile Include="Custom Interfaces\IResponseImage.cs" />
+    <Compile Include="Custom Interfaces\IResponseInfo.cs" />
+    <Compile Include="Custom Interfaces\IResponseOptionInfo.cs" />
+    <Compile Include="Custom Interfaces\ISignInInfo.cs" />
+    <Compile Include="Custom Interfaces\ISyntomMedicalSystemInfo.cs" />
+    <Compile Include="Custom Interfaces\MedicalSystemInterviews.cs" />
+    <Compile Include="Custom Interfaces\MedicalSystems.cs" />
+    <Compile Include="Custom Interfaces\QuestionResponseTypes.cs" />
+    <Compile Include="Custom Interfaces\Sex.cs" />
+    <Compile Include="Custom Interfaces\Syntoms.cs" />
+    <Compile Include="Generated Interfaces\EntityAttributes.cs" />
+    <Compile Include="Generated Interfaces\MedicalCategory.cs" />
+    <Compile Include="Generated Interfaces\MedicalSystemInterviews.cs" />
+    <Compile Include="Generated Interfaces\MedicalSystems.cs" />
+    <Compile Include="Generated Interfaces\Patients.cs" />
+    <Compile Include="Generated Interfaces\Phase.cs" />
+    <Compile Include="Generated Interfaces\QuestionResponseTypes.cs" />
+    <Compile Include="Generated Interfaces\SyntomMedicalSystems.cs" />
+    <Compile Include="Custom Interfaces\SyntomPriority.cs" />
+    <Compile Include="Custom Interfaces\SyntomStatus.cs" />
+    <Compile Include="Generated Interfaces\SyntomPriority.cs" />
+    <Compile Include="Generated Interfaces\SyntomStatus.cs" />
+    <Compile Include="Generated Interfaces\UserSignIn.cs" />
+    <Compile Include="Custom Interfaces\VisitType.cs" />
+    <Compile Include="Generated Interfaces\VisitType.cs" />
+    <Compile Include="IPersons.cs" />
+    <Compile Include="Generated Interfaces\AddressCities.cs" />
+    <Compile Include="Generated Interfaces\AddressCountries.cs" />
+    <Compile Include="Generated Interfaces\Addresses.cs" />
+    <Compile Include="Generated Interfaces\AddressLines.cs" />
+    <Compile Include="Generated Interfaces\AddressParishes.cs" />
+    <Compile Include="Generated Interfaces\AddressStates.cs" />
+    <Compile Include="Generated Interfaces\AddressTypes.cs" />
+    <Compile Include="Generated Interfaces\AddressZipCodes.cs" />
+    <Compile Include="Generated Interfaces\Allergies.cs" />
+    <Compile Include="Generated Interfaces\ApplicationSetting.cs" />
+    <Compile Include="Generated Interfaces\AssignedDating.cs" />
+    <Compile Include="Generated Interfaces\BloodPressure.cs" />
+    <Compile Include="Generated Interfaces\BoatInfo.cs" />
+    <Compile Include="Generated Interfaces\CarePlan.cs" />
+    <Compile Include="Generated Interfaces\CarePlanDetails.cs" />
+    <Compile Include="Generated Interfaces\CarePlanDetailsSuggestedMedication.cs" />
+    <Compile Include="Generated Interfaces\Cities.cs" />
+    <Compile Include="Generated Interfaces\Components.cs" />
+    <Compile Include="Generated Interfaces\Countries.cs" />
+    <Compile Include="Generated Interfaces\DefaultImages.cs" />
+    <Compile Include="Generated Interfaces\ExamDetailComponents.cs" />
+    <Compile Include="Generated Interfaces\ExamDetails.cs" />
+    <Compile Include="Generated Interfaces\ExamResults.cs" />
+    <Compile Include="Generated Interfaces\ExamResults_AnioticFluid.cs" />
+    <Compile Include="Generated Interfaces\ExamResults_FetalDates.cs" />
+    <Compile Include="Generated Interfaces\ExamResults_SimpleValues.cs" />
+    <Compile Include="Generated Interfaces\ExamResults_UmbilicalArtery.cs" />
+    <Compile Include="Generated Interfaces\Exams.cs" />
+    <Compile Include="Generated Interfaces\ExamTypes.cs" />
+    <Compile Include="Generated Interfaces\ForeignAddresses.cs" />
+    <Compile Include="Generated Interfaces\ForeignPhoneNumbers.cs" />
+    <Compile Include="Generated Interfaces\Height.cs" />
+    <Compile Include="Generated Interfaces\Interviews.cs" />
+    <Compile Include="Generated Interfaces\MaritalStatus.cs" />
+    <Compile Include="Generated Interfaces\MarketingMedium.cs" />
+    <Compile Include="Generated Interfaces\Media.cs" />
+    <Compile Include="Generated Interfaces\MediaTypes.cs" />
+    <Compile Include="Custom Interfaces\MedicalCategory.cs" />
+    <Compile Include="Generated Interfaces\NonResidentCompanyInfo.cs" />
+    <Compile Include="Generated Interfaces\NonResidentHotelInfo.cs" />
+    <Compile Include="Generated Interfaces\Occupations.cs" />
+    <Compile Include="Generated Interfaces\OrganisationAddress.cs" />
+    <Compile Include="Generated Interfaces\OrganisationPhoneNumbers.cs" />
+    <Compile Include="Generated Interfaces\Organisations.cs" />
+    <Compile Include="Generated Interfaces\Organisations_Companys.cs" />
+    <Compile Include="Generated Interfaces\Organisations_Hotels.cs" />
+    <Compile Include="Generated Interfaces\ParishCities.cs" />
+    <Compile Include="Generated Interfaces\Parishes.cs" />
+    <Compile Include="Generated Interfaces\PatientAllergies.cs" />
+    <Compile Include="Generated Interfaces\PatientDoctor.cs" />
+    <Compile Include="Generated Interfaces\PatientReligon.cs" />
+    <Compile Include="Generated Interfaces\PatientResponses.cs" />
+    <Compile Include="Generated Interfaces\PatientResults.cs" />
+    <Compile Include="Generated Interfaces\PatientSyntoms.cs" />
+    <Compile Include="Generated Interfaces\PatientVisit.cs" />
+    <Compile Include="Generated Interfaces\PatientVisitVitalSigns.cs" />
+    <Compile Include="Generated Interfaces\PersonAddresses.cs" />
+    <Compile Include="Generated Interfaces\PersonCountryOfResidence.cs" />
+    <Compile Include="Generated Interfaces\PersonEmailAddress.cs" />
+    <Compile Include="Generated Interfaces\PersonJob.cs" />
+    <Compile Include="Generated Interfaces\PersonMaritalStatus.cs" />
+    <Compile Include="Generated Interfaces\PersonMedia.cs" />
+    <Compile Include="Generated Interfaces\PersonNames.cs" />
+    <Compile Include="Generated Interfaces\PersonPhoneNumbers.cs" />
+    <Compile Include="Generated Interfaces\Persons.cs" />
+    <Compile Include="Generated Interfaces\Persons_ArrivalDepartureInfo.cs" />
+    <Compile Include="Generated Interfaces\Persons_Doctor.cs" />
+    <Compile Include="Generated Interfaces\Persons_EmergencyContact.cs" />
+    <Compile Include="Generated Interfaces\Persons_NextOfKin.cs" />
+    <Compile Include="Generated Interfaces\Persons_NonResidentPatient.cs" />
+    <Compile Include="Generated Interfaces\Persons_Nurses.cs" />
+    <Compile Include="Generated Interfaces\Persons_Patient.cs" />
+    <Compile Include="Custom Interfaces\Phase.cs" />
+    <Compile Include="Generated Interfaces\PhoneTypes.cs" />
+    <Compile Include="Generated Interfaces\PrimaryPersonAddress.cs" />
+    <Compile Include="Generated Interfaces\PrimaryPersonPhoneNumber.cs" />
+    <Compile Include="Generated Interfaces\Pulse.cs" />
+    <Compile Include="Generated Interfaces\Questions.cs" />
+    <Compile Include="Generated Interfaces\Religons.cs" />
+    <Compile Include="Generated Interfaces\Respiration.cs" />
+    <Compile Include="Generated Interfaces\Response.cs" />
+    <Compile Include="Generated Interfaces\ResponseImages.cs" />
+    <Compile Include="Generated Interfaces\ResponseOptions.cs" />
+    <Compile Include="Generated Interfaces\ResponseSuggestions.cs" />
+    <Compile Include="Generated Interfaces\ResponseSuggestions_CarePlans.cs" />
+    <Compile Include="Generated Interfaces\ResponseSuggestions_Interviews.cs" />
+    <Compile Include="Generated Interfaces\ResultFieldNames.cs" />
+    <Compile Include="Generated Interfaces\Sex.cs" />
+    <Compile Include="Generated Interfaces\States.cs" />
+    <Compile Include="Generated Interfaces\StudentInfo.cs" />
+    <Compile Include="Generated Interfaces\Syntoms.cs" />
+    <Compile Include="Generated Interfaces\Temperature.cs" />
+    <Compile Include="Generated Interfaces\UltraSoundGeneralEvaluation.cs" />
+    <Compile Include="Generated Interfaces\Units.cs" />
+    <Compile Include="Generated Interfaces\VitalSigns.cs" />
+    <Compile Include="Generated Interfaces\Weight.cs" />
+    <Compile Include="Generated Interfaces\ZipCodes.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Revolution\SystemInterfaces\SystemInterfaces.csproj">
+      <Project>{e3842263-e081-49ba-a1b4-bbe82b24e2db}</Project>
+      <Name>SystemInterfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

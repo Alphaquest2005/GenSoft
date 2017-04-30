@@ -1,0 +1,11 @@
+C:\Prism\Clients\Revolution\Stateless\bin\Debug\portable-net4+sl5+wp8+win8+monotouch+monoandroid\Stateless.XML
+C:\Prism\Clients\Revolution\Stateless\bin\Debug\portable-net4+sl5+wp8+win8+monotouch+monoandroid\Stateless.dll
+C:\Prism\Clients\Revolution\Stateless\bin\Debug\portable-net4+sl5+wp8+win8+monotouch+monoandroid\Stateless.pdb
+C:\Prism\Clients\Revolution\Stateless\obj\portable-net4+sl5+wp8+win8+monotouch+monoandroid\Stateless.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Revolution\Stateless\obj\portable-net4+sl5+wp8+win8+monotouch+monoandroid\Stateless.ParameterConversionResources.resources
+C:\Prism\Clients\Revolution\Stateless\obj\portable-net4+sl5+wp8+win8+monotouch+monoandroid\Stateless.StateConfigurationResources.resources
+C:\Prism\Clients\Revolution\Stateless\obj\portable-net4+sl5+wp8+win8+monotouch+monoandroid\Stateless.StateMachineResources.resources
+C:\Prism\Clients\Revolution\Stateless\obj\portable-net4+sl5+wp8+win8+monotouch+monoandroid\Stateless.StateRepresentationResources.resources
+C:\Prism\Clients\Revolution\Stateless\obj\portable-net4+sl5+wp8+win8+monotouch+monoandroid\Stateless.csproj.GenerateResource.Cache
+C:\Prism\Clients\Revolution\Stateless\obj\portable-net4+sl5+wp8+win8+monotouch+monoandroid\Stateless.dll
+C:\Prism\Clients\Revolution\Stateless\obj\portable-net4+sl5+wp8+win8+monotouch+monoandroid\Stateless.pdb

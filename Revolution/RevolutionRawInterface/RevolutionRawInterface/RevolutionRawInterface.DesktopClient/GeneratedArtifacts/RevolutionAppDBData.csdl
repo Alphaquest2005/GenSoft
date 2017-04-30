@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" Namespace="LightSwitchApplication" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="ApplicationEntity">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationId" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="EntityId" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Application1" Relationship="LightSwitchApplication.FK_ApplicationEntities_Applications" ToRole="Applications" FromRole="ApplicationEntities" />
+    <NavigationProperty Name="Entity" Relationship="LightSwitchApplication.FK_ApplicationEntities_Entities" ToRole="Entities" FromRole="ApplicationEntities" />
+  </EntityType>
+  <EntityType Name="Application1">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationName" Type="Edm.String" Nullable="false" MaxLength="50" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="ApplicationFolder" Type="Edm.String" Nullable="false" MaxLength="Max" Unicode="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="ApplicationEntities" Relationship="LightSwitchApplication.FK_ApplicationEntities_Applications" ToRole="ApplicationEntities" FromRole="Applications" />
+  </EntityType>
+  <EntityType Name="CalculatedProperty">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+    <Property Name="FunctionId" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="EntityProperty" Relationship="LightSwitchApplication.FK_CalculatedProperties_EntityProperties" ToRole="EntityProperties" FromRole="CalculatedProperties" />
+    <NavigationProperty Name="c_Function" Relationship="LightSwitchApplication.FK_CalculatedProperties_Functions" ToRole="Functions" FromRole="CalculatedProperties" />
+  </EntityType>
+  <EntityType Name="DataType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="50" Unicode="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="EntityProperties" Relationship="LightSwitchApplication.FK_EntityProperties_DataTypes" ToRole="EntityProperties" FromRole="DataTypes" />
+    <NavigationProperty Name="Parameters" Relationship="LightSwitchApplication.FK_Parameters_DataTypes" ToRole="Parameters" FromRole="DataTypes" />
+  </EntityType>
+  <EntityType Name="Entity">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EntityName" Type="Edm.String" Nullable="false" MaxLength="50" Unicode="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="ApplicationEntities" Relationship="LightSwitchApplication.FK_ApplicationEntities_Entities" ToRole="ApplicationEntities" FromRole="Entities" />
+    <NavigationProperty Name="EntityProperties" Relationship="LightSwitchApplication.FK_EntityProperties_Entities" ToRole="EntityProperties" FromRole="Entities" />
+    <NavigationProperty Name="EntityRelationships" Relationship="LightSwitchApplication.FK_EntityRelationships_Entities" ToRole="EntityRelationships" FromRole="Entities" />
+    <NavigationProperty Name="EntityRelationships1" Relationship="LightSwitchApplication.FK_EntityRelationships_Entities1" ToRole="EntityRelationships" FromRole="Entities" />
+  </EntityType>
+  <EntityType Name="EntityParameter">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EntityPropertyId" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="ParameterId" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="EntityProperty" Relationship="LightSwitchApplication.FK_EntityParameters_EntityProperties" ToRole="EntityProperties" FromRole="EntityParameters" />
+    <NavigationProperty Name="Parameter" Relationship="LightSwitchApplication.FK_EntityParameters_Parameters" ToRole="Parameters" FromRole="EntityParameters" />
+  </EntityType>
+  <EntityType Name="EntityProperty">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PropertyName" Type="Edm.String" Nullable="false" MaxLength="50" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="ModelTypeId" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="DataTypeId" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="EntityId" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="CalculatedProperty" Relationship="LightSwitchApplication.FK_CalculatedProperties_EntityProperties" ToRole="CalculatedProperties" FromRole="EntityProperties" />
+    <NavigationProperty Name="EntityParameters" Relationship="LightSwitchApplication.FK_EntityParameters_EntityProperties" ToRole="EntityParameters" FromRole="EntityProperties" />
+    <NavigationProperty Name="DataType" Relationship="LightSwitchApplication.FK_EntityProperties_DataTypes" ToRole="DataTypes" FromRole="EntityProperties" />
+    <NavigationProperty Name="Entity" Relationship="LightSwitchApplication.FK_EntityProperties_Entities" ToRole="Entities" FromRole="EntityProperties" />
+  </EntityType>
+  <EntityType Name="EntityRelationship">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IsMultiple" Type="Edm.Boolean" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="ChildEntityId" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="ParentEntityId" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Entity" Relationship="LightSwitchApplication.FK_EntityRelationships_Entities" ToRole="Entities" FromRole="EntityRelationships" />
+    <NavigationProperty Name="Entity1" Relationship="LightSwitchApplication.FK_EntityRelationships_Entities1" ToRole="Entities" FromRole="EntityRelationships" />
+  </EntityType>
+  <EntityType Name="FunctionOperation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+    <Property Name="FunctionId" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="OperatorId" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="ParameterId" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="c_Function" Relationship="LightSwitchApplication.FK_FunctionOperations_Functions" ToRole="Functions" FromRole="FunctionOperations" />
+    <NavigationProperty Name="c_Operator" Relationship="LightSwitchApplication.FK_FunctionOperations_Operators" ToRole="Operators" FromRole="FunctionOperations" />
+    <NavigationProperty Name="Parameter" Relationship="LightSwitchApplication.FK_FunctionOperations_Parameters" ToRole="Parameters" FromRole="FunctionOperations" />
+  </EntityType>
+  <EntityType Name="FunctionParameter">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FunctionId" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="ParameterId" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="c_Function" Relationship="LightSwitchApplication.FK_FunctionParameters_Functions" ToRole="Functions" FromRole="FunctionParameters" />
+    <NavigationProperty Name="Parameter" Relationship="LightSwitchApplication.FK_FunctionParameters_Parameters" ToRole="Parameters" FromRole="FunctionParameters" />
+  </EntityType>
+  <EntityType Name="c_Function">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="50" Unicode="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="CalculatedProperties" Relationship="LightSwitchApplication.FK_CalculatedProperties_Functions" ToRole="CalculatedProperties" FromRole="Functions" />
+    <NavigationProperty Name="FunctionOperations" Relationship="LightSwitchApplication.FK_FunctionOperations_Functions" ToRole="FunctionOperations" FromRole="Functions" />
+    <NavigationProperty Name="FunctionParameters" Relationship="LightSwitchApplication.FK_FunctionParameters_Functions" ToRole="FunctionParameters" FromRole="Functions" />
+  </EntityType>
+  <EntityType Name="FunctionSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ModelType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="50" Unicode="false" ConcurrencyMode="Fixed" />
+  </EntityType>
+  <EntityType Name="c_Operator">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+    <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="50" Unicode="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="FunctionOperations" Relationship="LightSwitchApplication.FK_FunctionOperations_Operators" ToRole="FunctionOperations" FromRole="Operators" />
+  </EntityType>
+  <EntityType Name="Parameter">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+    <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="50" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="DataTypeId" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="EntityParameters" Relationship="LightSwitchApplication.FK_EntityParameters_Parameters" ToRole="EntityParameters" FromRole="Parameters" />
+    <NavigationProperty Name="FunctionOperations" Relationship="LightSwitchApplication.FK_FunctionOperations_Parameters" ToRole="FunctionOperations" FromRole="Parameters" />
+    <NavigationProperty Name="FunctionParameters" Relationship="LightSwitchApplication.FK_FunctionParameters_Parameters" ToRole="FunctionParameters" FromRole="Parameters" />
+    <NavigationProperty Name="DataType" Relationship="LightSwitchApplication.FK_Parameters_DataTypes" ToRole="DataTypes" FromRole="Parameters" />
+  </EntityType>
+  <Association Name="FK_ApplicationEntities_Applications">
+    <End Role="Applications" Type="LightSwitchApplication.Application1" Multiplicity="1" />
+    <End Role="ApplicationEntities" Type="LightSwitchApplication.ApplicationEntity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applications">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ApplicationEntities">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ApplicationEntities_Entities">
+    <End Role="Entities" Type="LightSwitchApplication.Entity" Multiplicity="1" />
+    <End Role="ApplicationEntities" Type="LightSwitchApplication.ApplicationEntity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Entities">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ApplicationEntities">
+        <PropertyRef Name="EntityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CalculatedProperties_EntityProperties">
+    <End Role="EntityProperties" Type="LightSwitchApplication.EntityProperty" Multiplicity="1" />
+    <End Role="CalculatedProperties" Type="LightSwitchApplication.CalculatedProperty" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="EntityProperties">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CalculatedProperties">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CalculatedProperties_Functions">
+    <End Role="Functions" Type="LightSwitchApplication.c_Function" Multiplicity="1" />
+    <End Role="CalculatedProperties" Type="LightSwitchApplication.CalculatedProperty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Functions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CalculatedProperties">
+        <PropertyRef Name="FunctionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EntityParameters_EntityProperties">
+    <End Role="EntityProperties" Type="LightSwitchApplication.EntityProperty" Multiplicity="1" />
+    <End Role="EntityParameters" Type="LightSwitchApplication.EntityParameter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntityProperties">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EntityParameters">
+        <PropertyRef Name="EntityPropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EntityParameters_Parameters">
+    <End Role="Parameters" Type="LightSwitchApplication.Parameter" Multiplicity="1" />
+    <End Role="EntityParameters" Type="LightSwitchApplication.EntityParameter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parameters">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EntityParameters">
+        <PropertyRef Name="ParameterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EntityProperties_DataTypes">
+    <End Role="DataTypes" Type="LightSwitchApplication.DataType" Multiplicity="1" />
+    <End Role="EntityProperties" Type="LightSwitchApplication.EntityProperty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DataTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EntityProperties">
+        <PropertyRef Name="DataTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EntityProperties_Entities">
+    <End Role="Entities" Type="LightSwitchApplication.Entity" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EntityProperties" Type="LightSwitchApplication.EntityProperty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Entities">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EntityProperties">
+        <PropertyRef Name="EntityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EntityRelationships_Entities">
+    <End Role="Entities" Type="LightSwitchApplication.Entity" Multiplicity="1" />
+    <End Role="EntityRelationships" Type="LightSwitchApplication.EntityRelationship" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Entities">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EntityRelationships">
+        <PropertyRef Name="ChildEntityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EntityRelationships_Entities1">
+    <End Role="Entities" Type="LightSwitchApplication.Entity" Multiplicity="1" />
+    <End Role="EntityRelationships" Type="LightSwitchApplication.EntityRelationship" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Entities">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EntityRelationships">
+        <PropertyRef Name="ParentEntityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FunctionOperations_Functions">
+    <End Role="Functions" Type="LightSwitchApplication.c_Function" Multiplicity="1" />
+    <End Role="FunctionOperations" Type="LightSwitchApplication.FunctionOperation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Functions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FunctionOperations">
+        <PropertyRef Name="FunctionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FunctionOperations_Operators">
+    <End Role="Operators" Type="LightSwitchApplication.c_Operator" Multiplicity="1" />
+    <End Role="FunctionOperations" Type="LightSwitchApplication.FunctionOperation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Operators">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FunctionOperations">
+        <PropertyRef Name="OperatorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FunctionOperations_Parameters">
+    <End Role="Parameters" Type="LightSwitchApplication.Parameter" Multiplicity="1" />
+    <End Role="FunctionOperations" Type="LightSwitchApplication.FunctionOperation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parameters">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FunctionOperations">
+        <PropertyRef Name="ParameterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FunctionParameters_Functions">
+    <End Role="Functions" Type="LightSwitchApplication.c_Function" Multiplicity="1" />
+    <End Role="FunctionParameters" Type="LightSwitchApplication.FunctionParameter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Functions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FunctionParameters">
+        <PropertyRef Name="FunctionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FunctionParameters_Parameters">
+    <End Role="Parameters" Type="LightSwitchApplication.Parameter" Multiplicity="1" />
+    <End Role="FunctionParameters" Type="LightSwitchApplication.FunctionParameter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parameters">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FunctionParameters">
+        <PropertyRef Name="ParameterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Parameters_DataTypes">
+    <End Role="DataTypes" Type="LightSwitchApplication.DataType" Multiplicity="1" />
+    <End Role="Parameters" Type="LightSwitchApplication.Parameter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DataTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Parameters">
+        <PropertyRef Name="DataTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RevolutionAppDBData" m:IsDefaultEntityContainer="true">
+    <EntitySet Name="ApplicationEntities" EntityType="LightSwitchApplication.ApplicationEntity" />
+    <EntitySet Name="Applications" EntityType="LightSwitchApplication.Application1" />
+    <EntitySet Name="CalculatedProperties" EntityType="LightSwitchApplication.CalculatedProperty" />
+    <EntitySet Name="DataTypes" EntityType="LightSwitchApplication.DataType" />
+    <EntitySet Name="Entities" EntityType="LightSwitchApplication.Entity" />
+    <EntitySet Name="EntityParameters" EntityType="LightSwitchApplication.EntityParameter" />
+    <EntitySet Name="EntityProperties" EntityType="LightSwitchApplication.EntityProperty" />
+    <EntitySet Name="EntityRelationships" EntityType="LightSwitchApplication.EntityRelationship" />
+    <EntitySet Name="FunctionOperations" EntityType="LightSwitchApplication.FunctionOperation" />
+    <EntitySet Name="FunctionParameters" EntityType="LightSwitchApplication.FunctionParameter" />
+    <EntitySet Name="Functions" EntityType="LightSwitchApplication.c_Function" />
+    <EntitySet Name="FunctionSets" EntityType="LightSwitchApplication.FunctionSet" />
+    <EntitySet Name="ModelTypes" EntityType="LightSwitchApplication.ModelType" />
+    <EntitySet Name="Operators" EntityType="LightSwitchApplication.c_Operator" />
+    <EntitySet Name="Parameters" EntityType="LightSwitchApplication.Parameter" />
+    <AssociationSet Name="FK_ApplicationEntities_Applications" Association="LightSwitchApplication.FK_ApplicationEntities_Applications">
+      <End Role="Applications" EntitySet="Applications" />
+      <End Role="ApplicationEntities" EntitySet="ApplicationEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ApplicationEntities_Entities" Association="LightSwitchApplication.FK_ApplicationEntities_Entities">
+      <End Role="Entities" EntitySet="Entities" />
+      <End Role="ApplicationEntities" EntitySet="ApplicationEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CalculatedProperties_EntityProperties" Association="LightSwitchApplication.FK_CalculatedProperties_EntityProperties">
+      <End Role="EntityProperties" EntitySet="EntityProperties" />
+      <End Role="CalculatedProperties" EntitySet="CalculatedProperties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CalculatedProperties_Functions" Association="LightSwitchApplication.FK_CalculatedProperties_Functions">
+      <End Role="Functions" EntitySet="Functions" />
+      <End Role="CalculatedProperties" EntitySet="CalculatedProperties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EntityParameters_EntityProperties" Association="LightSwitchApplication.FK_EntityParameters_EntityProperties">
+      <End Role="EntityProperties" EntitySet="EntityProperties" />
+      <End Role="EntityParameters" EntitySet="EntityParameters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EntityParameters_Parameters" Association="LightSwitchApplication.FK_EntityParameters_Parameters">
+      <End Role="Parameters" EntitySet="Parameters" />
+      <End Role="EntityParameters" EntitySet="EntityParameters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EntityProperties_DataTypes" Association="LightSwitchApplication.FK_EntityProperties_DataTypes">
+      <End Role="DataTypes" EntitySet="DataTypes" />
+      <End Role="EntityProperties" EntitySet="EntityProperties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EntityProperties_Entities" Association="LightSwitchApplication.FK_EntityProperties_Entities">
+      <End Role="Entities" EntitySet="Entities" />
+      <End Role="EntityProperties" EntitySet="EntityProperties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EntityRelationships_Entities" Association="LightSwitchApplication.FK_EntityRelationships_Entities">
+      <End Role="Entities" EntitySet="Entities" />
+      <End Role="EntityRelationships" EntitySet="EntityRelationships" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EntityRelationships_Entities1" Association="LightSwitchApplication.FK_EntityRelationships_Entities1">
+      <End Role="Entities" EntitySet="Entities" />
+      <End Role="EntityRelationships" EntitySet="EntityRelationships" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FunctionOperations_Functions" Association="LightSwitchApplication.FK_FunctionOperations_Functions">
+      <End Role="Functions" EntitySet="Functions" />
+      <End Role="FunctionOperations" EntitySet="FunctionOperations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FunctionOperations_Operators" Association="LightSwitchApplication.FK_FunctionOperations_Operators">
+      <End Role="Operators" EntitySet="Operators" />
+      <End Role="FunctionOperations" EntitySet="FunctionOperations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FunctionOperations_Parameters" Association="LightSwitchApplication.FK_FunctionOperations_Parameters">
+      <End Role="Parameters" EntitySet="Parameters" />
+      <End Role="FunctionOperations" EntitySet="FunctionOperations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FunctionParameters_Functions" Association="LightSwitchApplication.FK_FunctionParameters_Functions">
+      <End Role="Functions" EntitySet="Functions" />
+      <End Role="FunctionParameters" EntitySet="FunctionParameters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FunctionParameters_Parameters" Association="LightSwitchApplication.FK_FunctionParameters_Parameters">
+      <End Role="Parameters" EntitySet="Parameters" />
+      <End Role="FunctionParameters" EntitySet="FunctionParameters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Parameters_DataTypes" Association="LightSwitchApplication.FK_Parameters_DataTypes">
+      <End Role="DataTypes" EntitySet="DataTypes" />
+      <End Role="Parameters" EntitySet="Parameters" />
+    </AssociationSet>
+    <FunctionImport Name="Microsoft_LightSwitch_GetCanInformation" ReturnType="Edm.String" m:HttpMethod="GET">
+      <Parameter Name="dataServiceMembers" Type="Edm.String" Mode="In" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

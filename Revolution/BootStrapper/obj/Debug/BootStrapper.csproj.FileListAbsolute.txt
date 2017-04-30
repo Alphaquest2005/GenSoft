@@ -1,0 +1,180 @@
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\BootStrapper.dll.config
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\BootStrapper.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\BootStrapper.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\Akka.Configuration.Builders.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\Akka.Configuration.Builders.Hocon.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\Akka.Configuration.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\Akka.Configuration.Lambdas.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\Akka.DI.Core.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\Akka.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\Akka.Logger.log4net.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\Akka.Monitoring.ApplicationInsights.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\Akka.Monitoring.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\DataInterfaces.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\EventAggregator.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\log4net.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\MefContrib.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\Microsoft.ApplicationInsights.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\Model.Interfaces.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\Newtonsoft.Json.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\Reactive.EventAggregator.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\System.Collections.Immutable.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\System.Reactive.Core.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\System.Reactive.Interfaces.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\System.Reactive.Linq.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\SystemInterfaces.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\ViewModel.Interfaces.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\NHibernate.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\Logging.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\Iesi.Collections.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\DataInterfaces.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\EventAggregator.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\Model.Interfaces.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\SystemInterfaces.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\ViewModel.Interfaces.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\Akka.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\Akka.DI.Core.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\Akka.Monitoring.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\Akka.Monitoring.ApplicationInsights.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\log4net.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\MefContrib.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\MefContrib.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\Microsoft.ApplicationInsights.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\Newtonsoft.Json.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\System.Collections.Immutable.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\System.Reactive.Core.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\System.Reactive.Interfaces.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\System.Reactive.Linq.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\NHibernate.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\Logging.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\Iesi.Collections.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\obj\Debug\BootStrapper.csprojResolveAssemblyReference.cache
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\obj\Debug\BootStrapper.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\obj\Debug\BootStrapper.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\CommonMessages.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\BootStrapper\bin\Debug\CommonMessages.pdb
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\BootStrapper.dll.config
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\BootStrapper.dll
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\BootStrapper.pdb
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\JB.Common.dll
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\JB.Common.Collections.dll
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\JB.Common.Collections.Reactive.dll
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\JB.Common.Reactive.dll
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\log4net.dll
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\MefContrib.dll
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\MefContrib.pdb
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\Reactive.EventAggregator.dll
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\ReactiveUI.dll
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\System.Reactive.Core.dll
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\System.Reactive.Interfaces.dll
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\System.Reactive.Linq.dll
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\System.Reactive.PlatformServices.dll
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\System.Reactive.Windows.Threading.dll
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\Splat.dll
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\Splat.pdb
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\CommonMessages.dll
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\EventAggregator.dll
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\SystemInterfaces.dll
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\ViewModel.Interfaces.dll
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\Logging.dll
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\CommonMessages.pdb
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\EventAggregator.pdb
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\SystemInterfaces.pdb
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\ViewModel.Interfaces.pdb
+C:\Prism\Clients\Revolution\BootStrapper\bin\Debug\Logging.pdb
+C:\Prism\Clients\Revolution\BootStrapper\obj\Debug\BootStrapper.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Revolution\BootStrapper\obj\Debug\BootStrapper.dll
+C:\Prism\Clients\Revolution\BootStrapper\obj\Debug\BootStrapper.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\BootStrapper.dll.config
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\BootStrapper.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\BootStrapper.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\JB.Common.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\JB.Common.Collections.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\JB.Common.Collections.Reactive.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\JB.Common.Reactive.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\log4net.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\MefContrib.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\MefContrib.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\Reactive.EventAggregator.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\ReactiveUI.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\System.Reactive.Core.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\System.Reactive.Interfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\System.Reactive.Linq.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\System.Reactive.PlatformServices.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\System.Reactive.Windows.Threading.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\Splat.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\Splat.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\CommonMessages.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\EventAggregator.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\SystemInterfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\ViewModel.Interfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\Logging.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\CommonMessages.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\EventAggregator.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\SystemInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\ViewModel.Interfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\bin\Debug\Logging.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\obj\Debug\BootStrapper.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\obj\Debug\BootStrapper.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\BootStrapper\obj\Debug\BootStrapper.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\BootStrapper.dll.config
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\BootStrapper.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\BootStrapper.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\FluentValidation.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\JB.Common.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\JB.Common.Collections.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\JB.Common.Collections.Reactive.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\JB.Common.Reactive.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\MefContrib.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\MefContrib.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\Reactive.EventAggregator.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\ReactiveProperty.DataAnnotations.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\ReactiveProperty.DataAnnotations.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\ReactiveProperty.NET46.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\ReactiveProperty.NET46.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\ReactiveProperty.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\ReactiveProperty.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\ReactiveUI.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\System.Reactive.Core.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\System.Reactive.Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\System.Reactive.Linq.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\System.Reactive.PlatformServices.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\System.Reactive.Windows.Threading.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\Splat.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\Splat.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\Actor.Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\CommonMessages.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\ComponentModel.Composition.Hosting.Extension.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\EventAggregator.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\SystemInterfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\ViewModel.Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\System.Collections.Immutable.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\Akka.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\RevolutionLogger.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\log4net.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\Actor.Interfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\CommonMessages.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\EventAggregator.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\ComponentModel.Composition.Hosting.Extension.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\SystemInterfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\ViewModel.Interfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\System.Collections.Immutable.xml
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\Akka.xml
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\RevolutionLogger.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\Interfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\log4net.xml
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\obj\Debug\BootStrapper.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\obj\Debug\BootStrapper.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\obj\Debug\BootStrapper.pdb

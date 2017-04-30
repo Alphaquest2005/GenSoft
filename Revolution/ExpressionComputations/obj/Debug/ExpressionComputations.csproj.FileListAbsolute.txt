@@ -1,0 +1,9 @@
+C:\Prism\Clients\Revolution\ExpressionComputations\bin\Debug\ExpressionComputations.dll
+C:\Prism\Clients\Revolution\ExpressionComputations\bin\Debug\ExpressionComputations.pdb
+C:\Prism\Clients\Revolution\ExpressionComputations\obj\Debug\ExpressionComputations.dll
+C:\Prism\Clients\Revolution\ExpressionComputations\obj\Debug\ExpressionComputations.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\ExpressionComputations\bin\Debug\ExpressionComputations.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\ExpressionComputations\bin\Debug\ExpressionComputations.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\ExpressionComputations\obj\Debug\ExpressionComputations.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager\Revolution\ExpressionComputations\obj\Debug\ExpressionComputations.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\ExpressionComputations\obj\Debug\ExpressionComputations.pdb

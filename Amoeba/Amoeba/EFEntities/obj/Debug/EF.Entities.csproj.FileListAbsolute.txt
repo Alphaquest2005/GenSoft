@@ -1,0 +1,26 @@
+C:\Prism\Clients\Amoeba Projects\MRManager\EFEntities\bin\Debug\EF.Entities.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\EFEntities\bin\Debug\EF.Entities.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\EFEntities\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\EFEntities\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\EFEntities\bin\Debug\Common.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\EFEntities\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\EFEntities\bin\Debug\Interfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\EFEntities\bin\Debug\Common.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\EFEntities\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\EFEntities\bin\Debug\Interfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\EFEntities\obj\Debug\EF.Entities.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba Projects\MRManager\EFEntities\obj\Debug\EF.Entities.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\EFEntities\obj\Debug\EF.Entities.pdb
+C:\Prism\Clients\Amoeba\Amoeba\EFEntities\obj\Debug\EF.Entities.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba\Amoeba\EFEntities\bin\Debug\EF.Entities.dll
+C:\Prism\Clients\Amoeba\Amoeba\EFEntities\bin\Debug\EF.Entities.pdb
+C:\Prism\Clients\Amoeba\Amoeba\EFEntities\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Amoeba\Amoeba\EFEntities\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Amoeba\Amoeba\EFEntities\bin\Debug\Common.dll
+C:\Prism\Clients\Amoeba\Amoeba\EFEntities\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Amoeba\Amoeba\EFEntities\bin\Debug\Interfaces.dll
+C:\Prism\Clients\Amoeba\Amoeba\EFEntities\bin\Debug\Common.pdb
+C:\Prism\Clients\Amoeba\Amoeba\EFEntities\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba\Amoeba\EFEntities\bin\Debug\Interfaces.pdb
+C:\Prism\Clients\Amoeba\Amoeba\EFEntities\obj\Debug\EF.Entities.dll
+C:\Prism\Clients\Amoeba\Amoeba\EFEntities\obj\Debug\EF.Entities.pdb

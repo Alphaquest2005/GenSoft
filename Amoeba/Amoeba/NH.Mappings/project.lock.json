@@ -1,0 +1,122 @@
+{
+  "locked": false,
+  "version": 1,
+  "targets": {
+    ".NETFramework,Version=v4.6.1": {
+      "FluentNHibernate/2.0.3": {
+        "dependencies": {
+          "NHibernate": "4.0.0"
+        },
+        "compile": {
+          "lib/net40/FluentNHibernate.dll": {}
+        },
+        "runtime": {
+          "lib/net40/FluentNHibernate.dll": {}
+        }
+      },
+      "Iesi.Collections/4.0.0.4000": {
+        "compile": {
+          "lib/net40/Iesi.Collections.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Iesi.Collections.dll": {}
+        }
+      },
+      "NHibernate/4.1.0-cr1": {
+        "dependencies": {
+          "Iesi.Collections": "[4.0.0, 5.0.0)"
+        },
+        "compile": {
+          "lib/net40/NHibernate.dll": {}
+        },
+        "runtime": {
+          "lib/net40/NHibernate.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.6.1/win": {
+      "FluentNHibernate/2.0.3": {
+        "dependencies": {
+          "NHibernate": "4.0.0"
+        },
+        "compile": {
+          "lib/net40/FluentNHibernate.dll": {}
+        },
+        "runtime": {
+          "lib/net40/FluentNHibernate.dll": {}
+        }
+      },
+      "Iesi.Collections/4.0.0.4000": {
+        "compile": {
+          "lib/net40/Iesi.Collections.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Iesi.Collections.dll": {}
+        }
+      },
+      "NHibernate/4.1.0-cr1": {
+        "dependencies": {
+          "Iesi.Collections": "[4.0.0, 5.0.0)"
+        },
+        "compile": {
+          "lib/net40/NHibernate.dll": {}
+        },
+        "runtime": {
+          "lib/net40/NHibernate.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FluentNHibernate/2.0.3": {
+      "sha512": "qlnjj/a2ClTVWLw0uESCBsmd5r+LaeNXoaUiVyeGzpXmqTs/mfcgZP+GO63xp3VTq4ydNBHKBuWMFMndW/uzOQ==",
+      "type": "package",
+      "files": [
+        "FluentNHibernate.2.0.3.nupkg.sha512",
+        "FluentNHibernate.nuspec",
+        "lib/net40/FluentNHibernate.XML",
+        "lib/net40/FluentNHibernate.dll",
+        "lib/net40/FluentNHibernate.pdb"
+      ]
+    },
+    "Iesi.Collections/4.0.0.4000": {
+      "sha512": "fLQKwZovMOhjte47Op+2YWLpmncQ/siA7hOdmG2eBLTFjp81s+gGkkGnDetOhBqYnmWK8g2kyx1DP9uNaJ68Ew==",
+      "type": "package",
+      "files": [
+        "Iesi.Collections.4.0.0.4000.nupkg.sha512",
+        "Iesi.Collections.nuspec",
+        "lib/net40/Iesi.Collections.dll",
+        "lib/net40/Iesi.Collections.xml"
+      ]
+    },
+    "NHibernate/4.1.0-cr1": {
+      "sha512": "xhbpENM+/2sbeqqr9akFLMGs2Srrs/jmI36ncvOWhaZ9NYx17VMtAjkAkMrqVOKhSTdU9fY+MFUIJCh20f/gJQ==",
+      "type": "package",
+      "files": [
+        "ConfigurationTemplates/FireBird.cfg.xml",
+        "ConfigurationTemplates/MSSQL.cfg.xml",
+        "ConfigurationTemplates/MySql.cfg.xml",
+        "ConfigurationTemplates/Oracle.cfg.xml",
+        "ConfigurationTemplates/PostgreSQL.cfg.xml",
+        "ConfigurationTemplates/SQLite.cfg.xml",
+        "ConfigurationTemplates/SybaseASE.cfg.xml",
+        "ConfigurationTemplates/SybaseSQLAnywhere.cfg.xml",
+        "NHibernate.4.1.0-cr1.nupkg.sha512",
+        "NHibernate.license.txt",
+        "NHibernate.nuspec",
+        "NHibernate.readme.html",
+        "NHibernate.releasenotes.txt",
+        "lib/net40/NHibernate.dll",
+        "lib/net40/NHibernate.xml",
+        "nhibernate-configuration.xsd",
+        "nhibernate-mapping.xsd"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "FluentNHibernate >= 2.0.3"
+    ],
+    ".NETFramework,Version=v4.6.1": []
+  }
+}

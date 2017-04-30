@@ -1,0 +1,48 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:viewModels="clr-namespace:ViewModels;assembly=ViewModels"
+                    mc:Ignorable="d">
+
+    <DataTemplate DataType="{x:Type viewModels:FooterViewModel}">
+
+        <Grid>
+
+            <StackPanel Width="Auto"
+                        HorizontalAlignment="Center"
+                        Orientation="Horizontal">
+                <ContentControl Content="{Binding CurrentPatient.Value}" ContentTemplate="{DynamicResource SummaryPatientInfoDT}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseLeftButtonUp">
+                            <i:InvokeCommandAction Command="{Binding Commands[ViewPatientSummary]}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ContentControl>
+                <ContentControl Content="{Binding CurrentPatientVisit.Value}" ContentTemplate="{DynamicResource SummaryPatientVisitInfoDT}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseLeftButtonUp">
+                            <i:InvokeCommandAction Command="{Binding Commands[ViewPatientVisit]}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ContentControl>
+                <ContentControl Content="{Binding CurrentPatientSyntom.Value}" ContentTemplate="{DynamicResource SummaryPatientSyntomInfoDT}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseLeftButtonUp">
+                            <i:InvokeCommandAction Command="{Binding Commands[ViewPatientSyntom]}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ContentControl>
+                <ContentControl Content="{Binding CurrentInterview.Value}" ContentTemplate="{DynamicResource SummaryInterviewInfoDT}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseLeftButtonUp">
+                            <i:InvokeCommandAction Command="{Binding Commands[ViewPatientResponses]}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ContentControl>
+
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>

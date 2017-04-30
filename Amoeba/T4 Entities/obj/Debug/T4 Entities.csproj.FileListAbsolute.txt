@@ -1,0 +1,24 @@
+C:\Prism\Clients\Amoeba\T4 Entities\bin\Debug\T4Entities.dll.config
+C:\Prism\Clients\Amoeba\T4 Entities\bin\Debug\T4Entities.dll
+C:\Prism\Clients\Amoeba\T4 Entities\bin\Debug\T4Entities.pdb
+C:\Prism\Clients\Amoeba\T4 Entities\obj\Debug\T4Entities.dll
+C:\Prism\Clients\Amoeba\T4 Entities\obj\Debug\T4Entities.pdb
+C:\Prism\Clients\Amoeba\T4 Entities\bin\Debug\EntityFramework.dll
+C:\Prism\Clients\Amoeba\T4 Entities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Prism\Clients\Amoeba\T4 Entities\obj\Debug\T4 Entities.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\T4 Entities\obj\Debug\T4Entities.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\T4 Entities\obj\Debug\T4Entities.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\T4 Entities\bin\Debug\T4Entities.dll.config
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\T4 Entities\bin\Debug\T4Entities.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\T4 Entities\bin\Debug\T4Entities.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\T4 Entities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\T4 Entities\bin\Debug\EntityFramework.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\T4 Entities\obj\Debug\T4 Entities.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager\Amoeba\T4 Entities\bin\Debug\T4Entities.dll.config
+C:\Prism\GitRepositiory\MRManager\Amoeba\T4 Entities\bin\Debug\T4Entities.dll
+C:\Prism\GitRepositiory\MRManager\Amoeba\T4 Entities\bin\Debug\T4Entities.pdb
+C:\Prism\GitRepositiory\MRManager\Amoeba\T4 Entities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Prism\GitRepositiory\MRManager\Amoeba\T4 Entities\bin\Debug\EntityFramework.dll
+C:\Prism\GitRepositiory\MRManager\Amoeba\T4 Entities\obj\Debug\T4 Entities.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager\Amoeba\T4 Entities\obj\Debug\T4Entities.dll
+C:\Prism\GitRepositiory\MRManager\Amoeba\T4 Entities\obj\Debug\T4Entities.pdb

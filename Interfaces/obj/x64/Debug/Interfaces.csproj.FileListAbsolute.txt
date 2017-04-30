@@ -1,0 +1,14 @@
+C:\Prism\GitRepositiory\MRManager\Interfaces\bin\x64\Debug\Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\Interfaces\bin\x64\Debug\Interfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Interfaces\bin\x64\Debug\SystemInterfaces.dll
+C:\Prism\GitRepositiory\MRManager\Interfaces\bin\x64\Debug\SystemInterfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Interfaces\obj\x64\Debug\Interfaces.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager\Interfaces\obj\x64\Debug\Interfaces.dll
+C:\Prism\GitRepositiory\MRManager\Interfaces\obj\x64\Debug\Interfaces.pdb
+C:\Prism\GitRepositiory\GenSoft\Interfaces\bin\x64\Debug\Interfaces.dll
+C:\Prism\GitRepositiory\GenSoft\Interfaces\bin\x64\Debug\Interfaces.pdb
+C:\Prism\GitRepositiory\GenSoft\Interfaces\bin\x64\Debug\SystemInterfaces.dll
+C:\Prism\GitRepositiory\GenSoft\Interfaces\bin\x64\Debug\SystemInterfaces.pdb
+C:\Prism\GitRepositiory\GenSoft\Interfaces\obj\x64\Debug\Interfaces.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\GenSoft\Interfaces\obj\x64\Debug\Interfaces.dll
+C:\Prism\GitRepositiory\GenSoft\Interfaces\obj\x64\Debug\Interfaces.pdb

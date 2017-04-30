@@ -1,0 +1,50 @@
+C:\prism\Clients\SAMS-MRManager\MRManager\DataMessages\bin\Debug\DataMessages.dll.config
+C:\prism\Clients\SAMS-MRManager\MRManager\DataMessages\bin\Debug\DataMessages.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\DataMessages\bin\Debug\DataMessages.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\DataMessages\bin\Debug\Akka.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\DataMessages\bin\Debug\DataInterfaces.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\DataMessages\bin\Debug\Model.Interfaces.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\DataMessages\bin\Debug\Newtonsoft.Json.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\DataMessages\bin\Debug\System.Collections.Immutable.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\DataMessages\bin\Debug\NHibernate.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\DataMessages\bin\Debug\Iesi.Collections.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\DataMessages\bin\Debug\DataInterfaces.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\DataMessages\bin\Debug\Model.Interfaces.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\DataMessages\bin\Debug\Akka.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\DataMessages\bin\Debug\Newtonsoft.Json.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\DataMessages\bin\Debug\System.Collections.Immutable.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\DataMessages\bin\Debug\NHibernate.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\DataMessages\bin\Debug\Iesi.Collections.xml
+C:\prism\Clients\SAMS-MRManager\MRManager\DataMessages\obj\Debug\DataMessages.csprojResolveAssemblyReference.cache
+C:\prism\Clients\SAMS-MRManager\MRManager\DataMessages\obj\Debug\DataMessages.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\DataMessages\obj\Debug\DataMessages.pdb
+C:\Prism\Clients\Revolution\DataMessages\bin\Debug\DataMessages.dll.config
+C:\Prism\Clients\Revolution\DataMessages\bin\Debug\DataMessages.dll
+C:\Prism\Clients\Revolution\DataMessages\bin\Debug\DataMessages.pdb
+C:\Prism\Clients\Revolution\DataMessages\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Revolution\DataMessages\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Revolution\DataMessages\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Revolution\DataMessages\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Revolution\DataMessages\obj\Debug\DataMessages.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Revolution\DataMessages\obj\Debug\DataMessages.dll
+C:\Prism\Clients\Revolution\DataMessages\obj\Debug\DataMessages.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\DataMessages\bin\Debug\DataMessages.dll.config
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\DataMessages\bin\Debug\DataMessages.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\DataMessages\bin\Debug\DataMessages.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\DataMessages\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\DataMessages\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\DataMessages\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\DataMessages\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\DataMessages\obj\Debug\DataMessages.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\DataMessages\obj\Debug\DataMessages.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Revolution\DataMessages\obj\Debug\DataMessages.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\DataMessages\bin\Debug\DataMessages.dll.config
+C:\Prism\GitRepositiory\MRManager\Revolution\DataMessages\bin\Debug\DataMessages.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\DataMessages\bin\Debug\DataMessages.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\DataMessages\bin\Debug\Iesi.Collections.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\DataMessages\bin\Debug\NHibernate.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\DataMessages\bin\Debug\DataInterfaces.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\DataMessages\bin\Debug\DataInterfaces.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\DataMessages\obj\Debug\DataMessages.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager\Revolution\DataMessages\obj\Debug\DataMessages.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\DataMessages\obj\Debug\DataMessages.pdb

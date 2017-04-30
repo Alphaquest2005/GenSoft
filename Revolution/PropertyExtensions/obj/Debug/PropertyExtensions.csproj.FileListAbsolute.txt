@@ -1,0 +1,9 @@
+C:\Prism\Clients\Revolution\PropertyExtensions\bin\Debug\PropertyExtensions.dll
+C:\Prism\Clients\Revolution\PropertyExtensions\bin\Debug\PropertyExtensions.pdb
+C:\Prism\Clients\Revolution\PropertyExtensions\obj\Debug\PropertyExtensions.dll
+C:\Prism\Clients\Revolution\PropertyExtensions\obj\Debug\PropertyExtensions.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\PropertyExtensions\bin\Debug\PropertyExtensions.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\PropertyExtensions\bin\Debug\PropertyExtensions.pdb
+C:\Prism\GitRepositiory\MRManager\Revolution\PropertyExtensions\obj\Debug\PropertyExtensions.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager\Revolution\PropertyExtensions\obj\Debug\PropertyExtensions.dll
+C:\Prism\GitRepositiory\MRManager\Revolution\PropertyExtensions\obj\Debug\PropertyExtensions.pdb
