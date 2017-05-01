@@ -1,9 +1,9 @@
 {
-  "version": 2,
+  "locked": false,
+  "version": 1,
   "targets": {
     ".NETFramework,Version=v4.6.1": {
       "EntityFramework/6.1.3": {
-        "type": "package",
         "frameworkAssemblies": [
           "System.ComponentModel.DataAnnotations"
         ],
@@ -14,23 +14,11 @@
         "runtime": {
           "lib/net45/EntityFramework.SqlServer.dll": {},
           "lib/net45/EntityFramework.dll": {}
-        }
-      },
-      "LinqSpecs/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.0"
-      },
-      "T4 Entities/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "EntityFramework": "6.1.3"
         }
       }
     },
     ".NETFramework,Version=v4.6.1/win-x64": {
       "EntityFramework/6.1.3": {
-        "type": "package",
         "frameworkAssemblies": [
           "System.ComponentModel.DataAnnotations"
         ],
@@ -41,17 +29,6 @@
         "runtime": {
           "lib/net45/EntityFramework.SqlServer.dll": {},
           "lib/net45/EntityFramework.dll": {}
-        }
-      },
-      "LinqSpecs/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.0"
-      },
-      "T4 Entities/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "EntityFramework": "6.1.3"
         }
       }
     }
@@ -83,52 +60,10 @@
         "tools/install.ps1",
         "tools/migrate.exe"
       ]
-    },
-    "LinqSpecs/1.0.0": {
-      "type": "project",
-      "path": "../../Revolution/LinqSpecs/project.json",
-      "msbuildProject": "../../Revolution/LinqSpecs/LinqSpecs.csproj"
-    },
-    "T4 Entities/1.0.0": {
-      "type": "project",
-      "path": "../T4 Entities/project.json",
-      "msbuildProject": "../T4 Entities/T4 Entities.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "": [],
     ".NETFramework,Version=v4.6.1": []
-  },
-  "packageFolders": {
-    "C:\\Users\\Alpha\\.nuget\\packages\\": {}
-  },
-  "project": {
-    "restore": {
-      "projectUniqueName": "C:\\Prism\\GitRepositiory\\GenSoft\\Amoeba\\Specifications\\Specifications.csproj",
-      "projectName": "Specifications",
-      "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Amoeba\\Specifications\\Specifications.csproj",
-      "projectJsonPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Amoeba\\Specifications\\project.json",
-      "projectStyle": "ProjectJson",
-      "frameworks": {
-        "net461": {
-          "projectReferences": {
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\LinqSpecs\\LinqSpecs.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\LinqSpecs\\LinqSpecs.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Amoeba\\T4 Entities\\T4 Entities.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Amoeba\\T4 Entities\\T4 Entities.csproj"
-            }
-          }
-        }
-      }
-    },
-    "frameworks": {
-      "net461": {}
-    },
-    "runtimes": {
-      "win-x64": {
-        "#import": []
-      }
-    }
   }
 }

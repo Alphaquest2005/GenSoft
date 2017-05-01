@@ -114,17 +114,14 @@ C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Debug\Actor.Interfaces.pd
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Debug\Common.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Debug\EventMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Debug\RevolutionData.pdb
-C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Debug\RevolutionData.dll.config
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Debug\RevolutionEntities.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Debug\SystemInterfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Debug\Utilities.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Debug\ViewMessages.pdb
-C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Debug\ViewMessages.dll.config
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Debug\ViewModel.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Debug\CommonMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Debug\Domain.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Debug\BootStrapper.pdb
-C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Debug\BootStrapper.dll.config
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Debug\ComponentModel.Composition.Hosting.Extension.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\obj\Debug\ViewModel.WorkFlow.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\obj\Debug\ViewModel.WorkFlow.dll

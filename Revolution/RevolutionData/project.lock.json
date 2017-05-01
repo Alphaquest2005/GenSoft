@@ -1,9 +1,9 @@
 {
-  "version": 2,
+  "locked": false,
+  "version": 1,
   "targets": {
     ".NETFramework,Version=v4.6.1": {
       "Akka/1.1.2": {
-        "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "9.0.1",
           "System.Collections.Immutable": "1.1.36"
@@ -16,7 +16,6 @@
         }
       },
       "FluentValidation.Net35/1.0.1": {
-        "type": "package",
         "compile": {
           "lib/net35/FluentValidation.dll": {}
         },
@@ -25,7 +24,6 @@
         }
       },
       "JB.Common/0.8.103-pre": {
-        "type": "package",
         "compile": {
           "lib/net45/JB.Common.dll": {}
         },
@@ -34,7 +32,6 @@
         }
       },
       "JB.Common.Collections/0.8.103-pre": {
-        "type": "package",
         "dependencies": {
           "JB.Common": "0.8.103-pre"
         },
@@ -46,7 +43,6 @@
         }
       },
       "JB.Common.Collections.Reactive/0.8.103-pre": {
-        "type": "package",
         "dependencies": {
           "JB.Common": "0.8.103-pre",
           "JB.Common.Collections": "0.8.103-pre",
@@ -61,7 +57,6 @@
         }
       },
       "JB.Common.Reactive/0.8.103-pre": {
-        "type": "package",
         "dependencies": {
           "JB.Common": "0.8.103-pre",
           "Rx-Main": "2.2.5"
@@ -74,7 +69,6 @@
         }
       },
       "log4net/2.0.5": {
-        "type": "package",
         "compile": {
           "lib/net45-full/log4net.dll": {}
         },
@@ -83,7 +77,6 @@
         }
       },
       "MefContrib/1.2.2.1": {
-        "type": "package",
         "frameworkAssemblies": [
           "System.ComponentModel.Composition"
         ],
@@ -95,7 +88,6 @@
         }
       },
       "morelinq/2.0.0": {
-        "type": "package",
         "frameworkAssemblies": [
           "System.Data",
           "System.Data.DataSetExtensions",
@@ -109,7 +101,6 @@
         }
       },
       "Newtonsoft.Json/9.0.1": {
-        "type": "package",
         "compile": {
           "lib/net45/Newtonsoft.Json.dll": {}
         },
@@ -118,7 +109,6 @@
         }
       },
       "Reactive.EventAggregator/2.0.0": {
-        "type": "package",
         "dependencies": {
           "Rx-Linq": "2.2.5"
         },
@@ -130,7 +120,6 @@
         }
       },
       "ReactiveProperty/2.9.0": {
-        "type": "package",
         "dependencies": {
           "Rx-Main": "2.2.5"
         },
@@ -156,7 +145,6 @@
         }
       },
       "reactiveui-core/7.0.0": {
-        "type": "package",
         "dependencies": {
           "Rx-Main": "2.2.5",
           "Rx-Xaml": "2.2.5",
@@ -170,7 +158,6 @@
         }
       },
       "Rx-Core/2.2.5": {
-        "type": "package",
         "dependencies": {
           "Rx-Interfaces": "2.2.5"
         },
@@ -182,7 +169,6 @@
         }
       },
       "Rx-Interfaces/2.2.5": {
-        "type": "package",
         "compile": {
           "lib/net45/System.Reactive.Interfaces.dll": {}
         },
@@ -191,7 +177,6 @@
         }
       },
       "Rx-Linq/2.2.5": {
-        "type": "package",
         "dependencies": {
           "Rx-Core": "2.2.5",
           "Rx-Interfaces": "2.2.5"
@@ -204,7 +189,6 @@
         }
       },
       "Rx-Main/2.2.5": {
-        "type": "package",
         "dependencies": {
           "Rx-Core": "2.2.5",
           "Rx-Interfaces": "2.2.5",
@@ -213,7 +197,6 @@
         }
       },
       "Rx-PlatformServices/2.2.5": {
-        "type": "package",
         "dependencies": {
           "Rx-Core": "2.2.5",
           "Rx-Interfaces": "2.2.5"
@@ -225,8 +208,7 @@
           "lib/net45/System.Reactive.PlatformServices.dll": {}
         }
       },
-      "Rx-XAML/2.2.5": {
-        "type": "package",
+      "Rx-Xaml/2.2.5": {
         "dependencies": {
           "Rx-Main": "2.2.5"
         },
@@ -241,7 +223,6 @@
         }
       },
       "Splat/1.4.0": {
-        "type": "package",
         "compile": {
           "lib/Net45/Splat.dll": {}
         },
@@ -250,163 +231,16 @@
         }
       },
       "System.Collections.Immutable/1.1.36": {
-        "type": "package",
         "compile": {
           "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll": {}
         },
         "runtime": {
           "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll": {}
-        }
-      },
-      "Actor.Interfaces/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0",
-          "ViewModel.Interfaces": "1.0.0"
-        }
-      },
-      "BootStrapper/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "Actor.Interfaces": "1.0.0",
-          "CommonMessages": "1.0.0",
-          "ComponentModel.Composition.Hosting.Extension": "1.0.0",
-          "EventAggregator": "1.0.0",
-          "MefContrib": "1.2.2.1",
-          "SystemInterfaces": "1.0.0",
-          "ViewModel.Interfaces": "1.0.0"
-        }
-      },
-      "Common/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "BootStrapper": "1.0.0",
-          "SystemInterfaces": "1.0.0"
-        }
-      },
-      "CommonMessages/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        }
-      },
-      "ComponentModel.Composition.Hosting.Extension/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1"
-      },
-      "Domain.Interfaces/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "Interfaces": "1.0.0",
-          "SystemInterfaces": "1.0.0"
-        }
-      },
-      "DomainMessages/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "CommonMessages": "1.0.0",
-          "Domain.Interfaces": "1.0.0",
-          "Interfaces": "1.0.0",
-          "SystemInterfaces": "1.0.0"
-        }
-      },
-      "EventAggregator/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "CommonMessages": "1.0.0",
-          "Reactive.EventAggregator": "2.0.0",
-          "RevolutionLogger": "1.0.0",
-          "SystemInterfaces": "1.0.0"
-        }
-      },
-      "EventMessages/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "Actor.Interfaces": "1.0.0",
-          "Akka": "1.1.2",
-          "CommonMessages": "1.0.0",
-          "Interfaces": "1.0.0",
-          "SystemInterfaces": "1.0.0"
-        }
-      },
-      "Interfaces/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        }
-      },
-      "RevolutionEntities/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "Actor.Interfaces": "1.0.0",
-          "BootStrapper": "1.0.0",
-          "Common": "1.0.0",
-          "CommonMessages": "1.0.0",
-          "EventAggregator": "1.0.0",
-          "System.Collections.Immutable": "1.1.36",
-          "SystemInterfaces": "1.0.0",
-          "Utilities": "1.0.0",
-          "ViewModel.Interfaces": "1.0.0",
-          "morelinq": "2.0.0"
-        }
-      },
-      "RevolutionLogger/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "log4net": "2.0.5"
-        }
-      },
-      "SystemInterfaces/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1"
-      },
-      "Utilities/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "Common": "1.0.0",
-          "SystemInterfaces": "1.0.0"
-        }
-      },
-      "ViewMessages/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "CommonMessages": "1.0.0",
-          "MefContrib": "1.2.2.1",
-          "SystemInterfaces": "1.0.0",
-          "Utilities": "1.0.0",
-          "ViewModel.Interfaces": "1.0.0"
-        }
-      },
-      "ViewModel.Interfaces/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "CommonMessages": "1.0.0",
-          "FluentValidation.Net35": "1.0.1",
-          "Interfaces": "1.0.0",
-          "JB.Common.Collections.Reactive": "0.8.103-pre",
-          "ReactiveProperty": "2.9.0",
-          "SystemInterfaces": "1.0.0",
-          "reactiveui-core": "7.0.0"
         }
       }
     },
     ".NETFramework,Version=v4.6.1/win-x64": {
       "Akka/1.1.2": {
-        "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "9.0.1",
           "System.Collections.Immutable": "1.1.36"
@@ -419,7 +253,6 @@
         }
       },
       "FluentValidation.Net35/1.0.1": {
-        "type": "package",
         "compile": {
           "lib/net35/FluentValidation.dll": {}
         },
@@ -428,7 +261,6 @@
         }
       },
       "JB.Common/0.8.103-pre": {
-        "type": "package",
         "compile": {
           "lib/net45/JB.Common.dll": {}
         },
@@ -437,7 +269,6 @@
         }
       },
       "JB.Common.Collections/0.8.103-pre": {
-        "type": "package",
         "dependencies": {
           "JB.Common": "0.8.103-pre"
         },
@@ -449,7 +280,6 @@
         }
       },
       "JB.Common.Collections.Reactive/0.8.103-pre": {
-        "type": "package",
         "dependencies": {
           "JB.Common": "0.8.103-pre",
           "JB.Common.Collections": "0.8.103-pre",
@@ -464,7 +294,6 @@
         }
       },
       "JB.Common.Reactive/0.8.103-pre": {
-        "type": "package",
         "dependencies": {
           "JB.Common": "0.8.103-pre",
           "Rx-Main": "2.2.5"
@@ -477,7 +306,6 @@
         }
       },
       "log4net/2.0.5": {
-        "type": "package",
         "compile": {
           "lib/net45-full/log4net.dll": {}
         },
@@ -486,7 +314,6 @@
         }
       },
       "MefContrib/1.2.2.1": {
-        "type": "package",
         "frameworkAssemblies": [
           "System.ComponentModel.Composition"
         ],
@@ -498,7 +325,6 @@
         }
       },
       "morelinq/2.0.0": {
-        "type": "package",
         "frameworkAssemblies": [
           "System.Data",
           "System.Data.DataSetExtensions",
@@ -512,7 +338,6 @@
         }
       },
       "Newtonsoft.Json/9.0.1": {
-        "type": "package",
         "compile": {
           "lib/net45/Newtonsoft.Json.dll": {}
         },
@@ -521,7 +346,6 @@
         }
       },
       "Reactive.EventAggregator/2.0.0": {
-        "type": "package",
         "dependencies": {
           "Rx-Linq": "2.2.5"
         },
@@ -533,7 +357,6 @@
         }
       },
       "ReactiveProperty/2.9.0": {
-        "type": "package",
         "dependencies": {
           "Rx-Main": "2.2.5"
         },
@@ -559,7 +382,6 @@
         }
       },
       "reactiveui-core/7.0.0": {
-        "type": "package",
         "dependencies": {
           "Rx-Main": "2.2.5",
           "Rx-Xaml": "2.2.5",
@@ -573,7 +395,6 @@
         }
       },
       "Rx-Core/2.2.5": {
-        "type": "package",
         "dependencies": {
           "Rx-Interfaces": "2.2.5"
         },
@@ -585,7 +406,6 @@
         }
       },
       "Rx-Interfaces/2.2.5": {
-        "type": "package",
         "compile": {
           "lib/net45/System.Reactive.Interfaces.dll": {}
         },
@@ -594,7 +414,6 @@
         }
       },
       "Rx-Linq/2.2.5": {
-        "type": "package",
         "dependencies": {
           "Rx-Core": "2.2.5",
           "Rx-Interfaces": "2.2.5"
@@ -607,7 +426,6 @@
         }
       },
       "Rx-Main/2.2.5": {
-        "type": "package",
         "dependencies": {
           "Rx-Core": "2.2.5",
           "Rx-Interfaces": "2.2.5",
@@ -616,7 +434,6 @@
         }
       },
       "Rx-PlatformServices/2.2.5": {
-        "type": "package",
         "dependencies": {
           "Rx-Core": "2.2.5",
           "Rx-Interfaces": "2.2.5"
@@ -628,8 +445,7 @@
           "lib/net45/System.Reactive.PlatformServices.dll": {}
         }
       },
-      "Rx-XAML/2.2.5": {
-        "type": "package",
+      "Rx-Xaml/2.2.5": {
         "dependencies": {
           "Rx-Main": "2.2.5"
         },
@@ -644,7 +460,6 @@
         }
       },
       "Splat/1.4.0": {
-        "type": "package",
         "compile": {
           "lib/Net45/Splat.dll": {}
         },
@@ -653,157 +468,11 @@
         }
       },
       "System.Collections.Immutable/1.1.36": {
-        "type": "package",
         "compile": {
           "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll": {}
         },
         "runtime": {
           "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll": {}
-        }
-      },
-      "Actor.Interfaces/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0",
-          "ViewModel.Interfaces": "1.0.0"
-        }
-      },
-      "BootStrapper/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "Actor.Interfaces": "1.0.0",
-          "CommonMessages": "1.0.0",
-          "ComponentModel.Composition.Hosting.Extension": "1.0.0",
-          "EventAggregator": "1.0.0",
-          "MefContrib": "1.2.2.1",
-          "SystemInterfaces": "1.0.0",
-          "ViewModel.Interfaces": "1.0.0"
-        }
-      },
-      "Common/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "BootStrapper": "1.0.0",
-          "SystemInterfaces": "1.0.0"
-        }
-      },
-      "CommonMessages/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        }
-      },
-      "ComponentModel.Composition.Hosting.Extension/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1"
-      },
-      "Domain.Interfaces/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "Interfaces": "1.0.0",
-          "SystemInterfaces": "1.0.0"
-        }
-      },
-      "DomainMessages/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "CommonMessages": "1.0.0",
-          "Domain.Interfaces": "1.0.0",
-          "Interfaces": "1.0.0",
-          "SystemInterfaces": "1.0.0"
-        }
-      },
-      "EventAggregator/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "CommonMessages": "1.0.0",
-          "Reactive.EventAggregator": "2.0.0",
-          "RevolutionLogger": "1.0.0",
-          "SystemInterfaces": "1.0.0"
-        }
-      },
-      "EventMessages/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "Actor.Interfaces": "1.0.0",
-          "Akka": "1.1.2",
-          "CommonMessages": "1.0.0",
-          "Interfaces": "1.0.0",
-          "SystemInterfaces": "1.0.0"
-        }
-      },
-      "Interfaces/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        }
-      },
-      "RevolutionEntities/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "Actor.Interfaces": "1.0.0",
-          "BootStrapper": "1.0.0",
-          "Common": "1.0.0",
-          "CommonMessages": "1.0.0",
-          "EventAggregator": "1.0.0",
-          "System.Collections.Immutable": "1.1.36",
-          "SystemInterfaces": "1.0.0",
-          "Utilities": "1.0.0",
-          "ViewModel.Interfaces": "1.0.0",
-          "morelinq": "2.0.0"
-        }
-      },
-      "RevolutionLogger/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "log4net": "2.0.5"
-        }
-      },
-      "SystemInterfaces/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1"
-      },
-      "Utilities/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "Common": "1.0.0",
-          "SystemInterfaces": "1.0.0"
-        }
-      },
-      "ViewMessages/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "CommonMessages": "1.0.0",
-          "MefContrib": "1.2.2.1",
-          "SystemInterfaces": "1.0.0",
-          "Utilities": "1.0.0",
-          "ViewModel.Interfaces": "1.0.0"
-        }
-      },
-      "ViewModel.Interfaces/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "CommonMessages": "1.0.0",
-          "FluentValidation.Net35": "1.0.1",
-          "Interfaces": "1.0.0",
-          "JB.Common.Collections.Reactive": "0.8.103-pre",
-          "ReactiveProperty": "2.9.0",
-          "SystemInterfaces": "1.0.0",
-          "reactiveui-core": "7.0.0"
         }
       }
     }
@@ -1284,10 +953,9 @@
         "lib/windowsphone8/System.Reactive.PlatformServices.dll"
       ]
     },
-    "Rx-XAML/2.2.5": {
+    "Rx-Xaml/2.2.5": {
       "sha512": "RzA/HcKP1U44i7ZchRdR3v3GdepNmr/93ydyixV+LwZs++Yxo13fsODRTqGIyz11ERSIKgnnSs6tbJUys4qRSw==",
       "type": "package",
-      "path": "rx-xaml/2.2.5",
       "files": [
         "Rx-Xaml.2.2.5.nupkg.sha512",
         "Rx-Xaml.nuspec",
@@ -1343,152 +1011,10 @@
         "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll",
         "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.xml"
       ]
-    },
-    "Actor.Interfaces/1.0.0": {
-      "type": "project",
-      "path": "../Actor.Interfaces/project.json",
-      "msbuildProject": "../Actor.Interfaces/Actor.Interfaces.csproj"
-    },
-    "BootStrapper/1.0.0": {
-      "type": "project",
-      "path": "../BootStrapper/project.json",
-      "msbuildProject": "../BootStrapper/BootStrapper.csproj"
-    },
-    "Common/1.0.0": {
-      "type": "project",
-      "path": "../Common/project.json",
-      "msbuildProject": "../Common/Common.csproj"
-    },
-    "CommonMessages/1.0.0": {
-      "type": "project",
-      "path": "../CommonMessages/project.json",
-      "msbuildProject": "../CommonMessages/CommonMessages.csproj"
-    },
-    "ComponentModel.Composition.Hosting.Extension/1.0.0": {
-      "type": "project",
-      "path": "../MefGeneric-master/MEFGeneric Preview 9/src/ComponentModel.Composition.Hosting.Extension/project.json",
-      "msbuildProject": "../MefGeneric-master/MEFGeneric Preview 9/src/ComponentModel.Composition.Hosting.Extension/ComponentModel.Composition.Hosting.Extension.csproj"
-    },
-    "Domain.Interfaces/1.0.0": {
-      "type": "project",
-      "path": "../../Domain.Interfaces/project.json",
-      "msbuildProject": "../../Domain.Interfaces/Domain.Interfaces.csproj"
-    },
-    "DomainMessages/1.0.0": {
-      "type": "project",
-      "path": "../../DomainMessages/project.json",
-      "msbuildProject": "../../DomainMessages/DomainMessages.csproj"
-    },
-    "EventAggregator/1.0.0": {
-      "type": "project",
-      "path": "../EventAggregator/project.json",
-      "msbuildProject": "../EventAggregator/EventAggregator.csproj"
-    },
-    "EventMessages/1.0.0": {
-      "type": "project",
-      "path": "../EventMessages/project.json",
-      "msbuildProject": "../EventMessages/EventMessages.csproj"
-    },
-    "Interfaces/1.0.0": {
-      "type": "project",
-      "path": "../../Interfaces/project.json",
-      "msbuildProject": "../../Interfaces/Interfaces.csproj"
-    },
-    "RevolutionEntities/1.0.0": {
-      "type": "project",
-      "path": "../RevolutionEntities/project.json",
-      "msbuildProject": "../RevolutionEntities/RevolutionEntities.csproj"
-    },
-    "RevolutionLogger/1.0.0": {
-      "type": "project",
-      "path": "../RevolutionLogger/project.json",
-      "msbuildProject": "../RevolutionLogger/RevolutionLogger.csproj"
-    },
-    "SystemInterfaces/1.0.0": {
-      "type": "project",
-      "path": "../SystemInterfaces/project.json",
-      "msbuildProject": "../SystemInterfaces/SystemInterfaces.csproj"
-    },
-    "Utilities/1.0.0": {
-      "type": "project",
-      "path": "../Utilities/project.json",
-      "msbuildProject": "../Utilities/Utilities.csproj"
-    },
-    "ViewMessages/1.0.0": {
-      "type": "project",
-      "path": "../ViewMessages/project.json",
-      "msbuildProject": "../ViewMessages/ViewMessages.csproj"
-    },
-    "ViewModel.Interfaces/1.0.0": {
-      "type": "project",
-      "path": "../ViewModel.Interfaces/project.json",
-      "msbuildProject": "../ViewModel.Interfaces/ViewModel.Interfaces.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "": [],
     ".NETFramework,Version=v4.6.1": []
-  },
-  "packageFolders": {
-    "C:\\Users\\Alpha\\.nuget\\packages\\": {}
-  },
-  "project": {
-    "restore": {
-      "projectUniqueName": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionData\\RevolutionData.csproj",
-      "projectName": "RevolutionData",
-      "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionData\\RevolutionData.csproj",
-      "projectJsonPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionData\\project.json",
-      "projectStyle": "ProjectJson",
-      "frameworks": {
-        "net461": {
-          "projectReferences": {
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Domain.Interfaces\\Domain.Interfaces.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Domain.Interfaces\\Domain.Interfaces.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\DomainMessages\\DomainMessages.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\DomainMessages\\DomainMessages.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Interfaces\\Interfaces.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Interfaces\\Interfaces.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Actor.Interfaces\\Actor.Interfaces.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Actor.Interfaces\\Actor.Interfaces.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\CommonMessages\\CommonMessages.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\CommonMessages\\CommonMessages.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Common\\Common.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Common\\Common.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\EventMessages\\EventMessages.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\EventMessages\\EventMessages.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionEntities\\RevolutionEntities.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionEntities\\RevolutionEntities.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Utilities\\Utilities.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Utilities\\Utilities.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewMessages\\ViewMessages.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewMessages\\ViewMessages.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj"
-            }
-          }
-        }
-      }
-    },
-    "frameworks": {
-      "net461": {}
-    },
-    "runtimes": {
-      "win-x64": {
-        "#import": []
-      }
-    }
   }
 }

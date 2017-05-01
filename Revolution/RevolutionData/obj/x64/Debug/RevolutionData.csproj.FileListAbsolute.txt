@@ -114,10 +114,8 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\Revoluti
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\SystemInterfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\Utilities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\ViewMessages.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\ViewMessages.dll.config
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\ViewModel.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\BootStrapper.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\BootStrapper.dll.config
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\ComponentModel.Composition.Hosting.Extension.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\obj\x64\Debug\RevolutionData.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\obj\x64\Debug\RevolutionData.dll

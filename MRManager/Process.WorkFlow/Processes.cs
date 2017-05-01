@@ -14,7 +14,21 @@ using ViewModel.Interfaces;
 
 namespace Process.WorkFlow
 {
-    
+
+    public class ComplexEventActionData
+    {
+        public string Name { get; set; }
+        public int ProcessId { get; set; }
+        public string ExpectedMessageType { get; set; }
+        public ProcessActionData ProcessAction { get; set; }
+        public IProcessStateInfo ActionTrigger
+        { get; set; }
+    }
+
+    public class ProcessActionData
+    {
+    }
+
 
     public static class Processes
     {
@@ -22,14 +36,25 @@ namespace Process.WorkFlow
         {
             //new Process(0,0, "Uknown Process", "Unknown Process", "Unknown"),
             new ProcessInfo(1, 0, "Starting System", "Prepare system for Intial Use", "Start","System"),
-            new ProcessInfo<ISignInInfo>(2, 1, "User SignOn", "User Login", "User","System"),
-            new ProcessInfo<ISignInInfo>(3, 2, "Load User Screen", "User Screen", "UserScreen", "joe")
+            new ProcessInfo(2, 1, "User SignOn", "User Login", "User","System"),
+            new ProcessInfo(3, 2, "Load User Screen", "User Screen", "UserScreen", "joe")
         };
+
+        public static Func<ComplexEventActionData,ComplexEventAction> CreateComplexEventAction = 
+            (cd) => new ComplexEventAction(cd.Name,
+                                           cd.ProcessId,
+                                           new List<IProcessExpectedEvent>(),
+                                           Type.GetType(cd.ExpectedMessageType),
+                                           CreateProcessAction.Invoke(cd.ProcessAction), cd.ActionTrigger
+                                           );
+
+        public static Func<ProcessActionData,ProcessAction> CreateProcessAction = (pd) => new ProcessAction(null,null,null);
 
 
 
         public static List<IComplexEventAction> ProcessComplexEvents = new List<IComplexEventAction>
         {
+
              new ComplexEventAction(
                 "100",
                 1, new List<IProcessExpectedEvent>

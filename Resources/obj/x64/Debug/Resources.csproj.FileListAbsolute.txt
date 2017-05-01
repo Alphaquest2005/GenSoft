@@ -141,9 +141,7 @@ C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\DomainMessages.dll
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\ViewMessages.dll
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\DataTemplates.pdb
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\Core.Common.UI.pdb
-C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\Core.Common.UI.dll.config
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\ViewModels.pdb
-C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\ViewModels.dll.config
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\Common.pdb
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\ViewModel.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\SystemInterfaces.pdb
@@ -152,9 +150,7 @@ C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\Utilities.pdb
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\RevolutionEntities.pdb
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\ValidationSets.pdb
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\EventAggregator.pdb
-C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\EventAggregator.dll.config
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\BootStrapper.pdb
-C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\BootStrapper.dll.config
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\EventMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\EF.Entities.pdb
@@ -164,11 +160,9 @@ C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\Actor.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\RevolutionLogger.pdb
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\ComponentModel.Composition.Hosting.Extension.pdb
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\RevolutionData.pdb
-C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\RevolutionData.dll.config
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\Domain.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\DomainMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\ViewMessages.pdb
-C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\ViewMessages.dll.config
 C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Resources.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Styles\DataGridCustomizations.baml
 C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Styles\non-DataGridCustomizations.baml
