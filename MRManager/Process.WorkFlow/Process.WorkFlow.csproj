@@ -59,6 +59,10 @@
       <Project>{8b10c72d-9f33-4290-b562-44cf1f718fa5}</Project>
       <Name>Actor.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Revolution\BootStrapper\BootStrapper.csproj">
+      <Project>{5dfeea8b-baba-4544-bf36-0a76a0d10c1b}</Project>
+      <Name>BootStrapper</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Revolution\CommonMessages\CommonMessages.csproj">
       <Project>{77007560-89dc-4e1f-9313-ae064a048ad4}</Project>
       <Name>CommonMessages</Name>

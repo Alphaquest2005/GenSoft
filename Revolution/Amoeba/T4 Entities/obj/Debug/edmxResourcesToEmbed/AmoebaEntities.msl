@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AmoebaDBModelStoreContainer" CdmEntityContainer="AmoebaDBEntities">
+    <EntitySetMapping Name="ApplicationEntities">
+      <EntityTypeMapping TypeName="AmoebaDBModel.ApplicationEntity">
+        <MappingFragment StoreEntitySet="ApplicationEntities">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Applications">
+      <EntityTypeMapping TypeName="AmoebaDBModel.Application">
+        <MappingFragment StoreEntitySet="Applications">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DataTypes">
+      <EntityTypeMapping TypeName="AmoebaDBModel.DataType">
+        <MappingFragment StoreEntitySet="DataTypes">
+          <ScalarProperty Name="DBType" ColumnName="DBType" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Entities">
+      <EntityTypeMapping TypeName="AmoebaDBModel.Entity">
+        <MappingFragment StoreEntitySet="Entities">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SchemaName" ColumnName="SchemaName" />
+          <ScalarProperty Name="EntitySetName" ColumnName="EntitySetName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EntityProperties">
+      <EntityTypeMapping TypeName="IsTypeOf(AmoebaDBModel.EntityProperty)">
+        <MappingFragment StoreEntitySet="EntityProperties">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PropertyName" ColumnName="PropertyName" />
+          <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EntityRelationships">
+      <EntityTypeMapping TypeName="AmoebaDBModel.EntityRelationship">
+        <MappingFragment StoreEntitySet="EntityRelationships">
+          <ScalarProperty Name="RelationshipTypeId" ColumnName="RelationshipTypeId" />
+          <ScalarProperty Name="ChildEntityPropertyId" ColumnName="ChildEntityPropertyId" />
+          <ScalarProperty Name="ParentEntityPropertyId" ColumnName="ParentEntityPropertyId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModelTypes">
+      <EntityTypeMapping TypeName="AmoebaDBModel.ModelType">
+        <MappingFragment StoreEntitySet="ModelTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Settings">
+      <EntityTypeMapping TypeName="AmoebaDBModel.Setting">
+        <MappingFragment StoreEntitySet="Settings">
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="LayerId" ColumnName="LayerId" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projects">
+      <EntityTypeMapping TypeName="AmoebaDBModel.Project">
+        <MappingFragment StoreEntitySet="Projects">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Layers">
+      <EntityTypeMapping TypeName="AmoebaDBModel.Layer">
+        <MappingFragment StoreEntitySet="Layers">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DataProperties">
+      <EntityTypeMapping TypeName="AmoebaDBModel.DataProperty">
+        <MappingFragment StoreEntitySet="DataProperties">
+          <ScalarProperty Name="EntityPropertyId" ColumnName="EntityPropertyId" />
+          <ScalarProperty Name="MaxLength" ColumnName="MaxLength" />
+          <ScalarProperty Name="ModelTypeId" ColumnName="ModelTypeId" />
+          <ScalarProperty Name="DataTypeId" ColumnName="DataTypeId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RelationshipTypes">
+      <EntityTypeMapping TypeName="AmoebaDBModel.RelationshipType">
+        <MappingFragment StoreEntitySet="RelationshipTypes">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PresentationProperties">
+      <EntityTypeMapping TypeName="AmoebaDBModel.PresentationProperty">
+        <MappingFragment StoreEntitySet="PresentationProperties">
+          <ScalarProperty Name="EntityPropertyId" ColumnName="EntityPropertyId" />
+          <ScalarProperty Name="ToolTip" ColumnName="ToolTip" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FunctionSets">
+      <EntityTypeMapping TypeName="AmoebaDBModel.FunctionSet">
+        <MappingFragment StoreEntitySet="FunctionSets">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TestValues">
+      <EntityTypeMapping TypeName="AmoebaDBModel.TestValue">
+        <MappingFragment StoreEntitySet="TestValues">
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="RowId" ColumnName="RowId" />
+          <ScalarProperty Name="EntityPropertyId" ColumnName="EntityPropertyId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PrimaryKeyOptions">
+      <EntityTypeMapping TypeName="AmoebaDBModel.PrimaryKeyOption">
+        <MappingFragment StoreEntitySet="PrimaryKeyOptions">
+          <ScalarProperty Name="IsCalculated" ColumnName="IsCalculated" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EntityViews">
+      <EntityTypeMapping TypeName="AmoebaDBModel.EntityView">
+        <MappingFragment StoreEntitySet="EntityView">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EntityViewPropertyFunctions">
+      <EntityTypeMapping TypeName="AmoebaDBModel.EntityViewPropertyFunction">
+        <MappingFragment StoreEntitySet="EntityViewPropertyFunction">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FunctionId" ColumnName="FunctionId" />
+          <ScalarProperty Name="EntityViewPropertyId" ColumnName="EntityViewPropertyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EntityViewPropertyFunctionParameters">
+      <EntityTypeMapping TypeName="AmoebaDBModel.EntityViewPropertyFunctionParameter">
+        <MappingFragment StoreEntitySet="EntityViewPropertyFunctionParameter">
+          <ScalarProperty Name="FunctionParameterId" ColumnName="FunctionParameterId" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FunctionBodies">
+      <EntityTypeMapping TypeName="AmoebaDBModel.FunctionBody">
+        <MappingFragment StoreEntitySet="FunctionBody">
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FunctionParameters">
+      <EntityTypeMapping TypeName="AmoebaDBModel.FunctionParameter">
+        <MappingFragment StoreEntitySet="FunctionParameters">
+          <ScalarProperty Name="ParameterId" ColumnName="ParameterId" />
+          <ScalarProperty Name="FunctionId" ColumnName="FunctionId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Functions">
+      <EntityTypeMapping TypeName="AmoebaDBModel.Function">
+        <MappingFragment StoreEntitySet="Functions">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FunctionSetFunctions">
+      <EntityTypeMapping TypeName="AmoebaDBModel.FunctionSetFunction">
+        <MappingFragment StoreEntitySet="FunctionSetFunctions">
+          <ScalarProperty Name="FunctionId" ColumnName="FunctionId" />
+          <ScalarProperty Name="FunctionSetId" ColumnName="FunctionSetId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Operators">
+      <EntityTypeMapping TypeName="AmoebaDBModel.Operator">
+        <MappingFragment StoreEntitySet="Operators">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Parameters">
+      <EntityTypeMapping TypeName="AmoebaDBModel.Parameter">
+        <MappingFragment StoreEntitySet="Parameters">
+          <ScalarProperty Name="DataTypeId" ColumnName="DataTypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FunctionReturnTypes">
+      <EntityTypeMapping TypeName="AmoebaDBModel.FunctionReturnType">
+        <MappingFragment StoreEntitySet="FunctionReturnType">
+          <ScalarProperty Name="DataTypeId" ColumnName="DataTypeId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EntityViewProperties">
+      <EntityTypeMapping TypeName="AmoebaDBModel.EntityViewProperty">
+        <MappingFragment StoreEntitySet="EntityViewProperties">
+          <ScalarProperty Name="EntityViewId" ColumnName="EntityViewId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="EntityViewEntityProperties" TypeName="AmoebaDBModel.EntityViewEntityProperties" StoreEntitySet="EntityViewEntityProperties">
+      <EndProperty Name="EntityViewProperty">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="EntityProperty">
+        <ScalarProperty Name="Id" ColumnName="EntityPropertyId" />
+      </EndProperty>
+      <Condition ColumnName="EntityPropertyId" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EntityViewViewProperties" TypeName="AmoebaDBModel.EntityViewViewProperties" StoreEntitySet="EntityViewViewProperties">
+      <EndProperty Name="EntityViewProperty1">
+        <ScalarProperty Name="Id" ColumnName="EntityViewPropertyId" />
+      </EndProperty>
+      <EndProperty Name="EntityViewProperty">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="EntityViewPropertyId" IsNull="false" />
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

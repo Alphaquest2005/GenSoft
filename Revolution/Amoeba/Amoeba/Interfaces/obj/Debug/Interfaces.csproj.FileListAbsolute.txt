@@ -1,0 +1,18 @@
+C:\Prism\Clients\Amoeba\Amoeba\Interfaces\bin\Debug\Interfaces.dll
+C:\Prism\Clients\Amoeba\Amoeba\Interfaces\bin\Debug\Interfaces.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Interfaces\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Amoeba\Amoeba\Interfaces\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Amoeba\Amoeba\Interfaces\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Amoeba\Amoeba\Interfaces\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Interfaces\obj\Debug\Interfaces.dll
+C:\Prism\Clients\Amoeba\Amoeba\Interfaces\obj\Debug\Interfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Interfaces\bin\Debug\Interfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Interfaces\bin\Debug\Interfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Interfaces\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Interfaces\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Interfaces\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Interfaces\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Interfaces\obj\Debug\Interfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Interfaces\obj\Debug\Interfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Interfaces\obj\Debug\Interfaces.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba\Amoeba\Interfaces\obj\Debug\Interfaces.csprojResolveAssemblyReference.cache

@@ -1,0 +1,12 @@
+C:\Prism\GitRepositiory\MRManager-Amoeba\GenSoft.Interface\bin\Debug\GenSoft.Interface.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\GenSoft.Interface\bin\Debug\GenSoft.Interface.pdb
+C:\Prism\GitRepositiory\MRManager-Amoeba\GenSoft.Interface\obj\Debug\GenSoft.Interface.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager-Amoeba\GenSoft.Interface\obj\Debug\GenSoft.Interface.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\GenSoft.Interface\obj\Debug\GenSoft.Interface.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\bin\Debug\SystemInterfaces.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\bin\Debug\SystemInterfaces.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\obj\Debug\GenSoft.Interface.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\bin\Debug\GenSoft.Interfaces.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\bin\Debug\GenSoft.Interfaces.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\obj\Debug\GenSoft.Interfaces.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\obj\Debug\GenSoft.Interfaces.pdb

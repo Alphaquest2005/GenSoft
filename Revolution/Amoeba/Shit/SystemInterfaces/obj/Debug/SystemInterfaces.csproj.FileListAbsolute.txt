@@ -1,0 +1,10 @@
+C:\prism\Clients\SAMS-MRManager\MRManager\SystemInterfaces\bin\Debug\SystemInterfaces.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\SystemInterfaces\bin\Debug\SystemInterfaces.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\SystemInterfaces\obj\Debug\SystemInterfaces.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\SystemInterfaces\obj\Debug\SystemInterfaces.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\SystemInterfaces\obj\Debug\SystemInterfaces.csprojResolveAssemblyReference.cache
+C:\prism\Clients\Revolution\SystemInterfaces\bin\Debug\SystemInterfaces.dll
+C:\prism\Clients\Revolution\SystemInterfaces\bin\Debug\SystemInterfaces.pdb
+C:\prism\Clients\Revolution\SystemInterfaces\obj\Debug\SystemInterfaces.dll
+C:\prism\Clients\Revolution\SystemInterfaces\obj\Debug\SystemInterfaces.pdb
+C:\prism\Clients\Revolution\SystemInterfaces\obj\Debug\SystemInterfaces.csprojResolveAssemblyReference.cache

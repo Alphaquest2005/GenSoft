@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F90CC1C1-1F4E-4719-817B-9A14CE56A5CE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GenSoft.Interfaces</RootNamespace>
+    <AssemblyName>GenSoft.Interfaces</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition">
+      <HintPath>..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.ComponentModel.Composition.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Generated Interfaces\Action.cs" />
+    <Compile Include="Generated Interfaces\Agent.cs" />
+    <Compile Include="Generated Interfaces\ApplicationSetting.cs" />
+    <Compile Include="Generated Interfaces\Command.cs" />
+    <Compile Include="Generated Interfaces\Entity.cs" />
+    <Compile Include="Generated Interfaces\EntityType.cs" />
+    <Compile Include="Generated Interfaces\EntityViews\ProcessInfo.cs" />
+    <Compile Include="Generated Interfaces\Event.cs" />
+    <Compile Include="Generated Interfaces\Machine.cs" />
+    <Compile Include="Generated Interfaces\Message.cs" />
+    <Compile Include="Generated Interfaces\MessageSource.cs" />
+    <Compile Include="Generated Interfaces\Process.cs" />
+    <Compile Include="Generated Interfaces\ProcessComplexState.cs" />
+    <Compile Include="Generated Interfaces\ProcessComplexStateExpectedProcessState.cs" />
+    <Compile Include="Generated Interfaces\ProcessState.cs" />
+    <Compile Include="Generated Interfaces\ProcessStateInfo.cs" />
+    <Compile Include="Generated Interfaces\ProcessStateTrigger.cs" />
+    <Compile Include="Generated Interfaces\SourceType.cs" />
+    <Compile Include="Generated Interfaces\State.cs" />
+    <Compile Include="Generated Interfaces\StateAction.cs" />
+    <Compile Include="Generated Interfaces\StateActionExpectedProcessState.cs" />
+    <Compile Include="Generated Interfaces\Type.cs" />
+    <Compile Include="Generated Interfaces\TypeParameter.cs" />
+    <Compile Include="Generated Interfaces\User.cs" />
+    <Compile Include="Generated Interfaces\ViewModel.cs" />
+    <Compile Include="IEntity.cs" />
+    <Compile Include="IPredicate.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SystemInterfaces\SystemInterfaces.csproj">
+      <Project>{e3842263-e081-49ba-a1b4-bbe82b24e2db}</Project>
+      <Name>SystemInterfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

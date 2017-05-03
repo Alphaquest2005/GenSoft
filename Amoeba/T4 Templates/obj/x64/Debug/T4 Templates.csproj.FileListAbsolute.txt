@@ -1,0 +1,20 @@
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4 Templates\obj\x64\Debug\T4 Templates.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4 Templates\bin\x64\Debug\T4Templates.dll.config
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4 Templates\bin\x64\Debug\T4Templates.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4 Templates\bin\x64\Debug\T4Templates.pdb
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4 Templates\bin\x64\Debug\EntityFramework.SqlServer.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4 Templates\bin\x64\Debug\EntityFramework.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4 Templates\bin\x64\Debug\MoreLinq.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4 Templates\bin\x64\Debug\LinqSpecs.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4 Templates\bin\x64\Debug\Specifications.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4 Templates\bin\x64\Debug\T4Entities.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4 Templates\bin\x64\Debug\T4Repository.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4 Templates\bin\x64\Debug\T4Utilities.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4 Templates\bin\x64\Debug\T4Utilities.pdb
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4 Templates\bin\x64\Debug\LinqSpecs.pdb
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4 Templates\bin\x64\Debug\LinqSpecs.xml
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4 Templates\bin\x64\Debug\Specifications.pdb
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4 Templates\bin\x64\Debug\T4Entities.pdb
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4 Templates\bin\x64\Debug\T4Repository.pdb
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4 Templates\obj\x64\Debug\T4Templates.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4 Templates\obj\x64\Debug\T4Templates.pdb

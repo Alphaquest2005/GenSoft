@@ -1,0 +1,10 @@
+C:\prism\Clients\SAMS-MRManager\MRManager\Converters\bin\Debug\Converters.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Converters\bin\Debug\Converters.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\Converters\obj\Debug\Converters.dll
+C:\prism\Clients\SAMS-MRManager\MRManager\Converters\obj\Debug\Converters.pdb
+C:\prism\Clients\SAMS-MRManager\MRManager\Converters\obj\Debug\Converters.csprojResolveAssemblyReference.cache
+C:\prism\Clients\Revolution\Converters\bin\Debug\Converters.dll
+C:\prism\Clients\Revolution\Converters\bin\Debug\Converters.pdb
+C:\prism\Clients\Revolution\Converters\obj\Debug\Converters.dll
+C:\prism\Clients\Revolution\Converters\obj\Debug\Converters.pdb
+C:\prism\Clients\Revolution\Converters\obj\Debug\Converters.csprojResolveAssemblyReference.cache

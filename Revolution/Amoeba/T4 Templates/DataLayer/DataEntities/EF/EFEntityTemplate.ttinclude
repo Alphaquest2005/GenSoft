@@ -1,0 +1,100 @@
+﻿<#@ include file="T4Toolbox.tt" #>
+<#@ assembly name="C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Templates\bin\Debug\T4Entities.dll" #>
+<#@ import namespace="T4Entities" #>
+<#@ assembly name="C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\Specifications\bin\Debug\Specifications.dll"#>
+<#@ assembly name="C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\Specifications\bin\Debug\LinqSpecs.dll"#>
+<#@ assembly name="System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" #>
+<#@ import namespace="System.Linq" #>
+<#@ assembly name="C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\Amoeba\Amoeba\packages\morelinq.1.4.0\lib\net35\MoreLinq.dll" #>
+<#@ import namespace="MoreLinq" #>
+<#@ import namespace="Specifications" #>
+<#+
+// <copyright file="EFEntityTemplate.tt" company="">
+//  Copyright © . All Rights Reserved.
+// </copyright>
+
+public class EFEntityTemplate : CSharpTemplate
+{
+	public EFEntityTemplate(ApplicationEntity entity, string appName)
+	{
+	    Entity = entity;
+	    AppName = appName;
+	}
+
+    public ApplicationEntity Entity { get;}
+	public string AppName { get; }
+
+	public override string TransformText()
+	{
+		base.TransformText();
+#>
+using System;
+using System.Collections.Generic;
+using Common.DataEntites;
+using <#=AppName#>.Entities;
+using <#=AppName#>.Interfaces;
+
+namespace <#=AppName#>.Entities
+{
+	public partial class <#= Entity.Entity.Name #>: BaseEntity, I<#= Entity.Entity.Name #>
+	{
+<#+
+	if(!EntitySpecificationContext.HasEntityId.IsSatisfiedBy(Entity.Entity)) return "EntityId Missing";
+	if(!DataPropertySpecificationContext.IntZeroLength.IsSatisfiedBy(Entity.Entity.EntityProperties.SelectMany(x=>x.DataProperties).First(x => x.ModelType.Name == "EntityId"))) return "EntryId DataType fail Int is Zero Check";
+	foreach (DataProperty prop in Entity.Entity.EntityProperties.SelectMany(x=>x.DataProperties).Where(z => z.ModelType.Name != "EntityId" && z.EntityProperty.PropertyName != "Id").DistinctBy(x => x.EntityPropertyId))
+	{
+	    
+#>
+		public virtual <#=prop.DataType.Name #> <#= prop.EntityProperty.PropertyName #> { get; set; }
+<#+ }
+#>
+
+		//-------------------Navigation Properties -------------------------------//
+			// ---------Child Relationships
+<#+
+	    var childRelationships = Entity.Entity.EntityProperties.SelectMany(x => x.ChildRelationships);
+	    foreach (var cr in childRelationships )
+	    {
+			if(cr.ChildProperty.DataProperties.Any(x => x.ModelType.Name == "EntityId"))
+	        {
+					// do single property types
+#>
+				public virtual <#=cr.ChildProperty.Entity.Name #> <#=cr.ChildProperty.Entity.Name #> {get; set;}
+<#+			}
+			else
+	        { /// do collection types
+#>
+				public virtual ICollection<<#=cr.ChildProperty.Entity.Name #>> <#=childRelationships.Count(x => x.ChildProperty.Entity.EntitySetName == cr.ChildProperty.Entity.EntitySetName) > 1 ? cr.ChildProperty.PropertyName.Replace("Id","s") : cr.ChildProperty.Entity.EntitySetName #> {get; set;}
+<#+ 
+			} 
+	    }
+ #>		
+			// ---------Parent Relationships
+<#+
+	    var parentRelationships = Entity.Entity.EntityProperties.SelectMany(x => x.ParentRelationships);
+	    foreach (var cr in parentRelationships)
+	    {
+			if(cr.ParentProperty.DataProperties.Any(x => x.ModelType.Name == "EntityId"))
+	        {
+					// do single property types
+#>
+				public virtual <#=cr.ParentProperty.Entity.Name #> <#=parentRelationships.Count(x => x.ParentProperty.Entity.Name == cr.ParentProperty.Entity.Name) > 1 ?  cr.ChildProperty.PropertyName.Replace("Id","") :cr.ParentProperty.Entity.Name #> {get; set;}
+<#+			}
+			else
+	        { /// do collection types
+#>
+				public virtual ICollection<<#=cr.ParentProperty.Entity.Name #>> <#=parentRelationships.Count(x => x.ParentProperty.Entity.EntitySetName == cr.ParentProperty.Entity.EntitySetName) > 1 ?  cr.ParentProperty.PropertyName.Replace("Id","s") :cr.ParentProperty.Entity.EntitySetName #> {get; set;}
+<#+ 
+			} 
+	    }
+ #>	
+
+	}
+}
+<#+
+		return this.GenerationEnvironment.ToString();
+	}
+}
+
+
+#>

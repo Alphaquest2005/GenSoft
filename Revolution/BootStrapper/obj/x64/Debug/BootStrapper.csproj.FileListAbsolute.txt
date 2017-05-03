@@ -86,7 +86,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\Interfaces
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\Actor.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\CommonMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\EventAggregator.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\EventAggregator.dll.config
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\ComponentModel.Composition.Hosting.Extension.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\SystemInterfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\ViewModel.Interfaces.pdb

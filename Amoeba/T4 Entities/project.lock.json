@@ -1,4 +1,5 @@
 {
+  "locked": false,
   "version": 2,
   "targets": {
     ".NETFramework,Version=v4.6.1": {
@@ -38,7 +39,6 @@
     "EntityFramework/6.1.3": {
       "sha512": "2xzFHAF3VVdmTR3//MygtQpwfbDjeaq+nQwCcokLzen7MKHOojPaxNPQPa4diHY1QtcR7zlHAJHNRqPB7W2Syw==",
       "type": "package",
-      "path": "entityframework/6.1.3",
       "files": [
         "EntityFramework.6.1.3.nupkg.sha512",
         "EntityFramework.nuspec",
@@ -68,28 +68,5 @@
       "EntityFramework >= 6.1.3"
     ],
     ".NETFramework,Version=v4.6.1": []
-  },
-  "packageFolders": {
-    "C:\\Users\\Alpha\\.nuget\\packages\\": {}
-  },
-  "project": {
-    "restore": {
-      "projectUniqueName": "C:\\Prism\\GitRepositiory\\GenSoft\\Amoeba\\T4 Entities\\T4 Entities.csproj",
-      "projectName": "T4 Entities",
-      "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Amoeba\\T4 Entities\\T4 Entities.csproj",
-      "projectJsonPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Amoeba\\T4 Entities\\project.json",
-      "projectStyle": "ProjectJson"
-    },
-    "dependencies": {
-      "EntityFramework": "6.1.3"
-    },
-    "frameworks": {
-      "net461": {}
-    },
-    "runtimes": {
-      "win-x64": {
-        "#import": []
-      }
-    }
   }
 }

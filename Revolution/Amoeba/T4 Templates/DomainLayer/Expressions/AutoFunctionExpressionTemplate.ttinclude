@@ -1,0 +1,49 @@
+﻿<#@ include file="T4Toolbox.tt" #>
+<#@ assembly name="C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Templates\bin\Debug\T4Entities.dll" #>
+<#@ assembly name="C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\Specifications\bin\Debug\Specifications.dll"#>
+<#@ assembly name="C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\Specifications\bin\Debug\LinqSpecs.dll"#>
+<#@ assembly name="System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" #>
+<#@ assembly name="C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\Amoeba\Amoeba\packages\morelinq.1.4.0\lib\net35\MoreLinq.dll" #>
+<#+
+// <copyright file="EFEntityTemplate.tt" company="">
+//  Copyright © . All Rights Reserved.
+// </copyright>
+
+public class AutoFunctionExpressionTemplate : CSharpTemplate
+{
+    public AutoFunctionExpressionTemplate(string appName)
+    {
+        AppName = appName;
+    }
+
+    public string AppName { get; }
+	
+	public override string TransformText()
+	{
+		base.TransformText();
+
+#>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Common.DataEntites;
+using <#=AppName#>.Entities;
+using Interfaces;
+
+namespace Entity.Expressions
+{
+	public static class AutoFunctions
+    {
+        public static string StringJoin(this IEnumerable<string> strings, string seperator) => string.Join(seperator, strings);       
+    }
+}
+<#+
+		return this.GenerationEnvironment.ToString();
+	}
+}
+
+
+
+
+
+#>

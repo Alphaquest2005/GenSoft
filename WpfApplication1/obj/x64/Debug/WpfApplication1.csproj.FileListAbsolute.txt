@@ -1,5 +1,0 @@
-C:\Prism\GitRepositiory\MRManager\WpfApplication1\obj\x64\Debug\WpfApplication1.csprojResolveAssemblyReference.cache
-C:\Prism\GitRepositiory\MRManager\WpfApplication1\obj\x64\Debug\MainWindow.g.cs
-C:\Prism\GitRepositiory\MRManager\WpfApplication1\obj\x64\Debug\App.g.cs
-C:\Prism\GitRepositiory\MRManager\WpfApplication1\obj\x64\Debug\WpfApplication1_MarkupCompile.cache
-C:\Prism\GitRepositiory\MRManager\WpfApplication1\obj\x64\Debug\WpfApplication1_MarkupCompile.lref

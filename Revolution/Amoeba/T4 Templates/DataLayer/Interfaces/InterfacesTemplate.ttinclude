@@ -1,0 +1,55 @@
+﻿<#@ include file="T4Toolbox.tt" #>
+<#@ assembly name="C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Templates\bin\Debug\T4Entities.dll" #>
+<#@ import namespace="T4Entities" #>
+<#@ assembly name="System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" #>
+<#@ assembly name="C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\Amoeba\Amoeba\packages\morelinq.1.4.0\lib\net35\MoreLinq.dll" #>
+<#@ import namespace="MoreLinq" #>
+<#@ import namespace="System.Linq" #>
+<#+
+// <copyright file="EFEntityTemplate.tt" company="">
+//  Copyright © . All Rights Reserved.
+// </copyright>
+
+public class InterfaceTemplate : CSharpTemplate
+{
+	public InterfaceTemplate(ApplicationEntity entity,string appName)
+	{
+	    Entity = entity;
+	    AppName = appName;
+	}
+
+    public ApplicationEntity Entity { get;}
+    public string AppName { get; set; }
+
+    public override string TransformText()
+	{
+		base.TransformText();
+#>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.Composition;
+using <#=AppName#>.Interfaces;
+
+
+namespace <#=AppName#>.Interfaces
+{
+	[InheritedExport]
+	public partial interface I<#= Entity.Entity.Name #>:IEntity  
+	{
+<#+
+	foreach (DataProperty prop in Entity.Entity.EntityProperties.SelectMany(x=>x.DataProperties).Where(x => x.ModelType.Name != "EntityId" && x.EntityProperty.PropertyName != "Id").DistinctBy(x => x.EntityPropertyId))
+	{
+#>
+		<#=prop.DataType.Name #> <#= prop.EntityProperty.PropertyName #> { get;}
+<#+ }
+#>
+
+
+
+	}
+}
+<#+
+		return this.GenerationEnvironment.ToString();
+	}
+}
+#>

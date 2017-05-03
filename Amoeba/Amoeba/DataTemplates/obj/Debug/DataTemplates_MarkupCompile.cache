@@ -1,0 +1,20 @@
+﻿DataTemplates
+
+
+library
+C#
+.cs
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\
+DataTemplates
+none
+false
+DEBUG;TRACE
+
+80-496656566
+
+3-630027162
+35-387644126
+AllDataTemplatesResource.xaml;CustomTemplatesResource.xaml;Generated DataTemplates\ApplicationEntitiesDT.xaml;Generated DataTemplates\ApplicationsDT.xaml;Generated DataTemplates\ApplicationSettingDT.xaml;Generated DataTemplates\DataPropertiesDT.xaml;Generated DataTemplates\DataTypesDT.xaml;Generated DataTemplates\EntitiesDT.xaml;Generated DataTemplates\EntityPropertiesDT.xaml;Generated DataTemplates\EntityRelationshipsDT.xaml;Generated DataTemplates\FunctionParametersDT.xaml;Generated DataTemplates\FunctionsDT.xaml;Generated DataTemplates\FunctionSetFunctionsDT.xaml;Generated DataTemplates\FunctionSetsDT.xaml;Generated DataTemplates\LayersDT.xaml;Generated DataTemplates\ModelTypesDT.xaml;Generated DataTemplates\OperatorsDT.xaml;Generated DataTemplates\ParametersDT.xaml;Generated DataTemplates\PresentationPropertiesDT.xaml;Generated DataTemplates\ProjectsDT.xaml;Generated DataTemplates\Read\ApplicationEntitiesRDT.xaml;Generated DataTemplates\Read\ApplicationSettingRDT.xaml;Generated DataTemplates\Read\ApplicationsRDT.xaml;Generated DataTemplates\Read\DataPropertiesRDT.xaml;Generated DataTemplates\Read\DataTypesRDT.xaml;Generated DataTemplates\Read\EntitiesRDT.xaml;Generated DataTemplates\Read\EntityPropertiesRDT.xaml;Generated DataTemplates\Read\EntityRelationshipsRDT.xaml;Generated DataTemplates\Read\FunctionParametersRDT.xaml;Generated DataTemplates\Read\FunctionSetFunctionsRDT.xaml;Generated DataTemplates\Read\FunctionSetsRDT.xaml;Generated DataTemplates\Read\FunctionsRDT.xaml;Generated DataTemplates\Read\LayersRDT.xaml;Generated DataTemplates\Read\ModelTypesRDT.xaml;Generated DataTemplates\Read\OperatorsRDT.xaml;Generated DataTemplates\Read\ParametersRDT.xaml;Generated DataTemplates\Read\PresentationPropertiesRDT.xaml;Generated DataTemplates\Read\ProjectsRDT.xaml;Generated DataTemplates\Read\RelationshipTypesRDT.xaml;Generated DataTemplates\Read\SettingsNamesRDT.xaml;Generated DataTemplates\Read\SettingsRDT.xaml;Generated DataTemplates\Read\StateMachinesRDT.xaml;Generated DataTemplates\Read\StateMachineStatesRDT.xaml;Generated DataTemplates\Read\StateMachineTriggersRDT.xaml;Generated DataTemplates\Read\StatesRDT.xaml;Generated DataTemplates\Read\TriggersRDT.xaml;Generated DataTemplates\RelationshipTypesDT.xaml;Generated DataTemplates\SettingsDT.xaml;Generated DataTemplates\SettingsNamesDT.xaml;Generated DataTemplates\StateMachinesDT.xaml;Generated DataTemplates\StateMachineStatesDT.xaml;Generated DataTemplates\StateMachineTriggersDT.xaml;Generated DataTemplates\StatesDT.xaml;Generated DataTemplates\TriggersDT.xaml;Generated DataTemplates\Write\ApplicationEntitiesWDT.xaml;Generated DataTemplates\Write\ApplicationSettingWDT.xaml;Generated DataTemplates\Write\ApplicationsWDT.xaml;Generated DataTemplates\Write\DataPropertiesWDT.xaml;Generated DataTemplates\Write\DataTypesWDT.xaml;Generated DataTemplates\Write\EntitiesWDT.xaml;Generated DataTemplates\Write\EntityPropertiesWDT.xaml;Generated DataTemplates\Write\EntityRelationshipsWDT.xaml;Generated DataTemplates\Write\FunctionParametersWDT.xaml;Generated DataTemplates\Write\FunctionSetFunctionsWDT.xaml;Generated DataTemplates\Write\FunctionSetsWDT.xaml;Generated DataTemplates\Write\FunctionsWDT.xaml;Generated DataTemplates\Write\LayersWDT.xaml;Generated DataTemplates\Write\ModelTypesWDT.xaml;Generated DataTemplates\Write\OperatorsWDT.xaml;Generated DataTemplates\Write\ParametersWDT.xaml;Generated DataTemplates\Write\PresentationPropertiesWDT.xaml;Generated DataTemplates\Write\ProjectsWDT.xaml;Generated DataTemplates\Write\RelationshipTypesWDT.xaml;Generated DataTemplates\Write\SettingsNamesWDT.xaml;Generated DataTemplates\Write\SettingsWDT.xaml;Generated DataTemplates\Write\StateMachineStatesWDT.xaml;Generated DataTemplates\Write\StateMachinesWDT.xaml;Generated DataTemplates\Write\StateMachineTriggersWDT.xaml;Generated DataTemplates\Write\StatesWDT.xaml;Generated DataTemplates\Write\TriggersWDT.xaml;
+
+False
+

@@ -1,0 +1,12 @@
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\Specifications\bin\x64\Debug\Specifications.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\Specifications\bin\x64\Debug\Specifications.pdb
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\Specifications\bin\x64\Debug\EntityFramework.SqlServer.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\Specifications\bin\x64\Debug\EntityFramework.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\Specifications\bin\x64\Debug\LinqSpecs.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\Specifications\bin\x64\Debug\T4Entities.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\Specifications\bin\x64\Debug\LinqSpecs.pdb
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\Specifications\bin\x64\Debug\LinqSpecs.xml
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\Specifications\bin\x64\Debug\T4Entities.pdb
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\Specifications\obj\x64\Debug\Specifications.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\Specifications\obj\x64\Debug\Specifications.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\Specifications\obj\x64\Debug\Specifications.pdb

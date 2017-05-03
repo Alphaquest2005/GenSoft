@@ -1,0 +1,74 @@
+C:\Prism\Clients\Amoeba Projects\MRManager\T4Utilities\bin\Debug\T4Utilities.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\T4Utilities\bin\Debug\T4Utilities.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\T4Utilities\bin\Debug\T4Entities.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\T4Utilities\bin\Debug\T4Repository.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\T4Utilities\bin\Debug\EntityFramework.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\T4Utilities\bin\Debug\LinqSpecs.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\T4Utilities\bin\Debug\Specifications.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\T4Utilities\bin\Debug\MoreLinq.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\T4Utilities\bin\Debug\T4Entities.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\T4Utilities\bin\Debug\T4Repository.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\T4Utilities\bin\Debug\LinqSpecs.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\T4Utilities\bin\Debug\LinqSpecs.xml
+C:\Prism\Clients\Amoeba Projects\MRManager\T4Utilities\bin\Debug\Specifications.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\T4Utilities\bin\Debug\MoreLinq.xml
+C:\Prism\Clients\Amoeba Projects\MRManager\T4Utilities\obj\Debug\T4Utilities.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\T4Utilities\obj\Debug\T4Utilities.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\T4Utilities\bin\Debug\Microsoft.CSharp.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\T4Utilities\obj\Debug\T4Utilities.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\T4Utilities\bin\Debug\T4Utilities.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\T4Utilities\bin\Debug\T4Utilities.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\T4Utilities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\T4Utilities\bin\Debug\EntityFramework.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\T4Utilities\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\T4Utilities\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\T4Utilities\bin\Debug\Microsoft.CSharp.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\T4Utilities\bin\Debug\T4Entities.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\T4Utilities\bin\Debug\T4Repository.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\T4Utilities\bin\Debug\LinqSpecs.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\T4Utilities\bin\Debug\Specifications.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\T4Utilities\bin\Debug\MoreLinq.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\T4Utilities\bin\Debug\T4Entities.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\T4Utilities\bin\Debug\T4Repository.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\T4Utilities\bin\Debug\LinqSpecs.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\T4Utilities\bin\Debug\LinqSpecs.xml
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\T4Utilities\bin\Debug\Specifications.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\T4Utilities\obj\Debug\T4Utilities.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\T4Utilities\obj\Debug\T4Utilities.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\T4Utilities\obj\Debug\T4Utilities.pdb
+C:\Prism\GitRepositiory\MRManager\Amoeba\T4Utilities\bin\Debug\T4Utilities.dll
+C:\Prism\GitRepositiory\MRManager\Amoeba\T4Utilities\bin\Debug\T4Utilities.pdb
+C:\Prism\GitRepositiory\MRManager\Amoeba\T4Utilities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Prism\GitRepositiory\MRManager\Amoeba\T4Utilities\bin\Debug\EntityFramework.dll
+C:\Prism\GitRepositiory\MRManager\Amoeba\T4Utilities\bin\Debug\Microsoft.CSharp.dll
+C:\Prism\GitRepositiory\MRManager\Amoeba\T4Utilities\bin\Debug\T4Entities.dll
+C:\Prism\GitRepositiory\MRManager\Amoeba\T4Utilities\bin\Debug\T4Repository.dll
+C:\Prism\GitRepositiory\MRManager\Amoeba\T4Utilities\bin\Debug\LinqSpecs.dll
+C:\Prism\GitRepositiory\MRManager\Amoeba\T4Utilities\bin\Debug\Specifications.dll
+C:\Prism\GitRepositiory\MRManager\Amoeba\T4Utilities\bin\Debug\MoreLinq.dll
+C:\Prism\GitRepositiory\MRManager\Amoeba\T4Utilities\bin\Debug\T4Entities.pdb
+C:\Prism\GitRepositiory\MRManager\Amoeba\T4Utilities\bin\Debug\T4Repository.pdb
+C:\Prism\GitRepositiory\MRManager\Amoeba\T4Utilities\bin\Debug\LinqSpecs.pdb
+C:\Prism\GitRepositiory\MRManager\Amoeba\T4Utilities\bin\Debug\LinqSpecs.xml
+C:\Prism\GitRepositiory\MRManager\Amoeba\T4Utilities\bin\Debug\Specifications.pdb
+C:\Prism\GitRepositiory\MRManager\Amoeba\T4Utilities\obj\Debug\T4Utilities.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager\Amoeba\T4Utilities\obj\Debug\T4Utilities.dll
+C:\Prism\GitRepositiory\MRManager\Amoeba\T4Utilities\obj\Debug\T4Utilities.pdb
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4Utilities\obj\Debug\T4Utilities.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4Utilities\obj\Debug\T4Utilities.pdb
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4Utilities\bin\Debug\T4Utilities.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4Utilities\bin\Debug\T4Utilities.pdb
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4Utilities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4Utilities\bin\Debug\EntityFramework.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4Utilities\bin\Debug\MoreLinq.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4Utilities\bin\Debug\Microsoft.CSharp.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4Utilities\bin\Debug\T4Entities.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4Utilities\bin\Debug\T4Repository.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4Utilities\bin\Debug\LinqSpecs.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4Utilities\bin\Debug\Specifications.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4Utilities\bin\Debug\T4Entities.pdb
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4Utilities\bin\Debug\T4Repository.pdb
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4Utilities\bin\Debug\LinqSpecs.pdb
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4Utilities\bin\Debug\LinqSpecs.xml
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4Utilities\bin\Debug\Specifications.pdb
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4Utilities\obj\Debug\T4Utilities.csprojResolveAssemblyReference.cache

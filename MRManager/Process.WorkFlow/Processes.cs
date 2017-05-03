@@ -6,6 +6,7 @@ using SystemInterfaces;
 using Actor.Interfaces;
 using Domain.Interfaces;
 using EventMessages.Commands;
+using EventMessages.Events;
 using Interfaces;
 using RevolutionData;
 using RevolutionEntities.Process;
@@ -15,20 +16,7 @@ using ViewModel.Interfaces;
 namespace Process.WorkFlow
 {
 
-    public class ComplexEventActionData
-    {
-        public string Name { get; set; }
-        public int ProcessId { get; set; }
-        public string ExpectedMessageType { get; set; }
-        public ProcessActionData ProcessAction { get; set; }
-        public IProcessStateInfo ActionTrigger
-        { get; set; }
-    }
-
-    public class ProcessActionData
-    {
-    }
-
+   
 
     public static class Processes
     {
@@ -40,15 +28,6 @@ namespace Process.WorkFlow
             new ProcessInfo(3, 2, "Load User Screen", "User Screen", "UserScreen", "joe")
         };
 
-        public static Func<ComplexEventActionData,ComplexEventAction> CreateComplexEventAction = 
-            (cd) => new ComplexEventAction(cd.Name,
-                                           cd.ProcessId,
-                                           new List<IProcessExpectedEvent>(),
-                                           Type.GetType(cd.ExpectedMessageType),
-                                           CreateProcessAction.Invoke(cd.ProcessAction), cd.ActionTrigger
-                                           );
-
-        public static Func<ProcessActionData,ProcessAction> CreateProcessAction = (pd) => new ProcessAction(null,null,null);
 
 
 
@@ -504,6 +483,6 @@ namespace Process.WorkFlow
         }
     }
 
-
+    
 }
 

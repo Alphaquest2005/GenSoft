@@ -1,0 +1,288 @@
+{
+  "locked": false,
+  "version": 1,
+  "targets": {
+    ".NETFramework,Version=v4.6.1": {
+      "FluentValidation/6.2.1": {
+        "compile": {
+          "lib/Net45/FluentValidation.dll": {}
+        },
+        "runtime": {
+          "lib/Net45/FluentValidation.dll": {}
+        },
+        "resource": {
+          "lib/Net45/cs/FluentValidation.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/Net45/da/FluentValidation.resources.dll": {
+            "locale": "da"
+          },
+          "lib/Net45/de/FluentValidation.resources.dll": {
+            "locale": "de"
+          },
+          "lib/Net45/es/FluentValidation.resources.dll": {
+            "locale": "es"
+          },
+          "lib/Net45/fa/FluentValidation.resources.dll": {
+            "locale": "fa"
+          },
+          "lib/Net45/fi/FluentValidation.resources.dll": {
+            "locale": "fi"
+          },
+          "lib/Net45/fr/FluentValidation.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/Net45/it/FluentValidation.resources.dll": {
+            "locale": "it"
+          },
+          "lib/Net45/ko/FluentValidation.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/Net45/mk/FluentValidation.resources.dll": {
+            "locale": "mk"
+          },
+          "lib/Net45/nl/FluentValidation.resources.dll": {
+            "locale": "nl"
+          },
+          "lib/Net45/pl/FluentValidation.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/Net45/pt/FluentValidation.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/Net45/ru/FluentValidation.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/Net45/sv/FluentValidation.resources.dll": {
+            "locale": "sv"
+          },
+          "lib/Net45/tr/FluentValidation.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/Net45/zh-CN/FluentValidation.resources.dll": {
+            "locale": "zh-CN"
+          }
+        }
+      },
+      "Iesi.Collections/4.0.0.4000": {
+        "compile": {
+          "lib/net40/Iesi.Collections.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Iesi.Collections.dll": {}
+        }
+      },
+      "NHibernate/4.0.4.4000": {
+        "dependencies": {
+          "Iesi.Collections": "[4.0.0, 5.0.0)"
+        },
+        "compile": {
+          "lib/net40/NHibernate.dll": {}
+        },
+        "runtime": {
+          "lib/net40/NHibernate.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.6.1/win": {
+      "FluentValidation/6.2.1": {
+        "compile": {
+          "lib/Net45/FluentValidation.dll": {}
+        },
+        "runtime": {
+          "lib/Net45/FluentValidation.dll": {}
+        },
+        "resource": {
+          "lib/Net45/cs/FluentValidation.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/Net45/da/FluentValidation.resources.dll": {
+            "locale": "da"
+          },
+          "lib/Net45/de/FluentValidation.resources.dll": {
+            "locale": "de"
+          },
+          "lib/Net45/es/FluentValidation.resources.dll": {
+            "locale": "es"
+          },
+          "lib/Net45/fa/FluentValidation.resources.dll": {
+            "locale": "fa"
+          },
+          "lib/Net45/fi/FluentValidation.resources.dll": {
+            "locale": "fi"
+          },
+          "lib/Net45/fr/FluentValidation.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/Net45/it/FluentValidation.resources.dll": {
+            "locale": "it"
+          },
+          "lib/Net45/ko/FluentValidation.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/Net45/mk/FluentValidation.resources.dll": {
+            "locale": "mk"
+          },
+          "lib/Net45/nl/FluentValidation.resources.dll": {
+            "locale": "nl"
+          },
+          "lib/Net45/pl/FluentValidation.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/Net45/pt/FluentValidation.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/Net45/ru/FluentValidation.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/Net45/sv/FluentValidation.resources.dll": {
+            "locale": "sv"
+          },
+          "lib/Net45/tr/FluentValidation.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/Net45/zh-CN/FluentValidation.resources.dll": {
+            "locale": "zh-CN"
+          }
+        }
+      },
+      "Iesi.Collections/4.0.0.4000": {
+        "compile": {
+          "lib/net40/Iesi.Collections.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Iesi.Collections.dll": {}
+        }
+      },
+      "NHibernate/4.0.4.4000": {
+        "dependencies": {
+          "Iesi.Collections": "[4.0.0, 5.0.0)"
+        },
+        "compile": {
+          "lib/net40/NHibernate.dll": {}
+        },
+        "runtime": {
+          "lib/net40/NHibernate.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FluentValidation/6.2.1": {
+      "sha512": "/5ERf6sSD8VVQObby24h6GzFB9iLJsA01V0stxJ+6KAAiLVOFJ7cE2EypG2BDOP0B3cYCzTYeJrd0Oyrvnb9Bw==",
+      "type": "package",
+      "files": [
+        "FluentValidation.6.2.1.nupkg.sha512",
+        "FluentValidation.nuspec",
+        "lib/Net45/FluentValidation.XML",
+        "lib/Net45/FluentValidation.dll",
+        "lib/Net45/FluentValidation.pdb",
+        "lib/Net45/cs/FluentValidation.resources.dll",
+        "lib/Net45/da/FluentValidation.resources.dll",
+        "lib/Net45/de/FluentValidation.resources.dll",
+        "lib/Net45/es/FluentValidation.resources.dll",
+        "lib/Net45/fa/FluentValidation.resources.dll",
+        "lib/Net45/fi/FluentValidation.resources.dll",
+        "lib/Net45/fr/FluentValidation.resources.dll",
+        "lib/Net45/it/FluentValidation.resources.dll",
+        "lib/Net45/ko/FluentValidation.resources.dll",
+        "lib/Net45/mk/FluentValidation.resources.dll",
+        "lib/Net45/nl/FluentValidation.resources.dll",
+        "lib/Net45/pl/FluentValidation.resources.dll",
+        "lib/Net45/pt/FluentValidation.resources.dll",
+        "lib/Net45/ru/FluentValidation.resources.dll",
+        "lib/Net45/sv/FluentValidation.resources.dll",
+        "lib/Net45/tr/FluentValidation.resources.dll",
+        "lib/Net45/zh-CN/FluentValidation.resources.dll",
+        "lib/portable-net40+sl50+wp80+win8+wpa81/FluentValidation.dll",
+        "lib/portable-net40+sl50+wp80+win8+wpa81/FluentValidation.pdb",
+        "lib/portable-net40+sl50+wp80+win8+wpa81/cs/FluentValidation.resources.dll",
+        "lib/portable-net40+sl50+wp80+win8+wpa81/da/FluentValidation.resources.dll",
+        "lib/portable-net40+sl50+wp80+win8+wpa81/de/FluentValidation.resources.dll",
+        "lib/portable-net40+sl50+wp80+win8+wpa81/es/FluentValidation.resources.dll",
+        "lib/portable-net40+sl50+wp80+win8+wpa81/fa/FluentValidation.resources.dll",
+        "lib/portable-net40+sl50+wp80+win8+wpa81/fi/FluentValidation.resources.dll",
+        "lib/portable-net40+sl50+wp80+win8+wpa81/fr/FluentValidation.resources.dll",
+        "lib/portable-net40+sl50+wp80+win8+wpa81/it/FluentValidation.resources.dll",
+        "lib/portable-net40+sl50+wp80+win8+wpa81/nl/FluentValidation.resources.dll",
+        "lib/portable-net40+sl50+wp80+win8+wpa81/pl/FluentValidation.resources.dll",
+        "lib/portable-net40+sl50+wp80+win8+wpa81/pt/FluentValidation.resources.dll",
+        "lib/portable-net40+sl50+wp80+win8+wpa81/ru/FluentValidation.resources.dll",
+        "lib/portable-net40+sl50+wp80+win8+wpa81/sv/FluentValidation.resources.dll",
+        "lib/portable-net40+sl50+wp80+win8+wpa81/zh-CN/FluentValidation.resources.dll",
+        "lib/portable-net45+wp80+win8+wpa81/FluentValidation.XML",
+        "lib/portable-net45+wp80+win8+wpa81/FluentValidation.dll",
+        "lib/portable-net45+wp80+win8+wpa81/FluentValidation.pdb",
+        "lib/portable-net45+wp80+win8+wpa81/cs/FluentValidation.resources.dll",
+        "lib/portable-net45+wp80+win8+wpa81/da/FluentValidation.resources.dll",
+        "lib/portable-net45+wp80+win8+wpa81/de/FluentValidation.resources.dll",
+        "lib/portable-net45+wp80+win8+wpa81/es/FluentValidation.resources.dll",
+        "lib/portable-net45+wp80+win8+wpa81/fa/FluentValidation.resources.dll",
+        "lib/portable-net45+wp80+win8+wpa81/fi/FluentValidation.resources.dll",
+        "lib/portable-net45+wp80+win8+wpa81/fr/FluentValidation.resources.dll",
+        "lib/portable-net45+wp80+win8+wpa81/it/FluentValidation.resources.dll",
+        "lib/portable-net45+wp80+win8+wpa81/nl/FluentValidation.resources.dll",
+        "lib/portable-net45+wp80+win8+wpa81/pl/FluentValidation.resources.dll",
+        "lib/portable-net45+wp80+win8+wpa81/pt/FluentValidation.resources.dll",
+        "lib/portable-net45+wp80+win8+wpa81/ru/FluentValidation.resources.dll",
+        "lib/portable-net45+wp80+win8+wpa81/sv/FluentValidation.resources.dll",
+        "lib/portable-net45+wp80+win8+wpa81/zh-CN/FluentValidation.resources.dll",
+        "lib/uap10.0/FluentValidation.dll",
+        "lib/uap10.0/FluentValidation.pdb",
+        "lib/uap10.0/cs/FluentValidation.resources.dll",
+        "lib/uap10.0/da/FluentValidation.resources.dll",
+        "lib/uap10.0/de/FluentValidation.resources.dll",
+        "lib/uap10.0/es/FluentValidation.resources.dll",
+        "lib/uap10.0/fa/FluentValidation.resources.dll",
+        "lib/uap10.0/fi/FluentValidation.resources.dll",
+        "lib/uap10.0/fr/FluentValidation.resources.dll",
+        "lib/uap10.0/it/FluentValidation.resources.dll",
+        "lib/uap10.0/nl/FluentValidation.resources.dll",
+        "lib/uap10.0/pl/FluentValidation.resources.dll",
+        "lib/uap10.0/pt/FluentValidation.resources.dll",
+        "lib/uap10.0/ru/FluentValidation.resources.dll",
+        "lib/uap10.0/sv/FluentValidation.resources.dll",
+        "lib/uap10.0/zh-CN/FluentValidation.resources.dll"
+      ]
+    },
+    "Iesi.Collections/4.0.0.4000": {
+      "sha512": "fLQKwZovMOhjte47Op+2YWLpmncQ/siA7hOdmG2eBLTFjp81s+gGkkGnDetOhBqYnmWK8g2kyx1DP9uNaJ68Ew==",
+      "type": "package",
+      "files": [
+        "Iesi.Collections.4.0.0.4000.nupkg.sha512",
+        "Iesi.Collections.nuspec",
+        "lib/net40/Iesi.Collections.dll",
+        "lib/net40/Iesi.Collections.xml"
+      ]
+    },
+    "NHibernate/4.0.4.4000": {
+      "sha512": "jAKwpGLeGai8KWj1e3p1K882vlZUJaQeH4RTuscKTyXhsEsiQEe2uKs9S3bY91aPyygMiPXg1CyRopi1K+e5aA==",
+      "type": "package",
+      "files": [
+        "ConfigurationTemplates/FireBird.cfg.xml",
+        "ConfigurationTemplates/MSSQL.cfg.xml",
+        "ConfigurationTemplates/MySql.cfg.xml",
+        "ConfigurationTemplates/Oracle.cfg.xml",
+        "ConfigurationTemplates/PostgreSQL.cfg.xml",
+        "ConfigurationTemplates/SQLite.cfg.xml",
+        "ConfigurationTemplates/SybaseASE.cfg.xml",
+        "ConfigurationTemplates/SybaseSQLAnywhere.cfg.xml",
+        "NHibernate.4.0.4.4000.nupkg.sha512",
+        "NHibernate.license.txt",
+        "NHibernate.nuspec",
+        "NHibernate.readme.html",
+        "NHibernate.releasenotes.txt",
+        "lib/net40/NHibernate.dll",
+        "lib/net40/NHibernate.xml",
+        "nhibernate-configuration.xsd",
+        "nhibernate-mapping.xsd"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "FluentValidation >= 6.2.1"
+    ],
+    ".NETFramework,Version=v4.6.1": []
+  }
+}

@@ -12,6 +12,8 @@ namespace Common.DataEntites
         public virtual int Id { get; set; }
         public virtual DateTime EntryDateTime { get; private set; } = DateTime.Now;
 
+        public virtual int EntityTypeId { get; set; }
+
         [IgnoreDataMember]
         [NotMapped]
         public virtual RowState RowState { get; set; } = RowState.Loaded ;

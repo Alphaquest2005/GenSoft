@@ -1,0 +1,34 @@
+﻿<#@ template language="C#" debug="True" #>
+<#@ output extension="cs" #>
+<#@ include file="T4Toolbox.tt" #>
+<#@ include file="AutoExpressionUnitTestTemplate.ttinclude" #>
+<#@ include file="EntityViewExpressionUnitTestTemplate.ttinclude" #>
+<#@ assembly name="C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Templates\bin\Debug\T4Entities.dll" #>
+<#@ import namespace="System.IO" #>
+<#+
+// <copyright file="DataLayer.tt" company="">
+//  Copyright © . All Rights Reserved.
+// </copyright>
+	public void CreatExpressionUnitTests(  Application app,string appFolder,Dictionary<string,string> settings,List<ApplicationEntity> entities)
+	{
+		// create simple properties
+		
+			var tpl = new AutoExpressionTestTemplate(entities.Select(x=> x.Entity), app.Name);
+			tpl.Output.Project = Path.Combine(appFolder, settings["Project"]) ;
+			tpl.Output.File = settings["Folder"] + @"\Auto Expressions\AutoExpressionTest.cs";
+			tpl.Render();
+			
+			var vtpl = new EntityViewExpressionTestTemplate(entities.SelectMany(x=> x.Entity.EntityViews), app.Name);
+			vtpl.Output.Project = Path.Combine(appFolder, settings["Project"]) ;
+			vtpl.Output.File = settings["Folder"] + @"\EntityView Expressions\EntityViewExpressionTests.cs";
+			vtpl.Render(); 
+		  
+			
+		
+
+	}
+	
+
+
+
+#>

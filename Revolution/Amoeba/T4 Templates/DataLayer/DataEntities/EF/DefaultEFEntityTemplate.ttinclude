@@ -1,0 +1,49 @@
+﻿<#@ include file="T4Toolbox.tt" #>
+<#@ assembly name="C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Templates\bin\Debug\T4Entities.dll" #>
+<#@ assembly name="System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" #>
+<#+
+// <copyright file="EFEntityTemplate.tt" company="">
+//  Copyright © . All Rights Reserved.
+// </copyright>
+
+public class DefaulEFEntityTemplate : CSharpTemplate
+{
+	public string AppName { get; set; }
+	public DefaulEFEntityTemplate(string appName)
+	{
+	    this.AppName = appName;
+	}
+
+    public override string TransformText()
+	{
+		base.TransformText();
+#>
+using Common.Dynamic;
+using <#=AppName#>.Interfaces;
+
+namespace <#=AppName#>.Entities
+{
+	public class EFEntity<T>: Expando where T: IEntity
+	{
+		public EFEntity()
+		{
+			
+		}
+		private EFEntity(int id)
+		{
+			Id = Id;
+		}
+		public EFEntity(object obj)
+		{
+			base.Initialize(obj);
+		}
+		public int Id { get; }
+	}
+}
+<#+
+		return this.GenerationEnvironment.ToString();
+	}
+}
+
+    
+#>

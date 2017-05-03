@@ -1,0 +1,44 @@
+C:\Prism\Clients\Amoeba\Specifications\bin\Debug\Specifications.dll
+C:\Prism\Clients\Amoeba\Specifications\bin\Debug\LinqSpecs.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\Specifications\bin\Debug\Specifications.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\Specifications\bin\Debug\Specifications.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\Specifications\bin\Debug\EntityFramework.SqlServer.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\Specifications\bin\Debug\EntityFramework.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\Specifications\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\Specifications\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\Specifications\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\Specifications\bin\Debug\LinqSpecs.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\Specifications\bin\Debug\T4Entities.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\Specifications\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\Specifications\bin\Debug\LinqSpecs.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\Specifications\bin\Debug\LinqSpecs.xml
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\Specifications\bin\Debug\T4Entities.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\Specifications\obj\Debug\Specifications.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\Specifications\obj\Debug\Specifications.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\Amoeba\Specifications\obj\Debug\Specifications.pdb
+C:\Prism\GitRepositiory\MRManager\Amoeba\Specifications\bin\Debug\Specifications.dll
+C:\Prism\GitRepositiory\MRManager\Amoeba\Specifications\bin\Debug\Specifications.pdb
+C:\Prism\GitRepositiory\MRManager\Amoeba\Specifications\bin\Debug\EntityFramework.SqlServer.dll
+C:\Prism\GitRepositiory\MRManager\Amoeba\Specifications\bin\Debug\EntityFramework.dll
+C:\Prism\GitRepositiory\MRManager\Amoeba\Specifications\bin\Debug\LinqSpecs.dll
+C:\Prism\GitRepositiory\MRManager\Amoeba\Specifications\bin\Debug\T4Entities.dll
+C:\Prism\GitRepositiory\MRManager\Amoeba\Specifications\bin\Debug\LinqSpecs.pdb
+C:\Prism\GitRepositiory\MRManager\Amoeba\Specifications\bin\Debug\LinqSpecs.xml
+C:\Prism\GitRepositiory\MRManager\Amoeba\Specifications\bin\Debug\T4Entities.pdb
+C:\Prism\GitRepositiory\MRManager\Amoeba\Specifications\obj\Debug\Specifications.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\MRManager\Amoeba\Specifications\obj\Debug\Specifications.dll
+C:\Prism\GitRepositiory\MRManager\Amoeba\Specifications\obj\Debug\Specifications.pdb
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\Specifications\obj\Debug\Specifications.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\Specifications\obj\Debug\Specifications.pdb
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\Specifications\bin\Debug\Specifications.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\Specifications\bin\Debug\Specifications.pdb
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\Specifications\bin\Debug\EntityFramework.SqlServer.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\Specifications\bin\Debug\EntityFramework.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\Specifications\bin\Debug\LinqSpecs.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\Specifications\bin\Debug\T4Entities.dll
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\Specifications\bin\Debug\LinqSpecs.pdb
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\Specifications\bin\Debug\LinqSpecs.xml
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\Specifications\bin\Debug\T4Entities.pdb
+C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\Specifications\obj\Debug\Specifications.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\Specifications\obj\Debug\Specifications.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\Specifications\obj\Debug\Specifications.pdb

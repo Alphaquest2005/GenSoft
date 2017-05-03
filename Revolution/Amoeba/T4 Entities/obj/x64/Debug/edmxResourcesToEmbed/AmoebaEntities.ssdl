@@ -1,0 +1,746 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AmoebaDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ApplicationEntities">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ApplicationId" Type="int" Nullable="false" />
+    <Property Name="EntityId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Applications">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DataProperties">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EntityPropertyId" Type="int" Nullable="false" />
+    <Property Name="DataTypeId" Type="int" Nullable="false" />
+    <Property Name="MaxLength" Type="int" Nullable="false" />
+    <Property Name="ModelTypeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DataTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DBType" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Entities">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EntitySetName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SchemaName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EntityProperties">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EntityId" Type="int" Nullable="false" />
+    <Property Name="PropertyName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EntityRelationships">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ParentEntityPropertyId" Type="int" Nullable="false" />
+    <Property Name="ChildEntityPropertyId" Type="int" Nullable="false" />
+    <Property Name="RelationshipTypeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EntityView">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EntityId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EntityViewEntityProperties">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="EntityPropertyId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EntityViewProperties">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EntityViewId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EntityViewPropertyFunction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="EntityViewPropertyId" Type="int" Nullable="false" />
+    <Property Name="FunctionId" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EntityViewPropertyFunctionParameter">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Value" Type="varchar(max)" Nullable="false" />
+    <Property Name="FunctionParameterId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EntityViewViewProperties">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="EntityViewPropertyId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FunctionBody">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FunctionParameters">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FunctionId" Type="int" Nullable="false" />
+    <Property Name="ParameterId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FunctionReturnType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="DataTypeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Functions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FunctionSetFunctions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="FunctionSetId" Type="int" />
+    <Property Name="FunctionId" Type="int" />
+  </EntityType>
+  <EntityType Name="FunctionSets">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Layers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ModelTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Operators">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Parameters">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DataTypeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PresentationProperties">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="EntityPropertyId" Type="int" Nullable="false" />
+    <Property Name="DisplayName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ToolTip" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PrimaryKeyOptions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="IsCalculated" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Projects">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RelationshipTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Settings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ApplicationId" Type="int" Nullable="false" />
+    <Property Name="LayerId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProjectId" Type="int" Nullable="false" />
+    <Property Name="Value" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TestValues">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EntityPropertyId" Type="int" Nullable="false" />
+    <Property Name="RowId" Type="int" Nullable="false" />
+    <Property Name="Value" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ApplicationEntities_Applications">
+    <End Role="Applications" Type="Self.Applications" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ApplicationEntities" Type="Self.ApplicationEntities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applications">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ApplicationEntities">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ApplicationEntities_Entities">
+    <End Role="Entities" Type="Self.Entities" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ApplicationEntities" Type="Self.ApplicationEntities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Entities">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ApplicationEntities">
+        <PropertyRef Name="EntityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DataProperties_DataTypes">
+    <End Role="DataTypes" Type="Self.DataTypes" Multiplicity="1" />
+    <End Role="DataProperties" Type="Self.DataProperties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DataTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DataProperties">
+        <PropertyRef Name="DataTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DataProperties_EntityProperties">
+    <End Role="EntityProperties" Type="Self.EntityProperties" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DataProperties" Type="Self.DataProperties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntityProperties">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DataProperties">
+        <PropertyRef Name="EntityPropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DataProperties_ModelTypes">
+    <End Role="ModelTypes" Type="Self.ModelTypes" Multiplicity="1" />
+    <End Role="DataProperties" Type="Self.DataProperties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModelTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DataProperties">
+        <PropertyRef Name="ModelTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EntityProperties_Entities">
+    <End Role="Entities" Type="Self.Entities" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EntityProperties" Type="Self.EntityProperties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Entities">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EntityProperties">
+        <PropertyRef Name="EntityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EntityRelationships_RelationshipTypes">
+    <End Role="RelationshipTypes" Type="Self.RelationshipTypes" Multiplicity="1" />
+    <End Role="EntityRelationships" Type="Self.EntityRelationships" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RelationshipTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EntityRelationships">
+        <PropertyRef Name="RelationshipTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EntityView_Entities">
+    <End Role="Entities" Type="Self.Entities" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EntityView" Type="Self.EntityView" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Entities">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EntityView">
+        <PropertyRef Name="EntityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EntityViewEntityProperties_EntityProperties">
+    <End Role="EntityProperties" Type="Self.EntityProperties" Multiplicity="1" />
+    <End Role="EntityViewEntityProperties" Type="Self.EntityViewEntityProperties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntityProperties">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EntityViewEntityProperties">
+        <PropertyRef Name="EntityPropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EntityViewEntityProperties_EntityViewProperties">
+    <End Role="EntityViewProperties" Type="Self.EntityViewProperties" Multiplicity="1" />
+    <End Role="EntityViewEntityProperties" Type="Self.EntityViewEntityProperties" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="EntityViewProperties">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EntityViewEntityProperties">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EntityViewProperties_EntityView">
+    <End Role="EntityView" Type="Self.EntityView" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EntityViewProperties" Type="Self.EntityViewProperties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntityView">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EntityViewProperties">
+        <PropertyRef Name="EntityViewId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EntityViewPropertyFunction_EntityViewProperties">
+    <End Role="EntityViewProperties" Type="Self.EntityViewProperties" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EntityViewPropertyFunction" Type="Self.EntityViewPropertyFunction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntityViewProperties">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EntityViewPropertyFunction">
+        <PropertyRef Name="EntityViewPropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EntityViewPropertyFunction_Functions">
+    <End Role="Functions" Type="Self.Functions" Multiplicity="1" />
+    <End Role="EntityViewPropertyFunction" Type="Self.EntityViewPropertyFunction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Functions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EntityViewPropertyFunction">
+        <PropertyRef Name="FunctionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EntityViewPropertyFunctionParameter_EntityViewPropertyFunction">
+    <End Role="EntityViewPropertyFunction" Type="Self.EntityViewPropertyFunction" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EntityViewPropertyFunctionParameter" Type="Self.EntityViewPropertyFunctionParameter" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="EntityViewPropertyFunction">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EntityViewPropertyFunctionParameter">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EntityViewPropertyFunctionParameter_FunctionParameters">
+    <End Role="FunctionParameters" Type="Self.FunctionParameters" Multiplicity="1" />
+    <End Role="EntityViewPropertyFunctionParameter" Type="Self.EntityViewPropertyFunctionParameter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FunctionParameters">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EntityViewPropertyFunctionParameter">
+        <PropertyRef Name="FunctionParameterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EntityViewViewProperties_EntityViewProperties">
+    <End Role="EntityViewProperties" Type="Self.EntityViewProperties" Multiplicity="1" />
+    <End Role="EntityViewViewProperties" Type="Self.EntityViewViewProperties" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="EntityViewProperties">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EntityViewViewProperties">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EntityViewViewProperties_EntityViewProperties1">
+    <End Role="EntityViewProperties" Type="Self.EntityViewProperties" Multiplicity="1" />
+    <End Role="EntityViewViewProperties" Type="Self.EntityViewViewProperties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntityViewProperties">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EntityViewViewProperties">
+        <PropertyRef Name="EntityViewPropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FunctionBody_Functions">
+    <End Role="Functions" Type="Self.Functions" Multiplicity="1" />
+    <End Role="FunctionBody" Type="Self.FunctionBody" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Functions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FunctionBody">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FunctionParameters_Functions">
+    <End Role="Functions" Type="Self.Functions" Multiplicity="1" />
+    <End Role="FunctionParameters" Type="Self.FunctionParameters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Functions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FunctionParameters">
+        <PropertyRef Name="FunctionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FunctionParameters_Parameters">
+    <End Role="Parameters" Type="Self.Parameters" Multiplicity="1" />
+    <End Role="FunctionParameters" Type="Self.FunctionParameters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parameters">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FunctionParameters">
+        <PropertyRef Name="ParameterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FunctionReturnType_DataTypes">
+    <End Role="DataTypes" Type="Self.DataTypes" Multiplicity="1" />
+    <End Role="FunctionReturnType" Type="Self.FunctionReturnType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DataTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FunctionReturnType">
+        <PropertyRef Name="DataTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FunctionReturnType_Functions">
+    <End Role="Functions" Type="Self.Functions" Multiplicity="1" />
+    <End Role="FunctionReturnType" Type="Self.FunctionReturnType" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Functions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FunctionReturnType">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Parameters_DataTypes">
+    <End Role="DataTypes" Type="Self.DataTypes" Multiplicity="1" />
+    <End Role="Parameters" Type="Self.Parameters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DataTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Parameters">
+        <PropertyRef Name="DataTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PresentationProperties_EntityProperties">
+    <End Role="EntityProperties" Type="Self.EntityProperties" Multiplicity="1" />
+    <End Role="PresentationProperties" Type="Self.PresentationProperties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntityProperties">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PresentationProperties">
+        <PropertyRef Name="EntityPropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PrimaryKeyOptions_DataProperties">
+    <End Role="DataProperties" Type="Self.DataProperties" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PrimaryKeyOptions" Type="Self.PrimaryKeyOptions" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="DataProperties">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PrimaryKeyOptions">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Settings_Applications">
+    <End Role="Applications" Type="Self.Applications" Multiplicity="1" />
+    <End Role="Settings" Type="Self.Settings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applications">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Settings">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Settings_Layers">
+    <End Role="Layers" Type="Self.Layers" Multiplicity="1" />
+    <End Role="Settings" Type="Self.Settings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Layers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Settings">
+        <PropertyRef Name="LayerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Settings_Projects">
+    <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
+    <End Role="Settings" Type="Self.Settings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projects">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Settings">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TestData_EntityProperties">
+    <End Role="EntityProperties" Type="Self.EntityProperties" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TestValues" Type="Self.TestValues" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntityProperties">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TestValues">
+        <PropertyRef Name="EntityPropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AmoebaDBModelStoreContainer">
+    <EntitySet Name="ApplicationEntities" EntityType="Self.ApplicationEntities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Applications" EntityType="Self.Applications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DataProperties" EntityType="Self.DataProperties" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DataTypes" EntityType="Self.DataTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Entities" EntityType="Self.Entities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EntityProperties" EntityType="Self.EntityProperties" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EntityRelationships" EntityType="Self.EntityRelationships" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EntityView" EntityType="Self.EntityView" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EntityViewEntityProperties" EntityType="Self.EntityViewEntityProperties" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EntityViewProperties" EntityType="Self.EntityViewProperties" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EntityViewPropertyFunction" EntityType="Self.EntityViewPropertyFunction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EntityViewPropertyFunctionParameter" EntityType="Self.EntityViewPropertyFunctionParameter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EntityViewViewProperties" EntityType="Self.EntityViewViewProperties" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FunctionBody" EntityType="Self.FunctionBody" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FunctionParameters" EntityType="Self.FunctionParameters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FunctionReturnType" EntityType="Self.FunctionReturnType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Functions" EntityType="Self.Functions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FunctionSetFunctions" EntityType="Self.FunctionSetFunctions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FunctionSets" EntityType="Self.FunctionSets" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Layers" EntityType="Self.Layers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ModelTypes" EntityType="Self.ModelTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Operators" EntityType="Self.Operators" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Parameters" EntityType="Self.Parameters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PresentationProperties" EntityType="Self.PresentationProperties" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PrimaryKeyOptions" EntityType="Self.PrimaryKeyOptions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Projects" EntityType="Self.Projects" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RelationshipTypes" EntityType="Self.RelationshipTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Settings" EntityType="Self.Settings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TestValues" EntityType="Self.TestValues" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ApplicationEntities_Applications" Association="Self.FK_ApplicationEntities_Applications">
+      <End Role="Applications" EntitySet="Applications" />
+      <End Role="ApplicationEntities" EntitySet="ApplicationEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ApplicationEntities_Entities" Association="Self.FK_ApplicationEntities_Entities">
+      <End Role="Entities" EntitySet="Entities" />
+      <End Role="ApplicationEntities" EntitySet="ApplicationEntities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DataProperties_DataTypes" Association="Self.FK_DataProperties_DataTypes">
+      <End Role="DataTypes" EntitySet="DataTypes" />
+      <End Role="DataProperties" EntitySet="DataProperties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DataProperties_EntityProperties" Association="Self.FK_DataProperties_EntityProperties">
+      <End Role="EntityProperties" EntitySet="EntityProperties" />
+      <End Role="DataProperties" EntitySet="DataProperties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DataProperties_ModelTypes" Association="Self.FK_DataProperties_ModelTypes">
+      <End Role="ModelTypes" EntitySet="ModelTypes" />
+      <End Role="DataProperties" EntitySet="DataProperties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EntityProperties_Entities" Association="Self.FK_EntityProperties_Entities">
+      <End Role="Entities" EntitySet="Entities" />
+      <End Role="EntityProperties" EntitySet="EntityProperties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EntityRelationships_RelationshipTypes" Association="Self.FK_EntityRelationships_RelationshipTypes">
+      <End Role="RelationshipTypes" EntitySet="RelationshipTypes" />
+      <End Role="EntityRelationships" EntitySet="EntityRelationships" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EntityView_Entities" Association="Self.FK_EntityView_Entities">
+      <End Role="Entities" EntitySet="Entities" />
+      <End Role="EntityView" EntitySet="EntityView" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EntityViewEntityProperties_EntityProperties" Association="Self.FK_EntityViewEntityProperties_EntityProperties">
+      <End Role="EntityProperties" EntitySet="EntityProperties" />
+      <End Role="EntityViewEntityProperties" EntitySet="EntityViewEntityProperties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EntityViewEntityProperties_EntityViewProperties" Association="Self.FK_EntityViewEntityProperties_EntityViewProperties">
+      <End Role="EntityViewProperties" EntitySet="EntityViewProperties" />
+      <End Role="EntityViewEntityProperties" EntitySet="EntityViewEntityProperties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EntityViewProperties_EntityView" Association="Self.FK_EntityViewProperties_EntityView">
+      <End Role="EntityView" EntitySet="EntityView" />
+      <End Role="EntityViewProperties" EntitySet="EntityViewProperties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EntityViewPropertyFunction_EntityViewProperties" Association="Self.FK_EntityViewPropertyFunction_EntityViewProperties">
+      <End Role="EntityViewProperties" EntitySet="EntityViewProperties" />
+      <End Role="EntityViewPropertyFunction" EntitySet="EntityViewPropertyFunction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EntityViewPropertyFunction_Functions" Association="Self.FK_EntityViewPropertyFunction_Functions">
+      <End Role="Functions" EntitySet="Functions" />
+      <End Role="EntityViewPropertyFunction" EntitySet="EntityViewPropertyFunction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EntityViewPropertyFunctionParameter_EntityViewPropertyFunction" Association="Self.FK_EntityViewPropertyFunctionParameter_EntityViewPropertyFunction">
+      <End Role="EntityViewPropertyFunction" EntitySet="EntityViewPropertyFunction" />
+      <End Role="EntityViewPropertyFunctionParameter" EntitySet="EntityViewPropertyFunctionParameter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EntityViewPropertyFunctionParameter_FunctionParameters" Association="Self.FK_EntityViewPropertyFunctionParameter_FunctionParameters">
+      <End Role="FunctionParameters" EntitySet="FunctionParameters" />
+      <End Role="EntityViewPropertyFunctionParameter" EntitySet="EntityViewPropertyFunctionParameter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EntityViewViewProperties_EntityViewProperties" Association="Self.FK_EntityViewViewProperties_EntityViewProperties">
+      <End Role="EntityViewProperties" EntitySet="EntityViewProperties" />
+      <End Role="EntityViewViewProperties" EntitySet="EntityViewViewProperties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EntityViewViewProperties_EntityViewProperties1" Association="Self.FK_EntityViewViewProperties_EntityViewProperties1">
+      <End Role="EntityViewProperties" EntitySet="EntityViewProperties" />
+      <End Role="EntityViewViewProperties" EntitySet="EntityViewViewProperties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FunctionBody_Functions" Association="Self.FK_FunctionBody_Functions">
+      <End Role="Functions" EntitySet="Functions" />
+      <End Role="FunctionBody" EntitySet="FunctionBody" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FunctionParameters_Functions" Association="Self.FK_FunctionParameters_Functions">
+      <End Role="Functions" EntitySet="Functions" />
+      <End Role="FunctionParameters" EntitySet="FunctionParameters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FunctionParameters_Parameters" Association="Self.FK_FunctionParameters_Parameters">
+      <End Role="Parameters" EntitySet="Parameters" />
+      <End Role="FunctionParameters" EntitySet="FunctionParameters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FunctionReturnType_DataTypes" Association="Self.FK_FunctionReturnType_DataTypes">
+      <End Role="DataTypes" EntitySet="DataTypes" />
+      <End Role="FunctionReturnType" EntitySet="FunctionReturnType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FunctionReturnType_Functions" Association="Self.FK_FunctionReturnType_Functions">
+      <End Role="Functions" EntitySet="Functions" />
+      <End Role="FunctionReturnType" EntitySet="FunctionReturnType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Parameters_DataTypes" Association="Self.FK_Parameters_DataTypes">
+      <End Role="DataTypes" EntitySet="DataTypes" />
+      <End Role="Parameters" EntitySet="Parameters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PresentationProperties_EntityProperties" Association="Self.FK_PresentationProperties_EntityProperties">
+      <End Role="EntityProperties" EntitySet="EntityProperties" />
+      <End Role="PresentationProperties" EntitySet="PresentationProperties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PrimaryKeyOptions_DataProperties" Association="Self.FK_PrimaryKeyOptions_DataProperties">
+      <End Role="DataProperties" EntitySet="DataProperties" />
+      <End Role="PrimaryKeyOptions" EntitySet="PrimaryKeyOptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Settings_Applications" Association="Self.FK_Settings_Applications">
+      <End Role="Applications" EntitySet="Applications" />
+      <End Role="Settings" EntitySet="Settings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Settings_Layers" Association="Self.FK_Settings_Layers">
+      <End Role="Layers" EntitySet="Layers" />
+      <End Role="Settings" EntitySet="Settings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Settings_Projects" Association="Self.FK_Settings_Projects">
+      <End Role="Projects" EntitySet="Projects" />
+      <End Role="Settings" EntitySet="Settings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TestData_EntityProperties" Association="Self.FK_TestData_EntityProperties">
+      <End Role="EntityProperties" EntitySet="EntityProperties" />
+      <End Role="TestValues" EntitySet="TestValues" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

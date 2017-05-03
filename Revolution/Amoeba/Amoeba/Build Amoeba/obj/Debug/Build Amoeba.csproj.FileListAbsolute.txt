@@ -1,0 +1,5 @@
+C:\Prism\Clients\Amoeba\Amoeba\Build Amoeba\bin\Debug\Build Amoeba.dll
+C:\Prism\Clients\Amoeba\Amoeba\Build Amoeba\bin\Debug\Build Amoeba.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Build Amoeba\obj\Debug\Build Amoeba.dll
+C:\Prism\Clients\Amoeba\Amoeba\Build Amoeba\obj\Debug\Build Amoeba.pdb
+C:\Prism\Clients\Amoeba\Amoeba\Build Amoeba\obj\Debug\Build Amoeba.csprojResolveAssemblyReference.cache

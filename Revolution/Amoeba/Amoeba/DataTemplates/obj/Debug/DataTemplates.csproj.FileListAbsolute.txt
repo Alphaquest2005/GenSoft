@@ -1,0 +1,549 @@
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\DataTemplates.dll.config
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\DataTemplates.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\DataTemplates.pdb
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\Converters.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\Core.Common.UI.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\Interfaces.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\ReactiveUI.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\Splat.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\System.Reactive.Core.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\System.Reactive.Interfaces.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\System.Reactive.Linq.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\System.Reactive.PlatformServices.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\System.Reactive.Windows.Threading.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\System.Windows.Interactivity.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\ViewModels.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\FluentValidation.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\EventMessages.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\JB.Common.Collections.Reactive.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\CommonMessages.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\Common.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\EventAggregator.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\Utilities.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\JB.Common.Collections.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\JB.Common.Reactive.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\Reactive.EventAggregator.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\Logging.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\log4net.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\Converters.pdb
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\Core.Common.UI.pdb
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\Interfaces.pdb
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\ViewModels.pdb
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\Splat.pdb
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\FluentValidation.pdb
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\EventMessages.pdb
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\CommonMessages.pdb
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\Common.pdb
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\EventAggregator.pdb
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\Utilities.pdb
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\Logging.pdb
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\cs\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\da\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\de\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\es\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\fa\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\fi\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\fr\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\it\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\ko\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\mk\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\nl\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\pl\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\pt\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\ru\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\sv\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\tr\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\zh-CN\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\DataTemplates.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\DataTemplates_MarkupCompile.cache
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\DataTemplates_MarkupCompile.lref
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\CustomTemplatesResource.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\DataTemplates.g.resources
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\DataTemplates.Properties.Resources.resources
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\DataTemplates.csproj.GenerateResource.Cache
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\DataTemplates.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\DataTemplates.pdb
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\AllDataTemplatesResource.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\DataTemplates.csprojResolveAssemblyReference.cache
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\AllDataTemplatesResource.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\AddressLinesRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\AddressZipCodesRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\AddressZipCodesWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\DataTemplates_MarkupCompile.cache
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\DataTemplates_MarkupCompile.lref
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\DataTemplates.dll.config
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\DataTemplates.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\DataTemplates.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\FluentValidation.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\FluentValidation.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\cs\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\da\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\de\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\es\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\fa\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\fi\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\fr\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\it\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\ko\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\mk\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\nl\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\pl\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\pt\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\ru\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\sv\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\tr\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\zh-CN\FluentValidation.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\Iesi.Collections.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\log4net.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\NHibernate.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\Reactive.EventAggregator.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\ReactiveUI.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\System.Reactive.Core.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\System.Reactive.Interfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\System.Reactive.Linq.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\System.Reactive.PlatformServices.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\System.Reactive.Windows.Threading.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\Splat.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\Splat.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\Converters.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\Core.Common.UI.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\DataInterfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\Interfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\System.Windows.Interactivity.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\ViewModels.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\EventMessages.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\JB.Common.Collections.Reactive.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\CommonMessages.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\Common.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\EventAggregator.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\Utilities.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\ViewModel.Interfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\SystemMessages.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\ViewMessages.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\EF.Entities.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\ValidationSets.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\JB.Common.Collections.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\JB.Common.Reactive.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\Logging.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\SystemInterfaces.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\Converters.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\Core.Common.UI.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\DataInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\Interfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\ViewModels.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\EventMessages.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\CommonMessages.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\Common.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\EventAggregator.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\Utilities.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\ViewModel.Interfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\SystemMessages.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\ViewMessages.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\EF.Entities.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\ValidationSets.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\Logging.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\SystemInterfaces.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\AddressLinesDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\AddressZipCodesDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\AddressLinesWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\CustomTemplatesResource.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\DataTemplates.g.resources
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\DataTemplates.Properties.Resources.resources
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\DataTemplates.csproj.GenerateResource.Cache
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\DataTemplates.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\DataTemplates.pdb
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\bin\Debug\JB.Common.dll
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\ApplicationSettingDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\ApplicationSettingRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\ApplicationSettingWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\AddressCitiesDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\AddressCountriesDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\AddressesDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\AddressParishesDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\AddressStatesDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\AddressTypesDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\AllergiesDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\AssignedDatingDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\AddressCitiesRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\AddressCountriesRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\AddressesRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\AddressParishesRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\AddressStatesRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\AddressTypesRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\AllergiesRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\AssignedDatingRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\AddressCitiesWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\AddressCountriesWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\AddressesWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\AddressParishesWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\AddressStatesWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\AddressTypesWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\AllergiesWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\AssignedDatingWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\BloodPressureDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\BloodPressureRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\BloodPressureWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\CarePlanDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\CarePlanRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\CarePlanWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\BoatInfoDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\CarePlanDetailsDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\CarePlanDetailsSuggestedMedicationDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\CitiesDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\ComponentsDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\CountriesDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\DefaultImagesDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\ExamDetailsDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\BoatInfoRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\CarePlanDetailsRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\CarePlanDetailsSuggestedMedicationRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\CitiesRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\ComponentsRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\CountriesRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\DefaultImagesRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\ExamDetailsRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\BoatInfoWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\CarePlanDetailsSuggestedMedicationWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\CarePlanDetailsWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\CitiesWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\ComponentsWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\CountriesWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\DefaultImagesWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\ExamDetailsWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\ExamResultsRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\ExamResults_AnioticFluidRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\ExamResults_FetalDatesRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\ExamResults_SimpleValuesRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\ExamResults_UmbilicalArteryRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\ExamsRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\ExamTypesRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\ForeignAddressesRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\ForeignPhoneNumbersRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\HeightRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\InterviewsRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\MaritalStatusRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\MarketingMediumRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\MediaRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\MediaTypesRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\MedicalCategoryRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\NonResidentCompanyInfoRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\NonResidentHotelInfoRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\OccupationsRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\OrganisationAddressRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\ExamResultsWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\OrganisationAddressWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\ExamResultsDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\ExamResults_AnioticFluidDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\ExamResults_FetalDatesDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\ExamResults_SimpleValuesDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\ExamResults_UmbilicalArteryDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\ExamsDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\ExamTypesDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\ForeignAddressesDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\ForeignPhoneNumbersDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\HeightDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\InterviewsDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\MaritalStatusDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\MarketingMediumDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\MediaDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\MediaTypesDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\MedicalCategoryDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\NonResidentCompanyInfoDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\NonResidentHotelInfoDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\OccupationsDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\OrganisationAddressDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\ExamResults_AnioticFluidWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\ExamResults_FetalDatesWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\ExamResults_SimpleValuesWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\ExamResults_UmbilicalArteryWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\ExamsWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\ExamTypesWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\ForeignAddressesWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\ForeignPhoneNumbersWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\HeightWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\InterviewsWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\MaritalStatusWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\MarketingMediumWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\MediaTypesWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\MediaWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\MedicalCategoryWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\NonResidentCompanyInfoWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\NonResidentHotelInfoWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\OccupationsWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\OrganisationPhoneNumbersDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\OrganisationsDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Organisations_CompanysDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Organisations_HotelsDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\ParishCitiesDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\ParishesDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\PatientAllergiesDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\PatientDoctorDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\PatientReligonDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\PatientResponsesDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\PatientResultsDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\PatientSyntomsDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\PatientVisitDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\PersonAddressesDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\PersonCountryOfResidenceDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\PersonEmailAddressDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\PersonJobDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\PersonMaritalStatusDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\PersonMediaDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\PersonNamesDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\PersonPhoneNumbersDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\PersonsDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Persons_ArrivalDepartureInfoDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Persons_DoctorDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Persons_EmergencyContactDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Persons_NextOfKinDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Persons_NonResidentPatientDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Persons_NursesDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Persons_PatientDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\PhaseDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\PhoneTypesDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\PrimaryPersonAddressDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\PrimaryPersonPhoneNumberDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\PulseDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\QuestionsDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\OrganisationPhoneNumbersRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\OrganisationsRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\Organisations_CompanysRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\Organisations_HotelsRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\ParishCitiesRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\ParishesRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\PatientAllergiesRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\PatientDoctorRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\PatientReligonRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\PatientResponsesRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\PatientResultsRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\PatientSyntomsRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\PatientVisitRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\PersonAddressesRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\PersonCountryOfResidenceRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\PersonEmailAddressRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\PersonJobRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\PersonMaritalStatusRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\PersonMediaRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\PersonNamesRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\PersonPhoneNumbersRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\PersonsRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\Persons_ArrivalDepartureInfoRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\Persons_DoctorRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\Persons_EmergencyContactRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\Persons_NextOfKinRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\Persons_NonResidentPatientRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\Persons_NursesRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\Persons_PatientRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\PhaseRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\PhoneTypesRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\PrimaryPersonAddressRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\PrimaryPersonPhoneNumberRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\PulseRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\QuestionsRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\ReligonsRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\RespirationRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\ResponseImagesRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\ResponseOptionsRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\ResponseRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\ResponseSuggestionsRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\ResponseSuggestions_CarePlansRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\ResponseSuggestions_InterviewsRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\ResultFieldNamesRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\SexRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\StatesRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\StudentInfoRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\SyntomsRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\TemperatureRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\UltraSoundGeneralEvaluationRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\UnitsRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\VitalSignsRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\WeightRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Read\ZipCodesRDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\ReligonsDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\RespirationDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\ResponseDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\ResponseImagesDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\ResponseOptionsDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\ResponseSuggestionsDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\ResponseSuggestions_CarePlansDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\ResponseSuggestions_InterviewsDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\ResultFieldNamesDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\SexDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\StatesDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\StudentInfoDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\SyntomsDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\TemperatureDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\UltraSoundGeneralEvaluationDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\UnitsDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\VitalSignsDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\WeightDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\OrganisationPhoneNumbersWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\OrganisationsWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\Organisations_CompanysWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\Organisations_HotelsWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\ParishCitiesWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\ParishesWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\PatientAllergiesWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\PatientDoctorWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\PatientReligonWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\PatientResponsesWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\PatientResultsWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\PatientSyntomsWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\PatientVisitWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\PersonAddressesWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\PersonCountryOfResidenceWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\PersonEmailAddressWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\PersonJobWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\PersonMaritalStatusWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\PersonMediaWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\PersonNamesWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\PersonPhoneNumbersWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\PersonsWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\Persons_ArrivalDepartureInfoWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\Persons_DoctorWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\Persons_EmergencyContactWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\Persons_NextOfKinWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\Persons_NonResidentPatientWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\Persons_NursesWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\Persons_PatientWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\PhaseWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\PhoneTypesWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\PrimaryPersonAddressWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\PrimaryPersonPhoneNumberWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\PulseWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\QuestionsWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\ReligonsWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\RespirationWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\ResponseImagesWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\ResponseOptionsWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\ResponseSuggestionsWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\ResponseSuggestions_CarePlansWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\ResponseSuggestions_InterviewsWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\ResponseWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\ResultFieldNamesWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\SexWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\StatesWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\StudentInfoWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\SyntomsWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\TemperatureWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\UltraSoundGeneralEvaluationWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\UnitsWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\VitalSignsWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\WeightWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\Write\ZipCodesWDT.baml
+C:\Prism\Clients\Amoeba Projects\MRManager\DataTemplates\obj\Debug\Generated DataTemplates\ZipCodesDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\JB.Common.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\ViewModel.Interfaces.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\SystemMessages.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\ViewMessages.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\EF.Entities.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\ValidationSets.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\SystemInterfaces.dll
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\ViewModel.Interfaces.pdb
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\SystemMessages.pdb
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\ViewMessages.pdb
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\EF.Entities.pdb
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\ValidationSets.pdb
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\bin\Debug\SystemInterfaces.pdb
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\ApplicationEntitiesDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\ApplicationsDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\ApplicationSettingDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\DataPropertiesDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\DataTypesDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\EntitiesDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\EntityPropertiesDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\EntityRelationshipsDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\FunctionParametersDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\FunctionsDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\FunctionSetFunctionsDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\FunctionSetsDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\LayersDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\ModelTypesDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\OperatorsDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\ParametersDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\PresentationPropertiesDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\ProjectsDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Read\ApplicationEntitiesRDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Read\ApplicationSettingRDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Read\ApplicationsRDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Read\DataPropertiesRDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Read\DataTypesRDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Read\EntitiesRDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Read\EntityPropertiesRDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Read\EntityRelationshipsRDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Read\FunctionParametersRDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Read\FunctionSetFunctionsRDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Read\FunctionSetsRDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Read\FunctionsRDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Read\LayersRDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Read\ModelTypesRDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Read\OperatorsRDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Read\ParametersRDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Read\PresentationPropertiesRDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Read\ProjectsRDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Read\RelationshipTypesRDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Read\SettingsNamesRDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Read\SettingsRDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Read\StateMachinesRDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Read\StateMachineStatesRDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Read\StateMachineTriggersRDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Read\StatesRDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Read\TriggersRDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\RelationshipTypesDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\SettingsDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\SettingsNamesDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\StateMachinesDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\StateMachineStatesDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\StateMachineTriggersDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\StatesDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\TriggersDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Write\ApplicationEntitiesWDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Write\ApplicationSettingWDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Write\ApplicationsWDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Write\DataPropertiesWDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Write\DataTypesWDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Write\EntitiesWDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Write\EntityPropertiesWDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Write\EntityRelationshipsWDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Write\FunctionParametersWDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Write\FunctionSetFunctionsWDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Write\FunctionSetsWDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Write\FunctionsWDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Write\LayersWDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Write\ModelTypesWDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Write\OperatorsWDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Write\ParametersWDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Write\PresentationPropertiesWDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Write\ProjectsWDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Write\RelationshipTypesWDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Write\SettingsNamesWDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Write\SettingsWDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Write\StateMachineStatesWDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Write\StateMachinesWDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Write\StateMachineTriggersWDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Write\StatesWDT.baml
+C:\Prism\Clients\Amoeba\Amoeba\DataTemplates\obj\Debug\Generated DataTemplates\Write\TriggersWDT.baml
