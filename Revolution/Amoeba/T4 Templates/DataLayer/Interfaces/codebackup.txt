@@ -1,0 +1,39 @@
+﻿		//-------------------Navigation Properties -------------------------------//
+			// ---------Child Relationships
+<#+
+	    var childRelationships = Entity.Entity.EntityProperties.SelectMany(x => x.ChildRelationships);
+	    foreach (var cr in childRelationships )
+	    {
+			if(cr.ChildProperty.DataProperties.Any(x => x.ModelType.Name == "EntityId"))
+	        {
+					// do single property types
+#>
+				I<#=cr.ChildProperty.Entity.Name #> <#=cr.ChildProperty.Entity.Name #> {get; }
+<#+			}
+			else
+	        { /// do collection types
+#>
+				ICollection<I<#=cr.ChildProperty.Entity.Name #>> <#=childRelationships.Count(x => x.ChildProperty.Entity.EntitySetName == cr.ChildProperty.Entity.EntitySetName) > 1 ? cr.ChildProperty.PropertyName.Replace("Id","s") : cr.ChildProperty.Entity.EntitySetName #> {get; }
+<#+ 
+			} 
+	    }
+ #>		
+			// ---------Parent Relationships
+<#+
+	    var parentRelationships = Entity.Entity.EntityProperties.SelectMany(x => x.ParentRelationships);
+	    foreach (var cr in parentRelationships)
+	    {
+			if(cr.ParentProperty.DataProperties.Any(x => x.ModelType.Name == "EntityId"))
+	        {
+					// do single property types
+#>
+				I<#=cr.ParentProperty.Entity.Name #> <#=parentRelationships.Count(x => x.ParentProperty.Entity.Name == cr.ParentProperty.Entity.Name) > 1 ?  cr.ChildProperty.PropertyName.Replace("Id","") :cr.ParentProperty.Entity.Name #> {get;}
+<#+			}
+			else
+	        { /// do collection types
+#>
+				ICollection<I<#=cr.ParentProperty.Entity.Name #>> <#=parentRelationships.Count(x => x.ParentProperty.Entity.EntitySetName == cr.ParentProperty.Entity.EntitySetName) > 1 ?  cr.ParentProperty.PropertyName.Replace("Id","s") :cr.ParentProperty.Entity.EntitySetName #> {get;}
+<#+ 
+			} 
+	    }
+ #>	

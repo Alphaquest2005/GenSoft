@@ -49,6 +49,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="StartUpProcess.cs" />
     <Compile Include="Context\Entity.cs" />
     <Compile Include="Context\View.cs" />
     <Compile Include="Context\ViewModel.cs" />
@@ -117,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
