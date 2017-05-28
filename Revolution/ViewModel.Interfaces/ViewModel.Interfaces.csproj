@@ -60,7 +60,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IDoctorInfoCacheViewModel.cs" />
     <Compile Include="ICacheViewModel.cs" />
     <Compile Include="IViewRowStateChanged.cs" />
     <Compile Include="INavigateToView.cs" />
@@ -72,7 +71,6 @@
     <Compile Include="IDynamicViewModel.cs" />
     <Compile Include="ILoadViewModel.cs" />
     <Compile Include="IMainWindowViewModel.cs" />
-    <Compile Include="Custom\ILoginViewModel.cs" />
     <Compile Include="IViewModelEvent.cs" />
     <Compile Include="IViewModelLoaded.cs" />
     <Compile Include="IAutoViewModel.cs" />
@@ -111,6 +109,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Custom\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

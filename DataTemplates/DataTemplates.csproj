@@ -282,6 +282,10 @@
       <Project>{dc325a78-b3ca-4717-89c6-28fc15a385d7}</Project>
       <Name>XamlGenericTypeExtension</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ViewModel.WorkFlow\ViewModel.WorkFlow.csproj">
+      <Project>{ee2fd2ef-1f6d-4ae6-b768-b788cdcfc250}</Project>
+      <Name>ViewModel.WorkFlow</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ViewModels\ViewModels.csproj">
       <Project>{db1e7bd6-7fe0-4cdd-8b6d-edbb0d156b41}</Project>
       <Name>ViewModels</Name>
