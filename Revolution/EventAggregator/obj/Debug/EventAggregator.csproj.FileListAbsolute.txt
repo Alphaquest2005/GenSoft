@@ -85,3 +85,5 @@ C:\Prism\GitRepositiory\MRManager\Revolution\EventAggregator\bin\Debug\log4net.x
 C:\Prism\GitRepositiory\MRManager\Revolution\EventAggregator\obj\Debug\EventAggregator.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\MRManager\Revolution\EventAggregator\obj\Debug\EventAggregator.dll
 C:\Prism\GitRepositiory\MRManager\Revolution\EventAggregator\obj\Debug\EventAggregator.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\obj\Debug\EventAggregator.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\obj\Debug\EventAggregator.pdb

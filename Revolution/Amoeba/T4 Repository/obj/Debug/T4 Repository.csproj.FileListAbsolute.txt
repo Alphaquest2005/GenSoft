@@ -64,3 +64,5 @@ C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4 Repository\bin\Debug\LinqSpec
 C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4 Repository\bin\Debug\LinqSpecs.xml
 C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4 Repository\bin\Debug\Specifications.pdb
 C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4 Repository\bin\Debug\T4Entities.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Repository\obj\Debug\T4Repository.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Repository\obj\Debug\T4Repository.pdb

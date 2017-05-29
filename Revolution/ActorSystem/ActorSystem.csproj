@@ -71,6 +71,10 @@
       <Project>{8b10c72d-9f33-4290-b562-44cf1f718fa5}</Project>
       <Name>Actor.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{cb6d5fbc-0c13-437d-b4f3-a0ec4d5673b3}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataServices\DataServices.csproj">
       <Project>{320107b2-d414-434b-ae0d-4d9f18ff49b8}</Project>
       <Name>DataServices</Name>
@@ -78,6 +82,26 @@
     <ProjectReference Include="..\EventAggregator\EventAggregator.csproj">
       <Project>{31E6B370-01F0-4489-832F-436CB97A6718}</Project>
       <Name>EventAggregator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GenSoft.DBContext\GenSoft.DBContext.csproj">
+      <Project>{ae0f4302-d3df-4561-96a0-0b093f988c03}</Project>
+      <Name>GenSoft.DBContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GenSoft.Entities\GenSoft.Entities.csproj">
+      <Project>{8ed4d838-4075-41b4-88a4-731ff303fb54}</Project>
+      <Name>GenSoft.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GenSoft.Expressions\GenSoft.Expressions.csproj">
+      <Project>{a73dfc98-2f9f-460a-9449-3624a666be07}</Project>
+      <Name>GenSoft.Expressions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GenSoft.Interface\GenSoft.Interface.csproj">
+      <Project>{f90cc1c1-1f4e-4719-817b-9a14ce56a5ce}</Project>
+      <Name>GenSoft.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RevolutionEntities\RevolutionEntities.csproj">
+      <Project>{c827930a-0d05-4ee2-b9ac-db1cf5144e16}</Project>
+      <Name>RevolutionEntities</Name>
     </ProjectReference>
     <ProjectReference Include="..\SystemInterfaces\SystemInterfaces.csproj">
       <Project>{5058D323-23EF-4EE9-9E33-9C1FFF3AE524}</Project>

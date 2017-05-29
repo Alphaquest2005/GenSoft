@@ -33,3 +33,5 @@ C:\Prism\GitRepositiory\MRManager\EFEntities\bin\Debug\Utilities.pdb
 C:\Prism\GitRepositiory\MRManager\EFEntities\obj\Debug\EF.Entities.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\MRManager\EFEntities\obj\Debug\EF.Entities.dll
 C:\Prism\GitRepositiory\MRManager\EFEntities\obj\Debug\EF.Entities.pdb
+C:\Prism\GitRepositiory\GenSoft\EFEntities\obj\Debug\EF.Entities.dll
+C:\Prism\GitRepositiory\GenSoft\EFEntities\obj\Debug\EF.Entities.pdb

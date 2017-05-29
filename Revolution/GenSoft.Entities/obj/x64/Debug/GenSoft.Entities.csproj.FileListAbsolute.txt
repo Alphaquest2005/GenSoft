@@ -70,9 +70,6 @@ C:\Prism\GitRepositiory\MRManager-Amoeba\EFEntities\bin\x64\Debug\PreticateBuild
 C:\Prism\GitRepositiory\MRManager-Amoeba\EFEntities\bin\x64\Debug\PreticateBuilder.pdb
 C:\Prism\GitRepositiory\MRManager-Amoeba\EFEntities\bin\x64\Debug\GenSoft.Interface.dll
 C:\Prism\GitRepositiory\MRManager-Amoeba\EFEntities\bin\x64\Debug\GenSoft.Interface.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\obj\x64\Debug\GenSoft.Entities.csprojResolveAssemblyReference.cache
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\obj\x64\Debug\GenSoft.Entities.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\obj\x64\Debug\GenSoft.Entities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\GenSoft.Entities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\GenSoft.Entities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\FluentValidation.dll
@@ -80,10 +77,8 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\JB.Com
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\JB.Common.Collections.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\JB.Common.Collections.Reactive.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\JB.Common.Reactive.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\log4net.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\MefContrib.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\MefContrib.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\Reactive.EventAggregator.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\ReactiveProperty.DataAnnotations.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\ReactiveProperty.DataAnnotations.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\ReactiveProperty.NET46.dll
@@ -108,3 +103,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\Interf
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\Common.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\SystemInterfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\Utilities.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\obj\x64\Debug\GenSoft.Entities.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\obj\x64\Debug\GenSoft.Entities.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\obj\x64\Debug\GenSoft.Entities.pdb

@@ -68,3 +68,5 @@ C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\Debug\Akka.xml
 C:\Prism\GitRepositiory\MRManager\Revolution\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\MRManager\Revolution\Common\obj\Debug\Common.dll
 C:\Prism\GitRepositiory\MRManager\Revolution\Common\obj\Debug\Common.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Common\obj\Debug\Common.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Common\obj\Debug\Common.pdb

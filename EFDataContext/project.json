@@ -1,6 +1,6 @@
 ﻿{
   "dependencies": {
-    "morelinq": "2.0.0"
+    "morelinq": "2.4.1"
   },
   "frameworks": {
     "net461": {}

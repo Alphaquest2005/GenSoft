@@ -78,3 +78,5 @@ C:\Prism\GitRepositiory\MRManager\ViewModels\bin\Debug\log4net.xml
 C:\Prism\GitRepositiory\MRManager\ViewModels\obj\Debug\ViewModels.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\MRManager\ViewModels\obj\Debug\ViewModels.dll
 C:\Prism\GitRepositiory\MRManager\ViewModels\obj\Debug\ViewModels.pdb
+C:\Prism\GitRepositiory\GenSoft\ViewModels\obj\Debug\ViewModels.dll
+C:\Prism\GitRepositiory\GenSoft\ViewModels\obj\Debug\ViewModels.pdb

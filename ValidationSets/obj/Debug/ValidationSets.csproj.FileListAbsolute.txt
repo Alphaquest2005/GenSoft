@@ -55,3 +55,5 @@ C:\Prism\GitRepositiory\MRManager\ValidationSets\bin\Debug\SystemInterfaces.pdb
 C:\Prism\GitRepositiory\MRManager\ValidationSets\obj\Debug\ValidationSets.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\MRManager\ValidationSets\obj\Debug\ValidationSets.dll
 C:\Prism\GitRepositiory\MRManager\ValidationSets\obj\Debug\ValidationSets.pdb
+C:\Prism\GitRepositiory\GenSoft\ValidationSets\obj\Debug\ValidationSets.dll
+C:\Prism\GitRepositiory\GenSoft\ValidationSets\obj\Debug\ValidationSets.pdb

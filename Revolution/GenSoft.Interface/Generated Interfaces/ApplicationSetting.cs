@@ -12,7 +12,7 @@ using GenSoft.Interfaces;
 namespace GenSoft.Interfaces
 {
 	[InheritedExport]
-	public partial interface IApplicationSetting:IEntity  
+	public partial interface IApplicationSetting:SystemInterfaces.IEntity  
 	{
 		bool AutoRun { get;}
 

@@ -214,3 +214,4 @@ C:\Prism\GitRepositiory\GenSoft\UnitTests\bin\x64\Debug\ComponentModel.Compositi
 C:\Prism\GitRepositiory\GenSoft\UnitTests\obj\x64\Debug\UnitTests.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\UnitTests\obj\x64\Debug\UnitTests.dll
 C:\Prism\GitRepositiory\GenSoft\UnitTests\obj\x64\Debug\UnitTests.pdb
+C:\Prism\GitRepositiory\GenSoft\UnitTests\bin\x64\Debug\System.ValueTuple.dll

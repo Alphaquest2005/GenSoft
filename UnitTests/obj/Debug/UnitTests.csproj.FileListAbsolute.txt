@@ -77,3 +77,5 @@ C:\Prism\GitRepositiory\MRManager\UnitTests\obj\Debug\UnitTests.pdb
 C:\Prism\GitRepositiory\MRManager\UnitTests\bin\Debug\MoreLinq.dll
 C:\Prism\GitRepositiory\MRManager\UnitTests\bin\Debug\MefContrib.dll
 C:\Prism\GitRepositiory\MRManager\UnitTests\bin\Debug\MefContrib.pdb
+C:\Prism\GitRepositiory\GenSoft\UnitTests\obj\Debug\UnitTests.dll
+C:\Prism\GitRepositiory\GenSoft\UnitTests\obj\Debug\UnitTests.pdb

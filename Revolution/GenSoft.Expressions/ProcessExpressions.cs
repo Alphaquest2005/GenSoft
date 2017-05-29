@@ -5,8 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using SystemInterfaces;
 using Actor.Interfaces;
+using GenSoft.Entities;
+using GenSoft.Interfaces;
 using RevolutionEntities.Process;
 using IProcess = GenSoft.Interfaces.IProcess;
+using IProcessStateInfo = SystemInterfaces.IProcessStateInfo;
+using ISourceType = SystemInterfaces.ISourceType;
+using Process = GenSoft.Entities.Process;
+using ProcessInfo = RevolutionEntities.Process.ProcessInfo;
+using SourceType = RevolutionEntities.Process.SourceType;
+using Type = System.Type;
 
 namespace GenSoft.Expressions
 {
@@ -88,6 +96,8 @@ namespace GenSoft.Expressions
 
         public static Func<TypeData, ISourceType> CreateSourceType = (td) => new SourceType(Type.GetType(td.TypeString));
 
-        public static Func<Interfaces.IProcessInfo, ProcessInfo> CreateProcessInfo = (p) => new ProcessInfo(p.Id, p.ParentProcessId.GetValueOrDefault(), p.Name, p.Description, p.Symbol, p.UserName);
+        public static Func<Process, SystemInterfaces.IProcessInfo> CreateProcessInfo = (p) => new ProcessInfo(p.Id, p.ParentProcessId, p.Name, p.Description, p.Symbol, p.UserId.ToString()) as SystemInterfaces.IProcessInfo;
+
+        public static Func<Machine, IMachineInfo> CreateMachineInfo =(m) => new MachineInfo(m.MachineName, m.Processors);
     }
 }

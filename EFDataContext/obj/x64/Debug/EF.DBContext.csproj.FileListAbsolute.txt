@@ -206,3 +206,4 @@ C:\Prism\GitRepositiory\GenSoft\EFDataContext\bin\x64\Debug\ViewModel.Interfaces
 C:\Prism\GitRepositiory\GenSoft\EFDataContext\obj\x64\Debug\EF.DBContext.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\EFDataContext\obj\x64\Debug\EF.DBContext.dll
 C:\Prism\GitRepositiory\GenSoft\EFDataContext\obj\x64\Debug\EF.DBContext.pdb
+C:\Prism\GitRepositiory\GenSoft\EFDataContext\bin\x64\Debug\System.ValueTuple.dll

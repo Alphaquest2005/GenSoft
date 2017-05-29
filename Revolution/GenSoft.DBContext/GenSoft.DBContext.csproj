@@ -56,6 +56,7 @@
     <Compile Include="Generated Mappings\ApplicationSetting.cs" />
     <Compile Include="Generated Mappings\Command.cs" />
     <Compile Include="Generated Mappings\Entity.cs" />
+    <Compile Include="Generated Mappings\EntityAttribute.cs" />
     <Compile Include="Generated Mappings\EntityType.cs" />
     <Compile Include="Generated Mappings\Event.cs" />
     <Compile Include="Generated Mappings\Machine.cs" />
@@ -112,10 +113,6 @@
       <Project>{AD573873-C8E6-4EA3-93F5-0D39A92FC9F6}</Project>
       <Name>Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BootStrapper\BootStrapper.csproj">
-      <Project>{5DFEEA8B-BABA-4544-BF36-0A76A0D10C1B}</Project>
-      <Name>BootStrapper</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{cb6d5fbc-0c13-437d-b4f3-a0ec4d5673b3}</Project>
       <Name>Common</Name>
@@ -135,10 +132,6 @@
     <ProjectReference Include="..\SystemInterfaces\SystemInterfaces.csproj">
       <Project>{e3842263-e081-49ba-a1b4-bbe82b24e2db}</Project>
       <Name>SystemInterfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Utilities\Utilities.csproj">
-      <Project>{0F9427B1-792E-4C35-97D8-22A9494CE28F}</Project>
-      <Name>Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

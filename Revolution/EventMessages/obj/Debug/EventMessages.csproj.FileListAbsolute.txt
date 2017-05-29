@@ -14,3 +14,5 @@ C:\Prism\GitRepositiory\MRManager\Revolution\EventMessages\bin\Debug\SystemInter
 C:\Prism\GitRepositiory\MRManager\Revolution\EventMessages\obj\Debug\EventMessages.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\MRManager\Revolution\EventMessages\obj\Debug\EventMessages.dll
 C:\Prism\GitRepositiory\MRManager\Revolution\EventMessages\obj\Debug\EventMessages.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\obj\Debug\EventMessages.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\obj\Debug\EventMessages.pdb

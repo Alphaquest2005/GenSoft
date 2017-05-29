@@ -223,3 +223,5 @@ C:\Prism\GitRepositiory\MRManager\Resources\obj\Debug\Resources_MarkupCompile.ca
 C:\Prism\GitRepositiory\MRManager\Resources\obj\Debug\Resources.g.resources
 C:\Prism\GitRepositiory\MRManager\Resources\obj\Debug\Resources.dll
 C:\Prism\GitRepositiory\MRManager\Resources\obj\Debug\Resources.pdb
+C:\Prism\GitRepositiory\GenSoft\Resources\obj\Debug\Resources.dll
+C:\Prism\GitRepositiory\GenSoft\Resources\obj\Debug\Resources.pdb

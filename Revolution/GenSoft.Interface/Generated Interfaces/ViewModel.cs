@@ -12,7 +12,7 @@ using GenSoft.Interfaces;
 namespace GenSoft.Interfaces
 {
 	[InheritedExport]
-	public partial interface IViewModel:IEntity  
+	public partial interface IViewModel:SystemInterfaces.IEntity  
 	{
 
 

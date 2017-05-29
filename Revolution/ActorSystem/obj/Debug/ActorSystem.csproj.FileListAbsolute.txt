@@ -416,3 +416,5 @@ C:\Prism\GitRepositiory\MRManager\Revolution\ActorSystem\bin\Debug\EF.Mappings.p
 C:\Prism\GitRepositiory\MRManager\Revolution\ActorSystem\obj\Debug\ActorSystem.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\MRManager\Revolution\ActorSystem\obj\Debug\ActorSystem.dll
 C:\Prism\GitRepositiory\MRManager\Revolution\ActorSystem\obj\Debug\ActorSystem.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\obj\Debug\ActorSystem.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\obj\Debug\ActorSystem.pdb

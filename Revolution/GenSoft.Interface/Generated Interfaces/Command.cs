@@ -12,10 +12,11 @@ using GenSoft.Interfaces;
 namespace GenSoft.Interfaces
 {
 	[InheritedExport]
-	public partial interface ICommand:IEntity  
+	public partial interface ICommand:SystemInterfaces.IEntity  
 	{
 		int StateActionId { get;}
-		DateTime EntryDateTime { get;}
+		int EntityId { get;}
+		int CommandTypeId { get;}
 
 
 

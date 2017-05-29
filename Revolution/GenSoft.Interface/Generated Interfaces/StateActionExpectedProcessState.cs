@@ -12,7 +12,7 @@ using GenSoft.Interfaces;
 namespace GenSoft.Interfaces
 {
 	[InheritedExport]
-	public partial interface IStateActionExpectedProcessState:IEntity  
+	public partial interface IStateActionExpectedProcessState:SystemInterfaces.IEntity  
 	{
 		int ExpectedProcesStateId { get;}
 

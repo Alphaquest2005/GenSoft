@@ -18,6 +18,8 @@ namespace GenSoft.Mappings
 			entityBuilder.ToTable("MessageSource", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
+			entityBuilder.Property(t => t.MachineId).HasColumnName("MachineId").IsRequired();
+			entityBuilder.Property(t => t.SourceGuid).HasColumnName("SourceGuid").IsRequired();
 			entityBuilder.Property(t => t.Name).HasColumnName("Name").IsRequired().HasMaxLength(Int32.MaxValue);
 			entityBuilder.Property(t => t.SourceTypeId).HasColumnName("SourceTypeId").IsRequired();
 			entityBuilder.Property(t => t.ProcessId).HasColumnName("ProcessId").IsRequired();
@@ -25,6 +27,7 @@ namespace GenSoft.Mappings
 				entityBuilder.HasMany(x => x.Message).WithOne(p => p.MessageSource).HasForeignKey(c => c.MessageSourceId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties
+				//entityBuilder.HasOne(p => p.Machine Machine).WithMany(p => p.MessageSource).HasForeignKey(c => c.MachineId).OnDelete(DeleteBehavior.Restrict);
 				//entityBuilder.HasOne(p => p.SourceType SourceType).WithMany(p => p.MessageSource).HasForeignKey(c => c.SourceTypeId).OnDelete(DeleteBehavior.Restrict);
 				//entityBuilder.HasOne(p => p.Process Process).WithMany(p => p.MessageSource).HasForeignKey(c => c.ProcessId).OnDelete(DeleteBehavior.Restrict);
 	

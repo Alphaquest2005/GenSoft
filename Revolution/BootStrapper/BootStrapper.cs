@@ -38,7 +38,22 @@ namespace BootStrapper
 
         }
 
-        
+        public void StartUp(bool autoContinue, Assembly dbContextAssembly, Assembly entitiesAssembly, List<IComplexEventAction> complexEventActions, List<IViewModelInfo> viewModelInfos)
+        {
+            try
+            {
+                var x = Container.GetExport<IActorBackBone>().Value;
+                x.Intialize(autoContinue, complexEventActions, viewModelInfos);
+                DbContextAssembly = dbContextAssembly;
+                EntitiesAssembly = entitiesAssembly;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public static BootStrapper Instance { get; }
 
         public static Assembly DbContextAssembly { get; set; }

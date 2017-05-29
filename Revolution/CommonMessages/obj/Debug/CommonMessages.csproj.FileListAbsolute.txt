@@ -34,3 +34,5 @@ C:\Prism\GitRepositiory\MRManager\Revolution\CommonMessages\bin\Debug\SystemInte
 C:\Prism\GitRepositiory\MRManager\Revolution\CommonMessages\obj\Debug\CommonMessages.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\MRManager\Revolution\CommonMessages\obj\Debug\CommonMessages.dll
 C:\Prism\GitRepositiory\MRManager\Revolution\CommonMessages\obj\Debug\CommonMessages.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\CommonMessages\obj\Debug\CommonMessages.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\CommonMessages\obj\Debug\CommonMessages.pdb

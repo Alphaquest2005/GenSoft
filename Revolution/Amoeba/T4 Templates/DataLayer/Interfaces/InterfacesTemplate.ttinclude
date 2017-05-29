@@ -34,7 +34,7 @@ using <#=AppName#>.Interfaces;
 namespace <#=AppName#>.Interfaces
 {
 	[InheritedExport]
-	public partial interface I<#= Entity.Entity.Name #>:IEntity  
+	public partial interface I<#= Entity.Entity.Name #>:SystemInterfaces.IEntity  
 	{
 <#+
 	foreach (DataProperty prop in Entity.Entity.EntityProperties.SelectMany(x=>x.DataProperties).Where(x => x.ModelType.Name != "EntityId" && x.EntityProperty.PropertyName != "Id").DistinctBy(x => x.EntityPropertyId))

@@ -141,3 +141,5 @@ C:\Prism\GitRepositiory\MRManager\DataTemplates\obj\Debug\Custom\FooterVDT.baml
 C:\Prism\GitRepositiory\MRManager\DataTemplates\obj\Debug\Custom\SummaryInterviewInfoDT.baml
 C:\Prism\GitRepositiory\MRManager\DataTemplates\obj\Debug\Custom\SummaryPatientSyntomInfoDT.baml
 C:\Prism\GitRepositiory\MRManager\DataTemplates\obj\Debug\Custom\SummaryPatientVisitInfoDT.baml
+C:\Prism\GitRepositiory\GenSoft\DataTemplates\obj\Debug\DataTemplates.dll
+C:\Prism\GitRepositiory\GenSoft\DataTemplates\obj\Debug\DataTemplates.pdb

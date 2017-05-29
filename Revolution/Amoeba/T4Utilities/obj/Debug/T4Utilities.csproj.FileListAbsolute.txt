@@ -72,3 +72,5 @@ C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4Utilities\bin\Debug\LinqSpecs.
 C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4Utilities\bin\Debug\LinqSpecs.xml
 C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4Utilities\bin\Debug\Specifications.pdb
 C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4Utilities\obj\Debug\T4Utilities.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4Utilities\obj\Debug\T4Utilities.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4Utilities\obj\Debug\T4Utilities.pdb

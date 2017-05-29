@@ -152,3 +152,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\obj\x64\Debug\Core.Com
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\obj\x64\Debug\Core.Common.UI.csproj.GenerateResource.Cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\obj\x64\Debug\Core.Common.UI.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\obj\x64\Debug\Core.Common.UI.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\System.ValueTuple.dll

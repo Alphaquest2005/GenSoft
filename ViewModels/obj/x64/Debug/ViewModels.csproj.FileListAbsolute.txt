@@ -149,8 +149,8 @@ C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\Utilities.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\ViewMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\ViewModel.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\ValidationSets.pdb
-C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\Process.WorkFlow.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\ViewModel.WorkFlow.pdb
+C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\Process.WorkFlow.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\BootStrapper.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\RevolutionLogger.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\Actor.Interfaces.pdb
@@ -160,3 +160,4 @@ C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\ComponentModel.Composit
 C:\Prism\GitRepositiory\GenSoft\ViewModels\obj\x64\Debug\ViewModels.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\ViewModels\obj\x64\Debug\ViewModels.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\obj\x64\Debug\ViewModels.pdb
+C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\System.ValueTuple.dll

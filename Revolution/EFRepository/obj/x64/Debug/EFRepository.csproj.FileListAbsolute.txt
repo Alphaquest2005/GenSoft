@@ -202,3 +202,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\Domain.Int
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\obj\x64\Debug\EFRepository.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\obj\x64\Debug\EFRepository.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\obj\x64\Debug\EFRepository.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\System.ValueTuple.dll

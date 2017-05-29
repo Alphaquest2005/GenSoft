@@ -12,10 +12,9 @@ using GenSoft.Interfaces;
 namespace GenSoft.Interfaces
 {
 	[InheritedExport]
-	public partial interface IMessage:IEntity  
+	public partial interface IMessage:SystemInterfaces.IEntity  
 	{
 		int MessageSourceId { get;}
-		int MachineId { get;}
 		int ProcessId { get;}
 		DateTime EntryDateTime { get;}
 

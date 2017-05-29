@@ -12,7 +12,7 @@ using GenSoft.Interfaces;
 namespace GenSoft.Interfaces
 {
 	[InheritedExport]
-	public partial interface IUser:IEntity  
+	public partial interface IUser:SystemInterfaces.IEntity  
 	{
 		string Password { get;}
 

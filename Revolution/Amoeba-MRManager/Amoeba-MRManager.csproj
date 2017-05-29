@@ -322,6 +322,7 @@
 ..\GenSoft.DBContext\Generated Mappings\ApplicationSetting.cs
 ..\GenSoft.DBContext\Generated Mappings\Command.cs
 ..\GenSoft.DBContext\Generated Mappings\Entity.cs
+..\GenSoft.DBContext\Generated Mappings\EntityAttribute.cs
 ..\GenSoft.DBContext\Generated Mappings\EntityType.cs
 ..\GenSoft.DBContext\Generated Mappings\Event.cs
 ..\GenSoft.DBContext\Generated Mappings\Machine.cs
@@ -348,6 +349,7 @@
 ..\GenSoft.Entities\Generated Entities\Command.cs
 ..\GenSoft.Entities\Generated Entities\Entity Views\ProcessInfo.cs
 ..\GenSoft.Entities\Generated Entities\Entity.cs
+..\GenSoft.Entities\Generated Entities\EntityAttribute.cs
 ..\GenSoft.Entities\Generated Entities\EntityType.cs
 ..\GenSoft.Entities\Generated Entities\Event.cs
 ..\GenSoft.Entities\Generated Entities\Machine.cs
@@ -378,6 +380,7 @@
 ..\GenSoft.Interface\Generated Interfaces\ApplicationSetting.cs
 ..\GenSoft.Interface\Generated Interfaces\Command.cs
 ..\GenSoft.Interface\Generated Interfaces\Entity.cs
+..\GenSoft.Interface\Generated Interfaces\EntityAttribute.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityType.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityViews\ProcessInfo.cs
 ..\GenSoft.Interface\Generated Interfaces\Event.cs

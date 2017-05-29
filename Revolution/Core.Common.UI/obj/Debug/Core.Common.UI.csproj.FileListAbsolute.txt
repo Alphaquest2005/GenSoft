@@ -372,3 +372,5 @@ C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\obj\Debug\Core.Commo
 C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI.pdb
 C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\EF.Entities.dll
 C:\Prism\GitRepositiory\MRManager\Revolution\Core.Common.UI\bin\Debug\EF.Entities.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\obj\Debug\Core.Common.UI.pdb

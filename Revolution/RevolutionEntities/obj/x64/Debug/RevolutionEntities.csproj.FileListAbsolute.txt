@@ -106,3 +106,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Debug\Inte
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\obj\x64\Debug\RevolutionEntities.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\obj\x64\Debug\RevolutionEntities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\obj\x64\Debug\RevolutionEntities.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Debug\System.ValueTuple.dll

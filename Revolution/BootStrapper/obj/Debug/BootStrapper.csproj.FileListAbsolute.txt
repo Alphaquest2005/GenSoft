@@ -178,3 +178,5 @@ C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\log4net.xml
 C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\obj\Debug\BootStrapper.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\obj\Debug\BootStrapper.dll
 C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\obj\Debug\BootStrapper.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\obj\Debug\BootStrapper.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\obj\Debug\BootStrapper.pdb

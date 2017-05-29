@@ -262,6 +262,10 @@ C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\bin\x64\Debug\ViewMessages.d
 C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\bin\x64\Debug\ViewModel.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\bin\x64\Debug\ViewModel.WorkFlow.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\bin\x64\Debug\ViewModels.dll
+C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\bin\x64\Debug\GenSoft.DBContext.dll
+C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\bin\x64\Debug\GenSoft.Entities.dll
+C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\bin\x64\Debug\GenSoft.Expressions.dll
+C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\bin\x64\Debug\GenSoft.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\bin\x64\Debug\DataTemplates.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\bin\x64\Debug\DesignTimeData.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\bin\x64\Debug\Domain.Interfaces.pdb
@@ -298,9 +302,13 @@ C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\bin\x64\Debug\Utilities.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\bin\x64\Debug\ViewMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\bin\x64\Debug\ViewModel.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\bin\x64\Debug\ValidationSets.pdb
+C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\bin\x64\Debug\ViewModel.WorkFlow.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\bin\x64\Debug\ViewModels.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\bin\x64\Debug\Process.WorkFlow.pdb
-C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\bin\x64\Debug\ViewModel.WorkFlow.pdb
+C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\bin\x64\Debug\GenSoft.DBContext.pdb
+C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\bin\x64\Debug\GenSoft.Entities.pdb
+C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\bin\x64\Debug\GenSoft.Expressions.pdb
+C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\bin\x64\Debug\GenSoft.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\bin\x64\Debug\de\System.Windows.Interactivity.resources.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\bin\x64\Debug\en\System.Windows.Interactivity.resources.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\bin\x64\Debug\es\System.Windows.Interactivity.resources.dll
@@ -314,3 +322,4 @@ C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\bin\x64\Debug\zh-Hant\System
 C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\obj\x64\Debug\MRManager-UnitTests.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\obj\x64\Debug\MRManager-UnitTests.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\obj\x64\Debug\MRManager-UnitTests.pdb
+C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\bin\x64\Debug\System.ValueTuple.dll

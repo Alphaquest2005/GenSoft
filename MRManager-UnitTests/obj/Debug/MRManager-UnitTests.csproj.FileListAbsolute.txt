@@ -347,3 +347,5 @@ C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\bin\Debug\zh-Hant\System.W
 C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\obj\Debug\MRManager-UnitTests.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\obj\Debug\MRManager-UnitTests.dll
 C:\Prism\GitRepositiory\MRManager\MRManager-UnitTests\obj\Debug\MRManager-UnitTests.pdb
+C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\obj\Debug\MRManager-UnitTests.dll
+C:\Prism\GitRepositiory\GenSoft\MRManager-UnitTests\obj\Debug\MRManager-UnitTests.pdb

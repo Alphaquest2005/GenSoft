@@ -14,10 +14,6 @@ namespace GenSoft.Entities
 	public partial class ProcessInfo: BaseEntity, IProcessInfo
 	{
 		public string UserName { get; set; }
-		public string Description { get; set; }
-		public string Name { get; set; }
-		public int? ParentProcessId { get; set; }
-		public string Symbol { get; set; }
 
 	}
 }

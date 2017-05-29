@@ -48,3 +48,5 @@ C:\Prism\GitRepositiory\MRManager\Amoeba\T4 Repository\bin\Debug\T4Entities.pdb
 C:\Prism\GitRepositiory\MRManager\Amoeba\T4 Repository\obj\Debug\T4 Repository.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\MRManager\Amoeba\T4 Repository\obj\Debug\T4Repository.dll
 C:\Prism\GitRepositiory\MRManager\Amoeba\T4 Repository\obj\Debug\T4Repository.pdb
+C:\Prism\GitRepositiory\GenSoft\Amoeba\T4 Repository\obj\Debug\T4Repository.dll
+C:\Prism\GitRepositiory\GenSoft\Amoeba\T4 Repository\obj\Debug\T4Repository.pdb

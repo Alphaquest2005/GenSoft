@@ -190,3 +190,5 @@ C:\Prism\GitRepositiory\MRManager\EFDataContext\bin\Debug\Utilities.pdb
 C:\Prism\GitRepositiory\MRManager\EFDataContext\obj\Debug\EF.DBContext.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\MRManager\EFDataContext\obj\Debug\EF.DBContext.dll
 C:\Prism\GitRepositiory\MRManager\EFDataContext\obj\Debug\EF.DBContext.pdb
+C:\Prism\GitRepositiory\GenSoft\EFDataContext\obj\Debug\EF.DBContext.dll
+C:\Prism\GitRepositiory\GenSoft\EFDataContext\obj\Debug\EF.DBContext.pdb

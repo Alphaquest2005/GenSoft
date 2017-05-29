@@ -28,15 +28,9 @@ namespace GenSoft.DBContexts
 		private static void CreateSeedData()
 		{
 				Instance.Database.ExecuteSqlCommand(@"
-					SET IDENTITY_INSERT dbo.Action ON
-						Insert Into dbo.Action (Id,Name) Values('1','StartProcess')
-						Insert Into dbo.Action (Id,Name) Values('2','StartNextProcess')
-						Insert Into dbo.Action (Id,Name) Values('3','CleanUpProcess')
-					SET IDENTITY_INSERT dbo.Action OFF");
-				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.Agent ON
-						Insert Into dbo.Agent (Id,UserName) Values('1','System')
-						Insert Into dbo.Agent (Id,UserName) Values('2','joe')
+						Insert Into dbo.Agent (UserName,Id) Values('System','0')
+						Insert Into dbo.Agent (UserName,Id) Values('joe','2')
 					SET IDENTITY_INSERT dbo.Agent OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.Machine ON
@@ -61,15 +55,19 @@ namespace GenSoft.DBContexts
 					SET IDENTITY_INSERT dbo.Type OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.Process ON
-						Insert Into dbo.Process (Id,Description,Name,ParentProcessId,Symbol) Values('1','Prepare system for Intial Use','Starting System','0','Start')
-						Insert Into dbo.Process (Id,Description,Name,ParentProcessId,Symbol) Values('2','User Login','User SignOn','1','User')
-						Insert Into dbo.Process (Id,Description,Name,ParentProcessId,Symbol) Values('3','User Screen','Load User Screen','2','UserScreen')
+						Insert Into dbo.Process (UserId,Id,Description,Name,ParentProcessId,Symbol) Values('0','1','Prepare system for Intial Use','Starting System','0','Start')
+						Insert Into dbo.Process (UserId,Id,Description,Name,ParentProcessId,Symbol) Values('0','2','User Login','User SignOn','1','User')
+						Insert Into dbo.Process (UserId,Id,Description,Name,ParentProcessId,Symbol) Values('0','3','User Screen','Load User Screen','2','UserScreen')
 					SET IDENTITY_INSERT dbo.Process OFF");
 			//No test data for SourceType
 			//No test data for MessageSource
 			//No test data for Message
 			//No test data for Entity
-			//No test data for EntityType
+				Instance.Database.ExecuteSqlCommand(@"
+						Insert Into dbo.EntityType (Id) Values('1')
+						Insert Into dbo.EntityType (Id) Values('2')
+						Insert Into dbo.EntityType (Id) Values('3')
+");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.ProcessState ON
 						Insert Into dbo.ProcessState (EntityTypeId,Id,Name,ProcessId,StateId,Predicate) Values('1','1','ServiceManagerStarted','1','1','entity != null')
@@ -97,8 +95,8 @@ namespace GenSoft.DBContexts
 ");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.StateAction ON
-						Insert Into dbo.StateAction (ActionId,Id,ProcessStateId) Values('1','5','1')
-						Insert Into dbo.StateAction (ActionId,Id,ProcessStateId) Values('3','6','5')
+						Insert Into dbo.StateAction (Id,ProcessStateId,ActionId) Values('5','1','1')
+						Insert Into dbo.StateAction (Id,ProcessStateId,ActionId) Values('6','5','3')
 					SET IDENTITY_INSERT dbo.StateAction OFF");
 			//No test data for Command
 				Instance.Database.ExecuteSqlCommand(@"

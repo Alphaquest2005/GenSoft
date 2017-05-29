@@ -236,3 +236,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\EF.Entitie
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\obj\x64\Debug\DataServices.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\obj\x64\Debug\DataServices.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\obj\x64\Debug\DataServices.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\System.ValueTuple.dll

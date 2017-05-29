@@ -28,3 +28,5 @@ C:\Prism\GitRepositiory\MRManager\Amoeba\Specifications\bin\Debug\T4Entities.pdb
 C:\Prism\GitRepositiory\MRManager\Amoeba\Specifications\obj\Debug\Specifications.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\MRManager\Amoeba\Specifications\obj\Debug\Specifications.dll
 C:\Prism\GitRepositiory\MRManager\Amoeba\Specifications\obj\Debug\Specifications.pdb
+C:\Prism\GitRepositiory\GenSoft\Amoeba\Specifications\obj\Debug\Specifications.dll
+C:\Prism\GitRepositiory\GenSoft\Amoeba\Specifications\obj\Debug\Specifications.pdb

@@ -19,16 +19,13 @@ namespace GenSoft.Mappings
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.MessageSourceId).HasColumnName("MessageSourceId").IsRequired();
-			entityBuilder.Property(t => t.MachineId).HasColumnName("MachineId").IsRequired();
 			entityBuilder.Property(t => t.ProcessId).HasColumnName("ProcessId").IsRequired();
 			entityBuilder.Property(t => t.EntryDateTime).HasColumnName("EntryDateTime").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasOne(p => p.Command).WithOne(p => p.Message).HasForeignKey<Command>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasOne(p => p.Event).WithOne(p => p.Message).HasForeignKey<Event>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties
 				//entityBuilder.HasOne(p => p.MessageSource MessageSource).WithMany(p => p.Message).HasForeignKey(c => c.MessageSourceId).OnDelete(DeleteBehavior.Restrict);
-				//entityBuilder.HasOne(p => p.Machine Machine).WithMany(p => p.Message).HasForeignKey(c => c.MachineId).OnDelete(DeleteBehavior.Restrict);
 				//entityBuilder.HasOne(p => p.Process Process).WithMany(p => p.Message).HasForeignKey(c => c.ProcessId).OnDelete(DeleteBehavior.Restrict);
 	
 		}

@@ -336,3 +336,5 @@ C:\Prism\GitRepositiory\MRManager\MRManager\obj\Debug\MRManager.Properties.Resou
 C:\Prism\GitRepositiory\MRManager\MRManager\obj\Debug\MRManager.csproj.GenerateResource.Cache
 C:\Prism\GitRepositiory\MRManager\MRManager\obj\Debug\MRManager.exe
 C:\Prism\GitRepositiory\MRManager\MRManager\obj\Debug\MRManager.pdb
+C:\Prism\GitRepositiory\GenSoft\MRManager\obj\Debug\MRManager.exe
+C:\Prism\GitRepositiory\GenSoft\MRManager\obj\Debug\MRManager.pdb

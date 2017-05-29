@@ -49,6 +49,7 @@
     <Compile Include="Generated Interfaces\ApplicationSetting.cs" />
     <Compile Include="Generated Interfaces\Command.cs" />
     <Compile Include="Generated Interfaces\Entity.cs" />
+    <Compile Include="Generated Interfaces\EntityAttribute.cs" />
     <Compile Include="Generated Interfaces\EntityType.cs" />
     <Compile Include="Generated Interfaces\EntityViews\ProcessInfo.cs" />
     <Compile Include="Generated Interfaces\Event.cs" />

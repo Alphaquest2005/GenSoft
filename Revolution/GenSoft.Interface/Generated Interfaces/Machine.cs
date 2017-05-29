@@ -12,7 +12,7 @@ using GenSoft.Interfaces;
 namespace GenSoft.Interfaces
 {
 	[InheritedExport]
-	public partial interface IMachine:IEntity  
+	public partial interface IMachine:SystemInterfaces.IEntity  
 	{
 		string MachineName { get;}
 		int Processors { get;}

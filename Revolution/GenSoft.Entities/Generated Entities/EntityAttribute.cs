@@ -6,25 +6,23 @@
 using System;
 using System.Collections.Generic;
 using Common.DataEntites;
-using System.Linq;
 using GenSoft.Entities;
 using GenSoft.Interfaces;
 
 namespace GenSoft.Entities
 {
-	public partial class EntityAttribute: BaseEntity<EntityAttribute>, IEntityAttribute
+	public partial class EntityAttribute: BaseEntity, IEntityAttribute
 	{
 		public virtual int EntityId { get; set; }
-		public virtual int DataTypeId { get; set; }
 		public virtual string Name { get; set; }
 		public virtual string Value { get; set; }
+		public virtual int DataTypeId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 		
 			// ---------Parent Relationships
 				public virtual Entity Entity {get; set;}
-				//IEntity IEntityAttribute.Entity => Entity;
 	
 
 	}

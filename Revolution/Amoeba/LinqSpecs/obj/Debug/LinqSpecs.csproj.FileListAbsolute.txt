@@ -11,3 +11,9 @@ C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\LinqSpecs\obj\Debug\LinqSpecs.pd
 C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\LinqSpecs\bin\Debug\LinqSpecs.XML
 C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\LinqSpecs\bin\Debug\LinqSpecs.dll
 C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\LinqSpecs\bin\Debug\LinqSpecs.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\LinqSpecs\bin\Debug\LinqSpecs.XML
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\LinqSpecs\bin\Debug\LinqSpecs.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\LinqSpecs\bin\Debug\LinqSpecs.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\LinqSpecs\obj\Debug\LinqSpecs.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\LinqSpecs\obj\Debug\LinqSpecs.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\LinqSpecs\obj\Debug\LinqSpecs.pdb

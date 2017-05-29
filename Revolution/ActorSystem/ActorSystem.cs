@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.Linq;
 using System.Reflection;
 using SystemInterfaces;
 using Actor.Interfaces;
 using Akka.Actor;
 using DataServices.Actors;
+using GenSoft.DBContexts;
+using GenSoft.Expressions;
+using RevolutionEntities.Process;
 using ViewModel.Interfaces;
 
 
@@ -34,5 +38,20 @@ namespace ActorBackBone
             }
         }
 
+        public void Intialize(bool autoContinue, List<IComplexEventAction> complexEventActions, List<IViewModelInfo> viewInfos)
+        {
+            using (var ctx = new GenSoftDBContext())
+            {
+                var machineInfo = ctx.Machine.Select(x => ProcessExpressions.CreateMachineInfo(x)).ToList();
+
+                var processInfos = ctx.Process.Select(x => ProcessExpressions.CreateProcessInfo(x)).ToList();
+
+                
+
+                Intialize(autoContinue, machineInfo, processInfos, complexEventActions, viewInfos);
+            }
+
+            
+        }
     }
 }

@@ -12,13 +12,9 @@ using GenSoft.Interfaces;
 namespace GenSoft.Interfaces
 {
 	
-	public partial interface IProcessInfo:IEntityView<IProcess>
+	public partial interface IProcessInfo:IEntityView<IAgent>
 	{
 		string UserName { get;}
-		string Description { get;}
-		string Name { get;}
-		int? ParentProcessId { get;}
-		string Symbol { get;}
 
 
 

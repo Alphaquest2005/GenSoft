@@ -8,6 +8,7 @@ using Core.Common.UI;
 using EF.DBContexts;
 using EF.Entities;
 using RevolutionLogger;
+using ViewModel.WorkFlow;
 using Application = System.Windows.Application;
 
 namespace MRManager
@@ -29,7 +30,7 @@ namespace MRManager
 		    {
                 var dbContextAssembly = new MRManagerDBContext().GetType().Assembly;
                 var entitiesAssembly = new EFEntity<IEntity>().GetType().Assembly;
-                BootStrapper.BootStrapper.Instance.StartUp( true, Process.WorkFlow.MachineInfoData.MachineInfos, Process.WorkFlow.Processes.ProcessInfos, Process.WorkFlow.Processes.ProcessComplexEvents, ViewModel.WorkFlow.ProcessViewModels.ProcessViewModelInfos.Skip(1).ToList(),dbContextAssembly,entitiesAssembly);
+                BootStrapper.BootStrapper.Instance.StartUp( true, dbContextAssembly,entitiesAssembly, Process.WorkFlow.Processes.ProcessComplexEvents, ProcessViewModels.ProcessViewModelInfos);
 		    }).ConfigureAwait(false);
 
 

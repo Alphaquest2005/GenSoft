@@ -68,3 +68,5 @@ C:\Prism\GitRepositiory\MRManager\Revolution\Utilities\bin\Debug\SystemInterface
 C:\Prism\GitRepositiory\MRManager\Revolution\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\MRManager\Revolution\Utilities\obj\Debug\Utilities.dll
 C:\Prism\GitRepositiory\MRManager\Revolution\Utilities\obj\Debug\Utilities.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\obj\Debug\Utilities.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\obj\Debug\Utilities.pdb

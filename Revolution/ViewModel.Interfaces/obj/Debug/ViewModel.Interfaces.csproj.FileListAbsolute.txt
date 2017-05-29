@@ -81,3 +81,5 @@ C:\Prism\GitRepositiory\MRManager\Revolution\ViewModel.Interfaces\bin\Debug\Syst
 C:\Prism\GitRepositiory\MRManager\Revolution\ViewModel.Interfaces\obj\Debug\ViewModel.Interfaces.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\MRManager\Revolution\ViewModel.Interfaces\obj\Debug\ViewModel.Interfaces.dll
 C:\Prism\GitRepositiory\MRManager\Revolution\ViewModel.Interfaces\obj\Debug\ViewModel.Interfaces.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\obj\Debug\ViewModel.Interfaces.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\obj\Debug\ViewModel.Interfaces.pdb

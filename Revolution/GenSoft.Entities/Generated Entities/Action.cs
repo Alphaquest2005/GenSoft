@@ -17,7 +17,6 @@ namespace GenSoft.Entities
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
-				public virtual ICollection<StateAction> StateAction {get; set;}
 		
 			// ---------Parent Relationships
 	

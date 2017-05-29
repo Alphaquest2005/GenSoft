@@ -68,3 +68,5 @@ C:\Prism\GitRepositiory\MRManager\EF.Mappings\bin\Debug\Utilities.pdb
 C:\Prism\GitRepositiory\MRManager\EF.Mappings\obj\Debug\EF.Mappings.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\MRManager\EF.Mappings\obj\Debug\EF.Mappings.dll
 C:\Prism\GitRepositiory\MRManager\EF.Mappings\obj\Debug\EF.Mappings.pdb
+C:\Prism\GitRepositiory\GenSoft\EF.Mappings\obj\Debug\EF.Mappings.dll
+C:\Prism\GitRepositiory\GenSoft\EF.Mappings\obj\Debug\EF.Mappings.pdb

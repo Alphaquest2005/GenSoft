@@ -24,3 +24,5 @@ C:\Prism\GitRepositiory\MRManager\Revolution\Converters\bin\Debug\ko\System.Wind
 C:\Prism\GitRepositiory\MRManager\Revolution\Converters\bin\Debug\ru\System.Windows.Interactivity.resources.dll
 C:\Prism\GitRepositiory\MRManager\Revolution\Converters\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 C:\Prism\GitRepositiory\MRManager\Revolution\Converters\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\obj\Debug\Converters.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\obj\Debug\Converters.pdb

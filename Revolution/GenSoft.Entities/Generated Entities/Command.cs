@@ -14,14 +14,15 @@ namespace GenSoft.Entities
 	public partial class Command: BaseEntity, ICommand
 	{
 		public virtual int StateActionId { get; set; }
-		public virtual DateTime EntryDateTime { get; set; }
+		public virtual int EntityId { get; set; }
+		public virtual int CommandTypeId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 		
 			// ---------Parent Relationships
-				public virtual Message Message {get; set;}
 				public virtual StateAction StateAction {get; set;}
+				public virtual Entity Entity {get; set;}
 	
 
 	}

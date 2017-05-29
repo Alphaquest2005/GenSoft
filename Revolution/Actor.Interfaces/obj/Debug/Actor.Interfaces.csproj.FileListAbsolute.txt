@@ -11,3 +11,5 @@ C:\Prism\GitRepositiory\MRManager\Revolution\Actor.Interfaces\bin\Debug\System.C
 C:\Prism\GitRepositiory\MRManager\Revolution\Actor.Interfaces\obj\Debug\Actor.Interfaces.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\MRManager\Revolution\Actor.Interfaces\obj\Debug\Actor.Interfaces.dll
 C:\Prism\GitRepositiory\MRManager\Revolution\Actor.Interfaces\obj\Debug\Actor.Interfaces.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\obj\Debug\Actor.Interfaces.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\obj\Debug\Actor.Interfaces.pdb

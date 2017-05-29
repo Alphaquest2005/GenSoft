@@ -18,7 +18,7 @@ namespace GenSoft.Entities
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
-				public virtual ICollection<Message> Message {get; set;}
+				public virtual ICollection<MessageSource> MessageSource {get; set;}
 		
 			// ---------Parent Relationships
 	

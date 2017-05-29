@@ -8,3 +8,5 @@ C:\Prism\GitRepositiory\MRManager\Revolution\UserControls\obj\Debug\ImageViewer.
 C:\Prism\GitRepositiory\MRManager\Revolution\UserControls\obj\Debug\UserControls.g.resources
 C:\Prism\GitRepositiory\MRManager\Revolution\UserControls\obj\Debug\UserControls.dll
 C:\Prism\GitRepositiory\MRManager\Revolution\UserControls\obj\Debug\UserControls.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\UserControls\obj\Debug\UserControls.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\UserControls\obj\Debug\UserControls.pdb

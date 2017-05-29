@@ -13,8 +13,8 @@ namespace GenSoft.Entities
 {
 	public partial class StateAction: BaseEntity, IStateAction
 	{
-		public virtual int ActionId { get; set; }
 		public virtual int ProcessStateId { get; set; }
+		public virtual int ActionId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
@@ -22,7 +22,6 @@ namespace GenSoft.Entities
 				public virtual StateActionExpectedProcessState StateActionExpectedProcessState {get; set;}
 		
 			// ---------Parent Relationships
-				public virtual Action Action {get; set;}
 				public virtual ProcessState ProcessState {get; set;}
 	
 

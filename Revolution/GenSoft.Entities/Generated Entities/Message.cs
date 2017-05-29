@@ -14,18 +14,15 @@ namespace GenSoft.Entities
 	public partial class Message: BaseEntity, IMessage
 	{
 		public virtual int MessageSourceId { get; set; }
-		public virtual int MachineId { get; set; }
 		public virtual int ProcessId { get; set; }
 		public virtual DateTime EntryDateTime { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
-				public virtual Command Command {get; set;}
 				public virtual Event Event {get; set;}
 		
 			// ---------Parent Relationships
 				public virtual MessageSource MessageSource {get; set;}
-				public virtual Machine Machine {get; set;}
 				public virtual Process Process {get; set;}
 	
 

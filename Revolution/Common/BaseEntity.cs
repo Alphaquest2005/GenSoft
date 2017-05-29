@@ -12,7 +12,7 @@ namespace Common.DataEntites
         public virtual int Id { get; set; }
         public virtual DateTime EntryDateTime { get; private set; } = DateTime.Now;
 
-        public virtual int EntityTypeId { get; set; }
+       // public virtual int EntityTypeId { get; set; } = 0;
 
         [IgnoreDataMember]
         [NotMapped]

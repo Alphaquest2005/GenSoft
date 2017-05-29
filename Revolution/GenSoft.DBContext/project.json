@@ -1,9 +1,9 @@
 ﻿{
   "dependencies": {
-    "Microsoft.EntityFrameworkCore": "1.1.1",
-    "Microsoft.EntityFrameworkCore.Relational": "1.1.1",
-    "Microsoft.EntityFrameworkCore.SqlServer": "1.1.1",
-    "morelinq": "2.3.0"
+    "Microsoft.EntityFrameworkCore": "1.1.2",
+    "Microsoft.EntityFrameworkCore.Relational": "1.1.2",
+    "Microsoft.EntityFrameworkCore.SqlServer": "1.1.2",
+    "morelinq": "2.4.1"
   },
   "frameworks": {
     "net461": {}

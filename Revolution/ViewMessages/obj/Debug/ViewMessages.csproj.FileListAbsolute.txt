@@ -104,3 +104,5 @@ C:\Prism\GitRepositiory\MRManager\Revolution\ViewMessages\bin\Debug\Interfaces.p
 C:\Prism\GitRepositiory\MRManager\Revolution\ViewMessages\obj\Debug\ViewMessages.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\MRManager\Revolution\ViewMessages\obj\Debug\ViewMessages.dll
 C:\Prism\GitRepositiory\MRManager\Revolution\ViewMessages\obj\Debug\ViewMessages.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\obj\Debug\ViewMessages.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\obj\Debug\ViewMessages.pdb

@@ -66,3 +66,5 @@ C:\Prism\GitRepositiory\MRManager\Expressions\bin\Debug\Utilities.pdb
 C:\Prism\GitRepositiory\MRManager\Expressions\obj\Debug\Expressions.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\MRManager\Expressions\obj\Debug\Expressions.dll
 C:\Prism\GitRepositiory\MRManager\Expressions\obj\Debug\Expressions.pdb
+C:\Prism\GitRepositiory\GenSoft\Expressions\obj\Debug\Expressions.dll
+C:\Prism\GitRepositiory\GenSoft\Expressions\obj\Debug\Expressions.pdb

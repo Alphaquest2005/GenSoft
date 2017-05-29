@@ -38,3 +38,5 @@ C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4 Templates\bin\Debug\LinqSpecs
 C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4 Templates\bin\Debug\LinqSpecs.xml
 C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4 Templates\bin\Debug\Specifications.pdb
 C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4 Templates\obj\Debug\T4 Templates.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Templates\obj\Debug\T4Templates.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Templates\obj\Debug\T4Templates.pdb

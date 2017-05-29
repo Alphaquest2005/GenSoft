@@ -12,7 +12,7 @@ using GenSoft.Interfaces;
 namespace GenSoft.Interfaces
 {
 	[InheritedExport]
-	public partial interface IProcess:IEntity  
+	public partial interface IProcess:SystemInterfaces.IEntity  
 	{
 		int UserId { get;}
 		string Description { get;}

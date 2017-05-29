@@ -3,10 +3,10 @@
   "version": 1,
   "targets": {
     ".NETFramework,Version=v4.6.1": {
-      "Akka/1.1.2": {
+      "Akka/1.2.0": {
         "dependencies": {
           "Newtonsoft.Json": "9.0.1",
-          "System.Collections.Immutable": "1.1.36"
+          "System.Collections.Immutable": "1.3.1"
         },
         "compile": {
           "lib/net45/Akka.dll": {}
@@ -68,7 +68,7 @@
           "lib/net45/JB.Common.Reactive.dll": {}
         }
       },
-      "log4net/2.0.5": {
+      "log4net/2.0.8": {
         "compile": {
           "lib/net45-full/log4net.dll": {}
         },
@@ -87,17 +87,15 @@
           "lib/net40-Client/MefContrib.dll": {}
         }
       },
-      "morelinq/2.0.0": {
-        "frameworkAssemblies": [
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.Xml"
-        ],
+      "morelinq/2.4.1": {
+        "dependencies": {
+          "System.ValueTuple": "4.3.0"
+        },
         "compile": {
-          "lib/net35/MoreLinq.dll": {}
+          "lib/net40/MoreLinq.dll": {}
         },
         "runtime": {
-          "lib/net35/MoreLinq.dll": {}
+          "lib/net40/MoreLinq.dll": {}
         }
       },
       "Newtonsoft.Json/9.0.1": {
@@ -230,20 +228,28 @@
           "lib/Net45/Splat.dll": {}
         }
       },
-      "System.Collections.Immutable/1.3.0": {
+      "System.Collections.Immutable/1.3.1": {
         "compile": {
           "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll": {}
         },
         "runtime": {
           "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll": {}
+        }
+      },
+      "System.ValueTuple/4.3.0": {
+        "compile": {
+          "lib/netstandard1.0/System.ValueTuple.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.ValueTuple.dll": {}
         }
       }
     },
     ".NETFramework,Version=v4.6.1/win-x64": {
-      "Akka/1.1.2": {
+      "Akka/1.2.0": {
         "dependencies": {
           "Newtonsoft.Json": "9.0.1",
-          "System.Collections.Immutable": "1.1.36"
+          "System.Collections.Immutable": "1.3.1"
         },
         "compile": {
           "lib/net45/Akka.dll": {}
@@ -305,7 +311,7 @@
           "lib/net45/JB.Common.Reactive.dll": {}
         }
       },
-      "log4net/2.0.5": {
+      "log4net/2.0.8": {
         "compile": {
           "lib/net45-full/log4net.dll": {}
         },
@@ -324,17 +330,15 @@
           "lib/net40-Client/MefContrib.dll": {}
         }
       },
-      "morelinq/2.0.0": {
-        "frameworkAssemblies": [
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.Xml"
-        ],
+      "morelinq/2.4.1": {
+        "dependencies": {
+          "System.ValueTuple": "4.3.0"
+        },
         "compile": {
-          "lib/net35/MoreLinq.dll": {}
+          "lib/net40/MoreLinq.dll": {}
         },
         "runtime": {
-          "lib/net35/MoreLinq.dll": {}
+          "lib/net40/MoreLinq.dll": {}
         }
       },
       "Newtonsoft.Json/9.0.1": {
@@ -467,23 +471,30 @@
           "lib/Net45/Splat.dll": {}
         }
       },
-      "System.Collections.Immutable/1.3.0": {
+      "System.Collections.Immutable/1.3.1": {
         "compile": {
           "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll": {}
         },
         "runtime": {
           "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll": {}
+        }
+      },
+      "System.ValueTuple/4.3.0": {
+        "compile": {
+          "lib/netstandard1.0/System.ValueTuple.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.ValueTuple.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "Akka/1.1.2": {
-      "sha512": "xQGINV9erWk2Lo0P/NAR01WU0B0oeJU5UImtV10q2Hp518Qc8uoNnG8oB/8yyDnGjNNf+9q5ZoRxubHNTc158A==",
+    "Akka/1.2.0": {
+      "sha512": "cd5LeeT7lWMRtvxmhzmsTUdeybHB9NZa0FFhWI1Cr8tH4x9+FNPrzPdyBKzVGdELZfGtQR/i0MbgwC13aZxlTQ==",
       "type": "package",
-      "path": "akka/1.1.2",
       "files": [
-        "Akka.1.1.2.nupkg.sha512",
+        "Akka.1.2.0.nupkg.sha512",
         "Akka.nuspec",
         "lib/net45/Akka.dll",
         "lib/net45/Akka.xml"
@@ -543,15 +554,10 @@
         "lib/net45/JB.Common.Reactive.dll"
       ]
     },
-    "log4net/2.0.5": {
-      "sha512": "AEqPZz+v+OikfnR2SqRVdQPnSaLq5y9Iz1CfRQZ9kTKPYCXHG6zYmDHb7wJotICpDLMr/JqokyjiqKAjUKp0ng==",
+    "log4net/2.0.8": {
+      "sha512": "N41MQGHZImiCfn0cUuSBjZxrcNfIQCuCgQP0rpgB3J/NWponEh3lc1LxJEuIsPAR9Oc1jVvfkNNFCY1C5hf9LA==",
       "type": "package",
-      "path": "log4net/2.0.5",
       "files": [
-        "lib/net10-full/log4net.dll",
-        "lib/net10-full/log4net.xml",
-        "lib/net11-full/log4net.dll",
-        "lib/net11-full/log4net.xml",
         "lib/net20-full/log4net.dll",
         "lib/net20-full/log4net.xml",
         "lib/net35-client/log4net.dll",
@@ -564,7 +570,8 @@
         "lib/net40-full/log4net.xml",
         "lib/net45-full/log4net.dll",
         "lib/net45-full/log4net.xml",
-        "log4net.2.0.5.nupkg.sha512",
+        "lib/netstandard1.3/log4net.dll",
+        "log4net.2.0.8.nupkg.sha512",
         "log4net.nuspec"
       ]
     },
@@ -582,20 +589,17 @@
         "lib/sl/MefContrib.Silverlight.pdb"
       ]
     },
-    "morelinq/2.0.0": {
-      "sha512": "A49ExxYvsBuazV9ftZHDkDKqAfO2bWhDiYopAU3jvTRCpINXK4DzX8QSyZnZdeY2i1BDsUMhcoAQZgpTFM83Lg==",
+    "morelinq/2.4.1": {
+      "sha512": "tdYIPs1jgunSbu24PHUvQrGB/Y2r9d0CfUeJm3GFqjpYJlFjTUmKoXT3T8BojqN/dsatFK8EJGKpFF7p9wRrxg==",
       "type": "package",
-      "path": "morelinq/2.0.0",
       "files": [
-        "COPYING.txt",
         "lib/net35/MoreLinq.dll",
         "lib/net35/MoreLinq.xml",
+        "lib/net40/MoreLinq.dll",
+        "lib/net40/MoreLinq.xml",
         "lib/netstandard1.0/MoreLinq.dll",
         "lib/netstandard1.0/MoreLinq.xml",
-        "lib/portable40-net40+sl5+win8+wp8+wpa81/MoreLinq.dll",
-        "lib/portable40-net40+sl5+win8+wp8+wpa81/MoreLinq.xml",
-        "lic/corefx/LICENSE",
-        "morelinq.2.0.0.nupkg.sha512",
+        "morelinq.2.4.1.nupkg.sha512",
         "morelinq.nuspec"
       ]
     },
@@ -1000,12 +1004,11 @@
         "lib/wp8/Splat.pdb"
       ]
     },
-    "System.Collections.Immutable/1.3.0": {
-      "sha512": "zukBRPUuNxwy9m4TGWLxKAnoiMc9+B+8VXeXVyPiBPvOd7yLgAlZ1DlsRWJjMx4VsvhhF2+6q6kO2GRbPja6hA==",
+    "System.Collections.Immutable/1.3.1": {
+      "sha512": "n+AGX7zmiZumW9aggOkXaHzUeAS3EfeTErnkKCusyONUozbTv+kMb8VE36m+ldV6kF9g57G2c641KCdgH9E0pg==",
       "type": "package",
-      "path": "system.collections.immutable/1.3.0",
       "files": [
-        "System.Collections.Immutable.1.3.0.nupkg.sha512",
+        "System.Collections.Immutable.1.3.1.nupkg.sha512",
         "System.Collections.Immutable.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
@@ -1013,6 +1016,20 @@
         "lib/netstandard1.0/System.Collections.Immutable.xml",
         "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll",
         "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.xml"
+      ]
+    },
+    "System.ValueTuple/4.3.0": {
+      "sha512": "cNLEvBX3d6MMQRZe3SMFNukVbitDAEpVZO17qa0/2FHxZ7Y7PpFRpr6m2615XYM/tYYYf0B+WyHNujqIw8Luwg==",
+      "type": "package",
+      "files": [
+        "System.ValueTuple.4.3.0.nupkg.sha512",
+        "System.ValueTuple.nuspec",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/netstandard1.0/.xml",
+        "lib/netstandard1.0/System.ValueTuple.dll",
+        "lib/portable-net40+sl4+win8+wp8/.xml",
+        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.dll"
       ]
     }
   },

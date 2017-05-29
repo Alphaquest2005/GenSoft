@@ -17,6 +17,7 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.ApplicationSetting> ApplicationSetting { get; set; }
 		public DbSet<Entities.Command> Command { get; set; }
 		public DbSet<Entities.Entity> Entity { get; set; }
+		public DbSet<Entities.EntityAttribute> EntityAttribute { get; set; }
 		public DbSet<Entities.EntityType> EntityType { get; set; }
 		public DbSet<Entities.Event> Event { get; set; }
 		public DbSet<Entities.Machine> Machine { get; set; }
@@ -49,6 +50,7 @@ namespace GenSoft.DBContexts
 				ApplicationSettingMap.Map(modelBuilder.Entity<Entities.ApplicationSetting>());
 				CommandMap.Map(modelBuilder.Entity<Entities.Command>());
 				EntityMap.Map(modelBuilder.Entity<Entities.Entity>());
+				EntityAttributeMap.Map(modelBuilder.Entity<Entities.EntityAttribute>());
 				EntityTypeMap.Map(modelBuilder.Entity<Entities.EntityType>());
 				EventMap.Map(modelBuilder.Entity<Entities.Event>());
 				MachineMap.Map(modelBuilder.Entity<Entities.Machine>());

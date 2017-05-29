@@ -12,10 +12,10 @@ using GenSoft.Interfaces;
 namespace GenSoft.Interfaces
 {
 	[InheritedExport]
-	public partial interface IStateAction:IEntity  
+	public partial interface IStateAction:SystemInterfaces.IEntity  
 	{
-		int ActionId { get;}
 		int ProcessStateId { get;}
+		int ActionId { get;}
 
 
 

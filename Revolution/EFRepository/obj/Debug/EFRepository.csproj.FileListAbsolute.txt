@@ -283,3 +283,5 @@ C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\bin\Debug\ComponentMod
 C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\obj\Debug\EFRepository.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\obj\Debug\EFRepository.dll
 C:\Prism\GitRepositiory\MRManager\Revolution\EFRepository\obj\Debug\EFRepository.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\obj\Debug\EFRepository.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\obj\Debug\EFRepository.pdb
