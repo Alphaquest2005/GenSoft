@@ -14,7 +14,7 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IProcessStateInfo:SystemInterfaces.IEntity  
 	{
-		string Status { get;}
+		string Description { get;}
 		string Notes { get;}
 
 

@@ -45,21 +45,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Generated Interfaces\Action.cs" />
+    <Compile Include="Generated Interfaces\ActionEntityType.cs" />
     <Compile Include="Generated Interfaces\Agent.cs" />
     <Compile Include="Generated Interfaces\ApplicationSetting.cs" />
     <Compile Include="Generated Interfaces\Command.cs" />
+    <Compile Include="Generated Interfaces\DataType.cs" />
+    <Compile Include="Generated Interfaces\DomainEntityType.cs" />
     <Compile Include="Generated Interfaces\Entity.cs" />
     <Compile Include="Generated Interfaces\EntityAttribute.cs" />
+    <Compile Include="Generated Interfaces\EntityId.cs" />
+    <Compile Include="Generated Interfaces\EntityName.cs" />
+    <Compile Include="Generated Interfaces\EntityRelationships.cs" />
     <Compile Include="Generated Interfaces\EntityType.cs" />
+    <Compile Include="Generated Interfaces\EntityTypeAttributes.cs" />
+    <Compile Include="Generated Interfaces\EntityViews\ProcessComplexStateView.cs" />
     <Compile Include="Generated Interfaces\EntityViews\ProcessInfo.cs" />
+    <Compile Include="Generated Interfaces\EntityViews\ProcessStateView.cs" />
     <Compile Include="Generated Interfaces\Event.cs" />
     <Compile Include="Generated Interfaces\Machine.cs" />
     <Compile Include="Generated Interfaces\Message.cs" />
     <Compile Include="Generated Interfaces\MessageSource.cs" />
+    <Compile Include="Generated Interfaces\MessageType.cs" />
     <Compile Include="Generated Interfaces\Process.cs" />
     <Compile Include="Generated Interfaces\ProcessComplexState.cs" />
     <Compile Include="Generated Interfaces\ProcessComplexStateExpectedProcessState.cs" />
     <Compile Include="Generated Interfaces\ProcessState.cs" />
+    <Compile Include="Generated Interfaces\ProcessStateDomainEntityTypes.cs" />
     <Compile Include="Generated Interfaces\ProcessStateInfo.cs" />
     <Compile Include="Generated Interfaces\ProcessStateTrigger.cs" />
     <Compile Include="Generated Interfaces\SourceType.cs" />

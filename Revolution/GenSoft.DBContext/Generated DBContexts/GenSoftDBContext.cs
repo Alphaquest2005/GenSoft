@@ -13,20 +13,29 @@ namespace GenSoft.DBContexts
 	public partial class GenSoftDBContext:DbContext
 	{
 		public DbSet<Entities.Action> Action { get; set; }
+		public DbSet<Entities.ActionEntityType> ActionEntityType { get; set; }
 		public DbSet<Entities.Agent> Agent { get; set; }
 		public DbSet<Entities.ApplicationSetting> ApplicationSetting { get; set; }
 		public DbSet<Entities.Command> Command { get; set; }
+		public DbSet<Entities.DataType> DataType { get; set; }
+		public DbSet<Entities.DomainEntityType> DomainEntityType { get; set; }
 		public DbSet<Entities.Entity> Entity { get; set; }
 		public DbSet<Entities.EntityAttribute> EntityAttribute { get; set; }
+		public DbSet<Entities.EntityId> EntityId { get; set; }
+		public DbSet<Entities.EntityName> EntityName { get; set; }
+		public DbSet<Entities.EntityRelationships> EntityRelationships { get; set; }
 		public DbSet<Entities.EntityType> EntityType { get; set; }
+		public DbSet<Entities.EntityTypeAttributes> EntityTypeAttributes { get; set; }
 		public DbSet<Entities.Event> Event { get; set; }
 		public DbSet<Entities.Machine> Machine { get; set; }
 		public DbSet<Entities.Message> Message { get; set; }
 		public DbSet<Entities.MessageSource> MessageSource { get; set; }
+		public DbSet<Entities.MessageType> MessageType { get; set; }
 		public DbSet<Entities.Process> Process { get; set; }
 		public DbSet<Entities.ProcessComplexState> ProcessComplexState { get; set; }
 		public DbSet<Entities.ProcessComplexStateExpectedProcessState> ProcessComplexStateExpectedProcessState { get; set; }
 		public DbSet<Entities.ProcessState> ProcessState { get; set; }
+		public DbSet<Entities.ProcessStateDomainEntityTypes> ProcessStateDomainEntityTypes { get; set; }
 		public DbSet<Entities.ProcessStateInfo> ProcessStateInfo { get; set; }
 		public DbSet<Entities.ProcessStateTrigger> ProcessStateTrigger { get; set; }
 		public DbSet<Entities.SourceType> SourceType { get; set; }
@@ -46,20 +55,29 @@ namespace GenSoft.DBContexts
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 				ActionMap.Map(modelBuilder.Entity<Entities.Action>());
+				ActionEntityTypeMap.Map(modelBuilder.Entity<Entities.ActionEntityType>());
 				AgentMap.Map(modelBuilder.Entity<Entities.Agent>());
 				ApplicationSettingMap.Map(modelBuilder.Entity<Entities.ApplicationSetting>());
 				CommandMap.Map(modelBuilder.Entity<Entities.Command>());
+				DataTypeMap.Map(modelBuilder.Entity<Entities.DataType>());
+				DomainEntityTypeMap.Map(modelBuilder.Entity<Entities.DomainEntityType>());
 				EntityMap.Map(modelBuilder.Entity<Entities.Entity>());
 				EntityAttributeMap.Map(modelBuilder.Entity<Entities.EntityAttribute>());
+				EntityIdMap.Map(modelBuilder.Entity<Entities.EntityId>());
+				EntityNameMap.Map(modelBuilder.Entity<Entities.EntityName>());
+				EntityRelationshipsMap.Map(modelBuilder.Entity<Entities.EntityRelationships>());
 				EntityTypeMap.Map(modelBuilder.Entity<Entities.EntityType>());
+				EntityTypeAttributesMap.Map(modelBuilder.Entity<Entities.EntityTypeAttributes>());
 				EventMap.Map(modelBuilder.Entity<Entities.Event>());
 				MachineMap.Map(modelBuilder.Entity<Entities.Machine>());
 				MessageMap.Map(modelBuilder.Entity<Entities.Message>());
 				MessageSourceMap.Map(modelBuilder.Entity<Entities.MessageSource>());
+				MessageTypeMap.Map(modelBuilder.Entity<Entities.MessageType>());
 				ProcessMap.Map(modelBuilder.Entity<Entities.Process>());
 				ProcessComplexStateMap.Map(modelBuilder.Entity<Entities.ProcessComplexState>());
 				ProcessComplexStateExpectedProcessStateMap.Map(modelBuilder.Entity<Entities.ProcessComplexStateExpectedProcessState>());
 				ProcessStateMap.Map(modelBuilder.Entity<Entities.ProcessState>());
+				ProcessStateDomainEntityTypesMap.Map(modelBuilder.Entity<Entities.ProcessStateDomainEntityTypes>());
 				ProcessStateInfoMap.Map(modelBuilder.Entity<Entities.ProcessStateInfo>());
 				ProcessStateTriggerMap.Map(modelBuilder.Entity<Entities.ProcessStateTrigger>());
 				SourceTypeMap.Map(modelBuilder.Entity<Entities.SourceType>());

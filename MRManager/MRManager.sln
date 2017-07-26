@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataLayer", "DataLayer", "{CCDC1DAB-3E49-49D3-8D84-661C080F52BA}"
 EndProject
@@ -134,6 +134,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenSoft.DBContext", "..\Revolution\GenSoft.DBContext\GenSoft.DBContext.csproj", "{AE0F4302-D3DF-4561-96A0-0B093F988C03}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenSoft.Expressions", "..\Revolution\GenSoft.Expressions\GenSoft.Expressions.csproj", "{A73DFC98-2F9F-460A-9449-3624A666BE07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildingSpecifications", "..\BuildingSpecifications\BuildingSpecifications.csproj", "{E307C55E-A215-45E5-B3F2-C23EC3396DE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -806,6 +808,18 @@ Global
 		{A73DFC98-2F9F-460A-9449-3624A666BE07}.Release|x64.Build.0 = Release|Any CPU
 		{A73DFC98-2F9F-460A-9449-3624A666BE07}.Release|x86.ActiveCfg = Release|Any CPU
 		{A73DFC98-2F9F-460A-9449-3624A666BE07}.Release|x86.Build.0 = Release|Any CPU
+		{E307C55E-A215-45E5-B3F2-C23EC3396DE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E307C55E-A215-45E5-B3F2-C23EC3396DE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E307C55E-A215-45E5-B3F2-C23EC3396DE0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E307C55E-A215-45E5-B3F2-C23EC3396DE0}.Debug|x64.Build.0 = Debug|Any CPU
+		{E307C55E-A215-45E5-B3F2-C23EC3396DE0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E307C55E-A215-45E5-B3F2-C23EC3396DE0}.Debug|x86.Build.0 = Debug|Any CPU
+		{E307C55E-A215-45E5-B3F2-C23EC3396DE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E307C55E-A215-45E5-B3F2-C23EC3396DE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E307C55E-A215-45E5-B3F2-C23EC3396DE0}.Release|x64.ActiveCfg = Release|Any CPU
+		{E307C55E-A215-45E5-B3F2-C23EC3396DE0}.Release|x64.Build.0 = Release|Any CPU
+		{E307C55E-A215-45E5-B3F2-C23EC3396DE0}.Release|x86.ActiveCfg = Release|Any CPU
+		{E307C55E-A215-45E5-B3F2-C23EC3396DE0}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -867,5 +881,6 @@ Global
 		{F90CC1C1-1F4E-4719-817B-9A14CE56A5CE} = {3A6EA7D1-C608-4EE1-AA45-1C4048CE5F2C}
 		{AE0F4302-D3DF-4561-96A0-0B093F988C03} = {3A6EA7D1-C608-4EE1-AA45-1C4048CE5F2C}
 		{A73DFC98-2F9F-460A-9449-3624A666BE07} = {3A6EA7D1-C608-4EE1-AA45-1C4048CE5F2C}
+		{E307C55E-A215-45E5-B3F2-C23EC3396DE0} = {F520993E-61D9-4D25-8CC1-6A778784E768}
 	EndGlobalSection
 EndGlobal

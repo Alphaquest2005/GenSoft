@@ -1,9 +1,9 @@
 {
-  "locked": false,
-  "version": 1,
+  "version": 2,
   "targets": {
     ".NETFramework,Version=v4.6.1": {
       "log4net/2.0.8": {
+        "type": "package",
         "compile": {
           "lib/net45-full/log4net.dll": {}
         },
@@ -12,6 +12,7 @@
         }
       },
       "Reactive.EventAggregator/2.0.0": {
+        "type": "package",
         "dependencies": {
           "Rx-Linq": "2.2.5"
         },
@@ -23,6 +24,7 @@
         }
       },
       "Rx-Core/2.2.5": {
+        "type": "package",
         "dependencies": {
           "Rx-Interfaces": "2.2.5"
         },
@@ -34,6 +36,7 @@
         }
       },
       "Rx-Interfaces/2.2.5": {
+        "type": "package",
         "compile": {
           "lib/net45/System.Reactive.Interfaces.dll": {}
         },
@@ -42,6 +45,7 @@
         }
       },
       "Rx-Linq/2.2.5": {
+        "type": "package",
         "dependencies": {
           "Rx-Core": "2.2.5",
           "Rx-Interfaces": "2.2.5"
@@ -52,10 +56,29 @@
         "runtime": {
           "lib/net45/System.Reactive.Linq.dll": {}
         }
+      },
+      "CommonMessages/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
+      },
+      "RevolutionLogger/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "log4net": "2.0.8"
+        }
+      },
+      "SystemInterfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1"
       }
     },
     ".NETFramework,Version=v4.6.1/win-x64": {
       "log4net/2.0.8": {
+        "type": "package",
         "compile": {
           "lib/net45-full/log4net.dll": {}
         },
@@ -64,6 +87,7 @@
         }
       },
       "Reactive.EventAggregator/2.0.0": {
+        "type": "package",
         "dependencies": {
           "Rx-Linq": "2.2.5"
         },
@@ -75,6 +99,7 @@
         }
       },
       "Rx-Core/2.2.5": {
+        "type": "package",
         "dependencies": {
           "Rx-Interfaces": "2.2.5"
         },
@@ -86,6 +111,7 @@
         }
       },
       "Rx-Interfaces/2.2.5": {
+        "type": "package",
         "compile": {
           "lib/net45/System.Reactive.Interfaces.dll": {}
         },
@@ -94,6 +120,7 @@
         }
       },
       "Rx-Linq/2.2.5": {
+        "type": "package",
         "dependencies": {
           "Rx-Core": "2.2.5",
           "Rx-Interfaces": "2.2.5"
@@ -104,6 +131,24 @@
         "runtime": {
           "lib/net45/System.Reactive.Linq.dll": {}
         }
+      },
+      "CommonMessages/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
+      },
+      "RevolutionLogger/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "log4net": "2.0.8"
+        }
+      },
+      "SystemInterfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1"
       }
     }
   },
@@ -111,6 +156,7 @@
     "log4net/2.0.8": {
       "sha512": "N41MQGHZImiCfn0cUuSBjZxrcNfIQCuCgQP0rpgB3J/NWponEh3lc1LxJEuIsPAR9Oc1jVvfkNNFCY1C5hf9LA==",
       "type": "package",
+      "path": "log4net/2.0.8",
       "files": [
         "lib/net20-full/log4net.dll",
         "lib/net20-full/log4net.xml",
@@ -232,6 +278,21 @@
         "lib/windowsphone8/System.Reactive.Linq.XML",
         "lib/windowsphone8/System.Reactive.Linq.dll"
       ]
+    },
+    "CommonMessages/1.0.0": {
+      "type": "project",
+      "path": "../CommonMessages/project.json",
+      "msbuildProject": "../CommonMessages/CommonMessages.csproj"
+    },
+    "RevolutionLogger/1.0.0": {
+      "type": "project",
+      "path": "../RevolutionLogger/project.json",
+      "msbuildProject": "../RevolutionLogger/RevolutionLogger.csproj"
+    },
+    "SystemInterfaces/1.0.0": {
+      "type": "project",
+      "path": "../SystemInterfaces/project.json",
+      "msbuildProject": "../SystemInterfaces/SystemInterfaces.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -239,5 +300,43 @@
       "Reactive.EventAggregator >= 2.0.0"
     ],
     ".NETFramework,Version=v4.6.1": []
+  },
+  "packageFolders": {
+    "C:\\Users\\Alpha\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "restore": {
+      "projectUniqueName": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\EventAggregator\\EventAggregator.csproj",
+      "projectName": "EventAggregator",
+      "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\EventAggregator\\EventAggregator.csproj",
+      "projectJsonPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\EventAggregator\\project.json",
+      "projectStyle": "ProjectJson",
+      "frameworks": {
+        "net461": {
+          "projectReferences": {
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\CommonMessages\\CommonMessages.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\CommonMessages\\CommonMessages.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionLogger\\RevolutionLogger.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionLogger\\RevolutionLogger.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj"
+            }
+          }
+        }
+      }
+    },
+    "dependencies": {
+      "Reactive.EventAggregator": "2.0.0"
+    },
+    "frameworks": {
+      "net461": {}
+    },
+    "runtimes": {
+      "win-x64": {
+        "#import": []
+      }
+    }
   }
 }

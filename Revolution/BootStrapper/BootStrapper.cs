@@ -43,7 +43,7 @@ namespace BootStrapper
             try
             {
                 var x = Container.GetExport<IActorBackBone>().Value;
-                x.Intialize(autoContinue, complexEventActions, viewModelInfos);
+                x.Intialize(autoContinue,  viewModelInfos);
                 DbContextAssembly = dbContextAssembly;
                 EntitiesAssembly = entitiesAssembly;
             }
@@ -59,12 +59,12 @@ namespace BootStrapper
         public static Assembly DbContextAssembly { get; set; }
         public static Assembly EntitiesAssembly { get; set; }
 
-        public void StartUp(bool autoRun, List<IMachineInfo> machineInfo, List<IProcessInfo> processInfos, List<IComplexEventAction> complexEventActions, List<IViewModelInfo> viewModelInfos, Assembly dbContextAssembly, Assembly entitiesAssembly)
+        public void StartUp(bool autoRun, List<IMachineInfo> machineInfo, List<IProcessInfo> processInfos, List<IComplexEventAction> complexEventActions, List<IViewModelInfo> viewModelInfos, Assembly dbContextAssembly, Assembly entitiesAssembly, Assembly interfaceAssembly)
         {
             try
             {
                 var x = Container.GetExport<IActorBackBone>().Value;
-                x.Intialize(autoRun,machineInfo, processInfos,complexEventActions, viewModelInfos);
+                x.Intialize(autoRun,machineInfo, processInfos,complexEventActions, viewModelInfos, interfaceAssembly);
                 DbContextAssembly = dbContextAssembly;
                 EntitiesAssembly = entitiesAssembly;
             }

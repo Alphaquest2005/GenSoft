@@ -121,3 +121,5 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\obj\x64\Debug\Revoluti
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\obj\x64\Debug\RevolutionData.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\obj\x64\Debug\RevolutionData.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\System.ValueTuple.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\ViewMessages.dll.config
+C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\BootStrapper.dll.config

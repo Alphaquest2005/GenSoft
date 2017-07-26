@@ -1,9 +1,9 @@
 {
-  "locked": false,
-  "version": 1,
+  "version": 2,
   "targets": {
     ".NETFramework,Version=v4.6.1": {
       "Akka/1.2.0": {
+        "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "9.0.1",
           "System.Collections.Immutable": "1.3.1"
@@ -16,6 +16,7 @@
         }
       },
       "FluentValidation.Net35/1.0.1": {
+        "type": "package",
         "compile": {
           "lib/net35/FluentValidation.dll": {}
         },
@@ -24,6 +25,7 @@
         }
       },
       "JB.Common/0.8.103-pre": {
+        "type": "package",
         "compile": {
           "lib/net45/JB.Common.dll": {}
         },
@@ -32,6 +34,7 @@
         }
       },
       "JB.Common.Collections/0.8.103-pre": {
+        "type": "package",
         "dependencies": {
           "JB.Common": "0.8.103-pre"
         },
@@ -43,6 +46,7 @@
         }
       },
       "JB.Common.Collections.Reactive/0.8.103-pre": {
+        "type": "package",
         "dependencies": {
           "JB.Common": "0.8.103-pre",
           "JB.Common.Collections": "0.8.103-pre",
@@ -57,6 +61,7 @@
         }
       },
       "JB.Common.Reactive/0.8.103-pre": {
+        "type": "package",
         "dependencies": {
           "JB.Common": "0.8.103-pre",
           "Rx-Main": "2.2.5"
@@ -69,6 +74,7 @@
         }
       },
       "Newtonsoft.Json/9.0.1": {
+        "type": "package",
         "compile": {
           "lib/net45/Newtonsoft.Json.dll": {}
         },
@@ -77,6 +83,7 @@
         }
       },
       "ReactiveProperty/2.9.0": {
+        "type": "package",
         "dependencies": {
           "Rx-Main": "2.2.5"
         },
@@ -102,6 +109,7 @@
         }
       },
       "reactiveui-core/7.0.0": {
+        "type": "package",
         "dependencies": {
           "Rx-Main": "2.2.5",
           "Rx-Xaml": "2.2.5",
@@ -115,6 +123,7 @@
         }
       },
       "Rx-Core/2.2.5": {
+        "type": "package",
         "dependencies": {
           "Rx-Interfaces": "2.2.5"
         },
@@ -126,6 +135,7 @@
         }
       },
       "Rx-Interfaces/2.2.5": {
+        "type": "package",
         "compile": {
           "lib/net45/System.Reactive.Interfaces.dll": {}
         },
@@ -134,6 +144,7 @@
         }
       },
       "Rx-Linq/2.2.5": {
+        "type": "package",
         "dependencies": {
           "Rx-Core": "2.2.5",
           "Rx-Interfaces": "2.2.5"
@@ -146,6 +157,7 @@
         }
       },
       "Rx-Main/2.2.5": {
+        "type": "package",
         "dependencies": {
           "Rx-Core": "2.2.5",
           "Rx-Interfaces": "2.2.5",
@@ -154,6 +166,7 @@
         }
       },
       "Rx-PlatformServices/2.2.5": {
+        "type": "package",
         "dependencies": {
           "Rx-Core": "2.2.5",
           "Rx-Interfaces": "2.2.5"
@@ -165,7 +178,8 @@
           "lib/net45/System.Reactive.PlatformServices.dll": {}
         }
       },
-      "Rx-Xaml/2.2.5": {
+      "Rx-XAML/2.2.5": {
+        "type": "package",
         "dependencies": {
           "Rx-Main": "2.2.5"
         },
@@ -180,6 +194,7 @@
         }
       },
       "Splat/1.4.0": {
+        "type": "package",
         "compile": {
           "lib/Net45/Splat.dll": {}
         },
@@ -188,16 +203,57 @@
         }
       },
       "System.Collections.Immutable/1.3.1": {
+        "type": "package",
         "compile": {
           "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll": {}
         },
         "runtime": {
           "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll": {}
+        }
+      },
+      "Actor.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0",
+          "ViewModel.Interfaces": "1.0.0"
+        }
+      },
+      "CommonMessages/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
+      },
+      "Interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
+      },
+      "SystemInterfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1"
+      },
+      "ViewModel.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "CommonMessages": "1.0.0",
+          "FluentValidation.Net35": "1.0.1",
+          "Interfaces": "1.0.0",
+          "JB.Common.Collections.Reactive": "0.8.103-pre",
+          "ReactiveProperty": "2.9.0",
+          "SystemInterfaces": "1.0.0",
+          "reactiveui-core": "7.0.0"
         }
       }
     },
     ".NETFramework,Version=v4.6.1/win-x64": {
       "Akka/1.2.0": {
+        "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "9.0.1",
           "System.Collections.Immutable": "1.3.1"
@@ -210,6 +266,7 @@
         }
       },
       "FluentValidation.Net35/1.0.1": {
+        "type": "package",
         "compile": {
           "lib/net35/FluentValidation.dll": {}
         },
@@ -218,6 +275,7 @@
         }
       },
       "JB.Common/0.8.103-pre": {
+        "type": "package",
         "compile": {
           "lib/net45/JB.Common.dll": {}
         },
@@ -226,6 +284,7 @@
         }
       },
       "JB.Common.Collections/0.8.103-pre": {
+        "type": "package",
         "dependencies": {
           "JB.Common": "0.8.103-pre"
         },
@@ -237,6 +296,7 @@
         }
       },
       "JB.Common.Collections.Reactive/0.8.103-pre": {
+        "type": "package",
         "dependencies": {
           "JB.Common": "0.8.103-pre",
           "JB.Common.Collections": "0.8.103-pre",
@@ -251,6 +311,7 @@
         }
       },
       "JB.Common.Reactive/0.8.103-pre": {
+        "type": "package",
         "dependencies": {
           "JB.Common": "0.8.103-pre",
           "Rx-Main": "2.2.5"
@@ -263,6 +324,7 @@
         }
       },
       "Newtonsoft.Json/9.0.1": {
+        "type": "package",
         "compile": {
           "lib/net45/Newtonsoft.Json.dll": {}
         },
@@ -271,6 +333,7 @@
         }
       },
       "ReactiveProperty/2.9.0": {
+        "type": "package",
         "dependencies": {
           "Rx-Main": "2.2.5"
         },
@@ -296,6 +359,7 @@
         }
       },
       "reactiveui-core/7.0.0": {
+        "type": "package",
         "dependencies": {
           "Rx-Main": "2.2.5",
           "Rx-Xaml": "2.2.5",
@@ -309,6 +373,7 @@
         }
       },
       "Rx-Core/2.2.5": {
+        "type": "package",
         "dependencies": {
           "Rx-Interfaces": "2.2.5"
         },
@@ -320,6 +385,7 @@
         }
       },
       "Rx-Interfaces/2.2.5": {
+        "type": "package",
         "compile": {
           "lib/net45/System.Reactive.Interfaces.dll": {}
         },
@@ -328,6 +394,7 @@
         }
       },
       "Rx-Linq/2.2.5": {
+        "type": "package",
         "dependencies": {
           "Rx-Core": "2.2.5",
           "Rx-Interfaces": "2.2.5"
@@ -340,6 +407,7 @@
         }
       },
       "Rx-Main/2.2.5": {
+        "type": "package",
         "dependencies": {
           "Rx-Core": "2.2.5",
           "Rx-Interfaces": "2.2.5",
@@ -348,6 +416,7 @@
         }
       },
       "Rx-PlatformServices/2.2.5": {
+        "type": "package",
         "dependencies": {
           "Rx-Core": "2.2.5",
           "Rx-Interfaces": "2.2.5"
@@ -359,7 +428,8 @@
           "lib/net45/System.Reactive.PlatformServices.dll": {}
         }
       },
-      "Rx-Xaml/2.2.5": {
+      "Rx-XAML/2.2.5": {
+        "type": "package",
         "dependencies": {
           "Rx-Main": "2.2.5"
         },
@@ -374,6 +444,7 @@
         }
       },
       "Splat/1.4.0": {
+        "type": "package",
         "compile": {
           "lib/Net45/Splat.dll": {}
         },
@@ -382,11 +453,51 @@
         }
       },
       "System.Collections.Immutable/1.3.1": {
+        "type": "package",
         "compile": {
           "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll": {}
         },
         "runtime": {
           "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll": {}
+        }
+      },
+      "Actor.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0",
+          "ViewModel.Interfaces": "1.0.0"
+        }
+      },
+      "CommonMessages/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
+      },
+      "Interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
+      },
+      "SystemInterfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1"
+      },
+      "ViewModel.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "CommonMessages": "1.0.0",
+          "FluentValidation.Net35": "1.0.1",
+          "Interfaces": "1.0.0",
+          "JB.Common.Collections.Reactive": "0.8.103-pre",
+          "ReactiveProperty": "2.9.0",
+          "SystemInterfaces": "1.0.0",
+          "reactiveui-core": "7.0.0"
         }
       }
     }
@@ -395,6 +506,7 @@
     "Akka/1.2.0": {
       "sha512": "cd5LeeT7lWMRtvxmhzmsTUdeybHB9NZa0FFhWI1Cr8tH4x9+FNPrzPdyBKzVGdELZfGtQR/i0MbgwC13aZxlTQ==",
       "type": "package",
+      "path": "akka/1.2.0",
       "files": [
         "Akka.1.2.0.nupkg.sha512",
         "Akka.nuspec",
@@ -793,9 +905,10 @@
         "lib/windowsphone8/System.Reactive.PlatformServices.dll"
       ]
     },
-    "Rx-Xaml/2.2.5": {
+    "Rx-XAML/2.2.5": {
       "sha512": "RzA/HcKP1U44i7ZchRdR3v3GdepNmr/93ydyixV+LwZs++Yxo13fsODRTqGIyz11ERSIKgnnSs6tbJUys4qRSw==",
       "type": "package",
+      "path": "rx-xaml/2.2.5",
       "files": [
         "Rx-Xaml.2.2.5.nupkg.sha512",
         "Rx-Xaml.nuspec",
@@ -843,6 +956,7 @@
     "System.Collections.Immutable/1.3.1": {
       "sha512": "n+AGX7zmiZumW9aggOkXaHzUeAS3EfeTErnkKCusyONUozbTv+kMb8VE36m+ldV6kF9g57G2c641KCdgH9E0pg==",
       "type": "package",
+      "path": "system.collections.immutable/1.3.1",
       "files": [
         "System.Collections.Immutable.1.3.1.nupkg.sha512",
         "System.Collections.Immutable.nuspec",
@@ -853,6 +967,31 @@
         "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll",
         "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.xml"
       ]
+    },
+    "Actor.Interfaces/1.0.0": {
+      "type": "project",
+      "path": "../Actor.Interfaces/project.json",
+      "msbuildProject": "../Actor.Interfaces/Actor.Interfaces.csproj"
+    },
+    "CommonMessages/1.0.0": {
+      "type": "project",
+      "path": "../CommonMessages/project.json",
+      "msbuildProject": "../CommonMessages/CommonMessages.csproj"
+    },
+    "Interfaces/1.0.0": {
+      "type": "project",
+      "path": "../../Interfaces/project.json",
+      "msbuildProject": "../../Interfaces/Interfaces.csproj"
+    },
+    "SystemInterfaces/1.0.0": {
+      "type": "project",
+      "path": "../SystemInterfaces/project.json",
+      "msbuildProject": "../SystemInterfaces/SystemInterfaces.csproj"
+    },
+    "ViewModel.Interfaces/1.0.0": {
+      "type": "project",
+      "path": "../ViewModel.Interfaces/project.json",
+      "msbuildProject": "../ViewModel.Interfaces/ViewModel.Interfaces.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -860,5 +999,46 @@
       "Akka >= 1.2.0"
     ],
     ".NETFramework,Version=v4.6.1": []
+  },
+  "packageFolders": {
+    "C:\\Users\\Alpha\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "restore": {
+      "projectUniqueName": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\EventMessages\\EventMessages.csproj",
+      "projectName": "EventMessages",
+      "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\EventMessages\\EventMessages.csproj",
+      "projectJsonPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\EventMessages\\project.json",
+      "projectStyle": "ProjectJson",
+      "frameworks": {
+        "net461": {
+          "projectReferences": {
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Interfaces\\Interfaces.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Interfaces\\Interfaces.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Actor.Interfaces\\Actor.Interfaces.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Actor.Interfaces\\Actor.Interfaces.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\CommonMessages\\CommonMessages.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\CommonMessages\\CommonMessages.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj"
+            }
+          }
+        }
+      }
+    },
+    "dependencies": {
+      "Akka": "1.2.0"
+    },
+    "frameworks": {
+      "net461": {}
+    },
+    "runtimes": {
+      "win-x64": {
+        "#import": []
+      }
+    }
   }
 }

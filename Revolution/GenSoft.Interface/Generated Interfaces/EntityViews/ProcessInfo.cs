@@ -14,7 +14,6 @@ namespace GenSoft.Interfaces
 	
 	public partial interface IProcessInfo:IEntityView<IAgent>
 	{
-		string UserName { get;}
 
 
 

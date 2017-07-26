@@ -63,8 +63,8 @@ namespace GenSoft.Expressions
                                    cd.ProcessId,
                                    new List<IProcessExpectedEvent>(),
                                    Type.GetType(cd.ExpectedMessageType),
-                                   CreateProcessAction.Invoke(cd.ProcessAction), cd.ActionTrigger
-                                   );
+                                   CreateProcessAction.Invoke(cd.ProcessAction),
+                                   cd.ActionTrigger);
 
         public static Func<ProcessActionData, ProcessAction> CreateProcessAction
             = (pd) => new ProcessAction(CreateActionFromComplexEvent.Invoke(pd.MessageData),
@@ -98,6 +98,6 @@ namespace GenSoft.Expressions
 
         public static Func<Process, SystemInterfaces.IProcessInfo> CreateProcessInfo = (p) => new ProcessInfo(p.Id, p.ParentProcessId, p.Name, p.Description, p.Symbol, p.UserId.ToString()) as SystemInterfaces.IProcessInfo;
 
-        public static Func<Machine, IMachineInfo> CreateMachineInfo =(m) => new MachineInfo(m.MachineName, m.Processors);
+        public static Func<Machine, IMachineInfo> CreateMachineInfo = (m) => new MachineInfo(m.MachineName, m.Processors);
     }
 }

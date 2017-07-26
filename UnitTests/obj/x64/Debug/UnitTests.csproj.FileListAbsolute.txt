@@ -196,7 +196,6 @@ C:\Prism\GitRepositiory\GenSoft\UnitTests\bin\x64\Debug\Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\UnitTests\bin\x64\Debug\Common.pdb
 C:\Prism\GitRepositiory\GenSoft\UnitTests\bin\x64\Debug\System.Linq.Dynamic.pdb
 C:\Prism\GitRepositiory\GenSoft\UnitTests\bin\x64\Debug\SystemInterfaces.pdb
-C:\Prism\GitRepositiory\GenSoft\UnitTests\bin\x64\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
 C:\Prism\GitRepositiory\GenSoft\UnitTests\bin\x64\Debug\RevolutionEntities.pdb
 C:\Prism\GitRepositiory\GenSoft\UnitTests\bin\x64\Debug\DomainMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\UnitTests\bin\x64\Debug\EventMessages.pdb
@@ -215,3 +214,4 @@ C:\Prism\GitRepositiory\GenSoft\UnitTests\obj\x64\Debug\UnitTests.csprojResolveA
 C:\Prism\GitRepositiory\GenSoft\UnitTests\obj\x64\Debug\UnitTests.dll
 C:\Prism\GitRepositiory\GenSoft\UnitTests\obj\x64\Debug\UnitTests.pdb
 C:\Prism\GitRepositiory\GenSoft\UnitTests\bin\x64\Debug\System.ValueTuple.dll
+C:\Prism\GitRepositiory\GenSoft\UnitTests\bin\x64\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml

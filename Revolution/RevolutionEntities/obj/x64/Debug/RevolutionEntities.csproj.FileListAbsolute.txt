@@ -107,3 +107,5 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\obj\x64\Debug\Revo
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\obj\x64\Debug\RevolutionEntities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\obj\x64\Debug\RevolutionEntities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Debug\System.ValueTuple.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Debug\BootStrapper.dll.config
+C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Debug\EventAggregator.dll.config

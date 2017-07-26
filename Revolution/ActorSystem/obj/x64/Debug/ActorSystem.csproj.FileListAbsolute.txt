@@ -233,3 +233,14 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\obj\x64\Debug\ActorSystem
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\obj\x64\Debug\ActorSystem.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\obj\x64\Debug\ActorSystem.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\System.ValueTuple.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\BuildingSpecifications.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\BuildingSpecifications.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Process.WorkFlow.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Process.WorkFlow.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\BootStrapper.dll.config
+C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\DataServices.dll.config
+C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\EventAggregator.dll.config
+C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\RevolutionData.dll.config
+C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\ViewMessages.dll.config
+C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\EFRepository.dll.config
+C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Expressions.dll.config

@@ -13,6 +13,7 @@ namespace RevolutionEntities.Process
 
     public class ProcessAction : IProcessAction
     {
+        public ProcessAction() { }
         public Func<IComplexEventParameters, Task<IProcessSystemMessage>> Action { get; set; }
         public Func<IComplexEventParameters, IProcessStateInfo> ProcessInfo { get; set; }
         public ISourceType ExpectedSourceType { get; set; }

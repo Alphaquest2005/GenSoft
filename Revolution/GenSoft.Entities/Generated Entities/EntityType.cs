@@ -16,7 +16,9 @@ namespace GenSoft.Entities
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
-				public virtual ICollection<ProcessState> ProcessState {get; set;}
+				public virtual ICollection<ActionEntityType> ActionEntityType {get; set;}
+				public virtual DomainEntityType DomainEntityType {get; set;}
+				public virtual ICollection<EntityTypeAttributes> EntityTypeAttributes {get; set;}
 		
 			// ---------Parent Relationships
 				public virtual Type Type {get; set;}

@@ -5,6 +5,7 @@ namespace RevolutionEntities.Process
 {
     public class ProcessInfo : IProcessInfo
     {
+        public ProcessInfo() { }
         public ProcessInfo(int id, int parentProcessId, string name, string description, string symbol, string userId)
         {
             Id = id;

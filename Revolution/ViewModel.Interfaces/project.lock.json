@@ -1,9 +1,9 @@
 {
-  "locked": false,
-  "version": 1,
+  "version": 2,
   "targets": {
     ".NETFramework,Version=v4.6.1": {
       "FluentValidation.Net35/1.0.1": {
+        "type": "package",
         "compile": {
           "lib/net35/FluentValidation.dll": {}
         },
@@ -12,6 +12,7 @@
         }
       },
       "JB.Common/0.8.103-pre": {
+        "type": "package",
         "compile": {
           "lib/net45/JB.Common.dll": {}
         },
@@ -20,6 +21,7 @@
         }
       },
       "JB.Common.Collections/0.8.103-pre": {
+        "type": "package",
         "dependencies": {
           "JB.Common": "0.8.103-pre"
         },
@@ -31,6 +33,7 @@
         }
       },
       "JB.Common.Collections.Reactive/0.8.103-pre": {
+        "type": "package",
         "dependencies": {
           "JB.Common": "0.8.103-pre",
           "JB.Common.Collections": "0.8.103-pre",
@@ -45,6 +48,7 @@
         }
       },
       "JB.Common.Reactive/0.8.103-pre": {
+        "type": "package",
         "dependencies": {
           "JB.Common": "0.8.103-pre",
           "Rx-Main": "2.2.5"
@@ -57,6 +61,7 @@
         }
       },
       "ReactiveProperty/2.9.0": {
+        "type": "package",
         "dependencies": {
           "Rx-Main": "2.2.5"
         },
@@ -82,6 +87,7 @@
         }
       },
       "reactiveui-core/7.0.0": {
+        "type": "package",
         "dependencies": {
           "Rx-Main": "2.2.5",
           "Rx-Xaml": "2.2.5",
@@ -95,6 +101,7 @@
         }
       },
       "Rx-Core/2.2.5": {
+        "type": "package",
         "dependencies": {
           "Rx-Interfaces": "2.2.5"
         },
@@ -106,6 +113,7 @@
         }
       },
       "Rx-Interfaces/2.2.5": {
+        "type": "package",
         "compile": {
           "lib/net45/System.Reactive.Interfaces.dll": {}
         },
@@ -114,6 +122,7 @@
         }
       },
       "Rx-Linq/2.2.5": {
+        "type": "package",
         "dependencies": {
           "Rx-Core": "2.2.5",
           "Rx-Interfaces": "2.2.5"
@@ -126,6 +135,7 @@
         }
       },
       "Rx-Main/2.2.5": {
+        "type": "package",
         "dependencies": {
           "Rx-Core": "2.2.5",
           "Rx-Interfaces": "2.2.5",
@@ -134,6 +144,7 @@
         }
       },
       "Rx-PlatformServices/2.2.5": {
+        "type": "package",
         "dependencies": {
           "Rx-Core": "2.2.5",
           "Rx-Interfaces": "2.2.5"
@@ -145,7 +156,8 @@
           "lib/net45/System.Reactive.PlatformServices.dll": {}
         }
       },
-      "Rx-Xaml/2.2.5": {
+      "Rx-XAML/2.2.5": {
+        "type": "package",
         "dependencies": {
           "Rx-Main": "2.2.5"
         },
@@ -160,16 +172,36 @@
         }
       },
       "Splat/1.4.0": {
+        "type": "package",
         "compile": {
           "lib/Net45/Splat.dll": {}
         },
         "runtime": {
           "lib/Net45/Splat.dll": {}
         }
+      },
+      "CommonMessages/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
+      },
+      "Interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
+      },
+      "SystemInterfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1"
       }
     },
     ".NETFramework,Version=v4.6.1/win-x64": {
       "FluentValidation.Net35/1.0.1": {
+        "type": "package",
         "compile": {
           "lib/net35/FluentValidation.dll": {}
         },
@@ -178,6 +210,7 @@
         }
       },
       "JB.Common/0.8.103-pre": {
+        "type": "package",
         "compile": {
           "lib/net45/JB.Common.dll": {}
         },
@@ -186,6 +219,7 @@
         }
       },
       "JB.Common.Collections/0.8.103-pre": {
+        "type": "package",
         "dependencies": {
           "JB.Common": "0.8.103-pre"
         },
@@ -197,6 +231,7 @@
         }
       },
       "JB.Common.Collections.Reactive/0.8.103-pre": {
+        "type": "package",
         "dependencies": {
           "JB.Common": "0.8.103-pre",
           "JB.Common.Collections": "0.8.103-pre",
@@ -211,6 +246,7 @@
         }
       },
       "JB.Common.Reactive/0.8.103-pre": {
+        "type": "package",
         "dependencies": {
           "JB.Common": "0.8.103-pre",
           "Rx-Main": "2.2.5"
@@ -223,6 +259,7 @@
         }
       },
       "ReactiveProperty/2.9.0": {
+        "type": "package",
         "dependencies": {
           "Rx-Main": "2.2.5"
         },
@@ -248,6 +285,7 @@
         }
       },
       "reactiveui-core/7.0.0": {
+        "type": "package",
         "dependencies": {
           "Rx-Main": "2.2.5",
           "Rx-Xaml": "2.2.5",
@@ -261,6 +299,7 @@
         }
       },
       "Rx-Core/2.2.5": {
+        "type": "package",
         "dependencies": {
           "Rx-Interfaces": "2.2.5"
         },
@@ -272,6 +311,7 @@
         }
       },
       "Rx-Interfaces/2.2.5": {
+        "type": "package",
         "compile": {
           "lib/net45/System.Reactive.Interfaces.dll": {}
         },
@@ -280,6 +320,7 @@
         }
       },
       "Rx-Linq/2.2.5": {
+        "type": "package",
         "dependencies": {
           "Rx-Core": "2.2.5",
           "Rx-Interfaces": "2.2.5"
@@ -292,6 +333,7 @@
         }
       },
       "Rx-Main/2.2.5": {
+        "type": "package",
         "dependencies": {
           "Rx-Core": "2.2.5",
           "Rx-Interfaces": "2.2.5",
@@ -300,6 +342,7 @@
         }
       },
       "Rx-PlatformServices/2.2.5": {
+        "type": "package",
         "dependencies": {
           "Rx-Core": "2.2.5",
           "Rx-Interfaces": "2.2.5"
@@ -311,7 +354,8 @@
           "lib/net45/System.Reactive.PlatformServices.dll": {}
         }
       },
-      "Rx-Xaml/2.2.5": {
+      "Rx-XAML/2.2.5": {
+        "type": "package",
         "dependencies": {
           "Rx-Main": "2.2.5"
         },
@@ -326,12 +370,31 @@
         }
       },
       "Splat/1.4.0": {
+        "type": "package",
         "compile": {
           "lib/Net45/Splat.dll": {}
         },
         "runtime": {
           "lib/Net45/Splat.dll": {}
         }
+      },
+      "CommonMessages/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
+      },
+      "Interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
+      },
+      "SystemInterfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1"
       }
     }
   },
@@ -703,9 +766,10 @@
         "lib/windowsphone8/System.Reactive.PlatformServices.dll"
       ]
     },
-    "Rx-Xaml/2.2.5": {
+    "Rx-XAML/2.2.5": {
       "sha512": "RzA/HcKP1U44i7ZchRdR3v3GdepNmr/93ydyixV+LwZs++Yxo13fsODRTqGIyz11ERSIKgnnSs6tbJUys4qRSw==",
       "type": "package",
+      "path": "rx-xaml/2.2.5",
       "files": [
         "Rx-Xaml.2.2.5.nupkg.sha512",
         "Rx-Xaml.nuspec",
@@ -749,6 +813,21 @@
         "lib/wp8/Splat.dll",
         "lib/wp8/Splat.pdb"
       ]
+    },
+    "CommonMessages/1.0.0": {
+      "type": "project",
+      "path": "../CommonMessages/project.json",
+      "msbuildProject": "../CommonMessages/CommonMessages.csproj"
+    },
+    "Interfaces/1.0.0": {
+      "type": "project",
+      "path": "../../Interfaces/project.json",
+      "msbuildProject": "../../Interfaces/Interfaces.csproj"
+    },
+    "SystemInterfaces/1.0.0": {
+      "type": "project",
+      "path": "../SystemInterfaces/project.json",
+      "msbuildProject": "../SystemInterfaces/SystemInterfaces.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -759,5 +838,46 @@
       "reactiveui-core >= 7.0.0"
     ],
     ".NETFramework,Version=v4.6.1": []
+  },
+  "packageFolders": {
+    "C:\\Users\\Alpha\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "restore": {
+      "projectUniqueName": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj",
+      "projectName": "ViewModel.Interfaces",
+      "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj",
+      "projectJsonPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\project.json",
+      "projectStyle": "ProjectJson",
+      "frameworks": {
+        "net461": {
+          "projectReferences": {
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Interfaces\\Interfaces.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Interfaces\\Interfaces.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\CommonMessages\\CommonMessages.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\CommonMessages\\CommonMessages.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj"
+            }
+          }
+        }
+      }
+    },
+    "dependencies": {
+      "FluentValidation.Net35": "1.0.1",
+      "JB.Common.Collections.Reactive": "0.8.103-pre",
+      "ReactiveProperty": "2.9.0",
+      "reactiveui-core": "7.0.0"
+    },
+    "frameworks": {
+      "net461": {}
+    },
+    "runtimes": {
+      "win-x64": {
+        "#import": []
+      }
+    }
   }
 }

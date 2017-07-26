@@ -161,3 +161,9 @@ C:\Prism\GitRepositiory\GenSoft\ViewModels\obj\x64\Debug\ViewModels.csprojResolv
 C:\Prism\GitRepositiory\GenSoft\ViewModels\obj\x64\Debug\ViewModels.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\obj\x64\Debug\ViewModels.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\System.ValueTuple.dll
+C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\Expressions.dll.config
+C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\Core.Common.UI.dll.config
+C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\EventAggregator.dll.config
+C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\RevolutionData.dll.config
+C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\ViewMessages.dll.config
+C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\BootStrapper.dll.config

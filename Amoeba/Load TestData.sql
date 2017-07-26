@@ -35,8 +35,11 @@ BEGIN
 	PRINT @entityId
     --Do something with Id here
 	declare @entityName varchar(50)
-	set @entityName = (select schemaName + '.' + EntitySetName from AmoebaDB.dbo.Entities where id = @entityId)
+	set @entityName = (select schemaName + '.[' + EntitySetName + ']' from AmoebaDB.dbo.Entities where id = @entityId)
 	PRINT @entityName
+
+
+	
 
 --------------------------For Each Data Row	
 	DECLARE @rowId int

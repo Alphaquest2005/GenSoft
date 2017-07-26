@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.ComponentModel.Composition;
@@ -10,6 +11,6 @@ namespace Actor.Interfaces
     {
         IComplexEventService Actor { get; }
         ImmutableDictionary<string, dynamic> Messages { get; }
-       
+        
     }
 }

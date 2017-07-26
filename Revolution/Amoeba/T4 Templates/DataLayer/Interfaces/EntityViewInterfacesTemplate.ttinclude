@@ -38,6 +38,13 @@ namespace <#=AppName#>.Interfaces
 <#+
 	foreach (var prop in EntityView.EntityViewProperties)
 	{
+
+		var isPropNull = prop.EntityProperty == null
+						? prop.EntityViewViewProperty == null
+						: prop.EntityProperty == null;
+
+		if(isPropNull == true) continue;	
+
 	    var dataType = prop.EntityProperty == null
 	        ? prop.EntityViewViewProperty.EntityProperty.DataProperties.First().DataType.Name
 	        : prop.EntityProperty.DataProperties.First().DataType.Name;

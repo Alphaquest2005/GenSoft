@@ -63,3 +63,6 @@ C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\obj\x64\Debug\ViewModel.WorkF
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\obj\x64\Debug\ViewModel.WorkFlow.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\obj\x64\Debug\ViewModel.WorkFlow.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\System.ValueTuple.dll
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\RevolutionData.dll.config
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\ViewMessages.dll.config
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\BootStrapper.dll.config

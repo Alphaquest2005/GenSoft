@@ -203,3 +203,7 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\obj\x64\Debug\EFReposito
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\obj\x64\Debug\EFRepository.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\obj\x64\Debug\EFRepository.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\System.ValueTuple.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\Expressions.dll.config
+C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\BootStrapper.dll.config
+C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\EventAggregator.dll.config
+C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\RevolutionData.dll.config

@@ -13,23 +13,21 @@ namespace GenSoft.Entities
 {
 	public partial class ProcessState: BaseEntity, IProcessState
 	{
-		public virtual int EntityTypeId { get; set; }
 		public virtual string Name { get; set; }
 		public virtual int ProcessId { get; set; }
 		public virtual int StateId { get; set; }
-		public virtual string Predicate { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 				public virtual ICollection<Event> Event {get; set;}
 				public virtual ProcessComplexState ProcessComplexState {get; set;}
 				public virtual ICollection<ProcessComplexStateExpectedProcessState> ProcessComplexStateExpectedProcessState {get; set;}
+				public virtual ICollection<ProcessStateDomainEntityTypes> ProcessStateDomainEntityTypes {get; set;}
 				public virtual ProcessStateInfo ProcessStateInfo {get; set;}
 				public virtual ICollection<StateAction> StateAction {get; set;}
 				public virtual ICollection<StateActionExpectedProcessState> StateActionExpectedProcessState {get; set;}
 		
 			// ---------Parent Relationships
-				public virtual EntityType EntityType {get; set;}
 				public virtual Process Process {get; set;}
 				public virtual State State {get; set;}
 	

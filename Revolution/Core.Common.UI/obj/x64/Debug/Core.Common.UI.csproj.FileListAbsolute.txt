@@ -153,3 +153,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\obj\x64\Debug\Core.Com
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\obj\x64\Debug\Core.Common.UI.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\obj\x64\Debug\Core.Common.UI.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\System.ValueTuple.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\BootStrapper.dll.config
+C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\EventAggregator.dll.config
+C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\RevolutionData.dll.config

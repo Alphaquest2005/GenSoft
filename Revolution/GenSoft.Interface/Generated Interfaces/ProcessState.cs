@@ -14,11 +14,9 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IProcessState:SystemInterfaces.IEntity  
 	{
-		int EntityTypeId { get;}
 		string Name { get;}
 		int ProcessId { get;}
 		int StateId { get;}
-		string Predicate { get;}
 
 
 

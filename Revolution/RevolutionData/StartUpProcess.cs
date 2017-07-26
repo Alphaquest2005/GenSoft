@@ -28,7 +28,7 @@ namespace RevolutionData
                 },
                 typeof (ISystemProcessStarted),
                 processInfo: new StateCommandInfo(1, RevolutionData.Context.Process.Commands.StartProcess),
-                action: ProcessActions.ProcessStarted),
+                action:  ProcessActions.Actions["ProcessStarted"]),
 
 
 
@@ -51,7 +51,7 @@ namespace RevolutionData
                 },
                 typeof (ISystemProcessCompleted),
                 processInfo: new StateCommandInfo(1, RevolutionData.Context.Process.Commands.CompleteProcess),
-                action: ProcessActions.CompleteProcess),
+                action: ProcessActions.Actions["CompleteProcess"]),
 
             new ComplexEventAction(
                 "103",
@@ -64,7 +64,7 @@ namespace RevolutionData
                 },
                 typeof (ISystemProcessStarted),
                 processInfo: new StateCommandInfo(1, RevolutionData.Context.Process.Commands.StartProcess),
-                action: ProcessActions.StartProcess),
+                action: ProcessActions.Actions["StartProcess"]),
 
             new ComplexEventAction(
                 "104",
@@ -77,7 +77,7 @@ namespace RevolutionData
                 },
                 typeof (ISystemProcessCleanedUp),
                 processInfo: new StateCommandInfo(1, RevolutionData.Context.Process.Commands.CleanUpProcess),
-                action: ProcessActions.CleanUpProcess),
+                action: ProcessActions.Actions["CleanUpProcess"]),
 
 
             //new ComplexEventAction(
@@ -102,7 +102,7 @@ namespace RevolutionData
                 },
                 typeof (ISystemProcessStarted),
                 processInfo: new StateCommandInfo(2, RevolutionData.Context.Process.Commands.StartProcess),
-                action: ProcessActions.ProcessStarted),
+                action:  ProcessActions.Actions["ProcessStarted"]),
             new ComplexEventAction(
 
                 key: "201",
@@ -182,7 +182,7 @@ namespace RevolutionData
                 },
                 typeof (ISystemProcessCompleted),
                 processInfo: new StateCommandInfo(2, RevolutionData.Context.Process.Commands.CompleteProcess),
-                action: ProcessActions.CompleteProcess),
+                action: ProcessActions.Actions["CompleteProcess"]),
 
             new ComplexEventAction(
                 "206",
@@ -195,7 +195,7 @@ namespace RevolutionData
                 },
                 typeof (ISystemProcessStarted),
                 processInfo: new StateCommandInfo(2, RevolutionData.Context.Process.Commands.StartProcess),
-                action: ProcessActions.StartProcessWithValidatedUser),
+                action: ProcessActions.Actions["StartProcessWithValidatedUser"]),
 
             new ComplexEventAction(
                 "207",
@@ -208,7 +208,7 @@ namespace RevolutionData
                 },
                 typeof (ISystemProcessCleanedUp),
                 processInfo: new StateCommandInfo(2, RevolutionData.Context.Process.Commands.CleanUpProcess),
-                action: ProcessActions.CleanUpProcess),
+                action: ProcessActions.Actions["CleanUpProcess"]),
         };
     }
 }

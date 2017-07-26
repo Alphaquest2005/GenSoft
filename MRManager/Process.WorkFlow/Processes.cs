@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using SystemInterfaces;
@@ -9,6 +10,7 @@ using EventMessages.Commands;
 using EventMessages.Events;
 using Interfaces;
 using RevolutionData;
+using RevolutionData.Context;
 using RevolutionEntities.Process;
 using Utilities;
 using ViewModel.Interfaces;
@@ -43,7 +45,7 @@ namespace Process.WorkFlow
                 },
                 typeof(ISystemProcessStarted),
                 processInfo:new StateCommandInfo(1,RevolutionData.Context.Process.Commands.StartProcess ),
-                action: ProcessActions.ProcessStarted),
+                action: ProcessActions.Actions["ProcessStarted"]),
 
              
 
@@ -57,7 +59,7 @@ namespace Process.WorkFlow
                 },
                 typeof(ISystemProcessCompleted),
                 processInfo:new StateCommandInfo(1,RevolutionData.Context.Process.Commands.CompleteProcess ),
-                action: ProcessActions.CompleteProcess),
+                action: ProcessActions.Actions["CompleteProcess"]),
 
            new ComplexEventAction(
                 "103",
@@ -68,7 +70,7 @@ namespace Process.WorkFlow
                 },
                 typeof(ISystemProcessStarted),
                 processInfo:new StateCommandInfo(1,RevolutionData.Context.Process.Commands.StartProcess),
-                action: ProcessActions.StartProcess),
+                action: ProcessActions.Actions["StartProcess"]),
 
             new ComplexEventAction(
                 "104",
@@ -79,7 +81,7 @@ namespace Process.WorkFlow
                 },
                 typeof(ISystemProcessCleanedUp),
                 processInfo:new StateCommandInfo(1,RevolutionData.Context.Process.Commands.CleanUpProcess ),
-                action: ProcessActions.CleanUpProcess),
+                action: ProcessActions.Actions["CleanUpProcess"]),
 
             
             //new ComplexEventAction(
@@ -93,16 +95,7 @@ namespace Process.WorkFlow
             //    processInfo:new StateCommandInfo(1,Context.Process.Commands.Error ),
             //    action: ProcessActions.ShutDownApplication),
 
-            new ComplexEventAction(
-                "200",
-                2, new List<IProcessExpectedEvent>
-                {
-                    new ProcessExpectedEvent ("ProcessServiceStarted", 2, typeof (IServiceStarted<IProcessService>), e => e != null, new StateEventInfo(2, RevolutionData.Context.Actor.Events.ActorStarted), new SourceType(typeof(IProcessService))),
-
-                },
-                typeof(ISystemProcessStarted),
-                processInfo:new StateCommandInfo(2,RevolutionData.Context.Process.Commands.StartProcess ),
-                action: ProcessActions.ProcessStarted),
+            ComplexActions.StartProcess(2),
             new ComplexEventAction(
                 
                 key:"201",
@@ -169,7 +162,7 @@ namespace Process.WorkFlow
                 },
                 typeof(ISystemProcessCompleted),
                 processInfo:new StateCommandInfo(2,RevolutionData.Context.Process.Commands.CompleteProcess ),
-                action: ProcessActions.CompleteProcess),
+                action: ProcessActions.Actions["CompleteProcess"]),
 
              new ComplexEventAction(
                 "206",
@@ -180,7 +173,7 @@ namespace Process.WorkFlow
                 },
                 typeof(ISystemProcessStarted),
                 processInfo:new StateCommandInfo(2,RevolutionData.Context.Process.Commands.StartProcess ),
-                action: ProcessActions.StartProcessWithValidatedUser),
+                action: ProcessActions.Actions["StartProcessWithValidatedUser"]),
 
             new ComplexEventAction(
                 "207",
@@ -191,86 +184,113 @@ namespace Process.WorkFlow
                 },
                 typeof(ISystemProcessCleanedUp),
                 processInfo:new StateCommandInfo(2,RevolutionData.Context.Process.Commands.CleanUpProcess ),
-                action: ProcessActions.CleanUpProcess),
+                action: ProcessActions.Actions["CleanUpProcess"]),
 
-             new ComplexEventAction(
-                "300",
-                3, new List<IProcessExpectedEvent>
-                {
-                    new ProcessExpectedEvent ("ProcessServiceStarted", 3, typeof (IServiceStarted<IProcessService>), e => e != null, new StateEventInfo(3, RevolutionData.Context.Actor.Events.ActorStarted), new SourceType(typeof(IProcessService))),
-
-                },
-                typeof(ISystemProcessStarted),
-                processInfo:new StateCommandInfo(3,RevolutionData.Context.Process.Commands.StartProcess ),
-                action: ProcessActions.ProcessStarted),
+            
+            ComplexActions.GetComplexAction("StartProcess",new Type[0], new object[]{3}),
 
 
 
-            ComplexActions.IntializePulledProcessState<IPatientInfo>(3, "Patient"),
-            ComplexActions.UpdateStateList<IPatientInfo>(3),
+            ComplexActions.GetComplexAction("IntializePulledProcessState",new[]{typeof(IPatientInfo)},  new object[]{3, "Patient",}),
+            ComplexActions.GetComplexAction("UpdateStateList",new[]{typeof(IPatientInfo)},  new object[]{3}),
+            
+            //////////Take this out to test if working////////////ComplexActions.GetComplexAction("RequestPulledState",new[]{typeof(IPatientInfo), typeof(IPatientDetailsInfo) },  new object[]{3,"Patient",}),
+
+            
+            ComplexActions.GetComplexAction("UpdateState",new[]{typeof(IPatientDetailsInfo) },  new object[]{3}),
+            ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new[]{typeof(IPatientInfo), typeof(IPatientDetailsInfo) },  new object[]{3,  (Expression<Func<IPatientInfo, object>>)(c => c.Id) , (Expression<Func<IPatientDetailsInfo, object>>)(v => v.Id)}),
+
+
+            ComplexActions.GetComplexAction("RequestState",new[]{typeof(IPatientInfo), typeof(IPatientAddressesInfo) },  new object[]{3, (Expression<Func<IPatientAddressesInfo, object>>)(x => x.Id)}),
+            ComplexActions.GetComplexAction("UpdateState",new[]{typeof(IPatientAddressesInfo) },  new object[]{3}),
+
+
+            ComplexActions.GetComplexAction("RequestState",new[]{typeof(IPatientInfo), typeof(IPatientPhoneNumbersInfo) },  new object[]{3, (Expression<Func<IPatientPhoneNumbersInfo, object>>)(x => x.Id)}),
+            ComplexActions.GetComplexAction("UpdateState",new[]{typeof(IPatientPhoneNumbersInfo) },  new object[]{3}),
+
+            ComplexActions.GetComplexAction("RequestState",new[]{typeof(IPatientInfo), typeof(IPatientNextOfKinsInfo) },  new object[]{3, (Expression<Func<IPatientNextOfKinsInfo, object>>)(x => x.Id)}),
+            ComplexActions.GetComplexAction("UpdateState",new[]{typeof(IPatientNextOfKinsInfo) },  new object[]{3}),
+
+            
+            ComplexActions.GetComplexAction("RequestPulledState",new[]{typeof(IPatientInfo), typeof(INonResidentInfo) },  new object[]{3, "NonResident", }),
+            ComplexActions.GetComplexAction("UpdateState",new[]{typeof(INonResidentInfo) },  new object[]{3}),
+
+            
+            ComplexActions.GetComplexAction("RequestPulledState",new[]{typeof(IPatientInfo), typeof(IPatientVitalsInfo) },  new object[]{3, "Vitals", }),
+            ComplexActions.GetComplexAction("UpdateState",new[]{typeof(IPatientVitalsInfo) },  new object[]{3}),
+            ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new[]{typeof(IPatientInfo), typeof(IPatientVitalsInfo) },  new object[]{3,  (Expression<Func<IPatientInfo, object>>)(c => c.Id) , (Expression<Func<IPatientVitalsInfo, object>>)(v => v.Id)}),
+
+
+
+            ComplexActions.GetComplexAction("RequestStateList",new[]{typeof(IPatientInfo), typeof(IPatientVisitInfo) },  new object[]{3,  (Expression<Func<IPatientInfo, object>>)(c => c.Id) , (Expression<Func<IPatientVisitInfo, object>>)(v => v.PatientId) }),
+            ComplexActions.GetComplexAction("UpdateStateList",new[]{typeof(IPatientVisitInfo) },  new object[]{3}),
+            ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new[]{typeof(IPatientInfo), typeof(IPatientVisitInfo) },  new object[]{3,  (Expression<Func<IPatientInfo, object>>)(c => c.Id) , (Expression<Func<IPatientVisitInfo, object>>)(v => v.Id)}),
+
+
+            ComplexActions.GetComplexAction("RequestStateList",new[]{typeof(IPatientVisitInfo), typeof(IPatientSyntomInfo) },  new object[]{3,  (Expression<Func<IPatientVisitInfo, object>>)(c => c.Id) , (Expression<Func<IPatientSyntomInfo, object>>)(v => v.PatientVisitId) }),
+            ComplexActions.GetComplexAction("RequestStateList",new[]{typeof(ISyntoms), typeof(IPatientSyntomInfo) },  new object[]{3,  (Expression<Func<ISyntoms, object>>)(c => c.Id) , (Expression<Func<IPatientSyntomInfo, object>>)(v => v.SyntomId) }),
+            ComplexActions.GetComplexAction("UpdateStateList",new[]{typeof(IPatientSyntomInfo) },  new object[]{3}),
+            ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new[]{typeof(IPatientSyntoms), typeof(IPatientSyntomInfo) },  new object[]{3,  (Expression<Func<IPatientSyntoms, object>>)(c => c.Id) , (Expression<Func<IPatientSyntomInfo, object>>)(v => v.Id)}),
+            ComplexActions.GetComplexAction("RequestStateList",new[]{typeof(IPatientSyntomInfo), typeof(ISyntomMedicalSystemInfo) },  new object[]{3,  (Expression<Func<IPatientSyntomInfo, object>>)(c => c.SyntomId) , (Expression<Func<ISyntomMedicalSystemInfo, object>>)(v => v.SyntomId) }),
+
+
+            ComplexActions.GetComplexAction("UpdateStateList",new[]{typeof(ISyntomMedicalSystemInfo) },  new object[]{3}),
+            ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new[]{typeof(ISyntomMedicalSystems), typeof(ISyntomMedicalSystemInfo) },  new object[]{3,  (Expression<Func<ISyntomMedicalSystems, object>>)(c => c.Id) , (Expression<Func<ISyntomMedicalSystemInfo, object>>)(v => v.Id)}),
+
+
+            ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new[]{typeof(IInterviews), typeof(IInterviewInfo) },  new object[]{3,  (Expression<Func<IInterviews, object>>)(c => c.Id) , (Expression<Func<IInterviewInfo, object>>)(v => v.Id)}),
+
+
+            ComplexActions.GetComplexAction("RequestStateList",new[]{typeof(IInterviewInfo), typeof(IQuestionResponseOptionInfo) },  new object[]{3,  (Expression<Func<IInterviewInfo, object>>)(c => c.Id) , (Expression<Func<IQuestionResponseOptionInfo, object>>)(v => v.InterviewId) }),
+            ComplexActions.GetComplexAction("UpdateStateList",new[]{typeof(IQuestionResponseOptionInfo) },  new object[]{3}),
+
+            ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new[]{typeof(IQuestionInfo), typeof(IQuestionResponseOptionInfo) },  new object[]{3,  (Expression<Func<IQuestionInfo, object>>)(c => c.Id) , (Expression<Func<IQuestionResponseOptionInfo, object>>)(v => v.Id)}),
+            ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new[]{typeof(IResponseInfo), typeof(IQuestionResponseOptionInfo) },  new object[]{3,  (Expression<Func<IResponseInfo, object>>)(c => c.Id) , (Expression<Func<IQuestionResponseOptionInfo, object>>)(v => v.Id)}),
+            ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new[]{typeof(IResponseOptions), typeof(IQuestionResponseOptionInfo) },  new object[]{3,  (Expression<Func<IResponseOptions, object>>)(c => c.Id) , (Expression<Func<IQuestionResponseOptionInfo, object>>)(v => v.Id)}),
+            ComplexActions.GetComplexAction("UpdateStateList",new[]{typeof(IQuestionInfo) },  new object[]{3}),
+            ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new[]{typeof(IQuestions), typeof(IQuestionInfo) },  new object[]{3,  (Expression<Func<IQuestions, object>>)(c => c.Id) , (Expression<Func<IQuestionInfo, object>>)(v => v.Id)}),
+
+            ComplexActions.GetComplexAction("RequestStateList",new[]{typeof(IInterviewInfo), typeof(IQuestionInfo) },  new object[]{3,  (Expression<Func<IInterviewInfo, object>>)(c => c.Id) , (Expression<Func<IQuestionInfo, object>>)(v => v.InterviewId) }),
+
             
 
 
-            ComplexActions.RequestPulledState<IPatientInfo, IPatientDetailsInfo>(3,  "Patient"),
-            ComplexActions.UpdateState<IPatientDetailsInfo>(3),
-            ComplexActions.UpdateStateWhenDataChanges<IPatientInfo,IPatientDetailsInfo>(3, c => c.Id, v => v.Id),
-            ComplexActions.RequestState<IPatientInfo, IPatientAddressesInfo>(3, x => x.Id),
-            ComplexActions.UpdateState<IPatientAddressesInfo>(3),
-            ComplexActions.RequestState<IPatientInfo, IPatientPhoneNumbersInfo>(3, x => x.Id),
-            ComplexActions.UpdateState<IPatientPhoneNumbersInfo>(3),
-            ComplexActions.RequestState<IPatientInfo, IPatientNextOfKinsInfo>(3, x => x.Id),
-            ComplexActions.UpdateState<IPatientNextOfKinsInfo>(3),
-            ComplexActions.RequestPulledState<IPatientInfo, INonResidentInfo>(3, "NonResident"),
-            ComplexActions.UpdateState<INonResidentInfo>(3),
-
-            ComplexActions.RequestPulledState<IPatientInfo, IPatientVitalsInfo>(3,  "Vitals"),
-            ComplexActions.UpdateState<IPatientVitalsInfo>(3),
-            ComplexActions.UpdateStateWhenDataChanges<IPatientInfo,IPatientVitalsInfo>(3, c => c.Id, v => v.Id),
-
-
-
-            ComplexActions.RequestStateList<IPatientInfo, IPatientVisitInfo>(3, c => c.Id,x => x.PatientId),
-            ComplexActions.UpdateStateList<IPatientVisitInfo>(3),
-            ComplexActions.UpdateStateWhenDataChanges<IPatientInfo,IPatientVisitInfo>(3, c => c.Id, v => v.PatientId),
-
-            ComplexActions.RequestStateList<IPatientVisitInfo, IPatientSyntomInfo>(3,c => c.Id, x => x.PatientVisitId),
-            ComplexActions.RequestStateList<ISyntoms, IPatientSyntomInfo>(3,c => c.Id, x => x.SyntomId),
-            ComplexActions.UpdateStateList<IPatientSyntomInfo>(3),
-            ComplexActions.UpdateStateWhenDataChanges<IPatientSyntoms,IPatientSyntomInfo>(3, c => c.Id, v => v.Id),
-
-            ComplexActions.RequestStateList<IPatientSyntomInfo, ISyntomMedicalSystemInfo>(3,c => c.SyntomId, x => x.SyntomId),
-            ComplexActions.UpdateStateList<ISyntomMedicalSystemInfo>(3),
-            ComplexActions.UpdateStateWhenDataChanges<ISyntomMedicalSystems,ISyntomMedicalSystemInfo>(3, c => c.Id, v => v.Id),
-            ComplexActions.UpdateStateWhenDataChanges<IInterviews,IInterviewInfo>(3, c => c.Id, v => v.Id),
-
-
-            ComplexActions.RequestStateList<IInterviewInfo, IQuestionResponseOptionInfo>(3,c => c.Id, x => x.InterviewId),
-            ComplexActions.UpdateStateList<IQuestionResponseOptionInfo>(3),
-            ComplexActions.UpdateStateWhenDataChanges<IQuestionInfo,IQuestionResponseOptionInfo>(3, c => c.Id, v => v.Id),
-            ComplexActions.UpdateStateWhenDataChanges<IResponseInfo,IQuestionResponseOptionInfo>(3, c => c.QuestionId, v => v.Id),
-            ComplexActions.UpdateStateWhenDataChanges<IResponseOptions,IQuestionResponseOptionInfo>(3, c => c.QuestionId, v => v.Id),
+            EntityComplexActions.GetComplexAction("IntializeCache",new[]{typeof(ISyntomPriority) },  new object[]{3} ),
+            EntityComplexActions.GetComplexAction("IntializeCache",new[]{typeof(ISyntomStatus) },  new object[]{3} ),
+            EntityComplexActions.GetComplexAction("IntializeCache",new[]{typeof(IVisitType) },  new object[]{3} ),
+            EntityComplexActions.GetComplexAction("IntializeCache",new[]{typeof(IPhase) },  new object[]{3} ),
+            EntityComplexActions.GetComplexAction("IntializeCache",new[]{typeof(IMedicalCategory) },  new object[]{3} ),
+            EntityComplexActions.GetComplexAction("IntializeCache",new[]{typeof(IMedicalSystems) },  new object[]{3} ),
+            EntityComplexActions.GetComplexAction("IntializeCache",new[]{typeof(IQuestionResponseTypes) },  new object[]{3} ),
+            EntityComplexActions.GetComplexAction("IntializeCache",new[]{typeof(ISex) },  new object[]{3} ),
             
 
-            ComplexActions.RequestStateList<IInterviewInfo, IQuestionInfo>(3,c => c.Id, x => x.InterviewId),
-            ComplexActions.UpdateStateList<IQuestionInfo>(3),
-            ComplexActions.UpdateStateWhenDataChanges<IQuestions,IQuestionInfo>(3, c => c.Id, v => v.Id),
-
-
-            EntityComplexActions<ISyntomPriority>.IntializeCache(3),
-            EntityComplexActions<ISyntoms>.IntializeCache(3),
-            EntityComplexActions<ISyntomStatus>.IntializeCache(3),
-            EntityComplexActions<IVisitType>.IntializeCache(3),
-            EntityComplexActions<IPhase>.IntializeCache(3),
-            EntityComplexActions<IMedicalCategory>.IntializeCache(3),
-            EntityComplexActions<IMedicalSystems>.IntializeCache(3),
-            EntityComplexActions<IQuestionResponseTypes>.IntializeCache(3),
-            EntityComplexActions<ISex>.IntializeCache(3),
-
-            EntityViewComplexActions<IDoctorInfo>.IntializeCache(3)
+            EntityViewComplexActions.GetComplexAction("IntializeCache",new[]{typeof(IDoctorInfo) },  new object[]{3} ),
         };
+
 
         public static class ComplexActions
         {
+            public static ComplexEventAction StartProcess(int processId)
+            {
+                return new ComplexEventAction(
+                    $"StartProcess-{processId}",
+                    processId, new List<IProcessExpectedEvent>
+                    {
+                        new ProcessExpectedEvent("ProcessServiceStarted", processId, typeof(IServiceStarted<IProcessService>),
+                            e => e != null, new StateEventInfo(processId, RevolutionData.Context.Actor.Events.ActorStarted),
+                            new SourceType(typeof(IProcessService))),
+
+                    },
+                    typeof(ISystemProcessStarted),
+                    processInfo: new StateCommandInfo(processId, RevolutionData.Context.Process.Commands.StartProcess),
+                    action: ProcessActions.Actions["ProcessStarted"]);
+            }
+
+            //public static ComplexEventAction IntializePulledProcessState(int processId, string entityName,Type type)
+            //{
+            //    return (ComplexEventAction)typeof(ComplexActions).GetMethod("IntializePulledProcessState").MakeGenericMethod(type).Invoke(null, new object[] {processId, entityName});
+            //}
             public static ComplexEventAction IntializePulledProcessState<TEntityView>(int processId, string entityName) where TEntityView : IEntityView
             {
                 return new ComplexEventAction(
@@ -301,19 +321,19 @@ namespace Process.WorkFlow
                     actionTrigger: ActionTrigger.Any, 
                     events: new List<IProcessExpectedEvent>
                     {
-                                new ProcessExpectedEvent<IEntityViewWithChangesUpdated<TEntityView>> (processId: processId,
+                                new ProcessExpectedEvent<IEntityViewWithChangesUpdated<TEntityView>>(processId: processId,
                             eventPredicate: e => e.Entity != null,
-                            processInfo: new StateEventInfo(processId, RevolutionData.Context.Entity.Events.EntityUpdated),
+                            processInfo: new StateEventInfo(processId, Entity.Events.EntityUpdated),
                             expectedSourceType: new SourceType(typeof(IEntityRepository)),
                             key: "EntityView"),
-                                   new ProcessExpectedEvent<IEntityViewWithChangesFound<TEntityView>> (processId: processId,
+                                   new ProcessExpectedEvent<IEntityViewWithChangesFound<TEntityView>>(processId: processId,
                             eventPredicate: e => e.Entity != null,
-                            processInfo: new StateEventInfo(processId, RevolutionData.Context.Entity.Events.EntityFound),
+                            processInfo: new StateEventInfo(processId, Entity.Events.EntityFound),
                             expectedSourceType: new SourceType(typeof(IEntityRepository)),
                             key: "EntityView"),
-                                   new ProcessExpectedEvent<IEntityFound<TEntityView>> (processId: processId,
+                                   new ProcessExpectedEvent<IEntityFound<TEntityView>>(processId: processId,
                             eventPredicate: e => e.Entity != null,
-                            processInfo: new StateEventInfo(processId, RevolutionData.Context.Entity.Events.EntityFound),
+                            processInfo: new StateEventInfo(processId, Entity.Events.EntityFound),
                             expectedSourceType: new SourceType(typeof(IEntityRepository)),
                             key: "EntityView")
                     },
@@ -341,17 +361,17 @@ namespace Process.WorkFlow
                             "CurrentEntity", processId, e => e.Entity != null,
                             expectedSourceType: new SourceType(typeof (IViewModel)),
                             //todo: check this cuz it comes from viewmodel
-                            processInfo: new StateEventInfo(processId, RevolutionData.Context.Entity.Events.EntityFound)),
+                            processInfo: new StateEventInfo(processId, Entity.Events.EntityFound)),
                         new ProcessExpectedEvent<IEntityUpdated<TCurrentEntity>>(
                             "CurrentEntity", processId, e => e.Entity != null,
                             expectedSourceType: new SourceType(typeof (IViewModel)),
                             //todo: check this cuz it comes from viewmodel
-                            processInfo: new StateEventInfo(processId, RevolutionData.Context.Entity.Events.EntityUpdated)),
+                            processInfo: new StateEventInfo(processId, Entity.Events.EntityUpdated)),
                         new ProcessExpectedEvent<IEntityViewWithChangesFound<TCurrentEntity>>(
                             "CurrentEntity", processId, e => e.Entity != null,
                             expectedSourceType: new SourceType(typeof (IViewModel)),
                             //todo: check this cuz it comes from viewmodel
-                            processInfo: new StateEventInfo(processId, RevolutionData.Context.EntityView.Events.EntityViewFound))
+                            processInfo: new StateEventInfo(processId, EntityView.Events.EntityViewFound))
                     },
                     expectedMessageType: typeof(IProcessStateMessage<TEntityView>),
                     action: ProcessActions.RequestState(property),
@@ -376,17 +396,17 @@ namespace Process.WorkFlow
                             "CurrentEntity", processId, e => e.Entity != null,
                             expectedSourceType: new SourceType(typeof (IViewModel)),
                             //todo: check this cuz it comes from viewmodel
-                            processInfo: new StateEventInfo(processId, RevolutionData.Context.Entity.Events.EntityFound)),
+                            processInfo: new StateEventInfo(processId, Entity.Events.EntityFound)),
                         new ProcessExpectedEvent<IEntityUpdated<TCurrentEntity>>(
                             "CurrentEntity", processId, e => e.Entity != null,
                             expectedSourceType: new SourceType(typeof (IViewModel)),
                             //todo: check this cuz it comes from viewmodel
-                            processInfo: new StateEventInfo(processId, RevolutionData.Context.Entity.Events.EntityUpdated)),
+                            processInfo: new StateEventInfo(processId, Entity.Events.EntityUpdated)),
                         new ProcessExpectedEvent<IEntityViewWithChangesFound<TCurrentEntity>>(
                             "CurrentEntity", processId, e => e.Entity != null,
                             expectedSourceType: new SourceType(typeof (IViewModel)),
                             //todo: check this cuz it comes from viewmodel
-                            processInfo: new StateEventInfo(processId, RevolutionData.Context.EntityView.Events.EntityViewFound))
+                            processInfo: new StateEventInfo(processId, EntityView.Events.EntityViewFound))
                     },
                     expectedMessageType: typeof(IProcessStateMessage<TEntityView>),
                     action: ProcessActions.RequestPulledState<TEntityView>(entityName),
@@ -395,6 +415,12 @@ namespace Process.WorkFlow
 
 
 
+            public static ComplexEventAction GetComplexAction(string method, Type[] genericTypes, object[] args)
+            {
+                return genericTypes == null || !genericTypes.Any() 
+                        ? (ComplexEventAction)typeof(ComplexActions).GetMethod(method).Invoke(null, args)
+                        : (ComplexEventAction)typeof(ComplexActions).GetMethod(method).MakeGenericMethod(genericTypes).Invoke(null, args);
+            }
             public static ComplexEventAction UpdateStateList<TEntityView>(int processId) where TEntityView : IEntityView
             {
                 return new ComplexEventAction(
@@ -402,9 +428,9 @@ namespace Process.WorkFlow
                     processId: processId,
                     events: new List<IProcessExpectedEvent>
                     {
-                            new ProcessExpectedEvent<IEntityViewSetWithChangesLoaded<TEntityView>> (
+                            new ProcessExpectedEvent<IEntityViewSetWithChangesLoaded<TEntityView>>(
                         "EntityViewSet",processId, e => e.EntitySet != null, expectedSourceType: new SourceType(typeof(IEntityViewRepository)),
-                        processInfo: new StateEventInfo(processId, RevolutionData.Context.EntityView.Events.EntityViewSetLoaded))
+                        processInfo: new StateEventInfo(processId, EntityView.Events.EntityViewSetLoaded))
                     },
                     expectedMessageType: typeof(IProcessStateList<TEntityView>),
                     action: ProcessActions.UpdateEntityViewStateList<TEntityView>(),
@@ -440,12 +466,12 @@ namespace Process.WorkFlow
                     {
                         new ProcessExpectedEvent<IEntityUpdated<TEntity>>(processId: processId,
                             eventPredicate: e => e.Entity != null,
-                            processInfo: new StateEventInfo(processId, RevolutionData.Context.Entity.Events.EntityUpdated),
+                            processInfo: new StateEventInfo(processId, Entity.Events.EntityUpdated),
                             expectedSourceType: new SourceType(typeof (IEntityRepository)),
                             key: "UpdatedEntity"),
                         new ProcessExpectedEvent<IEntityViewWithChangesUpdated<TEntity>>(processId: processId,
                             eventPredicate: e => e.Entity != null,
-                            processInfo: new StateEventInfo(processId, RevolutionData.Context.EntityView.Events.EntityViewUpdated),
+                            processInfo: new StateEventInfo(processId, EntityView.Events.EntityViewUpdated),
                             expectedSourceType: new SourceType(typeof (IEntityRepository)),
                             key: "UpdatedEntity"),
 
@@ -467,19 +493,17 @@ namespace Process.WorkFlow
                             var changes = new Dictionary<string, dynamic>() { { key, value } };
 
                             return await Task.Run(() => new GetEntityViewWithChanges<TView>(changes,
-                                new StateCommandInfo(cp.Actor.Process.Id, RevolutionData.Context.EntityView.Commands.GetEntityView),
+                                new StateCommandInfo(cp.Actor.Process.Id, EntityView.Commands.GetEntityView),
                                 cp.Actor.Process, cp.Actor.Source));
                         },
                     processInfo: cp =>
                         new StateCommandInfo(cp.Actor.Process.Id,
-                            RevolutionData.Context.EntityView.Commands.GetEntityView),
+                            EntityView.Commands.GetEntityView),
                     // take shortcut cud be IntialState
                     expectedSourceType: new SourceType(typeof(IComplexEventService))
 
                     );
             }
-
-
         }
     }
 

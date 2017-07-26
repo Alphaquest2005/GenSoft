@@ -13,7 +13,7 @@ namespace GenSoft.Entities
 {
 	public partial class ProcessStateInfo: BaseEntity, IProcessStateInfo
 	{
-		public virtual string Status { get; set; }
+		public virtual string Description { get; set; }
 		public virtual string Notes { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//

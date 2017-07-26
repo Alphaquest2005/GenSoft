@@ -13,7 +13,6 @@ namespace GenSoft.Entities
 {
 	public partial class ProcessInfo: BaseEntity, IProcessInfo
 	{
-		public string UserName { get; set; }
 
 	}
 }

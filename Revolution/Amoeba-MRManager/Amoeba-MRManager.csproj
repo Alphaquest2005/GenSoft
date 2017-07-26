@@ -318,20 +318,29 @@
       <LastGenOutput>MRManger-DataEntities.cs</LastGenOutput>
       <LastOutputs>
 ..\GenSoft.DBContext\Generated Mappings\Action.cs
+..\GenSoft.DBContext\Generated Mappings\ActionEntityType.cs
 ..\GenSoft.DBContext\Generated Mappings\Agent.cs
 ..\GenSoft.DBContext\Generated Mappings\ApplicationSetting.cs
 ..\GenSoft.DBContext\Generated Mappings\Command.cs
+..\GenSoft.DBContext\Generated Mappings\DataType.cs
+..\GenSoft.DBContext\Generated Mappings\DomainEntityType.cs
 ..\GenSoft.DBContext\Generated Mappings\Entity.cs
 ..\GenSoft.DBContext\Generated Mappings\EntityAttribute.cs
+..\GenSoft.DBContext\Generated Mappings\EntityId.cs
+..\GenSoft.DBContext\Generated Mappings\EntityName.cs
+..\GenSoft.DBContext\Generated Mappings\EntityRelationships.cs
 ..\GenSoft.DBContext\Generated Mappings\EntityType.cs
+..\GenSoft.DBContext\Generated Mappings\EntityTypeAttributes.cs
 ..\GenSoft.DBContext\Generated Mappings\Event.cs
 ..\GenSoft.DBContext\Generated Mappings\Machine.cs
 ..\GenSoft.DBContext\Generated Mappings\Message.cs
 ..\GenSoft.DBContext\Generated Mappings\MessageSource.cs
+..\GenSoft.DBContext\Generated Mappings\MessageType.cs
 ..\GenSoft.DBContext\Generated Mappings\Process.cs
 ..\GenSoft.DBContext\Generated Mappings\ProcessComplexState.cs
 ..\GenSoft.DBContext\Generated Mappings\ProcessComplexStateExpectedProcessState.cs
 ..\GenSoft.DBContext\Generated Mappings\ProcessState.cs
+..\GenSoft.DBContext\Generated Mappings\ProcessStateDomainEntityTypes.cs
 ..\GenSoft.DBContext\Generated Mappings\ProcessStateInfo.cs
 ..\GenSoft.DBContext\Generated Mappings\ProcessStateTrigger.cs
 ..\GenSoft.DBContext\Generated Mappings\SourceType.cs
@@ -344,21 +353,32 @@
 ..\GenSoft.DBContext\Generated Mappings\ViewModel.cs
 ..\GenSoft.Entities\EFEntity.cs
 ..\GenSoft.Entities\Generated Entities\Action.cs
+..\GenSoft.Entities\Generated Entities\ActionEntityType.cs
 ..\GenSoft.Entities\Generated Entities\Agent.cs
 ..\GenSoft.Entities\Generated Entities\ApplicationSetting.cs
 ..\GenSoft.Entities\Generated Entities\Command.cs
+..\GenSoft.Entities\Generated Entities\DataType.cs
+..\GenSoft.Entities\Generated Entities\DomainEntityType.cs
+..\GenSoft.Entities\Generated Entities\Entity Views\ProcessComplexStateView.cs
 ..\GenSoft.Entities\Generated Entities\Entity Views\ProcessInfo.cs
+..\GenSoft.Entities\Generated Entities\Entity Views\ProcessStateView.cs
 ..\GenSoft.Entities\Generated Entities\Entity.cs
 ..\GenSoft.Entities\Generated Entities\EntityAttribute.cs
+..\GenSoft.Entities\Generated Entities\EntityId.cs
+..\GenSoft.Entities\Generated Entities\EntityName.cs
+..\GenSoft.Entities\Generated Entities\EntityRelationships.cs
 ..\GenSoft.Entities\Generated Entities\EntityType.cs
+..\GenSoft.Entities\Generated Entities\EntityTypeAttributes.cs
 ..\GenSoft.Entities\Generated Entities\Event.cs
 ..\GenSoft.Entities\Generated Entities\Machine.cs
 ..\GenSoft.Entities\Generated Entities\Message.cs
 ..\GenSoft.Entities\Generated Entities\MessageSource.cs
+..\GenSoft.Entities\Generated Entities\MessageType.cs
 ..\GenSoft.Entities\Generated Entities\Process.cs
 ..\GenSoft.Entities\Generated Entities\ProcessComplexState.cs
 ..\GenSoft.Entities\Generated Entities\ProcessComplexStateExpectedProcessState.cs
 ..\GenSoft.Entities\Generated Entities\ProcessState.cs
+..\GenSoft.Entities\Generated Entities\ProcessStateDomainEntityTypes.cs
 ..\GenSoft.Entities\Generated Entities\ProcessStateInfo.cs
 ..\GenSoft.Entities\Generated Entities\ProcessStateTrigger.cs
 ..\GenSoft.Entities\Generated Entities\SourceType.cs
@@ -376,21 +396,32 @@
       <LastGenOutput>MRManger-Interfaces.cs</LastGenOutput>
       <LastOutputs>
 ..\GenSoft.Interface\Generated Interfaces\Action.cs
+..\GenSoft.Interface\Generated Interfaces\ActionEntityType.cs
 ..\GenSoft.Interface\Generated Interfaces\Agent.cs
 ..\GenSoft.Interface\Generated Interfaces\ApplicationSetting.cs
 ..\GenSoft.Interface\Generated Interfaces\Command.cs
+..\GenSoft.Interface\Generated Interfaces\DataType.cs
+..\GenSoft.Interface\Generated Interfaces\DomainEntityType.cs
 ..\GenSoft.Interface\Generated Interfaces\Entity.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityAttribute.cs
+..\GenSoft.Interface\Generated Interfaces\EntityId.cs
+..\GenSoft.Interface\Generated Interfaces\EntityName.cs
+..\GenSoft.Interface\Generated Interfaces\EntityRelationships.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityType.cs
+..\GenSoft.Interface\Generated Interfaces\EntityTypeAttributes.cs
+..\GenSoft.Interface\Generated Interfaces\EntityViews\ProcessComplexStateView.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityViews\ProcessInfo.cs
+..\GenSoft.Interface\Generated Interfaces\EntityViews\ProcessStateView.cs
 ..\GenSoft.Interface\Generated Interfaces\Event.cs
 ..\GenSoft.Interface\Generated Interfaces\Machine.cs
 ..\GenSoft.Interface\Generated Interfaces\Message.cs
 ..\GenSoft.Interface\Generated Interfaces\MessageSource.cs
+..\GenSoft.Interface\Generated Interfaces\MessageType.cs
 ..\GenSoft.Interface\Generated Interfaces\Process.cs
 ..\GenSoft.Interface\Generated Interfaces\ProcessComplexState.cs
 ..\GenSoft.Interface\Generated Interfaces\ProcessComplexStateExpectedProcessState.cs
 ..\GenSoft.Interface\Generated Interfaces\ProcessState.cs
+..\GenSoft.Interface\Generated Interfaces\ProcessStateDomainEntityTypes.cs
 ..\GenSoft.Interface\Generated Interfaces\ProcessStateInfo.cs
 ..\GenSoft.Interface\Generated Interfaces\ProcessStateTrigger.cs
 ..\GenSoft.Interface\Generated Interfaces\SourceType.cs

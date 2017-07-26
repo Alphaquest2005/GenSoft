@@ -78,19 +78,19 @@ else
 	var mainEntities = ml as IList<Entity> ?? ml.ToList();
 	mainEntities.ForEach((x) =>
 	{
-		InsertEntitySampleData(x);
-		res.Add(x);
+		InsertEntitySampleData(x, res);
+		
 	});
 				
 	foreach (var mainEntity in mainEntities)
 	{
 		ProcessMainEntity(mainEntity, res);
+					
 
 	}
 	Entities.Select(x => x.Entity).Except(res).ForEach((x) =>
 	{
 	    ProcessMainEntity(x, res);
-	    res.Add(x);
 	});
 #>
 		}
@@ -110,6 +110,7 @@ else
 	{
 		try
 		{
+
 			var childres = mainEntity.EntityProperties.SelectMany(x => x.ChildRelationships)
 				.Where(x => x != null && x.ChildProperty != null && x.ChildProperty.Entity != null)
 				.Where(x => !res.Contains(x.ChildProperty.Entity))
@@ -117,7 +118,11 @@ else
 				.DistinctBy(x => x.Id)
 				.ToList();
 
-			//InsertEntitySampleData(mainEntity);
+			if(!childres.Any())
+			{ 
+								InsertEntitySampleData(mainEntity, res);
+								
+			};
 			foreach (var c in childres)
 			{
 				var parentRes =
@@ -129,19 +134,19 @@ else
 					if(!parent.EntityProperties.SelectMany(x => x.ParentRelationships.Select(z => z.ParentProperty.Entity)).All(res.Contains)) continue;
 				    if (!res.Contains(parent))
 				    {
-				        InsertEntitySampleData(parent);
-						res.Add(parent);
+				        InsertEntitySampleData(parent, res);
+						
 				    }
 					
 				}
 				if(!c.EntityProperties.SelectMany(x => x.ParentRelationships.Select(z => z.ParentProperty.Entity)).All(res.Contains)) continue;
 			    if (!res.Contains(c))
 			    {
-			        InsertEntitySampleData(c);
-					res.Add(c);
+			        InsertEntitySampleData(c, res);
 			    }
 				ProcessMainEntity(c, res);
 			}
+
 		}
 		catch (Exception)
 		{
@@ -152,8 +157,9 @@ else
 
 <#+
 
-	private void InsertEntitySampleData(Entity entity)
+	private void InsertEntitySampleData(Entity entity, List<Entity> res)
 	{
+		if(res.Contains(entity)) return;
 #>
 <#+
 				var isPCal = entity.EntityProperties.Any(x => x!= null && x.DataProperties.Any() && x.DataProperties.Any(z => z!= null && z.ModelType != null && z.ModelType.Name == "EntityId" && z.PrimaryKeyOption != null && z.PrimaryKeyOption.IsCalculated));
@@ -172,14 +178,14 @@ else
 <#+			if (isPCal)
 			{
 #>
-					SET IDENTITY_INSERT <#=entity.SchemaName#>.<#=entity.EntitySetName #> ON
+					SET IDENTITY_INSERT <#=entity.SchemaName#>.[<#=entity.EntitySetName #>] ON
 <#+			}
  #>
 <#+
 			foreach (var grp in props)
 							{
 #>
-						Insert Into <#=entity.SchemaName#>.<#=entity.EntitySetName#> (<#+
+						Insert Into <#=entity.SchemaName#>.[<#=entity.EntitySetName#>] (<#+
 							foreach (var val in grp)
 							{
 								if(val.EntityProperty.DataProperties.FirstOrDefault() == null) continue;
@@ -205,8 +211,8 @@ else
  #><#+		if (isPCal)
 			{ 
 #>
-					SET IDENTITY_INSERT <#=entity.SchemaName#>.<#=entity.EntitySetName #> OFF<#+} #>");
-<#+        
+					SET IDENTITY_INSERT <#=entity.SchemaName#>.[<#=entity.EntitySetName #>] OFF<#+} #>");
+<#+												res.Add(entity);        
 	}#>
 
 
@@ -214,6 +220,7 @@ else
 
 <#+
 		/// end of class
+	
 }
 
    

@@ -207,3 +207,8 @@ C:\Prism\GitRepositiory\GenSoft\EFDataContext\obj\x64\Debug\EF.DBContext.csprojR
 C:\Prism\GitRepositiory\GenSoft\EFDataContext\obj\x64\Debug\EF.DBContext.dll
 C:\Prism\GitRepositiory\GenSoft\EFDataContext\obj\x64\Debug\EF.DBContext.pdb
 C:\Prism\GitRepositiory\GenSoft\EFDataContext\bin\x64\Debug\System.ValueTuple.dll
+C:\Prism\GitRepositiory\GenSoft\EFDataContext\bin\x64\Debug\EF.Mappings.dll.config
+C:\Prism\GitRepositiory\GenSoft\EFDataContext\bin\x64\Debug\Expressions.dll.config
+C:\Prism\GitRepositiory\GenSoft\EFDataContext\bin\x64\Debug\BootStrapper.dll.config
+C:\Prism\GitRepositiory\GenSoft\EFDataContext\bin\x64\Debug\EventAggregator.dll.config
+C:\Prism\GitRepositiory\GenSoft\EFDataContext\bin\x64\Debug\RevolutionData.dll.config

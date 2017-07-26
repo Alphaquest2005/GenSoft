@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
@@ -30,11 +31,14 @@ namespace MRManager
 		    {
                 var dbContextAssembly = new MRManagerDBContext().GetType().Assembly;
                 var entitiesAssembly = new EFEntity<IEntity>().GetType().Assembly;
-                BootStrapper.BootStrapper.Instance.StartUp( true, dbContextAssembly,entitiesAssembly, Process.WorkFlow.Processes.ProcessComplexEvents, ProcessViewModels.ProcessViewModelInfos);
+		        var interfacesAssembly = AppDomain.CurrentDomain.GetAssemblies()
+		            .FirstOrDefault(x => x.FullName.StartsWith("Interfaces"));
+                BootStrapper.BootStrapper.Instance.StartUp( true, Process.WorkFlow.MachineInfoData.MachineInfos, Process.WorkFlow.Processes.ProcessInfos, Process.WorkFlow.Processes.ProcessComplexEvents, ProcessViewModels.ProcessViewModelInfos, dbContextAssembly,entitiesAssembly, interfacesAssembly);
 		    }).ConfigureAwait(false);
+		    
 
 
-		}
+        }
         private void BackBtn_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (IsMouseOver == true)

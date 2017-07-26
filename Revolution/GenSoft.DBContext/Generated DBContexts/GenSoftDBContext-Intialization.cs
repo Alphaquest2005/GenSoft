@@ -28,82 +28,166 @@ namespace GenSoft.DBContexts
 		private static void CreateSeedData()
 		{
 				Instance.Database.ExecuteSqlCommand(@"
-					SET IDENTITY_INSERT dbo.Agent ON
-						Insert Into dbo.Agent (UserName,Id) Values('System','0')
-						Insert Into dbo.Agent (UserName,Id) Values('joe','2')
-					SET IDENTITY_INSERT dbo.Agent OFF");
+					SET IDENTITY_INSERT dbo.[Action] ON
+						Insert Into dbo.[Action] (Id,Name) Values('1','StartProcess')
+						Insert Into dbo.[Action] (Id,Name) Values('2','StartNextProcess')
+						Insert Into dbo.[Action] (Id,Name) Values('3','CleanUpProcess')
+					SET IDENTITY_INSERT dbo.[Action] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
-					SET IDENTITY_INSERT dbo.Machine ON
-						Insert Into dbo.Machine (Id,MachineName,Processors) Values('1','ALPHAQUEST-PC','8')
-					SET IDENTITY_INSERT dbo.Machine OFF");
+					SET IDENTITY_INSERT dbo.[Agent] ON
+						Insert Into dbo.[Agent] (Id,UserName) Values('0','System')
+						Insert Into dbo.[Agent] (Id,UserName) Values('2','joe')
+					SET IDENTITY_INSERT dbo.[Agent] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
-					SET IDENTITY_INSERT dbo.ProcessStateTrigger ON
-						Insert Into dbo.ProcessStateTrigger (Id,Name) Values('1','All')
-						Insert Into dbo.ProcessStateTrigger (Id,Name) Values('2','Any')
-					SET IDENTITY_INSERT dbo.ProcessStateTrigger OFF");
+					SET IDENTITY_INSERT dbo.[Machine] ON
+						Insert Into dbo.[Machine] (Id,MachineName,Processors) Values('1','ALPHAQUEST-PC','8')
+					SET IDENTITY_INSERT dbo.[Machine] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
-					SET IDENTITY_INSERT dbo.State ON
-						Insert Into dbo.State (Id,Name) Values('1','Started')
-						Insert Into dbo.State (Id,Name) Values('2','Loaded')
-						Insert Into dbo.State (Id,Name) Values('3','Completed')
-					SET IDENTITY_INSERT dbo.State OFF");
+					SET IDENTITY_INSERT dbo.[ProcessStateTrigger] ON
+						Insert Into dbo.[ProcessStateTrigger] (Id,Name) Values('1','All')
+						Insert Into dbo.[ProcessStateTrigger] (Id,Name) Values('2','Any')
+					SET IDENTITY_INSERT dbo.[ProcessStateTrigger] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
-					SET IDENTITY_INSERT dbo.Type ON
-						Insert Into dbo.Type (Id,Name) Values('1','IServiceManager')
-						Insert Into dbo.Type (Id,Name) Values('2','Process')
-						Insert Into dbo.Type (Id,Name) Values('3','ScreenModel')
-					SET IDENTITY_INSERT dbo.Type OFF");
+					SET IDENTITY_INSERT dbo.[State] ON
+						Insert Into dbo.[State] (Id,Name) Values('1','Started')
+						Insert Into dbo.[State] (Id,Name) Values('2','Loaded')
+						Insert Into dbo.[State] (Id,Name) Values('3','Completed')
+					SET IDENTITY_INSERT dbo.[State] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
-					SET IDENTITY_INSERT dbo.Process ON
-						Insert Into dbo.Process (UserId,Id,Description,Name,ParentProcessId,Symbol) Values('0','1','Prepare system for Intial Use','Starting System','0','Start')
-						Insert Into dbo.Process (UserId,Id,Description,Name,ParentProcessId,Symbol) Values('0','2','User Login','User SignOn','1','User')
-						Insert Into dbo.Process (UserId,Id,Description,Name,ParentProcessId,Symbol) Values('0','3','User Screen','Load User Screen','2','UserScreen')
-					SET IDENTITY_INSERT dbo.Process OFF");
-			//No test data for SourceType
-			//No test data for MessageSource
+					SET IDENTITY_INSERT dbo.[Type] ON
+						Insert Into dbo.[Type] (Id,Name) Values('1','IService')
+						Insert Into dbo.[Type] (Id,Name) Values('2','Process')
+						Insert Into dbo.[Type] (Id,Name) Values('3','ScreenModel')
+						Insert Into dbo.[Type] (Id,Name) Values('4','IPatientInfo')
+						Insert Into dbo.[Type] (Id,Name) Values('5','int')
+						Insert Into dbo.[Type] (Id,Name) Values('6','string')
+						Insert Into dbo.[Type] (Id,Name) Values('7','dateTime')
+						Insert Into dbo.[Type] (Id,Name) Values('8','IPatientDetailsInfo')
+					SET IDENTITY_INSERT dbo.[Type] OFF");
+				Instance.Database.ExecuteSqlCommand(@"
+						Insert Into dbo.[EntityType] (Id) Values('1')
+						Insert Into dbo.[EntityType] (Id) Values('2')
+						Insert Into dbo.[EntityType] (Id) Values('3')
+						Insert Into dbo.[EntityType] (Id) Values('4')
+						Insert Into dbo.[EntityType] (Id) Values('8')
+");
+			//No test data for ActionEntityType
+			//No test data for ActionEntityType
+				Instance.Database.ExecuteSqlCommand(@"
+					SET IDENTITY_INSERT dbo.[Process] ON
+						Insert Into dbo.[Process] (UserId,Id,Description,Name,ParentProcessId,Symbol) Values('0','1','Prepare system for Intial Use','Starting System','0','Start')
+						Insert Into dbo.[Process] (UserId,Id,Description,Name,ParentProcessId,Symbol) Values('0','2','User Login','User SignOn','1','User')
+						Insert Into dbo.[Process] (UserId,Id,Description,Name,ParentProcessId,Symbol) Values('0','3','User Screen','Load User Screen','2','UserScreen')
+					SET IDENTITY_INSERT dbo.[Process] OFF");
+				Instance.Database.ExecuteSqlCommand(@"
+						Insert Into dbo.[SourceType] (Id) Values('1')
+");
+				Instance.Database.ExecuteSqlCommand(@"
+					SET IDENTITY_INSERT dbo.[MessageSource] ON
+						Insert Into dbo.[MessageSource] (MachineId,Id,SourceGuid,Name,SourceTypeId,ProcessId) Values('1','1','575C9BC4-F78F-49F7-AD10-C1F47277A23B','ServiceManager','1','1')
+					SET IDENTITY_INSERT dbo.[MessageSource] OFF");
 			//No test data for Message
-			//No test data for Entity
 				Instance.Database.ExecuteSqlCommand(@"
-						Insert Into dbo.EntityType (Id) Values('1')
-						Insert Into dbo.EntityType (Id) Values('2')
-						Insert Into dbo.EntityType (Id) Values('3')
+					SET IDENTITY_INSERT dbo.[Entity] ON
+						Insert Into dbo.[Entity] (Id,EntityTypeId,Name) Values('1','1','IServiceManager')
+						Insert Into dbo.[Entity] (Id,EntityTypeId,Name) Values('2','3','IScreenModel')
+					SET IDENTITY_INSERT dbo.[Entity] OFF");
+			//No test data for Message
+				Instance.Database.ExecuteSqlCommand(@"
+					SET IDENTITY_INSERT dbo.[ProcessState] ON
+						Insert Into dbo.[ProcessState] (Id,Name,ProcessId,StateId) Values('1','ServiceManagerStarted','1','1')
+						Insert Into dbo.[ProcessState] (Id,Name,ProcessId,StateId) Values('2','Process0Started','1','1')
+						Insert Into dbo.[ProcessState] (Id,Name,ProcessId,StateId) Values('3','ScreenViewCreated','1','1')
+						Insert Into dbo.[ProcessState] (Id,Name,ProcessId,StateId) Values('4','ScreenViewLoaded','1','2')
+						Insert Into dbo.[ProcessState] (Id,Name,ProcessId,StateId) Values('5','Process0Completed','1','3')
+						Insert Into dbo.[ProcessState] (Id,Name,ProcessId,StateId) Values('6','Process3Started','3','1')
+					SET IDENTITY_INSERT dbo.[ProcessState] OFF");
+			//No test data for Message
+				Instance.Database.ExecuteSqlCommand(@"
+						Insert Into dbo.[ProcessComplexState] (Id,StateTriggerId) Values('1','1')
+						Insert Into dbo.[ProcessComplexState] (Id,StateTriggerId) Values('5','1')
 ");
 				Instance.Database.ExecuteSqlCommand(@"
-					SET IDENTITY_INSERT dbo.ProcessState ON
-						Insert Into dbo.ProcessState (EntityTypeId,Id,Name,ProcessId,StateId,Predicate) Values('1','1','ServiceManagerStarted','1','1','entity != null')
-						Insert Into dbo.ProcessState (EntityTypeId,Id,Name,ProcessId,StateId,Predicate) Values('2','2','Process0Started','1','1','entity is IProcessStarted')
-						Insert Into dbo.ProcessState (EntityTypeId,Id,Name,ProcessId,StateId,Predicate) Values('3','3','ScreenViewCreated','1','1','entity is IScreenModel')
-						Insert Into dbo.ProcessState (EntityTypeId,Id,Name,ProcessId,StateId,Predicate) Values('3','4','ScreenViewLoaded','1','2','entity is IViewModelLoaded<IMainWindowViewModel,IScreenModel>')
-						Insert Into dbo.ProcessState (EntityTypeId,Id,Name,ProcessId,StateId,Predicate) Values('2','5','Process0Completed','1','3','entity.Id == 1 && entity is ISystemProcessCompleted')
-					SET IDENTITY_INSERT dbo.ProcessState OFF");
-			//No test data for Event
+					SET IDENTITY_INSERT dbo.[ProcessComplexStateExpectedProcessState] ON
+						Insert Into dbo.[ProcessComplexStateExpectedProcessState] (ComplexStateId,Id,ProcessStateId) Values('1','1','1')
+						Insert Into dbo.[ProcessComplexStateExpectedProcessState] (ComplexStateId,Id,ProcessStateId) Values('5','7','2')
+						Insert Into dbo.[ProcessComplexStateExpectedProcessState] (ComplexStateId,Id,ProcessStateId) Values('5','2','3')
+						Insert Into dbo.[ProcessComplexStateExpectedProcessState] (ComplexStateId,Id,ProcessStateId) Values('5','3','4')
+					SET IDENTITY_INSERT dbo.[ProcessComplexStateExpectedProcessState] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
-						Insert Into dbo.ProcessComplexState (Id,StateTriggerId) Values('1','1')
-						Insert Into dbo.ProcessComplexState (Id,StateTriggerId) Values('5','1')
+						Insert Into dbo.[DomainEntityType] (Id,SourceEntity) Values('4','Patient')
+						Insert Into dbo.[DomainEntityType] (Id,SourceEntity) Values('8','Patient')
 ");
 				Instance.Database.ExecuteSqlCommand(@"
-					SET IDENTITY_INSERT dbo.ProcessComplexStateExpectedProcessState ON
-						Insert Into dbo.ProcessComplexStateExpectedProcessState (ComplexStateId,Id,ProcessStateId) Values('1','1','1')
-						Insert Into dbo.ProcessComplexStateExpectedProcessState (ComplexStateId,Id,ProcessStateId) Values('5','7','2')
-						Insert Into dbo.ProcessComplexStateExpectedProcessState (ComplexStateId,Id,ProcessStateId) Values('5','2','3')
-						Insert Into dbo.ProcessComplexStateExpectedProcessState (ComplexStateId,Id,ProcessStateId) Values('5','3','4')
-					SET IDENTITY_INSERT dbo.ProcessComplexStateExpectedProcessState OFF");
+					SET IDENTITY_INSERT dbo.[ProcessStateDomainEntityTypes] ON
+						Insert Into dbo.[ProcessStateDomainEntityTypes] (DomainEntityTypeId,Id,ProcessStateId) Values('4','1','6')
+						Insert Into dbo.[ProcessStateDomainEntityTypes] (DomainEntityTypeId,Id,ProcessStateId) Values('8','2','6')
+					SET IDENTITY_INSERT dbo.[ProcessStateDomainEntityTypes] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
-						Insert Into dbo.ProcessStateInfo (Id,Status,Notes) Values('1','Service Manager Started','Service Manager Started')
-						Insert Into dbo.ProcessStateInfo (Id,Status,Notes) Values('2','ProcessStarted','Process 0 Started ')
-						Insert Into dbo.ProcessStateInfo (Id,Status,Notes) Values('3','ScreenView Created','This view contains all views')
+						Insert Into dbo.[ProcessStateInfo] (Id,Description,Notes) Values('1','Service Manager Started','Service Manager Started')
+						Insert Into dbo.[ProcessStateInfo] (Id,Description,Notes) Values('2','ProcessStarted','Process 0 Started ')
+						Insert Into dbo.[ProcessStateInfo] (Id,Description,Notes) Values('3','ScreenView Created','This view contains all views')
 ");
 				Instance.Database.ExecuteSqlCommand(@"
-					SET IDENTITY_INSERT dbo.StateAction ON
-						Insert Into dbo.StateAction (Id,ProcessStateId,ActionId) Values('5','1','1')
-						Insert Into dbo.StateAction (Id,ProcessStateId,ActionId) Values('6','5','3')
-					SET IDENTITY_INSERT dbo.StateAction OFF");
+					SET IDENTITY_INSERT dbo.[StateAction] ON
+						Insert Into dbo.[StateAction] (ActionId,Id,ProcessStateId) Values('1','5','1')
+						Insert Into dbo.[StateAction] (ActionId,Id,ProcessStateId) Values('3','6','5')
+					SET IDENTITY_INSERT dbo.[StateAction] OFF");
+			//No test data for Command
 			//No test data for Command
 				Instance.Database.ExecuteSqlCommand(@"
-						Insert Into dbo.StateActionExpectedProcessState (ExpectedProcesStateId,Id) Values('2','5')
+						Insert Into dbo.[StateActionExpectedProcessState] (ExpectedProcesStateId,Id) Values('2','5')
 ");
-			//No test data for User
+				Instance.Database.ExecuteSqlCommand(@"
+						Insert Into dbo.[User] (Id,Password) Values('2','test')
+");
+				Instance.Database.ExecuteSqlCommand(@"
+						Insert Into dbo.[DataType] (Id) Values('5')
+						Insert Into dbo.[DataType] (Id) Values('6')
+						Insert Into dbo.[DataType] (Id) Values('7')
+");
+				Instance.Database.ExecuteSqlCommand(@"
+					SET IDENTITY_INSERT dbo.[EntityTypeAttributes] ON
+						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','1','Id','4')
+						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('6','2','Name','4')
+						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('6','3','Address','4')
+						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('6','4','PhoneNumber','4')
+						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('6','5','Age','4')
+						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('6','6','Sex','4')
+						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('6','7','BirthCountry','4')
+						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('6','8','Email','4')
+						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('7','9','BirthDate','4')
+						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','10','Id','8')
+						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('6','11','EmailAddress','8')
+						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('6','12','Marital Status','8')
+					SET IDENTITY_INSERT dbo.[EntityTypeAttributes] OFF");
+				Instance.Database.ExecuteSqlCommand(@"
+						Insert Into dbo.[EntityId] (Id) Values('1')
+						Insert Into dbo.[EntityId] (Id) Values('10')
+");
+				Instance.Database.ExecuteSqlCommand(@"
+					SET IDENTITY_INSERT dbo.[EntityRelationships] ON
+						Insert Into dbo.[EntityRelationships] (ParentEntityId,Id,ChildEntityId) Values('1','2','10')
+					SET IDENTITY_INSERT dbo.[EntityRelationships] OFF");
+				Instance.Database.ExecuteSqlCommand(@"
+						Insert Into dbo.[EntityName] (Id) Values('2')
+");
+			//No test data for MessageType
+			//No test data for MessageType
 			//No test data for TypeParameter
+			//No test data for TypeParameter
+			//No test data for ActionEntityType
+				Instance.Database.ExecuteSqlCommand(@"
+					SET IDENTITY_INSERT dbo.[ApplicationSetting] ON
+						Insert Into dbo.[ApplicationSetting] (Id,AutoRun) Values('1','1')
+					SET IDENTITY_INSERT dbo.[ApplicationSetting] OFF");
+			//No test data for Command
+			//No test data for EntityAttribute
+			//No test data for Event
+			//No test data for Message
+			//No test data for MessageType
+			//No test data for TypeParameter
+			//No test data for ViewModel
 		}
                
 			

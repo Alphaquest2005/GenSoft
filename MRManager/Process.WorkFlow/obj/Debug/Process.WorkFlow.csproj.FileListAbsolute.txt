@@ -119,3 +119,5 @@ C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\obj\Debug\Process.Wor
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\obj\Debug\Process.WorkFlow.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\obj\Debug\Process.WorkFlow.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\System.ValueTuple.dll
+C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\BootStrapper.dll.config
+C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\RevolutionData.dll.config

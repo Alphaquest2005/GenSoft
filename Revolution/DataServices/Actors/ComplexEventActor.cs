@@ -98,7 +98,7 @@ namespace DataServices.Actors
         {
             // if (!ComplexEventAction.Events.All(z => z.Raised())) return;
 
-            var inMsg = new ExecuteComplexEventAction(ComplexEventAction.Action, new ComplexEventParameters(this, msgs), new StateCommandInfo(Process.Id, RevolutionData.Context.Actor.Commands.CreateAction), Process, Source);
+            var inMsg = new ExecuteComplexEventAction(ComplexEventAction.Action, new ComplexEventParameters(this,  msgs), new StateCommandInfo(Process.Id, RevolutionData.Context.Actor.Commands.CreateAction), Process, Source);
 
             Publish(inMsg);
             try

@@ -84,3 +84,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\x64\Debug\Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\obj\x64\Debug\Common.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\obj\x64\Debug\Common.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\obj\x64\Debug\Common.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\x64\Debug\BootStrapper.dll.config

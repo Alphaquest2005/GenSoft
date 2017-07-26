@@ -67,9 +67,21 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\BuildingSpecifications\BuildingSpecifications.csproj">
+      <Project>{E307C55E-A215-45E5-B3F2-C23EC3396DE0}</Project>
+      <Name>BuildingSpecifications</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MRManager\Process.WorkFlow\Process.WorkFlow.csproj">
+      <Project>{4F0BAA58-3B45-4136-8095-445D406B4D23}</Project>
+      <Name>Process.WorkFlow</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Actor.Interfaces\Actor.Interfaces.csproj">
       <Project>{8b10c72d-9f33-4290-b562-44cf1f718fa5}</Project>
       <Name>Actor.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BootStrapper\BootStrapper.csproj">
+      <Project>{5DFEEA8B-BABA-4544-BF36-0A76A0D10C1B}</Project>
+      <Name>BootStrapper</Name>
     </ProjectReference>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{cb6d5fbc-0c13-437d-b4f3-a0ec4d5673b3}</Project>
