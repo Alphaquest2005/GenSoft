@@ -18,9 +18,9 @@ namespace GenSoft.Mappings
 			entityBuilder.ToTable("Message", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
+			entityBuilder.Property(t => t.EntryDateTime).HasColumnName("EntryDateTime").IsRequired();
 			entityBuilder.Property(t => t.MessageSourceId).HasColumnName("MessageSourceId").IsRequired();
 			entityBuilder.Property(t => t.ProcessId).HasColumnName("ProcessId").IsRequired();
-			entityBuilder.Property(t => t.EntryDateTime).HasColumnName("EntryDateTime").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
 				entityBuilder.HasOne(p => p.Event).WithOne(p => p.Message).HasForeignKey<Event>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 	

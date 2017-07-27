@@ -5,6 +5,8 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using Expression = System.Linq.Expressions.Expression;
 
 namespace Utilities
 {
@@ -34,6 +36,56 @@ namespace Utilities
                     type));
 
             return propInfo;
+        }
+
+        public static Expression<Func<T,object>> BuildForType<T>(Type sourceType, string propertyName)
+        {
+
+            var oexp = Build(sourceType, propertyName, out Type rtype);
+            var fexp = typeof(ExpressionConverter<>).MakeGenericType(rtype).GetMethod("ConvertExpressionReturnType")
+                .MakeGenericMethod(sourceType,typeof(object)).Invoke(null, new object[] { oexp});
+            return (Expression<Func<T, object>>)fexp;
+        }
+
+        public static dynamic Build(Type sourceType, string propertyName, out Type rType)
+        {
+            var propInfo = sourceType.GetProperty(propertyName);
+            if (propInfo == null && sourceType.IsInterface) propInfo = sourceType.GetInterfaces().SelectMany(x => x.GetProperties()).FirstOrDefault(x => x.Name == propertyName);
+
+            var parameter = Expression.Parameter(sourceType, "x");
+
+            var property = Expression.Property(parameter, propInfo);
+
+            var delegateType = typeof(Func<,>)
+                .MakeGenericType(sourceType, propInfo.PropertyType);//
+            rType = propInfo.PropertyType;
+            var lambda = GetExpressionLambdaMethod()
+                .MakeGenericMethod(delegateType)
+                .Invoke(null, new object[] { property, new[] { parameter } });
+
+           
+
+          
+
+            return lambda ; //lambda;
+        }
+
+        public static MethodInfo GetExpressionLambdaMethod()
+        {
+            return typeof(Expression)
+                .GetMethods()
+                .Where(m => m.Name == "Lambda")
+                .Select(m => new
+                {
+                    Method = m,
+                    Params = m.GetParameters(),
+                    Args = m.GetGenericArguments()
+                })
+                .Where(x => x.Params.Length == 2
+                            && x.Args.Length == 1
+                )
+                .Select(x => x.Method)
+                .First();
         }
     }
 }

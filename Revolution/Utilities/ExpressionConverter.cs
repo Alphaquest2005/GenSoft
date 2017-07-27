@@ -28,6 +28,14 @@ namespace Utilities
                 Expression body = new Visitor(parameter).Visit(expression.Body);
                 return Expression.Lambda<Func<TTo, U>>(body, parameter);
             }
+
+            internal static Expression<Func<U,TTo>> TranformReturnType<U>(Expression<Func<U, TFrom>> expression)
+            {
+                ParameterExpression parameter = Expression.Parameter(typeof(TTo));
+               
+                Expression body = Expression.Convert(expression.Body, typeof(object));
+                return Expression.Lambda<Func<U, TTo>>(body, parameter);
+            }
         }
 
 
@@ -35,6 +43,13 @@ namespace Utilities
         {
             if (filter == null) return null;
             var newExpression = ExpressionTransformer<T, T1>.Tranform(filter);
+            return newExpression;
+        }
+
+        public static Expression<Func<U, T1>> ConvertExpressionReturnType<U, T1>(Expression<Func<U, T>> filter)
+        {
+            if (filter == null) return null;
+            var newExpression = ExpressionTransformer<T, T1>.TranformReturnType(filter);
             return newExpression;
         }
 

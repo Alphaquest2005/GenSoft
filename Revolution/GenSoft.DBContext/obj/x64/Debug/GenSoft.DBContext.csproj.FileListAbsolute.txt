@@ -190,3 +190,5 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\obj\x64\Debug\GenSo
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\obj\x64\Debug\GenSoft.DBContext.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\obj\x64\Debug\GenSoft.DBContext.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\System.ValueTuple.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\Expressions.dll.config
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\EventAggregator.dll.config

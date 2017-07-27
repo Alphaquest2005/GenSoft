@@ -13,9 +13,9 @@ namespace GenSoft.Entities
 {
 	public partial class Message: BaseEntity, IMessage
 	{
+		public virtual DateTime EntryDateTime { get; set; }
 		public virtual int MessageSourceId { get; set; }
 		public virtual int ProcessId { get; set; }
-		public virtual DateTime EntryDateTime { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships

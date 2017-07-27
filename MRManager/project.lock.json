@@ -60,6 +60,15 @@
           "lib/net45/Akka.Persistence.SqlServer.dll": {}
         }
       },
+      "DynamicExpresso.Core/1.3.3.5": {
+        "type": "package",
+        "compile": {
+          "lib/net40/DynamicExpresso.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net40/DynamicExpresso.Core.dll": {}
+        }
+      },
       "FluentValidation.Net35/1.0.1": {
         "type": "package",
         "compile": {
@@ -1194,6 +1203,7 @@
           "BuildingSpecifications": "1.0.0",
           "Common": "1.0.0",
           "DataServices": "1.0.0",
+          "DynamicExpresso.Core": "1.3.3.5",
           "EventAggregator": "1.0.0",
           "GenSoft.DBContext": "1.0.0",
           "GenSoft.Entities": "1.0.0",
@@ -1202,6 +1212,7 @@
           "Process.WorkFlow": "1.0.0",
           "RevolutionEntities": "1.0.0",
           "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
         }
       },
@@ -1742,6 +1753,15 @@
         },
         "runtime": {
           "lib/net45/Akka.Persistence.SqlServer.dll": {}
+        }
+      },
+      "DynamicExpresso.Core/1.3.3.5": {
+        "type": "package",
+        "compile": {
+          "lib/net40/DynamicExpresso.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net40/DynamicExpresso.Core.dll": {}
         }
       },
       "FluentValidation.Net35/1.0.1": {
@@ -2830,6 +2850,7 @@
           "BuildingSpecifications": "1.0.0",
           "Common": "1.0.0",
           "DataServices": "1.0.0",
+          "DynamicExpresso.Core": "1.3.3.5",
           "EventAggregator": "1.0.0",
           "GenSoft.DBContext": "1.0.0",
           "GenSoft.Entities": "1.0.0",
@@ -2838,6 +2859,7 @@
           "Process.WorkFlow": "1.0.0",
           "RevolutionEntities": "1.0.0",
           "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
         }
       },
@@ -3364,6 +3386,18 @@
         "Akka.Persistence.SqlServer.1.1.1.7-beta.nupkg.sha512",
         "Akka.Persistence.SqlServer.nuspec",
         "lib/net45/Akka.Persistence.SqlServer.dll"
+      ]
+    },
+    "DynamicExpresso.Core/1.3.3.5": {
+      "sha512": "W2tTXp8RAI5Mds5SCKE6sstVHkmDT+lmfldMpsyI7A/i4FSaZ4m1h+57UrdIriotw9f5dgHdNyBMRc7wJxuPPg==",
+      "type": "package",
+      "path": "dynamicexpresso.core/1.3.3.5",
+      "files": [
+        "dynamicexpresso.core.1.3.3.5.nupkg.sha512",
+        "dynamicexpresso.core.nuspec",
+        "lib/net40/DynamicExpresso.Core.XML",
+        "lib/net40/DynamicExpresso.Core.dll",
+        "lib/net40/DynamicExpresso.Core.pdb"
       ]
     },
     "FluentValidation.Net35/1.0.1": {

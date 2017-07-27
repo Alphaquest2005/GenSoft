@@ -13,10 +13,11 @@ namespace GenSoft.Entities
 {
 	public partial class DomainEntityType: BaseEntity, IDomainEntityType
 	{
-		public virtual string SourceEntity { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
+				public virtual DomainEntityCache DomainEntityCache {get; set;}
+				public virtual DomainEntityTypeSourceEntity DomainEntityTypeSourceEntity {get; set;}
 				public virtual ICollection<ProcessStateDomainEntityTypes> ProcessStateDomainEntityTypes {get; set;}
 		
 			// ---------Parent Relationships

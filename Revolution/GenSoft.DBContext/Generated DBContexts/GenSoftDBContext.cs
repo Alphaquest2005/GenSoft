@@ -18,14 +18,18 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.ApplicationSetting> ApplicationSetting { get; set; }
 		public DbSet<Entities.Command> Command { get; set; }
 		public DbSet<Entities.DataType> DataType { get; set; }
+		public DbSet<Entities.DomainEntityCache> DomainEntityCache { get; set; }
 		public DbSet<Entities.DomainEntityType> DomainEntityType { get; set; }
+		public DbSet<Entities.DomainEntityTypeSourceEntity> DomainEntityTypeSourceEntity { get; set; }
 		public DbSet<Entities.Entity> Entity { get; set; }
 		public DbSet<Entities.EntityAttribute> EntityAttribute { get; set; }
 		public DbSet<Entities.EntityId> EntityId { get; set; }
+		public DbSet<Entities.EntityList> EntityList { get; set; }
 		public DbSet<Entities.EntityName> EntityName { get; set; }
 		public DbSet<Entities.EntityRelationships> EntityRelationships { get; set; }
 		public DbSet<Entities.EntityType> EntityType { get; set; }
 		public DbSet<Entities.EntityTypeAttributes> EntityTypeAttributes { get; set; }
+		public DbSet<Entities.EntityView> EntityView { get; set; }
 		public DbSet<Entities.Event> Event { get; set; }
 		public DbSet<Entities.Machine> Machine { get; set; }
 		public DbSet<Entities.Message> Message { get; set; }
@@ -60,14 +64,18 @@ namespace GenSoft.DBContexts
 				ApplicationSettingMap.Map(modelBuilder.Entity<Entities.ApplicationSetting>());
 				CommandMap.Map(modelBuilder.Entity<Entities.Command>());
 				DataTypeMap.Map(modelBuilder.Entity<Entities.DataType>());
+				DomainEntityCacheMap.Map(modelBuilder.Entity<Entities.DomainEntityCache>());
 				DomainEntityTypeMap.Map(modelBuilder.Entity<Entities.DomainEntityType>());
+				DomainEntityTypeSourceEntityMap.Map(modelBuilder.Entity<Entities.DomainEntityTypeSourceEntity>());
 				EntityMap.Map(modelBuilder.Entity<Entities.Entity>());
 				EntityAttributeMap.Map(modelBuilder.Entity<Entities.EntityAttribute>());
 				EntityIdMap.Map(modelBuilder.Entity<Entities.EntityId>());
+				EntityListMap.Map(modelBuilder.Entity<Entities.EntityList>());
 				EntityNameMap.Map(modelBuilder.Entity<Entities.EntityName>());
 				EntityRelationshipsMap.Map(modelBuilder.Entity<Entities.EntityRelationships>());
 				EntityTypeMap.Map(modelBuilder.Entity<Entities.EntityType>());
 				EntityTypeAttributesMap.Map(modelBuilder.Entity<Entities.EntityTypeAttributes>());
+				EntityViewMap.Map(modelBuilder.Entity<Entities.EntityView>());
 				EventMap.Map(modelBuilder.Entity<Entities.Event>());
 				MachineMap.Map(modelBuilder.Entity<Entities.Machine>());
 				MessageMap.Map(modelBuilder.Entity<Entities.Message>());

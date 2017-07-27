@@ -192,65 +192,65 @@ namespace Process.WorkFlow
 
 
             ComplexActions.GetComplexAction("IntializePulledProcessState",new[]{typeof(IPatientInfo)},  new object[]{3, "Patient",}),
-            ComplexActions.GetComplexAction("UpdateStateList",new[]{typeof(IPatientInfo)},  new object[]{3}),
+            //ComplexActions.GetComplexAction("UpdateStateList",new[]{typeof(IPatientInfo)},  new object[]{3}),
             
-            //////////Take this out to test if working////////////ComplexActions.GetComplexAction("RequestPulledState",new[]{typeof(IPatientInfo), typeof(IPatientDetailsInfo) },  new object[]{3,"Patient",}),
-
-            
-            ComplexActions.GetComplexAction("UpdateState",new[]{typeof(IPatientDetailsInfo) },  new object[]{3}),
-            ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new[]{typeof(IPatientInfo), typeof(IPatientDetailsInfo) },  new object[]{3,  (Expression<Func<IPatientInfo, object>>)(c => c.Id) , (Expression<Func<IPatientDetailsInfo, object>>)(v => v.Id)}),
-
-
-            ComplexActions.GetComplexAction("RequestState",new[]{typeof(IPatientInfo), typeof(IPatientAddressesInfo) },  new object[]{3, (Expression<Func<IPatientAddressesInfo, object>>)(x => x.Id)}),
-            ComplexActions.GetComplexAction("UpdateState",new[]{typeof(IPatientAddressesInfo) },  new object[]{3}),
-
-
-            ComplexActions.GetComplexAction("RequestState",new[]{typeof(IPatientInfo), typeof(IPatientPhoneNumbersInfo) },  new object[]{3, (Expression<Func<IPatientPhoneNumbersInfo, object>>)(x => x.Id)}),
-            ComplexActions.GetComplexAction("UpdateState",new[]{typeof(IPatientPhoneNumbersInfo) },  new object[]{3}),
-
-            ComplexActions.GetComplexAction("RequestState",new[]{typeof(IPatientInfo), typeof(IPatientNextOfKinsInfo) },  new object[]{3, (Expression<Func<IPatientNextOfKinsInfo, object>>)(x => x.Id)}),
-            ComplexActions.GetComplexAction("UpdateState",new[]{typeof(IPatientNextOfKinsInfo) },  new object[]{3}),
+            //ComplexActions.GetComplexAction("RequestPulledState",new[]{typeof(IPatientInfo), typeof(IPatientDetailsInfo) },  new object[]{3,"Patient",}),
 
             
-            ComplexActions.GetComplexAction("RequestPulledState",new[]{typeof(IPatientInfo), typeof(INonResidentInfo) },  new object[]{3, "NonResident", }),
-            ComplexActions.GetComplexAction("UpdateState",new[]{typeof(INonResidentInfo) },  new object[]{3}),
+            //ComplexActions.GetComplexAction("UpdateState",new[]{typeof(IPatientDetailsInfo) },  new object[]{3}),
+            //ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new[]{typeof(IPatientInfo), typeof(IPatientDetailsInfo) },  new object[]{3,  (Expression<Func<IPatientInfo, object>>)(c => c.Id) , (Expression<Func<IPatientDetailsInfo, object>>)(v => v.Id)}),
+
+
+           // ComplexActions.GetComplexAction("RequestState",new[]{typeof(IPatientInfo), typeof(IPatientAddressesInfo) },  new object[]{3, (Expression<Func<IPatientAddressesInfo, object>>)(x => x.Id)}),
+           // ComplexActions.GetComplexAction("UpdateState",new[]{typeof(IPatientAddressesInfo) },  new object[]{3}),
+
+
+          //  ComplexActions.GetComplexAction("RequestState",new[]{typeof(IPatientInfo), typeof(IPatientPhoneNumbersInfo) },  new object[]{3, (Expression<Func<IPatientPhoneNumbersInfo, object>>)(x => x.Id)}),
+          //  ComplexActions.GetComplexAction("UpdateState",new[]{typeof(IPatientPhoneNumbersInfo) },  new object[]{3}),
+
+         //   ComplexActions.GetComplexAction("RequestState",new[]{typeof(IPatientInfo), typeof(IPatientNextOfKinsInfo) },  new object[]{3, (Expression<Func<IPatientNextOfKinsInfo, object>>)(x => x.Id)}),
+          //  ComplexActions.GetComplexAction("UpdateState",new[]{typeof(IPatientNextOfKinsInfo) },  new object[]{3}),
 
             
-            ComplexActions.GetComplexAction("RequestPulledState",new[]{typeof(IPatientInfo), typeof(IPatientVitalsInfo) },  new object[]{3, "Vitals", }),
-            ComplexActions.GetComplexAction("UpdateState",new[]{typeof(IPatientVitalsInfo) },  new object[]{3}),
-            ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new[]{typeof(IPatientInfo), typeof(IPatientVitalsInfo) },  new object[]{3,  (Expression<Func<IPatientInfo, object>>)(c => c.Id) , (Expression<Func<IPatientVitalsInfo, object>>)(v => v.Id)}),
+         //   ComplexActions.GetComplexAction("RequestPulledState",new[]{typeof(IPatientInfo), typeof(INonResidentInfo) },  new object[]{3, "NonResident", }),
+         //   ComplexActions.GetComplexAction("UpdateState",new[]{typeof(INonResidentInfo) },  new object[]{3}),
+
+            
+         //   ComplexActions.GetComplexAction("RequestPulledState",new[]{typeof(IPatientInfo), typeof(IPatientVitalsInfo) },  new object[]{3, "Vitals", }),
+         //   ComplexActions.GetComplexAction("UpdateState",new[]{typeof(IPatientVitalsInfo) },  new object[]{3}),
+         //   ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new[]{typeof(IPatientInfo), typeof(IPatientVitalsInfo) },  new object[]{3,  (Expression<Func<IPatientInfo, object>>)(c => c.Id) , (Expression<Func<IPatientVitalsInfo, object>>)(v => v.Id)}),
 
 
 
-            ComplexActions.GetComplexAction("RequestStateList",new[]{typeof(IPatientInfo), typeof(IPatientVisitInfo) },  new object[]{3,  (Expression<Func<IPatientInfo, object>>)(c => c.Id) , (Expression<Func<IPatientVisitInfo, object>>)(v => v.PatientId) }),
-            ComplexActions.GetComplexAction("UpdateStateList",new[]{typeof(IPatientVisitInfo) },  new object[]{3}),
-            ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new[]{typeof(IPatientInfo), typeof(IPatientVisitInfo) },  new object[]{3,  (Expression<Func<IPatientInfo, object>>)(c => c.Id) , (Expression<Func<IPatientVisitInfo, object>>)(v => v.Id)}),
+           // ComplexActions.GetComplexAction("RequestStateList",new[]{typeof(IPatientInfo), typeof(IPatientVisitInfo) },  new object[]{3,  (Expression<Func<IPatientInfo, object>>)(c => c.Id) , (Expression<Func<IPatientVisitInfo, object>>)(v => v.PatientId) }),
+         //   ComplexActions.GetComplexAction("UpdateStateList",new[]{typeof(IPatientVisitInfo) },  new object[]{3}),
+         //   ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new[]{typeof(IPatientInfo), typeof(IPatientVisitInfo) },  new object[]{3,  (Expression<Func<IPatientInfo, object>>)(c => c.Id) , (Expression<Func<IPatientVisitInfo, object>>)(v => v.Id)}),
 
 
-            ComplexActions.GetComplexAction("RequestStateList",new[]{typeof(IPatientVisitInfo), typeof(IPatientSyntomInfo) },  new object[]{3,  (Expression<Func<IPatientVisitInfo, object>>)(c => c.Id) , (Expression<Func<IPatientSyntomInfo, object>>)(v => v.PatientVisitId) }),
-            ComplexActions.GetComplexAction("RequestStateList",new[]{typeof(ISyntoms), typeof(IPatientSyntomInfo) },  new object[]{3,  (Expression<Func<ISyntoms, object>>)(c => c.Id) , (Expression<Func<IPatientSyntomInfo, object>>)(v => v.SyntomId) }),
-            ComplexActions.GetComplexAction("UpdateStateList",new[]{typeof(IPatientSyntomInfo) },  new object[]{3}),
-            ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new[]{typeof(IPatientSyntoms), typeof(IPatientSyntomInfo) },  new object[]{3,  (Expression<Func<IPatientSyntoms, object>>)(c => c.Id) , (Expression<Func<IPatientSyntomInfo, object>>)(v => v.Id)}),
-            ComplexActions.GetComplexAction("RequestStateList",new[]{typeof(IPatientSyntomInfo), typeof(ISyntomMedicalSystemInfo) },  new object[]{3,  (Expression<Func<IPatientSyntomInfo, object>>)(c => c.SyntomId) , (Expression<Func<ISyntomMedicalSystemInfo, object>>)(v => v.SyntomId) }),
+          //  ComplexActions.GetComplexAction("RequestStateList",new[]{typeof(IPatientVisitInfo), typeof(IPatientSyntomInfo) },  new object[]{3,  (Expression<Func<IPatientVisitInfo, object>>)(c => c.Id) , (Expression<Func<IPatientSyntomInfo, object>>)(v => v.PatientVisitId) }),
+         //   ComplexActions.GetComplexAction("RequestStateList",new[]{typeof(ISyntoms), typeof(IPatientSyntomInfo) },  new object[]{3,  (Expression<Func<ISyntoms, object>>)(c => c.Id) , (Expression<Func<IPatientSyntomInfo, object>>)(v => v.SyntomId) }),
+          //  ComplexActions.GetComplexAction("UpdateStateList",new[]{typeof(IPatientSyntomInfo) },  new object[]{3}),
+          //  ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new[]{typeof(IPatientSyntoms), typeof(IPatientSyntomInfo) },  new object[]{3,  (Expression<Func<IPatientSyntoms, object>>)(c => c.Id) , (Expression<Func<IPatientSyntomInfo, object>>)(v => v.Id)}),
+         //   ComplexActions.GetComplexAction("RequestStateList",new[]{typeof(IPatientSyntomInfo), typeof(ISyntomMedicalSystemInfo) },  new object[]{3,  (Expression<Func<IPatientSyntomInfo, object>>)(c => c.SyntomId) , (Expression<Func<ISyntomMedicalSystemInfo, object>>)(v => v.SyntomId) }),
 
 
-            ComplexActions.GetComplexAction("UpdateStateList",new[]{typeof(ISyntomMedicalSystemInfo) },  new object[]{3}),
-            ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new[]{typeof(ISyntomMedicalSystems), typeof(ISyntomMedicalSystemInfo) },  new object[]{3,  (Expression<Func<ISyntomMedicalSystems, object>>)(c => c.Id) , (Expression<Func<ISyntomMedicalSystemInfo, object>>)(v => v.Id)}),
+         //   ComplexActions.GetComplexAction("UpdateStateList",new[]{typeof(ISyntomMedicalSystemInfo) },  new object[]{3}),
+         //   ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new[]{typeof(ISyntomMedicalSystems), typeof(ISyntomMedicalSystemInfo) },  new object[]{3,  (Expression<Func<ISyntomMedicalSystems, object>>)(c => c.Id) , (Expression<Func<ISyntomMedicalSystemInfo, object>>)(v => v.Id)}),
 
 
-            ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new[]{typeof(IInterviews), typeof(IInterviewInfo) },  new object[]{3,  (Expression<Func<IInterviews, object>>)(c => c.Id) , (Expression<Func<IInterviewInfo, object>>)(v => v.Id)}),
+         //   ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new[]{typeof(IInterviews), typeof(IInterviewInfo) },  new object[]{3,  (Expression<Func<IInterviews, object>>)(c => c.Id) , (Expression<Func<IInterviewInfo, object>>)(v => v.Id)}),
 
 
-            ComplexActions.GetComplexAction("RequestStateList",new[]{typeof(IInterviewInfo), typeof(IQuestionResponseOptionInfo) },  new object[]{3,  (Expression<Func<IInterviewInfo, object>>)(c => c.Id) , (Expression<Func<IQuestionResponseOptionInfo, object>>)(v => v.InterviewId) }),
-            ComplexActions.GetComplexAction("UpdateStateList",new[]{typeof(IQuestionResponseOptionInfo) },  new object[]{3}),
+         //   ComplexActions.GetComplexAction("RequestStateList",new[]{typeof(IInterviewInfo), typeof(IQuestionResponseOptionInfo) },  new object[]{3,  (Expression<Func<IInterviewInfo, object>>)(c => c.Id) , (Expression<Func<IQuestionResponseOptionInfo, object>>)(v => v.InterviewId) }),
+          //  ComplexActions.GetComplexAction("UpdateStateList",new[]{typeof(IQuestionResponseOptionInfo) },  new object[]{3}),
 
-            ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new[]{typeof(IQuestionInfo), typeof(IQuestionResponseOptionInfo) },  new object[]{3,  (Expression<Func<IQuestionInfo, object>>)(c => c.Id) , (Expression<Func<IQuestionResponseOptionInfo, object>>)(v => v.Id)}),
-            ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new[]{typeof(IResponseInfo), typeof(IQuestionResponseOptionInfo) },  new object[]{3,  (Expression<Func<IResponseInfo, object>>)(c => c.Id) , (Expression<Func<IQuestionResponseOptionInfo, object>>)(v => v.Id)}),
-            ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new[]{typeof(IResponseOptions), typeof(IQuestionResponseOptionInfo) },  new object[]{3,  (Expression<Func<IResponseOptions, object>>)(c => c.Id) , (Expression<Func<IQuestionResponseOptionInfo, object>>)(v => v.Id)}),
-            ComplexActions.GetComplexAction("UpdateStateList",new[]{typeof(IQuestionInfo) },  new object[]{3}),
-            ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new[]{typeof(IQuestions), typeof(IQuestionInfo) },  new object[]{3,  (Expression<Func<IQuestions, object>>)(c => c.Id) , (Expression<Func<IQuestionInfo, object>>)(v => v.Id)}),
+         //   ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new[]{typeof(IQuestionInfo), typeof(IQuestionResponseOptionInfo) },  new object[]{3,  (Expression<Func<IQuestionInfo, object>>)(c => c.Id) , (Expression<Func<IQuestionResponseOptionInfo, object>>)(v => v.Id)}),
+         //   ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new[]{typeof(IResponseInfo), typeof(IQuestionResponseOptionInfo) },  new object[]{3,  (Expression<Func<IResponseInfo, object>>)(c => c.Id) , (Expression<Func<IQuestionResponseOptionInfo, object>>)(v => v.Id)}),
+         //   ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new[]{typeof(IResponseOptions), typeof(IQuestionResponseOptionInfo) },  new object[]{3,  (Expression<Func<IResponseOptions, object>>)(c => c.Id) , (Expression<Func<IQuestionResponseOptionInfo, object>>)(v => v.Id)}),
+          //  ComplexActions.GetComplexAction("UpdateStateList",new[]{typeof(IQuestionInfo) },  new object[]{3}),
+         //   ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new[]{typeof(IQuestions), typeof(IQuestionInfo) },  new object[]{3,  (Expression<Func<IQuestions, object>>)(c => c.Id) , (Expression<Func<IQuestionInfo, object>>)(v => v.Id)}),
 
-            ComplexActions.GetComplexAction("RequestStateList",new[]{typeof(IInterviewInfo), typeof(IQuestionInfo) },  new object[]{3,  (Expression<Func<IInterviewInfo, object>>)(c => c.Id) , (Expression<Func<IQuestionInfo, object>>)(v => v.InterviewId) }),
+         //   ComplexActions.GetComplexAction("RequestStateList",new[]{typeof(IInterviewInfo), typeof(IQuestionInfo) },  new object[]{3,  (Expression<Func<IInterviewInfo, object>>)(c => c.Id) , (Expression<Func<IQuestionInfo, object>>)(v => v.InterviewId) }),
 
             
 
@@ -346,7 +346,7 @@ namespace Process.WorkFlow
             public static ComplexEventAction RequestState<TCurrentEntity, TEntityView>(int processId, Expression<Func<TEntityView, dynamic>> property) where TEntityView : IEntityView where TCurrentEntity : IEntityId
             {
                 return new ComplexEventAction(
-                    key: $"RequestState-{typeof(TEntityView).GetFriendlyName()}",
+                    key: $"RequestState-{typeof(TCurrentEntity).GetFriendlyName()}-{typeof(TEntityView).GetFriendlyName()}",
                     processId: processId,
                     actionTrigger: ActionTrigger.Any, 
                     events: new List<IProcessExpectedEvent>
@@ -381,7 +381,7 @@ namespace Process.WorkFlow
             public static ComplexEventAction RequestPulledState<TCurrentEntity, TEntityView>(int processId, string entityName) where TEntityView : IEntityView where TCurrentEntity : IEntityId
             {
                 return new ComplexEventAction(
-                    key: $"RequestState-{typeof(TEntityView).GetFriendlyName()}",
+                    key: $"RequestPullState-{typeof(TCurrentEntity).GetFriendlyName()}-{typeof(TEntityView).GetFriendlyName()}",
                     processId: processId,
                     actionTrigger: ActionTrigger.Any,
                     events: new List<IProcessExpectedEvent>
@@ -459,7 +459,7 @@ namespace Process.WorkFlow
             public static IComplexEventAction UpdateStateWhenDataChanges<TEntity, TView>(int processId, Expression<Func<TEntity, object>> currentProperty, Expression<Func<TView, object>> viewProperty) where TEntity : IEntityId where TView : IEntityView
             {
                 return new ComplexEventAction(
-                    key: $"Update{typeof(TEntity).Name}-{typeof(TView).Name}",
+                    key: $"UpdateStateWhenDataChanges{typeof(TEntity).Name}-{typeof(TView).Name}",
                     processId: 3,
                     actionTrigger:ActionTrigger.Any, 
                     events: new List<IProcessExpectedEvent>

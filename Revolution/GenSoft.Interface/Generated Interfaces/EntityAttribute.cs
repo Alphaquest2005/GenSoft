@@ -15,9 +15,9 @@ namespace GenSoft.Interfaces
 	public partial interface IEntityAttribute:SystemInterfaces.IEntity  
 	{
 		int EntityId { get;}
+		int DataTypeId { get;}
 		string Name { get;}
 		string Value { get;}
-		int DataTypeId { get;}
 
 
 

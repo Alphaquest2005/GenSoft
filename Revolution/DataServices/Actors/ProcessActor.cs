@@ -136,6 +136,7 @@ namespace DataServices.Actors
         {
             Contract.Requires(complexEvents.Any() && complexEvents != null);
             Parallel.ForEach(complexEvents, new ParallelOptions() { MaxDegreeOfParallelism = Environment.ProcessorCount },(cp) =>
+            
             {
                 var inMsg = new CreateComplexEventService(new ComplexEventService(cp.Key, cp, Process, Source),
                     new StateCommandInfo(Process.Id, RevolutionData.Context.Actor.Commands.StartActor), Process, Source);
@@ -148,7 +149,8 @@ namespace DataServices.Actors
                 {
                     PublishProcesError(inMsg, ex, typeof (IServiceStarted<IComplexEventService>));
                 }
-            });
+            }
+            );
         }
 
         private void HandleProcessEvents(IProcessSystemMessage pe)
