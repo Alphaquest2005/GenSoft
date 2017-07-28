@@ -16,6 +16,7 @@ using GenSoft.DBContexts;
 using GenSoft.Expressions;
 using Microsoft.EntityFrameworkCore;
 using Process.WorkFlow;
+using RevolutionData;
 using RevolutionEntities.Process;
 using Utilities;
 using ViewModel.Interfaces;
@@ -52,9 +53,52 @@ namespace ActorBackBone
         {
             try
             {
+
+
+
+
+
                 var res = new List<IComplexEventAction>();
                 using (var ctx = new GenSoftDBContext())
                 {
+                    foreach (var r in ctx.DomainEntityType
+                        .Include(x => x.DomainEntityTypeSourceEntity)
+                        .Include(x => x.EntityType.Type)
+                        .Include(x => x.EntityType.EntityView)
+                        .Include(x => x.EntityType.DomainEntityType.DomainEntityCache)
+                        .Include(x => x.EntityType.EntityList)
+                        .Include("ProcessStateDomainEntityTypes.ProcessState.Process")
+                        .OrderBy(x => x.Id))
+                    {
+                        var entityType = interfaces.GetTypes().FirstOrDefault(x => x.Name == r.EntityType.Type.Name);
+                        //var childExpression = typeof(ExpressionsExtensions).GetMethod("BuildForType").MakeGenericMethod(entityType)
+                        //    .Invoke(null, new object[] { entityType, r.EntityType.EntityTypeAttributes.FirstOrDefault(x => x.EntityId != null).Name });
+                        foreach (var processId in r.ProcessStateDomainEntityTypes.Select(x => x.ProcessState.Process.Id).Distinct())
+                        {
+                            if (r.EntityType.EntityView != null)
+                            {
+                                if (r.EntityType.EntityList == null)
+                                {
+
+                                    res.Add(Processes.ComplexActions.GetComplexAction("UpdateState", new[] {entityType},
+                                        new object[] {processId}));
+                                }
+                                else
+                                {
+                                    res.Add(Processes.ComplexActions.GetComplexAction("UpdateStateList",
+                                        new[] {entityType}, new object[] {processId}));
+                                }
+                            }
+
+                            if(r.EntityType.DomainEntityType.DomainEntityCache != null && r.EntityType.EntityView == null)
+                                res.Add(EntityComplexActions.GetComplexAction("IntializeCache", new[] { entityType }, new object[] { processId }));
+
+                            if (r.EntityType.DomainEntityType.DomainEntityCache != null && r.EntityType.EntityView != null)
+                                res.Add(EntityViewComplexActions.GetComplexAction("IntializeCache", new[] { entityType }, new object[] { processId }));
+
+                        }
+                    }
+
                     foreach (var r in ctx.EntityRelationships
                         .Include(x => x.ChildEntity.EntityType.Type)
                         .Include(x => x.ChildEntity.EntityType.EntityList)
@@ -116,31 +160,10 @@ namespace ActorBackBone
 
                     }
 
-                    foreach (var r in ctx.DomainEntityType
-                        .Include(x => x.DomainEntityTypeSourceEntity)
-                        .Include(x => x.EntityType.Type)
-                        .Include(x => x.EntityType.EntityList)
-                        .Include("ProcessStateDomainEntityTypes.ProcessState.Process")
-                        .Where(x => x.EntityType.EntityView != null).OrderBy(x => x.Id))
-                    {
-                        var entityType = interfaces.GetTypes().FirstOrDefault(x => x.Name == r.EntityType.Type.Name);
-                        //var childExpression = typeof(ExpressionsExtensions).GetMethod("BuildForType").MakeGenericMethod(entityType)
-                        //    .Invoke(null, new object[] { entityType, r.EntityType.EntityTypeAttributes.FirstOrDefault(x => x.EntityId != null).Name });
-                        foreach (var processId in r.ProcessStateDomainEntityTypes.Select(x => x.ProcessState.Process.Id).Distinct())
-                        {
-                            if (r.EntityType.EntityList == null)
-                            {
-                                res.Add(Processes.ComplexActions.GetComplexAction("UpdateState", new[] { entityType },
-                                    new object[] { processId }));
-                            }
-                            else
-                            {
-                                res.Add(Processes.ComplexActions.GetComplexAction("UpdateStateList", new[] { entityType }, new object[] { processId }));
-                            }
 
 
-                        }
-                    }
+
+
                 }
                 return res;
             }

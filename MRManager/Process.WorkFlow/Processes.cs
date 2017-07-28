@@ -256,17 +256,17 @@ namespace Process.WorkFlow
             
 
 
-            EntityComplexActions.GetComplexAction("IntializeCache",new[]{typeof(ISyntomPriority) },  new object[]{3} ),
-            EntityComplexActions.GetComplexAction("IntializeCache",new[]{typeof(ISyntomStatus) },  new object[]{3} ),
-            EntityComplexActions.GetComplexAction("IntializeCache",new[]{typeof(IVisitType) },  new object[]{3} ),
-            EntityComplexActions.GetComplexAction("IntializeCache",new[]{typeof(IPhase) },  new object[]{3} ),
-            EntityComplexActions.GetComplexAction("IntializeCache",new[]{typeof(IMedicalCategory) },  new object[]{3} ),
-            EntityComplexActions.GetComplexAction("IntializeCache",new[]{typeof(IMedicalSystems) },  new object[]{3} ),
-            EntityComplexActions.GetComplexAction("IntializeCache",new[]{typeof(IQuestionResponseTypes) },  new object[]{3} ),
-            EntityComplexActions.GetComplexAction("IntializeCache",new[]{typeof(ISex) },  new object[]{3} ),
+            //EntityComplexActions.GetComplexAction("IntializeCache",new[]{typeof(ISyntomPriority) },  new object[]{3} ),
+            //EntityComplexActions.GetComplexAction("IntializeCache",new[]{typeof(ISyntomStatus) },  new object[]{3} ),
+            //EntityComplexActions.GetComplexAction("IntializeCache",new[]{typeof(IVisitType) },  new object[]{3} ),
+            //EntityComplexActions.GetComplexAction("IntializeCache",new[]{typeof(IPhase) },  new object[]{3} ),
+            //EntityComplexActions.GetComplexAction("IntializeCache",new[]{typeof(IMedicalCategory) },  new object[]{3} ),
+            //EntityComplexActions.GetComplexAction("IntializeCache",new[]{typeof(IMedicalSystems) },  new object[]{3} ),
+            //EntityComplexActions.GetComplexAction("IntializeCache",new[]{typeof(IQuestionResponseTypes) },  new object[]{3} ),
+            //EntityComplexActions.GetComplexAction("IntializeCache",new[]{typeof(ISex) },  new object[]{3} ),
             
 
-            EntityViewComplexActions.GetComplexAction("IntializeCache",new[]{typeof(IDoctorInfo) },  new object[]{3} ),
+            //EntityViewComplexActions.GetComplexAction("IntializeCache",new[]{typeof(IDoctorInfo) },  new object[]{3} ),
         };
 
 

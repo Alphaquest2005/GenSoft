@@ -111,6 +111,10 @@
       <Project>{f90cc1c1-1f4e-4719-817b-9a14ce56a5ce}</Project>
       <Name>GenSoft.Interface</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RevolutionData\RevolutionData.csproj">
+      <Project>{959D7F6B-0426-452C-8962-C0F4DADBE3B4}</Project>
+      <Name>RevolutionData</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RevolutionEntities\RevolutionEntities.csproj">
       <Project>{c827930a-0d05-4ee2-b9ac-db1cf5144e16}</Project>
       <Name>RevolutionEntities</Name>
