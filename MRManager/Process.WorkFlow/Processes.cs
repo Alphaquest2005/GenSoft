@@ -223,8 +223,8 @@ namespace Process.WorkFlow
 
 
 
-           // ComplexActions.GetComplexAction("RequestStateList",new[]{typeof(IPatientInfo), typeof(IPatientVisitInfo) },  new object[]{3,  (Expression<Func<IPatientInfo, object>>)(c => c.Id) , (Expression<Func<IPatientVisitInfo, object>>)(v => v.PatientId) }),
-         //   ComplexActions.GetComplexAction("UpdateStateList",new[]{typeof(IPatientVisitInfo) },  new object[]{3}),
+            //ComplexActions.GetComplexAction("RequestStateList",new[]{typeof(IPatientInfo), typeof(IPatientVisitInfo) },  new object[]{3,  (Expression<Func<IPatientInfo, object>>)(c => c.Id) , (Expression<Func<IPatientVisitInfo, object>>)(v => v.PatientId) }),
+          // ComplexActions.GetComplexAction("UpdateStateList",new[]{typeof(IPatientVisitInfo) },  new object[]{3}),
          //   ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new[]{typeof(IPatientInfo), typeof(IPatientVisitInfo) },  new object[]{3,  (Expression<Func<IPatientInfo, object>>)(c => c.Id) , (Expression<Func<IPatientVisitInfo, object>>)(v => v.Id)}),
 
 

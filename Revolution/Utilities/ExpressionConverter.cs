@@ -31,10 +31,8 @@ namespace Utilities
 
             internal static Expression<Func<U,TTo>> TranformReturnType<U>(Expression<Func<U, TFrom>> expression)
             {
-                ParameterExpression parameter = Expression.Parameter(typeof(TTo));
-               
-                Expression body = Expression.Convert(expression.Body, typeof(object));
-                return Expression.Lambda<Func<U, TTo>>(body, parameter);
+               Expression body = Expression.Convert(expression.Body, typeof(object));
+                return Expression.Lambda<Func<U, TTo>>(body, expression.Parameters);
             }
         }
 

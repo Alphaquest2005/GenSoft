@@ -56,20 +56,27 @@ namespace RevolutionData
 
                        var f = v.EntitySet.Value.FirstOrDefault(x => x.Id == e.Entity.Id);
                         if (v.CurrentEntity.Value.Id == e.Entity.Id) v.CurrentEntity.Value = e.Entity;
-                        if (f == null)
-                        {
-                            v.EntitySet.Value.Insert(v.EntitySet.Value.Count() - 1,e.Entity);
-                            v.EntitySet.Value.Reset();
-                        }
-                        else
-                        {
-                            //f = e.Entity;
-                            var idx = v.EntitySet.Value.IndexOf(f);
-                            v.EntitySet.Value.Remove(f);
-                            v.EntitySet.Value.Insert(idx, e.Entity);
-                            v.EntitySet.Value.Reset();
-                        }
-                        v.RowState.Value = RowState.Unchanged;
+                            if (f == null)
+                            {
+                                if (v.EntitySet.Value.Any())
+                                {
+                                    v.EntitySet.Value.Insert(v.EntitySet.Value.Count() - 1, e.Entity);
+                                }
+                                else
+                                {
+                                    v.EntitySet.Value.Add(e.Entity);
+                                }
+                                v.EntitySet.Value.Reset();
+                            }
+                            else
+                            {
+                                //f = e.Entity;
+                                var idx = v.EntitySet.Value.IndexOf(f);
+                                v.EntitySet.Value.Remove(f);
+                                v.EntitySet.Value.Insert(idx, e.Entity);
+                                v.EntitySet.Value.Reset();
+                            }
+                            v.RowState.Value = RowState.Unchanged;
                         }));
 
                     }),

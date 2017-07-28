@@ -38,7 +38,7 @@ namespace Utilities
             throw new Exception($"Could not determine member from {expression}");
         }
 
-        public static PropertyInfo GetPropertyInfo<TSource, TProperty>(this Expression<Func<TSource, TProperty>> propertyLambda, TSource source)
+        public static PropertyInfo GetPropertyInfo<TSource, TProperty>(this Expression<Func<TSource, TProperty>> propertyLambda)
         {
             Type type = typeof (TSource);
 
@@ -62,6 +62,27 @@ namespace Utilities
                     type));
 
             return propInfo;
+        }
+
+        public class ReturnTypeVisitor<TSource, TReturnValue> : ExpressionVisitor
+        {
+
+            public Expression VisitLambda<T>(Expression<T> node)
+            {
+                var delegateType = typeof(Func<,>).MakeGenericType(typeof(TSource), typeof(TReturnValue));
+                var parameter = Expression.Parameter(typeof(TSource),  node.GetMemberName());
+                var body = Expression.Property(parameter, node.GetMemberName());
+                return Expression.Lambda(delegateType, body, node.Parameters);
+            }
+
+            public Expression VisitMember(MemberExpression node)
+            {
+                if (node.Member.DeclaringType == typeof(TSource))
+                {
+                    return Expression.Property(Visit(node.Expression), node.Member.Name);
+                }
+                return base.Visit(node);
+            }
         }
 
         public static Expression<Func<T,object>> BuildForType<T>(Type sourceType, string propertyName)

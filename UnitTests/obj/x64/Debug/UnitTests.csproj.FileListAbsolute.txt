@@ -214,4 +214,9 @@ C:\Prism\GitRepositiory\GenSoft\UnitTests\obj\x64\Debug\UnitTests.csprojResolveA
 C:\Prism\GitRepositiory\GenSoft\UnitTests\obj\x64\Debug\UnitTests.dll
 C:\Prism\GitRepositiory\GenSoft\UnitTests\obj\x64\Debug\UnitTests.pdb
 C:\Prism\GitRepositiory\GenSoft\UnitTests\bin\x64\Debug\System.ValueTuple.dll
-C:\Prism\GitRepositiory\GenSoft\UnitTests\bin\x64\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Prism\GitRepositiory\GenSoft\UnitTests\bin\x64\Debug\EF.DBContext.dll.config
+C:\Prism\GitRepositiory\GenSoft\UnitTests\bin\x64\Debug\Expressions.dll.config
+C:\Prism\GitRepositiory\GenSoft\UnitTests\bin\x64\Debug\EventAggregator.dll.config
+C:\Prism\GitRepositiory\GenSoft\UnitTests\bin\x64\Debug\RevolutionData.dll.config
+C:\Prism\GitRepositiory\GenSoft\UnitTests\bin\x64\Debug\BootStrapper.dll.config
+C:\Prism\GitRepositiory\GenSoft\UnitTests\bin\x64\Debug\EF.Mappings.dll.config

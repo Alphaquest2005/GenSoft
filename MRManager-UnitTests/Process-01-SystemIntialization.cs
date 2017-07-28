@@ -39,7 +39,7 @@ namespace MRManager_UnitTests
             Logger.Initialize();
             var dbContextAssembly = new MRManagerDBContext().GetType().Assembly;
             var entitiesAssembly = new EFEntity<IEntity>().GetType().Assembly;
-            BootStrapper.BootStrapper.Instance.StartUp(false,Process.WorkFlow.MachineInfoData.MachineInfos,Process.WorkFlow.Processes.ProcessInfos, Process.WorkFlow.Processes.ProcessComplexEvents, ViewModel.WorkFlow.ProcessViewModels.ProcessViewModelInfos,dbContextAssembly, entitiesAssembly);
+          //  BootStrapper.BootStrapper.Instance.StartUp(false,Process.WorkFlow.MachineInfoData.MachineInfos,Process.WorkFlow.Processes.ProcessInfos, Process.WorkFlow.Processes.ProcessComplexEvents, ViewModel.WorkFlow.ProcessViewModels.ProcessViewModelInfos,dbContextAssembly, entitiesAssembly);
             var mainWindow = MainWindowViewModel.Instance;
            
         }
