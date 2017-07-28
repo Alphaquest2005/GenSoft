@@ -12,6 +12,32 @@ namespace Utilities
 {
     public static class ExpressionsExtensions
     {
+        public static string GetMemberName(
+            this Expression expression)
+        {
+            if (expression is MemberExpression)
+            {
+                var memberExpression = (MemberExpression)expression;
+                if (memberExpression.Expression.NodeType ==
+                    ExpressionType.MemberAccess)
+                    return GetMemberName(memberExpression.Expression) + "." + memberExpression.Member.Name;
+                return memberExpression.Member.Name;
+            }
+            if (expression is LambdaExpression)
+            {
+                var lambdaExpression = (LambdaExpression)expression;
+                return GetMemberName(lambdaExpression.Body);
+            }
+            if (expression is UnaryExpression)
+            {
+                var unaryExpression = (UnaryExpression)expression;
+                if (unaryExpression.NodeType != ExpressionType.Convert)
+                    throw new Exception($"Cannot interpret member from {expression}");
+                return GetMemberName(unaryExpression.Operand);
+            }
+            throw new Exception($"Could not determine member from {expression}");
+        }
+
         public static PropertyInfo GetPropertyInfo<TSource, TProperty>(this Expression<Func<TSource, TProperty>> propertyLambda, TSource source)
         {
             Type type = typeof (TSource);

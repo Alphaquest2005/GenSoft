@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 using System.Threading.Tasks;
 using SystemInterfaces;
 using Actor.Interfaces;
@@ -346,7 +347,7 @@ namespace Process.WorkFlow
             public static ComplexEventAction RequestState<TCurrentEntity, TEntityView>(int processId, Expression<Func<TEntityView, dynamic>> property) where TEntityView : IEntityView where TCurrentEntity : IEntityId
             {
                 return new ComplexEventAction(
-                    key: $"RequestState-{typeof(TCurrentEntity).GetFriendlyName()}-{typeof(TEntityView).GetFriendlyName()}",
+                    key: $"RequestState-{typeof(TCurrentEntity).GetFriendlyName()}-{typeof(TEntityView).GetFriendlyName()}-{property.GetMemberName()}",
                     processId: processId,
                     actionTrigger: ActionTrigger.Any, 
                     events: new List<IProcessExpectedEvent>
@@ -439,7 +440,7 @@ namespace Process.WorkFlow
             public static ComplexEventAction RequestStateList<TCurrentEntity,TEntityView>(int processId, Expression<Func<TCurrentEntity, object>> currentProperty, Expression<Func<TEntityView, object>> viewProperty) where TEntityView : IEntityView where TCurrentEntity:IEntityId
             {
                 return new ComplexEventAction(
-                    key: $"RequestStateList-{typeof(TCurrentEntity).GetFriendlyName()}-{typeof(TEntityView).GetFriendlyName()}",
+                    key: $"RequestStateList-{typeof(TCurrentEntity).GetFriendlyName()}-{typeof(TEntityView).GetFriendlyName()}-{viewProperty.GetMemberName()}",
                     processId: processId,
                     actionTrigger: ActionTrigger.Any, 
                     events: new List<IProcessExpectedEvent>
@@ -459,7 +460,7 @@ namespace Process.WorkFlow
             public static IComplexEventAction UpdateStateWhenDataChanges<TEntity, TView>(int processId, Expression<Func<TEntity, object>> currentProperty, Expression<Func<TView, object>> viewProperty) where TEntity : IEntityId where TView : IEntityView
             {
                 return new ComplexEventAction(
-                    key: $"UpdateStateWhenDataChanges{typeof(TEntity).Name}-{typeof(TView).Name}",
+                    key: $"UpdateStateWhenDataChanges{typeof(TEntity).Name}-{typeof(TView).Name}-{viewProperty.GetMemberName()}",
                     processId: 3,
                     actionTrigger:ActionTrigger.Any, 
                     events: new List<IProcessExpectedEvent>
