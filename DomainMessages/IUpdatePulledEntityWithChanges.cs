@@ -4,7 +4,7 @@ using SystemInterfaces;
 namespace DomainMessages
 {
 
-    public interface IUpdatePatientEntityWithChanges<out TEntity>: IEntityRequest<TEntity> where TEntity:IEntity
+    public interface IUpdatePullEntityWithChanges: IEntityRequest 
     {
         Dictionary<string, object> Changes { get; }
         int EntityId { get; }

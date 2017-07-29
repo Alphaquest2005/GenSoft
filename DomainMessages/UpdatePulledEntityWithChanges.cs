@@ -6,11 +6,11 @@ using System;
 
 namespace DomainMessages
 {
-    [Export(typeof(IUpdatePatientEntityWithChanges<>))]
-    public class UpdatePatientEntityWithChanges<TEntity> : ProcessSystemMessage, IUpdatePatientEntityWithChanges<TEntity> where TEntity : IEntity
+    [Export(typeof(IUpdatePullEntityWithChanges))]
+    public class UpdatePullEntityWithChanges : ProcessSystemMessage, IUpdatePullEntityWithChanges
     {
-        public UpdatePatientEntityWithChanges(){}
-       public UpdatePatientEntityWithChanges(int entityId, string entityName,string syntomName,string interviewName, Dictionary<string, object> changes, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source): base(processInfo, process, source)
+        public UpdatePullEntityWithChanges(){}
+       public UpdatePullEntityWithChanges(int entityId, string entityName,string syntomName,string interviewName, Dictionary<string, object> changes, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source): base(processInfo, process, source)
         {
             Changes = changes;
             EntityId = entityId;
@@ -25,6 +25,7 @@ namespace DomainMessages
         public string SyntomName { get; }
         public string InterviewName { get; }
 
-        public Type ViewType => typeof (TEntity);
+
+        public Type ViewType { get; } = typeof(IEntityId);
     }
 }

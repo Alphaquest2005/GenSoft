@@ -148,7 +148,7 @@ namespace RevolutionData
                             s.Source);
                     }),
 
-                new ViewEventCommand<IPatientDetailsViewModel, IUpdatePatientEntityWithChanges<IPatients>>(
+                new ViewEventCommand<IPatientDetailsViewModel, IUpdatePullEntityWithChanges>(
                     key:"SavePatientDetails",
                     subject:s => Observable.Empty<ReactiveCommand<IViewModel, Unit>>(),
                     commandPredicate: new List<Func<IPatientDetailsViewModel, bool>>

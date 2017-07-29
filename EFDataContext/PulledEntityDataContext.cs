@@ -39,13 +39,13 @@ namespace EF.DBContext
 
         static PulledDBContext()
         {
-            EventMessageBus.Current.GetEvent<IUpdatePatientEntityWithChanges<IPatients>>(Source).Subscribe(x => UpdatePulledEntityWithChanges(x));
+            EventMessageBus.Current.GetEvent<IUpdatePullEntityWithChanges>(Source).Subscribe(x => UpdatePulledEntityWithChanges(x));
             EventMessageBus.Current.GetEvent<IGetEntityFromPatientResponse<IEntityView>>(Source).Subscribe(x => GetEntityFromPatientResponse(x));
             EventMessageBus.Current.GetEvent<ILoadPulledEntityViewSetWithChanges<IMatchType>>(Source).Subscribe(x => LoadPulledEntityViewSetWithChanges(x));
 
         }
 
-        public static void UpdatePulledEntityWithChanges(IUpdatePatientEntityWithChanges<IPatients> msg)
+        public static void UpdatePulledEntityWithChanges(IUpdatePullEntityWithChanges msg)
         {
 
             using (var ctx = new MRManagerDBContext())

@@ -156,7 +156,7 @@ namespace RevolutionData
                             s.Source);
                     }),
 
-                new ViewEventCommand<IPatientSummaryListViewModel, IUpdatePatientEntityWithChanges<IPatients>>(
+                new ViewEventCommand<IPatientSummaryListViewModel, IUpdatePullEntityWithChanges>(
                     key:"SavePatientInfo",
                     subject:v => v.ChangeTracking.DictionaryChanges,
                     commandPredicate: new List<Func<IPatientSummaryListViewModel, bool>>
@@ -183,7 +183,7 @@ namespace RevolutionData
                         return msg;
                     }),
 
-                new ViewEventCommand<IPatientSummaryListViewModel, IUpdatePatientEntityWithChanges<IPatients>>(
+                new ViewEventCommand<IPatientSummaryListViewModel, IUpdatePullEntityWithChanges>(
                     key:"CreatePatientInfo",
                     subject:v => v.ChangeTracking.DictionaryChanges,
                     commandPredicate: new List<Func<IPatientSummaryListViewModel, bool>>
