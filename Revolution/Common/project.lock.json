@@ -208,6 +208,7 @@
           "ComponentModel.Composition.Hosting.Extension": "1.0.0",
           "MefContrib": "1.2.2.1",
           "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
         }
       },
@@ -232,6 +233,13 @@
       "SystemInterfaces/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1"
+      },
+      "Utilities/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
       },
       "ViewModel.Interfaces/1.0.0": {
         "type": "project",
@@ -454,6 +462,7 @@
           "ComponentModel.Composition.Hosting.Extension": "1.0.0",
           "MefContrib": "1.2.2.1",
           "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
         }
       },
@@ -478,6 +487,13 @@
       "SystemInterfaces/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1"
+      },
+      "Utilities/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
       },
       "ViewModel.Interfaces/1.0.0": {
         "type": "project",
@@ -953,6 +969,11 @@
       "type": "project",
       "path": "../SystemInterfaces/project.json",
       "msbuildProject": "../SystemInterfaces/SystemInterfaces.csproj"
+    },
+    "Utilities/1.0.0": {
+      "type": "project",
+      "path": "../Utilities/project.json",
+      "msbuildProject": "../Utilities/Utilities.csproj"
     },
     "ViewModel.Interfaces/1.0.0": {
       "type": "project",

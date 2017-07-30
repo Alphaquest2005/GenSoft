@@ -80,8 +80,7 @@ namespace Core.Common.UI
                 paramArray.Add(param.ProcessInfo);
                 paramArray.Add(param.Process);
                 paramArray.Add(param.Source);
-                var concreteEvent = BootStrapper.BootStrapper.Container.GetExportedTypes(itm.EventType).FirstOrDefault() ?? BootStrapper.BootStrapper.Container.GetExportedType(itm.EventType) ;
-                //TODO: Replace MEF with Good IOC container - can't do <,>
+                var concreteEvent = BootStrapper.BootStrapper.Container.GetConcreteType(itm.EventType) ;
                 ProcessSystemMessage msg;
                 if (concreteEvent == null)
                 {
@@ -105,7 +104,7 @@ namespace Core.Common.UI
                 paramArray.Add(param.ProcessInfo);
                 paramArray.Add(param.Process);
                 paramArray.Add(param.Source);
-                var concreteEvent = BootStrapper.BootStrapper.Container.GetExportedTypes(itm.EventType).FirstOrDefault() ?? BootStrapper.BootStrapper.Container.GetExportedType(itm.EventType);
+                var concreteEvent = BootStrapper.BootStrapper.Container.GetConcreteType(itm.EventType);
                 //TODO: Replace MEF with Good IOC container - can't do <,>
                 ProcessSystemMessage msg;
                 if (concreteEvent == null)

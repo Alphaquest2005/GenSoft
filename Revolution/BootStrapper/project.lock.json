@@ -222,6 +222,13 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1"
       },
+      "Utilities/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
+      },
       "ViewModel.Interfaces/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
@@ -456,6 +463,13 @@
       "SystemInterfaces/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1"
+      },
+      "Utilities/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
       },
       "ViewModel.Interfaces/1.0.0": {
         "type": "project",
@@ -927,6 +941,11 @@
       "path": "../SystemInterfaces/project.json",
       "msbuildProject": "../SystemInterfaces/SystemInterfaces.csproj"
     },
+    "Utilities/1.0.0": {
+      "type": "project",
+      "path": "../Utilities/project.json",
+      "msbuildProject": "../Utilities/Utilities.csproj"
+    },
     "ViewModel.Interfaces/1.0.0": {
       "type": "project",
       "path": "../ViewModel.Interfaces/project.json",
@@ -963,6 +982,9 @@
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Utilities\\Utilities.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Utilities\\Utilities.csproj"
             }
           }
         }

@@ -5,6 +5,6 @@ namespace ViewModel.Interfaces
 {
     public interface IPatientVisitViewModel : IEntityListViewModel<IPatientVisitInfo>
     {
-        IPatientInfo CurrentPatient { get; set; }
+        IPatientInfo Patient { get; set; }
     }
 }

@@ -72,6 +72,7 @@
     <Compile Include="ProcessViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModelInfo\EntityCacheViewModelInfo.cs" />
+    <Compile Include="ViewModelInfo\SummaryListViewModelInfo.cs" />
     <Compile Include="ViewModelInfo\EntityViewCacheViewModelInfo.cs" />
     <Compile Include="ViewModelInfo\FooterViewModelInfo.cs" />
     <Compile Include="ViewModelInfo\HeaderViewModelInfo.cs" />
@@ -103,6 +104,10 @@
     <ProjectReference Include="..\Revolution\Actor.Interfaces\Actor.Interfaces.csproj">
       <Project>{8b10c72d-9f33-4290-b562-44cf1f718fa5}</Project>
       <Name>Actor.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Revolution\BootStrapper\BootStrapper.csproj">
+      <Project>{5DFEEA8B-BABA-4544-BF36-0A76A0D10C1B}</Project>
+      <Name>BootStrapper</Name>
     </ProjectReference>
     <ProjectReference Include="..\Revolution\Common\Common.csproj">
       <Project>{cb6d5fbc-0c13-437d-b4f3-a0ec4d5673b3}</Project>

@@ -18,7 +18,13 @@ namespace ViewModel.WorkFlow
             PatientSummaryListViewModelInfo.PatientSummaryListViewModel,
             PatientDetailsViewModelInfo.PatientDetailsViewModel,
             PatientVitalsViewModelInfo.PatientVitalsViewModel,
-            PatientVisitViewModelInfo.PatientVisitViewModel,
+            //PatientVisitViewModelInfo.PatientVisitViewModel,
+            SummaryListViewModelInfo<IPatientVisitInfo>.SummaryListViewModel(3, new List<EntityViewModelRelationship>(){new EntityViewModelRelationship()
+            {
+                ParentType = typeof(IPatientInfo),
+                CurrentParentEntity = "Patient",
+                ParentProperty = "PatientId"
+            }}),
             PatientSyntomViewModelInfo.PatientSyntomViewModel,
             InterviewListViewModelInfo.InterviewListViewModel,
             QuestionListViewModelInfo.QuestionListViewModel,

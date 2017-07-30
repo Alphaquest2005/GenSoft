@@ -12,6 +12,35 @@ namespace Utilities
 {
     public static class ExpressionsExtensions
     {
+
+        public static void SetPropertyValue<T, TValue>(this T target, Expression<Func<T, TValue>> memberLamda, TValue value)
+        {
+            var memberSelectorExpression = memberLamda.Body as MemberExpression;
+            if (memberSelectorExpression != null)
+            {
+                var property = memberSelectorExpression.Member as PropertyInfo;
+                if (property != null)
+                {
+                    property.SetValue(target, value, null);
+                }
+            }
+        }
+
+        public static TValue GetPropertyValue<T, TValue>(this T target, Expression<Func<T, TValue>> memberLamda)
+        {
+            var memberSelectorExpression = memberLamda.Body as MemberExpression;
+            if (memberSelectorExpression != null)
+            {
+                var property = memberSelectorExpression.Member as PropertyInfo;
+                if (property != null)
+                {
+                    return (TValue)property.GetValue(target, null);
+                }
+            }
+            return default(TValue);
+        }
+
+
         public static string GetMemberName(
             this Expression expression)
         {

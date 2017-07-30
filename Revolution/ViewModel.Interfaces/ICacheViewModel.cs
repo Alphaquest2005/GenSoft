@@ -9,7 +9,12 @@ namespace ViewModel.Interfaces
     {
 
     }
-    
+
+    public interface ISummaryListViewModel : IViewModel
+    {
+
+    }
+
     public interface IEntityCacheViewModel<TEntity> :ICacheViewModel, IEntityListViewModel<TEntity> where TEntity : IEntity//
     {
 
@@ -23,5 +28,11 @@ namespace ViewModel.Interfaces
     {
 
     }
+
+    public interface ISummaryListViewModel<TView> : ISummaryListViewModel, IEntityListViewModel<TView> where TView : IEntityView
+    {
+        
+    }
+
 }
 

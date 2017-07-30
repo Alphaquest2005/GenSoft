@@ -1140,6 +1140,7 @@
           "ComponentModel.Composition.Hosting.Extension": "1.0.0",
           "MefContrib": "1.2.2.1",
           "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
         }
       },
@@ -1282,7 +1283,6 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
-          "Common": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
       },
@@ -2402,6 +2402,7 @@
           "ComponentModel.Composition.Hosting.Extension": "1.0.0",
           "MefContrib": "1.2.2.1",
           "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
         }
       },
@@ -2544,7 +2545,6 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
-          "Common": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
       },

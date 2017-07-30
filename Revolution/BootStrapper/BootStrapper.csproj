@@ -81,6 +81,10 @@
       <Project>{5058d323-23ef-4ee9-9e33-9c1fff3ae524}</Project>
       <Name>SystemInterfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{0f9427b1-792e-4c35-97d8-22a9494ce28f}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ViewModel.Interfaces\ViewModel.Interfaces.csproj">
       <Project>{2F936E24-723E-4E7A-B21C-D6F618C74651}</Project>
       <Name>ViewModel.Interfaces</Name>

@@ -281,6 +281,7 @@
           "ComponentModel.Composition.Hosting.Extension": "1.0.0",
           "MefContrib": "1.2.2.1",
           "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
         }
       },
@@ -408,7 +409,6 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
-          "Common": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
       },
@@ -717,6 +717,7 @@
           "ComponentModel.Composition.Hosting.Extension": "1.0.0",
           "MefContrib": "1.2.2.1",
           "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
         }
       },
@@ -844,7 +845,6 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
-          "Common": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
       },
@@ -1576,6 +1576,9 @@
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\BootStrapper\\BootStrapper.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\BootStrapper\\BootStrapper.csproj"
             }
           }
         }

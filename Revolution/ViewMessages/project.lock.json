@@ -192,43 +192,12 @@
           "lib/Net45/Splat.dll": {}
         }
       },
-      "Actor.Interfaces/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0",
-          "ViewModel.Interfaces": "1.0.0"
-        }
-      },
-      "BootStrapper/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "Actor.Interfaces": "1.0.0",
-          "ComponentModel.Composition.Hosting.Extension": "1.0.0",
-          "MefContrib": "1.2.2.1",
-          "SystemInterfaces": "1.0.0",
-          "ViewModel.Interfaces": "1.0.0"
-        }
-      },
-      "Common/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "BootStrapper": "1.0.0",
-          "SystemInterfaces": "1.0.0"
-        }
-      },
       "CommonMessages/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
           "SystemInterfaces": "1.0.0"
         }
-      },
-      "ComponentModel.Composition.Hosting.Extension/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1"
       },
       "Interfaces/1.0.0": {
         "type": "project",
@@ -245,7 +214,6 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
-          "Common": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
       },
@@ -454,43 +422,12 @@
           "lib/Net45/Splat.dll": {}
         }
       },
-      "Actor.Interfaces/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0",
-          "ViewModel.Interfaces": "1.0.0"
-        }
-      },
-      "BootStrapper/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "Actor.Interfaces": "1.0.0",
-          "ComponentModel.Composition.Hosting.Extension": "1.0.0",
-          "MefContrib": "1.2.2.1",
-          "SystemInterfaces": "1.0.0",
-          "ViewModel.Interfaces": "1.0.0"
-        }
-      },
-      "Common/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "BootStrapper": "1.0.0",
-          "SystemInterfaces": "1.0.0"
-        }
-      },
       "CommonMessages/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
           "SystemInterfaces": "1.0.0"
         }
-      },
-      "ComponentModel.Composition.Hosting.Extension/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1"
       },
       "Interfaces/1.0.0": {
         "type": "project",
@@ -507,7 +444,6 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
-          "Common": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
       },
@@ -956,30 +892,10 @@
         "lib/wp8/Splat.pdb"
       ]
     },
-    "Actor.Interfaces/1.0.0": {
-      "type": "project",
-      "path": "../Actor.Interfaces/project.json",
-      "msbuildProject": "../Actor.Interfaces/Actor.Interfaces.csproj"
-    },
-    "BootStrapper/1.0.0": {
-      "type": "project",
-      "path": "../BootStrapper/project.json",
-      "msbuildProject": "../BootStrapper/BootStrapper.csproj"
-    },
-    "Common/1.0.0": {
-      "type": "project",
-      "path": "../Common/project.json",
-      "msbuildProject": "../Common/Common.csproj"
-    },
     "CommonMessages/1.0.0": {
       "type": "project",
       "path": "../CommonMessages/project.json",
       "msbuildProject": "../CommonMessages/CommonMessages.csproj"
-    },
-    "ComponentModel.Composition.Hosting.Extension/1.0.0": {
-      "type": "project",
-      "path": "../MefGeneric-master/MEFGeneric Preview 9/src/ComponentModel.Composition.Hosting.Extension/project.json",
-      "msbuildProject": "../MefGeneric-master/MEFGeneric Preview 9/src/ComponentModel.Composition.Hosting.Extension/ComponentModel.Composition.Hosting.Extension.csproj"
     },
     "Interfaces/1.0.0": {
       "type": "project",
