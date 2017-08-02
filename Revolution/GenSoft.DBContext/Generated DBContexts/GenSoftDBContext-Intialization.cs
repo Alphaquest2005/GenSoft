@@ -300,6 +300,7 @@ namespace GenSoft.DBContexts
 						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,EntityTypeId,Id,Name) Values('5','21','43','InterviewId')
 						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,EntityTypeId,Id,Name) Values('5','24','44','InterviewId')
 						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,EntityTypeId,Id,Name) Values('5','15','45','PatientVisitId')
+						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,EntityTypeId,Id,Name) Values('5','20','46','MedicalSystemId')
 					SET IDENTITY_INSERT dbo.[EntityTypeAttributes] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 						Insert Into dbo.[EntityId] (Id) Values('1')
@@ -355,6 +356,7 @@ namespace GenSoft.DBContexts
 						Insert Into dbo.[EntityRelationships] (ChildEntityId,Id,ParentEntityId) Values('15','57','1')
 						Insert Into dbo.[EntityRelationships] (ChildEntityId,Id,ParentEntityId) Values('40','59','1')
 						Insert Into dbo.[EntityRelationships] (ChildEntityId,Id,ParentEntityId) Values('10','60','1')
+						Insert Into dbo.[EntityRelationships] (ChildEntityId,Id,ParentEntityId) Values('46','61','21')
 					SET IDENTITY_INSERT dbo.[EntityRelationships] OFF");
 			//No test data for MessageType
 			//No test data for MessageType

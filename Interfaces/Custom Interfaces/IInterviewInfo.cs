@@ -5,7 +5,7 @@ using SystemInterfaces;
 namespace Interfaces
 {
     
-    public partial interface IInterviewInfo :IEntityView<IInterviews>
+    public partial interface IInterviewInfo :IEntityView<IMedicalSystemInterviews>
     {
         String Interview { get; }
         String Category { get; }
@@ -14,7 +14,7 @@ namespace Interfaces
         int CategoryId { get; }
 
         string System { get; }
-        int SystemId { get; }
+        int MedicalSystemId { get; }
         
     }
 }

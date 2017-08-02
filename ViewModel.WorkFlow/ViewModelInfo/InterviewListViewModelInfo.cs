@@ -144,7 +144,7 @@ namespace ViewModel.WorkFlow.ViewModelInfo
 
 
                        var f = v.EntitySet.Value.FirstOrDefault(x => x.Id == e.Entity.Id);
-                            if (e.Entity.SystemId == 0)
+                            if (e.Entity.MedicalSystemId == 0)
                             {
                                 v.CurrentMedicalSystem.Value.Interviews.Add(e.Entity);
                                 v.ChangeTracking.Clear();

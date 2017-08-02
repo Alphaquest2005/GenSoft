@@ -69,6 +69,91 @@ namespace ViewModels
 
     }
 
+    [Export(typeof(ISummaryListViewModel<IPatientInfo>))]
+    public class PatientSummaryListViewModel : SummaryListViewModel<IPatientInfo>
+    {
+        public PatientSummaryListViewModel()
+        {
+        }
+
+        public PatientSummaryListViewModel(ISystemProcess process, IViewInfo viewInfo,
+            List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions,
+            List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications,
+            List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, Type orientation, int priority)
+            : base(process, viewInfo, eventSubscriptions, eventPublications, commandInfo, orientation, priority)
+        {
+        }
+
+    }
+
+    [Export(typeof(ISummaryListViewModel<IPatientSyntomInfo>))]
+    public class PatientSyntomViewModel : SummaryListViewModel<IPatientSyntomInfo>
+    {
+        public PatientSyntomViewModel()
+        {
+        }
+
+        public PatientSyntomViewModel(ISystemProcess process, IViewInfo viewInfo,
+            List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions,
+            List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications,
+            List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, Type orientation, int priority)
+            : base(process, viewInfo, eventSubscriptions, eventPublications, commandInfo, orientation, priority)
+        {
+        }
+
+    }
+
+    [Export(typeof(ISummaryListViewModel<ISyntomMedicalSystemInfo>))]
+    public class SystemInfoListViewModel : SummaryListViewModel<ISyntomMedicalSystemInfo>
+    {
+        public SystemInfoListViewModel()
+        {
+        }
+
+        public SystemInfoListViewModel(ISystemProcess process, IViewInfo viewInfo,
+            List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions,
+            List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications,
+            List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, Type orientation, int priority)
+            : base(process, viewInfo, eventSubscriptions, eventPublications, commandInfo, orientation, priority)
+        {
+        }
+
+    }
+
+    [Export(typeof(ISummaryListViewModel<IInterviewInfo>))]
+    public class InterviewListViewModel : SummaryListViewModel<IInterviewInfo>
+    {
+        public InterviewListViewModel()
+        {
+        }
+
+        public InterviewListViewModel(ISystemProcess process, IViewInfo viewInfo,
+            List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions,
+            List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications,
+            List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, Type orientation, int priority)
+            : base(process, viewInfo, eventSubscriptions, eventPublications, commandInfo, orientation, priority)
+        {
+        }
+
+    }
+    
+    [Export(typeof(ISummaryListViewModel<IQuestionInfo>))]
+    public class QuestionListViewModel : SummaryListViewModel<IQuestionInfo>
+    {
+        public QuestionListViewModel()
+        {
+        }
+
+        public QuestionListViewModel(ISystemProcess process, IViewInfo viewInfo,
+            List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions,
+            List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications,
+            List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, Type orientation, int priority)
+            : base(process, viewInfo, eventSubscriptions, eventPublications, commandInfo, orientation, priority)
+        {
+        }
+
+    }
+
 }
 
 

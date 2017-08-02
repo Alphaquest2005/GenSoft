@@ -29,13 +29,15 @@ namespace Entity.Expressions
 
 
 
-        public static Expression<Func<Interviews, InterviewInfo>> InterviewInfoExpression { get; } =
+        public static Expression<Func<MedicalSystemInterviews, InterviewInfo>> InterviewInfoExpression { get; } =
             x => new InterviewInfo()
             {
-                Id = x.Id,
-                Interview = x.Name,
-                Category = x.MedicalCategory.Name,
-                Phase = x.Phase.Name
+                Id = x.InterviewId,
+                Interview = x.Interviews.Name,
+                Category = x.Interviews.MedicalCategory.Name,
+                Phase = x.Interviews.Phase.Name,
+                MedicalSystemId = x.MedicalSystemId
+                
             };
 
         public static Expression<Func<PatientResponses, PatientResponseInfo>> PatientResponseInfoExpression { get; } =

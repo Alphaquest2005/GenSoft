@@ -20,14 +20,14 @@ namespace RevolutionData
     
     public class SummaryListViewModelInfo<TView> where TView : IEntityView
     {
-        public static ViewModelInfo SummaryListViewModel(int processId, List<EntityViewModelRelationship> parentEntities)
+        public static ViewModelInfo SummaryListViewModel(int processId, string symbol, string description, int priority, List<EntityViewModelRelationship> parentEntities)
         {
             try
             {
                 var viewInfo = new ViewModelInfo
                 (
                     processId: processId,
-                    viewInfo: new ViewInfo($"{typeof(TView).Name}SummaryListViewModel", "", ""),
+                    viewInfo: new ViewInfo($"{typeof(TView).Name}SummaryListViewModel", symbol, description),
                     subscriptions: new List<IViewModelEventSubscription<IViewModel, IEvent>>
                     {
                         new ViewEventSubscription<ISummaryListViewModel<TView>, IUpdateProcessStateList<TView>>(
@@ -77,7 +77,11 @@ namespace RevolutionData
                             3,
                             e => e != null,
                             new List<Func<ISummaryListViewModel<TView>, ICurrentEntityChanged<TView>, bool>>(),
-                            (v,e) => v.CurrentEntity.Value = e.Entity),
+                            (v, e) =>
+                            {
+                                if (v.CurrentEntity.Value?.Id == e.Entity?.Id) return;
+                                v.CurrentEntity.Value = e.Entity;
+                            }),
 
 
                     },
@@ -105,7 +109,7 @@ namespace RevolutionData
 
                         new ViewEventPublication<ISummaryListViewModel<TView>, ICurrentEntityChanged<TView>>(
                             key:"CurrentEntityChanged",
-                            subject:v =>  v.WhenAnyValue(x => x.CurrentEntity),//.WhenAnyValue(x => x.Value),
+                            subject:v =>  (IObservable<dynamic>)v.CurrentEntity,//.WhenAnyValue(x => x.Value),
                             subjectPredicate:new List<Func<ISummaryListViewModel<TView>, bool>>{},
                             messageData:s => new ViewEventPublicationParameter(new object[] {s.CurrentEntity.Value},new StateEventInfo(s.Process.Id, Context.View.Events.ProcessStateLoaded),s.Process,s.Source))
                     },
@@ -161,7 +165,7 @@ namespace RevolutionData
                     },
                     viewModelType: typeof(ISummaryListViewModel<TView>),
                     orientation: typeof(IBodyViewModel),
-                    priority: 2);
+                    priority: priority);
 
                 var parentSubscriptions = new List<IViewModelEventSubscription<IViewModel, IEvent>>();
                 var parentCommands = new List<IViewModelEventCommand<IViewModel, IEvent>>();
@@ -172,7 +176,7 @@ namespace RevolutionData
                 }
                 viewInfo.Subscriptions.AddRange(parentSubscriptions);
 
-                parentCommands.AddRange(CreateParentEntityCommands(parentEntities.Select(x => x.ParentProperty).ToList()));
+                parentCommands.AddRange(CreateParentEntityCommands(parentEntities.Select(x => x.ChildProperty).ToList()));
 
 
                 return viewInfo;
@@ -304,8 +308,8 @@ namespace RevolutionData
     {
         public Type ParentType { get; set; }
         public  string CurrentParentEntity { get; set; }
-
         public string ParentProperty { get; set; }
+        public string ChildProperty { get; set; }
 
     }
 }

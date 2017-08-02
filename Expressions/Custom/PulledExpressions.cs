@@ -371,7 +371,7 @@ namespace Entity.Expressions
                     CategoryId = i.Interviews.MedicalCategoryId,
                     PhaseId = i.Interviews.PhaseId,
                     Phase = i.Interviews.Phase.Name,
-                    SystemId = z.MedicalSystemId,
+                    MedicalSystemId = z.MedicalSystemId,
                     System = z.MedicalSystems.Name,
 
                 } as IInterviewInfo).ToList()

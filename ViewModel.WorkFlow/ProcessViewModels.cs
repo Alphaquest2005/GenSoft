@@ -15,19 +15,53 @@ namespace ViewModel.WorkFlow
             SigninViewModelInfo.SigninViewModel,
             HeaderViewModelInfo.HeaderViewModel,
             FooterViewModelInfo.FooterViewModel,
-            PatientSummaryListViewModelInfo.PatientSummaryListViewModel,
+            //PatientSummaryListViewModelInfo.PatientSummaryListViewModel,
+            SummaryListViewModelInfo<IPatientInfo>.SummaryListViewModel(3, "", "Patient List", 0, new List<EntityViewModelRelationship>()),
             PatientDetailsViewModelInfo.PatientDetailsViewModel,
             PatientVitalsViewModelInfo.PatientVitalsViewModel,
             //PatientVisitViewModelInfo.PatientVisitViewModel,
-            SummaryListViewModelInfo<IPatientVisitInfo>.SummaryListViewModel(3, new List<EntityViewModelRelationship>(){new EntityViewModelRelationship()
+            SummaryListViewModelInfo<IPatientVisitInfo>.SummaryListViewModel(3,  "", "Patient Visits", 2, new List<EntityViewModelRelationship>(){new EntityViewModelRelationship()
             {
                 ParentType = typeof(IPatientInfo),
                 CurrentParentEntity = "Patient",
-                ParentProperty = "PatientId"
+                ParentProperty = "Id",
+                ChildProperty = "PatientId"
             }}),
-            PatientSyntomViewModelInfo.PatientSyntomViewModel,
-            InterviewListViewModelInfo.InterviewListViewModel,
-            QuestionListViewModelInfo.QuestionListViewModel,
+           // PatientSyntomViewModelInfo.PatientSyntomViewModel,
+            SummaryListViewModelInfo<IPatientSyntomInfo>.SummaryListViewModel(3,  "", "Patient Syntoms", 3, new List<EntityViewModelRelationship>(){new EntityViewModelRelationship()
+            {
+                ParentType = typeof(IPatientVisitInfo),
+                CurrentParentEntity = "PatientVisit",
+                ParentProperty = "Id",
+                ChildProperty = "PatientVisitId"
+            }}),
+
+            SummaryListViewModelInfo<ISyntomMedicalSystemInfo>.SummaryListViewModel(3,  "", "Systems", 4, new List<EntityViewModelRelationship>(){new EntityViewModelRelationship()
+            {
+                ParentType = typeof(IPatientSyntomInfo),
+                CurrentParentEntity = "PatientSyntom",
+                ParentProperty = "SyntomId",
+                ChildProperty = "SyntomId"
+            }}),
+
+            SummaryListViewModelInfo<IInterviewInfo>.SummaryListViewModel(3,  "", "Interviews", 5, new List<EntityViewModelRelationship>(){new EntityViewModelRelationship()
+            {
+                ParentType = typeof(ISyntomMedicalSystemInfo),
+                CurrentParentEntity = "System",
+                ParentProperty = "Id",
+                ChildProperty = "SystemId"
+            }}),
+            //InterviewListViewModelInfo.InterviewListViewModel,
+            //QuestionListViewModelInfo.QuestionListViewModel,
+
+            SummaryListViewModelInfo<IQuestionInfo>.SummaryListViewModel(3,  "", "Questions", 6, new List<EntityViewModelRelationship>(){new EntityViewModelRelationship()
+            {
+                ParentType = typeof(IInterviewInfo),
+                CurrentParentEntity = "Interview",
+                ParentProperty = "Id",
+                ChildProperty = "InterviewId"
+            }}),
+
             QuestionaireViewModelInfo.QuestionairenaireViewViewModel,
             
             EntityCacheViewModelInfo<ISyntomPriority>.CacheViewModel(3),

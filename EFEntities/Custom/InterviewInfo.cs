@@ -15,7 +15,7 @@ namespace EF.Entities
         public int PhaseId { get; set; }
         public int CategoryId { get; set; }
         public string System { get; set; }
-        public int SystemId { get; set; }
+        public int MedicalSystemId { get; set; }
     }
 
 

@@ -29,6 +29,7 @@
         <ResourceDictionary Source="Custom/FooterVDT.xaml" />
         <ResourceDictionary Source="Custom/SystemInfoRDT.xaml" />
         <ResourceDictionary Source="Custom/SystemInfoWDT.xaml" />
+        <ResourceDictionary Source="Custom/SystemInfoVDT.xaml" />
         <ResourceDictionary Source="Custom/PatientSyntomInfoRDT.xaml" />
         <ResourceDictionary Source="Custom/PatientSyntomInfoWDT.xaml" />
         <ResourceDictionary Source="Custom/PatientSyntomListVDT.xaml" />

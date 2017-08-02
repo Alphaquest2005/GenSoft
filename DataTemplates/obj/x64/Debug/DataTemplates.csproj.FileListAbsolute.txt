@@ -287,3 +287,4 @@ C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\EventAggregator.dll.
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\BootStrapper.dll.config
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\ViewMessages.dll.config
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\RevolutionData.dll.config
+C:\Prism\GitRepositiory\GenSoft\DataTemplates\obj\x64\Debug\Custom\SystemInfoVDT.baml
