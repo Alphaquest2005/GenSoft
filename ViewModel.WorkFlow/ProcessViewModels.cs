@@ -17,8 +17,23 @@ namespace ViewModel.WorkFlow
             FooterViewModelInfo.FooterViewModel,
             //PatientSummaryListViewModelInfo.PatientSummaryListViewModel,
             SummaryListViewModelInfo<IPatientInfo>.SummaryListViewModel(3, "", "Patient List", 0, new List<EntityViewModelRelationship>()),
-            PatientDetailsViewModelInfo.PatientDetailsViewModel,
-            PatientVitalsViewModelInfo.PatientVitalsViewModel,
+           // PatientDetailsViewModelInfo.PatientDetailsViewModel,
+            EntityDetailsViewModelInfo<IPatientDetailsInfo>.EntityDetailsViewModel(3,  "", "Patient Details", 2, new List<EntityViewModelRelationship>()
+            {
+                new EntityViewModelRelationship(){ParentType = typeof(IPatientInfo),CurrentParentEntity = "Patient",ParentProperty = "Id",ChildProperty = "Id"},
+                new EntityViewModelRelationship(){ParentType = typeof(IPatientAddressesInfo),CurrentParentEntity = "Addresses",ParentProperty = "Id",ChildProperty = "Id"},
+                new EntityViewModelRelationship(){ParentType = typeof(IPatientPhoneNumbersInfo),CurrentParentEntity = "PhoneNumbers",ParentProperty = "Id",ChildProperty = "Id"},
+                new EntityViewModelRelationship(){ParentType = typeof(IPatientNextOfKinsInfo),CurrentParentEntity = "NextOfKins",ParentProperty = "Id",ChildProperty = "Id"},
+                new EntityViewModelRelationship(){ParentType = typeof(INonResidentInfo),CurrentParentEntity = "NonResidentInfo",ParentProperty = "Id",ChildProperty = "Id"},
+            }),
+
+
+            //PatientVitalsViewModelInfo.PatientVitalsViewModel,
+            EntityDetailsViewModelInfo<IPatientVitalsInfo>.EntityDetailsViewModel(3,   "", "Vitals", 1, new List<EntityViewModelRelationship>()
+            {
+                new EntityViewModelRelationship(){ParentType = typeof(IPatientInfo),CurrentParentEntity = "Patient",ParentProperty = "Id",ChildProperty = "Id"},
+            }),
+
             //PatientVisitViewModelInfo.PatientVisitViewModel,
             SummaryListViewModelInfo<IPatientVisitInfo>.SummaryListViewModel(3,  "", "Patient Visits", 2, new List<EntityViewModelRelationship>(){new EntityViewModelRelationship()
             {

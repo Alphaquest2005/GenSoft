@@ -1,34 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Composition;
-using SystemInterfaces;
-using Core.Common.UI;
-using Interfaces;
-using JB.Collections.Reactive;
-using Reactive.Bindings;
-using ViewModel.Interfaces;
-using ViewModelInterfaces;
+﻿//using System;
+//using System.Collections.Generic;
+//using System.ComponentModel.Composition;
+//using SystemInterfaces;
+//using Core.Common.UI;
+//using Interfaces;
+//using JB.Collections.Reactive;
+//using Reactive.Bindings;
+//using ViewModel.Interfaces;
+//using ViewModelInterfaces;
 
-namespace ViewModels
-{
-    [Export(typeof(IPatientVitalsViewModel))]
-    public partial class PatientVitalsViewModel : DynamicViewModel<ObservableViewModel<IPatientVitalsInfo>>, IPatientVitalsViewModel
-    {
-       [ImportingConstructor]
-        public PatientVitalsViewModel(ISystemProcess process, IViewInfo viewInfo, List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions, List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications, List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, Type orientation, int priority) : base(new ObservableViewModel<IPatientVitalsInfo>(viewInfo, eventSubscriptions, eventPublications, commandInfo, process, orientation, priority))
-        {
-            this.WireEvents();
-        }
-
-        
-       public ReactiveProperty<IProcessState<IPatientVitalsInfo>> State => this.ViewModel.State;
-        public ObservableDictionary<string, dynamic> ChangeTracking => this.ViewModel.ChangeTracking;
-
-        public IPatientInfo CurrentPatient { get; set; }
-
+//namespace ViewModels
+//{
+//    [Export(typeof(IPatientVitalsViewModel))]
+//    public partial class PatientVitalsViewModel : DynamicViewModel<ObservableViewModel<IPatientVitalsInfo>>, IPatientVitalsViewModel
+//    {
+//       [ImportingConstructor]
+//        public PatientVitalsViewModel(ISystemProcess process, IViewInfo viewInfo, List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions, List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications, List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, Type orientation, int priority) : base(new ObservableViewModel<IPatientVitalsInfo>(viewInfo, eventSubscriptions, eventPublications, commandInfo, process, orientation, priority))
+//        {
+//            this.WireEvents();
+//        }
 
         
-    }
+//       public ReactiveProperty<IProcessState<IPatientVitalsInfo>> State => this.ViewModel.State;
+//        public ObservableDictionary<string, dynamic> ChangeTracking => this.ViewModel.ChangeTracking;
+
+//        public IPatientInfo CurrentPatient { get; set; }
+
+
+        
+//    }
 
     //public partial class PatientVitalsViewModel : IPatientVitalsInfo
     //{
@@ -75,4 +75,4 @@ namespace ViewModels
     //    public int Id { get; set; }
     //    public DateTime EntryDateTime { get; }
     //}
-}
+//}

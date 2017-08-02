@@ -68,6 +68,7 @@
     <Compile Include="EntityViewCacheViewModel.cs" />
     <Compile Include="FooterViewModel.cs" />
     <Compile Include="HeaderViewModel.cs" />
+    <Compile Include="EntityDetailsModel.cs" />
     <Compile Include="SummaryViewModel.cs" />
     <Compile Include="PatientVitalsViewModel.cs" />
     <Compile Include="PatientSyntomViewModel.cs" />
