@@ -40,57 +40,57 @@ namespace Entity.Expressions
                 
             };
 
-        public static Expression<Func<PatientResponses, PatientResponseInfo>> PatientResponseInfoExpression { get; } =
-            x => new PatientResponseInfo()
-            {
-                Id = x.Id,
-                Category = x.Questions.Interviews.MedicalCategory.Name,
-                Question = x.Questions.Description,
-                Interview = x.Questions.Interviews.Name,
-                PatientSyntomId = x.PatientSyntomId,
-                InterviewId = x.Questions.InterviewId,
-                PatientVisitId = x.PatientVisitId,
-                QuestionId = x.QuestionId,
-                PatientId = x.PatientVisit.PatientId,
-                ResponseImages = x.ResponseImages.Select(z => new ResponseImage()
-                {
-                    MediaId = z.MediaId,
-                    PatientResponseId = z.PatientResponseId,
-                    Media = z.Media.Value
-                } as IResponseImage).ToList(),
-                ResponseOptions = x.Questions.ResponseOptions.OrderBy(z => z.ResponseNumber).Select(z => new ResponseOptionInfo()
-                {
-                    Id = z.Id,
-                    Description = z.Description,
-                    QuestionId = z.QuestionId,
-                    ResponseId =
-                        (int?)
-                            (z.Response.Any()
-                                ? z.Response.Where(x1 => x1.PatientResponseId == x.Id).Select(x2 => x2.Id).First()
-                                : 0),
-                    Value =
-                            z.Response.Any()
-                            ? z.Response.Where(x1 => x1.PatientResponseId == x.Id).Select(x2 => x2.Value).First()
-                            : null, //
-                    QuestionResponseTypeId = z.QuestionResponseTypeId,
-                    Type = z.QuestionResponseTypes.Name,
-                    PatientResponseId = x.Id,
-                    ResponseNumber = z.ResponseNumber
+        //public static Expression<Func<PatientResponses, PatientResponseInfo>> PatientResponseInfoExpression { get; } =
+        //    x => new PatientResponseInfo()
+        //    {
+        //        Id = x.Id,
+        //        Category = x.Questions.Interviews.MedicalCategory.Name,
+        //        Question = x.Questions.Description,
+        //        Interview = x.Questions.Interviews.Name,
+        //        PatientSyntomId = x.PatientSyntomId,
+        //        InterviewId = x.Questions.InterviewId,
+        //        PatientVisitId = x.PatientVisitId,
+        //        QuestionId = x.QuestionId,
+        //        PatientId = x.PatientVisit.PatientId,
+        //        ResponseImages = x.ResponseImages.Select(z => new ResponseImage()
+        //        {
+        //            MediaId = z.MediaId,
+        //            PatientResponseId = z.PatientResponseId,
+        //            Media = z.Media.Value
+        //        } as IResponseImage).ToList(),
+        //        ResponseOptions = x.Questions.ResponseOptions.OrderBy(z => z.ResponseNumber).Select(z => new ResponseOptionInfo()
+        //        {
+        //            Id = z.Id,
+        //            Description = z.Description,
+        //            QuestionId = z.QuestionId,
+        //            ResponseId =
+        //                (int?)
+        //                    (z.Response.Any()
+        //                        ? z.Response.Where(x1 => x1.PatientResponseId == x.Id).Select(x2 => x2.Id).First()
+        //                        : 0),
+        //            Value =
+        //                    z.Response.Any()
+        //                    ? z.Response.Where(x1 => x1.PatientResponseId == x.Id).Select(x2 => x2.Value).First()
+        //                    : null, //
+        //            QuestionResponseTypeId = z.QuestionResponseTypeId,
+        //            Type = z.QuestionResponseTypes.Name,
+        //            PatientResponseId = x.Id,
+        //            ResponseNumber = z.ResponseNumber
 
-                } as IResponseOptionInfo).ToList(),
+        //        } as IResponseOptionInfo).ToList(),
 
 
-            };
+        //    };
         //ToDo: just a short cut to avoid implementing entity repostiory
-        public static Expression<Func<Response, ResponseInfo>> ResponseInfoExpression { get; } =
-            x => new ResponseInfo()
-            {
-                Id = x.Id,
-                PatientResponseId = x.PatientResponseId,
-                ResponseOptionId = x.ResponseOptionId,
-                QuestionId = x.ResponseOptions.QuestionId,
-                Value = x.Value
-            };
+        //public static Expression<Func<Response, ResponseInfo>> ResponseInfoExpression { get; } =
+        //    x => new ResponseInfo()
+        //    {
+        //        Id = x.Id,
+        //        PatientResponseId = x.PatientResponseId,
+        //        ResponseOptionId = x.ResponseOptionId,
+        //        QuestionId = x.ResponseOptions.QuestionId,
+        //        Value = x.Value
+        //    };
 
 
        public static Expression<Func<Questions, QuestionInfo>> QuestionInfoInfoExpression { get; } =
@@ -109,40 +109,40 @@ namespace Entity.Expressions
 
             };
 
-        public static Expression<Func<Questions, QuestionResponseOptionInfo>> QuestionResponseOptionsExpression { get; } =
-          (q) => new QuestionResponseOptionInfo()
-          {
-              Id = q.Id,
-              Category = q.Interviews.MedicalCategory.Name,
-              Question = q.Description,
-              Interview = q.Interviews.Name,
-              InterviewId = q.InterviewId,
-              ResponseOptions = q.ResponseOptions
-                                  .Select(z => new ResponseOptionInfo()
-                                  {
-                                      Id = z.Id,
-                                      Description = z.Description,
-                                      QuestionId = z.QuestionId,
-                                      ResponseId = 0,
-                                      QuestionResponseTypeId = z.QuestionResponseTypeId,
-                                      Type = z.QuestionResponseTypes.Name,
+        //public static Expression<Func<Questions, QuestionResponseOptionInfo>> QuestionResponseOptionsExpression { get; } =
+        //  (q) => new QuestionResponseOptionInfo()
+        //  {
+        //      Id = q.Id,
+        //      Category = q.Interviews.MedicalCategory.Name,
+        //      Question = q.Description,
+        //      Interview = q.Interviews.Name,
+        //      InterviewId = q.InterviewId,
+        //      ResponseOptions = q.ResponseOptions
+        //                          .Select(z => new ResponseOptionInfo()
+        //                          {
+        //                              Id = z.Id,
+        //                              Description = z.Description,
+        //                              QuestionId = z.QuestionId,
+        //                              ResponseId = 0,
+        //                              QuestionResponseTypeId = z.QuestionResponseTypeId,
+        //                              Type = z.QuestionResponseTypes.Name,
 
-                                      ResponseNumber = z.ResponseNumber
-                                  } as IResponseOptionInfo).ToList(),
-              PatientResponses = q.PatientResponses.SelectMany(pr => pr.Response).Select(z => new ResponseOptionInfo()
-              {
-                  PatientResponseId = z.Id,
-                  PatientVisitId = z.PatientResponses.PatientVisit.Id,
-                  PatientId = z.PatientResponses.PatientVisit.PatientId,
-                  Id = z.ResponseOptionId,
-                  Description = z.ResponseOptions.Description,
-                  QuestionId = z.ResponseOptions.QuestionId,
-                  ResponseId = z.Id,
-                  Value = z.Value,
-                  QuestionResponseTypeId = z.ResponseOptions.QuestionResponseTypeId,
-                  Type = z.ResponseOptions.QuestionResponseTypes.Name
-              } as IResponseOptionInfo).ToList()
-          };
+        //                              ResponseNumber = z.ResponseNumber
+        //                          } as IResponseOptionInfo).ToList(),
+        //      PatientResponses = q.PatientResponses.SelectMany(pr => pr.Response).Select(z => new ResponseOptionInfo()
+        //      {
+        //          PatientResponseId = z.Id,
+        //          PatientVisitId = z.PatientResponses.PatientVisit.Id,
+        //          PatientId = z.PatientResponses.PatientVisit.PatientId,
+        //          Id = z.ResponseOptionId,
+        //          Description = z.ResponseOptions.Description,
+        //          QuestionId = z.ResponseOptions.QuestionId,
+        //          ResponseId = z.Id,
+        //          Value = z.Value,
+        //          QuestionResponseTypeId = z.ResponseOptions.QuestionResponseTypeId,
+        //          Type = z.ResponseOptions.QuestionResponseTypes.Name
+        //      } as IResponseOptionInfo).ToList()
+        //  };
 
         public static Expression<Func<Persons_Doctor, DoctorInfo>> DoctorInfoExpression { get; } =
                         x => new DoctorInfo()
@@ -158,9 +158,9 @@ namespace Entity.Expressions
                         {
                             Id = x.ResponseOptionId,
                             Description = x.ResponseOptions.Description,
-                            PatientId = x.PatientResponses.PatientVisit.PatientId,
+                            PatientId = x.PatientResponses.PatientSyntoms.PatientVisit.PatientId,
+                            PatientSyntomId = x.PatientResponses.PatientSyntomId,
                             PatientResponseId = x.PatientResponseId,
-                            PatientVisitId = x.PatientResponses.PatientVisitId,
                             QuestionId = x.ResponseOptions.QuestionId,
                             QuestionResponseTypeId = x.ResponseOptions.QuestionResponseTypeId,
                             ResponseId = x.Id,
@@ -169,18 +169,18 @@ namespace Entity.Expressions
                             Value = x.Value
                         };
 
-        public static Expression<Func<ResponseOptions, ResponseOptionInfo>> ResponseOptionInfo1Expression { get; } =
-                        x => new ResponseOptionInfo()
-                        {
-                            Id = x.Id,
-                            Description = x.Description,
-                            QuestionId = x.QuestionId,
-                            QuestionResponseTypeId = x.QuestionResponseTypeId,
-                            ResponseId = x.Id,
-                            ResponseNumber = x.ResponseNumber,
-                            Type = x.QuestionResponseTypes.Name,
+        //public static Expression<Func<ResponseOptions, ResponseOptionInfo>> ResponseOptionInfo1Expression { get; } =
+        //                x => new ResponseOptionInfo()
+        //                {
+        //                    Id = x.Id,
+        //                    Description = x.Description,
+        //                    QuestionId = x.QuestionId,
+        //                    QuestionResponseTypeId = x.QuestionResponseTypeId,
+        //                    ResponseId = x.Id,
+        //                    ResponseNumber = x.ResponseNumber,
+        //                    Type = x.QuestionResponseTypes.Name,
 
-                        };
+        //                };
 
 
     }

@@ -32,7 +32,7 @@
                            HorizontalAlignment="Stretch"
                            VerticalAlignment="Stretch"
                            FontSize="20"
-                           Text="{Binding CurrentQuestion.Value.Question,
+                           Text="{Binding Question.Description,
                                           FallbackValue='No Questions',
                                           UpdateSourceTrigger=PropertyChanged,
                                           ValidatesOnDataErrors=True}"
@@ -73,7 +73,7 @@
                          HorizontalAlignment="Stretch"
                          VerticalAlignment="Stretch"
                          Background="#33FFFFFF"
-                         ItemsSource="{Binding EntitySet.Value}"
+                         ItemsSource="{Binding Responses}"
                          SelectedItem="{Binding CurrentEntity.Value}">
 
                     <ListBox.ItemContainerStyle>

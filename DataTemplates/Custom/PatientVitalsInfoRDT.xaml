@@ -37,7 +37,7 @@
                        HorizontalAlignment="Left"
                        VerticalAlignment="Top"
                        FontSize="16"
-                       Text="{Binding State.Value.Entity.Temperature,
+                       Text="{Binding PatientVitals.Temperature,
                                       UpdateSourceTrigger=PropertyChanged}" />
             <TextBlock Width="Auto"
                        Height="24"
@@ -54,7 +54,7 @@
                        HorizontalAlignment="Left"
                        VerticalAlignment="Top"
                        FontSize="16"
-                       Text="{Binding State.Value.Entity.Pulse,
+                       Text="{Binding PatientVitals.Pulse,
                                       UpdateSourceTrigger=PropertyChanged}" />
             <TextBlock Width="Auto"
                        Height="24"
@@ -70,7 +70,7 @@
                        HorizontalAlignment="Left"
                        VerticalAlignment="Top"
                        FontSize="16"
-                       Text="{Binding State.Value.Entity.Respiratory,
+                       Text="{Binding PatientVitals.Respiratory,
                                       UpdateSourceTrigger=PropertyChanged}" />
             <TextBlock Width="Auto"
                        Height="24"
@@ -87,7 +87,7 @@
                        HorizontalAlignment="Left"
                        VerticalAlignment="Top"
                        FontSize="16"
-                       Text="{Binding State.Value.Entity.BloodPressure,
+                       Text="{Binding PatientVitals.BloodPressure,
                                       UpdateSourceTrigger=PropertyChanged}" />
             <TextBlock Width="Auto"
                        Height="24"
@@ -104,7 +104,7 @@
                        HorizontalAlignment="Left"
                        VerticalAlignment="Top"
                        FontSize="16"
-                       Text="{Binding State.Value.Entity.SaO2,
+                       Text="{Binding PatientVitals.SaO2,
                                       UpdateSourceTrigger=PropertyChanged}" />
 
 

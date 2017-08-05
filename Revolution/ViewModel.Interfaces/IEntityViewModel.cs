@@ -18,7 +18,13 @@ namespace ViewModelInterfaces
 
     }
 
-    
+    public interface IEntityDetailsViewModel<TEntity> : IViewModel
+    {
+        ObservableDictionary<string, dynamic> ChangeTracking { get; }
+        void NotifyPropertyChanged(string propertyName);
+    }
+
+
     public interface IEntityListViewModel<TEntity> : IEntityViewModel<TEntity> where TEntity : IEntityId
     {
         IEntityListViewModel<TEntity> Instance { get; }

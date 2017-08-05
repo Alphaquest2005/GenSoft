@@ -16,8 +16,7 @@ namespace Interfaces
 	{
 		int PatientSyntomId { get;}
 		int QuestionId { get;}
-		int PatientVisitId { get;}
-
+		
 
 
 	}

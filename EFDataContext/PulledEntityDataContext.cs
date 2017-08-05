@@ -146,9 +146,7 @@ namespace EF.DBContext
                       
 
                         var patientResponses = ctx.PatientResponses.Include(x => x.Response).ThenInclude(x => x.ResponseOptions)
-                                                .FirstOrDefault(x => x.PatientVisit == patientVisit
-                                                                     &&
-                                                                     x.PatientSyntoms ==
+                                                .FirstOrDefault(x => x.PatientSyntoms ==
                                                                      patientSyntom
                                                                      && x.Questions == question) 
                                                  
@@ -156,7 +154,6 @@ namespace EF.DBContext
                                                  {
                                                      PatientSyntoms = patientSyntom,
                                                      Questions = question,
-                                                     PatientVisit = patientVisit,
                                                      Response = new List<Response>()
                                                  }).Entity;
 
@@ -199,7 +196,7 @@ namespace EF.DBContext
                 {
                     var props = msg.ViewType.GetProperties().ToList();
                     var res =
-                        ctx.PatientResponses.OrderByDescending(x3 => x3.PatientVisitId).Where(x => x.PatientVisit.PatientId == msg.PatientId)
+                        ctx.PatientResponses.OrderByDescending(x3 => x3.PatientSyntomId).Where(x => x.PatientSyntoms.PatientVisit.PatientId == msg.PatientId)
                             .Where(x => x.Questions.EntityAttributes.Entity == msg.EntityName)
                             .SelectMany(x => x.Response).Where(z => z.Value != null && props.Any(q => q.Name.Replace(" ", "") == z.ResponseOptions.Description.Replace(" ", "")))
                             .GroupBy(x => x.ResponseOptions.Description)
@@ -249,12 +246,12 @@ namespace EF.DBContext
                     whereStr = whereStr.TrimEnd('&');
 
                     var entities = string.IsNullOrEmpty(whereStr)
-                        ? ctx.PatientResponses.OrderByDescending(x3 => x3.PatientVisitId)
+                        ? ctx.PatientResponses.OrderByDescending(x3 => x3.PatientSyntomId)
                             .Where(
                                 x =>
                                     x.Questions.EntityAttributes.Entity == msg.EntityName &&
                                     props.Any(z => z.Name == x.Questions.EntityAttributes.Attribute))
-                            .GroupBy(x => new { x.PatientVisit.PatientId })
+                            .GroupBy(x => new { x.PatientSyntoms.PatientVisit.PatientId })
                             .Select(g => new
                             {
                                 Id = g.Key.PatientId,
@@ -267,7 +264,7 @@ namespace EF.DBContext
                         : ctx.PatientResponses
                             .Where(x => x.Questions.EntityAttributes.Entity == msg.EntityName && props.Any(z => z.Name == x.Questions.EntityAttributes.Attribute))
                             .Where($"Response.Where({whereStr}).Any()")
-                            .GroupBy(x => new { x.PatientVisit.PatientId })
+                            .GroupBy(x => new { x.PatientSyntoms.PatientVisit.PatientId })
                             .Select(g => new
                             {
                                 Id = g.Key.PatientId,

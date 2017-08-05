@@ -34,7 +34,7 @@ namespace ViewModels
         }
 
 
-        public ReactiveProperty<IProcessState<TView>> State => this.ViewModel.State;
+        
         public ObservableDictionary<string, dynamic> ChangeTracking => this.ViewModel.ChangeTracking;
     }
 
@@ -71,7 +71,23 @@ namespace ViewModels
         }
 
     }
+    
+    [Export(typeof(IEntityDetailsViewModel<IQuestionInfo>))]
+    public class QuestionaireViewModel : EntityDetailsViewModel<IQuestionInfo>
+    {
+        public QuestionaireViewModel()
+        {
+        }
 
+        public QuestionaireViewModel(ISystemProcess process, IViewInfo viewInfo,
+            List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions,
+            List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications,
+            List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, Type orientation, int priority)
+            : base(process, viewInfo, eventSubscriptions, eventPublications, commandInfo, orientation, priority)
+        {
+        }
+
+    }
 
 }
 

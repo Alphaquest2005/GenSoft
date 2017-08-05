@@ -1,5 +1,6 @@
 using System.ComponentModel.Composition;
 using SystemInterfaces;
+using JB.Collections.Reactive;
 using ViewModelInterfaces;
 
 namespace ViewModel.Interfaces
@@ -15,10 +16,7 @@ namespace ViewModel.Interfaces
 
     }
 
-    public interface IEntityDetailsViewModel : IViewModel
-    {
-
-    }
+   
 
     public interface IEntityCacheViewModel<TEntity> :ICacheViewModel, IEntityListViewModel<TEntity> where TEntity : IEntity//
     {
@@ -39,10 +37,7 @@ namespace ViewModel.Interfaces
         
     }
 
-    public interface IEntityDetailsViewModel<TView> : IEntityDetailsViewModel, IEntityViewModel<TView> where TView : IEntityView
-    {
 
-    }
 
 }
 

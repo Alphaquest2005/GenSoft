@@ -15,8 +15,7 @@ namespace EF.Entities
 	{
 		public virtual int PatientSyntomId { get; set; }
 		public virtual int QuestionId { get; set; }
-		public virtual int PatientVisitId { get; set; }
-
+		
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 				public virtual ICollection<Response> Response {get; set;}
@@ -25,7 +24,7 @@ namespace EF.Entities
 			// ---------Parent Relationships
 				public virtual PatientSyntoms PatientSyntoms {get; set;}
 				public virtual Questions Questions {get; set;}
-				public virtual PatientVisit PatientVisit {get; set;}
+				
 	
 
 	}

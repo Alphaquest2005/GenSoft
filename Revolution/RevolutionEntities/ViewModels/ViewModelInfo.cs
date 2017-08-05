@@ -42,7 +42,4 @@ namespace RevolutionEntities.ViewModels
         public string Symbol { get; }
         public string Description { get; }
     }
-
-
-
 }

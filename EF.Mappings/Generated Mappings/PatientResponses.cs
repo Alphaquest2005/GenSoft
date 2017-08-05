@@ -20,7 +20,7 @@ namespace EF.Mappings
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.PatientSyntomId).HasColumnName("PatientSyntomId").IsRequired();
 			entityBuilder.Property(t => t.QuestionId).HasColumnName("QuestionId").IsRequired();
-			entityBuilder.Property(t => t.PatientVisitId).HasColumnName("PatientVisitId").IsRequired();
+			
 		//-------------------Navigation Properties -------------------------------//
 				entityBuilder.HasMany(x => x.Response).WithOne(p => p.PatientResponses).HasForeignKey(c => c.PatientResponseId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.ResponseImages).WithOne(p => p.PatientResponses).HasForeignKey(c => c.PatientResponseId).OnDelete(DeleteBehavior.Restrict);

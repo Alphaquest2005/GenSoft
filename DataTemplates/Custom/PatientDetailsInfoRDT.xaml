@@ -46,7 +46,7 @@
                                HorizontalAlignment="Left"
                                VerticalAlignment="Top"
                                FontSize="26"
-                               Text="{Binding State.Value.Entity.Name,
+                               Text="{Binding PatientDetails.Name,
                                               UpdateSourceTrigger=PropertyChanged}" />
                     <TextBlock Width="120"
                                Height="24"
@@ -55,7 +55,7 @@
                                HorizontalAlignment="Left"
                                VerticalAlignment="Top"
                                FontSize="20"
-                               Text="{Binding State.Value.Entity.Age,
+                               Text="{Binding PatientDetails.Age,
                                               StringFormat=0 years,
                                               UpdateSourceTrigger=PropertyChanged}" />
                     <TextBlock Width="405"
@@ -65,7 +65,7 @@
                                HorizontalAlignment="Left"
                                VerticalAlignment="Top"
                                FontSize="16"
-                               Text="{Binding State.Value.Entity.Address,
+                               Text="{Binding PatientDetails.Address,
                                               TargetNullValue='No Address',
                                               UpdateSourceTrigger=PropertyChanged}" />
                     <TextBlock Width="159"
@@ -75,7 +75,7 @@
                                HorizontalAlignment="Left"
                                VerticalAlignment="Top"
                                FontSize="16"
-                               Text="{Binding State.Value.Entity.PhoneNumber,
+                               Text="{Binding PatientDetails.PhoneNumber,
                                               TargetNullValue='No Phone Number',
                                               UpdateSourceTrigger=PropertyChanged}" />
                     <TextBlock Width="Auto"
@@ -96,7 +96,7 @@
                                FontSize="16"
                                FontWeight="Bold"
                                Foreground="#FFFF0C00"
-                               Text="{Binding State.Value.Entity.Allergies,
+                               Text="{Binding PatientDetails.Allergies,
                                               UpdateSourceTrigger=PropertyChanged}" />
                     <TextBlock Width="Auto"
                                Height="24"
@@ -113,7 +113,7 @@
                                HorizontalAlignment="Left"
                                VerticalAlignment="Top"
                                FontSize="16"
-                               Text="{Binding State.Value.Entity.BirthCountry,
+                               Text="{Binding PatientDetails.BirthCountry,
                                               UpdateSourceTrigger=PropertyChanged}" />
                     <TextBlock Width="Auto"
                                Height="24"
@@ -130,7 +130,7 @@
                                HorizontalAlignment="Left"
                                VerticalAlignment="Top"
                                FontSize="16"
-                               Text="{Binding State.Value.Entity.Job,
+                               Text="{Binding PatientDetails.Job,
                                               UpdateSourceTrigger=PropertyChanged}" />
                     <TextBlock Width="Auto"
                                Height="24"
@@ -148,7 +148,7 @@
                                HorizontalAlignment="Left"
                                VerticalAlignment="Top"
                                FontSize="16"
-                               Text="{Binding State.Value.Entity.Religion,
+                               Text="{Binding PatientDetails.Religion,
                                               UpdateSourceTrigger=PropertyChanged}" />
                     <TextBlock Width="Auto"
                                Height="24"
@@ -158,7 +158,7 @@
                                VerticalAlignment="Top"
                                FontSize="16"
                                FontWeight="Bold"
-                               Text="{Binding State.Value.Entity.Sex,
+                               Text="{Binding PatientDetails.Sex,
                                               UpdateSourceTrigger=PropertyChanged}" />
                     <TextBlock Width="361"
                                Height="24"
@@ -167,7 +167,7 @@
                                HorizontalAlignment="Left"
                                VerticalAlignment="Top"
                                FontSize="16"
-                               Text="{Binding State.Value.Entity.EmailAddress,
+                               Text="{Binding PatientDetails.EmailAddress,
                                               TargetNullValue='No Email Address',
                                               UpdateSourceTrigger=PropertyChanged}" />
                     <Border Margin="396,85,25,165"
@@ -191,7 +191,7 @@
                             <LineBreak /><Run /></TextBlock>
                         <TextBlock Margin="0,78,0,0"
                                    FontSize="16"
-                                   Text="{Binding State.Value.Entity.PhoneNumbers.Count,
+                                   Text="{Binding PatientDetails.PhoneNumbers.Count,
                                                   StringFormat='0 Phone Numbers'}"
                                    TextWrapping="Wrap" />
                         <TextBlock Margin="0,28,10,0"
@@ -303,7 +303,7 @@
                 </TabItem.Header>
                 <Grid>
                     <ContentControl Margin="10,0,0.333,300"
-                                    Content="{Binding NonResidentInfo}"
+                                    Content="{Binding NonResident}"
                                     ContentTemplate="{DynamicResource PS-NonResidentPatientInfoTpl}" />
                     <!--<TextBlock Width="92"
                                Height="85"
@@ -319,7 +319,7 @@
                     <ListBox Height="Auto"
                              Margin="128,221,10.333,162"
                              ItemTemplate="{DynamicResource PS-ForeignPhoneNumberInfoTpl}"
-                             ItemsSource="{Binding State.Value.Entity.NonResident.PhoneNumbers}" />
+                             ItemsSource="{Binding PatientDetails.NonResident.PhoneNumbers}" />
                     <TextBlock Width="97"
                                Height="64"
                                Margin="10,374,0,0"
@@ -336,7 +336,7 @@
                     <ListBox Height="Auto"
                              Margin="117,374,21.333,9"
                              ItemTemplate="{DynamicResource PS-ForeignAddressTpl}"
-                             ItemsSource="{Binding State.Value.Entity.NonResident.Addresses}" />-->
+                             ItemsSource="{Binding PatientDetails.NonResident.Addresses}" />-->
 
                 </Grid>
             </TabItem>

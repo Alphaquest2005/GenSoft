@@ -8,7 +8,6 @@ namespace EF.Entities
     [Export(typeof(IPatientResponseInfo))]
     public partial class PatientResponseInfo : EntityView<IPatientResponses>, IPatientResponseInfo
     {
-        public int PatientVisitId { get; set; }
         public int QuestionId { get; set; }
         public int InterviewId { get; set; }
         public int PatientSyntomId { get; set; }

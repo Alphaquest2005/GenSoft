@@ -323,7 +323,7 @@ namespace RevolutionData
 
                         if(!s.ChangeTracking.ContainsKey(nameof(IPatientResponses.QuestionId)))
                                 s.ChangeTracking.Add(nameof(IPatientResponses.QuestionId), s.CurrentQuestion.Value.Id);
-                        s.ChangeTracking.Add(nameof(IPatientResponses.PatientVisitId), s.CurrentPatientVisit.Id);
+                        
                         s.ChangeTracking.Add(nameof(IPatientResponses.PatientSyntomId), s.CurrentPatientSyntom.Id);
 
                         

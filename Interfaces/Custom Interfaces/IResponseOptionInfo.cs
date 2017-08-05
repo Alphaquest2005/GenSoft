@@ -5,7 +5,7 @@ using SystemInterfaces;
 namespace Interfaces
 {
     
-    public partial interface IResponseOptionInfo : IEntityView<IResponseOptions>
+    public partial interface IResponseOptionInfo : IEntityView<IResponse>
     {
         Int32? ResponseId { get;  }
         Int32? PatientResponseId { get; }
@@ -17,5 +17,6 @@ namespace Interfaces
         int ResponseNumber { get; }
         int PatientId { get; }
         int PatientVisitId { get; }
+        int PatientSyntomId { get; }
     }
 }

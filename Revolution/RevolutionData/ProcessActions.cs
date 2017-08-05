@@ -15,6 +15,7 @@ using EventMessages.Events;
 using Interfaces;
 using RevolutionEntities;
 using RevolutionEntities.Process;
+using RevolutionEntities.ViewModels;
 using Utilities;
 using ViewModel.Interfaces;
 
@@ -211,6 +212,40 @@ namespace RevolutionData
                 expectedSourceType: new SourceType(typeof (IComplexEventService))
 
                 );
+        }
+
+        public static IProcessAction RequestCompositStateList<TEntityView>(Dictionary<string, dynamic> changes, List<ViewModelEntity> entities) where TEntityView : IEntityView
+        {
+            return new ProcessAction(
+                action: async cp =>
+                {
+                    
+                        var centity = cp.Messages.FirstOrDefault(x => x.Key.Contains("CurrentEntity")).Value?.Entity;
+                        var entitytype = centity.GetType();
+                        var ve = entities.FirstOrDefault(x => x.EntityType.IsInstanceOfType(centity));
+                        var key = ve.Property;
+                        var value = centity.GetType().GetProperty("Id").GetValue(centity);
+                        if (changes.ContainsKey(key))
+                        {
+                            changes[key] = value;
+                        }
+                        else
+                        {
+                            changes.Add(key, value);
+                        }
+                    
+                    
+                    return await Task.Run(() => new LoadEntityViewSetWithChanges<TEntityView, IExactMatch>(changes,
+                        new StateCommandInfo(cp.Actor.Process.Id, Context.EntityView.Commands.GetEntityView),
+                        cp.Actor.Process, cp.Actor.Source));
+                },
+                processInfo: cp =>
+                    new StateCommandInfo(cp.Actor.Process.Id,
+                        Context.EntityView.Commands.GetEntityView),
+                // take shortcut cud be IntialState
+                expectedSourceType: new SourceType(typeof(IComplexEventService))
+
+            );
         }
 
         public class SignIn

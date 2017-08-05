@@ -13,6 +13,7 @@ using Interfaces;
 using RevolutionData;
 using RevolutionData.Context;
 using RevolutionEntities.Process;
+using RevolutionEntities.ViewModels;
 using Utilities;
 using ViewModel.Interfaces;
 
@@ -193,6 +194,14 @@ namespace Process.WorkFlow
 
 
             ComplexActions.GetComplexAction("IntializePulledProcessState",new[]{typeof(IPatientInfo)},  new object[]{3, "Patient",}),
+
+
+            ComplexActions.RequestCompositeStateList<IResponseOptionInfo>(3, new Dictionary<string, dynamic>(), new List<ViewModelEntity>()
+            {
+                new ViewModelEntity(typeof(IQuestionInfo), "Question","QuestionId"),
+                new ViewModelEntity(typeof(IPatientSyntomInfo), "PatientSyntom","PatientSyntomId"),
+            })
+
             //ComplexActions.GetComplexAction("UpdateStateList",new[]{typeof(IPatientInfo)},  new object[]{3}),
             
             //ComplexActions.GetComplexAction("RequestPulledState",new[]{typeof(IPatientInfo), typeof(IPatientDetailsInfo) },  new object[]{3,"Patient",}),
@@ -504,6 +513,30 @@ namespace Process.WorkFlow
                     expectedSourceType: new SourceType(typeof(IComplexEventService))
 
                     );
+            }
+
+
+            public static ComplexEventAction RequestCompositeStateList<TEntityView>(int processId, Dictionary<string, dynamic>changes, List<ViewModelEntity> entities) where TEntityView : IEntityView
+            {
+                
+                return new ComplexEventAction(
+                    key: $"RequestCompositState-{string.Join(",", entities.Select(x => x.EntityType.GetFriendlyName()))}",
+                    processId: processId,
+                    actionTrigger: ActionTrigger.Any,
+                    events: new List<IProcessExpectedEvent>(entities.Select(x => (IProcessExpectedEvent)typeof(Processes.ComplexActions).GetMethod("CreateProcessExpectedEvent").MakeGenericMethod(x.EntityType).Invoke(null,new object[] { processId })).ToList()),
+                                       
+                    expectedMessageType: typeof(IProcessStateMessage<TEntityView>),
+                    action: ProcessActions.RequestCompositStateList<TEntityView>(changes,entities),
+                    processInfo: new StateCommandInfo(processId, RevolutionData.Context.Process.Commands.UpdateState));
+            }
+
+            public static IProcessExpectedEvent CreateProcessExpectedEvent<T>(int processId)
+            {
+               return new ProcessExpectedEvent<ICurrentEntityChanged<T>>(processId: processId,
+                            eventPredicate: e => e.Entity != null,
+                            processInfo: new StateEventInfo(processId, RevolutionData.Context.Process.Events.CurrentEntityChanged),
+                            expectedSourceType: new SourceType(typeof(IComplexEventService)),
+                            key: $"CurrentEntity-{typeof(T).GetFriendlyName()}");
             }
         }
     }

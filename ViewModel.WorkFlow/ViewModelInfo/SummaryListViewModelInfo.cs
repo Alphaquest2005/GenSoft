@@ -171,7 +171,7 @@ namespace RevolutionData
                 var parentCommands = new List<IViewModelEventCommand<IViewModel, IEvent>>();
                 foreach (var p in parentEntities)
                 {
-                    parentSubscriptions.AddRange(CreateParentEntitySubscibtion(processId, p.ParentType, p.CurrentParentEntity));
+                    parentSubscriptions.AddRange(CreateParentEntitySubscibtion(processId, p.ParentType, p.ViewParentProperty));
 
                 }
                 viewInfo.Subscriptions.AddRange(parentSubscriptions);
@@ -304,12 +304,5 @@ namespace RevolutionData
        
     }
 
-    public class EntityViewModelRelationship
-    {
-        public Type ParentType { get; set; }
-        public  string CurrentParentEntity { get; set; }
-        public string ParentProperty { get; set; }
-        public string ChildProperty { get; set; }
 
-    }
 }

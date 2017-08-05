@@ -23,7 +23,6 @@ namespace EF.Mappings
 			entityBuilder.Property(t => t.DoctorId).HasColumnName("DoctorId").IsRequired();
 			entityBuilder.Property(t => t.VisitTypeId).HasColumnName("VisitTypeId").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasMany(x => x.PatientResponses).WithOne(p => p.PatientVisit).HasForeignKey(c => c.PatientVisitId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.PatientResults).WithOne(p => p.PatientVisit).HasForeignKey(c => c.PatientVisitId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.PatientSyntoms).WithOne(p => p.PatientVisit).HasForeignKey(c => c.PatientVisitId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.PatientVisitVitalSigns).WithOne(p => p.PatientVisit).HasForeignKey(c => c.PatientVisitId).OnDelete(DeleteBehavior.Restrict);

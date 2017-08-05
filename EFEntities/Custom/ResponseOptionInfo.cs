@@ -6,7 +6,7 @@ using ReactiveUI;
 namespace EF.Entities
 {
     [Export(typeof(IResponseOptionInfo))]
-    public partial class ResponseOptionInfo : EntityView<IResponseOptions>, IResponseOptionInfo
+    public partial class ResponseOptionInfo : EntityView<IResponse>, IResponseOptionInfo
     {
         public int? ResponseId { get; set; }
         public int? PatientResponseId { get; set; }
@@ -18,5 +18,6 @@ namespace EF.Entities
         public int PatientId { get; set; }
         public int PatientVisitId { get; set; }
         public int QuestionResponseTypeId { get; set; }
+        public int PatientSyntomId { get; set; }
     }
 }
