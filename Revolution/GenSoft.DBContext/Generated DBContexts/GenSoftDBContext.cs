@@ -17,6 +17,7 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.Agent> Agent { get; set; }
 		public DbSet<Entities.ApplicationSetting> ApplicationSetting { get; set; }
 		public DbSet<Entities.Command> Command { get; set; }
+		public DbSet<Entities.CompositeRequest> CompositeRequest { get; set; }
 		public DbSet<Entities.DataType> DataType { get; set; }
 		public DbSet<Entities.DomainEntityCache> DomainEntityCache { get; set; }
 		public DbSet<Entities.DomainEntityType> DomainEntityType { get; set; }
@@ -63,6 +64,7 @@ namespace GenSoft.DBContexts
 				AgentMap.Map(modelBuilder.Entity<Entities.Agent>());
 				ApplicationSettingMap.Map(modelBuilder.Entity<Entities.ApplicationSetting>());
 				CommandMap.Map(modelBuilder.Entity<Entities.Command>());
+				CompositeRequestMap.Map(modelBuilder.Entity<Entities.CompositeRequest>());
 				DataTypeMap.Map(modelBuilder.Entity<Entities.DataType>());
 				DomainEntityCacheMap.Map(modelBuilder.Entity<Entities.DomainEntityCache>());
 				DomainEntityTypeMap.Map(modelBuilder.Entity<Entities.DomainEntityType>());

@@ -196,11 +196,17 @@ namespace Process.WorkFlow
             ComplexActions.GetComplexAction("IntializePulledProcessState",new[]{typeof(IPatientInfo)},  new object[]{3, "Patient",}),
 
 
-            ComplexActions.RequestCompositeStateList<IResponseOptionInfo>(3, new Dictionary<string, dynamic>(), new List<ViewModelEntity>()
-            {
-                new ViewModelEntity(typeof(IQuestionInfo), "Question","QuestionId"),
-                new ViewModelEntity(typeof(IPatientSyntomInfo), "PatientSyntom","PatientSyntomId"),
-            })
+            //ComplexActions.GetComplexAction("RequestCompositeStateList",new[]{typeof(IResponseOptionInfo) },  new object[]{3, new Dictionary<string, dynamic>(), new List<ViewModelEntity>()
+            //{
+            //    new ViewModelEntity(){EntityType = typeof(IQuestionInfo), Property = "QuestionId" },
+            //    new ViewModelEntity(){ EntityType = typeof(IPatientSyntomInfo), Property =  "PatientSyntomId"},
+            //}}),
+
+            //ComplexActions.RequestCompositeStateList<IResponseOptionInfo>(3, new Dictionary<string, dynamic>(), new List<ViewModelEntity>()
+            //{
+            //    new ViewModelEntity(typeof(IQuestionInfo), "Question","QuestionId"),
+            //    new ViewModelEntity(typeof(IPatientSyntomInfo), "PatientSyntom","PatientSyntomId"),
+            //})
 
             //ComplexActions.GetComplexAction("UpdateStateList",new[]{typeof(IPatientInfo)},  new object[]{3}),
             

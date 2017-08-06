@@ -56,6 +56,7 @@
     <Compile Include="Generated Mappings\Agent.cs" />
     <Compile Include="Generated Mappings\ApplicationSetting.cs" />
     <Compile Include="Generated Mappings\Command.cs" />
+    <Compile Include="Generated Mappings\CompositeRequest.cs" />
     <Compile Include="Generated Mappings\DataType.cs" />
     <Compile Include="Generated Mappings\DomainEntityCache.cs" />
     <Compile Include="Generated Mappings\DomainEntityType.cs" />

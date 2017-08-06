@@ -20,7 +20,7 @@ using RevolutionData;
 using RevolutionEntities.Process;
 using Utilities;
 using ViewModel.Interfaces;
-
+using RevolutionEntities.ViewModels;
 
 namespace ActorBackBone
 {
@@ -68,7 +68,8 @@ namespace ActorBackBone
                         .Include(x => x.EntityType.DomainEntityType.DomainEntityCache)
                         .Include(x => x.EntityType.EntityList)
                         .Include("ProcessStateDomainEntityTypes.ProcessState.Process")
-                        .OrderBy(x => x.Id))
+                        .OrderBy(x => x.Id)
+                        )
                     {
                         var entityType = interfaces.GetTypes().FirstOrDefault(x => x.Name == r.EntityType.Type.Name);
                         //var childExpression = typeof(ExpressionsExtensions).GetMethod("BuildForType").MakeGenericMethod(entityType)
@@ -107,7 +108,8 @@ namespace ActorBackBone
                         .Include(x => x.ChildEntity.EntityType.DomainEntityType.DomainEntityTypeSourceEntity)
                         .Include(
                             "ChildEntity.EntityType.DomainEntityType.ProcessStateDomainEntityTypes.ProcessState.Process")
-                        .OrderBy(x => x.ParentEntity.Id))
+                        .OrderBy(x => x.ParentEntity.Id)
+                        .Where(x => x.ChildEntity.EntityType.CompositeRequest == null))
                     {
                         var parentType = interfaces.GetTypes()
                             .FirstOrDefault(x => x.Name == r.ParentEntity.EntityType.Type.Name);
@@ -161,10 +163,30 @@ namespace ActorBackBone
                     }
 
 
+                    foreach (var g in ctx.EntityRelationships
+                        .Include("ChildEntity.EntityType.DomainEntityType.ProcessStateDomainEntityTypes.ProcessState.Process")
+                        .Where(x => x.ChildEntity.EntityType.CompositeRequest != null)
+                        .GroupBy(x => x.ChildEntity.EntityType).Where(g => g.Count() > 1))                        
+                    {
+
+                        foreach (var processId in g.Key.DomainEntityType
+                            .ProcessStateDomainEntityTypes.Select(x => x.ProcessState.Process.Id).Distinct())
+                        {
+                            var childType = interfaces.GetTypes().FirstOrDefault(x => x.Name == g.Key.Type.Name);
+                            var parentEntities = g.Select(p =>
+                                                new ViewModelEntity() {
+                                                    EntityType = interfaces.GetTypes().FirstOrDefault(x => x.Name == p.ParentEntity.EntityType.Type.Name),
+                                                    Property = p.ChildEntity.Name}
+                                                    ).ToList();
+
+                            res.Add(Processes.ComplexActions.GetComplexAction("RequestCompositeStateList",
+                                new[] { childType },
+                                new object[] { processId, new Dictionary<string, dynamic>(), parentEntities }));
+                        }
+                    }
 
 
-
-                }
+                    }
                 return res;
             }
             catch (Exception e)

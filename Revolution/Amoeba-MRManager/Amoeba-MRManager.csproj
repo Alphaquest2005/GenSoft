@@ -322,6 +322,7 @@
 ..\GenSoft.DBContext\Generated Mappings\Agent.cs
 ..\GenSoft.DBContext\Generated Mappings\ApplicationSetting.cs
 ..\GenSoft.DBContext\Generated Mappings\Command.cs
+..\GenSoft.DBContext\Generated Mappings\CompositeRequest.cs
 ..\GenSoft.DBContext\Generated Mappings\DataType.cs
 ..\GenSoft.DBContext\Generated Mappings\DomainEntityCache.cs
 ..\GenSoft.DBContext\Generated Mappings\DomainEntityType.cs
@@ -361,10 +362,13 @@
 ..\GenSoft.Entities\Generated Entities\Agent.cs
 ..\GenSoft.Entities\Generated Entities\ApplicationSetting.cs
 ..\GenSoft.Entities\Generated Entities\Command.cs
+..\GenSoft.Entities\Generated Entities\CompositeRequest.cs
 ..\GenSoft.Entities\Generated Entities\DataType.cs
 ..\GenSoft.Entities\Generated Entities\DomainEntityCache.cs
 ..\GenSoft.Entities\Generated Entities\DomainEntityType.cs
 ..\GenSoft.Entities\Generated Entities\DomainEntityTypeSourceEntity.cs
+..\GenSoft.Entities\Generated Entities\Entity Views\EntityListView.cs
+..\GenSoft.Entities\Generated Entities\Entity Views\EntityRelationsView.cs
 ..\GenSoft.Entities\Generated Entities\Entity Views\ProcessComplexStateView.cs
 ..\GenSoft.Entities\Generated Entities\Entity Views\ProcessInfo.cs
 ..\GenSoft.Entities\Generated Entities\Entity Views\ProcessStateView.cs
@@ -408,6 +412,7 @@
 ..\GenSoft.Interface\Generated Interfaces\Agent.cs
 ..\GenSoft.Interface\Generated Interfaces\ApplicationSetting.cs
 ..\GenSoft.Interface\Generated Interfaces\Command.cs
+..\GenSoft.Interface\Generated Interfaces\CompositeRequest.cs
 ..\GenSoft.Interface\Generated Interfaces\DataType.cs
 ..\GenSoft.Interface\Generated Interfaces\DomainEntityCache.cs
 ..\GenSoft.Interface\Generated Interfaces\DomainEntityType.cs
@@ -421,6 +426,8 @@
 ..\GenSoft.Interface\Generated Interfaces\EntityType.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityTypeAttributes.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityView.cs
+..\GenSoft.Interface\Generated Interfaces\EntityViews\EntityListView.cs
+..\GenSoft.Interface\Generated Interfaces\EntityViews\EntityRelationsView.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityViews\ProcessComplexStateView.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityViews\ProcessInfo.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityViews\ProcessStateView.cs

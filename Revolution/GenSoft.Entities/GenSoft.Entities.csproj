@@ -55,10 +55,13 @@
     <Compile Include="Generated Entities\Agent.cs" />
     <Compile Include="Generated Entities\ApplicationSetting.cs" />
     <Compile Include="Generated Entities\Command.cs" />
+    <Compile Include="Generated Entities\CompositeRequest.cs" />
     <Compile Include="Generated Entities\DataType.cs" />
     <Compile Include="Generated Entities\DomainEntityCache.cs" />
     <Compile Include="Generated Entities\DomainEntityType.cs" />
     <Compile Include="Generated Entities\DomainEntityTypeSourceEntity.cs" />
+    <Compile Include="Generated Entities\Entity Views\EntityListView.cs" />
+    <Compile Include="Generated Entities\Entity Views\EntityRelationsView.cs" />
     <Compile Include="Generated Entities\Entity Views\ProcessComplexStateView.cs" />
     <Compile Include="Generated Entities\Entity Views\ProcessInfo.cs" />
     <Compile Include="Generated Entities\Entity Views\ProcessStateView.cs" />
