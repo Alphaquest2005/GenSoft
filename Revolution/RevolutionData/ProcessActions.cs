@@ -12,7 +12,6 @@ using DomainMessages;
 using EventMessages;
 using EventMessages.Commands;
 using EventMessages.Events;
-using Interfaces;
 using RevolutionEntities;
 using RevolutionEntities.Process;
 using RevolutionEntities.ViewModels;
@@ -84,11 +83,11 @@ namespace RevolutionData
                         processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.Error),
                         expectedSourceType: new SourceType(typeof(IComplexEventService)));
 
-        public static IProcessAction IntializePulledProcessState<TEntityView>(string entityName) where TEntityView : IEntityView
+        public static IProcessAction IntializeProcessState(string entityType)
         {
             return new ProcessAction(
                 action: async cp =>
-                         await Task.Run(() => new LoadPulledEntityViewSetWithChanges<IExactMatch>(typeof(TEntityView),entityName,new Dictionary<string, dynamic>(),
+                         await Task.Run(() => new LoadEntitySetWithChanges("ExactMatch",entityType,new Dictionary<string, dynamic>(),
                             new StateCommandInfo(cp.Actor.Process.Id,
                                 Context.EntityView.Commands.LoadEntityViewSetWithChanges),
                             cp.Actor.Process, cp.Actor.Source)),
@@ -100,16 +99,16 @@ namespace RevolutionData
                 expectedSourceType: new SourceType(typeof (IComplexEventService)));
         }
 
-        public static IProcessAction UpdateEntityViewState<TEntityView>() where TEntityView : IEntityView
+        public static IProcessAction UpdateEntityViewState(string entityType) 
         {
             return new ProcessAction(
                 action: async cp =>
                     {
-                        var ps = new ProcessState<TEntityView>(
+                        var ps = new ProcessStateEntity(
                              process: cp.Actor.Process,
                              entity: cp.Messages["EntityView"].Entity,
-                             info: new StateInfo(cp.Actor.Process.Id, new State($"Loaded {typeof(TEntityView).Name} Data", $"Loaded{typeof(TEntityView).Name}", "")));
-                        return await Task.Run(() => new UpdateProcessState<TEntityView>(
+                             info: new StateInfo(cp.Actor.Process.Id, new State($"Loaded {cp.Messages["EntityView"].Entity.EntityType} Data", $"Loaded{cp.Messages["EntityView"].Entity.EntityType}", "")));
+                        return await Task.Run(() => new UpdateProcessStateEntity(
                                     state: ps,
                                     process: cp.Actor.Process,
                                     processInfo: new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),
@@ -123,18 +122,19 @@ namespace RevolutionData
                 expectedSourceType: new SourceType(typeof(IComplexEventService)));
         }
 
-        public static IProcessAction UpdateEntityViewStateList<TEntityView>() where TEntityView : IEntityView
+        public static IProcessAction UpdateEntityViewStateList(string entityType)
         {
             return new ProcessAction(
                 action: async cp =>
                     {
-                        var ps = new ProcessStateList<TEntityView>(
+                        var ps = new ProcessStateList(
                              process: cp.Actor.Process,
-                             entity: ((List<TEntityView>)cp.Messages["EntityViewSet"].EntitySet).FirstOrDefault(),
+                             entity: ((List<IDynamicEntity>)cp.Messages["EntityViewSet"].EntitySet).FirstOrDefault(),
                              entitySet: cp.Messages["EntityViewSet"].EntitySet,
-                             selectedEntities: new List<TEntityView>(),
-                             stateInfo: new StateInfo(cp.Actor.Process.Id, new State($"Loaded {typeof(TEntityView).Name} Data", $"Loaded{typeof(TEntityView).Name}", "")));
-                        return await Task.Run(() => new UpdateProcessStateList<TEntityView>(
+                             selectedEntities: new List<IDynamicEntity>(),
+                             stateInfo: new StateInfo(cp.Actor.Process.Id, new State($"Loaded {entityType} Data", $"Loaded{entityType}", "")));
+                        return await Task.Run(() => new UpdateProcessStateList(
+                                    entityType: entityType,
                                     state: ps,
                                     process: cp.Actor.Process,
                                     processInfo: new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),
@@ -148,16 +148,16 @@ namespace RevolutionData
                 expectedSourceType: new SourceType(typeof(IComplexEventService)));
         }
 
-        public static IProcessAction RequestState<TEntityView>(Expression<Func<TEntityView, object>> property) where TEntityView : IEntityView
+        public static IProcessAction RequestState(string entityType,Expression<Func<IDynamicEntity, object>> property)
         {
             return new ProcessAction(
                 action: async cp =>
                 {
 
-                    var key = default(TEntityView).GetMemberName(property);
+                    var key = default(IDynamicEntity).GetMemberName(property);
                     var value = cp.Messages["CurrentEntity"].Entity.Id;
                     var changes = new Dictionary<string, dynamic>() { { key, value } };
-                    return await Task.Run(() => new GetEntityViewWithChanges<TEntityView>(changes,
+                    return await Task.Run(() => new GetEntityWithChanges(entityType,changes,
                          new StateCommandInfo(cp.Actor.Process.Id, Context.EntityView.Commands.GetEntityView),
                          cp.Actor.Process, cp.Actor.Source));
                 },
@@ -170,28 +170,8 @@ namespace RevolutionData
                 );
         }
 
-        public static IProcessAction RequestPulledState<TEntityView>(string entityName) where TEntityView : IEntityView
-        {
-            return new ProcessAction(
-                action: async cp =>
-                {
-
-                    var value = cp.Messages["CurrentEntity"].Entity.Id;
-                    
-                    return await Task.Run(() => new GetEntityFromPatientResponse<TEntityView>(value,entityName,
-                         new StateCommandInfo(cp.Actor.Process.Id, Context.EntityView.Commands.GetEntityView),
-                         cp.Actor.Process, cp.Actor.Source));
-                },
-                processInfo: cp =>
-                    new StateCommandInfo(cp.Actor.Process.Id,
-                        Context.EntityView.Commands.GetEntityView),
-                // take shortcut cud be IntialState
-                expectedSourceType: new SourceType(typeof(IComplexEventService))
-
-                );
-        }
-
-        public static IProcessAction RequestStateList<TCurrentEntity, TEntityView>( Expression<Func<TCurrentEntity, dynamic>> currentProperty, Expression<Func<TEntityView, dynamic>> viewProperty) where TEntityView : IEntityView
+        
+        public static IProcessAction RequestStateList(string entityType, Expression<Func<IDynamicEntity, dynamic>> currentProperty, Expression<Func<IDynamicEntity, dynamic>> viewProperty) 
         {
             return new ProcessAction(
                 action: async cp =>
@@ -201,7 +181,7 @@ namespace RevolutionData
                     
                     var value = currentProperty.Compile().Invoke(cp.Messages["CurrentEntity"].Entity);
                     var changes = new Dictionary<string, dynamic>() { {key,value} };
-                    return await Task.Run(() => new LoadEntityViewSetWithChanges<TEntityView, IExactMatch>(changes,
+                    return await Task.Run(() => new LoadEntitySetWithChanges("ExactMatch", entityType,changes,
                         new StateCommandInfo(cp.Actor.Process.Id, Context.EntityView.Commands.GetEntityView),
                         cp.Actor.Process, cp.Actor.Source));
                 },
@@ -214,15 +194,15 @@ namespace RevolutionData
                 );
         }
 
-        public static IProcessAction RequestCompositStateList<TEntityView>(Dictionary<string, dynamic> changes, List<ViewModelEntity> entities) where TEntityView : IEntityView
+        public static IProcessAction RequestCompositStateList(string entityType, Dictionary<string, dynamic> changes, List<ViewModelEntity> entities)
         {
             return new ProcessAction(
                 action: async cp =>
                 {
                     
                         var centity = cp.Messages.FirstOrDefault(x => x.Key.Contains("CurrentEntity")).Value?.Entity;
-                        var entitytype = centity.GetType();
-                        var ve = entities.FirstOrDefault(x => x.EntityType.IsInstanceOfType(centity));
+                        var entitytype = centity.EntityType;
+                        var ve = entities.FirstOrDefault(x => x.EntityType == entitytype);
                         var key = ve.Property;
                         var value = centity.GetType().GetProperty("Id").GetValue(centity);
                         if (changes.ContainsKey(key))
@@ -235,7 +215,7 @@ namespace RevolutionData
                         }
                     
                     
-                    return await Task.Run(() => new LoadEntityViewSetWithChanges<TEntityView, IExactMatch>(changes,
+                    return await Task.Run(() => new LoadEntitySetWithChanges("ExactMatch",entityType,changes,
                         new StateCommandInfo(cp.Actor.Process.Id, Context.EntityView.Commands.GetEntityView),
                         cp.Actor.Process, cp.Actor.Source));
                 },
@@ -253,14 +233,14 @@ namespace RevolutionData
             public static IProcessAction IntializeSigninProcessState => new ProcessAction(
                 action: async cp =>
                 {
-                    var ps = new ProcessState<ISignInInfo>(
+                    var ps = new ProcessStateEntity(
                         process: cp.Actor.Process,
-                        entity: NullEntity<ISignInInfo>.Instance,
+                        entity: new NullEntity("ISignInInfo"),
                         info: new StateInfo(cp.Actor.Process.Id,
                             new State(name: "AwaitUserName", status: "Waiting for User Name",
                                 notes:
                                     "Please Enter your User Name. If this is your First Time Login In please Contact the Receptionist for your user info.")));
-                    return await Task.Run(() => new UpdateProcessState<ISignInInfo>(ps,
+                    return await Task.Run(() => new UpdateProcessStateEntity(ps,
                         new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),
                         cp.Actor.Process, cp.Actor.Source));
 
@@ -272,10 +252,10 @@ namespace RevolutionData
             public static IProcessAction UserNameFound => new ProcessAction(
                 action: async cp =>
                 {
-                    var ps = new ProcessState<ISignInInfo>(cp.Actor.Process, cp.Messages["UserNameFound"].Entity,
+                    var ps = new ProcessStateEntity(cp.Actor.Process, cp.Messages["UserNameFound"].Entity,
                         new StateInfo(cp.Actor.Process.Id, "WelcomeUser",
                             $"Welcome {cp.Messages["UserNameFound"].Entity.Usersignin}", "Please Enter your Password"));
-                    return await Task.Run(() => new UpdateProcessState<ISignInInfo>(ps,
+                    return await Task.Run(() => new UpdateProcessStateEntity(ps,
                         new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),
                         cp.Actor.Process, cp.Actor.Source));
                 },
@@ -286,10 +266,10 @@ namespace RevolutionData
             public static IProcessAction SetProcessStatetoValidatedUser => new ProcessAction(
                 action: async cp =>
                 {
-                    var ps = new ProcessState<ISignInInfo>(cp.Actor.Process, cp.Messages["ValidatedUser"].Entity,
+                    var ps = new ProcessStateEntity(cp.Actor.Process, cp.Messages["ValidatedUser"].Entity,
                         new StateInfo(cp.Actor.Process.Id, "UserValidated",
                             $"User: {cp.Messages["ValidatedUser"].Entity.Usersignin} Validated", "User Validated"));
-                    return await Task.Run(() => new UpdateProcessState<ISignInInfo>(ps,
+                    return await Task.Run(() => new UpdateProcessStateEntity(ps,
                         new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),
                         cp.Actor.Process, cp.Actor.Source));
                 },
@@ -313,14 +293,14 @@ namespace RevolutionData
 
     public partial class EntityComplexActions
     {
-        public static ComplexEventAction GetComplexAction(string method, Type[] genericTypes, object[] args)
+        public static ComplexEventAction GetComplexAction(string method,  object[] args)
         {
-            return (ComplexEventAction)typeof(EntityComplexActions).GetMethod(method).MakeGenericMethod(genericTypes).Invoke(null, args);
+            return (ComplexEventAction)typeof(EntityComplexActions).GetMethod(method).Invoke(null, args);
         }
-        public static ComplexEventAction IntializeCache<TEntity>(int processId) where TEntity : IEntity
+        public static ComplexEventAction IntializeCache(int processId, string entityType) 
         {
             return new ComplexEventAction(
-                key: $"{typeof(TEntity).Name}EntityCache-1",
+                key: $"{entityType}EntityCache-1",
                 processId: processId,
                 events: new List<IProcessExpectedEvent>
                 {
@@ -332,10 +312,10 @@ namespace RevolutionData
                         expectedSourceType: new SourceType(typeof (IComplexEventService)))
 
                 },
-                expectedMessageType: typeof(IProcessStateMessage<IInterviewInfo>),
+                expectedMessageType: typeof(IProcessStateMessage),
                 action: new ProcessAction(
                     action: async cp =>
-                        await Task.Run(() => new LoadEntitySet<TEntity>(
+                        await Task.Run(() => new LoadEntitySet(entityType,
                             new StateCommandInfo(3, Context.EntityView.Commands.LoadEntityViewSetWithChanges),
                             cp.Actor.Process, cp.Actor.Source)),
                     processInfo:
@@ -352,44 +332,5 @@ namespace RevolutionData
 
     }
 
-    public partial class EntityViewComplexActions
-    {
-        public static ComplexEventAction GetComplexAction(string method, Type[] genericTypes, object[] args)
-        {
-            return (ComplexEventAction)typeof(EntityViewComplexActions).GetMethod(method).MakeGenericMethod(genericTypes).Invoke(null, args);
-        }
-        public static ComplexEventAction IntializeCache<TView>(int processId) where TView : IEntityView
-        {
-            return new ComplexEventAction(
-                key: $"{typeof(TView).Name}EntityViewCache-1",
-                processId: processId,
-                events: new List<IProcessExpectedEvent>
-                {
-                        new ProcessExpectedEvent(key: "ProcessStarted",
-                            processId: processId,
-                            eventPredicate: e => e != null,
-                            eventType: typeof (ISystemProcessStarted),
-                            processInfo: new StateEventInfo(processId, Context.Process.Events.ProcessStarted),
-                            expectedSourceType: new SourceType(typeof (IComplexEventService)))
-
-                },
-                expectedMessageType: typeof(IProcessStateMessage<IInterviewInfo>),
-                action: new ProcessAction(
-                    action: async cp =>
-                        await Task.Run(() => new LoadEntityViewSetWithChanges<TView, IExactMatch>(new Dictionary<string, dynamic>(),
-                            new StateCommandInfo(3, Context.EntityView.Commands.LoadEntityViewSetWithChanges),
-                            cp.Actor.Process, cp.Actor.Source)),
-                    processInfo:
-                    cp =>
-                        new StateCommandInfo(cp.Actor.Process.Id,
-                            Context.EntityView.Commands.LoadEntityViewSetWithChanges),
-                    // take shortcut cud be IntialState
-                    expectedSourceType: new SourceType(typeof(IComplexEventService))),
-                processInfo: new StateCommandInfo(processId, Context.Process.Commands.CreateState));
-        }
-
-
-       
-
-    }
+   
 }

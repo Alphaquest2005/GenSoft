@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using SystemInterfaces;
 using Actor.Interfaces;
 using Domain.Interfaces;
-using Interfaces;
 using RevolutionEntities.Process;
 using ViewModel.Interfaces;
 
@@ -117,7 +116,7 @@ namespace RevolutionData
                         expectedSourceType: new SourceType(typeof (IComplexEventService)))
 
                 },
-                expectedMessageType: typeof (IProcessStateMessage<ISignInInfo>),
+                expectedMessageType: typeof (IProcessStateMessage),
                 action: ProcessActions.SignIn.IntializeSigninProcessState,
                 processInfo: new StateCommandInfo(2, RevolutionData.Context.Process.Commands.CreateState)),
             new ComplexEventAction(
@@ -125,15 +124,15 @@ namespace RevolutionData
                 processId: 2,
                 events: new List<IProcessExpectedEvent>
                 {
-                    new ProcessExpectedEvent<IEntityViewWithChangesFound<ISignInInfo>>(
+                    new ProcessExpectedEvent<IEntityWithChangesFound>(
                         "UserNameFound", 2,
                         e =>
                             e.Entity != null && e.Changes.Count == 1 &&
-                            e.Changes.ContainsKey(nameof(ISignInInfo.Usersignin)),
+                            e.Changes.ContainsKey("Usersignin"),
                         expectedSourceType: new SourceType(typeof (IEntityViewRepository)),
                         processInfo: new StateEventInfo(2, RevolutionData.Context.User.Events.UserNameFound))
                 },
-                expectedMessageType: typeof (IProcessStateMessage<ISignInInfo>),
+                expectedMessageType: typeof (IProcessStateMessage),
                 action: ProcessActions.SignIn.UserNameFound,
                 processInfo: new StateCommandInfo(2, RevolutionData.Context.Process.Commands.UpdateState)),
             new ComplexEventAction(
@@ -141,16 +140,16 @@ namespace RevolutionData
                 processId: 2,
                 events: new List<IProcessExpectedEvent>
                 {
-                    new ProcessExpectedEvent<IEntityViewWithChangesFound<ISignInInfo>>(processId: 2,
+                    new ProcessExpectedEvent<IEntityWithChangesFound>(processId: 2,
                         eventPredicate:
                             e =>
                                 e.Entity != null && e.Changes.Count == 2 &&
-                                e.Changes.ContainsKey(nameof(ISignInInfo.Password)),
+                                e.Changes.ContainsKey("Password"),
                         processInfo: new StateEventInfo(2, RevolutionData.Context.User.Events.UserFound),
                         expectedSourceType: new SourceType(typeof (IEntityViewRepository)),
                         key: "ValidatedUser")
                 },
-                expectedMessageType: typeof (IProcessStateMessage<ISignInInfo>),
+                expectedMessageType: typeof (IProcessStateMessage),
                 action: ProcessActions.SignIn.SetProcessStatetoValidatedUser,
                 processInfo: new StateCommandInfo(2, RevolutionData.Context.Process.Commands.UpdateState)),
             new ComplexEventAction(
@@ -158,11 +157,11 @@ namespace RevolutionData
                 processId: 2,
                 events: new List<IProcessExpectedEvent>
                 {
-                    new ProcessExpectedEvent<IEntityViewWithChangesFound<ISignInInfo>>(processId: 2,
+                    new ProcessExpectedEvent<IEntityWithChangesFound>(processId: 2,
                         eventPredicate:
                             e =>
                                 e.Entity != null && e.Changes.Count == 2 &&
-                                e.Changes.ContainsKey(nameof(ISignInInfo.Password)),
+                                e.Changes.ContainsKey("Password"),
                         processInfo: new StateEventInfo(2, RevolutionData.Context.User.Events.UserFound),
                         expectedSourceType: new SourceType(typeof (IEntityViewRepository)),
                         key: "ValidatedUser")

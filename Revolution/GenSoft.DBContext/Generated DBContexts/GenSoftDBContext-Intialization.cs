@@ -91,6 +91,7 @@ namespace GenSoft.DBContexts
 						Insert Into dbo.[Type] (Id,Name) Values('34','IDoctorInfo')
 						Insert Into dbo.[Type] (Id,Name) Values('35','IPatientSyntoms')
 						Insert Into dbo.[Type] (Id,Name) Values('36','IResponseOptionInfo')
+						Insert Into dbo.[Type] (Id,Name) Values('37','IPatient')
 					SET IDENTITY_INSERT dbo.[Type] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 						Insert Into dbo.[EntityType] (Id) Values('1')
@@ -126,6 +127,7 @@ namespace GenSoft.DBContexts
 						Insert Into dbo.[EntityType] (Id) Values('34')
 						Insert Into dbo.[EntityType] (Id) Values('35')
 						Insert Into dbo.[EntityType] (Id) Values('36')
+						Insert Into dbo.[EntityType] (Id) Values('37')
 ");
 			//No test data for ActionEntityType
 			//No test data for ActionEntityType
@@ -145,8 +147,9 @@ namespace GenSoft.DBContexts
 			//No test data for Message
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[Entity] ON
-						Insert Into dbo.[Entity] (Id,EntityTypeId,Name) Values('1','1','IServiceManager')
-						Insert Into dbo.[Entity] (Id,EntityTypeId,Name) Values('2','3','IScreenModel')
+						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('1','1',cast((select Value from AmoebaDB.dbo.TestValues where Id = 115897) as varbinary(max)))
+						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('2','3',cast((select Value from AmoebaDB.dbo.TestValues where Id = 115900) as varbinary(max)))
+						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('3','37',cast((select Value from AmoebaDB.dbo.TestValues where Id = 115903) as varbinary(max)))
 					SET IDENTITY_INSERT dbo.[Entity] OFF");
 			//No test data for Message
 				Instance.Database.ExecuteSqlCommand(@"
@@ -258,115 +261,72 @@ namespace GenSoft.DBContexts
 						Insert Into dbo.[DataType] (Id) Values('7')
 ");
 				Instance.Database.ExecuteSqlCommand(@"
-					SET IDENTITY_INSERT dbo.[EntityTypeAttributes] ON
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','1','Id','4')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('6','2','Name','4')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('6','3','Address','4')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('6','4','PhoneNumber','4')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('6','5','Age','4')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('6','6','Sex','4')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('6','7','BirthCountry','4')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('6','8','Email','4')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('7','9','BirthDate','4')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','10','Id','8')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('6','11','EmailAddress','8')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('6','12','Marital Status','8')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','13','Id','9')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','14','Id','10')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','15','Id','11')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','16','Id','12')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','17','Id','13')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','18','Id','14')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','19','Id','15')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','20','Id','16')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','21','Id','17')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','22','Id','18')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','23','Id','19')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','24','Id','20')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','25','Id','21')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','26','Id','22')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','27','Id','23')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','28','Id','24')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','29','Id','25')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','30','Id','26')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','31','Id','27')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','32','Id','28')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','33','Id','29')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','34','Id','30')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','35','Id','31')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','36','Id','32')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','37','Id','33')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','38','Id','34')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','39','Id','35')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','40','PatientId','14')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','41','SyntomId','15')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','42','SyntomId','17')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','43','InterviewId','21')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','44','InterviewId','24')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','45','PatientVisitId','15')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','46','MedicalSystemId','20')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','47','Id','36')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','48','PatientSyntomId','36')
-						Insert Into dbo.[EntityTypeAttributes] (DataTypeId,Id,Name,EntityTypeId) Values('5','49','QuestionId','36')
-					SET IDENTITY_INSERT dbo.[EntityTypeAttributes] OFF");
+					SET IDENTITY_INSERT dbo.[Attributes] ON
+						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('1','Id','5')
+						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('2','FirstName','6')
+						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('3','Address','6')
+						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('4','PhoneNumber','6')
+						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('6','Sex','6')
+						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('7','BirthCountry','6')
+						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('8','Email','6')
+						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('9','BirthDate','7')
+						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('11','EmailAddress','6')
+						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('12','Marital Status','6')
+						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('40','PatientId','5')
+						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('41','SyntomId','5')
+						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('43','InterviewId','5')
+						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('45','PatientVisitId','5')
+						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('46','MedicalSystemId','5')
+						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('48','PatientSyntomId','5')
+						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('49','QuestionId','5')
+						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('50','LastName','6')
+					SET IDENTITY_INSERT dbo.[Attributes] OFF");
+				Instance.Database.ExecuteSqlCommand(@"
+					SET IDENTITY_INSERT dbo.[EntityAttribute] ON
+						Insert Into dbo.[EntityAttribute] (AttributeId,Id,EntityId,Value) Values('1','1','3','1')
+						Insert Into dbo.[EntityAttribute] (AttributeId,Id,EntityId,Value) Values('2','2','3','Jonali')
+						Insert Into dbo.[EntityAttribute] (AttributeId,Id,EntityId,Value) Values('50','3','3','St. Louis')
+						Insert Into dbo.[EntityAttribute] (AttributeId,Id,EntityId,Value) Values('3','4','3','Fort Jeudy')
+						Insert Into dbo.[EntityAttribute] (AttributeId,Id,EntityId,Value) Values('4','5','3','456-4724')
+						Insert Into dbo.[EntityAttribute] (AttributeId,Id,EntityId,Value) Values('9','6','3','3/16/1994')
+						Insert Into dbo.[EntityAttribute] (AttributeId,Id,EntityId,Value) Values('6','7','3','Female')
+					SET IDENTITY_INSERT dbo.[EntityAttribute] OFF");
+			//No test data for EntityAttributeChanges
+			//No test data for EntityAttributeChanges
 				Instance.Database.ExecuteSqlCommand(@"
 						Insert Into dbo.[EntityId] (Id) Values('1')
-						Insert Into dbo.[EntityId] (Id) Values('10')
-						Insert Into dbo.[EntityId] (Id) Values('13')
-						Insert Into dbo.[EntityId] (Id) Values('14')
-						Insert Into dbo.[EntityId] (Id) Values('15')
-						Insert Into dbo.[EntityId] (Id) Values('16')
-						Insert Into dbo.[EntityId] (Id) Values('17')
-						Insert Into dbo.[EntityId] (Id) Values('18')
-						Insert Into dbo.[EntityId] (Id) Values('19')
-						Insert Into dbo.[EntityId] (Id) Values('20')
-						Insert Into dbo.[EntityId] (Id) Values('21')
-						Insert Into dbo.[EntityId] (Id) Values('22')
-						Insert Into dbo.[EntityId] (Id) Values('23')
-						Insert Into dbo.[EntityId] (Id) Values('24')
-						Insert Into dbo.[EntityId] (Id) Values('25')
-						Insert Into dbo.[EntityId] (Id) Values('26')
-						Insert Into dbo.[EntityId] (Id) Values('27')
-						Insert Into dbo.[EntityId] (Id) Values('28')
-						Insert Into dbo.[EntityId] (Id) Values('29')
-						Insert Into dbo.[EntityId] (Id) Values('30')
-						Insert Into dbo.[EntityId] (Id) Values('31')
-						Insert Into dbo.[EntityId] (Id) Values('32')
-						Insert Into dbo.[EntityId] (Id) Values('33')
-						Insert Into dbo.[EntityId] (Id) Values('34')
-						Insert Into dbo.[EntityId] (Id) Values('35')
-						Insert Into dbo.[EntityId] (Id) Values('36')
-						Insert Into dbo.[EntityId] (Id) Values('37')
-						Insert Into dbo.[EntityId] (Id) Values('38')
-						Insert Into dbo.[EntityId] (Id) Values('39')
-						Insert Into dbo.[EntityId] (Id) Values('47')
 ");
 				Instance.Database.ExecuteSqlCommand(@"
 						Insert Into dbo.[EntityName] (Id) Values('2')
 ");
 				Instance.Database.ExecuteSqlCommand(@"
+					SET IDENTITY_INSERT dbo.[EntityTypeAttributes] ON
+						Insert Into dbo.[EntityTypeAttributes] (AttributeId,Id,EntityTypeId) Values('1','1','37')
+						Insert Into dbo.[EntityTypeAttributes] (AttributeId,Id,EntityTypeId) Values('2','2','37')
+						Insert Into dbo.[EntityTypeAttributes] (AttributeId,Id,EntityTypeId) Values('3','3','37')
+						Insert Into dbo.[EntityTypeAttributes] (AttributeId,Id,EntityTypeId) Values('4','4','37')
+						Insert Into dbo.[EntityTypeAttributes] (AttributeId,Id,EntityTypeId) Values('6','6','37')
+						Insert Into dbo.[EntityTypeAttributes] (AttributeId,Id,EntityTypeId) Values('7','7','37')
+						Insert Into dbo.[EntityTypeAttributes] (AttributeId,Id,EntityTypeId) Values('8','8','37')
+						Insert Into dbo.[EntityTypeAttributes] (AttributeId,Id,EntityTypeId) Values('9','9','37')
+						Insert Into dbo.[EntityTypeAttributes] (AttributeId,Id,EntityTypeId) Values('11','11','37')
+						Insert Into dbo.[EntityTypeAttributes] (AttributeId,Id,EntityTypeId) Values('12','12','37')
+						Insert Into dbo.[EntityTypeAttributes] (AttributeId,Id,EntityTypeId) Values('1','13','4')
+						Insert Into dbo.[EntityTypeAttributes] (AttributeId,Id,EntityTypeId) Values('2','14','4')
+						Insert Into dbo.[EntityTypeAttributes] (AttributeId,Id,EntityTypeId) Values('3','15','4')
+						Insert Into dbo.[EntityTypeAttributes] (AttributeId,Id,EntityTypeId) Values('4','16','4')
+						Insert Into dbo.[EntityTypeAttributes] (AttributeId,Id,EntityTypeId) Values('1','18','8')
+						Insert Into dbo.[EntityTypeAttributes] (AttributeId,Id,EntityTypeId) Values('2','19','8')
+						Insert Into dbo.[EntityTypeAttributes] (AttributeId,Id,EntityTypeId) Values('3','20','8')
+						Insert Into dbo.[EntityTypeAttributes] (AttributeId,Id,EntityTypeId) Values('4','21','8')
+						Insert Into dbo.[EntityTypeAttributes] (AttributeId,Id,EntityTypeId) Values('6','23','8')
+						Insert Into dbo.[EntityTypeAttributes] (AttributeId,Id,EntityTypeId) Values('7','24','8')
+						Insert Into dbo.[EntityTypeAttributes] (AttributeId,Id,EntityTypeId) Values('8','25','8')
+						Insert Into dbo.[EntityTypeAttributes] (AttributeId,Id,EntityTypeId) Values('9','26','8')
+					SET IDENTITY_INSERT dbo.[EntityTypeAttributes] OFF");
+				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[EntityRelationships] ON
-						Insert Into dbo.[EntityRelationships] (Id,ParentEntityId,ChildEntityId) Values('40','24','44')
-						Insert Into dbo.[EntityRelationships] (Id,ParentEntityId,ChildEntityId) Values('41','1','16')
-						Insert Into dbo.[EntityRelationships] (Id,ParentEntityId,ChildEntityId) Values('42','1','17')
-						Insert Into dbo.[EntityRelationships] (Id,ParentEntityId,ChildEntityId) Values('44','18','45')
-						Insert Into dbo.[EntityRelationships] (Id,ParentEntityId,ChildEntityId) Values('45','20','19')
-						Insert Into dbo.[EntityRelationships] (Id,ParentEntityId,ChildEntityId) Values('46','39','19')
-						Insert Into dbo.[EntityRelationships] (Id,ParentEntityId,ChildEntityId) Values('47','41','42')
-						Insert Into dbo.[EntityRelationships] (Id,ParentEntityId,ChildEntityId) Values('48','22','21')
-						Insert Into dbo.[EntityRelationships] (Id,ParentEntityId,ChildEntityId) Values('49','24','43')
-						Insert Into dbo.[EntityRelationships] (Id,ParentEntityId,ChildEntityId) Values('50','28','25')
-						Insert Into dbo.[EntityRelationships] (Id,ParentEntityId,ChildEntityId) Values('51','26','25')
-						Insert Into dbo.[EntityRelationships] (Id,ParentEntityId,ChildEntityId) Values('52','29','28')
-						Insert Into dbo.[EntityRelationships] (Id,ParentEntityId,ChildEntityId) Values('53','23','24')
-						Insert Into dbo.[EntityRelationships] (Id,ParentEntityId,ChildEntityId) Values('55','1','13')
-						Insert Into dbo.[EntityRelationships] (Id,ParentEntityId,ChildEntityId) Values('56','1','14')
-						Insert Into dbo.[EntityRelationships] (Id,ParentEntityId,ChildEntityId) Values('57','1','15')
-						Insert Into dbo.[EntityRelationships] (Id,ParentEntityId,ChildEntityId) Values('59','1','40')
-						Insert Into dbo.[EntityRelationships] (Id,ParentEntityId,ChildEntityId) Values('60','1','10')
-						Insert Into dbo.[EntityRelationships] (Id,ParentEntityId,ChildEntityId) Values('61','21','46')
-						Insert Into dbo.[EntityRelationships] (Id,ParentEntityId,ChildEntityId) Values('64','19','48')
-						Insert Into dbo.[EntityRelationships] (Id,ParentEntityId,ChildEntityId) Values('65','28','49')
+						Insert Into dbo.[EntityRelationships] (Id,ParentEntityId,ChildEntityId) Values('67','13','18')
 					SET IDENTITY_INSERT dbo.[EntityRelationships] OFF");
 			//No test data for MessageType
 			//No test data for MessageType
@@ -398,7 +358,7 @@ namespace GenSoft.DBContexts
 						Insert Into dbo.[DomainEntityTypeSourceEntity] (Id,SourceEntity) Values('12','NonResident')
 						Insert Into dbo.[DomainEntityTypeSourceEntity] (Id,SourceEntity) Values('13','Vitals')
 ");
-			//No test data for EntityAttribute
+			//No test data for EntityAttributeChanges
 				Instance.Database.ExecuteSqlCommand(@"
 						Insert Into dbo.[EntityList] (Id) Values('4')
 						Insert Into dbo.[EntityList] (Id) Values('14')
@@ -408,21 +368,21 @@ namespace GenSoft.DBContexts
 						Insert Into dbo.[EntityList] (Id) Values('24')
 ");
 				Instance.Database.ExecuteSqlCommand(@"
-						Insert Into dbo.[EntityView] (Id) Values('4')
-						Insert Into dbo.[EntityView] (Id) Values('8')
-						Insert Into dbo.[EntityView] (Id) Values('9')
-						Insert Into dbo.[EntityView] (Id) Values('10')
-						Insert Into dbo.[EntityView] (Id) Values('11')
-						Insert Into dbo.[EntityView] (Id) Values('12')
-						Insert Into dbo.[EntityView] (Id) Values('13')
-						Insert Into dbo.[EntityView] (Id) Values('14')
-						Insert Into dbo.[EntityView] (Id) Values('15')
-						Insert Into dbo.[EntityView] (Id) Values('17')
-						Insert Into dbo.[EntityView] (Id) Values('20')
-						Insert Into dbo.[EntityView] (Id) Values('21')
-						Insert Into dbo.[EntityView] (Id) Values('22')
-						Insert Into dbo.[EntityView] (Id) Values('24')
-						Insert Into dbo.[EntityView] (Id) Values('34')
+						Insert Into dbo.[EntityView] (Id,BaseEntityTypeId) Values('4','37')
+						Insert Into dbo.[EntityView] (Id,BaseEntityTypeId) Values('8','37')
+						Insert Into dbo.[EntityView] (Id,BaseEntityTypeId) Values('9','37')
+						Insert Into dbo.[EntityView] (Id,BaseEntityTypeId) Values('10','37')
+						Insert Into dbo.[EntityView] (Id,BaseEntityTypeId) Values('11','37')
+						Insert Into dbo.[EntityView] (Id,BaseEntityTypeId) Values('12','37')
+						Insert Into dbo.[EntityView] (Id,BaseEntityTypeId) Values('13','37')
+						Insert Into dbo.[EntityView] (Id,BaseEntityTypeId) Values('14','37')
+						Insert Into dbo.[EntityView] (Id,BaseEntityTypeId) Values('15','37')
+						Insert Into dbo.[EntityView] (Id,BaseEntityTypeId) Values('17','37')
+						Insert Into dbo.[EntityView] (Id,BaseEntityTypeId) Values('20','37')
+						Insert Into dbo.[EntityView] (Id,BaseEntityTypeId) Values('21','37')
+						Insert Into dbo.[EntityView] (Id,BaseEntityTypeId) Values('22','37')
+						Insert Into dbo.[EntityView] (Id,BaseEntityTypeId) Values('24','37')
+						Insert Into dbo.[EntityView] (Id,BaseEntityTypeId) Values('34','37')
 ");
 			//No test data for Event
 			//No test data for Message

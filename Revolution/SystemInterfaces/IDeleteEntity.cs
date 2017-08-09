@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace SystemInterfaces
 {
     
-    public interface IDeleteEntity<out TEntity> : IProcessSystemMessage, IEntityRequest<TEntity> where TEntity:IEntity
+    public interface IDeleteEntity : IEntityRequest
     {
         int EntityId { get; }
     }

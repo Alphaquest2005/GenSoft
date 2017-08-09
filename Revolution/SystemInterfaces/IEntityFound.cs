@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace SystemInterfaces
 {
-    public interface IEntityFound<out TEntity> : IProcessSystemMessage where TEntity : IEntityId
+    public interface IEntityFound : IEntityRequest
     {
-        TEntity Entity { get; }
+        IDynamicEntity Entity { get; }
     }
 }

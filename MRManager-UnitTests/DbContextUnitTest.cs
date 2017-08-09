@@ -47,8 +47,8 @@ namespace MRManager_UnitTests
         [TestMethod]
         public void EntityViewGetEntityWithChanges()
         {
-            IEntityViewWithChangesFound<ISignInInfo> signonInfo = null;
-            EventMessageBus.Current.GetEvent<IEntityViewWithChangesFound<ISignInInfo>>(Source).Subscribe(x => signonInfo = x);
+            IEntityWithChangesFound signonInfo = null;
+            EventMessageBus.Current.GetEvent<IEntityWithChangesFound>(Source).Subscribe(x => signonInfo = x);
             EventMessageBus.Current.GetEvent<IProcessEventFailure>(Source)
                 .Subscribe(x => Debugger.Log(0, "Test", x.Exception.Message + ":-:" + x.Exception.StackTrace));
             var msg = new GetEntityViewWithChanges<ISignInInfo>(new Dictionary<string, dynamic>() { { "Usersignin", "joe" } }, new StateCommandInfo(testProcess.Id, RevolutionData.Context.EntityView.Commands.GetEntityView), testProcess, Source);
@@ -60,8 +60,8 @@ namespace MRManager_UnitTests
         [TestMethod]
         public void LoadEntityViewSetWithChanges_With_Changes()
         {
-            IEntityViewSetWithChangesLoaded<ISignInInfo> signonInfo = null;
-            EventMessageBus.Current.GetEvent<IEntityViewSetWithChangesLoaded<ISignInInfo>>(Source).Subscribe(x => signonInfo = x);
+            IEntitySetWithChangesLoaded<ISignInInfo> signonInfo = null;
+            EventMessageBus.Current.GetEvent<IEntitySetWithChangesLoaded<ISignInInfo>>(Source).Subscribe(x => signonInfo = x);
             EventMessageBus.Current.GetEvent<IProcessEventFailure>(Source)
                 .Subscribe(x => Debugger.Log(0, "Test", x.Exception.Message + ":-:" + x.Exception.StackTrace));
             var msg = new LoadEntityViewSetWithChanges<ISignInInfo,IExactMatch>(new Dictionary<string, dynamic>() { { "Usersignin", "joe" } }, new StateCommandInfo(testProcess.Id, RevolutionData.Context.EntityView.Commands.GetEntityView), testProcess, Source);
@@ -73,8 +73,8 @@ namespace MRManager_UnitTests
         [TestMethod]
         public void LoadEntityViewSetWithChanges_With_No_Changes()
         {
-            IEntityViewSetWithChangesLoaded<IPatientInfo> signonInfo = null;
-            EventMessageBus.Current.GetEvent<IEntityViewSetWithChangesLoaded<IPatientInfo>>(Source).Subscribe(x => signonInfo = x);
+            IEntitySetWithChangesLoaded<IPatientInfo> signonInfo = null;
+            EventMessageBus.Current.GetEvent<IEntitySetWithChangesLoaded<IPatientInfo>>(Source).Subscribe(x => signonInfo = x);
             EventMessageBus.Current.GetEvent<IProcessEventFailure>(Source)
                 .Subscribe(x => Debugger.Log(0, "Test", x.Exception.Message + ":-:" + x.Exception.StackTrace));
             var msg = new LoadEntityViewSetWithChanges<IPatientInfo,IExactMatch>(new Dictionary<string, dynamic>(), new StateCommandInfo(testProcess.Id, RevolutionData.Context.EntityView.Commands.GetEntityView), testProcess, Source);

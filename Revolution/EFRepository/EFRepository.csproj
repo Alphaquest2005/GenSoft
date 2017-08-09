@@ -62,24 +62,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseRepository.cs" />
-    <Compile Include="PulledEntityDataContext.cs" />
-    <Compile Include="EF7DataContextBase.cs" />
+    <Compile Include="DynamicDataContext.cs" />
     <Compile Include="EntityRepository.cs" />
-    <Compile Include="EntityViewDataContext.cs" />
-    <Compile Include="EntityViewRepository.cs" />
     <Compile Include="MyLoggingProvider.cs" />
-    <Compile Include="EF7DataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Expressions\Expressions.csproj">
-      <Project>{2ab54ce2-e09b-40b4-9cbf-184b3e770b0d}</Project>
-      <Name>Expressions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Interfaces\Interfaces.csproj">
-      <Project>{AD573873-C8E6-4EA3-93F5-0D39A92FC9F6}</Project>
-      <Name>Interfaces</Name>
-    </ProjectReference>
     <ProjectReference Include="..\BootStrapper\BootStrapper.csproj">
       <Project>{5dfeea8b-baba-4544-bf36-0a76a0d10c1b}</Project>
       <Name>BootStrapper</Name>

@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 namespace SystemInterfaces
 {
     
-    public interface ILoadEntitySetWithFilterWithIncludes<TEntity> : IProcessSystemMessage, IEntityRequest<TEntity> where TEntity : IEntity
+    public interface ILoadEntitySetWithFilterWithIncludes : IProcessSystemMessage, IEntityRequest
     {
-        List<Expression<Func<TEntity, bool>>> Filter { get; }
-        List<Expression<Func<TEntity, object>>> Includes { get; }
+        List<Expression<Func<IDynamicEntity, bool>>> Filter { get; }
+        List<Expression<Func<IDynamicEntity, object>>> Includes { get; }
     }
 }

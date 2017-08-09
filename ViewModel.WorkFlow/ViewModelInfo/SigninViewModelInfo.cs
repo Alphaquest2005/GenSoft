@@ -4,7 +4,6 @@ using System.Linq;
 using System.Reactive;
 using System.Reactive.Linq;
 using SystemInterfaces;
-using Interfaces;
 using ReactiveUI;
 using RevolutionEntities.Process;
 using RevolutionEntities.ViewModels;
@@ -20,8 +19,9 @@ namespace RevolutionData
             new ViewInfo("", "", ""),
             new List<IViewModelEventSubscription<IViewModel, IEvent>>
             {
-                new ViewEventSubscription<ISigninViewModel, IProcessStateMessage<ISignInInfo>>(
-                    2, e => e != null, new List<Func<ISigninViewModel, IProcessStateMessage<ISignInInfo>, bool>>(),
+                new ViewEventSubscription<ISigninViewModel, IProcessStateMessage>(
+                    2, e => e != null && e.State.Entity.EntityType == "ISignInInfo",
+                    new List<Func<ISigninViewModel, IProcessStateMessage, bool>>(),
                     (v, e) =>
                     {
                         if(v.State.Value == e.State) return;
@@ -34,31 +34,31 @@ namespace RevolutionData
                    
 
 
-                new ViewEventPublication<ISigninViewModel, IViewStateLoaded<ISigninViewModel,IProcessState<ISignInInfo>>>(
+                new ViewEventPublication<ISigninViewModel, IViewStateLoaded<ISigninViewModel,IProcessState>>(
                     key:"ILoginModelViewStateLoaded", 
                     subject:v => v.State,
                     subjectPredicate:new List<Func<ISigninViewModel, bool>>
                     {
-                        v => v.State != null
+                        v => v.State != null 
                     },
                     messageData:s => new ViewEventPublicationParameter(new object[] {s,s.State.Value},new StateEventInfo(s.Process.Id, Context.View.Events.ProcessStateLoaded),s.Process,s.Source))
             }, new List<IViewModelEventCommand<IViewModel,IEvent>>
             {
                    
-                new ViewEventCommand<ISigninViewModel, IGetEntityViewWithChanges<ISignInInfo>>(
+                new ViewEventCommand<ISigninViewModel, IGetEntityWithChanges>(
                     key:"UserName",
                     subject:v => v.ChangeTracking.DictionaryChanges,
                     commandPredicate: new List<Func<ISigninViewModel, bool>>
                     {
-                        v => v.ChangeTracking.Keys.Contains(nameof(ISignInInfo.Usersignin)) && v.ChangeTracking.Keys.Count == 1
+                        v => v.ChangeTracking.Keys.Contains("Usersignin") && v.ChangeTracking.Keys.Count == 1
                     },
                     messageData: s => new ViewEventCommandParameter(new object[] {s.ChangeTracking.ToDictionary(x => x.Key, x => x.Value)},new StateCommandInfo(s.Process.Id, Context.EntityView.Commands.GetEntityView),s.Process,s.Source)),
 
-                new ViewEventCommand<ISigninViewModel, IGetEntityViewWithChanges<ISignInInfo>>(
+                new ViewEventCommand<ISigninViewModel, IGetEntityWithChanges>(
                     key:"ValidateUserInfo",
                     commandPredicate:new List<Func<ISigninViewModel, bool>>
                     {
-                        v => v.ChangeTracking.Keys.Contains(nameof(ISignInInfo.Usersignin))
+                        v => v.ChangeTracking.Keys.Contains("Usersignin")
                                                     
                     },
                     subject:s => Observable.Empty<ReactiveCommand<IViewModel, Unit>>(),

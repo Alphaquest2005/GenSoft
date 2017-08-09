@@ -92,7 +92,6 @@ C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\BootStrappe
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\CommonMessages.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\Domain.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\EventMessages.dll
-C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\RevolutionData.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\RevolutionEntities.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\SystemInterfaces.dll
@@ -102,7 +101,6 @@ C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\ComponentMo
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\DomainMessages.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\Common.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\Domain.Interfaces.pdb
-C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\Actor.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\BootStrapper.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\CommonMessages.pdb

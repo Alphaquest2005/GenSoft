@@ -23,7 +23,7 @@ public class EntityViewValidationSetTemplate : CSharpTemplate
 #>
 
 using FluentValidation;
-using Interfaces;
+
 
 namespace ValidationSets
 {

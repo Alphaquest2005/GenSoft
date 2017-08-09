@@ -13,15 +13,17 @@ namespace GenSoft.Entities
 {
 	public partial class EntityAttribute: BaseEntity, IEntityAttribute
 	{
+		public virtual int AttributeId { get; set; }
 		public virtual int EntityId { get; set; }
-		public virtual string Name { get; set; }
 		public virtual string Value { get; set; }
-		public virtual int DataTypeId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
+				public virtual ICollection<EntityAttributeChanges> Predecessors {get; set;}
+				public virtual ICollection<EntityAttributeChanges> Successors {get; set;}
 		
 			// ---------Parent Relationships
+				public virtual Attributes Attributes {get; set;}
 				public virtual Entity Entity {get; set;}
 	
 

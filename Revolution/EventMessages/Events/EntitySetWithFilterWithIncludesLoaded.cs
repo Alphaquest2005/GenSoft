@@ -8,18 +8,21 @@ using CommonMessages;
 namespace EventMessages.Events
 {
 
-    [Export(typeof(IEntitySetWithFilterWithIncludesLoaded<>))]
-    public class EntitySetWithFilterWithIncludesLoaded<T> : ProcessSystemMessage, IEntitySetWithFilterWithIncludesLoaded<T> where T : IEntity
+    [Export(typeof(IEntitySetWithFilterWithIncludesLoaded))]
+    public class EntitySetWithFilterWithIncludesLoaded : ProcessSystemMessage, IEntitySetWithFilterWithIncludesLoaded
     {
         public EntitySetWithFilterWithIncludesLoaded() { }
-        public IList<T> Entities { get; }
-        public IList<Expression<Func<T, dynamic>>> Includes { get; }
+        public IList<IDynamicEntity> Entities { get; }
+        public IList<Expression<Func<IDynamicEntity, dynamic>>> Includes { get; }
         //Todo: include filter just to match name
-        public EntitySetWithFilterWithIncludesLoaded(IList<T> entities, IList<Expression<Func<T, dynamic>>> includes, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
+        public EntitySetWithFilterWithIncludesLoaded(string entityType, IList<IDynamicEntity> entities, IList<Expression<Func<IDynamicEntity, dynamic>>> includes, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
         {
             Entities = entities;
             Includes = includes;
-            
+            EntityType = entityType;
+
         }
+
+        public string EntityType { get; }
     }
 }

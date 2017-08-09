@@ -33,7 +33,7 @@ using EventAggregator;
 using Entity.Expressions;
 using EF.Entities;
 using EventMessages;
-using Interfaces;
+
 using Utilities;
 
 namespace ViewModels

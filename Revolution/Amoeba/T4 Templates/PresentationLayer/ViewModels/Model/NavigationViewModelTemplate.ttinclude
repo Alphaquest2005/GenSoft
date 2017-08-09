@@ -32,7 +32,7 @@ using Core.Common.UI;
 using CommonMessages;
 using EventAggregator;
 using EventMessages;
-using Interfaces;
+
 using Utilities;
 
 namespace ViewModels

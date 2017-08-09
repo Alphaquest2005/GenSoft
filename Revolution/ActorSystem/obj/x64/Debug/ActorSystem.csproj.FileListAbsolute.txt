@@ -196,13 +196,9 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\RevolutionL
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\BootStrapper.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\CommonMessages.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\EFRepository.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\DomainMessages.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Domain.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\ComponentModel.Composition.Hosting.Extension.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\System.Linq.Dynamic.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Expressions.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\EF.Entities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Actor.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Common.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\DataServices.pdb
@@ -222,13 +218,9 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\RevolutionL
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\BootStrapper.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\CommonMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\EFRepository.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\DomainMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Domain.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\ComponentModel.Composition.Hosting.Extension.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\System.Linq.Dynamic.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Expressions.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\EF.Entities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\obj\x64\Debug\ActorSystem.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\obj\x64\Debug\ActorSystem.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\obj\x64\Debug\ActorSystem.pdb
@@ -243,6 +235,5 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\EventAggreg
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\RevolutionData.dll.config
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\ViewMessages.dll.config
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\EFRepository.dll.config
-C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Expressions.dll.config
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\DynamicExpresso.Core.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\DynamicExpresso.Core.pdb

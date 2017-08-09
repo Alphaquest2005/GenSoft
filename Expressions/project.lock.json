@@ -252,16 +252,6 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1"
       },
-      "EF.Entities/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "Common": "1.0.0",
-          "Interfaces": "1.0.0",
-          "SystemInterfaces": "1.0.0",
-          "Utilities": "1.0.0"
-        }
-      },
       "Interfaces/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
@@ -544,16 +534,6 @@
       "ComponentModel.Composition.Hosting.Extension/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1"
-      },
-      "EF.Entities/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "Common": "1.0.0",
-          "Interfaces": "1.0.0",
-          "SystemInterfaces": "1.0.0",
-          "Utilities": "1.0.0"
-        }
       },
       "Interfaces/1.0.0": {
         "type": "project",
@@ -1073,11 +1053,6 @@
       "path": "../Revolution/MefGeneric-master/MEFGeneric Preview 9/src/ComponentModel.Composition.Hosting.Extension/project.json",
       "msbuildProject": "../Revolution/MefGeneric-master/MEFGeneric Preview 9/src/ComponentModel.Composition.Hosting.Extension/ComponentModel.Composition.Hosting.Extension.csproj"
     },
-    "EF.Entities/1.0.0": {
-      "type": "project",
-      "path": "../EFEntities/project.json",
-      "msbuildProject": "../EFEntities/EF.Entities.csproj"
-    },
     "Interfaces/1.0.0": {
       "type": "project",
       "path": "../Interfaces/project.json",
@@ -1118,9 +1093,6 @@
       "frameworks": {
         "net461": {
           "projectReferences": {
-            "C:\\Prism\\GitRepositiory\\GenSoft\\EFEntities\\EF.Entities.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\EFEntities\\EF.Entities.csproj"
-            },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Interfaces\\Interfaces.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Interfaces\\Interfaces.csproj"
             },

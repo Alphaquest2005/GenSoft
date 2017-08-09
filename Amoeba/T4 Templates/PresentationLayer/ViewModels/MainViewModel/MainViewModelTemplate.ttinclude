@@ -21,7 +21,7 @@ using CommonMessages;
 using Core.Common.UI;
 using EventAggregator;
 using EventMessages;
-using Interfaces;
+
 using ViewMessages;
 
 namespace ViewModels

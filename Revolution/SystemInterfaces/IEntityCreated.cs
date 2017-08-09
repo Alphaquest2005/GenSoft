@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace SystemInterfaces
 {
     
-    public interface IEntityCreated<out TEntity>:IProcessSystemMessage where TEntity : IEntity
+    public interface IEntityCreated: IEntityRequest
     {
-        TEntity Entity { get; }
+        IDynamicEntity Entity { get; }
     }
 }

@@ -318,7 +318,6 @@
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
-          "Interfaces": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.103-pre",
           "JB.Common.Reactive": "0.8.103-pre",
           "ReactiveProperty": "2.9.0",
@@ -339,7 +338,6 @@
           "Common": "1.0.0",
           "Converters": "1.0.0",
           "Core.Common.UI": "1.0.0",
-          "Interfaces": "1.0.0",
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0",
@@ -353,8 +351,6 @@
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
           "Common": "1.0.0",
-          "EF.Entities": "1.0.0",
-          "Interfaces": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
       },
@@ -362,7 +358,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
-          "Interfaces": "1.0.0",
+          "Common": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
       },
@@ -372,18 +368,7 @@
         "dependencies": {
           "CommonMessages": "1.0.0",
           "Domain.Interfaces": "1.0.0",
-          "Interfaces": "1.0.0",
           "SystemInterfaces": "1.0.0"
-        }
-      },
-      "EF.Entities/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "Common": "1.0.0",
-          "Interfaces": "1.0.0",
-          "SystemInterfaces": "1.0.0",
-          "Utilities": "1.0.0"
         }
       },
       "EventAggregator/1.0.0": {
@@ -403,22 +388,10 @@
           "Actor.Interfaces": "1.0.0",
           "Akka": "1.2.0",
           "CommonMessages": "1.0.0",
-          "Interfaces": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
       },
-      "Expressions/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "Common": "1.0.0",
-          "EF.Entities": "1.0.0",
-          "Interfaces": "1.0.0",
-          "SystemInterfaces": "1.0.0",
-          "morelinq": "2.4.1"
-        }
-      },
-      "Interfaces/1.0.0": {
+      "GenSoft.Interface/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
@@ -434,7 +407,6 @@
           "CommonMessages": "1.0.0",
           "Domain.Interfaces": "1.0.0",
           "EventMessages": "1.0.0",
-          "Interfaces": "1.0.0",
           "RevolutionData": "1.0.0",
           "RevolutionEntities": "1.0.0",
           "System.Collections.Immutable": "1.3.1",
@@ -453,7 +425,6 @@
           "Domain.Interfaces": "1.0.0",
           "DomainMessages": "1.0.0",
           "EventMessages": "1.0.0",
-          "Interfaces": "1.0.0",
           "RevolutionEntities": "1.0.0",
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
@@ -470,6 +441,7 @@
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
           "EventAggregator": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
           "System.Collections.Immutable": "1.3.1",
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
@@ -500,7 +472,6 @@
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
           "FluentValidation.Net35": "1.0.1",
-          "Interfaces": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
       },
@@ -521,7 +492,6 @@
         "dependencies": {
           "CommonMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
-          "Interfaces": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.103-pre",
           "ReactiveProperty": "2.9.0",
           "SystemInterfaces": "1.0.0",
@@ -536,9 +506,7 @@
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "DomainMessages": "1.0.0",
-          "EF.Entities": "1.0.0",
           "EventMessages": "1.0.0",
-          "Interfaces": "1.0.0",
           "JB.Common": "0.7.0",
           "JB.Common.Collections": "0.7.0",
           "JB.Common.Collections.Reactive": "0.7.0",
@@ -564,11 +532,8 @@
           "CommonMessages": "1.0.0",
           "Core.Common.UI": "1.0.0",
           "DesignTimeData": "1.0.0",
-          "EF.Entities": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
-          "Expressions": "1.0.0",
-          "Interfaces": "1.0.0",
           "Process.WorkFlow": "1.0.0",
           "RevolutionData": "1.0.0",
           "RevolutionEntities": "1.0.0",
@@ -902,7 +867,6 @@
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
-          "Interfaces": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.103-pre",
           "JB.Common.Reactive": "0.8.103-pre",
           "ReactiveProperty": "2.9.0",
@@ -923,7 +887,6 @@
           "Common": "1.0.0",
           "Converters": "1.0.0",
           "Core.Common.UI": "1.0.0",
-          "Interfaces": "1.0.0",
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0",
@@ -937,8 +900,6 @@
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
           "Common": "1.0.0",
-          "EF.Entities": "1.0.0",
-          "Interfaces": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
       },
@@ -946,7 +907,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
-          "Interfaces": "1.0.0",
+          "Common": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
       },
@@ -956,18 +917,7 @@
         "dependencies": {
           "CommonMessages": "1.0.0",
           "Domain.Interfaces": "1.0.0",
-          "Interfaces": "1.0.0",
           "SystemInterfaces": "1.0.0"
-        }
-      },
-      "EF.Entities/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "Common": "1.0.0",
-          "Interfaces": "1.0.0",
-          "SystemInterfaces": "1.0.0",
-          "Utilities": "1.0.0"
         }
       },
       "EventAggregator/1.0.0": {
@@ -987,22 +937,10 @@
           "Actor.Interfaces": "1.0.0",
           "Akka": "1.2.0",
           "CommonMessages": "1.0.0",
-          "Interfaces": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
       },
-      "Expressions/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "Common": "1.0.0",
-          "EF.Entities": "1.0.0",
-          "Interfaces": "1.0.0",
-          "SystemInterfaces": "1.0.0",
-          "morelinq": "2.4.1"
-        }
-      },
-      "Interfaces/1.0.0": {
+      "GenSoft.Interface/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
@@ -1018,7 +956,6 @@
           "CommonMessages": "1.0.0",
           "Domain.Interfaces": "1.0.0",
           "EventMessages": "1.0.0",
-          "Interfaces": "1.0.0",
           "RevolutionData": "1.0.0",
           "RevolutionEntities": "1.0.0",
           "System.Collections.Immutable": "1.3.1",
@@ -1037,7 +974,6 @@
           "Domain.Interfaces": "1.0.0",
           "DomainMessages": "1.0.0",
           "EventMessages": "1.0.0",
-          "Interfaces": "1.0.0",
           "RevolutionEntities": "1.0.0",
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
@@ -1054,6 +990,7 @@
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
           "EventAggregator": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
           "System.Collections.Immutable": "1.3.1",
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
@@ -1084,7 +1021,6 @@
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
           "FluentValidation.Net35": "1.0.1",
-          "Interfaces": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
       },
@@ -1105,7 +1041,6 @@
         "dependencies": {
           "CommonMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
-          "Interfaces": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.103-pre",
           "ReactiveProperty": "2.9.0",
           "SystemInterfaces": "1.0.0",
@@ -1120,9 +1055,7 @@
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "DomainMessages": "1.0.0",
-          "EF.Entities": "1.0.0",
           "EventMessages": "1.0.0",
-          "Interfaces": "1.0.0",
           "JB.Common": "0.7.0",
           "JB.Common.Collections": "0.7.0",
           "JB.Common.Collections.Reactive": "0.7.0",
@@ -1148,11 +1081,8 @@
           "CommonMessages": "1.0.0",
           "Core.Common.UI": "1.0.0",
           "DesignTimeData": "1.0.0",
-          "EF.Entities": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
-          "Expressions": "1.0.0",
-          "Interfaces": "1.0.0",
           "Process.WorkFlow": "1.0.0",
           "RevolutionData": "1.0.0",
           "RevolutionEntities": "1.0.0",
@@ -1774,11 +1704,6 @@
       "path": "../DomainMessages/project.json",
       "msbuildProject": "../DomainMessages/DomainMessages.csproj"
     },
-    "EF.Entities/1.0.0": {
-      "type": "project",
-      "path": "../EFEntities/project.json",
-      "msbuildProject": "../EFEntities/EF.Entities.csproj"
-    },
     "EventAggregator/1.0.0": {
       "type": "project",
       "path": "../Revolution/EventAggregator/project.json",
@@ -1789,15 +1714,10 @@
       "path": "../Revolution/EventMessages/project.json",
       "msbuildProject": "../Revolution/EventMessages/EventMessages.csproj"
     },
-    "Expressions/1.0.0": {
+    "GenSoft.Interface/1.0.0": {
       "type": "project",
-      "path": "../Expressions/project.json",
-      "msbuildProject": "../Expressions/Expressions.csproj"
-    },
-    "Interfaces/1.0.0": {
-      "type": "project",
-      "path": "../Interfaces/project.json",
-      "msbuildProject": "../Interfaces/Interfaces.csproj"
+      "path": "../Revolution/GenSoft.Interface/project.json",
+      "msbuildProject": "../Revolution/GenSoft.Interface/GenSoft.Interface.csproj"
     },
     "Process.WorkFlow/1.0.0": {
       "type": "project",

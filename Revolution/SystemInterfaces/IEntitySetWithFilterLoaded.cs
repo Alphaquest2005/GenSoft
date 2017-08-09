@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 namespace SystemInterfaces
 {
     
-    public interface IEntitySetWithFilterLoaded<TEntity> : IProcessSystemMessage where TEntity : IEntity
+    public interface IEntitySetWithFilterLoaded : IEntityRequest
     {
-        IList<TEntity> Entities { get; }
+        IList<IDynamicEntity> Entities { get; }
     }
 }

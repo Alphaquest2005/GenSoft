@@ -7,7 +7,7 @@ namespace SystemInterfaces
     
     public interface IEntityId
     {
-        int Id { get; set; }
+        int Id { get; }
         DateTime EntryDateTime { get; }
     }
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace SystemInterfaces
 {
     
-    public interface IGetEntityWithChanges<out TEntity> : IProcessSystemMessage, IEntityRequest<TEntity> where TEntity:IEntity
+    public interface IGetEntityWithChanges : IEntityRequest
     {
         Dictionary<string, object> Changes { get; }
     }

@@ -35,7 +35,7 @@ using DataEntites;
 using <#=AppName#>.Entities;
 using EventAggregator;
 using EventMessages;
-using Interfaces;
+
 using JB.Collections.Reactive;
 using ReactiveUI;
 using System.Linq;

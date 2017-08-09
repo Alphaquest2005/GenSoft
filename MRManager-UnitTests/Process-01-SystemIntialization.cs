@@ -76,7 +76,7 @@ namespace MRManager_UnitTests
         private IRequestProcessState process2StateRequest;
         private List<IProcessStateMessage<ISignInInfo>> process2StateMessageList = new List<IProcessStateMessage<ISignInInfo>>();
         private IGetEntityViewWithChanges<ISignInInfo> UserNameEntityChanges;
-        private IEntityViewWithChangesFound<ISignInInfo> userFound;
+        private IEntityWithChangesFound userFound;
         private IUserValidated userValidated;
         private IServiceStarted<IEntityViewDataServiceActor<IGetEntityViewWithChanges<ISignInInfo>>> getEntityChangesActor;
         private static ConcurrentQueue<IProcessEventFailure> EventFailures = new ConcurrentQueue<IProcessEventFailure>();

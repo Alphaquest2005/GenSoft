@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace SystemInterfaces
 {
     
-    public interface IEntityDeleted<TEntity>:IProcessSystemMessage where TEntity:IEntity
+    public interface IEntityDeleted: IEntityRequest
     {
-        int EntityId { get; }
+        IDynamicEntity Entity { get; }
     }
 
 }

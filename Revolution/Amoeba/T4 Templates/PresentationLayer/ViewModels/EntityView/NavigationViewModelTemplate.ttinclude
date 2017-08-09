@@ -34,7 +34,7 @@ using EventAggregator;
 using Entity.Expressions;
 using <#=AppName#>.Entities;
 using EventMessages;
-using Interfaces;
+
 using Utilities;
 
 namespace ViewModels

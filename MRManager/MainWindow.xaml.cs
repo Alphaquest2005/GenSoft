@@ -6,8 +6,7 @@ using System.Windows;
 using System.Windows.Input;
 using SystemInterfaces;
 using Core.Common.UI;
-using EF.DBContexts;
-using EF.Entities;
+
 using RevolutionLogger;
 using ViewModel.WorkFlow;
 using Application = System.Windows.Application;
@@ -29,11 +28,10 @@ namespace MRManager
 
             Task.Run(() =>
 		    {
-                var dbContextAssembly = new MRManagerDBContext().GetType().Assembly;
-                var entitiesAssembly = new EFEntity<IEntity>().GetType().Assembly;
+
 		        var interfacesAssembly = AppDomain.CurrentDomain.GetAssemblies()
 		            .FirstOrDefault(x => x.FullName.StartsWith("Interfaces"));
-                BootStrapper.BootStrapper.Instance.StartUp( true, Process.WorkFlow.MachineInfoData.MachineInfos, Process.WorkFlow.Processes.ProcessInfos, Process.WorkFlow.Processes.ProcessComplexEvents, ProcessViewModels.ProcessViewModelInfos, dbContextAssembly,entitiesAssembly, interfacesAssembly);
+                BootStrapper.BootStrapper.Instance.StartUp( true, Process.WorkFlow.MachineInfoData.MachineInfos, Process.WorkFlow.Processes.ProcessInfos, Process.WorkFlow.Processes.ProcessComplexEvents, ProcessViewModels.ProcessViewModelInfos);
 		    }).ConfigureAwait(false);
 		    
 

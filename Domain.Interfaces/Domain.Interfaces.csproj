@@ -63,9 +63,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
-      <Project>{ad573873-c8e6-4ea3-93f5-0d39a92fc9f6}</Project>
-      <Name>Interfaces</Name>
+    <ProjectReference Include="..\Revolution\Common\Common.csproj">
+      <Project>{CB6D5FBC-0C13-437D-B4F3-A0EC4D5673B3}</Project>
+      <Name>Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\Revolution\SystemInterfaces\SystemInterfaces.csproj">
       <Project>{e3842263-e081-49ba-a1b4-bbe82b24e2db}</Project>

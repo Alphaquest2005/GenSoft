@@ -7,7 +7,13 @@ using System.Threading.Tasks;
 namespace SystemInterfaces
 {
     
-    public interface ILoadEntitySet<out TEntity> : IProcessSystemMessage, IEntityRequest<TEntity> where TEntity:IEntity
+    public interface ILoadEntitySet :  IEntityRequest
     {
+       
+    }
+    public interface ILoadEntitySetWithChanges : IEntityRequest
+    {
+        string MatchType { get; }
+        Dictionary<string, object> Changes { get; }
     }
 }

@@ -68,7 +68,6 @@
     <Compile Include="IEntityViewSetWithChangesLoaded.cs" />
     <Compile Include="ICurrentEntityChanged.cs" />
     <Compile Include="IDataRequest.cs" />
-    <Compile Include="IEntityViewRequest.cs" />
     <Compile Include="IStartSystemProcess.cs" />
     <Compile Include="IProcessStateUpddated.cs" />
     <Compile Include="IRequestProcessLog.cs" />
@@ -81,8 +80,6 @@
     <Compile Include="IEntityUpdated.cs" />
     <Compile Include="IEntityId.cs" />
     <Compile Include="IEntitySetWithFilterWithIncludesLoaded.cs" />
-    <Compile Include="IGetEntityViewById.cs" />
-    <Compile Include="IGetEntityViewWithChanges.cs" />
     <Compile Include="ILoadEntitySetWithFilterWithIncludes.cs" />
     <Compile Include="ILoadEntitySetWithFilter.cs" />
     <Compile Include="IEntitySetWithFilterLoaded.cs" />
@@ -92,9 +89,7 @@
     <Compile Include="IDeleteEntity.cs" />
     <Compile Include="ICreateEntity.cs" />
     <Compile Include="IEntityCreated.cs" />
-    <Compile Include="IEntityView.cs" />
     <Compile Include="IProcessEventFailure.cs" />
-    <Compile Include="IEntityWithChangesFound.cs" />
     <Compile Include="IGetEntityWithChanges.cs" />
     <Compile Include="IProcessSource.cs" />
     <Compile Include="IProcessStateMessage.cs" />
@@ -120,7 +115,6 @@
     <Compile Include="ISystemMessage.cs" />
     <Compile Include="IMessage.cs" />
     <Compile Include="IDataService.cs" />
-    <Compile Include="IEntityProcess.cs" />
     <Compile Include="IEvent.cs" />
     <Compile Include="IEventPublication.cs" />
     <Compile Include="IPerson.cs" />

@@ -4,16 +4,17 @@ using CommonMessages;
 
 namespace EventMessages.Events
 {
-    [Export(typeof(IEntityFound<>))]
-    public class EntityFound<T> : ProcessSystemMessage, IEntityFound<T> where T : IEntityId
+    [Export(typeof(IEntityFound))]
+    public class EntityFound : ProcessSystemMessage, IEntityFound
     {
         public EntityFound() { }
-        public EntityFound(T entity, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
+        public EntityFound(IDynamicEntity entity, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
         {
             Entity = entity;
         }
 
-        public T Entity { get; }
+        public IDynamicEntity Entity { get; }
 
+        public string EntityType => Entity.EntityType;
     }
 }

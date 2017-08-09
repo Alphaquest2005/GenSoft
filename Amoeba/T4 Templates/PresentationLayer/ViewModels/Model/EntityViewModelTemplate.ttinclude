@@ -27,7 +27,7 @@ using System;
 using Core.Common.UI;
 using EF.Entities;
 
-using Interfaces;
+
 using Utilities;
 
 namespace ViewModels

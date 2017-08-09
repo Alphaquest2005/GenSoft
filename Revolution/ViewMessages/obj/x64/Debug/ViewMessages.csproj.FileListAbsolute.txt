@@ -65,12 +65,10 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\CommonMess
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\SystemInterfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\Utilities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\ViewModel.Interfaces.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\CommonMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\SystemInterfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\Utilities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\ViewModel.Interfaces.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\obj\x64\Debug\ViewMessages.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\obj\x64\Debug\ViewMessages.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\obj\x64\Debug\ViewMessages.pdb

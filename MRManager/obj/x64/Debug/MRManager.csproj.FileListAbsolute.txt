@@ -243,15 +243,10 @@ C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\DataTemplates.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\DesignTimeData.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\Domain.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\DomainMessages.dll
-C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\EF.DBContext.dll
-C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\EF.Entities.dll
-C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\EF.Mappings.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\EFRepository.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\EventAggregator.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\EventMessages.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\ExpressionComputations.dll
-C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\Expressions.dll
-C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\LinqSpecs.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\Process.WorkFlow.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\PropertyExtensions.dll
@@ -277,11 +272,6 @@ C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\DataTemplates.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\DesignTimeData.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\Domain.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\DomainMessages.pdb
-C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\EF.Mappings.pdb
-C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\EF.DBContext.pdb
-C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\EF.Entities.pdb
-C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\Expressions.pdb
-C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\Resources.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\Actor.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\ActorSystem.pdb
@@ -339,9 +329,6 @@ C:\Prism\GitRepositiory\GenSoft\MRManager\obj\x64\Debug\MRManager.csproj.Generat
 C:\Prism\GitRepositiory\GenSoft\MRManager\obj\x64\Debug\MRManager.exe
 C:\Prism\GitRepositiory\GenSoft\MRManager\obj\x64\Debug\MRManager.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\System.ValueTuple.dll
-C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\EF.Mappings.dll.config
-C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\EF.DBContext.dll.config
-C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\Expressions.dll.config
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\Resources.dll.config
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\ActorSystem.dll.config
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\BootStrapper.dll.config

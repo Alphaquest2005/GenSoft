@@ -9,20 +9,20 @@ using ViewModel.Interfaces;
 namespace RevolutionData
 {
     
-    public class EntityViewCacheViewModelInfo<TView> where TView : IEntityView
+    public class EntityViewCacheViewModelInfo
     {
-        public static ViewModelInfo CacheViewModel(int processId)
+        public static ViewModelInfo CacheViewModel(int processId, string entityType)
         {
             return new ViewModelInfo
                 (
                 processId: processId,
-                viewInfo: new ViewInfo($"{typeof(TView).Name}CacheViewModel", "", ""),
+                viewInfo: new ViewInfo($"{entityType}CacheViewModel", "", ""),
                 subscriptions: new List<IViewModelEventSubscription<IViewModel, IEvent>>
                 {
-                    new ViewEventSubscription<IEntityViewCacheViewModel<TView>, IEntityViewSetWithChangesLoaded<TView>>(
+                    new ViewEventSubscription<IEntityListCacheViewModel, IEntitySetWithChangesLoaded>(
                         processId: processId,
-                        eventPredicate: e => e.Changes.Count == 0,
-                        actionPredicate: new List<Func<IEntityViewCacheViewModel<TView>, IEntityViewSetWithChangesLoaded<TView>, bool>>(),
+                        eventPredicate: e => e.Changes.Count == 0 && e.EntitySet.First().EntityType == entityType,
+                        actionPredicate: new List<Func<IEntityListCacheViewModel, IEntitySetWithChangesLoaded, bool>>(),
                         action: (v, e) =>
                         {
                             if (Application.Current == null)
@@ -35,10 +35,10 @@ namespace RevolutionData
                             }
                         }),
 
-                    new ViewEventSubscription<IEntityViewCacheViewModel<TView>, IEntityViewWithChangesUpdated<TView>>(
+                    new ViewEventSubscription<IEntityListCacheViewModel, IEntityWithChangesUpdated>(
                         processId: processId,
-                        eventPredicate: e => e.Changes.Count > 0,
-                        actionPredicate: new List<Func<IEntityViewCacheViewModel<TView>, IEntityViewWithChangesUpdated<TView>, bool>>(),
+                        eventPredicate: e => e.Changes.Count > 0 && e.Entity.EntityType == entityType,
+                        actionPredicate: new List<Func<IEntityListCacheViewModel, IEntityWithChangesUpdated, bool>>(),
                         action: (v, e) =>
                         {
                             if (Application.Current == null)
@@ -51,23 +51,25 @@ namespace RevolutionData
                             }
                         }),
 
-                     new ViewEventSubscription<IEntityViewCacheViewModel<TView>, ICurrentEntityChanged<TView>>(
+                     new ViewEventSubscription<IEntityListCacheViewModel, ICurrentEntityChanged>(
                             3,
-                            e => e != null,
-                            new List<Func<IEntityViewCacheViewModel<TView>, ICurrentEntityChanged<TView>, bool>>(),
+                            e => e != null && e.Entity.EntityType == entityType,
+                            new List<Func<IEntityListCacheViewModel, ICurrentEntityChanged, bool>>(),
                             (v,e) => v.CurrentEntity.Value = e.Entity),
 
 
                 },
                 publications: new List<IViewModelEventPublication<IViewModel, IEvent>> {},
                 commands: new List<IViewModelEventCommand<IViewModel, IEvent>> {},
-                viewModelType: typeof (IEntityViewCacheViewModel<TView>),
+                viewModelType: typeof (IEntityListCacheViewModel),
                 orientation: typeof (ICacheViewModel),
                 priority:0);
         }
 
-        private static void UpdateEntitySet(IEntityViewCacheViewModel<TView> cacheViewModel,
-            IEntityViewWithChangesUpdated<TView> msg)
+
+
+        private static void UpdateEntitySet(IEntityListCacheViewModel cacheViewModel,
+            IEntityWithChangesUpdated msg)
         {
             var existingEntity = cacheViewModel.EntitySet.Value.FirstOrDefault(x => x.Id == msg.Entity.Id);
             if (existingEntity != null) cacheViewModel.EntitySet.Value.Remove(existingEntity);
@@ -77,7 +79,7 @@ namespace RevolutionData
 
         }
 
-        private static void ReloadEntitySet(IEntityViewCacheViewModel<TView> v, IEntityViewSetWithChangesLoaded<TView> e)
+        private static void ReloadEntitySet(IEntityListCacheViewModel v, IEntitySetWithChangesLoaded e)
         {
             v.EntitySet.Value.Clear();
             v.EntitySet.Value.AddRange(e.EntitySet);

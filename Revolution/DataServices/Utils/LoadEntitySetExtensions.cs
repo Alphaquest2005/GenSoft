@@ -10,26 +10,24 @@ namespace DataServices.Actors
     {
 
 
-        public static void LoadEntitySet<TEntity>(this ILoadEntitySet<TEntity> msg)
-            where TEntity : class, IEntity
+        public static void LoadEntitySet(this ILoadEntitySetWithChanges msg)
         {
 
-            EF7DataContext<TEntity>.LoadEntitySet(msg);
+            DynamicDataContext.LoadEntitySet(msg);
 
         }
 
-        public static void LoadEntitySet<TEntity>(this ILoadEntitySetWithFilter<TEntity> msg)
-            where TEntity : class, IEntity
+        public static void LoadEntitySet(this ILoadEntitySetWithFilter msg)
         {
 
-            EF7DataContext<TEntity>.LoadEntitySetWithFilter(msg);
+            DynamicDataContext.LoadEntitySetWithFilter(msg);
 
         }
 
-        public static void LoadEntitySet<TEntity>(this ILoadEntitySetWithFilterWithIncludes<TEntity> msg) where TEntity : class, IEntity
+        public static void LoadEntitySet(this ILoadEntitySetWithFilterWithIncludes msg) 
         {
 
-            EF7DataContext<TEntity>.LoadEntitySetWithFilterWithIncludes(msg);
+            DynamicDataContext.LoadEntitySetWithFilterWithIncludes(msg);
 
         }
     }

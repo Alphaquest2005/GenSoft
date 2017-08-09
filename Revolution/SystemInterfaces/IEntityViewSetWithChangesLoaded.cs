@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 namespace SystemInterfaces
 {
     
-    public interface IEntityViewSetWithChangesLoaded<TView> : IProcessSystemMessage where TView : IEntityView
+    public interface IEntitySetWithChangesLoaded : IEntityRequest
     {
-        List<TView> EntitySet { get; }
+        List<IDynamicEntity> EntitySet { get; }
         Dictionary<string, object> Changes { get; }
     }
 

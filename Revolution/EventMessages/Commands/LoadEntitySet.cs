@@ -5,16 +5,16 @@ using CommonMessages;
 
 namespace EventMessages.Commands
 {
-    [Export(typeof(ILoadEntitySet<>))]
+    [Export(typeof(ILoadEntitySetWithChanges))]
 
 
-    public class LoadEntitySet<TEntity> : ProcessSystemMessage, ILoadEntitySet<TEntity> where TEntity : IEntity
-    {
+    public class LoadEntitySet : ProcessSystemMessage, ILoadEntitySet
+    { 
         public LoadEntitySet() { }
-        public LoadEntitySet(IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
+        public LoadEntitySet(string entityType, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
         {
-            
+            EntityType = entityType;
         }
-        public Type ViewType => typeof(TEntity);
+        public string EntityType { get; }
     }
 }

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace SystemInterfaces
 {
-    public interface IEntityNotFound
+    public interface IEntityNotFound: IEntityRequest
     {
-        int EntityId { get; }
+        IDynamicEntity Entity { get; }
     }
 }

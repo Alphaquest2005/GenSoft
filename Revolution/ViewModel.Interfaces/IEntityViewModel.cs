@@ -9,29 +9,29 @@ using ViewModel.Interfaces;
 namespace ViewModelInterfaces
 {
     
-    public interface IEntityViewModel<TEntity>: IViewModel where TEntity:IEntityId
+    public interface IEntityViewModel: IViewModel 
     {
-        ReactiveProperty<IProcessState<TEntity>> State { get; }
+        ReactiveProperty<IProcessState> State { get; }
         ObservableDictionary<string, dynamic> ChangeTracking { get; }
 
         void NotifyPropertyChanged(string propertyName);
 
     }
 
-    public interface IEntityDetailsViewModel<TEntity> : IViewModel
+    public interface IEntityDetailsViewModel : IViewModel
     {
         ObservableDictionary<string, dynamic> ChangeTracking { get; }
         void NotifyPropertyChanged(string propertyName);
     }
 
 
-    public interface IEntityListViewModel<TEntity> : IEntityViewModel<TEntity> where TEntity : IEntityId
+    public interface IEntityListViewModel : IEntityViewModel
     {
-        IEntityListViewModel<TEntity> Instance { get; }
-        new ReactiveProperty<IProcessStateList<TEntity>> State { get; }
-        ReactiveProperty<TEntity> CurrentEntity { get; }
-        ReactiveProperty<ObservableList<TEntity>> EntitySet { get; }
-        ReactiveProperty<ObservableList<TEntity>> SelectedEntities { get; }
+        IEntityListViewModel Instance { get; }
+        new ReactiveProperty<IProcessStateList> State { get; }
+        ReactiveProperty<IDynamicEntity> CurrentEntity { get; }
+        ReactiveProperty<ObservableList<IDynamicEntity>> EntitySet { get; }
+        ReactiveProperty<ObservableList<IDynamicEntity>> SelectedEntities { get; }
         
     }
 

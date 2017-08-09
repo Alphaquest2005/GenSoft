@@ -9,10 +9,10 @@ namespace EventMessages.Events
     public class ProcessStateUpdated : ProcessSystemMessage, IProcessStateUpddated
     {
         public ProcessStateUpdated() { }
-        public Type EntityType { get;}
-        public IProcessStateMessage<IEntityId> StateMessage { get; }
+        public string EntityType { get;}
+        public IProcessStateMessage StateMessage { get; }
 
-        public ProcessStateUpdated(Type entityType, IProcessStateMessage<IEntityId> stateMessage, IStateEventInfo stateEventInfo, ISystemProcess process, ISystemSource source):base(stateEventInfo, process, source)
+        public ProcessStateUpdated(string entityType, IProcessStateMessage stateMessage, IStateEventInfo stateEventInfo, ISystemProcess process, ISystemSource source):base(stateEventInfo, process, source)
         {
             this.EntityType = entityType;
             StateMessage = stateMessage;

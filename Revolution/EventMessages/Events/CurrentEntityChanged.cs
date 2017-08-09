@@ -9,15 +9,17 @@ using CommonMessages;
 
 namespace EventMessages.Events
 {
-    [Export(typeof(ICurrentEntityChanged<>))]
-    public class CurrentEntityChanged<TEntity> : ProcessSystemMessage, ICurrentEntityChanged<TEntity>
+    [Export(typeof(ICurrentEntityChanged))]
+    public class CurrentEntityChanged : ProcessSystemMessage, ICurrentEntityChanged
     {
         public CurrentEntityChanged() { }
-        public TEntity Entity { get; }
-        public CurrentEntityChanged(TEntity entity, IProcessStateInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo, process, source)
+        public IDynamicEntity Entity { get; }
+        public CurrentEntityChanged(IDynamicEntity entity, IProcessStateInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo, process, source)
         {
             Entity = entity;
         }
+
+        public string EntityType => Entity.EntityType;
     }
 
 

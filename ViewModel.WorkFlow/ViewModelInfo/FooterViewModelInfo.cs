@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Reactive;
 using System.Reactive.Linq;
 using SystemInterfaces;
-using Interfaces;
+
 using ReactiveUI;
 using RevolutionEntities.Process;
 using RevolutionEntities.ViewModels;
@@ -24,46 +24,46 @@ namespace RevolutionData
             new ViewInfo("Footer","",""), 
             new List<IViewModelEventSubscription<IViewModel, IEvent>>
             {
-                new ViewEventSubscription<IFooterViewModel, ICurrentEntityChanged<IPatientInfo>>(
-                    3,
-                    e => e != null,
-                    new List<Func<IFooterViewModel, ICurrentEntityChanged<IPatientInfo>, bool>>(),
-                    (v, e) =>
-                    {
-                        if (v.CurrentPatient.Value == e.Entity) return;
-                        v.CurrentPatient.Value = e.Entity;
-                    }),
+                //new ViewEventSubscription<IFooterViewModel, ICurrentEntityChanged<IPatientInfo>>(
+                //    3,
+                //    e => e != null,
+                //    new List<Func<IFooterViewModel, ICurrentEntityChanged<IPatientInfo>, bool>>(),
+                //    (v, e) =>
+                //    {
+                //        if (v.CurrentPatient.Value == e.Entity) return;
+                //        v.CurrentPatient.Value = e.Entity;
+                //    }),
 
-                new ViewEventSubscription<IFooterViewModel, ICurrentEntityChanged<IPatientVisitInfo>>(
-                    3,
-                    e => e != null,
-                    new List<Func<IFooterViewModel, ICurrentEntityChanged<IPatientVisitInfo>, bool>>(),
-                    (v, e) =>
-                    {
-                        if (v.CurrentPatientVisit.Value == e.Entity) return;
-                        v.CurrentPatientVisit.Value = e.Entity;
-                    }),
+                //new ViewEventSubscription<IFooterViewModel, ICurrentEntityChanged<IPatientVisitInfo>>(
+                //    3,
+                //    e => e != null,
+                //    new List<Func<IFooterViewModel, ICurrentEntityChanged<IPatientVisitInfo>, bool>>(),
+                //    (v, e) =>
+                //    {
+                //        if (v.CurrentPatientVisit.Value == e.Entity) return;
+                //        v.CurrentPatientVisit.Value = e.Entity;
+                //    }),
 
-                new ViewEventSubscription<IFooterViewModel, ICurrentEntityChanged<IPatientSyntomInfo>>(
-                    3,
-                    e => e?.Entity != null,
-                    new List<Func<IFooterViewModel, ICurrentEntityChanged<IPatientSyntomInfo>, bool>>(),
-                    (v, e) =>
-                    {
-                        if (v.CurrentPatientSyntom.Value == e.Entity) return;
-                        v.CurrentPatientSyntom.Value = e.Entity;
-                    }),
+                //new ViewEventSubscription<IFooterViewModel, ICurrentEntityChanged<IPatientSyntomInfo>>(
+                //    3,
+                //    e => e?.Entity != null,
+                //    new List<Func<IFooterViewModel, ICurrentEntityChanged<IPatientSyntomInfo>, bool>>(),
+                //    (v, e) =>
+                //    {
+                //        if (v.CurrentPatientSyntom.Value == e.Entity) return;
+                //        v.CurrentPatientSyntom.Value = e.Entity;
+                //    }),
 
-                new ViewEventSubscription<IFooterViewModel, ICurrentEntityChanged<IInterviewInfo>>(
-                    3,
-                    e => e != null,
-                    new List<Func<IFooterViewModel, ICurrentEntityChanged<IInterviewInfo>, bool>>(),
-                    (v, e) =>
-                    {
-                        if (v.CurrentInterview.Value == e.Entity) return;
-                        v.CurrentInterview.Value = e.Entity;
+                //new ViewEventSubscription<IFooterViewModel, ICurrentEntityChanged<IInterviewInfo>>(
+                //    3,
+                //    e => e != null,
+                //    new List<Func<IFooterViewModel, ICurrentEntityChanged<IInterviewInfo>, bool>>(),
+                //    (v, e) =>
+                //    {
+                //        if (v.CurrentInterview.Value == e.Entity) return;
+                //        v.CurrentInterview.Value = e.Entity;
 
-                    }),
+                //    }),
             },
             new List<IViewModelEventPublication<IViewModel, IEvent>>{},
             new List<IViewModelEventCommand<IViewModel,IEvent>>

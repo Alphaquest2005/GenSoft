@@ -10,21 +10,21 @@ namespace RevolutionData
 {
 
     
-    public class EntityCacheViewModelInfo<TEntity> where TEntity : IEntity
+    public class EntityCacheViewModelInfo
     {
         
-        public static ViewModelInfo CacheViewModel(int processId)
+        public static ViewModelInfo CacheViewModel(int processId, string entityType)
         {
             return new ViewModelInfo
                 (
                 processId: processId,
-                viewInfo: new ViewInfo($"{typeof(TEntity).Name}CacheViewModel","",""), 
+                viewInfo: new ViewInfo($"{entityType}CacheViewModel","",""), 
                 subscriptions: new List<IViewModelEventSubscription<IViewModel, IEvent>>
                 {
-                    new ViewEventSubscription<IEntityCacheViewModel<TEntity>, IEntitySetLoaded<TEntity>>(
+                    new ViewEventSubscription<IEntityListCacheViewModel, IEntitySetLoaded>(
                         processId: processId,
-                        eventPredicate: e => e != null,
-                        actionPredicate: new List<Func<IEntityCacheViewModel<TEntity>, IEntitySetLoaded<TEntity>, bool>>(),
+                        eventPredicate: e => e != null && e.EntityType == entityType,
+                        actionPredicate: new List<Func<IEntityListCacheViewModel, IEntitySetLoaded, bool>>(),
                         action: (v, e) =>
                         {
                             if (Application.Current == null)
@@ -37,10 +37,10 @@ namespace RevolutionData
                             }
                         }),
 
-                    new ViewEventSubscription<IEntityCacheViewModel<TEntity>, IEntityUpdated<TEntity>>(
+                    new ViewEventSubscription<IEntityListCacheViewModel, IEntityUpdated>(
                         processId: processId,
-                        eventPredicate: e => e != null,
-                        actionPredicate: new List<Func<IEntityCacheViewModel<TEntity>, IEntityUpdated<TEntity>, bool>>(),
+                        eventPredicate: e => e != null && e.EntityType == entityType,
+                        actionPredicate: new List<Func<IEntityListCacheViewModel, IEntityUpdated, bool>>(),
                         action: (v, e) =>
                         {
                             if (Application.Current == null)
@@ -52,10 +52,10 @@ namespace RevolutionData
                                 Application.Current.Dispatcher.BeginInvoke(new Action(() => UpdateEntitySet(v, e)));
                             }
                         }),
-                    new ViewEventSubscription<IEntityCacheViewModel<TEntity>, ICurrentEntityChanged<TEntity>>(
+                    new ViewEventSubscription<IEntityListCacheViewModel, ICurrentEntityChanged>(
                             3,
-                            e => e != null,
-                            new List<Func<IEntityCacheViewModel<TEntity>, ICurrentEntityChanged<TEntity>, bool>>(),
+                            e => e != null && e.EntityType == entityType,
+                            new List<Func<IEntityListCacheViewModel, ICurrentEntityChanged, bool>>(),
                             (v,e) => v.CurrentEntity.Value = e.Entity),
 
                 },
@@ -64,15 +64,15 @@ namespace RevolutionData
                 {
                     
                 },
-                viewModelType: typeof(IEntityCacheViewModel<TEntity>),
+                viewModelType: typeof(IEntityCacheViewModel),
                 orientation: typeof (ICacheViewModel),
                 priority:0);
         }
 
 
        
-        private static void UpdateEntitySet(IEntityCacheViewModel<TEntity> cacheViewModel,
-            IEntityUpdated<TEntity> msg)
+        private static void UpdateEntitySet(IEntityListCacheViewModel cacheViewModel,
+            IEntityUpdated msg)
         {
             var existingEntity = cacheViewModel.EntitySet.Value.FirstOrDefault(x => x.Id == msg.Entity.Id);
             if (existingEntity != null) cacheViewModel.EntitySet.Value.Remove(existingEntity);
@@ -82,7 +82,7 @@ namespace RevolutionData
 
         }
 
-        private static void ReloadEntitySet(IEntityCacheViewModel<TEntity> v, IEntitySetLoaded<TEntity> e)
+        private static void ReloadEntitySet(IEntityListCacheViewModel v, IEntitySetLoaded e)
         {
             v.EntitySet.Value.Clear();
             v.EntitySet.Value.AddRange(e.Entities);

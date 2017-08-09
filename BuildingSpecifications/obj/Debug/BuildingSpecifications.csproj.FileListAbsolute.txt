@@ -9,14 +9,11 @@ C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\System.Collecti
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\ViewModel.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\Akka.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\GenSoft.Interfaces.dll
-C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\BootStrapper.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\Utilities.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\ReactiveProperty.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\JB.Common.Collections.Reactive.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\ReactiveUI.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\System.Reactive.Core.dll
-C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\Interfaces.dll
-C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\ComponentModel.Composition.Hosting.Extension.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\System.Reactive.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\System.Reactive.Linq.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\JB.Common.Collections.dll
@@ -32,12 +29,8 @@ C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\SystemInterface
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\ViewModel.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\Akka.xml
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\GenSoft.Interfaces.pdb
-C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\BootStrapper.pdb
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\Utilities.pdb
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\ReactiveProperty.pdb
-C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\Interfaces.pdb
-C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\ComponentModel.Composition.Hosting.Extension.pdb
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\obj\Debug\BuildingSpecifications.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\obj\Debug\BuildingSpecifications.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\obj\Debug\BuildingSpecifications.pdb
-C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\BootStrapper.dll.config

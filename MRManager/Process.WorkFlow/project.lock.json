@@ -308,7 +308,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
-          "Interfaces": "1.0.0",
+          "Common": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
       },
@@ -318,7 +318,6 @@
         "dependencies": {
           "CommonMessages": "1.0.0",
           "Domain.Interfaces": "1.0.0",
-          "Interfaces": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
       },
@@ -339,11 +338,10 @@
           "Actor.Interfaces": "1.0.0",
           "Akka": "1.2.0",
           "CommonMessages": "1.0.0",
-          "Interfaces": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
       },
-      "Interfaces/1.0.0": {
+      "GenSoft.Interface/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
@@ -360,7 +358,6 @@
           "Domain.Interfaces": "1.0.0",
           "DomainMessages": "1.0.0",
           "EventMessages": "1.0.0",
-          "Interfaces": "1.0.0",
           "RevolutionEntities": "1.0.0",
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
@@ -377,6 +374,7 @@
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
           "EventAggregator": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
           "System.Collections.Immutable": "1.3.1",
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
@@ -419,7 +417,6 @@
         "dependencies": {
           "CommonMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
-          "Interfaces": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.103-pre",
           "ReactiveProperty": "2.9.0",
           "SystemInterfaces": "1.0.0",
@@ -734,7 +731,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
-          "Interfaces": "1.0.0",
+          "Common": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
       },
@@ -744,7 +741,6 @@
         "dependencies": {
           "CommonMessages": "1.0.0",
           "Domain.Interfaces": "1.0.0",
-          "Interfaces": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
       },
@@ -765,11 +761,10 @@
           "Actor.Interfaces": "1.0.0",
           "Akka": "1.2.0",
           "CommonMessages": "1.0.0",
-          "Interfaces": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
       },
-      "Interfaces/1.0.0": {
+      "GenSoft.Interface/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
@@ -786,7 +781,6 @@
           "Domain.Interfaces": "1.0.0",
           "DomainMessages": "1.0.0",
           "EventMessages": "1.0.0",
-          "Interfaces": "1.0.0",
           "RevolutionEntities": "1.0.0",
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
@@ -803,6 +797,7 @@
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
           "EventAggregator": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
           "System.Collections.Immutable": "1.3.1",
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
@@ -845,7 +840,6 @@
         "dependencies": {
           "CommonMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
-          "Interfaces": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.103-pre",
           "ReactiveProperty": "2.9.0",
           "SystemInterfaces": "1.0.0",
@@ -1448,10 +1442,10 @@
       "path": "../../Revolution/EventMessages/project.json",
       "msbuildProject": "../../Revolution/EventMessages/EventMessages.csproj"
     },
-    "Interfaces/1.0.0": {
+    "GenSoft.Interface/1.0.0": {
       "type": "project",
-      "path": "../../Interfaces/project.json",
-      "msbuildProject": "../../Interfaces/Interfaces.csproj"
+      "path": "../../Revolution/GenSoft.Interface/project.json",
+      "msbuildProject": "../../Revolution/GenSoft.Interface/GenSoft.Interface.csproj"
     },
     "RevolutionData/1.0.0": {
       "type": "project",
@@ -1510,9 +1504,6 @@
           "projectReferences": {
             "C:\\Prism\\GitRepositiory\\GenSoft\\Domain.Interfaces\\Domain.Interfaces.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Domain.Interfaces\\Domain.Interfaces.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Interfaces\\Interfaces.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Interfaces\\Interfaces.csproj"
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Actor.Interfaces\\Actor.Interfaces.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Actor.Interfaces\\Actor.Interfaces.csproj"

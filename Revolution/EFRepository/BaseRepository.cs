@@ -10,9 +10,10 @@ using Utilities;
 
 namespace EFRepository
 {
-    public class BaseRepository<TRepository>:IProcessSource
+    public class BaseRepository:IProcessSource
     {
-        public static ISystemSource Source => new Source(Guid.NewGuid(), $"EntityRepository:<{typeof(BaseRepository<TRepository>).GetFriendlyName()}>", new SourceType(typeof(BaseRepository<TRepository>)), new SystemProcess(new Process(1, 0, "Starting System", "Prepare system for Intial Use", "", new Agent("System")), new MachineInfo(Environment.MachineName, Environment.ProcessorCount)), new MachineInfo(Environment.MachineName, Environment.ProcessorCount));
+
+        public static ISystemSource Source => new Source(Guid.NewGuid(), $"EntityRepository:<>", new SourceType(typeof(BaseRepository)), new SystemProcess(new Process(1, 0, "Starting System", "Prepare system for Intial Use", "", new Agent("System")), new MachineInfo(Environment.MachineName, Environment.ProcessorCount)), new MachineInfo(Environment.MachineName, Environment.ProcessorCount));
         internal static void PublishProcesError(IProcessSystemMessage msg, Exception ex, Type expectedMessageType)
         {
             var outMsg = new ProcessEventFailure(failedEventType: msg.GetType(),
@@ -24,6 +25,6 @@ namespace EFRepository
             EventMessageBus.Current.Publish(outMsg, Source);
         }
 
-        ISystemSource IProcessSource.Source => BaseRepository<TRepository>.Source;
+        ISystemSource IProcessSource.Source => BaseRepository.Source;
     }
 }

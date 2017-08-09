@@ -7,15 +7,16 @@ namespace EventMessages.Events
 
 
     [Export(typeof(IEntityNotFound))]
-    public class EntityNotFound<T> : ProcessSystemMessage, IEntityNotFound where T : IEntity
+    public class EntityNotFound : ProcessSystemMessage, IEntityNotFound
     {
         public EntityNotFound() { }
-        public EntityNotFound(int entityId, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
+        public EntityNotFound(IDynamicEntity entity, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
         {
-            EntityId = entityId;
+            Entity = entity;
         }
 
-        public int EntityId { get; }
+        public IDynamicEntity Entity { get; }
 
+        public string EntityType => Entity.EntityType;
     }
 }

@@ -27,7 +27,7 @@ using EF.DBContexts;
 using EF.Entities;
 using EventAggregator;
 using EventMessages;
-using Interfaces;
+
 using NH.DBContext;
 using ViewModels;
 using Application = System.Windows.Application;

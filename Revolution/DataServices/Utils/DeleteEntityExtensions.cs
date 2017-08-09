@@ -10,9 +10,9 @@ namespace DataServices.Actors
     public static class DeleteEntityExtensions
     {
         
-        public static void DeleteEntity<TEntity>(this IDeleteEntity<TEntity> msg) where TEntity : class, IEntity
+        public static void DeleteEntity(this IDeleteEntity msg) 
         {
-            EF7DataContext<TEntity>.Delete(msg);
+            DynamicDataContext.DeleteEntity(msg);
         }
 
     }

@@ -26,7 +26,7 @@ public class ConstructorViewModelTemplate : CSharpTemplate
 #>
 using System.ComponentModel;
 using Core.Common.UI;
-using Interfaces;
+
 using DesignTime;
 using ValidationSets;
 

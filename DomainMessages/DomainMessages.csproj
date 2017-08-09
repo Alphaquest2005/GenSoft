@@ -60,10 +60,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GetEntityFromPatientResponse.cs" />
-    <Compile Include="IGetEntityFromPatientResponse.cs" />
-    <Compile Include="IUpdatePulledEntityWithChanges.cs" />
-    <Compile Include="UpdatePulledEntityWithChanges.cs" />
     <Compile Include="UserValidated.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -71,10 +67,6 @@
     <ProjectReference Include="..\Domain.Interfaces\Domain.Interfaces.csproj">
       <Project>{e41cf673-fe71-4aae-a8fc-b571a36c1211}</Project>
       <Name>Domain.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
-      <Project>{ad573873-c8e6-4ea3-93f5-0d39a92fc9f6}</Project>
-      <Name>Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\Revolution\CommonMessages\CommonMessages.csproj">
       <Project>{77007560-89dc-4e1f-9313-ae064a048ad4}</Project>

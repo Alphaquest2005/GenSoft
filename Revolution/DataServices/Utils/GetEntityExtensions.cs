@@ -12,43 +12,17 @@ namespace DataServices.Actors
     public static class GetEntityExtensions
     {
        
-        public static void GetEntity<TEntity>(this IGetEntityById<TEntity> msg) where TEntity : class, IEntity
+        public static void GetEntity(this IGetEntityById msg) 
         {
 
-            EF7DataContext<TEntity>.GetEntityById(msg);
+          //  EF7DataContext.GetEntityById(msg);
         }
 
-        public static void GetEntity<TEntity>(this IGetEntityWithChanges<TEntity> msg) where TEntity : class, IEntity
+        public static void GetEntity(this IGetEntityWithChanges msg) 
         {
 
-            EF7DataContext<TEntity>.GetEntityWithChanges(msg);
+            //EF7DataContext.GetEntityWithChanges(msg);
         }
-
-        public static void GetEntity<TEntityView>(this IGetEntityViewById<TEntityView> msg) where TEntityView : IEntityView
-        {
-
-          EntityViewDataContext<TEntityView>.GetEntityViewById(msg);
-        }
-
-
-
-        public static void GetEntityViewWithChanges<TEntityView>(this IGetEntityViewWithChanges<TEntityView> msg) where TEntityView : IEntityView
-        {
-            EntityViewDataContext<TEntityView>.GetEntityViewWithChanges(msg);
-        }
-
-        public static void UpdateEntityViewWithChanges<TEntityView>(this IUpdateEntityViewWithChanges<TEntityView> msg) where TEntityView : IEntityView
-        {
-            EntityViewDataContext<TEntityView>.UpdateEntityViewWithChanges(msg);
-        }
-
-        public static void LoadEntityViewSetWithChanges<TEntityView>(this ILoadEntityViewSetWithChanges<TEntityView,IMatchType> msg) where TEntityView : IEntityView
-        {
-            EntityViewDataContext<TEntityView>.LoadEntityViewSetWithChanges(msg);
-        }
-
-
-
 
 
     }

@@ -9,16 +9,16 @@ namespace DataServices.Actors
 {
     public static class EntityChangesExtensions
     {
-        public static void UpdateEntity<TEntity>(this IUpdateEntityWithChanges<TEntity> msg) where TEntity : class, IEntity
+        public static void UpdateEntity(this IUpdateEntityWithChanges msg)
         {
 
-            EF7DataContext<TEntity>.Update(msg);
+            DynamicDataContext.UpdateEntity(msg);
         }
 
-        public static void AddEntity<TEntity>(this IAddOrGetEntityWithChanges<TEntity> msg) where TEntity : class, IEntity
+        public static void AddEntity(this IAddOrGetEntityWithChanges msg)
         {
 
-            EF7DataContext<TEntity>.Add(msg);
+            DynamicDataContext.AddEntity(msg);
         }
     }
 }

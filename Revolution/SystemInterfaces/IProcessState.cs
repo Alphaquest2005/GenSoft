@@ -14,16 +14,16 @@ namespace SystemInterfaces
     }
 
     
-    public interface IProcessState<out TEntity>: IProcessState where TEntity: IEntityId
+    public interface IProcessStateEntity: IProcessState 
     {
-       TEntity Entity { get; }
+       IDynamicEntity Entity { get; }
     }
 
     
-    public interface IProcessStateList<out TEntity> : IProcessState<TEntity> where TEntity : IEntityId
+    public interface IProcessStateList : IProcessState
     {
-        IEnumerable<TEntity> EntitySet { get; }
-        IEnumerable<TEntity> SelectedEntities { get; }
+        IEnumerable<IDynamicEntity> EntitySet { get; }
+        IEnumerable<IDynamicEntity> SelectedEntities { get; }
         
     }
 

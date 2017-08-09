@@ -11,30 +11,21 @@ namespace ViewModel.Interfaces
 
     }
 
-    public interface ISummaryListViewModel : IViewModel
+    public interface ISummaryListViewModel : IEntityListViewModel
     {
 
     }
 
    
 
-    public interface IEntityCacheViewModel<TEntity> :ICacheViewModel, IEntityListViewModel<TEntity> where TEntity : IEntity//
+    public interface IEntityCacheViewModel :ICacheViewModel
     {
 
     }
 
-    public interface IEntityCacheViewModeltest<TEntity> : ICacheViewModel
+    public interface IEntityListCacheViewModel : ICacheViewModel, IEntityListViewModel 
     {
 
-    }
-    public interface IEntityViewCacheViewModel<TView> : ICacheViewModel, IEntityListViewModel<TView> where TView : IEntityView
-    {
-
-    }
-
-    public interface ISummaryListViewModel<TView> : ISummaryListViewModel, IEntityListViewModel<TView> where TView : IEntityView
-    {
-        
     }
 
 

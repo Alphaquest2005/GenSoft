@@ -23,7 +23,7 @@ public class ValidationSetTemplate : CSharpTemplate
 #>
 
 using FluentValidation;
-using Interfaces;
+
 
 namespace ValidationSets
 {

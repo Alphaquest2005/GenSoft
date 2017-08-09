@@ -1334,7 +1334,6 @@
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
           "Common": "1.0.0",
-          "EF.Entities": "1.0.0",
           "Interfaces": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
@@ -1357,50 +1356,6 @@
           "SystemInterfaces": "1.0.0"
         }
       },
-      "EF.DBContext/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "BootStrapper": "1.0.0",
-          "Common": "1.0.0",
-          "CommonMessages": "1.0.0",
-          "DomainMessages": "1.0.0",
-          "EF.Entities": "1.0.0",
-          "EF.Mappings": "1.0.0",
-          "EventAggregator": "1.0.0",
-          "EventMessages": "1.0.0",
-          "Expressions": "1.0.0",
-          "Interfaces": "1.0.0",
-          "RevolutionData": "1.0.0",
-          "RevolutionEntities": "1.0.0",
-          "RevolutionLogger": "1.0.0",
-          "System.Linq.Dynamic": "1.0.0",
-          "SystemInterfaces": "1.0.0",
-          "Utilities": "1.0.0",
-          "morelinq": "2.4.1"
-        }
-      },
-      "EF.Entities/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "Common": "1.0.0",
-          "Interfaces": "1.0.0",
-          "SystemInterfaces": "1.0.0",
-          "Utilities": "1.0.0"
-        }
-      },
-      "EF.Mappings/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "Common": "1.0.0",
-          "EF.Entities": "1.0.0",
-          "Interfaces": "1.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "1.1.2",
-          "SystemInterfaces": "1.0.0"
-        }
-      },
       "EFRepository/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
@@ -1410,7 +1365,6 @@
           "CommonMessages": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
-          "Expressions": "1.0.0",
           "Interfaces": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "1.1.2",
           "RevolutionData": "1.0.0",
@@ -1446,17 +1400,6 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1"
       },
-      "Expressions/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "Common": "1.0.0",
-          "EF.Entities": "1.0.0",
-          "Interfaces": "1.0.0",
-          "SystemInterfaces": "1.0.0",
-          "morelinq": "2.4.1"
-        }
-      },
       "GenSoft.DBContext/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
@@ -1464,7 +1407,6 @@
           "Common": "1.0.0",
           "DomainMessages": "1.0.0",
           "EventAggregator": "1.0.0",
-          "Expressions": "1.0.0",
           "GenSoft.Entities": "1.0.0",
           "GenSoft.Interface": "1.0.0",
           "Interfaces": "1.0.0",
@@ -1534,14 +1476,10 @@
           "DesignTimeData": "1.0.0",
           "Domain.Interfaces": "1.0.0",
           "DomainMessages": "1.0.0",
-          "EF.DBContext": "1.0.0",
-          "EF.Entities": "1.0.0",
-          "EF.Mappings": "1.0.0",
           "EFRepository": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
           "ExpressionComputations": "1.0.0",
-          "Expressions": "1.0.0",
           "Interfaces": "1.0.0",
           "LinqSpecs": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "1.1.2",
@@ -1698,7 +1636,6 @@
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "DomainMessages": "1.0.0",
-          "EF.Entities": "1.0.0",
           "EventMessages": "1.0.0",
           "Interfaces": "1.0.0",
           "JB.Common": "0.7.0",
@@ -1726,10 +1663,8 @@
           "CommonMessages": "1.0.0",
           "Core.Common.UI": "1.0.0",
           "DesignTimeData": "1.0.0",
-          "EF.Entities": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
-          "Expressions": "1.0.0",
           "Interfaces": "1.0.0",
           "Process.WorkFlow": "1.0.0",
           "RevolutionData": "1.0.0",
@@ -3032,7 +2967,6 @@
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
           "Common": "1.0.0",
-          "EF.Entities": "1.0.0",
           "Interfaces": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
@@ -3055,50 +2989,6 @@
           "SystemInterfaces": "1.0.0"
         }
       },
-      "EF.DBContext/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "BootStrapper": "1.0.0",
-          "Common": "1.0.0",
-          "CommonMessages": "1.0.0",
-          "DomainMessages": "1.0.0",
-          "EF.Entities": "1.0.0",
-          "EF.Mappings": "1.0.0",
-          "EventAggregator": "1.0.0",
-          "EventMessages": "1.0.0",
-          "Expressions": "1.0.0",
-          "Interfaces": "1.0.0",
-          "RevolutionData": "1.0.0",
-          "RevolutionEntities": "1.0.0",
-          "RevolutionLogger": "1.0.0",
-          "System.Linq.Dynamic": "1.0.0",
-          "SystemInterfaces": "1.0.0",
-          "Utilities": "1.0.0",
-          "morelinq": "2.4.1"
-        }
-      },
-      "EF.Entities/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "Common": "1.0.0",
-          "Interfaces": "1.0.0",
-          "SystemInterfaces": "1.0.0",
-          "Utilities": "1.0.0"
-        }
-      },
-      "EF.Mappings/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "Common": "1.0.0",
-          "EF.Entities": "1.0.0",
-          "Interfaces": "1.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "1.1.2",
-          "SystemInterfaces": "1.0.0"
-        }
-      },
       "EFRepository/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
@@ -3108,7 +2998,6 @@
           "CommonMessages": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
-          "Expressions": "1.0.0",
           "Interfaces": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "1.1.2",
           "RevolutionData": "1.0.0",
@@ -3144,17 +3033,6 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1"
       },
-      "Expressions/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "Common": "1.0.0",
-          "EF.Entities": "1.0.0",
-          "Interfaces": "1.0.0",
-          "SystemInterfaces": "1.0.0",
-          "morelinq": "2.4.1"
-        }
-      },
       "GenSoft.DBContext/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
@@ -3162,7 +3040,6 @@
           "Common": "1.0.0",
           "DomainMessages": "1.0.0",
           "EventAggregator": "1.0.0",
-          "Expressions": "1.0.0",
           "GenSoft.Entities": "1.0.0",
           "GenSoft.Interface": "1.0.0",
           "Interfaces": "1.0.0",
@@ -3232,14 +3109,10 @@
           "DesignTimeData": "1.0.0",
           "Domain.Interfaces": "1.0.0",
           "DomainMessages": "1.0.0",
-          "EF.DBContext": "1.0.0",
-          "EF.Entities": "1.0.0",
-          "EF.Mappings": "1.0.0",
           "EFRepository": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
           "ExpressionComputations": "1.0.0",
-          "Expressions": "1.0.0",
           "Interfaces": "1.0.0",
           "LinqSpecs": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "1.1.2",
@@ -3396,7 +3269,6 @@
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "DomainMessages": "1.0.0",
-          "EF.Entities": "1.0.0",
           "EventMessages": "1.0.0",
           "Interfaces": "1.0.0",
           "JB.Common": "0.7.0",
@@ -3424,10 +3296,8 @@
           "CommonMessages": "1.0.0",
           "Core.Common.UI": "1.0.0",
           "DesignTimeData": "1.0.0",
-          "EF.Entities": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
-          "Expressions": "1.0.0",
           "Interfaces": "1.0.0",
           "Process.WorkFlow": "1.0.0",
           "RevolutionData": "1.0.0",
@@ -7070,21 +6940,6 @@
       "path": "../DomainMessages/project.json",
       "msbuildProject": "../DomainMessages/DomainMessages.csproj"
     },
-    "EF.DBContext/1.0.0": {
-      "type": "project",
-      "path": "../EFDataContext/project.json",
-      "msbuildProject": "../EFDataContext/EF.DBContext.csproj"
-    },
-    "EF.Entities/1.0.0": {
-      "type": "project",
-      "path": "../EFEntities/project.json",
-      "msbuildProject": "../EFEntities/EF.Entities.csproj"
-    },
-    "EF.Mappings/1.0.0": {
-      "type": "project",
-      "path": "../EF.Mappings/project.json",
-      "msbuildProject": "../EF.Mappings/EF.Mappings.csproj"
-    },
     "EFRepository/1.0.0": {
       "type": "project",
       "path": "../Revolution/EFRepository/project.json",
@@ -7104,11 +6959,6 @@
       "type": "project",
       "path": "../Revolution/ExpressionComputations/project.json",
       "msbuildProject": "../Revolution/ExpressionComputations/ExpressionComputations.csproj"
-    },
-    "Expressions/1.0.0": {
-      "type": "project",
-      "path": "../Expressions/project.json",
-      "msbuildProject": "../Expressions/Expressions.csproj"
     },
     "GenSoft.DBContext/1.0.0": {
       "type": "project",
@@ -7259,20 +7109,8 @@
             "C:\\Prism\\GitRepositiory\\GenSoft\\DomainMessages\\DomainMessages.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\DomainMessages\\DomainMessages.csproj"
             },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\EF.Mappings\\EF.Mappings.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\EF.Mappings\\EF.Mappings.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\EFDataContext\\EF.DBContext.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\EFDataContext\\EF.DBContext.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\EFEntities\\EF.Entities.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\EFEntities\\EF.Entities.csproj"
-            },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Interfaces\\Interfaces.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Interfaces\\Interfaces.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Expressions\\Expressions.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Expressions\\Expressions.csproj"
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\MRManager\\MRManager.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\MRManager\\MRManager.csproj"

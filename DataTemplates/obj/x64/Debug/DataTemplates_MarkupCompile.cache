@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-45-1643306889
+13-1790051349
 
 2786311639
-1031352636409
-Custom\SystemInfoVDT.xaml;Custom\PatientVitalsInfoRDT.xaml;Custom\PatientVitalsInfoVDT.xaml;Custom\PatientVitalsInfoWDT.xaml;Custom\ScreenDT.xaml;Custom\SummaryInterviewInfoDT.xaml;Custom\SummaryPatientSyntomInfoDT.xaml;Custom\SummaryPatientVisitInfoDT.xaml;Custom\SummaryPatientInfo.xaml;CustomTemplatesResource.xaml;AllDataTemplatesResource.xaml;AllEntityViewDataTemplatesResource.xaml;Custom\FooterVDT.xaml;Custom\InterviewInfoWDT.xaml;Custom\PatientDetailsInfoVDT.xaml;Custom\PatientDetailsInfoWDT.xaml;Custom\PatientSummaryInfoWDT.xaml;Custom\PatientSyntomInfoWDT.xaml;Custom\PatientSyntomInfoRDT.xaml;Custom\PatientVisitInfoWDT.xaml;Custom\SystemInfoWDT.xaml;Custom\SystemInfoRDT.xaml;Custom\PatientVisitInfoRDT.xaml;Custom\PatientSyntomListVDT.xaml;Custom\PatientVisitListVDT.xaml;Custom\QuestionInfoWDT.xaml;Custom\QuestionInfoRDT.xaml;Custom\InterviewInfoRDT.xaml;Custom\QuestionListVDT.xaml;Custom\InterviewListVDT.xaml;Custom\PatientDetailsInfoRDT.xaml;Custom\PatientSummaryInfoRDT.xaml;Custom\PatientSummaryInfoListVDT.xaml;Custom\PS-ForeignAddressInfoTpl.xaml;Custom\PS-ForeignPhoneNumberInfoTpl.xaml;Custom\PS-NextOfKinInfoTpl.xaml;Custom\PS-NonResidentPatientInfoTpl.xaml;Custom\PS-PersonAddressInfoTpl.xaml;Custom\PS-PersonPhoneNumberInfoTpl.xaml;Custom\QuestionaireVDT.xaml;Custom\ResponseOptionWDT.xaml;Custom\ResponseOptionRDT.xaml;Custom\HeaderVDT.xaml;Custom\SignInInfoRDT.xaml;ScratchPad.xaml;
+102385355224
+Custom\ScreenDT.xaml;CustomTemplatesResource.xaml;AllDataTemplatesResource.xaml;AllEntityViewDataTemplatesResource.xaml;Custom\FooterVDT.xaml;Custom\EntityDetailsInfoVDT.xaml;Custom\EntityDetailsInfoWDT.xaml;Custom\SummaryInfoWDT.xaml;Custom\EntityDetailsInfoRDT.xaml;Custom\SummaryInfoRDT.xaml;Custom\SummaryInfoListVDT.xaml;Custom\HeaderVDT.xaml;ScratchPad.xaml;
 
 False
 

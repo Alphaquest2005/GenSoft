@@ -41,7 +41,7 @@ using System.ComponentModel;
 using System;
 using System.Linq;
 using <#=AppName#>.Entities;
-using Interfaces;
+
 
 namespace DesignTime
 {

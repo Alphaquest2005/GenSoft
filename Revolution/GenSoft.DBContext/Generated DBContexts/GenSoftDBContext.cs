@@ -16,6 +16,7 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.ActionEntityType> ActionEntityType { get; set; }
 		public DbSet<Entities.Agent> Agent { get; set; }
 		public DbSet<Entities.ApplicationSetting> ApplicationSetting { get; set; }
+		public DbSet<Entities.Attributes> Attributes { get; set; }
 		public DbSet<Entities.Command> Command { get; set; }
 		public DbSet<Entities.CompositeRequest> CompositeRequest { get; set; }
 		public DbSet<Entities.DataType> DataType { get; set; }
@@ -24,6 +25,7 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.DomainEntityTypeSourceEntity> DomainEntityTypeSourceEntity { get; set; }
 		public DbSet<Entities.Entity> Entity { get; set; }
 		public DbSet<Entities.EntityAttribute> EntityAttribute { get; set; }
+		public DbSet<Entities.EntityAttributeChanges> EntityAttributeChanges { get; set; }
 		public DbSet<Entities.EntityId> EntityId { get; set; }
 		public DbSet<Entities.EntityList> EntityList { get; set; }
 		public DbSet<Entities.EntityName> EntityName { get; set; }
@@ -63,6 +65,7 @@ namespace GenSoft.DBContexts
 				ActionEntityTypeMap.Map(modelBuilder.Entity<Entities.ActionEntityType>());
 				AgentMap.Map(modelBuilder.Entity<Entities.Agent>());
 				ApplicationSettingMap.Map(modelBuilder.Entity<Entities.ApplicationSetting>());
+				AttributesMap.Map(modelBuilder.Entity<Entities.Attributes>());
 				CommandMap.Map(modelBuilder.Entity<Entities.Command>());
 				CompositeRequestMap.Map(modelBuilder.Entity<Entities.CompositeRequest>());
 				DataTypeMap.Map(modelBuilder.Entity<Entities.DataType>());
@@ -71,6 +74,7 @@ namespace GenSoft.DBContexts
 				DomainEntityTypeSourceEntityMap.Map(modelBuilder.Entity<Entities.DomainEntityTypeSourceEntity>());
 				EntityMap.Map(modelBuilder.Entity<Entities.Entity>());
 				EntityAttributeMap.Map(modelBuilder.Entity<Entities.EntityAttribute>());
+				EntityAttributeChangesMap.Map(modelBuilder.Entity<Entities.EntityAttributeChanges>());
 				EntityIdMap.Map(modelBuilder.Entity<Entities.EntityId>());
 				EntityListMap.Map(modelBuilder.Entity<Entities.EntityList>());
 				EntityNameMap.Map(modelBuilder.Entity<Entities.EntityName>());

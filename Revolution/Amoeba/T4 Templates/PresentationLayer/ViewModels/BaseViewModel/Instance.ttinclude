@@ -28,7 +28,7 @@ using DataEntites;
 using <#=AppName#>.Entities;
 using EventAggregator;
 using EventMessages;
-using Interfaces;
+
 using ReactiveUI;
 
 namespace ViewModels

@@ -33,12 +33,12 @@ namespace ActorBackBone
         public static ActorSystem System { get; private set; }
 
 
-        public void Intialize(bool autoRun, List<IMachineInfo> machineInfo, List<IProcessInfo> processInfos, List<IComplexEventAction> complexEventActions, List<IViewModelInfo> viewInfos, Assembly interfaces)
+        public void Intialize(bool autoRun, List<IMachineInfo> machineInfo, List<IProcessInfo> processInfos, List<IComplexEventAction> complexEventActions, List<IViewModelInfo> viewInfos)
         {
              try
             {
                 System = ActorSystem.Create("System");
-                var res = GetDBComplexActions(interfaces);
+                var res = GetDBComplexActions();
                 res.AddRange(complexEventActions);
                 System.ActorOf(Props.Create<ServiceManager>(autoRun,machineInfo, processInfos, res,viewInfos),"ServiceManager");
                 Instance = this;
@@ -49,7 +49,7 @@ namespace ActorBackBone
             }
         }
 
-        private List<IComplexEventAction> GetDBComplexActions(Assembly interfaces)
+        private List<IComplexEventAction> GetDBComplexActions()
         {
             try
             {
@@ -71,7 +71,7 @@ namespace ActorBackBone
                         .OrderBy(x => x.Id)
                         )
                     {
-                        var entityType = interfaces.GetTypes().FirstOrDefault(x => x.Name == r.EntityType.Type.Name);
+                        var entityType = r.EntityType.Type.Name;
                         //var childExpression = typeof(ExpressionsExtensions).GetMethod("BuildForType").MakeGenericMethod(entityType)
                         //    .Invoke(null, new object[] { entityType, r.EntityType.EntityTypeAttributes.FirstOrDefault(x => x.EntityId != null).Name });
                         foreach (var processId in r.ProcessStateDomainEntityTypes.Select(x => x.ProcessState.Process.Id).Distinct())
@@ -81,21 +81,18 @@ namespace ActorBackBone
                                 if (r.EntityType.EntityList == null)
                                 {
 
-                                    res.Add(Processes.ComplexActions.GetComplexAction("UpdateState", new[] {entityType},
-                                        new object[] {processId}));
+                                    res.Add(Processes.ComplexActions.GetComplexAction("UpdateState", new object[] {processId,entityType}));
                                 }
                                 else
                                 {
-                                    res.Add(Processes.ComplexActions.GetComplexAction("UpdateStateList",
-                                        new[] {entityType}, new object[] {processId}));
+                                    res.Add(Processes.ComplexActions.GetComplexAction("UpdateStateList", new object[] {processId,entityType}));
                                 }
                             }
 
-                            if(r.EntityType.DomainEntityType.DomainEntityCache != null && r.EntityType.EntityView == null)
-                                res.Add(EntityComplexActions.GetComplexAction("IntializeCache", new[] { entityType }, new object[] { processId }));
+                            if(r.EntityType.DomainEntityType.DomainEntityCache != null )
+                                res.Add(EntityComplexActions.GetComplexAction("IntializeCache",  new object[] { processId, entityType}));
 
-                            if (r.EntityType.DomainEntityType.DomainEntityCache != null && r.EntityType.EntityView != null)
-                                res.Add(EntityViewComplexActions.GetComplexAction("IntializeCache", new[] { entityType }, new object[] { processId }));
+                            
 
                         }
                     }
@@ -111,20 +108,16 @@ namespace ActorBackBone
                         .OrderBy(x => x.ParentEntity.Id)
                         .Where(x => x.ChildEntity.EntityType.CompositeRequest == null))
                     {
-                        var parentType = interfaces.GetTypes()
-                            .FirstOrDefault(x => x.Name == r.ParentEntity.EntityType.Type.Name);
-                        var childType = interfaces.GetTypes()
-                            .FirstOrDefault(x => x.Name == r.ChildEntity.EntityType.Type.Name);
+                        var parentType = r.ParentEntity.EntityType.Type.Name;
+                        var childType = r.ChildEntity.EntityType.Type.Name;
                         var sourceEntityName = r.ChildEntity.EntityType.DomainEntityType.DomainEntityTypeSourceEntity
                             ?.SourceEntity;
 
                         var parentExpression = typeof(ExpressionsExtensions).GetMethod("BuildForType")
-                            .MakeGenericMethod(parentType)
-                            .Invoke(null, new object[] {parentType, r.ParentEntity.Name});
+                            .Invoke(null, new object[] {parentType, r.ParentEntity.Attributes.Name});
 
                         var childExpression = typeof(ExpressionsExtensions).GetMethod("BuildForType")
-                            .MakeGenericMethod(childType)
-                            .Invoke(null, new object[] {childType, r.ChildEntity.Name});
+                            .Invoke(null, new object[] {childType, r.ChildEntity.Attributes.Name});
 
 
 
@@ -138,26 +131,20 @@ namespace ActorBackBone
                         {
                             if (sourceEntityName != null)
                             {
-                                res.Add(Processes.ComplexActions.GetComplexAction("RequestPulledState",
-                                    new[] {parentType, childType}, new object[] {processId, sourceEntityName}));
+                                res.Add(Processes.ComplexActions.GetComplexAction("RequestPulledState",new object[] {processId, parentType, childType, sourceEntityName}));
                             }
                             else
                             {
                                 if (r.ChildEntity.EntityType.EntityList == null)
-                                    res.Add(Processes.ComplexActions.GetComplexAction("RequestState",
-                                    new[] {parentType, childType}, new object[] {processId, childExpression}));
+                                    res.Add(Processes.ComplexActions.GetComplexAction("RequestState", new object[] {processId,parentType, childType, childExpression}));
                             }
 
                             if (r.ChildEntity.EntityType.EntityList != null)
                             {
-                                res.Add(Processes.ComplexActions.GetComplexAction("RequestStateList",
-                                    new[] {parentType, childType},
-                                    new object[] {processId, parentExpression, childExpression}));
+                                res.Add(Processes.ComplexActions.GetComplexAction("RequestStateList",new object[] {processId,parentType, childType, parentExpression, childExpression}));
                             }
 
-                            res.Add(Processes.ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",
-                                new[] {parentType, childType},
-                                new object[] {processId, parentExpression, childExpression}));
+                            res.Add(Processes.ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new object[] {processId,parentType, childType, parentExpression, childExpression}));
                         }
 
                     }
@@ -172,16 +159,15 @@ namespace ActorBackBone
                         foreach (var processId in g.Key.DomainEntityType
                             .ProcessStateDomainEntityTypes.Select(x => x.ProcessState.Process.Id).Distinct())
                         {
-                            var childType = interfaces.GetTypes().FirstOrDefault(x => x.Name == g.Key.Type.Name);
+                            var childType = g.Key.Type.Name;
                             var parentEntities = g.Select(p =>
                                                 new ViewModelEntity() {
-                                                    EntityType = interfaces.GetTypes().FirstOrDefault(x => x.Name == p.ParentEntity.EntityType.Type.Name),
-                                                    Property = p.ChildEntity.Name}
+                                                    EntityType = p.ParentEntity.EntityType.Type.Name,
+                                                    Property = p.ChildEntity.Attributes.Name}
                                                     ).ToList();
 
                             res.Add(Processes.ComplexActions.GetComplexAction("RequestCompositeStateList",
-                                new[] { childType },
-                                new object[] { processId, new Dictionary<string, dynamic>(), parentEntities }));
+                                new object[] { processId, childType, new Dictionary<string, dynamic>(), parentEntities }));
                         }
                     }
 
@@ -241,7 +227,7 @@ namespace ActorBackBone
                 //                    .Build() as IComplexEventAction).ToList();
 
 
-                Intialize(autoContinue, machineInfo, processInfos, dbComplexAction, viewInfos, null);
+                Intialize(autoContinue, machineInfo, processInfos, dbComplexAction, viewInfos);
             }
 
             

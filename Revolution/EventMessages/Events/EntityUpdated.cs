@@ -6,17 +6,21 @@ using CommonMessages;
 namespace EventMessages.Events
 {
 
-    [Export(typeof(IEntityUpdated<>))]
-    public class EntityUpdated<T> : ProcessSystemMessage, IEntityUpdated<T> where T : IEntity
+    [Export(typeof(IEntityUpdated))]
+    public class EntityUpdated : ProcessSystemMessage, IEntityUpdated
     {
         public EntityUpdated() { }
-        public T Entity { get; }
+        public IDynamicEntity Entity { get; }
         
-        public EntityUpdated(T entity,IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
+        public EntityUpdated(IDynamicEntity entity,IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
         {
             Contract.Requires(entity != null);
             Entity = entity;
+           
+
         }
+
+        public string EntityType => Entity.EntityType;
 
     }
 }

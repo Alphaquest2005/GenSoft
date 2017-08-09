@@ -9,14 +9,11 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\SystemI
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\System.Collections.Immutable.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\ViewModel.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\Akka.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\BootStrapper.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\Utilities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\ReactiveProperty.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\JB.Common.Collections.Reactive.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\ReactiveUI.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\System.Reactive.Core.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\Interfaces.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\ComponentModel.Composition.Hosting.Extension.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\System.Reactive.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\System.Reactive.Linq.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\JB.Common.Collections.dll
@@ -32,12 +29,8 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\SystemI
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\GenSoft.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\ViewModel.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\Akka.xml
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\BootStrapper.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\Utilities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\ReactiveProperty.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\Interfaces.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\ComponentModel.Composition.Hosting.Extension.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\obj\Debug\GenSoft.Expressions.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\obj\Debug\GenSoft.Expressions.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\obj\Debug\GenSoft.Expressions.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\BootStrapper.dll.config

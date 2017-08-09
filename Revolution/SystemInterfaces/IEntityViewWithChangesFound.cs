@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 namespace SystemInterfaces
 {
     
-    public interface IEntityViewWithChangesFound<TView> : IProcessSystemMessage
+    public interface IEntityWithChangesFound : IEntityRequest
     {
-        TView Entity { get; set; }
+        IDynamicEntity Entity { get; set; }
         Dictionary<string, object> Changes { get; }
     }
 
     
-    public interface IEntityViewWithChangesUpdated<TView> : IProcessSystemMessage
+    public interface IEntityWithChangesUpdated : IEntityRequest
     {
-        TView Entity { get; set; }
+        IDynamicEntity Entity { get; set; }
         Dictionary<string, object> Changes { get; }
     }
 }

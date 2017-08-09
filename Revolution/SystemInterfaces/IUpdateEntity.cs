@@ -4,13 +4,13 @@ using System.ComponentModel.Composition;
 namespace SystemInterfaces
 {
     
-    public interface IUpdateEntityWithChanges<out TEntity> : IProcessSystemMessage, IEntityRequest<TEntity> where TEntity : IEntity
+    public interface IUpdateEntityWithChanges :  IEntityRequest
     {
         Dictionary<string, object> Changes { get; }
-        int EntityId { get; }
+        IDynamicEntity Entity { get; }
     }
 
-    public interface IAddOrGetEntityWithChanges<out TEntity> : IProcessSystemMessage, IEntityRequest<TEntity> where TEntity : IEntity
+    public interface IAddOrGetEntityWithChanges : IEntityRequest
     {
         Dictionary<string, object> Changes { get; }
     }

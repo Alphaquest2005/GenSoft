@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace SystemInterfaces
 {
-    public interface IEntityChanges
+    public interface IEntityChanges:IEntityRequest
     {
         Dictionary<string, object> Changes { get; }
         int EntityId { get; }

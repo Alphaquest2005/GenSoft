@@ -51,10 +51,6 @@
       <Project>{e41cf673-fe71-4aae-a8fc-b571a36c1211}</Project>
       <Name>Domain.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Interfaces\Interfaces.csproj">
-      <Project>{ad573873-c8e6-4ea3-93f5-0d39a92fc9f6}</Project>
-      <Name>Interfaces</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Revolution\Actor.Interfaces\Actor.Interfaces.csproj">
       <Project>{8b10c72d-9f33-4290-b562-44cf1f718fa5}</Project>
       <Name>Actor.Interfaces</Name>

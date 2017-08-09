@@ -23,12 +23,12 @@ namespace MRManager_UnitTests
     [TestClass]
     public class ObservableViewModelTests:IProcessSource
     {
-        private static readonly ProcessState<ISignInInfo> ProcessState;
+        private static readonly ProcessStateEntity<ISignInInfo> ProcessStateEntity;
         private static readonly SystemProcess TestProcess= new SystemProcess(new RevolutionEntities.Process.Process(1, 0, "Test Proces", "This is a Test", "T", new Agent("TestManager")),new MachineInfo(Environment.MachineName, Environment.ProcessorCount));
 
         static ObservableViewModelTests()
         {
-            ProcessState = new ProcessState<ISignInInfo>(TestProcess, new SignInInfo() { Id = 5, Usersignin = "Joe", Password = "Test" }, new StateInfo(1, "Test Name", "Test status", ""));
+            ProcessStateEntity = new ProcessStateEntity<ISignInInfo>(TestProcess, new SignInInfo() { Id = 5, Usersignin = "Joe", Password = "Test" }, new StateInfo(1, "Test Name", "Test status", ""));
         }
        
     
@@ -46,7 +46,7 @@ namespace MRManager_UnitTests
                    
                }, commandInfo: new List<IViewModelEventCommand<IViewModel,IEvent>>(), orientation: typeof(IBodyViewModel), priority: 0);
             
-            viewModel.State.Value = ProcessState;
+            viewModel.State.Value = ProcessStateEntity;
             // var id = dynamicViewModel.GetValue("Id");
            Assert.AreEqual(5, viewModel.Id);
         }
@@ -67,7 +67,7 @@ namespace MRManager_UnitTests
                        messageData: (s) => new ViewEventPublicationParameter(new object[] {s.State.Value.Entity.Id, s.ChangeTracking.ToDictionary(x => x.Key, x => x.Value)},new StateEventInfo(s.Process.Id, RevolutionData.Context.View.Events.EntityChanged), s.Process, s.Source ), key: "Entity Changes")
                }, commandInfo: new List<IViewModelEventCommand<IViewModel,IEvent>>(), orientation: typeof(IBodyViewModel), priority: 0);
 
-            viewModel.State.Value = ProcessState;
+            viewModel.State.Value = ProcessStateEntity;
 
 
             viewModel.Id = 6;
@@ -94,7 +94,7 @@ namespace MRManager_UnitTests
                        messageData: (s) => new ViewEventPublicationParameter(new object[] {s.State.Value.Entity.Id, s.ChangeTracking.ToDictionary(x => x.Key, x => x.Value)},new StateEventInfo(s.Process.Id, RevolutionData.Context.View.Events.EntityChanged), s.Process, s.Source ), key: "entity Changes")
                }, commandInfo: new List<IViewModelEventCommand<IViewModel, IEvent>>(), orientation: typeof(IBodyViewModel), priority: 0);
 
-            viewModel.State.Value = ProcessState;
+            viewModel.State.Value = ProcessStateEntity;
 
 
             viewModel.Id = 6;
@@ -114,9 +114,9 @@ namespace MRManager_UnitTests
                 .Subscribe(x => handleEntityChanges(x));
             dynamic viewModel = CreateLoginViewModel();
 
-            viewModel.State.Value = ProcessState;
+            viewModel.State.Value = ProcessStateEntity;
             viewModel.ChangeTracking.Add(nameof(ISignInInfo.Usersignin), "joe");
-            viewModel.ChangeTracking.Add(nameof(ISignInInfo.Password), "test");
+            viewModel.ChangeTracking.Add("Password"), "test");
             viewModel.Commands["ValidateUserInfo"].Execute();
             // var id = dynamicViewModel.GetValue("Id");
             Assert.AreEqual(5, viewModel.Id);
@@ -129,9 +129,9 @@ namespace MRManager_UnitTests
                 .Subscribe(x => handleEntityChanges(x));
             dynamic viewModel = CreateLoginViewModel();
 
-            viewModel.State.Value = ProcessState;
+            viewModel.State.Value = ProcessStateEntity;
             viewModel.ChangeTracking.Add(nameof(ISignInInfo.Usersignin), "joe");
-            viewModel.ChangeTracking.Add(nameof(ISignInInfo.Password), "test");
+            viewModel.ChangeTracking.Add("Password"), "test");
             viewModel.Commands["ValidateUserInfo"].Execute();
             // var id = dynamicViewModel.GetValue("Id");
             Assert.AreEqual(5, viewModel.Id);
@@ -154,7 +154,7 @@ namespace MRManager_UnitTests
                         commandPredicate: new List<Func<SigninViewModel, bool>>()
                         {
                             (v) => v.ChangeTracking.Keys.Count > 2,
-                            v => v.ChangeTracking.Values.Contains(nameof(ISignInInfo.Password)) && v.ChangeTracking.Values.Contains(nameof(ISignInInfo.Usersignin)), 
+                            v => v.ChangeTracking.Values.Contains("Password")) && v.ChangeTracking.Values.Contains(nameof(ISignInInfo.Usersignin)), 
                         },
                         messageData: s => new ViewEventCommandParameter(new object[] {s.State.Value.Entity.Id,s.ChangeTracking.ToDictionary(x => x.Key, x => x.Value)},new StateCommandInfo(s.Process.Id, RevolutionData.Context.View.Commands.ChangeEntity),s.Process,s.Source))
                 }, orientation: typeof(IBodyViewModel), priority: 0);

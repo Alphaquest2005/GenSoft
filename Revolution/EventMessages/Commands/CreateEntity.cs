@@ -7,17 +7,17 @@ using CommonMessages;
 namespace EventMessages.Commands
 {
 
-    [Export(typeof(ICreateEntity<>))]
-    public class CreateEntity<T> : ProcessSystemMessage, ICreateEntity<T> where T : IEntity
+    [Export(typeof(ICreateEntity))]
+    public class CreateEntity : ProcessSystemMessage, ICreateEntity
     {
         public CreateEntity() { }
-        public T Entity { get; }
+        public IDynamicEntity Entity { get; }
         
-        public CreateEntity(T entity, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
+        public CreateEntity(IDynamicEntity entity, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
         {
             Contract.Requires(entity != null);
             Entity = entity;
         }
-        public Type ViewType => typeof(T);
+        public string EntityType => Entity.EntityType;
     }
 }

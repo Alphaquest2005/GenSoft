@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 namespace SystemInterfaces
 {
     
-    public interface ICurrentEntityChanged<out TEntity>:IProcessSystemMessage
+    public interface ICurrentEntityChanged:IEntityRequest
     {
-        TEntity Entity { get; }
+        IDynamicEntity Entity { get; }
     }
 }

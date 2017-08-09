@@ -24,7 +24,7 @@ using DataEntites;
 using EF.Entities;
 using EventAggregator;
 using EventMessages;
-using Interfaces;
+
 using ReactiveUI;
 
 namespace ViewModels

@@ -24,7 +24,7 @@ public class ConstructorEntityViewModelTemplate : CSharpTemplate
 #>
 using System.ComponentModel;
 using Core.Common.UI;
-using Interfaces;
+
 using DesignTime;
 using ValidationSets;
 

@@ -68,9 +68,7 @@
     <Compile Include="Actors\ComplexEventActor.cs" />
     <Compile Include="Actors\ViewModelActor.cs" />
     <Compile Include="Supervisors\BaseSupervisor.cs" />
-    <Compile Include="Supervisors\EntityViewDataServiceManager.cs" />
     <Compile Include="Supervisors\EntityDataServiceManager.cs" />
-    <Compile Include="Supervisors\EntityViewDataServiceSupervisor.cs" />
     <Compile Include="Supervisors\ProcessSupervisor.cs" />
     <Compile Include="Supervisors\ViewModelSupervisor.cs" />
     <Compile Include="Actors\ProcessActor.cs" />
@@ -89,10 +87,6 @@
     <ProjectReference Include="..\..\DesignTimeData\DesignTimeData.csproj">
       <Project>{e7ec52dc-8650-4cf0-bcab-ed8a9473d2cf}</Project>
       <Name>DesignTimeData</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Interfaces\Interfaces.csproj">
-      <Project>{ad573873-c8e6-4ea3-93f5-0d39a92fc9f6}</Project>
-      <Name>Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\MRManager\Process.WorkFlow\Process.WorkFlow.csproj">
       <Project>{4f0baa58-3b45-4136-8095-445d406b4d23}</Project>

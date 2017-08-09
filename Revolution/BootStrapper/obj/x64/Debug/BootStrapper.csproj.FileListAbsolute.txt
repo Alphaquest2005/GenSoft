@@ -77,14 +77,12 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\SystemInte
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\ViewModel.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\System.Collections.Immutable.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\Akka.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\Actor.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\ComponentModel.Composition.Hosting.Extension.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\SystemInterfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\ViewModel.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\System.Collections.Immutable.xml
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\Akka.xml
-C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\obj\x64\Debug\BootStrapper.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\obj\x64\Debug\BootStrapper.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\obj\x64\Debug\BootStrapper.pdb

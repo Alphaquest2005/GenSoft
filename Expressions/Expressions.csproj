@@ -70,10 +70,6 @@
     <Compile Include="Custom\PatientExpressions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EFEntities\EF.Entities.csproj">
-      <Project>{FAD2A8C8-A1B4-4A3C-8E37-0388C0E3733C}</Project>
-      <Name>EF.Entities</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">
       <Project>{AD573873-C8E6-4EA3-93F5-0D39A92FC9F6}</Project>
       <Name>Interfaces</Name>

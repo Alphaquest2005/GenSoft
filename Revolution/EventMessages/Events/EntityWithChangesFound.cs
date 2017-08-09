@@ -1,21 +1,24 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using SystemInterfaces;
 using CommonMessages;
 
 namespace EventMessages.Events
 {
-    
-    public class EntityWithChangesFound<TEntity> : ProcessSystemMessage, IEntityWithChangesFound<TEntity> where TEntity : IEntity
+    [Export(typeof(IEntityWithChangesFound))]
+    public class EntityWithChangesFound : ProcessSystemMessage, IEntityWithChangesFound 
     {
-        public EntityWithChangesFound(TEntity entity, Dictionary<string, dynamic> changes, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
+        public EntityWithChangesFound() { }
+        public EntityWithChangesFound(IDynamicEntity entity, Dictionary<string, dynamic> changes, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
         {
             Entity = entity;
             Changes = changes;
         }
 
-        public TEntity Entity { get; set; }
+        public IDynamicEntity Entity { get; set; }
         public Dictionary<string, dynamic> Changes { get; }
 
+        public string EntityType => Entity.EntityType;
     }
+   
 }

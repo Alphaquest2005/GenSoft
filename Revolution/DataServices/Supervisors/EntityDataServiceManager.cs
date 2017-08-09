@@ -35,27 +35,9 @@ namespace DataServices.Actors
         {
             try
             {
-                var type = entityRequest.GetType()
-                    .GetInterfaces()
-                    .FirstOrDefault(
-                        x =>
-                            x.GetInterfaces()
-                                .Any(
-                                    z =>
-                                        z.IsGenericType && z.GetGenericTypeDefinition() == typeof (IEntityRequest<>)));
+                var type = entityRequest.EntityType;
 
-                Type classType;
-                if (type != null)
-                {
-                    classType = type.GenericTypeArguments[0];
-                }
-                else
-                {
-                    classType = entityRequest.ViewType;
-                }
-
-
-                CreateEntityActors(classType, typeof (EntityDataServiceSupervisor<>), "{0}EntityDataServiceSupervisor",
+                CreateEntityActors(type,  "{0}EntityDataServiceSupervisor",
                         entityRequest.Process, entityRequest);
                 
             }
@@ -68,21 +50,21 @@ namespace DataServices.Actors
 
         }
 
-        private void CreateEntityActors(Type classType, Type genericListType, string actorName, ISystemProcess process, IProcessSystemMessage msg)
+        private void CreateEntityActors(string classType,  string actorName, ISystemProcess process, IProcessSystemMessage msg)
         {
-            var child = ctx.Child(string.Format(actorName, classType.Name));
+            var child = ctx.Child(string.Format(actorName, classType));
             if (!Equals(child, ActorRefs.Nobody)) return;
-            var specificListType = genericListType.MakeGenericType(classType);
+            
             try
             {
-                Task.Run(() => { ctx.ActorOf(Props.Create(specificListType, process, msg), string.Format(actorName, classType.Name)); });
+                Task.Run(() => { ctx.ActorOf(Props.Create<EntityDataServiceSupervisor>(process, msg), string.Format(actorName, classType)); });
             }
             catch (Exception ex)
             {
                 Debugger.Break();
                 EventMessageBus.Current.Publish(new ProcessEventFailure(failedEventType: msg.GetType(),
                     failedEventMessage: msg,
-                    expectedEventType: typeof(ServiceStarted<>).MakeGenericType(specificListType),
+                    expectedEventType: typeof(IServiceStarted<EntityDataServiceSupervisor>),
                     exception: ex,
                     source: Source, processInfo: new StateEventInfo(msg.Process.Id, RevolutionData.Context.Process.Events.Error)), Source);
             }

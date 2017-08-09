@@ -5,7 +5,7 @@ namespace SystemInterfaces
 {
     
     
-    public interface IGetEntityById<out TEntity>:IProcessSystemMessage, IEntityRequest<TEntity> where TEntity:IEntity
+    public interface IGetEntityById: IEntityRequest
     {
        // void Create(int entityId);
         int EntityId { get; }

@@ -95,20 +95,17 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Commands\AddEntityWithChanges.cs" />
+    <Compile Include="Commands\AddOrGetEntityWithChanges.cs" />
     <Compile Include="Commands\CleanUpSystemProcess.cs" />
     <Compile Include="Commands\CreateProcessActor.cs" />
-    <Compile Include="Commands\GetEntityViewById.cs" />
-    <Compile Include="Commands\LoadEntityViewSetWithChanges.cs" />
-    <Compile Include="Commands\LoadPulledEntityViewSetWithChanges.cs" />
+    <Compile Include="Commands\LoadEntitySetWithChanges.cs" />
     <Compile Include="Commands\StartSystemProcess.cs" />
     <Compile Include="Commands\RequestProcessLog.cs" />
     <Compile Include="Commands\CreateEntityService.cs" />
-    <Compile Include="Commands\UpdateEntityViewWithChanges.cs" />
     <Compile Include="Events\ActorTerminated.cs" />
-    <Compile Include="Events\EntityViewSetWithChangesLoaded.cs" />
+    <Compile Include="Events\EntitySetWithChangesLoaded.cs" />
     <Compile Include="Events\CurrentEntityChanged.cs" />
-    <Compile Include="Events\EntityViewWithChangesUpdated.cs" />
+    <Compile Include="Events\EntityWithChangesUpdated.cs" />
     <Compile Include="Events\FailedCommandData.cs" />
     <Compile Include="Events\FailedMessageData.cs" />
     <Compile Include="Events\ProcessStateUpdated.cs" />
@@ -120,18 +117,10 @@
     <Compile Include="Commands\ExecuteComplexEventAction.cs" />
     <Compile Include="Events\ComplexEventActionTimedOut.cs" />
     <Compile Include="Events\EntityFound.cs" />
-    <Compile Include="Events\EntityViewWithChangesFound.cs" />
     <Compile Include="Events\EntityWithChangesFound.cs" />
-    <Compile Include="Commands\GetEntityViewWithChanges.cs" />
     <Compile Include="Commands\GetEntityWithChanges.cs" />
     <Compile Include="Events\ProcessEventFailure.cs" />
-    <Compile Include="Events\EntityViewLoaded.cs" />
-    <Compile Include="Commands\LoadEntityViewSetWithFilter.cs" />
-    <Compile Include="Commands\LoadEntityView.cs" />
     <Compile Include="Commands\CreateEntity.cs" />
-    <Compile Include="Events\EntityChanges.cs" />
-    <Compile Include="Events\EntityDeleted.cs" />
-    <Compile Include="Events\EntityCreated.cs" />
     <Compile Include="Events\MediaNotFound.cs" />
     <Compile Include="Events\EntityNotFound.cs" />
     <Compile Include="Events\EntitySetLoaded.cs" />
@@ -139,7 +128,7 @@
     <Compile Include="Events\GotMedia.cs" />
     <Compile Include="Commands\GetMedia.cs" />
     <Compile Include="Commands\LoadEntitySetWithFilterWithIncludes.cs" />
-    <Compile Include="Events\UpdateProcessState.cs" />
+    <Compile Include="Events\UpdateProcessStateEntity.cs" />
     <Compile Include="Commands\RequestProcessState.cs" />
     <Compile Include="Events\EntitySetWithFilterLoaded.cs" />
     <Compile Include="Events\EntityUpdated.cs" />
@@ -159,10 +148,6 @@
     <Compile Include="Commands\UpdateEntityWithChanges.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Interfaces\Interfaces.csproj">
-      <Project>{AD573873-C8E6-4EA3-93F5-0D39A92FC9F6}</Project>
-      <Name>Interfaces</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Actor.Interfaces\Actor.Interfaces.csproj">
       <Project>{8b10c72d-9f33-4290-b562-44cf1f718fa5}</Project>
       <Name>Actor.Interfaces</Name>

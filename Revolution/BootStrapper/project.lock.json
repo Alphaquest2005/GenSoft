@@ -211,13 +211,6 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1"
       },
-      "Interfaces/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        }
-      },
       "SystemInterfaces/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1"
@@ -235,7 +228,6 @@
         "dependencies": {
           "CommonMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
-          "Interfaces": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.103-pre",
           "ReactiveProperty": "2.9.0",
           "SystemInterfaces": "1.0.0",
@@ -453,13 +445,6 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1"
       },
-      "Interfaces/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        }
-      },
       "SystemInterfaces/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1"
@@ -477,7 +462,6 @@
         "dependencies": {
           "CommonMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
-          "Interfaces": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.103-pre",
           "ReactiveProperty": "2.9.0",
           "SystemInterfaces": "1.0.0",
@@ -930,11 +914,6 @@
       "type": "project",
       "path": "../MefGeneric-master/MEFGeneric Preview 9/src/ComponentModel.Composition.Hosting.Extension/project.json",
       "msbuildProject": "../MefGeneric-master/MEFGeneric Preview 9/src/ComponentModel.Composition.Hosting.Extension/ComponentModel.Composition.Hosting.Extension.csproj"
-    },
-    "Interfaces/1.0.0": {
-      "type": "project",
-      "path": "../../Interfaces/project.json",
-      "msbuildProject": "../../Interfaces/Interfaces.csproj"
     },
     "SystemInterfaces/1.0.0": {
       "type": "project",

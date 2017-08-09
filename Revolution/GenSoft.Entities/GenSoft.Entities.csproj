@@ -54,19 +54,16 @@
     <Compile Include="Generated Entities\ActionEntityType.cs" />
     <Compile Include="Generated Entities\Agent.cs" />
     <Compile Include="Generated Entities\ApplicationSetting.cs" />
+    <Compile Include="Generated Entities\Attributes.cs" />
     <Compile Include="Generated Entities\Command.cs" />
     <Compile Include="Generated Entities\CompositeRequest.cs" />
     <Compile Include="Generated Entities\DataType.cs" />
     <Compile Include="Generated Entities\DomainEntityCache.cs" />
     <Compile Include="Generated Entities\DomainEntityType.cs" />
     <Compile Include="Generated Entities\DomainEntityTypeSourceEntity.cs" />
-    <Compile Include="Generated Entities\Entity Views\EntityListView.cs" />
-    <Compile Include="Generated Entities\Entity Views\EntityRelationsView.cs" />
-    <Compile Include="Generated Entities\Entity Views\ProcessComplexStateView.cs" />
-    <Compile Include="Generated Entities\Entity Views\ProcessInfo.cs" />
-    <Compile Include="Generated Entities\Entity Views\ProcessStateView.cs" />
     <Compile Include="Generated Entities\Entity.cs" />
     <Compile Include="Generated Entities\EntityAttribute.cs" />
+    <Compile Include="Generated Entities\EntityAttributeChanges.cs" />
     <Compile Include="Generated Entities\EntityId.cs" />
     <Compile Include="Generated Entities\EntityList.cs" />
     <Compile Include="Generated Entities\EntityName.cs" />
@@ -100,10 +97,6 @@
     <ProjectReference Include="..\GenSoft.Interface\GenSoft.Interface.csproj">
       <Project>{f90cc1c1-1f4e-4719-817b-9a14ce56a5ce}</Project>
       <Name>GenSoft.Interface</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Interfaces\Interfaces.csproj">
-      <Project>{ad573873-c8e6-4ea3-93f5-0d39a92fc9f6}</Project>
-      <Name>Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{cb6d5fbc-0c13-437d-b4f3-a0ec4d5673b3}</Project>

@@ -139,10 +139,6 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Interfaces\Interfaces.csproj">
-      <Project>{ad573873-c8e6-4ea3-93f5-0d39a92fc9f6}</Project>
-      <Name>Interfaces</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\ValidationSets\ValidationSets.csproj">
       <Project>{6a9c99e7-2552-4a6c-b26e-2d727c5d85ce}</Project>
       <Name>ValidationSets</Name>

@@ -48,6 +48,7 @@
     <Compile Include="Generated Interfaces\ActionEntityType.cs" />
     <Compile Include="Generated Interfaces\Agent.cs" />
     <Compile Include="Generated Interfaces\ApplicationSetting.cs" />
+    <Compile Include="Generated Interfaces\Attributes.cs" />
     <Compile Include="Generated Interfaces\Command.cs" />
     <Compile Include="Generated Interfaces\CompositeRequest.cs" />
     <Compile Include="Generated Interfaces\DataType.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="Generated Interfaces\DomainEntityTypeSourceEntity.cs" />
     <Compile Include="Generated Interfaces\Entity.cs" />
     <Compile Include="Generated Interfaces\EntityAttribute.cs" />
+    <Compile Include="Generated Interfaces\EntityAttributeChanges.cs" />
     <Compile Include="Generated Interfaces\EntityId.cs" />
     <Compile Include="Generated Interfaces\EntityList.cs" />
     <Compile Include="Generated Interfaces\EntityName.cs" />
@@ -63,11 +65,6 @@
     <Compile Include="Generated Interfaces\EntityType.cs" />
     <Compile Include="Generated Interfaces\EntityTypeAttributes.cs" />
     <Compile Include="Generated Interfaces\EntityView.cs" />
-    <Compile Include="Generated Interfaces\EntityViews\EntityListView.cs" />
-    <Compile Include="Generated Interfaces\EntityViews\EntityRelationsView.cs" />
-    <Compile Include="Generated Interfaces\EntityViews\ProcessComplexStateView.cs" />
-    <Compile Include="Generated Interfaces\EntityViews\ProcessInfo.cs" />
-    <Compile Include="Generated Interfaces\EntityViews\ProcessStateView.cs" />
     <Compile Include="Generated Interfaces\Event.cs" />
     <Compile Include="Generated Interfaces\Machine.cs" />
     <Compile Include="Generated Interfaces\Message.cs" />

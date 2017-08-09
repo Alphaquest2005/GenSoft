@@ -11,9 +11,7 @@ C:\Prism\GitRepositiory\MRManager\ValidationSets\obj\x64\Debug\ValidationSets.pd
 C:\Prism\GitRepositiory\GenSoft\ValidationSets\bin\x64\Debug\ValidationSets.dll
 C:\Prism\GitRepositiory\GenSoft\ValidationSets\bin\x64\Debug\ValidationSets.pdb
 C:\Prism\GitRepositiory\GenSoft\ValidationSets\bin\x64\Debug\FluentValidation.dll
-C:\Prism\GitRepositiory\GenSoft\ValidationSets\bin\x64\Debug\Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\ValidationSets\bin\x64\Debug\SystemInterfaces.dll
-C:\Prism\GitRepositiory\GenSoft\ValidationSets\bin\x64\Debug\Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\ValidationSets\bin\x64\Debug\SystemInterfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\ValidationSets\obj\x64\Debug\ValidationSets.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\ValidationSets\obj\x64\Debug\ValidationSets.dll

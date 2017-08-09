@@ -85,13 +85,13 @@ namespace MRManager_UnitTests
 
             EventMessageBus.Current.GetEvent<IGetEntityViewWithChanges<ISignInInfo>>(Source).Subscribe(x => GetEntityViewWithChanges.Enqueue(x));
 
-            EventMessageBus.Current.GetEvent<IEntityViewWithChangesFound<ISignInInfo>>(Source).Where(x => x.Process.Id == 2 && x.Entity.Usersignin == "joe" && x.Changes.Count == 1).Subscribe(
+            EventMessageBus.Current.GetEvent<IEntityWithChangesFound>(Source).Where(x => x.Process.Id == 2 && x.Entity.Usersignin == "joe" && x.Changes.Count == 1).Subscribe(
                 x =>
                 {
                    ((dynamic)LoginViewModelCreated.ViewModel).Password = "test";
                     ((dynamic)LoginViewModelCreated.ViewModel).Commands["ValidateUserInfo"].Execute();
                 });
-            EventMessageBus.Current.GetEvent<IEntityViewWithChangesFound<ISignInInfo>>(Source)
+            EventMessageBus.Current.GetEvent<IEntityWithChangesFound>(Source)
                 .Where(x => x.Process.Id == 2 && x.Changes.Count == 2 && x.Entity.Usersignin == "joe")
                 .Subscribe(
                     x =>
@@ -148,7 +148,7 @@ namespace MRManager_UnitTests
         private IRequestProcessState process2StateRequest;
         private List<IProcessStateMessage<ISignInInfo>> process2StateMessageList = new List<IProcessStateMessage<ISignInInfo>>();
         private IGetEntityViewWithChanges<ISignInInfo> UserNameEntityChanges;
-        private IEntityViewWithChangesFound<ISignInInfo> userFound;
+        private IEntityWithChangesFound userFound;
         private IUserValidated userValidated;
         private IServiceStarted<IEntityViewDataServiceActor<IGetEntityViewWithChanges<ISignInInfo>>> getEntityChangesActor;
         private ConcurrentQueue<IProcessEventFailure> EventFailures = new ConcurrentQueue<IProcessEventFailure>();

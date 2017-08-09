@@ -113,11 +113,8 @@ C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\Common.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\CommonMessages.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\Core.Common.UI.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\DesignTimeData.dll
-C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\EF.Entities.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\EventAggregator.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\EventMessages.dll
-C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\Expressions.dll
-C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\Process.WorkFlow.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\RevolutionData.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\RevolutionEntities.dll
@@ -134,9 +131,6 @@ C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\DomainMessages.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\Domain.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\ComponentModel.Composition.Hosting.Extension.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\DesignTimeData.pdb
-C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\EF.Entities.pdb
-C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\Expressions.pdb
-C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\CommonMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\Common.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\Core.Common.UI.pdb
@@ -161,7 +155,6 @@ C:\Prism\GitRepositiory\GenSoft\ViewModels\obj\x64\Debug\ViewModels.csprojResolv
 C:\Prism\GitRepositiory\GenSoft\ViewModels\obj\x64\Debug\ViewModels.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\obj\x64\Debug\ViewModels.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\System.ValueTuple.dll
-C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\Expressions.dll.config
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\Core.Common.UI.dll.config
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\EventAggregator.dll.config
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\RevolutionData.dll.config

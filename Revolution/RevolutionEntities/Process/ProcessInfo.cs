@@ -24,7 +24,7 @@ namespace RevolutionEntities.Process
         public string UserId { get; }
     }
 
-    //public class ProcessInfo<TEntity> : IProcessInfo<TEntity> where TEntity : IEntityId
+    //public class ProcessInfo<TEntity> : IProcessInfoId
     //{
     //    public ProcessInfo(int id, int parentProcessId, string name, string description, string symbol, string userId)
     //    {

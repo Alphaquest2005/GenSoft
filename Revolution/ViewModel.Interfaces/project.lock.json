@@ -187,13 +187,6 @@
           "SystemInterfaces": "1.0.0"
         }
       },
-      "Interfaces/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        }
-      },
       "SystemInterfaces/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1"
@@ -379,13 +372,6 @@
         }
       },
       "CommonMessages/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        }
-      },
-      "Interfaces/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
@@ -819,11 +805,6 @@
       "path": "../CommonMessages/project.json",
       "msbuildProject": "../CommonMessages/CommonMessages.csproj"
     },
-    "Interfaces/1.0.0": {
-      "type": "project",
-      "path": "../../Interfaces/project.json",
-      "msbuildProject": "../../Interfaces/Interfaces.csproj"
-    },
     "SystemInterfaces/1.0.0": {
       "type": "project",
       "path": "../SystemInterfaces/project.json",
@@ -852,9 +833,6 @@
       "frameworks": {
         "net461": {
           "projectReferences": {
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Interfaces\\Interfaces.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Interfaces\\Interfaces.csproj"
-            },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\CommonMessages\\CommonMessages.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\CommonMessages\\CommonMessages.csproj"
             },

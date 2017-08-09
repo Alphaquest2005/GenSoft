@@ -7,22 +7,23 @@ using CommonMessages;
 
 namespace EventMessages.Commands
 {
-    [Export(typeof(IUpdateEntityWithChanges<>))]
+    [Export(typeof(IUpdateEntityWithChanges))]
 
-    public class UpdateEntityWithChanges<TEntity> : ProcessSystemMessage, IUpdateEntityWithChanges<TEntity> where TEntity : IEntity
+    public class UpdateEntityWithChanges : ProcessSystemMessage, IUpdateEntityWithChanges
     {
         public UpdateEntityWithChanges() { }
         public Dictionary<string, dynamic> Changes { get; }
-        public int EntityId { get; }
+        public IDynamicEntity Entity { get; }
 
-        public UpdateEntityWithChanges(int entityId, Dictionary<string, dynamic> changes, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
+        public UpdateEntityWithChanges(IDynamicEntity entity, Dictionary<string, dynamic> changes, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
         {
             Contract.Requires(changes.Count > 0);
-            EntityId = entityId;
+            Entity = entity;
             Changes = changes;
-
+            
         }
 
-        public Type ViewType => typeof(TEntity);
+
+        public string EntityType => Entity.EntityType;
     }
 }

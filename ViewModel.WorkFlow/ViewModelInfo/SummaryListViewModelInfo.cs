@@ -8,7 +8,6 @@ using System.Windows;
 using SystemInterfaces;
 using BootStrapper;
 using Common.Dynamic;
-using Interfaces;
 using ReactiveUI;
 using RevolutionEntities.Process;
 using RevolutionEntities.ViewModels;
@@ -18,22 +17,22 @@ using ViewModel.Interfaces;
 namespace RevolutionData
 {
     
-    public class SummaryListViewModelInfo<TView> where TView : IEntityView
+    public class SummaryListViewModelInfo
     {
-        public static ViewModelInfo SummaryListViewModel(int processId, string symbol, string description, int priority, List<EntityViewModelRelationship> parentEntities)
+        public static ViewModelInfo SummaryListViewModel(int processId,string entityType, string symbol, string description, int priority, List<EntityViewModelRelationship> parentEntities)
         {
             try
             {
                 var viewInfo = new ViewModelInfo
                 (
                     processId: processId,
-                    viewInfo: new ViewInfo($"{typeof(TView).Name}SummaryListViewModel", symbol, description),
+                    viewInfo: new ViewInfo($"{entityType}SummaryListViewModel", symbol, description),
                     subscriptions: new List<IViewModelEventSubscription<IViewModel, IEvent>>
                     {
-                        new ViewEventSubscription<ISummaryListViewModel<TView>, IUpdateProcessStateList<TView>>(
+                        new ViewEventSubscription<ISummaryListViewModel, IUpdateProcessStateList>(
                             3,
                             e => e != null,
-                            new List<Func<ISummaryListViewModel<TView>, IUpdateProcessStateList<TView>, bool>>(),
+                            new List<Func<ISummaryListViewModel, IUpdateProcessStateList, bool>>(),
                             (v,e) =>
                             {
                                 if (v.State.Value == e.State) return;
@@ -41,10 +40,10 @@ namespace RevolutionData
                             }),
 
 
-                        new ViewEventSubscription<ISummaryListViewModel<TView>, IEntityViewSetWithChangesLoaded<TView>>(
+                        new ViewEventSubscription<ISummaryListViewModel, IEntitySetWithChangesLoaded>(
                             processId: processId,
                             eventPredicate: e => e.Changes.Count == 0,
-                            actionPredicate: new List<Func<ISummaryListViewModel<TView>, IEntityViewSetWithChangesLoaded<TView>, bool>>(),
+                            actionPredicate: new List<Func<ISummaryListViewModel, IEntitySetWithChangesLoaded, bool>>(),
                             action: (v, e) =>
                             {
                                 if (Application.Current == null)
@@ -57,10 +56,10 @@ namespace RevolutionData
                                 }
                             }),
 
-                        new ViewEventSubscription<ISummaryListViewModel<TView>, IEntityViewWithChangesUpdated<TView>>(
+                        new ViewEventSubscription<ISummaryListViewModel, IEntityWithChangesUpdated>(
                             processId: processId,
                             eventPredicate: e => e.Changes.Count > 0,
-                            actionPredicate: new List<Func<ISummaryListViewModel<TView>, IEntityViewWithChangesUpdated<TView>, bool>>(),
+                            actionPredicate: new List<Func<ISummaryListViewModel, IEntityWithChangesUpdated, bool>>(),
                             action: (v, e) =>
                             {
                                 if (Application.Current == null)
@@ -73,10 +72,10 @@ namespace RevolutionData
                                 }
                             }),
 
-                        new ViewEventSubscription<ISummaryListViewModel<TView>, ICurrentEntityChanged<TView>>(
+                        new ViewEventSubscription<ISummaryListViewModel, ICurrentEntityChanged>(
                             3,
                             e => e != null,
-                            new List<Func<ISummaryListViewModel<TView>, ICurrentEntityChanged<TView>, bool>>(),
+                            new List<Func<ISummaryListViewModel, ICurrentEntityChanged, bool>>(),
                             (v, e) =>
                             {
                                 if (v.CurrentEntity.Value?.Id == e.Entity?.Id) return;
@@ -87,10 +86,10 @@ namespace RevolutionData
                     },
                     publications: new List<IViewModelEventPublication<IViewModel, IEvent>>
                     {
-                        new ViewEventPublication<ISummaryListViewModel<TView>, IViewStateLoaded<ISummaryListViewModel<TView>,IProcessStateList<TView>>>(
+                        new ViewEventPublication<ISummaryListViewModel, IViewStateLoaded<ISummaryListViewModel,IProcessStateList>>(
                             key:"ViewStateLoaded",
                             subject:v => v.State,
-                            subjectPredicate:new List<Func<ISummaryListViewModel<TView>, bool>>
+                            subjectPredicate:new List<Func<ISummaryListViewModel, bool>>
                             {
                                 v => v.State != null
                             },
@@ -98,7 +97,7 @@ namespace RevolutionData
                             {
                                 Application.Current.Dispatcher.BeginInvoke(new Action(() =>
                                 {
-                                    s.EntitySet.Value.Add(BootStrapper.BootStrapper.Container.GetConcreteInstance<TView>(typeof(TView)));
+                                    //s.EntitySet.Value.Add(BootStrapper.BootStrapper.Container.GetConcreteInstance(typeof(TView)));
                                     s.NotifyPropertyChanged(nameof(s.EntitySet));
                                 }));
 
@@ -107,19 +106,19 @@ namespace RevolutionData
                                     s.Source);
                             }),
 
-                        new ViewEventPublication<ISummaryListViewModel<TView>, ICurrentEntityChanged<TView>>(
+                        new ViewEventPublication<ISummaryListViewModel, ICurrentEntityChanged>(
                             key:"CurrentEntityChanged",
                             subject:v =>  (IObservable<dynamic>)v.CurrentEntity,//.WhenAnyValue(x => x.Value),
-                            subjectPredicate:new List<Func<ISummaryListViewModel<TView>, bool>>{},
+                            subjectPredicate:new List<Func<ISummaryListViewModel, bool>>{},
                             messageData:s => new ViewEventPublicationParameter(new object[] {s.CurrentEntity.Value},new StateEventInfo(s.Process.Id, Context.View.Events.ProcessStateLoaded),s.Process,s.Source))
                     },
                     commands: new List<IViewModelEventCommand<IViewModel, IEvent>>
                     {
 
 
-                        new ViewEventCommand<ISummaryListViewModel<TView>, ILoadEntityViewSetWithChanges<TView,IPartialMatch>>(
+                        new ViewEventCommand<ISummaryListViewModel, ILoadEntitySetWithChanges>(
                             key:"Search",
-                            commandPredicate:new List<Func<ISummaryListViewModel<TView>, bool>>
+                            commandPredicate:new List<Func<ISummaryListViewModel, bool>>
                             {
                                 v => v.ChangeTracking.Values.Count > 0
 
@@ -141,9 +140,9 @@ namespace RevolutionData
                                     s.Source);
                             }),
 
-                        new ViewEventCommand<ISummaryListViewModel<TView>, IViewRowStateChanged<TView>>(
+                        new ViewEventCommand<ISummaryListViewModel, IViewRowStateChanged>(
                             key:"EditEntity",
-                            commandPredicate:new List<Func<ISummaryListViewModel<TView>, bool>>
+                            commandPredicate:new List<Func<ISummaryListViewModel, bool>>
                             {
                                 v => v.CurrentEntity != null
                             },
@@ -163,7 +162,7 @@ namespace RevolutionData
 
 
                     },
-                    viewModelType: typeof(ISummaryListViewModel<TView>),
+                    viewModelType: typeof(ISummaryListViewModel),
                     orientation: typeof(IBodyViewModel),
                     priority: priority);
 
@@ -200,10 +199,10 @@ namespace RevolutionData
 
         public static IViewModelEventCommand<IViewModel, IEvent> CreateEntityCommand(List<string> childProperties)
         {
-            return  new ViewEventCommand<ISummaryListViewModel<TView>, IUpdateEntityViewWithChanges<TView>>(
+            return  new ViewEventCommand<ISummaryListViewModel, IUpdateEntityWithChanges>(
                 key: "EditEntity",
                 subject: v => v.ChangeTracking.DictionaryChanges,
-                commandPredicate: new List<Func<ISummaryListViewModel<TView>, bool>>
+                commandPredicate: new List<Func<ISummaryListViewModel, bool>>
                 {
                     v => v.ChangeTracking.Count == 1 && v.CurrentEntity.Value.Id != 0
 
@@ -231,10 +230,10 @@ namespace RevolutionData
 
         public static IViewModelEventCommand<IViewModel, IEvent> EditEntityCommand(List<string> childProperties)
         {
-            return new ViewEventCommand<ISummaryListViewModel<TView>, IUpdateEntityViewWithChanges<TView>>(
+            return new ViewEventCommand<ISummaryListViewModel, IUpdateEntityWithChanges>(
                 key: "CreateEntity",
                 subject: v => v.ChangeTracking.DictionaryChanges,
-                commandPredicate: new List<Func<ISummaryListViewModel<TView>, bool>>
+                commandPredicate: new List<Func<ISummaryListViewModel, bool>>
                 {
                     v => v.ChangeTracking.Count > 0 && v.CurrentEntity.Value.Id == 0
 
@@ -259,11 +258,11 @@ namespace RevolutionData
                 });
         }
 
-        private static List<IViewModelEventSubscription<IViewModel, IEvent>> CreateParentEntitySubscibtion(int processId, Type parentEntity, string parentProperty)
+        private static List<IViewModelEventSubscription<IViewModel, IEvent>> CreateParentEntitySubscibtion(int processId, string parentEntity, string parentProperty)
         {
             var res = new List<IViewModelEventSubscription<IViewModel, IEvent>>();
             
-            res.Add((IViewModelEventSubscription<IViewModel, IEvent>) typeof(SummaryListViewModelInfo<TView>).GetMethod("ParentCurrentEntityChanged").MakeGenericMethod(parentEntity).Invoke(null, new object[] { processId, parentProperty}));
+            res.Add((IViewModelEventSubscription<IViewModel, IEvent>) typeof(SummaryListViewModelInfo).GetMethod("ParentCurrentEntityChanged").Invoke(null, new object[] { processId,parentEntity, parentProperty}));
             return res;
         }
 
@@ -271,20 +270,19 @@ namespace RevolutionData
 
 
 
-        public static IViewModelEventSubscription<IViewModel, IEvent> ParentCurrentEntityChanged<PEntity>(int processId,string parentProperty)
+        public static IViewModelEventSubscription<IViewModel, IEvent> ParentCurrentEntityChanged(int processId, string pEntity,string parentProperty)
         {
-            return new ViewEventSubscription<ISummaryListViewModel<TView>, ICurrentEntityChanged<PEntity>>(
+            return new ViewEventSubscription<ISummaryListViewModel, ICurrentEntityChanged>(
                 processId,
-                e => e != null,
-                new List<Func<ISummaryListViewModel<TView>, ICurrentEntityChanged<PEntity>, bool>>(),
+                e => e != null && e.Entity.EntityType == pEntity,
+                new List<Func<ISummaryListViewModel, ICurrentEntityChanged, bool>>(),
                 (v, e) =>
                 {
                     ((Expando)v).Properties[parentProperty] = e.Entity;
                 });
         }
 
-        private static void UpdateEntitySet(ISummaryListViewModel<TView> summaryListViewModel,
-            IEntityViewWithChangesUpdated<TView> msg)
+        private static void UpdateEntitySet(ISummaryListViewModel summaryListViewModel,IEntityWithChangesUpdated msg)
         {
             var existingEntity = summaryListViewModel.EntitySet.Value.FirstOrDefault(x => x.Id == msg.Entity.Id);
             if (existingEntity != null) summaryListViewModel.EntitySet.Value.Remove(existingEntity);
@@ -294,7 +292,7 @@ namespace RevolutionData
 
         }
 
-        private static void ReloadEntitySet(ISummaryListViewModel<TView> v, IEntityViewSetWithChangesLoaded<TView> e)
+        private static void ReloadEntitySet(ISummaryListViewModel v, IEntitySetWithChangesLoaded e)
         {
             v.EntitySet.Value.Clear();
             v.EntitySet.Value.AddRange(e.EntitySet);

@@ -5,6 +5,6 @@ C:\Prism\GitRepositiory\MRManager\Revolution\MefGeneric-master\MEFGeneric Previe
 C:\Prism\GitRepositiory\MRManager\Revolution\MefGeneric-master\MEFGeneric Preview 9\src\ComponentModel.Composition.Hosting.Extension\obj\x64\Debug\ComponentModel.Composition.Hosting.Extension.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\MefGeneric-master\MEFGeneric Preview 9\src\ComponentModel.Composition.Hosting.Extension\bin\x64\Debug\ComponentModel.Composition.Hosting.Extension.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\MefGeneric-master\MEFGeneric Preview 9\src\ComponentModel.Composition.Hosting.Extension\bin\x64\Debug\ComponentModel.Composition.Hosting.Extension.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\MefGeneric-master\MEFGeneric Preview 9\src\ComponentModel.Composition.Hosting.Extension\obj\x64\Debug\ComponentModel.Composition.Hosting.Extension.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\MefGeneric-master\MEFGeneric Preview 9\src\ComponentModel.Composition.Hosting.Extension\obj\x64\Debug\ComponentModel.Composition.Hosting.Extension.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\MefGeneric-master\MEFGeneric Preview 9\src\ComponentModel.Composition.Hosting.Extension\obj\x64\Debug\ComponentModel.Composition.Hosting.Extension.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\MefGeneric-master\MEFGeneric Preview 9\src\ComponentModel.Composition.Hosting.Extension\obj\x64\Debug\ComponentModel.Composition.Hosting.Extension.csprojResolveAssemblyReference.cache

@@ -16,35 +16,35 @@ using ViewMessages;
 
 namespace DataServices.Actors
 {
-    public class EntityDataServiceSupervisor<TEntity> : BaseSupervisor<EntityDataServiceSupervisor<TEntity>> where TEntity : class, IEntity
+    public class EntityDataServiceSupervisor : BaseSupervisor<EntityDataServiceSupervisor> 
     {
 
-        private static readonly Action<ISystemSource, ICreateEntity<TEntity>> CreateAction = (s, x) => x.CreateEntity();
-        private static readonly Action<ISystemSource, IDeleteEntity<TEntity>> DeleteAction = (s, x) => x.DeleteEntity();
-        private static readonly Action<ISystemSource, IUpdateEntityWithChanges<TEntity>> UpdateAction = (s, x) => x.UpdateEntity();
-        private static readonly Action<ISystemSource, IAddOrGetEntityWithChanges<TEntity>> AddAction = (s, x) => x.AddEntity();
-        private static readonly Action<ISystemSource, IGetEntityById<TEntity>> GetEntityByIdAction = (s, x) => x.GetEntity();
-        private static readonly Action<ISystemSource, IGetEntityWithChanges<TEntity>> GetEntityWithChangesAction = (s, x) => x.GetEntity();
+        private static readonly Action<ISystemSource, ICreateEntity> CreateAction = (s, x) => x.CreateEntity();
+        private static readonly Action<ISystemSource, IDeleteEntity> DeleteAction = (s, x) => x.DeleteEntity();
+        private static readonly Action<ISystemSource, IUpdateEntityWithChanges> UpdateAction = (s, x) => x.UpdateEntity();
+        private static readonly Action<ISystemSource, IAddOrGetEntityWithChanges> AddAction = (s, x) => x.AddEntity();
+        private static readonly Action<ISystemSource, IGetEntityById> GetEntityByIdAction = (s, x) => x.GetEntity();
+        private static readonly Action<ISystemSource, IGetEntityWithChanges> GetEntityWithChangesAction = (s, x) => x.GetEntity();
 
-        private static readonly Action<ISystemSource, ILoadEntitySet<TEntity>> LoadEntitySet = (s, x) => x.LoadEntitySet();
-        private static readonly Action<ISystemSource, ILoadEntitySetWithFilter<TEntity>> LoadEntitySetWithFilter = (s, x) => x.LoadEntitySet();
-        private static readonly Action<ISystemSource, ILoadEntitySetWithFilterWithIncludes<TEntity>> LoadEntitySetWithFilterWithIncludes = (s, x) => x.LoadEntitySet();
+        private static readonly Action<ISystemSource, ILoadEntitySetWithChanges> LoadEntitySet = (s, x) => x.LoadEntitySet();
+        private static readonly Action<ISystemSource, ILoadEntitySetWithFilter> LoadEntitySetWithFilter = (s, x) => x.LoadEntitySet();
+        private static readonly Action<ISystemSource, ILoadEntitySetWithFilterWithIncludes> LoadEntitySetWithFilterWithIncludes = (s, x) => x.LoadEntitySet();
 
         
 
         readonly Dictionary<Type, object> entityEvents =
             new Dictionary<Type, object>()
             {
-                {typeof (ICreateEntity<TEntity>), CreateAction},
-                {typeof (IDeleteEntity<TEntity>), DeleteAction},
-                {typeof (IUpdateEntityWithChanges<TEntity>), UpdateAction},
-                {typeof (IAddOrGetEntityWithChanges<TEntity>), AddAction},
-                {typeof (IGetEntityById<TEntity>), GetEntityByIdAction},
-                {typeof (IGetEntityWithChanges<TEntity>), GetEntityWithChangesAction},
+                {typeof (ICreateEntity), CreateAction},
+                {typeof (IDeleteEntity), DeleteAction},
+                {typeof (IUpdateEntityWithChanges), UpdateAction},
+                {typeof (IAddOrGetEntityWithChanges), AddAction},
+                {typeof (IGetEntityById), GetEntityByIdAction},
+                {typeof (IGetEntityWithChanges), GetEntityWithChangesAction},
 
-                {typeof (ILoadEntitySet<TEntity>), LoadEntitySet},
-                {typeof (ILoadEntitySetWithFilter<TEntity>), LoadEntitySetWithFilter},
-                {typeof (ILoadEntitySetWithFilterWithIncludes<TEntity>), LoadEntitySetWithFilterWithIncludes},
+                {typeof (ILoadEntitySetWithChanges), LoadEntitySet},
+                {typeof (ILoadEntitySetWithFilter), LoadEntitySetWithFilter},
+                {typeof (ILoadEntitySetWithFilterWithIncludes), LoadEntitySetWithFilterWithIncludes},
                 
             };
         private IUntypedActorContext ctx = null;

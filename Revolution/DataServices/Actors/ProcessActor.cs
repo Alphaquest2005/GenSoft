@@ -35,14 +35,14 @@ namespace DataServices.Actors
         
         private ConcurrentQueue<IProcessSystemMessage> msgQue = new ConcurrentQueue<IProcessSystemMessage>();
         private ReadOnlyCollection<IComplexEventAction> _complexEvents;
-        public ConcurrentDictionary<Type, IProcessStateMessage<IEntityId>> ProcessStateMessages { get; }= new ConcurrentDictionary<Type, IProcessStateMessage<IEntityId>>();
+        public ConcurrentDictionary<Type, IProcessStateMessage> ProcessStateMessages { get; }= new ConcurrentDictionary<Type, IProcessStateMessage>();
         private static IUntypedActorContext ctx = null;
 
 
         public ProcessActor(ICreateProcessActor msg):base(msg.Process)
         {
             ctx = Context;
-            EventMessageBus.Current.GetEvent<IProcessStateMessage<IEntityId>>(Source)
+            EventMessageBus.Current.GetEvent<IProcessStateMessage>(Source)
                 .Where(x => x.Process.Id == msg.Process.Id)
                 .Subscribe(x => SaveStateMessages(x));
             EventMessageBus.Current.GetEvent<IRequestProcessState>(Source)
@@ -124,11 +124,11 @@ namespace DataServices.Actors
             }
         }
 
-        private void SaveStateMessages(IProcessStateMessage<IEntityId> pe)
+        private void SaveStateMessages(IProcessStateMessage pe)
         {
 
             ProcessStateMessages.AddOrUpdate(pe.GetType(), pe, (k, v) => pe);
-            var msg = new ProcessStateUpdated(pe.GetType(), pe, new StateEventInfo(Process.Id, RevolutionData.Context.Process.Events.StateUpdated), Process, Source);
+            var msg = new ProcessStateUpdated(pe.EntityType, pe, new StateEventInfo(Process.Id, RevolutionData.Context.Process.Events.StateUpdated), Process, Source);
             Publish(msg);
         }
 

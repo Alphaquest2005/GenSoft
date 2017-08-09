@@ -61,8 +61,7 @@ namespace DataServices.Actors
                        await Task.Run(() =>ctx.ActorOf(Props.Create<ViewModelSupervisor>(viewModelInfos,systemProcess, systemStartedMsg),"ViewModelSupervisor")).ConfigureAwait(false);
                        
                         await Task.Run(() => ctx.ActorOf(Props.Create<EntityDataServiceManager>(systemProcess), "EntityDataServiceManager")).ConfigureAwait(false);
-                        await Task.Run(() =>ctx.ActorOf(Props.Create<EntityViewDataServiceManager>(systemProcess), "EntityViewDataServiceManager")).ConfigureAwait(false);
-
+                        
 
                         EventMessageBus.Current.Publish(
                             new ServiceStarted<IServiceManager>(this,

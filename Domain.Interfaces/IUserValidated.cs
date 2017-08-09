@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SystemInterfaces;
-using Interfaces;
+using Common.DataEntites;
+
 
 namespace Domain.Interfaces
 {
     public interface IUserValidated : IProcessSystemMessage
     {
-        ISignInInfo UserSignIn { get; }
+        IDynamicEntity UserSignIn { get; }
     }
 }

@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 namespace SystemInterfaces
 {
     
-    public interface IProcessStateMessage<out TEntity>:IProcessSystemMessage where TEntity : IEntityId
+    public interface IProcessStateMessage:IEntityRequest
     {
-        IProcessState<TEntity> State { get; }
+        IProcessStateEntity State { get; }
     }
 
     
-    public interface IUpdateProcessStateList<out TEntity> : IProcessSystemMessage where TEntity : IEntityId
+    public interface IUpdateProcessStateList : IEntityRequest 
     {
-        IProcessStateList<TEntity> State { get; }
+        IProcessStateList State { get; }
     }
 }

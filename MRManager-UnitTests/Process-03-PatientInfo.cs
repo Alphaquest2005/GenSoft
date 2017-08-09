@@ -74,9 +74,9 @@ namespace MRManager_UnitTests
 
             EventMessageBus.Current.GetEvent<IUpdateProcessStateList<IPatientInfo>>(Source).Where(x => x.Process.Id == 3).Subscribe(x => processStateMessageList.Add(x));
 
-            EventMessageBus.Current.GetEvent<IEntityViewSetWithChangesLoaded<IPatientInfo>>(Source).Where(x => x.Process.Id == 3 && x.Changes.Count == 0).Subscribe(x => EntityViewSetLoaded_without_Changes = x);
+            EventMessageBus.Current.GetEvent<IEntitySetWithChangesLoaded<IPatientInfo>>(Source).Where(x => x.Process.Id == 3 && x.Changes.Count == 0).Subscribe(x => EntityViewSetLoaded_without_Changes = x);
 
-            EventMessageBus.Current.GetEvent<IEntityViewSetWithChangesLoaded<IPatientInfo>>(Source).Where(x => x.Process.Id == 3 && x.Changes.Count == 2).Subscribe(x => EntityViewSetLoaded_WithChanges = x);
+            EventMessageBus.Current.GetEvent<IEntitySetWithChangesLoaded<IPatientInfo>>(Source).Where(x => x.Process.Id == 3 && x.Changes.Count == 2).Subscribe(x => EntityViewSetLoaded_WithChanges = x);
 
             EventMessageBus.Current.GetEvent<IViewStateLoaded<IPatientSummaryListViewModel, IProcessStateList<IPatientInfo>>>(Source).Where(x => x.Process.Id == 3).Subscribe(x => InitialViewStateLoaded = x);
 
@@ -121,8 +121,8 @@ namespace MRManager_UnitTests
         
         private IViewStateLoaded<IPatientSummaryListViewModel, IProcessState<IPatientInfo>> InitialViewStateLoaded;
         private List<IUpdateProcessStateList<IPatientInfo>> processStateMessageList = new List<IUpdateProcessStateList<IPatientInfo>>();
-        private IEntityViewSetWithChangesLoaded<IPatientInfo> EntityViewSetLoaded_without_Changes;
-        private IEntityViewSetWithChangesLoaded<IPatientInfo> EntityViewSetLoaded_WithChanges;
+        private IEntitySetWithChangesLoaded<IPatientInfo> EntityViewSetLoaded_without_Changes;
+        private IEntitySetWithChangesLoaded<IPatientInfo> EntityViewSetLoaded_WithChanges;
     }
 
 

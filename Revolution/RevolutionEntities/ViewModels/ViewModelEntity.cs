@@ -1,4 +1,5 @@
 using System;
+using GenSoft.Interfaces;
 
 namespace RevolutionEntities.ViewModels
 {
@@ -6,14 +7,14 @@ namespace RevolutionEntities.ViewModels
     {
         public ViewModelEntity() { }
 
-        public ViewModelEntity(Type entityType, string viewProperty, string property)
+        public ViewModelEntity(string entityType, string viewProperty, string property)
         {
             EntityType = entityType;
             ViewProperty = viewProperty;
             Property = property;
         }
 
-        public Type EntityType { get; set; }
+        public string EntityType { get; set; }
         public string ViewProperty { get; set; }
         public string Property { get; set; }
 

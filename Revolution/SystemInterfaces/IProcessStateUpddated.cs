@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 namespace SystemInterfaces
 {
     
-    public interface IProcessStateUpddated : IProcessSystemMessage
+    public interface IProcessStateUpddated : IEntityRequest
     {
-        Type EntityType { get; }
-        IProcessStateMessage<IEntityId> StateMessage { get; }
+        IProcessStateMessage StateMessage { get; }
     }
 }

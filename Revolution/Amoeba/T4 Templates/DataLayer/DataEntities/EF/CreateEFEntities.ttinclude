@@ -23,13 +23,13 @@
 
 		}
 
-		foreach (var entityView in entities.SelectMany(x=> x.Entity.EntityViews))
-		{
-			var tpl = new EntityViewEntityTemplate(entityView, app.Name);
-			tpl.Output.Project = Path.Combine(appFolder, settings["Project"]) ;
-			tpl.Output.File = settings["Folder"] + @"\Entity Views\" + entityView.Name + ".cs";
-			tpl.Render(); 
-		}
+	//	foreach (var entityView in entities.SelectMany(x=> x.Entity.EntityViews))
+	//	{
+	//		var tpl = new EntityViewEntityTemplate(entityView, app.Name);
+	//		tpl.Output.Project = Path.Combine(appFolder, settings["Project"]) ;
+	//		tpl.Output.File = settings["Folder"] + @"\Entity Views\" + entityView.Name + ".cs";
+	//		tpl.Render(); 
+	//	}
 
 			var dtpl = new DefaulEFEntityTemplate(app.Name);
 			dtpl.Output.Project = Path.Combine(appFolder, settings["Project"]) ;

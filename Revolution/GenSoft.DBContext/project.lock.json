@@ -1145,7 +1145,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
-          "Interfaces": "1.0.0",
+          "Common": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
       },
@@ -1155,18 +1155,7 @@
         "dependencies": {
           "CommonMessages": "1.0.0",
           "Domain.Interfaces": "1.0.0",
-          "Interfaces": "1.0.0",
           "SystemInterfaces": "1.0.0"
-        }
-      },
-      "EF.Entities/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "Common": "1.0.0",
-          "Interfaces": "1.0.0",
-          "SystemInterfaces": "1.0.0",
-          "Utilities": "1.0.0"
         }
       },
       "EventAggregator/1.0.0": {
@@ -1179,36 +1168,17 @@
           "SystemInterfaces": "1.0.0"
         }
       },
-      "Expressions/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "Common": "1.0.0",
-          "EF.Entities": "1.0.0",
-          "Interfaces": "1.0.0",
-          "SystemInterfaces": "1.0.0",
-          "morelinq": "2.4.1"
-        }
-      },
       "GenSoft.Entities/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
           "Common": "1.0.0",
           "GenSoft.Interface": "1.0.0",
-          "Interfaces": "1.0.0",
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0"
         }
       },
       "GenSoft.Interface/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        }
-      },
-      "Interfaces/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
@@ -1243,7 +1213,6 @@
         "dependencies": {
           "CommonMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
-          "Interfaces": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.103-pre",
           "ReactiveProperty": "2.9.0",
           "SystemInterfaces": "1.0.0",
@@ -2347,7 +2316,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
-          "Interfaces": "1.0.0",
+          "Common": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
       },
@@ -2357,18 +2326,7 @@
         "dependencies": {
           "CommonMessages": "1.0.0",
           "Domain.Interfaces": "1.0.0",
-          "Interfaces": "1.0.0",
           "SystemInterfaces": "1.0.0"
-        }
-      },
-      "EF.Entities/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "Common": "1.0.0",
-          "Interfaces": "1.0.0",
-          "SystemInterfaces": "1.0.0",
-          "Utilities": "1.0.0"
         }
       },
       "EventAggregator/1.0.0": {
@@ -2381,36 +2339,17 @@
           "SystemInterfaces": "1.0.0"
         }
       },
-      "Expressions/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "Common": "1.0.0",
-          "EF.Entities": "1.0.0",
-          "Interfaces": "1.0.0",
-          "SystemInterfaces": "1.0.0",
-          "morelinq": "2.4.1"
-        }
-      },
       "GenSoft.Entities/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
           "Common": "1.0.0",
           "GenSoft.Interface": "1.0.0",
-          "Interfaces": "1.0.0",
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0"
         }
       },
       "GenSoft.Interface/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        }
-      },
-      "Interfaces/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
@@ -2445,7 +2384,6 @@
         "dependencies": {
           "CommonMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
-          "Interfaces": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.103-pre",
           "ReactiveProperty": "2.9.0",
           "SystemInterfaces": "1.0.0",
@@ -5900,20 +5838,10 @@
       "path": "../../DomainMessages/project.json",
       "msbuildProject": "../../DomainMessages/DomainMessages.csproj"
     },
-    "EF.Entities/1.0.0": {
-      "type": "project",
-      "path": "../../EFEntities/project.json",
-      "msbuildProject": "../../EFEntities/EF.Entities.csproj"
-    },
     "EventAggregator/1.0.0": {
       "type": "project",
       "path": "../EventAggregator/project.json",
       "msbuildProject": "../EventAggregator/EventAggregator.csproj"
-    },
-    "Expressions/1.0.0": {
-      "type": "project",
-      "path": "../../Expressions/project.json",
-      "msbuildProject": "../../Expressions/Expressions.csproj"
     },
     "GenSoft.Entities/1.0.0": {
       "type": "project",
@@ -5924,11 +5852,6 @@
       "type": "project",
       "path": "../GenSoft.Interface/project.json",
       "msbuildProject": "../GenSoft.Interface/GenSoft.Interface.csproj"
-    },
-    "Interfaces/1.0.0": {
-      "type": "project",
-      "path": "../../Interfaces/project.json",
-      "msbuildProject": "../../Interfaces/Interfaces.csproj"
     },
     "RevolutionLogger/1.0.0": {
       "type": "project",
@@ -5981,17 +5904,11 @@
             "C:\\Prism\\GitRepositiory\\GenSoft\\DomainMessages\\DomainMessages.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\DomainMessages\\DomainMessages.csproj"
             },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Expressions\\Expressions.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Expressions\\Expressions.csproj"
-            },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Entities\\GenSoft.Entities.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Entities\\GenSoft.Entities.csproj"
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Interface\\GenSoft.Interface.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Interface\\GenSoft.Interface.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Interfaces\\Interfaces.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Interfaces\\Interfaces.csproj"
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Common\\Common.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Common\\Common.csproj"

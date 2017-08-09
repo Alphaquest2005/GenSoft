@@ -27,7 +27,7 @@ using SystemMessages;
 using CommonMessages;
 using EventAggregator;
 using EventMessages;
-using Interfaces;
+
 using EF.Entities;
 using Entity.Expressions;
 using JB.Collections.Reactive;

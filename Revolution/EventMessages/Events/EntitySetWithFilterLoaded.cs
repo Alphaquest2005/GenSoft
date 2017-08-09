@@ -6,16 +6,19 @@ using CommonMessages;
 namespace EventMessages.Events
 {
 
-    [Export(typeof(IEntitySetWithFilterLoaded<>))]
-    public class EntitySetWithFilterLoaded<TEntity> : ProcessSystemMessage, IEntitySetWithFilterLoaded<TEntity> where TEntity : IEntity
+    [Export(typeof(IEntitySetWithFilterLoaded))]
+    public class EntitySetWithFilterLoaded : ProcessSystemMessage, IEntitySetWithFilterLoaded
     {
         public EntitySetWithFilterLoaded() { }
-        public IList<TEntity> Entities { get; }
+        public IList<IDynamicEntity> Entities { get; }
         
 
-        public EntitySetWithFilterLoaded(IList<TEntity> entities, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
+        public EntitySetWithFilterLoaded(string entityType, IList<IDynamicEntity> entities, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
         {
             Entities = entities;
+            EntityType = entityType;
         }
+
+        public string EntityType { get; }
     }
 }

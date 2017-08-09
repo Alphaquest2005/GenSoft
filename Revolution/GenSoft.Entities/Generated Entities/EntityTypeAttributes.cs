@@ -13,19 +13,16 @@ namespace GenSoft.Entities
 {
 	public partial class EntityTypeAttributes: BaseEntity, IEntityTypeAttributes
 	{
-		public virtual int DataTypeId { get; set; }
-		public virtual string Name { get; set; }
+		public virtual int AttributeId { get; set; }
 		public virtual int EntityTypeId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
-				public virtual EntityId EntityId {get; set;}
-				public virtual EntityName EntityName {get; set;}
 				public virtual ICollection<EntityRelationships> ParentEntitys {get; set;}
 				public virtual ICollection<EntityRelationships> ChildEntitys {get; set;}
 		
 			// ---------Parent Relationships
-				public virtual DataType DataType {get; set;}
+				public virtual Attributes Attributes {get; set;}
 				public virtual EntityType EntityType {get; set;}
 	
 

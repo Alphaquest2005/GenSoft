@@ -22,7 +22,7 @@ public class InstanceEntityViewModelTemplate : CSharpTemplate
 #>
 
 using Core.Common.UI;
-using Interfaces;
+
 
 namespace ViewModels
 {

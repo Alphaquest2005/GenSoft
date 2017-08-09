@@ -67,7 +67,6 @@
     <Compile Include="Process\ComplexEventParameters.cs" />
     <Compile Include="Process\ProcessAction.cs" />
     <Compile Include="Process\ComplexEventAction.cs" />
-    <Compile Include="Process\EntityProcess.cs" />
     <Compile Include="Process\IProcessExpectedEvent.cs" />
     <Compile Include="Process\ProcessExpectedEvent.cs" />
     <Compile Include="Process\ProcessInfo.cs" />
@@ -115,6 +114,10 @@
     <ProjectReference Include="..\EventAggregator\EventAggregator.csproj">
       <Project>{31e6b370-01f0-4489-832f-436cb97a6718}</Project>
       <Name>EventAggregator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GenSoft.Interface\GenSoft.Interface.csproj">
+      <Project>{F90CC1C1-1F4E-4719-817B-9A14CE56A5CE}</Project>
+      <Name>GenSoft.Interface</Name>
     </ProjectReference>
     <ProjectReference Include="..\SystemInterfaces\SystemInterfaces.csproj">
       <Project>{e3842263-e081-49ba-a1b4-bbe82b24e2db}</Project>

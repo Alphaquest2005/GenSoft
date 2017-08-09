@@ -33,28 +33,28 @@ namespace RevolutionEntities.Process
         public ISystemProcess Process { get; }
     }
 
-    public class ProcessState<TEntity> :ProcessState, IProcessState<TEntity> where TEntity : IEntityId
+    public class ProcessStateEntity :ProcessState, IProcessStateEntity
     {
-        public ProcessState(ISystemProcess process, TEntity entity, IStateInfo info) : base(process, info)
+        public ProcessStateEntity(ISystemProcess process, IDynamicEntity entity, IStateInfo info) : base(process, info)
         {
             Entity = entity;
         }
 
-        public TEntity Entity { get; }
+        public IDynamicEntity Entity { get; }
     }
 
-    public class ProcessStateList<TEntity> : ProcessState, IProcessStateList<TEntity> where TEntity : IEntityId
+    public class ProcessStateList : ProcessState, IProcessStateList
     {
-        public ProcessStateList(ISystemProcess process, TEntity entity, IEnumerable<TEntity> entitySet, IEnumerable<TEntity> selectedEntities, IProcessStateInfo stateInfo) : base(process, stateInfo)
+        public ProcessStateList(ISystemProcess process, IDynamicEntity entity, IEnumerable<IDynamicEntity> entitySet, IEnumerable<IDynamicEntity> selectedEntities, IProcessStateInfo stateInfo) : base(process, stateInfo)
         {
             Entity = entity;
             EntitySet = entitySet;
             SelectedEntities = selectedEntities;
         }
 
-        public TEntity Entity { get; }
-        public IEnumerable<TEntity> EntitySet { get; }
-        public IEnumerable<TEntity> SelectedEntities { get; }
+        public IDynamicEntity Entity { get; }
+        public IEnumerable<IDynamicEntity> EntitySet { get; }
+        public IEnumerable<IDynamicEntity> SelectedEntities { get; }
         
     }
 }

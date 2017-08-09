@@ -27,6 +27,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\ko\System.Wi
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\ru\System.Windows.Interactivity.resources.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\obj\x64\Debug\Converters.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\obj\x64\Debug\Converters.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\obj\x64\Debug\Converters.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\obj\x64\Debug\Converters.csprojResolveAssemblyReference.cache

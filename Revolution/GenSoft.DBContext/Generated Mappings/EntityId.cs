@@ -22,7 +22,7 @@ namespace GenSoft.Mappings
 		//-------------------Navigation Properties -------------------------------//
 	
 				//----------------Parent Properties
-				//entityBuilder.HasOne(p => p.EntityTypeAttributes EntityTypeAttributes).WithOne(p => p.EntityId).HasForeignKey<EntityTypeAttributes>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.Attributes Attributes).WithOne(p => p.EntityId).HasForeignKey<Attributes>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

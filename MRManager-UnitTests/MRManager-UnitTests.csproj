@@ -115,26 +115,6 @@
       <Project>{7ee26a5b-63e6-450e-b4bd-66d0205fb492}</Project>
       <Name>DomainMessages</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EF.Mappings\EF.Mappings.csproj">
-      <Project>{da54313c-4b98-49b1-a8f9-b5827f121886}</Project>
-      <Name>EF.Mappings</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EFDataContext\EF.DBContext.csproj">
-      <Project>{27C692A7-9601-43FB-8243-42B997107649}</Project>
-      <Name>EF.DBContext</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EFEntities\EF.Entities.csproj">
-      <Project>{FAD2A8C8-A1B4-4A3C-8E37-0388C0E3733C}</Project>
-      <Name>EF.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
-      <Project>{AD573873-C8E6-4EA3-93F5-0D39A92FC9F6}</Project>
-      <Name>Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Expressions\Expressions.csproj">
-      <Project>{2ab54ce2-e09b-40b4-9cbf-184b3e770b0d}</Project>
-      <Name>Expressions</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MRManager\MRManager.csproj">
       <Project>{83852b7c-5680-4695-9190-df230a6004a1}</Project>
       <Name>MRManager</Name>

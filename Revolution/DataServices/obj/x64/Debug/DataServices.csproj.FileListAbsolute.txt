@@ -192,7 +192,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\DesignTime
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\EFRepository.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\EventAggregator.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\EventMessages.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\Process.WorkFlow.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\RevolutionData.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\RevolutionEntities.dll
@@ -203,13 +202,9 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\Utilities.
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\ViewMessages.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\ViewModel.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\ComponentModel.Composition.Hosting.Extension.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\ValidationSets.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\Expressions.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\DomainMessages.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\Domain.Interfaces.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\EF.Entities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\DesignTimeData.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\Actor.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\BootStrapper.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\CommonMessages.pdb
@@ -228,11 +223,8 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\ViewMessag
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\ViewModel.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\Process.WorkFlow.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\ComponentModel.Composition.Hosting.Extension.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\ValidationSets.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\Expressions.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\DomainMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\Domain.Interfaces.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\EF.Entities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\obj\x64\Debug\DataServices.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\obj\x64\Debug\DataServices.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\obj\x64\Debug\DataServices.pdb
@@ -243,4 +235,3 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\EFReposito
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\EventAggregator.dll.config
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\RevolutionData.dll.config
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\ViewMessages.dll.config
-C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\Expressions.dll.config

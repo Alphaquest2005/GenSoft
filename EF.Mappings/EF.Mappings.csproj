@@ -167,10 +167,6 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EFEntities\EF.Entities.csproj">
-      <Project>{fad2a8c8-a1b4-4a3c-8e37-0388c0e3733c}</Project>
-      <Name>EF.Entities</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">
       <Project>{AD573873-C8E6-4EA3-93F5-0D39A92FC9F6}</Project>
       <Name>Interfaces</Name>

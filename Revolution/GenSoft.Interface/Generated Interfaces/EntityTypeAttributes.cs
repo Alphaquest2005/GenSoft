@@ -14,8 +14,7 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IEntityTypeAttributes:SystemInterfaces.IEntity  
 	{
-		int DataTypeId { get;}
-		string Name { get;}
+		int AttributeId { get;}
 		int EntityTypeId { get;}
 
 
