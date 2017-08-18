@@ -192,7 +192,7 @@ namespace Process.WorkFlow
 
 
 
-            ComplexActions.GetComplexAction("IntializeProcessState", new object[]{3, "Patient","IPatientInfo"}),
+            ComplexActions.GetComplexAction("IntializeProcessState", new object[]{3, "IPatientInfo"}),
 
         };
 
@@ -271,10 +271,10 @@ namespace Process.WorkFlow
             }
 
             
-            public static ComplexEventAction RequestState(int processId,string currentEntityType, string viewEntityType, Expression<Func<IDynamicEntity, dynamic>> property) 
+            public static ComplexEventAction RequestState(int processId,string currentEntityType, string viewEntityType, string property) 
             {
                 return new ComplexEventAction(
-                    key: $"RequestState-{currentEntityType}-{viewEntityType}-{property.GetMemberName()}",
+                    key: $"RequestState-{currentEntityType}-{viewEntityType}-{property}",
                     processId: processId,
                     actionTrigger: ActionTrigger.Any, 
                     events: new List<IProcessExpectedEvent>
@@ -310,9 +310,19 @@ namespace Process.WorkFlow
 
             public static ComplexEventAction GetComplexAction(string method, object[] args)
             {
-               return (ComplexEventAction) typeof(ComplexActions).GetMethod(method).Invoke(null, args);
+                try
+                {
+                    return (ComplexEventAction) typeof(ComplexActions).GetMethod(method).Invoke(null, args);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+
 
             }
+
             public static ComplexEventAction UpdateStateList(int processId, string entityType) 
             {
                 return new ComplexEventAction(
@@ -328,10 +338,10 @@ namespace Process.WorkFlow
                     action: ProcessActions.UpdateEntityViewStateList(entityType),
                     processInfo: new StateCommandInfo(processId, RevolutionData.Context.Process.Commands.UpdateState));
             }
-            public static ComplexEventAction RequestStateList(int processId, string currentEntityType, string viewEntityType, Expression<Func<IDynamicEntity, object>> currentProperty, Expression<Func<IDynamicEntity, object>> viewProperty)
+            public static ComplexEventAction RequestStateList(int processId, string currentEntityType, string viewEntityType, string currentProperty, string viewProperty)
             {
                 return new ComplexEventAction(
-                    key: $"RequestStateList-{currentEntityType}-{viewEntityType}-{viewProperty.GetMemberName()}",
+                    key: $"RequestStateList-{currentEntityType}-{viewEntityType}-{viewProperty}",
                     processId: processId,
                     actionTrigger: ActionTrigger.Any, 
                     events: new List<IProcessExpectedEvent>
@@ -348,10 +358,10 @@ namespace Process.WorkFlow
                     processInfo: new StateCommandInfo(processId, RevolutionData.Context.Process.Commands.UpdateState));
             }
 
-            public static IComplexEventAction UpdateStateWhenDataChanges(int processId, string currentEntityType, string viewEntityType, Expression<Func<IDynamicEntity, object>> currentProperty, Expression<Func<IDynamicEntity, object>> viewProperty)
+            public static IComplexEventAction UpdateStateWhenDataChanges(int processId, string currentEntityType, string viewEntityType, string currentProperty, string viewProperty)
             {
                 return new ComplexEventAction(
-                    key: $"UpdateStateWhenDataChanges{currentEntityType}-{viewEntityType}-{viewProperty.GetMemberName()}",
+                    key: $"UpdateStateWhenDataChanges{currentEntityType}-{viewEntityType}-{viewProperty}",
                     processId: 3,
                     actionTrigger:ActionTrigger.Any, 
                     events: new List<IProcessExpectedEvent>
@@ -374,14 +384,14 @@ namespace Process.WorkFlow
                     processInfo: new StateCommandInfo(processId, RevolutionData.Context.Process.Commands.UpdateState));
             }
 
-            public static IProcessAction GetView(string entityType, Expression<Func<IDynamicEntity, object>> currentProperty, Expression<Func<IDynamicEntity, object>> viewProperty) 
+            public static IProcessAction GetView(string entityType, string currentProperty, string viewProperty) 
             {
                 return new ProcessAction(
                     action:
                         async cp =>
                         {
-                            var key = default(IDynamicEntity).GetMemberName(viewProperty);
-                            var value = currentProperty.Compile().Invoke(cp.Messages["UpdatedEntity"].Entity);
+                            var key = viewProperty;
+                            var value = cp.Messages["UpdatedEntity"].Entity.Properties[currentProperty];
                             var changes = new Dictionary<string, dynamic>() { { key, value } };
 
                             return await Task.Run(() => new LoadEntitySetWithChanges("ExactMatch",entityType,changes,

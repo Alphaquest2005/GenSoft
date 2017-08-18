@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-13-1790051349
+16-1696633051
 
 2786311639
 102385355224
-Custom\ScreenDT.xaml;CustomTemplatesResource.xaml;AllDataTemplatesResource.xaml;AllEntityViewDataTemplatesResource.xaml;Custom\FooterVDT.xaml;Custom\EntityDetailsInfoVDT.xaml;Custom\EntityDetailsInfoWDT.xaml;Custom\SummaryInfoWDT.xaml;Custom\EntityDetailsInfoRDT.xaml;Custom\SummaryInfoRDT.xaml;Custom\SummaryInfoListVDT.xaml;Custom\HeaderVDT.xaml;ScratchPad.xaml;
+Custom\CommandDT.xaml;Custom\EntityDetailWDT.xaml;Custom\EntityDetailRDT.xaml;Custom\ScreenDT.xaml;CustomTemplatesResource.xaml;AllDataTemplatesResource.xaml;AllEntityViewDataTemplatesResource.xaml;Custom\FooterVDT.xaml;Custom\EntityDetailListVDT.xaml;Custom\EntityDetailListWDT.xaml;Custom\SummaryInfoWDT.xaml;Custom\EntityDetailListRDT.xaml;Custom\SummaryInfoRDT.xaml;Custom\SummaryInfoListVDT.xaml;Custom\HeaderVDT.xaml;ScratchPad.xaml;
 
 False
 

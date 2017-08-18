@@ -17,7 +17,7 @@
             <Style TargetType="{x:Type ContentControl}">
 
                     <!--  Default Template  -->
-                    <Setter Property="ContentTemplate" Value="{DynamicResource PatientDetailsInfoRDT}" />
+                    <Setter Property="ContentTemplate" Value="{DynamicResource EntityDetailListRDT}" />
                     <Setter Property="Height" Value="Auto" />
                     <!--<Setter Property="Visibility" Value="{Binding Value, Converter={StaticResource NullVisibilityConverter}}"/>-->
 
@@ -25,11 +25,11 @@
                     <Style.Triggers>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
-                                <Condition Binding="{Binding Path=RowState.Value, Source={x:Static viewModels:EntityDetailsViewModel.Instance}}" Value="{x:Static systemInterfaces:RowState.Added}" />
+                                <Condition Binding="{Binding Path=RowState.Value, Source={x:Static viewModels:EntityDetailsViewModel.Instance}}" Value="{x:Static systemInterfaces:RowState.Loaded}" />
                                 
                             </MultiDataTrigger.Conditions>
                             <MultiDataTrigger.Setters>
-                            <Setter Property="ContentTemplate" Value="{DynamicResource PatientDetailsInfoWDT}" />
+                                <Setter Property="ContentTemplate" Value="{DynamicResource EntityDetailListRDT}" />
                                 <Setter Property="Visibility" Value="Visible" />
                             </MultiDataTrigger.Setters>
                         </MultiDataTrigger>
@@ -39,7 +39,7 @@
                                 
                             </MultiDataTrigger.Conditions>
                             <MultiDataTrigger.Setters>
-                            <Setter Property="ContentTemplate" Value="{DynamicResource PatientDetailsInfoWDT}" />
+                                <Setter Property="ContentTemplate" Value="{DynamicResource EntityDetailListWDT}" />
                                 <Setter Property="Visibility" Value="Visible" />
                             </MultiDataTrigger.Setters>
                         </MultiDataTrigger>

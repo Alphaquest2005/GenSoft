@@ -124,14 +124,11 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\DomainMe
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\Domain.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\ValidationSets.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\BootStrapper.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\BootStrapper.dll.config
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\CommonMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\Common.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\EventAggregator.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\EventAggregator.dll.config
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\EventMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\RevolutionData.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\RevolutionData.dll.config
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\RevolutionEntities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\RevolutionLogger.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\SystemInterfaces.pdb
@@ -154,3 +151,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\obj\x64\Debug\Core.Com
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\obj\x64\Debug\Core.Common.UI.csproj.GenerateResource.Cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\obj\x64\Debug\Core.Common.UI.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\obj\x64\Debug\Core.Common.UI.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\BootStrapper.dll.config
+C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\EventAggregator.dll.config
+C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\RevolutionData.dll.config

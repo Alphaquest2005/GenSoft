@@ -12,7 +12,16 @@ namespace ViewModel.WorkFlow
         {
             MainWindowViewModelInfo.MainWindowViewModel,
             ScreenViewModelInfo.ScreenViewModel,
-            SigninViewModelInfo.SigninViewModel,
+            //SigninViewModelInfo.SigninViewModel,
+            EntityDetailsViewModelInfo.EntityDetailsViewModel(2,"ISignInInfo",  "", "Sign In", 0,
+                parentEntities:new List<ViewModelEntity>()
+                {
+                    
+                },
+                childEntities:new List<ViewModelEntity>()
+                {
+                    new ViewModelEntity(){EntityType = "ISignInInfo", ViewProperty = "SignInInfo", Property = "Id"},
+                }),
             HeaderViewModelInfo.HeaderViewModel,
             FooterViewModelInfo.FooterViewModel,
             //PatientSummaryListViewModelInfo.PatientSummaryListViewModel,

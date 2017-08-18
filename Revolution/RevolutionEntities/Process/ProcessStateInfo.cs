@@ -13,6 +13,7 @@ namespace RevolutionEntities.Process
 
         public int ProcessId { get; }
         public IState State { get; }
+        public IStateInfo ToStateInfo() => new StateInfo(ProcessId, State);
     }
 
 

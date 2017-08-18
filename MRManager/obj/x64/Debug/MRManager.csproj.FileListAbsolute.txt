@@ -329,6 +329,8 @@ C:\Prism\GitRepositiory\GenSoft\MRManager\obj\x64\Debug\MRManager.csproj.Generat
 C:\Prism\GitRepositiory\GenSoft\MRManager\obj\x64\Debug\MRManager.exe
 C:\Prism\GitRepositiory\GenSoft\MRManager\obj\x64\Debug\MRManager.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\System.ValueTuple.dll
+C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\DynamicExpresso.Core.dll
+C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\DynamicExpresso.Core.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\Resources.dll.config
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\ActorSystem.dll.config
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\BootStrapper.dll.config
@@ -339,5 +341,3 @@ C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\EventAggregator.dll.conf
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\RevolutionData.dll.config
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\ViewMessages.dll.config
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\ViewModels.dll.config
-C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\DynamicExpresso.Core.dll
-C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\DynamicExpresso.Core.pdb

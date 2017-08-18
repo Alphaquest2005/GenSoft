@@ -7,5 +7,7 @@ namespace SystemInterfaces
     {
         int ProcessId { get; }
         IState State { get; }
+
+        IStateInfo ToStateInfo();
     }
 }

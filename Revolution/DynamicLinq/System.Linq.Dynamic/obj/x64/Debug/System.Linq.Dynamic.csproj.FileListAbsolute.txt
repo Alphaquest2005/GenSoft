@@ -5,6 +5,6 @@ C:\Prism\GitRepositiory\MRManager\Revolution\DynamicLinq\System.Linq.Dynamic\obj
 C:\Prism\GitRepositiory\MRManager\Revolution\DynamicLinq\System.Linq.Dynamic\obj\x64\Debug\System.Linq.Dynamic.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\DynamicLinq\System.Linq.Dynamic\bin\x64\Debug\System.Linq.Dynamic.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DynamicLinq\System.Linq.Dynamic\bin\x64\Debug\System.Linq.Dynamic.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\DynamicLinq\System.Linq.Dynamic\obj\x64\Debug\System.Linq.Dynamic.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\DynamicLinq\System.Linq.Dynamic\obj\x64\Debug\System.Linq.Dynamic.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DynamicLinq\System.Linq.Dynamic\obj\x64\Debug\System.Linq.Dynamic.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\DynamicLinq\System.Linq.Dynamic\obj\x64\Debug\System.Linq.Dynamic.csprojResolveAssemblyReference.cache

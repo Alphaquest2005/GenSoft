@@ -37,7 +37,7 @@ namespace ViewModels
         public ReactiveProperty<IProcessStateList> State => this.ViewModel.State;
 
 
-        ReactiveProperty<IProcessState> IEntityViewModel.State => new ReactiveProperty<IProcessState>(this.ViewModel.State.Value, ReactivePropertyMode.DistinctUntilChanged);
+        ReactiveProperty<IProcessStateEntity> IEntityViewModel.State => new ReactiveProperty<IProcessStateEntity>(new ProcessStateEntity(this.ViewModel.State.Value.Process, this.ViewModel.State.Value.EntitySet.FirstOrDefault(), this.ViewModel.State.Value.StateInfo.ToStateInfo()), ReactivePropertyMode.DistinctUntilChanged);
         public ReactiveProperty<IDynamicEntity> CurrentEntity => this.ViewModel.CurrentEntity;
 
         public ObservableDictionary<string, dynamic> ChangeTracking => this.ViewModel.ChangeTracking;

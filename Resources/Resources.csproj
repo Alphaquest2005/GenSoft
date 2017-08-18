@@ -81,6 +81,10 @@
       <Project>{2f8bef84-3c02-48a4-a576-fbf41e3fffdd}</Project>
       <Name>DataTemplates</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Revolution\Converters\Converters.csproj">
+      <Project>{b7f58070-3c58-46af-95d1-6fc0d99d48ee}</Project>
+      <Name>Converters</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Revolution\Core.Common.UI\Core.Common.UI.csproj">
       <Project>{5dd82ad7-f344-45e3-92cc-96f8d07700af}</Project>
       <Name>Core.Common.UI</Name>

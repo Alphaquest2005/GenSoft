@@ -40,7 +40,7 @@ namespace RevolutionEntities.Process
             Entity = entity;
         }
 
-        public IDynamicEntity Entity { get; }
+        public IDynamicEntity Entity { get; set; }
     }
 
     public class ProcessStateList : ProcessState, IProcessStateList

@@ -69,6 +69,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Custom\CommandDT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Custom\EntityDetailWDT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Custom\EntityDetailRDT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Custom\ScreenDT.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -89,11 +101,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Custom\EntityDetailsInfoVDT.xaml">
+    <Page Include="Custom\EntityDetailListVDT.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Custom\EntityDetailsInfoWDT.xaml">
+    <Page Include="Custom\EntityDetailListWDT.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -101,7 +113,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Custom\EntityDetailsInfoRDT.xaml">
+    <Page Include="Custom\EntityDetailListRDT.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -16,7 +16,7 @@ namespace SystemInterfaces
     
     public interface IProcessStateEntity: IProcessState 
     {
-       IDynamicEntity Entity { get; }
+       IDynamicEntity Entity { get; set; }
     }
 
     

@@ -171,5 +171,7 @@ C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\Core.Common.UI.dll.confi
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\ViewModels.dll.config
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\EventAggregator.dll.config
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\BootStrapper.dll.config
-C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\ViewMessages.dll.config
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\RevolutionData.dll.config
+C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\ViewMessages.dll.config
+C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\Converters.dll
+C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\Converters.pdb

@@ -7,7 +7,7 @@ using ViewModelInterfaces;
 namespace ViewModel.Interfaces
 {
     
-    public interface ISigninViewModel: IEntityViewModel
-    {
-    }
+    //public interface ISigninViewModel: IEntityViewModel
+    //{
+    //}
 }

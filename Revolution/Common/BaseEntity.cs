@@ -1,15 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 using System.Runtime.Serialization;
 using SystemInterfaces;
 using Common.Dynamic;
+using JB.Collections.Reactive;
 
 namespace Common.DataEntites
 {
    
-    public abstract class DynamicEntity:Expando, IDynamicEntity
+    public class DynamicEntity:Expando, IDynamicEntity
     {
-        protected DynamicEntity(string entityType, int id)
+        public DynamicEntity(string entityType, int id)
         {
             EntityType = entityType;
             Id = id;
@@ -18,8 +21,9 @@ namespace Common.DataEntites
         public DateTime EntryDateTime { get; private set; } = DateTime.Now;
 
         public virtual string EntityType { get; }
+        public List<KeyValuePair<string, object>> PropertyList => new List<KeyValuePair<string, object>>(this.Properties.ToList());
 
-       
+
         public virtual RowState RowState { get; set; } = RowState.Loaded ;
         
         private readonly Guid _entityGuid = Guid.NewGuid();
@@ -59,10 +63,11 @@ namespace Common.DataEntites
     public abstract class BaseEntity : IEntity
     {
        
-        public int Id { get; }
+        public int Id { get; set; }
         public DateTime EntryDateTime { get; private set; } = DateTime.Now;
 
-        
+        [IgnoreDataMember]
+        [NotMapped]
         public virtual RowState RowState { get; set; } = RowState.Loaded;
 
         private readonly Guid _entityGuid = Guid.NewGuid();

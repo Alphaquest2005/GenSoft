@@ -1468,6 +1468,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
+          "Converters": "1.0.0",
           "Core.Common.UI": "1.0.0",
           "DataTemplates": "1.0.0",
           "ViewModels": "1.0.0"
@@ -3035,6 +3036,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
+          "Converters": "1.0.0",
           "Core.Common.UI": "1.0.0",
           "DataTemplates": "1.0.0",
           "ViewModels": "1.0.0"

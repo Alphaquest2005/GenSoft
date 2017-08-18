@@ -99,8 +99,10 @@ namespace ActorBackBone
 
                     foreach (var r in ctx.EntityRelationships
                         .Include(x => x.ChildEntity.EntityType.Type)
+                        .Include(x => x.ChildEntity.Attributes)
                         .Include(x => x.ChildEntity.EntityType.EntityList)
                         .Include(x => x.ParentEntity.EntityType.Type)
+                        .Include(x => x.ParentEntity.Attributes)
                         .Include(x => x.ParentEntity.EntityType.EntityList)
                         .Include(x => x.ChildEntity.EntityType.DomainEntityType.DomainEntityTypeSourceEntity)
                         .Include(
@@ -113,11 +115,9 @@ namespace ActorBackBone
                         var sourceEntityName = r.ChildEntity.EntityType.DomainEntityType.DomainEntityTypeSourceEntity
                             ?.SourceEntity;
 
-                        var parentExpression = typeof(ExpressionsExtensions).GetMethod("BuildForType")
-                            .Invoke(null, new object[] {parentType, r.ParentEntity.Attributes.Name});
+                        var parentExpression = r.ParentEntity.Attributes.Name;
 
-                        var childExpression = typeof(ExpressionsExtensions).GetMethod("BuildForType")
-                            .Invoke(null, new object[] {childType, r.ChildEntity.Attributes.Name});
+                        var childExpression = r.ChildEntity.Attributes.Name;
 
 
 
@@ -129,21 +129,16 @@ namespace ActorBackBone
                         foreach (var processId in r.ChildEntity.EntityType.DomainEntityType
                             .ProcessStateDomainEntityTypes.Select(x => x.ProcessState.Process.Id).Distinct())
                         {
-                            if (sourceEntityName != null)
+
+                            if (r.ChildEntity.EntityType.EntityList == null)
                             {
-                                res.Add(Processes.ComplexActions.GetComplexAction("RequestPulledState",new object[] {processId, parentType, childType, sourceEntityName}));
+                                res.Add(Processes.ComplexActions.GetComplexAction("RequestState",
+                                    new object[] {processId, parentType, childType, childExpression}));
                             }
                             else
                             {
-                                if (r.ChildEntity.EntityType.EntityList == null)
-                                    res.Add(Processes.ComplexActions.GetComplexAction("RequestState", new object[] {processId,parentType, childType, childExpression}));
-                            }
-
-                            if (r.ChildEntity.EntityType.EntityList != null)
-                            {
                                 res.Add(Processes.ComplexActions.GetComplexAction("RequestStateList",new object[] {processId,parentType, childType, parentExpression, childExpression}));
                             }
-
                             res.Add(Processes.ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new object[] {processId,parentType, childType, parentExpression, childExpression}));
                         }
 

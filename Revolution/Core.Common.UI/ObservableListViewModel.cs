@@ -16,6 +16,7 @@ using JB.Collections.Reactive;
 using Reactive.Bindings;
 using ReactiveUI;
 using RevolutionEntities;
+using RevolutionEntities.Process;
 using ViewModel.Interfaces;
 using ViewModelInterfaces;
 
@@ -60,9 +61,9 @@ namespace Core.Common.UI
             }));
         }
 
-        ReactiveProperty<IProcessState> IEntityViewModel.State
+        ReactiveProperty<IProcessStateEntity> IEntityViewModel.State
         {
-            get { return new ReactiveProperty<IProcessState>(_state.Value); }
+            get { return new ReactiveProperty<IProcessStateEntity>(){Value = new ProcessStateEntity(this.State.Value.Process, this.State.Value.EntitySet.FirstOrDefault(), this.State.Value.StateInfo.ToStateInfo())}; }
         }
 
 

@@ -17,8 +17,8 @@ using ViewModelInterfaces;
 
 namespace ViewModels
 {
-    [Export(typeof(IEntityDetailsViewModel))]
-    public class EntityDetailsViewModel : DynamicViewModel<ObservableViewModel>, IEntityDetailsViewModel
+    [Export(typeof(IEntityViewModel))]
+    public class EntityDetailsViewModel : DynamicViewModel<ObservableViewModel>, IEntityViewModel
     {
 
         public EntityDetailsViewModel() { }
@@ -31,7 +31,7 @@ namespace ViewModels
         }
 
 
-        
+        public ReactiveProperty<IProcessStateEntity> State => this.ViewModel.State;
         public ObservableDictionary<string, dynamic> ChangeTracking => this.ViewModel.ChangeTracking;
     }
 

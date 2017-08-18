@@ -36,14 +36,37 @@ namespace RevolutionData
                     viewInfo: new ViewInfo("EntityDetailsViewModel", symbol, description),
                     subscriptions: new List<IViewModelEventSubscription<IViewModel, IEvent>>{},
                     publications: new List<IViewModelEventPublication<IViewModel, IEvent>>{},
-                    commands: new List<IViewModelEventCommand<IViewModel, IEvent>>{},
-                    viewModelType: typeof(IEntityDetailsViewModel),
+                    commands: new List<IViewModelEventCommand<IViewModel, IEvent>>
+                    {
+                        new ViewEventCommand<IEntityViewModel, IViewRowStateChanged>(
+                            key:"EditEntity",
+                            commandPredicate:new List<Func<IEntityViewModel, bool>>
+                            {
+                                //v => v. != null
+                            },
+                            subject:s => Observable.Empty<ReactiveCommand<IViewModel, Unit>>(),
+
+                            messageData: s =>
+                            {
+                                s.RowState.Value = s.RowState.Value != RowState.Modified?RowState.Modified: RowState.Unchanged;//new ReactiveProperty<RowState>(rowstate != RowState.Modified?RowState.Modified: RowState.Unchanged);
+
+                                return new ViewEventCommandParameter(
+                                    new object[] {s,s.RowState.Value},
+                                    new StateCommandInfo(s.Process.Id,
+                                        Context.Process.Commands.CurrentEntityChanged), s.Process,
+                                    s.Source);
+                            }),
+                    },
+                    viewModelType: typeof(IEntityViewModel),
                     orientation: typeof(IBodyViewModel),
                     priority: priority);
 
                 var parentSubscriptions = new List<IViewModelEventSubscription<IViewModel, IEvent>>();
-                var parentCommands = new List<IViewModelEventCommand<IViewModel, IEvent>>();
+                var parentCommands = new List<IViewModelEventCommand<IViewModel, IEvent>>(viewInfo.Commands);
                 var parentPublications = new List<IViewModelEventPublication<IViewModel, IEvent>>();
+
+
+
                 foreach (var p in childEntities)
                 {
                     parentSubscriptions.AddRange(CreateChildSubscibtions(processId,p));
@@ -85,7 +108,7 @@ namespace RevolutionData
             res.Add((IViewModelEventSubscription<IViewModel, IEvent>)typeof(EntityDetailsViewModelInfo).GetMethod("RecieveProcessStateMessage").Invoke(null, new object[] { processId,relationship.EntityType, relationship.ViewProperty }));
             res.Add((IViewModelEventSubscription<IViewModel, IEvent>)typeof(EntityDetailsViewModelInfo).GetMethod("EntityFound").Invoke(null, new object[] { processId, relationship.EntityType, relationship.ViewProperty }));
             res.Add((IViewModelEventSubscription<IViewModel, IEvent>)typeof(EntityDetailsViewModelInfo).GetMethod("EntityViewWithChangesFound").Invoke(null, new object[] { processId, relationship.EntityType, relationship.ViewProperty }));
-            res.Add((IViewModelEventSubscription<IViewModel, IEvent>)typeof(EntityDetailsViewModelInfo).GetMethod("EntityViewSetWithChangesLoaded").Invoke(null, new object[] { processId, relationship.EntityType, relationship.ViewProperty }));
+           
             return res;
         }
         private static List<IViewModelEventPublication<IViewModel, IEvent>> CreatePublications(EntityViewModelRelationship rel)
@@ -107,10 +130,10 @@ namespace RevolutionData
 
         //public static IViewModelEventCommand<IViewModel, IEvent> SaveEntityCommand(string viewChildProperty,List<EntityViewModelRelationship> rels)
         //{
-        //    return new ViewEventCommand<IEntityDetailsViewModel, IUpdatePullEntityWithChanges>(
+        //    return new ViewEventCommand<IEntityViewModel, IUpdatePullEntityWithChanges>(
         //        key: "SaveEntity",
         //        subject: s => Observable.Empty<ReactiveCommand<IViewModel, Unit>>(),
-        //        commandPredicate: new List<Func<IEntityDetailsViewModel, bool>>
+        //        commandPredicate: new List<Func<IEntityViewModel, bool>>
         //        {
         //            v => v.ChangeTracking.Count >= 1 && ((dynamic)v).Properties[viewChildProperty].Id != 0
         //        },
@@ -137,10 +160,10 @@ namespace RevolutionData
 
         //public static IViewModelEventCommand<IViewModel, IEvent> EditEntityCommand(string viewChildProperty, List<EntityViewModelRelationship> rels)
         //{
-        //    return new ViewEventCommand<IEntityDetailsViewModel, IUpdatePullEntityWithChanges>(
+        //    return new ViewEventCommand<IEntityViewModel, IUpdatePullEntityWithChanges>(
         //        key: $"EditEntity{EntityType}",
         //        subject: v => v.ChangeTracking.DictionaryChanges,
-        //        commandPredicate: new List<Func<IEntityDetailsViewModel, bool>>
+        //        commandPredicate: new List<Func<IEntityViewModel, bool>>
         //        {
         //            v => v.ChangeTracking.Count == 1 && ((dynamic)v).Properties[viewChildProperty].Id != 0
 
@@ -170,10 +193,10 @@ namespace RevolutionData
 
         //public static IViewModelEventCommand<IViewModel, IEvent> CreateEntityCommand(string childProperty, List<EntityViewModelRelationship> rels) 
         //{
-        //    return new ViewEventCommand<IEntityDetailsViewModel, IUpdatePullEntityWithChanges> (
+        //    return new ViewEventCommand<IEntityViewModel, IUpdatePullEntityWithChanges> (
         //        key: "CreateEntity",
         //        subject: v => v.ChangeTracking.DictionaryChanges,
-        //        commandPredicate: new List<Func<IEntityDetailsViewModel, bool>>
+        //        commandPredicate: new List<Func<IEntityViewModel, bool>>
         //        {
         //            v => v.ChangeTracking.Count > 0 && ((dynamic)v).Properties[childProperty].Id == 0
 
@@ -206,10 +229,10 @@ namespace RevolutionData
 
         public static IViewModelEventSubscription<IViewModel, IEvent> ParentCurrentEntityChanged(int processId,string pentity,string parentProperty)
         {
-            return new ViewEventSubscription<IEntityDetailsViewModel, ICurrentEntityChanged>(
+            return new ViewEventSubscription<IEntityViewModel, ICurrentEntityChanged>(
                 processId,
                 e => e != null && e.EntityType == pentity,
-                new List<Func<IEntityDetailsViewModel, ICurrentEntityChanged, bool>>(),
+                new List<Func<IEntityViewModel, ICurrentEntityChanged, bool>>(),
                 (v, e) =>
                 {
                     ((dynamic)v).Properties[parentProperty] = e.Entity;
@@ -219,63 +242,56 @@ namespace RevolutionData
 
         public static IViewModelEventSubscription<IViewModel, IEvent> RecieveProcessStateMessage(int processId,string pEntity,  string viewChildProperty) 
         {
-            return new ViewEventSubscription<IEntityDetailsViewModel, IProcessStateMessage>(
+            return new ViewEventSubscription<IEntityViewModel, IProcessStateMessage>(
                 processId,
                 e => e != null  && e.EntityType == pEntity,
-                new List<Func<IEntityDetailsViewModel, IProcessStateMessage, bool>>(),
+                new List<Func<IEntityViewModel, IProcessStateMessage, bool>>(),
                 (v, e) =>
                 {
-                    ((dynamic)v).Properties[viewChildProperty] = e.State.Entity;
-                    v.NotifyPropertyChanged(viewChildProperty);
+                    Application.Current.Dispatcher.Invoke(() =>
+                    {
+                        v.State.Value = e.State;
+                    });
+                    
+                    
                 });
         }
 
         public static IViewModelEventSubscription<IViewModel, IEvent> EntityFound(int processId, string pEntity, string viewChildProperty)
         {
-            return new ViewEventSubscription<IEntityDetailsViewModel, IEntityFound>(
+            return new ViewEventSubscription<IEntityViewModel, IEntityFound>(
                 processId,
                 e => e != null && e.EntityType == pEntity,
-                new List<Func<IEntityDetailsViewModel, IEntityFound, bool>>(),
+                new List<Func<IEntityViewModel, IEntityFound, bool>>(),
                 (v, e) =>
                 {
-                    ((dynamic)v).Properties[viewChildProperty] = e.Entity;
-                    v.NotifyPropertyChanged(viewChildProperty);
+                    v.State.Value.Entity = e.Entity;
+                    v.NotifyPropertyChanged("State");
                 });
         }
 
         public static IViewModelEventSubscription<IViewModel, IEvent> EntityViewWithChangesFound(int processId, string pEntity, string viewChildProperty)
         {
-            return new ViewEventSubscription<IEntityDetailsViewModel, IEntityWithChangesFound>(
+            return new ViewEventSubscription<IEntityViewModel, IEntityWithChangesFound>(
                 processId,
                 e => e != null && e.EntityType == pEntity,
-                new List<Func<IEntityDetailsViewModel, IEntityWithChangesFound, bool>>(),
+                new List<Func<IEntityViewModel, IEntityWithChangesFound, bool>>(),
                 (v, e) =>
                 {
-                    ((dynamic)v).Properties[viewChildProperty] = e.Entity;
-                    v.NotifyPropertyChanged(viewChildProperty);
+                    v.State.Value.Entity = e.Entity;
+                    v.NotifyPropertyChanged("State");
                 });
         }
 
 
-        public static IViewModelEventSubscription<IViewModel, IEvent> EntityViewSetWithChangesLoaded(int processId, string pEntity, string viewChildProperty) 
-        {
-            return new ViewEventSubscription<IEntityDetailsViewModel, IEntitySetWithChangesLoaded>(
-                processId,
-                e => e != null && e.EntityType == pEntity,
-                new List<Func<IEntityDetailsViewModel, IEntitySetWithChangesLoaded, bool>>(),
-                (v, e) =>
-                {
-                    ((dynamic)v).Properties[viewChildProperty] = e.EntitySet;
-                    v.NotifyPropertyChanged(viewChildProperty);
-                });
-        }
+
 
         //public static IViewModelEventPublication<IViewModel, IEvent> IViewStateLoaded(int processId, string childProperty) where TView : IEntityId
         //{
-        //    return new ViewEventPublication<IEntityDetailsViewModel, IViewStateLoaded<IEntityDetailsViewModel, IProcessState>>(
+        //    return new ViewEventPublication<IEntityViewModel, IViewStateLoaded<IEntityViewModel, IProcessState>>(
         //        key: "ViewStateLoaded",
         //        subject: v => v.WhenAny(),
-        //        subjectPredicate: new List<Func<IEntityDetailsViewModel, bool>>
+        //        subjectPredicate: new List<Func<IEntityViewModel, bool>>
         //        {
         //            v => v.State != null
         //        },

@@ -8,6 +8,8 @@ using System.Linq.Expressions;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Common.DataEntites;
+using Common.Dynamic;
 using DomainMessages;
 using EventMessages;
 using EventMessages.Commands;
@@ -148,13 +150,13 @@ namespace RevolutionData
                 expectedSourceType: new SourceType(typeof(IComplexEventService)));
         }
 
-        public static IProcessAction RequestState(string entityType,Expression<Func<IDynamicEntity, object>> property)
+        public static IProcessAction RequestState(string entityType,string property)
         {
             return new ProcessAction(
                 action: async cp =>
                 {
 
-                    var key = default(IDynamicEntity).GetMemberName(property);
+                    var key = property;
                     var value = cp.Messages["CurrentEntity"].Entity.Id;
                     var changes = new Dictionary<string, dynamic>() { { key, value } };
                     return await Task.Run(() => new GetEntityWithChanges(entityType,changes,
@@ -171,15 +173,15 @@ namespace RevolutionData
         }
 
         
-        public static IProcessAction RequestStateList(string entityType, Expression<Func<IDynamicEntity, dynamic>> currentProperty, Expression<Func<IDynamicEntity, dynamic>> viewProperty) 
+        public static IProcessAction RequestStateList(string entityType, string currentProperty, string viewProperty) 
         {
             return new ProcessAction(
                 action: async cp =>
                 {
 
-                    var key = viewProperty.GetMemberName();//default(TEntityView).GetMemberName(viewProperty);
+                    var key = viewProperty;
                     
-                    var value = currentProperty.Compile().Invoke(cp.Messages["CurrentEntity"].Entity);
+                    var value = cp.Messages["CurrentEntity"].Entity.Properties[currentProperty];
                     var changes = new Dictionary<string, dynamic>() { {key,value} };
                     return await Task.Run(() => new LoadEntitySetWithChanges("ExactMatch", entityType,changes,
                         new StateCommandInfo(cp.Actor.Process.Id, Context.EntityView.Commands.GetEntityView),
@@ -235,7 +237,7 @@ namespace RevolutionData
                 {
                     var ps = new ProcessStateEntity(
                         process: cp.Actor.Process,
-                        entity: new NullEntity("ISignInInfo"),
+                        entity: new DynamicEntity("ISignInInfo",-1) {Properties = new PropertyBag(){{"UserName", "User Name"},{"Password", "Password"}}},
                         info: new StateInfo(cp.Actor.Process.Id,
                             new State(name: "AwaitUserName", status: "Waiting for User Name",
                                 notes:

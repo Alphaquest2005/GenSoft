@@ -11,18 +11,14 @@ namespace ViewModelInterfaces
     
     public interface IEntityViewModel: IViewModel 
     {
-        ReactiveProperty<IProcessState> State { get; }
+        ReactiveProperty<IProcessStateEntity> State { get; }
         ObservableDictionary<string, dynamic> ChangeTracking { get; }
 
         void NotifyPropertyChanged(string propertyName);
 
     }
 
-    public interface IEntityDetailsViewModel : IViewModel
-    {
-        ObservableDictionary<string, dynamic> ChangeTracking { get; }
-        void NotifyPropertyChanged(string propertyName);
-    }
+
 
 
     public interface IEntityListViewModel : IEntityViewModel

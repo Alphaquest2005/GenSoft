@@ -22,8 +22,7 @@ namespace GenSoft.Entities
 			// ---------Parent Relationships
 				public virtual DomainEntityType DomainEntityType {get; set;}
 				public virtual ProcessState ProcessState {get; set;}
+	
 
-
-	  
 	}
 }

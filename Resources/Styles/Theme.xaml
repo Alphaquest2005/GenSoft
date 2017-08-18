@@ -12,16 +12,18 @@
 	
 	mc:Ignorable="d"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-	xmlns:t="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero">
+    
+	xmlns:t="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+	xmlns:converters="clr-namespace:Converters;assembly=Converters">
 
-
+    
 
     <ControlTemplate x:Key="LookUpTextBlock" TargetType="{x:Type ComboBox}">
-        <TextBlock Text="{Binding Text, RelativeSource={RelativeSource TemplatedParent}}"/>
-    </ControlTemplate>
+		<TextBlock Text="{Binding Text, RelativeSource={RelativeSource TemplatedParent}}"/>
+	</ControlTemplate>
 
 
-    <LinearGradientBrush x:Key="WindowBackgroundBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+	<LinearGradientBrush x:Key="WindowBackgroundBrush" EndPoint="0.5,1" StartPoint="0.5,0">
 		<GradientStop Color="#FFAAA93D" Offset="1"/>
 		<GradientStop Color="#FFDAC363" Offset="0"/>
 	</LinearGradientBrush>
@@ -48,22 +50,22 @@
 							<VisualStateGroup x:Name="FocusStates">
 								<VisualState x:Name="Unfocused"/>
 								<VisualState x:Name="Focused">
-									<!--<Storyboard>
+									<Storyboard>
 										<ColorAnimationUsingKeyFrames Duration="00:00:00.001" Storyboard.TargetName="InnerBorder" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)">
 											<SplineColorKeyFrame KeyTime="0" Value="#BF000000"/>
 										</ColorAnimationUsingKeyFrames>
-									</Storyboard>-->
+									</Storyboard>
 								</VisualState>
 							</VisualStateGroup>
-							<VisualStateGroup x:Name="CommonStates">
+							<!--<VisualStateGroup x:Name="CommonStates">
 								<VisualStateGroup.Transitions>
-									<!--<VisualTransition GeneratedDuration="00:00:00.3000000"/>-->
+									<VisualTransition GeneratedDuration="00:00:00.3000000"/>
 									<VisualTransition From="MouseOver" GeneratedDuration="00:00:00" To="Pressed"/>
 									<VisualTransition From="MouseOver" GeneratedDuration="00:00:00.1000000" To="Normal"/>
 								</VisualStateGroup.Transitions>
 								<VisualState x:Name="MouseOver">
 									<Storyboard>
-										<DoubleAnimationUsingKeyFrames Duration="00:00:00.001" Storyboard.TargetName="Background" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                        <DoubleAnimationUsingKeyFrames Duration="00:00:00.001" Storyboard.TargetName="Background" Storyboard.TargetProperty="(UIElement.Opacity)" >
 											<SplineDoubleKeyFrame KeyTime="0" Value="1"/>
 										</DoubleAnimationUsingKeyFrames>
 										<ColorAnimationUsingKeyFrames Duration="00:00:00.001" Storyboard.TargetName="Shadow" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
@@ -110,7 +112,7 @@
 										</DoubleAnimationUsingKeyFrames>
 									</Storyboard>
 								</VisualState>
-							</VisualStateGroup>
+							</VisualStateGroup>-->
 						</VisualStateManager.VisualStateGroups>
 						<Grid.RowDefinitions>
 							<RowDefinition Height="50*" />
