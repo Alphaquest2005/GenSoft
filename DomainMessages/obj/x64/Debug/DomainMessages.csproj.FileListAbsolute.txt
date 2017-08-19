@@ -43,3 +43,4 @@ C:\Prism\GitRepositiory\GenSoft\DomainMessages\bin\x64\Debug\System.Reactive.Pla
 C:\Prism\GitRepositiory\GenSoft\DomainMessages\bin\x64\Debug\System.Reactive.Windows.Threading.dll
 C:\Prism\GitRepositiory\GenSoft\DomainMessages\bin\x64\Debug\Splat.dll
 C:\Prism\GitRepositiory\GenSoft\DomainMessages\bin\x64\Debug\Splat.pdb
+C:\Prism\GitRepositiory\GenSoft\DomainMessages\obj\x64\Debug\DomainMessages.csproj.CoreCompileInputs.cache

@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "targets": {
     ".NETFramework,Version=v4.6.1": {
       "Akka/1.2.0": {
@@ -775,6 +775,10 @@
           "lib/net46/System.Net.Http.dll": {}
         },
         "runtimeTargets": {
+          "runtimes/unix/lib/netstandard1.6/System.Net.Http.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
           "runtimes/win/lib/net46/System.Net.Http.dll": {
             "assetType": "runtime",
             "rid": "win"
@@ -961,6 +965,14 @@
           "lib/net461/System.Security.Cryptography.Algorithms.dll": {}
         },
         "runtimeTargets": {
+          "runtimes/osx/lib/netstandard1.6/System.Security.Cryptography.Algorithms.dll": {
+            "assetType": "runtime",
+            "rid": "osx"
+          },
+          "runtimes/unix/lib/netstandard1.6/System.Security.Cryptography.Algorithms.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
           "runtimes/win/lib/net461/System.Security.Cryptography.Algorithms.dll": {
             "assetType": "runtime",
             "rid": "win"
@@ -1020,6 +1032,10 @@
           "lib/net461/System.Security.Cryptography.X509Certificates.dll": {}
         },
         "runtimeTargets": {
+          "runtimes/unix/lib/netstandard1.6/System.Security.Cryptography.X509Certificates.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
           "runtimes/win/lib/net461/System.Security.Cryptography.X509Certificates.dll": {
             "assetType": "runtime",
             "rid": "win"
@@ -1197,6 +1213,45 @@
           "Actor.Interfaces": "1.0.0",
           "Akka": "1.2.0",
           "CommonMessages": "1.0.0",
+          "SystemInterfaces": "1.0.0"
+        }
+      },
+      "GenSoft.DBContext/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "Common": "1.0.0",
+          "DomainMessages": "1.0.0",
+          "EventAggregator": "1.0.0",
+          "GenSoft.Entities": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "1.1.2",
+          "Microsoft.EntityFrameworkCore.Relational": "1.1.2",
+          "Microsoft.EntityFrameworkCore.SqlServer": "1.1.2",
+          "RevolutionLogger": "1.0.0",
+          "System.Linq.Dynamic": "1.0.0",
+          "SystemInterfaces": "1.0.0",
+          "morelinq": "2.4.1"
+        }
+      },
+      "GenSoft.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "Common": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
+        }
+      },
+      "GenSoft.Expressions/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Actor.Interfaces": "1.0.0",
+          "Common": "1.0.0",
+          "GenSoft.Entities": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
+          "RevolutionEntities": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
       },
@@ -2435,6 +2490,45 @@
           "Actor.Interfaces": "1.0.0",
           "Akka": "1.2.0",
           "CommonMessages": "1.0.0",
+          "SystemInterfaces": "1.0.0"
+        }
+      },
+      "GenSoft.DBContext/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "Common": "1.0.0",
+          "DomainMessages": "1.0.0",
+          "EventAggregator": "1.0.0",
+          "GenSoft.Entities": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "1.1.2",
+          "Microsoft.EntityFrameworkCore.Relational": "1.1.2",
+          "Microsoft.EntityFrameworkCore.SqlServer": "1.1.2",
+          "RevolutionLogger": "1.0.0",
+          "System.Linq.Dynamic": "1.0.0",
+          "SystemInterfaces": "1.0.0",
+          "morelinq": "2.4.1"
+        }
+      },
+      "GenSoft.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "Common": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
+        }
+      },
+      "GenSoft.Expressions/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Actor.Interfaces": "1.0.0",
+          "Common": "1.0.0",
+          "GenSoft.Entities": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
+          "RevolutionEntities": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
       },
@@ -6017,6 +6111,21 @@
       "path": "../EventMessages/project.json",
       "msbuildProject": "../EventMessages/EventMessages.csproj"
     },
+    "GenSoft.DBContext/1.0.0": {
+      "type": "project",
+      "path": "../GenSoft.DBContext/project.json",
+      "msbuildProject": "../GenSoft.DBContext/GenSoft.DBContext.csproj"
+    },
+    "GenSoft.Entities/1.0.0": {
+      "type": "project",
+      "path": "../GenSoft.Entities/project.json",
+      "msbuildProject": "../GenSoft.Entities/GenSoft.Entities.csproj"
+    },
+    "GenSoft.Expressions/1.0.0": {
+      "type": "project",
+      "path": "../GenSoft.Expressions/GenSoft.Expressions.csproj",
+      "msbuildProject": "../GenSoft.Expressions/GenSoft.Expressions.csproj"
+    },
     "GenSoft.Interface/1.0.0": {
       "type": "project",
       "path": "../GenSoft.Interface/project.json",
@@ -6078,7 +6187,17 @@
       "projectName": "EFRepository",
       "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\EFRepository\\EFRepository.csproj",
       "projectJsonPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\EFRepository\\project.json",
+      "packagesPath": "C:\\Users\\Alpha\\.nuget\\packages\\",
+      "outputPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\EFRepository\\obj\\",
       "projectStyle": "ProjectJson",
+      "configFilePaths": [
+        "C:\\Users\\Alpha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
       "frameworks": {
         "net461": {
           "projectReferences": {
@@ -6099,6 +6218,18 @@
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\EventMessages\\EventMessages.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\EventMessages\\EventMessages.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.DBContext\\GenSoft.DBContext.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.DBContext\\GenSoft.DBContext.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Entities\\GenSoft.Entities.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Entities\\GenSoft.Entities.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Expressions\\GenSoft.Expressions.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Expressions\\GenSoft.Expressions.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Interface\\GenSoft.Interface.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Interface\\GenSoft.Interface.csproj"
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionData\\RevolutionData.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionData\\RevolutionData.csproj"

@@ -12,3 +12,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\CommonMessages\bin\x64\Debug\SystemIn
 C:\Prism\GitRepositiory\GenSoft\Revolution\CommonMessages\obj\x64\Debug\CommonMessages.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\CommonMessages\obj\x64\Debug\CommonMessages.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\CommonMessages\obj\x64\Debug\CommonMessages.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\CommonMessages\bin\x64\Debug\JB.Common.Collections.Reactive.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\CommonMessages\bin\x64\Debug\JB.Common.Collections.Reactive.xml
+C:\Prism\GitRepositiory\GenSoft\Revolution\CommonMessages\obj\x64\Debug\CommonMessages.csproj.CoreCompileInputs.cache

@@ -25,10 +25,7 @@ namespace Core.Common.UI
         public ISystemSource Source { get; }
         public TViewModel ViewModel { get; }
 
-        protected static DynamicViewModel<TViewModel> _instance = null;
-        public new static DynamicViewModel<TViewModel> Instance => _instance;
-
-        
+   
         public DynamicViewModel(TViewModel viewModel) : base(viewModel)
         {
             ViewInfo = viewModel.ViewInfo;
@@ -46,7 +43,7 @@ namespace Core.Common.UI
             RowState = viewModel.RowState;
             Priority = viewModel.Priority;
 
-            if (_instance == null) _instance = this;
+           
 
         }
 

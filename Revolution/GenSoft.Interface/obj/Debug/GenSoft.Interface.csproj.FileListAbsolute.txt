@@ -10,3 +10,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\bin\Debug\SystemInt
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\obj\Debug\GenSoft.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\obj\Debug\GenSoft.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\obj\Debug\GenSoft.Interface.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\bin\Debug\JB.Common.Collections.Reactive.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\bin\Debug\JB.Common.Collections.Reactive.xml
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\obj\Debug\GenSoft.Interface.csproj.CoreCompileInputs.cache

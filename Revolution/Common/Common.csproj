@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseEntity.cs" />
+    <Compile Include="EntityKeyValuePair.cs" />
     <Compile Include="EntityExtensions.cs" />
     <Compile Include="Expando\Expando.cs" />
     <Compile Include="Expando\PropertyBag.cs" />

@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "targets": {
     ".NETFramework,Version=v4.6.1": {
       "Akka/1.2.0": {
@@ -836,6 +836,10 @@
           "lib/net46/System.Net.Http.dll": {}
         },
         "runtimeTargets": {
+          "runtimes/unix/lib/netstandard1.6/System.Net.Http.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
           "runtimes/win/lib/net46/System.Net.Http.dll": {
             "assetType": "runtime",
             "rid": "win"
@@ -1022,6 +1026,14 @@
           "lib/net461/System.Security.Cryptography.Algorithms.dll": {}
         },
         "runtimeTargets": {
+          "runtimes/osx/lib/netstandard1.6/System.Security.Cryptography.Algorithms.dll": {
+            "assetType": "runtime",
+            "rid": "osx"
+          },
+          "runtimes/unix/lib/netstandard1.6/System.Security.Cryptography.Algorithms.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
           "runtimes/win/lib/net461/System.Security.Cryptography.Algorithms.dll": {
             "assetType": "runtime",
             "rid": "win"
@@ -1081,6 +1093,10 @@
           "lib/net461/System.Security.Cryptography.X509Certificates.dll": {}
         },
         "runtimeTargets": {
+          "runtimes/unix/lib/netstandard1.6/System.Security.Cryptography.X509Certificates.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
           "runtimes/win/lib/net461/System.Security.Cryptography.X509Certificates.dll": {
             "assetType": "runtime",
             "rid": "win"
@@ -1360,6 +1376,10 @@
           "CommonMessages": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
+          "GenSoft.DBContext": "1.0.0",
+          "GenSoft.Entities": "1.0.0",
+          "GenSoft.Expressions": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "1.1.2",
           "RevolutionData": "1.0.0",
           "RevolutionEntities": "1.0.0",
@@ -2928,6 +2948,10 @@
           "CommonMessages": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
+          "GenSoft.DBContext": "1.0.0",
+          "GenSoft.Entities": "1.0.0",
+          "GenSoft.Expressions": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "1.1.2",
           "RevolutionData": "1.0.0",
           "RevolutionEntities": "1.0.0",
@@ -6955,7 +6979,17 @@
       "projectName": "MRManager",
       "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\MRManager\\MRManager.csproj",
       "projectJsonPath": "C:\\Prism\\GitRepositiory\\GenSoft\\MRManager\\project.json",
+      "packagesPath": "C:\\Users\\Alpha\\.nuget\\packages\\",
+      "outputPath": "C:\\Prism\\GitRepositiory\\GenSoft\\MRManager\\obj\\",
       "projectStyle": "ProjectJson",
+      "configFilePaths": [
+        "C:\\Users\\Alpha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
       "frameworks": {
         "net461": {
           "projectReferences": {

@@ -5,6 +5,7 @@ using System.ComponentModel.Composition;
 using System.Linq;
 using System.Windows;
 using SystemInterfaces;
+using Common;
 using Core.Common.UI;
 using FluentValidation;
 
@@ -12,6 +13,7 @@ using JB.Collections.Reactive;
 using Reactive.Bindings;
 using ReactiveUI;
 using RevolutionEntities.Process;
+using RevolutionEntities.ViewModels;
 using Utilities;
 
 using ViewModel.Interfaces;
@@ -33,11 +35,11 @@ namespace ViewModels
         }
 
 
-        IEntityListViewModel IEntityListViewModel.Instance => (IEntityListViewModel) Instance;
         public ReactiveProperty<IProcessStateList> State => this.ViewModel.State;
+        public ReactiveProperty<EntityKeyValuePair> CurrentProperty => new ReactiveProperty<EntityKeyValuePair>();
 
 
-        ReactiveProperty<IProcessStateEntity> IEntityViewModel.State => new ReactiveProperty<IProcessStateEntity>(new ProcessStateEntity(this.ViewModel.State.Value.Process, this.ViewModel.State.Value.EntitySet.FirstOrDefault(), this.ViewModel.State.Value.StateInfo.ToStateInfo()), ReactivePropertyMode.DistinctUntilChanged);
+       
         public ReactiveProperty<IDynamicEntity> CurrentEntity => this.ViewModel.CurrentEntity;
 
         public ObservableDictionary<string, dynamic> ChangeTracking => this.ViewModel.ChangeTracking;

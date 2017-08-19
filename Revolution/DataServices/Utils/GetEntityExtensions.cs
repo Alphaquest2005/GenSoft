@@ -15,13 +15,13 @@ namespace DataServices.Actors
         public static void GetEntity(this IGetEntityById msg) 
         {
 
-          //  EF7DataContext.GetEntityById(msg);
+            DynamicDataContext.GetEntityById(msg);
         }
 
         public static void GetEntity(this IGetEntityWithChanges msg) 
         {
 
-            //EF7DataContext.GetEntityWithChanges(msg);
+            DynamicDataContext.GetEntityWithChanges(msg);
         }
 
 

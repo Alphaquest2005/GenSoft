@@ -56,6 +56,25 @@ namespace RevolutionData
                                         Context.Process.Commands.CurrentEntityChanged), s.Process,
                                     s.Source);
                             }),
+
+                        new ViewEventCommand<IEntityViewModel, IGetEntityWithChanges>(
+                            key:"FindEntity",
+                            commandPredicate:new List<Func<IEntityViewModel, bool>>
+                            {
+                                //v => v. != null
+                            },
+                            subject:s => Observable.Empty<ReactiveCommand<IViewModel, Unit>>(),
+
+                            messageData: s =>
+                            {
+                                
+
+                                return new ViewEventCommandParameter(
+                                    new object[] {s.State.Value.Entity.EntityType, s.ChangeTracking.ToDictionary(x => x.Key, x => x.Value)},
+                                    new StateCommandInfo(s.Process.Id,
+                                        Context.Process.Commands.CurrentEntityChanged), s.Process,
+                                    s.Source);
+                            }),
                     },
                     viewModelType: typeof(IEntityViewModel),
                     orientation: typeof(IBodyViewModel),
@@ -81,9 +100,9 @@ namespace RevolutionData
                     //parentCommands.AddRange(CreateCommands(p));
                 }
                 viewInfo.Subscriptions.AddRange(parentSubscriptions);
-
                 
-
+                
+                
 
                 return viewInfo;
             }
@@ -235,8 +254,11 @@ namespace RevolutionData
                 new List<Func<IEntityViewModel, ICurrentEntityChanged, bool>>(),
                 (v, e) =>
                 {
-                    ((dynamic)v).Properties[parentProperty] = e.Entity;
-                    v.NotifyPropertyChanged(parentProperty);
+                    Application.Current.Dispatcher.Invoke(() =>
+                    {
+                        ((dynamic) v).Properties[parentProperty] = e.Entity;
+                        v.NotifyPropertyChanged(parentProperty);
+                    });
                 });
         }
 
@@ -251,6 +273,7 @@ namespace RevolutionData
                     Application.Current.Dispatcher.Invoke(() =>
                     {
                         v.State.Value = e.State;
+                        v.NotifyPropertyChanged("State.Value");
                     });
                     
                     

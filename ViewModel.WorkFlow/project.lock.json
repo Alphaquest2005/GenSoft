@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "targets": {
     ".NETFramework,Version=v4.6.1": {
       "Akka/1.2.0": {
@@ -1506,7 +1506,17 @@
       "projectName": "ViewModel.WorkFlow",
       "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\ViewModel.WorkFlow\\ViewModel.WorkFlow.csproj",
       "projectJsonPath": "C:\\Prism\\GitRepositiory\\GenSoft\\ViewModel.WorkFlow\\project.json",
+      "packagesPath": "C:\\Users\\Alpha\\.nuget\\packages\\",
+      "outputPath": "C:\\Prism\\GitRepositiory\\GenSoft\\ViewModel.WorkFlow\\obj\\",
       "projectStyle": "ProjectJson",
+      "configFilePaths": [
+        "C:\\Users\\Alpha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
       "frameworks": {
         "net461": {
           "projectReferences": {
@@ -1566,5 +1576,18 @@
         "#import": []
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: JB.Common.Collections.Reactive from 0.8.103-pre to 0.7.0. Reference the package directly from the project to select a different version. \r\n ViewModel.WorkFlow (>= 1.0.0) -> ViewModel.Interfaces (>= 1.0.0) -> JB.Common.Collections.Reactive (>= 0.8.103-pre) \r\n ViewModel.WorkFlow (>= 1.0.0) -> JB.Common.Collections.Reactive (>= 0.7.0)",
+      "libraryId": "JB.Common.Collections.Reactive",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.6.1",
+        ".NETFramework,Version=v4.6.1/win-x64"
+      ]
+    }
+  ]
 }

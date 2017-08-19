@@ -12,16 +12,21 @@ namespace Common.DataEntites
    
     public class DynamicEntity:Expando, IDynamicEntity
     {
-        public DynamicEntity(string entityType, int id)
+        public DynamicEntity(string entityType, int id, List<EntityKeyValuePair> toList = null)
         {
             EntityType = entityType;
             Id = id;
+            if (toList == null) return;
+            foreach (var itm in toList)
+            {
+                Properties.Add(itm.Key, itm.Value);
+            }
         }
         public int Id { get;  }
         public DateTime EntryDateTime { get; private set; } = DateTime.Now;
 
         public virtual string EntityType { get; }
-        public List<KeyValuePair<string, object>> PropertyList => new List<KeyValuePair<string, object>>(this.Properties.ToList());
+        public ObservableList<IEntityKeyValuePair> PropertyList => new ObservableList<IEntityKeyValuePair>(this.Properties.Select(x => new EntityKeyValuePair(x.Key, x.Value) as IEntityKeyValuePair).ToList());
 
 
         public virtual RowState RowState { get; set; } = RowState.Loaded ;

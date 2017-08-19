@@ -16,3 +16,6 @@ C:\Prism\GitRepositiory\GenSoft\ValidationSets\bin\x64\Debug\SystemInterfaces.pd
 C:\Prism\GitRepositiory\GenSoft\ValidationSets\obj\x64\Debug\ValidationSets.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\ValidationSets\obj\x64\Debug\ValidationSets.dll
 C:\Prism\GitRepositiory\GenSoft\ValidationSets\obj\x64\Debug\ValidationSets.pdb
+C:\Prism\GitRepositiory\GenSoft\ValidationSets\bin\x64\Debug\JB.Common.Collections.Reactive.dll
+C:\Prism\GitRepositiory\GenSoft\ValidationSets\bin\x64\Debug\JB.Common.Collections.Reactive.xml
+C:\Prism\GitRepositiory\GenSoft\ValidationSets\obj\x64\Debug\ValidationSets.csproj.CoreCompileInputs.cache

@@ -175,3 +175,4 @@ C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\RevolutionData.dll.confi
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\ViewMessages.dll.config
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\Converters.dll
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\Converters.pdb
+C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Resources.csproj.CoreCompileInputs.cache

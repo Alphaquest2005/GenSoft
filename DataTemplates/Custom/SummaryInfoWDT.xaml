@@ -7,15 +7,14 @@
                     xmlns:viewModels="clr-namespace:ViewModels;assembly=ViewModels"
                     mc:Ignorable="d">
 
-    <DataTemplate x:Key="PatientInfoWDT">
+    <DataTemplate x:Key="SummaryInfoWDT">
         <DataTemplate.Resources>
             <converters:NullVisibilityConverter x:Key="NullVisibilityConverter" />
             <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         </DataTemplate.Resources>
 
         <Grid Width="469"
-              Height="80"
-              DataContext="{Binding Source={x:Static viewModels:SummaryListViewModel.Instance}}">
+              Height="80">
             <Grid.Background>
                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
                     <GradientStop Offset="0.907" Color="#33000000" />

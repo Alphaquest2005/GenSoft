@@ -200,3 +200,12 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\DomainMess
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\Domain.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\obj\x64\Debug\EFRepository.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\obj\x64\Debug\EFRepository.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\GenSoft.DBContext.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\GenSoft.Entities.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\GenSoft.Expressions.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\GenSoft.Interfaces.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\GenSoft.DBContext.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\GenSoft.Entities.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\GenSoft.Expressions.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\GenSoft.Interfaces.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\obj\x64\Debug\EFRepository.csproj.CoreCompileInputs.cache

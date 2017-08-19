@@ -66,7 +66,6 @@
     <Compile Include="ViewModelInfo\EntityCacheViewModelInfo.cs" />
     <Compile Include="ViewModelInfo\EntityDetailsViewModelInfo.cs" />
     <Compile Include="ViewModelInfo\SummaryListViewModelInfo.cs" />
-    <Compile Include="ViewModelInfo\EntityViewCacheViewModelInfo.cs" />
     <Compile Include="ViewModelInfo\FooterViewModelInfo.cs" />
     <Compile Include="ViewModelInfo\HeaderViewModelInfo.cs" />
     <Compile Include="ViewModelInfo\MainWindowViewModelInfo.cs" />

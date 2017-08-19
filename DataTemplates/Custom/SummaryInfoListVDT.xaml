@@ -14,37 +14,6 @@
               Background="#4CFFFFFF">
 
 
-
-            <!--<ComboBox x:Name="ComboBox"
-                      Width="78"
-                      Height="26"
-                      Margin="10,30,0,0"
-                      HorizontalAlignment="Left"
-                      VerticalAlignment="Top"
-                      SelectedValue="{Binding Field,
-                                              UpdateSourceTrigger=PropertyChanged}"
-                      SelectedValuePath="Content">
-                <ComboBox.Items>
-                    <ComboBoxItem Content="Email" />
-                    <ComboBoxItem Content="PhoneNumber" />
-                </ComboBox.Items>
-            </ComboBox>
-            <TextBox Height="26"
-                     Margin="93,30,41,0"
-                     VerticalAlignment="Top"
-                     Text="{Binding Value,
-                                    UpdateSourceTrigger=PropertyChanged}" />
-            <Button Width="26"
-                    Height="25"
-                    Margin="0,30,10,0"
-                    HorizontalAlignment="Right"
-                    VerticalAlignment="Top"
-                    Command="{Binding Commands[Search],
-                                      Mode=OneWay}"
-                    Content=""
-                    FontFamily="Segoe UI Symbol"
-                    FontSize="10" />-->
-
             <ListBox Margin="10,65,10,10"
                      IsSynchronizedWithCurrentItem="True"
                      ItemsSource="{Binding EntitySet.Value,
@@ -55,7 +24,7 @@
                     <Style TargetType="{x:Type ListBoxItem}">
 
                         <!--  Default Template  -->
-                        <Setter Property="ContentTemplate" Value="{DynamicResource PatientInfoRDT}" />
+                        <Setter Property="ContentTemplate" Value="{DynamicResource SummaryInfoRDT}" />
                         <Setter Property="Height" Value="Auto" />
                         <!--<Setter Property="Visibility" Value="{Binding Value, Converter={StaticResource NullVisibilityConverter}}"/>-->
 
@@ -63,21 +32,21 @@
                         <Style.Triggers>
                             <MultiDataTrigger>
                                 <MultiDataTrigger.Conditions>
-                                    <Condition Binding="{Binding Path=RowState.Value, Source={x:Static viewModels:SummaryListViewModel.Instance}}" Value="{x:Static systemInterfaces:RowState.Added}" />
+                                    <Condition Binding="{Binding Path=RowState.Value}" Value="{x:Static systemInterfaces:RowState.Added}" />
                                     <Condition Binding="{Binding RelativeSource={RelativeSource Mode=Self}, Path=IsSelected}" Value="True" />
                                 </MultiDataTrigger.Conditions>
                                 <MultiDataTrigger.Setters>
-                                    <Setter Property="ContentTemplate" Value="{DynamicResource PatientInfoWDT}" />
+                                    <Setter Property="ContentTemplate" Value="{DynamicResource SummaryInfoRDT}" />
                                     <Setter Property="Visibility" Value="Visible" />
                                 </MultiDataTrigger.Setters>
                             </MultiDataTrigger>
                             <MultiDataTrigger>
                                 <MultiDataTrigger.Conditions>
-                                    <Condition Binding="{Binding Path=RowState.Value, Source={x:Static viewModels:SummaryListViewModel.Instance}}" Value="{x:Static systemInterfaces:RowState.Modified}" />
+                                    <Condition Binding="{Binding Path=RowState.Value}" Value="{x:Static systemInterfaces:RowState.Modified}" />
                                     <Condition Binding="{Binding RelativeSource={RelativeSource Mode=Self}, Path=IsSelected}" Value="True" />
                                 </MultiDataTrigger.Conditions>
                                 <MultiDataTrigger.Setters>
-                                    <Setter Property="ContentTemplate" Value="{DynamicResource PatientInfoWDT}" />
+                                    <Setter Property="ContentTemplate" Value="{DynamicResource SummaryInfoWDT}" />
                                     <Setter Property="Visibility" Value="Visible" />
                                 </MultiDataTrigger.Setters>
                             </MultiDataTrigger>

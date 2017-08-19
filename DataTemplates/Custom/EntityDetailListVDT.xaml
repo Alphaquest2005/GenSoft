@@ -12,7 +12,7 @@
         <DataTemplate.Resources>
             <converters:NullVisibilityConverter x:Key="NullVisibilityConverter" />
         </DataTemplate.Resources>
-        <ContentControl Focusable="True">
+        <ContentControl Focusable="True" Content="{Binding}">
             <ContentControl.Style>
             <Style TargetType="{x:Type ContentControl}">
 
@@ -25,7 +25,7 @@
                     <Style.Triggers>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
-                                <Condition Binding="{Binding Path=RowState.Value, Source={x:Static viewModels:EntityDetailsViewModel.Instance}}" Value="{x:Static systemInterfaces:RowState.Loaded}" />
+                                <Condition Binding="{Binding RowState.Value}" Value="{x:Static systemInterfaces:RowState.Loaded}" />
                                 
                             </MultiDataTrigger.Conditions>
                             <MultiDataTrigger.Setters>
@@ -35,7 +35,7 @@
                         </MultiDataTrigger>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
-                                <Condition Binding="{Binding Path=RowState.Value, Source={x:Static viewModels:EntityDetailsViewModel.Instance}}" Value="{x:Static systemInterfaces:RowState.Modified}" />
+                                <Condition Binding="{Binding RowState.Value}" Value="{x:Static systemInterfaces:RowState.Modified}" />
                                 
                             </MultiDataTrigger.Conditions>
                             <MultiDataTrigger.Setters>

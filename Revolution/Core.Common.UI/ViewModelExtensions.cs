@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -24,7 +25,31 @@ namespace Core.Common.UI
         public static void WireEvents(this IViewModel viewModel)
         {
             if (LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
-            Parallel.ForEach(viewModel.CommandInfo, new ParallelOptions() {MaxDegreeOfParallelism = Environment.ProcessorCount}, (itm) =>
+           
+            //    var commands = new ConcurrentBag<IViewModelEventCommand<IViewModel, IEvent>>(viewModel.CommandInfo);
+            //Parallel.ForEach(commands, new ParallelOptions() {MaxDegreeOfParallelism = Environment.ProcessorCount},
+            //    (itm) =>
+            //    {
+            //        var subject = itm.Subject.Invoke(viewModel);
+
+
+            //        if (subject.GetType() == Observable.Empty<ReactiveCommand<IViewModel, Unit>>().GetType())
+            //        {
+            //            var publishMessage = CreateCommandMessageAction<IViewModel>(viewModel, itm);
+            //            var cmd = ReactiveCommand.Create(publishMessage);
+
+            //            viewModel.Commands.Add(itm.Key, cmd);
+            //        }
+            //        else
+            //        {
+            //            var publishMessage = CreateCommandMessageAction<dynamic>(viewModel, itm);
+            //            subject.Where(x => itm.CommandPredicate.All(z => z.Invoke(viewModel)))
+            //                .Subscribe(publishMessage);
+            //        }
+
+            //    });
+
+            foreach (var itm in viewModel.CommandInfo)
             {
                 var subject = itm.Subject.Invoke(viewModel);
 
@@ -42,32 +67,53 @@ namespace Core.Common.UI
                     subject.Where(x => itm.CommandPredicate.All(z => z.Invoke(viewModel)))
                         .Subscribe(publishMessage);
                 }
-                
-            });
-            
-            Parallel.ForEach(viewModel.EventSubscriptions,
+            }
+
+
+
+
+            var subscriptions =
+                new ConcurrentBag<IViewModelEventSubscription<IViewModel, IEvent>>(viewModel.EventSubscriptions);
+
+            Parallel.ForEach(subscriptions,
                 new ParallelOptions() {MaxDegreeOfParallelism = Environment.ProcessorCount}, (itm) =>
                 {
-                    typeof (ViewModelExtensions)
+                    typeof(ViewModelExtensions)
                         .GetMethod("Subscribe")
                         .MakeGenericMethod(itm.EventType, viewModel.GetType())
-                        .Invoke(viewModel, new object[] {viewModel, itm.EventPredicate, itm.ActionPredicate, itm.Action});
+                        .Invoke(viewModel,
+                            new object[] {viewModel, itm.EventPredicate, itm.ActionPredicate, itm.Action});
                 });
-
-
-
-            Parallel.ForEach(viewModel.EventPublications,
-                new ParallelOptions() {MaxDegreeOfParallelism = Environment.ProcessorCount}, (itm) =>
-                {
-
-                    var subject = itm.Subject.Invoke(viewModel);
-
-                    var publishMessage = CreatePublishMessageAction(viewModel, itm);
-                    subject.Where(x => itm.SubjectPredicate.All(z => z.Invoke(viewModel)))
-                        .Subscribe(publishMessage);
-                });
-
             
+
+           
+                //var publications =
+                //    new ConcurrentBag<IViewModelEventPublication<IViewModel, IEvent>>(viewModel.EventPublications);
+
+                //Parallel.ForEach(publications,
+                //    new ParallelOptions() {MaxDegreeOfParallelism = Environment.ProcessorCount}, (itm) =>
+                //    {
+
+                //        var subject = itm.Subject.Invoke(viewModel);
+
+                //        var publishMessage = CreatePublishMessageAction(viewModel, itm);
+                //        subject.Where(x => itm.SubjectPredicate.All(z => z.Invoke(viewModel)))
+                //            .Subscribe(publishMessage);
+                //    });
+
+            foreach (var itm in viewModel.EventPublications)
+            {
+                var subject = itm.Subject.Invoke(viewModel);
+
+                var publishMessage = CreatePublishMessageAction(viewModel, itm);
+                subject.Where(x => itm.SubjectPredicate.All(z => z.Invoke(viewModel)))
+                    .Subscribe(publishMessage);
+            }
+
+
+
+
+
 
         }
 

@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "targets": {
     ".NETFramework,Version=v4.6.1": {
       "Akka/1.2.0": {
@@ -1793,21 +1793,31 @@
       "projectName": "Resources",
       "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Resources\\Resources.csproj",
       "projectJsonPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Resources\\project.json",
+      "packagesPath": "C:\\Users\\Alpha\\.nuget\\packages\\",
+      "outputPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Resources\\obj\\",
       "projectStyle": "ProjectJson",
+      "configFilePaths": [
+        "C:\\Users\\Alpha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
       "frameworks": {
         "net461": {
           "projectReferences": {
             "C:\\Prism\\GitRepositiory\\GenSoft\\DataTemplates\\DataTemplates.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\DataTemplates\\DataTemplates.csproj"
             },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Converters\\Converters.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Converters\\Converters.csproj"
+            },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Core.Common.UI\\Core.Common.UI.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Core.Common.UI\\Core.Common.UI.csproj"
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\ViewModels\\ViewModels.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\ViewModels\\ViewModels.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Converters\\Converters.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Converters\\Converters.csproj"
             }
           }
         }

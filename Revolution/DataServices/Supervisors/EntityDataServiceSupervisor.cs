@@ -26,7 +26,8 @@ namespace DataServices.Actors
         private static readonly Action<ISystemSource, IGetEntityById> GetEntityByIdAction = (s, x) => x.GetEntity();
         private static readonly Action<ISystemSource, IGetEntityWithChanges> GetEntityWithChangesAction = (s, x) => x.GetEntity();
 
-        private static readonly Action<ISystemSource, ILoadEntitySetWithChanges> LoadEntitySet = (s, x) => x.LoadEntitySet();
+        private static readonly Action<ISystemSource, ILoadEntitySet> LoadEntitySet = (s, x) => x.LoadEntitySet();
+        private static readonly Action<ISystemSource, ILoadEntitySetWithChanges> LoadEntitySetWithChanges = (s, x) => x.LoadEntitySetWithChanges();
         private static readonly Action<ISystemSource, ILoadEntitySetWithFilter> LoadEntitySetWithFilter = (s, x) => x.LoadEntitySet();
         private static readonly Action<ISystemSource, ILoadEntitySetWithFilterWithIncludes> LoadEntitySetWithFilterWithIncludes = (s, x) => x.LoadEntitySet();
 
@@ -42,7 +43,8 @@ namespace DataServices.Actors
                 {typeof (IGetEntityById), GetEntityByIdAction},
                 {typeof (IGetEntityWithChanges), GetEntityWithChangesAction},
 
-                {typeof (ILoadEntitySetWithChanges), LoadEntitySet},
+                {typeof (ILoadEntitySet), LoadEntitySet},
+                { typeof (ILoadEntitySetWithChanges), LoadEntitySetWithChanges},
                 {typeof (ILoadEntitySetWithFilter), LoadEntitySetWithFilter},
                 {typeof (ILoadEntitySetWithFilterWithIncludes), LoadEntitySetWithFilterWithIncludes},
                 

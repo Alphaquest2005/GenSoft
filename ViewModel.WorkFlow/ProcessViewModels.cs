@@ -141,8 +141,8 @@ namespace ViewModel.WorkFlow
             EntityCacheViewModelInfo.CacheViewModel(3,"IQuestionResponseTypes"),
             EntityCacheViewModelInfo.CacheViewModel(3,"ISex"),
 
-            EntityViewCacheViewModelInfo.CacheViewModel(3,"IDoctorInfo"),
-            EntityViewCacheViewModelInfo.CacheViewModel(3,"ISyntomMedicalSystemInfo"),
+            EntityCacheViewModelInfo.CacheViewModel(3,"IDoctorInfo"),
+            EntityCacheViewModelInfo.CacheViewModel(3,"ISyntomMedicalSystemInfo"),
             
 
         };

@@ -6,7 +6,7 @@ using ViewModelInterfaces;
 namespace ViewModel.Interfaces
 {
     
-    public interface ICacheViewModel : IViewModel
+    public interface ICacheViewModel : IEntityListViewModel 
     {
 
     }
@@ -16,17 +16,8 @@ namespace ViewModel.Interfaces
 
     }
 
-   
 
-    public interface IEntityCacheViewModel :ICacheViewModel
-    {
 
-    }
-
-    public interface IEntityListCacheViewModel : ICacheViewModel, IEntityListViewModel 
-    {
-
-    }
 
 
 

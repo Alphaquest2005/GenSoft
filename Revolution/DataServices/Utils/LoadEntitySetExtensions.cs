@@ -9,11 +9,17 @@ namespace DataServices.Actors
     public static class LoadEntitySetExtensions
     {
 
-
-        public static void LoadEntitySet(this ILoadEntitySetWithChanges msg)
+        public static void LoadEntitySet(this ILoadEntitySet msg)
         {
 
             DynamicDataContext.LoadEntitySet(msg);
+
+        }
+
+        public static void LoadEntitySetWithChanges(this ILoadEntitySetWithChanges msg)
+        {
+
+            DynamicDataContext.LoadEntitySetWithChanges(msg);
 
         }
 

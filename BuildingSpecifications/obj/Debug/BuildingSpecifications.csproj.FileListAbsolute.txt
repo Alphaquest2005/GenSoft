@@ -34,3 +34,4 @@ C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\ReactivePropert
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\obj\Debug\BuildingSpecifications.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\obj\Debug\BuildingSpecifications.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\obj\Debug\BuildingSpecifications.pdb
+C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\obj\Debug\BuildingSpecifications.csproj.CoreCompileInputs.cache

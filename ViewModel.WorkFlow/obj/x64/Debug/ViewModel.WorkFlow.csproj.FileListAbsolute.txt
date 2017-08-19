@@ -62,3 +62,4 @@ C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\ComponentModel.
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\obj\x64\Debug\ViewModel.WorkFlow.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\obj\x64\Debug\ViewModel.WorkFlow.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\obj\x64\Debug\ViewModel.WorkFlow.pdb
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\obj\x64\Debug\ViewModel.WorkFlow.csproj.CoreCompileInputs.cache

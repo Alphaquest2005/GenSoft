@@ -19,10 +19,10 @@ namespace GenSoft.DBContexts
 
 		static GenSoftDBContext()
 		{
-			//if (System.ComponentModel.LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
-			//Instance.Database.EnsureDeleted();
-			//Instance.Database.EnsureCreated();
-			//CreateSeedData();
+			if (System.ComponentModel.LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
+			Instance.Database.EnsureDeleted();
+			Instance.Database.EnsureCreated();
+			CreateSeedData();
 		}
 
 		private static void CreateSeedData()
@@ -92,6 +92,7 @@ namespace GenSoft.DBContexts
 						Insert Into dbo.[Type] (Id,Name) Values('35','IPatientSyntoms')
 						Insert Into dbo.[Type] (Id,Name) Values('36','IResponseOptionInfo')
 						Insert Into dbo.[Type] (Id,Name) Values('37','IPatient')
+						Insert Into dbo.[Type] (Id,Name) Values('38','ISignInInfo')
 					SET IDENTITY_INSERT dbo.[Type] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 						Insert Into dbo.[EntityType] (Id) Values('1')
@@ -128,6 +129,7 @@ namespace GenSoft.DBContexts
 						Insert Into dbo.[EntityType] (Id) Values('35')
 						Insert Into dbo.[EntityType] (Id) Values('36')
 						Insert Into dbo.[EntityType] (Id) Values('37')
+						Insert Into dbo.[EntityType] (Id) Values('38')
 ");
 			//No test data for ActionEntityType
 			//No test data for ActionEntityType
@@ -147,9 +149,10 @@ namespace GenSoft.DBContexts
 			//No test data for Message
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[Entity] ON
-						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('1','1',cast((select Value from AmoebaDB.dbo.TestValues where Id = 115897) as varbinary(max)))
-						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('2','3',cast((select Value from AmoebaDB.dbo.TestValues where Id = 115900) as varbinary(max)))
-						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('3','37',cast((select Value from AmoebaDB.dbo.TestValues where Id = 115903) as varbinary(max)))
+						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('1','1',cast((select Value from AmoebaDB.dbo.TestValues where Id = 116456) as varbinary(max)))
+						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('2','3',cast((select Value from AmoebaDB.dbo.TestValues where Id = 116459) as varbinary(max)))
+						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('3','37',cast((select Value from AmoebaDB.dbo.TestValues where Id = 116462) as varbinary(max)))
+						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('4','38',cast((select Value from AmoebaDB.dbo.TestValues where Id = 116465) as varbinary(max)))
 					SET IDENTITY_INSERT dbo.[Entity] OFF");
 			//No test data for Message
 				Instance.Database.ExecuteSqlCommand(@"
@@ -280,6 +283,8 @@ namespace GenSoft.DBContexts
 						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('48','PatientSyntomId','5')
 						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('49','QuestionId','5')
 						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('50','LastName','6')
+						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('51','UserName','6')
+						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('52','Password','6')
 					SET IDENTITY_INSERT dbo.[Attributes] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[EntityAttribute] ON
@@ -290,6 +295,8 @@ namespace GenSoft.DBContexts
 						Insert Into dbo.[EntityAttribute] (AttributeId,Id,EntityId,Value) Values('4','5','3','456-4724')
 						Insert Into dbo.[EntityAttribute] (AttributeId,Id,EntityId,Value) Values('9','6','3','3/16/1994')
 						Insert Into dbo.[EntityAttribute] (AttributeId,Id,EntityId,Value) Values('6','7','3','Female')
+						Insert Into dbo.[EntityAttribute] (AttributeId,Id,EntityId,Value) Values('51','8','4','joe')
+						Insert Into dbo.[EntityAttribute] (AttributeId,Id,EntityId,Value) Values('52','9','4','test')
 					SET IDENTITY_INSERT dbo.[EntityAttribute] OFF");
 			//No test data for EntityAttributeChanges
 			//No test data for EntityAttributeChanges
@@ -323,6 +330,8 @@ namespace GenSoft.DBContexts
 						Insert Into dbo.[EntityTypeAttributes] (AttributeId,Id,EntityTypeId) Values('7','24','8')
 						Insert Into dbo.[EntityTypeAttributes] (AttributeId,Id,EntityTypeId) Values('8','25','8')
 						Insert Into dbo.[EntityTypeAttributes] (AttributeId,Id,EntityTypeId) Values('9','26','8')
+						Insert Into dbo.[EntityTypeAttributes] (AttributeId,Id,EntityTypeId) Values('51','30','38')
+						Insert Into dbo.[EntityTypeAttributes] (AttributeId,Id,EntityTypeId) Values('52','31','38')
 					SET IDENTITY_INSERT dbo.[EntityTypeAttributes] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[EntityRelationships] ON

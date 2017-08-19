@@ -6,11 +6,11 @@
                     xmlns:viewModels="clr-namespace:ViewModels;assembly=ViewModels"
                     mc:Ignorable="d">
 
-    <DataTemplate x:Key="EntityDetailListRDT">
+    <DataTemplate x:Key="EntityDetailListRDT"  DataType="{x:Type viewModels:EntityDetailsViewModel}">
         <DataTemplate.Resources>
             <converters:NullVisibilityConverter x:Key="NullVisibilityConverter" />
         </DataTemplate.Resources>
-        <Grid  DataContext="{Binding Source={x:Static viewModels:EntityDetailsViewModel.Instance}}" Background="#4CF9F8F8" Width="500" Height="500">
+        <Grid Background="#4CF9F8F8" Width="500" Height="500">
             <TextBlock Width="460"
                        Height="24"
                        Margin="30,10,0,0"
@@ -18,7 +18,7 @@
                        VerticalAlignment="Top"
                        FontSize="18"
                        FontWeight="Bold"
-                       Text="{Binding State.Value.StateInfo.State.Status}" />
+                       Text="{Binding State.Value.StateInfo.State.Status, IsAsync=True}" />
             
             <ListBox Width="Auto"
                      Height="Auto"

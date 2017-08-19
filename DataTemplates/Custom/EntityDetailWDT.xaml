@@ -24,7 +24,7 @@
                        Margin="150,25,0,0"
                        HorizontalAlignment="Left"
                        VerticalAlignment="Top"
-                       Text="{Binding Value, Mode=OneWay ,
+                       Text="{Binding Value, Mode=TwoWay , IsAsync=True,
                                     UpdateSourceTrigger=LostFocus,
                                     ValidatesOnDataErrors=True}" />
         </Grid>

@@ -34,3 +34,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\Reactiv
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\obj\Debug\GenSoft.Expressions.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\obj\Debug\GenSoft.Expressions.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\obj\Debug\GenSoft.Expressions.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\obj\Debug\GenSoft.Expressions.csproj.CoreCompileInputs.cache

@@ -8,8 +8,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using SystemInterfaces;
-
-
+using Common;
 using FluentValidation;
 using FluentValidation.Results;
 using JB.Collections.Reactive;
@@ -17,6 +16,7 @@ using Reactive.Bindings;
 using ReactiveUI;
 using RevolutionEntities;
 using RevolutionEntities.Process;
+using RevolutionEntities.ViewModels;
 using ViewModel.Interfaces;
 using ViewModelInterfaces;
 
@@ -34,8 +34,7 @@ namespace Core.Common.UI
         protected ValidationResult ValidationResults = new ValidationResult();
         protected static ObservableListViewModel _instance = null;
         public static ObservableListViewModel Instance => _instance;
-        IEntityListViewModel IEntityListViewModel.Instance => Instance;
-
+        
         public ObservableListViewModel() { }
 
         public ObservableListViewModel(IViewInfo viewInfo, List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions, List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications, List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, ISystemProcess process, Type orientation, int priority) : base(process,viewInfo,eventSubscriptions,eventPublications,commandInfo, orientation, priority)
@@ -61,10 +60,8 @@ namespace Core.Common.UI
             }));
         }
 
-        ReactiveProperty<IProcessStateEntity> IEntityViewModel.State
-        {
-            get { return new ReactiveProperty<IProcessStateEntity>(){Value = new ProcessStateEntity(this.State.Value.Process, this.State.Value.EntitySet.FirstOrDefault(), this.State.Value.StateInfo.ToStateInfo())}; }
-        }
+       
+        public ReactiveProperty<EntityKeyValuePair> CurrentProperty => new ReactiveProperty<EntityKeyValuePair>();
 
 
         //ReactiveProperty<IProcessStateList> IEntityViewModel.State
