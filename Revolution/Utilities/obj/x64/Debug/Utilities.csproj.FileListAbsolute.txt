@@ -33,10 +33,10 @@ C:\Prism\GitRepositiory\MRManager\Revolution\Utilities\obj\x64\Debug\Utilities.p
 C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\bin\x64\Debug\Utilities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\bin\x64\Debug\Utilities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\bin\x64\Debug\SystemInterfaces.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\bin\x64\Debug\JB.Common.Collections.Reactive.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\bin\x64\Debug\SystemInterfaces.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\bin\x64\Debug\JB.Common.Collections.Reactive.xml
 C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\obj\x64\Debug\Utilities.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\obj\x64\Debug\Utilities.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\obj\x64\Debug\Utilities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\obj\x64\Debug\Utilities.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\bin\x64\Debug\JB.Common.Collections.Reactive.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\bin\x64\Debug\JB.Common.Collections.Reactive.xml
-C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\obj\x64\Debug\Utilities.csproj.CoreCompileInputs.cache

@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.6.1": {
-      "Akka/1.2.0": {
+      "Akka/1.3.0": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "9.0.1",
@@ -244,7 +244,7 @@
       }
     },
     ".NETFramework,Version=v4.6.1/win-x64": {
-      "Akka/1.2.0": {
+      "Akka/1.3.0": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "9.0.1",
@@ -487,15 +487,17 @@
     }
   },
   "libraries": {
-    "Akka/1.2.0": {
-      "sha512": "cd5LeeT7lWMRtvxmhzmsTUdeybHB9NZa0FFhWI1Cr8tH4x9+FNPrzPdyBKzVGdELZfGtQR/i0MbgwC13aZxlTQ==",
+    "Akka/1.3.0": {
+      "sha512": "YWu+CFYlPmn8znS36vtuZSIyEkl5Lg4Ab6JTlhu3VS2ZKbdrL0hgg0UucLYh4YukSZ99yKwzfaENn9VK0wlI9Q==",
       "type": "package",
-      "path": "akka/1.2.0",
+      "path": "akka/1.3.0",
       "files": [
-        "Akka.1.2.0.nupkg.sha512",
-        "Akka.nuspec",
+        "akka.1.3.0.nupkg.sha512",
+        "akka.nuspec",
         "lib/net45/Akka.dll",
-        "lib/net45/Akka.xml"
+        "lib/net45/Akka.xml",
+        "lib/netstandard1.6/Akka.dll",
+        "lib/netstandard1.6/Akka.xml"
       ]
     },
     "FluentValidation.Net35/1.0.1": {
@@ -975,7 +977,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "Akka >= 1.2.0"
+      "Akka >= 1.3.0"
     ],
     ".NETFramework,Version=v4.6.1": []
   },
@@ -1016,7 +1018,7 @@
       }
     },
     "dependencies": {
-      "Akka": "1.2.0"
+      "Akka": "1.3.0"
     },
     "frameworks": {
       "net461": {}

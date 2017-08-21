@@ -19,7 +19,7 @@ namespace GenSoft.Entities
 			// ---------Child Relationships
 		
 			// ---------Parent Relationships
-				public virtual EntityType EntityType { get; set;}
+				public virtual EntityType EntityType {get; set;}
 				public virtual EntityType BaseEntityType {get; set;}
 	
 

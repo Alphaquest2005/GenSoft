@@ -31,7 +31,7 @@ namespace RevolutionData
                     {
                         new ViewEventSubscription<ISummaryListViewModel, IUpdateProcessStateList>(
                             3,
-                            e => e != null,
+                            e => e.EntityType == entityType,
                             new List<Func<ISummaryListViewModel, IUpdateProcessStateList, bool>>(),
                             (v,e) =>
                             {
@@ -42,23 +42,39 @@ namespace RevolutionData
 
                         new ViewEventSubscription<ISummaryListViewModel, IEntitySetWithChangesLoaded>(
                             processId: processId,
-                            eventPredicate: e => e.Changes.Count == 0,
+                            eventPredicate: e => e.EntityType == entityType,
                             actionPredicate: new List<Func<ISummaryListViewModel, IEntitySetWithChangesLoaded, bool>>(),
                             action: (v, e) =>
                             {
                                 if (Application.Current == null)
                                 {
-                                    ReloadEntitySet(v, e);
+                                    ReloadEntitySet(v, e.EntitySet);
                                 }
                                 else
                                 {
-                                    Application.Current.Dispatcher.BeginInvoke(new Action(() => ReloadEntitySet(v, e)));
+                                    Application.Current.Dispatcher.BeginInvoke(new Action(() => ReloadEntitySet(v, e.EntitySet)));
+                                }
+                            }),
+
+                        new ViewEventSubscription<ISummaryListViewModel, IEntitySetLoaded>(
+                            processId: processId,
+                            eventPredicate: e => e.EntityType == entityType,
+                            actionPredicate: new List<Func<ISummaryListViewModel, IEntitySetLoaded, bool>>(),
+                            action: (v, e) =>
+                            {
+                                if (Application.Current == null)
+                                {
+                                    ReloadEntitySet(v, e.Entities);
+                                }
+                                else
+                                {
+                                    Application.Current.Dispatcher.BeginInvoke(new Action(() => ReloadEntitySet(v, e.Entities)));
                                 }
                             }),
 
                         new ViewEventSubscription<ISummaryListViewModel, IEntityWithChangesUpdated>(
                             processId: processId,
-                            eventPredicate: e => e.Changes.Count > 0,
+                            eventPredicate: e => e.Changes.Count > 0 && e.EntityType == entityType,
                             actionPredicate: new List<Func<ISummaryListViewModel, IEntityWithChangesUpdated, bool>>(),
                             action: (v, e) =>
                             {
@@ -74,7 +90,7 @@ namespace RevolutionData
 
                         new ViewEventSubscription<ISummaryListViewModel, ICurrentEntityChanged>(
                             3,
-                            e => e != null,
+                            e => e.EntityType == entityType,
                             new List<Func<ISummaryListViewModel, ICurrentEntityChanged, bool>>(),
                             (v, e) =>
                             {
@@ -292,10 +308,10 @@ namespace RevolutionData
 
         }
 
-        private static void ReloadEntitySet(ISummaryListViewModel v, IEntitySetWithChangesLoaded e)
+        private static void ReloadEntitySet(ISummaryListViewModel v, IList<IDynamicEntity> e)
         {
             v.EntitySet.Value.Clear();
-            v.EntitySet.Value.AddRange(e.EntitySet);
+            v.EntitySet.Value.AddRange(e);
             v.EntitySet.Value.Reset();
         }
 

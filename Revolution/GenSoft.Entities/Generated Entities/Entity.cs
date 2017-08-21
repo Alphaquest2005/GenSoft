@@ -23,7 +23,7 @@ namespace GenSoft.Entities
 				public virtual ICollection<Event> Event {get; set;}
 		
 			// ---------Parent Relationships
-				public virtual Type Type {get; set;}
+				public virtual EntityType EntityType {get; set;}
 	
 
 	}
