@@ -7,6 +7,7 @@ using System.Reactive.Linq;
 using System.Windows;
 using SystemInterfaces;
 using BootStrapper;
+using Common.DataEntites;
 using Common.Dynamic;
 using ReactiveUI;
 using RevolutionEntities.Process;
@@ -48,11 +49,11 @@ namespace RevolutionData
                             {
                                 if (Application.Current == null)
                                 {
-                                    ReloadEntitySet(v, e.EntitySet);
+                                    ReloadEntitySet(v, e.EntitySet, e.EntityType);
                                 }
                                 else
                                 {
-                                    Application.Current.Dispatcher.BeginInvoke(new Action(() => ReloadEntitySet(v, e.EntitySet)));
+                                    Application.Current.Dispatcher.BeginInvoke(new Action(() => ReloadEntitySet(v, e.EntitySet, e.EntityType)));
                                 }
                             }),
 
@@ -64,11 +65,11 @@ namespace RevolutionData
                             {
                                 if (Application.Current == null)
                                 {
-                                    ReloadEntitySet(v, e.Entities);
+                                    ReloadEntitySet(v, e.Entities, e.EntityType);
                                 }
                                 else
                                 {
-                                    Application.Current.Dispatcher.BeginInvoke(new Action(() => ReloadEntitySet(v, e.Entities)));
+                                    Application.Current.Dispatcher.BeginInvoke(new Action(() => ReloadEntitySet(v, e.Entities, e.EntityType)));
                                 }
                             }),
 
@@ -308,10 +309,11 @@ namespace RevolutionData
 
         }
 
-        private static void ReloadEntitySet(ISummaryListViewModel v, IList<IDynamicEntity> e)
+        private static void ReloadEntitySet(ISummaryListViewModel v, IList<IDynamicEntity> e, string entityType)
         {
             v.EntitySet.Value.Clear();
             v.EntitySet.Value.AddRange(e);
+            v.EntitySet.Value.Add(new DynamicEntity(entityType,0));
             v.EntitySet.Value.Reset();
         }
 

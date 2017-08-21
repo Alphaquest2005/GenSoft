@@ -57,8 +57,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\JB.Common.
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\JB.Common.Reactive.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\MefContrib.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\MefContrib.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\ReactiveProperty.DataAnnotations.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\ReactiveProperty.DataAnnotations.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\ReactiveProperty.NET46.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\ReactiveProperty.NET46.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\ReactiveProperty.dll
@@ -89,3 +87,5 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\obj\x64\Debug\BootStrapp
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\Utilities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\Utilities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\obj\x64\Debug\BootStrapper.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\ReactiveProperty.DataAnnotations.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Debug\ReactiveProperty.DataAnnotations.pdb

@@ -57,7 +57,6 @@ namespace GenSoft.DBContexts
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
 			optionsBuilder.UseSqlServer(DBContext.Properties.Settings.Default.DbConnectionString);
-            
 		}
 	
 		protected override void OnModelCreating(ModelBuilder modelBuilder)

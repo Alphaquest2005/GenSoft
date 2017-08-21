@@ -149,10 +149,10 @@ namespace GenSoft.DBContexts
 			//No test data for Message
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[Entity] ON
-						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('1','1',cast((select Value from AmoebaDB.dbo.TestValues where Id = 117035) as varbinary(max)))
-						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('2','3',cast((select Value from AmoebaDB.dbo.TestValues where Id = 117038) as varbinary(max)))
-						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('3','37',cast((select Value from AmoebaDB.dbo.TestValues where Id = 117041) as varbinary(max)))
-						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('4','38',cast((select Value from AmoebaDB.dbo.TestValues where Id = 117044) as varbinary(max)))
+						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('1','1',cast((select Value from AmoebaDB.dbo.TestValues where Id = 118195) as varbinary(max)))
+						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('2','3',cast((select Value from AmoebaDB.dbo.TestValues where Id = 118198) as varbinary(max)))
+						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('3','37',cast((select Value from AmoebaDB.dbo.TestValues where Id = 118201) as varbinary(max)))
+						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('4','37',cast((select Value from AmoebaDB.dbo.TestValues where Id = 118204) as varbinary(max)))
 					SET IDENTITY_INSERT dbo.[Entity] OFF");
 			//No test data for Message
 				Instance.Database.ExecuteSqlCommand(@"
@@ -288,7 +288,7 @@ namespace GenSoft.DBContexts
 					SET IDENTITY_INSERT dbo.[Attributes] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[EntityAttribute] ON
-						Insert Into dbo.[EntityAttribute] (AttributeId,Id,EntityId,Value) Values('1','1','3','1')
+						Insert Into dbo.[EntityAttribute] (AttributeId,Id,EntityId,Value) Values('1','1','3','3')
 						Insert Into dbo.[EntityAttribute] (AttributeId,Id,EntityId,Value) Values('2','2','3','Jonali')
 						Insert Into dbo.[EntityAttribute] (AttributeId,Id,EntityId,Value) Values('50','3','3','St. Louis')
 						Insert Into dbo.[EntityAttribute] (AttributeId,Id,EntityId,Value) Values('3','4','3','Fort Jeudy')
@@ -392,6 +392,7 @@ namespace GenSoft.DBContexts
 						Insert Into dbo.[EntityView] (Id,BaseEntityTypeId) Values('22','37')
 						Insert Into dbo.[EntityView] (Id,BaseEntityTypeId) Values('24','37')
 						Insert Into dbo.[EntityView] (Id,BaseEntityTypeId) Values('34','37')
+						Insert Into dbo.[EntityView] (Id,BaseEntityTypeId) Values('38','37')
 ");
 			//No test data for Event
 			//No test data for Message

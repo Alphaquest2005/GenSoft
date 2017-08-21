@@ -35,8 +35,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\x64\Debug\JB
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\x64\Debug\JB.Common.Collections.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\x64\Debug\JB.Common.Collections.Reactive.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\x64\Debug\JB.Common.Reactive.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\x64\Debug\ReactiveProperty.DataAnnotations.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\x64\Debug\ReactiveProperty.DataAnnotations.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\x64\Debug\ReactiveProperty.NET46.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\x64\Debug\ReactiveProperty.NET46.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\x64\Debug\ReactiveProperty.dll
@@ -57,3 +55,5 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\obj\x64\Debug\Vi
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\obj\x64\Debug\ViewModel.Interfaces.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\obj\x64\Debug\ViewModel.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\obj\x64\Debug\ViewModel.Interfaces.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\x64\Debug\ReactiveProperty.DataAnnotations.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\x64\Debug\ReactiveProperty.DataAnnotations.pdb
