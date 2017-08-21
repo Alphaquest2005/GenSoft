@@ -28,14 +28,14 @@ namespace DataServices.Actors
         public EntityDataServiceManager(ISystemProcess process) : base(process)
         {
             ctx = Context;
-            EventMessageBus.Current.GetEvent<IProcessSystemMessage>(Source).Where(x => x is IEntityRequest).Subscribe(x => handleEntityRequest((IEntityRequest)x));
+            EventMessageBus.Current.GetEvent<IEntityRequest>(Source).Subscribe(handleEntityRequest);
         }
 
         private void handleEntityRequest(IEntityRequest entityRequest)
         {
             try
             {
-                var type = entityRequest.EntityType;
+                var type = "IDynamicEntity";//entityRequest.EntityType;
 
                 CreateEntityActors(type,  "{0}EntityDataServiceSupervisor",
                         entityRequest.Process, entityRequest);
