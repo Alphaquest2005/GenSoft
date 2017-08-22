@@ -12,6 +12,7 @@ namespace Common.DataEntites
    
     public class DynamicEntity:Expando, IDynamicEntity
     {
+        public List<EntityKeyValuePair> DBpropertyList { get; } = new List<EntityKeyValuePair>();
         public DynamicEntity(string entityType, int id, List<EntityKeyValuePair> toList = null)
         {
             EntityType = entityType;
@@ -21,6 +22,8 @@ namespace Common.DataEntites
             {
                 Properties.Add(itm.Key, itm.Value);
             }
+
+            DBpropertyList = toList;
         }
         public int Id { get;  }
         public DateTime EntryDateTime { get; private set; } = DateTime.Now;
@@ -30,7 +33,23 @@ namespace Common.DataEntites
 
 
         public virtual RowState RowState { get; set; } = RowState.Loaded ;
-        
+
+        private string _entityName;
+        public dynamic EntityName
+        {
+            get
+            {
+                if(_entityName == null) _entityName = DBpropertyList.FirstOrDefault(x => x.IsEntityName)?.Key;
+                return _entityName == null ? this.Properties["EntityName"] : Properties[_entityName].ToString();
+            }
+            set
+            {
+                if (_entityName == null) _entityName = DBpropertyList.FirstOrDefault(x => x.IsEntityName)?.Key;
+                if (_entityName == null) this.Properties["EntityName"] = value;
+                else Properties[_entityName] = value;
+            }
+        }
+
         private readonly Guid _entityGuid = Guid.NewGuid();
 
         public override bool Equals(object obj)
@@ -107,5 +126,15 @@ namespace Common.DataEntites
         }
 
 
+    }
+
+    public static class NullEntity
+    {
+
+
+        public static DynamicEntity GetNullEntity(string entityType)
+        {
+            return new DynamicEntity(entityType, -1);
+        }
     }
 }

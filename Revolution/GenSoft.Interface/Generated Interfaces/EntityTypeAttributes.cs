@@ -16,6 +16,7 @@ namespace GenSoft.Interfaces
 	{
 		int AttributeId { get;}
 		int EntityTypeId { get;}
+		int Priority { get;}
 
 
 

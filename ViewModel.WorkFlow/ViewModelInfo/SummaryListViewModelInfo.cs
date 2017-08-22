@@ -7,6 +7,7 @@ using System.Reactive.Linq;
 using System.Windows;
 using SystemInterfaces;
 using BootStrapper;
+using Common;
 using Common.DataEntites;
 using Common.Dynamic;
 using ReactiveUI;
@@ -313,7 +314,7 @@ namespace RevolutionData
         {
             v.EntitySet.Value.Clear();
             v.EntitySet.Value.AddRange(e);
-            v.EntitySet.Value.Add(new DynamicEntity(entityType,0));
+            v.EntitySet.Value.Add(new DynamicEntity(entityType,0){EntityName = "Create New..."});
             v.EntitySet.Value.Reset();
         }
 

@@ -430,6 +430,8 @@
 ..\GenSoft.Interface\Generated Interfaces\EntityViews\Entities.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityViews\EntityListView.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityViews\EntityRelationsView.cs
+..\GenSoft.Interface\Generated Interfaces\EntityViews\EntityTypeAttributesView.cs
+..\GenSoft.Interface\Generated Interfaces\EntityViews\EntityViewEntity.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityViews\ProcessComplexStateView.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityViews\ProcessInfo.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityViews\ProcessStateView.cs

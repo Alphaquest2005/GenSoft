@@ -47,7 +47,7 @@ namespace ViewModels
             set
             {
                 _currentProperty = value;
-                _currentProperty.WhenAnyValue(x => x.Value).Subscribe(x => OnValueChanged(x));}
+                _currentProperty?.WhenAnyValue(x => x.Value).Subscribe(x => OnValueChanged(x));}
         }
 
 

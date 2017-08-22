@@ -8,10 +8,12 @@ namespace Common
 {
     public class EntityKeyValuePair : IEntityKeyValuePair
     {
-        public EntityKeyValuePair(string key, dynamic value)
+        public EntityKeyValuePair(string key, dynamic value, bool isEntityId = false, bool isEntityName = false )
         {
             Value = value;
             Key = key;
+            if (isEntityId) IsEntityId = true;
+            if (isEntityName) IsEntityId = true;
         }
 
         private string _key;
@@ -41,6 +43,9 @@ namespace Common
 
             }
         }
+
+        public bool IsEntityId { get; set; }
+        public bool IsEntityName { get; set; }
 
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -17,6 +17,9 @@ namespace SystemInterfaces
     {
         string Key { get; }
         dynamic Value { get; }
+
+        bool IsEntityId { get; }
+        bool IsEntityName { get; }
     }
 
     public interface IEntity:IEntityId

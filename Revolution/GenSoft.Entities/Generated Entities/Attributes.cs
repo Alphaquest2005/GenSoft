@@ -13,8 +13,8 @@ namespace GenSoft.Entities
 {
 	public partial class Attributes: BaseEntity, IAttributes
 	{
-		public virtual string Name { get; set; }
 		public virtual int DataTypeId { get; set; }
+		public virtual string Name { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships

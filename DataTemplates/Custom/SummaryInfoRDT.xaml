@@ -24,7 +24,7 @@
                        HorizontalAlignment="Left"
                        VerticalAlignment="Top"
                        FontSize="18.667"
-                       Text="{Binding Name,
+                       Text="{Binding PropertyList[0].Value,
                                       Mode=OneWay}" />
             <TextBlock Width="264"
                        Height="27"
@@ -32,7 +32,7 @@
                        HorizontalAlignment="Left"
                        VerticalAlignment="Top"
                        FontSize="16"
-                       Text="{Binding Address,
+                       Text="{Binding PropertyList[1].Value,
                                       Mode=OneWay}" />
             <TextBlock Width="159"
                        Height="27"
@@ -40,7 +40,7 @@
                        HorizontalAlignment="Left"
                        VerticalAlignment="Top"
                        FontSize="16"
-                       Text="{Binding PhoneNumber,
+                       Text="{Binding PropertyList[2].Value,
                                       Mode=OneWay}" />
             <TextBlock Width="147"
                        Height="27"
@@ -49,7 +49,7 @@
                        VerticalAlignment="Top"
                        FontSize="14"
                        FontWeight="Bold"
-                       Text="{Binding Age,
+                       Text="{Binding PropertyList[3].Value,
                                       Mode=OneWay}"
                        TextWrapping="NoWrap" />
         </Grid>
