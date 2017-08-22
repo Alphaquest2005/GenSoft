@@ -20,6 +20,7 @@ namespace RevolutionEntities.ViewModels
         }
 
         public int ProcessId { get; }
+        public string Key => ViewInfo.Name;
         public IViewInfo ViewInfo { get; }
         public List<IViewModelEventSubscription<IViewModel, IEvent>> Subscriptions { get; }
         public List<IViewModelEventPublication<IViewModel, IEvent>> Publications { get; }

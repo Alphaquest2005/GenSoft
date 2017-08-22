@@ -10,7 +10,7 @@ namespace ViewModel.Interfaces
     {
         
         int ProcessId { get; }
-
+        string Key { get; }
         IViewInfo ViewInfo { get; }
         List<IViewModelEventSubscription<IViewModel, IEvent>> Subscriptions { get; }
 

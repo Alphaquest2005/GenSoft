@@ -78,11 +78,14 @@ namespace EFRepository
                 //        x.Entity.EntityAttribute.Select(z => new EntityKeyValuePair(z.Attributes.Name, z.Value)).ToList()) as IDynamicEntity)
                 //    .ToList();
 
-                var viewId = ctx.EntityView
+                var viewTypeId = ctx.EntityView
+                    .FirstOrDefault(x => x.EntityType.Type.Name == msg.EntityType)?.Id;
+
+                var entityTypeId = ctx.EntityView
                     .FirstOrDefault(x => x.EntityType.Type.Name == msg.EntityType)?.BaseEntityTypeId;
-                
-                var viewEntityAttributes = GetViewEntityAttributes(ctx, viewId);
-                var res = GetEntities(ctx, viewId);
+
+                var viewEntityAttributes = GetViewEntityAttributes(ctx, viewTypeId);
+                var res = GetEntities(ctx, entityTypeId);
                 var viewset = GetViewEntities(msg.EntityType, res, viewEntityAttributes)
                     .ToList();
 
@@ -139,12 +142,16 @@ namespace EFRepository
                 //var entity = res.Select(x => new DynamicEntity(x.Entity.EntityType.Type.Name, x.Id,
                 //         x.Entity.EntityAttribute.Select(z => new EntityKeyValuePair(z.Attributes.Name, z.Value)).ToList()))
                 //     .FirstOrDefault();
-                var viewId = ctx.EntityView
+
+                var  viewTypeId= ctx.EntityView
+                    .FirstOrDefault(x => x.EntityType.Type.Name == msg.EntityType)?.Id;
+
+                var entityTypeId = ctx.EntityView
                     .FirstOrDefault(x => x.EntityType.Type.Name == msg.EntityType)?.BaseEntityTypeId;
 
-                var viewEntityAttributes = GetViewEntityAttributes(ctx, viewId);
+                var viewEntityAttributes = GetViewEntityAttributes(ctx, viewTypeId);
 
-                var res = GetEntities(ctx, viewId).Include(x => x.EntityAttribute).ThenInclude(x => x.Attributes).AsQueryable();
+                var res = GetEntities(ctx, entityTypeId).Include(x => x.EntityAttribute).ThenInclude(x => x.Attributes).AsQueryable();
                 res = msg.Changes.Aggregate(res, (current, c) => current.Where(x => x.EntityAttribute.Any(z => z.Attributes.Name == c.Key && z.Value.ToString() == c.Value.ToString())));
 
                 var entity = GetViewEntities(msg.EntityType, res, viewEntityAttributes).FirstOrDefault();

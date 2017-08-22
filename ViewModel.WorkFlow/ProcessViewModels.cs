@@ -102,6 +102,17 @@ namespace ViewModel.WorkFlow
                                     new ViewModelEntity(){EntityType = "IPatientNextOfKinsInfo", ViewProperty = "NextOfKins"},
                                     new ViewModelEntity(){EntityType = "INonResidentInfo", ViewProperty = "NonResident"},
                                     }),
+            //PatientVitalsViewModelInfo.PatientVitalsViewModel,
+            EntityDetailsViewModelInfo.EntityDetailsViewModel(3,"IPatientVitalsInfo",   "", "Vitals", 1,
+                parentEntities:new List<ViewModelEntity>()
+                {
+                    new ViewModelEntity(){EntityType = "IPatientInfo", ViewProperty = "Patient", Property = "Id"},
+                },
+                childEntities:new List<ViewModelEntity>()
+                {
+                    new ViewModelEntity(){EntityType = "IPatientVitalsInfo", ViewProperty = "PatientVitals"},
+                }),
+
             //QuestionaireViewModelInfo.QuestionairenaireViewViewModel,
             EntityDetailsViewModelInfo.EntityDetailsViewModel(
                     processId: 3,
@@ -120,16 +131,7 @@ namespace ViewModel.WorkFlow
                                     }
                     ),
 
-            //PatientVitalsViewModelInfo.PatientVitalsViewModel,
-            EntityDetailsViewModelInfo.EntityDetailsViewModel(3,"IPatientVitalsInfo",   "", "Vitals", 1, 
-            parentEntities:new List<ViewModelEntity>()
-            {
-            new ViewModelEntity(){EntityType = "IPatientInfo", ViewProperty = "Patient", Property = "Id"},
-            },
-            childEntities:new List<ViewModelEntity>()
-            {
-            new ViewModelEntity(){EntityType = "IPatientVitalsInfo", ViewProperty = "PatientVitals"},
-            }),
+            
 
             EntityCacheViewModelInfo.CacheViewModel(3,"ISyntomPriority"),
             EntityCacheViewModelInfo.CacheViewModel(3,"ISyntomPriority"),
