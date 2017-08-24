@@ -6,6 +6,6 @@ namespace SystemInterfaces
 
     public interface IEntityRequest:IProcessSystemMessage
     {
-        string EntityType { get; }
+        IDynamicEntityType EntityType { get; }
     }
 }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Windows;
 using SystemInterfaces;
 using Common;
+using Common.DataEntites;
 using Core.Common.UI;
 using FluentValidation;
 
@@ -22,15 +23,15 @@ using ViewModelInterfaces;
 namespace ViewModels
 {
     [Export(typeof(ISummaryListViewModel))]
-    public class SummaryListViewModel : DynamicViewModel<ObservableListViewModel>, ISummaryListViewModel
+    public class SummaryListViewModel : DynamicViewModel<EntityListViewModel>, ISummaryListViewModel
     {
 
         public SummaryListViewModel() { }
-        public SummaryListViewModel(ISystemProcess process, IViewInfo viewInfo, List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions, List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications, List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, Type orientation, int priority) : base(new ObservableListViewModel(viewInfo, eventSubscriptions, eventPublications, commandInfo, process, orientation, priority))
+        public SummaryListViewModel(ISystemProcess process, IViewInfo viewInfo, List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions, List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications, List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, Type orientation, int priority) : base(new EntityListViewModel(viewInfo, eventSubscriptions, eventPublications, commandInfo, process, orientation, priority))
         {
             if (LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
             this.WireEvents();
-
+            
 
         }
 

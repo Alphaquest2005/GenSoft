@@ -18,6 +18,6 @@ namespace EventMessages.Commands
             Contract.Requires(entity != null);
             Entity = entity;
         }
-        public string EntityType => Entity.EntityType;
+        public IDynamicEntityType EntityType => Entity.EntityType;
     }
 }

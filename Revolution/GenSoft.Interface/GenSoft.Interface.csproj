@@ -64,6 +64,7 @@
     <Compile Include="Generated Interfaces\EntityRelationships.cs" />
     <Compile Include="Generated Interfaces\EntityType.cs" />
     <Compile Include="Generated Interfaces\EntityTypeAttributes.cs" />
+    <Compile Include="Generated Interfaces\EntityTypeViewModel.cs" />
     <Compile Include="Generated Interfaces\EntityView.cs" />
     <Compile Include="Generated Interfaces\Event.cs" />
     <Compile Include="Generated Interfaces\Machine.cs" />
@@ -84,7 +85,7 @@
     <Compile Include="Generated Interfaces\Type.cs" />
     <Compile Include="Generated Interfaces\TypeParameter.cs" />
     <Compile Include="Generated Interfaces\User.cs" />
-    <Compile Include="Generated Interfaces\ViewModel.cs" />
+    <Compile Include="Generated Interfaces\ViewModelTypes.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="IPredicate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

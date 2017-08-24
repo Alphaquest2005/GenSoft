@@ -784,6 +784,7 @@
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ValidationSets": "1.0.0",
+          "ViewMessages": "1.0.0",
           "ViewModel.Interfaces": "1.0.0",
           "reactiveui-core": "7.0.0"
         }
@@ -934,6 +935,7 @@
         "dependencies": {
           "Actor.Interfaces": "1.0.0",
           "BootStrapper": "1.0.0",
+          "Common": "1.0.0",
           "CommonMessages": "1.0.0",
           "Domain.Interfaces": "1.0.0",
           "EventMessages": "1.0.0",
@@ -1030,6 +1032,34 @@
           "ReactiveProperty": "2.9.0",
           "SystemInterfaces": "1.0.0",
           "reactiveui-core": "7.0.0"
+        }
+      },
+      "ViewModel.WorkFlow/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "Actor.Interfaces": "1.0.0",
+          "BootStrapper": "1.0.0",
+          "Common": "1.0.0",
+          "DomainMessages": "1.0.0",
+          "EventMessages": "1.0.0",
+          "GenSoft.Entities": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
+          "JB.Common": "0.7.0",
+          "JB.Common.Collections": "0.7.0",
+          "JB.Common.Collections.Reactive": "0.7.0",
+          "JB.Common.Reactive": "0.7.0",
+          "RevolutionData": "1.0.0",
+          "RevolutionEntities": "1.0.0",
+          "Rx-Core": "2.2.5",
+          "Rx-Interfaces": "2.2.5",
+          "Rx-Linq": "2.2.5",
+          "Rx-Main": "2.2.5",
+          "Rx-PlatformServices": "2.2.5",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0",
+          "ViewMessages": "1.0.0",
+          "ViewModel.Interfaces": "1.0.0"
         }
       }
     },
@@ -1806,6 +1836,7 @@
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ValidationSets": "1.0.0",
+          "ViewMessages": "1.0.0",
           "ViewModel.Interfaces": "1.0.0",
           "reactiveui-core": "7.0.0"
         }
@@ -1956,6 +1987,7 @@
         "dependencies": {
           "Actor.Interfaces": "1.0.0",
           "BootStrapper": "1.0.0",
+          "Common": "1.0.0",
           "CommonMessages": "1.0.0",
           "Domain.Interfaces": "1.0.0",
           "EventMessages": "1.0.0",
@@ -2052,6 +2084,34 @@
           "ReactiveProperty": "2.9.0",
           "SystemInterfaces": "1.0.0",
           "reactiveui-core": "7.0.0"
+        }
+      },
+      "ViewModel.WorkFlow/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "Actor.Interfaces": "1.0.0",
+          "BootStrapper": "1.0.0",
+          "Common": "1.0.0",
+          "DomainMessages": "1.0.0",
+          "EventMessages": "1.0.0",
+          "GenSoft.Entities": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
+          "JB.Common": "0.7.0",
+          "JB.Common.Collections": "0.7.0",
+          "JB.Common.Collections.Reactive": "0.7.0",
+          "JB.Common.Reactive": "0.7.0",
+          "RevolutionData": "1.0.0",
+          "RevolutionEntities": "1.0.0",
+          "Rx-Core": "2.2.5",
+          "Rx-Interfaces": "2.2.5",
+          "Rx-Linq": "2.2.5",
+          "Rx-Main": "2.2.5",
+          "Rx-PlatformServices": "2.2.5",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0",
+          "ViewMessages": "1.0.0",
+          "ViewModel.Interfaces": "1.0.0"
         }
       }
     }
@@ -4066,6 +4126,11 @@
       "type": "project",
       "path": "../ViewModel.Interfaces/project.json",
       "msbuildProject": "../ViewModel.Interfaces/ViewModel.Interfaces.csproj"
+    },
+    "ViewModel.WorkFlow/1.0.0": {
+      "type": "project",
+      "path": "../../ViewModel.WorkFlow/project.json",
+      "msbuildProject": "../../ViewModel.WorkFlow/ViewModel.WorkFlow.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4103,9 +4168,6 @@
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\MRManager\\Process.WorkFlow\\Process.WorkFlow.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\MRManager\\Process.WorkFlow\\Process.WorkFlow.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Actor.Interfaces\\Actor.Interfaces.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Actor.Interfaces\\Actor.Interfaces.csproj"
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\BootStrapper\\BootStrapper.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\BootStrapper\\BootStrapper.csproj"
@@ -4145,6 +4207,12 @@
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Actor.Interfaces\\Actor.Interfaces.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Actor.Interfaces\\Actor.Interfaces.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\ViewModel.WorkFlow\\ViewModel.WorkFlow.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\ViewModel.WorkFlow\\ViewModel.WorkFlow.csproj"
             }
           }
         }

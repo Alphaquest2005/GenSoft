@@ -21,4 +21,18 @@ namespace ViewMessages
         public TViewModel ViewModel { get; }
 
     }
+
+    [Export(typeof(IViewModelIntialized))]
+    public class ViewModelIntialized : ProcessSystemMessage, IViewModelIntialized
+    {
+        //occurs when viewmodel loaded in View
+        public ViewModelIntialized() { }
+        public ViewModelIntialized(IViewModel viewModel, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo, process, source)
+        {
+            ViewModel = viewModel;
+        }
+
+        public IViewModel ViewModel { get; }
+
+    }
 }

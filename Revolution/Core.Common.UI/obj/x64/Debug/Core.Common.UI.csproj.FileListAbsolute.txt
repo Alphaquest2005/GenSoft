@@ -250,3 +250,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\System.X
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\System.Xml.XmlSerializer.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\System.Xml.XPath.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\System.Xml.XPath.XDocument.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\ViewMessages.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\ViewMessages.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\ViewMessages.dll.config

@@ -29,4 +29,9 @@ namespace ViewModel.Interfaces
         string Symbol { get; }
         string Description { get; }
     }
+
+    public interface IEntityViewInfo:IViewInfo
+    {
+        IDynamicEntityType EntityType { get; }
+    }
 }

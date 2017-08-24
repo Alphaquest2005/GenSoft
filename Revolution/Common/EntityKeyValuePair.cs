@@ -6,9 +6,10 @@ using SystemInterfaces.Annotations;
 
 namespace Common
 {
+
     public class EntityKeyValuePair : IEntityKeyValuePair
     {
-        public EntityKeyValuePair(string key, dynamic value, bool isEntityId = false, bool isEntityName = false )
+        public EntityKeyValuePair(string key, dynamic value, bool isEntityId = false, bool isEntityName = false ) 
         {
             Value = value;
             Key = key;
@@ -16,17 +17,11 @@ namespace Common
             if (isEntityName) IsEntityId = true;
         }
 
-        private string _key;
+        public string Key { get; set; }
 
-        public string Key
-        {
-            get => _key;
-            set
-            {
-                _key = value;
-                OnPropertyChanged();
-            }
-        }
+
+        public bool IsEntityId { get; set; }
+        public bool IsEntityName { get; set; }
 
         private dynamic _value;
 
@@ -43,9 +38,6 @@ namespace Common
 
             }
         }
-
-        public bool IsEntityId { get; set; }
-        public bool IsEntityName { get; set; }
 
 
         public event PropertyChangedEventHandler PropertyChanged;

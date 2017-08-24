@@ -17,13 +17,13 @@ namespace EventMessages.Commands
         }
         public Dictionary<string, dynamic> Changes { get; }
         
-        public AddOrGetEntityWithChanges(string entityType, Dictionary<string, dynamic> changes, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo, process, source)
+        public AddOrGetEntityWithChanges(IDynamicEntityType entityType, Dictionary<string, dynamic> changes, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo, process, source)
         {
             Contract.Requires(changes.Count > 0);
             Changes = changes;
             EntityType = entityType;
         }
 
-        public string EntityType { get; }
+        public IDynamicEntityType EntityType { get; }
     }
 }

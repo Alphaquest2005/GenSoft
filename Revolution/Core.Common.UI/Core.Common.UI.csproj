@@ -75,8 +75,8 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="DynamicViewModel.cs" />
-    <Compile Include="ObservableListViewModel.cs" />
-    <Compile Include="ObservableViewModel.cs" />
+    <Compile Include="EntityListViewModel.cs" />
+    <Compile Include="EntityViewModel.cs" />
     <Compile Include="BaseViewModel.cs" />
     <Compile Include="AppSlider.cs" />
     <Compile Include="CBSelectedItem.cs" />
@@ -182,6 +182,10 @@
     <ProjectReference Include="..\Utilities\Utilities.csproj">
       <Project>{0F9427B1-792E-4C35-97D8-22A9494CE28F}</Project>
       <Name>Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewMessages\ViewMessages.csproj">
+      <Project>{EB1E2E94-D6FB-49DF-8036-9BF910E3B7AA}</Project>
+      <Name>ViewMessages</Name>
     </ProjectReference>
     <ProjectReference Include="..\ViewModel.Interfaces\ViewModel.Interfaces.csproj">
       <Project>{2f936e24-723e-4e7a-b21c-d6f618c74651}</Project>

@@ -37,10 +37,21 @@ namespace RevolutionEntities.ViewModels
             Name = name;
             Symbol = symbol;
             Description = description;
+            
         }
 
         public string Name { get; }
         public string Symbol { get; }
         public string Description { get; }
+        
+    }
+
+    public class EntityViewInfo :ViewInfo, IEntityViewInfo
+    {
+        public EntityViewInfo(string name, string symbol, string description, IDynamicEntityType entityType) : base(name,symbol,description)
+        {
+            EntityType = entityType;
+        }
+        public IDynamicEntityType EntityType { get; }
     }
 }

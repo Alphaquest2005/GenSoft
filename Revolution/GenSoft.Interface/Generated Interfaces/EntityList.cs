@@ -14,6 +14,7 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IEntityList:SystemInterfaces.IEntity  
 	{
+		bool Initalize { get;}
 
 
 

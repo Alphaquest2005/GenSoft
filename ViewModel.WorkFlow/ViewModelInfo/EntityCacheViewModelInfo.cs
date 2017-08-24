@@ -13,12 +13,12 @@ namespace RevolutionData
     public class EntityCacheViewModelInfo
     {
         
-        public static ViewModelInfo CacheViewModel(int processId, string entityType)
+        public static ViewModelInfo CacheViewModel(int processId, IDynamicEntityType entityType)
         {
             return new ViewModelInfo
                 (
                 processId: processId,
-                viewInfo: new ViewInfo($"{entityType}CacheViewModel","",""), 
+                viewInfo: new EntityViewInfo($"{entityType.Name}CacheViewModel","","", entityType), 
                 subscriptions: new List<IViewModelEventSubscription<IViewModel, IEvent>>
                 {
                     new ViewEventSubscription<ICacheViewModel, IEntitySetLoaded>(

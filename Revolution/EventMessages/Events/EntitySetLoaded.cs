@@ -13,11 +13,11 @@ namespace EventMessages.Events
         public IList<IDynamicEntity> Entities { get; }
         
 
-        public EntitySetLoaded(string entityType, IList<IDynamicEntity> entities, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
+        public EntitySetLoaded(IDynamicEntityType entityType, IList<IDynamicEntity> entities, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
         {
             Entities = entities;
             EntityType = entityType;
         }
-        public string EntityType { get; }
+        public IDynamicEntityType EntityType { get; }
     }
 }

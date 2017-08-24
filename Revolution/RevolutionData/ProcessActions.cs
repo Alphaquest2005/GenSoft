@@ -85,7 +85,7 @@ namespace RevolutionData
                         processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.Error),
                         expectedSourceType: new SourceType(typeof(IComplexEventService)));
 
-        public static IProcessAction IntializeProcessState(string entityType)
+        public static IProcessAction IntializeProcessState(IDynamicEntityType entityType)
         {
             return new ProcessAction(
                 action: async cp =>
@@ -101,7 +101,7 @@ namespace RevolutionData
                 expectedSourceType: new SourceType(typeof (IComplexEventService)));
         }
 
-        public static IProcessAction UpdateEntityViewState(string entityType) 
+        public static IProcessAction UpdateEntityViewState(IDynamicEntityType entityType) 
         {
             return new ProcessAction(
                 action: async cp =>
@@ -124,7 +124,7 @@ namespace RevolutionData
                 expectedSourceType: new SourceType(typeof(IComplexEventService)));
         }
 
-        public static IProcessAction UpdateEntityViewStateList(string entityType)
+        public static IProcessAction UpdateEntityViewStateList(IDynamicEntityType entityType)
         {
             return new ProcessAction(
                 action: async cp =>
@@ -150,7 +150,7 @@ namespace RevolutionData
                 expectedSourceType: new SourceType(typeof(IComplexEventService)));
         }
 
-        public static IProcessAction RequestState(string entityType,string property)
+        public static IProcessAction RequestState(IDynamicEntityType entityType,string property)
         {
             return new ProcessAction(
                 action: async cp =>
@@ -173,7 +173,7 @@ namespace RevolutionData
         }
 
         
-        public static IProcessAction RequestStateList(string entityType, string currentProperty, string viewProperty) 
+        public static IProcessAction RequestStateList(IDynamicEntityType entityType, string currentProperty, string viewProperty) 
         {
             return new ProcessAction(
                 action: async cp =>
@@ -196,7 +196,7 @@ namespace RevolutionData
                 );
         }
 
-        public static IProcessAction RequestCompositStateList(string entityType, Dictionary<string, dynamic> changes, List<ViewModelEntity> entities)
+        public static IProcessAction RequestCompositStateList(IDynamicEntityType entityType, Dictionary<string, dynamic> changes, List<ViewModelEntity> entities)
         {
             return new ProcessAction(
                 action: async cp =>
@@ -237,7 +237,7 @@ namespace RevolutionData
                 {
                     var ps = new ProcessStateEntity(
                         process: cp.Actor.Process,
-                        entity: new DynamicEntity("ISignInInfo",-1) {Properties = new PropertyBag(){{"UserName", "User Name"},{"Password", "Password"}}},
+                        entity: new DynamicEntity(DynamicEntityType.DynamicEntityTypes["ISignInInfo"],-1, new Dictionary<string, object>(){}),
                         info: new StateInfo(cp.Actor.Process.Id,
                             new State(name: "AwaitUserName", status: "Waiting for User Name",
                                 notes:
@@ -299,7 +299,7 @@ namespace RevolutionData
         {
             return (ComplexEventAction)typeof(EntityComplexActions).GetMethod(method).Invoke(null, args);
         }
-        public static ComplexEventAction IntializeCache(int processId, string entityType) 
+        public static ComplexEventAction IntializeCache(int processId, IDynamicEntityType entityType) 
         {
             return new ComplexEventAction(
                 key: $"{entityType}EntityCache-1",

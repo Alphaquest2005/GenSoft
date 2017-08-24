@@ -16,13 +16,13 @@ namespace EventMessages.Events
         public List<IDynamicEntity> EntitySet { get; }
         public Dictionary<string, object> Changes { get; }
 
-        public EntitySetWithChangesLoaded(string entityType,List<IDynamicEntity> entitySet, Dictionary<string, object> changes, IStateEventInfo stateEventInfo, ISystemProcess process, ISystemSource source):base(stateEventInfo,process, source)
+        public EntitySetWithChangesLoaded(IDynamicEntityType entityType,List<IDynamicEntity> entitySet, Dictionary<string, object> changes, IStateEventInfo stateEventInfo, ISystemProcess process, ISystemSource source):base(stateEventInfo,process, source)
         {
             EntitySet = entitySet;
             Changes = changes;
             EntityType = entityType;
         }
 
-        public string EntityType { get; }
+        public IDynamicEntityType EntityType { get; }
     }
 }

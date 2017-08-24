@@ -73,11 +73,6 @@ namespace BootStrapper
             }
 
 
-
-            // var t = Container.GetExport<ISummaryViewModel<IPatientInfo>>().Value;
-            // EventMessageBus.Current.Publish(Container.GetExport<ICreateSummaryViewModel<IPatientInfo>>().Value);
-            //EventMessageBus.Current.Publish(Container.GetExport<IStartDataService>().Value, new MessageSource(this.ToString()));
-
         }
 
         public static CompositionContainer Container { get;  }

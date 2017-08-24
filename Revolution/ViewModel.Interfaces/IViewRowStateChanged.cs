@@ -15,8 +15,4 @@ namespace ViewModel.Interfaces
         RowState RowState { get; }
     }
 
-    public interface IViewRowStateChanged<TEntity> : IViewRowStateChanged where TEntity : IEntityId
-    {
-
-    }
 }

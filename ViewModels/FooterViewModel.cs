@@ -23,10 +23,7 @@ namespace ViewModels
             this.WireEvents();
         }
 
-        
-        public ReactiveProperty<IDynamicEntity> CurrentPatient { get; } = new ReactiveProperty<IDynamicEntity>();
-        public ReactiveProperty<IDynamicEntity> CurrentPatientVisit { get; } = new ReactiveProperty<IDynamicEntity>();
-        public ReactiveProperty<IDynamicEntity> CurrentPatientSyntom { get; } = new ReactiveProperty<IDynamicEntity>();
-        public ReactiveProperty<IDynamicEntity> CurrentInterview { get; } = new ReactiveProperty<IDynamicEntity>();
+
+        public ObservableList<IDynamicEntity> Entities { get; } = new ObservableList<IDynamicEntity>();
     }
 }

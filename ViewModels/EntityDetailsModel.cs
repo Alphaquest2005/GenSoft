@@ -21,12 +21,12 @@ using ViewModelInterfaces;
 namespace ViewModels
 {
     [Export(typeof(IEntityViewModel))]
-    public class EntityDetailsViewModel : DynamicViewModel<ObservableViewModel>, IEntityViewModel
+    public class EntityDetailsViewModel : DynamicViewModel<EntityViewModel>, IEntityViewModel
     {
 
         public EntityDetailsViewModel() { }
         
-        public EntityDetailsViewModel(ISystemProcess process, IViewInfo viewInfo, List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions, List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications, List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, Type orientation, int priority) : base(new ObservableViewModel(viewInfo, eventSubscriptions, eventPublications, commandInfo, process, orientation, priority))
+        public EntityDetailsViewModel(ISystemProcess process, IEntityViewInfo viewInfo, List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions, List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications, List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, Type orientation, int priority) : base(new EntityViewModel(viewInfo, eventSubscriptions, eventPublications, commandInfo, process, orientation, priority))
         {
             if (LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
             this.WireEvents();

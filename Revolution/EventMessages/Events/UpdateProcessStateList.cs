@@ -8,13 +8,13 @@ namespace EventMessages.Events
     public class UpdateProcessStateList : ProcessSystemMessage, IUpdateProcessStateList
     {
         public UpdateProcessStateList() { }
-        public UpdateProcessStateList(string entityType,IProcessStateList state, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo, process, source)
+        public UpdateProcessStateList(IDynamicEntityType entityType,IProcessStateList state, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo, process, source)
         {
             State = state;
             EntityType = entityType;
         }
 
         public IProcessStateList State { get; }
-        public string EntityType { get; }
+        public IDynamicEntityType EntityType { get; }
     }
 }

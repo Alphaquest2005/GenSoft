@@ -320,3 +320,5 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\System.Xml.
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\System.Xml.XmlSerializer.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\System.Xml.XPath.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\System.Xml.XPath.XDocument.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\ViewModel.WorkFlow.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\ViewModel.WorkFlow.pdb

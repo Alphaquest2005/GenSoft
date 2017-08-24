@@ -11,10 +11,10 @@ namespace EventMessages.Commands
     public class LoadEntitySet : ProcessSystemMessage, ILoadEntitySet
     { 
         public LoadEntitySet() { }
-        public LoadEntitySet(string entityType, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
+        public LoadEntitySet(IDynamicEntityType entityType, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
         {
             EntityType = entityType;
         }
-        public string EntityType { get; }
+        public IDynamicEntityType EntityType { get; }
     }
 }

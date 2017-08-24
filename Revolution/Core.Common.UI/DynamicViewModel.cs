@@ -40,14 +40,14 @@ namespace Core.Common.UI
             ViewModel = (TViewModel) base.Instance;
             Orientation = viewModel.Orientation;
             ViewModelType = typeof (TViewModel);
-            RowState = viewModel.RowState;
+            //RowState = viewModel.RowState;
             Priority = viewModel.Priority;
 
            
 
         }
 
-        public ReactiveProperty<SystemInterfaces.RowState> RowState { get; }
+        public ReactiveProperty<RowState> RowState { get; } = new ReactiveProperty<RowState>(SystemInterfaces.RowState.Loaded);
 
         public override bool TryGetMember(GetMemberBinder binder, out object result)
         {

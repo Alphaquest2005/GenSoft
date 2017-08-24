@@ -12,8 +12,14 @@ using GenSoft.Interfaces;
 namespace GenSoft.Interfaces
 {
 	[InheritedExport]
-	public partial interface IViewModel:SystemInterfaces.IEntity  
+	public partial interface IEntityTypeViewModel:SystemInterfaces.IEntity  
 	{
+		int ProcessDomainEntityTypeId { get;}
+		int ViewModelId { get;}
+		int Priority { get;}
+		string Symbol { get;}
+		string Description { get;}
+		string PropertyName { get;}
 
 
 

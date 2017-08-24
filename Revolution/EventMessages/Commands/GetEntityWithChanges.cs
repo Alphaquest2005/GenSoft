@@ -11,7 +11,7 @@ namespace EventMessages.Commands
     public class GetEntityWithChanges : ProcessSystemMessage, IGetEntityWithChanges 
     {
         public GetEntityWithChanges() { }
-        public GetEntityWithChanges(string entityType, Dictionary<string, dynamic> changes, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
+        public GetEntityWithChanges(IDynamicEntityType entityType, Dictionary<string, dynamic> changes, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
         {
             Changes = changes;
             EntityType = entityType;
@@ -19,6 +19,6 @@ namespace EventMessages.Commands
 
         public Dictionary<string, dynamic> Changes { get; }
 
-        public string EntityType { get; }
+        public IDynamicEntityType EntityType { get; }
     }
 }

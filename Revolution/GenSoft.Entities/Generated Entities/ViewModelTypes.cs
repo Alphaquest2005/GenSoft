@@ -11,11 +11,13 @@ using GenSoft.Interfaces;
 
 namespace GenSoft.Entities
 {
-	public partial class ViewModel: BaseEntity, IViewModel
+	public partial class ViewModelTypes: BaseEntity, IViewModelTypes
 	{
+		public virtual string Name { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
+				public virtual ICollection<EntityTypeViewModel> EntityTypeViewModel {get; set;}
 		
 			// ---------Parent Relationships
 	

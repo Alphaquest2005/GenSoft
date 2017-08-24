@@ -9,17 +9,17 @@ namespace SystemInterfaces
 
     public interface IDynamicEntity:IEntity
     {
-        string EntityType { get; }
+        IDynamicEntityType EntityType { get; }
         ObservableList<IEntityKeyValuePair> PropertyList { get; }
     }
+
 
     public interface IEntityKeyValuePair: INotifyPropertyChanged
     {
         string Key { get; }
-        dynamic Value { get; }
-
         bool IsEntityId { get; }
         bool IsEntityName { get; }
+       dynamic Value { get; }
     }
 
     public interface IEntity:IEntityId

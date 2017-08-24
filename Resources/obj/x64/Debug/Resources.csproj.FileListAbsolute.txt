@@ -271,3 +271,7 @@ C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\System.Xml.XmlDocument.d
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\System.Xml.XmlSerializer.dll
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\System.Xml.XPath.dll
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\System.Xml.XPath.XDocument.dll
+C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\GenSoft.Entities.dll
+C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\GenSoft.Interfaces.dll
+C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\GenSoft.Entities.pdb
+C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\GenSoft.Interfaces.pdb

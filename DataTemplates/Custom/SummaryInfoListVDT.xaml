@@ -9,7 +9,7 @@
                     mc:Ignorable="d">
 
     <DataTemplate DataType="{x:Type viewModels:SummaryListViewModel}">
-        <Grid x:Name="ViewPatientSummary"
+        <Grid x:Name="SummaryListViewModel"
               Margin="10"
               Background="#4CFFFFFF">
 
@@ -32,7 +32,7 @@
                         <Style.Triggers>
                             <MultiDataTrigger>
                                 <MultiDataTrigger.Conditions>
-                                    <Condition Binding="{Binding Path=RowState.Value}" Value="{x:Static systemInterfaces:RowState.Added}" />
+                                    <Condition Binding="{Binding DataContext.RowState.Value, RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}" Value="{x:Static systemInterfaces:RowState.Loaded}" />
                                     <Condition Binding="{Binding RelativeSource={RelativeSource Mode=Self}, Path=IsSelected}" Value="True" />
                                 </MultiDataTrigger.Conditions>
                                 <MultiDataTrigger.Setters>
@@ -42,7 +42,7 @@
                             </MultiDataTrigger>
                             <MultiDataTrigger>
                                 <MultiDataTrigger.Conditions>
-                                    <Condition Binding="{Binding Path=RowState.Value}" Value="{x:Static systemInterfaces:RowState.Modified}" />
+                                    <Condition Binding="{Binding DataContext.RowState.Value, RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}" Value="{x:Static systemInterfaces:RowState.Modified}" />
                                     <Condition Binding="{Binding RelativeSource={RelativeSource Mode=Self}, Path=IsSelected}" Value="True" />
                                 </MultiDataTrigger.Conditions>
                                 <MultiDataTrigger.Setters>

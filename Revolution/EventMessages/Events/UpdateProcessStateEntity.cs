@@ -14,6 +14,6 @@ namespace EventMessages.Events
         }
 
         public IProcessStateEntity State { get; }
-        public string EntityType => State.Entity.EntityType;
+        public IDynamicEntityType EntityType => State.Entity.EntityType;
     }
 }

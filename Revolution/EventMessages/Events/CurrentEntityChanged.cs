@@ -19,7 +19,7 @@ namespace EventMessages.Events
             Entity = entity;
         }
 
-        public string EntityType => Entity.EntityType;
+        public IDynamicEntityType EntityType => Entity?.EntityType;
     }
 
 

@@ -14,4 +14,9 @@ namespace ViewModel.Interfaces
         TLoadingViewModel LoadingViewModel { get; }
         TViewModel ViewModel { get; }
     }
+
+    public interface IViewModelIntialized : IProcessSystemMessage, IViewModelEvent<IViewModel>
+    {
+        IViewModel ViewModel { get; }
+    }
 }

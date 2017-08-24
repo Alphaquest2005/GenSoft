@@ -764,6 +764,7 @@
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ValidationSets": "1.0.0",
+          "ViewMessages": "1.0.0",
           "ViewModel.Interfaces": "1.0.0",
           "reactiveui-core": "7.0.0"
         }
@@ -888,6 +889,7 @@
         "dependencies": {
           "Actor.Interfaces": "1.0.0",
           "BootStrapper": "1.0.0",
+          "Common": "1.0.0",
           "CommonMessages": "1.0.0",
           "Domain.Interfaces": "1.0.0",
           "EventMessages": "1.0.0",
@@ -1740,6 +1742,7 @@
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ValidationSets": "1.0.0",
+          "ViewMessages": "1.0.0",
           "ViewModel.Interfaces": "1.0.0",
           "reactiveui-core": "7.0.0"
         }
@@ -1864,6 +1867,7 @@
         "dependencies": {
           "Actor.Interfaces": "1.0.0",
           "BootStrapper": "1.0.0",
+          "Common": "1.0.0",
           "CommonMessages": "1.0.0",
           "Domain.Interfaces": "1.0.0",
           "EventMessages": "1.0.0",

@@ -20,20 +20,21 @@ namespace MRManager
 	{
 		public MainWindow()
 		{
-			InitializeComponent();
+			
             if (File.Exists("MRManager-Logs.xml")) File.Delete("MRManager-Logs.xml");
             Logger.Initialize();
 
             Logger.Log(LoggingLevel.Info, $"The UI Thread is:{Application.Current.Dispatcher.Thread.ManagedThreadId}");
 
-            Task.Run(() =>
-		    {
+      //      Task.Run(() =>
+		    //{
 
-		        var interfacesAssembly = AppDomain.CurrentDomain.GetAssemblies()
-		            .FirstOrDefault(x => x.FullName.StartsWith("Interfaces"));
+		    //    var interfacesAssembly = AppDomain.CurrentDomain.GetAssemblies()
+		    //        .FirstOrDefault(x => x.FullName.StartsWith("Interfaces"));
                 BootStrapper.BootStrapper.Instance.StartUp( true, Process.WorkFlow.MachineInfoData.MachineInfos, Process.WorkFlow.Processes.ProcessInfos, Process.WorkFlow.Processes.ProcessComplexEvents, ProcessViewModels.ProcessViewModelInfos);
-		    }).ConfigureAwait(false);
-		    
+		    //}).ConfigureAwait(false);
+
+		    InitializeComponent();
 
 
         }

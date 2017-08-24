@@ -27,17 +27,17 @@ namespace Core.Common.UI
 
 
     
-    public partial class ObservableListViewModel : BaseViewModel<ObservableListViewModel>, IEntityListViewModel
+    public partial class EntityListViewModel : BaseViewModel<EntityListViewModel>, IEntityListViewModel
     {
 
         
         protected ValidationResult ValidationResults = new ValidationResult();
-        protected static ObservableListViewModel _instance = null;
-        public static ObservableListViewModel Instance => _instance;
+        protected static EntityListViewModel _instance = null;
+        public static EntityListViewModel Instance => _instance;
         
-        public ObservableListViewModel() { }
+        public EntityListViewModel() { }
 
-        public ObservableListViewModel(IViewInfo viewInfo, List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions, List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications, List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, ISystemProcess process, Type orientation, int priority) : base(process,viewInfo,eventSubscriptions,eventPublications,commandInfo, orientation, priority)
+        public EntityListViewModel(IViewInfo viewInfo, List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions, List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications, List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, ISystemProcess process, Type orientation, int priority) : base(process,viewInfo,eventSubscriptions,eventPublications,commandInfo, orientation, priority)
         {
             
             State.WhenAnyValue(x => x.Value).Subscribe(x => UpdateLocalState(x));

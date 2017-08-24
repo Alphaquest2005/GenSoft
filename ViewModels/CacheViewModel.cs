@@ -22,11 +22,11 @@ using ViewModelInterfaces;
 namespace ViewModels
 {
     [Export(typeof(ICacheViewModel))]
-    public class CacheViewModel : DynamicViewModel<ObservableListViewModel>, ICacheViewModel
+    public class CacheViewModel : DynamicViewModel<EntityListViewModel>, ICacheViewModel
     {
 
         public CacheViewModel() { }
-        public CacheViewModel(ISystemProcess process, IViewInfo viewInfo, List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions, List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications, List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, Type orientation, int priority) : base(new ObservableListViewModel(viewInfo, eventSubscriptions, eventPublications, commandInfo, process, orientation, priority))
+        public CacheViewModel(ISystemProcess process, IViewInfo viewInfo, List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions, List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications, List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, Type orientation, int priority) : base(new EntityListViewModel(viewInfo, eventSubscriptions, eventPublications, commandInfo, process, orientation, priority))
         {
             if (LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
             this.WireEvents();

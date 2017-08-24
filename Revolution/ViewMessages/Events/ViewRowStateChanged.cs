@@ -5,8 +5,8 @@ using ViewModel.Interfaces;
 
 namespace ViewMessages
 {
-    [Export(typeof(IViewRowStateChanged<>))]
-    public class ViewRowStateChanged<TEntity> : ProcessSystemMessage, IViewRowStateChanged<TEntity> where TEntity:IEntityId
+    [Export(typeof(IViewRowStateChanged))]
+    public class ViewRowStateChanged : ProcessSystemMessage, IViewRowStateChanged
     {
         public IViewModel ViewModel { get; }
         public RowState RowState { get; }

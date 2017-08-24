@@ -13,6 +13,7 @@ namespace GenSoft.Entities
 {
 	public partial class EntityList: BaseEntity, IEntityList
 	{
+		public virtual bool Initalize { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships

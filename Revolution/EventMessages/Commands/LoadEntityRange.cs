@@ -18,7 +18,7 @@ namespace EventMessages.Commands
         public object SortDescriptions { get; }
 
         
-        public LoadEntityRange(string entityType, int startIndex, int count, string filterExpression, Dictionary<string, string> navExp, IEnumerable<string> includesLst, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
+        public LoadEntityRange(IDynamicEntityType entityType, int startIndex, int count, string filterExpression, Dictionary<string, string> navExp, IEnumerable<string> includesLst, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
         {
             StartIndex = startIndex;
             Count = count;
@@ -28,13 +28,13 @@ namespace EventMessages.Commands
             EntityType = entityType;
         }
 
-        public LoadEntityRange(string entityType, int startIndex, int count, SortDescriptionCollection sortDescriptions, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
+        public LoadEntityRange(IDynamicEntityType entityType, int startIndex, int count, SortDescriptionCollection sortDescriptions, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
         {
             StartIndex = startIndex;
             Count = count;
             SortDescriptions = sortDescriptions;
             EntityType = entityType;
         }
-        public string EntityType { get; }
+        public IDynamicEntityType EntityType { get; }
     }
 }

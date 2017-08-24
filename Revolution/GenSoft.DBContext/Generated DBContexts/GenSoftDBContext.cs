@@ -32,6 +32,7 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.EntityRelationships> EntityRelationships { get; set; }
 		public DbSet<Entities.EntityType> EntityType { get; set; }
 		public DbSet<Entities.EntityTypeAttributes> EntityTypeAttributes { get; set; }
+		public DbSet<Entities.EntityTypeViewModel> EntityTypeViewModel { get; set; }
 		public DbSet<Entities.EntityView> EntityView { get; set; }
 		public DbSet<Entities.Event> Event { get; set; }
 		public DbSet<Entities.Machine> Machine { get; set; }
@@ -52,7 +53,7 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.Type> Type { get; set; }
 		public DbSet<Entities.TypeParameter> TypeParameter { get; set; }
 		public DbSet<Entities.User> User { get; set; }
-		public DbSet<Entities.ViewModel> ViewModel { get; set; }
+		public DbSet<Entities.ViewModelTypes> ViewModelTypes { get; set; }
 	
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
@@ -81,6 +82,7 @@ namespace GenSoft.DBContexts
 				EntityRelationshipsMap.Map(modelBuilder.Entity<Entities.EntityRelationships>());
 				EntityTypeMap.Map(modelBuilder.Entity<Entities.EntityType>());
 				EntityTypeAttributesMap.Map(modelBuilder.Entity<Entities.EntityTypeAttributes>());
+				EntityTypeViewModelMap.Map(modelBuilder.Entity<Entities.EntityTypeViewModel>());
 				EntityViewMap.Map(modelBuilder.Entity<Entities.EntityView>());
 				EventMap.Map(modelBuilder.Entity<Entities.Event>());
 				MachineMap.Map(modelBuilder.Entity<Entities.Machine>());
@@ -101,7 +103,7 @@ namespace GenSoft.DBContexts
 				TypeMap.Map(modelBuilder.Entity<Entities.Type>());
 				TypeParameterMap.Map(modelBuilder.Entity<Entities.TypeParameter>());
 				UserMap.Map(modelBuilder.Entity<Entities.User>());
-				ViewModelMap.Map(modelBuilder.Entity<Entities.ViewModel>());
+				ViewModelTypesMap.Map(modelBuilder.Entity<Entities.ViewModelTypes>());
 			}
 	}
 }

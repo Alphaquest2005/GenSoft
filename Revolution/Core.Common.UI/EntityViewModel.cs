@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using SystemInterfaces;
+using Common;
 using Common.DataEntites;
 using FluentValidation;
 using FluentValidation.Results;
@@ -21,18 +22,19 @@ using ViewModelInterfaces;
 namespace Core.Common.UI
 {
 
-    public class ObservableViewModel : BaseViewModel<ObservableViewModel>
+    public class EntityViewModel : BaseViewModel<EntityViewModel>, IEntityViewModel
     {
-        public ObservableViewModel(IViewInfo viewInfo,
+        public EntityViewModel(IEntityViewInfo viewInfo,
             List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions,
             List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications,
             List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, ISystemProcess process, Type orientation,
             int priority) : base(process, viewInfo, eventSubscriptions, eventPublications, commandInfo, orientation,
             priority)
         {
-            State.Value = new ProcessStateEntity(process, new DynamicEntity("Null", -1), new StateInfo(process.Id, "IntialState", "Inital","first op"));
+            State.Value = new ProcessStateEntity(process, viewInfo.EntityType.DefaultEntity(), new StateInfo(process.Id, "IntialState", "Inital","first op"));
         }
 
+        public IEntityKeyValuePair CurrentProperty { get; } = new EntityKeyValuePair(null, null);
         public ObservableDictionary<string, dynamic> ChangeTracking { get; } = new ObservableDictionary<string, dynamic>();
 
         private ReactiveProperty<IProcessStateEntity> _state = new ReactiveProperty<IProcessStateEntity>(null, ReactivePropertyMode.DistinctUntilChanged);
@@ -49,4 +51,23 @@ namespace Core.Common.UI
 
     }
 
+    public class ObservableViewModel : BaseViewModel<ObservableViewModel>
+    {
+        public ObservableViewModel(IViewInfo viewInfo,
+            List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions,
+            List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications,
+            List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, ISystemProcess process, Type orientation,
+            int priority) : base(process, viewInfo, eventSubscriptions, eventPublications, commandInfo, orientation,
+            priority)
+        {
+            
+        }
+
+       
+        public void NotifyPropertyChanged(string propertyName)
+        {
+            this.RaisePropertyChanged(propertyName);
+        }
+
+    }
 }

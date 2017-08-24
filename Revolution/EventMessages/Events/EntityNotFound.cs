@@ -17,6 +17,6 @@ namespace EventMessages.Events
 
         public IDynamicEntity Entity { get; }
 
-        public string EntityType => Entity.EntityType;
+        public IDynamicEntityType EntityType => Entity.EntityType;
     }
 }

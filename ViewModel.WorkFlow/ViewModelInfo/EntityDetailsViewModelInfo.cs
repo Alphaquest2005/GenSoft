@@ -21,11 +21,8 @@ namespace RevolutionData
     
     public class EntityDetailsViewModelInfo
     {
-        public EntityDetailsViewModelInfo(string entityType)
-        {
-            EntityType = entityType;
-        }
-        public static ViewModelInfo EntityDetailsViewModel(int processId, string entityType,  string symbol, string description, int priority, List<ViewModelEntity> parentEntities, List<ViewModelEntity> childEntities)
+       
+        public static ViewModelInfo EntityDetailsViewModel(int processId, IDynamicEntityType entityType,  string symbol, string description, int priority, List<ViewModelEntity> parentEntities, List<ViewModelEntity> childEntities)
         {
             try
             {
@@ -33,7 +30,7 @@ namespace RevolutionData
                 var viewInfo = new ViewModelInfo
                 (
                     processId: processId,
-                    viewInfo: new ViewInfo($"EntityDetailsViewMode-{entityType}", symbol, description),
+                    viewInfo: new EntityViewInfo($"EntityDetailsViewModel-{entityType.Name}", symbol, description,entityType),
                     subscriptions: new List<IViewModelEventSubscription<IViewModel, IEvent>>{},
                     publications: new List<IViewModelEventPublication<IViewModel, IEvent>>{},
                     commands: new List<IViewModelEventCommand<IViewModel, IEvent>>
@@ -117,16 +114,16 @@ namespace RevolutionData
         private static List<IViewModelEventSubscription<IViewModel, IEvent>> CreateParentSubscibtions(int processId, ViewModelEntity relationship)
         {
             var res = new List<IViewModelEventSubscription<IViewModel, IEvent>>();
-            res.Add((IViewModelEventSubscription<IViewModel, IEvent>)typeof(EntityDetailsViewModelInfo).GetMethod("ParentCurrentEntityChanged").Invoke(null, new object[] { processId, relationship.EntityType, relationship.ViewProperty }));
+            res.Add((IViewModelEventSubscription<IViewModel, IEvent>)typeof(EntityDetailsViewModelInfo).GetMethod("ParentCurrentEntityChanged").Invoke(null, new object[] { processId, relationship.EntityType.Name, relationship.ViewProperty }));
             return res;
         }
 
         private static List<IViewModelEventSubscription<IViewModel, IEvent>> CreateChildSubscibtions(int processId, ViewModelEntity relationship)
         {
             var res = new List<IViewModelEventSubscription<IViewModel, IEvent>>();
-            res.Add((IViewModelEventSubscription<IViewModel, IEvent>)typeof(EntityDetailsViewModelInfo).GetMethod("RecieveProcessStateMessage").Invoke(null, new object[] { processId,relationship.EntityType, relationship.ViewProperty }));
-            res.Add((IViewModelEventSubscription<IViewModel, IEvent>)typeof(EntityDetailsViewModelInfo).GetMethod("EntityFound").Invoke(null, new object[] { processId, relationship.EntityType, relationship.ViewProperty }));
-            res.Add((IViewModelEventSubscription<IViewModel, IEvent>)typeof(EntityDetailsViewModelInfo).GetMethod("EntityViewWithChangesFound").Invoke(null, new object[] { processId, relationship.EntityType, relationship.ViewProperty }));
+            res.Add((IViewModelEventSubscription<IViewModel, IEvent>)typeof(EntityDetailsViewModelInfo).GetMethod("RecieveProcessStateMessage").Invoke(null, new object[] { processId,relationship.EntityType.Name, relationship.ViewProperty }));
+            res.Add((IViewModelEventSubscription<IViewModel, IEvent>)typeof(EntityDetailsViewModelInfo).GetMethod("EntityFound").Invoke(null, new object[] { processId, relationship.EntityType.Name, relationship.ViewProperty }));
+            res.Add((IViewModelEventSubscription<IViewModel, IEvent>)typeof(EntityDetailsViewModelInfo).GetMethod("EntityViewWithChangesFound").Invoke(null, new object[] { processId, relationship.EntityType.Name, relationship.ViewProperty }));
            
             return res;
         }
@@ -208,7 +205,7 @@ namespace RevolutionData
         //        });
         //}
 
-        public static string EntityType { get; set; }
+        public static IDynamicEntityType entityType { get; set; }
 
         //public static IViewModelEventCommand<IViewModel, IEvent> CreateEntityCommand(string childProperty, List<EntityViewModelRelationship> rels) 
         //{
@@ -250,7 +247,7 @@ namespace RevolutionData
         {
             return new ViewEventSubscription<IEntityViewModel, ICurrentEntityChanged>(
                 processId,
-                e => e != null && e.EntityType == pentity,
+                e => e != null && e.EntityType.Name == pentity,
                 new List<Func<IEntityViewModel, ICurrentEntityChanged, bool>>(),
                 (v, e) =>
                 {
@@ -266,14 +263,15 @@ namespace RevolutionData
         {
             return new ViewEventSubscription<IEntityViewModel, IProcessStateMessage>(
                 processId,
-                e => e != null  && e.EntityType == pEntity,
+                e => e != null  && e.EntityType.Name == pEntity,
                 new List<Func<IEntityViewModel, IProcessStateMessage, bool>>(),
                 (v, e) =>
                 {
                     Application.Current.Dispatcher.Invoke(() =>
                     {
+                        if (v.State.Value.Entity == e.State.Entity) return;
                         v.State.Value = e.State;
-                        v.NotifyPropertyChanged("State.Value");
+                       // v.NotifyPropertyChanged("State.Value");
                     });
                     
                     
@@ -284,7 +282,7 @@ namespace RevolutionData
         {
             return new ViewEventSubscription<IEntityViewModel, IEntityFound>(
                 processId,
-                e => e != null && e.EntityType == pEntity,
+                e => e != null && e.EntityType.Name == pEntity,
                 new List<Func<IEntityViewModel, IEntityFound, bool>>(),
                 (v, e) =>
                 {
@@ -297,7 +295,7 @@ namespace RevolutionData
         {
             return new ViewEventSubscription<IEntityViewModel, IEntityWithChangesFound>(
                 processId,
-                e => e != null && e.EntityType == pEntity,
+                e => e != null && e.EntityType.Name == pEntity,
                 new List<Func<IEntityViewModel, IEntityWithChangesFound, bool>>(),
                 (v, e) =>
                 {

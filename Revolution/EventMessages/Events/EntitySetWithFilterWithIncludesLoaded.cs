@@ -15,7 +15,7 @@ namespace EventMessages.Events
         public IList<IDynamicEntity> Entities { get; }
         public IList<Expression<Func<IDynamicEntity, dynamic>>> Includes { get; }
         //Todo: include filter just to match name
-        public EntitySetWithFilterWithIncludesLoaded(string entityType, IList<IDynamicEntity> entities, IList<Expression<Func<IDynamicEntity, dynamic>>> includes, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
+        public EntitySetWithFilterWithIncludesLoaded(IDynamicEntityType entityType, IList<IDynamicEntity> entities, IList<Expression<Func<IDynamicEntity, dynamic>>> includes, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
         {
             Entities = entities;
             Includes = includes;
@@ -23,6 +23,6 @@ namespace EventMessages.Events
 
         }
 
-        public string EntityType { get; }
+        public IDynamicEntityType EntityType { get; }
     }
 }

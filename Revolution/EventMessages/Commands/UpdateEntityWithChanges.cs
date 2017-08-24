@@ -24,6 +24,6 @@ namespace EventMessages.Commands
         }
 
 
-        public string EntityType => Entity.EntityType;
+        public IDynamicEntityType EntityType => Entity.EntityType;
     }
 }

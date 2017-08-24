@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Runtime.Serialization;
 using SystemInterfaces;
@@ -9,26 +10,52 @@ using JB.Collections.Reactive;
 
 namespace Common.DataEntites
 {
-   
+
+    public static class DynamicEntityTypeExtenstions
+    {
+        public static IDynamicEntity DefaultEntity(this IDynamicEntityType dt)
+        {
+             return new DynamicEntity(dt, 0, dt.Properties.ToDictionary(x => x.Key, x => x.Value)); 
+        }
+    }
+    public class DynamicEntityType : IDynamicEntityType
+    {
+        public static Dictionary<string,IDynamicEntityType> DynamicEntityTypes { get; } = new Dictionary<string, IDynamicEntityType>();
+
+        
+        public DynamicEntityType(string name, List<IEntityKeyValuePair> properties)
+        {
+            Name = name;
+            Properties = properties;
+        }
+
+        
+
+        public string Name { get; }
+        public List<IEntityKeyValuePair> Properties { get; }
+    }
     public class DynamicEntity:Expando, IDynamicEntity
     {
-        public List<EntityKeyValuePair> DBpropertyList { get; } = new List<EntityKeyValuePair>();
-        public DynamicEntity(string entityType, int id, List<EntityKeyValuePair> toList = null)
+
+        
+        
+        public DynamicEntity(IDynamicEntityType entityType, int id, Dictionary<string,object> values)
         {
+            Contract.Requires(entityType != null, "EntityType is Null");
             EntityType = entityType;
             Id = id;
-            if (toList == null) return;
-            foreach (var itm in toList)
+            
+            foreach (var itm in entityType.Properties)
             {
-                Properties.Add(itm.Key, itm.Value);
+                Properties.Add(itm.Key, values[itm.Key]);
             }
 
-            DBpropertyList = toList;
+            
         }
         public int Id { get;  }
         public DateTime EntryDateTime { get; private set; } = DateTime.Now;
 
-        public virtual string EntityType { get; }
+        public virtual IDynamicEntityType EntityType { get; }
         public ObservableList<IEntityKeyValuePair> PropertyList => new ObservableList<IEntityKeyValuePair>(this.Properties.Select(x => new EntityKeyValuePair(x.Key, x.Value) as IEntityKeyValuePair).ToList());
 
 
@@ -39,12 +66,12 @@ namespace Common.DataEntites
         {
             get
             {
-                if(_entityName == null) _entityName = DBpropertyList.FirstOrDefault(x => x.IsEntityName)?.Key;
+                if(_entityName == null) _entityName = EntityType.Properties.FirstOrDefault(x => x.IsEntityName)?.Key;
                 return _entityName == null ? this.Properties["EntityName"] : Properties[_entityName].ToString();
             }
             set
             {
-                if (_entityName == null) _entityName = DBpropertyList.FirstOrDefault(x => x.IsEntityName)?.Key;
+                if (_entityName == null) _entityName = EntityType.Properties.FirstOrDefault(x => x.IsEntityName)?.Key;
                 if (_entityName == null) this.Properties["EntityName"] = value;
                 else Properties[_entityName] = value;
             }
@@ -128,13 +155,5 @@ namespace Common.DataEntites
 
     }
 
-    public static class NullEntity
-    {
 
-
-        public static DynamicEntity GetNullEntity(string entityType)
-        {
-            return new DynamicEntity(entityType, -1);
-        }
-    }
 }

@@ -11,14 +11,16 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace GenSoft.Mappings
 {
-	public class ViewModelMap
+	public class ViewModelTypesMap
 	{
-		public static void Map(EntityTypeBuilder<Entities.ViewModel> entityBuilder)
+		public static void Map(EntityTypeBuilder<Entities.ViewModelTypes> entityBuilder)
 		{
-			entityBuilder.ToTable("ViewModel", "dbo");
+			entityBuilder.ToTable("ViewModelTypes", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
+			entityBuilder.Property(t => t.Name).HasColumnName("Name").IsRequired().HasMaxLength(50);
 		//-------------------Navigation Properties -------------------------------//
+				entityBuilder.HasMany(x => x.EntityTypeViewModel).WithOne(p => p.ViewModelTypes).HasForeignKey(c => c.ViewModelId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties
 	

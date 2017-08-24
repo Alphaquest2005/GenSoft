@@ -70,6 +70,7 @@
     <Compile Include="Generated Entities\EntityRelationships.cs" />
     <Compile Include="Generated Entities\EntityType.cs" />
     <Compile Include="Generated Entities\EntityTypeAttributes.cs" />
+    <Compile Include="Generated Entities\EntityTypeViewModel.cs" />
     <Compile Include="Generated Entities\EntityView.cs" />
     <Compile Include="Generated Entities\Event.cs" />
     <Compile Include="Generated Entities\Machine.cs" />
@@ -90,7 +91,7 @@
     <Compile Include="Generated Entities\Type.cs" />
     <Compile Include="Generated Entities\TypeParameter.cs" />
     <Compile Include="Generated Entities\User.cs" />
-    <Compile Include="Generated Entities\ViewModel.cs" />
+    <Compile Include="Generated Entities\ViewModelTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

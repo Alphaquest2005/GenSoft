@@ -7,69 +7,45 @@
                     xmlns:viewModels="clr-namespace:ViewModels;assembly=ViewModels"
                     mc:Ignorable="d">
 
-    <DataTemplate x:Key="SummaryInfoWDT">
+    <DataTemplate x:Key="SummaryInfoWDT" >
         <DataTemplate.Resources>
             <converters:NullVisibilityConverter x:Key="NullVisibilityConverter" />
             <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         </DataTemplate.Resources>
 
         <Grid Width="469"
-              Height="80">
+              Height="Auto">
             <Grid.Background>
                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
                     <GradientStop Offset="0.907" Color="#33000000" />
                     <GradientStop Offset="0.069" Color="#19FFFFFF" />
                 </LinearGradientBrush>
             </Grid.Background>
-            
-            <TextBox Width="264"
-                     x:Name="NameTxt"
-                     Height="37"
-                     Margin="10,10,0,0"
-                     HorizontalAlignment="Left"
-                     VerticalAlignment="Top"
-                     FontSize="18.667"
-                     Text="{Binding Name,
-                                    Mode=TwoWay,
-                                    UpdateSourceTrigger=LostFocus}" />
-            <TextBlock Width="264"
-                     Height="37"
-                     Margin="10,10,0,0"
-                     HorizontalAlignment="Left"
-                     VerticalAlignment="Top"
-                     FontSize="18.667"
-                     Visibility="{Binding ElementName=NameTxt, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}"
-                     Text="Name..." />
-            <TextBox Width="264"
-                     Height="27"
-                     Margin="10,52,0,0"
-                     HorizontalAlignment="Left"
-                     VerticalAlignment="Top"
-                     FontSize="16"
-                     Text="{Binding Address,
-                                    Mode=TwoWay,
-                                    UpdateSourceTrigger=LostFocus}" />
-            <TextBox Width="159"
-                     Height="27"
-                     Margin="282,52,0,0"
-                     HorizontalAlignment="Left"
-                     VerticalAlignment="Top"
-                     FontSize="16"
-                     Text="{Binding PhoneNumber,
-                                    FallbackValue=PhoneNumber,
-                                    TargetNullValue=PhoneNumber,
-                                    Mode=TwoWay,
-                                    UpdateSourceTrigger=LostFocus}" />
-            <DatePicker Width="147"
-                        Height="27"
-                        Margin="282,10,0,0"
-                        HorizontalAlignment="Left"
-                        VerticalAlignment="Top"
-                        FontSize="14"
-                        FontWeight="Bold"
-                        SelectedDate="{Binding BirthDate,
-                                               Mode=TwoWay,
-                                               TargetNullValue={x:Static sys:DateTime.Now}, UpdateSourceTrigger=PropertyChanged}" />
+
+            <ListBox Width="Auto"
+                     Height="Auto"
+                     Margin="10,48,10,10"
+                     HorizontalAlignment="Stretch"
+                     VerticalAlignment="Stretch"
+                     Background="#33FFFFFF"
+                     IsSynchronizedWithCurrentItem="True"
+                     ItemTemplate="{DynamicResource EntityDetailWDT}"
+                     ItemsSource="{Binding PropertyList}"/>
+            <!--<ListBox Width="Auto"
+                     Height="50"
+                     Margin="10,10,10,10"
+                     HorizontalAlignment="Stretch"
+                     VerticalAlignment="Stretch"
+                     Background="#33FFFFFF"
+                     IsSynchronizedWithCurrentItem="True"
+                     ItemTemplate="{DynamicResource CommandDT}"
+                     ItemsSource="{Binding Commands}">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel IsItemsHost="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" />
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            </ListBox>-->
         </Grid>
 
     </DataTemplate>

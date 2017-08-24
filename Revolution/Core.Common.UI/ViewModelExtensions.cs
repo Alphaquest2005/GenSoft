@@ -15,6 +15,7 @@ using EventMessages.Commands;
 using EventMessages.Events;
 using ReactiveUI;
 using RevolutionEntities.Process;
+using ViewMessages;
 using ViewModel.Interfaces;
 
 
@@ -111,7 +112,7 @@ namespace Core.Common.UI
             }
 
 
-
+            EventMessageBus.Current.Publish(new ViewModelIntialized(viewModel, new StateEventInfo(viewModel.Process.Id,"ViewModelIntialized", "View Model Initalized","ViewModel Started", RevolutionData.Context.ViewModel.Commands.LoadViewModel),viewModel.Process,viewModel.Source),viewModel.Source);
 
 
 

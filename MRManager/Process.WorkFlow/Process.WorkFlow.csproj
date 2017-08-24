@@ -63,6 +63,10 @@
       <Project>{77007560-89dc-4e1f-9313-ae064a048ad4}</Project>
       <Name>CommonMessages</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Revolution\Common\Common.csproj">
+      <Project>{CB6D5FBC-0C13-437D-B4F3-A0EC4D5673B3}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Revolution\EventMessages\EventMessages.csproj">
       <Project>{e3d04176-3758-4c9d-84f3-7a4d3859eae5}</Project>
       <Name>EventMessages</Name>
