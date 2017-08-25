@@ -70,7 +70,6 @@
     <Compile Include="ViewModelInfo\HeaderViewModelInfo.cs" />
     <Compile Include="ViewModelInfo\MainWindowViewModelInfo.cs" />
     <Compile Include="ViewModelInfo\ScreenViewModelInfo.cs" />
-    <Compile Include="ViewModelInfo\SigninViewModelInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DomainMessages\DomainMessages.csproj">

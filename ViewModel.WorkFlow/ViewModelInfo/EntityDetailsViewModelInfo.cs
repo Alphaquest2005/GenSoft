@@ -7,6 +7,7 @@ using System.Reactive.Linq;
 using System.Windows;
 using SystemInterfaces;
 using BootStrapper;
+using Common;
 using Common.Dynamic;
 using DomainMessages;
 using GenSoft.Entities;
@@ -127,9 +128,10 @@ namespace RevolutionData
         {
             var res = new List<IViewModelEventSubscription<IViewModel, IEvent>>();
             res.Add((IViewModelEventSubscription<IViewModel, IEvent>)typeof(EntityDetailsViewModelInfo).GetMethod("RecieveProcessStateMessage").Invoke(null, new object[] { processId,relationship.EntityType.Name, relationship.ViewProperty }));
-            res.Add((IViewModelEventSubscription<IViewModel, IEvent>)typeof(EntityDetailsViewModelInfo).GetMethod("EntityFound").Invoke(null, new object[] { processId, relationship.EntityType.Name, relationship.ViewProperty }));
-            res.Add((IViewModelEventSubscription<IViewModel, IEvent>)typeof(EntityDetailsViewModelInfo).GetMethod("EntityViewWithChangesFound").Invoke(null, new object[] { processId, relationship.EntityType.Name, relationship.ViewProperty }));
-           
+            //res.Add((IViewModelEventSubscription<IViewModel, IEvent>)typeof(EntityDetailsViewModelInfo).GetMethod("EntityFound").Invoke(null, new object[] { processId, relationship.EntityType.Name, relationship.ViewProperty }));
+            //res.Add((IViewModelEventSubscription<IViewModel, IEvent>)typeof(EntityDetailsViewModelInfo).GetMethod("EntityWithChangesFound").Invoke(null, new object[] { processId, relationship.EntityType.Name, relationship.ViewProperty }));
+            //res.Add((IViewModelEventSubscription<IViewModel, IEvent>)typeof(EntityDetailsViewModelInfo).GetMethod("EntityWithChangesUpdated").Invoke(null, new object[] { processId, relationship.EntityType.Name, relationship.ViewProperty }));
+
             return res;
         }
         private static List<IViewModelEventPublication<IViewModel, IEvent>> CreatePublications(EntityViewModelRelationship rel)
@@ -158,105 +160,10 @@ namespace RevolutionData
             return res;
         }
 
-        //public static IViewModelEventCommand<IViewModel, IEvent> SaveEntityCommand(string viewChildProperty,List<EntityViewModelRelationship> rels)
-        //{
-        //    return new ViewEventCommand<IEntityViewModel, IUpdatePullEntityWithChanges>(
-        //        key: "SaveEntity",
-        //        subject: s => Observable.Empty<ReactiveCommand<IViewModel, Unit>>(),
-        //        commandPredicate: new List<Func<IEntityViewModel, bool>>
-        //        {
-        //            v => v.ChangeTracking.Count >= 1 && ((dynamic)v).Properties[viewChildProperty].Id != 0
-        //        },
-        //        //TODO: Make a type to capture this info... i killing it here
-        //        messageData: s =>
-        //        {
-        //            var msg = new ViewEventCommandParameter(
-        //                new object[]
-        //                {
-        //                    ((dynamic) s).Id,
-        //                    "Patient",
-        //                    "General",
-        //                    "Personal Information",
-        //                    s.ChangeTracking.ToDictionary(x => x.Key, x => x.Value)
-        //                },
-        //                new StateCommandInfo(s.Process.Id, Context.Entity.Commands.GetEntity), s.Process,
-        //                s.Source);
-        //            s.ChangeTracking.Clear();
-        //            ((dynamic)s).Properties[viewChildProperty] = null;
-
-        //            return msg;
-        //        });
-        //}
-
-        //public static IViewModelEventCommand<IViewModel, IEvent> EditEntityCommand(string viewChildProperty, List<EntityViewModelRelationship> rels)
-        //{
-        //    return new ViewEventCommand<IEntityViewModel, IUpdatePullEntityWithChanges>(
-        //        key: $"EditEntity{EntityType}",
-        //        subject: v => v.ChangeTracking.DictionaryChanges,
-        //        commandPredicate: new List<Func<IEntityViewModel, bool>>
-        //        {
-        //            v => v.ChangeTracking.Count == 1 && ((dynamic)v).Properties[viewChildProperty].Id != 0
-
-        //        },
-        //        //TODO: Make a type to capture this info... i killing it here
-        //        messageData: v =>
-        //        {
-        //            foreach (var c in rels)
-        //            {
-        //                v.ChangeTracking.Add(nameof(c.ChildProperty), ((dynamic)v).Properties[c.ChildProperty]);
-        //            }
-
-        //            var msg = new ViewEventCommandParameter(
-        //                new object[]
-        //                {
-        //                    ((dynamic)v).Properties[viewChildProperty].Id,
-        //                    v.ChangeTracking.ToDictionary(x => x.Key, x => x.Value)
-        //                },
-        //                new StateCommandInfo(v.Process.Id, Context.Entity.Commands.GetEntity), v.Process,
-        //                v.Source);
-        //            v.ChangeTracking.Clear();
-        //            return msg;
-        //        });
-        //}
 
         public static IDynamicEntityType entityType { get; set; }
 
-        //public static IViewModelEventCommand<IViewModel, IEvent> CreateEntityCommand(string childProperty, List<EntityViewModelRelationship> rels) 
-        //{
-        //    return new ViewEventCommand<IEntityViewModel, IUpdatePullEntityWithChanges> (
-        //        key: "CreateEntity",
-        //        subject: v => v.ChangeTracking.DictionaryChanges,
-        //        commandPredicate: new List<Func<IEntityViewModel, bool>>
-        //        {
-        //            v => v.ChangeTracking.Count > 0 && ((dynamic)v).Properties[childProperty].Id == 0
-
-        //        },
-        //        //TODO: Make a type to capture this info... i killing it here
-        //        messageData: v =>
-        //        {
-        //            foreach (var c in rels)
-        //            {
-        //                v.ChangeTracking.Add(nameof(c.ChildProperty), ((dynamic)v).Properties[c.ChildProperty]);
-        //            }
-        //            var msg = new ViewEventCommandParameter(
-        //                new object[]
-        //                {
-        //                    ((dynamic)v).Properties[childProperty].Id,
-        //                    v.ChangeTracking.ToDictionary(x => x.Key, x => x.Value)
-        //                },
-        //                new StateCommandInfo(v.Process.Id, Context.Entity.Commands.GetEntity), v.Process,
-        //                v.Source);
-        //            v.ChangeTracking.Clear();
-        //            return msg;
-        //        });
-        //}
-
-
-
-
-
-
-
+        
         public static IViewModelEventSubscription<IViewModel, IEvent> ParentCurrentEntityChanged(int processId,string pentity,string parentProperty)
         {
             return new ViewEventSubscription<IEntityViewModel, ICurrentEntityChanged>(
@@ -285,7 +192,7 @@ namespace RevolutionData
                     {
                         if (v.State.Value.Entity == e.State.Entity) return;
                         v.State.Value = e.State;
-                       // v.NotifyPropertyChanged("State.Value");
+                       
                     });
                     
                     
@@ -305,28 +212,28 @@ namespace RevolutionData
                 });
         }
 
-        public static IViewModelEventSubscription<IViewModel, IEvent> EntityViewWithChangesFound(int processId, string pEntity, string viewChildProperty)
-        {
-            return new ViewEventSubscription<IEntityViewModel, IEntityWithChangesFound>(
-                processId,
-                e => e != null && e.EntityType.Name == pEntity,
-                new List<Func<IEntityViewModel, IEntityWithChangesFound, bool>>(),
-                (v, e) =>
-                {
-                    v.State.Value.Entity = e.Entity;
-                    v.NotifyPropertyChanged("State");
-                });
-        }
+        //public static IViewModelEventSubscription<IViewModel, IEvent> EntityWithChangesFound(int processId, string pEntity, string viewChildProperty)
+        //{
+        //    return new ViewEventSubscription<IEntityViewModel, IEntityWithChangesFound>(
+        //        processId,
+        //        e => e != null && e.EntityType.Name == pEntity,
+        //        new List<Func<IEntityViewModel, IEntityWithChangesFound, bool>>(),
+        //        (v, e) =>
+        //        {
+        //            v.State.Value.Entity = e.Entity;
+        //            v.NotifyPropertyChanged("State");
+        //        });
+        //}
 
         public static IViewModelEventSubscription<IViewModel, IEvent> EntityWithChangesUpdated(int processId, string pEntity, string viewChildProperty)
         {
-            return new ViewEventSubscription<IEntityViewModel, IEntityWithChangesFound>(
+            return new ViewEventSubscription<IEntityViewModel, IEntityWithChangesUpdated>(
                 processId,
                 e => e != null && e.EntityType.Name == pEntity,
-                new List<Func<IEntityViewModel, IEntityWithChangesFound, bool>>(),
+                new List<Func<IEntityViewModel, IEntityWithChangesUpdated, bool>>(),
                 (v, e) =>
                 {
-                    v.State.Value.Entity = e.Entity;
+                    v.State.Value.Entity = v.State.Value.Entity.ApplyChanges(e.Changes);
                     v.NotifyPropertyChanged("State");
                 });
         }

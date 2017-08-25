@@ -25,7 +25,7 @@ namespace ViewModel.WorkFlow
             else cmdPredicates.Add(v => v.CurrentEntity.Value.Id <= 0);
 
             if (cmd.RequireAllFields) cmdPredicates.Add(v => v.ChangeTracking.Count == v.CurrentEntity.Value.PropertyList.Count(x => x.Key != nameof(IDynamicEntity.Id)));
-            else cmdPredicates.Add(v => v.ChangeTracking.Count == 1 && v.CurrentEntity.Value.PropertyList.FirstOrDefault(x => x.Key == v.ChangeTracking.FirstOrDefault().Key)?.Value != v.ChangeTracking.FirstOrDefault().Value);
+            else cmdPredicates.Add(v => v.ChangeTracking.Any(z => v.CurrentEntity.Value.PropertyList.FirstOrDefault(x => x.Key == z.Key)?.Value != z.Value));
 
             var commandType = typeof(SystemInterfaces.IEntity).Assembly.GetType($"SystemInterfaces.{cmd.CommandTypes.Name}");
             var vcmdType = typeof(ViewEventCommand<,>).MakeGenericType(typeof(TViewModel), commandType);
@@ -43,7 +43,7 @@ namespace ViewModel.WorkFlow
                         new object[]
                         {
                             v.CurrentEntity.Value,
-                            v.ChangeTracking.ToDictionary(x => x.Key, x => x.Value)
+                            v.ChangeTracking.Where(z => v.CurrentEntity.Value.PropertyList.FirstOrDefault(x => x.Key == z.Key)?.Value != z.Value).ToDictionary(x => x.Key, x => x.Value)
                         },
                         new StateCommandInfo(v.Process.Id, RevolutionData.Context.Entity.Commands.GetEntity), v.Process,
                         v.Source);

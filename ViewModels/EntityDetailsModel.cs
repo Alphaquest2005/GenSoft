@@ -30,8 +30,8 @@ namespace ViewModels
         {
             if (LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
             this.WireEvents();
-            this.State.WhenAnyValue(x => x.Value).Subscribe(UpdateCurrentEntity);
-            this.CurrentEntity.WhenAnyValue(x => x.Value).Subscribe(UpdateStateEntity);
+            this.State.WhenAnyValue(x => x.Value, x=> x.Value.Entity).Subscribe(UpdateCurrentEntity);
+            this.ViewModel.CurrentEntity.WhenAnyValue(x => x.Value).Subscribe(UpdateStateEntity);
 
         }
 
@@ -41,10 +41,10 @@ namespace ViewModels
             State.Value.Entity = dynamicEntity;
         }
 
-        private void UpdateCurrentEntity(IProcessStateEntity processStateEntity)
+        private void UpdateCurrentEntity(Tuple<IProcessStateEntity,IDynamicEntity> processStateEntity)
         {
-            if(CurrentEntity.Value != processStateEntity.Entity)
-            CurrentEntity.Value = processStateEntity.Entity;
+            if(this.ViewModel.CurrentEntity.Value != processStateEntity.Item1.Entity)
+            this.ViewModel.CurrentEntity.Value = processStateEntity.Item1.Entity;
         }
 
 
@@ -70,6 +70,7 @@ namespace ViewModels
 
         private void OnValueChanged(object entityKeyValuePair)
         {
+            if(RowState.Value == SystemInterfaces.RowState.Modified)
             ChangeTracking.AddOrUpdate(_currentProperty.Key, _currentProperty.Value);
         }
 

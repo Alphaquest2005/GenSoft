@@ -108,8 +108,8 @@ namespace RevolutionData
                     {
                         var ps = new ProcessStateEntity(
                              process: cp.Actor.Process,
-                             entity: cp.Messages["EntityView"].Entity,
-                             info: new StateInfo(cp.Actor.Process.Id, new State($"Loaded {cp.Messages["EntityView"].Entity.EntityType} Data", $"Loaded{cp.Messages["EntityView"].Entity.EntityType}", "")));
+                             entity: cp.Messages["Entity"].Entity,
+                             info: new StateInfo(cp.Actor.Process.Id, new State($"Loaded {cp.Messages["Entity"].Entity.EntityType} Data", $"Loaded{cp.Messages["Entity"].Entity.EntityType}", "")));
                         return await Task.Run(() => new UpdateProcessStateEntity(
                                     state: ps,
                                     process: cp.Actor.Process,

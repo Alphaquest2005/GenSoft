@@ -54,7 +54,8 @@ namespace ViewModels
 
         private void OnValueChanged(object entityKeyValuePair)
         {
-            ChangeTracking.AddOrUpdate(_currentProperty.Key, _currentProperty.Value);
+            if (RowState.Value == SystemInterfaces.RowState.Modified)
+                ChangeTracking.AddOrUpdate(_currentProperty.Key, _currentProperty.Value);
         }
 
 
