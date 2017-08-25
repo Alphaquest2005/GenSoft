@@ -17,7 +17,7 @@ namespace SystemInterfaces
     
     public interface IEntityWithChangesUpdated : IEntityRequest
     {
-        IDynamicEntity Entity { get; set; }
+        IDynamicEntityCore Entity { get; set; }
         Dictionary<string, object> Changes { get; }
     }
 }

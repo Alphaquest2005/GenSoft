@@ -181,14 +181,16 @@ namespace Core.Common.UI
         public static void VerifyConstuctorVsParameterArray(Type t, params object[] p)
         {
             System.Diagnostics.Debug.WriteLine("<---- foo");
-            foreach (System.Reflection.ConstructorInfo ci in t.GetConstructors())
+            foreach (System.Reflection.ConstructorInfo ci in t.GetConstructors().Where(x => x.GetParameters().Count() == p.Count()))
             {
                 System.Diagnostics.Debug.WriteLine(t.FullName + ci.ToString());
+                var cp = ci.GetParameters().ToList();
+                for (int j = 0; j < cp.Count; j++)
+                {
+                    System.Diagnostics.Debug.WriteLine($"Val:{cp[j].ParameterType.FullName == p[j].GetType().FullName} Cparm:{cp[j].ParameterType.FullName} || Oparam:{p[j].GetType().FullName}");
+                }
             }
-            foreach (object o in p)
-            {
-                System.Diagnostics.Debug.WriteLine("param:" + o.GetType().FullName);
-            }
+            
             System.Diagnostics.Debug.WriteLine("foo ---->");
         }
     }

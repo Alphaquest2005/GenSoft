@@ -18,6 +18,7 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.ApplicationSetting> ApplicationSetting { get; set; }
 		public DbSet<Entities.Attributes> Attributes { get; set; }
 		public DbSet<Entities.Command> Command { get; set; }
+		public DbSet<Entities.CommandTypes> CommandTypes { get; set; }
 		public DbSet<Entities.CompositeRequest> CompositeRequest { get; set; }
 		public DbSet<Entities.DataType> DataType { get; set; }
 		public DbSet<Entities.DomainEntityCache> DomainEntityCache { get; set; }
@@ -34,6 +35,7 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.EntityTypeAttributes> EntityTypeAttributes { get; set; }
 		public DbSet<Entities.EntityTypeViewModel> EntityTypeViewModel { get; set; }
 		public DbSet<Entities.EntityView> EntityView { get; set; }
+		public DbSet<Entities.EntityViewModelCommands> EntityViewModelCommands { get; set; }
 		public DbSet<Entities.Event> Event { get; set; }
 		public DbSet<Entities.Machine> Machine { get; set; }
 		public DbSet<Entities.Message> Message { get; set; }
@@ -53,6 +55,7 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.Type> Type { get; set; }
 		public DbSet<Entities.TypeParameter> TypeParameter { get; set; }
 		public DbSet<Entities.User> User { get; set; }
+		public DbSet<Entities.ViewModelCommands> ViewModelCommands { get; set; }
 		public DbSet<Entities.ViewModelTypes> ViewModelTypes { get; set; }
 	
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -68,6 +71,7 @@ namespace GenSoft.DBContexts
 				ApplicationSettingMap.Map(modelBuilder.Entity<Entities.ApplicationSetting>());
 				AttributesMap.Map(modelBuilder.Entity<Entities.Attributes>());
 				CommandMap.Map(modelBuilder.Entity<Entities.Command>());
+				CommandTypesMap.Map(modelBuilder.Entity<Entities.CommandTypes>());
 				CompositeRequestMap.Map(modelBuilder.Entity<Entities.CompositeRequest>());
 				DataTypeMap.Map(modelBuilder.Entity<Entities.DataType>());
 				DomainEntityCacheMap.Map(modelBuilder.Entity<Entities.DomainEntityCache>());
@@ -84,6 +88,7 @@ namespace GenSoft.DBContexts
 				EntityTypeAttributesMap.Map(modelBuilder.Entity<Entities.EntityTypeAttributes>());
 				EntityTypeViewModelMap.Map(modelBuilder.Entity<Entities.EntityTypeViewModel>());
 				EntityViewMap.Map(modelBuilder.Entity<Entities.EntityView>());
+				EntityViewModelCommandsMap.Map(modelBuilder.Entity<Entities.EntityViewModelCommands>());
 				EventMap.Map(modelBuilder.Entity<Entities.Event>());
 				MachineMap.Map(modelBuilder.Entity<Entities.Machine>());
 				MessageMap.Map(modelBuilder.Entity<Entities.Message>());
@@ -103,6 +108,7 @@ namespace GenSoft.DBContexts
 				TypeMap.Map(modelBuilder.Entity<Entities.Type>());
 				TypeParameterMap.Map(modelBuilder.Entity<Entities.TypeParameter>());
 				UserMap.Map(modelBuilder.Entity<Entities.User>());
+				ViewModelCommandsMap.Map(modelBuilder.Entity<Entities.ViewModelCommands>());
 				ViewModelTypesMap.Map(modelBuilder.Entity<Entities.ViewModelTypes>());
 			}
 	}

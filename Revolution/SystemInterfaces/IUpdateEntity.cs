@@ -7,7 +7,7 @@ namespace SystemInterfaces
     public interface IUpdateEntityWithChanges :  IEntityRequest
     {
         Dictionary<string, object> Changes { get; }
-        IDynamicEntity Entity { get; }
+        IDynamicEntityCore Entity { get; }
     }
 
     public interface IAddOrGetEntityWithChanges : IEntityRequest

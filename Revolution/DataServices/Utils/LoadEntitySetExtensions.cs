@@ -16,7 +16,7 @@ namespace DataServices.Actors
 
         }
 
-        public static void LoadEntitySetWithChanges(this ILoadEntitySetWithChanges msg)
+        public static void LoadEntitySetWithChanges(this IGetEntitySetWithChanges msg)
         {
 
             DynamicDataContext.LoadEntitySetWithChanges(msg);

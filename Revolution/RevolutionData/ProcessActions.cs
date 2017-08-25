@@ -91,12 +91,12 @@ namespace RevolutionData
                 action: async cp =>
                          await Task.Run(() => new LoadEntitySet(entityType,
                             new StateCommandInfo(cp.Actor.Process.Id,
-                                Context.EntityView.Commands.LoadEntityViewSetWithChanges),
+                                Context.Entity.Commands.LoadEntitySetWithChanges),
                             cp.Actor.Process, cp.Actor.Source)),
                 processInfo:
                     cp =>
                         new StateCommandInfo(cp.Actor.Process.Id,
-                            Context.EntityView.Commands.LoadEntityViewSetWithChanges),
+                            Context.Entity.Commands.LoadEntitySetWithChanges),
                 // take shortcut cud be IntialState
                 expectedSourceType: new SourceType(typeof (IComplexEventService)));
         }
@@ -159,13 +159,13 @@ namespace RevolutionData
                     var key = property;
                     var value = cp.Messages["CurrentEntity"].Entity.Id;
                     var changes = new Dictionary<string, dynamic>() { { key, value } };
-                    return await Task.Run(() => new GetEntityWithChanges(entityType,changes,
-                         new StateCommandInfo(cp.Actor.Process.Id, Context.EntityView.Commands.GetEntityView),
+                    return await Task.Run(() => new GetEntityWithChanges(entityType.DefaultEntity(),changes,
+                         new StateCommandInfo(cp.Actor.Process.Id, Context.Entity.Commands.GetEntity),
                          cp.Actor.Process, cp.Actor.Source));
                 },
                 processInfo: cp =>
                     new StateCommandInfo(cp.Actor.Process.Id,
-                        Context.EntityView.Commands.GetEntityView),
+                        Context.Entity.Commands.GetEntity),
                 // take shortcut cud be IntialState
                 expectedSourceType: new SourceType(typeof(IComplexEventService))
 
@@ -183,13 +183,13 @@ namespace RevolutionData
                     
                     var value = cp.Messages["CurrentEntity"].Entity.Properties[currentProperty];
                     var changes = new Dictionary<string, dynamic>() { {key,value} };
-                    return await Task.Run(() => new LoadEntitySetWithChanges("ExactMatch", entityType,changes,
-                        new StateCommandInfo(cp.Actor.Process.Id, Context.EntityView.Commands.GetEntityView),
+                    return await Task.Run(() => new GetEntitySetWithChanges("ExactMatch", entityType,changes,
+                        new StateCommandInfo(cp.Actor.Process.Id, Context.Entity.Commands.GetEntity),
                         cp.Actor.Process, cp.Actor.Source));
                 },
                 processInfo: cp =>
                     new StateCommandInfo(cp.Actor.Process.Id,
-                        Context.EntityView.Commands.GetEntityView),
+                        Context.Entity.Commands.GetEntity),
                 // take shortcut cud be IntialState
                 expectedSourceType: new SourceType(typeof (IComplexEventService))
 
@@ -217,13 +217,13 @@ namespace RevolutionData
                         }
                     
                     
-                    return await Task.Run(() => new LoadEntitySetWithChanges("ExactMatch",entityType,changes,
-                        new StateCommandInfo(cp.Actor.Process.Id, Context.EntityView.Commands.GetEntityView),
+                    return await Task.Run(() => new GetEntitySetWithChanges("ExactMatch",entityType,changes,
+                        new StateCommandInfo(cp.Actor.Process.Id, Context.Entity.Commands.GetEntity),
                         cp.Actor.Process, cp.Actor.Source));
                 },
                 processInfo: cp =>
                     new StateCommandInfo(cp.Actor.Process.Id,
-                        Context.EntityView.Commands.GetEntityView),
+                        Context.Entity.Commands.GetEntity),
                 // take shortcut cud be IntialState
                 expectedSourceType: new SourceType(typeof(IComplexEventService))
 
@@ -318,12 +318,12 @@ namespace RevolutionData
                 action: new ProcessAction(
                     action: async cp =>
                         await Task.Run(() => new LoadEntitySet(entityType,
-                            new StateCommandInfo(3, Context.EntityView.Commands.LoadEntityViewSetWithChanges),
+                            new StateCommandInfo(3, Context.Entity.Commands.LoadEntitySetWithChanges),
                             cp.Actor.Process, cp.Actor.Source)),
                     processInfo:
                     cp =>
                         new StateCommandInfo(cp.Actor.Process.Id,
-                            Context.EntityView.Commands.LoadEntityViewSetWithChanges),
+                            Context.Entity.Commands.LoadEntitySetWithChanges),
                     // take shortcut cud be IntialState
                     expectedSourceType: new SourceType(typeof(IComplexEventService))),
                 processInfo: new StateCommandInfo(processId, Context.Process.Commands.CreateState));

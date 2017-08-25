@@ -24,11 +24,7 @@
 		return AmoebaRepository.GetFunctions(appId);
 	}
 
-	public static List<EntityView> GetEntityViews(int appId)
-	{
-		return AmoebaRepository.GetEntityViews(appId);
-	}
-
+	
 	
 	public static List<FunctionSet> GetFunctionSets()
 	{

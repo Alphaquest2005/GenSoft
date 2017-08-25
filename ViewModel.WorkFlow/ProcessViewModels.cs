@@ -26,14 +26,15 @@ namespace ViewModel.WorkFlow
                                                         .DomainEntityType
                                                         .EntityType
                                                         .EntityTypeAttributes
-                                                        .SelectMany(x => x.ParentEntitys)//.DistinctBy(x => x.Id)
+                                                        .SelectMany(x => x.ChildEntitys).DistinctBy(x => x.Id)
                                                         .Select(x => new EntityViewModelRelationship()
                                                         {
                                                             ParentType = x.ParentEntity.EntityType.Type.Name,
                                                             ChildType = x.ChildEntity.EntityType.Type.Name,
                                                             ParentProperty = x.ParentEntity.Attributes.Name,
                                                             ChildProperty = x.ChildEntity.Attributes.Name
-                                                        }).ToList());
+                                                        }).ToList(),
+                                                    v.EntityViewModelCommands.DistinctBy(x => x.Id).ToList());
                                             }},
                 {
                     "EntityViewModel",
@@ -49,7 +50,8 @@ namespace ViewModel.WorkFlow
                                 .DomainEntityType
                                 .EntityType
                                 .EntityTypeAttributes
-                                .SelectMany(x => x.ParentEntitys).DistinctBy(x => x.ParentEntityId)
+                                .SelectMany(x => x.ChildEntitys).DistinctBy(x => x.ChildEntityId)
+                                .Where(x => DynamicEntityType.DynamicEntityTypes.ContainsKey(x.ParentEntity.EntityType.Type.Name))
                                 .Select(x => new ViewModelEntity()
                                 {
                                     EntityType = DynamicEntityType.DynamicEntityTypes[x.ParentEntity.EntityType.Type.Name],
@@ -60,11 +62,13 @@ namespace ViewModel.WorkFlow
                                 .EntityType
                                 .EntityTypeAttributes
                                 .SelectMany(x => x.ChildEntitys).DistinctBy(x => x.ChildEntityId)
+                                .Where(x => DynamicEntityType.DynamicEntityTypes.ContainsKey(x.ChildEntity.EntityType.Type.Name))
                                 .Select(x => new ViewModelEntity()
                                 {
                                     EntityType = DynamicEntityType.DynamicEntityTypes[x.ChildEntity.EntityType.Type.Name],
                                     ViewProperty = v.PropertyName
-                                }).ToList()
+                                }).ToList(),
+                            viewCommands:v.EntityViewModelCommands.DistinctBy(x => x.Id).ToList()
                          );
                     }
                 }

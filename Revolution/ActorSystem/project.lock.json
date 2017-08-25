@@ -1041,6 +1041,7 @@
           "Actor.Interfaces": "1.0.0",
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
+          "Core.Common.UI": "1.0.0",
           "DomainMessages": "1.0.0",
           "EventMessages": "1.0.0",
           "GenSoft.Entities": "1.0.0",
@@ -2093,6 +2094,7 @@
           "Actor.Interfaces": "1.0.0",
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
+          "Core.Common.UI": "1.0.0",
           "DomainMessages": "1.0.0",
           "EventMessages": "1.0.0",
           "GenSoft.Entities": "1.0.0",
@@ -4169,6 +4171,12 @@
             "C:\\Prism\\GitRepositiory\\GenSoft\\MRManager\\Process.WorkFlow\\Process.WorkFlow.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\MRManager\\Process.WorkFlow\\Process.WorkFlow.csproj"
             },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\ViewModel.WorkFlow\\ViewModel.WorkFlow.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\ViewModel.WorkFlow\\ViewModel.WorkFlow.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Actor.Interfaces\\Actor.Interfaces.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Actor.Interfaces\\Actor.Interfaces.csproj"
+            },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\BootStrapper\\BootStrapper.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\BootStrapper\\BootStrapper.csproj"
             },
@@ -4207,12 +4215,6 @@
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Actor.Interfaces\\Actor.Interfaces.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Actor.Interfaces\\Actor.Interfaces.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\ViewModel.WorkFlow\\ViewModel.WorkFlow.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\ViewModel.WorkFlow\\ViewModel.WorkFlow.csproj"
             }
           }
         }

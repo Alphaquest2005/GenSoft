@@ -37,14 +37,17 @@ namespace ViewModels
 
        
         public ReactiveProperty<IProcessStateList> State => this.ViewModel.State;
-        public ReactiveProperty<EntityKeyValuePair> CurrentProperty => new ReactiveProperty<EntityKeyValuePair>();
 
 
-       
+        ReactiveProperty<IProcessStateEntity> IEntityViewModel.State
+        {
+            get { throw new NotImplementedException(); }
+        }
+
         public ReactiveProperty<IDynamicEntity> CurrentEntity => this.ViewModel.CurrentEntity;
+        public IEntityKeyValuePair CurrentProperty => this.ViewModel.CurrentProperty;
 
 
-        
         public ObservableDictionary<string, dynamic> ChangeTracking => this.ViewModel.ChangeTracking;
 
         public ReactiveProperty<ObservableList<IDynamicEntity>> EntitySet => this.ViewModel.EntitySet;

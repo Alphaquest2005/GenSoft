@@ -9,11 +9,13 @@ using SystemInterfaces;
 using BootStrapper;
 using Common.Dynamic;
 using DomainMessages;
+using GenSoft.Entities;
 using ReactiveUI;
 using RevolutionEntities.Process;
 using RevolutionEntities.ViewModels;
 using Utilities;
 using ViewModel.Interfaces;
+using ViewModel.WorkFlow;
 using ViewModelInterfaces;
 
 namespace RevolutionData
@@ -22,7 +24,7 @@ namespace RevolutionData
     public class EntityDetailsViewModelInfo
     {
        
-        public static ViewModelInfo EntityDetailsViewModel(int processId, IDynamicEntityType entityType,  string symbol, string description, int priority, List<ViewModelEntity> parentEntities, List<ViewModelEntity> childEntities)
+        public static ViewModelInfo EntityDetailsViewModel(int processId, IDynamicEntityType entityType,  string symbol, string description, int priority, List<ViewModelEntity> parentEntities, List<ViewModelEntity> childEntities, List<EntityViewModelCommands> viewCommands)
         {
             try
             {
@@ -54,31 +56,31 @@ namespace RevolutionData
                                     s.Source);
                             }),
 
-                        new ViewEventCommand<IEntityViewModel, IGetEntityWithChanges>(
-                            key:"FindEntity",
-                            commandPredicate:new List<Func<IEntityViewModel, bool>>
-                            {
-                                //v => v. != null
-                            },
-                            subject:s => Observable.Empty<ReactiveCommand<IViewModel, Unit>>(),
+                        //new ViewEventCommand<IEntityViewModel, IGetEntityWithChanges>(
+                        //    key:"FindEntity",
+                        //    commandPredicate:new List<Func<IEntityViewModel, bool>>
+                        //    {
+                        //        //v => v. != null
+                        //    },
+                        //    subject:s => Observable.Empty<ReactiveCommand<IViewModel, Unit>>(),
 
-                            messageData: s =>
-                            {
+                        //    messageData: s =>
+                        //    {
                                 
 
-                                return new ViewEventCommandParameter(
-                                    new object[] {s.State.Value.Entity.EntityType, s.ChangeTracking.ToDictionary(x => x.Key, x => x.Value)},
-                                    new StateCommandInfo(s.Process.Id,
-                                        Context.Process.Commands.CurrentEntityChanged), s.Process,
-                                    s.Source);
-                            }),
+                        //        return new ViewEventCommandParameter(
+                        //            new object[] {s.State.Value.Entity.EntityType, s.ChangeTracking.ToDictionary(x => x.Key, x => x.Value)},
+                        //            new StateCommandInfo(s.Process.Id,
+                        //                Context.Process.Commands.CurrentEntityChanged), s.Process,
+                        //            s.Source);
+                        //    }),
                     },
                     viewModelType: typeof(IEntityViewModel),
                     orientation: typeof(IBodyViewModel),
                     priority: priority);
 
                 var parentSubscriptions = new List<IViewModelEventSubscription<IViewModel, IEvent>>();
-                var parentCommands = new List<IViewModelEventCommand<IViewModel, IEvent>>(viewInfo.Commands);
+                var parentCommands = new List<IViewModelEventCommand<IViewModel, IEvent>>();
                 var parentPublications = new List<IViewModelEventPublication<IViewModel, IEvent>>();
 
 
@@ -97,9 +99,12 @@ namespace RevolutionData
                     //parentCommands.AddRange(CreateCommands(p));
                 }
                 viewInfo.Subscriptions.AddRange(parentSubscriptions);
-                
-                
-                
+
+                parentCommands.AddRange(CreateCustomCommands(viewCommands));
+
+                viewInfo.Commands.AddRange(parentCommands);
+
+
 
                 return viewInfo;
             }
@@ -143,6 +148,15 @@ namespace RevolutionData
             return res;
         }
 
+        private static List<IViewModelEventCommand<IViewModel, IEvent>> CreateCustomCommands(List<EntityViewModelCommands> viewCommands)
+        {
+            List<IViewModelEventCommand<IViewModel, IEvent>> res = new List<IViewModelEventCommand<IViewModel, IEvent>>();
+            foreach (var cmd in viewCommands)
+            {
+                res.Add(ViewModelInfoExtensions.CreateCustomCommand<IEntityViewModel>(cmd.Name, cmd.ViewModelCommands));
+            }
+            return res;
+        }
 
         //public static IViewModelEventCommand<IViewModel, IEvent> SaveEntityCommand(string viewChildProperty,List<EntityViewModelRelationship> rels)
         //{
@@ -165,7 +179,7 @@ namespace RevolutionData
         //                    "Personal Information",
         //                    s.ChangeTracking.ToDictionary(x => x.Key, x => x.Value)
         //                },
-        //                new StateCommandInfo(s.Process.Id, Context.EntityView.Commands.GetEntityView), s.Process,
+        //                new StateCommandInfo(s.Process.Id, Context.Entity.Commands.GetEntity), s.Process,
         //                s.Source);
         //            s.ChangeTracking.Clear();
         //            ((dynamic)s).Properties[viewChildProperty] = null;
@@ -198,7 +212,7 @@ namespace RevolutionData
         //                    ((dynamic)v).Properties[viewChildProperty].Id,
         //                    v.ChangeTracking.ToDictionary(x => x.Key, x => x.Value)
         //                },
-        //                new StateCommandInfo(v.Process.Id, Context.EntityView.Commands.GetEntityView), v.Process,
+        //                new StateCommandInfo(v.Process.Id, Context.Entity.Commands.GetEntity), v.Process,
         //                v.Source);
         //            v.ChangeTracking.Clear();
         //            return msg;
@@ -230,7 +244,7 @@ namespace RevolutionData
         //                    ((dynamic)v).Properties[childProperty].Id,
         //                    v.ChangeTracking.ToDictionary(x => x.Key, x => x.Value)
         //                },
-        //                new StateCommandInfo(v.Process.Id, Context.EntityView.Commands.GetEntityView), v.Process,
+        //                new StateCommandInfo(v.Process.Id, Context.Entity.Commands.GetEntity), v.Process,
         //                v.Source);
         //            v.ChangeTracking.Clear();
         //            return msg;
@@ -292,6 +306,19 @@ namespace RevolutionData
         }
 
         public static IViewModelEventSubscription<IViewModel, IEvent> EntityViewWithChangesFound(int processId, string pEntity, string viewChildProperty)
+        {
+            return new ViewEventSubscription<IEntityViewModel, IEntityWithChangesFound>(
+                processId,
+                e => e != null && e.EntityType.Name == pEntity,
+                new List<Func<IEntityViewModel, IEntityWithChangesFound, bool>>(),
+                (v, e) =>
+                {
+                    v.State.Value.Entity = e.Entity;
+                    v.NotifyPropertyChanged("State");
+                });
+        }
+
+        public static IViewModelEventSubscription<IViewModel, IEvent> EntityWithChangesUpdated(int processId, string pEntity, string viewChildProperty)
         {
             return new ViewEventSubscription<IEntityViewModel, IEntityWithChangesFound>(
                 processId,

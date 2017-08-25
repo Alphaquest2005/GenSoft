@@ -56,6 +56,7 @@
     <Compile Include="Generated Entities\ApplicationSetting.cs" />
     <Compile Include="Generated Entities\Attributes.cs" />
     <Compile Include="Generated Entities\Command.cs" />
+    <Compile Include="Generated Entities\CommandTypes.cs" />
     <Compile Include="Generated Entities\CompositeRequest.cs" />
     <Compile Include="Generated Entities\DataType.cs" />
     <Compile Include="Generated Entities\DomainEntityCache.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Generated Entities\EntityTypeAttributes.cs" />
     <Compile Include="Generated Entities\EntityTypeViewModel.cs" />
     <Compile Include="Generated Entities\EntityView.cs" />
+    <Compile Include="Generated Entities\EntityViewModelCommands.cs" />
     <Compile Include="Generated Entities\Event.cs" />
     <Compile Include="Generated Entities\Machine.cs" />
     <Compile Include="Generated Entities\Message.cs" />
@@ -91,6 +93,7 @@
     <Compile Include="Generated Entities\Type.cs" />
     <Compile Include="Generated Entities\TypeParameter.cs" />
     <Compile Include="Generated Entities\User.cs" />
+    <Compile Include="Generated Entities\ViewModelCommands.cs" />
     <Compile Include="Generated Entities\ViewModelTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

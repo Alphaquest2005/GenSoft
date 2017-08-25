@@ -26,26 +26,13 @@
                      Height="Auto"
                      Margin="10,48,10,10"
                      HorizontalAlignment="Stretch"
-                     VerticalAlignment="Stretch"
+                     VerticalAlignment="Top"
                      Background="#33FFFFFF"
                      IsSynchronizedWithCurrentItem="True"
                      ItemTemplate="{DynamicResource EntityDetailWDT}"
-                     ItemsSource="{Binding PropertyList}"/>
-            <!--<ListBox Width="Auto"
-                     Height="50"
-                     Margin="10,10,10,10"
-                     HorizontalAlignment="Stretch"
-                     VerticalAlignment="Stretch"
-                     Background="#33FFFFFF"
-                     IsSynchronizedWithCurrentItem="True"
-                     ItemTemplate="{DynamicResource CommandDT}"
-                     ItemsSource="{Binding Commands}">
-                <ListBox.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <WrapPanel IsItemsHost="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" />
-                    </ItemsPanelTemplate>
-                </ListBox.ItemsPanel>
-            </ListBox>-->
+                     ItemsSource="{Binding PropertyList}"
+                     SelectedItem="{Binding  DataContext.CurrentProperty,  RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}"/>
+            
         </Grid>
 
     </DataTemplate>

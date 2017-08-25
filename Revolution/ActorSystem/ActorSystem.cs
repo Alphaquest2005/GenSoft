@@ -75,6 +75,7 @@ namespace ActorBackBone
                     .Include(x => x.EntityType.EntityList)
                     .Include(x => x.ProcessStateDomainEntityTypes).ThenInclude(x => x.ProcessState.Process)
                     .Include(x => x.ProcessStateDomainEntityTypes).ThenInclude(x => x.EntityTypeViewModel).ThenInclude(x => x.ViewModelTypes)
+                     .Include(x => x.ProcessStateDomainEntityTypes).ThenInclude(x => x.EntityTypeViewModel).ThenInclude(x => x.EntityViewModelCommands).ThenInclude(x => x.ViewModelCommands.CommandTypes)
                     .Where(x => x.EntityType.EntityTypeAttributes.SelectMany(z => z.ParentEntitys).Any() || x.EntityType.EntityTypeAttributes.SelectMany(z => z.ChildEntitys).Any())
                     .OrderBy(x => x.Id)
                 )

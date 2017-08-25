@@ -4,10 +4,10 @@ using CommonMessages;
 
 namespace EventMessages.Commands
 {
-    public class LoadEntitySetWithChanges : ProcessSystemMessage, ILoadEntitySetWithChanges
+    public class GetEntitySetWithChanges : ProcessSystemMessage, IGetEntitySetWithChanges
     {
-        public LoadEntitySetWithChanges(){}
-        public LoadEntitySetWithChanges(string match,IDynamicEntityType entityType, Dictionary<string, dynamic> changes, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo, process, source)
+        public GetEntitySetWithChanges(){}
+        public GetEntitySetWithChanges(string match,IDynamicEntityType entityType, Dictionary<string, dynamic> changes, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo, process, source)
         {
             EntityType = entityType;
             Changes = changes;

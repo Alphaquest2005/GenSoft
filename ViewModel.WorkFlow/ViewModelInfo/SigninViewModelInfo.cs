@@ -52,7 +52,7 @@
 //                    {
 //                        v => v.ChangeTracking.Keys.Contains("Usersignin") && v.ChangeTracking.Keys.Count == 1
 //                    },
-//                    messageData: s => new ViewEventCommandParameter(new object[] {s.ChangeTracking.ToDictionary(x => x.Key, x => x.Value)},new StateCommandInfo(s.Process.Id, Context.EntityView.Commands.GetEntityView),s.Process,s.Source)),
+//                    messageData: s => new ViewEventCommandParameter(new object[] {s.ChangeTracking.ToDictionary(x => x.Key, x => x.Value)},new StateCommandInfo(s.Process.Id, Context.Entity.Commands.GetEntity),s.Process,s.Source)),
 
 //                new ViewEventCommand<ISigninViewModel, IGetEntityWithChanges>(
 //                    key:"ValidateUserInfo",
@@ -63,7 +63,7 @@
 //                    },
 //                    subject:s => Observable.Empty<ReactiveCommand<IViewModel, Unit>>(),
                                
-//                    messageData:s => new ViewEventCommandParameter(new object[] {s.ChangeTracking.ToDictionary(x => x.Key, x => x.Value)},new StateCommandInfo(s.Process.Id, Context.EntityView.Commands.GetEntityView),s.Process,s.Source)),
+//                    messageData:s => new ViewEventCommandParameter(new object[] {s.ChangeTracking.ToDictionary(x => x.Key, x => x.Value)},new StateCommandInfo(s.Process.Id, Context.Entity.Commands.GetEntity),s.Process,s.Source)),
 
                     
 

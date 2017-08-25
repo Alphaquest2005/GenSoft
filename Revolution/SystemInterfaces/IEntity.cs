@@ -6,10 +6,15 @@ using JB.Collections.Reactive;
 
 namespace SystemInterfaces
 {
-
-    public interface IDynamicEntity:IEntity
+    public interface IDynamicEntityCore : IEntity
     {
         IDynamicEntityType EntityType { get; }
+        
+    }
+
+
+    public interface IDynamicEntity: IDynamicEntityCore
+    {
         ObservableList<IEntityKeyValuePair> PropertyList { get; }
     }
 

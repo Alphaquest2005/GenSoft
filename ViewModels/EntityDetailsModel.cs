@@ -30,7 +30,21 @@ namespace ViewModels
         {
             if (LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
             this.WireEvents();
-           
+            this.State.WhenAnyValue(x => x.Value).Subscribe(UpdateCurrentEntity);
+            this.CurrentEntity.WhenAnyValue(x => x.Value).Subscribe(UpdateStateEntity);
+
+        }
+
+        private void UpdateStateEntity(IDynamicEntity dynamicEntity)
+        {
+            if(State.Value.Entity != dynamicEntity)
+            State.Value.Entity = dynamicEntity;
+        }
+
+        private void UpdateCurrentEntity(IProcessStateEntity processStateEntity)
+        {
+            if(CurrentEntity.Value != processStateEntity.Entity)
+            CurrentEntity.Value = processStateEntity.Entity;
         }
 
 
@@ -38,6 +52,8 @@ namespace ViewModels
         {
             get { return this.ViewModel.State; }
         }
+        //potential problem state different from current entity!
+        public ReactiveProperty<IDynamicEntity> CurrentEntity => this.ViewModel.CurrentEntity;
 
         private IEntityKeyValuePair _currentProperty;
 

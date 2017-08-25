@@ -37,11 +37,31 @@ namespace ViewModels
 
 
         public ReactiveProperty<IProcessStateList> State => this.ViewModel.State;
-        public ReactiveProperty<EntityKeyValuePair> CurrentProperty => new ReactiveProperty<EntityKeyValuePair>();
+
+        private IEntityKeyValuePair _currentProperty;
+
+        public IEntityKeyValuePair CurrentProperty
+        {
+            get { return _currentProperty; }
+            set
+            {
+                _currentProperty = value;
+                _currentProperty?.WhenAnyValue(x => x.Value).Subscribe(x => OnValueChanged(x));
+            }
+        }
 
 
-       
+
+        private void OnValueChanged(object entityKeyValuePair)
+        {
+            ChangeTracking.AddOrUpdate(_currentProperty.Key, _currentProperty.Value);
+        }
+
+
+        ReactiveProperty<IProcessStateEntity> IEntityViewModel.State => new ReactiveProperty<IProcessStateEntity>(new ProcessStateEntity(State.Value.Process, CurrentEntity.Value, State.Value.StateInfo.ToStateInfo()));
+
         public ReactiveProperty<IDynamicEntity> CurrentEntity => this.ViewModel.CurrentEntity;
+        
 
         public ObservableDictionary<string, dynamic> ChangeTracking => this.ViewModel.ChangeTracking;
 

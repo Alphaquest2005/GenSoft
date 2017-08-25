@@ -22,8 +22,8 @@ namespace GenSoft.Entities
 				public virtual ICollection<Entity> Entity {get; set;}
 				public virtual EntityList EntityList {get; set;}
 				public virtual ICollection<EntityTypeAttributes> EntityTypeAttributes {get; set;}
-				public virtual EntityView EntityView {get; set;}
 				public virtual ICollection<EntityView> BaseEntityTypes {get; set;}
+				public virtual EntityView EntityView {get; set;}
 		
 			// ---------Parent Relationships
 				public virtual Type Type {get; set;}

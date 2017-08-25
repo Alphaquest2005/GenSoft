@@ -300,7 +300,7 @@ namespace Process.WorkFlow
                             "CurrentEntity", processId, e => e.Entity != null && e.Entity.EntityType.Name == currentEntityType,
                             expectedSourceType: new SourceType(typeof (IViewModel)),
                             //todo: check this cuz it comes from viewmodel
-                            processInfo: new StateEventInfo(processId, EntityView.Events.EntityViewFound))
+                            processInfo: new StateEventInfo(processId, Entity.Events.EntityFound))
                     },
                     expectedMessageType: typeof(IProcessStateMessage),
                     action: ProcessActions.RequestState(DynamicEntityType.DynamicEntityTypes[viewEntityType],property),
@@ -333,7 +333,7 @@ namespace Process.WorkFlow
                     {
                             new ProcessExpectedEvent<IEntitySetWithChangesLoaded>(
                         "EntityViewSet",processId, e => e.EntitySet != null && e.EntityType == entityType, expectedSourceType: new SourceType(typeof(IEntityViewRepository)),
-                        processInfo: new StateEventInfo(processId, EntityView.Events.EntityViewSetLoaded))
+                        processInfo: new StateEventInfo(processId, Entity.Events.EntitySetLoaded))
                     },
                     expectedMessageType: typeof(IProcessStateList),
                     action: ProcessActions.UpdateEntityViewStateList(entityType),
@@ -374,7 +374,7 @@ namespace Process.WorkFlow
                             key: "UpdatedEntity"),
                         new ProcessExpectedEvent<IEntityWithChangesUpdated>(processId: processId,
                             eventPredicate: e => e.Entity != null && e.EntityType.Name == currentEntityType,
-                            processInfo: new StateEventInfo(processId, EntityView.Events.EntityViewUpdated),
+                            processInfo: new StateEventInfo(processId, Entity.Events.EntityUpdated),
                             expectedSourceType: new SourceType(typeof (IEntityRepository)),
                             key: "UpdatedEntity"),
 
@@ -395,13 +395,13 @@ namespace Process.WorkFlow
                             var value = cp.Messages["UpdatedEntity"].Entity.Properties[currentProperty];
                             var changes = new Dictionary<string, dynamic>() { { key, value } };
 
-                            return await Task.Run(() => new LoadEntitySetWithChanges("ExactMatch",entityType,changes,
-                                new StateCommandInfo(cp.Actor.Process.Id, EntityView.Commands.GetEntityView),
+                            return await Task.Run(() => new GetEntitySetWithChanges("ExactMatch",entityType,changes,
+                                new StateCommandInfo(cp.Actor.Process.Id, Entity.Commands.GetEntity),
                                 cp.Actor.Process, cp.Actor.Source));
                         },
                     processInfo: cp =>
                         new StateCommandInfo(cp.Actor.Process.Id,
-                            EntityView.Commands.GetEntityView),
+                            Entity.Commands.GetEntity),
                     // take shortcut cud be IntialState
                     expectedSourceType: new SourceType(typeof(IComplexEventService))
 

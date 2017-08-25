@@ -11,10 +11,10 @@ namespace EventMessages.Commands
     public class GetEntityWithChanges : ProcessSystemMessage, IGetEntityWithChanges 
     {
         public GetEntityWithChanges() { }
-        public GetEntityWithChanges(IDynamicEntityType entityType, Dictionary<string, dynamic> changes, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
+        public GetEntityWithChanges(IDynamicEntityCore entityType, Dictionary<string, dynamic> changes, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
         {
             Changes = changes;
-            EntityType = entityType;
+            EntityType = entityType.EntityType;
         }
 
         public Dictionary<string, dynamic> Changes { get; }

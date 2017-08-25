@@ -60,8 +60,25 @@ namespace Core.Common.UI
             }));
         }
 
-       
-        public ReactiveProperty<EntityKeyValuePair> CurrentProperty => new ReactiveProperty<EntityKeyValuePair>();
+
+        private IEntityKeyValuePair _currentProperty;
+
+        public IEntityKeyValuePair CurrentProperty
+        {
+            get { return _currentProperty; }
+            set
+            {
+                _currentProperty = value;
+                _currentProperty?.WhenAnyValue(x => x.Value).Subscribe(x => OnValueChanged(x));
+            }
+        }
+
+
+
+        private void OnValueChanged(object entityKeyValuePair)
+        {
+            ChangeTracking.AddOrUpdate(_currentProperty.Key, _currentProperty.Value);
+        }
 
 
         //ReactiveProperty<IProcessStateList> IEntityViewModel.State
@@ -79,7 +96,11 @@ namespace Core.Common.UI
             set { this.RaiseAndSetIfChanged(ref _state, value);}
         }
 
-        private ReactiveProperty<IDynamicEntity> _currentEntity = new ReactiveProperty<IDynamicEntity>(null,ReactivePropertyMode.DistinctUntilChanged);
+        
+
+        ReactiveProperty<IProcessStateEntity> IEntityViewModel.State => new ReactiveProperty<IProcessStateEntity>(new ProcessStateEntity(State.Value.Process, CurrentEntity.Value, State.Value.StateInfo.ToStateInfo()));
+
+        private ReactiveProperty<IDynamicEntity> _currentEntity = new ReactiveProperty<IDynamicEntity>(null, ReactivePropertyMode.DistinctUntilChanged);
         public ReactiveProperty<IDynamicEntity> CurrentEntity
         {
             get { return _currentEntity; }
@@ -108,7 +129,10 @@ namespace Core.Common.UI
         }
         protected dynamic GetOriginalValue([CallerMemberName] string property = "UnspecifiedProperty")
         {
-            return CurrentEntity.Value.GetType().GetProperty(property).GetValue(CurrentEntity);
+            var propertyInfo = CurrentEntity.Value.GetType().GetProperty(property);
+            if (propertyInfo != null)
+                return propertyInfo.GetValue(CurrentEntity);
+            return null;
         }
         protected bool GetPropertyIsChanged([CallerMemberName] string property = "UnspecifiedProperty")
         {

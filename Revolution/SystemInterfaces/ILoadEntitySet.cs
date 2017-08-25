@@ -11,7 +11,7 @@ namespace SystemInterfaces
     {
        
     }
-    public interface ILoadEntitySetWithChanges : IEntityRequest
+    public interface IGetEntitySetWithChanges : IEntityRequest
     {
         string MatchType { get; }
         Dictionary<string, object> Changes { get; }

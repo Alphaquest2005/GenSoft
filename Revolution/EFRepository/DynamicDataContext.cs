@@ -8,12 +8,15 @@ using Common;
 using Common.DataEntites;
 using Common.Dynamic;
 using EventAggregator;
+using EventMessages.Commands;
 using EventMessages.Events;
 using GenSoft.DBContexts;
+using GenSoft.Entities;
 using Microsoft.EntityFrameworkCore;
-using RevolutionData.Context;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using RevolutionEntities.Process;
 using Entity = GenSoft.Entities.Entity;
+using EntityEvents = RevolutionData.Context.Entity;
 
 
 namespace EFRepository
@@ -25,9 +28,91 @@ namespace EFRepository
             throw new NotImplementedException();
         }
 
-        public static void UpdateEntity(IUpdateEntityWithChanges msg)
+        public static void UpdateEntityWithChanges(IUpdateEntityWithChanges msg)
         {
-            throw new NotImplementedException();
+            try
+            {
+
+
+                using (var ctx = new GenSoftDBContext())
+                {
+                    var viewType = ctx.EntityView.FirstOrDefault(x => x.EntityType.Type.Name == msg.EntityType.Name);
+                    var ctxEntityType = ctx.EntityType.Include(x => x.Type);
+                    var entityType = viewType == null
+                        ? ctxEntityType.FirstOrDefault(x => x.Type.Name == msg.EntityType.Name)
+                        : ctxEntityType.FirstOrDefault(x => x.Id == viewType.BaseEntityTypeId);
+
+
+                    if (entityType == null)
+                    {
+                        PublishProcesError(msg,
+                            new ApplicationException($"EntityType - '{msg.Entity.EntityType.Name}' not Found."),
+                            typeof(EntityWithChangesUpdated));
+                        return;
+                    }
+
+
+
+                    var entity = msg.Entity.Id == 0
+                        ? ctx.Entity.Add(new Entity() {EntityTypeId = entityType.Id, EntityAttribute = new List<EntityAttribute>()}).Entity
+                        : ctx.Entity.FirstOrDefault(x => x.Id == msg.Entity.Id && x.EntityTypeId == entityType.Id);
+                    if (entity == null)
+                    {
+                        PublishProcesError(msg,
+                            new ApplicationException(
+                                $"Entity with Type - '{msg.Entity.EntityType.Name}' & Id:{msg.Entity.Id} not Found."),
+                            typeof(EntityWithChangesUpdated));
+                        return;
+                    }
+
+                    if (msg.Entity.Id == 0)
+                    {
+                        ctx.SaveChanges(true);
+                        msg.Changes.Add(nameof(IDynamicEntity.Id), entity.Id);
+                    }
+
+                    foreach (var change in msg.Changes)
+                    {
+                        var data = ctx.EntityAttribute.FirstOrDefault(
+                            x => x.EntityId == entity.Id && x.Attributes.Name == change.Key);
+                        if (data == null)
+                        {
+                            var attibute = ctx.Attributes.FirstOrDefault(x => x.Name == change.Key);
+                            if (attibute == null)
+                            {
+                                var dataType = ctx.DataType.First(x => x.Type.Name == "string");
+                                attibute = ctx.Attributes
+                                    .Add(new Attributes() {DataTypeId = dataType.Id, Name = change.Key}).Entity;
+                            }
+                            var entityAttribute = ctx.EntityAttribute
+                                .Add(new EntityAttribute()
+                                {
+                                    AttributeId = attibute.Id,
+                                    EntityId = entity.Id,
+                                    Value = change.Value.ToString()
+                                }).Entity;
+                            entity.EntityAttribute.Add(entityAttribute);
+                        }
+                        else
+                        {
+                            data.Value = change.Value.ToString();
+                        }
+                    }
+                    ctx.SaveChanges(true);
+
+
+
+                    EventMessageBus.Current.Publish(
+                        new EntityWithChangesUpdated(new DynamicEntityCore(msg.EntityType, entity.Id), msg.Changes,
+                            new StateEventInfo(msg.Process.Id, EntityEvents.Events.EntityUpdated), msg.Process,
+                            Source), Source);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
 
         public static void AddEntity(IAddOrGetEntityWithChanges msg)
@@ -35,7 +120,7 @@ namespace EFRepository
             throw new NotImplementedException();
         }
 
-        public static void LoadEntitySetWithChanges(ILoadEntitySetWithChanges msg)
+        public static void LoadEntitySetWithChanges(IGetEntitySetWithChanges msg)
         {
             using (var ctx = new GenSoftDBContext())
             {
@@ -53,7 +138,7 @@ namespace EFRepository
                 {
                     EventMessageBus.Current.Publish(
                         new EntitySetWithChangesLoaded(msg.EntityType,entities, msg.Changes,
-                            new StateEventInfo(msg.Process.Id, EntityView.Events.EntityViewFound), msg.Process,
+                            new StateEventInfo(msg.Process.Id, EntityEvents.Events.EntityFound), msg.Process,
                             Source), Source);
                 }
                 else
@@ -92,7 +177,7 @@ namespace EFRepository
 
                 EventMessageBus.Current.Publish(
                         new EntitySetLoaded(msg.EntityType, viewset, 
-                            new StateEventInfo(msg.Process.Id, EntityView.Events.EntityViewFound), msg.Process,
+                            new StateEventInfo(msg.Process.Id, EntityEvents.Events.EntityFound), msg.Process,
                             Source), Source);
                 
             }
@@ -145,14 +230,14 @@ namespace EFRepository
                 {
                     EventMessageBus.Current.Publish(
                         new EntityWithChangesFound(entity, msg.Changes,
-                            new StateEventInfo(msg.Process.Id, EntityView.Events.EntityViewFound), msg.Process,
+                            new StateEventInfo(msg.Process.Id, EntityEvents.Events.EntityFound), msg.Process,
                             Source), Source);
                 }
                 else
                 {
                     EventMessageBus.Current.Publish(
                         new EntityWithChangesFound(DynamicEntityType.DynamicEntityTypes[msg.EntityType.Name].DefaultEntity(), msg.Changes,
-                            new StateEventInfo(msg.Process.Id, EntityView.Events.EntityViewFound), msg.Process,
+                            new StateEventInfo(msg.Process.Id, EntityEvents.Events.EntityFound), msg.Process,
                             Source), Source);
                 }
             }

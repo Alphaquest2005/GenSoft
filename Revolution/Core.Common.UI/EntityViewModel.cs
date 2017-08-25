@@ -49,6 +49,13 @@ namespace Core.Common.UI
             this.RaisePropertyChanged(propertyName);
         }
 
+        private ReactiveProperty<IDynamicEntity> _currentEntity = new ReactiveProperty<IDynamicEntity>(null, ReactivePropertyMode.DistinctUntilChanged);
+        public ReactiveProperty<IDynamicEntity> CurrentEntity
+        {
+            get { return _currentEntity; }
+            set { this.RaiseAndSetIfChanged(ref _currentEntity, value); }
+        }
+
     }
 
     public class ObservableViewModel : BaseViewModel<ObservableViewModel>

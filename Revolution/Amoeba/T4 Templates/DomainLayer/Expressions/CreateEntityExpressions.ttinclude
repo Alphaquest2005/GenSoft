@@ -39,7 +39,7 @@
 			
 		}
 
-		var entityViews = GetEntityViews(app.Id);
+		var entityViews = GetEntitys(app.Id);
 		foreach (var func in entityViews)
 		{
 			var tpl = new EntityViewExpressionTemplate(func,app.Name);

@@ -9,9 +9,10 @@ namespace RevolutionData.Context
         {
             public static IStateCommand CreateEntity => new StateCommand("CreateEntity", "Create Entity",Events.EntityCreated);
             public static IStateCommand UpdateEntity => new StateCommand("UpdateEntity", "Update Entity", Events.EntityCreated);
-            public static IStateCommand FindEntity => new StateCommand("FindEntity", "Find Entity", Events.EntityCreated);
+            public static IStateCommand GetEntity => new StateCommand("GetEntity", "Get Entity", Events.EntityCreated);
             public static IStateCommand DeleteEntity => new StateCommand("DeleteEntity", "Delete Entity", Events.EntityCreated);
             public static IStateCommand LoadEntitySet => new StateCommand("LoadEntitySet", "Load Entity Set", Events.EntityCreated);
+            public static IStateCommand LoadEntitySetWithChanges => new StateCommand("LoadEntitySetWithChanges", "Load EntitySet with Changes", Events.EntitySetLoaded);
         }
 
         public class Events

@@ -74,7 +74,7 @@ namespace T4Repository
             }
         }
 
-        public static List<EntityView> GetEntityViews(int appId)
+        public static List<EntityView> GetEntitys(int appId)
         {
 
            using (var ctx = new AmoebaDBEntities(Settings.Default.DBConnectionString))

@@ -50,6 +50,7 @@
     <Compile Include="Generated Interfaces\ApplicationSetting.cs" />
     <Compile Include="Generated Interfaces\Attributes.cs" />
     <Compile Include="Generated Interfaces\Command.cs" />
+    <Compile Include="Generated Interfaces\CommandTypes.cs" />
     <Compile Include="Generated Interfaces\CompositeRequest.cs" />
     <Compile Include="Generated Interfaces\DataType.cs" />
     <Compile Include="Generated Interfaces\DomainEntityCache.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="Generated Interfaces\EntityTypeAttributes.cs" />
     <Compile Include="Generated Interfaces\EntityTypeViewModel.cs" />
     <Compile Include="Generated Interfaces\EntityView.cs" />
+    <Compile Include="Generated Interfaces\EntityViewModelCommands.cs" />
     <Compile Include="Generated Interfaces\Event.cs" />
     <Compile Include="Generated Interfaces\Machine.cs" />
     <Compile Include="Generated Interfaces\Message.cs" />
@@ -85,6 +87,7 @@
     <Compile Include="Generated Interfaces\Type.cs" />
     <Compile Include="Generated Interfaces\TypeParameter.cs" />
     <Compile Include="Generated Interfaces\User.cs" />
+    <Compile Include="Generated Interfaces\ViewModelCommands.cs" />
     <Compile Include="Generated Interfaces\ViewModelTypes.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="IPredicate.cs" />

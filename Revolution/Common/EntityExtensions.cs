@@ -25,6 +25,15 @@ namespace Common
             return entity;
         }
 
+        public static IDynamicEntity ApplyChanges(this IDynamicEntity entity, Dictionary<string, dynamic> changeTracking) //where T : IEntityId
+        {
+            foreach (var change in changeTracking.ToList())
+            {
+                ((dynamic)entity).Properties[change.Key] = change.Value;
+            }
+            return entity;
+        }
+
         public static void ApplyChanges<T>(this T entity, KeyValuePair<string, dynamic> change) //where T : IEntityId
         {
             var prop = entity.GetType().GetProperty(change.Key.Replace(" ",""));

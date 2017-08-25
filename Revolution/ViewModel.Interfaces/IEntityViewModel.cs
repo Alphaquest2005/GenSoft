@@ -13,6 +13,7 @@ namespace ViewModelInterfaces
     {
         ReactiveProperty<IProcessStateEntity> State { get; }
 
+        ReactiveProperty<IDynamicEntity> CurrentEntity { get; }
         IEntityKeyValuePair CurrentProperty { get; }
         ObservableDictionary<string, dynamic> ChangeTracking { get; }
 
@@ -25,16 +26,14 @@ namespace ViewModelInterfaces
 
 
 
-    public interface IEntityListViewModel :  IViewModel
+    public interface IEntityListViewModel : IEntityViewModel
     {
-        ObservableDictionary<string, dynamic> ChangeTracking { get; }
-        ReactiveProperty<IProcessStateList> State { get; }
-        ReactiveProperty<IDynamicEntity> CurrentEntity { get; }
+        new ReactiveProperty<IProcessStateList> State { get; }
+        
+        
         ReactiveProperty<ObservableList<IDynamicEntity>> EntitySet { get; }
         ReactiveProperty<ObservableList<IDynamicEntity>> SelectedEntities { get; }
-        void NotifyPropertyChanged(string propertyName);
-
-        ReactiveProperty<RowState> RowState { get; }
+        
 
     }
 

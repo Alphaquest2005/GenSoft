@@ -304,6 +304,30 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1"
       },
+      "Core.Common.UI/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "BootStrapper": "1.0.0",
+          "Common": "1.0.0",
+          "CommonMessages": "1.0.0",
+          "EventAggregator": "1.0.0",
+          "EventMessages": "1.0.0",
+          "FluentValidation.Net35": "1.0.1",
+          "JB.Common.Collections.Reactive": "0.8.103-pre",
+          "JB.Common.Reactive": "0.8.103-pre",
+          "ReactiveProperty": "2.9.0",
+          "RevolutionData": "1.0.0",
+          "RevolutionEntities": "1.0.0",
+          "RevolutionLogger": "1.0.0",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0",
+          "ValidationSets": "1.0.0",
+          "ViewMessages": "1.0.0",
+          "ViewModel.Interfaces": "1.0.0",
+          "reactiveui-core": "7.0.0"
+        }
+      },
       "Domain.Interfaces/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
@@ -407,6 +431,14 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
+      },
+      "ValidationSets/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "FluentValidation.Net35": "1.0.1",
           "SystemInterfaces": "1.0.0"
         }
       },
@@ -737,6 +769,30 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1"
       },
+      "Core.Common.UI/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "BootStrapper": "1.0.0",
+          "Common": "1.0.0",
+          "CommonMessages": "1.0.0",
+          "EventAggregator": "1.0.0",
+          "EventMessages": "1.0.0",
+          "FluentValidation.Net35": "1.0.1",
+          "JB.Common.Collections.Reactive": "0.8.103-pre",
+          "JB.Common.Reactive": "0.8.103-pre",
+          "ReactiveProperty": "2.9.0",
+          "RevolutionData": "1.0.0",
+          "RevolutionEntities": "1.0.0",
+          "RevolutionLogger": "1.0.0",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0",
+          "ValidationSets": "1.0.0",
+          "ViewMessages": "1.0.0",
+          "ViewModel.Interfaces": "1.0.0",
+          "reactiveui-core": "7.0.0"
+        }
+      },
       "Domain.Interfaces/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
@@ -840,6 +896,14 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
+      },
+      "ValidationSets/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "FluentValidation.Net35": "1.0.1",
           "SystemInterfaces": "1.0.0"
         }
       },
@@ -1450,6 +1514,11 @@
       "path": "../Revolution/MefGeneric-master/MEFGeneric Preview 9/src/ComponentModel.Composition.Hosting.Extension/project.json",
       "msbuildProject": "../Revolution/MefGeneric-master/MEFGeneric Preview 9/src/ComponentModel.Composition.Hosting.Extension/ComponentModel.Composition.Hosting.Extension.csproj"
     },
+    "Core.Common.UI/1.0.0": {
+      "type": "project",
+      "path": "../Revolution/Core.Common.UI/project.json",
+      "msbuildProject": "../Revolution/Core.Common.UI/Core.Common.UI.csproj"
+    },
     "Domain.Interfaces/1.0.0": {
       "type": "project",
       "path": "../Domain.Interfaces/project.json",
@@ -1505,6 +1574,11 @@
       "path": "../Revolution/Utilities/project.json",
       "msbuildProject": "../Revolution/Utilities/Utilities.csproj"
     },
+    "ValidationSets/1.0.0": {
+      "type": "project",
+      "path": "../ValidationSets/project.json",
+      "msbuildProject": "../ValidationSets/ValidationSets.csproj"
+    },
     "ViewMessages/1.0.0": {
       "type": "project",
       "path": "../Revolution/ViewMessages/project.json",
@@ -1556,6 +1630,9 @@
             "C:\\Prism\\GitRepositiory\\GenSoft\\DomainMessages\\DomainMessages.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\DomainMessages\\DomainMessages.csproj"
             },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Actor.Interfaces\\Actor.Interfaces.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Actor.Interfaces\\Actor.Interfaces.csproj"
+            },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\BootStrapper\\BootStrapper.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\BootStrapper\\BootStrapper.csproj"
             },
@@ -1564,6 +1641,12 @@
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\EventMessages\\EventMessages.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\EventMessages\\EventMessages.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Entities\\GenSoft.Entities.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Entities\\GenSoft.Entities.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Interface\\GenSoft.Interface.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Interface\\GenSoft.Interface.csproj"
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionData\\RevolutionData.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionData\\RevolutionData.csproj"
@@ -1583,14 +1666,8 @@
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj"
             },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Interface\\GenSoft.Interface.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Interface\\GenSoft.Interface.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Entities\\GenSoft.Entities.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Entities\\GenSoft.Entities.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Actor.Interfaces\\Actor.Interfaces.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Actor.Interfaces\\Actor.Interfaces.csproj"
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Core.Common.UI\\Core.Common.UI.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Core.Common.UI\\Core.Common.UI.csproj"
             }
           }
         }
@@ -1623,6 +1700,28 @@
       "warningLevel": 1,
       "message": "Detected package downgrade: JB.Common.Collections.Reactive from 0.8.103-pre to 0.7.0. Reference the package directly from the project to select a different version. \r\n ViewModel.WorkFlow (>= 1.0.0) -> ViewModel.Interfaces (>= 1.0.0) -> JB.Common.Collections.Reactive (>= 0.8.103-pre) \r\n ViewModel.WorkFlow (>= 1.0.0) -> JB.Common.Collections.Reactive (>= 0.7.0)",
       "libraryId": "JB.Common.Collections.Reactive",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.6.1",
+        ".NETFramework,Version=v4.6.1/win-x64"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: JB.Common.Collections.Reactive from 0.8.103-pre to 0.7.0. Reference the package directly from the project to select a different version. \r\n ViewModel.WorkFlow (>= 1.0.0) -> Core.Common.UI (>= 1.0.0) -> JB.Common.Collections.Reactive (>= 0.8.103-pre) \r\n ViewModel.WorkFlow (>= 1.0.0) -> JB.Common.Collections.Reactive (>= 0.7.0)",
+      "libraryId": "JB.Common.Collections.Reactive",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.6.1",
+        ".NETFramework,Version=v4.6.1/win-x64"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: JB.Common.Reactive from 0.8.103-pre to 0.7.0. Reference the package directly from the project to select a different version. \r\n ViewModel.WorkFlow (>= 1.0.0) -> Core.Common.UI (>= 1.0.0) -> JB.Common.Reactive (>= 0.8.103-pre) \r\n ViewModel.WorkFlow (>= 1.0.0) -> JB.Common.Reactive (>= 0.7.0)",
+      "libraryId": "JB.Common.Reactive",
       "targetGraphs": [
         ".NETFramework,Version=v4.6.1",
         ".NETFramework,Version=v4.6.1/win-x64"

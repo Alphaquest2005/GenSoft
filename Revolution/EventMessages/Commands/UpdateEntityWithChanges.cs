@@ -13,9 +13,9 @@ namespace EventMessages.Commands
     {
         public UpdateEntityWithChanges() { }
         public Dictionary<string, dynamic> Changes { get; }
-        public IDynamicEntity Entity { get; }
+        public IDynamicEntityCore Entity { get; }
 
-        public UpdateEntityWithChanges(IDynamicEntity entity, Dictionary<string, dynamic> changes, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
+        public UpdateEntityWithChanges(IDynamicEntityCore entity, Dictionary<string, dynamic> changes, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
         {
             Contract.Requires(changes.Count > 0);
             Entity = entity;
