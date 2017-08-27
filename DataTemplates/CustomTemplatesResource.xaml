@@ -3,6 +3,7 @@
 
         <ResourceDictionary Source="Custom/HeaderVDT.xaml" />
         <ResourceDictionary Source="Custom/FooterVDT.xaml" />
+        <ResourceDictionary Source="Custom/FooterInfoRDT.xaml" />
 
         <ResourceDictionary Source="Custom/CommandDT.xaml" />
         <ResourceDictionary Source="Custom/EntityDetailRDT.xaml" />

@@ -19,11 +19,11 @@ namespace GenSoft.DBContexts
 
 		static GenSoftDBContext()
 		{
-			//if (System.ComponentModel.LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
-			//Instance.Database.EnsureDeleted();
-			//Instance.Database.EnsureCreated();
-			//CreateSeedData();
-		}
+            if (System.ComponentModel.LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
+            Instance.Database.EnsureDeleted();
+            Instance.Database.EnsureCreated();
+            CreateSeedData();
+        }
 
 		private static void CreateSeedData()
 		{
@@ -259,10 +259,10 @@ namespace GenSoft.DBContexts
 					SET IDENTITY_INSERT dbo.[ProcessStateDomainEntityTypes] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[EntityTypeViewModel] ON
-						Insert Into dbo.[EntityTypeViewModel] (Description,Id,Priority,ProcessDomainEntityTypeId,PropertyName,Symbol,ViewModelId) Values('Patient List','1','1','1','Patients','?','3')
-						Insert Into dbo.[EntityTypeViewModel] (Description,Id,Priority,ProcessDomainEntityTypeId,PropertyName,Symbol,ViewModelId) Values('Patient Details','2','3','2','PatientDetails','?','2')
+						Insert Into dbo.[EntityTypeViewModel] (Description,Id,Priority,ProcessDomainEntityTypeId,PropertyName,Symbol,ViewModelId) Values('Patient List','1','1','1','Patients','','3')
+						Insert Into dbo.[EntityTypeViewModel] (Description,Id,Priority,ProcessDomainEntityTypeId,PropertyName,Symbol,ViewModelId) Values('Patient Details','2','3','2','PatientDetails','','2')
 						Insert Into dbo.[EntityTypeViewModel] (Description,Id,Priority,ProcessDomainEntityTypeId,PropertyName,Symbol,ViewModelId) Values('Sign In','3','1','33','SignIn','?','2')
-						Insert Into dbo.[EntityTypeViewModel] (Description,Id,Priority,ProcessDomainEntityTypeId,PropertyName,Symbol,ViewModelId) Values('Vitals','4','2','9','Vitals','?','2')
+						Insert Into dbo.[EntityTypeViewModel] (Description,Id,Priority,ProcessDomainEntityTypeId,PropertyName,Symbol,ViewModelId) Values('Vitals','4','2','9','Vitals','','2')
 					SET IDENTITY_INSERT dbo.[EntityTypeViewModel] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[ViewModelCommands] ON

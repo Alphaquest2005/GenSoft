@@ -23,5 +23,8 @@ namespace ViewModels
         {
             this.WireEvents();
         }
+
+        public ReactiveProperty<ObservableList<IDynamicEntity>> Entities { get; } = new ReactiveProperty<ObservableList<IDynamicEntity>>(new ObservableList<IDynamicEntity>());
+        public ReactiveProperty<IDynamicEntity> CurrentEntity { get; } = new ReactiveProperty<IDynamicEntity>();
     }
 }

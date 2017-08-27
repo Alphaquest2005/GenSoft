@@ -33,7 +33,7 @@ namespace RevolutionData
                 var viewInfo = new ViewModelInfo
                 (
                     processId: processId,
-                    viewInfo: new EntityViewInfo($"EntityDetailsViewModel-{entityType.Name}", symbol, description,entityType),
+                    viewInfo: new EntityViewInfo($"{entityType.Name}-EntityDetailsViewModel", symbol, description,entityType),
                     subscriptions: new List<IViewModelEventSubscription<IViewModel, IEvent>>{},
                     publications: new List<IViewModelEventPublication<IViewModel, IEvent>>{},
                     commands: new List<IViewModelEventCommand<IViewModel, IEvent>>

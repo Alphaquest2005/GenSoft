@@ -10,6 +10,7 @@
 
     <DataTemplate DataType="{x:Type viewModels:SummaryListViewModel}">
         <Grid x:Name="SummaryListViewModel"
+              Tag="{Binding ViewInfo.Name}"
               Margin="10"
               Background="#4CFFFFFF">
 

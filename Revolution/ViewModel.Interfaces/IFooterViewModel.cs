@@ -8,7 +8,9 @@ namespace ViewModel.Interfaces
     
     public interface IFooterViewModel : IViewModel
     {
-        ObservableList<IDynamicEntity> Entities { get; }
+        ReactiveProperty<ObservableList<IDynamicEntity>> Entities { get; }
+
+        ReactiveProperty<IDynamicEntity> CurrentEntity { get; }
 
     }
 }

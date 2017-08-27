@@ -24,6 +24,7 @@ namespace ViewModels
         }
 
 
-        public ObservableList<IDynamicEntity> Entities { get; } = new ObservableList<IDynamicEntity>();
+        public ReactiveProperty<ObservableList<IDynamicEntity>> Entities { get; } = new ReactiveProperty<ObservableList<IDynamicEntity>>(new ObservableList<IDynamicEntity>());
+        public ReactiveProperty<IDynamicEntity> CurrentEntity { get; } = new ReactiveProperty<IDynamicEntity>();
     }
 }

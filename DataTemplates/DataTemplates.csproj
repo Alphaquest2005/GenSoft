@@ -109,6 +109,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Custom\FooterInfoRDT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Custom\SummaryInfoWDT.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

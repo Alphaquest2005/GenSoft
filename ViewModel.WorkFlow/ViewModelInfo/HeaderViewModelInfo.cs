@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reactive;
 using System.Reactive.Linq;
+using System.Windows;
 using SystemInterfaces;
+using JB.Collections.Reactive;
 using ReactiveUI;
 using RevolutionEntities.Process;
 using RevolutionEntities.ViewModels;
@@ -21,72 +24,56 @@ namespace RevolutionData
             (
             3,
             new ViewInfo("HeaderViewModel", "", ""),
-            new List<IViewModelEventSubscription<IViewModel, IEvent>>{},
+            new List<IViewModelEventSubscription<IViewModel, IEvent>>
+            {
+                new ViewEventSubscription<IHeaderViewModel, ICurrentEntityChanged>(
+                    3,
+                    e => e.Entity != null,
+                    new List<Func<IHeaderViewModel, ICurrentEntityChanged, bool>>(),
+                    (v, e) =>
+                    {
+                        Application.Current.Dispatcher.Invoke(() =>
+                        {
+                            var res = v.Entities.Value.ToList();
+                            var existingEntity = res.FirstOrDefault(x => x.EntityType.Name == e.EntityType.Name);
+                            if (existingEntity == null)
+                            {
+                                v.Entities.Value.Add(e.Entity);
+                                v.Entities.Value.Reset();
+                            }
+                            else
+                            {
+                                var idx = res.IndexOf(existingEntity);
+                                res[idx] = e.Entity;
+                                v.Entities.Value = new ObservableList<IDynamicEntity>(res);
+                            }
+                        });
+
+
+
+                    }),
+
+
+            },
             new List<IViewModelEventPublication<IViewModel, IEvent>>{},
             new List<IViewModelEventCommand<IViewModel,IEvent>>
             {
 
 
                 new ViewEventCommand<IHeaderViewModel, INavigateToView>(
-                    key:"ViewHome",
+                    key:"NavigateToView",
                     commandPredicate:new List<Func<IHeaderViewModel, bool>>{},
                     subject:s => Observable.Empty<ReactiveCommand<IViewModel, Unit>>(),
 
                     messageData: s =>
                     {
                         return new ViewEventCommandParameter(
-                            new object[] {ViewMessageConst.Instance.ViewPatientSummary},
-                            new StateCommandInfo(s.Process.Id,
-                                Context.View.Commands.NavigateToView), s.Process,
-                            s.Source);
-                    }),
-
-                new ViewEventCommand<IHeaderViewModel, INavigateToView>(
-                    key:"ViewVitals",
-                    commandPredicate:new List<Func<IHeaderViewModel, bool>>{},
-                    subject:s => Observable.Empty<ReactiveCommand<IViewModel, Unit>>(),
-
-                    messageData: s =>
-                    {
-                        return new ViewEventCommandParameter(
-                            new object[] {ViewMessageConst.Instance.ViewVitals},
-                            new StateCommandInfo(s.Process.Id,
-                                Context.View.Commands.NavigateToView), s.Process,
-                            s.Source);
-                    }),
-
-                new ViewEventCommand<IHeaderViewModel, INavigateToView>(
-                    key:"ViewPatientInfo",
-                    commandPredicate:new List<Func<IHeaderViewModel, bool>>{},
-                    subject:s => Observable.Empty<ReactiveCommand<IViewModel, Unit>>(),
-
-                    messageData: s =>
-                    {
-                        return new ViewEventCommandParameter(
-                            new object[] {ViewMessageConst.Instance.ViewPatientSummary},
+                            new object[] {$"{s.CurrentEntity.Value.EntityType.Name}-SummaryListViewModel" },
                             new StateCommandInfo(s.Process.Id,
                                 Context.View.Commands.NavigateToView), s.Process,
                             s.Source);
                     }),
                 
-
-                new ViewEventCommand<IHeaderViewModel, INavigateToView>(
-                    key:"ViewPatientResponses",
-                    commandPredicate:new List<Func<IHeaderViewModel, bool>>{},
-                    subject:s => Observable.Empty<ReactiveCommand<IViewModel, Unit>>(),
-
-                    messageData: s =>
-                    {
-                        return new ViewEventCommandParameter(
-                            new object[] {ViewMessageConst.Instance.ViewPatientResponses},
-                            new StateCommandInfo(s.Process.Id,
-                                Context.View.Commands.NavigateToView), s.Process,
-                            s.Source);
-                    }),
-                   
-
-
-
             },
             typeof(IHeaderViewModel),
             typeof(IHeaderViewModel), 0);

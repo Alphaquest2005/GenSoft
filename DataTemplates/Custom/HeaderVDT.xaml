@@ -127,16 +127,19 @@
 
         <Grid>
 
-            <TabControl Margin="100,19,0,0.333" Background="Transparent">
-
-                <TabItem>
+            <TabControl Margin="100,19,0,0.333" Background="Transparent"
+                        ItemsSource="{Binding Entities.Value, Mode=OneWay}"
+                        SelectedItem="{Binding CurrentEntity.Value}"
+                        >
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="MouseLeftButtonUp">
-                            <i:InvokeCommandAction Command="{Binding Commands[ViewHome]}" />
+                            <i:InvokeCommandAction Command="{Binding Commands[NavigateToView]}" />
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
-                    <TabItem.Header>
-
+                
+                    
+                    <TabControl.ItemTemplate>
+                    <DataTemplate>
                         <Grid Width="Auto"
                               Height="75"
                               Margin="420,0,0,0">
@@ -168,8 +171,10 @@
                                        Text="Home"
                                        TextAlignment="Center" />
                         </Grid>
-                    </TabItem.Header>
-                    <TabItem.Content>
+                    </DataTemplate>
+                </TabControl.ItemTemplate>
+                <TabControl.ContentTemplate>
+                    <DataTemplate>
                         <Grid>
                             <Grid.Background>
                                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
@@ -180,9 +185,9 @@
                             </Grid.Background>
 
                         </Grid>
-                    </TabItem.Content>
-                </TabItem>
-                <TabItem>
+                    </DataTemplate>
+                </TabControl.ContentTemplate>
+                <!--<TabItem>
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="MouseLeftButtonUp">
                             <i:InvokeCommandAction Command="{Binding Commands[ViewPatientInfo]}" />
@@ -330,7 +335,7 @@
                                     <GradientStop Offset="0.013" Color="#00D3D327" />
                                 </LinearGradientBrush>
                             </Grid.Background>
-                            <!--<TextBlock Margin="10,9,0,28.333"
+                            --><!--<TextBlock Margin="10,9,0,28.333"
                                        FontSize="14"
                                        FontWeight="Bold"
                                        Foreground="#FF193520"
@@ -357,7 +362,7 @@
                                        FontSize="16"
                                        Foreground="#FFE3FE4C"
                                        Text="Patient History"
-                                       TextAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" />-->
+                                       TextAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" />--><!--
 
                         </Grid>
                     </TabItem.Content>
@@ -492,10 +497,11 @@
                         </Grid>
                     </TabItem.Content>
 
-                </TabItem>
+                </TabItem>-->
             </TabControl>
 
 
         </Grid>
     </DataTemplate>
 </ResourceDictionary>
+
