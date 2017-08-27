@@ -30,7 +30,7 @@
                      ItemTemplate="{DynamicResource EntityDetailWDT}"
                      ItemsSource="{Binding State.Value.Entity.PropertyList}"
                      SelectedItem="{Binding CurrentProperty,  Mode=TwoWay, IsAsync=True}"/>
-            <ListBox Width="Auto"
+            <!--<ListBox Width="Auto"
                      Height="Auto"
                      Margin="10,10,10,10"
                      HorizontalAlignment="Stretch"
@@ -44,7 +44,7 @@
                         <WrapPanel IsItemsHost="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" />
                     </ItemsPanelTemplate>
                 </ListBox.ItemsPanel>
-            </ListBox>
+            </ListBox>-->
         </Grid>
 
     </DataTemplate>
