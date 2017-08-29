@@ -16,7 +16,6 @@ namespace GenSoft.Interfaces
 	{
 		int EntityViewModelId { get;}
 		int ViewModelCommandId { get;}
-		string Name { get;}
 
 
 

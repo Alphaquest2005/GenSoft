@@ -50,6 +50,8 @@ namespace Core.Common.UI
             this.RaisePropertyChanged(propertyName);
         }
 
+        public ObservableList<IDynamicEntity> ParentEntities { get; } = new ObservableList<IDynamicEntity>();
+
         private ReactiveProperty<IDynamicEntity> _currentEntity = new ReactiveProperty<IDynamicEntity>(null, ReactivePropertyMode.DistinctUntilChanged);
         public ReactiveProperty<IDynamicEntity> CurrentEntity
         {

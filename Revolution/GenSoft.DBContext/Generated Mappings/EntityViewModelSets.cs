@@ -18,13 +18,13 @@ namespace GenSoft.Mappings
 			entityBuilder.ToTable("EntityViewModelSets", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
-			entityBuilder.Property(t => t.ParentViewModelId).HasColumnName("ParentViewModelId").IsRequired();
 			entityBuilder.Property(t => t.ChildViewModelId).HasColumnName("ChildViewModelId").IsRequired();
+			entityBuilder.Property(t => t.ParentViewModelId).HasColumnName("ParentViewModelId").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
 	
 				//----------------Parent Properties
-				//entityBuilder.HasOne(p => p.EntityTypeViewModel ParentViewModel).WithMany(p => p.EntityViewModelSets).HasForeignKey(c => c.ParentViewModelId).OnDelete(DeleteBehavior.Restrict);
 				//entityBuilder.HasOne(p => p.EntityTypeViewModel ChildViewModel).WithMany(p => p.EntityViewModelSets).HasForeignKey(c => c.ChildViewModelId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.EntityTypeViewModel ParentViewModel).WithMany(p => p.EntityViewModelSets).HasForeignKey(c => c.ParentViewModelId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

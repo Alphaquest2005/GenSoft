@@ -15,7 +15,6 @@ namespace GenSoft.Entities
 	{
 		public virtual int EntityViewModelId { get; set; }
 		public virtual int ViewModelCommandId { get; set; }
-		public virtual string Name { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships

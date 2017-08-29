@@ -13,15 +13,15 @@ namespace GenSoft.Entities
 {
 	public partial class EntityViewModelSets: BaseEntity, IEntityViewModelSets
 	{
-		public virtual int ParentViewModelId { get; set; }
 		public virtual int ChildViewModelId { get; set; }
+		public virtual int ParentViewModelId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 		
 			// ---------Parent Relationships
-				public virtual EntityTypeViewModel ParentViewModel {get; set;}
 				public virtual EntityTypeViewModel ChildViewModel {get; set;}
+				public virtual EntityTypeViewModel ParentViewModel {get; set;}
 	
 
 	}

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using JB.Collections.Reactive;
 
 namespace SystemInterfaces
 {

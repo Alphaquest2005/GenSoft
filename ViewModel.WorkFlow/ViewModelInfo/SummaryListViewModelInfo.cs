@@ -58,40 +58,41 @@ namespace RevolutionData
                             {
                                 if (v.State.Value == e.State) return;
                                 v.State.Value = e.State;
+                                
                             }),
 
 
-                        new ViewEventSubscription<ISummaryListViewModel, IEntitySetWithChangesLoaded>(
-                            processId: processId,
-                            eventPredicate: e => e.EntityType == entityType,
-                            actionPredicate: new List<Func<ISummaryListViewModel, IEntitySetWithChangesLoaded, bool>>(),
-                            action: (v, e) =>
-                            {
-                                if (Application.Current == null)
-                                {
-                                    ReloadEntitySet(v, e.EntitySet, e.EntityType);
-                                }
-                                else
-                                {
-                                    Application.Current.Dispatcher.BeginInvoke(new Action(() => ReloadEntitySet(v, e.EntitySet, e.EntityType)));
-                                }
-                            }),
+                        //new ViewEventSubscription<ISummaryListViewModel, IEntitySetWithChangesLoaded>(
+                        //    processId: processId,
+                        //    eventPredicate: e => e.EntityType == entityType,
+                        //    actionPredicate: new List<Func<ISummaryListViewModel, IEntitySetWithChangesLoaded, bool>>(),
+                        //    action: (v, e) =>
+                        //    {
+                        //        if (Application.Current == null)
+                        //        {
+                        //            ReloadEntitySet(v, e.EntitySet, e.EntityType);
+                        //        }
+                        //        else
+                        //        {
+                        //            Application.Current.Dispatcher.BeginInvoke(new Action(() => ReloadEntitySet(v, e.EntitySet, e.EntityType)));
+                        //        }
+                        //    }),
 
-                        new ViewEventSubscription<ISummaryListViewModel, IEntitySetLoaded>(
-                            processId: processId,
-                            eventPredicate: e => e.EntityType == entityType,
-                            actionPredicate: new List<Func<ISummaryListViewModel, IEntitySetLoaded, bool>>(),
-                            action: (v, e) =>
-                            {
-                                if (Application.Current == null)
-                                {
-                                    ReloadEntitySet(v, e.Entities, e.EntityType);
-                                }
-                                else
-                                {
-                                    Application.Current.Dispatcher.BeginInvoke(new Action(() => ReloadEntitySet(v, e.Entities, e.EntityType)));
-                                }
-                            }),
+                        //new ViewEventSubscription<ISummaryListViewModel, IEntitySetLoaded>(
+                        //    processId: processId,
+                        //    eventPredicate: e => e.EntityType == entityType,
+                        //    actionPredicate: new List<Func<ISummaryListViewModel, IEntitySetLoaded, bool>>(),
+                        //    action: (v, e) =>
+                        //    {
+                        //        if (Application.Current == null)
+                        //        {
+                        //            ReloadEntitySet(v, e.Entities, e.EntityType);
+                        //        }
+                        //        else
+                        //        {
+                        //            Application.Current.Dispatcher.BeginInvoke(new Action(() => ReloadEntitySet(v, e.Entities, e.EntityType)));
+                        //        }
+                        //    }),
 
                         new ViewEventSubscription<ISummaryListViewModel, IEntityWithChangesUpdated>(
                             processId: processId,
@@ -151,32 +152,7 @@ namespace RevolutionData
                     },
                     commands: new List<IViewModelEventCommand<IViewModel, IEvent>>
                     {
-
-
-                        //new ViewEventCommand<ISummaryListViewModel, IGetEntitySetWithChanges>(
-                        //    key:"Search",
-                        //    commandPredicate:new List<Func<ISummaryListViewModel, bool>>
-                        //    {
-                        //        v => v.ChangeTracking.Values.Count > 0
-
-                        //    },
-                        //    subject:s => Observable.Empty<ReactiveCommand<IViewModel, Unit>>(),
-
-                        //    messageData: s =>
-                        //    {
-                        //        //ToDo: bad practise
-                        //        if (!string.IsNullOrEmpty(((dynamic)s).Field) && !string.IsNullOrEmpty(((dynamic) s).Value))
-                        //        {
-                        //            s.ChangeTracking.AddOrUpdate(((dynamic) s).Field, ((dynamic) s).Value);
-                        //        }
-
-                        //        return new ViewEventCommandParameter(
-                        //            new object[] {s.ChangeTracking.ToDictionary(x => x.Key, x => x.Value)},
-                        //            new StateCommandInfo(s.Process.Id,
-                        //                Context.Entity.Commands.LoadEntitySetWithChanges), s.Process,
-                        //            s.Source);
-                        //    }),
-
+                        
                         new ViewEventCommand<ISummaryListViewModel, IViewRowStateChanged>(
                             key:"EditEntity",
                             commandPredicate:new List<Func<ISummaryListViewModel, bool>>
@@ -197,64 +173,7 @@ namespace RevolutionData
                                     s.Source);
                             }),
 
-                        //new ViewEventCommand<ISummaryListViewModel, IUpdateEntityWithChanges>(
-                        //    key: "UpdateEntity",
-                        //    subject: v => v.ChangeTracking.DictionaryChanges,
-                        //    commandPredicate: new List<Func<ISummaryListViewModel, bool>>
-                        //    {
-                        //        v => v.ChangeTracking.Count == 1 &&  v.CurrentEntity.Value.Id != 0
-                        //             && v.ChangeTracking.First().Value != null
-                        //             && v.CurrentEntity.Value.PropertyList.FirstOrDefault(x => x.Key == v.ChangeTracking.FirstOrDefault().Key)?.Value != v.ChangeTracking.FirstOrDefault().Value
-
-                        //    },
-                        //    //TODO: Make a type to capture this info... i killing it here
-                        //    messageData: v =>
-                        //    {
-                               
-
-                        //        var msg = new ViewEventCommandParameter(
-                        //            new object[]
-                        //            {
-                        //                v.CurrentEntity.Value,
-                        //                v.ChangeTracking.ToDictionary(x => x.Key, x => x.Value)
-                        //            },
-                        //            new StateCommandInfo(v.Process.Id, Context.Entity.Commands.GetEntity), v.Process,
-                        //            v.Source);
-                        //        v.ChangeTracking.Clear();
-                        //        return msg;
-                        //    }),
-
-
-                        //new ViewEventCommand<ISummaryListViewModel, IUpdateEntityWithChanges>(
-                        //    key: "CreateEntity",
-                        //    subject: v => v.ChangeTracking.DictionaryChanges,
-                        //    commandPredicate: new List<Func<ISummaryListViewModel, bool>>
-                        //    {
-                        //        v => v.ChangeTracking.Count == v.CurrentEntity.Value.PropertyList.Count() && v.CurrentEntity.Value.Id == 0 
-                                    
-
-                        //    },
-                        //    //TODO: Make a type to capture this info... i killing it here
-                        //    messageData: v =>
-                        //    {
-
-
-                        //        var msg = new ViewEventCommandParameter(
-                        //            new object[]
-                        //            {
-                        //                v.CurrentEntity.Value,
-                        //                v.ChangeTracking.ToDictionary(x => x.Key, x => x.Value)
-                        //            },
-                        //            new StateCommandInfo(v.Process.Id, Context.Entity.Commands.GetEntity), v.Process,
-                        //            v.Source);
-                        //        v.ChangeTracking.Clear();
-                        //        return msg;
-                        //    }),
-
-
-
-
-
+                       
             },
                     viewModelType: typeof(ISummaryListViewModel),
                     orientation: typeof(IBodyViewModel),
@@ -264,13 +183,13 @@ namespace RevolutionData
                 var parentCommands = new List<IViewModelEventCommand<IViewModel, IEvent>>();
                 foreach (var p in parentEntities)
                 {
-                    parentSubscriptions.AddRange(CreateParentEntitySubscibtion(processId, p.ParentType, p.ViewParentProperty));
+                    parentSubscriptions.AddRange(CreateParentEntitySubscibtion(processId, p.ParentType, p.ParentType));
 
                 }
                 viewInfo.Subscriptions.AddRange(parentSubscriptions);
 
                 parentCommands.AddRange(CreateParentEntityCommands(parentEntities.Select(x => x.ChildProperty).ToList()));
-                parentCommands.AddRange(CreateCustomCommands(viewCommands));
+                parentCommands.AddRange(CreateCustomCommands(viewCommands, parentEntities));
 
                 viewInfo.Commands.AddRange(parentCommands);
 
@@ -284,22 +203,7 @@ namespace RevolutionData
             
         }
 
-        private static List<IViewModelEventCommand<IViewModel, IEvent>> CreateParentEntityCommands(List<string> childProperty)
-        {
-            List<IViewModelEventCommand<IViewModel, IEvent>> res = new List<IViewModelEventCommand<IViewModel, IEvent>>();
-            
-            return res;
-        }
 
-        private static List<IViewModelEventCommand<IViewModel, IEvent>> CreateCustomCommands(List<EntityViewModelCommands> viewCommands)
-        {
-            List<IViewModelEventCommand<IViewModel, IEvent>> res = new List<IViewModelEventCommand<IViewModel, IEvent>>();
-            foreach (var cmd in viewCommands)
-            {
-                 res.Add(ViewModelInfoExtensions.CreateCustomCommand<ISummaryListViewModel>(cmd.Name, cmd.ViewModelCommands));
-            }
-            return res;
-        }
 
         
 
@@ -311,10 +215,6 @@ namespace RevolutionData
             return res;
         }
 
-
-
-
-
         public static IViewModelEventSubscription<IViewModel, IEvent> ParentCurrentEntityChanged(int processId, IDynamicEntityType pEntity,string parentProperty)
         {
             return new ViewEventSubscription<ISummaryListViewModel, ICurrentEntityChanged>(
@@ -323,9 +223,30 @@ namespace RevolutionData
                 new List<Func<ISummaryListViewModel, ICurrentEntityChanged, bool>>(),
                 (v, e) =>
                 {
-                    ((Expando)v).Properties[parentProperty] = e.Entity;
+                    v.ParentEntities.AddOrUpdate(e.Entity);
                 });
         }
+        private static List<IViewModelEventCommand<IViewModel, IEvent>> CreateParentEntityCommands(List<string> childProperty)
+        {
+            List<IViewModelEventCommand<IViewModel, IEvent>> res = new List<IViewModelEventCommand<IViewModel, IEvent>>();
+            
+            return res;
+        }
+
+        private static List<IViewModelEventCommand<IViewModel, IEvent>> CreateCustomCommands(List<EntityViewModelCommands> viewCommands, List<EntityViewModelRelationship> parentEntites)
+        {
+            List<IViewModelEventCommand<IViewModel, IEvent>> res = new List<IViewModelEventCommand<IViewModel, IEvent>>();
+
+            
+            foreach (var cmd in viewCommands)
+            {
+                 res.Add(ViewModelInfoExtensions.CreateCustomCommand<ISummaryListViewModel>(cmd.ViewModelCommands, parentEntites));
+            }
+            return res;
+        }
+
+
+
 
         private static void UpdateEntitySet(ISummaryListViewModel summaryListViewModel, IEntityWithChangesUpdated msg)
         {

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 using System.Text;
 using System.Threading.Tasks;
 using SystemInterfaces;
+using Akka.Event;
 using Core.Common.UI;
 using GenSoft.Entities;
 using GenSoft.Interfaces;
@@ -18,7 +20,7 @@ namespace ViewModel.WorkFlow
 {
     public static class ViewModelInfoExtensions
     {
-        public static IViewModelEventCommand<IViewModel, IEvent> CreateCustomCommand<TViewModel>(string cmdName, ViewModelCommands cmd) where TViewModel : IEntityViewModel
+        public static IViewModelEventCommand<IViewModel, IEvent> CreateCustomCommand<TViewModel>(ViewModelCommands cmd, List<EntityViewModelRelationship> parentEntites) where TViewModel : IEntityViewModel
         {
             var cmdPredicates = new List<Func<TViewModel, bool>>();
             if (cmd.ExistingEntities) cmdPredicates.Add(v => v.CurrentEntity.Value.Id != 0);
@@ -32,12 +34,17 @@ namespace ViewModel.WorkFlow
 
             var args = new object[]
             {
-                cmdName,
+                cmd.Name,
                 cmdPredicates,
                 (Func<TViewModel, IObservable<dynamic>>) (v => v.ChangeTracking.DictionaryChanges),
                 (Func<TViewModel, IViewEventCommandParameter>) (v =>
                 {
-
+                    foreach (var p in parentEntites.Where(x => x.ParentType != null))
+                    {
+                        var parentEntity = v.ParentEntities.FirstOrDefault(x => x.EntityType.Name == p.ParentType);
+                        if (parentEntity == null) Debugger.Break();
+                        v.ChangeTracking.Add(p.ChildProperty, parentEntity.Id);
+                    }
 
                     var msg = new ViewEventCommandParameter(
                         new object[]

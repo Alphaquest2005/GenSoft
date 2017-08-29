@@ -18,7 +18,7 @@ namespace Common.DataEntites
             
         }
         
-        public ObservableList<IEntityKeyValuePair> PropertyList => new ObservableList<IEntityKeyValuePair>(this.Properties.Select(x => new EntityKeyValuePair(x.Key, x.Value) as IEntityKeyValuePair).ToList());
+        public ObservableList<IEntityKeyValuePair> PropertyList => new ObservableList<IEntityKeyValuePair>(this.Properties.Where(x => x.Key != nameof(IDynamicEntity.Id)).Select(x => new EntityKeyValuePair(x.Key, x.Value) as IEntityKeyValuePair).ToList());
 
         private string _entityName;
         public dynamic EntityName

@@ -21,6 +21,8 @@ namespace ViewModelInterfaces
 
         ReactiveProperty<RowState> RowState { get; }
 
+        ObservableList<IDynamicEntity> ParentEntities { get; }
+
     }
 
 

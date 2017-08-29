@@ -8,6 +8,7 @@ using System.Windows;
 using SystemInterfaces;
 using BootStrapper;
 using Common;
+using Common.DataEntites;
 using Common.Dynamic;
 using DomainMessages;
 using GenSoft.Entities;
@@ -25,17 +26,31 @@ namespace RevolutionData
     public class EntityDetailsViewModelInfo
     {
        
-        public static ViewModelInfo EntityDetailsViewModel(int processId, IDynamicEntityType entityType,  string symbol, string description, int priority, List<ViewModelEntity> parentEntities, List<ViewModelEntity> childEntities, List<EntityViewModelCommands> viewCommands)
+        public static ViewModelInfo EntityDetailsViewModel(int processId, IDynamicEntityType entityType,  string symbol, string description, int priority, List<EntityViewModelRelationship> viewRelationships, List<EntityViewModelCommands> viewCommands)
         {
             try
             {
-                
+                var parentEntities = viewRelationships.Where(x => x.ParentType != null && DynamicEntityType.DynamicEntityTypes.ContainsKey(x.ParentType))
+                    .Select(x => new ViewModelEntity(DynamicEntityType.DynamicEntityTypes[x.ParentType],
+                        x.ViewParentProperty, x.ParentProperty)).ToList();
+
+                var childEntities = viewRelationships.Where(x => x.ChildType != null && DynamicEntityType.DynamicEntityTypes.ContainsKey(x.ChildType))
+                    .Select(x => new ViewModelEntity(DynamicEntityType.DynamicEntityTypes[x.ChildType],
+                        x.ViewChildProperty, x.ChildProperty)).ToList();
+
                 var viewInfo = new ViewModelInfo
                 (
                     processId: processId,
                     viewInfo: new EntityViewInfo($"{entityType.Name}-EntityDetailsViewModel", symbol, description,entityType),
                     subscriptions: new List<IViewModelEventSubscription<IViewModel, IEvent>>{},
-                    publications: new List<IViewModelEventPublication<IViewModel, IEvent>>{},
+                    publications: new List<IViewModelEventPublication<IViewModel, IEvent>>
+                    {
+                        new ViewEventPublication<IEntityViewModel, ICurrentEntityChanged>(
+                            key:"CurrentEntityChanged",
+                            subject:v =>  (IObservable<dynamic>)v.CurrentEntity,//.WhenAnyValue(x => x.Value),
+                            subjectPredicate:new List<Func<IEntityViewModel, bool>>{},
+                            messageData:s => new ViewEventPublicationParameter(new object[] {s.CurrentEntity.Value},new StateEventInfo(s.Process.Id, Context.View.Events.ProcessStateLoaded),s.Process,s.Source))
+                    },
                     commands: new List<IViewModelEventCommand<IViewModel, IEvent>>
                     {
                         new ViewEventCommand<IEntityViewModel, IViewRowStateChanged>(
@@ -57,24 +72,7 @@ namespace RevolutionData
                                     s.Source);
                             }),
 
-                        //new ViewEventCommand<IEntityViewModel, IGetEntityWithChanges>(
-                        //    key:"FindEntity",
-                        //    commandPredicate:new List<Func<IEntityViewModel, bool>>
-                        //    {
-                        //        //v => v. != null
-                        //    },
-                        //    subject:s => Observable.Empty<ReactiveCommand<IViewModel, Unit>>(),
-
-                        //    messageData: s =>
-                        //    {
-                                
-
-                        //        return new ViewEventCommandParameter(
-                        //            new object[] {s.State.Value.Entity.EntityType, s.ChangeTracking.ToDictionary(x => x.Key, x => x.Value)},
-                        //            new StateCommandInfo(s.Process.Id,
-                        //                Context.Process.Commands.CurrentEntityChanged), s.Process,
-                        //            s.Source);
-                        //    }),
+                        
                     },
                     viewModelType: typeof(IEntityViewModel),
                     orientation: typeof(IBodyViewModel),
@@ -101,7 +99,7 @@ namespace RevolutionData
                 }
                 viewInfo.Subscriptions.AddRange(parentSubscriptions);
 
-                parentCommands.AddRange(CreateCustomCommands(viewCommands));
+                parentCommands.AddRange(CreateCustomCommands(viewCommands,viewRelationships));
 
                 viewInfo.Commands.AddRange(parentCommands);
 
@@ -150,12 +148,12 @@ namespace RevolutionData
             return res;
         }
 
-        private static List<IViewModelEventCommand<IViewModel, IEvent>> CreateCustomCommands(List<EntityViewModelCommands> viewCommands)
+        private static List<IViewModelEventCommand<IViewModel, IEvent>> CreateCustomCommands(List<EntityViewModelCommands> viewCommands, List<EntityViewModelRelationship> parentEntities)
         {
             List<IViewModelEventCommand<IViewModel, IEvent>> res = new List<IViewModelEventCommand<IViewModel, IEvent>>();
             foreach (var cmd in viewCommands)
             {
-                res.Add(ViewModelInfoExtensions.CreateCustomCommand<IEntityViewModel>(cmd.Name, cmd.ViewModelCommands));
+                res.Add(ViewModelInfoExtensions.CreateCustomCommand<IEntityViewModel>(cmd.ViewModelCommands, parentEntities));
             }
             return res;
         }
@@ -168,14 +166,14 @@ namespace RevolutionData
         {
             return new ViewEventSubscription<IEntityViewModel, ICurrentEntityChanged>(
                 processId,
-                e => e != null && e.EntityType.Name == pentity,
+                e => e != null && e.EntityType?.Name == pentity,
                 new List<Func<IEntityViewModel, ICurrentEntityChanged, bool>>(),
                 (v, e) =>
                 {
                     Application.Current.Dispatcher.Invoke(() =>
                     {
-                        ((dynamic) v).Properties[parentProperty] = e.Entity;
-                        v.NotifyPropertyChanged(parentProperty);
+                        v.ParentEntities.AddOrUpdate(e.Entity);
+                        //v.NotifyPropertyChanged(parentProperty);
                     });
                 });
         }

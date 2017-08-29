@@ -31,8 +31,22 @@ namespace ViewModels
         {
             if (LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
             this.WireEvents();
-            
 
+            this.State.WhenAnyValue(x => x.Value, x => x.Value.EntitySet).Subscribe(x => UpdateCurrentEntity(x));
+            this.ViewModel.EntitySet.WhenAnyValue(x => x.Value).Subscribe(x => UpdateStateEntity(x));
+
+        }
+
+        private void UpdateStateEntity(ObservableList<IDynamicEntity> dynamicEntities)
+        {
+            //if (State.Value.EntitySet != dynamicEntities)
+            //    State.Value.EntitySet = dynamicEntities;
+        }
+
+        private void UpdateCurrentEntity(Tuple<IProcessStateList, IEnumerable<IDynamicEntity>> processStateEntity)
+        {
+            if (this.ViewModel.EntitySet.Value.ToList() != processStateEntity.Item1.EntitySet.ToList())
+                this.ViewModel.EntitySet.Value = new ObservableList<IDynamicEntity>(processStateEntity.Item1.EntitySet.ToList()); 
         }
 
 
@@ -65,6 +79,7 @@ namespace ViewModels
         
 
         public ObservableDictionary<string, dynamic> ChangeTracking => this.ViewModel.ChangeTracking;
+        public ObservableList<IDynamicEntity> ParentEntities => this.ViewModel.ParentEntities;
 
         public ReactiveProperty<ObservableList<IDynamicEntity>> EntitySet => this.ViewModel.EntitySet;
 

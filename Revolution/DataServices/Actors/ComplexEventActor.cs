@@ -27,7 +27,7 @@ namespace DataServices.Actors
         public ComplexEventActor(ICreateComplexEventService msg) : base(msg.Process)
         {
             ComplexEventAction = msg.ComplexEventService.ComplexEventAction;
-            Process = msg.ComplexEventService.Process;
+            //Process = msg.ComplexEventService.Process;
             ActorId = msg.ComplexEventService.ActorId;
             foreach (var e in msg.ComplexEventService.ComplexEventAction.Events)
             {
@@ -119,7 +119,7 @@ namespace DataServices.Actors
 
         public string ActorId { get; }
         public IComplexEventAction ComplexEventAction { get; }
-        public ISystemProcess Process { get; }
+        //public ISystemProcess Process { get; }
         private readonly ConcurrentDictionary<string, IProcessSystemMessage> InMessages = new ConcurrentDictionary<string, IProcessSystemMessage>();
 
     }

@@ -76,6 +76,7 @@ namespace ViewModels
 
 
         public ObservableDictionary<string, dynamic> ChangeTracking => this.ViewModel.ChangeTracking;
+        public ObservableList<IDynamicEntity> ParentEntities => this.ViewModel.ParentEntities;
     }
 
    

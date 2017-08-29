@@ -14,8 +14,8 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IEntityViewModelSets:SystemInterfaces.IEntity  
 	{
-		int ParentViewModelId { get;}
 		int ChildViewModelId { get;}
+		int ParentViewModelId { get;}
 
 
 

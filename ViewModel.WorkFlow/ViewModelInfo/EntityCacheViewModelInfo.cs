@@ -85,7 +85,7 @@ namespace RevolutionData
         private static void ReloadEntitySet(ICacheViewModel v, IEntitySetLoaded e)
         {
             v.EntitySet.Value.Clear();
-            v.EntitySet.Value.AddRange(e.Entities);
+            v.EntitySet.Value.AddRange(e.EntitySet);
             v.EntitySet.Value.Reset();
         }
 

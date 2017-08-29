@@ -10,6 +10,6 @@ namespace SystemInterfaces
     
     public interface IEntitySetLoaded: IEntityRequest
     {
-        IList<IDynamicEntity> Entities { get; }
+        IList<IDynamicEntity> EntitySet { get; }
     }
 }

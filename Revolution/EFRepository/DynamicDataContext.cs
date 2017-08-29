@@ -139,27 +139,31 @@ namespace EFRepository
         {
             using (var ctx = new GenSoftDBContext())
             {
-                var res = ctx.EntityAttribute
-                    .Include(x => x.Attributes)
-                    .Include(x => x.Entity.EntityAttribute)
-                    .AsNoTracking()
-                    .Where(x => x.Entity.EntityType.Type.Name == msg.EntityType.Name);
+                var entityType = msg.EntityType;
+                var changes = msg.Changes;
+                var viewTypeId = ctx.EntityView
+                    .FirstOrDefault(x => x.EntityType.Type.Name == entityType.Name)?.Id;
 
-                res = msg.Changes.Aggregate(res, (current, c) => current.Where(x => x.Entity.EntityAttribute.Any(z => z.Attributes.Name == c.Key && z.Value == (string)c.Value)));
+                var entityTypeId = ctx.EntityView
+                    .FirstOrDefault(x => x.EntityType.Type.Name == entityType.Name)?.BaseEntityTypeId;
 
-                var entities = res.Select(x => new DynamicEntity(msg.EntityType, x.Id, x.Entity.EntityAttribute.Select(z => new {z.Attributes.Name, z.Value}).ToDictionary(q => q.Name, q=> q.Value as object)) as IDynamicEntity)
-                     .ToList();
-                if (entities.Any())
-                {
+                var viewEntityAttributes = GetViewEntityAttributes(ctx, viewTypeId);
+
+                var res = GetEntities(ctx, entityTypeId).Include(x => x.EntityAttribute).ThenInclude(x => x.Attributes)
+                    .AsQueryable();
+                res = changes.Aggregate(res,
+                    (current, c) => current.Where(
+                        x => x.EntityAttribute.Any(z => z.Attributes.Name == c.Key && z.Value.ToString() == c.Value.ToString())));
+
+                var entities = GetViewEntities(entityType, res, viewEntityAttributes).ToList();
+                //var entities = res.Select(x => new DynamicEntity(msg.EntityType, x.Id, x.Entity.EntityAttribute.Select(z => new {z.Attributes.Name, z.Value}).ToDictionary(q => q.Name, q=> q.Value as object)) as IDynamicEntity)
+                //     .ToList();
+                
                     EventMessageBus.Current.Publish(
                         new EntitySetWithChangesLoaded(msg.EntityType,entities, msg.Changes,
                             new StateEventInfo(msg.Process.Id, EntityEvents.Events.EntityFound), msg.Process,
                             Source), Source);
-                }
-                else
-                {
-                    // not found
-                }
+               
             }
         }
 

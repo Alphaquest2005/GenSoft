@@ -10,12 +10,12 @@ namespace EventMessages.Events
     public class EntitySetLoaded : ProcessSystemMessage, IEntitySetLoaded
     {
         public EntitySetLoaded() { }
-        public IList<IDynamicEntity> Entities { get; }
+        public IList<IDynamicEntity> EntitySet { get; }
         
 
         public EntitySetLoaded(IDynamicEntityType entityType, IList<IDynamicEntity> entities, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
         {
-            Entities = entities;
+            EntitySet = entities;
             EntityType = entityType;
         }
         public IDynamicEntityType EntityType { get; }

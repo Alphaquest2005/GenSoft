@@ -171,6 +171,8 @@ namespace Core.Common.UI
             this.RaisePropertyChanged(propertyName);
         }
 
+        public ObservableList<IDynamicEntity> ParentEntities { get; } = new ObservableBindingList<IDynamicEntity>();
+
         private ObservableBindingList<IDynamicEntity> _changeTrackingList = new ObservableBindingList<IDynamicEntity>();
         private ReactiveProperty<ObservableList<IDynamicEntity>> _entitySet = new ReactiveProperty<ObservableList<IDynamicEntity>>(new ObservableList<IDynamicEntity>());
 

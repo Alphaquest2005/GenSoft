@@ -129,6 +129,8 @@ namespace RevolutionData
             return new ProcessAction(
                 action: async cp =>
                     {
+                        //v.EntitySet.Value.Add(entityType.DefaultEntity());
+                        cp.Messages["EntityViewSet"].EntitySet.Add(entityType.DefaultEntity());
                         var ps = new ProcessStateList(
                              process: cp.Actor.Process,
                              entity: ((List<IDynamicEntity>)cp.Messages["EntityViewSet"].EntitySet).FirstOrDefault(),
@@ -181,7 +183,7 @@ namespace RevolutionData
 
                     var key = viewProperty;
                     
-                    var value = cp.Messages["CurrentEntity"].Entity.Properties[currentProperty];
+                    var value = cp.Messages["CurrentEntity"].Entity[currentProperty];
                     var changes = new Dictionary<string, dynamic>() { {key,value} };
                     return await Task.Run(() => new GetEntitySetWithChanges("ExactMatch", entityType,changes,
                         new StateCommandInfo(cp.Actor.Process.Id, Context.Entity.Commands.GetEntity),

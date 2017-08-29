@@ -329,11 +329,16 @@ namespace Process.WorkFlow
                 return new ComplexEventAction(
                     key: $"UpdateStateList-{entityType.Name}",
                     processId: processId,
+                    actionTrigger: ActionTrigger.Any,
                     events: new List<IProcessExpectedEvent>
                     {
                             new ProcessExpectedEvent<IEntitySetWithChangesLoaded>(
                         "EntityViewSet",processId, e => e.EntitySet != null && e.EntityType == entityType, expectedSourceType: new SourceType(typeof(IEntityViewRepository)),
-                        processInfo: new StateEventInfo(processId, Entity.Events.EntitySetLoaded))
+                        processInfo: new StateEventInfo(processId, Entity.Events.EntitySetLoaded)),
+
+                        new ProcessExpectedEvent<IEntitySetLoaded>(
+                            "EntityViewSet",processId, e => e.EntitySet != null && e.EntityType == entityType, expectedSourceType: new SourceType(typeof(IEntityViewRepository)),
+                            processInfo: new StateEventInfo(processId, Entity.Events.EntitySetLoaded))
                     },
                     expectedMessageType: typeof(IProcessStateList),
                     action: ProcessActions.UpdateEntityViewStateList(entityType),
