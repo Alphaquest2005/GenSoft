@@ -84,3 +84,5 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Common\obj\x64\Debug\Common.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\obj\x64\Debug\Common.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\x64\Debug\BootStrapper.dll.config
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\obj\x64\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\x64\Debug\GenSoft.Interfaces.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\x64\Debug\GenSoft.Interfaces.pdb

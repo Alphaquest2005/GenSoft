@@ -46,6 +46,7 @@ namespace Core.Common.UI
             _instance = this;
         }
 
+        
         private void UpdateLocalState(IProcessStateList state)
         {
             if (state == null) return;

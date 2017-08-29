@@ -7,6 +7,7 @@ using System.Reactive;
 using SystemInterfaces;
 using Common;
 using Common.Dynamic;
+using JB.Collections.Reactive;
 using Reactive.Bindings;
 using ReactiveUI;
 using RevolutionEntities.Process;
@@ -48,6 +49,7 @@ namespace Core.Common.UI
         }
 
         public ReactiveProperty<RowState> RowState { get; } = new ReactiveProperty<RowState>(SystemInterfaces.RowState.Loaded);
+        public ObservableList<IViewModel> ViewModels { get; } = new ObservableBindingList<IViewModel>();
 
         public override bool TryGetMember(GetMemberBinder binder, out object result)
         {

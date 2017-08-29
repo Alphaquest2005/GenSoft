@@ -44,6 +44,7 @@ namespace Core.Common.UI
             set { this.RaiseAndSetIfChanged(ref _state, value); }
         }
 
+        
         public void NotifyPropertyChanged(string propertyName)
         {
             this.RaisePropertyChanged(propertyName);

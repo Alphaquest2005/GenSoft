@@ -14,6 +14,7 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IEntityType:SystemInterfaces.IEntity  
 	{
+		string EntitySetName { get;}
 
 
 

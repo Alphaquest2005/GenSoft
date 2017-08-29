@@ -28,6 +28,7 @@ namespace RevolutionEntities.ViewModels
         public Type ViewModelType { get; }
         public Type Orientation { get; }
         public int Priority { get; }
+        public List<IViewModelInfo> ViewModelInfos { get; } = new List<IViewModelInfo>();
     }
 
     public class ViewInfo : IViewInfo

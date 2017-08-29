@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Reactive;
 using SystemInterfaces;
 using Common;
+using JB.Collections.Reactive;
 using Reactive.Bindings;
 using ReactiveUI;
 using RevolutionEntities.Process;
@@ -43,6 +44,8 @@ namespace Core.Common.UI
         public Type Orientation { get; }
         public Type ViewModelType { get; }
         public int Priority { get; }
+
+        public ObservableList<IViewModel> ViewModels { get; } = new ObservableBindingList<IViewModel>();
 
         public Dictionary<string, ReactiveCommand<IViewModel, Unit>> Commands { get; } = new Dictionary<string, ReactiveCommand<IViewModel, Unit>>();
 

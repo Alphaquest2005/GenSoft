@@ -231,7 +231,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EntityPropertyId" Type="int" Nullable="false" />
           <Property Name="RowId" Type="int" Nullable="false" />
-          <Property Name="Value" Type="varchar(max)" Nullable="false" />
+          <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <Association Name="FK_ApplicationEntities_Applications">
           <End Role="Applications" Type="Self.Applications" Multiplicity="1">
@@ -352,7 +352,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_EntityViewEntityProperties_EntityViewProperties">
-          <End Role="EntityViewProperties" Type="Self.EntityViewProperties" Multiplicity="1" />
+          <End Role="EntityViewProperties" Type="Self.EntityViewProperties" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="EntityViewEntityProperties" Type="Self.EntityViewEntityProperties" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="EntityViewProperties">
@@ -392,7 +394,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_EntityViewPropertyFunction_Functions">
-          <End Role="Functions" Type="Self.Functions" Multiplicity="1" />
+          <End Role="Functions" Type="Self.Functions" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="EntityViewPropertyFunction" Type="Self.EntityViewPropertyFunction" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Functions">
@@ -442,7 +446,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_EntityViewViewProperties_EntityViewProperties1">
-          <End Role="EntityViewProperties" Type="Self.EntityViewProperties" Multiplicity="1" />
+          <End Role="EntityViewProperties" Type="Self.EntityViewProperties" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="EntityViewViewProperties" Type="Self.EntityViewViewProperties" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="EntityViewProperties">
@@ -454,7 +460,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_FunctionBody_Functions">
-          <End Role="Functions" Type="Self.Functions" Multiplicity="1" />
+          <End Role="Functions" Type="Self.Functions" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="FunctionBody" Type="Self.FunctionBody" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Functions">
@@ -466,7 +474,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_FunctionParameters_Functions">
-          <End Role="Functions" Type="Self.Functions" Multiplicity="1" />
+          <End Role="Functions" Type="Self.Functions" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="FunctionParameters" Type="Self.FunctionParameters" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Functions">
@@ -502,7 +512,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_FunctionReturnType_Functions">
-          <End Role="Functions" Type="Self.Functions" Multiplicity="1" />
+          <End Role="Functions" Type="Self.Functions" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="FunctionReturnType" Type="Self.FunctionReturnType" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Functions">
@@ -1228,7 +1240,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="EntityPropertyId" Type="Int32" Nullable="false" />
           <Property Name="RowId" Type="Int32" Nullable="false" />
-          <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="EntityProperty" Relationship="AmoebaDBModel.FK_TestData_EntityProperties" FromRole="TestValue" ToRole="EntityProperty" />
         </EntityType>
         <Association Name="FK_TestData_EntityProperties">

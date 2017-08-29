@@ -19,10 +19,10 @@ namespace GenSoft.Mappings
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.MachineId).HasColumnName("MachineId").IsRequired();
-			entityBuilder.Property(t => t.SourceTypeId).HasColumnName("SourceTypeId").IsRequired();
-			entityBuilder.Property(t => t.Name).HasColumnName("Name").IsRequired().HasMaxLength(Int32.MaxValue);
-			entityBuilder.Property(t => t.ProcessId).HasColumnName("ProcessId").IsRequired();
 			entityBuilder.Property(t => t.SourceGuid).HasColumnName("SourceGuid").IsRequired();
+			entityBuilder.Property(t => t.Name).HasColumnName("Name").IsRequired().HasMaxLength(Int32.MaxValue);
+			entityBuilder.Property(t => t.SourceTypeId).HasColumnName("SourceTypeId").IsRequired();
+			entityBuilder.Property(t => t.ProcessId).HasColumnName("ProcessId").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
 				entityBuilder.HasMany(x => x.Message).WithOne(p => p.MessageSource).HasForeignKey(c => c.MessageSourceId).OnDelete(DeleteBehavior.Restrict);
 	

@@ -15,6 +15,8 @@ namespace GenSoft.Interfaces
 	public partial interface IViewModelTypes:SystemInterfaces.IEntity  
 	{
 		string Name { get;}
+		bool List { get;}
+		bool DomainEntity { get;}
 
 
 

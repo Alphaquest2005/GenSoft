@@ -8,11 +8,12 @@
                     xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
                     mc:Ignorable="d">
 
-    <DataTemplate x:Name="PatientDetailsInfoVDT" DataType="{x:Type viewModels:EntityDetailsViewModel}">
+    <DataTemplate x:Name="EntityDetailsListVDT" DataType="{x:Type viewModels:EntityDetailsViewModel}">
         <DataTemplate.Resources>
             <converters:NullVisibilityConverter x:Key="NullVisibilityConverter" />
         </DataTemplate.Resources>
-        <ContentControl Focusable="True" Content="{Binding}">
+        <StackPanel Orientation="Horizontal">
+        <ContentControl Focusable="True" Content="{Binding}" Width="Auto" Height="Auto" Margin="5">
             <ContentControl.Style>
             <Style TargetType="{x:Type ContentControl}">
 
@@ -52,6 +53,35 @@
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </ContentControl>
+            <TabControl Width="Auto" Height="Auto" ItemsSource="{Binding ViewModels}" Background="#7FFFFFFF" TabStripPlacement="Left" Margin="5">
+                <TabControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Width="200" Height="100">
+                            <TextBlock Margin="0,0,0,72"
+                                       FontSize="20"
+                                       FontWeight="Bold"
+                                       Text="{Binding ViewInfo.Name}"
+                                       TextAlignment="left" />
+                            <TextBlock Margin="0,20,0,72"
+                                       FontSize="11"
+                                       FontWeight="Bold"
+                                       Text="{Binding ViewInfo.Description}"
+                                       TextAlignment="Right" />
+                            <TextBlock Margin="0,42,0,0"
+                                       FontFamily="Segoe UI Symbol"
+                                       FontSize="36"
+                                       Text="{Binding ViewInfo.Symbol}"
+                                       TextAlignment="Center" />
+                        </Grid>
+                    </DataTemplate>
+                </TabControl.ItemTemplate>
+                <TabControl.ContentTemplate>
+                    <DataTemplate>
+                        <ContentControl Content="{Binding}"/>
+                    </DataTemplate>
+                </TabControl.ContentTemplate>
 
+            </TabControl>
+        </StackPanel>
     </DataTemplate>
 </ResourceDictionary>

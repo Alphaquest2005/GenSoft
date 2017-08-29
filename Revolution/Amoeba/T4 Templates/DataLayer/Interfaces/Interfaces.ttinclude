@@ -24,13 +24,13 @@
 
 			
 
-		    foreach (var entityView in entity.Entity.EntityViews)
-		    {
-		        var vtpl = new EntityViewInterfaceTemplate(entityView, app.Name);
-				vtpl.Output.Project = Path.Combine(appFolder, settings["Project"]) ;
-				vtpl.Output.File = settings["Folder"] + @"\EntityViews\" + entityView.Name + ".cs";
-				vtpl.Render(); 
-		    }
+		   // foreach (var entityView in entity.Entity.EntityViews)
+		   // {
+		   //     var vtpl = new EntityViewInterfaceTemplate(entityView, app.Name);
+			//	vtpl.Output.Project = Path.Combine(appFolder, settings["Project"]) ;
+		//		vtpl.Output.File = settings["Folder"] + @"\EntityViews\" + entityView.Name + ".cs";
+		//		vtpl.Render(); 
+		//    }
 			
 		}
 

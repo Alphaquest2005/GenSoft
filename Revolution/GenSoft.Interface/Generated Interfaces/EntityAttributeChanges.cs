@@ -16,6 +16,7 @@ namespace GenSoft.Interfaces
 	{
 		int PredecessorId { get;}
 		int SuccessorId { get;}
+		DateTime EntryDateTime { get;}
 
 
 

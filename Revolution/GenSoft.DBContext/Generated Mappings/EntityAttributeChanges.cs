@@ -20,6 +20,7 @@ namespace GenSoft.Mappings
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.PredecessorId).HasColumnName("PredecessorId").IsRequired();
 			entityBuilder.Property(t => t.SuccessorId).HasColumnName("SuccessorId").IsRequired();
+			entityBuilder.Property(t => t.EntryDateTime).HasColumnName("EntryDateTime").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
 	
 				//----------------Parent Properties

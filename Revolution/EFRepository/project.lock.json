@@ -675,6 +675,7 @@
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
           "BootStrapper": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
       },
@@ -1517,6 +1518,7 @@
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
           "BootStrapper": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
       },

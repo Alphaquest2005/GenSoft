@@ -15,8 +15,8 @@ namespace GenSoft.Interfaces
 	public partial interface IEntityViewModelCommands:SystemInterfaces.IEntity  
 	{
 		int EntityViewModelId { get;}
-		string Name { get;}
 		int ViewModelCommandId { get;}
+		string Name { get;}
 
 
 

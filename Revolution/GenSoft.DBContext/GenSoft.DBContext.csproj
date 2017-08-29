@@ -75,6 +75,7 @@
     <Compile Include="Generated Mappings\EntityTypeViewModel.cs" />
     <Compile Include="Generated Mappings\EntityView.cs" />
     <Compile Include="Generated Mappings\EntityViewModelCommands.cs" />
+    <Compile Include="Generated Mappings\EntityViewModelSets.cs" />
     <Compile Include="Generated Mappings\Event.cs" />
     <Compile Include="Generated Mappings\Machine.cs" />
     <Compile Include="Generated Mappings\Message.cs" />

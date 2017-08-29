@@ -15,6 +15,7 @@ namespace GenSoft.Entities
 	{
 		public virtual int PredecessorId { get; set; }
 		public virtual int SuccessorId { get; set; }
+		public virtual DateTime EntryDateTime { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships

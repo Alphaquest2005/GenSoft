@@ -476,7 +476,7 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="EntityPropertyId" Type="Int32" Nullable="false" />
     <Property Name="RowId" Type="Int32" Nullable="false" />
-    <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="EntityProperty" Relationship="AmoebaDBModel.FK_TestData_EntityProperties" FromRole="TestValue" ToRole="EntityProperty" />
   </EntityType>
   <Association Name="FK_TestData_EntityProperties">

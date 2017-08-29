@@ -20,7 +20,7 @@ namespace ViewModel.Interfaces
         Type ViewModelType { get; }
         Type Orientation { get; }
         int Priority { get; }
-        
+        List<IViewModelInfo> ViewModelInfos { get; }
     }
 
     public interface IViewInfo

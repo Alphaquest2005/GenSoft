@@ -15,8 +15,8 @@ namespace GenSoft.Interfaces
 	public partial interface IViewModelCommands:SystemInterfaces.IEntity  
 	{
 		int CommandTypeId { get;}
-		bool ExistingEntities { get;}
 		bool RequireAllFields { get;}
+		bool ExistingEntities { get;}
 
 
 

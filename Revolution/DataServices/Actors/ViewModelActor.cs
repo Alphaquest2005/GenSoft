@@ -43,9 +43,9 @@ namespace DataServices.Actors
         {
             try
             {
-                var concreteVM = BootStrapper.BootStrapper.Container.GetExportedTypes<TViewModel>().FirstOrDefault() ?? BootStrapper.BootStrapper.Container.GetExportedType(vmInfo.ViewModelInfo.ViewModelType);
-
-                var vm =(TViewModel) Activator.CreateInstance( concreteVM, new object[] {vmInfo.Process,vmInfo.ViewModelInfo.ViewInfo, vmInfo.ViewModelInfo.Subscriptions, vmInfo.ViewModelInfo.Publications, vmInfo.ViewModelInfo.Commands, vmInfo.ViewModelInfo.Orientation, vmInfo.ViewModelInfo.Priority });
+                var process = vmInfo.Process;
+                var viewInfo = vmInfo.ViewModelInfo;
+                var vm = CreateViewModel<TViewModel>(process, viewInfo);
                 EventMessageBus.Current.Publish(new ViewModelCreated<TViewModel>(vm, new StateEventInfo(vmInfo.Process.Id, RevolutionData.Context.ViewModel.Events.ViewModelCreated), vmInfo.Process, Source), Source);
                 EventMessageBus.Current.Publish(new ViewModelCreated<IViewModel>(vm, new StateEventInfo(vmInfo.Process.Id, RevolutionData.Context.ViewModel.Events.ViewModelCreated), vmInfo.Process, Source), Source);
                 //dynamic dvm = new DynamicViewModel<TViewModel>(vm);
@@ -61,6 +61,29 @@ namespace DataServices.Actors
                                                                         source: Source, processInfo: new StateEventInfo(vmInfo.Process.Id, RevolutionData.Context.Process.Events.Error)), Source);
             }
            
+        }
+
+      
+
+        public static TViewModel CreateViewModel<TViewModel>(ISystemProcess vmInfoProcess, IViewModelInfo vmInfo) where TViewModel : IViewModel
+        {
+            var concreteVM = BootStrapper.BootStrapper.Container.GetExportedTypes<TViewModel>().FirstOrDefault() ??
+                             BootStrapper.BootStrapper.Container.GetExportedType(vmInfo.ViewModelType);
+
+            var vm = (TViewModel) Activator.CreateInstance(concreteVM,
+                new object[]
+                {
+                    vmInfoProcess, vmInfo.ViewInfo, vmInfo.Subscriptions,
+                    vmInfo.Publications, vmInfo.Commands, vmInfo.Orientation,
+                    vmInfo.Priority
+                });
+            foreach (var v in vmInfo.ViewModelInfos)
+            {
+                var cvm = (IViewModel)typeof(ViewModelActor).GetMethod("CreateViewModel").MakeGenericMethod(v.ViewModelType)
+                    .Invoke(null, new object[] { vmInfoProcess, v });
+                vm.ViewModels.Add(cvm);
+            }
+            return vm;
         }
     }
 

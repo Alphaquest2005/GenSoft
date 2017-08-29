@@ -290,6 +290,7 @@
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
           "BootStrapper": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
       },
@@ -755,6 +756,7 @@
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
           "BootStrapper": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
       },
@@ -1639,6 +1641,9 @@
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Common\\Common.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Common\\Common.csproj"
             },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Core.Common.UI\\Core.Common.UI.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Core.Common.UI\\Core.Common.UI.csproj"
+            },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\EventMessages\\EventMessages.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\EventMessages\\EventMessages.csproj"
             },
@@ -1665,9 +1670,6 @@
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Core.Common.UI\\Core.Common.UI.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Core.Common.UI\\Core.Common.UI.csproj"
             }
           }
         }
@@ -1698,17 +1700,6 @@
       "code": "NU1605",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Detected package downgrade: JB.Common.Collections.Reactive from 0.8.103-pre to 0.7.0. Reference the package directly from the project to select a different version. \r\n ViewModel.WorkFlow (>= 1.0.0) -> ViewModel.Interfaces (>= 1.0.0) -> JB.Common.Collections.Reactive (>= 0.8.103-pre) \r\n ViewModel.WorkFlow (>= 1.0.0) -> JB.Common.Collections.Reactive (>= 0.7.0)",
-      "libraryId": "JB.Common.Collections.Reactive",
-      "targetGraphs": [
-        ".NETFramework,Version=v4.6.1",
-        ".NETFramework,Version=v4.6.1/win-x64"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
       "message": "Detected package downgrade: JB.Common.Collections.Reactive from 0.8.103-pre to 0.7.0. Reference the package directly from the project to select a different version. \r\n ViewModel.WorkFlow (>= 1.0.0) -> Core.Common.UI (>= 1.0.0) -> JB.Common.Collections.Reactive (>= 0.8.103-pre) \r\n ViewModel.WorkFlow (>= 1.0.0) -> JB.Common.Collections.Reactive (>= 0.7.0)",
       "libraryId": "JB.Common.Collections.Reactive",
       "targetGraphs": [
@@ -1722,6 +1713,17 @@
       "warningLevel": 1,
       "message": "Detected package downgrade: JB.Common.Reactive from 0.8.103-pre to 0.7.0. Reference the package directly from the project to select a different version. \r\n ViewModel.WorkFlow (>= 1.0.0) -> Core.Common.UI (>= 1.0.0) -> JB.Common.Reactive (>= 0.8.103-pre) \r\n ViewModel.WorkFlow (>= 1.0.0) -> JB.Common.Reactive (>= 0.7.0)",
       "libraryId": "JB.Common.Reactive",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.6.1",
+        ".NETFramework,Version=v4.6.1/win-x64"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: JB.Common.Collections.Reactive from 0.8.103-pre to 0.7.0. Reference the package directly from the project to select a different version. \r\n ViewModel.WorkFlow (>= 1.0.0) -> ViewModel.Interfaces (>= 1.0.0) -> JB.Common.Collections.Reactive (>= 0.8.103-pre) \r\n ViewModel.WorkFlow (>= 1.0.0) -> JB.Common.Collections.Reactive (>= 0.7.0)",
+      "libraryId": "JB.Common.Collections.Reactive",
       "targetGraphs": [
         ".NETFramework,Version=v4.6.1",
         ".NETFramework,Version=v4.6.1/win-x64"

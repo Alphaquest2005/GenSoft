@@ -20,56 +20,74 @@ namespace ViewModel.WorkFlow
             {
                 { "SummaryListViewModel", v =>
                                             {
+                                                try
+                                                {
                                                 return SummaryListViewModelInfo.SummaryListViewModel(v.ProcessStateDomainEntityTypes.ProcessState.ProcessId,
-                                                    DynamicEntityType.DynamicEntityTypes[v.ProcessStateDomainEntityTypes.DomainEntityType.EntityType.Type.Name], v.Symbol, v.Description, v.Priority,
-                                                    v.ProcessStateDomainEntityTypes
-                                                        .DomainEntityType
-                                                        .EntityType
-                                                        .EntityTypeAttributes
-                                                        .SelectMany(x => x.ChildEntitys).DistinctBy(x => x.Id)
-                                                        .Select(x => new EntityViewModelRelationship()
-                                                        {
-                                                            ParentType = x.ParentEntity.EntityType.Type.Name,
-                                                            ChildType = x.ChildEntity.EntityType.Type.Name,
-                                                            ParentProperty = x.ParentEntity.Attributes.Name,
-                                                            ChildProperty = x.ChildEntity.Attributes.Name
-                                                        }).ToList(),
-                                                    v.EntityViewModelCommands.DistinctBy(x => x.Id).ToList());
+                                                        DynamicEntityType.DynamicEntityTypes[v.ProcessStateDomainEntityTypes.DomainEntityType.EntityType.Type.Name], v.Symbol, v.Description, v.Priority,
+                                                        v.ProcessStateDomainEntityTypes
+                                                            .DomainEntityType
+                                                            .EntityType
+                                                            .EntityTypeAttributes
+                                                            .SelectMany(x => x.ChildEntitys).DistinctBy(x => x.Id)
+                                                            .Select(x => new EntityViewModelRelationship()
+                                                            {
+                                                                ParentType = x.ParentEntity.EntityType.Type.Name,
+                                                                ChildType = x.ChildEntity.EntityType.Type.Name,
+                                                                ParentProperty = x.ParentEntity.Attributes.Name,
+                                                                ChildProperty = x.ChildEntity.Attributes.Name
+                                                            }).ToList(),
+                                                        v.EntityViewModelCommands.DistinctBy(x => x.Id).ToList());
+                                                }
+                                                catch (Exception e)
+                                                {
+                                                    Console.WriteLine(e);
+                                                    throw;
+                                                }
+                                                
                                             }},
                 {
                     "EntityViewModel",
                     v =>
                     {
-                        return EntityDetailsViewModelInfo.EntityDetailsViewModel
-                        (
-                            v.ProcessStateDomainEntityTypes.ProcessState.ProcessId,
-                            DynamicEntityType.DynamicEntityTypes[
-                                v.ProcessStateDomainEntityTypes.DomainEntityType.EntityType.Type.Name], v.Symbol,
-                            v.Description, v.Priority,
-                            parentEntities: v.ProcessStateDomainEntityTypes
-                                .DomainEntityType
-                                .EntityType
-                                .EntityTypeAttributes
-                                .SelectMany(x => x.ChildEntitys).DistinctBy(x => x.ChildEntityId)
-                                .Where(x => DynamicEntityType.DynamicEntityTypes.ContainsKey(x.ParentEntity.EntityType.Type.Name))
-                                .Select(x => new ViewModelEntity()
-                                {
-                                    EntityType = DynamicEntityType.DynamicEntityTypes[x.ParentEntity.EntityType.Type.Name],
-                                    ViewProperty = v.PropertyName
-                                }).ToList(),
-                            childEntities: v.ProcessStateDomainEntityTypes
-                                .DomainEntityType
-                                .EntityType
-                                .EntityTypeAttributes
-                                .SelectMany(x => x.ChildEntitys).DistinctBy(x => x.ChildEntityId)
-                                .Where(x => DynamicEntityType.DynamicEntityTypes.ContainsKey(x.ChildEntity.EntityType.Type.Name))
-                                .Select(x => new ViewModelEntity()
-                                {
-                                    EntityType = DynamicEntityType.DynamicEntityTypes[x.ChildEntity.EntityType.Type.Name],
-                                    ViewProperty = v.PropertyName
-                                }).ToList(),
-                            viewCommands:v.EntityViewModelCommands.DistinctBy(x => x.Id).ToList()
-                         );
+                        try
+                        {
+                            return EntityDetailsViewModelInfo.EntityDetailsViewModel
+                                                    (
+                                                        v.ProcessStateDomainEntityTypes.ProcessState.ProcessId,
+                                                        DynamicEntityType.DynamicEntityTypes[
+                                                            v.ProcessStateDomainEntityTypes.DomainEntityType.EntityType.Type.Name], v.Symbol,
+                                                        v.Description, v.Priority,
+                                                        parentEntities: v.ProcessStateDomainEntityTypes
+                                                            .DomainEntityType
+                                                            .EntityType
+                                                            .EntityTypeAttributes
+                                                            .SelectMany(x => x.ChildEntitys).DistinctBy(x => x.ChildEntityId)
+                                                            .Where(x =>x.ParentEntity != null && DynamicEntityType.DynamicEntityTypes.ContainsKey(x.ParentEntity.EntityType.Type.Name))
+                                                            .Select(x => new ViewModelEntity()
+                                                            {
+                                                                EntityType = DynamicEntityType.DynamicEntityTypes[x.ParentEntity.EntityType.Type.Name],
+                                                                ViewProperty = v.PropertyName
+                                                            }).ToList(),
+                                                        childEntities: v.ProcessStateDomainEntityTypes
+                                                            .DomainEntityType
+                                                            .EntityType
+                                                            .EntityTypeAttributes
+                                                            .SelectMany(x => x.ChildEntitys).DistinctBy(x => x.ChildEntityId)
+                                                            .Where(x => x.ChildEntity != null && DynamicEntityType.DynamicEntityTypes.ContainsKey(x.ChildEntity.EntityType.Type.Name))
+                                                            .Select(x => new ViewModelEntity()
+                                                            {
+                                                                EntityType = DynamicEntityType.DynamicEntityTypes[x.ChildEntity.EntityType.Type.Name],
+                                                                ViewProperty = v.PropertyName
+                                                            }).ToList(),
+                                                        viewCommands:v.EntityViewModelCommands.DistinctBy(x => x.Id).ToList()
+                                                     );
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e);
+                            throw;
+                        }
+                        
                     }
                 }
             };

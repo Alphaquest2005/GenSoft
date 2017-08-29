@@ -341,6 +341,7 @@
 ..\GenSoft.DBContext\Generated Mappings\EntityTypeViewModel.cs
 ..\GenSoft.DBContext\Generated Mappings\EntityView.cs
 ..\GenSoft.DBContext\Generated Mappings\EntityViewModelCommands.cs
+..\GenSoft.DBContext\Generated Mappings\EntityViewModelSets.cs
 ..\GenSoft.DBContext\Generated Mappings\Event.cs
 ..\GenSoft.DBContext\Generated Mappings\Machine.cs
 ..\GenSoft.DBContext\Generated Mappings\Message.cs
@@ -387,6 +388,7 @@
 ..\GenSoft.Entities\Generated Entities\EntityTypeViewModel.cs
 ..\GenSoft.Entities\Generated Entities\EntityView.cs
 ..\GenSoft.Entities\Generated Entities\EntityViewModelCommands.cs
+..\GenSoft.Entities\Generated Entities\EntityViewModelSets.cs
 ..\GenSoft.Entities\Generated Entities\Event.cs
 ..\GenSoft.Entities\Generated Entities\Machine.cs
 ..\GenSoft.Entities\Generated Entities\Message.cs
@@ -438,14 +440,7 @@
 ..\GenSoft.Interface\Generated Interfaces\EntityTypeViewModel.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityView.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityViewModelCommands.cs
-..\GenSoft.Interface\Generated Interfaces\EntityViews\Entities.cs
-..\GenSoft.Interface\Generated Interfaces\EntityViews\EntityListView.cs
-..\GenSoft.Interface\Generated Interfaces\EntityViews\EntityRelationsView.cs
-..\GenSoft.Interface\Generated Interfaces\EntityViews\EntityTypeAttributesView.cs
-..\GenSoft.Interface\Generated Interfaces\EntityViews\EntityViewEntity.cs
-..\GenSoft.Interface\Generated Interfaces\EntityViews\ProcessComplexStateView.cs
-..\GenSoft.Interface\Generated Interfaces\EntityViews\ProcessInfo.cs
-..\GenSoft.Interface\Generated Interfaces\EntityViews\ProcessStateView.cs
+..\GenSoft.Interface\Generated Interfaces\EntityViewModelSets.cs
 ..\GenSoft.Interface\Generated Interfaces\Event.cs
 ..\GenSoft.Interface\Generated Interfaces\Machine.cs
 ..\GenSoft.Interface\Generated Interfaces\Message.cs

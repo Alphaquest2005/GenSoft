@@ -74,6 +74,7 @@
     <Compile Include="Generated Entities\EntityTypeViewModel.cs" />
     <Compile Include="Generated Entities\EntityView.cs" />
     <Compile Include="Generated Entities\EntityViewModelCommands.cs" />
+    <Compile Include="Generated Entities\EntityViewModelSets.cs" />
     <Compile Include="Generated Entities\Event.cs" />
     <Compile Include="Generated Entities\Machine.cs" />
     <Compile Include="Generated Entities\Message.cs" />

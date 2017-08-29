@@ -5,6 +5,7 @@ using System.Reactive;
 using System.Text;
 using System.Threading.Tasks;
 using SystemInterfaces;
+using JB.Collections.Reactive;
 using Reactive.Bindings;
 using ReactiveUI;
 
@@ -26,5 +27,6 @@ namespace ViewModel.Interfaces
         Type Orientation { get; }
         Type ViewModelType { get; }
         int Priority { get; }
+        ObservableList<IViewModel> ViewModels { get; }
     }
 }

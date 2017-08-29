@@ -68,6 +68,7 @@
     <Compile Include="Generated Interfaces\EntityTypeViewModel.cs" />
     <Compile Include="Generated Interfaces\EntityView.cs" />
     <Compile Include="Generated Interfaces\EntityViewModelCommands.cs" />
+    <Compile Include="Generated Interfaces\EntityViewModelSets.cs" />
     <Compile Include="Generated Interfaces\Event.cs" />
     <Compile Include="Generated Interfaces\Machine.cs" />
     <Compile Include="Generated Interfaces\Message.cs" />
