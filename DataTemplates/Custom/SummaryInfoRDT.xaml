@@ -11,47 +11,26 @@
             <converters:NullVisibilityConverter x:Key="NullVisibilityConverter" />
         </DataTemplate.Resources>
 
-        <Grid Width="469" Height="80">
+        <Grid Width="469"
+              Height="Auto">
             <Grid.Background>
                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
                     <GradientStop Offset="0.907" Color="#33000000" />
                     <GradientStop Offset="0.069" Color="#19FFFFFF" />
                 </LinearGradientBrush>
             </Grid.Background>
-            <TextBlock Width="264"
-                       Height="37"
-                       Margin="10,10,0,0"
-                       HorizontalAlignment="Left"
-                       VerticalAlignment="Top"
-                       FontSize="18.667"
-                       Text="{Binding PropertyList[0].Value,
-                                      Mode=OneWay, TargetNullValue='Create New ...'}" />
-            <TextBlock Width="264"
-                       Height="27"
-                       Margin="10,52,0,0"
-                       HorizontalAlignment="Left"
-                       VerticalAlignment="Top"
-                       FontSize="16"
-                       Text="{Binding PropertyList[1].Value,
-                                      Mode=OneWay}" />
-            <TextBlock Width="159"
-                       Height="27"
-                       Margin="282,52,0,0"
-                       HorizontalAlignment="Left"
-                       VerticalAlignment="Top"
-                       FontSize="16"
-                       Text="{Binding PropertyList[2].Value,
-                                      Mode=OneWay}" />
-            <TextBlock Width="147"
-                       Height="27"
-                       Margin="282,10,0,0"
-                       HorizontalAlignment="Left"
-                       VerticalAlignment="Top"
-                       FontSize="14"
-                       FontWeight="Bold"
-                       Text="{Binding PropertyList[3].Value,
-                                      Mode=OneWay}"
-                       TextWrapping="NoWrap" />
+
+            <ListBox Width="Auto"
+                     Height="Auto"
+                     Margin="10,48,10,10"
+                     HorizontalAlignment="Stretch"
+                     VerticalAlignment="Top"
+                     Background="#33FFFFFF"
+                     IsSynchronizedWithCurrentItem="True"
+                     ItemTemplate="{DynamicResource EntityDetailRDT}"
+                     ItemsSource="{Binding PropertyList}"
+                     SelectedItem="{Binding  DataContext.CurrentProperty,  RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}"/>
+
         </Grid>
 
     </DataTemplate>

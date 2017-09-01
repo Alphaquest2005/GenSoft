@@ -73,6 +73,10 @@
     <Compile Include="Generated Mappings\EntityType.cs" />
     <Compile Include="Generated Mappings\EntityTypeAttributes.cs" />
     <Compile Include="Generated Mappings\EntityTypeViewModel.cs" />
+    <Compile Include="Generated Mappings\EntityTypeViewModelAttributeGridProperty.cs" />
+    <Compile Include="Generated Mappings\EntityTypeViewModelAttributeLabelProperty.cs" />
+    <Compile Include="Generated Mappings\EntityTypeViewModelAttributes.cs" />
+    <Compile Include="Generated Mappings\EntityTypeViewModelAttributeValueProperty.cs" />
     <Compile Include="Generated Mappings\EntityView.cs" />
     <Compile Include="Generated Mappings\EntityViewModelCommands.cs" />
     <Compile Include="Generated Mappings\Event.cs" />

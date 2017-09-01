@@ -34,7 +34,7 @@ namespace Core.Common.UI
             State.Value = new ProcessStateEntity(process, viewInfo.EntityType.DefaultEntity(), new StateInfo(process.Id, "IntialState", "Inital","first op"));
         }
 
-        public IEntityKeyValuePair CurrentProperty { get; } = new EntityKeyValuePair(null, null);
+        public IEntityKeyValuePair CurrentProperty { get; } = new EntityKeyValuePair(null, null, new ViewAttributeDisplayProperties(new AttributeDisplayProperties(new Dictionary<string, string>(), new Dictionary<string, string>(), new Dictionary<string, string>()), new AttributeDisplayProperties(new Dictionary<string, string>(), new Dictionary<string, string>(), new Dictionary<string, string>())));
         public ObservableDictionary<string, dynamic> ChangeTracking { get; } = new ObservableDictionary<string, dynamic>();
 
         private ReactiveProperty<IProcessStateEntity> _state = new ReactiveProperty<IProcessStateEntity>(null, ReactivePropertyMode.DistinctUntilChanged);

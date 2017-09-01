@@ -339,6 +339,10 @@
 ..\GenSoft.DBContext\Generated Mappings\EntityType.cs
 ..\GenSoft.DBContext\Generated Mappings\EntityTypeAttributes.cs
 ..\GenSoft.DBContext\Generated Mappings\EntityTypeViewModel.cs
+..\GenSoft.DBContext\Generated Mappings\EntityTypeViewModelAttributeGridProperty.cs
+..\GenSoft.DBContext\Generated Mappings\EntityTypeViewModelAttributeLabelProperty.cs
+..\GenSoft.DBContext\Generated Mappings\EntityTypeViewModelAttributes.cs
+..\GenSoft.DBContext\Generated Mappings\EntityTypeViewModelAttributeValueProperty.cs
 ..\GenSoft.DBContext\Generated Mappings\EntityView.cs
 ..\GenSoft.DBContext\Generated Mappings\EntityViewModelCommands.cs
 ..\GenSoft.DBContext\Generated Mappings\Event.cs
@@ -385,6 +389,10 @@
 ..\GenSoft.Entities\Generated Entities\EntityType.cs
 ..\GenSoft.Entities\Generated Entities\EntityTypeAttributes.cs
 ..\GenSoft.Entities\Generated Entities\EntityTypeViewModel.cs
+..\GenSoft.Entities\Generated Entities\EntityTypeViewModelAttributeGridProperty.cs
+..\GenSoft.Entities\Generated Entities\EntityTypeViewModelAttributeLabelProperty.cs
+..\GenSoft.Entities\Generated Entities\EntityTypeViewModelAttributes.cs
+..\GenSoft.Entities\Generated Entities\EntityTypeViewModelAttributeValueProperty.cs
 ..\GenSoft.Entities\Generated Entities\EntityView.cs
 ..\GenSoft.Entities\Generated Entities\EntityViewModelCommands.cs
 ..\GenSoft.Entities\Generated Entities\Event.cs
@@ -436,6 +444,10 @@
 ..\GenSoft.Interface\Generated Interfaces\EntityType.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityTypeAttributes.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityTypeViewModel.cs
+..\GenSoft.Interface\Generated Interfaces\EntityTypeViewModelAttributeGridProperty.cs
+..\GenSoft.Interface\Generated Interfaces\EntityTypeViewModelAttributeLabelProperty.cs
+..\GenSoft.Interface\Generated Interfaces\EntityTypeViewModelAttributes.cs
+..\GenSoft.Interface\Generated Interfaces\EntityTypeViewModelAttributeValueProperty.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityView.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityViewModelCommands.cs
 ..\GenSoft.Interface\Generated Interfaces\Event.cs

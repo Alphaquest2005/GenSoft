@@ -34,6 +34,10 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.EntityType> EntityType { get; set; }
 		public DbSet<Entities.EntityTypeAttributes> EntityTypeAttributes { get; set; }
 		public DbSet<Entities.EntityTypeViewModel> EntityTypeViewModel { get; set; }
+		public DbSet<Entities.EntityTypeViewModelAttributeGridProperty> EntityTypeViewModelAttributeGridProperty { get; set; }
+		public DbSet<Entities.EntityTypeViewModelAttributeLabelProperty> EntityTypeViewModelAttributeLabelProperty { get; set; }
+		public DbSet<Entities.EntityTypeViewModelAttributes> EntityTypeViewModelAttributes { get; set; }
+		public DbSet<Entities.EntityTypeViewModelAttributeValueProperty> EntityTypeViewModelAttributeValueProperty { get; set; }
 		public DbSet<Entities.EntityView> EntityView { get; set; }
 		public DbSet<Entities.EntityViewModelCommands> EntityViewModelCommands { get; set; }
 		public DbSet<Entities.Event> Event { get; set; }
@@ -87,6 +91,10 @@ namespace GenSoft.DBContexts
 				EntityTypeMap.Map(modelBuilder.Entity<Entities.EntityType>());
 				EntityTypeAttributesMap.Map(modelBuilder.Entity<Entities.EntityTypeAttributes>());
 				EntityTypeViewModelMap.Map(modelBuilder.Entity<Entities.EntityTypeViewModel>());
+				EntityTypeViewModelAttributeGridPropertyMap.Map(modelBuilder.Entity<Entities.EntityTypeViewModelAttributeGridProperty>());
+				EntityTypeViewModelAttributeLabelPropertyMap.Map(modelBuilder.Entity<Entities.EntityTypeViewModelAttributeLabelProperty>());
+				EntityTypeViewModelAttributesMap.Map(modelBuilder.Entity<Entities.EntityTypeViewModelAttributes>());
+				EntityTypeViewModelAttributeValuePropertyMap.Map(modelBuilder.Entity<Entities.EntityTypeViewModelAttributeValueProperty>());
 				EntityViewMap.Map(modelBuilder.Entity<Entities.EntityView>());
 				EntityViewModelCommandsMap.Map(modelBuilder.Entity<Entities.EntityViewModelCommands>());
 				EventMap.Map(modelBuilder.Entity<Entities.Event>());

@@ -10,7 +10,7 @@
         <DataTemplate.Resources>
             <converters:NullVisibilityConverter x:Key="NullVisibilityConverter" />
         </DataTemplate.Resources>
-        <Grid  >
+        <Grid Visibility="{Binding DisplayProperties.ReadProperties.GridProperties[Visibility], TargetNullValue={x:Static Visibility.Visible}}" >
             <TextBlock Width="Auto"
                        Height="24"
                        Margin="10,25,0,0"

@@ -66,6 +66,10 @@
     <Compile Include="Generated Interfaces\EntityType.cs" />
     <Compile Include="Generated Interfaces\EntityTypeAttributes.cs" />
     <Compile Include="Generated Interfaces\EntityTypeViewModel.cs" />
+    <Compile Include="Generated Interfaces\EntityTypeViewModelAttributeGridProperty.cs" />
+    <Compile Include="Generated Interfaces\EntityTypeViewModelAttributeLabelProperty.cs" />
+    <Compile Include="Generated Interfaces\EntityTypeViewModelAttributes.cs" />
+    <Compile Include="Generated Interfaces\EntityTypeViewModelAttributeValueProperty.cs" />
     <Compile Include="Generated Interfaces\EntityView.cs" />
     <Compile Include="Generated Interfaces\EntityViewModelCommands.cs" />
     <Compile Include="Generated Interfaces\Event.cs" />

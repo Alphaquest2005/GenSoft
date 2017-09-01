@@ -19,12 +19,28 @@ namespace SystemInterfaces
     }
 
 
-    public interface IEntityKeyValuePair: INotifyPropertyChanged
+    public interface IEntityKeyValuePair : INotifyPropertyChanged
     {
         string Key { get; }
         bool IsEntityId { get; }
         bool IsEntityName { get; }
-       dynamic Value { get; }
+        dynamic Value { get; }
+        IViewAttributeDisplayProperties DisplayProperties { get; }
+
+    }
+
+    public interface IViewAttributeDisplayProperties
+    {
+        IAttributeDisplayProperties ReadProperties { get; }
+        IAttributeDisplayProperties WriteProperties { get; }
+
+    }
+
+    public interface IAttributeDisplayProperties
+    {
+        Dictionary<string, string> GridProperties { get; }
+        Dictionary<string, string> LabelProperties { get; }
+        Dictionary<string, string> ValueProperties { get; }
     }
 
     public interface IEntity:IEntityId
