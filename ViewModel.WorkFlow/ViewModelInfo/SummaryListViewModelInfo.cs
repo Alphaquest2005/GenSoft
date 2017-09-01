@@ -13,6 +13,7 @@ using Common.Dynamic;
 using GenSoft.Entities;
 using GenSoft.Interfaces;
 using JB.Collections.Reactive;
+using MoreLinq;
 using ReactiveUI;
 using RevolutionEntities.Process;
 using RevolutionEntities.ViewModels;
@@ -29,7 +30,7 @@ namespace RevolutionData
     
     public class SummaryListViewModelInfo
     {
-        public static ViewModelInfo SummaryListViewModel(int processId,IDynamicEntityType entityType, string symbol, string description, int priority, List<EntityViewModelRelationship> parentEntities, List<EntityViewModelCommands> viewCommands)
+        public static ViewModelInfo SummaryListViewModel(int processId,IDynamicEntityType entityType, string symbol, string description, int priority, List<EntityViewModelRelationship> viewRelationships, List<EntityViewModelCommands> viewCommands)
         {
             try
             {
@@ -51,7 +52,8 @@ namespace RevolutionData
                         //    }),
 
                         new ViewEventSubscription<ISummaryListViewModel, IUpdateProcessStateList>(
-                            3,
+                            $"{entityType.Name}-IEntityWithChangesUpdated",
+                            processId,
                             e => e.EntityType == entityType,
                             new List<Func<ISummaryListViewModel, IUpdateProcessStateList, bool>>(),
                             (v,e) =>
@@ -95,6 +97,7 @@ namespace RevolutionData
                         //    }),
 
                         new ViewEventSubscription<ISummaryListViewModel, IEntityWithChangesUpdated>(
+                            key:$"{entityType.Name}-IEntityWithChangesUpdated",
                             processId: processId,
                             eventPredicate: e => e.Changes.Count > 0 && e.EntityType == entityType,
                             actionPredicate: new List<Func<ISummaryListViewModel, IEntityWithChangesUpdated, bool>>(),
@@ -111,12 +114,13 @@ namespace RevolutionData
                             }),
 
                         new ViewEventSubscription<ISummaryListViewModel, ICurrentEntityChanged>(
-                            3,
+                            $"{entityType.Name}-ICurrentEntityChanged",
+                            processId,
                             e => e.EntityType == entityType,
                             new List<Func<ISummaryListViewModel, ICurrentEntityChanged, bool>>(),
                             (v, e) =>
                             {
-                                if (v.CurrentEntity.Value?.Id == e.Entity?.Id) return;
+                                if (Equals(v.CurrentEntity.Value, e.Entity)) return;
                                 v.CurrentEntity.Value = e.Entity;
                             }),
 
@@ -181,15 +185,15 @@ namespace RevolutionData
 
                 var parentSubscriptions = new List<IViewModelEventSubscription<IViewModel, IEvent>>();
                 var parentCommands = new List<IViewModelEventCommand<IViewModel, IEvent>>();
-                foreach (var p in parentEntities)
+                foreach (var p in viewRelationships.Select(x => x.ParentType).Distinct())
                 {
-                    parentSubscriptions.AddRange(CreateParentEntitySubscibtion(processId, p.ParentType, p.ParentType));
+                    parentSubscriptions.AddRange(CreateParentEntitySubscibtion(processId, p, p));
 
                 }
                 viewInfo.Subscriptions.AddRange(parentSubscriptions);
 
-                parentCommands.AddRange(CreateParentEntityCommands(parentEntities.Select(x => x.ChildProperty).ToList()));
-                parentCommands.AddRange(CreateCustomCommands(viewCommands, parentEntities));
+                parentCommands.AddRange(CreateParentEntityCommands(viewRelationships.Select(x => x.ChildProperty).Distinct().ToList()));
+                parentCommands.AddRange(CreateCustomCommands(viewCommands, viewRelationships));
 
                 viewInfo.Commands.AddRange(parentCommands);
 
@@ -218,6 +222,7 @@ namespace RevolutionData
         public static IViewModelEventSubscription<IViewModel, IEvent> ParentCurrentEntityChanged(int processId, IDynamicEntityType pEntity,string parentProperty)
         {
             return new ViewEventSubscription<ISummaryListViewModel, ICurrentEntityChanged>(
+                $"{pEntity.Name}-ICurrentEntityChanged",
                 processId,
                 e => e != null && e.Entity?.EntityType == pEntity,
                 new List<Func<ISummaryListViewModel, ICurrentEntityChanged, bool>>(),

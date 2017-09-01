@@ -14,9 +14,9 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IMessage:SystemInterfaces.IEntity  
 	{
-		DateTime EntryDateTime { get;}
 		int MessageSourceId { get;}
 		int ProcessId { get;}
+		DateTime EntryDateTime { get;}
 
 
 

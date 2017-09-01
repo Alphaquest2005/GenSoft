@@ -13,5 +13,7 @@ namespace ViewModel.Interfaces
         Action<TViewModel, TEvent> Action { get; }
         IEnumerable<Func<TViewModel, TEvent, bool>> ActionPredicate { get; }
         Type ViewModelType { get; }
+
+        string Key { get; }
     }
 }

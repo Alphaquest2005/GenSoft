@@ -15,7 +15,7 @@ namespace RevolutionData
             0,// set to zero to prevent ViewActorInializing this view
             new ViewInfo("MainWindowViewModel", "", ""),
             new List<IViewModelEventSubscription<IViewModel, IEvent>>
-            {   new ViewEventSubscription<IMainWindowViewModel, IViewModelCreated<IScreenModel>>(1, e => e != null, new List<Func<IMainWindowViewModel, IViewModelCreated<IScreenModel>, bool>>
+            {   new ViewEventSubscription<IMainWindowViewModel, IViewModelCreated<IScreenModel>>("MainWindowViewModel-ICurrentEntityChanged",1, e => e != null, new List<Func<IMainWindowViewModel, IViewModelCreated<IScreenModel>, bool>>
             {
                 (s, e) => s.Process.Id == e.ViewModel.Process.Id 
             }, (s, e) =>

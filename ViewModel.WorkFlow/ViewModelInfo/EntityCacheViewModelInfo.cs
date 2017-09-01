@@ -22,6 +22,7 @@ namespace RevolutionData
                 subscriptions: new List<IViewModelEventSubscription<IViewModel, IEvent>>
                 {
                     new ViewEventSubscription<ICacheViewModel, IEntitySetLoaded>(
+                        key:$"{entityType.Name}-IEntitySetLoaded",
                         processId: processId,
                         eventPredicate: e => e != null && e.EntityType == entityType,
                         actionPredicate: new List<Func<ICacheViewModel, IEntitySetLoaded, bool>>(),
@@ -38,6 +39,7 @@ namespace RevolutionData
                         }),
 
                     new ViewEventSubscription<ICacheViewModel, IEntityUpdated>(
+                        key:$"{entityType.Name}-IEntityUpdated",
                         processId: processId,
                         eventPredicate: e => e != null && e.EntityType == entityType,
                         actionPredicate: new List<Func<ICacheViewModel, IEntityUpdated, bool>>(),
@@ -53,7 +55,8 @@ namespace RevolutionData
                             }
                         }),
                     new ViewEventSubscription<ICacheViewModel, ICurrentEntityChanged>(
-                            3,
+                        $"{entityType.Name}-ICurrentEntityChanged",
+                            processId,
                             e => e != null && e.EntityType == entityType,
                             new List<Func<ICacheViewModel, ICurrentEntityChanged, bool>>(),
                             (v,e) => v.CurrentEntity.Value = e.Entity),

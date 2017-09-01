@@ -20,60 +20,65 @@ namespace RevolutionData
 {
     public class FooterViewModelInfo
     {
-        public static readonly ViewModelInfo FooterViewModel = new ViewModelInfo
+        public static ViewModelInfo FooterViewModel(int processId)
+        {
+            return new ViewModelInfo
             (
-            3,
-            new ViewInfo("Footer","",""), 
-            new List<IViewModelEventSubscription<IViewModel, IEvent>>
-            {
-                new ViewEventSubscription<IFooterViewModel, ICurrentEntityChanged>(
-                    3,
-                    e => e.Entity != null,
-                    new List<Func<IFooterViewModel, ICurrentEntityChanged, bool>>(),
-                    (v, e) =>
-                    {
-                        Application.Current.Dispatcher.Invoke(() =>
+                processId,
+                new ViewInfo("Footer", "", ""),
+                new List<IViewModelEventSubscription<IViewModel, IEvent>>
+                {
+                    new ViewEventSubscription<IFooterViewModel, ICurrentEntityChanged>(
+                        "Footer-ICurrentEntityChanged",
+                        processId,
+                        e => e.Entity != null && e.Entity.EntityType.IsList && e.Entity.Id > 0 &&
+                             e.Entity.EntityType.IsParentEntity,
+                        new List<Func<IFooterViewModel, ICurrentEntityChanged, bool>>(),
+                        (v, e) =>
                         {
-                            var res = v.Entities.Value.ToList();
-                            var existingEntity = res.FirstOrDefault(x => x.EntityType.Name == e.EntityType.Name);
-                            if (existingEntity == null)
+                            Application.Current.Dispatcher.Invoke(() =>
                             {
-                                v.Entities.Value.Add(e.Entity);
-                                v.Entities.Value.Reset();
-                            }
-                            else
-                            {
-                                var idx = res.IndexOf(existingEntity);
-                                res[idx] = e.Entity;
-                                v.Entities.Value = new ObservableList<IDynamicEntity>(res);
-                            }
-                        });
-
-                        
-
-                    }),
-
-
-            },
-            new List<IViewModelEventPublication<IViewModel, IEvent>>{},
-            new List<IViewModelEventCommand<IViewModel,IEvent>>
-            {
+                                var res = v.Entities.Value.ToList();
+                                var existingEntity = res.FirstOrDefault(x => x.EntityType.Name == e.EntityType.Name);
+                                if (existingEntity == null)
+                                {
+                                    v.Entities.Value.Add(e.Entity);
+                                    v.Entities.Value.Reset();
+                                }
+                                else
+                                {
+                                    var idx = res.IndexOf(existingEntity);
+                                    res[idx] = e.Entity;
+                                    v.Entities.Value = new ObservableList<IDynamicEntity>(res);
+                                }
+                            });
 
 
-                new ViewEventCommand<IFooterViewModel, INavigateToView>(
-                    key:"NavigateToView",
-                    commandPredicate:new List<Func<IFooterViewModel, bool>>{},
-                    subject:s => Observable.Empty<ReactiveCommand<IViewModel, Unit>>(),
 
-                    messageData: s => new ViewEventCommandParameter(
-                        new object[] {$"{s.CurrentEntity.Value.EntityType.Name}-SummaryListViewModel" },
-                        new StateCommandInfo(s.Process.Id,
-                            Context.View.Commands.NavigateToView), s.Process,
-                        s.Source)),
+                        }),
 
-               
-            },
-            typeof(IFooterViewModel),
-            typeof(IFooterViewModel), 0);
+
+                },
+                new List<IViewModelEventPublication<IViewModel, IEvent>> { },
+                new List<IViewModelEventCommand<IViewModel, IEvent>>
+                {
+
+
+                    new ViewEventCommand<IFooterViewModel, INavigateToView>(
+                        key: "NavigateToView",
+                        commandPredicate: new List<Func<IFooterViewModel, bool>> {s => s.CurrentEntity.Value != null},
+                        subject: s => Observable.Empty<ReactiveCommand<IViewModel, Unit>>(),
+
+                        messageData: s => new ViewEventCommandParameter(
+                            new object[] {$"{s.CurrentEntity.Value.EntityType.Name}-SummaryListViewModel"},
+                            new StateCommandInfo(s.Process.Id,
+                                Context.View.Commands.NavigateToView), s.Process,
+                            s.Source)),
+
+
+                },
+                typeof(IFooterViewModel),
+                typeof(IFooterViewModel), 0);
+        }
     }
 }

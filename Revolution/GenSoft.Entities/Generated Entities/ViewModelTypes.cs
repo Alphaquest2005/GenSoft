@@ -13,9 +13,9 @@ namespace GenSoft.Entities
 {
 	public partial class ViewModelTypes: BaseEntity, IViewModelTypes
 	{
-		public virtual bool DomainEntity { get; set; }
-		public virtual bool List { get; set; }
 		public virtual string Name { get; set; }
+		public virtual bool List { get; set; }
+		public virtual bool DomainEntity { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships

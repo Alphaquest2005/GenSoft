@@ -67,7 +67,8 @@ namespace ActorBackBone
                     .Include(x => x.ProcessStateDomainEntityTypes).ThenInclude(x => x.EntityTypeViewModel)
                     .Include(x => x.ProcessStateDomainEntityTypes).ThenInclude(x => x.ProcessState.Process)
                     
-                    .Where(x => x.EntityType.EntityTypeAttributes.SelectMany(z => z.ParentEntitys).Any() || x.EntityType.EntityTypeAttributes.SelectMany(z => z.ChildEntitys).Any())
+                    .Where(x => 
+                                (!x.EntityType.EntityTypeAttributes.SelectMany(z => z.ChildEntitys).Any() )) //&& x.EntityType.EntityTypeAttributes.SelectMany(z => z.ParentEntitys).Any()
                     .OrderBy(x => x.Id)
                 )
                 {
@@ -79,33 +80,53 @@ namespace ActorBackBone
                         foreach (var pd in r.ProcessStateDomainEntityTypes.Where(
                             x => x.ProcessState.ProcessId == processId).DistinctBy(x => x.Id))
                         {
-                           
-                            foreach (var vm in pd.EntityTypeViewModel.DistinctBy(x => x.Id))
+                            if (pd.EntityTypeViewModel.Any())
                             {
-                               res.Add(CreateEntityViewModel(ctx, vm.Id));
+                                foreach (var vm in pd.EntityTypeViewModel.DistinctBy(x => x.Id))
+                                {
+                                    res.Add(CreateEntityViewModel(ctx, vm.Id, res));
+                                }
                             }
+                            else
+                            {
+                                DoChildViews(ctx, pd.DomainEntityTypeId, res);
+                            }
+
                         }
 
                     }
+                    if(!r.ProcessStateDomainEntityTypes.Any()) DoChildViews(ctx, r.Id, res);
                 }
             }
             return res;
         }
 
-        private static IViewModelInfo CreateEntityViewModel(GenSoftDBContext ctx, int vmId)
+        private static void DoChildViews(GenSoftDBContext ctx, int domainEntityTypeId, List<IViewModelInfo> res)
         {
-            var vm = ctx.EntityTypeViewModel.Include(x => x.ChildViewModels).ThenInclude(x => x.ChildViewModel)
-                .Include(x => x.ParentViewModels).ThenInclude(x => x.ChildViewModel).ThenInclude(x => x.ProcessStateDomainEntityTypes).ThenInclude(x => x.DomainEntityType.EntityType.EntityList)
-                .Include(x => x.ParentViewModels).ThenInclude(x => x.ChildViewModel).ThenInclude(x => x.EntityViewModelCommands).ThenInclude(x => x.ViewModelCommands.CommandTypes)
-                .Include(x => x.ParentViewModels).ThenInclude(x => x.ParentViewModel)
+            var childviewModels = ctx.EntityRelationships
+                .Include(x => x.ChildEntity.ChildEntitys)
+                .Where(x => x.ParentEntity.EntityTypeId == domainEntityTypeId)
+                .SelectMany(x => x.ChildEntity.EntityType.DomainEntityType.ProcessStateDomainEntityTypes)
+                .SelectMany(x => x.EntityTypeViewModel).Select(x => x.Id);
+            foreach (var c in childviewModels)
+            {
+                res.Add(CreateEntityViewModel(ctx, c, res));
+            }
+        }
+
+        private static IViewModelInfo CreateEntityViewModel(GenSoftDBContext ctx, int vmId, List<IViewModelInfo> viewInfos, bool isChild = false)
+        {
+            var vm = ctx.EntityTypeViewModel
                 .Include(x => x.EntityViewModelCommands).ThenInclude(x => x.ViewModelCommands.CommandTypes)
                 .Include(x => x.ProcessStateDomainEntityTypes).ThenInclude(x => x.ProcessState.Process)
                 .Include(x => x.ProcessStateDomainEntityTypes.DomainEntityType.EntityType.Type)
                 .Include(x => x.ProcessStateDomainEntityTypes.DomainEntityType.EntityType.EntityTypeAttributes).ThenInclude(x => x.EntityType.DomainEntityType)
-                .Include(x => x.ProcessStateDomainEntityTypes.DomainEntityType.EntityType.EntityTypeAttributes).ThenInclude(x => x.ParentEntitys).ThenInclude(x => x.ParentEntity.EntityType.Type)
-                .Include(x => x.ProcessStateDomainEntityTypes.DomainEntityType.EntityType.EntityTypeAttributes).ThenInclude(x => x.ParentEntitys).ThenInclude(x => x.ParentEntity.Attributes)
-                .Include(x => x.ProcessStateDomainEntityTypes.DomainEntityType.EntityType.EntityTypeAttributes).ThenInclude(x => x.ChildEntitys).ThenInclude(x => x.ChildEntity.EntityType.Type)
-                .Include(x => x.ProcessStateDomainEntityTypes.DomainEntityType.EntityType.EntityTypeAttributes).ThenInclude(x => x.ChildEntitys).ThenInclude(x => x.ChildEntity.Attributes)
+                .Include(x => x.ProcessStateDomainEntityTypes.DomainEntityType.EntityType.EntityTypeAttributes).ThenInclude(x => x.ChildEntitys).ThenInclude(x => x.ParentEntity.EntityType.Type)
+                .Include(x => x.ProcessStateDomainEntityTypes.DomainEntityType.EntityType.EntityTypeAttributes).ThenInclude(x => x.ChildEntitys).ThenInclude(x => x.ParentEntity.Attributes)
+                .Include(x => x.ProcessStateDomainEntityTypes.DomainEntityType.EntityType.EntityTypeAttributes)
+                        .ThenInclude(x => x.ParentEntitys).ThenInclude(x => x.ChildEntity.EntityType.Type)
+                .Include(x => x.ProcessStateDomainEntityTypes.DomainEntityType.EntityType.EntityTypeAttributes)
+                        .ThenInclude(x => x.ParentEntitys).ThenInclude(x => x.ChildEntity.Attributes)
                 .Include(x => x.ProcessStateDomainEntityTypes.DomainEntityType.EntityType.EntityView)
                 .Include(x => x.ProcessStateDomainEntityTypes.DomainEntityType.EntityType.DomainEntityType.DomainEntityCache)
                 .Include(x => x.ProcessStateDomainEntityTypes.DomainEntityType.EntityType.EntityList)
@@ -115,10 +136,30 @@ namespace ActorBackBone
                     x => x.List == (vm.ProcessStateDomainEntityTypes.DomainEntityType.EntityType.EntityList != null) &&
                          x.DomainEntity == true).Name;
             var res = ProcessViewModels.ProcessViewModelFactory[viewModelTypeName].Invoke(vm);
-            foreach (var cvm in vm.ParentViewModels.DistinctBy(x => x.Id))
+
+
+            
+
+            var childviewModels = ctx.EntityRelationships
+                .Include(x => x.ChildEntity.ChildEntitys)
+                .Where(x => x.ParentEntity.EntityTypeId == vm.ProcessStateDomainEntityTypes.DomainEntityTypeId)
+                .SelectMany(x => x.ChildEntity.EntityType.DomainEntityType.ProcessStateDomainEntityTypes)
+                .SelectMany(x => x.EntityTypeViewModel).Select(x => x.Id);
+
+            foreach (var cvm in childviewModels)
             {
-               res.ViewModelInfos.Add(CreateEntityViewModel(ctx, cvm.ChildViewModel.Id));
-            }
+                var v = CreateEntityViewModel(ctx, cvm,viewInfos, true);
+                if (!isChild && vm.ProcessStateDomainEntityTypes.DomainEntityType.EntityType.EntityList != null)
+                {
+                    viewInfos.Add(v);
+                }
+                else
+                {
+                    res.ViewModelInfos.Add(v);
+                }
+                    
+                }
+            
             return res;
         }
 
@@ -256,7 +297,10 @@ namespace ActorBackBone
 
         private static bool AddDynamicEntityTypes(GenSoftDBContext ctx, string entityType)
         {
-            var viewType = ctx.EntityView.Include(x => x.EntityType.Type)
+            var viewType = ctx.EntityView
+                .Include(x => x.EntityType.Type)
+                .Include(x => x.EntityType.EntityTypeAttributes).ThenInclude(x => x.ChildEntitys)
+                .Include(x => x.EntityType.EntityList)
                 .FirstOrDefault(x => x.EntityType.Type.Name == entityType);
             if (viewType == null) return false;
 
@@ -281,7 +325,7 @@ namespace ActorBackBone
                               z.Attributes.EntityId != null, z.Attributes.EntityName != null) as IEntityKeyValuePair).ToList();
 
             DynamicEntityType.DynamicEntityTypes.Add(entityType,
-                new DynamicEntityType(viewType.EntityType.Type.Name,viewType.EntityType.EntitySetName, tes));
+                new DynamicEntityType(viewType.EntityType.Type.Name,viewType.EntityType.EntitySetName, tes, viewType.EntityType.EntityList != null, viewType.EntityType.EntityTypeAttributes.Any(z => z.ChildEntitys.Any())));
             return true;
         }
 

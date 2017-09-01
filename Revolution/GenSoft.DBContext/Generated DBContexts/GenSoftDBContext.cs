@@ -36,7 +36,6 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.EntityTypeViewModel> EntityTypeViewModel { get; set; }
 		public DbSet<Entities.EntityView> EntityView { get; set; }
 		public DbSet<Entities.EntityViewModelCommands> EntityViewModelCommands { get; set; }
-		public DbSet<Entities.EntityViewModelSets> EntityViewModelSets { get; set; }
 		public DbSet<Entities.Event> Event { get; set; }
 		public DbSet<Entities.Machine> Machine { get; set; }
 		public DbSet<Entities.Message> Message { get; set; }
@@ -90,7 +89,6 @@ namespace GenSoft.DBContexts
 				EntityTypeViewModelMap.Map(modelBuilder.Entity<Entities.EntityTypeViewModel>());
 				EntityViewMap.Map(modelBuilder.Entity<Entities.EntityView>());
 				EntityViewModelCommandsMap.Map(modelBuilder.Entity<Entities.EntityViewModelCommands>());
-				EntityViewModelSetsMap.Map(modelBuilder.Entity<Entities.EntityViewModelSets>());
 				EventMap.Map(modelBuilder.Entity<Entities.Event>());
 				MachineMap.Map(modelBuilder.Entity<Entities.Machine>());
 				MessageMap.Map(modelBuilder.Entity<Entities.Message>());

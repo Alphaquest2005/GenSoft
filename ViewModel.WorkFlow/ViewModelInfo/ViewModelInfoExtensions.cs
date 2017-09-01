@@ -24,7 +24,7 @@ namespace ViewModel.WorkFlow
         {
             var cmdPredicates = new List<Func<TViewModel, bool>>();
             if (cmd.ExistingEntities) cmdPredicates.Add(v => v.CurrentEntity.Value.Id != 0);
-            else cmdPredicates.Add(v => v.CurrentEntity.Value.Id <= 0);
+            else cmdPredicates.Add(v => v.CurrentEntity.Value?.Id <= 0);
 
             if (cmd.RequireAllFields) cmdPredicates.Add(v => v.ChangeTracking.Count == v.CurrentEntity.Value.PropertyList.Count(x => x.Key != nameof(IDynamicEntity.Id)));
             else cmdPredicates.Add(v => v.ChangeTracking.Any(z => v.CurrentEntity.Value.PropertyList.FirstOrDefault(x => x.Key == z.Key)?.Value != z.Value));
@@ -43,7 +43,7 @@ namespace ViewModel.WorkFlow
                     {
                         var parentEntity = v.ParentEntities.FirstOrDefault(x => x.EntityType.Name == p.ParentType);
                         if (parentEntity == null) Debugger.Break();
-                        v.ChangeTracking.Add(p.ChildProperty, parentEntity.Id);
+                        v.ChangeTracking.AddOrUpdate(p.ChildProperty, parentEntity.Id);
                     }
 
                     var msg = new ViewEventCommandParameter(

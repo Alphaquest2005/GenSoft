@@ -239,7 +239,8 @@ namespace RevolutionData
                 {
                     var ps = new ProcessStateEntity(
                         process: cp.Actor.Process,
-                        entity: new DynamicEntity(DynamicEntityType.DynamicEntityTypes["ISignInInfo"],-1, new Dictionary<string, object>(){}),
+                        //Todo: get rid of this type name
+                        entity: new DynamicEntity(DynamicEntityType.DynamicEntityTypes["SignInInfo"],-1, new Dictionary<string, object>(){}),
                         info: new StateInfo(cp.Actor.Process.Id,
                             new State(name: "AwaitUserName", status: "Waiting for User Name",
                                 notes:

@@ -7,12 +7,13 @@ namespace RevolutionEntities.ViewModels
 {
     public class ViewModelEventSubscription<TViewModel, TEvent> :IViewModelEventSubscription<TViewModel, TEvent> where TViewModel : IViewModel where TEvent : IEvent
     {
-        protected ViewModelEventSubscription(int processId, Func<TEvent, bool> eventPredicate, IEnumerable<Func<TViewModel,TEvent, bool>> actionPredicate, Action<TViewModel, TEvent> action)
+        protected ViewModelEventSubscription(string key, int processId, Func<TEvent, bool> eventPredicate, IEnumerable<Func<TViewModel,TEvent, bool>> actionPredicate, Action<TViewModel, TEvent> action)
         {
             ProcessId = processId;
             EventPredicate = eventPredicate;
             ActionPredicate = actionPredicate;
             Action = action;
+            Key = key;
         }
 
         public Type EventType { get; } = typeof (TEvent);
@@ -20,6 +21,7 @@ namespace RevolutionEntities.ViewModels
         public Func<TEvent, bool> EventPredicate { get; }
         public IEnumerable<Func<TViewModel, TEvent, bool>> ActionPredicate { get; }
         public Type ViewModelType { get; } = typeof (TViewModel);
+        public string Key { get; }
         public int ProcessId { get; }
     }
 }

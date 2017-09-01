@@ -34,7 +34,7 @@ namespace ViewModels
 
             this.State.WhenAnyValue(x => x.Value, x => x.Value.EntitySet).Subscribe(x => UpdateCurrentEntity(x));
             this.ViewModel.EntitySet.WhenAnyValue(x => x.Value).Subscribe(x => UpdateStateEntity(x));
-
+            
         }
 
         private void UpdateStateEntity(ObservableList<IDynamicEntity> dynamicEntities)
@@ -46,8 +46,12 @@ namespace ViewModels
         private void UpdateCurrentEntity(Tuple<IProcessStateList, IEnumerable<IDynamicEntity>> processStateEntity)
         {
             if (this.ViewModel.EntitySet.Value.ToList() != processStateEntity.Item1.EntitySet.ToList())
-                this.ViewModel.EntitySet.Value = new ObservableList<IDynamicEntity>(processStateEntity.Item1.EntitySet.ToList()); 
+                this.ViewModel.EntitySet.Value = new ObservableList<IDynamicEntity>(processStateEntity.Item1.EntitySet.ToList());
+
+           
         }
+
+
 
 
         public ReactiveProperty<IProcessStateList> State => this.ViewModel.State;
@@ -75,7 +79,7 @@ namespace ViewModels
 
         ReactiveProperty<IProcessStateEntity> IEntityViewModel.State => new ReactiveProperty<IProcessStateEntity>(new ProcessStateEntity(State.Value.Process, CurrentEntity.Value, State.Value.StateInfo.ToStateInfo()));
 
-        public ReactiveProperty<IDynamicEntity> CurrentEntity => this.ViewModel.CurrentEntity;
+        public ReactiveProperty<IDynamicEntity> CurrentEntity { get { return this.ViewModel.CurrentEntity; } }
         
 
         public ObservableDictionary<string, dynamic> ChangeTracking => this.ViewModel.ChangeTracking;

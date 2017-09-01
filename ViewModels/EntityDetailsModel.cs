@@ -30,28 +30,26 @@ namespace ViewModels
         {
             if (LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
             this.WireEvents();
-            this.State.WhenAnyValue(x => x.Value, x=> x.Value.Entity).Subscribe(UpdateCurrentEntity);
+            this.State.WhenAnyValue(x => x.Value, x => x.Value.Entity).Subscribe(UpdateCurrentEntity);
             this.ViewModel.CurrentEntity.WhenAnyValue(x => x.Value).Subscribe(UpdateStateEntity);
 
         }
 
         private void UpdateStateEntity(IDynamicEntity dynamicEntity)
         {
-            if(State.Value.Entity != dynamicEntity)
-            State.Value.Entity = dynamicEntity;
+            if (!Equals(State.Value.Entity, dynamicEntity))
+                State.Value.Entity = dynamicEntity;
         }
 
         private void UpdateCurrentEntity(Tuple<IProcessStateEntity,IDynamicEntity> processStateEntity)
         {
-            if(this.ViewModel.CurrentEntity.Value != processStateEntity.Item1.Entity)
+            if(!Equals(ViewModel.CurrentEntity.Value, processStateEntity.Item1.Entity))
             this.ViewModel.CurrentEntity.Value = processStateEntity.Item1.Entity;
         }
 
 
-        public ReactiveProperty<IProcessStateEntity> State
-        {
-            get { return this.ViewModel.State; }
-        }
+        public ReactiveProperty<IProcessStateEntity> State => this.ViewModel.State;
+
         //potential problem state different from current entity!
         public ReactiveProperty<IDynamicEntity> CurrentEntity => this.ViewModel.CurrentEntity;
 
