@@ -93,6 +93,7 @@
     <Compile Include="Generated Interfaces\User.cs" />
     <Compile Include="Generated Interfaces\ViewModelCommands.cs" />
     <Compile Include="Generated Interfaces\ViewModelTypes.cs" />
+    <Compile Include="Generated Interfaces\ViewProperty.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="IPredicate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

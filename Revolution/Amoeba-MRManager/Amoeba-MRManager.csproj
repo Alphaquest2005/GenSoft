@@ -366,6 +366,7 @@
 ..\GenSoft.DBContext\Generated Mappings\User.cs
 ..\GenSoft.DBContext\Generated Mappings\ViewModelCommands.cs
 ..\GenSoft.DBContext\Generated Mappings\ViewModelTypes.cs
+..\GenSoft.DBContext\Generated Mappings\ViewProperty.cs
 ..\GenSoft.Entities\EFEntity.cs
 ..\GenSoft.Entities\Generated Entities\Action.cs
 ..\GenSoft.Entities\Generated Entities\ActionEntityType.cs
@@ -416,6 +417,7 @@
 ..\GenSoft.Entities\Generated Entities\User.cs
 ..\GenSoft.Entities\Generated Entities\ViewModelCommands.cs
 ..\GenSoft.Entities\Generated Entities\ViewModelTypes.cs
+..\GenSoft.Entities\Generated Entities\ViewProperty.cs
 </LastOutputs>
     </Content>
     <Content Include="MRManger-Interfaces.tt">
@@ -471,6 +473,7 @@
 ..\GenSoft.Interface\Generated Interfaces\User.cs
 ..\GenSoft.Interface\Generated Interfaces\ViewModelCommands.cs
 ..\GenSoft.Interface\Generated Interfaces\ViewModelTypes.cs
+..\GenSoft.Interface\Generated Interfaces\ViewProperty.cs
 </LastOutputs>
     </Content>
     <Content Include="MRManger-EntityViews.tt">

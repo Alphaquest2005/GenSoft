@@ -4,30 +4,41 @@
                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                     xmlns:viewModels="clr-namespace:ViewModels;assembly=ViewModels"
+                    xmlns:common="clr-namespace:Common;assembly=Common"
                     mc:Ignorable="d">
 
-    <DataTemplate x:Key="EntityDetailRDT" >
+    <DataTemplate x:Key="EntityDetailRDT" DataType="common:EntityKeyValuePair">
         <DataTemplate.Resources>
             <converters:NullVisibilityConverter x:Key="NullVisibilityConverter" />
+            <converters:FontConverter x:Key="FontConverter"/>
+            <converters:StringVisibilityConverter x:Key="VisibilityConverter"/>
         </DataTemplate.Resources>
-        <Grid Visibility="{Binding DisplayProperties.ReadProperties.GridProperties[Visibility], TargetNullValue={x:Static Visibility.Visible}}" >
+        <StackPanel Orientation="Horizontal" Visibility="{Binding DisplayProperties.ReadProperties.GridProperties[Visibility], TargetNullValue={x:Static Visibility.Visible}, Converter={StaticResource VisibilityConverter}}" >
             <TextBlock Width="Auto"
-                       Height="24"
-                       Margin="10,25,0,0"
+                       Height="Auto"
+                       Margin="5"
+                       Visibility="{Binding DisplayProperties.ReadProperties.LabelProperties[Visibility], TargetNullValue={x:Static Visibility.Visible}, Converter={StaticResource VisibilityConverter}}"
                        HorizontalAlignment="Left"
                        VerticalAlignment="Top"
                        Text="{Binding Key}"
-                       TextAlignment="Right" FontWeight="Bold" />
+                       TextAlignment="Right"
+                       FontSize="{Binding DisplayProperties.ReadProperties.LabelProperties[FontSize], TargetNullValue=16}"
+                       FontWeight="{Binding DisplayProperties.ReadProperties.LabelProperties[FontWeight], TargetNullValue={x:Static FontWeights.Bold}, Converter={StaticResource FontConverter}}"
+                       />
+            <!---->
             <TextBlock Width="Auto"
-                       Height="24"
+                       Height="Auto"
                        MinWidth="75"
-                       Margin="150,25,0,0"
-                       HorizontalAlignment="Left"
+                       Margin="5"
+                       HorizontalAlignment="Right"
                        VerticalAlignment="Top"
+                       FontSize="{Binding DisplayProperties.ReadProperties.LabelProperties[FontSize], TargetNullValue=16}"
+                       FontWeight="{Binding DisplayProperties.ReadProperties.LabelProperties[FontWeight], TargetNullValue={x:Static FontWeights.Bold}, Converter={StaticResource FontConverter}}"
+                       Visibility="{Binding DisplayProperties.ReadProperties.ValueProperties[Visibility], TargetNullValue={x:Static Visibility.Visible}, Converter={StaticResource VisibilityConverter}}"
                        Text="{Binding Value,Mode=OneWay,
                                     UpdateSourceTrigger=PropertyChanged,
                                     ValidatesOnDataErrors=True}" />
-        </Grid>
+        </StackPanel>
 
     </DataTemplate>
 </ResourceDictionary>

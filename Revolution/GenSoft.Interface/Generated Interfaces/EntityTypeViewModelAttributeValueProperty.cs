@@ -16,8 +16,8 @@ namespace GenSoft.Interfaces
 	{
 		int EntityTypeViewModelAttributeId { get;}
 		bool IsWriteView { get;}
-		string PropertyName { get;}
 		string Value { get;}
+		int ViewPropertyId { get;}
 
 
 

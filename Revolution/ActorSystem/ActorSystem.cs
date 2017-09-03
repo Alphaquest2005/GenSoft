@@ -334,29 +334,29 @@ namespace ActorBackBone
                                 (
 
 
-                                    ctx.EntityTypeViewModelAttributeGridProperty
+                                    ctx.EntityTypeViewModelAttributeGridProperty.Include(q => q.ViewProperty)
                                         .Where(q => q.EntityTypeViewModelAttributes.EntityTypeAttributeId == z.Id && q.IsWriteView == false)
-                                        .Select(w => new { w.PropertyName, w.Value }).ToDictionary(w => w.PropertyName, w => w.Value),
-                                    ctx.EntityTypeViewModelAttributeLabelProperty
+                                        .Select(w => new { w.ViewProperty.Name, w.Value }).ToDictionary(w => w.Name, w => w.Value),
+                                    ctx.EntityTypeViewModelAttributeLabelProperty.Include(q => q.ViewProperty)
                                         .Where(q => q.EntityTypeViewModelAttributes.EntityTypeAttributeId == z.Id && q.IsWriteView == false)
-                                        .Select(w => new { w.PropertyName, w.Value }).ToDictionary(w => w.PropertyName, w => w.Value),
-                                    ctx.EntityTypeViewModelAttributeValueProperty
+                                        .Select(w => new { w.ViewProperty.Name, w.Value }).ToDictionary(w => w.Name, w => w.Value),
+                                    ctx.EntityTypeViewModelAttributeValueProperty.Include(q => q.ViewProperty)
                                         .Where(q => q.EntityTypeViewModelAttributes.EntityTypeAttributeId == z.Id && q.IsWriteView == false)
-                                        .Select(w => new { w.PropertyName, w.Value }).ToDictionary(w => w.PropertyName, w => w.Value)
+                                        .Select(w => new { w.ViewProperty.Name, w.Value }).ToDictionary(w => w.Name, w => w.Value)
 
 
                                 ),
                                 new AttributeDisplayProperties
                                 (
-                                    ctx.EntityTypeViewModelAttributeGridProperty
+                                    ctx.EntityTypeViewModelAttributeGridProperty.Include(q => q.ViewProperty)
                                         .Where(q => q.EntityTypeViewModelAttributes.EntityTypeAttributeId == z.Id && q.IsWriteView)
-                                        .Select(w => new { w.PropertyName, w.Value }).ToDictionary(w => w.PropertyName, w => w.Value),
-                                    ctx.EntityTypeViewModelAttributeLabelProperty
+                                        .Select(w => new { w.ViewProperty.Name, w.Value }).ToDictionary(w => w.Name, w => w.Value),
+                                    ctx.EntityTypeViewModelAttributeLabelProperty.Include(q => q.ViewProperty)
                                         .Where(q => q.EntityTypeViewModelAttributes.EntityTypeAttributeId == z.Id && q.IsWriteView)
-                                        .Select(w => new { w.PropertyName, w.Value }).ToDictionary(w => w.PropertyName, w => w.Value),
-                                    ctx.EntityTypeViewModelAttributeValueProperty
+                                        .Select(w => new { w.ViewProperty.Name, w.Value }).ToDictionary(w => w.Name, w => w.Value),
+                                    ctx.EntityTypeViewModelAttributeValueProperty.Include(q => q.ViewProperty)
                                         .Where(q => q.EntityTypeViewModelAttributes.EntityTypeAttributeId == z.Id && q.IsWriteView)
-                                        .Select(w => new { w.PropertyName, w.Value }).ToDictionary(w => w.PropertyName, w => w.Value)
+                                        .Select(w => new { w.ViewProperty.Name, w.Value }).ToDictionary(w => w.Name, w => w.Value)
 
                                 )
 

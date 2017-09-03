@@ -15,14 +15,15 @@ namespace GenSoft.Entities
 	{
 		public virtual int EntityTypeViewModelAttributeId { get; set; }
 		public virtual bool IsWriteView { get; set; }
-		public virtual string PropertyName { get; set; }
 		public virtual string Value { get; set; }
+		public virtual int ViewPropertyId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 		
 			// ---------Parent Relationships
 				public virtual EntityTypeViewModelAttributes EntityTypeViewModelAttributes {get; set;}
+				public virtual ViewProperty ViewProperty {get; set;}
 	
 
 	}

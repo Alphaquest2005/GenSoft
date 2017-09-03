@@ -20,13 +20,13 @@ namespace GenSoft.Mappings
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.EntityTypeViewModelAttributeId).HasColumnName("EntityTypeViewModelAttributeId").IsRequired();
 			entityBuilder.Property(t => t.IsWriteView).HasColumnName("IsWriteView").IsRequired();
-			entityBuilder.Property(t => t.PropertyName).HasColumnName("PropertyName").IsRequired().HasMaxLength(50);
-			entityBuilder.Property(t => t.PropertyName).HasColumnName("PropertyName").IsRequired().HasMaxLength(50);
 			entityBuilder.Property(t => t.Value).HasColumnName("Value").IsRequired().HasMaxLength(50);
+			entityBuilder.Property(t => t.ViewPropertyId).HasColumnName("ViewPropertyId").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
 	
 				//----------------Parent Properties
 				//entityBuilder.HasOne(p => p.EntityTypeViewModelAttributes EntityTypeViewModelAttributes).WithMany(p => p.EntityTypeViewModelAttributeLabelProperty).HasForeignKey(c => c.EntityTypeViewModelAttributeId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.ViewProperty ViewProperty).WithMany(p => p.EntityTypeViewModelAttributeLabelProperty).HasForeignKey(c => c.ViewPropertyId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

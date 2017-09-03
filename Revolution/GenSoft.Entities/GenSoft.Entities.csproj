@@ -99,6 +99,7 @@
     <Compile Include="Generated Entities\User.cs" />
     <Compile Include="Generated Entities\ViewModelCommands.cs" />
     <Compile Include="Generated Entities\ViewModelTypes.cs" />
+    <Compile Include="Generated Entities\ViewProperty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

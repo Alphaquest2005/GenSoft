@@ -61,6 +61,7 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.User> User { get; set; }
 		public DbSet<Entities.ViewModelCommands> ViewModelCommands { get; set; }
 		public DbSet<Entities.ViewModelTypes> ViewModelTypes { get; set; }
+		public DbSet<Entities.ViewProperty> ViewProperty { get; set; }
 	
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
@@ -118,6 +119,7 @@ namespace GenSoft.DBContexts
 				UserMap.Map(modelBuilder.Entity<Entities.User>());
 				ViewModelCommandsMap.Map(modelBuilder.Entity<Entities.ViewModelCommands>());
 				ViewModelTypesMap.Map(modelBuilder.Entity<Entities.ViewModelTypes>());
+				ViewPropertyMap.Map(modelBuilder.Entity<Entities.ViewProperty>());
 			}
 	}
 }

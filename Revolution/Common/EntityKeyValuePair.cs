@@ -11,7 +11,7 @@ namespace Common
 
     public class EntityKeyValuePair : IEntityKeyValuePair
     {
-        public EntityKeyValuePair(string key, dynamic value, IViewAttributeDisplayProperties displayProperties, bool isEntityId = false, bool isEntityName = false ) 
+        public EntityKeyValuePair(string key, dynamic value, ViewAttributeDisplayProperties displayProperties, bool isEntityId = false, bool isEntityName = false ) 
         {
             Value = value;
             DisplayProperties = displayProperties;
@@ -42,9 +42,11 @@ namespace Common
             }
         }
 
+       // public ViewAttributeDisplayProperties GridVisiblity => this.DisplayProperties; //new ViewAttributeDisplayProperties(new AttributeDisplayProperties(new Dictionary<string, string>() { { "Visibility", "real shit" } }, null, null),null ); 
 
-        public IViewAttributeDisplayProperties DisplayProperties { get; }
+        public ViewAttributeDisplayProperties DisplayProperties { get; }
 
+        IViewAttributeDisplayProperties IEntityKeyValuePair.DisplayProperties => DisplayProperties;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -71,14 +73,18 @@ namespace Common
 
     public class ViewAttributeDisplayProperties : IViewAttributeDisplayProperties
     {
-        public ViewAttributeDisplayProperties(IAttributeDisplayProperties readProperties, IAttributeDisplayProperties writeProperties)
+        public ViewAttributeDisplayProperties(AttributeDisplayProperties readProperties, AttributeDisplayProperties writeProperties)
         {
             ReadProperties = readProperties;
             WriteProperties = writeProperties;
         }
 
-        public IAttributeDisplayProperties ReadProperties { get; }
-        public IAttributeDisplayProperties WriteProperties { get; }
+        public AttributeDisplayProperties ReadProperties { get; }
+        public AttributeDisplayProperties WriteProperties { get; }
+
+        IAttributeDisplayProperties IViewAttributeDisplayProperties.ReadProperties => ReadProperties;
+
+        IAttributeDisplayProperties IViewAttributeDisplayProperties.WriteProperties => WriteProperties;
     }
 
     

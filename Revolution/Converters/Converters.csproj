@@ -64,6 +64,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FontConverter.cs" />
     <Compile Include="FreezableCloneConverter.cs" />
     <Compile Include="XamlExtensions.cs" />
     <Compile Include="StringDateConverter.cs" />
