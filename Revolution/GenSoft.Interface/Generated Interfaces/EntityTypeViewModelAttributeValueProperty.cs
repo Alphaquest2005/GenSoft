@@ -15,9 +15,9 @@ namespace GenSoft.Interfaces
 	public partial interface IEntityTypeViewModelAttributeValueProperty:SystemInterfaces.IEntity  
 	{
 		int EntityTypeViewModelAttributeId { get;}
-		bool IsWriteView { get;}
-		string Value { get;}
 		int ViewPropertyId { get;}
+		string Value { get;}
+		bool IsWriteView { get;}
 
 
 

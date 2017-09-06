@@ -67,3 +67,5 @@ C:\Prism\GitRepositiory\GenSoft\DesignTimeData\obj\x64\Debug\DesignTimeData.cspr
 C:\Prism\GitRepositiory\GenSoft\DesignTimeData\obj\x64\Debug\DesignTimeData.dll
 C:\Prism\GitRepositiory\GenSoft\DesignTimeData\obj\x64\Debug\DesignTimeData.pdb
 C:\Prism\GitRepositiory\GenSoft\DesignTimeData\obj\x64\Debug\DesignTimeData.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\DesignTimeData\bin\x64\Debug\GenSoft.Interfaces.dll
+C:\Prism\GitRepositiory\GenSoft\DesignTimeData\bin\x64\Debug\GenSoft.Interfaces.pdb

@@ -14,9 +14,9 @@ namespace GenSoft.Entities
 	public partial class ViewModelCommands: BaseEntity, IViewModelCommands
 	{
 		public virtual int CommandTypeId { get; set; }
+		public virtual bool RequireAllFields { get; set; }
 		public virtual bool ExistingEntities { get; set; }
 		public virtual string Name { get; set; }
-		public virtual bool RequireAllFields { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships

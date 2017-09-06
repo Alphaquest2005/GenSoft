@@ -55,6 +55,9 @@
     <Compile Include="Generated Entities\Agent.cs" />
     <Compile Include="Generated Entities\ApplicationSetting.cs" />
     <Compile Include="Generated Entities\Attributes.cs" />
+    <Compile Include="Generated Entities\CalculatedProperties.cs" />
+    <Compile Include="Generated Entities\CalculatedPropertyParameterEntityTypes.cs" />
+    <Compile Include="Generated Entities\CalculatedPropertyParameters.cs" />
     <Compile Include="Generated Entities\Command.cs" />
     <Compile Include="Generated Entities\CommandTypes.cs" />
     <Compile Include="Generated Entities\CompositeRequest.cs" />
@@ -79,6 +82,11 @@
     <Compile Include="Generated Entities\EntityView.cs" />
     <Compile Include="Generated Entities\EntityViewModelCommands.cs" />
     <Compile Include="Generated Entities\Event.cs" />
+    <Compile Include="Generated Entities\FunctionParameterConstants.cs" />
+    <Compile Include="Generated Entities\FunctionParameters.cs" />
+    <Compile Include="Generated Entities\Functions.cs" />
+    <Compile Include="Generated Entities\FunctionSetFunctions.cs" />
+    <Compile Include="Generated Entities\FunctionSets.cs" />
     <Compile Include="Generated Entities\Machine.cs" />
     <Compile Include="Generated Entities\Message.cs" />
     <Compile Include="Generated Entities\MessageSource.cs" />
@@ -95,6 +103,7 @@
     <Compile Include="Generated Entities\StateAction.cs" />
     <Compile Include="Generated Entities\StateActionExpectedProcessState.cs" />
     <Compile Include="Generated Entities\Type.cs" />
+    <Compile Include="Generated Entities\TypeArguements.cs" />
     <Compile Include="Generated Entities\TypeParameter.cs" />
     <Compile Include="Generated Entities\User.cs" />
     <Compile Include="Generated Entities\ViewModelCommands.cs" />

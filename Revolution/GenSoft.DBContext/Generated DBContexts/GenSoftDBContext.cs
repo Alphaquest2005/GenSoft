@@ -17,6 +17,9 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.Agent> Agent { get; set; }
 		public DbSet<Entities.ApplicationSetting> ApplicationSetting { get; set; }
 		public DbSet<Entities.Attributes> Attributes { get; set; }
+		public DbSet<Entities.CalculatedProperties> CalculatedProperties { get; set; }
+		public DbSet<Entities.CalculatedPropertyParameterEntityTypes> CalculatedPropertyParameterEntityTypes { get; set; }
+		public DbSet<Entities.CalculatedPropertyParameters> CalculatedPropertyParameters { get; set; }
 		public DbSet<Entities.Command> Command { get; set; }
 		public DbSet<Entities.CommandTypes> CommandTypes { get; set; }
 		public DbSet<Entities.CompositeRequest> CompositeRequest { get; set; }
@@ -41,6 +44,11 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.EntityView> EntityView { get; set; }
 		public DbSet<Entities.EntityViewModelCommands> EntityViewModelCommands { get; set; }
 		public DbSet<Entities.Event> Event { get; set; }
+		public DbSet<Entities.FunctionParameterConstants> FunctionParameterConstants { get; set; }
+		public DbSet<Entities.FunctionParameters> FunctionParameters { get; set; }
+		public DbSet<Entities.Functions> Functions { get; set; }
+		public DbSet<Entities.FunctionSetFunctions> FunctionSetFunctions { get; set; }
+		public DbSet<Entities.FunctionSets> FunctionSets { get; set; }
 		public DbSet<Entities.Machine> Machine { get; set; }
 		public DbSet<Entities.Message> Message { get; set; }
 		public DbSet<Entities.MessageSource> MessageSource { get; set; }
@@ -57,6 +65,7 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.StateAction> StateAction { get; set; }
 		public DbSet<Entities.StateActionExpectedProcessState> StateActionExpectedProcessState { get; set; }
 		public DbSet<Entities.Type> Type { get; set; }
+		public DbSet<Entities.TypeArguements> TypeArguements { get; set; }
 		public DbSet<Entities.TypeParameter> TypeParameter { get; set; }
 		public DbSet<Entities.User> User { get; set; }
 		public DbSet<Entities.ViewModelCommands> ViewModelCommands { get; set; }
@@ -75,6 +84,9 @@ namespace GenSoft.DBContexts
 				AgentMap.Map(modelBuilder.Entity<Entities.Agent>());
 				ApplicationSettingMap.Map(modelBuilder.Entity<Entities.ApplicationSetting>());
 				AttributesMap.Map(modelBuilder.Entity<Entities.Attributes>());
+				CalculatedPropertiesMap.Map(modelBuilder.Entity<Entities.CalculatedProperties>());
+				CalculatedPropertyParameterEntityTypesMap.Map(modelBuilder.Entity<Entities.CalculatedPropertyParameterEntityTypes>());
+				CalculatedPropertyParametersMap.Map(modelBuilder.Entity<Entities.CalculatedPropertyParameters>());
 				CommandMap.Map(modelBuilder.Entity<Entities.Command>());
 				CommandTypesMap.Map(modelBuilder.Entity<Entities.CommandTypes>());
 				CompositeRequestMap.Map(modelBuilder.Entity<Entities.CompositeRequest>());
@@ -99,6 +111,11 @@ namespace GenSoft.DBContexts
 				EntityViewMap.Map(modelBuilder.Entity<Entities.EntityView>());
 				EntityViewModelCommandsMap.Map(modelBuilder.Entity<Entities.EntityViewModelCommands>());
 				EventMap.Map(modelBuilder.Entity<Entities.Event>());
+				FunctionParameterConstantsMap.Map(modelBuilder.Entity<Entities.FunctionParameterConstants>());
+				FunctionParametersMap.Map(modelBuilder.Entity<Entities.FunctionParameters>());
+				FunctionsMap.Map(modelBuilder.Entity<Entities.Functions>());
+				FunctionSetFunctionsMap.Map(modelBuilder.Entity<Entities.FunctionSetFunctions>());
+				FunctionSetsMap.Map(modelBuilder.Entity<Entities.FunctionSets>());
 				MachineMap.Map(modelBuilder.Entity<Entities.Machine>());
 				MessageMap.Map(modelBuilder.Entity<Entities.Message>());
 				MessageSourceMap.Map(modelBuilder.Entity<Entities.MessageSource>());
@@ -115,6 +132,7 @@ namespace GenSoft.DBContexts
 				StateActionMap.Map(modelBuilder.Entity<Entities.StateAction>());
 				StateActionExpectedProcessStateMap.Map(modelBuilder.Entity<Entities.StateActionExpectedProcessState>());
 				TypeMap.Map(modelBuilder.Entity<Entities.Type>());
+				TypeArguementsMap.Map(modelBuilder.Entity<Entities.TypeArguements>());
 				TypeParameterMap.Map(modelBuilder.Entity<Entities.TypeParameter>());
 				UserMap.Map(modelBuilder.Entity<Entities.User>());
 				ViewModelCommandsMap.Map(modelBuilder.Entity<Entities.ViewModelCommands>());

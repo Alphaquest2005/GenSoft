@@ -49,6 +49,9 @@
     <Compile Include="Generated Interfaces\Agent.cs" />
     <Compile Include="Generated Interfaces\ApplicationSetting.cs" />
     <Compile Include="Generated Interfaces\Attributes.cs" />
+    <Compile Include="Generated Interfaces\CalculatedProperties.cs" />
+    <Compile Include="Generated Interfaces\CalculatedPropertyParameterEntityTypes.cs" />
+    <Compile Include="Generated Interfaces\CalculatedPropertyParameters.cs" />
     <Compile Include="Generated Interfaces\Command.cs" />
     <Compile Include="Generated Interfaces\CommandTypes.cs" />
     <Compile Include="Generated Interfaces\CompositeRequest.cs" />
@@ -73,6 +76,11 @@
     <Compile Include="Generated Interfaces\EntityView.cs" />
     <Compile Include="Generated Interfaces\EntityViewModelCommands.cs" />
     <Compile Include="Generated Interfaces\Event.cs" />
+    <Compile Include="Generated Interfaces\FunctionParameterConstants.cs" />
+    <Compile Include="Generated Interfaces\FunctionParameters.cs" />
+    <Compile Include="Generated Interfaces\Functions.cs" />
+    <Compile Include="Generated Interfaces\FunctionSetFunctions.cs" />
+    <Compile Include="Generated Interfaces\FunctionSets.cs" />
     <Compile Include="Generated Interfaces\Machine.cs" />
     <Compile Include="Generated Interfaces\Message.cs" />
     <Compile Include="Generated Interfaces\MessageSource.cs" />
@@ -89,6 +97,7 @@
     <Compile Include="Generated Interfaces\StateAction.cs" />
     <Compile Include="Generated Interfaces\StateActionExpectedProcessState.cs" />
     <Compile Include="Generated Interfaces\Type.cs" />
+    <Compile Include="Generated Interfaces\TypeArguements.cs" />
     <Compile Include="Generated Interfaces\TypeParameter.cs" />
     <Compile Include="Generated Interfaces\User.cs" />
     <Compile Include="Generated Interfaces\ViewModelCommands.cs" />

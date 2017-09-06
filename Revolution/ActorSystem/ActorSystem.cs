@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.Diagnostics;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
@@ -26,6 +27,7 @@ using Utilities;
 using ViewModel.Interfaces;
 using RevolutionEntities.ViewModels;
 using ViewModel.WorkFlow;
+using Type = System.Type;
 
 namespace ActorBackBone
 {
@@ -43,6 +45,9 @@ namespace ActorBackBone
              try
             {
                 System = ActorSystem.Create("System");
+
+                BuildExpressions();
+
                 var res = GetDBComplexActions();
                 res.AddRange(complexEventActions);
 
@@ -56,6 +61,103 @@ namespace ActorBackBone
             {
                 throw;
             }
+        }
+
+        private void BuildExpressions()
+        {
+            using (var ctx = new GenSoftDBContext())
+            {
+                var lst = ctx.Functions
+                    .Include(x => x.FunctionParameters)
+                    .ToList();
+
+                foreach (var f in lst)
+                {
+                    var interpreter = new Interpreter();
+                    var returnType = CreateTypesFromDbType(f.ReturnDataTypeId);
+                    var parameters = f.FunctionParameters.DistinctBy(x => x.Id);
+                    var argType = parameters.Select(x => CreateTypesFromDbType(x.DataTypeId)).ToList();
+                    argType.Add(returnType);
+                    var expType = typeof(Func<,>).MakeGenericType(argType.ToArray());
+                    var exp = typeof(Interpreter).GetMethod("ParseAsDelegate").MakeGenericMethod(expType)
+                        .Invoke(interpreter, new object[] {f.Body, parameters.Select(x => x.Name).ToArray()});
+
+                    DynamicEntityType.Functions.Add(f.Name, exp);
+                    //var t = interpreter.ParseAsDelegate<Func<DateTime, int>>(
+                    //    "DateTime.Now.Year - x.Date.Year", "x");
+                }
+            }
+
+        }
+
+
+
+        static Dictionary<int, Type> DBTypes = new Dictionary<int, Type>();
+        private static Type CreateTypesFromDbType(int dataTypeId)
+        {
+            
+
+            var typedic = new Dictionary<Tuple<int,Type>, List<Type>>();
+            
+            using (var ctx = new GenSoftDBContext())
+            {
+                var dataType = ctx.DataType
+                                //.Include(x => x.Type).ThenInclude(x => x.ChildTypes).ThenInclude(x => x.Type.ChildTypes).ThenInclude(x => x.ChildType)
+                                //.Include(x => x.Type).ThenInclude(x => x.ChildTypes).ThenInclude(x => x.Type.ParentTypes).ThenInclude(x => x.ParentType)
+                                //.Include(x => x.Type).ThenInclude(x => x.ParentTypes).ThenInclude(x => x.Type.ParentTypes).ThenInclude(x => x.ParentType)
+                                //.Include(x => x.Type).ThenInclude(x => x.ParentTypes).ThenInclude(x => x.Type.ChildTypes).ThenInclude(x => x.ChildType)
+                                .Include(x => x.Type.Types).ThenInclude(x => x.ChildType)
+                                .Include(x => x.Type.Types).ThenInclude(x => x.ParentType)
+                    .First(x => x.Id == dataTypeId);
+                if (dataType.Type.Types.Count == 0)
+                {
+
+                    
+                    var res = GetTypeByName(dataType.Type.Name);
+                    if(res == null) Debugger.Break();
+                    DBTypes.Add(dataTypeId, res[0]);
+                    return res[0];
+                }
+                else
+                {
+                    
+                    foreach (var typeArguements in dataType.Type.Types.DistinctBy(x => x.Id))
+                    {
+                        var parentType = new Tuple<int, Type>(typeArguements.ParentTypeId,CreateTypesFromDbType(typeArguements.ParentTypeId));
+                        var childType = CreateTypesFromDbType(typeArguements.ChildTypeId);
+                        if (typedic.ContainsKey(parentType))
+                        {
+                            typedic[parentType].Add(childType);
+                        }
+                        else
+                        {
+                            typedic.Add(parentType, new List<Type>(){childType});
+                        }
+                            
+                    }
+
+                    if(typedic.Count > 1) Debugger.Break();
+
+                    var t = typedic.First();
+                       var res = t.Key.Item2.MakeGenericType(t.Value.ToArray());
+                       DBTypes.Add(dataType.Id, res);
+                    return res;
+
+                }
+            }
+        }
+
+        public static Type[] GetTypeByName(string className)
+        {
+            var returnVal = new List<Type>();
+
+            foreach (var a in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                var assemblyTypes = a.GetTypes();
+                returnVal.AddRange(assemblyTypes.Where(t => t.Name.ToLower() == className.ToLower() ));//|| t.FullName.ToLower().Contains(className.ToLower()) 
+            }
+
+            return returnVal.ToArray();
         }
 
         private List<IViewModelInfo> GetDBViewInfos()
@@ -376,42 +478,6 @@ namespace ActorBackBone
 
                 var processInfos = ctx.Process.Select(x => ProcessExpressions.CreateProcessInfo(x)).ToList();
                 List<IComplexEventAction> dbComplexAction = new List<IComplexEventAction>(); 
-                //var dbComplexAction = ctx.ProcessComplexState
-                //    .Select(x => new BuildingSpecification<ComplexEventAction>()
-                //    {
-                //        Properties = new PropertyBag()
-                //        {
-                //            {nameof(IComplexEventAction.Key), x.ProcessState.Name },
-                //            {nameof(IComplexEventAction.ProcessId), x.ProcessState.ProcessId },
-                //            {nameof(IComplexEventAction.ExpectedMessageType), null },//ToDo: define MessageType
-                //            {nameof(IComplexEventAction.ActionTrigger), Enum.Parse(typeof(ActionTrigger), x.ProcessStateTrigger.Name) },
-                //            {nameof(IComplexEventAction.ProcessInfo),
-                //                new BuildingSpecification<ProcessInfo>(){
-                //                    Properties = new PropertyBag()
-                //                    {
-                //                        {nameof(IProcessInfo.Name), x.ProcessState.Process.Name },
-                //                        {nameof(IProcessInfo.Description), x.ProcessState.Process.Description },
-                //                        {nameof(IProcessInfo.ParentProcessId), x.ProcessState.Process.ParentProcessId },
-                //                        {nameof(IProcessInfo.Symbol), x.ProcessState.Process.Symbol },
-                //                        {nameof(IProcessInfo.Id), x.ProcessState.Process.Id },
-                //                        {nameof(IProcessInfo.UserId), x.ProcessState.Process.UserId },
-                //                    }}.Build() },
-                //            {nameof(IComplexEventAction.Action),
-                //                new BuildingSpecification<ProcessAction>()
-                //                {
-                //                    Properties = new PropertyBag()
-                //                    {
-                //                        {nameof(IProcessAction.ExpectedSourceType), new SourceType(typeof(IComplexEventService)) },
-                //                        {nameof(IProcessAction.Action), ProcessActions
-                //                         },
-                //                    }
-                //                } },
-
-                //        }
-                //    }
-
-                //                    .Build() as IComplexEventAction).ToList();
-
 
                 Intialize(autoContinue, machineInfo, processInfos, dbComplexAction, viewInfos);
             }

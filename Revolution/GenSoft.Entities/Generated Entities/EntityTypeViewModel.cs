@@ -13,11 +13,11 @@ namespace GenSoft.Entities
 {
 	public partial class EntityTypeViewModel: BaseEntity, IEntityTypeViewModel
 	{
-		public virtual string Description { get; set; }
-		public virtual int Priority { get; set; }
 		public virtual int ProcessDomainEntityTypeId { get; set; }
-		public virtual string PropertyName { get; set; }
+		public virtual int Priority { get; set; }
 		public virtual string Symbol { get; set; }
+		public virtual string Description { get; set; }
+		public virtual string PropertyName { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships

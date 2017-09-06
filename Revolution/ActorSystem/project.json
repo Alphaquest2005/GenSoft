@@ -1,7 +1,7 @@
 ﻿{
   "dependencies": {
     "Akka": "1.3.0",
-    "DynamicExpresso.Core": "1.3.3.5"
+    "DynamicExpresso.Core": "1.3.3.6"
   },
   "frameworks": {
     "net461": {}

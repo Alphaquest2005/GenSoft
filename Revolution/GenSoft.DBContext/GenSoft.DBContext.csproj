@@ -56,6 +56,9 @@
     <Compile Include="Generated Mappings\Agent.cs" />
     <Compile Include="Generated Mappings\ApplicationSetting.cs" />
     <Compile Include="Generated Mappings\Attributes.cs" />
+    <Compile Include="Generated Mappings\CalculatedProperties.cs" />
+    <Compile Include="Generated Mappings\CalculatedPropertyParameterEntityTypes.cs" />
+    <Compile Include="Generated Mappings\CalculatedPropertyParameters.cs" />
     <Compile Include="Generated Mappings\Command.cs" />
     <Compile Include="Generated Mappings\CommandTypes.cs" />
     <Compile Include="Generated Mappings\CompositeRequest.cs" />
@@ -80,6 +83,11 @@
     <Compile Include="Generated Mappings\EntityView.cs" />
     <Compile Include="Generated Mappings\EntityViewModelCommands.cs" />
     <Compile Include="Generated Mappings\Event.cs" />
+    <Compile Include="Generated Mappings\FunctionParameterConstants.cs" />
+    <Compile Include="Generated Mappings\FunctionParameters.cs" />
+    <Compile Include="Generated Mappings\Functions.cs" />
+    <Compile Include="Generated Mappings\FunctionSetFunctions.cs" />
+    <Compile Include="Generated Mappings\FunctionSets.cs" />
     <Compile Include="Generated Mappings\Machine.cs" />
     <Compile Include="Generated Mappings\Message.cs" />
     <Compile Include="Generated Mappings\MessageSource.cs" />
@@ -96,6 +104,7 @@
     <Compile Include="Generated Mappings\StateAction.cs" />
     <Compile Include="Generated Mappings\StateActionExpectedProcessState.cs" />
     <Compile Include="Generated Mappings\Type.cs" />
+    <Compile Include="Generated Mappings\TypeArguements.cs" />
     <Compile Include="Generated Mappings\TypeParameter.cs" />
     <Compile Include="Generated Mappings\User.cs" />
     <Compile Include="Generated Mappings\ViewModelCommands.cs" />
