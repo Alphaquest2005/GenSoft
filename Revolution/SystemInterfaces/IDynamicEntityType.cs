@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace SystemInterfaces
 {
@@ -9,5 +10,7 @@ namespace SystemInterfaces
         string EntitySetName { get; }
         List<IEntityKeyValuePair> Properties { get; }
         bool IsParentEntity { get;  }
+
+        Dictionary<string, List<dynamic>> CalculatedProperties { get; }
     }
 }

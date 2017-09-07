@@ -15,6 +15,15 @@
           "lib/net45/Akka.dll": {}
         }
       },
+      "DynamicExpresso.Core/1.3.3.6": {
+        "type": "package",
+        "compile": {
+          "lib/net40/DynamicExpresso.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net40/DynamicExpresso.Core.dll": {}
+        }
+      },
       "FluentValidation.Net35/1.0.1": {
         "type": "package",
         "compile": {
@@ -290,6 +299,7 @@
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
           "BootStrapper": "1.0.0",
+          "DynamicExpresso.Core": "1.3.3.6",
           "GenSoft.Interface": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
@@ -481,6 +491,15 @@
           "lib/net45/Akka.dll": {}
         }
       },
+      "DynamicExpresso.Core/1.3.3.6": {
+        "type": "package",
+        "compile": {
+          "lib/net40/DynamicExpresso.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net40/DynamicExpresso.Core.dll": {}
+        }
+      },
       "FluentValidation.Net35/1.0.1": {
         "type": "package",
         "compile": {
@@ -756,6 +775,7 @@
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
           "BootStrapper": "1.0.0",
+          "DynamicExpresso.Core": "1.3.3.6",
           "GenSoft.Interface": "1.0.0",
           "SystemInterfaces": "1.0.0"
         }
@@ -946,6 +966,18 @@
         "lib/net45/Akka.xml",
         "lib/netstandard1.6/Akka.dll",
         "lib/netstandard1.6/Akka.xml"
+      ]
+    },
+    "DynamicExpresso.Core/1.3.3.6": {
+      "sha512": "jXzXqogy0dRs4qndxAdJvFoLCEMf48ndaPfozky/+noti2/TzV33j5a0Kh5AnunEFltYAEzJNxMOo7hjntL1hQ==",
+      "type": "package",
+      "path": "dynamicexpresso.core/1.3.3.6",
+      "files": [
+        "dynamicexpresso.core.1.3.3.6.nupkg.sha512",
+        "dynamicexpresso.core.nuspec",
+        "lib/net40/DynamicExpresso.Core.XML",
+        "lib/net40/DynamicExpresso.Core.dll",
+        "lib/net40/DynamicExpresso.Core.pdb"
       ]
     },
     "FluentValidation.Net35/1.0.1": {

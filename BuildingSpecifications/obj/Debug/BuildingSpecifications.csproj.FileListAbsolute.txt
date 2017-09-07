@@ -143,3 +143,5 @@ C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\System.Xml.XmlD
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\System.Xml.XmlSerializer.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\System.Xml.XPath.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\System.Xml.XPath.XDocument.dll
+C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\DynamicExpresso.Core.dll
+C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\DynamicExpresso.Core.pdb

@@ -260,3 +260,5 @@ C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\GenSoft.Entities.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\GenSoft.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\GenSoft.Entities.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\GenSoft.Interfaces.pdb
+C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\DynamicExpresso.Core.dll
+C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\DynamicExpresso.Core.pdb

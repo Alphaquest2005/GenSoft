@@ -217,3 +217,5 @@ C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\System.Xml.
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\System.Xml.XPath.XDocument.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\GenSoft.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\GenSoft.Interfaces.pdb
+C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\DynamicExpresso.Core.dll
+C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\DynamicExpresso.Core.pdb

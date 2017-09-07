@@ -16,11 +16,14 @@ namespace Common.DataEntites
                 Properties.Add(itm.Key, values.ContainsKey(itm.Key)? values[itm.Key]: null);
             }
 
-            
+            SetCalculatedProperties();
         }
+
         
         public ObservableList<IEntityKeyValuePair> PropertyList => new ObservableList<IEntityKeyValuePair>(EntityType.Properties.Where(x => x.Key != nameof(IDynamicEntity.Id))
             .Select(x => new EntityKeyValuePair(x.Key,Properties[x.Key], (ViewAttributeDisplayProperties)x.DisplayProperties, x.IsEntityId, x.IsEntityName)as IEntityKeyValuePair).ToList());
+
+        public new Dictionary<string, object> Properties => base.Properties;
 
         private string _entityName;
         public dynamic EntityName
@@ -35,6 +38,21 @@ namespace Common.DataEntites
                 if (_entityName == null) _entityName = EntityType.Properties.FirstOrDefault(x => x.IsEntityName)?.Key;
                 if (_entityName == null) this.Properties["EntityName"] = value;
                 else Properties[_entityName] = value;
+            }
+        }
+
+
+        private void SetCalculatedProperties()
+        {
+            foreach (var cp in EntityType.CalculatedProperties)
+            {
+                dynamic res = this;
+                foreach (var f in cp.Value)
+                {
+                    res = f.Invoke(res);
+                    if (res == null) break;
+                }
+                Properties[cp.Key] = res;
             }
         }
 

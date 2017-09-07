@@ -65,28 +65,77 @@ namespace ActorBackBone
 
         private void BuildExpressions()
         {
+
             using (var ctx = new GenSoftDBContext())
             {
                 var lst = ctx.Functions
-                    .Include(x => x.FunctionParameters)
+                    .Include(x => x.FunctionParameters).ThenInclude(x => x.CalculatedPropertyParameters).ThenInclude(x => x.CalculatedProperties).ThenInclude(x => x.EntityTypeAttributes.Attributes)
+                    .Include(x => x.FunctionParameters).ThenInclude(x => x.CalculatedPropertyParameters).ThenInclude(x => x.CalculatedProperties).ThenInclude(x => x.CalculatedPropertyParameters).ThenInclude(x => x.FunctionParameters)
+                    .Include(x => x.FunctionParameters).ThenInclude(x => x.CalculatedPropertyParameters).ThenInclude(x => x.CalculatedProperties).ThenInclude(x => x.CalculatedPropertyParameters).ThenInclude(x => x.CalculatedPropertyParameterEntityTypes).ThenInclude(x => x.EntityTypeAttributes.Attributes)
+                    .Include(x => x.FunctionParameters).ThenInclude(x => x.CalculatedPropertyParameters).ThenInclude(x => x.CalculatedProperties).ThenInclude(x => x.FunctionParameterConstants)
                     .ToList();
 
                 foreach (var f in lst)
                 {
-                    var interpreter = new Interpreter();
-                    var returnType = CreateTypesFromDbType(f.ReturnDataTypeId);
-                    var parameters = f.FunctionParameters.DistinctBy(x => x.Id);
-                    var argType = parameters.Select(x => CreateTypesFromDbType(x.DataTypeId)).ToList();
-                    argType.Add(returnType);
-                    var expType = typeof(Func<,>).MakeGenericType(argType.ToArray());
-                    var exp = typeof(Interpreter).GetMethod("ParseAsDelegate").MakeGenericMethod(expType)
-                        .Invoke(interpreter, new object[] {f.Body, parameters.Select(x => x.Name).ToArray()});
+                    try
+                    {
+                        var body = f.Body;
+                        var paramlst = new Dictionary<string, string>();
 
-                    DynamicEntityType.Functions.Add(f.Name, exp);
-                    //var t = interpreter.ParseAsDelegate<Func<DateTime, int>>(
-                    //    "DateTime.Now.Year - x.Date.Year", "x");
+                        if (f.FunctionParameters.SelectMany(x => x.CalculatedPropertyParameters).Any())
+                        {
+                            foreach (var p in f.FunctionParameters.DistinctBy(x => x.Id))
+                            {
+                                var cpList = p.CalculatedPropertyParameters.DistinctBy(x => x.Id).ToList();
+                                for (int i = 0; i < cpList.Count(); i++)
+                                {
+
+                                    var cp = cpList[i];
+                                    var pconst = cp.CalculatedProperties.FunctionParameterConstants
+                                        .FirstOrDefault(q => q.FunctionParameterId == p.Id)?.Value;
+
+                                    var pEntityParameter =
+                                        cp.CalculatedProperties.CalculatedPropertyParameters.FirstOrDefault(
+                                            x => x.FunctionParameterId == p.Id);
+
+                                    var cparameter = pEntityParameter?.CalculatedPropertyParameterEntityTypes
+                                        .FirstOrDefault(x => x.CalculatedPropertyParameterId == pEntityParameter.Id)
+                                        ?.EntityTypeAttributes.Attributes.Name;
+
+                                    var val = pconst ?? cparameter;
+                                    if (val == null) Debugger.Break();
+
+                                    paramlst.Add($"param{i}", $"\"{val}\"");
+
+                                }
+                            }
+                            body = paramlst.Aggregate(body, (current, p) => current.Replace(p.Key, p.Value));
+                        }
+
+                        var interpreter = new Interpreter();
+                        var returnType = CreateTypesFromDbType(f.ReturnDataTypeId);
+                        var parameters = f.FunctionParameters.DistinctBy(x => x.Id);
+                        var argType = parameters.Select(x => CreateTypesFromDbType(x.DataTypeId)).ToList();
+                        argType.Add(returnType);
+                        var funcType = GetTypeByName($"Func`{argType.Count}")
+                            .First(x => x.IsGenericTypeDefinition == true);
+                        var expType = funcType.MakeGenericType(argType.ToArray());
+                        var exp = typeof(Interpreter).GetMethod("ParseAsDelegate").MakeGenericMethod(expType)
+                            .Invoke(interpreter, new object[] {body, parameters.Select(x => x.Name).ToArray()});
+
+                        DynamicEntityType.Functions.Add(f.Name, exp);
+
+
+
+                    }
+                    catch (Exception e)
+                    {
+                        throw;
+                    }
                 }
             }
+
+
 
         }
 
@@ -95,7 +144,7 @@ namespace ActorBackBone
         static Dictionary<int, Type> DBTypes = new Dictionary<int, Type>();
         private static Type CreateTypesFromDbType(int dataTypeId)
         {
-            
+            if (DBTypes.ContainsKey(dataTypeId)) return DBTypes[dataTypeId];
 
             var typedic = new Dictionary<Tuple<int,Type>, List<Type>>();
             
@@ -139,8 +188,11 @@ namespace ActorBackBone
                     if(typedic.Count > 1) Debugger.Break();
 
                     var t = typedic.First();
-                       var res = t.Key.Item2.MakeGenericType(t.Value.ToArray());
-                       DBTypes.Add(dataType.Id, res);
+                    var res = t.Key.Item2 == typeof(Array) 
+                        ? t.Value[0].MakeArrayType() 
+                        : t.Key.Item2.MakeGenericType(t.Value.ToArray());
+                    
+                    DBTypes.Add(dataType.Id, res);
                     return res;
 
                 }
@@ -401,7 +453,12 @@ namespace ActorBackBone
         {
             var viewType = ctx.EntityView
                 .Include(x => x.EntityType.Type)
+                .Include(x => x.EntityType.EntityTypeAttributes).ThenInclude(x => x.Attributes)
                 .Include(x => x.EntityType.EntityTypeAttributes).ThenInclude(x => x.ChildEntitys)
+                .Include(x => x.EntityType.EntityTypeAttributes).ThenInclude(x => x.CalculatedProperties.CalculatedPropertyParameters)
+                .Include(x => x.EntityType.EntityTypeAttributes).ThenInclude(x => x.CalculatedProperties.FunctionParameterConstants)
+                .Include(x => x.EntityType.EntityTypeAttributes).ThenInclude(x => x.CalculatedProperties.FunctionSets.FunctionSetFunctions).ThenInclude(x => x.Functions)
+                .Include(x => x.EntityType.EntityTypeAttributes).ThenInclude(x => x.CalculatedPropertyParameterEntityTypes)
                 .Include(x => x.EntityType.EntityList)
                 .FirstOrDefault(x => x.EntityType.Type.Name == entityType);
             if (viewType == null) return false;
@@ -434,8 +491,6 @@ namespace ActorBackBone
 
                                 new AttributeDisplayProperties
                                 (
-
-
                                     ctx.EntityTypeViewModelAttributeGridProperty.Include(q => q.ViewProperty)
                                         .Where(q => q.EntityTypeViewModelAttributes.EntityTypeAttributeId == z.Id && q.IsWriteView == false)
                                         .Select(w => new { w.ViewProperty.Name, w.Value }).ToDictionary(w => w.Name, w => w.Value),
@@ -445,8 +500,6 @@ namespace ActorBackBone
                                     ctx.EntityTypeViewModelAttributeValueProperty.Include(q => q.ViewProperty)
                                         .Where(q => q.EntityTypeViewModelAttributes.EntityTypeAttributeId == z.Id && q.IsWriteView == false)
                                         .Select(w => new { w.ViewProperty.Name, w.Value }).ToDictionary(w => w.Name, w => w.Value)
-
-
                                 ),
                                 new AttributeDisplayProperties
                                 (
@@ -466,10 +519,103 @@ namespace ActorBackBone
                             z.Attributes.EntityId != null,
                             z.Attributes.EntityName != null) as IEntityKeyValuePair).ToList();
 
-            DynamicEntityType.DynamicEntityTypes.Add(entityType,
-                new DynamicEntityType(viewType.EntityType.Type.Name, viewType.EntityType.EntitySetName, tes, viewType.EntityType.EntityList != null, viewType.EntityType.EntityTypeAttributes.Any(z => z.ChildEntitys.Any())));
+            var calPropDef = CreateCalculatedProperties(viewType);
+
+            
+            var dynamicEntityType = new DynamicEntityType(viewType.EntityType.Type.Name, viewType.EntityType.EntitySetName, tes, calPropDef, viewType.EntityType.EntityList != null, viewType.EntityType.EntityTypeAttributes.Any(z => z.ChildEntitys.Any()));
+
+
+
+            DynamicEntityType.DynamicEntityTypes.Add(entityType,dynamicEntityType);
             return true;
         }
+
+        private static Dictionary<string, List<dynamic>> CreateCalculatedProperties(EntityView viewType)
+        {
+
+            var calprops = new Dictionary<string, List<dynamic>>();
+
+            
+                var lst = viewType.EntityType.EntityTypeAttributes
+                    .Where(x => x.CalculatedProperties != null)
+                    .Select(x => x.CalculatedProperties).DistinctBy(x => x.Id).ToList();
+                foreach (var cp in lst)
+                {
+                   var flst = cp.FunctionSets.FunctionSetFunctions.DistinctBy(x => x.Id).Select(f => DynamicEntityType.Functions[f.Functions.Name]).ToList();
+
+                    calprops.Add(cp.EntityTypeAttributes.Attributes.Name, flst);
+                }
+            
+
+                return calprops;
+        }
+
+        private static List<IEntityKeyValuePair> GetCalculatedProperties(EntityView viewType, Dictionary<string, List<dynamic>> calPropDefinition)
+        {
+            using (var ctx = new GenSoftDBContext())
+            {
+                var res = viewType.EntityType.EntityTypeAttributes
+                    .Where(x => x.CalculatedProperties != null)
+                    .Select(x => x.CalculatedProperties).DistinctBy(x => x.Id)
+                    .Select(x => new EntityKeyValuePair(x.EntityTypeAttributes.Attributes.Name,
+                       null,
+                        new ViewAttributeDisplayProperties
+                        (
+                            new AttributeDisplayProperties
+                            (
+                                ctx.EntityTypeViewModelAttributeGridProperty.Include(q => q.ViewProperty)
+                                    .Where(q => q.EntityTypeViewModelAttributes.EntityTypeAttributeId ==
+                                                x.EntityTypeAttributes.Id &&
+                                                q.IsWriteView == false)
+                                    .Select(w => new {w.ViewProperty.Name, w.Value})
+                                    .ToDictionary(w => w.Name, w => w.Value),
+                                ctx.EntityTypeViewModelAttributeLabelProperty.Include(q => q.ViewProperty)
+                                    .Where(q => q.EntityTypeViewModelAttributes.EntityTypeAttributeId ==
+                                                x.EntityTypeAttributes.Id &&
+                                                q.IsWriteView == false)
+                                    .Select(w => new {w.ViewProperty.Name, w.Value})
+                                    .ToDictionary(w => w.Name, w => w.Value),
+                                ctx.EntityTypeViewModelAttributeValueProperty.Include(q => q.ViewProperty)
+                                    .Where(q => q.EntityTypeViewModelAttributes.EntityTypeAttributeId ==
+                                                x.EntityTypeAttributes.Id &&
+                                                q.IsWriteView == false)
+                                    .Select(w => new {w.ViewProperty.Name, w.Value})
+                                    .ToDictionary(w => w.Name, w => w.Value)
+
+
+                            ),
+                            new AttributeDisplayProperties
+                            (
+                                ctx.EntityTypeViewModelAttributeGridProperty.Include(q => q.ViewProperty)
+                                    .Where(q => q.EntityTypeViewModelAttributes.EntityTypeAttributeId ==
+                                                x.EntityTypeAttributes.Id &&
+                                                q.IsWriteView)
+                                    .Select(w => new {w.ViewProperty.Name, w.Value})
+                                    .ToDictionary(w => w.Name, w => w.Value),
+                                ctx.EntityTypeViewModelAttributeLabelProperty.Include(q => q.ViewProperty)
+                                    .Where(q => q.EntityTypeViewModelAttributes.EntityTypeAttributeId ==
+                                                x.EntityTypeAttributes.Id &&
+                                                q.IsWriteView)
+                                    .Select(w => new {w.ViewProperty.Name, w.Value})
+                                    .ToDictionary(w => w.Name, w => w.Value),
+                                ctx.EntityTypeViewModelAttributeValueProperty.Include(q => q.ViewProperty)
+                                    .Where(q => q.EntityTypeViewModelAttributes.EntityTypeAttributeId ==
+                                                x.EntityTypeAttributes.Id &&
+                                                q.IsWriteView)
+                                    .Select(w => new {w.ViewProperty.Name, w.Value})
+                                    .ToDictionary(w => w.Name, w => w.Value)
+
+                            )
+
+                        ),
+                        viewType.EntityType.EntityList != null,
+                        viewType.EntityType.EntityTypeAttributes.Any(z => z.ChildEntitys.Any())
+                    ) as IEntityKeyValuePair).ToList();
+                return res;
+            }
+            
+        }
+
         public void Intialize(bool autoContinue, List<IViewModelInfo> viewInfos)
         {
             using (var ctx = new GenSoftDBContext())

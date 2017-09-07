@@ -16,6 +16,7 @@ namespace SystemInterfaces
     public interface IDynamicEntity: IDynamicEntityCore
     {
         ObservableList<IEntityKeyValuePair> PropertyList { get; }
+        Dictionary<string, object> Properties { get; }
     }
 
 
@@ -38,9 +39,9 @@ namespace SystemInterfaces
 
     public interface IAttributeDisplayProperties
     {
-        Dictionary<string, string> GridProperties { get; }
-        Dictionary<string, string> LabelProperties { get; }
-        Dictionary<string, string> ValueProperties { get; }
+        INullValueDictionary<string, string> GridProperties { get; }
+        INullValueDictionary<string, string> LabelProperties { get; }
+        INullValueDictionary<string, string> ValueProperties { get; }
     }
 
     public interface IEntity:IEntityId

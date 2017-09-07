@@ -61,14 +61,20 @@ namespace Common
     {
         public AttributeDisplayProperties(Dictionary<string, string> gridProperties, Dictionary<string, string> labelProperties, Dictionary<string, string> valueProperties)
         {
-            GridProperties = gridProperties;
-            LabelProperties = labelProperties;
-            ValueProperties = valueProperties;
+            GridProperties = new NullValueDictionary<string, string>(gridProperties);
+            LabelProperties = new NullValueDictionary<string, string>(labelProperties);
+            ValueProperties = new NullValueDictionary<string, string>(valueProperties);
         }
 
-        public Dictionary<string, string> GridProperties { get; }
-        public Dictionary<string, string> LabelProperties { get; }
-        public Dictionary<string, string> ValueProperties { get; }
+        public NullValueDictionary<string, string> GridProperties { get; }
+        public NullValueDictionary<string, string> LabelProperties { get; }
+        public NullValueDictionary<string, string> ValueProperties { get; }
+
+        INullValueDictionary<string, string> IAttributeDisplayProperties.GridProperties => GridProperties;
+
+        INullValueDictionary<string, string> IAttributeDisplayProperties.LabelProperties => LabelProperties;
+
+        INullValueDictionary<string, string> IAttributeDisplayProperties.ValueProperties => ValueProperties;
     }
 
     public class ViewAttributeDisplayProperties : IViewAttributeDisplayProperties

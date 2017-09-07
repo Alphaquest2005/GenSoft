@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using SystemInterfaces;
+using DynamicExpresso;
 using GenSoft.Interfaces;
 
 namespace Common.DataEntites
@@ -15,12 +16,15 @@ namespace Common.DataEntites
 
         public static Dictionary<string, dynamic> Functions { get; } = new Dictionary<string, dynamic>();
 
-        public DynamicEntityType(string name, string entitySetName, List<IEntityKeyValuePair> properties, bool isList, bool isParentEntity)
+        public static Dictionary<int, Parameter> CalculatedPropertyParameters { get; } = new Dictionary<int, Parameter>();
+
+        public DynamicEntityType(string name, string entitySetName, List<IEntityKeyValuePair> properties, Dictionary<string, List<dynamic>> calculatedProperties, bool isList, bool isParentEntity)
         {
             Name = name;
             Properties = properties;
             IsList = isList;
             IsParentEntity = isParentEntity;
+            CalculatedProperties = calculatedProperties;
             EntitySetName = entitySetName;
         }
 
@@ -31,6 +35,8 @@ namespace Common.DataEntites
         public string EntitySetName { get; }
         public List<IEntityKeyValuePair> Properties { get; }
         public bool IsParentEntity { get; }
+        public Dictionary<string, List<dynamic>> CalculatedProperties { get; } 
+        
     }
 
 }

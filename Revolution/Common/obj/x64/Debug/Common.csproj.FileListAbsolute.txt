@@ -86,3 +86,5 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\x64\Debug\BootStrapper.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\obj\x64\Debug\Common.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\x64\Debug\GenSoft.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\x64\Debug\GenSoft.Interfaces.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\x64\Debug\DynamicExpresso.Core.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\x64\Debug\DynamicExpresso.Core.pdb

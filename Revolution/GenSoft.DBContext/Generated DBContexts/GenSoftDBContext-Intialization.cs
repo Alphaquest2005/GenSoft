@@ -93,6 +93,9 @@ namespace GenSoft.DBContexts
 						Insert Into dbo.[Type] (Id,Name) Values('52','Object')
 						Insert Into dbo.[Type] (Id,Name) Values('53','List<Object>')
 						Insert Into dbo.[Type] (Id,Name) Values('54','Func<List<Object>, int>')
+						Insert Into dbo.[Type] (Id,Name) Values('55','Array')
+						Insert Into dbo.[Type] (Id,Name) Values('56','string[]')
+						Insert Into dbo.[Type] (Id,Name) Values('57','IDynamicEntity')
 					SET IDENTITY_INSERT dbo.[Type] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[ViewProperty] ON
@@ -137,8 +140,8 @@ namespace GenSoft.DBContexts
 			//No test data for Message
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[Entity] ON
-						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('3','37',cast((select Value from AmoebaDB.dbo.TestValues where Id = 179584) as varbinary(max)))
-						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('4','40',cast((select Value from AmoebaDB.dbo.TestValues where Id = 179587) as varbinary(max)))
+						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('3','37',cast((select Value from AmoebaDB.dbo.TestValues where Id = 195132) as varbinary(max)))
+						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('4','40',cast((select Value from AmoebaDB.dbo.TestValues where Id = 195135) as varbinary(max)))
 					SET IDENTITY_INSERT dbo.[Entity] OFF");
 			//No test data for Message
 				Instance.Database.ExecuteSqlCommand(@"
@@ -262,6 +265,9 @@ namespace GenSoft.DBContexts
 						Insert Into dbo.[DataType] (Id) Values('51')
 						Insert Into dbo.[DataType] (Id) Values('52')
 						Insert Into dbo.[DataType] (Id) Values('53')
+						Insert Into dbo.[DataType] (Id) Values('55')
+						Insert Into dbo.[DataType] (Id) Values('56')
+						Insert Into dbo.[DataType] (Id) Values('57')
 ");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[Attributes] ON
@@ -417,7 +423,6 @@ namespace GenSoft.DBContexts
 						Insert Into dbo.[EntityTypeAttributes] (AttributeId,Id,EntityTypeId,Priority) Values('86','92','4','0')
 					SET IDENTITY_INSERT dbo.[EntityTypeAttributes] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
-						Insert Into dbo.[CalculatedProperties] (Id,FunctionSetId) Values('90','2')
 						Insert Into dbo.[CalculatedProperties] (Id,FunctionSetId) Values('92','1')
 ");
 				Instance.Database.ExecuteSqlCommand(@"
@@ -461,41 +466,41 @@ namespace GenSoft.DBContexts
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[Functions] ON
 						Insert Into dbo.[Functions] (ReturnDataTypeId,Id,Name,Description,Body) Values('5','1','YearsDateDiff','Calculate Number of Years from Current Date','DateTime.Now.Year - x.Date.Year')
-						Insert Into dbo.[Functions] (ReturnDataTypeId,Id,Name,Description,Body) Values('6','2','StringJoin','Concat with character','string.Join(x,c)')
+						Insert Into dbo.[Functions] (ReturnDataTypeId,Id,Name,Description,Body) Values('6','2','StringJoin','Concat with character','string.Join(c, x)')
+						Insert Into dbo.[Functions] (ReturnDataTypeId,Id,Name,Description,Body) Values('7','3','String2Date','Convert String To Date','DateTime.Parse(x)')
+						Insert Into dbo.[Functions] (ReturnDataTypeId,Id,Name,Description,Body) Values('6','4','GetDynamicEntityProperty','Get Dynamic Entity Property','IDynamicEntity.Properties[param0]')
 					SET IDENTITY_INSERT dbo.[Functions] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[FunctionParameters] ON
-						Insert Into dbo.[FunctionParameters] (Id,FunctionId,Name,DataTypeId) Values('1','1','x','7')
-						Insert Into dbo.[FunctionParameters] (Id,FunctionId,Name,DataTypeId) Values('2','2','x','6')
+						Insert Into dbo.[FunctionParameters] (Id,FunctionId,Name,DataTypeId) Values('1','4','IDynamicEntity','57')
+						Insert Into dbo.[FunctionParameters] (Id,FunctionId,Name,DataTypeId) Values('2','2','x','56')
 						Insert Into dbo.[FunctionParameters] (Id,FunctionId,Name,DataTypeId) Values('3','2','c','6')
+						Insert Into dbo.[FunctionParameters] (Id,FunctionId,Name,DataTypeId) Values('5','1','x','7')
+						Insert Into dbo.[FunctionParameters] (Id,FunctionId,Name,DataTypeId) Values('6','3','x','6')
 					SET IDENTITY_INSERT dbo.[FunctionParameters] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[CalculatedPropertyParameters] ON
 						Insert Into dbo.[CalculatedPropertyParameters] (CalculatedPropertyId,Id,FunctionParameterId) Values('92','1','1')
-						Insert Into dbo.[CalculatedPropertyParameters] (CalculatedPropertyId,Id,FunctionParameterId) Values('90','2','2')
 					SET IDENTITY_INSERT dbo.[CalculatedPropertyParameters] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[CalculatedPropertyParameterEntityTypes] ON
 						Insert Into dbo.[CalculatedPropertyParameterEntityTypes] (Id,CalculatedPropertyParameterId,EntityTypeAttributeId) Values('1','1','91')
-						Insert Into dbo.[CalculatedPropertyParameterEntityTypes] (Id,CalculatedPropertyParameterId,EntityTypeAttributeId) Values('2','2','14')
-						Insert Into dbo.[CalculatedPropertyParameterEntityTypes] (Id,CalculatedPropertyParameterId,EntityTypeAttributeId) Values('3','2','89')
 					SET IDENTITY_INSERT dbo.[CalculatedPropertyParameterEntityTypes] OFF");
-				Instance.Database.ExecuteSqlCommand(@"
-					SET IDENTITY_INSERT dbo.[FunctionParameterConstants] ON
-						Insert Into dbo.[FunctionParameterConstants] (CalculatedPropertyId,Id,FunctionParameterId,Value) Values('90','1','3',' ')
-					SET IDENTITY_INSERT dbo.[FunctionParameterConstants] OFF");
+			//No test data for FunctionParameterConstants
+			//No test data for FunctionParameterConstants
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[FunctionSetFunctions] ON
-						Insert Into dbo.[FunctionSetFunctions] (FunctionId,Id,FunctionSetId) Values('1','1','2')
-						Insert Into dbo.[FunctionSetFunctions] (FunctionId,Id,FunctionSetId) Values('2','2','1')
+						Insert Into dbo.[FunctionSetFunctions] (FunctionId,Id,FunctionSetId) Values('2','1','2')
+						Insert Into dbo.[FunctionSetFunctions] (FunctionId,Id,FunctionSetId) Values('4','2','1')
+						Insert Into dbo.[FunctionSetFunctions] (FunctionId,Id,FunctionSetId) Values('3','3','1')
+						Insert Into dbo.[FunctionSetFunctions] (FunctionId,Id,FunctionSetId) Values('1','4','1')
 					SET IDENTITY_INSERT dbo.[FunctionSetFunctions] OFF");
 			//No test data for MessageType
 			//No test data for MessageType
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[TypeArguements] ON
 						Insert Into dbo.[TypeArguements] (TypeId,Id,ParentTypeId,ChildTypeId) Values('53','53','51','52')
-						Insert Into dbo.[TypeArguements] (TypeId,Id,ParentTypeId,ChildTypeId) Values('54','54','50','7')
-						Insert Into dbo.[TypeArguements] (TypeId,Id,ParentTypeId,ChildTypeId) Values('54','55','50','5')
+						Insert Into dbo.[TypeArguements] (TypeId,Id,ParentTypeId,ChildTypeId) Values('56','54','55','6')
 					SET IDENTITY_INSERT dbo.[TypeArguements] OFF");
 			//No test data for TypeParameter
 			//No test data for TypeParameter
@@ -536,6 +541,7 @@ namespace GenSoft.DBContexts
 						Insert Into dbo.[EntityView] (Id,BaseEntityTypeId) Values('46','49')
 ");
 			//No test data for Event
+			//No test data for FunctionParameterConstants
 			//No test data for Message
 			//No test data for MessageType
 			//No test data for TypeParameter

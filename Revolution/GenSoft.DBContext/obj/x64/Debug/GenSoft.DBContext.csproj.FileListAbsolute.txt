@@ -266,3 +266,5 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\Syste
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\System.Xml.XmlSerializer.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\System.Xml.XPath.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\System.Xml.XPath.XDocument.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\DynamicExpresso.Core.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\DynamicExpresso.Core.pdb
