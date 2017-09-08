@@ -14,9 +14,9 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IFunctionParameters:SystemInterfaces.IEntity  
 	{
+		int DataTypeId { get;}
 		int FunctionId { get;}
 		string Name { get;}
-		int DataTypeId { get;}
 
 
 

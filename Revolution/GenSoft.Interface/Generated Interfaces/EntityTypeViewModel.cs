@@ -14,11 +14,11 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IEntityTypeViewModel:SystemInterfaces.IEntity  
 	{
-		int ProcessDomainEntityTypeId { get;}
-		int Priority { get;}
-		string Symbol { get;}
 		string Description { get;}
+		int Priority { get;}
+		int ProcessDomainEntityTypeId { get;}
 		string PropertyName { get;}
+		string Symbol { get;}
 
 
 

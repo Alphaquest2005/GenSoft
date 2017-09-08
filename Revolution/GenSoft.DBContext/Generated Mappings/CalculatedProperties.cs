@@ -18,15 +18,15 @@ namespace GenSoft.Mappings
 			entityBuilder.ToTable("CalculatedProperties", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").ValueGeneratedNever();	
-			entityBuilder.Property(t => t.Id).HasColumnName("Id").IsRequired();
 			entityBuilder.Property(t => t.FunctionSetId).HasColumnName("FunctionSetId").IsRequired();
+			entityBuilder.Property(t => t.Id).HasColumnName("Id").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
 				entityBuilder.HasMany(x => x.CalculatedPropertyParameters).WithOne(p => p.CalculatedProperties).HasForeignKey(c => c.CalculatedPropertyId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.FunctionParameterConstants).WithOne(p => p.CalculatedProperties).HasForeignKey(c => c.CalculatedPropertyId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties
-				//entityBuilder.HasOne(p => p.EntityTypeAttributes EntityTypeAttributes).WithOne(p => p.CalculatedProperties).HasForeignKey<EntityTypeAttributes>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 				//entityBuilder.HasOne(p => p.FunctionSets FunctionSets).WithMany(p => p.CalculatedProperties).HasForeignKey(c => c.FunctionSetId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.EntityTypeAttributes EntityTypeAttributes).WithOne(p => p.CalculatedProperties).HasForeignKey<EntityTypeAttributes>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

@@ -44,16 +44,26 @@ namespace Common.DataEntites
 
         private void SetCalculatedProperties()
         {
-            foreach (var cp in EntityType.CalculatedProperties)
+            try
             {
-                dynamic res = this;
-                foreach (var f in cp.Value)
+                if (this.Id <= 0) return;
+                foreach (var cp in EntityType.CalculatedProperties)
                 {
-                    res = f.Invoke(res);
-                    if (res == null) break;
+                    dynamic res = this;
+                    foreach (var f in cp.Value)
+                    {
+                        res = f.Invoke(res);
+                        if (res == null) break;
+                    }
+                    Properties[cp.Key] = res;
                 }
-                Properties[cp.Key] = res;
             }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+
         }
 
 

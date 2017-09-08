@@ -15,10 +15,10 @@ namespace GenSoft.Interfaces
 	public partial interface IMessageSource:SystemInterfaces.IEntity  
 	{
 		int MachineId { get;}
-		Guid SourceGuid { get;}
 		string Name { get;}
-		int SourceTypeId { get;}
 		int ProcessId { get;}
+		Guid SourceGuid { get;}
+		int SourceTypeId { get;}
 
 
 

@@ -14,10 +14,10 @@ namespace GenSoft.Entities
 	public partial class MessageSource: BaseEntity, IMessageSource
 	{
 		public virtual int MachineId { get; set; }
-		public virtual Guid SourceGuid { get; set; }
 		public virtual string Name { get; set; }
-		public virtual int SourceTypeId { get; set; }
 		public virtual int ProcessId { get; set; }
+		public virtual Guid SourceGuid { get; set; }
+		public virtual int SourceTypeId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
@@ -25,8 +25,8 @@ namespace GenSoft.Entities
 		
 			// ---------Parent Relationships
 				public virtual Machine Machine {get; set;}
-				public virtual SourceType SourceType {get; set;}
 				public virtual Process Process {get; set;}
+				public virtual SourceType SourceType {get; set;}
 	
 
 	}

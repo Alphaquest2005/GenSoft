@@ -14,9 +14,9 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface ITypeArguements:SystemInterfaces.IEntity  
 	{
-		int TypeId { get;}
-		int ParentTypeId { get;}
 		int ChildTypeId { get;}
+		int ParentTypeId { get;}
+		int TypeId { get;}
 
 
 

@@ -69,6 +69,7 @@ namespace ActorBackBone
             using (var ctx = new GenSoftDBContext())
             {
                 var lst = ctx.Functions
+                    .Include(x => x.FunctionParameters).ThenInclude(x => x.FunctionParameterConstants)
                     .Include(x => x.FunctionParameters).ThenInclude(x => x.CalculatedPropertyParameters).ThenInclude(x => x.CalculatedProperties).ThenInclude(x => x.EntityTypeAttributes.Attributes)
                     .Include(x => x.FunctionParameters).ThenInclude(x => x.CalculatedPropertyParameters).ThenInclude(x => x.CalculatedProperties).ThenInclude(x => x.CalculatedPropertyParameters).ThenInclude(x => x.FunctionParameters)
                     .Include(x => x.FunctionParameters).ThenInclude(x => x.CalculatedPropertyParameters).ThenInclude(x => x.CalculatedProperties).ThenInclude(x => x.CalculatedPropertyParameters).ThenInclude(x => x.CalculatedPropertyParameterEntityTypes).ThenInclude(x => x.EntityTypeAttributes.Attributes)
@@ -79,42 +80,49 @@ namespace ActorBackBone
                 {
                     try
                     {
+                        var interpreter = new Interpreter();
+                        
+                        
                         var body = f.Body;
                         var paramlst = new Dictionary<string, string>();
 
-                        if (f.FunctionParameters.SelectMany(x => x.CalculatedPropertyParameters).Any())
+                        var functionParameters = f.FunctionParameters.DistinctBy(x => x.Id).ToList();
+                        if (functionParameters.SelectMany(x => x.CalculatedPropertyParameters).Any() || functionParameters.SelectMany(x => x.FunctionParameterConstants).Any())
                         {
-                            foreach (var p in f.FunctionParameters.DistinctBy(x => x.Id))
+                            foreach (var p in functionParameters)
                             {
                                 var cpList = p.CalculatedPropertyParameters.DistinctBy(x => x.Id).ToList();
-                                for (int i = 0; i < cpList.Count(); i++)
+                                foreach (var cp in cpList)
                                 {
+                                    var pconst = cp.CalculatedProperties.FunctionParameterConstants.DistinctBy(x => x.Id)
+                                        .Where(q => q.FunctionParameterId == p.Id).ToList();
+                                    for (int j = 0; j < pconst.Count; j++)
+                                    {
+                                        var c = pconst[j];
+                                        paramlst.AddOrSet($"const{j}", $"\"{c.Value}\"");
+                                    }
 
-                                    var cp = cpList[i];
-                                    var pconst = cp.CalculatedProperties.FunctionParameterConstants
-                                        .FirstOrDefault(q => q.FunctionParameterId == p.Id)?.Value;
-
-                                    var pEntityParameter =
-                                        cp.CalculatedProperties.CalculatedPropertyParameters.FirstOrDefault(
-                                            x => x.FunctionParameterId == p.Id);
-
-                                    var cparameter = pEntityParameter?.CalculatedPropertyParameterEntityTypes
-                                        .FirstOrDefault(x => x.CalculatedPropertyParameterId == pEntityParameter.Id)
+                                    var pEntityParameters =
+                                        cp.CalculatedProperties.CalculatedPropertyParameters.Where(x => x.FunctionParameterId == p.Id).DistinctBy(x => x.Id).ToList();
+                                    for (int j = 0; j < pEntityParameters.Count; j++)
+                                    {
+                                        var param = pEntityParameters[j];
+                                        var cparameter = param.CalculatedPropertyParameterEntityTypes.DistinctBy(x => x.Id)
+                                        .FirstOrDefault(x => x.CalculatedPropertyParameterId == param.Id)
                                         ?.EntityTypeAttributes.Attributes.Name;
 
-                                    var val = pconst ?? cparameter;
-                                    if (val == null) Debugger.Break();
-
-                                    paramlst.Add($"param{i}", $"\"{val}\"");
+                                        if(cparameter!= null) paramlst.AddOrSet($"param{j}", $"\"{cparameter}\"");
+                                    }
+                                    
 
                                 }
                             }
                             body = paramlst.Aggregate(body, (current, p) => current.Replace(p.Key, p.Value));
                         }
 
-                        var interpreter = new Interpreter();
+                        
                         var returnType = CreateTypesFromDbType(f.ReturnDataTypeId);
-                        var parameters = f.FunctionParameters.DistinctBy(x => x.Id);
+                        var parameters = functionParameters;
                         var argType = parameters.Select(x => CreateTypesFromDbType(x.DataTypeId)).ToList();
                         argType.Add(returnType);
                         var funcType = GetTypeByName($"Func`{argType.Count}")
@@ -122,6 +130,8 @@ namespace ActorBackBone
                         var expType = funcType.MakeGenericType(argType.ToArray());
                         var exp = typeof(Interpreter).GetMethod("ParseAsDelegate").MakeGenericMethod(expType)
                             .Invoke(interpreter, new object[] {body, parameters.Select(x => x.Name).ToArray()});
+
+                         
 
                         DynamicEntityType.Functions.Add(f.Name, exp);
 

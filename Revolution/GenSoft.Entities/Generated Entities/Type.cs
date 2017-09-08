@@ -21,9 +21,9 @@ namespace GenSoft.Entities
 				public virtual EntityType EntityType {get; set;}
 				public virtual MessageType MessageType {get; set;}
 				public virtual SourceType SourceType {get; set;}
-				public virtual ICollection<TypeArguements> Types {get; set;}
-				public virtual ICollection<TypeArguements> ParentTypes {get; set;}
 				public virtual ICollection<TypeArguements> ChildTypes {get; set;}
+				public virtual ICollection<TypeArguements> ParentTypes {get; set;}
+				public virtual ICollection<TypeArguements> Types {get; set;}
 				public virtual ICollection<TypeParameter> EntityTypes {get; set;}
 				public virtual ICollection<TypeParameter> ParameterTypes {get; set;}
 		

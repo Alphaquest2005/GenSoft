@@ -15,9 +15,9 @@ namespace GenSoft.Interfaces
 	public partial interface IFunctions:SystemInterfaces.IEntity  
 	{
 		int ReturnDataTypeId { get;}
-		string Name { get;}
-		string Description { get;}
 		string Body { get;}
+		string Description { get;}
+		string Name { get;}
 
 
 

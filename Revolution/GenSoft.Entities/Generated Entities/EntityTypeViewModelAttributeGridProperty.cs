@@ -14,9 +14,9 @@ namespace GenSoft.Entities
 	public partial class EntityTypeViewModelAttributeGridProperty: BaseEntity, IEntityTypeViewModelAttributeGridProperty
 	{
 		public virtual int EntityTypeViewModelAttributeId { get; set; }
-		public virtual int ViewPropertyId { get; set; }
-		public virtual string Value { get; set; }
 		public virtual bool IsWriteView { get; set; }
+		public virtual string Value { get; set; }
+		public virtual int ViewPropertyId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
