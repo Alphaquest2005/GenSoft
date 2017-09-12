@@ -76,12 +76,10 @@
     <Compile Include="Generated Mappings\EntityType.cs" />
     <Compile Include="Generated Mappings\EntityTypeAttributes.cs" />
     <Compile Include="Generated Mappings\EntityTypeViewModel.cs" />
-    <Compile Include="Generated Mappings\EntityTypeViewModelAttributeGridProperty.cs" />
-    <Compile Include="Generated Mappings\EntityTypeViewModelAttributeLabelProperty.cs" />
     <Compile Include="Generated Mappings\EntityTypeViewModelAttributes.cs" />
-    <Compile Include="Generated Mappings\EntityTypeViewModelAttributeValueProperty.cs" />
     <Compile Include="Generated Mappings\EntityView.cs" />
     <Compile Include="Generated Mappings\EntityViewModelCommands.cs" />
+    <Compile Include="Generated Mappings\EntityViewModelPresentationProperties.cs" />
     <Compile Include="Generated Mappings\Event.cs" />
     <Compile Include="Generated Mappings\FunctionParameterConstants.cs" />
     <Compile Include="Generated Mappings\FunctionParameters.cs" />
@@ -92,6 +90,8 @@
     <Compile Include="Generated Mappings\Message.cs" />
     <Compile Include="Generated Mappings\MessageSource.cs" />
     <Compile Include="Generated Mappings\MessageType.cs" />
+    <Compile Include="Generated Mappings\PresentationPropertyType.cs" />
+    <Compile Include="Generated Mappings\PresentationTheme.cs" />
     <Compile Include="Generated Mappings\Process.cs" />
     <Compile Include="Generated Mappings\ProcessComplexState.cs" />
     <Compile Include="Generated Mappings\ProcessComplexStateExpectedProcessState.cs" />
@@ -108,8 +108,13 @@
     <Compile Include="Generated Mappings\TypeParameter.cs" />
     <Compile Include="Generated Mappings\User.cs" />
     <Compile Include="Generated Mappings\ViewModelCommands.cs" />
+    <Compile Include="Generated Mappings\ViewModelPropertyPresentationType.cs" />
     <Compile Include="Generated Mappings\ViewModelTypes.cs" />
     <Compile Include="Generated Mappings\ViewProperty.cs" />
+    <Compile Include="Generated Mappings\ViewPropertyPresentationPropertyType.cs" />
+    <Compile Include="Generated Mappings\ViewPropertyTheme.cs" />
+    <Compile Include="Generated Mappings\ViewPropertyValueOptions.cs" />
+    <Compile Include="Generated Mappings\ViewType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>

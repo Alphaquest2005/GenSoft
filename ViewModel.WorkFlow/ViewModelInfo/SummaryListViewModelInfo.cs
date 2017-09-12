@@ -30,7 +30,7 @@ namespace RevolutionData
     
     public class SummaryListViewModelInfo
     {
-        public static ViewModelInfo SummaryListViewModel(int processId,IDynamicEntityType entityType, string symbol, string description, int priority, List<EntityViewModelRelationship> viewRelationships, List<EntityViewModelCommands> viewCommands)
+        public static ViewModelInfo SummaryListViewModel(int processId, IDynamicEntityType entityType, string symbol, string description, int priority, List<EntityViewModelRelationship> viewRelationships, List<EntityViewModelCommands> viewCommands, IViewAttributeDisplayProperties displayProperties)
         {
             try
             {
@@ -181,7 +181,8 @@ namespace RevolutionData
             },
                     viewModelType: typeof(ISummaryListViewModel),
                     orientation: typeof(IBodyViewModel),
-                    priority: priority);
+                    priority: priority,
+                    displayProperties: displayProperties);
 
                 var parentSubscriptions = new List<IViewModelEventSubscription<IViewModel, IEvent>>();
                 var parentCommands = new List<IViewModelEventCommand<IViewModel, IEvent>>();

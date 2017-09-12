@@ -11,9 +11,11 @@ using EventMessages;
 using EventMessages.Events;
 using RevolutionData;
 using RevolutionEntities.Process;
+using RevolutionEntities.ViewModels;
 using StartUp.Messages;
 using ViewMessages;
 using ViewModel.Interfaces;
+using ViewModelInterfaces;
 
 namespace DataServices.Actors
 {
@@ -70,13 +72,31 @@ namespace DataServices.Actors
             var concreteVM = BootStrapper.BootStrapper.Container.GetExportedTypes<TViewModel>().FirstOrDefault() ??
                              BootStrapper.BootStrapper.Container.GetExportedType(vmInfo.ViewModelType);
 
-            var vm = (TViewModel) Activator.CreateInstance(concreteVM,
-                new object[]
+
+            object[] objects;
+            if (vmInfo.DisplayProperties.ReadProperties.Properties.Any())
+            {
+                objects = new object[]
+                {
+                    vmInfoProcess, vmInfo.ViewInfo, vmInfo.Subscriptions,
+                    vmInfo.Publications, vmInfo.Commands, vmInfo.Orientation,
+                    vmInfo.Priority, vmInfo.DisplayProperties
+                };
+            }
+            else
+            {
+                objects = new object[]
                 {
                     vmInfoProcess, vmInfo.ViewInfo, vmInfo.Subscriptions,
                     vmInfo.Publications, vmInfo.Commands, vmInfo.Orientation,
                     vmInfo.Priority
-                });
+                };
+            }
+
+
+            var vm = (TViewModel) Activator.CreateInstance(concreteVM,
+                objects);
+            
             foreach (var v in vmInfo.ViewModelInfos)
             {
                 var cvm = (IViewModel)typeof(ViewModelActor).GetMethod("CreateViewModel").MakeGenericMethod(v.ViewModelType)

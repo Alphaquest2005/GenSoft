@@ -69,7 +69,11 @@ namespace RevolutionData
                 },
                 viewModelType: typeof(ICacheViewModel),
                 orientation: typeof (ICacheViewModel),
-                priority:0);
+                priority:0,
+                displayProperties: new ViewAttributeDisplayProperties(
+                    new AttributeDisplayProperties(new Dictionary<string, Dictionary<string, string>>()),
+                    new AttributeDisplayProperties(new Dictionary<string, Dictionary<string, string>>())
+                ));
         }
 
 

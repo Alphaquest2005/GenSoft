@@ -23,6 +23,8 @@ namespace ViewModelInterfaces
 
         ObservableList<IDynamicEntity> ParentEntities { get; }
 
+        IViewAttributeDisplayProperties DisplayProperties { get; }
+
     }
 
 

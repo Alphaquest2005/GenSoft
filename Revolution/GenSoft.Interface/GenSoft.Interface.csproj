@@ -69,12 +69,10 @@
     <Compile Include="Generated Interfaces\EntityType.cs" />
     <Compile Include="Generated Interfaces\EntityTypeAttributes.cs" />
     <Compile Include="Generated Interfaces\EntityTypeViewModel.cs" />
-    <Compile Include="Generated Interfaces\EntityTypeViewModelAttributeGridProperty.cs" />
-    <Compile Include="Generated Interfaces\EntityTypeViewModelAttributeLabelProperty.cs" />
     <Compile Include="Generated Interfaces\EntityTypeViewModelAttributes.cs" />
-    <Compile Include="Generated Interfaces\EntityTypeViewModelAttributeValueProperty.cs" />
     <Compile Include="Generated Interfaces\EntityView.cs" />
     <Compile Include="Generated Interfaces\EntityViewModelCommands.cs" />
+    <Compile Include="Generated Interfaces\EntityViewModelPresentationProperties.cs" />
     <Compile Include="Generated Interfaces\Event.cs" />
     <Compile Include="Generated Interfaces\FunctionParameterConstants.cs" />
     <Compile Include="Generated Interfaces\FunctionParameters.cs" />
@@ -85,6 +83,8 @@
     <Compile Include="Generated Interfaces\Message.cs" />
     <Compile Include="Generated Interfaces\MessageSource.cs" />
     <Compile Include="Generated Interfaces\MessageType.cs" />
+    <Compile Include="Generated Interfaces\PresentationPropertyType.cs" />
+    <Compile Include="Generated Interfaces\PresentationTheme.cs" />
     <Compile Include="Generated Interfaces\Process.cs" />
     <Compile Include="Generated Interfaces\ProcessComplexState.cs" />
     <Compile Include="Generated Interfaces\ProcessComplexStateExpectedProcessState.cs" />
@@ -101,8 +101,13 @@
     <Compile Include="Generated Interfaces\TypeParameter.cs" />
     <Compile Include="Generated Interfaces\User.cs" />
     <Compile Include="Generated Interfaces\ViewModelCommands.cs" />
+    <Compile Include="Generated Interfaces\ViewModelPropertyPresentationType.cs" />
     <Compile Include="Generated Interfaces\ViewModelTypes.cs" />
     <Compile Include="Generated Interfaces\ViewProperty.cs" />
+    <Compile Include="Generated Interfaces\ViewPropertyPresentationPropertyType.cs" />
+    <Compile Include="Generated Interfaces\ViewPropertyTheme.cs" />
+    <Compile Include="Generated Interfaces\ViewPropertyValueOptions.cs" />
+    <Compile Include="Generated Interfaces\ViewType.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="IPredicate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

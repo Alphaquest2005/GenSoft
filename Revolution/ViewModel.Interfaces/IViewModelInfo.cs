@@ -21,7 +21,14 @@ namespace ViewModel.Interfaces
         Type Orientation { get; }
         int Priority { get; }
         List<IViewModelInfo> ViewModelInfos { get; }
+        IViewAttributeDisplayProperties DisplayProperties { get; }
+
     }
+
+    
+
+    
+
 
     public interface IViewInfo
     {
@@ -33,5 +40,6 @@ namespace ViewModel.Interfaces
     public interface IEntityViewInfo:IViewInfo
     {
         IDynamicEntityType EntityType { get; }
+        
     }
 }

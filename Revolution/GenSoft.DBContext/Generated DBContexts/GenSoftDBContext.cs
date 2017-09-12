@@ -37,12 +37,10 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.EntityType> EntityType { get; set; }
 		public DbSet<Entities.EntityTypeAttributes> EntityTypeAttributes { get; set; }
 		public DbSet<Entities.EntityTypeViewModel> EntityTypeViewModel { get; set; }
-		public DbSet<Entities.EntityTypeViewModelAttributeGridProperty> EntityTypeViewModelAttributeGridProperty { get; set; }
-		public DbSet<Entities.EntityTypeViewModelAttributeLabelProperty> EntityTypeViewModelAttributeLabelProperty { get; set; }
 		public DbSet<Entities.EntityTypeViewModelAttributes> EntityTypeViewModelAttributes { get; set; }
-		public DbSet<Entities.EntityTypeViewModelAttributeValueProperty> EntityTypeViewModelAttributeValueProperty { get; set; }
 		public DbSet<Entities.EntityView> EntityView { get; set; }
 		public DbSet<Entities.EntityViewModelCommands> EntityViewModelCommands { get; set; }
+		public DbSet<Entities.EntityViewModelPresentationProperties> EntityViewModelPresentationProperties { get; set; }
 		public DbSet<Entities.Event> Event { get; set; }
 		public DbSet<Entities.FunctionParameterConstants> FunctionParameterConstants { get; set; }
 		public DbSet<Entities.FunctionParameters> FunctionParameters { get; set; }
@@ -53,6 +51,8 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.Message> Message { get; set; }
 		public DbSet<Entities.MessageSource> MessageSource { get; set; }
 		public DbSet<Entities.MessageType> MessageType { get; set; }
+		public DbSet<Entities.PresentationPropertyType> PresentationPropertyType { get; set; }
+		public DbSet<Entities.PresentationTheme> PresentationTheme { get; set; }
 		public DbSet<Entities.Process> Process { get; set; }
 		public DbSet<Entities.ProcessComplexState> ProcessComplexState { get; set; }
 		public DbSet<Entities.ProcessComplexStateExpectedProcessState> ProcessComplexStateExpectedProcessState { get; set; }
@@ -69,8 +69,13 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.TypeParameter> TypeParameter { get; set; }
 		public DbSet<Entities.User> User { get; set; }
 		public DbSet<Entities.ViewModelCommands> ViewModelCommands { get; set; }
+		public DbSet<Entities.ViewModelPropertyPresentationType> ViewModelPropertyPresentationType { get; set; }
 		public DbSet<Entities.ViewModelTypes> ViewModelTypes { get; set; }
 		public DbSet<Entities.ViewProperty> ViewProperty { get; set; }
+		public DbSet<Entities.ViewPropertyPresentationPropertyType> ViewPropertyPresentationPropertyType { get; set; }
+		public DbSet<Entities.ViewPropertyTheme> ViewPropertyTheme { get; set; }
+		public DbSet<Entities.ViewPropertyValueOptions> ViewPropertyValueOptions { get; set; }
+		public DbSet<Entities.ViewType> ViewType { get; set; }
 	
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
@@ -104,12 +109,10 @@ namespace GenSoft.DBContexts
 				EntityTypeMap.Map(modelBuilder.Entity<Entities.EntityType>());
 				EntityTypeAttributesMap.Map(modelBuilder.Entity<Entities.EntityTypeAttributes>());
 				EntityTypeViewModelMap.Map(modelBuilder.Entity<Entities.EntityTypeViewModel>());
-				EntityTypeViewModelAttributeGridPropertyMap.Map(modelBuilder.Entity<Entities.EntityTypeViewModelAttributeGridProperty>());
-				EntityTypeViewModelAttributeLabelPropertyMap.Map(modelBuilder.Entity<Entities.EntityTypeViewModelAttributeLabelProperty>());
 				EntityTypeViewModelAttributesMap.Map(modelBuilder.Entity<Entities.EntityTypeViewModelAttributes>());
-				EntityTypeViewModelAttributeValuePropertyMap.Map(modelBuilder.Entity<Entities.EntityTypeViewModelAttributeValueProperty>());
 				EntityViewMap.Map(modelBuilder.Entity<Entities.EntityView>());
 				EntityViewModelCommandsMap.Map(modelBuilder.Entity<Entities.EntityViewModelCommands>());
+				EntityViewModelPresentationPropertiesMap.Map(modelBuilder.Entity<Entities.EntityViewModelPresentationProperties>());
 				EventMap.Map(modelBuilder.Entity<Entities.Event>());
 				FunctionParameterConstantsMap.Map(modelBuilder.Entity<Entities.FunctionParameterConstants>());
 				FunctionParametersMap.Map(modelBuilder.Entity<Entities.FunctionParameters>());
@@ -120,6 +123,8 @@ namespace GenSoft.DBContexts
 				MessageMap.Map(modelBuilder.Entity<Entities.Message>());
 				MessageSourceMap.Map(modelBuilder.Entity<Entities.MessageSource>());
 				MessageTypeMap.Map(modelBuilder.Entity<Entities.MessageType>());
+				PresentationPropertyTypeMap.Map(modelBuilder.Entity<Entities.PresentationPropertyType>());
+				PresentationThemeMap.Map(modelBuilder.Entity<Entities.PresentationTheme>());
 				ProcessMap.Map(modelBuilder.Entity<Entities.Process>());
 				ProcessComplexStateMap.Map(modelBuilder.Entity<Entities.ProcessComplexState>());
 				ProcessComplexStateExpectedProcessStateMap.Map(modelBuilder.Entity<Entities.ProcessComplexStateExpectedProcessState>());
@@ -136,8 +141,13 @@ namespace GenSoft.DBContexts
 				TypeParameterMap.Map(modelBuilder.Entity<Entities.TypeParameter>());
 				UserMap.Map(modelBuilder.Entity<Entities.User>());
 				ViewModelCommandsMap.Map(modelBuilder.Entity<Entities.ViewModelCommands>());
+				ViewModelPropertyPresentationTypeMap.Map(modelBuilder.Entity<Entities.ViewModelPropertyPresentationType>());
 				ViewModelTypesMap.Map(modelBuilder.Entity<Entities.ViewModelTypes>());
 				ViewPropertyMap.Map(modelBuilder.Entity<Entities.ViewProperty>());
+				ViewPropertyPresentationPropertyTypeMap.Map(modelBuilder.Entity<Entities.ViewPropertyPresentationPropertyType>());
+				ViewPropertyThemeMap.Map(modelBuilder.Entity<Entities.ViewPropertyTheme>());
+				ViewPropertyValueOptionsMap.Map(modelBuilder.Entity<Entities.ViewPropertyValueOptions>());
+				ViewTypeMap.Map(modelBuilder.Entity<Entities.ViewType>());
 			}
 	}
 }

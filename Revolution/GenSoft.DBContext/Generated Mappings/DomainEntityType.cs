@@ -21,8 +21,8 @@ namespace GenSoft.Mappings
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
 				entityBuilder.HasOne(p => p.DomainEntityCache).WithOne(p => p.DomainEntityType).HasForeignKey<DomainEntityCache>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasOne(p => p.DomainEntityTypeSourceEntity).WithOne(p => p.DomainEntityType).HasForeignKey<DomainEntityTypeSourceEntity>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.ProcessStateDomainEntityTypes).WithOne(p => p.DomainEntityType).HasForeignKey(c => c.DomainEntityTypeId).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasOne(p => p.DomainEntityTypeSourceEntity).WithOne(p => p.DomainEntityType).HasForeignKey<DomainEntityTypeSourceEntity>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties
 				//entityBuilder.HasOne(p => p.EntityType EntityType).WithOne(p => p.DomainEntityType).HasForeignKey<EntityType>(c => c.Id).OnDelete(DeleteBehavior.Restrict);

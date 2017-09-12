@@ -24,12 +24,14 @@ namespace GenSoft.Mappings
 			entityBuilder.Property(t => t.PropertyName).HasColumnName("PropertyName").IsRequired().HasMaxLength(50);
 			entityBuilder.Property(t => t.PropertyName).HasColumnName("PropertyName").IsRequired().HasMaxLength(50);
 			entityBuilder.Property(t => t.Symbol).HasColumnName("Symbol").IsRequired().HasMaxLength(3);
+			entityBuilder.Property(t => t.ViewModelTypeId).HasColumnName("ViewModelTypeId").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasMany(x => x.EntityTypeViewModelAttributes).WithOne(p => p.EntityTypeViewModel).HasForeignKey(c => c.EntityTypeViewModelId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.EntityViewModelCommands).WithOne(p => p.EntityTypeViewModel).HasForeignKey(c => c.EntityViewModelId).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasMany(x => x.EntityTypeViewModelAttributes).WithOne(p => p.EntityTypeViewModel).HasForeignKey(c => c.EntityTypeViewModelId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties
 				//entityBuilder.HasOne(p => p.ProcessStateDomainEntityTypes ProcessStateDomainEntityTypes).WithMany(p => p.EntityTypeViewModel).HasForeignKey(c => c.ProcessDomainEntityTypeId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.ViewModelTypes ViewModelTypes).WithMany(p => p.EntityTypeViewModel).HasForeignKey(c => c.ViewModelTypeId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

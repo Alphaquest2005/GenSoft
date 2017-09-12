@@ -23,9 +23,9 @@ namespace GenSoft.Entities
 				public virtual ProcessComplexState ProcessComplexState {get; set;}
 				public virtual ICollection<ProcessComplexStateExpectedProcessState> ProcessComplexStateExpectedProcessState {get; set;}
 				public virtual ICollection<ProcessStateDomainEntityTypes> ProcessStateDomainEntityTypes {get; set;}
+				public virtual ICollection<StateActionExpectedProcessState> StateActionExpectedProcessState {get; set;}
 				public virtual ProcessStateInfo ProcessStateInfo {get; set;}
 				public virtual ICollection<StateAction> StateAction {get; set;}
-				public virtual ICollection<StateActionExpectedProcessState> StateActionExpectedProcessState {get; set;}
 		
 			// ---------Parent Relationships
 				public virtual Process Process {get; set;}

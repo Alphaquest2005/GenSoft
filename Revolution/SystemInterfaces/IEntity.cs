@@ -29,7 +29,6 @@ namespace SystemInterfaces
         IViewAttributeDisplayProperties DisplayProperties { get; }
 
     }
-
     public interface IViewAttributeDisplayProperties
     {
         IAttributeDisplayProperties ReadProperties { get; }
@@ -39,10 +38,9 @@ namespace SystemInterfaces
 
     public interface IAttributeDisplayProperties
     {
-        INullValueDictionary<string, string> GridProperties { get; }
-        INullValueDictionary<string, string> LabelProperties { get; }
-        INullValueDictionary<string, string> ValueProperties { get; }
+        Dictionary<string, Dictionary<string, string>> Properties { get; }
     }
+
 
     public interface IEntity:IEntityId
     {

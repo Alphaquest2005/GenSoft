@@ -78,7 +78,12 @@ namespace RevolutionData
 
                 },
                 typeof(IFooterViewModel),
-                typeof(IFooterViewModel), 0);
+                typeof(IFooterViewModel), 
+                0,
+                new ViewAttributeDisplayProperties(
+                    new AttributeDisplayProperties(new Dictionary<string, Dictionary<string, string>>()),
+                    new AttributeDisplayProperties(new Dictionary<string, Dictionary<string, string>>())
+                ));
         }
     }
 }

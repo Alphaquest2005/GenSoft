@@ -18,9 +18,7 @@ namespace GenSoft.Entities
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
-				public virtual ICollection<EntityTypeViewModelAttributeGridProperty> EntityTypeViewModelAttributeGridProperty {get; set;}
-				public virtual ICollection<EntityTypeViewModelAttributeLabelProperty> EntityTypeViewModelAttributeLabelProperty {get; set;}
-				public virtual ICollection<EntityTypeViewModelAttributeValueProperty> EntityTypeViewModelAttributeValueProperty {get; set;}
+				public virtual ICollection<EntityViewModelPresentationProperties> EntityViewModelPresentationProperties {get; set;}
 		
 			// ---------Parent Relationships
 				public virtual EntityTypeAttributes EntityTypeAttributes {get; set;}

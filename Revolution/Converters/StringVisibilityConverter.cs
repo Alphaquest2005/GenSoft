@@ -7,7 +7,12 @@ namespace Converters
 {
     public class StringVisibilityConverter : IValueConverter
     {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture) => parameter != null && value != null && value.ToString() == parameter.ToString() ? Visibility.Visible :Visibility.Collapsed;
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            Visibility res = Visibility.Collapsed;
+            var t = value != null && Enum.TryParse(value.ToString(),out res);
+            return res;
+        }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) => null;
     }

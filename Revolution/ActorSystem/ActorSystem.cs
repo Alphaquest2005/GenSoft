@@ -161,10 +161,6 @@ namespace ActorBackBone
             using (var ctx = new GenSoftDBContext())
             {
                 var dataType = ctx.DataType
-                                //.Include(x => x.Type).ThenInclude(x => x.ChildTypes).ThenInclude(x => x.Type.ChildTypes).ThenInclude(x => x.ChildType)
-                                //.Include(x => x.Type).ThenInclude(x => x.ChildTypes).ThenInclude(x => x.Type.ParentTypes).ThenInclude(x => x.ParentType)
-                                //.Include(x => x.Type).ThenInclude(x => x.ParentTypes).ThenInclude(x => x.Type.ParentTypes).ThenInclude(x => x.ParentType)
-                                //.Include(x => x.Type).ThenInclude(x => x.ParentTypes).ThenInclude(x => x.Type.ChildTypes).ThenInclude(x => x.ChildType)
                                 .Include(x => x.Type.Types).ThenInclude(x => x.ChildType)
                                 .Include(x => x.Type.Types).ThenInclude(x => x.ParentType)
                     .First(x => x.Id == dataTypeId);
@@ -294,12 +290,19 @@ namespace ActorBackBone
                 .Include(x => x.ProcessStateDomainEntityTypes.DomainEntityType.EntityType.EntityView)
                 .Include(x => x.ProcessStateDomainEntityTypes.DomainEntityType.EntityType.DomainEntityType.DomainEntityCache)
                 .Include(x => x.ProcessStateDomainEntityTypes.DomainEntityType.EntityType.EntityList)
+                .Include(x => x.ViewModelTypes.ViewModelPropertyPresentationType).ThenInclude(x => x.PresentationTheme)
+                .Include(x => x.ViewModelTypes.ViewModelPropertyPresentationType).ThenInclude(x => x.ViewPropertyValueOptions)
+                .Include(x => x.ViewModelTypes.ViewModelPropertyPresentationType).ThenInclude(x => x.ViewType)
+                .Include(x => x.ViewModelTypes.ViewModelPropertyPresentationType).ThenInclude(x => x.ViewPropertyPresentationPropertyType)
                 .First(x => x.Id == vmId);
-            var viewModelTypeName =
-                ctx.ViewModelTypes.First(
-                    x => x.List == (vm.ProcessStateDomainEntityTypes.DomainEntityType.EntityType.EntityList != null) &&
-                         x.DomainEntity == true).Name;
-            var res = ProcessViewModels.ProcessViewModelFactory[viewModelTypeName].Invoke(vm);
+            //var viewModelTypeName =
+            //    ctx.ViewModelTypes.First(
+            //        x => x.List == (vm.ProcessStateDomainEntityTypes.DomainEntityType.EntityType.EntityList != null) &&
+            //             x.DomainEntity == true).Name;
+            var vp = CreateViewAttributeDisplayProperties(vm);
+
+
+            var res = ProcessViewModels.ProcessViewModelFactory[vm.ViewModelTypes.Name].Invoke(vm,vp);
 
 
             
@@ -325,6 +328,92 @@ namespace ActorBackBone
                 }
             
             return res;
+        }
+
+        private static ViewAttributeDisplayProperties CreateViewAttributeDisplayProperties(EntityTypeViewModel vm)
+        {
+            return new ViewAttributeDisplayProperties
+                (
+                CreateAttributeDisplayProperties(vm, "Read"),
+                CreateAttributeDisplayProperties(vm, "Write")
+                );
+        }
+
+        private static AttributeDisplayProperties CreateAttributeDisplayProperties(EntityTypeViewModel vm, string viewType)
+        {
+            return new AttributeDisplayProperties(CreateDisplayProperties(vm, viewType));
+        }
+
+        private static Dictionary<string, Dictionary<string, string>> CreateDisplayProperties(EntityTypeViewModel vm, string viewType)
+        {
+            using (var ctx = new GenSoftDBContext())
+            {
+
+                var basicTheme = ctx.ViewPropertyTheme
+                    .Include(x => x.ViewPropertyValueOptions)
+                    .Include(x => x.ViewPropertyPresentationPropertyType.PresentationPropertyType)
+                    .Include(x => x.ViewPropertyPresentationPropertyType.ViewProperty)
+                    .Where(x => x.ViewType.Name == viewType)
+                    //.GroupBy(x => x.ViewPropertyPresentationPropertyType.PresentationPropertyType.Name)
+                    .Select(x => new
+                    {
+                        PresentationPropertyName = x.ViewPropertyPresentationPropertyType.PresentationPropertyType.Name,
+                        ViewPropertyName = x.ViewPropertyPresentationPropertyType.ViewProperty.Name,
+                        x.ViewPropertyValueOptions.Value
+                    }).GroupBy(x => x.PresentationPropertyName)
+                    .Select(x => new {x.Key, Value = x.ToDictionary(z => z.ViewPropertyName, z => z.Value)}).ToDictionary(x => x.Key, x => x.Value);
+
+                var viewTypeTheme =
+                    ctx.ViewModelPropertyPresentationType
+                        .Include(x => x.ViewPropertyValueOptions)
+                        .Include(x => x.ViewPropertyPresentationPropertyType.PresentationPropertyType)
+                        .Include(x => x.ViewPropertyPresentationPropertyType.ViewProperty)
+                        .Where(x => x.ViewType.Name == viewType && x.ViewModelTypeId == vm.ViewModelTypeId)
+                        //.GroupBy(x => x.ViewPropertyPresentationPropertyType.PresentationPropertyType.Name)
+                        .Select(x => new
+                        {
+                            PresentationPropertyName = x.ViewPropertyPresentationPropertyType.PresentationPropertyType.Name,
+                            ViewPropertyName = x.ViewPropertyPresentationPropertyType.ViewProperty.Name,
+                            x.ViewPropertyValueOptions.Value
+                        }).GroupBy(x => x.PresentationPropertyName)
+                        .Select(x => new { x.Key, Value = x.ToDictionary(z => z.ViewPropertyName, z => z.Value) }).ToDictionary(x => x.Key, x => x.Value);
+
+
+
+                foreach (var vt in viewTypeTheme)
+                {
+                    
+
+                        if (!basicTheme.ContainsKey(vt.Key))
+                        {
+
+                            basicTheme.Add(vt.Key, vt.Value);
+                        }
+                        else
+                        {
+                            var bt = basicTheme[vt.Key];
+                            foreach (var etitm in vt.Value)
+                            {
+                                if (bt.ContainsKey(etitm.Key))
+                                {
+
+                                    bt[etitm.Key] = etitm.Value;
+
+                                }
+                                else
+                                {
+                                    bt.Add(etitm.Key, etitm.Value);
+                                }
+                            }
+                        }
+
+                    
+                }
+                
+                return basicTheme;
+
+            }
+            
         }
 
         private List<IComplexEventAction> GetDBComplexActions()
@@ -400,13 +489,6 @@ namespace ActorBackBone
                         var parentExpression = r.ParentEntity.Attributes.Name;
 
                         var childExpression = r.ChildEntity.Attributes.Name;
-
-
-
-                        //var childPropertyExpression = ExpressionsExtensions.Build(childType, r.ChildEntity.EntityTypeAttributes.Name);
-
-
-
 
                         foreach (var processId in r.ChildEntity.EntityType.DomainEntityType
                             .ProcessStateDomainEntityTypes.Select(x => x.ProcessState.Process.Id).Distinct())
@@ -486,7 +568,8 @@ namespace ActorBackBone
                     ?.EntityAttribute
                     .Where(z => viewset.Contains(z.AttributeId))
                     .OrderBy(d => viewset.IndexOf(d.AttributeId))
-                    .Select(z => new EntityKeyValuePair(z.Attributes.Name, z.Value, new ViewAttributeDisplayProperties(new AttributeDisplayProperties(new Dictionary<string, string>(), new Dictionary<string, string>(), new Dictionary<string, string>()), new AttributeDisplayProperties(new Dictionary<string, string>(), new Dictionary<string, string>(), new Dictionary<string, string>())),
+                    .Select(z => new EntityKeyValuePair(z.Attributes.Name, z.Value,
+                       CreateEntityAttributeViewProperties(z.Id),
                         z.Attributes.EntityId != null, z.Attributes.EntityName != null) as IEntityKeyValuePair)
                     .ToList()
                 ??
@@ -496,36 +579,7 @@ namespace ActorBackBone
                     .Select(z =>
                         new EntityKeyValuePair(z.Attributes.Name,
                             null,
-                            new ViewAttributeDisplayProperties
-                            (
-
-                                new AttributeDisplayProperties
-                                (
-                                    ctx.EntityTypeViewModelAttributeGridProperty.Include(q => q.ViewProperty)
-                                        .Where(q => q.EntityTypeViewModelAttributes.EntityTypeAttributeId == z.Id && q.IsWriteView == false)
-                                        .Select(w => new { w.ViewProperty.Name, w.Value }).ToDictionary(w => w.Name, w => w.Value),
-                                    ctx.EntityTypeViewModelAttributeLabelProperty.Include(q => q.ViewProperty)
-                                        .Where(q => q.EntityTypeViewModelAttributes.EntityTypeAttributeId == z.Id && q.IsWriteView == false)
-                                        .Select(w => new { w.ViewProperty.Name, w.Value }).ToDictionary(w => w.Name, w => w.Value),
-                                    ctx.EntityTypeViewModelAttributeValueProperty.Include(q => q.ViewProperty)
-                                        .Where(q => q.EntityTypeViewModelAttributes.EntityTypeAttributeId == z.Id && q.IsWriteView == false)
-                                        .Select(w => new { w.ViewProperty.Name, w.Value }).ToDictionary(w => w.Name, w => w.Value)
-                                ),
-                                new AttributeDisplayProperties
-                                (
-                                    ctx.EntityTypeViewModelAttributeGridProperty.Include(q => q.ViewProperty)
-                                        .Where(q => q.EntityTypeViewModelAttributes.EntityTypeAttributeId == z.Id && q.IsWriteView)
-                                        .Select(w => new { w.ViewProperty.Name, w.Value }).ToDictionary(w => w.Name, w => w.Value),
-                                    ctx.EntityTypeViewModelAttributeLabelProperty.Include(q => q.ViewProperty)
-                                        .Where(q => q.EntityTypeViewModelAttributes.EntityTypeAttributeId == z.Id && q.IsWriteView)
-                                        .Select(w => new { w.ViewProperty.Name, w.Value }).ToDictionary(w => w.Name, w => w.Value),
-                                    ctx.EntityTypeViewModelAttributeValueProperty.Include(q => q.ViewProperty)
-                                        .Where(q => q.EntityTypeViewModelAttributes.EntityTypeAttributeId == z.Id && q.IsWriteView)
-                                        .Select(w => new { w.ViewProperty.Name, w.Value }).ToDictionary(w => w.Name, w => w.Value)
-
-                                )
-
-                            ),
+                            CreateEntityAttributeViewProperties(z.Id),
                             z.Attributes.EntityId != null,
                             z.Attributes.EntityName != null) as IEntityKeyValuePair).ToList();
 
@@ -539,6 +593,51 @@ namespace ActorBackBone
             DynamicEntityType.DynamicEntityTypes.Add(entityType,dynamicEntityType);
             return true;
         }
+
+        private static IViewAttributeDisplayProperties CreateEntityAttributeViewProperties(int entityTypeAttributeId)
+        {
+            return new ViewAttributeDisplayProperties(
+                CreateEntityAttributeDisplayProperties(entityTypeAttributeId, "Read"),
+                CreateEntityAttributeDisplayProperties(entityTypeAttributeId, "Write")
+                );
+           
+        }
+
+        private static AttributeDisplayProperties CreateEntityAttributeDisplayProperties(int entityTypeAttributeId, string viewType)
+        {
+           
+                return new AttributeDisplayProperties(
+                    CreateEntityTypeAttributeDisplayProperties(entityTypeAttributeId, viewType)
+                    );
+
+           
+        }
+
+        private static Dictionary<string, Dictionary<string, string>> CreateEntityTypeAttributeDisplayProperties(
+            int entityTypeAttributeId, string viewType)
+        {
+            using (var ctx = new GenSoftDBContext())
+            {
+                var viewTypeTheme =
+                    ctx.EntityViewModelPresentationProperties
+                        .Include(x => x.ViewPropertyValueOptions)
+                        .Include(x => x.ViewPropertyPresentationPropertyType.PresentationPropertyType)
+                        .Include(x => x.ViewPropertyPresentationPropertyType.ViewProperty)
+                        .Where(x => x.ViewType.Name == viewType && x.EntityTypeViewModelAttributes.EntityTypeAttributeId == entityTypeAttributeId)
+                        .Select(x => new
+                        {
+                            PresentationPropertyName = x.ViewPropertyPresentationPropertyType.PresentationPropertyType
+                                .Name,
+                            ViewPropertyName = x.ViewPropertyPresentationPropertyType.ViewProperty.Name,
+                            x.ViewPropertyValueOptions.Value
+                        }).GroupBy(x => x.PresentationPropertyName)
+                        .Select(x => new {x.Key, Value = x.ToDictionary(z => z.ViewPropertyName, z => z.Value)})
+                        .ToDictionary(x => x.Key, x => x.Value);
+
+                return viewTypeTheme;
+            }
+        }
+
 
         private static Dictionary<string, List<dynamic>> CreateCalculatedProperties(EntityView viewType)
         {
@@ -560,71 +659,27 @@ namespace ActorBackBone
                 return calprops;
         }
 
-        private static List<IEntityKeyValuePair> GetCalculatedProperties(EntityView viewType, Dictionary<string, List<dynamic>> calPropDefinition)
-        {
-            using (var ctx = new GenSoftDBContext())
-            {
-                var res = viewType.EntityType.EntityTypeAttributes
-                    .Where(x => x.CalculatedProperties != null)
-                    .Select(x => x.CalculatedProperties).DistinctBy(x => x.Id)
-                    .Select(x => new EntityKeyValuePair(x.EntityTypeAttributes.Attributes.Name,
-                       null,
-                        new ViewAttributeDisplayProperties
-                        (
-                            new AttributeDisplayProperties
-                            (
-                                ctx.EntityTypeViewModelAttributeGridProperty.Include(q => q.ViewProperty)
-                                    .Where(q => q.EntityTypeViewModelAttributes.EntityTypeAttributeId ==
-                                                x.EntityTypeAttributes.Id &&
-                                                q.IsWriteView == false)
-                                    .Select(w => new {w.ViewProperty.Name, w.Value})
-                                    .ToDictionary(w => w.Name, w => w.Value),
-                                ctx.EntityTypeViewModelAttributeLabelProperty.Include(q => q.ViewProperty)
-                                    .Where(q => q.EntityTypeViewModelAttributes.EntityTypeAttributeId ==
-                                                x.EntityTypeAttributes.Id &&
-                                                q.IsWriteView == false)
-                                    .Select(w => new {w.ViewProperty.Name, w.Value})
-                                    .ToDictionary(w => w.Name, w => w.Value),
-                                ctx.EntityTypeViewModelAttributeValueProperty.Include(q => q.ViewProperty)
-                                    .Where(q => q.EntityTypeViewModelAttributes.EntityTypeAttributeId ==
-                                                x.EntityTypeAttributes.Id &&
-                                                q.IsWriteView == false)
-                                    .Select(w => new {w.ViewProperty.Name, w.Value})
-                                    .ToDictionary(w => w.Name, w => w.Value)
-
-
-                            ),
-                            new AttributeDisplayProperties
-                            (
-                                ctx.EntityTypeViewModelAttributeGridProperty.Include(q => q.ViewProperty)
-                                    .Where(q => q.EntityTypeViewModelAttributes.EntityTypeAttributeId ==
-                                                x.EntityTypeAttributes.Id &&
-                                                q.IsWriteView)
-                                    .Select(w => new {w.ViewProperty.Name, w.Value})
-                                    .ToDictionary(w => w.Name, w => w.Value),
-                                ctx.EntityTypeViewModelAttributeLabelProperty.Include(q => q.ViewProperty)
-                                    .Where(q => q.EntityTypeViewModelAttributes.EntityTypeAttributeId ==
-                                                x.EntityTypeAttributes.Id &&
-                                                q.IsWriteView)
-                                    .Select(w => new {w.ViewProperty.Name, w.Value})
-                                    .ToDictionary(w => w.Name, w => w.Value),
-                                ctx.EntityTypeViewModelAttributeValueProperty.Include(q => q.ViewProperty)
-                                    .Where(q => q.EntityTypeViewModelAttributes.EntityTypeAttributeId ==
-                                                x.EntityTypeAttributes.Id &&
-                                                q.IsWriteView)
-                                    .Select(w => new {w.ViewProperty.Name, w.Value})
-                                    .ToDictionary(w => w.Name, w => w.Value)
-
-                            )
-
-                        ),
-                        viewType.EntityType.EntityList != null,
-                        viewType.EntityType.EntityTypeAttributes.Any(z => z.ChildEntitys.Any())
-                    ) as IEntityKeyValuePair).ToList();
-                return res;
-            }
+        //private static List<IEntityKeyValuePair> GetCalculatedProperties(EntityView viewType, Dictionary<string, List<dynamic>> calPropDefinition)
+        //{
+        //    using (var ctx = new GenSoftDBContext())
+        //    {
+        //        var res = viewType.EntityType.EntityTypeAttributes
+        //            .Where(x => x.CalculatedProperties != null)
+        //            .Select(x => x.CalculatedProperties).DistinctBy(x => x.Id)
+        //            .Select(x => new EntityKeyValuePair(x.EntityTypeAttributes.Attributes.Name,
+        //               null,
+        //                new ViewAttributeDisplayProperties
+        //                (
+        //                    CreateAttributeDisplayProperties(ctx, x.EntityTypeAttributes, "Read"),
+        //                    CreateAttributeDisplayProperties(ctx, x.EntityTypeAttributes, "Write")
+        //                ),
+        //                viewType.EntityType.EntityList != null,
+        //                viewType.EntityType.EntityTypeAttributes.Any(z => z.ChildEntitys.Any())
+        //            ) as IEntityKeyValuePair).ToList();
+        //        return res;
+        //    }
             
-        }
+        //}
 
         public void Intialize(bool autoContinue, List<IViewModelInfo> viewInfos)
         {

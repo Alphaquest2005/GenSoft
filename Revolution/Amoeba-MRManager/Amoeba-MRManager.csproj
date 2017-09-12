@@ -342,12 +342,10 @@
 ..\GenSoft.DBContext\Generated Mappings\EntityType.cs
 ..\GenSoft.DBContext\Generated Mappings\EntityTypeAttributes.cs
 ..\GenSoft.DBContext\Generated Mappings\EntityTypeViewModel.cs
-..\GenSoft.DBContext\Generated Mappings\EntityTypeViewModelAttributeGridProperty.cs
-..\GenSoft.DBContext\Generated Mappings\EntityTypeViewModelAttributeLabelProperty.cs
 ..\GenSoft.DBContext\Generated Mappings\EntityTypeViewModelAttributes.cs
-..\GenSoft.DBContext\Generated Mappings\EntityTypeViewModelAttributeValueProperty.cs
 ..\GenSoft.DBContext\Generated Mappings\EntityView.cs
 ..\GenSoft.DBContext\Generated Mappings\EntityViewModelCommands.cs
+..\GenSoft.DBContext\Generated Mappings\EntityViewModelPresentationProperties.cs
 ..\GenSoft.DBContext\Generated Mappings\Event.cs
 ..\GenSoft.DBContext\Generated Mappings\FunctionParameterConstants.cs
 ..\GenSoft.DBContext\Generated Mappings\FunctionParameters.cs
@@ -358,6 +356,8 @@
 ..\GenSoft.DBContext\Generated Mappings\Message.cs
 ..\GenSoft.DBContext\Generated Mappings\MessageSource.cs
 ..\GenSoft.DBContext\Generated Mappings\MessageType.cs
+..\GenSoft.DBContext\Generated Mappings\PresentationPropertyType.cs
+..\GenSoft.DBContext\Generated Mappings\PresentationTheme.cs
 ..\GenSoft.DBContext\Generated Mappings\Process.cs
 ..\GenSoft.DBContext\Generated Mappings\ProcessComplexState.cs
 ..\GenSoft.DBContext\Generated Mappings\ProcessComplexStateExpectedProcessState.cs
@@ -374,8 +374,13 @@
 ..\GenSoft.DBContext\Generated Mappings\TypeParameter.cs
 ..\GenSoft.DBContext\Generated Mappings\User.cs
 ..\GenSoft.DBContext\Generated Mappings\ViewModelCommands.cs
+..\GenSoft.DBContext\Generated Mappings\ViewModelPropertyPresentationType.cs
 ..\GenSoft.DBContext\Generated Mappings\ViewModelTypes.cs
 ..\GenSoft.DBContext\Generated Mappings\ViewProperty.cs
+..\GenSoft.DBContext\Generated Mappings\ViewPropertyPresentationPropertyType.cs
+..\GenSoft.DBContext\Generated Mappings\ViewPropertyTheme.cs
+..\GenSoft.DBContext\Generated Mappings\ViewPropertyValueOptions.cs
+..\GenSoft.DBContext\Generated Mappings\ViewType.cs
 ..\GenSoft.Entities\EFEntity.cs
 ..\GenSoft.Entities\Generated Entities\Action.cs
 ..\GenSoft.Entities\Generated Entities\ActionEntityType.cs
@@ -402,12 +407,10 @@
 ..\GenSoft.Entities\Generated Entities\EntityType.cs
 ..\GenSoft.Entities\Generated Entities\EntityTypeAttributes.cs
 ..\GenSoft.Entities\Generated Entities\EntityTypeViewModel.cs
-..\GenSoft.Entities\Generated Entities\EntityTypeViewModelAttributeGridProperty.cs
-..\GenSoft.Entities\Generated Entities\EntityTypeViewModelAttributeLabelProperty.cs
 ..\GenSoft.Entities\Generated Entities\EntityTypeViewModelAttributes.cs
-..\GenSoft.Entities\Generated Entities\EntityTypeViewModelAttributeValueProperty.cs
 ..\GenSoft.Entities\Generated Entities\EntityView.cs
 ..\GenSoft.Entities\Generated Entities\EntityViewModelCommands.cs
+..\GenSoft.Entities\Generated Entities\EntityViewModelPresentationProperties.cs
 ..\GenSoft.Entities\Generated Entities\Event.cs
 ..\GenSoft.Entities\Generated Entities\FunctionParameterConstants.cs
 ..\GenSoft.Entities\Generated Entities\FunctionParameters.cs
@@ -418,6 +421,8 @@
 ..\GenSoft.Entities\Generated Entities\Message.cs
 ..\GenSoft.Entities\Generated Entities\MessageSource.cs
 ..\GenSoft.Entities\Generated Entities\MessageType.cs
+..\GenSoft.Entities\Generated Entities\PresentationPropertyType.cs
+..\GenSoft.Entities\Generated Entities\PresentationTheme.cs
 ..\GenSoft.Entities\Generated Entities\Process.cs
 ..\GenSoft.Entities\Generated Entities\ProcessComplexState.cs
 ..\GenSoft.Entities\Generated Entities\ProcessComplexStateExpectedProcessState.cs
@@ -434,8 +439,13 @@
 ..\GenSoft.Entities\Generated Entities\TypeParameter.cs
 ..\GenSoft.Entities\Generated Entities\User.cs
 ..\GenSoft.Entities\Generated Entities\ViewModelCommands.cs
+..\GenSoft.Entities\Generated Entities\ViewModelPropertyPresentationType.cs
 ..\GenSoft.Entities\Generated Entities\ViewModelTypes.cs
 ..\GenSoft.Entities\Generated Entities\ViewProperty.cs
+..\GenSoft.Entities\Generated Entities\ViewPropertyPresentationPropertyType.cs
+..\GenSoft.Entities\Generated Entities\ViewPropertyTheme.cs
+..\GenSoft.Entities\Generated Entities\ViewPropertyValueOptions.cs
+..\GenSoft.Entities\Generated Entities\ViewType.cs
 </LastOutputs>
     </Content>
     <Content Include="MRManger-Interfaces.tt">
@@ -467,12 +477,10 @@
 ..\GenSoft.Interface\Generated Interfaces\EntityType.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityTypeAttributes.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityTypeViewModel.cs
-..\GenSoft.Interface\Generated Interfaces\EntityTypeViewModelAttributeGridProperty.cs
-..\GenSoft.Interface\Generated Interfaces\EntityTypeViewModelAttributeLabelProperty.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityTypeViewModelAttributes.cs
-..\GenSoft.Interface\Generated Interfaces\EntityTypeViewModelAttributeValueProperty.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityView.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityViewModelCommands.cs
+..\GenSoft.Interface\Generated Interfaces\EntityViewModelPresentationProperties.cs
 ..\GenSoft.Interface\Generated Interfaces\Event.cs
 ..\GenSoft.Interface\Generated Interfaces\FunctionParameterConstants.cs
 ..\GenSoft.Interface\Generated Interfaces\FunctionParameters.cs
@@ -483,6 +491,8 @@
 ..\GenSoft.Interface\Generated Interfaces\Message.cs
 ..\GenSoft.Interface\Generated Interfaces\MessageSource.cs
 ..\GenSoft.Interface\Generated Interfaces\MessageType.cs
+..\GenSoft.Interface\Generated Interfaces\PresentationPropertyType.cs
+..\GenSoft.Interface\Generated Interfaces\PresentationTheme.cs
 ..\GenSoft.Interface\Generated Interfaces\Process.cs
 ..\GenSoft.Interface\Generated Interfaces\ProcessComplexState.cs
 ..\GenSoft.Interface\Generated Interfaces\ProcessComplexStateExpectedProcessState.cs
@@ -499,8 +509,13 @@
 ..\GenSoft.Interface\Generated Interfaces\TypeParameter.cs
 ..\GenSoft.Interface\Generated Interfaces\User.cs
 ..\GenSoft.Interface\Generated Interfaces\ViewModelCommands.cs
+..\GenSoft.Interface\Generated Interfaces\ViewModelPropertyPresentationType.cs
 ..\GenSoft.Interface\Generated Interfaces\ViewModelTypes.cs
 ..\GenSoft.Interface\Generated Interfaces\ViewProperty.cs
+..\GenSoft.Interface\Generated Interfaces\ViewPropertyPresentationPropertyType.cs
+..\GenSoft.Interface\Generated Interfaces\ViewPropertyTheme.cs
+..\GenSoft.Interface\Generated Interfaces\ViewPropertyValueOptions.cs
+..\GenSoft.Interface\Generated Interfaces\ViewType.cs
 </LastOutputs>
     </Content>
     <Content Include="MRManger-EntityViews.tt">

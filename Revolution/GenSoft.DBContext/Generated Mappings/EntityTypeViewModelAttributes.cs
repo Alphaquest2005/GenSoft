@@ -21,9 +21,7 @@ namespace GenSoft.Mappings
 			entityBuilder.Property(t => t.EntityTypeAttributeId).HasColumnName("EntityTypeAttributeId").IsRequired();
 			entityBuilder.Property(t => t.EntityTypeViewModelId).HasColumnName("EntityTypeViewModelId").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasMany(x => x.EntityTypeViewModelAttributeGridProperty).WithOne(p => p.EntityTypeViewModelAttributes).HasForeignKey(c => c.EntityTypeViewModelAttributeId).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.EntityTypeViewModelAttributeLabelProperty).WithOne(p => p.EntityTypeViewModelAttributes).HasForeignKey(c => c.EntityTypeViewModelAttributeId).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.EntityTypeViewModelAttributeValueProperty).WithOne(p => p.EntityTypeViewModelAttributes).HasForeignKey(c => c.EntityTypeViewModelAttributeId).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasMany(x => x.EntityViewModelPresentationProperties).WithOne(p => p.EntityTypeViewModelAttributes).HasForeignKey(c => c.EntityTypeViewModelAttributeId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties
 				//entityBuilder.HasOne(p => p.EntityTypeAttributes EntityTypeAttributes).WithMany(p => p.EntityTypeViewModelAttributes).HasForeignKey(c => c.EntityTypeAttributeId).OnDelete(DeleteBehavior.Restrict);

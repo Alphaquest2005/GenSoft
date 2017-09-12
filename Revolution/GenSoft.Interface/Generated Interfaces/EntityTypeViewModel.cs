@@ -19,6 +19,7 @@ namespace GenSoft.Interfaces
 		int ProcessDomainEntityTypeId { get;}
 		string PropertyName { get;}
 		string Symbol { get;}
+		int ViewModelTypeId { get;}
 
 
 

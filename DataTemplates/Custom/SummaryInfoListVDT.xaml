@@ -17,6 +17,7 @@
 
             <ListBox Margin="10,65,10,10"
                      IsSynchronizedWithCurrentItem="True"
+                     x:Name="EntityDetailListGRD"
                      ItemsSource="{Binding EntitySet.Value,
                                            Mode=OneWay}"
                      SelectedItem="{Binding CurrentEntity.Value,

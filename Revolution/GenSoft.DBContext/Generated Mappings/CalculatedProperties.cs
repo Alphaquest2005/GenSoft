@@ -21,8 +21,8 @@ namespace GenSoft.Mappings
 			entityBuilder.Property(t => t.FunctionSetId).HasColumnName("FunctionSetId").IsRequired();
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasMany(x => x.CalculatedPropertyParameters).WithOne(p => p.CalculatedProperties).HasForeignKey(c => c.CalculatedPropertyId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.FunctionParameterConstants).WithOne(p => p.CalculatedProperties).HasForeignKey(c => c.CalculatedPropertyId).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasMany(x => x.CalculatedPropertyParameters).WithOne(p => p.CalculatedProperties).HasForeignKey(c => c.CalculatedPropertyId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties
 				//entityBuilder.HasOne(p => p.FunctionSets FunctionSets).WithMany(p => p.CalculatedProperties).HasForeignKey(c => c.FunctionSetId).OnDelete(DeleteBehavior.Restrict);

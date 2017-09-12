@@ -12,7 +12,7 @@
         </DataTemplate.Resources>
 
         <Grid Width="469"
-              Height="Auto">
+              Height="Auto" >
             <Grid.Background>
                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
                     <GradientStop Offset="0.907" Color="#33000000" />
@@ -25,7 +25,6 @@
                      Margin="0"
                      HorizontalAlignment="Stretch"
                      VerticalAlignment="Top"
-                     
                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                      Background="#33FFFFFF"
                      IsSynchronizedWithCurrentItem="True"

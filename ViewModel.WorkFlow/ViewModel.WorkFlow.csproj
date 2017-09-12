@@ -96,6 +96,10 @@
       <Project>{e3d04176-3758-4c9d-84f3-7a4d3859eae5}</Project>
       <Name>EventMessages</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Revolution\GenSoft.DBContext\GenSoft.DBContext.csproj">
+      <Project>{AE0F4302-D3DF-4561-96A0-0B093F988C03}</Project>
+      <Name>GenSoft.DBContext</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Revolution\GenSoft.Entities\GenSoft.Entities.csproj">
       <Project>{8ED4D838-4075-41B4-88A4-731FF303FB54}</Project>
       <Name>GenSoft.Entities</Name>

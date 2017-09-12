@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using SystemInterfaces;
+using Akka.Util.Internal;
 using Common.DataEntites;
+using GenSoft.DBContexts;
 using GenSoft.Entities;
 using GenSoft.Interfaces;
 using MoreLinq;
@@ -15,31 +17,32 @@ namespace ViewModel.WorkFlow
     public class ProcessViewModels
     {
 
-        public static Dictionary<string, Func<EntityTypeViewModel, IViewModelInfo>> ProcessViewModelFactory =
-            new Dictionary<string, Func<EntityTypeViewModel, IViewModelInfo>>()
+        public static Dictionary<string, Func<EntityTypeViewModel, ViewAttributeDisplayProperties, IViewModelInfo>> ProcessViewModelFactory =
+            new Dictionary<string, Func<EntityTypeViewModel, ViewAttributeDisplayProperties, IViewModelInfo>>()
             {
-                { "SummaryListViewModel", v =>
+                { "SummaryListViewModel", (v, vp) =>
                                             {
                                                 try
                                                 {
+                                                    
                                                 return SummaryListViewModelInfo.SummaryListViewModel(v.ProcessStateDomainEntityTypes.ProcessState.ProcessId,
                                                         DynamicEntityType.DynamicEntityTypes[v.ProcessStateDomainEntityTypes.DomainEntityType.EntityType.Type.Name], v.Symbol, v.Description, v.Priority,
                                                         v.ProcessStateDomainEntityTypes
                                                             .DomainEntityType
                                                             .EntityType
                                                             .EntityTypeAttributes
-                                                    .SelectMany(x => x.ChildEntitys)
-                                                        .Where(x => x.ChildEntity.EntityType.Type.Name == v.ProcessStateDomainEntityTypes.DomainEntityType.EntityType.Type.Name 
-                                                                    && DynamicEntityType.DynamicEntityTypes.ContainsKey(x.ParentEntity.EntityType.Type.Name))
-                                                        .DistinctBy(x => x.Id)
-                                                    .Select(x => new EntityViewModelRelationship()
-                                                    {
-                                                        ParentType = x.ParentEntity.EntityType.Type.Name,
-                                                        ChildType = x.ChildEntity.EntityType.Type.Name,
-                                                        ParentProperty = x.ParentEntity.Attributes.Name,
-                                                        ChildProperty = x.ChildEntity.Attributes.Name,
+                                                            .SelectMany(x => x.ChildEntitys)
+                                                            .Where(x => x.ChildEntity.EntityType.Type.Name == v.ProcessStateDomainEntityTypes.DomainEntityType.EntityType.Type.Name
+                                                                        && DynamicEntityType.DynamicEntityTypes.ContainsKey(x.ParentEntity.EntityType.Type.Name))
+                                                            .DistinctBy(x => x.Id)
+                                                            .Select(x => new EntityViewModelRelationship()
+                                                            {
+                                                                ParentType = x.ParentEntity.EntityType.Type.Name,
+                                                                ChildType = x.ChildEntity.EntityType.Type.Name,
+                                                                ParentProperty = x.ParentEntity.Attributes.Name,
+                                                                ChildProperty = x.ChildEntity.Attributes.Name,
 
-                                                    }).ToList(),
+                                                            }).ToList(),
                                                             //.SelectMany(x => x.ParentEntitys).DistinctBy(x => x.Id)
                                                             //.Select(x => new EntityViewModelRelationship()
                                                             //{
@@ -49,7 +52,8 @@ namespace ViewModel.WorkFlow
                                                             //    ChildProperty = x.ChildEntity.Attributes.Name,
                                                                 
                                                             //}).ToList(),
-                                                        v.EntityViewModelCommands.DistinctBy(x => x.Id).ToList());
+                                                        v.EntityViewModelCommands.DistinctBy(x => x.Id).ToList(),
+                                                        vp);
                                                 }
                                                 catch (Exception e)
                                                 {
@@ -60,7 +64,7 @@ namespace ViewModel.WorkFlow
                                             }},
                 {
                     "EntityViewModel",
-                    v =>
+                    (v, vp) =>
                     {
                         try
                         {
@@ -84,8 +88,8 @@ namespace ViewModel.WorkFlow
 
                                                             }).ToList(),
                                                        
-                                                        viewCommands:v.EntityViewModelCommands.DistinctBy(x => x.Id).ToList()
-                                                     );
+                                                        viewCommands: v.EntityViewModelCommands.DistinctBy(x => x.Id).ToList(),
+                                                        displayProperties: vp);
                         }
                         catch (Exception e)
                         {
@@ -97,6 +101,8 @@ namespace ViewModel.WorkFlow
                 }
             };
 
+
+       
         public static readonly List<IViewModelInfo> ProcessViewModelInfos = new List<IViewModelInfo>
         {
             MainWindowViewModelInfo.MainWindowViewModel,

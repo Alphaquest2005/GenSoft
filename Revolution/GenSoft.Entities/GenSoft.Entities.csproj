@@ -75,12 +75,10 @@
     <Compile Include="Generated Entities\EntityType.cs" />
     <Compile Include="Generated Entities\EntityTypeAttributes.cs" />
     <Compile Include="Generated Entities\EntityTypeViewModel.cs" />
-    <Compile Include="Generated Entities\EntityTypeViewModelAttributeGridProperty.cs" />
-    <Compile Include="Generated Entities\EntityTypeViewModelAttributeLabelProperty.cs" />
     <Compile Include="Generated Entities\EntityTypeViewModelAttributes.cs" />
-    <Compile Include="Generated Entities\EntityTypeViewModelAttributeValueProperty.cs" />
     <Compile Include="Generated Entities\EntityView.cs" />
     <Compile Include="Generated Entities\EntityViewModelCommands.cs" />
+    <Compile Include="Generated Entities\EntityViewModelPresentationProperties.cs" />
     <Compile Include="Generated Entities\Event.cs" />
     <Compile Include="Generated Entities\FunctionParameterConstants.cs" />
     <Compile Include="Generated Entities\FunctionParameters.cs" />
@@ -91,6 +89,8 @@
     <Compile Include="Generated Entities\Message.cs" />
     <Compile Include="Generated Entities\MessageSource.cs" />
     <Compile Include="Generated Entities\MessageType.cs" />
+    <Compile Include="Generated Entities\PresentationPropertyType.cs" />
+    <Compile Include="Generated Entities\PresentationTheme.cs" />
     <Compile Include="Generated Entities\Process.cs" />
     <Compile Include="Generated Entities\ProcessComplexState.cs" />
     <Compile Include="Generated Entities\ProcessComplexStateExpectedProcessState.cs" />
@@ -107,8 +107,13 @@
     <Compile Include="Generated Entities\TypeParameter.cs" />
     <Compile Include="Generated Entities\User.cs" />
     <Compile Include="Generated Entities\ViewModelCommands.cs" />
+    <Compile Include="Generated Entities\ViewModelPropertyPresentationType.cs" />
     <Compile Include="Generated Entities\ViewModelTypes.cs" />
     <Compile Include="Generated Entities\ViewProperty.cs" />
+    <Compile Include="Generated Entities\ViewPropertyPresentationPropertyType.cs" />
+    <Compile Include="Generated Entities\ViewPropertyTheme.cs" />
+    <Compile Include="Generated Entities\ViewPropertyValueOptions.cs" />
+    <Compile Include="Generated Entities\ViewType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -46,8 +46,13 @@ namespace RevolutionData
             }, 
             new List<IViewModelEventCommand<IViewModel, IEvent>>(),
             typeof(IMainWindowViewModel),
-            typeof(IBodyViewModel)
-            ,0)
+            typeof(IBodyViewModel),
+            0,
+            new ViewAttributeDisplayProperties(
+                new AttributeDisplayProperties(new Dictionary<string, Dictionary<string, string>>()),
+                new AttributeDisplayProperties(new Dictionary<string, Dictionary<string, string>>())
+            )
+            )
             ;
     }
 }

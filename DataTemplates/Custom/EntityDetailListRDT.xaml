@@ -10,7 +10,7 @@
         <DataTemplate.Resources>
             <converters:NullVisibilityConverter x:Key="NullVisibilityConverter" />
         </DataTemplate.Resources>
-        <Grid Background="#4CF9F8F8" Width="350" Height="500">
+        <Grid  Background="#4CF9F8F8" Width="350" Height="500">
             <TextBlock Width="460"
                        Height="24"
                        Margin="30,10,0,0"
@@ -25,6 +25,7 @@
                      Margin="10,48,10,10"
                      HorizontalAlignment="Stretch"
                      VerticalAlignment="Stretch"
+                     x:Name="EntityDetailListGRD"
                      Background="#33FFFFFF"
                      IsSynchronizedWithCurrentItem="True"
                      ItemTemplate="{DynamicResource EntityDetailRDT}"

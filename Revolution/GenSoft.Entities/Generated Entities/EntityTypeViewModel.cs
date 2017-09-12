@@ -18,14 +18,16 @@ namespace GenSoft.Entities
 		public virtual int ProcessDomainEntityTypeId { get; set; }
 		public virtual string PropertyName { get; set; }
 		public virtual string Symbol { get; set; }
+		public virtual int ViewModelTypeId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
-				public virtual ICollection<EntityTypeViewModelAttributes> EntityTypeViewModelAttributes {get; set;}
 				public virtual ICollection<EntityViewModelCommands> EntityViewModelCommands {get; set;}
+				public virtual ICollection<EntityTypeViewModelAttributes> EntityTypeViewModelAttributes {get; set;}
 		
 			// ---------Parent Relationships
 				public virtual ProcessStateDomainEntityTypes ProcessStateDomainEntityTypes {get; set;}
+				public virtual ViewModelTypes ViewModelTypes {get; set;}
 	
 
 	}

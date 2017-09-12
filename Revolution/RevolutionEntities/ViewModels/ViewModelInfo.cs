@@ -1,19 +1,21 @@
 using System;
 using System.Collections.Generic;
 using SystemInterfaces;
+using Common;
 using ViewModel.Interfaces;
 
 namespace RevolutionEntities.ViewModels
 {
     public class ViewModelInfo : IViewModelInfo
     {
-        public ViewModelInfo(int processId, IViewInfo viewInfo, List<IViewModelEventSubscription<IViewModel, IEvent>> subscriptions, List<IViewModelEventPublication<IViewModel, IEvent>> publications, List<IViewModelEventCommand<IViewModel, IEvent>> commands, Type viewModelType, Type orientation, int priority)
+        public ViewModelInfo(int processId, IViewInfo viewInfo, List<IViewModelEventSubscription<IViewModel, IEvent>> subscriptions, List<IViewModelEventPublication<IViewModel, IEvent>> publications, List<IViewModelEventCommand<IViewModel, IEvent>> commands, Type viewModelType, Type orientation, int priority, IViewAttributeDisplayProperties displayProperties)
         {
             ProcessId = processId;
             Subscriptions = subscriptions;
             ViewModelType = viewModelType;
             Orientation = orientation;
             Priority = priority;
+            DisplayProperties = displayProperties;
             ViewInfo = viewInfo;
             Commands = commands;
             Publications = publications;
@@ -29,6 +31,7 @@ namespace RevolutionEntities.ViewModels
         public Type Orientation { get; }
         public int Priority { get; }
         public List<IViewModelInfo> ViewModelInfos { get; } = new List<IViewModelInfo>();
+        public IViewAttributeDisplayProperties DisplayProperties { get; }
     }
 
     public class ViewInfo : IViewInfo
@@ -52,7 +55,37 @@ namespace RevolutionEntities.ViewModels
         public EntityViewInfo(string name, string symbol, string description, IDynamicEntityType entityType) : base(name,symbol,description)
         {
             EntityType = entityType;
+            
         }
         public IDynamicEntityType EntityType { get; }
+        
     }
+
+    public class AttributeDisplayProperties : IAttributeDisplayProperties
+    {
+        public AttributeDisplayProperties(Dictionary< string, Dictionary<string, string>> properties)
+        {
+            Properties = new Dictionary<string, Dictionary<string, string>>(properties);
+        }
+
+        public Dictionary<string, Dictionary<string, string>> Properties { get; }
+        
+    }
+
+    public class ViewAttributeDisplayProperties : IViewAttributeDisplayProperties
+    {
+        public ViewAttributeDisplayProperties(AttributeDisplayProperties readProperties, AttributeDisplayProperties writeProperties)
+        {
+            ReadProperties = readProperties;
+            WriteProperties = writeProperties;
+        }
+
+        public AttributeDisplayProperties ReadProperties { get; }
+        public AttributeDisplayProperties WriteProperties { get; }
+
+        IAttributeDisplayProperties IViewAttributeDisplayProperties.ReadProperties => ReadProperties;
+
+        IAttributeDisplayProperties IViewAttributeDisplayProperties.WriteProperties => WriteProperties;
+    }
+
 }

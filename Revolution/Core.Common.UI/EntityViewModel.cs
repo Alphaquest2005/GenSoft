@@ -15,6 +15,7 @@ using Reactive.Bindings;
 using ReactiveUI;
 using RevolutionData.Context;
 using RevolutionEntities.Process;
+using RevolutionEntities.ViewModels;
 using ViewModel.Interfaces;
 using ViewModelInterfaces;
 
@@ -28,13 +29,14 @@ namespace Core.Common.UI
             List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions,
             List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications,
             List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, ISystemProcess process, Type orientation,
-            int priority) : base(process, viewInfo, eventSubscriptions, eventPublications, commandInfo, orientation,
+            int priority, IViewAttributeDisplayProperties displayProperties) : base(process, viewInfo, eventSubscriptions, eventPublications, commandInfo, orientation,
             priority)
         {
+            DisplayProperties = displayProperties;
             State.Value = new ProcessStateEntity(process, viewInfo.EntityType.DefaultEntity(), new StateInfo(process.Id, "IntialState", "Inital","first op"));
         }
 
-        public IEntityKeyValuePair CurrentProperty { get; } = new EntityKeyValuePair(null, null, new ViewAttributeDisplayProperties(new AttributeDisplayProperties(new Dictionary<string, string>(), new Dictionary<string, string>(), new Dictionary<string, string>()), new AttributeDisplayProperties(new Dictionary<string, string>(), new Dictionary<string, string>(), new Dictionary<string, string>())));
+        public IEntityKeyValuePair CurrentProperty { get; } = new EntityKeyValuePair(null, null,new ViewAttributeDisplayProperties(new AttributeDisplayProperties(new Dictionary<string, Dictionary<string, string>>()), new AttributeDisplayProperties(new Dictionary<string, Dictionary<string, string>>())));
         public ObservableDictionary<string, dynamic> ChangeTracking { get; } = new ObservableDictionary<string, dynamic>();
 
         private ReactiveProperty<IProcessStateEntity> _state = new ReactiveProperty<IProcessStateEntity>(null, ReactivePropertyMode.DistinctUntilChanged);
@@ -51,6 +53,7 @@ namespace Core.Common.UI
         }
 
         public ObservableList<IDynamicEntity> ParentEntities { get; } = new ObservableList<IDynamicEntity>();
+        public IViewAttributeDisplayProperties DisplayProperties { get; }
 
         private ReactiveProperty<IDynamicEntity> _currentEntity = new ReactiveProperty<IDynamicEntity>(null, ReactivePropertyMode.DistinctUntilChanged);
         public ReactiveProperty<IDynamicEntity> CurrentEntity
