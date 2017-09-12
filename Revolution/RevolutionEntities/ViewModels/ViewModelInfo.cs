@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using SystemInterfaces;
 using Common;
 using ViewModel.Interfaces;
@@ -63,9 +64,9 @@ namespace RevolutionEntities.ViewModels
 
     public class AttributeDisplayProperties : IAttributeDisplayProperties
     {
-        public AttributeDisplayProperties(Dictionary< string, Dictionary<string, string>> properties)
+        public AttributeDisplayProperties(Dictionary<string, Dictionary<string, string>> properties)
         {
-            Properties = new Dictionary<string, Dictionary<string, string>>(properties);
+            Properties = properties;
         }
 
         public Dictionary<string, Dictionary<string, string>> Properties { get; }

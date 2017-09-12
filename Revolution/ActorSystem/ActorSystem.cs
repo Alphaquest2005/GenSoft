@@ -409,8 +409,9 @@ namespace ActorBackBone
 
                     
                 }
-                
-                return basicTheme;
+
+                var displayProperties = basicTheme;
+               return displayProperties;
 
             }
             
