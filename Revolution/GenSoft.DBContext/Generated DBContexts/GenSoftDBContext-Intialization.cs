@@ -122,8 +122,8 @@ namespace GenSoft.DBContexts
 					SET IDENTITY_INSERT dbo.[ViewProperty] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[ViewType] ON
-						Insert Into dbo.[ViewType] (Id,Name) Values('2','Write')
 						Insert Into dbo.[ViewType] (Id,Name) Values('1','Read')
+						Insert Into dbo.[ViewType] (Id,Name) Values('2','Write')
 					SET IDENTITY_INSERT dbo.[ViewType] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 						Insert Into dbo.[EntityType] (Id,EntitySetName) Values('49','IForeignPhoneNumbers')
@@ -165,8 +165,8 @@ namespace GenSoft.DBContexts
 			//No test data for Message
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[Entity] ON
-						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('3','37',cast((select Value from AmoebaDB.dbo.TestValues where Id = 236647) as varbinary(max)))
-						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('4','40',cast((select Value from AmoebaDB.dbo.TestValues where Id = 236650) as varbinary(max)))
+						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('3','37',cast((select Value from AmoebaDB.dbo.TestValues where Id = 237871) as varbinary(max)))
+						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('4','40',cast((select Value from AmoebaDB.dbo.TestValues where Id = 237874) as varbinary(max)))
 					SET IDENTITY_INSERT dbo.[Entity] OFF");
 			//No test data for Message
 				Instance.Database.ExecuteSqlCommand(@"
@@ -256,13 +256,13 @@ namespace GenSoft.DBContexts
 						Insert Into dbo.[EntityViewModelCommands] (EntityViewModelId,Id,ViewModelCommandId) Values('6','8','2')
 						Insert Into dbo.[EntityViewModelCommands] (EntityViewModelId,Id,ViewModelCommandId) Values('6','9','4')
 						Insert Into dbo.[EntityViewModelCommands] (EntityViewModelId,Id,ViewModelCommandId) Values('7','10','2')
-						Insert Into dbo.[EntityViewModelCommands] (EntityViewModelId,Id,ViewModelCommandId) Values('10','17','4')
 						Insert Into dbo.[EntityViewModelCommands] (EntityViewModelId,Id,ViewModelCommandId) Values('7','11','4')
 						Insert Into dbo.[EntityViewModelCommands] (EntityViewModelId,Id,ViewModelCommandId) Values('8','12','2')
 						Insert Into dbo.[EntityViewModelCommands] (EntityViewModelId,Id,ViewModelCommandId) Values('8','13','4')
 						Insert Into dbo.[EntityViewModelCommands] (EntityViewModelId,Id,ViewModelCommandId) Values('9','14','2')
 						Insert Into dbo.[EntityViewModelCommands] (EntityViewModelId,Id,ViewModelCommandId) Values('9','15','4')
 						Insert Into dbo.[EntityViewModelCommands] (EntityViewModelId,Id,ViewModelCommandId) Values('10','16','2')
+						Insert Into dbo.[EntityViewModelCommands] (EntityViewModelId,Id,ViewModelCommandId) Values('10','17','4')
 					SET IDENTITY_INSERT dbo.[EntityViewModelCommands] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[StateAction] ON
@@ -295,10 +295,10 @@ namespace GenSoft.DBContexts
 						Insert Into dbo.[ViewPropertyValueOptions] (Id,Value,ViewPropertyId) Values('2','Hidden','1')
 						Insert Into dbo.[ViewPropertyValueOptions] (Id,Value,ViewPropertyId) Values('3','16','2')
 						Insert Into dbo.[ViewPropertyValueOptions] (Id,Value,ViewPropertyId) Values('4','18','2')
+						Insert Into dbo.[ViewPropertyValueOptions] (Id,Value,ViewPropertyId) Values('7','Normal','3')
 						Insert Into dbo.[ViewPropertyValueOptions] (Id,Value,ViewPropertyId) Values('5','14','2')
 						Insert Into dbo.[ViewPropertyValueOptions] (Id,Value,ViewPropertyId) Values('6','Bold','3')
 						Insert Into dbo.[ViewPropertyValueOptions] (Id,Value,ViewPropertyId) Values('8','Visible','1')
-						Insert Into dbo.[ViewPropertyValueOptions] (Id,Value,ViewPropertyId) Values('7','Normal','3')
 					SET IDENTITY_INSERT dbo.[ViewPropertyValueOptions] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[ViewModelPropertyPresentationType] ON
@@ -307,12 +307,12 @@ namespace GenSoft.DBContexts
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[ViewPropertyTheme] ON
 						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ValueOptionId,ViewPropertyPresentationPropertyTypeId,ViewTypeId) Values('1','1','8','1','1')
-						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ValueOptionId,ViewPropertyPresentationPropertyTypeId,ViewTypeId) Values('1','4','4','5','1')
-						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ValueOptionId,ViewPropertyPresentationPropertyTypeId,ViewTypeId) Values('1','3','8','3','1')
 						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ValueOptionId,ViewPropertyPresentationPropertyTypeId,ViewTypeId) Values('1','2','8','2','1')
-						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ValueOptionId,ViewPropertyPresentationPropertyTypeId,ViewTypeId) Values('1','7','7','8','1')
 						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ValueOptionId,ViewPropertyPresentationPropertyTypeId,ViewTypeId) Values('1','6','7','7','1')
 						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ValueOptionId,ViewPropertyPresentationPropertyTypeId,ViewTypeId) Values('1','5','4','6','1')
+						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ValueOptionId,ViewPropertyPresentationPropertyTypeId,ViewTypeId) Values('1','4','4','5','1')
+						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ValueOptionId,ViewPropertyPresentationPropertyTypeId,ViewTypeId) Values('1','3','8','3','1')
+						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ValueOptionId,ViewPropertyPresentationPropertyTypeId,ViewTypeId) Values('1','7','7','8','1')
 					SET IDENTITY_INSERT dbo.[ViewPropertyTheme] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 						Insert Into dbo.[DataType] (Id) Values('5')
@@ -476,12 +476,16 @@ namespace GenSoft.DBContexts
 						Insert Into dbo.[EntityTypeViewModelAttributes] (EntityTypeAttributeId,EntityTypeViewModelId,Id) Values('13','1','1')
 						Insert Into dbo.[EntityTypeViewModelAttributes] (EntityTypeAttributeId,EntityTypeViewModelId,Id) Values('90','1','2')
 						Insert Into dbo.[EntityTypeViewModelAttributes] (EntityTypeAttributeId,EntityTypeViewModelId,Id) Values('15','1','3')
-						Insert Into dbo.[EntityTypeViewModelAttributes] (EntityTypeAttributeId,EntityTypeViewModelId,Id) Values('30','3','5')
 						Insert Into dbo.[EntityTypeViewModelAttributes] (EntityTypeAttributeId,EntityTypeViewModelId,Id) Values('16','1','4')
+						Insert Into dbo.[EntityTypeViewModelAttributes] (EntityTypeAttributeId,EntityTypeViewModelId,Id) Values('30','3','5')
+						Insert Into dbo.[EntityTypeViewModelAttributes] (EntityTypeAttributeId,EntityTypeViewModelId,Id) Values('89','1','7')
+						Insert Into dbo.[EntityTypeViewModelAttributes] (EntityTypeAttributeId,EntityTypeViewModelId,Id) Values('14','1','6')
 					SET IDENTITY_INSERT dbo.[EntityTypeViewModelAttributes] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[EntityViewModelPresentationProperties] ON
 						Insert Into dbo.[EntityViewModelPresentationProperties] (EntityTypeViewModelAttributeId,Id,PresentationThemeId,ValueOptionId,ViewPropertyPresentationPropertyTypeId,ViewTypeId) Values('2','1','1','2','2','1')
+						Insert Into dbo.[EntityViewModelPresentationProperties] (EntityTypeViewModelAttributeId,Id,PresentationThemeId,ValueOptionId,ViewPropertyPresentationPropertyTypeId,ViewTypeId) Values('7','5','1','2','1','1')
+						Insert Into dbo.[EntityViewModelPresentationProperties] (EntityTypeViewModelAttributeId,Id,PresentationThemeId,ValueOptionId,ViewPropertyPresentationPropertyTypeId,ViewTypeId) Values('6','2','1','2','1','1')
 					SET IDENTITY_INSERT dbo.[EntityViewModelPresentationProperties] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[EntityAttribute] ON
@@ -546,9 +550,9 @@ namespace GenSoft.DBContexts
 					SET IDENTITY_INSERT dbo.[FunctionSetFunctions] ON
 						Insert Into dbo.[FunctionSetFunctions] (FunctionId,FunctionSetId,Id) Values('3','1','3')
 						Insert Into dbo.[FunctionSetFunctions] (FunctionId,FunctionSetId,Id) Values('1','1','4')
+						Insert Into dbo.[FunctionSetFunctions] (FunctionId,FunctionSetId,Id) Values('4','1','2')
 						Insert Into dbo.[FunctionSetFunctions] (FunctionId,FunctionSetId,Id) Values('2','2','8')
 						Insert Into dbo.[FunctionSetFunctions] (FunctionId,FunctionSetId,Id) Values('7','2','6')
-						Insert Into dbo.[FunctionSetFunctions] (FunctionId,FunctionSetId,Id) Values('4','1','2')
 					SET IDENTITY_INSERT dbo.[FunctionSetFunctions] OFF");
 			//No test data for MessageType
 			//No test data for MessageType
@@ -586,9 +590,9 @@ namespace GenSoft.DBContexts
 ");
 				Instance.Database.ExecuteSqlCommand(@"
 						Insert Into dbo.[EntityView] (BaseEntityTypeId,Id) Values('37','8')
+						Insert Into dbo.[EntityView] (BaseEntityTypeId,Id) Values('37','4')
 						Insert Into dbo.[EntityView] (BaseEntityTypeId,Id) Values('43','9')
 						Insert Into dbo.[EntityView] (BaseEntityTypeId,Id) Values('44','10')
-						Insert Into dbo.[EntityView] (BaseEntityTypeId,Id) Values('37','4')
 						Insert Into dbo.[EntityView] (BaseEntityTypeId,Id) Values('47','11')
 						Insert Into dbo.[EntityView] (BaseEntityTypeId,Id) Values('37','12')
 						Insert Into dbo.[EntityView] (BaseEntityTypeId,Id) Values('37','13')

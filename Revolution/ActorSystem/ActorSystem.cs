@@ -570,7 +570,7 @@ namespace ActorBackBone
                     .Where(z => viewset.Contains(z.AttributeId))
                     .OrderBy(d => viewset.IndexOf(d.AttributeId))
                     .Select(z => new EntityKeyValuePair(z.Attributes.Name, z.Value,
-                       CreateEntityAttributeViewProperties(z.Id),
+                       (ViewAttributeDisplayProperties) CreateEntityAttributeViewProperties(z.Id),
                         z.Attributes.EntityId != null, z.Attributes.EntityName != null) as IEntityKeyValuePair)
                     .ToList()
                 ??
@@ -580,7 +580,7 @@ namespace ActorBackBone
                     .Select(z =>
                         new EntityKeyValuePair(z.Attributes.Name,
                             null,
-                            CreateEntityAttributeViewProperties(z.Id),
+                            (ViewAttributeDisplayProperties) CreateEntityAttributeViewProperties(z.Id),
                             z.Attributes.EntityId != null,
                             z.Attributes.EntityName != null) as IEntityKeyValuePair).ToList();
 
@@ -619,7 +619,20 @@ namespace ActorBackBone
         {
             using (var ctx = new GenSoftDBContext())
             {
-                var viewTypeTheme =
+                var basicTheme = ctx.ViewPropertyTheme
+                    .Include(x => x.ViewPropertyValueOptions)
+                    .Include(x => x.ViewPropertyPresentationPropertyType.PresentationPropertyType)
+                    .Include(x => x.ViewPropertyPresentationPropertyType.ViewProperty)
+                    .Where(x => x.ViewType.Name == viewType)
+                    .Select(x => new
+                    {
+                        PresentationPropertyName = x.ViewPropertyPresentationPropertyType.PresentationPropertyType.Name,
+                        ViewPropertyName = x.ViewPropertyPresentationPropertyType.ViewProperty.Name,
+                        Value = (string)null
+                    }).GroupBy(x => x.PresentationPropertyName)
+                    .Select(x => new { x.Key, Value = x.ToDictionary(z => z.ViewPropertyName, z => z.Value) }).ToDictionary(x => x.Key, x => x.Value);
+
+                var entityAttributeTheme =
                     ctx.EntityViewModelPresentationProperties
                         .Include(x => x.ViewPropertyValueOptions)
                         .Include(x => x.ViewPropertyPresentationPropertyType.PresentationPropertyType)
@@ -635,7 +648,37 @@ namespace ActorBackBone
                         .Select(x => new {x.Key, Value = x.ToDictionary(z => z.ViewPropertyName, z => z.Value)})
                         .ToDictionary(x => x.Key, x => x.Value);
 
-                return viewTypeTheme;
+                foreach (var vt in entityAttributeTheme)
+                {
+
+
+                    if (!basicTheme.ContainsKey(vt.Key))
+                    {
+
+                        basicTheme.Add(vt.Key, vt.Value);
+                    }
+                    else
+                    {
+                        var bt = basicTheme[vt.Key];
+                        foreach (var etitm in vt.Value)
+                        {
+                            if (bt.ContainsKey(etitm.Key))
+                            {
+
+                                bt[etitm.Key] = etitm.Value;
+
+                            }
+                            else
+                            {
+                                bt.Add(etitm.Key, etitm.Value);
+                            }
+                        }
+                    }
+
+
+                }
+
+                return basicTheme;
             }
         }
 

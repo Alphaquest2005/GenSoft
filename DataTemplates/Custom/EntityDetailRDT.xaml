@@ -10,15 +10,16 @@
     <DataTemplate x:Key="EntityDetailRDT" DataType="common:EntityKeyValuePair">
         <DataTemplate.Resources>
             <converters:NullVisibilityConverter x:Key="NullVisibilityConverter" />
-            <converters:FontConverter x:Key="FontConverter"/>
-            <converters:StringVisibilityConverter x:Key="VisibilityConverter"/>
+            <converters:FontMultiConverter x:Key="FontMultiConverter"/>
+            <converters:FontSizeMultiConverter x:Key="FontSizeMultiConverter"/>
+            <converters:StringVisibilityMultiConverter x:Key="VisibilityMultiConverter"/>
         </DataTemplate.Resources>
         <StackPanel Orientation="Horizontal"  >
             <StackPanel.Visibility>
-                <PriorityBinding>
-                    <!--<Binding Path="DisplayProperties.ReadProperties.Properties[AttributeGrid][Visibility]" Converter="{StaticResource VisibilityConverter}"/>-->
-                    <Binding Path="DataContext.DisplayProperties.ReadProperties.Properties[AttributeGrid][Visibility]" TargetNullValue="{x:Static Visibility.Visible}" Converter="{StaticResource VisibilityConverter}" ElementName="EntityDetailListGRD"/>
-                </PriorityBinding>
+                <MultiBinding  Converter="{StaticResource VisibilityMultiConverter}" TargetNullValue="{x:Static Visibility.Visible}">
+                    <Binding Path="DisplayProperties.ReadProperties.Properties[AttributeGrid][Visibility]"/>
+                    <Binding Path="DataContext.DisplayProperties.ReadProperties.Properties[AttributeGrid][Visibility]" ElementName="EntityDetailListGRD"/>
+                </MultiBinding>
             </StackPanel.Visibility>
             <TextBlock Width="Auto"
                        Height="Auto"
@@ -30,22 +31,22 @@
                        
                        >
                 <TextBlock.Visibility>
-                    <PriorityBinding>
-                        <!--<Binding Path="DisplayProperties.ReadProperties.Properties[AttributeLabel][Visibility]" Converter="{StaticResource VisibilityConverter}"/>-->
-                        <Binding Path="DataContext.DisplayProperties.ReadProperties.Properties[AttributeLabel][Visibility]" TargetNullValue="{x:Static Visibility.Visible}" Converter="{StaticResource VisibilityConverter}" ElementName="EntityDetailListGRD"/>
-                    </PriorityBinding>
+                    <MultiBinding  Converter="{StaticResource VisibilityMultiConverter}" TargetNullValue="{x:Static Visibility.Visible}">
+                        <Binding Path="DisplayProperties.ReadProperties.Properties[AttributeLabel][Visibility]"/>
+                        <Binding Path="DataContext.DisplayProperties.ReadProperties.Properties[AttributeLabel][Visibility]" ElementName="EntityDetailListGRD"/>
+                    </MultiBinding>
                 </TextBlock.Visibility>
                 <TextBlock.FontSize>
-                    <PriorityBinding>
-                        <!--<Binding Path="DisplayProperties.ReadProperties.Properties[AttributeLabel][FontSize]"/>-->
-                        <Binding Path="DataContext.DisplayProperties.ReadProperties.Properties[AttributeLabel][FontSize]" TargetNullValue="11" ElementName="EntityDetailListGRD"/>
-                    </PriorityBinding>
+                    <MultiBinding Converter="{StaticResource FontSizeMultiConverter}" TargetNullValue="11">
+                        <Binding Path="DisplayProperties.ReadProperties.Properties[AttributeLabel][FontSize]"/>
+                        <Binding Path="DataContext.DisplayProperties.ReadProperties.Properties[AttributeLabel][FontSize]" ElementName="EntityDetailListGRD"/>
+                    </MultiBinding>
                 </TextBlock.FontSize>
                 <TextBlock.FontWeight>
-                    <PriorityBinding>
-                        <!--<Binding Path="DisplayProperties.ReadProperties.Properties[AttributeLabel][FontWeight]" Converter="{StaticResource FontConverter}"/>-->
-                        <Binding Path="DataContext.DisplayProperties.ReadProperties.Properties[AttributeLabel][FontWeight]" TargetNullValue="{x:Static FontWeights.Bold}" Converter="{StaticResource FontConverter}" ElementName="EntityDetailListGRD"/>
-                    </PriorityBinding>
+                    <MultiBinding Converter="{StaticResource FontMultiConverter}" TargetNullValue="{x:Static FontWeights.Bold}">
+                        <Binding Path="DisplayProperties.ReadProperties.Properties[AttributeLabel][FontWeight]"/>
+                        <Binding Path="DataContext.DisplayProperties.ReadProperties.Properties[AttributeLabel][FontWeight]" ElementName="EntityDetailListGRD"/>
+                    </MultiBinding>
                 </TextBlock.FontWeight>
             </TextBlock>
             <!---->
@@ -59,22 +60,22 @@
                                     UpdateSourceTrigger=PropertyChanged,
                                     ValidatesOnDataErrors=True}" >
                 <TextBlock.Visibility>
-                    <PriorityBinding>
-                        <!--<Binding Path="DisplayProperties.ReadProperties.Properties[AttributeValue][Visibility]" Converter="{StaticResource VisibilityConverter}"/>-->
-                        <Binding Path="DataContext.DisplayProperties.ReadProperties.Properties[AttributeValue][Visibility]" TargetNullValue="{x:Static Visibility.Visible}" Converter="{StaticResource VisibilityConverter}" ElementName="EntityDetailListGRD"/>
-                    </PriorityBinding>
+                    <MultiBinding  Converter="{StaticResource VisibilityMultiConverter}" TargetNullValue="{x:Static Visibility.Visible}">
+                        <Binding Path="DisplayProperties.ReadProperties.Properties[AttributeValue][Visibility]"/>
+                        <Binding Path="DataContext.DisplayProperties.ReadProperties.Properties[AttributeValue][Visibility]" ElementName="EntityDetailListGRD"/>
+                    </MultiBinding>
                 </TextBlock.Visibility>
                 <TextBlock.FontSize>
-                    <PriorityBinding>
-                        <!--<Binding Path="DisplayProperties.ReadProperties.Properties[AttributeValue][FontSize]"/>-->
-                        <Binding Path="DataContext.DisplayProperties.ReadProperties.Properties[AttributeValue][FontSize]" TargetNullValue="11" ElementName="EntityDetailListGRD"/>
-                    </PriorityBinding>
+                    <MultiBinding Converter="{StaticResource FontSizeMultiConverter}" TargetNullValue="11">
+                        <Binding Path="DisplayProperties.ReadProperties.Properties[AttributeValue][FontSize]"/>
+                        <Binding Path="DataContext.DisplayProperties.ReadProperties.Properties[AttributeValue][FontSize]"  ElementName="EntityDetailListGRD"/>
+                    </MultiBinding>
                 </TextBlock.FontSize>
                 <TextBlock.FontWeight>
-                    <PriorityBinding>
-                        <!--<Binding Path="DisplayProperties.ReadProperties.Properties[AttributeValue][FontWeight]" Converter="{StaticResource FontConverter}"/>-->
-                        <Binding Path="DataContext.DisplayProperties.ReadProperties.Properties[AttributeValue][FontWeight]" TargetNullValue="{x:Static FontWeights.Bold}" Converter="{StaticResource FontConverter}" ElementName="EntityDetailListGRD"/>
-                    </PriorityBinding>
+                    <MultiBinding Converter="{StaticResource FontMultiConverter}" TargetNullValue="{x:Static FontWeights.Bold}">
+                        <Binding Path="DisplayProperties.ReadProperties.Properties[AttributeValue][FontWeight]"/>
+                        <Binding Path="DataContext.DisplayProperties.ReadProperties.Properties[AttributeValue][FontWeight]" ElementName="EntityDetailListGRD"/>
+                    </MultiBinding>
                 </TextBlock.FontWeight>
                
             </TextBlock>

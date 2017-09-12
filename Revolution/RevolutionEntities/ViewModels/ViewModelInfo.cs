@@ -62,31 +62,6 @@ namespace RevolutionEntities.ViewModels
         
     }
 
-    public class AttributeDisplayProperties : IAttributeDisplayProperties
-    {
-        public AttributeDisplayProperties(Dictionary<string, Dictionary<string, string>> properties)
-        {
-            Properties = properties;
-        }
-
-        public Dictionary<string, Dictionary<string, string>> Properties { get; }
-        
-    }
-
-    public class ViewAttributeDisplayProperties : IViewAttributeDisplayProperties
-    {
-        public ViewAttributeDisplayProperties(AttributeDisplayProperties readProperties, AttributeDisplayProperties writeProperties)
-        {
-            ReadProperties = readProperties;
-            WriteProperties = writeProperties;
-        }
-
-        public AttributeDisplayProperties ReadProperties { get; }
-        public AttributeDisplayProperties WriteProperties { get; }
-
-        IAttributeDisplayProperties IViewAttributeDisplayProperties.ReadProperties => ReadProperties;
-
-        IAttributeDisplayProperties IViewAttributeDisplayProperties.WriteProperties => WriteProperties;
-    }
+   
 
 }

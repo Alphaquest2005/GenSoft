@@ -11,7 +11,7 @@ namespace Common
 
     public class EntityKeyValuePair : IEntityKeyValuePair
     {
-        public EntityKeyValuePair(string key, dynamic value, IViewAttributeDisplayProperties displayProperties, bool isEntityId = false, bool isEntityName = false ) 
+        public EntityKeyValuePair(string key, dynamic value, ViewAttributeDisplayProperties displayProperties, bool isEntityId = false, bool isEntityName = false ) 
         {
             Value = value;
             DisplayProperties = displayProperties;
@@ -42,9 +42,9 @@ namespace Common
             }
         }
 
-        public IViewAttributeDisplayProperties DisplayProperties { get; }
+        public ViewAttributeDisplayProperties DisplayProperties { get; }
 
-        // public ViewAttributeDisplayProperties GridVisiblity => this.DisplayProperties; //new ViewAttributeDisplayProperties(new AttributeDisplayProperties(new Dictionary<string, string>() { { "Visibility", "real shit" } }, null, null),null ); 
+        IViewAttributeDisplayProperties IEntityKeyValuePair.DisplayProperties => DisplayProperties;
 
         
         public event PropertyChangedEventHandler PropertyChanged;
@@ -56,6 +56,31 @@ namespace Common
         }
     }
 
-    
-    
+
+    public class AttributeDisplayProperties : IAttributeDisplayProperties
+    {
+        public AttributeDisplayProperties(Dictionary<string, Dictionary<string, string>> properties)
+        {
+            Properties = properties;
+        }
+
+        public Dictionary<string, Dictionary<string, string>> Properties { get; }
+
+    }
+
+    public class ViewAttributeDisplayProperties : IViewAttributeDisplayProperties
+    {
+        public ViewAttributeDisplayProperties(AttributeDisplayProperties readProperties, AttributeDisplayProperties writeProperties)
+        {
+            ReadProperties = readProperties;
+            WriteProperties = writeProperties;
+        }
+
+        public AttributeDisplayProperties ReadProperties { get; }
+        public AttributeDisplayProperties WriteProperties { get; }
+
+        IAttributeDisplayProperties IViewAttributeDisplayProperties.ReadProperties => ReadProperties;
+
+        IAttributeDisplayProperties IViewAttributeDisplayProperties.WriteProperties => WriteProperties;
+    }
 }

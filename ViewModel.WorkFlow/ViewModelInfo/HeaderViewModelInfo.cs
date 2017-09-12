@@ -5,6 +5,7 @@ using System.Reactive;
 using System.Reactive.Linq;
 using System.Windows;
 using SystemInterfaces;
+using Common;
 using JB.Collections.Reactive;
 using ReactiveUI;
 using RevolutionEntities.Process;
