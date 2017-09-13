@@ -340,6 +340,7 @@
 ..\GenSoft.DBContext\Generated Mappings\EntityName.cs
 ..\GenSoft.DBContext\Generated Mappings\EntityRelationships.cs
 ..\GenSoft.DBContext\Generated Mappings\EntityType.cs
+..\GenSoft.DBContext\Generated Mappings\EntityTypeAttributeCache.cs
 ..\GenSoft.DBContext\Generated Mappings\EntityTypeAttributes.cs
 ..\GenSoft.DBContext\Generated Mappings\EntityTypeViewModel.cs
 ..\GenSoft.DBContext\Generated Mappings\EntityTypeViewModelAttributes.cs
@@ -405,6 +406,7 @@
 ..\GenSoft.Entities\Generated Entities\EntityName.cs
 ..\GenSoft.Entities\Generated Entities\EntityRelationships.cs
 ..\GenSoft.Entities\Generated Entities\EntityType.cs
+..\GenSoft.Entities\Generated Entities\EntityTypeAttributeCache.cs
 ..\GenSoft.Entities\Generated Entities\EntityTypeAttributes.cs
 ..\GenSoft.Entities\Generated Entities\EntityTypeViewModel.cs
 ..\GenSoft.Entities\Generated Entities\EntityTypeViewModelAttributes.cs
@@ -475,6 +477,7 @@
 ..\GenSoft.Interface\Generated Interfaces\EntityName.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityRelationships.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityType.cs
+..\GenSoft.Interface\Generated Interfaces\EntityTypeAttributeCache.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityTypeAttributes.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityTypeViewModel.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityTypeViewModelAttributes.cs

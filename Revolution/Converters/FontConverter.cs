@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -76,12 +77,22 @@ namespace Converters
 
     public class FontSizeMultiConverter : IMultiValueConverter
     {
-        public object Convert(object[] value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        public object Convert(object[] value, Type targetType, object parameter,
+            System.Globalization.CultureInfo culture)
         {
             var val = value.FirstOrDefault(x => x != null);
-            var res = System.Convert.ToDouble(val);
-            return res;
+            if (val is string)
+            {
+                var res = System.Convert.ToDouble(val);
+                return res;
+            }
+            else
+            {
+                return null;
+            }
+
         }
+
         public object[] ConvertBack(object value, Type[] targetType, object parameter, System.Globalization.CultureInfo culture) => null;
     }
 }

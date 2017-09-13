@@ -58,6 +58,7 @@ namespace Core.Common.UI
             var res = base.TryGetMember(binder, out result);
             if(res == false) throw new InvalidOperationException($"Property not found{binder.Name}");
             return true;
+            
         }
 
         public override bool TrySetMember(SetMemberBinder binder, object value)

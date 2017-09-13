@@ -21,7 +21,10 @@ namespace Common.DataEntites
 
         
         public ObservableList<IEntityKeyValuePair> PropertyList => new ObservableList<IEntityKeyValuePair>(EntityType.Properties.Where(x => x.Key != nameof(IDynamicEntity.Id))
-            .Select(x => new EntityKeyValuePair(x.Key,Properties[x.Key], (ViewAttributeDisplayProperties) EntityType.Properties.FirstOrDefault(z => z.Key == x.Key)?.DisplayProperties, x.IsEntityId, x.IsEntityName)as IEntityKeyValuePair).ToList());
+            .Select(x => new EntityKeyValuePair(x.Key,Properties[x.Key],
+                        (ViewAttributeDisplayProperties) EntityType.Properties.FirstOrDefault(z => z.Key == x.Key)?.DisplayProperties,
+                        x.IsEntityId,
+                        x.IsEntityName)as IEntityKeyValuePair).ToList());
 
         public new Dictionary<string, object> Properties => base.Properties;
 

@@ -52,7 +52,6 @@
             <!---->
             <TextBlock Width="Auto"
                        Height="Auto"
-                       MinWidth="75"
                        Margin="5"
                        HorizontalAlignment="Right"
                        VerticalAlignment="Top"
@@ -60,7 +59,9 @@
                                     UpdateSourceTrigger=PropertyChanged,
                                     ValidatesOnDataErrors=True}" >
                 <TextBlock.Visibility>
-                    <MultiBinding  Converter="{StaticResource VisibilityMultiConverter}" TargetNullValue="{x:Static Visibility.Visible}">
+                    <MultiBinding  Converter="{StaticResource VisibilityMultiConverter}" TargetNullValue="{x:Static Visibility.Visible}" ConverterParameter="TextBlock">
+                        <Binding Path="DisplayProperties.ReadProperties.Properties[AttributeValue][ControlType]"/>
+                        <Binding Path="DataContext.DisplayProperties.ReadProperties.Properties[AttributeValue][ControlType]" ElementName="EntityDetailListGRD"/>
                         <Binding Path="DisplayProperties.ReadProperties.Properties[AttributeValue][Visibility]"/>
                         <Binding Path="DataContext.DisplayProperties.ReadProperties.Properties[AttributeValue][Visibility]" ElementName="EntityDetailListGRD"/>
                     </MultiBinding>

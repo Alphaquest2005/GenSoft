@@ -74,6 +74,7 @@
     <Compile Include="Generated Mappings\EntityName.cs" />
     <Compile Include="Generated Mappings\EntityRelationships.cs" />
     <Compile Include="Generated Mappings\EntityType.cs" />
+    <Compile Include="Generated Mappings\EntityTypeAttributeCache.cs" />
     <Compile Include="Generated Mappings\EntityTypeAttributes.cs" />
     <Compile Include="Generated Mappings\EntityTypeViewModel.cs" />
     <Compile Include="Generated Mappings\EntityTypeViewModelAttributes.cs" />

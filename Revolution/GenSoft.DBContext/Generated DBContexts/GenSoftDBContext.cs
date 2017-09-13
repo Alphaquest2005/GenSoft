@@ -35,6 +35,7 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.EntityName> EntityName { get; set; }
 		public DbSet<Entities.EntityRelationships> EntityRelationships { get; set; }
 		public DbSet<Entities.EntityType> EntityType { get; set; }
+		public DbSet<Entities.EntityTypeAttributeCache> EntityTypeAttributeCache { get; set; }
 		public DbSet<Entities.EntityTypeAttributes> EntityTypeAttributes { get; set; }
 		public DbSet<Entities.EntityTypeViewModel> EntityTypeViewModel { get; set; }
 		public DbSet<Entities.EntityTypeViewModelAttributes> EntityTypeViewModelAttributes { get; set; }
@@ -107,6 +108,7 @@ namespace GenSoft.DBContexts
 				EntityNameMap.Map(modelBuilder.Entity<Entities.EntityName>());
 				EntityRelationshipsMap.Map(modelBuilder.Entity<Entities.EntityRelationships>());
 				EntityTypeMap.Map(modelBuilder.Entity<Entities.EntityType>());
+				EntityTypeAttributeCacheMap.Map(modelBuilder.Entity<Entities.EntityTypeAttributeCache>());
 				EntityTypeAttributesMap.Map(modelBuilder.Entity<Entities.EntityTypeAttributes>());
 				EntityTypeViewModelMap.Map(modelBuilder.Entity<Entities.EntityTypeViewModel>());
 				EntityTypeViewModelAttributesMap.Map(modelBuilder.Entity<Entities.EntityTypeViewModelAttributes>());

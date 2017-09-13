@@ -23,6 +23,7 @@ namespace GenSoft.Entities
 				public virtual ICollection<CalculatedPropertyParameterEntityTypes> CalculatedPropertyParameterEntityTypes {get; set;}
 				public virtual ICollection<EntityRelationships> ChildEntitys {get; set;}
 				public virtual ICollection<EntityRelationships> ParentEntitys {get; set;}
+				public virtual EntityTypeAttributeCache EntityTypeAttributeCache {get; set;}
 				public virtual ICollection<EntityTypeViewModelAttributes> EntityTypeViewModelAttributes {get; set;}
 		
 			// ---------Parent Relationships

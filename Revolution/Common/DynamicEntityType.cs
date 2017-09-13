@@ -4,6 +4,7 @@ using System.Linq.Expressions;
 using SystemInterfaces;
 using DynamicExpresso;
 using GenSoft.Interfaces;
+using JB.Collections.Reactive;
 
 namespace Common.DataEntites
 {
@@ -11,19 +12,17 @@ namespace Common.DataEntites
     {
         public static Dictionary<string,IDynamicEntityType> DynamicEntityTypes { get; } = new Dictionary<string, IDynamicEntityType>();
 
-        public static Dictionary<IEntityTypeAttributes, Expression<Func<IDynamicEntity, dynamic>>> CalulatedProperties { get; } 
-            = new Dictionary<IEntityTypeAttributes, Expression<Func<IDynamicEntity, dynamic>>>();
-
         public static Dictionary<string, dynamic> Functions { get; } = new Dictionary<string, dynamic>();
 
-        public static Dictionary<int, Parameter> CalculatedPropertyParameters { get; } = new Dictionary<int, Parameter>();
+        
 
-        public DynamicEntityType(string name, string entitySetName, List<IEntityKeyValuePair> properties, Dictionary<string, List<dynamic>> calculatedProperties, bool isList, bool isParentEntity)
+        public DynamicEntityType(string name, string entitySetName, List<IEntityKeyValuePair> properties, Dictionary<string, List<dynamic>> calculatedProperties, ObservableDictionary<string, List<dynamic>> cachedProperties, bool isList, bool isParentEntity)
         {
             Name = name;
             Properties = properties;
             IsList = isList;
             IsParentEntity = isParentEntity;
+            CachedProperties = cachedProperties;
             CalculatedProperties = calculatedProperties;
             EntitySetName = entitySetName;
         }
@@ -35,8 +34,8 @@ namespace Common.DataEntites
         public string EntitySetName { get; }
         public List<IEntityKeyValuePair> Properties { get; }
         public bool IsParentEntity { get; }
-        public Dictionary<string, List<dynamic>> CalculatedProperties { get; } 
-        
+        public Dictionary<string, List<dynamic>> CalculatedProperties { get; }
+        public ObservableDictionary<string, List<dynamic>> CachedProperties { get; }
     }
 
 }

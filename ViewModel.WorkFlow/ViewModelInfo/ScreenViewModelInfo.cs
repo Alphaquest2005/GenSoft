@@ -7,6 +7,7 @@ using Common;
 using RevolutionEntities.Process;
 using RevolutionEntities.ViewModels;
 using ViewModel.Interfaces;
+using ViewModelInterfaces;
 
 namespace RevolutionData
 {
@@ -143,14 +144,19 @@ namespace RevolutionData
                                       e.ViewModel.Orientation == typeof(ICacheViewModel)
                         }, (s, e) =>
                         {
+                            var em = (e.ViewModel as IEntityViewModel);
+                            var viewName = em != null
+                                ? (em.ViewInfo as IEntityViewInfo).EntityType.Name
+                                : e.ViewModel.ViewModelType.Name;
                             if (Application.Current == null)
                             {
-                                s.CacheViewModels.Add(e.ViewModel);
+                                
+                                s.CacheViewModels.Add(viewName,e.ViewModel);
                             }
                             else
                             {
                                 Application.Current.Dispatcher.BeginInvoke(
-                                    new Action(() => s.CacheViewModels.Add(e.ViewModel)));
+                                    new Action(() => s.CacheViewModels.Add(viewName,e.ViewModel)));
                             }
                         }),
 
@@ -163,41 +169,13 @@ namespace RevolutionData
                         {
                             if (Application.Current == null)
                             {
-                                s.BodyViewModels.RemoveRange(
-                                    s.BodyViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId));
-                                s.LeftViewModels.RemoveRange(
-                                    s.LeftViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId));
-                                s.HeaderViewModels.RemoveRange(
-                                    s.HeaderViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId));
-                                s.RightViewModels.RemoveRange(
-                                    s.RightViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId));
-                                s.FooterViewModels.RemoveRange(
-                                    s.FooterViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId));
-                                s.CacheViewModels.RemoveRange(
-                                    s.FooterViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId));
+                                ClearScreenModels(s, e);
                             }
                             else
                             {
                                 Application.Current.Dispatcher.BeginInvoke(new Action(() =>
                                 {
-                                    s.BodyViewModels.RemoveRange(
-                                        s.BodyViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId));
-                                    s.BodyViewModels.Reset();
-                                    s.LeftViewModels.RemoveRange(
-                                        s.LeftViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId));
-                                    s.LeftViewModels.Reset();
-                                    s.HeaderViewModels.RemoveRange(
-                                        s.HeaderViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId));
-                                    s.HeaderViewModels.Reset();
-                                    s.RightViewModels.RemoveRange(
-                                        s.RightViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId));
-                                    s.RightViewModels.Reset();
-                                    s.FooterViewModels.RemoveRange(
-                                        s.FooterViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId));
-                                    s.FooterViewModels.Reset();
-                                    s.CacheViewModels.RemoveRange(
-                                        s.CacheViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId));
-                                    s.CacheViewModels.Reset();
+                                    ClearScreenModels(s, e);
                                 }));
                             }
                         }),
@@ -259,16 +237,16 @@ namespace RevolutionData
                             new StateEventInfo(s.Process.Id, Context.ViewModel.Events.ViewModelLoaded),
                             s.FooterViewModels.Last().Process, s.Source)),
 
-                    new ViewEventPublication<IScreenModel, IViewModelLoaded<IScreenModel, IViewModel>>(
-                        key: "ScreenModelCache",
-                        subject: v => v.CacheViewModels.CollectionChanges,
-                        subjectPredicate: new List<Func<IScreenModel, bool>>
-                        {
-                            v => v.CacheViewModels.LastOrDefault() != null
-                        },
-                        messageData: s => new ViewEventPublicationParameter(new object[] {s, s.CacheViewModels.Last()},
-                            new StateEventInfo(s.Process.Id, Context.ViewModel.Events.ViewModelLoaded),
-                            s.CacheViewModels.Last().Process, s.Source)),
+                    //new ViewEventPublication<IScreenModel, IViewModelLoaded<IScreenModel, IViewModel>>(
+                    //    key: "ScreenModelCache",
+                    //    subject: v => v.CacheViewModels.CollectionChanges,
+                    //    subjectPredicate: new List<Func<IScreenModel, bool>>
+                    //    {
+                    //        v => v.CacheViewModels.LastOrDefault() != null
+                    //    },
+                    //    messageData: s => new ViewEventPublicationParameter(new object[] {s, s.CacheViewModels.Last()},
+                    //        new StateEventInfo(s.Process.Id, Context.ViewModel.Events.ViewModelLoaded),
+                    //        s.CacheViewModels.Last().Process, s.Source)),
 
 
                 },
@@ -280,6 +258,30 @@ namespace RevolutionData
                     new AttributeDisplayProperties(new Dictionary<string, Dictionary<string, string>>()),
                     new AttributeDisplayProperties(new Dictionary<string, Dictionary<string, string>>())
                 ));
+        }
+
+        private static void ClearScreenModels(IScreenModel s, ICleanUpSystemProcess e)
+        {
+            s.BodyViewModels.RemoveRange(
+                s.BodyViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId));
+            s.BodyViewModels.Reset();
+            s.LeftViewModels.RemoveRange(
+                s.LeftViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId));
+            s.LeftViewModels.Reset();
+            s.HeaderViewModels.RemoveRange(
+                s.HeaderViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId));
+            s.HeaderViewModels.Reset();
+            s.RightViewModels.RemoveRange(
+                s.RightViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId));
+            s.RightViewModels.Reset();
+            s.FooterViewModels.RemoveRange(
+                s.FooterViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId));
+            s.FooterViewModels.Reset();
+
+            foreach (var itm in s.CacheViewModels.Where(x => x.Value.Process.Id == e.ProcessToBeCleanedUpId).ToList())
+            {
+                s.CacheViewModels.Remove(itm.Key);
+            }
         }
     }
 }

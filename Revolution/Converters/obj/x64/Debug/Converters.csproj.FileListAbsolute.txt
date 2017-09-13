@@ -31,3 +31,5 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\obj\x64\Debug\Converters.d
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\obj\x64\Debug\Converters.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\obj\x64\Debug\Converters.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\obj\x64\Debug\Converters.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\JB.Common.Collections.Reactive.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\JB.Common.Collections.Reactive.xml

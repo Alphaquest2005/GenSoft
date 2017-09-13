@@ -24,6 +24,7 @@
                      Height="Auto"
                      Margin="10,48,10,10"
                      HorizontalAlignment="Stretch"
+                     x:Name="EntityDetailListGRD"
                      VerticalAlignment="Stretch"
                      Background="#33FFFFFF"
                      IsSynchronizedWithCurrentItem="True"

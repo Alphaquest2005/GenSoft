@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Windows;
 using System.Windows.Data;
+using JB.Collections.Reactive;
 
 namespace Converters
 {
@@ -22,15 +24,60 @@ namespace Converters
     {
         public object Convert(object[] value, Type targetType, object parameter, CultureInfo culture)
         {
-            Visibility res = Visibility.Collapsed;
-            var val = value.FirstOrDefault(x => x != null);
-            if (val != null) Enum.TryParse(val.ToString(), out res);
-            return res;
+            try
+            {
+                Visibility res = Visibility.Collapsed;
+                var controlType = value.FirstOrDefault();
+
+
+                if (parameter == null)
+                {
+                    var val = value.FirstOrDefault(x => x != null);
+                    if (val != null) Enum.TryParse(val.ToString(), out res);
+                }
+                else
+                {
+                    if (controlType != null && controlType?.ToString() == parameter.ToString())
+                    {
+                        var val = value.FirstOrDefault(
+                            x => x != null && "Collapsed,Hidden,Visible".Contains(x.ToString()));
+                        if (val != null) Enum.TryParse(val.ToString(), out res);
+                    }
+                    else if (parameter != null && controlType == null &&
+                             value.Any(x => x?.ToString() == parameter.ToString()))
+                    {
+                        var val = value.FirstOrDefault(
+                            x => x != null && "Collapsed,Hidden,Visible".Contains(x.ToString()));
+                        if (val != null) Enum.TryParse(val.ToString(), out res);
+                    }
+                }
+
+
+                return res;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+
+        }
+
+
+        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture) => null;
+    }
+
+    public class CachedPropertyConverter : IMultiValueConverter
+    {
+        public object Convert(object[] value, Type targetType, object parameter, CultureInfo culture)
+        {
+            var key = value[0] as string;
+            var cachedProperties = value[1] as ObservableDictionary<string,List<dynamic>>;
+            if(key != null && cachedProperties != null && cachedProperties.ContainsKey(key)) return cachedProperties[key];
+            return null;
         }
 
       
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture) => null;
     }
-
-
 }

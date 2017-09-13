@@ -18,6 +18,7 @@ using DynamicExpresso;
 using GenSoft.DBContexts;
 using GenSoft.Entities;
 using GenSoft.Expressions;
+using JB.Collections.Reactive;
 using Microsoft.EntityFrameworkCore;
 using MoreLinq;
 using Process.WorkFlow;
@@ -552,6 +553,7 @@ namespace ActorBackBone
                 .Include(x => x.EntityType.EntityTypeAttributes).ThenInclude(x => x.CalculatedProperties.FunctionParameterConstants)
                 .Include(x => x.EntityType.EntityTypeAttributes).ThenInclude(x => x.CalculatedProperties.FunctionSets.FunctionSetFunctions).ThenInclude(x => x.Functions)
                 .Include(x => x.EntityType.EntityTypeAttributes).ThenInclude(x => x.CalculatedPropertyParameterEntityTypes)
+                .Include(x => x.EntityType.EntityTypeAttributes).ThenInclude(x => x.EntityTypeAttributeCache)
                 .Include(x => x.EntityType.EntityList)
                 .FirstOrDefault(x => x.EntityType.Type.Name == entityType);
             if (viewType == null) return false;
@@ -586,13 +588,44 @@ namespace ActorBackBone
 
             var calPropDef = CreateCalculatedProperties(viewType);
 
+            var cachedProperties = CreateCachedProperties(viewType);
             
-            var dynamicEntityType = new DynamicEntityType(viewType.EntityType.Type.Name, viewType.EntityType.EntitySetName, tes, calPropDef, viewType.EntityType.EntityList != null, viewType.EntityType.EntityTypeAttributes.Any(z => z.ChildEntitys.Any()));
+            var dynamicEntityType = new DynamicEntityType(viewType.EntityType.Type.Name, viewType.EntityType.EntitySetName, tes, calPropDef,cachedProperties, viewType.EntityType.EntityList != null, viewType.EntityType.EntityTypeAttributes.Any(z => z.ChildEntitys.Any()));
 
 
 
             DynamicEntityType.DynamicEntityTypes.Add(entityType,dynamicEntityType);
             return true;
+        }
+
+        private static ObservableDictionary<string, List<dynamic>> CreateCachedProperties(EntityView viewType)
+        {
+            var res = new ObservableDictionary<string, List<dynamic>>();
+            
+
+            var lst = viewType.EntityType.EntityTypeAttributes
+                .Where(x => x.EntityTypeAttributeCache != null).DistinctBy(x => x.Id).ToList();
+
+
+            using (var ctx = new GenSoftDBContext())
+            {
+                foreach (var cp in lst)
+                {
+                    var elst = ctx.EntityAttribute
+                        .Where(x => x.AttributeId == cp.AttributeId && x.Entity.EntityTypeId == viewType.BaseEntityTypeId)
+                        .Select(x => new {Key = x.Attributes.Name, Value = x.Value})
+                        .GroupBy(x => x.Key)
+                        .ToDictionary(x => x.Key, x => x.Select(z => (dynamic)z.Value).ToList());
+                    foreach (var itm in elst)
+                    {
+                         res.Add(itm.Key, itm.Value);
+                    }
+                   
+                }
+            }
+
+
+            return res;
         }
 
         private static IViewAttributeDisplayProperties CreateEntityAttributeViewProperties(int entityTypeAttributeId)

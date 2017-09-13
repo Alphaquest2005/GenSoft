@@ -253,7 +253,5 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\System.X
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\ViewMessages.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\ViewMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\ViewMessages.dll.config
-C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\GenSoft.Interfaces.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\GenSoft.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\DynamicExpresso.Core.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\DynamicExpresso.Core.pdb

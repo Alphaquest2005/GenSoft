@@ -43,6 +43,7 @@ namespace Common
         }
 
         public ViewAttributeDisplayProperties DisplayProperties { get; }
+        public string Type { get; }
 
         IViewAttributeDisplayProperties IEntityKeyValuePair.DisplayProperties => DisplayProperties;
 

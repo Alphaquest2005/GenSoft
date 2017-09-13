@@ -73,6 +73,7 @@
     <Compile Include="Generated Entities\EntityName.cs" />
     <Compile Include="Generated Entities\EntityRelationships.cs" />
     <Compile Include="Generated Entities\EntityType.cs" />
+    <Compile Include="Generated Entities\EntityTypeAttributeCache.cs" />
     <Compile Include="Generated Entities\EntityTypeAttributes.cs" />
     <Compile Include="Generated Entities\EntityTypeViewModel.cs" />
     <Compile Include="Generated Entities\EntityTypeViewModelAttributes.cs" />
