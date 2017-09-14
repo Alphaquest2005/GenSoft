@@ -329,7 +329,6 @@
 ..\GenSoft.DBContext\Generated Mappings\CommandTypes.cs
 ..\GenSoft.DBContext\Generated Mappings\CompositeRequest.cs
 ..\GenSoft.DBContext\Generated Mappings\DataType.cs
-..\GenSoft.DBContext\Generated Mappings\DomainEntityCache.cs
 ..\GenSoft.DBContext\Generated Mappings\DomainEntityType.cs
 ..\GenSoft.DBContext\Generated Mappings\DomainEntityTypeSourceEntity.cs
 ..\GenSoft.DBContext\Generated Mappings\Entity.cs
@@ -395,7 +394,6 @@
 ..\GenSoft.Entities\Generated Entities\CommandTypes.cs
 ..\GenSoft.Entities\Generated Entities\CompositeRequest.cs
 ..\GenSoft.Entities\Generated Entities\DataType.cs
-..\GenSoft.Entities\Generated Entities\DomainEntityCache.cs
 ..\GenSoft.Entities\Generated Entities\DomainEntityType.cs
 ..\GenSoft.Entities\Generated Entities\DomainEntityTypeSourceEntity.cs
 ..\GenSoft.Entities\Generated Entities\Entity.cs
@@ -466,7 +464,6 @@
 ..\GenSoft.Interface\Generated Interfaces\CommandTypes.cs
 ..\GenSoft.Interface\Generated Interfaces\CompositeRequest.cs
 ..\GenSoft.Interface\Generated Interfaces\DataType.cs
-..\GenSoft.Interface\Generated Interfaces\DomainEntityCache.cs
 ..\GenSoft.Interface\Generated Interfaces\DomainEntityType.cs
 ..\GenSoft.Interface\Generated Interfaces\DomainEntityTypeSourceEntity.cs
 ..\GenSoft.Interface\Generated Interfaces\Entity.cs

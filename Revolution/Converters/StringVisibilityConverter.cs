@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Data;
 using JB.Collections.Reactive;
+using ViewModel.Interfaces;
 
 namespace Converters
 {
@@ -78,6 +79,26 @@ namespace Converters
         }
 
       
+        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture) => null;
+    }
+
+    public class CachedEntityPropertyConverter : IMultiValueConverter
+    {
+        public object Convert(object[] value, Type targetType, object parameter, CultureInfo culture)
+        {
+            var prop = value[0] as string;
+            var cachelst = value[1] as Dictionary<string, string>;
+            var cachedProperties = value[2] as ObservableList<ICacheViewModel>;
+            if (prop != null && cachelst != null && cachedProperties != null && cachelst.ContainsKey(prop))
+            {
+                
+                var cache = cachedProperties.FirstOrDefault(x => x.ViewInfo.EntityType.Name == cachelst[prop]);
+                if(cache != null) return cache.EntitySet.Value;
+            }
+            return null;
+        }
+
+
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture) => null;
     }
 }

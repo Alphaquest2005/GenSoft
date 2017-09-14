@@ -14,7 +14,6 @@ using GenSoft.DBContexts;
 using GenSoft.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
-using MoreLinq;
 using RevolutionEntities.Process;
 using Entity = GenSoft.Entities.Entity;
 using EntityEvents = RevolutionData.Context.Entity;

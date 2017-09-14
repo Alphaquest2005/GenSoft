@@ -32,6 +32,7 @@ namespace Core.Common.UI
             int priority, IViewAttributeDisplayProperties displayProperties) : base(process, viewInfo, eventSubscriptions, eventPublications, commandInfo, orientation,
             priority)
         {
+            ViewInfo = viewInfo;
             DisplayProperties = displayProperties;
             State.Value = new ProcessStateEntity(process, viewInfo.EntityType.DefaultEntity(), new StateInfo(process.Id, "IntialState", "Inital","first op"));
         }
@@ -40,6 +41,8 @@ namespace Core.Common.UI
         public ObservableDictionary<string, dynamic> ChangeTracking { get; } = new ObservableDictionary<string, dynamic>();
 
         private ReactiveProperty<IProcessStateEntity> _state = new ReactiveProperty<IProcessStateEntity>(null, ReactivePropertyMode.DistinctUntilChanged);
+        public new IEntityViewInfo ViewInfo { get; }
+
         public ReactiveProperty<IProcessStateEntity> State
         {
             get { return _state; }

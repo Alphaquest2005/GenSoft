@@ -62,7 +62,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Debug\JB.C
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Debug\log4net.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Debug\MefContrib.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Debug\MefContrib.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Debug\MoreLinq.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Debug\Reactive.EventAggregator.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Debug\ReactiveProperty.DataAnnotations.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Debug\ReactiveProperty.DataAnnotations.pdb

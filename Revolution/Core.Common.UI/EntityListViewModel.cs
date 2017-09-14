@@ -37,13 +37,13 @@ namespace Core.Common.UI
         
         public EntityListViewModel(){}
 
-        public EntityListViewModel(IViewInfo viewInfo, List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions, List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications, List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, ISystemProcess process, Type orientation, int priority, IViewAttributeDisplayProperties displayProperties) : base(process,viewInfo,eventSubscriptions,eventPublications,commandInfo, orientation, priority)
+        public EntityListViewModel(IEntityViewInfo viewInfo, List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions, List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications, List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, ISystemProcess process, Type orientation, int priority, IViewAttributeDisplayProperties displayProperties) : base(process,viewInfo,eventSubscriptions,eventPublications,commandInfo, orientation, priority)
         {
             DisplayProperties = displayProperties;
-
+            ViewInfo = viewInfo;
             State.WhenAnyValue(x => x.Value).Subscribe(x => UpdateLocalState(x));
             CurrentEntity.WhenAnyValue(x => x.Value).Subscribe(x => ChangeTracking.Clear());
-
+            
             _instance = this;
         }
 
@@ -93,6 +93,8 @@ namespace Core.Common.UI
         // public ReactiveProperty<IProcessStateList> State => new ReactiveProperty<IProcessStateList>();
 
         private ReactiveProperty<IProcessStateList> _state = new ReactiveProperty<IProcessStateList>();
+        public new IEntityViewInfo ViewInfo { get; }
+
         public ReactiveProperty<IProcessStateList> State
         {
             get { return _state; }

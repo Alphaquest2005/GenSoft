@@ -27,7 +27,7 @@ namespace ViewModels
     {
 
         public SummaryListViewModel() { }
-        public SummaryListViewModel(ISystemProcess process, IViewInfo viewInfo, List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions, List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications, List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, Type orientation, int priority, IViewAttributeDisplayProperties displayProperties) : base(new EntityListViewModel(viewInfo, eventSubscriptions, eventPublications, commandInfo, process, orientation, priority, displayProperties))
+        public SummaryListViewModel(ISystemProcess process, IEntityViewInfo viewInfo, List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions, List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications, List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, Type orientation, int priority, IViewAttributeDisplayProperties displayProperties) : base(new EntityListViewModel(viewInfo, eventSubscriptions, eventPublications, commandInfo, process, orientation, priority, displayProperties))
         {
             if (LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
             this.WireEvents();
@@ -52,8 +52,7 @@ namespace ViewModels
         }
 
 
-
-
+        public new IEntityViewInfo ViewInfo => this.ViewModel.ViewInfo;
         public ReactiveProperty<IProcessStateList> State => this.ViewModel.State;
 
         private IEntityKeyValuePair _currentProperty;

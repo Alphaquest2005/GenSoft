@@ -24,7 +24,6 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.CommandTypes> CommandTypes { get; set; }
 		public DbSet<Entities.CompositeRequest> CompositeRequest { get; set; }
 		public DbSet<Entities.DataType> DataType { get; set; }
-		public DbSet<Entities.DomainEntityCache> DomainEntityCache { get; set; }
 		public DbSet<Entities.DomainEntityType> DomainEntityType { get; set; }
 		public DbSet<Entities.DomainEntityTypeSourceEntity> DomainEntityTypeSourceEntity { get; set; }
 		public DbSet<Entities.Entity> Entity { get; set; }
@@ -97,7 +96,6 @@ namespace GenSoft.DBContexts
 				CommandTypesMap.Map(modelBuilder.Entity<Entities.CommandTypes>());
 				CompositeRequestMap.Map(modelBuilder.Entity<Entities.CompositeRequest>());
 				DataTypeMap.Map(modelBuilder.Entity<Entities.DataType>());
-				DomainEntityCacheMap.Map(modelBuilder.Entity<Entities.DomainEntityCache>());
 				DomainEntityTypeMap.Map(modelBuilder.Entity<Entities.DomainEntityType>());
 				DomainEntityTypeSourceEntityMap.Map(modelBuilder.Entity<Entities.DomainEntityTypeSourceEntity>());
 				EntityMap.Map(modelBuilder.Entity<Entities.Entity>());

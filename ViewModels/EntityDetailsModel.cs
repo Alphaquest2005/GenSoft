@@ -29,6 +29,7 @@ namespace ViewModels
         public EntityDetailsViewModel(ISystemProcess process, IEntityViewInfo viewInfo, List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions, List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications, List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, Type orientation, int priority, IViewAttributeDisplayProperties displayProperties) : base(new EntityViewModel(viewInfo, eventSubscriptions, eventPublications, commandInfo, process, orientation, priority, displayProperties))
         {
             if (LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
+            ViewInfo = viewInfo;
             this.WireEvents();
             this.State.WhenAnyValue(x => x.Value, x => x.Value.Entity).Subscribe(UpdateCurrentEntity);
             this.ViewModel.CurrentEntity.WhenAnyValue(x => x.Value).Subscribe(UpdateStateEntity);
@@ -48,6 +49,7 @@ namespace ViewModels
         }
 
 
+        public new IEntityViewInfo ViewInfo { get; }
         public ReactiveProperty<IProcessStateEntity> State => this.ViewModel.State;
 
         //potential problem state different from current entity!

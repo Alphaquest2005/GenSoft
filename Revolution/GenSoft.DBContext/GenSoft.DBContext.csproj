@@ -63,7 +63,6 @@
     <Compile Include="Generated Mappings\CommandTypes.cs" />
     <Compile Include="Generated Mappings\CompositeRequest.cs" />
     <Compile Include="Generated Mappings\DataType.cs" />
-    <Compile Include="Generated Mappings\DomainEntityCache.cs" />
     <Compile Include="Generated Mappings\DomainEntityType.cs" />
     <Compile Include="Generated Mappings\DomainEntityTypeSourceEntity.cs" />
     <Compile Include="Generated Mappings\Entity.cs" />

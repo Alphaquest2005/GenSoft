@@ -24,7 +24,7 @@ namespace ViewModels
         private dynamic _slider;
 
         private static IScreenModel _instance = null;
-        public new IScreenModel Instance => _instance;
+        public static IScreenModel Instance => _instance;
 
         [ImportingConstructor]
 	    public ScreenModel(ISystemProcess process, IViewInfo viewInfo, List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions, List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications, List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, Type orientation, int priority) : base(process,viewInfo, eventSubscriptions, eventPublications,commandInfo, orientation, priority)
@@ -40,7 +40,7 @@ namespace ViewModels
         public ObservableList<IViewModel> RightViewModels { get; } = new ObservableList<IViewModel>();
         public ObservableList<IViewModel> BodyViewModels { get; } = new ObservableList<IViewModel>();
 
-        public Dictionary<string, IViewModel> CacheViewModels { get; } = new Dictionary<string, IViewModel>();
+        public ObservableList<IViewModel> CacheViewModels { get; } = new ObservableList<IViewModel>();
        
 
         public ObservableList<IViewModel> FooterViewModels { get; } = new ObservableList<IViewModel>();

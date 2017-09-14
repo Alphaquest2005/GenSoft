@@ -144,19 +144,15 @@ namespace RevolutionData
                                       e.ViewModel.Orientation == typeof(ICacheViewModel)
                         }, (s, e) =>
                         {
-                            var em = (e.ViewModel as IEntityViewModel);
-                            var viewName = em != null
-                                ? (em.ViewInfo as IEntityViewInfo).EntityType.Name
-                                : e.ViewModel.ViewModelType.Name;
-                            if (Application.Current == null)
+                           if (Application.Current == null)
                             {
                                 
-                                s.CacheViewModels.Add(viewName,e.ViewModel);
+                                s.CacheViewModels.Add(e.ViewModel);
                             }
                             else
                             {
                                 Application.Current.Dispatcher.BeginInvoke(
-                                    new Action(() => s.CacheViewModels.Add(viewName,e.ViewModel)));
+                                    new Action(() => s.CacheViewModels.Add(e.ViewModel)));
                             }
                         }),
 
@@ -278,10 +274,9 @@ namespace RevolutionData
                 s.FooterViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId));
             s.FooterViewModels.Reset();
 
-            foreach (var itm in s.CacheViewModels.Where(x => x.Value.Process.Id == e.ProcessToBeCleanedUpId).ToList())
-            {
-                s.CacheViewModels.Remove(itm.Key);
-            }
+            s.CacheViewModels.RemoveRange(
+                s.CacheViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId));
+            s.CacheViewModels.Reset();
         }
     }
 }

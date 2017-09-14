@@ -296,46 +296,46 @@ namespace RevolutionData
 
     }
 
-    public partial class EntityComplexActions
-    {
-        public static ComplexEventAction GetComplexAction(string method,  object[] args)
-        {
-            return (ComplexEventAction)typeof(EntityComplexActions).GetMethod(method).Invoke(null, args);
-        }
-        public static ComplexEventAction IntializeCache(int processId, IDynamicEntityType entityType) 
-        {
-            return new ComplexEventAction(
-                key: $"{entityType}EntityCache-1",
-                processId: processId,
-                events: new List<IProcessExpectedEvent>
-                {
-                    new ProcessExpectedEvent(key: "ProcessStarted",
-                        processId: processId,
-                        eventPredicate: e => e != null,
-                        eventType: typeof (ISystemProcessStarted),
-                        processInfo: new StateEventInfo(processId, Context.Process.Events.ProcessStarted),
-                        expectedSourceType: new SourceType(typeof (IComplexEventService)))
+    //public partial class EntityComplexActions
+    //{
+    //    public static ComplexEventAction GetComplexAction(string method,  object[] args)
+    //    {
+    //        return (ComplexEventAction)typeof(EntityComplexActions).GetMethod(method).Invoke(null, args);
+    //    }
+    //    public static ComplexEventAction IntializeCache(int processId, IDynamicEntityType entityType) 
+    //    {
+    //        return new ComplexEventAction(
+    //            key: $"{entityType}EntityCache-1",
+    //            processId: processId,
+    //            events: new List<IProcessExpectedEvent>
+    //            {
+    //                new ProcessExpectedEvent(key: "ProcessStarted",
+    //                    processId: processId,
+    //                    eventPredicate: e => e != null,
+    //                    eventType: typeof (ISystemProcessStarted),
+    //                    processInfo: new StateEventInfo(processId, Context.Process.Events.ProcessStarted),
+    //                    expectedSourceType: new SourceType(typeof (IComplexEventService)))
 
-                },
-                expectedMessageType: typeof(IProcessStateMessage),
-                action: new ProcessAction(
-                    action: async cp =>
-                        await Task.Run(() => new LoadEntitySet(entityType,
-                            new StateCommandInfo(3, Context.Entity.Commands.LoadEntitySetWithChanges),
-                            cp.Actor.Process, cp.Actor.Source)),
-                    processInfo:
-                    cp =>
-                        new StateCommandInfo(cp.Actor.Process.Id,
-                            Context.Entity.Commands.LoadEntitySetWithChanges),
-                    // take shortcut cud be IntialState
-                    expectedSourceType: new SourceType(typeof(IComplexEventService))),
-                processInfo: new StateCommandInfo(processId, Context.Process.Commands.CreateState));
-        }
+    //            },
+    //            expectedMessageType: typeof(IProcessStateMessage),
+    //            action: new ProcessAction(
+    //                action: async cp =>
+    //                    await Task.Run(() => new LoadEntitySet(entityType,
+    //                        new StateCommandInfo(3, Context.Entity.Commands.LoadEntitySetWithChanges),
+    //                        cp.Actor.Process, cp.Actor.Source)),
+    //                processInfo:
+    //                cp =>
+    //                    new StateCommandInfo(cp.Actor.Process.Id,
+    //                        Context.Entity.Commands.LoadEntitySetWithChanges),
+    //                // take shortcut cud be IntialState
+    //                expectedSourceType: new SourceType(typeof(IComplexEventService))),
+    //            processInfo: new StateCommandInfo(processId, Context.Process.Commands.CreateState));
+    //    }
 
         
         
 
-    }
+    //}
 
    
 }

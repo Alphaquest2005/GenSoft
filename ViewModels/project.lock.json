@@ -268,17 +268,17 @@
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "morelinq/2.6.0": {
+      "morelinq/2.7.0": {
         "type": "package",
         "dependencies": {
-          "System.ValueTuple": "4.3.0"
+          "System.ValueTuple": "4.4.0"
         },
-        "compile": {
-          "lib/net40/MoreLinq.dll": {}
-        },
-        "runtime": {
-          "lib/net40/MoreLinq.dll": {}
-        }
+        "frameworkAssemblies": [
+          "System",
+          "System.Data",
+          "System.Data.DataSetExtensions",
+          "System.Xml"
+        ]
       },
       "Newtonsoft.Json/9.0.1": {
         "type": "package",
@@ -650,13 +650,17 @@
           "lib/net45/_._": {}
         }
       },
-      "System.ValueTuple/4.3.0": {
+      "System.ValueTuple/4.4.0": {
         "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "mscorlib"
+        ],
         "compile": {
-          "lib/netstandard1.0/System.ValueTuple.dll": {}
+          "ref/net461/System.ValueTuple.dll": {}
         },
         "runtime": {
-          "lib/netstandard1.0/System.ValueTuple.dll": {}
+          "lib/net461/System.ValueTuple.dll": {}
         }
       },
       "Actor.Interfaces/1.0.0": {
@@ -784,7 +788,7 @@
           "RevolutionLogger": "1.0.0",
           "System.Linq.Dynamic": "1.0.0",
           "SystemInterfaces": "1.0.0",
-          "morelinq": "2.6.0"
+          "morelinq": "2.7.0"
         }
       },
       "GenSoft.Entities/1.0.0": {
@@ -853,7 +857,7 @@
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0",
-          "morelinq": "2.6.0"
+          "morelinq": "2.7.0"
         }
       },
       "RevolutionLogger/1.0.0": {
@@ -1207,17 +1211,17 @@
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "morelinq/2.6.0": {
+      "morelinq/2.7.0": {
         "type": "package",
         "dependencies": {
-          "System.ValueTuple": "4.3.0"
+          "System.ValueTuple": "4.4.0"
         },
-        "compile": {
-          "lib/net40/MoreLinq.dll": {}
-        },
-        "runtime": {
-          "lib/net40/MoreLinq.dll": {}
-        }
+        "frameworkAssemblies": [
+          "System",
+          "System.Data",
+          "System.Data.DataSetExtensions",
+          "System.Xml"
+        ]
       },
       "Newtonsoft.Json/9.0.1": {
         "type": "package",
@@ -1579,13 +1583,17 @@
           "lib/net45/_._": {}
         }
       },
-      "System.ValueTuple/4.3.0": {
+      "System.ValueTuple/4.4.0": {
         "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "mscorlib"
+        ],
         "compile": {
-          "lib/netstandard1.0/System.ValueTuple.dll": {}
+          "ref/net461/System.ValueTuple.dll": {}
         },
         "runtime": {
-          "lib/netstandard1.0/System.ValueTuple.dll": {}
+          "lib/net461/System.ValueTuple.dll": {}
         }
       },
       "Actor.Interfaces/1.0.0": {
@@ -1713,7 +1721,7 @@
           "RevolutionLogger": "1.0.0",
           "System.Linq.Dynamic": "1.0.0",
           "SystemInterfaces": "1.0.0",
-          "morelinq": "2.6.0"
+          "morelinq": "2.7.0"
         }
       },
       "GenSoft.Entities/1.0.0": {
@@ -1782,7 +1790,7 @@
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0",
-          "morelinq": "2.6.0"
+          "morelinq": "2.7.0"
         }
       },
       "RevolutionLogger/1.0.0": {
@@ -2182,18 +2190,16 @@
         "microsoft.extensions.primitives.nuspec"
       ]
     },
-    "morelinq/2.6.0": {
-      "sha512": "tlKZWsl+djJRWk5O+16BErpnoJshs1iX9FCxn4LLxWalXJeqY6S2jtI5H2/NdR8qDZ58MyxBRYYBsWY0B4WFfA==",
+    "morelinq/2.7.0": {
+      "sha512": "sZ0k5XtoA4/lh7pRRS1d9ZQZghHfVM6OUrfJyjntD1uwIjwuoPJKj26Nt7pTyVMLH+g+tjaQz3Dzm97Q0npxPg==",
       "type": "package",
-      "path": "morelinq/2.6.0",
+      "path": "morelinq/2.7.0",
       "files": [
-        "lib/net35/MoreLinq.dll",
         "lib/net35/MoreLinq.xml",
-        "lib/net40/MoreLinq.dll",
         "lib/net40/MoreLinq.xml",
-        "lib/netstandard1.0/MoreLinq.dll",
         "lib/netstandard1.0/MoreLinq.xml",
-        "morelinq.2.6.0.nupkg.sha512",
+        "lib/netstandard2.0/MoreLinq.xml",
+        "morelinq.2.7.0.nupkg.sha512",
         "morelinq.nuspec"
       ]
     },
@@ -3634,19 +3640,47 @@
         "runtimes/aot/lib/netcore50/System.Threading.dll"
       ]
     },
-    "System.ValueTuple/4.3.0": {
-      "sha512": "cNLEvBX3d6MMQRZe3SMFNukVbitDAEpVZO17qa0/2FHxZ7Y7PpFRpr6m2615XYM/tYYYf0B+WyHNujqIw8Luwg==",
+    "System.ValueTuple/4.4.0": {
+      "sha512": "BahUww/+mdP4ARCAh2RQhQTg13wYLVrBb9SYVgW8ZlrwjraGCXHGjo0oIiUfZ34LUZkMMR+RAzR7dEY4S1HeQQ==",
       "type": "package",
-      "path": "system.valuetuple/4.3.0",
+      "path": "system.valuetuple/4.4.0",
       "files": [
-        "System.ValueTuple.4.3.0.nupkg.sha512",
-        "System.ValueTuple.nuspec",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/netstandard1.0/.xml",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.ValueTuple.dll",
+        "lib/net461/System.ValueTuple.xml",
+        "lib/net47/System.ValueTuple.dll",
+        "lib/net47/System.ValueTuple.xml",
+        "lib/netcoreapp2.0/_._",
         "lib/netstandard1.0/System.ValueTuple.dll",
-        "lib/portable-net40+sl4+win8+wp8/.xml",
-        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.dll"
+        "lib/netstandard1.0/System.ValueTuple.xml",
+        "lib/netstandard2.0/_._",
+        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
+        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.xml",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net461/System.ValueTuple.dll",
+        "ref/net461/System.ValueTuple.xml",
+        "ref/net47/System.ValueTuple.dll",
+        "ref/net47/System.ValueTuple.xml",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard2.0/_._",
+        "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
+        "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.valuetuple.4.4.0.nupkg.sha512",
+        "system.valuetuple.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "Actor.Interfaces/1.0.0": {

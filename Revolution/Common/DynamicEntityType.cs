@@ -16,12 +16,13 @@ namespace Common.DataEntites
 
         
 
-        public DynamicEntityType(string name, string entitySetName, List<IEntityKeyValuePair> properties, Dictionary<string, List<dynamic>> calculatedProperties, ObservableDictionary<string, List<dynamic>> cachedProperties, bool isList, bool isParentEntity)
+        public DynamicEntityType(string name, string entitySetName, List<IEntityKeyValuePair> properties, Dictionary<string, List<dynamic>> calculatedProperties, ObservableDictionary<string, List<dynamic>> cachedProperties, ObservableDictionary<string, string> cachedEntityProperties, bool isList, bool isParentEntity)
         {
             Name = name;
             Properties = properties;
             IsList = isList;
             IsParentEntity = isParentEntity;
+            CachedEntityProperties = cachedEntityProperties;
             CachedProperties = cachedProperties;
             CalculatedProperties = calculatedProperties;
             EntitySetName = entitySetName;
@@ -36,6 +37,7 @@ namespace Common.DataEntites
         public bool IsParentEntity { get; }
         public Dictionary<string, List<dynamic>> CalculatedProperties { get; }
         public ObservableDictionary<string, List<dynamic>> CachedProperties { get; }
+        public ObservableDictionary<string, string> CachedEntityProperties { get; }
     }
 
 }

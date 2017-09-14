@@ -56,7 +56,6 @@
     <Compile Include="Generated Interfaces\CommandTypes.cs" />
     <Compile Include="Generated Interfaces\CompositeRequest.cs" />
     <Compile Include="Generated Interfaces\DataType.cs" />
-    <Compile Include="Generated Interfaces\DomainEntityCache.cs" />
     <Compile Include="Generated Interfaces\DomainEntityType.cs" />
     <Compile Include="Generated Interfaces\DomainEntityTypeSourceEntity.cs" />
     <Compile Include="Generated Interfaces\Entity.cs" />

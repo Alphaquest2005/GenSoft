@@ -11,6 +11,7 @@ namespace ViewModelInterfaces
     
     public interface IEntityViewModel: IViewModel 
     {
+        new IEntityViewInfo ViewInfo { get; }
         ReactiveProperty<IProcessStateEntity> State { get; }
 
         ReactiveProperty<IDynamicEntity> CurrentEntity { get; }

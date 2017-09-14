@@ -49,11 +49,20 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="JB.Common.Collections">
+      <HintPath>..\..\..\..\..\Users\Alpha\.nuget\packages\JB.Common.Collections\0.8.103-pre\lib\net45\JB.Common.Collections.dll</HintPath>
+    </Reference>
     <Reference Include="JB.Common.Collections.Reactive">
       <HintPath>..\..\..\..\..\Users\Alpha\.nuget\packages\JB.Common.Collections.Reactive\0.8.103-pre\lib\net45\JB.Common.Collections.Reactive.dll</HintPath>
     </Reference>
+    <Reference Include="JB.Common.Reactive">
+      <HintPath>..\..\..\..\..\Users\Alpha\.nuget\packages\JB.Common.Reactive\0.8.103-pre\lib\net45\JB.Common.Reactive.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="ReactiveProperty">
+      <HintPath>..\..\..\..\..\Users\Alpha\.nuget\packages\ReactiveProperty\2.9.0\lib\net46\ReactiveProperty.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Collections" />
     <Reference Include="System.Core" />
@@ -80,6 +89,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SystemInterfaces\SystemInterfaces.csproj">
+      <Project>{e3842263-e081-49ba-a1b4-bbe82b24e2db}</Project>
+      <Name>SystemInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewModel.Interfaces\ViewModel.Interfaces.csproj">
+      <Project>{2F936E24-723E-4E7A-B21C-D6F618C74651}</Project>
+      <Name>ViewModel.Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

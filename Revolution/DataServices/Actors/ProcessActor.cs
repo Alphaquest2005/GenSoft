@@ -18,7 +18,6 @@ using EventAggregator;
 using EventMessages;
 using EventMessages.Commands;
 using EventMessages.Events;
-using MoreLinq;
 using RevolutionData;
 using RevolutionEntities.Process;
 using StartUp.Messages;

@@ -15,5 +15,6 @@ namespace SystemInterfaces
         Dictionary<string, List<dynamic>> CalculatedProperties { get; }
 
         ObservableDictionary<string, List<dynamic>> CachedProperties { get; }
+        ObservableDictionary<string, string> CachedEntityProperties { get; }
     }
 }

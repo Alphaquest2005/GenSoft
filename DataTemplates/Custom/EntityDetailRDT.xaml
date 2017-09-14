@@ -13,6 +13,7 @@
             <converters:FontMultiConverter x:Key="FontMultiConverter"/>
             <converters:FontSizeMultiConverter x:Key="FontSizeMultiConverter"/>
             <converters:StringVisibilityMultiConverter x:Key="VisibilityMultiConverter"/>
+            <converters:CachedEntityPropertyConverter x:Key="CachedEntityPropertyConverter"/>
         </DataTemplate.Resources>
         <StackPanel Orientation="Horizontal"  >
             <StackPanel.Visibility>
@@ -80,6 +81,47 @@
                 </TextBlock.FontWeight>
                
             </TextBlock>
+            
+            <ComboBox Width="Auto"
+                      Height="Auto"
+                      Margin="5"
+                      IsEditable="True"
+                      HorizontalAlignment="Right"
+                      VerticalAlignment="Top"
+                      
+                      Text="{Binding Value, Mode=TwoWay , IsAsync=True,
+                                    UpdateSourceTrigger=LostFocus,
+                                    ValidatesOnDataErrors=True}" >
+                <ComboBox.Visibility>
+                    <MultiBinding  Converter="{StaticResource VisibilityMultiConverter}" TargetNullValue="{x:Static Visibility.Visible}" ConverterParameter="EntityComboBox">
+                        <Binding Path="DisplayProperties.ReadProperties.Properties[AttributeValue][ControlType]"/>
+                        <Binding Path="DataContext.DisplayProperties.ReadProperties.Properties[AttributeValue][ControlType]" ElementName="EntityDetailListGRD"/>
+                        <Binding Path="DisplayProperties.ReadProperties.Properties[AttributeValue][Visibility]"/>
+                        <Binding Path="DataContext.DisplayProperties.ReadProperties.Properties[AttributeValue][Visibility]" ElementName="EntityDetailListGRD"/>
+                    </MultiBinding>
+                </ComboBox.Visibility>
+                <ComboBox.ItemsSource>
+                    <MultiBinding  Converter="{StaticResource CachedEntityPropertyConverter}" >
+                        <Binding Path="Key"/>
+                        <Binding Path="DataContext.EntityType.CachedEntityProperties" ElementName="EntityDetailListGRD"/>
+                        <Binding Path="CacheViewModels" Source="{x:Static viewModels:ScreenModel.Instance}"/>
+                    </MultiBinding>
+                </ComboBox.ItemsSource>
+                
+                <ComboBox.FontSize>
+                    <MultiBinding Converter="{StaticResource FontSizeMultiConverter}" TargetNullValue="11">
+                        <Binding Path="DisplayProperties.ReadProperties.Properties[AttributeValue][FontSize]"/>
+                        <Binding Path="DataContext.DisplayProperties.ReadProperties.Properties[AttributeValue][FontSize]"  ElementName="EntityDetailListGRD"/>
+                    </MultiBinding>
+                </ComboBox.FontSize>
+                <ComboBox.FontWeight>
+                    <MultiBinding Converter="{StaticResource FontMultiConverter}" TargetNullValue="{x:Static FontWeights.Bold}">
+                        <Binding Path="DisplayProperties.ReadProperties.Properties[AttributeValue][FontWeight]"/>
+                        <Binding Path="DataContext.DisplayProperties.ReadProperties.Properties[AttributeValue][FontWeight]" ElementName="EntityDetailListGRD"/>
+                    </MultiBinding>
+                </ComboBox.FontWeight>
+               
+            </ComboBox>
         </StackPanel>
 
     </DataTemplate>
