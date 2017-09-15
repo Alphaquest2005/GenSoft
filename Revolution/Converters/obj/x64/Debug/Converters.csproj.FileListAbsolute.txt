@@ -54,3 +54,5 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\SystemInterf
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\ViewModel.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\SystemInterfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\ViewModel.Interfaces.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\Utilities.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\Utilities.pdb

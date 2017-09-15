@@ -13,7 +13,7 @@
             <converters:FontMultiConverter x:Key="FontMultiConverter"/>
             <converters:FontSizeMultiConverter x:Key="FontSizeMultiConverter"/>
             <converters:StringVisibilityMultiConverter x:Key="VisibilityMultiConverter"/>
-            <converters:CachedEntityPropertyConverter x:Key="CachedEntityPropertyConverter"/>
+            <converters:ItemSourceConverter x:Key="ItemSourceConverter"/>
         </DataTemplate.Resources>
         <StackPanel Orientation="Horizontal"  >
             <StackPanel.Visibility>
@@ -88,10 +88,13 @@
                       IsEditable="True"
                       HorizontalAlignment="Right"
                       VerticalAlignment="Top"
-                      
-                      Text="{Binding Value, Mode=TwoWay , IsAsync=True,
-                                    UpdateSourceTrigger=LostFocus,
-                                    ValidatesOnDataErrors=True}" >
+                      DisplayMemberPath="Name"
+                       SelectedValue="{Binding Value,UpdateSourceTrigger=PropertyChanged, IsAsync=True}"
+                      SelectedValuePath="Id"
+                       >
+                <!--Text="{Binding Value, Mode=TwoWay , IsAsync=True,
+                UpdateSourceTrigger=LostFocus,  
+                ValidatesOnDataErrors=True}"-->
                 <ComboBox.Visibility>
                     <MultiBinding  Converter="{StaticResource VisibilityMultiConverter}" TargetNullValue="{x:Static Visibility.Visible}" ConverterParameter="EntityComboBox">
                         <Binding Path="DisplayProperties.ReadProperties.Properties[AttributeValue][ControlType]"/>
@@ -101,7 +104,7 @@
                     </MultiBinding>
                 </ComboBox.Visibility>
                 <ComboBox.ItemsSource>
-                    <MultiBinding  Converter="{StaticResource CachedEntityPropertyConverter}" >
+                <MultiBinding  Converter="{StaticResource ItemSourceConverter}" >
                         <Binding Path="Key"/>
                         <Binding Path="DataContext.EntityType.CachedEntityProperties" ElementName="EntityDetailListGRD"/>
                         <Binding Path="CacheViewModels" Source="{x:Static viewModels:ScreenModel.Instance}"/>

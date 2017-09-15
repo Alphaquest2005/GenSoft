@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Data;
 using JB.Collections.Reactive;
+using Utilities;
 using ViewModel.Interfaces;
 
 namespace Converters
@@ -82,18 +83,36 @@ namespace Converters
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture) => null;
     }
 
-    public class CachedEntityPropertyConverter : IMultiValueConverter
+    public class ItemSourceConverter : IMultiValueConverter
     {
         public object Convert(object[] value, Type targetType, object parameter, CultureInfo culture)
         {
             var prop = value[0] as string;
-            var cachelst = value[1] as Dictionary<string, string>;
-            var cachedProperties = value[2] as ObservableList<ICacheViewModel>;
+            var cachelst = value[1] as IObservableDictionary<string, string>;
+            var cachedProperties = value[2] as IObservableList<IViewModel>;
             if (prop != null && cachelst != null && cachedProperties != null && cachelst.ContainsKey(prop))
             {
+                var cache = cachedProperties.Cast<ICacheViewModel>().FirstOrDefault(x => x.ViewInfo.EntityType.Name == cachelst[prop]);
+                if (cache != null) return cache.EntitySet.Value;
+            }
+            return null;
+        }
+
+
+        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture) => null;
+    }
+
+    public class DisplayMemberConverter : IMultiValueConverter
+    {
+        public object Convert(object[] value, Type targetType, object parameter, CultureInfo culture)
+        {
+            var prop = value[0] as string;
+            var cachelst = value[1] as IObservableDictionary<string, string>;
+            
+            if (prop != null && cachelst != null && cachelst.ContainsKey(prop))
+            {
+                return cachelst[prop];
                 
-                var cache = cachedProperties.FirstOrDefault(x => x.ViewInfo.EntityType.Name == cachelst[prop]);
-                if(cache != null) return cache.EntitySet.Value;
             }
             return null;
         }

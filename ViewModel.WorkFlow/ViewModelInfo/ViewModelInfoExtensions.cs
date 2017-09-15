@@ -42,7 +42,7 @@ namespace ViewModel.WorkFlow
                     foreach (var p in parentEntites.Where(x => x.ParentType != null))
                     {
                         var parentEntity = v.ParentEntities.FirstOrDefault(x => x.EntityType.Name == p.ParentType);
-                        if (parentEntity == null) Debugger.Break();
+                        if (parentEntity == null) continue;
                         v.ChangeTracking.AddOrUpdate(p.ChildProperty, parentEntity.Id);
                     }
 

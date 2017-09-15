@@ -709,6 +709,7 @@
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
           "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
         }
       },
@@ -1675,6 +1676,7 @@
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
           "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
         }
       },
