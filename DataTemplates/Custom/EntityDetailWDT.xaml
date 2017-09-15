@@ -13,7 +13,7 @@
             <converters:FontMultiConverter x:Key="FontMultiConverter"/>
             <converters:FontSizeMultiConverter x:Key="FontSizeMultiConverter"/>
             <converters:StringVisibilityMultiConverter x:Key="VisibilityMultiConverter"/>
-            <converters:CachedPropertyConverter x:Key="CachedPropertyConverter"/>
+            <converters:ItemSourceConverter x:Key="ItemSourceConverter"/>
         </DataTemplate.Resources>
         <StackPanel Orientation="Horizontal"  >
             <StackPanel.Visibility>
@@ -84,17 +84,20 @@
             </TextBox>
             
             <ComboBox Width="Auto"
-                     Height="Auto"
-                     Margin="5"
-                     IsEditable="True"
-                     HorizontalAlignment="Right"
-                     VerticalAlignment="Top"
-                      
-                     Text="{Binding Value, Mode=TwoWay , IsAsync=True,
-                                    UpdateSourceTrigger=LostFocus,
-                                    ValidatesOnDataErrors=True}" >
+                      Height="Auto"
+                      Margin="5"
+                      IsEditable="True"
+                      HorizontalAlignment="Right"
+                      VerticalAlignment="Top"
+                      DisplayMemberPath="Name"
+                      SelectedValue="{Binding Value,UpdateSourceTrigger=PropertyChanged, IsAsync=True}"
+                      SelectedValuePath="Id"
+            >
+                <!--Text="{Binding Value, Mode=TwoWay , IsAsync=True,
+                UpdateSourceTrigger=LostFocus,  
+                ValidatesOnDataErrors=True}"-->
                 <ComboBox.Visibility>
-                    <MultiBinding  Converter="{StaticResource VisibilityMultiConverter}" TargetNullValue="{x:Static Visibility.Visible}" ConverterParameter="ComboBox">
+                    <MultiBinding  Converter="{StaticResource VisibilityMultiConverter}" TargetNullValue="{x:Static Visibility.Visible}" ConverterParameter="EntityComboBox">
                         <Binding Path="DisplayProperties.WriteProperties.Properties[AttributeValue][ControlType]"/>
                         <Binding Path="DataContext.DisplayProperties.WriteProperties.Properties[AttributeValue][ControlType]" ElementName="EntityDetailListGRD"/>
                         <Binding Path="DisplayProperties.WriteProperties.Properties[AttributeValue][Visibility]"/>
@@ -102,12 +105,13 @@
                     </MultiBinding>
                 </ComboBox.Visibility>
                 <ComboBox.ItemsSource>
-                    <MultiBinding  Converter="{StaticResource CachedPropertyConverter}" >
+                    <MultiBinding  Converter="{StaticResource ItemSourceConverter}" >
                         <Binding Path="Key"/>
-                        <Binding Path="DataContext.EntityType.CachedProperties" ElementName="EntityDetailListGRD"/>
+                        <Binding Path="DataContext.EntityType.CachedEntityProperties" ElementName="EntityDetailListGRD"/>
+                        <Binding Path="CacheViewModels" Source="{x:Static viewModels:ScreenModel.Instance}"/>
                     </MultiBinding>
                 </ComboBox.ItemsSource>
-                
+
                 <ComboBox.FontSize>
                     <MultiBinding Converter="{StaticResource FontSizeMultiConverter}" TargetNullValue="11">
                         <Binding Path="DisplayProperties.WriteProperties.Properties[AttributeValue][FontSize]"/>
@@ -120,9 +124,9 @@
                         <Binding Path="DataContext.DisplayProperties.WriteProperties.Properties[AttributeValue][FontWeight]" ElementName="EntityDetailListGRD"/>
                     </MultiBinding>
                 </ComboBox.FontWeight>
-               
+
             </ComboBox>
-           
+
         </StackPanel>
 
     </DataTemplate>

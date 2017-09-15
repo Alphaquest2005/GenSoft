@@ -120,4 +120,23 @@ namespace Converters
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture) => null;
     }
+
+    public class LookUpTextConverter : IMultiValueConverter
+    {
+        public object Convert(object[] value, Type targetType, object parameter, CultureInfo culture)
+        {
+            var prop = value[0] as string;
+            var cachelst = value[1] as IObservableDictionary<string, string>;
+            var cachedProperties = value[2] as IObservableList<IViewModel>;
+            var val = value[3] as int? ?? 0;
+            if (prop == null || cachelst == null || cachedProperties == null || !cachelst.ContainsKey(prop) ||
+                val == 0) return null;
+
+            var cache = cachedProperties.Cast<ICacheViewModel>().FirstOrDefault(x => x.ViewInfo.EntityType.Name == cachelst[prop]);
+            return cache != null ? cache.EntitySet.Value.FirstOrDefault(x => x.Id == val)?.Properties["Name"] : null;
+        }
+
+
+        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture) => null;
+    }
 }
