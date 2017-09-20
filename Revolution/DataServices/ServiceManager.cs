@@ -33,12 +33,13 @@ namespace DataServices.Actors
         public ISystemSource Source { get; private set; }
 
         
-
+        public static List<IProcessInfo> ProcessInfos { get; set; }
 
         public ServiceManager(bool autoRun, List<IMachineInfo> machineInfos, List<IProcessInfo> processInfos, List<IComplexEventAction> complexEventActions, List<IViewModelInfo> viewModelInfos)
         {
             try
             {
+                ProcessInfos = processInfos;
                 var ctx = Context;
                 var machineInfo =
                     machineInfos.FirstOrDefault(

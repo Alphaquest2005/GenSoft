@@ -196,7 +196,6 @@ C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\SystemInter
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\Utilities.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\ViewModel.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\ComponentModel.Composition.Hosting.Extension.dll
-C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\DomainMessages.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\Domain.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\Actor.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\BootStrapper.pdb
@@ -211,7 +210,6 @@ C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\SystemInter
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\Utilities.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\ViewModel.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\ComponentModel.Composition.Hosting.Extension.pdb
-C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\DomainMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\obj\Debug\Process.WorkFlow.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\obj\Debug\Process.WorkFlow.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\obj\Debug\Process.WorkFlow.dll

@@ -52,7 +52,13 @@
     <Compile Include="Generated DBContexts\GenSoftDBContext-Intialization.cs" />
     <Compile Include="Generated DBContexts\GenSoftDBContext.cs" />
     <Compile Include="Generated Mappings\Action.cs" />
-    <Compile Include="Generated Mappings\ActionEntityType.cs" />
+    <Compile Include="Generated Mappings\ActionParameterConstants.cs" />
+    <Compile Include="Generated Mappings\ActionParameterEntityTypeAttributes.cs" />
+    <Compile Include="Generated Mappings\ActionParameters.cs" />
+    <Compile Include="Generated Mappings\ActionProperties.cs" />
+    <Compile Include="Generated Mappings\ActionPropertyParameter.cs" />
+    <Compile Include="Generated Mappings\ActionSet.cs" />
+    <Compile Include="Generated Mappings\ActionSetActions.cs" />
     <Compile Include="Generated Mappings\Agent.cs" />
     <Compile Include="Generated Mappings\ApplicationSetting.cs" />
     <Compile Include="Generated Mappings\Attributes.cs" />
@@ -63,6 +69,7 @@
     <Compile Include="Generated Mappings\CommandTypes.cs" />
     <Compile Include="Generated Mappings\CompositeRequest.cs" />
     <Compile Include="Generated Mappings\DataType.cs" />
+    <Compile Include="Generated Mappings\DBType.cs" />
     <Compile Include="Generated Mappings\DomainEntityType.cs" />
     <Compile Include="Generated Mappings\DomainEntityTypeSourceEntity.cs" />
     <Compile Include="Generated Mappings\Entity.cs" />
@@ -89,7 +96,6 @@
     <Compile Include="Generated Mappings\Machine.cs" />
     <Compile Include="Generated Mappings\Message.cs" />
     <Compile Include="Generated Mappings\MessageSource.cs" />
-    <Compile Include="Generated Mappings\MessageType.cs" />
     <Compile Include="Generated Mappings\PresentationPropertyType.cs" />
     <Compile Include="Generated Mappings\PresentationTheme.cs" />
     <Compile Include="Generated Mappings\Process.cs" />
@@ -105,7 +111,6 @@
     <Compile Include="Generated Mappings\StateActionExpectedProcessState.cs" />
     <Compile Include="Generated Mappings\Type.cs" />
     <Compile Include="Generated Mappings\TypeArguements.cs" />
-    <Compile Include="Generated Mappings\TypeParameter.cs" />
     <Compile Include="Generated Mappings\User.cs" />
     <Compile Include="Generated Mappings\ViewModelCommands.cs" />
     <Compile Include="Generated Mappings\ViewModelPropertyPresentationType.cs" />

@@ -51,7 +51,13 @@
   <ItemGroup>
     <Compile Include="EFEntity.cs" />
     <Compile Include="Generated Entities\Action.cs" />
-    <Compile Include="Generated Entities\ActionEntityType.cs" />
+    <Compile Include="Generated Entities\ActionParameterConstants.cs" />
+    <Compile Include="Generated Entities\ActionParameterEntityTypeAttributes.cs" />
+    <Compile Include="Generated Entities\ActionParameters.cs" />
+    <Compile Include="Generated Entities\ActionProperties.cs" />
+    <Compile Include="Generated Entities\ActionPropertyParameter.cs" />
+    <Compile Include="Generated Entities\ActionSet.cs" />
+    <Compile Include="Generated Entities\ActionSetActions.cs" />
     <Compile Include="Generated Entities\Agent.cs" />
     <Compile Include="Generated Entities\ApplicationSetting.cs" />
     <Compile Include="Generated Entities\Attributes.cs" />
@@ -62,6 +68,7 @@
     <Compile Include="Generated Entities\CommandTypes.cs" />
     <Compile Include="Generated Entities\CompositeRequest.cs" />
     <Compile Include="Generated Entities\DataType.cs" />
+    <Compile Include="Generated Entities\DBType.cs" />
     <Compile Include="Generated Entities\DomainEntityType.cs" />
     <Compile Include="Generated Entities\DomainEntityTypeSourceEntity.cs" />
     <Compile Include="Generated Entities\Entity.cs" />
@@ -88,7 +95,6 @@
     <Compile Include="Generated Entities\Machine.cs" />
     <Compile Include="Generated Entities\Message.cs" />
     <Compile Include="Generated Entities\MessageSource.cs" />
-    <Compile Include="Generated Entities\MessageType.cs" />
     <Compile Include="Generated Entities\PresentationPropertyType.cs" />
     <Compile Include="Generated Entities\PresentationTheme.cs" />
     <Compile Include="Generated Entities\Process.cs" />
@@ -104,7 +110,6 @@
     <Compile Include="Generated Entities\StateActionExpectedProcessState.cs" />
     <Compile Include="Generated Entities\Type.cs" />
     <Compile Include="Generated Entities\TypeArguements.cs" />
-    <Compile Include="Generated Entities\TypeParameter.cs" />
     <Compile Include="Generated Entities\User.cs" />
     <Compile Include="Generated Entities\ViewModelCommands.cs" />
     <Compile Include="Generated Entities\ViewModelPropertyPresentationType.cs" />

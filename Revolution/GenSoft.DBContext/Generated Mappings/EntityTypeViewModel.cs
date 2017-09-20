@@ -21,8 +21,6 @@ namespace GenSoft.Mappings
 			entityBuilder.Property(t => t.Description).HasColumnName("Description").IsRequired().HasMaxLength(255);
 			entityBuilder.Property(t => t.Priority).HasColumnName("Priority").IsRequired();
 			entityBuilder.Property(t => t.ProcessDomainEntityTypeId).HasColumnName("ProcessDomainEntityTypeId").IsRequired();
-			entityBuilder.Property(t => t.PropertyName).HasColumnName("PropertyName").IsRequired().HasMaxLength(50);
-			entityBuilder.Property(t => t.PropertyName).HasColumnName("PropertyName").IsRequired().HasMaxLength(50);
 			entityBuilder.Property(t => t.Symbol).HasColumnName("Symbol").IsRequired().HasMaxLength(3);
 			entityBuilder.Property(t => t.ViewModelTypeId).HasColumnName("ViewModelTypeId").IsRequired();
 		//-------------------Navigation Properties -------------------------------//

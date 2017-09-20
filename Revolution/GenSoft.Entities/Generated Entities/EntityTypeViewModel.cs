@@ -16,7 +16,6 @@ namespace GenSoft.Entities
 		public virtual string Description { get; set; }
 		public virtual int Priority { get; set; }
 		public virtual int ProcessDomainEntityTypeId { get; set; }
-		public virtual string PropertyName { get; set; }
 		public virtual string Symbol { get; set; }
 		public virtual int ViewModelTypeId { get; set; }
 

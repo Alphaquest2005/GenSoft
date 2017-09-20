@@ -14,7 +14,7 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IStateAction:SystemInterfaces.IEntity  
 	{
-		int ActionId { get;}
+		int ActionSetId { get;}
 		int ProcessStateId { get;}
 
 

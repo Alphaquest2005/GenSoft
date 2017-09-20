@@ -13,7 +13,13 @@ namespace GenSoft.DBContexts
 	public partial class GenSoftDBContext:DbContext
 	{
 		public DbSet<Entities.Action> Action { get; set; }
-		public DbSet<Entities.ActionEntityType> ActionEntityType { get; set; }
+		public DbSet<Entities.ActionParameterConstants> ActionParameterConstants { get; set; }
+		public DbSet<Entities.ActionParameterEntityTypeAttributes> ActionParameterEntityTypeAttributes { get; set; }
+		public DbSet<Entities.ActionParameters> ActionParameters { get; set; }
+		public DbSet<Entities.ActionProperties> ActionProperties { get; set; }
+		public DbSet<Entities.ActionPropertyParameter> ActionPropertyParameter { get; set; }
+		public DbSet<Entities.ActionSet> ActionSet { get; set; }
+		public DbSet<Entities.ActionSetActions> ActionSetActions { get; set; }
 		public DbSet<Entities.Agent> Agent { get; set; }
 		public DbSet<Entities.ApplicationSetting> ApplicationSetting { get; set; }
 		public DbSet<Entities.Attributes> Attributes { get; set; }
@@ -24,6 +30,7 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.CommandTypes> CommandTypes { get; set; }
 		public DbSet<Entities.CompositeRequest> CompositeRequest { get; set; }
 		public DbSet<Entities.DataType> DataType { get; set; }
+		public DbSet<Entities.DBType> DBType { get; set; }
 		public DbSet<Entities.DomainEntityType> DomainEntityType { get; set; }
 		public DbSet<Entities.DomainEntityTypeSourceEntity> DomainEntityTypeSourceEntity { get; set; }
 		public DbSet<Entities.Entity> Entity { get; set; }
@@ -50,7 +57,6 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.Machine> Machine { get; set; }
 		public DbSet<Entities.Message> Message { get; set; }
 		public DbSet<Entities.MessageSource> MessageSource { get; set; }
-		public DbSet<Entities.MessageType> MessageType { get; set; }
 		public DbSet<Entities.PresentationPropertyType> PresentationPropertyType { get; set; }
 		public DbSet<Entities.PresentationTheme> PresentationTheme { get; set; }
 		public DbSet<Entities.Process> Process { get; set; }
@@ -66,7 +72,6 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.StateActionExpectedProcessState> StateActionExpectedProcessState { get; set; }
 		public DbSet<Entities.Type> Type { get; set; }
 		public DbSet<Entities.TypeArguements> TypeArguements { get; set; }
-		public DbSet<Entities.TypeParameter> TypeParameter { get; set; }
 		public DbSet<Entities.User> User { get; set; }
 		public DbSet<Entities.ViewModelCommands> ViewModelCommands { get; set; }
 		public DbSet<Entities.ViewModelPropertyPresentationType> ViewModelPropertyPresentationType { get; set; }
@@ -85,7 +90,13 @@ namespace GenSoft.DBContexts
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 				ActionMap.Map(modelBuilder.Entity<Entities.Action>());
-				ActionEntityTypeMap.Map(modelBuilder.Entity<Entities.ActionEntityType>());
+				ActionParameterConstantsMap.Map(modelBuilder.Entity<Entities.ActionParameterConstants>());
+				ActionParameterEntityTypeAttributesMap.Map(modelBuilder.Entity<Entities.ActionParameterEntityTypeAttributes>());
+				ActionParametersMap.Map(modelBuilder.Entity<Entities.ActionParameters>());
+				ActionPropertiesMap.Map(modelBuilder.Entity<Entities.ActionProperties>());
+				ActionPropertyParameterMap.Map(modelBuilder.Entity<Entities.ActionPropertyParameter>());
+				ActionSetMap.Map(modelBuilder.Entity<Entities.ActionSet>());
+				ActionSetActionsMap.Map(modelBuilder.Entity<Entities.ActionSetActions>());
 				AgentMap.Map(modelBuilder.Entity<Entities.Agent>());
 				ApplicationSettingMap.Map(modelBuilder.Entity<Entities.ApplicationSetting>());
 				AttributesMap.Map(modelBuilder.Entity<Entities.Attributes>());
@@ -96,6 +107,7 @@ namespace GenSoft.DBContexts
 				CommandTypesMap.Map(modelBuilder.Entity<Entities.CommandTypes>());
 				CompositeRequestMap.Map(modelBuilder.Entity<Entities.CompositeRequest>());
 				DataTypeMap.Map(modelBuilder.Entity<Entities.DataType>());
+				DBTypeMap.Map(modelBuilder.Entity<Entities.DBType>());
 				DomainEntityTypeMap.Map(modelBuilder.Entity<Entities.DomainEntityType>());
 				DomainEntityTypeSourceEntityMap.Map(modelBuilder.Entity<Entities.DomainEntityTypeSourceEntity>());
 				EntityMap.Map(modelBuilder.Entity<Entities.Entity>());
@@ -122,7 +134,6 @@ namespace GenSoft.DBContexts
 				MachineMap.Map(modelBuilder.Entity<Entities.Machine>());
 				MessageMap.Map(modelBuilder.Entity<Entities.Message>());
 				MessageSourceMap.Map(modelBuilder.Entity<Entities.MessageSource>());
-				MessageTypeMap.Map(modelBuilder.Entity<Entities.MessageType>());
 				PresentationPropertyTypeMap.Map(modelBuilder.Entity<Entities.PresentationPropertyType>());
 				PresentationThemeMap.Map(modelBuilder.Entity<Entities.PresentationTheme>());
 				ProcessMap.Map(modelBuilder.Entity<Entities.Process>());
@@ -138,7 +149,6 @@ namespace GenSoft.DBContexts
 				StateActionExpectedProcessStateMap.Map(modelBuilder.Entity<Entities.StateActionExpectedProcessState>());
 				TypeMap.Map(modelBuilder.Entity<Entities.Type>());
 				TypeArguementsMap.Map(modelBuilder.Entity<Entities.TypeArguements>());
-				TypeParameterMap.Map(modelBuilder.Entity<Entities.TypeParameter>());
 				UserMap.Map(modelBuilder.Entity<Entities.User>());
 				ViewModelCommandsMap.Map(modelBuilder.Entity<Entities.ViewModelCommands>());
 				ViewModelPropertyPresentationTypeMap.Map(modelBuilder.Entity<Entities.ViewModelPropertyPresentationType>());

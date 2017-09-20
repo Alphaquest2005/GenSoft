@@ -39,7 +39,7 @@ namespace DataServices.Actors
 
         private void StartParentProcess(int processId, IUser user)
         {
-            var processSteps = ProcessInfos.Where(x => x.ParentProcessId == processId);
+            var processSteps = ServiceManager.ProcessInfos.Where(x => x.ParentProcessId == processId);
             CreateProcesses(user, processSteps, processSteps.First().Id);
         }
 

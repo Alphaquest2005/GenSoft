@@ -318,7 +318,13 @@
       <LastGenOutput>MRManger-DataEntities.cs</LastGenOutput>
       <LastOutputs>
 ..\GenSoft.DBContext\Generated Mappings\Action.cs
-..\GenSoft.DBContext\Generated Mappings\ActionEntityType.cs
+..\GenSoft.DBContext\Generated Mappings\ActionParameterConstants.cs
+..\GenSoft.DBContext\Generated Mappings\ActionParameterEntityTypeAttributes.cs
+..\GenSoft.DBContext\Generated Mappings\ActionParameters.cs
+..\GenSoft.DBContext\Generated Mappings\ActionProperties.cs
+..\GenSoft.DBContext\Generated Mappings\ActionPropertyParameter.cs
+..\GenSoft.DBContext\Generated Mappings\ActionSet.cs
+..\GenSoft.DBContext\Generated Mappings\ActionSetActions.cs
 ..\GenSoft.DBContext\Generated Mappings\Agent.cs
 ..\GenSoft.DBContext\Generated Mappings\ApplicationSetting.cs
 ..\GenSoft.DBContext\Generated Mappings\Attributes.cs
@@ -329,6 +335,7 @@
 ..\GenSoft.DBContext\Generated Mappings\CommandTypes.cs
 ..\GenSoft.DBContext\Generated Mappings\CompositeRequest.cs
 ..\GenSoft.DBContext\Generated Mappings\DataType.cs
+..\GenSoft.DBContext\Generated Mappings\DBType.cs
 ..\GenSoft.DBContext\Generated Mappings\DomainEntityType.cs
 ..\GenSoft.DBContext\Generated Mappings\DomainEntityTypeSourceEntity.cs
 ..\GenSoft.DBContext\Generated Mappings\Entity.cs
@@ -355,7 +362,6 @@
 ..\GenSoft.DBContext\Generated Mappings\Machine.cs
 ..\GenSoft.DBContext\Generated Mappings\Message.cs
 ..\GenSoft.DBContext\Generated Mappings\MessageSource.cs
-..\GenSoft.DBContext\Generated Mappings\MessageType.cs
 ..\GenSoft.DBContext\Generated Mappings\PresentationPropertyType.cs
 ..\GenSoft.DBContext\Generated Mappings\PresentationTheme.cs
 ..\GenSoft.DBContext\Generated Mappings\Process.cs
@@ -371,7 +377,6 @@
 ..\GenSoft.DBContext\Generated Mappings\StateActionExpectedProcessState.cs
 ..\GenSoft.DBContext\Generated Mappings\Type.cs
 ..\GenSoft.DBContext\Generated Mappings\TypeArguements.cs
-..\GenSoft.DBContext\Generated Mappings\TypeParameter.cs
 ..\GenSoft.DBContext\Generated Mappings\User.cs
 ..\GenSoft.DBContext\Generated Mappings\ViewModelCommands.cs
 ..\GenSoft.DBContext\Generated Mappings\ViewModelPropertyPresentationType.cs
@@ -383,7 +388,13 @@
 ..\GenSoft.DBContext\Generated Mappings\ViewType.cs
 ..\GenSoft.Entities\EFEntity.cs
 ..\GenSoft.Entities\Generated Entities\Action.cs
-..\GenSoft.Entities\Generated Entities\ActionEntityType.cs
+..\GenSoft.Entities\Generated Entities\ActionParameterConstants.cs
+..\GenSoft.Entities\Generated Entities\ActionParameterEntityTypeAttributes.cs
+..\GenSoft.Entities\Generated Entities\ActionParameters.cs
+..\GenSoft.Entities\Generated Entities\ActionProperties.cs
+..\GenSoft.Entities\Generated Entities\ActionPropertyParameter.cs
+..\GenSoft.Entities\Generated Entities\ActionSet.cs
+..\GenSoft.Entities\Generated Entities\ActionSetActions.cs
 ..\GenSoft.Entities\Generated Entities\Agent.cs
 ..\GenSoft.Entities\Generated Entities\ApplicationSetting.cs
 ..\GenSoft.Entities\Generated Entities\Attributes.cs
@@ -394,6 +405,7 @@
 ..\GenSoft.Entities\Generated Entities\CommandTypes.cs
 ..\GenSoft.Entities\Generated Entities\CompositeRequest.cs
 ..\GenSoft.Entities\Generated Entities\DataType.cs
+..\GenSoft.Entities\Generated Entities\DBType.cs
 ..\GenSoft.Entities\Generated Entities\DomainEntityType.cs
 ..\GenSoft.Entities\Generated Entities\DomainEntityTypeSourceEntity.cs
 ..\GenSoft.Entities\Generated Entities\Entity.cs
@@ -420,7 +432,6 @@
 ..\GenSoft.Entities\Generated Entities\Machine.cs
 ..\GenSoft.Entities\Generated Entities\Message.cs
 ..\GenSoft.Entities\Generated Entities\MessageSource.cs
-..\GenSoft.Entities\Generated Entities\MessageType.cs
 ..\GenSoft.Entities\Generated Entities\PresentationPropertyType.cs
 ..\GenSoft.Entities\Generated Entities\PresentationTheme.cs
 ..\GenSoft.Entities\Generated Entities\Process.cs
@@ -436,7 +447,6 @@
 ..\GenSoft.Entities\Generated Entities\StateActionExpectedProcessState.cs
 ..\GenSoft.Entities\Generated Entities\Type.cs
 ..\GenSoft.Entities\Generated Entities\TypeArguements.cs
-..\GenSoft.Entities\Generated Entities\TypeParameter.cs
 ..\GenSoft.Entities\Generated Entities\User.cs
 ..\GenSoft.Entities\Generated Entities\ViewModelCommands.cs
 ..\GenSoft.Entities\Generated Entities\ViewModelPropertyPresentationType.cs
@@ -453,7 +463,13 @@
       <LastGenOutput>MRManger-Interfaces.cs</LastGenOutput>
       <LastOutputs>
 ..\GenSoft.Interface\Generated Interfaces\Action.cs
-..\GenSoft.Interface\Generated Interfaces\ActionEntityType.cs
+..\GenSoft.Interface\Generated Interfaces\ActionParameterConstants.cs
+..\GenSoft.Interface\Generated Interfaces\ActionParameterEntityTypeAttributes.cs
+..\GenSoft.Interface\Generated Interfaces\ActionParameters.cs
+..\GenSoft.Interface\Generated Interfaces\ActionProperties.cs
+..\GenSoft.Interface\Generated Interfaces\ActionPropertyParameter.cs
+..\GenSoft.Interface\Generated Interfaces\ActionSet.cs
+..\GenSoft.Interface\Generated Interfaces\ActionSetActions.cs
 ..\GenSoft.Interface\Generated Interfaces\Agent.cs
 ..\GenSoft.Interface\Generated Interfaces\ApplicationSetting.cs
 ..\GenSoft.Interface\Generated Interfaces\Attributes.cs
@@ -464,6 +480,7 @@
 ..\GenSoft.Interface\Generated Interfaces\CommandTypes.cs
 ..\GenSoft.Interface\Generated Interfaces\CompositeRequest.cs
 ..\GenSoft.Interface\Generated Interfaces\DataType.cs
+..\GenSoft.Interface\Generated Interfaces\DBType.cs
 ..\GenSoft.Interface\Generated Interfaces\DomainEntityType.cs
 ..\GenSoft.Interface\Generated Interfaces\DomainEntityTypeSourceEntity.cs
 ..\GenSoft.Interface\Generated Interfaces\Entity.cs
@@ -490,7 +507,6 @@
 ..\GenSoft.Interface\Generated Interfaces\Machine.cs
 ..\GenSoft.Interface\Generated Interfaces\Message.cs
 ..\GenSoft.Interface\Generated Interfaces\MessageSource.cs
-..\GenSoft.Interface\Generated Interfaces\MessageType.cs
 ..\GenSoft.Interface\Generated Interfaces\PresentationPropertyType.cs
 ..\GenSoft.Interface\Generated Interfaces\PresentationTheme.cs
 ..\GenSoft.Interface\Generated Interfaces\Process.cs
@@ -506,7 +522,6 @@
 ..\GenSoft.Interface\Generated Interfaces\StateActionExpectedProcessState.cs
 ..\GenSoft.Interface\Generated Interfaces\Type.cs
 ..\GenSoft.Interface\Generated Interfaces\TypeArguements.cs
-..\GenSoft.Interface\Generated Interfaces\TypeParameter.cs
 ..\GenSoft.Interface\Generated Interfaces\User.cs
 ..\GenSoft.Interface\Generated Interfaces\ViewModelCommands.cs
 ..\GenSoft.Interface\Generated Interfaces\ViewModelPropertyPresentationType.cs

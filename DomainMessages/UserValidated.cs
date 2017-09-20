@@ -10,13 +10,13 @@ using Domain.Interfaces;
 
 namespace DomainMessages
 {
-    public class UserValidated : ProcessSystemMessage, IUserValidated
-    {
-        public UserValidated(IDynamicEntity userSignIn, IProcessStateInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
-        {
-            UserSignIn = userSignIn;
-        }
+    //public class UserValidated : ProcessSystemMessage, IUserValidated
+    //{
+    //    public UserValidated(IDynamicEntity userSignIn, IProcessStateInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
+    //    {
+    //        UserSignIn = userSignIn;
+    //    }
 
-        public IDynamicEntity UserSignIn { get; }
-    }
+    //    public IDynamicEntity UserSignIn { get; }
+    //}
 }

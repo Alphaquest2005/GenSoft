@@ -19,6 +19,8 @@ namespace GenSoft.Entities
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
+				public virtual ICollection<ActionParameterEntityTypeAttributes> ActionParameterEntityTypeAttributes {get; set;}
+				public virtual ActionProperties ActionProperties {get; set;}
 				public virtual CalculatedProperties CalculatedProperties {get; set;}
 				public virtual ICollection<CalculatedPropertyParameterEntityTypes> CalculatedPropertyParameterEntityTypes {get; set;}
 				public virtual ICollection<EntityRelationships> ChildEntitys {get; set;}

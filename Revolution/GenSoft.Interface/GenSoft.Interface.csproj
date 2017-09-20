@@ -45,7 +45,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Generated Interfaces\Action.cs" />
-    <Compile Include="Generated Interfaces\ActionEntityType.cs" />
+    <Compile Include="Generated Interfaces\ActionParameterConstants.cs" />
+    <Compile Include="Generated Interfaces\ActionParameterEntityTypeAttributes.cs" />
+    <Compile Include="Generated Interfaces\ActionParameters.cs" />
+    <Compile Include="Generated Interfaces\ActionProperties.cs" />
+    <Compile Include="Generated Interfaces\ActionPropertyParameter.cs" />
+    <Compile Include="Generated Interfaces\ActionSet.cs" />
+    <Compile Include="Generated Interfaces\ActionSetActions.cs" />
     <Compile Include="Generated Interfaces\Agent.cs" />
     <Compile Include="Generated Interfaces\ApplicationSetting.cs" />
     <Compile Include="Generated Interfaces\Attributes.cs" />
@@ -56,6 +62,7 @@
     <Compile Include="Generated Interfaces\CommandTypes.cs" />
     <Compile Include="Generated Interfaces\CompositeRequest.cs" />
     <Compile Include="Generated Interfaces\DataType.cs" />
+    <Compile Include="Generated Interfaces\DBType.cs" />
     <Compile Include="Generated Interfaces\DomainEntityType.cs" />
     <Compile Include="Generated Interfaces\DomainEntityTypeSourceEntity.cs" />
     <Compile Include="Generated Interfaces\Entity.cs" />
@@ -82,7 +89,6 @@
     <Compile Include="Generated Interfaces\Machine.cs" />
     <Compile Include="Generated Interfaces\Message.cs" />
     <Compile Include="Generated Interfaces\MessageSource.cs" />
-    <Compile Include="Generated Interfaces\MessageType.cs" />
     <Compile Include="Generated Interfaces\PresentationPropertyType.cs" />
     <Compile Include="Generated Interfaces\PresentationTheme.cs" />
     <Compile Include="Generated Interfaces\Process.cs" />
@@ -98,7 +104,6 @@
     <Compile Include="Generated Interfaces\StateActionExpectedProcessState.cs" />
     <Compile Include="Generated Interfaces\Type.cs" />
     <Compile Include="Generated Interfaces\TypeArguements.cs" />
-    <Compile Include="Generated Interfaces\TypeParameter.cs" />
     <Compile Include="Generated Interfaces\User.cs" />
     <Compile Include="Generated Interfaces\ViewModelCommands.cs" />
     <Compile Include="Generated Interfaces\ViewModelPropertyPresentationType.cs" />

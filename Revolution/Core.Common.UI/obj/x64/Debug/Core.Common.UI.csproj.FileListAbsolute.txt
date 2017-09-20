@@ -217,8 +217,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\ViewMess
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\ViewModel.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\ComponentModel.Composition.Hosting.Extension.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\Actor.Interfaces.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\DomainMessages.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\Domain.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\ValidationSets.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\BootStrapper.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\BootStrapper.dll.config
@@ -238,8 +236,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\ViewMess
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\ViewModel.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\ComponentModel.Composition.Hosting.Extension.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\Actor.Interfaces.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\DomainMessages.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\Domain.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\obj\x64\Debug\Core.Common.UI.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\obj\x64\Debug\Virtualization\LoadingAnimationBlock.baml
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\obj\x64\Debug\Virtualization\LoadingAnimation.g.cs

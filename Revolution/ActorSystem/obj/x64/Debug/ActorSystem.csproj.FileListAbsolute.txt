@@ -197,13 +197,11 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\SystemInter
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Utilities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\ViewModel.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\EventMessages.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Domain.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\ComponentModel.Composition.Hosting.Extension.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\ViewMessages.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\RevolutionLogger.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\CommonMessages.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\EFRepository.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\DomainMessages.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\BuildingSpecifications.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Process.WorkFlow.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\GenSoft.Expressions.pdb
@@ -225,7 +223,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\SystemInter
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Utilities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\ViewModel.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\EventMessages.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Domain.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\ComponentModel.Composition.Hosting.Extension.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\ViewMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\ViewMessages.dll.config
@@ -233,7 +230,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\RevolutionL
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\CommonMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\EFRepository.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\EFRepository.dll.config
-C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\DomainMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\obj\x64\Debug\ActorSystem.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\obj\x64\Debug\ActorSystem.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\obj\x64\Debug\ActorSystem.pdb

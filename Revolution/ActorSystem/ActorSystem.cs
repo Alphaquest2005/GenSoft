@@ -46,6 +46,7 @@ namespace ActorBackBone
              try
             {
                 System = ActorSystem.Create("System");
+                
 
                 BuildExpressions();
 
@@ -100,8 +101,13 @@ namespace ActorBackBone
         {
             try
             {
-                var interpreter = new Interpreter();
                 
+                var interpreter = new Interpreter();
+                if (body.Contains("const") || body.Contains("param"))
+                {
+                    return "\"EntityParameter or constant not assigned to entity attribute\"";
+                    
+                }
                 var returnType = CreateTypesFromDbType(returnDataTypeId);
                 var parameters = functionParameters;
                 var argType = parameters.Select(x => CreateTypesFromDbType(x.DataTypeId)).ToList();
@@ -448,6 +454,12 @@ namespace ActorBackBone
                 var res = new List<IComplexEventAction>();
                 using (var ctx = new GenSoftDBContext())
                 {
+                    foreach (var process in ctx.Process.Where(x => x.Id > 1))
+                    {
+                        res.Add(Processes.ComplexActions.GetComplexAction("StartProcess", new object[] { process.Id }));
+
+                    }
+
                     foreach (var r in ctx.DomainEntityType
                         .Include(x => x.DomainEntityTypeSourceEntity)
                         .Include(x => x.EntityType.Type)
@@ -551,7 +563,7 @@ namespace ActorBackBone
                     }
 
 
-                    }
+                }
                 return res;
             }
             catch (Exception e)
@@ -805,27 +817,6 @@ namespace ActorBackBone
                 return calprops;
         }
 
-        //private static List<IEntityKeyValuePair> GetCalculatedProperties(EntityView viewType, Dictionary<string, List<dynamic>> calPropDefinition)
-        //{
-        //    using (var ctx = new GenSoftDBContext())
-        //    {
-        //        var res = viewType.EntityType.EntityTypeAttributes
-        //            .Where(x => x.CalculatedProperties != null)
-        //            .Select(x => x.CalculatedProperties).DistinctBy(x => x.Id)
-        //            .Select(x => new EntityKeyValuePair(x.EntityTypeAttributes.Attributes.Name,
-        //               null,
-        //                new ViewAttributeDisplayProperties
-        //                (
-        //                    CreateAttributeDisplayProperties(ctx, x.EntityTypeAttributes, "Read"),
-        //                    CreateAttributeDisplayProperties(ctx, x.EntityTypeAttributes, "Write")
-        //                ),
-        //                viewType.EntityType.EntityList != null,
-        //                viewType.EntityType.EntityTypeAttributes.Any(z => z.ChildEntitys.Any())
-        //            ) as IEntityKeyValuePair).ToList();
-        //        return res;
-        //    }
-            
-        //}
 
         public void Intialize(bool autoContinue, List<IViewModelInfo> viewInfos)
         {
@@ -841,5 +832,19 @@ namespace ActorBackBone
 
             
         }
+
+        public void Intialize(bool autoContinue, List<IComplexEventAction> processComplexEvents, List<IViewModelInfo> processViewModelInfos)
+        {
+            using (var ctx = new GenSoftDBContext())
+            {
+                var machineInfo = ctx.Machine.Select(x => ProcessExpressions.CreateMachineInfo(x)).ToList();
+
+                var processInfos = ctx.Process.Select(x => ProcessExpressions.CreateProcessInfo(x)).ToList();
+                
+
+                Intialize(autoContinue, machineInfo, processInfos, processComplexEvents, processViewModelInfos);
+            }
+        }
+
     }
 }

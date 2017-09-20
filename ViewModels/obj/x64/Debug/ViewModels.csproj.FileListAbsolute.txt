@@ -127,8 +127,6 @@ C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\ViewModel.WorkFlow.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\BootStrapper.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\RevolutionLogger.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\Actor.Interfaces.dll
-C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\DomainMessages.dll
-C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\Domain.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\ComponentModel.Composition.Hosting.Extension.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\DesignTimeData.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\CommonMessages.pdb
@@ -148,8 +146,6 @@ C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\Process.WorkFlow.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\BootStrapper.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\RevolutionLogger.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\Actor.Interfaces.pdb
-C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\DomainMessages.pdb
-C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\Domain.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\ComponentModel.Composition.Hosting.Extension.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModels\obj\x64\Debug\ViewModels.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\ViewModels\obj\x64\Debug\ViewModels.dll

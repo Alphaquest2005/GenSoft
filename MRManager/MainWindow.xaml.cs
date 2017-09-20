@@ -31,7 +31,7 @@ namespace MRManager
 
 		    //    var interfacesAssembly = AppDomain.CurrentDomain.GetAssemblies()
 		    //        .FirstOrDefault(x => x.FullName.StartsWith("Interfaces"));
-                BootStrapper.BootStrapper.Instance.StartUp( true, Process.WorkFlow.MachineInfoData.MachineInfos, Process.WorkFlow.Processes.ProcessInfos, Process.WorkFlow.Processes.ProcessComplexEvents, ProcessViewModels.ProcessViewModelInfos);
+                BootStrapper.BootStrapper.Instance.StartUp( true, Process.WorkFlow.Processes.ProcessComplexEvents, ProcessViewModels.ProcessViewModelInfos);
 		    //}).ConfigureAwait(false);
 
 		    InitializeComponent();

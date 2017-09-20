@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows;
 using Common.DataEntites;
 using Common.Dynamic;
-using DomainMessages;
 using EventMessages;
 using EventMessages.Commands;
 using EventMessages.Events;
@@ -232,69 +231,69 @@ namespace RevolutionData
             );
         }
 
-        public class SignIn
-        {
-            public static IProcessAction IntializeSigninProcessState => new ProcessAction(
-                action: async cp =>
-                {
-                    var ps = new ProcessStateEntity(
-                        process: cp.Actor.Process,
-                        //Todo: get rid of this type name
-                        entity: new DynamicEntity(DynamicEntityType.DynamicEntityTypes["SignInInfo"],-1, new Dictionary<string, object>(){}),
-                        info: new StateInfo(cp.Actor.Process.Id,
-                            new State(name: "AwaitUserName", status: "Waiting for User Name",
-                                notes:
-                                    "Please Enter your User Name. If this is your First Time Login In please Contact the Receptionist for your user info.")));
-                    return await Task.Run(() => new UpdateProcessStateEntity(ps,
-                        new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),
-                        cp.Actor.Process, cp.Actor.Source));
+    //    public class SignIn
+    //    {
+    //        public static IProcessAction IntializeSigninProcessState => new ProcessAction(
+    //            action: async cp =>
+    //            {
+    //                var ps = new ProcessStateEntity(
+    //                    process: cp.Actor.Process,
+    //                    //Todo: get rid of this type name
+    //                    entity: new DynamicEntity(DynamicEntityType.DynamicEntityTypes["SignInInfo"],-1, new Dictionary<string, object>(){}),
+    //                    info: new StateInfo(cp.Actor.Process.Id,
+    //                        new State(name: "AwaitUserName", status: "Waiting for User Name",
+    //                            notes:
+    //                                "Please Enter your User Name. If this is your First Time Login In please Contact the Receptionist for your user info.")));
+    //                return await Task.Run(() => new UpdateProcessStateEntity(ps,
+    //                    new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),
+    //                    cp.Actor.Process, cp.Actor.Source));
 
-                },
-                processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.CreateState),
-                // take shortcut cud be IntialState
-                expectedSourceType: new SourceType(typeof (IComplexEventService)));
+    //            },
+    //            processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.CreateState),
+    //            // take shortcut cud be IntialState
+    //            expectedSourceType: new SourceType(typeof (IComplexEventService)));
 
-            public static IProcessAction UserNameFound => new ProcessAction(
-                action: async cp =>
-                {
-                    var ps = new ProcessStateEntity(cp.Actor.Process, cp.Messages["UserNameFound"].Entity,
-                        new StateInfo(cp.Actor.Process.Id, "WelcomeUser",
-                            $"Welcome {cp.Messages["UserNameFound"].Entity.Usersignin}", "Please Enter your Password"));
-                    return await Task.Run(() => new UpdateProcessStateEntity(ps,
-                        new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),
-                        cp.Actor.Process, cp.Actor.Source));
-                },
-                processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),
-                expectedSourceType: new SourceType(typeof (IComplexEventService))
-                );
+    //        public static IProcessAction UserNameFound => new ProcessAction(
+    //            action: async cp =>
+    //            {
+    //                var ps = new ProcessStateEntity(cp.Actor.Process, cp.Messages["UserNameFound"].Entity,
+    //                    new StateInfo(cp.Actor.Process.Id, "WelcomeUser",
+    //                        $"Welcome {cp.Messages["UserNameFound"].Entity.Usersignin}", "Please Enter your Password"));
+    //                return await Task.Run(() => new UpdateProcessStateEntity(ps,
+    //                    new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),
+    //                    cp.Actor.Process, cp.Actor.Source));
+    //            },
+    //            processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),
+    //            expectedSourceType: new SourceType(typeof (IComplexEventService))
+    //            );
 
-            public static IProcessAction SetProcessStatetoValidatedUser => new ProcessAction(
-                action: async cp =>
-                {
-                    var ps = new ProcessStateEntity(cp.Actor.Process, cp.Messages["ValidatedUser"].Entity,
-                        new StateInfo(cp.Actor.Process.Id, "UserValidated",
-                            $"User: {cp.Messages["ValidatedUser"].Entity.Usersignin} Validated", "User Validated"));
-                    return await Task.Run(() => new UpdateProcessStateEntity(ps,
-                        new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),
-                        cp.Actor.Process, cp.Actor.Source));
-                },
-                processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),
-                expectedSourceType: new SourceType(typeof (IComplexEventService)));
-
-
-            public static IProcessAction UserValidated => new ProcessAction(
-                action: async cp =>
-                         await Task.Run(() => new UserValidated(cp.Messages["ValidatedUser"].Entity,
-                            new StateEventInfo(cp.Actor.Process.Id, Context.Domain.Events.DomainEventPublished),
-                            cp.Actor.Process, cp.Actor.Source)),
-                processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Domain.Commands.PublishDomainEvent),
-                expectedSourceType: new SourceType(typeof (IComplexEventService))
-                );
+    //        public static IProcessAction SetProcessStatetoValidatedUser => new ProcessAction(
+    //            action: async cp =>
+    //            {
+    //                var ps = new ProcessStateEntity(cp.Actor.Process, cp.Messages["ValidatedUser"].Entity,
+    //                    new StateInfo(cp.Actor.Process.Id, "UserValidated",
+    //                        $"User: {cp.Messages["ValidatedUser"].Entity.Usersignin} Validated", "User Validated"));
+    //                return await Task.Run(() => new UpdateProcessStateEntity(ps,
+    //                    new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),
+    //                    cp.Actor.Process, cp.Actor.Source));
+    //            },
+    //            processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),
+    //            expectedSourceType: new SourceType(typeof (IComplexEventService)));
 
 
-        }
+    //        public static IProcessAction UserValidated => new ProcessAction(
+    //            action: async cp =>
+    //                     await Task.Run(() => new UserValidated(cp.Messages["ValidatedUser"].Entity,
+    //                        new StateEventInfo(cp.Actor.Process.Id, Context.Domain.Events.DomainEventPublished),
+    //                        cp.Actor.Process, cp.Actor.Source)),
+    //            processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Domain.Commands.PublishDomainEvent),
+    //            expectedSourceType: new SourceType(typeof (IComplexEventService))
+    //            );
 
-    }
+
+    //    }
+
+    //}
 
     //public partial class EntityComplexActions
     //{
@@ -335,7 +334,7 @@ namespace RevolutionData
         
         
 
-    //}
+    }
 
    
 }

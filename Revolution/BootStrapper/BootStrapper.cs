@@ -76,6 +76,23 @@ namespace BootStrapper
         }
 
         public static CompositionContainer Container { get;  }
+
+        public void StartUp(bool autoContinue, List<IComplexEventAction> processComplexEvents, List<IViewModelInfo> processViewModelInfos)
+        {
+            try
+            {
+
+
+                var x = Container.GetExport<IActorBackBone>().Value;
+                x.Intialize(autoContinue, processComplexEvents, processViewModelInfos);
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 
     public static class CompositionContainerExtensions

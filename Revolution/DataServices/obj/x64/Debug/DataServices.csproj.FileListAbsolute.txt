@@ -290,8 +290,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\ViewModel.
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\ComponentModel.Composition.Hosting.Extension.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\GenSoft.Entities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\GenSoft.DBContext.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\DomainMessages.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\Domain.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\GenSoft.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\DesignTimeData.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\Actor.Interfaces.pdb
@@ -320,8 +318,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\Process.Wo
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\ComponentModel.Composition.Hosting.Extension.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\GenSoft.Entities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\GenSoft.DBContext.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\DomainMessages.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\Domain.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\GenSoft.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\obj\x64\Debug\DataServices.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\obj\x64\Debug\DataServices.pdb

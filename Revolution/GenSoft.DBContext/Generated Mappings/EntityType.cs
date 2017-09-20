@@ -22,8 +22,8 @@ namespace GenSoft.Mappings
 			entityBuilder.Property(t => t.EntitySetName).HasColumnName("EntitySetName").IsRequired().HasMaxLength(50);
 			entityBuilder.Property(t => t.EntitySetName).HasColumnName("EntitySetName").IsRequired().HasMaxLength(50);
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasMany(x => x.ActionEntityType).WithOne(p => p.EntityType).HasForeignKey(c => c.EntityTypeId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasOne(p => p.CompositeRequest).WithOne(p => p.EntityType).HasForeignKey<CompositeRequest>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasOne(p => p.DBType).WithOne(p => p.EntityType).HasForeignKey<DBType>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasOne(p => p.DomainEntityType).WithOne(p => p.EntityType).HasForeignKey<DomainEntityType>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.Entity).WithOne(p => p.EntityType).HasForeignKey(c => c.EntityTypeId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasOne(p => p.EntityList).WithOne(p => p.EntityType).HasForeignKey<EntityList>(c => c.Id).OnDelete(DeleteBehavior.Restrict);

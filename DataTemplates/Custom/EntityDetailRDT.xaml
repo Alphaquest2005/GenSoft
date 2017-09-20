@@ -15,6 +15,8 @@
             <converters:StringVisibilityMultiConverter x:Key="VisibilityMultiConverter"/>
             <converters:ItemSourceConverter x:Key="ItemSourceConverter"/>
             <converters:LookUpTextConverter x:Key="LookUpTextConverter"/>
+            <converters:String2BoolConverter x:Key="String2BoolConverter"/>
+            <converters:String2DateConverter x:Key="String2DateConverter"/>
         </DataTemplate.Resources>
         <StackPanel Orientation="Horizontal"  >
             <StackPanel.Visibility>
@@ -124,6 +126,68 @@
                 </TextBlock.FontWeight>
                
             </TextBlock>
+            
+            <CheckBox Width="Auto"
+                      IsChecked="{Binding Value,  UpdateSourceTrigger=PropertyChanged, IsAsync=True,  Converter={StaticResource String2BoolConverter}}"
+                      Height="Auto"
+                      Margin="5"
+                      Content=""
+                      IsEnabled="False"
+                      HorizontalAlignment="Right"
+                      VerticalAlignment="Top" >
+  
+                <CheckBox.Visibility>
+                    <MultiBinding  Converter="{StaticResource VisibilityMultiConverter}" TargetNullValue="{x:Static Visibility.Visible}" ConverterParameter="CheckBox">
+                        <Binding Path="DisplayProperties.ReadProperties.Properties[AttributeValue][ControlType]"/>
+                        <Binding Path="DataContext.DisplayProperties.ReadProperties.Properties[AttributeValue][ControlType]" ElementName="EntityDetailListGRD"/>
+                        <Binding Path="DisplayProperties.ReadProperties.Properties[AttributeValue][Visibility]"/>
+                        <Binding Path="DataContext.DisplayProperties.ReadProperties.Properties[AttributeValue][Visibility]" ElementName="EntityDetailListGRD"/>
+                    </MultiBinding>
+                </CheckBox.Visibility>
+                <CheckBox.FontSize>
+                    <MultiBinding Converter="{StaticResource FontSizeMultiConverter}" TargetNullValue="11">
+                        <Binding Path="DisplayProperties.ReadProperties.Properties[AttributeValue][FontSize]"/>
+                        <Binding Path="DataContext.DisplayProperties.ReadProperties.Properties[AttributeValue][FontSize]"  ElementName="EntityDetailListGRD"/>
+                    </MultiBinding>
+                </CheckBox.FontSize>
+                <CheckBox.FontWeight>
+                    <MultiBinding Converter="{StaticResource FontMultiConverter}" TargetNullValue="{x:Static FontWeights.Bold}">
+                        <Binding Path="DisplayProperties.ReadProperties.Properties[AttributeValue][FontWeight]"/>
+                        <Binding Path="DataContext.DisplayProperties.ReadProperties.Properties[AttributeValue][FontWeight]" ElementName="EntityDetailListGRD"/>
+                    </MultiBinding>
+                </CheckBox.FontWeight>
+            </CheckBox>
+
+            <DatePicker Width="Auto"
+                      SelectedDate="{Binding Value,  UpdateSourceTrigger=PropertyChanged, IsAsync=True,  Converter={StaticResource String2DateConverter}}"
+                      Height="Auto"
+                      Margin="5"
+                      IsEnabled="False"
+                      HorizontalAlignment="Right"
+                      VerticalAlignment="Top" >
+
+                <DatePicker.Visibility>
+                    <MultiBinding  Converter="{StaticResource VisibilityMultiConverter}" TargetNullValue="{x:Static Visibility.Visible}" ConverterParameter="DatePicker">
+                        <Binding Path="DisplayProperties.ReadProperties.Properties[AttributeValue][ControlType]"/>
+                        <Binding Path="DataContext.DisplayProperties.ReadProperties.Properties[AttributeValue][ControlType]" ElementName="EntityDetailListGRD"/>
+                        <Binding Path="DisplayProperties.ReadProperties.Properties[AttributeValue][Visibility]"/>
+                        <Binding Path="DataContext.DisplayProperties.ReadProperties.Properties[AttributeValue][Visibility]" ElementName="EntityDetailListGRD"/>
+                    </MultiBinding>
+                </DatePicker.Visibility>
+                <DatePicker.FontSize>
+                    <MultiBinding Converter="{StaticResource FontSizeMultiConverter}" TargetNullValue="11">
+                        <Binding Path="DisplayProperties.ReadProperties.Properties[AttributeValue][FontSize]"/>
+                        <Binding Path="DataContext.DisplayProperties.ReadProperties.Properties[AttributeValue][FontSize]"  ElementName="EntityDetailListGRD"/>
+                    </MultiBinding>
+                </DatePicker.FontSize>
+                <DatePicker.FontWeight>
+                    <MultiBinding Converter="{StaticResource FontMultiConverter}" TargetNullValue="{x:Static FontWeights.Bold}">
+                        <Binding Path="DisplayProperties.ReadProperties.Properties[AttributeValue][FontWeight]"/>
+                        <Binding Path="DataContext.DisplayProperties.ReadProperties.Properties[AttributeValue][FontWeight]" ElementName="EntityDetailListGRD"/>
+                    </MultiBinding>
+                </DatePicker.FontWeight>
+            </DatePicker>
+
 
         </StackPanel>
 

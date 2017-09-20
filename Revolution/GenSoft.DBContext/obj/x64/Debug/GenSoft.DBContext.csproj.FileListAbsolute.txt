@@ -164,8 +164,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\GenSo
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\RevolutionLogger.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\System.Linq.Dynamic.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\SystemInterfaces.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\CommonMessages.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\Domain.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\DomainMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\GenSoft.Entities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\Common.pdb
@@ -174,8 +172,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\Event
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\RevolutionLogger.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\SystemInterfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\GenSoft.Interfaces.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\CommonMessages.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\Domain.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\obj\x64\Debug\GenSoft.DBContext.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\obj\x64\Debug\GenSoft.DBContext.g.resources
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\obj\x64\Debug\GenSoft.DBContext.dll

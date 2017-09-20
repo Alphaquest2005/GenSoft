@@ -18,14 +18,14 @@ namespace GenSoft.Mappings
 			entityBuilder.ToTable("StateAction", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
-			entityBuilder.Property(t => t.ActionId).HasColumnName("ActionId").IsRequired();
+			entityBuilder.Property(t => t.ActionSetId).HasColumnName("ActionSetId").IsRequired();
 			entityBuilder.Property(t => t.ProcessStateId).HasColumnName("ProcessStateId").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
 				entityBuilder.HasMany(x => x.Command).WithOne(p => p.StateAction).HasForeignKey(c => c.StateActionId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasOne(p => p.StateActionExpectedProcessState).WithOne(p => p.StateAction).HasForeignKey<StateActionExpectedProcessState>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties
-				//entityBuilder.HasOne(p => p.Action Action).WithMany(p => p.StateAction).HasForeignKey(c => c.ActionId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.ActionSet ActionSet).WithMany(p => p.StateAction).HasForeignKey(c => c.ActionSetId).OnDelete(DeleteBehavior.Restrict);
 				//entityBuilder.HasOne(p => p.ProcessState ProcessState).WithMany(p => p.StateAction).HasForeignKey(c => c.ProcessStateId).OnDelete(DeleteBehavior.Restrict);
 	
 		}

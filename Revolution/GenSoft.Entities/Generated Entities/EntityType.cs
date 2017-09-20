@@ -17,8 +17,8 @@ namespace GenSoft.Entities
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
-				public virtual ICollection<ActionEntityType> ActionEntityType {get; set;}
 				public virtual CompositeRequest CompositeRequest {get; set;}
+				public virtual DBType DBType {get; set;}
 				public virtual DomainEntityType DomainEntityType {get; set;}
 				public virtual ICollection<Entity> Entity {get; set;}
 				public virtual EntityList EntityList {get; set;}
