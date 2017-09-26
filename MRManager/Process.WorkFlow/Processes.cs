@@ -280,23 +280,23 @@ namespace Process.WorkFlow
                     events: new List<IProcessExpectedEvent>
                     {
                         new ProcessExpectedEvent<ICurrentEntityChanged>(
-                            "CurrentEntity", processId, e => e.Entity != null && e.Entity.EntityType.Name == currentEntityType,
+                            "CurrentEntity", processId, e => e.Entity != null && e.Entity.Id > 0 && e.Entity.EntityType.Name == currentEntityType,
                             expectedSourceType: new SourceType(typeof (IViewModel)),
                             //todo: check this cuz it comes from viewmodel
                             processInfo: new StateEventInfo(processId, RevolutionData.Context.Process.Events.CurrentEntityChanged)),
 
                         new ProcessExpectedEvent<IEntityFound>(
-                            "CurrentEntity", processId, e => e.Entity != null && e.Entity.EntityType.Name == currentEntityType,
+                            "CurrentEntity", processId, e => e.Entity != null && e.Entity.Id > 0 && e.Entity.EntityType.Name == currentEntityType,
                             expectedSourceType: new SourceType(typeof (IViewModel)),
                             //todo: check this cuz it comes from viewmodel
                             processInfo: new StateEventInfo(processId, Entity.Events.EntityFound)),
                         new ProcessExpectedEvent<IEntityUpdated>(
-                            "CurrentEntity", processId, e => e.Entity != null && e.Entity.EntityType.Name == currentEntityType,
+                            "CurrentEntity", processId, e => e.Entity != null && e.Entity.Id > 0  && e.Entity.EntityType.Name == currentEntityType,
                             expectedSourceType: new SourceType(typeof (IViewModel)),
                             //todo: check this cuz it comes from viewmodel
                             processInfo: new StateEventInfo(processId, Entity.Events.EntityUpdated)),
                         new ProcessExpectedEvent<IEntityWithChangesFound>(
-                            "CurrentEntity", processId, e => e.Entity != null && e.Entity.EntityType.Name == currentEntityType,
+                            "CurrentEntity", processId, e => e.Entity != null && e.Entity.Id > 0 && e.Entity.EntityType.Name == currentEntityType,
                             expectedSourceType: new SourceType(typeof (IViewModel)),
                             //todo: check this cuz it comes from viewmodel
                             processInfo: new StateEventInfo(processId, Entity.Events.EntityFound))
@@ -352,7 +352,7 @@ namespace Process.WorkFlow
                     events: new List<IProcessExpectedEvent>
                     {
                         new ProcessExpectedEvent<ICurrentEntityChanged>(
-                            "CurrentEntity", processId, e => e.Entity != null && e.EntityType.Name == currentEntityType,
+                            "CurrentEntity", processId, e => e.Entity != null && e.Entity.Id > 0 && e.EntityType.Name == currentEntityType,
                             expectedSourceType: new SourceType(typeof (IViewModel)),
                             //todo: check this cuz it comes from viewmodel
                             processInfo: new StateEventInfo(processId, RevolutionData.Context.Process.Events.CurrentEntityChanged)),

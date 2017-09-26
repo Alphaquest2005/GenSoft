@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Diagnostics;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
+using System.Threading.Tasks;
 using SystemInterfaces;
 using Actor.Interfaces;
 using Akka.Actor;
@@ -53,7 +55,7 @@ namespace ActorBackBone
                 var res = GetDBComplexActions();
                 res.AddRange(complexEventActions);
 
-                var vmres = GetDBViewInfos();
+                var vmres = GetDBViewInfos();//.Where(t => t.ViewModelInfos.Any(q => q.ViewModelInfos.Any(z => z.ViewModelInfos.Any()))).ToList();
                 vmres.AddRange(viewInfos);
 
                 System.ActorOf(Props.Create<ServiceManager>(autoRun,machineInfo, processInfos, res,vmres),"ServiceManager");
@@ -235,23 +237,26 @@ namespace ActorBackBone
 
         private List<IViewModelInfo> GetDBViewInfos()
         {
-            var res = new List<IViewModelInfo>();
+            var res = new ConcurrentBag<IViewModelInfo>();
+            List<DomainEntityType> domainEntityTypes;
             using (var ctx = new GenSoftDBContext())
             {
-                foreach (var r in ctx.DomainEntityType
+
+                domainEntityTypes = ctx.DomainEntityType
                     .Include(x => x.ProcessStateDomainEntityTypes).ThenInclude(x => x.EntityTypeViewModel)
                     .Include(x => x.ProcessStateDomainEntityTypes).ThenInclude(x => x.ProcessState.Process)
-                    
-                    .Where(x => 
-                                (!x.EntityType.EntityTypeAttributes.SelectMany(z => z.ChildEntitys).Any() )) //&& x.EntityType.EntityTypeAttributes.SelectMany(z => z.ParentEntitys).Any()
-                    .OrderBy(x => x.Id)
-                )
+                    .Where(x => (!x.EntityType.EntityTypeAttributes.SelectMany(z => z.ChildEntitys).Any()))
+                    .OrderBy(x => x.Id).ToList();
+
+            }
+            Parallel.ForEach(domainEntityTypes, (r) =>
+            {
+                using (var ctx = new GenSoftDBContext())
                 {
-                    
                     foreach (var processId in r.ProcessStateDomainEntityTypes.Select(x => x.ProcessState.Process.Id)
                         .Distinct())
                     {
-                        
+
                         foreach (var pd in r.ProcessStateDomainEntityTypes.Where(
                             x => x.ProcessState.ProcessId == processId).DistinctBy(x => x.Id))
                         {
@@ -272,13 +277,13 @@ namespace ActorBackBone
                         }
 
                     }
-                    if(!r.ProcessStateDomainEntityTypes.Any()) DoChildViews(ctx, r.Id, res);
+                    if (!r.ProcessStateDomainEntityTypes.Any()) DoChildViews(ctx, r.Id, res);
                 }
-            }
-            return res;
+            });
+            return res.ToList();
         }
 
-        private static void DoChildViews(GenSoftDBContext ctx, int domainEntityTypeId, List<IViewModelInfo> res)
+        private static void DoChildViews(GenSoftDBContext ctx, int domainEntityTypeId, ConcurrentBag<IViewModelInfo> res)
         {
             var childviewModels = ctx.EntityRelationships
                 .Include(x => x.ChildEntity.ChildEntitys)
@@ -295,7 +300,7 @@ namespace ActorBackBone
 
         static List<int> processedVMIds =new List<int>();
 
-        private static IViewModelInfo CreateEntityViewModel(GenSoftDBContext ctx, int vmId, List<IViewModelInfo> viewInfos, bool isChild = false)
+        private static IViewModelInfo CreateEntityViewModel(GenSoftDBContext ctx, int vmId, ConcurrentBag<IViewModelInfo> viewInfos, bool isChild = false)
         {
             if (processedVMIds.Contains(vmId)) return null;
 
@@ -339,7 +344,7 @@ namespace ActorBackBone
 
             foreach (var cvm in childviewModels)
             {
-                var v = CreateEntityViewModel(ctx, cvm,viewInfos, true);
+                var v = CreateEntityViewModel(ctx, cvm, viewInfos, true);
                 if (v == null) continue;
                 if (!isChild && vm.ProcessStateDomainEntityTypes.DomainEntityType.EntityType.EntityList != null)
                 {
@@ -349,7 +354,7 @@ namespace ActorBackBone
                 {
                     res.ViewModelInfos.Add(v);
                 }
-                    
+
             }
             processedVMIds.Add(vmId);
             return res;
@@ -451,56 +456,91 @@ namespace ActorBackBone
 
 
 
-                var res = new List<IComplexEventAction>();
+                var res = new ConcurrentBag<IComplexEventAction>();
                 using (var ctx = new GenSoftDBContext())
                 {
                     foreach (var process in ctx.Process.Where(x => x.Id > 1))
                     {
-                        res.Add(Processes.ComplexActions.GetComplexAction("StartProcess", new object[] { process.Id }));
+                        res.Add(Processes.ComplexActions.GetComplexAction("StartProcess", new object[] {process.Id}));
 
                     }
 
-                    foreach (var r in ctx.DomainEntityType
+                }
+
+                List<DomainEntityType> domainEntityTypes;
+
+                using (var ctx = new GenSoftDBContext())
+                {
+
+                    domainEntityTypes = ctx.DomainEntityType
                         .Include(x => x.DomainEntityTypeSourceEntity)
                         .Include(x => x.EntityType.Type)
                         .Include(x => x.EntityType.EntityView)
                         //.Include(x => x.EntityType.DomainEntityType.DomainEntityCache)
                         .Include(x => x.EntityType.EntityList)
                         .Include("ProcessStateDomainEntityTypes.ProcessState.Process")
-                        .OrderBy(x => x.Id)
-                        )
+                        .OrderBy(x => x.Id).ToList();
+
+                }
+                
+
+                //Parallel.ForEach(domainEntityTypes, new ParallelOptions(){MaxDegreeOfParallelism = Environment.ProcessorCount} , (entity) =>
+                //{
+                foreach (var entity in domainEntityTypes)
+                {
+                     AddDynamicEntityTypes( entity.EntityType.Type.Name);
+                }
+                       
+                //});
+
+
+
+
+                //Parallel.ForEach(domainEntityTypes, (entity) =>
+                foreach (var entity in domainEntityTypes)
+
+                {
+                    var entityType = entity.EntityType.Type.Name;
+                    using (var ctx = new GenSoftDBContext())
                     {
-                        var entityType = r.EntityType.Type.Name;
 
 
-                       if(! AddDynamicEntityTypes(ctx, entityType)) continue;
-                        
-                        foreach (var processId in r.ProcessStateDomainEntityTypes.Select(x => x.ProcessState.Process.Id).Distinct())
+
+                        foreach (var processId in entity.ProcessStateDomainEntityTypes
+                            .Select(x => x.ProcessState.Process.Id)
+                            .Distinct())
                         {
-                            
 
-                            if (r.EntityType.EntityView != null)
+
+                            if (entity.EntityType.EntityView != null)
                             {
-                                if (r.EntityType.EntityList == null)
+                                if (entity.EntityType.EntityList == null)
                                 {
 
-                                    res.Add(Processes.ComplexActions.GetComplexAction("UpdateState", new object[] {processId,DynamicEntityType.DynamicEntityTypes[entityType]}));
+                                    res.Add(Processes.ComplexActions.GetComplexAction("UpdateState",
+                                        new object[] {processId, DynamicEntityType.DynamicEntityTypes[entityType]}));
                                 }
                                 else
                                 {
-                                    if(r.EntityType.EntityList.Initalize) res.Add(Processes.ComplexActions.GetComplexAction("IntializeProcessState", new object[] { processId, DynamicEntityType.DynamicEntityTypes[entityType] }));
-                                    res.Add(Processes.ComplexActions.GetComplexAction("UpdateStateList", new object[] {processId, DynamicEntityType.DynamicEntityTypes[entityType] }));
+                                    if (entity.EntityType.EntityList.Initalize)
+                                        res.Add(Processes.ComplexActions.GetComplexAction("IntializeProcessState",
+                                            new object[]
+                                                {processId, DynamicEntityType.DynamicEntityTypes[entityType]}));
+                                    res.Add(Processes.ComplexActions.GetComplexAction("UpdateStateList",
+                                        new object[] {processId, DynamicEntityType.DynamicEntityTypes[entityType]}));
                                 }
                             }
 
-                            //if(r.EntityType.DomainEntityType.DomainEntityCache != null )
-                            //    res.Add(EntityComplexActions.GetComplexAction("IntializeCache",  new object[] { processId, DynamicEntityType.DynamicEntityTypes[entityType] }));
 
-                            
                         }
                     }
+                    // });
+                }
 
-                    foreach (var r in ctx.EntityRelationships
+
+                using (var ctx = new GenSoftDBContext())
+                {
+                    Parallel.ForEach(ctx.EntityRelationships
                         .Include(x => x.ChildEntity.EntityType.Type)
                         .Include(x => x.ChildEntity.Attributes)
                         .Include(x => x.ChildEntity.EntityType.EntityList)
@@ -511,12 +551,11 @@ namespace ActorBackBone
                         .Include(
                             "ChildEntity.EntityType.DomainEntityType.ProcessStateDomainEntityTypes.ProcessState.Process")
                         .OrderBy(x => x.ParentEntity.Id)
-                        .Where(x => x.ChildEntity.EntityType.CompositeRequest == null))
+                        .Where(x => x.ChildEntity.EntityType.CompositeRequest == null).ToList(), (r) =>
                     {
                         var parentType = r.ParentEntity.EntityType.Type.Name;
                         var childType = r.ChildEntity.EntityType.Type.Name;
-                        var sourceEntityName = r.ChildEntity.EntityType.DomainEntityType.DomainEntityTypeSourceEntity
-                            ?.SourceEntity;
+
 
                         var parentExpression = r.ParentEntity.Attributes.Name;
 
@@ -533,18 +572,26 @@ namespace ActorBackBone
                             }
                             else
                             {
-                                res.Add(Processes.ComplexActions.GetComplexAction("RequestStateList",new object[] {processId,parentType, childType, parentExpression, childExpression}));
+                                res.Add(Processes.ComplexActions.GetComplexAction("RequestStateList",
+                                    new object[]
+                                        {processId, parentType, childType, parentExpression, childExpression}));
                             }
-                            res.Add(Processes.ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new object[] {processId,parentType, childType, parentExpression, childExpression}));
+                            res.Add(Processes.ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",
+                                new object[]
+                                    {processId, parentType, childType, parentExpression, childExpression}));
                         }
 
-                    }
+                    });
+                }
 
+                using (var ctx = new GenSoftDBContext())
+                {
 
-                    foreach (var g in ctx.EntityRelationships
-                        .Include("ChildEntity.EntityType.DomainEntityType.ProcessStateDomainEntityTypes.ProcessState.Process")
+                    Parallel.ForEach(ctx.EntityRelationships
+                        .Include(
+                            "ChildEntity.EntityType.DomainEntityType.ProcessStateDomainEntityTypes.ProcessState.Process")
                         .Where(x => x.ChildEntity.EntityType.CompositeRequest != null)
-                        .GroupBy(x => x.ChildEntity.EntityType).Where(g => g.Count() > 1))                        
+                        .GroupBy(x => x.ChildEntity.EntityType).Where(g => g.Count() > 1), (g) =>
                     {
 
                         foreach (var processId in g.Key.DomainEntityType
@@ -552,19 +599,26 @@ namespace ActorBackBone
                         {
                             var childType = g.Key.Type.Name;
                             var parentEntities = g.Select(p =>
-                                                new ViewModelEntity() {
-                                                    EntityType = DynamicEntityType.DynamicEntityTypes[p.ParentEntity.EntityType.Type.Name],
-                                                    Property = p.ChildEntity.Attributes.Name}
-                                                    ).ToList();
+                                new ViewModelEntity()
+                                {
+                                    EntityType =
+                                        DynamicEntityType.DynamicEntityTypes[p.ParentEntity.EntityType.Type.Name],
+                                    Property = p.ChildEntity.Attributes.Name
+                                }
+                            ).ToList();
 
                             res.Add(Processes.ComplexActions.GetComplexAction("RequestCompositeStateList",
-                                new object[] { processId, DynamicEntityType.DynamicEntityTypes[childType], new Dictionary<string, dynamic>(), parentEntities }));
+                                new object[]
+                                {
+                                    processId, DynamicEntityType.DynamicEntityTypes[childType],
+                                    new Dictionary<string, dynamic>(), parentEntities
+                                }));
                         }
-                    }
-
+                    });
 
                 }
-                return res;
+
+                return res.ToList();
             }
             catch (Exception e)
             {
@@ -573,62 +627,84 @@ namespace ActorBackBone
             
         }
 
-        private static bool AddDynamicEntityTypes(GenSoftDBContext ctx, string entityType)
+        private void AddDynamicEntityTypes(string entityType)
         {
-            var viewType = ctx.EntityView
-                .Include(x => x.EntityType.Type)
-                .Include(x => x.EntityType.EntityTypeAttributes).ThenInclude(x => x.Attributes)
-                .Include(x => x.EntityType.EntityTypeAttributes).ThenInclude(x => x.ChildEntitys)
-                .Include(x => x.EntityType.EntityTypeAttributes).ThenInclude(x => x.CalculatedProperties.CalculatedPropertyParameters).ThenInclude(x => x.FunctionParameters)
-                .Include(x => x.EntityType.EntityTypeAttributes).ThenInclude(x => x.CalculatedProperties.CalculatedPropertyParameters).ThenInclude(x => x.CalculatedPropertyParameterEntityTypes).ThenInclude(x => x.EntityTypeAttributes.Attributes)
-                .Include(x => x.EntityType.EntityTypeAttributes).ThenInclude(x => x.CalculatedProperties.FunctionParameterConstants)
-                .Include(x => x.EntityType.EntityTypeAttributes).ThenInclude(x => x.CalculatedProperties.FunctionSets.FunctionSetFunctions).ThenInclude(x => x.Functions)
-                .Include(x => x.EntityType.EntityTypeAttributes).ThenInclude(x => x.CalculatedPropertyParameterEntityTypes)
-                .Include(x => x.EntityType.EntityTypeAttributes).ThenInclude(x => x.EntityTypeAttributeCache)
-                .Include(x => x.EntityType.EntityList)
-                .FirstOrDefault(x => x.EntityType.Type.Name == entityType);
-            if (viewType == null) return false;
+            using (var ctx = new GenSoftDBContext())
+            {
+                try
+                {
+                    var viewType = ctx.EntityView
+                        .Include(x => x.EntityType.Type)
+                        .Include(x => x.EntityType.EntityTypeAttributes).ThenInclude(x => x.Attributes)
+                        .Include(x => x.EntityType.EntityTypeAttributes).ThenInclude(x => x.ChildEntitys)
+                        .Include(x => x.EntityType.EntityTypeAttributes)
+                        .ThenInclude(x => x.CalculatedProperties.CalculatedPropertyParameters)
+                        .ThenInclude(x => x.FunctionParameters)
+                        .Include(x => x.EntityType.EntityTypeAttributes)
+                        .ThenInclude(x => x.CalculatedProperties.CalculatedPropertyParameters)
+                        .ThenInclude(x => x.CalculatedPropertyParameterEntityTypes)
+                        .ThenInclude(x => x.EntityTypeAttributes.Attributes)
+                        .Include(x => x.EntityType.EntityTypeAttributes)
+                        .ThenInclude(x => x.CalculatedProperties.FunctionParameterConstants)
+                        .Include(x => x.EntityType.EntityTypeAttributes)
+                        .ThenInclude(x => x.CalculatedProperties.FunctionSets.FunctionSetFunctions)
+                        .ThenInclude(x => x.Functions)
+                        .Include(x => x.EntityType.EntityTypeAttributes)
+                        .ThenInclude(x => x.CalculatedPropertyParameterEntityTypes)
+                        .Include(x => x.EntityType.EntityTypeAttributes).ThenInclude(x => x.EntityTypeAttributeCache)
+                        .Include(x => x.EntityType.EntityList)
+                        .FirstOrDefault(x => x.EntityType.Type.Name == entityType);
+                    if (viewType == null) return;
 
-            var viewset = ctx.EntityTypeAttributes
-                .Where(x => x.EntityTypeId == viewType.Id)
-                .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
-                .Select(x => x.AttributeId).ToList();
+                    var viewset = ctx.EntityTypeAttributes
+                        .Where(x => x.EntityTypeId == viewType.Id)
+                        .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
+                        .Select(x => x.AttributeId).ToList();
 
-            if (!viewset.Any()) return false;
-            var tes =
+                    if (!viewset.Any()) return;
+                    var tes =
 
-                ctx.Entity
-                    .FirstOrDefault(x => x.Id == 0 && x.EntityTypeId == viewType.BaseEntityTypeId)
-                    ?.EntityAttribute
-                    .Where(z => viewset.Contains(z.AttributeId))
-                    .OrderBy(d => viewset.IndexOf(d.AttributeId))
-                    .Select(z => new EntityKeyValuePair(z.Attributes.Name, z.Value,
-                       (ViewAttributeDisplayProperties) CreateEntityAttributeViewProperties(z.Id),
-                        z.Attributes.EntityId != null, z.Attributes.EntityName != null) as IEntityKeyValuePair)
-                    .ToList()
-                ??
-                ctx.EntityTypeAttributes
-                    .Where(x => x.EntityTypeId == viewType.Id)
-                    .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
-                    .Select(z =>
-                        new EntityKeyValuePair(z.Attributes.Name,
-                            null,
-                            (ViewAttributeDisplayProperties) CreateEntityAttributeViewProperties(z.Id),
-                            z.Attributes.EntityId != null,
-                            z.Attributes.EntityName != null) as IEntityKeyValuePair).ToList();
+                        ctx.Entity
+                            .FirstOrDefault(x => x.Id == 0 && x.EntityTypeId == viewType.BaseEntityTypeId)
+                            ?.EntityAttribute
+                            .Where(z => viewset.Contains(z.AttributeId))
+                            .OrderBy(d => viewset.IndexOf(d.AttributeId))
+                            .Select(z => new EntityKeyValuePair(z.Attributes.Name, z.Value,
+                                (ViewAttributeDisplayProperties) CreateEntityAttributeViewProperties(z.Id),
+                                z.Attributes.EntityId != null, z.Attributes.EntityName != null) as IEntityKeyValuePair)
+                            .ToList()
+                        ??
+                        ctx.EntityTypeAttributes
+                            .Where(x => x.EntityTypeId == viewType.Id)
+                            .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
+                            .Select(z =>
+                                new EntityKeyValuePair(z.Attributes.Name,
+                                    null,
+                                    (ViewAttributeDisplayProperties) CreateEntityAttributeViewProperties(z.Id),
+                                    z.Attributes.EntityId != null,
+                                    z.Attributes.EntityName != null) as IEntityKeyValuePair).ToList();
 
-            var calPropDef = CreateCalculatedProperties(viewType);
+                    var calPropDef = CreateCalculatedProperties(viewType);
 
-            var cachedProperties = CreateCachedProperties(viewType);
-            var cachedEntityProperties = CreateCachedEntityProperties(viewType);
-
-
-            var dynamicEntityType = new DynamicEntityType(viewType.EntityType.Type.Name, viewType.EntityType.EntitySetName, tes, calPropDef,cachedProperties,cachedEntityProperties, viewType.EntityType.EntityList != null, viewType.EntityType.EntityTypeAttributes.Any(z => z.ChildEntitys.Any()));
+                    var cachedProperties = CreateCachedProperties(viewType);
+                    var cachedEntityProperties = CreateCachedEntityProperties(viewType);
 
 
+                    var dynamicEntityType = new DynamicEntityType(viewType.EntityType.Type.Name,
+                        viewType.EntityType.EntitySetName, tes, calPropDef, cachedProperties, cachedEntityProperties,
+                        viewType.EntityType.EntityList != null,
+                        viewType.EntityType.EntityTypeAttributes.Any(z => z.ChildEntitys.Any()));
 
-            DynamicEntityType.DynamicEntityTypes.Add(entityType,dynamicEntityType);
-            return true;
+
+
+                    DynamicEntityType.DynamicEntityTypes.AddOrSet(entityType, dynamicEntityType);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
         }
 
         private static ObservableDictionary<string, List<dynamic>> CreateCachedProperties(EntityView viewType)

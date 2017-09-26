@@ -8,7 +8,7 @@ namespace SystemInterfaces
     public interface IEntityId
     {
         int Id { get; }
-        DateTime EntryDateTime { get; }
+       // DateTime EntryDateTime { get; }
     }
 
     public class IEntityIdComparer : IComparer<IEntityId>, IEqualityComparer<IEntityId>

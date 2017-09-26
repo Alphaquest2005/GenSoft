@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using SystemInterfaces;
@@ -10,7 +11,7 @@ namespace Common.DataEntites
 {
     public class DynamicEntityType : IDynamicEntityType
     {
-        public static Dictionary<string,IDynamicEntityType> DynamicEntityTypes { get; } = new Dictionary<string, IDynamicEntityType>();
+        public static ConcurrentDictionary<string,IDynamicEntityType> DynamicEntityTypes { get; } = new ConcurrentDictionary<string, IDynamicEntityType>();
 
         public static Dictionary<string, dynamic> Functions { get; } = new Dictionary<string, dynamic>();
 

@@ -66,8 +66,7 @@ declare @attributeId int, @datatypeId int, @Counter int = 0
 
 		insert into EntityTypeAttributes(EntityTypeId,AttributeId) values (@entityId, @attributeId)
 
-		insert into EntityView(Id, BaseEntityTypeId) values(@entityId, @rEntityId)
-
+		
 		INSERT INTO Attributes
 								 (Name, DataTypeId)
 		SELECT DISTINCT INFORMATION_SCHEMA.COLUMNS.COLUMN_NAME, MIN(DataType.Id) AS DataTypeId
@@ -101,12 +100,12 @@ declare @attributeId int, @datatypeId int, @Counter int = 0
 												 Type ON EntityType.Id = Type.Id
 						where (Attributes.Name like '%Name%')
 						GROUP BY EntityTypeAttributes.EntityTypeId, Type.Name
-						HAVING        (EntityTypeAttributes.EntityTypeId = 63))
+						HAVING        (EntityTypeAttributes.EntityTypeId = @entityId))
 
 		declare @entityViewModelId int
 		if(@nameCount > 0)
 		begin
-			insert into EntityList(Id,Initalize) Values(@entityId,1)
+			
 			insert into EntityTypeViewModel(ProcessDomainEntityTypeId, [Priority], Symbol, [Description], ViewModelTypeId ) Values (@processDomainEntityId,0, Left(@TableName, 1), @TableName, 3)
 			insert into EntityTypeViewModel(ProcessDomainEntityTypeId, [Priority], Symbol, [Description], ViewModelTypeId ) Values (@processDomainEntityId,0, Left(@TableName, 1), @TableName, 4)
 							
@@ -128,28 +127,33 @@ declare @attributeId int, @datatypeId int, @Counter int = 0
 	END
 	
 	INSERT INTO EntityRelationships
-                         (ParentEntityId, ChildEntityId)
-		SELECT        ParentEntityTypeAttributes.Id AS ParentAttributeId, ChildEntityTypeAttributes.Id AS ChildAttributeId
-		FROM            EntityType AS ChildEntityType INNER JOIN
-									EntityTypeAttributes AS ParentEntityTypeAttributes INNER JOIN
-									EntityType AS ParentEntityType ON ParentEntityTypeAttributes.EntityTypeId = ParentEntityType.Id INNER JOIN
-									Type AS ParentType ON ParentEntityType.Id = ParentType.Id INNER JOIN
-									Attributes AS ParentAttributes ON ParentEntityTypeAttributes.AttributeId = ParentAttributes.Id INNER JOIN
-										(SELECT        KEY_COLUMN_USAGE_1.TABLE_NAME AS ParentTable, KEY_COLUMN_USAGE_1.COLUMN_NAME AS ParentColumn, INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE.TABLE_NAME AS ChildTable, 
-																	INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE.COLUMN_NAME AS ChildColumn
-										FROM            INFORMATION_SCHEMA.CONSTRAINT_TABLE_USAGE INNER JOIN
-																	INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS ON 
-																	INFORMATION_SCHEMA.CONSTRAINT_TABLE_USAGE.CONSTRAINT_NAME = INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS.CONSTRAINT_NAME INNER JOIN
-																	INFORMATION_SCHEMA.KEY_COLUMN_USAGE AS KEY_COLUMN_USAGE_1 ON 
-																	INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS.UNIQUE_CONSTRAINT_NAME = KEY_COLUMN_USAGE_1.CONSTRAINT_NAME INNER JOIN
-																	INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE ON 
-																	INFORMATION_SCHEMA.CONSTRAINT_TABLE_USAGE.CONSTRAINT_NAME = INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE.CONSTRAINT_NAME) AS RelView ON 
-									ParentType.Name = RelView.ParentTable AND ParentAttributes.Name = RelView.ParentColumn INNER JOIN
-									Type AS ChildType ON RelView.ChildTable = ChildType.Name ON ChildEntityType.Id = ChildType.Id INNER JOIN
-									Attributes AS ChildAttributes INNER JOIN
-									EntityTypeAttributes AS ChildEntityTypeAttributes ON ChildAttributes.Id = ChildEntityTypeAttributes.AttributeId ON ChildEntityType.Id = ChildEntityTypeAttributes.EntityTypeId AND 
-									RelView.ChildColumn = ChildAttributes.Name
-
+                         (ParentEntityId, ChildEntityId, RelationshipTypeId)
+SELECT DISTINCT ParentEntityTypeAttributes.Id AS ParentAttributeId, ChildEntityTypeAttributes.Id AS ChildAttributeId, RelationshipTypes.Id AS RelationshipTypeId
+FROM            Attributes AS ChildAttributes INNER JOIN
+                         EntityTypeAttributes AS ChildEntityTypeAttributes ON ChildAttributes.Id = ChildEntityTypeAttributes.AttributeId INNER JOIN
+                         Type AS ChildType INNER JOIN
+                             (SELECT        KEY_COLUMN_USAGE_1.TABLE_NAME AS ParentTable, KEY_COLUMN_USAGE_1.COLUMN_NAME AS ParentColumn, INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE.TABLE_NAME AS ChildTable, 
+                                                         INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE.COLUMN_NAME AS ChildColumn
+                               FROM            INFORMATION_SCHEMA.CONSTRAINT_TABLE_USAGE INNER JOIN
+                                                         INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS ON 
+                                                         INFORMATION_SCHEMA.CONSTRAINT_TABLE_USAGE.CONSTRAINT_NAME = INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS.CONSTRAINT_NAME INNER JOIN
+                                                         INFORMATION_SCHEMA.KEY_COLUMN_USAGE AS KEY_COLUMN_USAGE_1 ON 
+                                                         INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS.UNIQUE_CONSTRAINT_NAME = KEY_COLUMN_USAGE_1.CONSTRAINT_NAME INNER JOIN
+                                                         INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE ON 
+                                                         INFORMATION_SCHEMA.CONSTRAINT_TABLE_USAGE.CONSTRAINT_NAME = INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE.CONSTRAINT_NAME) AS RelView ON 
+                         ChildType.Name = RelView.ChildTable INNER JOIN
+                         EntityType AS ChildEntityType ON ChildType.Id = ChildEntityType.Id ON ChildEntityTypeAttributes.EntityTypeId = ChildEntityType.Id AND ChildAttributes.Name = RelView.ChildColumn LEFT OUTER JOIN
+                         EntityTypeAttributes AS ParentEntityTypeAttributes INNER JOIN
+                         EntityType AS ParentEntityType ON ParentEntityTypeAttributes.EntityTypeId = ParentEntityType.Id INNER JOIN
+                         Type AS ParentType ON ParentEntityType.Id = ParentType.Id INNER JOIN
+                         Attributes AS ParentAttributes ON ParentEntityTypeAttributes.AttributeId = ParentAttributes.Id ON RelView.ParentTable = ParentType.Name AND RelView.ParentColumn = ParentAttributes.Name LEFT OUTER JOIN
+                             (SELECT        MaxLength, TABLE_NAME, COLUMN_NAME, isIdentity, isPrimaryKey
+                               FROM            [EntityRelationships-KeyDefinition]) AS ChildKeyData ON ChildAttributes.Name = ChildKeyData.COLUMN_NAME AND ChildType.Name = ChildKeyData.TABLE_NAME LEFT OUTER JOIN
+                             (SELECT        MaxLength, TABLE_NAME, COLUMN_NAME, isIdentity, isPrimaryKey
+                               FROM            [EntityRelationships-KeyDefinition] AS [EntityRelationships-KeyDefinition_1]) AS ParentKeyData ON ParentType.Name = ParentKeyData.TABLE_NAME AND 
+                         ParentAttributes.Name = ParentKeyData.COLUMN_NAME LEFT OUTER JOIN
+                         RelationshipTypes ON CASE WHEN ParentKeyData.isidentity = 1 THEN 'One' ELSE 'Many' END = RelationshipTypes.ParentOrdinality AND 
+                         CASE WHEN ChildKeyData.isidentity = 1 THEN 'One' ELSE 'Many' END = RelationshipTypes.ChildOrdinality
 --INSERT INTO AmoebaDB.dbo.Entities
 --                         (Name, EntitySetName, schemaname)
 --SELECT    TABLE_NAME, TABLE_NAME AS EntitySetName, TABLE_SCHEMA as [Schema] --top 60

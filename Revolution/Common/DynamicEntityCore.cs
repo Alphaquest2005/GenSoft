@@ -15,11 +15,11 @@ namespace Common.DataEntites
 
         }
         public int Id => (int) Properties[nameof(IDynamicEntityCore.Id)];
-        public DateTime EntryDateTime { get; private set; } = DateTime.Now;
+       // public DateTime EntryDateTime { get; private set; } = DateTime.Now;
         public virtual RowState RowState { get; set; } = RowState.Loaded;
         public IDynamicEntityType EntityType { get; }
 
-        private readonly Guid _entityGuid = Guid.NewGuid();
+        //private readonly Guid _entityGuid = Guid.NewGuid();
 
         //public override bool Equals(object obj)
         //{
