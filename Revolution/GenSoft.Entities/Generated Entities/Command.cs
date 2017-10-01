@@ -22,7 +22,6 @@ namespace GenSoft.Entities
 		
 			// ---------Parent Relationships
 				public virtual Entity Entity {get; set;}
-				public virtual StateAction StateAction {get; set;}
 	
 
 	}

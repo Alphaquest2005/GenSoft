@@ -2,6 +2,8 @@
 declare @AppName varchar(50)
 set @AppName = 'GenSoft'
 
+
+
 declare @appId int
 set @appId = (select Id from AmoebaDB.dbo.Applications where Name = @AppName)
 select @appId 

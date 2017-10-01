@@ -27,7 +27,7 @@
         <AssociationConnector Association="AmoebaDBModel.FK_ChildProperty" />
         <AssociationConnector Association="AmoebaDBModel.FK_ParentProperty" />
         <EntityTypeShape EntityType="AmoebaDBModel.RelationshipType" Width="1.5" PointX="4.125" PointY="7" />
-        <AssociationConnector Association="AmoebaDBModel.FK_EntityRelationships_RelationshipTypes1" />
+        <AssociationConnector Association="AmoebaDBModel.FK_EntityRelationship_RelationshipTypes1" />
         <EntityTypeShape EntityType="AmoebaDBModel.PresentationProperty" Width="1.5" PointX="6.375" PointY="14.375" />
         <EntityTypeShape EntityType="AmoebaDBModel.FunctionSet" Width="1.5" PointX="0.75" PointY="1.125" />
         <AssociationConnector Association="AmoebaDBModel.EntityPropertyPresentationProperty" />
@@ -49,10 +49,10 @@
         <AssociationConnector Association="AmoebaDBModel.FK_EntityView_Entities" />
         <AssociationConnector Association="AmoebaDBModel.FK_EntityViewPropertyFunction_Functions" />
         <AssociationConnector Association="AmoebaDBModel.FK_EntityViewPropertyFunctionParameter_EntityViewPropertyFunction" />
-        <AssociationConnector Association="AmoebaDBModel.FK_EntityViewPropertyFunctionParameter_FunctionParameters" />
+        <AssociationConnector Association="AmoebaDBModel.FK_EntityViewPropertyFunctionParameter_FunctionParameter" />
         <AssociationConnector Association="AmoebaDBModel.FK_FunctionBody_Functions" />
-        <AssociationConnector Association="AmoebaDBModel.FK_FunctionParameters_Functions" />
-        <AssociationConnector Association="AmoebaDBModel.FK_FunctionParameters_Parameters" />
+        <AssociationConnector Association="AmoebaDBModel.FK_FunctionParameter_Functions" />
+        <AssociationConnector Association="AmoebaDBModel.FK_FunctionParameter_Parameters" />
         <AssociationConnector Association="AmoebaDBModel.FK_Parameters_DataTypes" />
         <EntityTypeShape EntityType="AmoebaDBModel.FunctionReturnType" Width="1.5" PointX="14.5" PointY="13.125" />
         <AssociationConnector Association="AmoebaDBModel.FK_FunctionReturnType_Functions" />

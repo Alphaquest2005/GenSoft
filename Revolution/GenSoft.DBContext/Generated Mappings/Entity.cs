@@ -22,7 +22,6 @@ namespace GenSoft.Mappings
 			entityBuilder.Property(t => t.EntryDateTimeStamp).HasColumnName("EntryDateTimeStamp").ValueGeneratedOnAdd();
 		//-------------------Navigation Properties -------------------------------//
 				entityBuilder.HasMany(x => x.Command).WithOne(p => p.Entity).HasForeignKey(c => c.EntityId).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.Event).WithOne(p => p.Entity).HasForeignKey(c => c.EntityId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.EntityAttribute).WithOne(p => p.Entity).HasForeignKey(c => c.EntityId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties

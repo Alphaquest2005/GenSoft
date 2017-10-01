@@ -6,7 +6,7 @@ using ViewModel.Interfaces;
 namespace ViewMessages
 {
     [Export(typeof(IViewModelCreated<>))]
-    public class ViewModelCreated<TViewModel> : ProcessSystemMessage, IViewModelCreated<TViewModel>
+    public class ViewModelCreated<TViewModel> : ProcessSystemMessage, IViewModelCreated<TViewModel> where TViewModel:IViewModel
     {
         public ViewModelCreated() { }
         [ImportingConstructor]

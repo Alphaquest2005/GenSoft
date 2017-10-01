@@ -22,7 +22,6 @@ namespace GenSoft.Mappings
 		//-------------------Navigation Properties -------------------------------//
 				entityBuilder.HasMany(x => x.ActionProperties).WithOne(p => p.ActionSet).HasForeignKey(c => c.ActionSetId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.ActionSetActions).WithOne(p => p.ActionSet).HasForeignKey(c => c.ActionSetId).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.StateAction).WithOne(p => p.ActionSet).HasForeignKey(c => c.ActionSetId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties
 	

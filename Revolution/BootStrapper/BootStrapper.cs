@@ -58,7 +58,7 @@ namespace BootStrapper
         public static BootStrapper Instance { get; }
 
 
-        public void StartUp(bool autoRun, List<IMachineInfo> machineInfo, List<IProcessInfo> processInfos, List<IComplexEventAction> complexEventActions, List<IViewModelInfo> viewModelInfos)
+        public void StartUp(bool autoRun, List<IMachineInfo> machineInfo, List<ISystemProcessInfo> processInfos, List<IComplexEventAction> complexEventActions, List<IViewModelInfo> viewModelInfos)
         {
             try
             {

@@ -20,7 +20,7 @@ namespace GenSoft.Mappings
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.Name).HasColumnName("Name").IsRequired().HasMaxLength(50);
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasMany(x => x.EntityViewModelPresentationProperties).WithOne(p => p.ViewType).HasForeignKey(c => c.ViewTypeId).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasMany(x => x.EntityTypePresentationProperty).WithOne(p => p.ViewType).HasForeignKey(c => c.ViewTypeId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.ViewModelPropertyPresentationType).WithOne(p => p.ViewType).HasForeignKey(c => c.ViewTypeId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.ViewPropertyTheme).WithOne(p => p.ViewType).HasForeignKey(c => c.ViewTypeId).OnDelete(DeleteBehavior.Restrict);
 	

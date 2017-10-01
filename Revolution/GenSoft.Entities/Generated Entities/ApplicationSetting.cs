@@ -13,12 +13,14 @@ namespace GenSoft.Entities
 {
 	public partial class ApplicationSetting: BaseEntity, IApplicationSetting
 	{
+		public virtual int ApplicationId { get; set; }
 		public virtual bool AutoRun { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 		
 			// ---------Parent Relationships
+				public virtual Application Application {get; set;}
 	
 
 	}

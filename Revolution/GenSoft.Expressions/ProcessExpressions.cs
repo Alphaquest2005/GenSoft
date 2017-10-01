@@ -8,12 +8,10 @@ using Actor.Interfaces;
 using GenSoft.Entities;
 using GenSoft.Interfaces;
 using RevolutionEntities.Process;
-using IProcess = GenSoft.Interfaces.IProcess;
 using IProcessStateInfo = SystemInterfaces.IProcessStateInfo;
 using ISourceType = SystemInterfaces.ISourceType;
-using Process = GenSoft.Entities.Process;
-using ProcessInfo = RevolutionEntities.Process.ProcessInfo;
 using SourceType = RevolutionEntities.Process.SourceType;
+using SystemProcess = GenSoft.Entities.SystemProcess;
 using Type = System.Type;
 
 namespace GenSoft.Expressions
@@ -39,7 +37,7 @@ namespace GenSoft.Expressions
 
     public class ProcessActionData
     {
-        public ProcessInfo ProcessInfo { get; set; }
+        public SystemProcessInfo SystemProcessInfo { get; set; }
         public TypeData ExpectedSourceType { get; set; }
         public MessageData MessageData { get; set; }
         public MessageData CommandData { get; set; }
@@ -96,7 +94,7 @@ namespace GenSoft.Expressions
 
         public static Func<TypeData, ISourceType> CreateSourceType = (td) => new SourceType(Type.GetType(td.TypeString));
 
-        public static Func<Process, SystemInterfaces.IProcessInfo> CreateProcessInfo = (p) => new ProcessInfo(p.Id, p.ParentProcessId, p.Name, p.Description, p.Symbol, p.UserId.ToString()) as SystemInterfaces.IProcessInfo;
+        public static Func<SystemProcess, SystemInterfaces.ISystemProcessInfo> CreateProcessInfo = (p) => new SystemProcessInfo(p.Id, p.ParentProcessId, p.Name, p.Description, p.Symbol, p.UserId.ToString()) as SystemInterfaces.ISystemProcessInfo;
 
         public static Func<Machine, IMachineInfo> CreateMachineInfo = (m) => new MachineInfo(m.MachineName, m.Processors);
     }

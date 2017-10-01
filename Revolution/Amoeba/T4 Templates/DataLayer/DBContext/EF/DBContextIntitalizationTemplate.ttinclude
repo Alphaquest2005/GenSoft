@@ -71,6 +71,8 @@ else
 
 		private static void CreateSeedData()
 		{
+			try
+			{
 <#+
 	var ml = T4Utilities.GetMainEntities(Entities).Select(x => x.Entity);
 	var res = new List<Entity>();
@@ -93,6 +95,13 @@ else
 	    ProcessMainEntity(x, res);
 	});
 #>
+			
+			}
+		    catch (Exception e)
+		    {
+		        Console.WriteLine(e);
+		        throw;
+		    }
 		}
 <#+
 } 
@@ -167,6 +176,7 @@ else
 		if (!testvals.Any())
 		{
 #>
+		
 			//No test data for <#=entity.Name #>
 <#+
 			return;

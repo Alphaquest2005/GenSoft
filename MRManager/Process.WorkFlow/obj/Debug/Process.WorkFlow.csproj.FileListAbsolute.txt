@@ -214,3 +214,7 @@ C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\obj\Debug\Process.Wor
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\obj\Debug\Process.WorkFlow.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\obj\Debug\Process.WorkFlow.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\obj\Debug\Process.WorkFlow.pdb
+C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\GenSoft.Entities.dll
+C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\GenSoft.Interfaces.dll
+C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\GenSoft.Entities.pdb
+C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Debug\GenSoft.Interfaces.pdb

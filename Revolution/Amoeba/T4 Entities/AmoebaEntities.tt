@@ -332,7 +332,7 @@ public class CodeStringGenerator
             _code.Escape(_typeMapper.UnderlyingClrType(enumType)));
         }
     
-    public void WriteFunctionParameters(EdmFunction edmFunction, Action<string, string, string, string> writeParameter)
+    public void WriteFunctionParameter(EdmFunction edmFunction, Action<string, string, string, string> writeParameter)
     {
         var parameters = FunctionImportParameter.Create(edmFunction.Parameters, _code, _ef);
         foreach (var parameter in parameters.Where(p => p.NeedsLocalVariable))

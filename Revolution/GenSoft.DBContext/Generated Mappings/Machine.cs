@@ -22,7 +22,6 @@ namespace GenSoft.Mappings
 			entityBuilder.Property(t => t.MachineName).HasColumnName("MachineName").IsRequired().HasMaxLength(Int32.MaxValue);
 			entityBuilder.Property(t => t.Processors).HasColumnName("Processors").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasMany(x => x.MessageSource).WithOne(p => p.Machine).HasForeignKey(c => c.MachineId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties
 	

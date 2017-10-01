@@ -6,6 +6,7 @@ using System.Reactive.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using SystemInterfaces;
+using Actor.Interfaces;
 using Akka.Actor;
 using Akka.Event;
 using Akka.IO;
@@ -21,7 +22,7 @@ using ViewMessages;
 
 namespace DataServices.Actors
 {
-    public class EntityDataServiceManager : BaseSupervisor<EntityDataServiceManager>
+    public class EntityDataServiceManager : BaseSupervisor<EntityDataServiceManager>, IEntityDataServiceManager
     {
        
         private IUntypedActorContext ctx = null;
@@ -29,6 +30,7 @@ namespace DataServices.Actors
         {
             ctx = Context;
             EventMessageBus.Current.GetEvent<IEntityRequest>(Source).Subscribe(handleEntityRequest);
+            EventMessageBus.Current.Publish(new ServiceStarted<IEntityDataServiceManager>(this, new StateEventInfo(process.Id, RevolutionData.Context.Actor.Events.ActorStarted), process, Source), Source);
         }
 
         private void handleEntityRequest(IEntityRequest entityRequest)
@@ -53,8 +55,11 @@ namespace DataServices.Actors
         private void CreateEntityActors(string classType,  string actorName, ISystemProcess process, IProcessSystemMessage msg)
         {
             var child = ctx.Child(string.Format(actorName, classType));
-            if (!Equals(child, ActorRefs.Nobody)) return;
-            
+            if (!Equals(child, ActorRefs.Nobody))
+            {
+                child.Tell(msg);
+            }
+            else
             try
             {
                 Task.Run(() => { ctx.ActorOf(Props.Create<EntityDataServiceSupervisor>(process, msg), string.Format(actorName, classType)); });

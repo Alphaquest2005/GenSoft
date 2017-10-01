@@ -22,6 +22,7 @@ using ViewModel.Interfaces;
 using ViewModel.WorkFlow;
 using ViewModelInterfaces;
 using Action = System.Action;
+using Application = System.Windows.Application;
 using IEvent = SystemInterfaces.IEvent;
 using IViewModel = ViewModel.Interfaces.IViewModel;
 
@@ -30,7 +31,7 @@ namespace RevolutionData
     
     public class CachedViewModelInfo
     {
-        public static ViewModelInfo CachedViewModel(int processId, IDynamicEntityType entityType, string symbol, string description, int priority, List<EntityViewModelRelationship> viewRelationships, List<EntityViewModelCommands> viewCommands, IViewAttributeDisplayProperties displayProperties)
+        public static ViewModelInfo CachedViewModel(int processId, IDynamicEntityType entityType, string symbol, string description, int priority, List<EntityViewModelRelationship> viewRelationships, List<EntityTypeViewModelCommand> viewCommands, IViewAttributeDisplayProperties displayProperties)
         {
             try
             {
@@ -106,7 +107,13 @@ namespace RevolutionData
                                     s.Source);
                             }),
 
-                       
+                        new ViewEventPublication<ICacheViewModel, ILoadEntitySet>(
+                            $"{entityType.Name}-IViewModelIntialized",
+                            subject:v => v.ViewModelState as dynamic,
+                            subjectPredicate:new List<Func<ICacheViewModel, bool>>{ v => v.ViewModelState.Value == ViewModelState.Intialized},
+                            messageData:v => new ViewEventPublicationParameter(new object[] {v.ViewInfo.EntityType},new StateEventInfo(v.Process.Id, Context.View.Events.Intitalized),v.Process,v.Source)),
+
+
                     },
                     commands: new List<IViewModelEventCommand<IViewModel, IEvent>>{},
                     viewModelType: typeof(ICacheViewModel),

@@ -28,7 +28,7 @@ namespace ViewModel.Interfaces
         Type ViewModelType { get; }
         int Priority { get; }
         ObservableList<IViewModel> ViewModels { get; }
-
+        ReactiveProperty<dynamic> ViewModelState { get; }
         
     }
 }

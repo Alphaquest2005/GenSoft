@@ -19,7 +19,6 @@ namespace GenSoft.Entities
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
-				public virtual ICollection<EntityTypeViewModel> EntityTypeViewModel {get; set;}
 				public virtual ICollection<ViewModelPropertyPresentationType> ViewModelPropertyPresentationType {get; set;}
 		
 			// ---------Parent Relationships

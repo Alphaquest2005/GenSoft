@@ -3,10 +3,10 @@ using SystemInterfaces;
 
 namespace RevolutionEntities.Process
 {
-    public class ProcessInfo : IProcessInfo
+    public class SystemProcessInfo : ISystemProcessInfo
     {
-        public ProcessInfo() { }
-        public ProcessInfo(int id, int parentProcessId, string name, string description, string symbol, string userId)
+        public SystemProcessInfo() { }
+        public SystemProcessInfo(int id, int parentProcessId, string name, string description, string symbol, string userId)
         {
             Id = id;
             ParentProcessId = parentProcessId;

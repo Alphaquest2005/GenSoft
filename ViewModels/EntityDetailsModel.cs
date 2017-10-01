@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
+using System.Diagnostics;
 using System.Linq;
+using System.Reactive.Linq;
 using System.Windows;
 using SystemInterfaces;
 using Common;
@@ -45,6 +47,7 @@ namespace ViewModels
         private void UpdateCurrentEntity(Tuple<IProcessStateEntity,IDynamicEntity> processStateEntity)
         {
             if(!Equals(ViewModel.CurrentEntity.Value, processStateEntity.Item1.Entity))
+            if(processStateEntity?.Item1?.Entity == null) Debugger.Break();
             this.ViewModel.CurrentEntity.Value = processStateEntity.Item1.Entity;
         }
 

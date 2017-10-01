@@ -35,3 +35,5 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\obj\x64\Debug\EventAg
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\obj\x64\Debug\EventAggregator.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\obj\x64\Debug\EventAggregator.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\obj\x64\Debug\EventAggregator.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\Utilities.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\Utilities.pdb

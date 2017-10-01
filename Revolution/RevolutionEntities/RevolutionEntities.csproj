@@ -115,6 +115,10 @@
       <Project>{31e6b370-01f0-4489-832f-436cb97a6718}</Project>
       <Name>EventAggregator</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GenSoft.Entities\GenSoft.Entities.csproj">
+      <Project>{8ED4D838-4075-41B4-88A4-731FF303FB54}</Project>
+      <Name>GenSoft.Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GenSoft.Interface\GenSoft.Interface.csproj">
       <Project>{F90CC1C1-1F4E-4719-817B-9A14CE56A5CE}</Project>
       <Name>GenSoft.Interface</Name>

@@ -706,7 +706,8 @@
           "CommonMessages": "1.0.0",
           "Reactive.EventAggregator": "2.0.0",
           "RevolutionLogger": "1.0.0",
-          "SystemInterfaces": "1.0.0"
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
         }
       },
       "GenSoft.Entities/1.0.0": {
@@ -1456,7 +1457,8 @@
           "CommonMessages": "1.0.0",
           "Reactive.EventAggregator": "2.0.0",
           "RevolutionLogger": "1.0.0",
-          "SystemInterfaces": "1.0.0"
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
         }
       },
       "GenSoft.Entities/1.0.0": {

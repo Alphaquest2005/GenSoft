@@ -46,6 +46,7 @@ namespace Core.Common.UI
         public int Priority { get; }
 
         public ObservableList<IViewModel> ViewModels { get; } = new ObservableBindingList<IViewModel>();
+        public ReactiveProperty<dynamic> ViewModelState { get; } = new ReactiveProperty<dynamic>(SystemInterfaces.ViewModelState.NotIntialized);
 
         public Dictionary<string, ReactiveCommand<IViewModel, Unit>> Commands { get; } = new Dictionary<string, ReactiveCommand<IViewModel, Unit>>();
 

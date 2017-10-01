@@ -14,13 +14,13 @@ namespace RevolutionEntities.Process
             User = user;
         }
 
-        public Process(IProcessInfo processInfo, IUser user)
+        public Process(ISystemProcessInfo systemProcessInfo, IUser user)
         {
-            Id = processInfo.Id;
-            ParentProcessId = processInfo.ParentProcessId;
-            Name = processInfo.Name;
-            Description = processInfo.Description;
-            Symbol = processInfo.Symbol;
+            Id = systemProcessInfo.Id;
+            ParentProcessId = systemProcessInfo.ParentProcessId;
+            Name = systemProcessInfo.Name;
+            Description = systemProcessInfo.Description;
+            Symbol = systemProcessInfo.Symbol;
             User = user;
            
         }

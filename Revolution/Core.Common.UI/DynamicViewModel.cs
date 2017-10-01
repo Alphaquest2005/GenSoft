@@ -50,6 +50,7 @@ namespace Core.Common.UI
 
         public ReactiveProperty<RowState> RowState { get; } = new ReactiveProperty<RowState>(SystemInterfaces.RowState.Loaded);
         public ObservableList<IViewModel> ViewModels { get; } = new ObservableBindingList<IViewModel>();
+        public ReactiveProperty<dynamic> ViewModelState { get; } = new ReactiveProperty<dynamic>(SystemInterfaces.ViewModelState.NotIntialized);
 
         public override bool TryGetMember(GetMemberBinder binder, out object result)
         {

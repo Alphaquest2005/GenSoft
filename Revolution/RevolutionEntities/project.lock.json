@@ -304,7 +304,18 @@
           "CommonMessages": "1.0.0",
           "Reactive.EventAggregator": "2.0.0",
           "RevolutionLogger": "1.0.0",
-          "SystemInterfaces": "1.0.0"
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
+        }
+      },
+      "GenSoft.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "Common": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
         }
       },
       "GenSoft.Interface/1.0.0": {
@@ -648,7 +659,18 @@
           "CommonMessages": "1.0.0",
           "Reactive.EventAggregator": "2.0.0",
           "RevolutionLogger": "1.0.0",
-          "SystemInterfaces": "1.0.0"
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
+        }
+      },
+      "GenSoft.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "Common": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
         }
       },
       "GenSoft.Interface/1.0.0": {
@@ -1278,6 +1300,11 @@
       "path": "../EventAggregator/project.json",
       "msbuildProject": "../EventAggregator/EventAggregator.csproj"
     },
+    "GenSoft.Entities/1.0.0": {
+      "type": "project",
+      "path": "../GenSoft.Entities/project.json",
+      "msbuildProject": "../GenSoft.Entities/GenSoft.Entities.csproj"
+    },
     "GenSoft.Interface/1.0.0": {
       "type": "project",
       "path": "../GenSoft.Interface/project.json",
@@ -1348,6 +1375,9 @@
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\EventAggregator\\EventAggregator.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\EventAggregator\\EventAggregator.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Entities\\GenSoft.Entities.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Entities\\GenSoft.Entities.csproj"
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Interface\\GenSoft.Interface.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Interface\\GenSoft.Interface.csproj"

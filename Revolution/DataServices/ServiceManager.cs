@@ -11,11 +11,15 @@ using SystemInterfaces;
 using Actor.Interfaces;
 using Akka.Actor;
 using Common;
+using Common.DataEntites;
 using CommonMessages;
 using EFRepository;
 using EventAggregator;
 using EventMessages;
+using EventMessages.Commands;
 using EventMessages.Events;
+using Reactive.Bindings;
+using ReactiveUI;
 using RevolutionData;
 using RevolutionEntities.Process;
 using StartUp.Messages;
@@ -33,9 +37,11 @@ namespace DataServices.Actors
         public ISystemSource Source { get; private set; }
 
         
-        public static List<IProcessInfo> ProcessInfos { get; set; }
+        public static List<ISystemProcessInfo> ProcessInfos { get; set; }
 
-        public ServiceManager(bool autoRun, List<IMachineInfo> machineInfos, List<IProcessInfo> processInfos, List<IComplexEventAction> complexEventActions, List<IViewModelInfo> viewModelInfos)
+       
+       
+        public ServiceManager(bool autoRun, List<IMachineInfo> machineInfos, List<ISystemProcessInfo> processInfos, List<IComplexEventAction> complexEventActions, List<IViewModelInfo> viewModelInfos)
         {
             try
             {
@@ -47,47 +53,87 @@ namespace DataServices.Actors
                 if (machineInfo == null) return;
                 var processInfo = processInfos.FirstOrDefault(x => x.ParentProcessId == 0);
                 if (processInfo == null) return;
-                var systemProcess = new SystemProcess(new RevolutionEntities.Process.Process(processInfo, new Agent("System")), machineInfo);
-                Source = new Source(Guid.NewGuid(),"ServiceManager", new SourceType(typeof(IServiceManager)),systemProcess, machineInfo);
-                                    var systemStartedMsg = new SystemStarted(new StateEventInfo(systemProcess.Id, RevolutionData.Context.Process.Events.ProcessStarted), systemProcess, Source);
 
-                
+                var systemProcess =
+                    new SystemProcess(new RevolutionEntities.Process.Process(processInfo, new Agent("System")),
+                        machineInfo);
+                Source = new Source(Guid.NewGuid(), "ServiceManager", new SourceType(typeof(IServiceManager)),
+                    systemProcess, machineInfo);
+                var systemStartedMsg =
+                    new SystemStarted(
+                        new StateEventInfo(systemProcess.Id, RevolutionData.Context.Process.Events.ProcessStarted),
+                        systemProcess, Source);
 
-                EventMessageBus.Current.GetEvent<IServiceStarted<IProcessService>>(Source).Where(x => x.Process.Id == 1)//only start up process
-                    .Subscribe(async x =>
+
+
+
+                EventMessageBus.Current.GetEvent<IServiceStarted<IEntityDataServiceManager>>(Source)
+                    .Where(x => x.Process.Id == 1) //only start up process
+                    .Subscribe(x =>
                     {
-                        var child = Context.Child("ViewModelSupervisor");
-                        if (!Equals(child, ActorRefs.Nobody)) return;
-
-                       await Task.Run(() =>ctx.ActorOf(Props.Create<ViewModelSupervisor>(viewModelInfos,systemProcess, systemStartedMsg),"ViewModelSupervisor")).ConfigureAwait(false);
-                       
-                        await Task.Run(() => ctx.ActorOf(Props.Create<EntityDataServiceManager>(systemProcess), "EntityDataServiceManager")).ConfigureAwait(false);
-                        
+                        //start the data supervisor
+                        EventMessageBus.Current.Publish(
+                            new LoadEntitySet(DynamicEntityType.DynamicEntityTypes.First().Value,
+                                new StateCommandInfo(systemProcess.Id,
+                                    RevolutionData.Context.Entity.Commands.LoadEntitySetWithChanges), systemProcess,
+                                Source), Source);
 
                         EventMessageBus.Current.Publish(
                             new ServiceStarted<IServiceManager>(this,
-                                new StateEventInfo(systemProcess.Id, RevolutionData.Context.Actor.Events.ActorStarted),
+                                new StateEventInfo(systemProcess.Id,
+                                    RevolutionData.Context.Actor.Events.ActorStarted),
                                 systemProcess, Source), Source);
 
                     });
 
-                Task.Run(() =>ctx.ActorOf(Props.Create<ProcessSupervisor>(autoRun, systemStartedMsg, processInfos, complexEventActions),"ProcessSupervisor")).ConfigureAwait(false);
-                
+                EventMessageBus.Current.GetEvent<IServiceStarted<IProcessService>>(Source)
+                    .Where(x => x.Process.Id == 1) //only start up process
+                    .Subscribe(x =>
+                    {
+                        Task.Run(() => ctx.ActorOf(Props.Create<EntityDataServiceManager>(systemProcess),
+                            "EntityDataServiceManager")).ConfigureAwait(false);
+                    });
+
+                EventMessageBus.Current
+                    .GetEvent<IServiceStarted<IViewModelSupervisor>>(Source)
+                    .Where(z => z.Process.Id == 1).Subscribe(z =>
+                    {
+                        Task.Run(() => ctx.ActorOf(
+                            Props.Create<ProcessSupervisor>(autoRun, systemStartedMsg, processInfos,
+                                complexEventActions), "ProcessSupervisor")).ConfigureAwait(false);
+
+        
+
+                    });
+
+                Task.Run(() => ctx.ActorOf(
+                    Props.Create<ViewModelSupervisor>(viewModelInfos, systemProcess, systemStartedMsg),
+                    "ViewModelSupervisor")).ConfigureAwait(false);
+
+
+
+
+
+
 
 
             }
             catch (Exception ex)
             {
                 Debugger.Break();
-                EventMessageBus.Current.Publish(new ProcessEventFailure(failedEventType: typeof(ServiceStarted<IServiceManager>),
-                    failedEventMessage: null,
-                    expectedEventType: typeof(ServiceStarted<IServiceManager>),
-                    exception: ex,
-                    source: Source, processInfo: new StateEventInfo(1, RevolutionData.Context.Process.Events.Error)), Source);
+                EventMessageBus.Current.Publish(new ProcessEventFailure(
+                        failedEventType: typeof(ServiceStarted<IServiceManager>),
+                        failedEventMessage: null,
+                        expectedEventType: typeof(ServiceStarted<IServiceManager>),
+                        exception: ex,
+                        source: Source,
+                        processInfo: new StateEventInfo(1, RevolutionData.Context.Process.Events.Error)),
+                    Source);
 
             }
         }
 
+      
         public string UserId => this.Source.SourceName;
     }
 

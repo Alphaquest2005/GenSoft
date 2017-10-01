@@ -5,11 +5,11 @@ using SystemInterfaces;
 
 namespace Common.DataEntites
 {
-    public abstract class BaseEntity : IEntity
+    public abstract class BaseEntity : IEntity, IComparable
     {
        
         public int Id { get; set; }
-        public DateTime EntryDateTime { get; private set; } = DateTime.Now;
+        //public DateTime EntryDateTime { get; private set; } = DateTime.Now;
 
         [IgnoreDataMember]
         [NotMapped]
@@ -20,7 +20,7 @@ namespace Common.DataEntites
         public override bool Equals(object obj)
         {
 
-            var other = obj as DynamicEntity;
+            var other = obj as BaseEntity;
             if (ReferenceEquals(other, null)) return false;
             if (ReferenceEquals(this, other)) return true;
             if (GetType() != other.GetType()) return false;
@@ -46,7 +46,12 @@ namespace Common.DataEntites
             return (_entityGuid.ToString()).GetHashCode();
         }
 
-
+        public int CompareTo(object obj)
+        {
+            var other = obj as BaseEntity;
+            if (ReferenceEquals(other, null)) return -1;
+            return Id.CompareTo(other.Id);
+        }
     }
 
 

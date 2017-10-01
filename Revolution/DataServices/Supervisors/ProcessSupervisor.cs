@@ -24,7 +24,7 @@ namespace DataServices.Actors
 
         //TODO: Track Actor Shutdown instead of just broadcast
 
-        public ProcessSupervisor(bool autoRun, ISystemStarted firstMsg, List<IProcessInfo> processInfos, List<IComplexEventAction> processComplexEvents) : base(firstMsg.Process)
+        public ProcessSupervisor(bool autoRun, ISystemStarted firstMsg, List<ISystemProcessInfo> processInfos, List<IComplexEventAction> processComplexEvents) : base(firstMsg.Process)
         {
 
             ctx = Context;
@@ -43,7 +43,7 @@ namespace DataServices.Actors
             CreateProcesses(user, processSteps, processSteps.First().Id);
         }
 
-        public List<IProcessInfo> ProcessInfos { get; }
+        public List<ISystemProcessInfo> ProcessInfos { get; }
 
         private void StartProcess(int processId, IUser user)
         {
@@ -53,7 +53,7 @@ namespace DataServices.Actors
 
         static ConcurrentDictionary<string,string> existingProcessActors = new ConcurrentDictionary<string, string>();
 
-        private void CreateProcesses(IUser user, IEnumerable<IProcessInfo> processSteps, int processId)
+        private void CreateProcesses(IUser user, IEnumerable<ISystemProcessInfo> processSteps, int processId)
         {
             Parallel.ForEach(
                 processSteps.Select(

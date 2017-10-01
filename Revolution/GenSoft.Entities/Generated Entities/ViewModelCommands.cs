@@ -20,10 +20,10 @@ namespace GenSoft.Entities
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
-				public virtual ICollection<EntityViewModelCommands> EntityViewModelCommands {get; set;}
+				public virtual ICollection<EntityTypeViewModelCommand> EntityTypeViewModelCommand {get; set;}
 		
 			// ---------Parent Relationships
-				public virtual CommandTypes CommandTypes {get; set;}
+				public virtual CommandType CommandType {get; set;}
 	
 
 	}

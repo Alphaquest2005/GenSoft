@@ -13,20 +13,19 @@ namespace GenSoft.Entities
 {
 	public partial class EntityType: BaseEntity, IEntityType
 	{
+		public virtual int ApplicationId { get; set; }
 		public virtual string EntitySetName { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
-				public virtual CompositeRequest CompositeRequest {get; set;}
 				public virtual DBType DBType {get; set;}
-				public virtual DomainEntityType DomainEntityType {get; set;}
 				public virtual ICollection<Entity> Entity {get; set;}
-				public virtual EntityList EntityList {get; set;}
 				public virtual ICollection<EntityTypeAttributes> EntityTypeAttributes {get; set;}
-				public virtual ICollection<EntityView> BaseEntityTypes {get; set;}
-				public virtual EntityView EntityView {get; set;}
+				public virtual ICollection<EntityTypeViewModelCommand> EntityTypeViewModelCommand {get; set;}
+				public virtual ICollection<ProcessStepEntity> ProcessStepEntity {get; set;}
 		
 			// ---------Parent Relationships
+				public virtual Application Application {get; set;}
 				public virtual Type Type {get; set;}
 	
 

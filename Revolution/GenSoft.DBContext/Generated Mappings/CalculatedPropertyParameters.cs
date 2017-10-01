@@ -25,7 +25,7 @@ namespace GenSoft.Mappings
 	
 				//----------------Parent Properties
 				//entityBuilder.HasOne(p => p.CalculatedProperties CalculatedProperties).WithMany(p => p.CalculatedPropertyParameters).HasForeignKey(c => c.CalculatedPropertyId).OnDelete(DeleteBehavior.Restrict);
-				//entityBuilder.HasOne(p => p.FunctionParameters FunctionParameters).WithMany(p => p.CalculatedPropertyParameters).HasForeignKey(c => c.FunctionParameterId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.FunctionParameter FunctionParameter).WithMany(p => p.CalculatedPropertyParameters).HasForeignKey(c => c.FunctionParameterId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

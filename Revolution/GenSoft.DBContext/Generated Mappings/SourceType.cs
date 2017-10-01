@@ -20,7 +20,6 @@ namespace GenSoft.Mappings
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").ValueGeneratedNever();	
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasMany(x => x.MessageSource).WithOne(p => p.SourceType).HasForeignKey(c => c.SourceTypeId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties
 				//entityBuilder.HasOne(p => p.Type Type).WithOne(p => p.SourceType).HasForeignKey<Type>(c => c.Id).OnDelete(DeleteBehavior.Restrict);

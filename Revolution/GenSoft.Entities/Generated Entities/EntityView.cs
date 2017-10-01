@@ -13,14 +13,15 @@ namespace GenSoft.Entities
 {
 	public partial class EntityView: BaseEntity, IEntityView
 	{
-		public virtual int BaseEntityTypeId { get; set; }
+		public virtual int EntityTypePresentationPropertyId { get; set; }
+		public virtual int ProcessStepId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 		
 			// ---------Parent Relationships
-				public virtual EntityType BaseEntityType {get; set;}
-				public virtual EntityType EntityType {get; set;}
+				public virtual EntityTypePresentationProperty EntityTypePresentationProperty {get; set;}
+				public virtual ProcessStep ProcessStep {get; set;}
 	
 
 	}

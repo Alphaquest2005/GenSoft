@@ -7,4 +7,9 @@ namespace SystemInterfaces
         Loaded, Added, Modified, Deleted,
         Unchanged
     }
+
+    public enum ViewModelState
+    {
+       Intialized, NotIntialized
+    }
 }

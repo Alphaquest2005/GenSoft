@@ -24,10 +24,10 @@ namespace Process.WorkFlow
 
     public static class Processes
     {
-        public static readonly List<IProcessInfo> ProcessInfos = new List<IProcessInfo>
+        public static readonly List<ISystemProcessInfo> ProcessInfos = new List<ISystemProcessInfo>
         {
             //new Process(0,0, "Uknown Process", "Unknown Process", "Unknown"),
-            new ProcessInfo(1, 0, "Starting System", "Prepare system for Intial Use", "Start","System"),
+            new SystemProcessInfo(1, 0, "Starting System", "Prepare system for Intial Use", "Start","System"),
        
         };
 
@@ -84,115 +84,6 @@ namespace Process.WorkFlow
                 processInfo:new StateCommandInfo(1,RevolutionData.Context.Process.Commands.CleanUpProcess ),
                 action: ProcessActions.Actions["CleanUpProcess"]),
 
-            
-            //new ComplexEventAction(
-            //    "106",
-            //    1, new List<IProcessExpectedEvent>
-            //    {
-            //        new ProcessExpectedEvent ("ProcessEventError", 1, typeof (IProcessEventFailure), e => e != null, new StateEventInfo(1, Context.Process.Events.Error), new SourceType(typeof(IComplexEventService))),
-
-            //    },
-            //    typeof(IProcessEventFailure),
-            //    processInfo:new StateCommandInfo(1,Context.Process.Commands.Error ),
-            //    action: ProcessActions.ShutDownApplication),
-
-            //ComplexActions.StartProcess(2),
-            //new ComplexEventAction(
-                
-            //    key:"201",
-            //    processId:2,
-            //    events:new List<IProcessExpectedEvent>
-            //    {
-            //        new ProcessExpectedEvent (key: "ProcessStarted",
-            //                                  processId: 2,
-            //                                  eventPredicate: e => e != null,
-            //                                  eventType: typeof (ISystemProcessStarted),
-            //                                  processInfo: new StateEventInfo(2,RevolutionData.Context.Process.Events.ProcessStarted),
-            //                                  expectedSourceType:new SourceType(typeof(IComplexEventService)))
-                    
-            //    },
-            //    expectedMessageType:typeof(IProcessStateMessage),
-            //    action:ProcessActions.SignIn.IntializeSigninProcessState,
-            //    processInfo:new StateCommandInfo(2, RevolutionData.Context.Process.Commands.CreateState)),
-            //new ComplexEventAction(
-            //    key:"202",
-            //    processId:2,
-            //    events:new List<IProcessExpectedEvent>
-            //    {
-            //        new ProcessExpectedEvent<IEntityWithChangesFound> (
-            //            "UserNameFound", 2, e => e.Entity != null && e.Changes.Count == 1 && e.Changes.ContainsKey("Usersignin"), expectedSourceType: new SourceType(typeof(IEntityViewRepository)), processInfo: new StateEventInfo(2, RevolutionData.Context.User.Events.UserNameFound))
-            //    },
-            //    expectedMessageType:typeof(IProcessStateMessage),
-            //    action: ProcessActions.SignIn.UserNameFound,
-            //    processInfo: new StateCommandInfo(2, RevolutionData.Context.Process.Commands.UpdateState)),
-            //new ComplexEventAction(
-            //    key:"203",
-            //    processId: 2,
-            //    events: new List<IProcessExpectedEvent>
-            //    {
-            //        new ProcessExpectedEvent<IEntityWithChangesFound> (processId: 2,
-            //                                            eventPredicate: e => e.Entity != null && e.Changes.Count == 2 && e.Changes.ContainsKey("Password"),
-            //                                            processInfo: new StateEventInfo(2, RevolutionData.Context.User.Events.UserFound),
-            //                                            expectedSourceType: new SourceType(typeof(IEntityViewRepository)),
-            //                                            key: "ValidatedUser")
-            //    },
-            //    expectedMessageType: typeof(IProcessStateMessage),
-            //    action: ProcessActions.SignIn.SetProcessStatetoValidatedUser,
-            //    processInfo: new StateCommandInfo(2, RevolutionData.Context.Process.Commands.UpdateState)),
-            //new ComplexEventAction(
-            //    key:"204",
-            //    processId: 2,
-            //    events: new List<IProcessExpectedEvent>
-            //    {
-            //        new ProcessExpectedEvent<IEntityWithChangesFound> (processId: 2,
-            //                                            eventPredicate: e => e.Entity != null && e.Changes.Count == 2 && e.Changes.ContainsKey("Password"),
-            //                                            processInfo: new StateEventInfo(2, RevolutionData.Context.User.Events.UserFound),
-            //                                            expectedSourceType: new SourceType(typeof(IEntityViewRepository)),
-            //                                            key: "ValidatedUser")
-            //    },
-            //    expectedMessageType:typeof(IUserValidated),
-            //    processInfo:new StateCommandInfo(2, RevolutionData.Context.Domain.Commands.PublishDomainEvent),
-            //    action: ProcessActions.SignIn.UserValidated),
-
-            //new ComplexEventAction(
-            //    "205",
-            //    2, new List<IProcessExpectedEvent>
-            //    {
-            //        new ProcessExpectedEvent ("ValidatedUser", 2, typeof (IUserValidated), e => e != null, new StateEventInfo(2, RevolutionData.Context.User.Events.UserFound), new SourceType(typeof(IComplexEventService))),
-                    
-            //    },
-            //    typeof(ISystemProcessCompleted),
-            //    processInfo:new StateCommandInfo(2,RevolutionData.Context.Process.Commands.CompleteProcess ),
-            //    action: ProcessActions.Actions["CompleteProcess"]),
-
-            // new ComplexEventAction(
-            //    "206",
-            //    2, new List<IProcessExpectedEvent>
-            //    {
-            //        new ProcessExpectedEvent ("ValidatedUser", 2, typeof (IUserValidated), e => e != null, new StateEventInfo(2, RevolutionData.Context.User.Events.UserFound), new SourceType(typeof(IComplexEventService))),
-
-            //    },
-            //    typeof(ISystemProcessStarted),
-            //    processInfo:new StateCommandInfo(2,RevolutionData.Context.Process.Commands.StartProcess ),
-            //    action: ProcessActions.Actions["StartProcessWithValidatedUser"]),
-
-            //new ComplexEventAction(
-            //    "207",
-            //    2, new List<IProcessExpectedEvent>
-            //    {
-            //        new ProcessExpectedEvent ("ProcessCompleted", 2, typeof (ISystemProcessCompleted), e => e != null, new StateEventInfo(2, RevolutionData.Context.Process.Events.ProcessCompleted), new SourceType(typeof(IComplexEventService))),
-
-            //    },
-            //    typeof(ISystemProcessCleanedUp),
-            //    processInfo:new StateCommandInfo(2,RevolutionData.Context.Process.Commands.CleanUpProcess ),
-            //    action: ProcessActions.Actions["CleanUpProcess"]),
-
-            
-            //ComplexActions.GetComplexAction("StartProcess", new object[]{3}),
-
-
-
-           // ComplexActions.GetComplexAction("IntializeProcessState", new object[]{3, DynamicEntityType.DynamicEntityTypes["IPatientInfo"]}),
 
         };
 
@@ -225,12 +116,13 @@ namespace Process.WorkFlow
 
                     key: $"InitalizeProcessState-{entityType.Name}",
                     processId: processId,
+                    actionTrigger: ActionTrigger.Any,
                     events: new List<IProcessExpectedEvent>
                     {
-                        new ProcessExpectedEvent(key: "ProcessStarted",
+                        new ProcessExpectedEvent(key: "ViewModelIntialized",
                             processId: processId,
-                            eventPredicate: e => e != null,
-                            eventType: typeof (ISystemProcessStarted),
+                            eventPredicate: e => e != null && ((IEntityViewInfo)((IViewModelIntialized)e)?.ViewModel.ViewInfo)?.EntityType == entityType  ,
+                            eventType: typeof (IViewModelIntialized),
                             processInfo: new StateEventInfo(processId, RevolutionData.Context.Process.Events.ProcessStarted),
                             expectedSourceType: new SourceType(typeof (IComplexEventService))),
                         

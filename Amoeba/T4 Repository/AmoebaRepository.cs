@@ -138,8 +138,8 @@ namespace T4Repository
                 return ctx.Functions.Where(x => x.ReturnDataType != null && x.EntityViewPropertyFunctions.Any(y => y.EntityViewProperty.EntityProperty.Entity.ApplicationEntities.Any(z => z.ApplicationId == appId)))
                     .Include(x => x.ReturnDataType)
                     .Include("FunctionBody")
-                    .Include("FunctionParameters")
-                    .Include("FunctionParameters.Parameter.DataType")
+                    .Include("FunctionParameter")
+                    .Include("FunctionParameter.Parameter.DataType")
                     .ToList();
             }
         }

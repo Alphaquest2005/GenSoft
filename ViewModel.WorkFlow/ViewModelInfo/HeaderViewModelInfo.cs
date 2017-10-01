@@ -32,8 +32,7 @@ namespace RevolutionData
                     new ViewEventSubscription<IHeaderViewModel, ICurrentEntityChanged>(
                         "Header-ICurrentEntityChanged",
                         processId,
-                        e => e.Entity != null && e.Entity.EntityType.IsList && e.Entity.Id > 0 &&
-                             e.Entity.EntityType.IsParentEntity,
+                        e => e.Entity != null && e.Entity.Id > 0 ,
                         new List<Func<IHeaderViewModel, ICurrentEntityChanged, bool>>(),
                         (v, e) =>
                         {

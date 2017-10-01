@@ -15,4 +15,13 @@ namespace Actor.Interfaces
         IActorRef ActorRef { get; }
         
     }
+
+    public interface IEntityDataServiceActor<TService> : IAgent
+    {
+    }
+    
+
+    public interface IEntityDataServiceManager
+    {
+    }
 }

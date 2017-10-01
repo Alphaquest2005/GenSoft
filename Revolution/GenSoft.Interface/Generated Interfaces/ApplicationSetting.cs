@@ -14,6 +14,7 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IApplicationSetting:SystemInterfaces.IEntity  
 	{
+		int ApplicationId { get;}
 		bool AutoRun { get;}
 
 

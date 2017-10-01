@@ -13,10 +13,12 @@ using EventAggregator;
 using EventMessages;
 using EventMessages.Commands;
 using EventMessages.Events;
+using Reactive.Bindings;
 using ReactiveUI;
 using RevolutionEntities.Process;
 using ViewMessages;
 using ViewModel.Interfaces;
+using ReactiveCommand = ReactiveUI.ReactiveCommand;
 
 
 namespace Core.Common.UI
@@ -26,7 +28,8 @@ namespace Core.Common.UI
         public static void WireEvents(this IViewModel viewModel)
         {
             if (LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
-           
+            viewModel.ViewModelState.Value = ViewModelState.NotIntialized;
+
             //    var commands = new ConcurrentBag<IViewModelEventCommand<IViewModel, IEvent>>(viewModel.CommandInfo);
             //Parallel.ForEach(commands, new ParallelOptions() {MaxDegreeOfParallelism = Environment.ProcessorCount},
             //    (itm) =>
@@ -111,12 +114,14 @@ namespace Core.Common.UI
                     .Subscribe(publishMessage);
             }
 
-
-            EventMessageBus.Current.Publish(new ViewModelIntialized(viewModel, new StateEventInfo(viewModel.Process.Id,"ViewModelIntialized", "View Model Initalized","ViewModel Started", RevolutionData.Context.ViewModel.Commands.LoadViewModel),viewModel.Process,viewModel.Source),viewModel.Source);
+            viewModel.ViewModelState.Value = ViewModelState.Intialized;
+            //EventMessageBus.Current.Publish(new ViewModelIntialized(viewModel, new StateEventInfo(viewModel.Process.Id,"ViewModelIntialized", "View Model Initalized","ViewModel Started", RevolutionData.Context.ViewModel.Commands.LoadViewModel),viewModel.Process,viewModel.Source),viewModel.Source);
 
 
 
         }
+
+        
 
         private static Action<dynamic> CreatePublishMessageAction(IViewModel viewModel, IViewModelEventPublication<IViewModel, IEvent> itm)
         {

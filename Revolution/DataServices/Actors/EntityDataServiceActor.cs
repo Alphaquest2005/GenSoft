@@ -11,10 +11,7 @@ using RevolutionEntities.Process;
 
 namespace DataServices.Actors
 {
-    public interface IEntityDataServiceActor<TService>:IAgent
-    {
-    }
-
+  
     public class EntityDataServiceActor<TService>: BaseActor<EntityDataServiceActor<TService>>, IEntityDataServiceActor<TService> where TService:IProcessSystemMessage
     {
         private Action<ISystemSource,TService> Action { get; }

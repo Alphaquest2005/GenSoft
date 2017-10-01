@@ -13,9 +13,8 @@
               Tag="{Binding ViewInfo.Name}"
               Margin="10"
               Background="#4CFFFFFF">
-
-
-            <ListBox Margin="10,65,10,10"
+            <StackPanel Orientation="Horizontal">
+                <ListBox Margin="10,65,10,10"
                      IsSynchronizedWithCurrentItem="True"
                      x:Name="EntityDetailListGRD"
                      ItemsSource="{Binding EntitySet.Value,
@@ -61,6 +60,38 @@
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </ListBox>
+                <TabControl Width="Auto" Height="Auto" ItemsSource="{Binding ViewModels}" Background="#7FFFFFFF" TabStripPlacement="Left" Margin="5">
+                    <TabControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Width="200" Height="100">
+                                <TextBlock Margin="0,0,0,72"
+                                           FontSize="20"
+                                           FontWeight="Bold"
+                                           Text="{Binding ViewInfo.Name}"
+                                           TextAlignment="left" />
+                                <TextBlock Margin="0,20,0,72"
+                                           FontSize="11"
+                                           FontWeight="Bold"
+                                           Text="{Binding ViewInfo.Description}"
+                                           TextAlignment="Right" />
+                                <TextBlock Margin="0,42,0,0"
+                                           FontFamily="Segoe UI Symbol"
+                                           FontSize="36"
+                                           Text="{Binding ViewInfo.Symbol}"
+                                           TextAlignment="Center" />
+                            </Grid>
+                        </DataTemplate>
+                    </TabControl.ItemTemplate>
+                    <TabControl.ContentTemplate>
+                        <DataTemplate>
+                            <ContentControl Content="{Binding}"/>
+                        </DataTemplate>
+                    </TabControl.ContentTemplate>
+
+                </TabControl>
+            </StackPanel>
+
+                
 
         </Grid>
     </DataTemplate>

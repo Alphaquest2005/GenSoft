@@ -14,7 +14,8 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IEntityView:SystemInterfaces.IEntity  
 	{
-		int BaseEntityTypeId { get;}
+		int EntityTypePresentationPropertyId { get;}
+		int ProcessStepId { get;}
 
 
 

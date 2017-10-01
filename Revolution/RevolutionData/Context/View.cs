@@ -22,6 +22,8 @@ namespace RevolutionData.Context
             public static IStateEvent ProcessStateLoaded => new StateEvent("ProcessStateLoaded", "Process State Loaded", "");
             public static IStateEvent EntityChanged => new StateEvent("EntityChanged", "Entity Changed", "Changes from User Interface");
             public static IStateEvent NavigatedToView => new StateEvent("NavigatedToView", "Navigated To View", "Navigated To View");
+            public static IStateEvent Intitalized  => new StateEvent("Intitalized", "View Intitalized", "View Intitalized");
+            public static IStateEvent CurrentEntityChanged => new StateEvent("CurrentEntityChanged", "View Current Entity Changed", "View Current Entity Changed");
         }
     }
 

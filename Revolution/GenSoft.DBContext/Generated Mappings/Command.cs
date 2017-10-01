@@ -25,7 +25,6 @@ namespace GenSoft.Mappings
 	
 				//----------------Parent Properties
 				//entityBuilder.HasOne(p => p.Entity Entity).WithMany(p => p.Command).HasForeignKey(c => c.EntityId).OnDelete(DeleteBehavior.Restrict);
-				//entityBuilder.HasOne(p => p.StateAction StateAction).WithMany(p => p.Command).HasForeignKey(c => c.StateActionId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

@@ -22,7 +22,7 @@ namespace GenSoft.Entities
 		
 			// ---------Parent Relationships
 				public virtual CalculatedProperties CalculatedProperties {get; set;}
-				public virtual FunctionParameters FunctionParameters {get; set;}
+				public virtual FunctionParameter FunctionParameter {get; set;}
 	
 
 	}

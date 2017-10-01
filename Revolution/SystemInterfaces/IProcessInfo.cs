@@ -4,7 +4,7 @@ using System.ComponentModel.Composition;
 namespace SystemInterfaces
 {
     
-    public interface IProcessInfo
+    public interface ISystemProcessInfo
     {
         int Id { get; }
         int ParentProcessId { get; }
@@ -14,7 +14,7 @@ namespace SystemInterfaces
         string UserId { get; }
     }
 
-    public interface IProcessInfo<TEntity>:IProcessInfo where TEntity:IEntityId
+    public interface ISystemProcessInfo<TEntity>:ISystemProcessInfo where TEntity:IEntityId
     {
       Type EntityType { get; }
     }

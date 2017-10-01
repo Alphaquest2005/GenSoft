@@ -23,10 +23,10 @@ namespace GenSoft.Mappings
 			entityBuilder.Property(t => t.Name).HasColumnName("Name").IsRequired().HasMaxLength(50);
 			entityBuilder.Property(t => t.RequireAllFields).HasColumnName("RequireAllFields").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasMany(x => x.EntityViewModelCommands).WithOne(p => p.ViewModelCommands).HasForeignKey(c => c.ViewModelCommandId).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasMany(x => x.EntityTypeViewModelCommand).WithOne(p => p.ViewModelCommands).HasForeignKey(c => c.ViewModelCommandId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties
-				//entityBuilder.HasOne(p => p.CommandTypes CommandTypes).WithMany(p => p.ViewModelCommands).HasForeignKey(c => c.CommandTypeId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.CommandType CommandType).WithMany(p => p.ViewModelCommands).HasForeignKey(c => c.CommandTypeId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

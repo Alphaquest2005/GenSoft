@@ -38,8 +38,8 @@ namespace Entity.Expressions
 {
 	public static partial class FunctionExpressions
 	{
-		public static <#=Function.ReturnDataType.DataType.Name#> <#= Function.Name #>(<#+ foreach (var parameter in Function.FunctionParameters)
-{ #><#=parameter.Parameter.DataType.Name#> <#=parameter.Parameter.Name#><#=parameter == Function.FunctionParameters.LastOrDefault()?"":","#><#+ }#>) => <#=Function.FunctionBody.Body#>;
+		public static <#=Function.ReturnDataType.DataType.Name#> <#= Function.Name #>(<#+ foreach (var parameter in Function.FunctionParameter)
+{ #><#=parameter.Parameter.DataType.Name#> <#=parameter.Parameter.Name#><#=parameter == Function.FunctionParameter.LastOrDefault()?"":","#><#+ }#>) => <#=Function.FunctionBody.Body#>;
 	}
 }
 <#+

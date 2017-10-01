@@ -10,13 +10,15 @@ using CommonMessages;
 using EventAggregator;
 using EventMessages;
 using EventMessages.Commands;
+using EventMessages.Events;
 using RevolutionEntities.Process;
 using Utilities;
 using ViewMessages;
+using ViewModel.Interfaces;
 
 namespace DataServices.Actors
 {
-    public class EntityDataServiceSupervisor : BaseSupervisor<EntityDataServiceSupervisor> 
+    public class EntityDataServiceSupervisor : BaseSupervisor<EntityDataServiceSupervisor>, IEntityDataServiceSupervisor
     {
 
         private static readonly Action<ISystemSource, ICreateEntity> CreateAction = (s, x) => x.CreateEntity();
@@ -44,7 +46,7 @@ namespace DataServices.Actors
                 {typeof (IGetEntityWithChanges), GetEntityWithChangesAction},
 
                 {typeof (ILoadEntitySet), LoadEntitySet},
-                { typeof (IGetEntitySetWithChanges), LoadEntitySetWithChanges},
+                {typeof (IGetEntitySetWithChanges), LoadEntitySetWithChanges},
                 {typeof (ILoadEntitySetWithFilter), LoadEntitySetWithFilter},
                 {typeof (ILoadEntitySetWithFilterWithIncludes), LoadEntitySetWithFilterWithIncludes},
                 
@@ -60,7 +62,9 @@ namespace DataServices.Actors
                         .MakeGenericMethod(itm.Key)
                         .Invoke(this, new object[] {itm.Value, process, msg});
             }
+            EventMessageBus.Current.Publish(new ServiceStarted<IEntityDataServiceSupervisor>(this, new StateEventInfo(process.Id, RevolutionData.Context.Actor.Events.ActorStarted), process, Source), Source);
 
+            
         }
 
         public void CreateEntityActor<TEvent>(object action, ISystemProcess process, IProcessSystemMessage msg) where TEvent : IMessage

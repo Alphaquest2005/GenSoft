@@ -121,7 +121,7 @@ private void WriteFunctionImport(TypeMapper typeMapper, CodeStringGenerator code
     <#=codeStringGenerator.ComposableFunctionMethod(edmFunction, modelNamespace)#>
     {
 <#+
-        codeStringGenerator.WriteFunctionParameters(edmFunction, WriteFunctionParameter);
+        codeStringGenerator.WriteFunctionParameter(edmFunction, WriteFunctionParameter);
 #>
         <#=codeStringGenerator.ComposableCreateQuery(edmFunction, modelNamespace)#>
     }
@@ -134,7 +134,7 @@ private void WriteFunctionImport(TypeMapper typeMapper, CodeStringGenerator code
     <#=codeStringGenerator.FunctionMethod(edmFunction, modelNamespace, includeMergeOption)#>
     {
 <#+
-        codeStringGenerator.WriteFunctionParameters(edmFunction, WriteFunctionParameter);
+        codeStringGenerator.WriteFunctionParameter(edmFunction, WriteFunctionParameter);
 #>
         <#=codeStringGenerator.ExecuteFunction(edmFunction, modelNamespace, includeMergeOption)#>
     }
@@ -226,7 +226,7 @@ public class CodeStringGenerator
             _code.Escape(_typeMapper.UnderlyingClrType(enumType)));
         }
     
-    public void WriteFunctionParameters(EdmFunction edmFunction, Action<string, string, string, string> writeParameter)
+    public void WriteFunctionParameter(EdmFunction edmFunction, Action<string, string, string, string> writeParameter)
     {
         var parameters = FunctionImportParameter.Create(edmFunction.Parameters, _code, _ef);
         foreach (var parameter in parameters.Where(p => p.NeedsLocalVariable))
