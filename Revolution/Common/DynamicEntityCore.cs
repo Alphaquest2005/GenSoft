@@ -11,10 +11,10 @@ namespace Common.DataEntites
         {
             Contract.Requires(entityType != null, "EntityType is Null");
             EntityType = entityType;
-            Properties.Add(nameof(IDynamicEntityCore.Id), id);
+            Id = id;
 
         }
-        public int Id => (int) Properties[nameof(IDynamicEntityCore.Id)];
+        public int Id { get; }
        // public DateTime EntryDateTime { get; private set; } = DateTime.Now;
         public virtual RowState RowState { get; set; } = RowState.Loaded;
         public IDynamicEntityType EntityType { get; }

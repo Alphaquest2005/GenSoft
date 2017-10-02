@@ -94,7 +94,7 @@ namespace GenSoft.Expressions
 
         public static Func<TypeData, ISourceType> CreateSourceType = (td) => new SourceType(Type.GetType(td.TypeString));
 
-        public static Func<SystemProcess, SystemInterfaces.ISystemProcessInfo> CreateProcessInfo = (p) => new SystemProcessInfo(p.Id, p.ParentProcessId, p.Name, p.Description, p.Symbol, p.UserId.ToString()) as SystemInterfaces.ISystemProcessInfo;
+        public static Func<SystemProcess, SystemInterfaces.ISystemProcessInfo> CreateProcessInfo = (p) => new SystemProcessInfo(p.Id, p.ParentProcessId, p.Process.Name, p.Process.Description, p.Symbol, p.UserId.ToString()) as SystemInterfaces.ISystemProcessInfo;
 
         public static Func<Machine, IMachineInfo> CreateMachineInfo = (m) => new MachineInfo(m.MachineName, m.Processors);
     }

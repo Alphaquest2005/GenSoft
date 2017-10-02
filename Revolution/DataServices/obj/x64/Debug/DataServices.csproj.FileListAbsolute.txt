@@ -321,3 +321,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\GenSoft.DB
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\GenSoft.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\obj\x64\Debug\DataServices.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\obj\x64\Debug\DataServices.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\MoreLinq.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\ViewModel.WorkFlow.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\ViewModel.WorkFlow.pdb

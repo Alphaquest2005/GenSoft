@@ -144,6 +144,9 @@ namespace Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
+            if (string.IsNullOrEmpty(value?.ToString())) return false;
+            if (!"True,False,0,1".ToLower().Contains(value.ToString().ToLower())) return false;
+            if ("0,1".ToLower().Contains(value.ToString().ToLower())) return System.Convert.ToBoolean(System.Convert.ToInt16(value));
             return System.Convert.ToBoolean(value);
         }
 

@@ -12,4 +12,9 @@ namespace SystemInterfaces
     {
         IDynamicEntity Entity { get; }
     }
+
+    public interface IMainEntityChanged : IEntityRequest
+    {
+        IDynamicEntity Entity { get; }
+    }
 }

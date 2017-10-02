@@ -15,8 +15,7 @@ namespace GenSoft.Interfaces
 	public partial interface IDomainProcess:SystemInterfaces.IEntity  
 	{
 		int ApplicationId { get;}
-		string Descripton { get;}
-		string Name { get;}
+		int Priority { get;}
 
 
 

@@ -65,6 +65,7 @@
     <Compile Include="Generated Interfaces\DataType.cs" />
     <Compile Include="Generated Interfaces\DBType.cs" />
     <Compile Include="Generated Interfaces\DomainProcess.cs" />
+    <Compile Include="Generated Interfaces\DomainProcessMainEntity.cs" />
     <Compile Include="Generated Interfaces\DomainSystemProcess.cs" />
     <Compile Include="Generated Interfaces\Entity.cs" />
     <Compile Include="Generated Interfaces\EntityAttribute.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Generated Interfaces\ParentEntity.cs" />
     <Compile Include="Generated Interfaces\PresentationPropertyType.cs" />
     <Compile Include="Generated Interfaces\PresentationTheme.cs" />
+    <Compile Include="Generated Interfaces\Process.cs" />
     <Compile Include="Generated Interfaces\ProcessPath.cs" />
     <Compile Include="Generated Interfaces\ProcessStep.cs" />
     <Compile Include="Generated Interfaces\ProcessStepEntity.cs" />

@@ -338,6 +338,7 @@
 ..\GenSoft.DBContext\Generated Mappings\DataType.cs
 ..\GenSoft.DBContext\Generated Mappings\DBType.cs
 ..\GenSoft.DBContext\Generated Mappings\DomainProcess.cs
+..\GenSoft.DBContext\Generated Mappings\DomainProcessMainEntity.cs
 ..\GenSoft.DBContext\Generated Mappings\DomainSystemProcess.cs
 ..\GenSoft.DBContext\Generated Mappings\Entity.cs
 ..\GenSoft.DBContext\Generated Mappings\EntityAttribute.cs
@@ -361,6 +362,7 @@
 ..\GenSoft.DBContext\Generated Mappings\ParentEntity.cs
 ..\GenSoft.DBContext\Generated Mappings\PresentationPropertyType.cs
 ..\GenSoft.DBContext\Generated Mappings\PresentationTheme.cs
+..\GenSoft.DBContext\Generated Mappings\Process.cs
 ..\GenSoft.DBContext\Generated Mappings\ProcessPath.cs
 ..\GenSoft.DBContext\Generated Mappings\ProcessStep.cs
 ..\GenSoft.DBContext\Generated Mappings\ProcessStepEntity.cs
@@ -405,6 +407,7 @@
 ..\GenSoft.Entities\Generated Entities\DataType.cs
 ..\GenSoft.Entities\Generated Entities\DBType.cs
 ..\GenSoft.Entities\Generated Entities\DomainProcess.cs
+..\GenSoft.Entities\Generated Entities\DomainProcessMainEntity.cs
 ..\GenSoft.Entities\Generated Entities\DomainSystemProcess.cs
 ..\GenSoft.Entities\Generated Entities\Entity.cs
 ..\GenSoft.Entities\Generated Entities\EntityAttribute.cs
@@ -428,6 +431,7 @@
 ..\GenSoft.Entities\Generated Entities\ParentEntity.cs
 ..\GenSoft.Entities\Generated Entities\PresentationPropertyType.cs
 ..\GenSoft.Entities\Generated Entities\PresentationTheme.cs
+..\GenSoft.Entities\Generated Entities\Process.cs
 ..\GenSoft.Entities\Generated Entities\ProcessPath.cs
 ..\GenSoft.Entities\Generated Entities\ProcessStep.cs
 ..\GenSoft.Entities\Generated Entities\ProcessStepEntity.cs
@@ -477,6 +481,7 @@
 ..\GenSoft.Interface\Generated Interfaces\DataType.cs
 ..\GenSoft.Interface\Generated Interfaces\DBType.cs
 ..\GenSoft.Interface\Generated Interfaces\DomainProcess.cs
+..\GenSoft.Interface\Generated Interfaces\DomainProcessMainEntity.cs
 ..\GenSoft.Interface\Generated Interfaces\DomainSystemProcess.cs
 ..\GenSoft.Interface\Generated Interfaces\Entity.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityAttribute.cs
@@ -500,6 +505,7 @@
 ..\GenSoft.Interface\Generated Interfaces\ParentEntity.cs
 ..\GenSoft.Interface\Generated Interfaces\PresentationPropertyType.cs
 ..\GenSoft.Interface\Generated Interfaces\PresentationTheme.cs
+..\GenSoft.Interface\Generated Interfaces\Process.cs
 ..\GenSoft.Interface\Generated Interfaces\ProcessPath.cs
 ..\GenSoft.Interface\Generated Interfaces\ProcessStep.cs
 ..\GenSoft.Interface\Generated Interfaces\ProcessStepEntity.cs

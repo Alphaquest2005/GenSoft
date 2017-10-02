@@ -700,6 +700,9 @@
           "EFRepository": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
+          "GenSoft.DBContext": "1.0.0",
+          "GenSoft.Entities": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections": "0.8.103-pre",
           "Process.WorkFlow": "1.0.0",
           "RevolutionData": "1.0.0",
@@ -709,7 +712,8 @@
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ViewMessages": "1.0.0",
-          "ViewModel.Interfaces": "1.0.0"
+          "ViewModel.Interfaces": "1.0.0",
+          "ViewModel.WorkFlow": "1.0.0"
         }
       },
       "DataTemplates/1.0.0": {
@@ -1719,6 +1723,9 @@
           "EFRepository": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
+          "GenSoft.DBContext": "1.0.0",
+          "GenSoft.Entities": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections": "0.8.103-pre",
           "Process.WorkFlow": "1.0.0",
           "RevolutionData": "1.0.0",
@@ -1728,7 +1735,8 @@
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ViewMessages": "1.0.0",
-          "ViewModel.Interfaces": "1.0.0"
+          "ViewModel.Interfaces": "1.0.0",
+          "ViewModel.WorkFlow": "1.0.0"
         }
       },
       "DataTemplates/1.0.0": {

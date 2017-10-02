@@ -20,9 +20,9 @@ namespace GenSoft.Entities
 				public virtual DataType DataType {get; set;}
 				public virtual EntityType EntityType {get; set;}
 				public virtual SourceType SourceType {get; set;}
-				public virtual ICollection<TypeArguement> ChildTypes {get; set;}
-				public virtual ICollection<TypeArguement> ParentTypes {get; set;}
 				public virtual ICollection<TypeArguement> Types {get; set;}
+				public virtual ICollection<TypeArguement> ParentTypes {get; set;}
+				public virtual ICollection<TypeArguement> ChildTypes {get; set;}
 		
 			// ---------Parent Relationships
 	

@@ -70,10 +70,10 @@ namespace RevolutionData
                             subject:v =>  (IObservable<dynamic>)v.CurrentEntity,//.WhenAnyValue(x => x.Value),
                             subjectPredicate:new List<Func<IEntityViewModel, bool>>{},
                             messageData:s => new ViewEventPublicationParameter(new object[] {s.CurrentEntity.Value},new StateEventInfo(s.Process.Id, Context.View.Events.CurrentEntityChanged),s.Process,s.Source)),
-                        new ViewEventPublication<ISummaryListViewModel, ILoadEntitySet>(
+                        new ViewEventPublication<IEntityViewModel, ILoadEntitySet>(
                             $"{entityType.Name}-IViewModelIntialized",
                             subject:v => v.ViewModelState as dynamic,
-                            subjectPredicate:new List<Func<ISummaryListViewModel, bool>>{ v => v.ViewModelState.Value == ViewModelState.Intialized},
+                            subjectPredicate:new List<Func<IEntityViewModel, bool>>{ v => v.ViewModelState.Value == ViewModelState.Intialized},
                             messageData:v => new ViewEventPublicationParameter(new object[] {v.ViewInfo.EntityType},new StateEventInfo(v.Process.Id, Context.View.Events.Intitalized),v.Process,v.Source)),
                     },
                     commands: new List<IViewModelEventCommand<IViewModel, IEvent>>

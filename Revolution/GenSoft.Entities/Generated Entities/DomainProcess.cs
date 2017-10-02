@@ -14,16 +14,17 @@ namespace GenSoft.Entities
 	public partial class DomainProcess: BaseEntity, IDomainProcess
 	{
 		public virtual int ApplicationId { get; set; }
-		public virtual string Descripton { get; set; }
-		public virtual string Name { get; set; }
+		public virtual int Priority { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
+				public virtual ICollection<DomainProcessMainEntity> DomainProcessMainEntity {get; set;}
 				public virtual ICollection<DomainSystemProcess> DomainSystemProcess {get; set;}
 				public virtual ICollection<ProcessStep> ProcessStep {get; set;}
 		
 			// ---------Parent Relationships
 				public virtual Application Application {get; set;}
+				public virtual Process Process {get; set;}
 	
 
 	}

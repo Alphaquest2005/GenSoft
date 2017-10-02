@@ -809,6 +809,9 @@
           "EFRepository": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
+          "GenSoft.DBContext": "1.0.0",
+          "GenSoft.Entities": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections": "0.8.103-pre",
           "Process.WorkFlow": "1.0.0",
           "RevolutionData": "1.0.0",
@@ -818,7 +821,8 @@
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ViewMessages": "1.0.0",
-          "ViewModel.Interfaces": "1.0.0"
+          "ViewModel.Interfaces": "1.0.0",
+          "ViewModel.WorkFlow": "1.0.0"
         }
       },
       "DesignTimeData/1.0.0": {
@@ -1871,6 +1875,9 @@
           "EFRepository": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
+          "GenSoft.DBContext": "1.0.0",
+          "GenSoft.Entities": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections": "0.8.103-pre",
           "Process.WorkFlow": "1.0.0",
           "RevolutionData": "1.0.0",
@@ -1880,7 +1887,8 @@
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ViewMessages": "1.0.0",
-          "ViewModel.Interfaces": "1.0.0"
+          "ViewModel.Interfaces": "1.0.0",
+          "ViewModel.WorkFlow": "1.0.0"
         }
       },
       "DesignTimeData/1.0.0": {
@@ -4218,9 +4226,6 @@
             "C:\\Prism\\GitRepositiory\\GenSoft\\ViewModel.WorkFlow\\ViewModel.WorkFlow.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\ViewModel.WorkFlow\\ViewModel.WorkFlow.csproj"
             },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Actor.Interfaces\\Actor.Interfaces.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Actor.Interfaces\\Actor.Interfaces.csproj"
-            },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\BootStrapper\\BootStrapper.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\BootStrapper\\BootStrapper.csproj"
             },
@@ -4259,6 +4264,9 @@
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Actor.Interfaces\\Actor.Interfaces.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Actor.Interfaces\\Actor.Interfaces.csproj"
             }
           }
         }

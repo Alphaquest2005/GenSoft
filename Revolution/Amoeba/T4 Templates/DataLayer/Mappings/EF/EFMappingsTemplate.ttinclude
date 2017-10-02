@@ -71,7 +71,7 @@ namespace <#=AppName#>.Mappings
 			else
 	        { // do collection types
 #>
-				entityBuilder.HasMany(x => x.<#=childRelationships.Count(x => x.ChildProperty.Entity.EntitySetName == cr.ChildProperty.Entity.EntitySetName) > 1 ? cr.ChildProperty.PropertyName.Replace("Id","s") : cr.ChildProperty.Entity.EntitySetName #>).WithOne(p => p.<#=cr.ParentProperty.Entity.Name#>).HasForeignKey<#=!hasManyParents?"": string.Format("<{0}>",cr.ParentProperty.Entity.Name == Entity.Entity.Name? cr.ChildProperty.Entity.Name: cr.ParentProperty.Entity.Name)  #>(c => c.<#=cr.ChildProperty.PropertyName #>)<#=hasManyParents?"":".OnDelete(DeleteBehavior.Restrict)" #>;
+				entityBuilder.HasMany(x => x.<#=childRelationships.Count(x => x.ChildProperty.Entity.EntitySetName == cr.ChildProperty.Entity.EntitySetName) > 1 ? cr.ChildProperty.PropertyName.Replace("Id","s") : cr.ChildProperty.Entity.EntitySetName #>).WithOne(p => p.<#= childRelationships.Count(x => x.ChildProperty.Entity.EntitySetName == cr.ChildProperty.Entity.EntitySetName) > 1 ?  cr.ChildProperty.PropertyName.Replace("Id","s") :cr.ParentProperty.Entity.Name #>).HasForeignKey<#=!hasManyParents?"": string.Format("<{0}>",cr.ParentProperty.Entity.Name == Entity.Entity.Name? cr.ChildProperty.Entity.Name: cr.ParentProperty.Entity.Name)  #>(c => c.<#=cr.ChildProperty.PropertyName #>)<#=hasManyParents?"":".OnDelete(DeleteBehavior.Restrict)" #>;
 <#+ 
 			} 
 	    }

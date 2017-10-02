@@ -158,7 +158,7 @@ namespace RevolutionData
                 {
 
                     var key = property;
-                    var value = cp.Messages["CurrentEntity"].Entity.Id;
+                    var value = cp.Messages["CurrentEntity"].Entity.Properties["Id"];
                     var changes = new Dictionary<string, dynamic>() { { key, value } };
                     return await Task.Run(() => new GetEntityWithChanges(entityType.DefaultEntity(),changes,
                          new StateCommandInfo(cp.Actor.Process.Id, Context.Entity.Commands.GetEntity),

@@ -131,15 +131,13 @@ namespace EFRepository
                 
                 var viewEntityAttributes = GetViewEntityAttributes(ctx, entityTypeId);
 
-                var res = GetEntities(ctx, entityTypeId).Include(x => x.EntityAttribute).ThenInclude(x => x.Attributes)
-                    .AsQueryable();
+                var res = GetEntities(ctx, entityTypeId).Include(x => x.EntityAttribute).ThenInclude(x => x.Attributes).AsQueryable();
                 res = changes.Aggregate(res,
                     (current, c) => current.Where(
                         x => x.EntityAttribute.Any(z => z.Attributes.Name == c.Key && z.Value.ToString() == c.Value.ToString())));
 
                 var entities = GetViewEntities(entityType, res, viewEntityAttributes).ToList();
-                //var entities = res.Select(x => new DynamicEntity(msg.EntityType, x.Id, x.Entity.EntityAttribute.Select(z => new {z.Attributes.Name, z.Value}).ToDictionary(q => q.Name, q=> q.Value as object)) as IDynamicEntity)
-                //     .ToList();
+                
                 
                     EventMessageBus.Current.Publish(
                         new EntitySetWithChangesLoaded(msg.EntityType,entities, msg.Changes,

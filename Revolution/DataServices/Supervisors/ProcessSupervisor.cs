@@ -18,13 +18,13 @@ using Utilities;
 
 namespace DataServices.Actors
 {
-    public class ProcessSupervisor : BaseSupervisor<ProcessSupervisor>
+    public class SystemProcessSupervisor : BaseSupervisor<SystemProcessSupervisor>
     {
         private IUntypedActorContext ctx = null;
 
         //TODO: Track Actor Shutdown instead of just broadcast
 
-        public ProcessSupervisor(bool autoRun, ISystemStarted firstMsg, List<ISystemProcessInfo> processInfos, List<IComplexEventAction> processComplexEvents) : base(firstMsg.Process)
+        public SystemProcessSupervisor(bool autoRun, ISystemStarted firstMsg, List<ISystemProcessInfo> processInfos, List<IComplexEventAction> processComplexEvents) : base(firstMsg.Process)
         {
 
             ctx = Context;

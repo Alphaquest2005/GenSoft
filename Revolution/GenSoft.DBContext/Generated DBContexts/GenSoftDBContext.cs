@@ -33,6 +33,7 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.DataType> DataType { get; set; }
 		public DbSet<Entities.DBType> DBType { get; set; }
 		public DbSet<Entities.DomainProcess> DomainProcess { get; set; }
+		public DbSet<Entities.DomainProcessMainEntity> DomainProcessMainEntity { get; set; }
 		public DbSet<Entities.DomainSystemProcess> DomainSystemProcess { get; set; }
 		public DbSet<Entities.Entity> Entity { get; set; }
 		public DbSet<Entities.EntityAttribute> EntityAttribute { get; set; }
@@ -56,6 +57,7 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.ParentEntity> ParentEntity { get; set; }
 		public DbSet<Entities.PresentationPropertyType> PresentationPropertyType { get; set; }
 		public DbSet<Entities.PresentationTheme> PresentationTheme { get; set; }
+		public DbSet<Entities.Process> Process { get; set; }
 		public DbSet<Entities.ProcessPath> ProcessPath { get; set; }
 		public DbSet<Entities.ProcessStep> ProcessStep { get; set; }
 		public DbSet<Entities.ProcessStepEntity> ProcessStepEntity { get; set; }
@@ -107,6 +109,7 @@ namespace GenSoft.DBContexts
 				DataTypeMap.Map(modelBuilder.Entity<Entities.DataType>());
 				DBTypeMap.Map(modelBuilder.Entity<Entities.DBType>());
 				DomainProcessMap.Map(modelBuilder.Entity<Entities.DomainProcess>());
+				DomainProcessMainEntityMap.Map(modelBuilder.Entity<Entities.DomainProcessMainEntity>());
 				DomainSystemProcessMap.Map(modelBuilder.Entity<Entities.DomainSystemProcess>());
 				EntityMap.Map(modelBuilder.Entity<Entities.Entity>());
 				EntityAttributeMap.Map(modelBuilder.Entity<Entities.EntityAttribute>());
@@ -130,6 +133,7 @@ namespace GenSoft.DBContexts
 				ParentEntityMap.Map(modelBuilder.Entity<Entities.ParentEntity>());
 				PresentationPropertyTypeMap.Map(modelBuilder.Entity<Entities.PresentationPropertyType>());
 				PresentationThemeMap.Map(modelBuilder.Entity<Entities.PresentationTheme>());
+				ProcessMap.Map(modelBuilder.Entity<Entities.Process>());
 				ProcessPathMap.Map(modelBuilder.Entity<Entities.ProcessPath>());
 				ProcessStepMap.Map(modelBuilder.Entity<Entities.ProcessStep>());
 				ProcessStepEntityMap.Map(modelBuilder.Entity<Entities.ProcessStepEntity>());

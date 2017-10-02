@@ -17,16 +17,18 @@ namespace GenSoft.Mappings
 		{
 			entityBuilder.ToTable("DomainProcess", "dbo");
 			entityBuilder.HasKey(t => t.Id);
-			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
+			entityBuilder.Property(t => t.Id).HasColumnName("Id").ValueGeneratedNever();	
 			entityBuilder.Property(t => t.ApplicationId).HasColumnName("ApplicationId").IsRequired();
-			entityBuilder.Property(t => t.Descripton).HasColumnName("Descripton").IsRequired().HasMaxLength(255);
-			entityBuilder.Property(t => t.Name).HasColumnName("Name").IsRequired().HasMaxLength(50);
+			entityBuilder.Property(t => t.Id).HasColumnName("Id").IsRequired();
+			entityBuilder.Property(t => t.Priority).HasColumnName("Priority").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
+				entityBuilder.HasMany(x => x.DomainProcessMainEntity).WithOne(p => p.DomainProcess).HasForeignKey(c => c.DomainProcessId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.DomainSystemProcess).WithOne(p => p.DomainProcess).HasForeignKey(c => c.DomainProcessId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.ProcessStep).WithOne(p => p.DomainProcess).HasForeignKey(c => c.DomainProcessId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties
 				//entityBuilder.HasOne(p => p.Application Application).WithMany(p => p.DomainProcess).HasForeignKey(c => c.ApplicationId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.Process Process).WithOne(p => p.DomainProcess).HasForeignKey<Process>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

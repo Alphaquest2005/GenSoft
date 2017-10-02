@@ -32,8 +32,7 @@ namespace DataServices.Actors
                 ctx.ActorOf(
                     Props.Create<ViewModelActor>(process)
                         .WithRouter(new RoundRobinPool(1,
-                            new DefaultResizer(1, Environment.ProcessorCount, 1, .2, .3, .1, Environment.ProcessorCount))),
-                    "ViewModelActorEntityActor");
+                            new DefaultResizer(1, Environment.ProcessorCount, 1, .2, .3, .1, Environment.ProcessorCount))),"ViewModelActorEntityActor");
             });
             
 
@@ -44,13 +43,13 @@ namespace DataServices.Actors
                 EventMessageBus.Current.Publish(new ServiceStarted<IViewModelSupervisor>(this,new StateEventInfo(process.Id, RevolutionData.Context.Actor.Events.ActorStarted), process, Source), Source);
             });
 
-            //HandleProcessViews(firstMsg);
+            
         }
 
        
 
 
-        private void HandleProcessViews(IProcessSystemMessage pe)
+        private void HandleProcessViews(ISystemProcessStarted pe)
         {
             try
             {

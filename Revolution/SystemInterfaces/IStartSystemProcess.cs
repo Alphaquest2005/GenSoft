@@ -12,4 +12,8 @@ namespace SystemInterfaces
     {
         int ProcessToBeStartedId { get; }
     }
+    public interface IStartDomainProcess : IProcessSystemMessage
+    {
+        int ProcessToBeStartedId { get; }
+    }
 }

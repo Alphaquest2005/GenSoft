@@ -14,15 +14,15 @@ namespace GenSoft.Entities
 	public partial class EntityAttributeChange: BaseEntity, IEntityAttributeChange
 	{
 		public virtual int PredecessorId { get; set; }
-		public virtual DateTime EntryDateTime { get; set; }
 		public virtual int SuccessorId { get; set; }
+		public virtual DateTime EntryDateTime { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 		
 			// ---------Parent Relationships
-				public virtual EntityAttribute Predecessor {get; set;}
-				public virtual EntityAttribute Successor {get; set;}
+				public virtual EntityAttribute Predecessors {get; set;}
+				public virtual EntityAttribute Successors {get; set;}
 	
 
 	}

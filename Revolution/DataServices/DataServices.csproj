@@ -50,6 +50,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MoreLinq">
+      <HintPath>..\Amoeba\T4 Repository\bin\Debug\MoreLinq.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -68,6 +71,7 @@
     <Compile Include="Actors\ViewModelActor.cs" />
     <Compile Include="Supervisors\BaseSupervisor.cs" />
     <Compile Include="Supervisors\EntityDataServiceManager.cs" />
+    <Compile Include="Supervisors\DomainProcessSupervisor.cs" />
     <Compile Include="Supervisors\ProcessSupervisor.cs" />
     <Compile Include="Supervisors\ViewModelSupervisor.cs" />
     <Compile Include="Actors\ProcessActor.cs" />
@@ -90,6 +94,10 @@
     <ProjectReference Include="..\..\MRManager\Process.WorkFlow\Process.WorkFlow.csproj">
       <Project>{4f0baa58-3b45-4136-8095-445d406b4d23}</Project>
       <Name>Process.WorkFlow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ViewModel.WorkFlow\ViewModel.WorkFlow.csproj">
+      <Project>{EE2FD2EF-1F6D-4AE6-B768-B788CDCFC250}</Project>
+      <Name>ViewModel.WorkFlow</Name>
     </ProjectReference>
     <ProjectReference Include="..\Actor.Interfaces\Actor.Interfaces.csproj">
       <Project>{8b10c72d-9f33-4290-b562-44cf1f718fa5}</Project>
@@ -126,6 +134,18 @@
     <ProjectReference Include="..\EventMessages\EventMessages.csproj">
       <Project>{E3D04176-3758-4C9D-84F3-7A4D3859EAE5}</Project>
       <Name>EventMessages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GenSoft.DBContext\GenSoft.DBContext.csproj">
+      <Project>{AE0F4302-D3DF-4561-96A0-0B093F988C03}</Project>
+      <Name>GenSoft.DBContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GenSoft.Entities\GenSoft.Entities.csproj">
+      <Project>{8ed4d838-4075-41b4-88a4-731ff303fb54}</Project>
+      <Name>GenSoft.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GenSoft.Interface\GenSoft.Interface.csproj">
+      <Project>{f90cc1c1-1f4e-4719-817b-9a14ce56a5ce}</Project>
+      <Name>GenSoft.Interface</Name>
     </ProjectReference>
     <ProjectReference Include="..\RevolutionData\RevolutionData.csproj">
       <Project>{959d7f6b-0426-452c-8962-c0f4dadbe3b4}</Project>

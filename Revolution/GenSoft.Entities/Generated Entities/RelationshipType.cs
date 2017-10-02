@@ -13,17 +13,17 @@ namespace GenSoft.Entities
 {
 	public partial class RelationshipType: BaseEntity, IRelationshipType
 	{
-		public virtual int ChildOrdinalityId { get; set; }
 		public virtual string Name { get; set; }
 		public virtual int ParentOrdinalityId { get; set; }
+		public virtual int ChildOrdinalityId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 				public virtual ICollection<EntityRelationship> EntityRelationship {get; set;}
 		
 			// ---------Parent Relationships
-				public virtual Ordinality ChildOrdinality {get; set;}
-				public virtual Ordinality ParentOrdinality {get; set;}
+				public virtual Ordinality ParentOrdinalitys {get; set;}
+				public virtual Ordinality ChildOrdinalitys {get; set;}
 	
 
 	}

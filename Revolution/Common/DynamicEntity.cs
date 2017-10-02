@@ -11,7 +11,7 @@ namespace Common.DataEntites
         public DynamicEntity(IDynamicEntityType entityType, int id, Dictionary<string,object> values) : base(entityType,id)
         {
             
-            foreach (var itm in entityType.Properties.Where(x =>x.Key != nameof(IDynamicEntity.Id)))
+            foreach (var itm in entityType.Properties)
             {
                 Properties.Add(itm.Key, values.ContainsKey(itm.Key)? values[itm.Key]: null);
             }

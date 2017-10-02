@@ -18,6 +18,7 @@ using EventAggregator;
 using EventMessages;
 using EventMessages.Commands;
 using EventMessages.Events;
+using JB.Collections.Reactive;
 using Reactive.Bindings;
 using ReactiveUI;
 using RevolutionData;
@@ -45,7 +46,8 @@ namespace DataServices.Actors
         {
             try
             {
-                ProcessInfos = processInfos;
+
+               ProcessInfos = processInfos;
                 var ctx = Context;
                 var machineInfo =
                     machineInfos.FirstOrDefault(
@@ -64,16 +66,14 @@ namespace DataServices.Actors
                         new StateEventInfo(systemProcess.Id, RevolutionData.Context.Process.Events.ProcessStarted),
                         systemProcess, Source);
 
-
-
-
+               
                 EventMessageBus.Current.GetEvent<IServiceStarted<IEntityDataServiceManager>>(Source)
                     .Where(x => x.Process.Id == 1) //only start up process
                     .Subscribe(x =>
                     {
                         //start the data supervisor
                         EventMessageBus.Current.Publish(
-                            new LoadEntitySet(DynamicEntityType.DynamicEntityTypes.First().Value,
+                            new LoadEntitySet(new DynamicEntityType("Test Entity","Test Entities",new List<IEntityKeyValuePair>(),new Dictionary<string, List<dynamic>>(), new ObservableDictionary<string, List<dynamic>>(),new ObservableDictionary<string, string>()), 
                                 new StateCommandInfo(systemProcess.Id,
                                     RevolutionData.Context.Entity.Commands.LoadEntitySetWithChanges), systemProcess,
                                 Source), Source);
@@ -83,6 +83,8 @@ namespace DataServices.Actors
                                 new StateEventInfo(systemProcess.Id,
                                     RevolutionData.Context.Actor.Events.ActorStarted),
                                 systemProcess, Source), Source);
+
+                        Task.Run(() => ctx.ActorOf(Props.Create<DomainProcessSupervisor>(autoRun, systemProcess),"DomainProcessSupervisor")).ConfigureAwait(false);
 
                     });
 
@@ -99,7 +101,7 @@ namespace DataServices.Actors
                     .Where(z => z.Process.Id == 1).Subscribe(z =>
                     {
                         Task.Run(() => ctx.ActorOf(
-                            Props.Create<ProcessSupervisor>(autoRun, systemStartedMsg, processInfos,
+                            Props.Create<SystemProcessSupervisor>(autoRun, systemStartedMsg, processInfos,
                                 complexEventActions), "ProcessSupervisor")).ConfigureAwait(false);
 
         
@@ -134,6 +136,7 @@ namespace DataServices.Actors
         }
 
       
+
         public string UserId => this.Source.SourceName;
     }
 

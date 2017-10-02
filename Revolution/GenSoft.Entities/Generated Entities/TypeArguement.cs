@@ -13,17 +13,17 @@ namespace GenSoft.Entities
 {
 	public partial class TypeArguement: BaseEntity, ITypeArguement
 	{
-		public virtual int ChildTypeId { get; set; }
-		public virtual int ParentTypeId { get; set; }
 		public virtual int TypeId { get; set; }
+		public virtual int ParentTypeId { get; set; }
+		public virtual int ChildTypeId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 		
 			// ---------Parent Relationships
-				public virtual Type ChildType {get; set;}
-				public virtual Type ParentType {get; set;}
-				public virtual Type Type {get; set;}
+				public virtual Type Types {get; set;}
+				public virtual Type ParentTypes {get; set;}
+				public virtual Type ChildTypes {get; set;}
 	
 
 	}

@@ -107,7 +107,9 @@ declare @attributeId int, @datatypeId int, @Counter int = 0
 			--set @rEntityId = null
 			--set @rEntityId = (select id from [GenSoft-Creator].dbo.[Type] where [Name] = 'r'+@TableName)
 
-		
+			
+
+
 			insert into [GenSoft-Creator].dbo.EntityType(ID, ApplicationId, EntitySetName) values (@entityId, @AppId, @EntitySet)
 			
 
@@ -134,6 +136,14 @@ declare @attributeId int, @datatypeId int, @Counter int = 0
 								 [GenSoft-Creator].dbo.Attributes AS Attributes_1 ON INFORMATION_SCHEMA.COLUMNS.COLUMN_NAME = Attributes_1.Name
 		WHERE        (INFORMATION_SCHEMA.COLUMNS.TABLE_NAME = @TableName) AND (Attributes_1.Name IS NULL)
 		GROUP BY INFORMATION_SCHEMA.COLUMNS.COLUMN_NAME
+
+				DELETE FROM [GenSoft-Creator].dbo.EntityRelationship
+				FROM            [GenSoft-Creator].dbo.EntityType INNER JOIN
+										 [GenSoft-Creator].dbo.EntityTypeAttributes ON EntityType.Id = EntityTypeAttributes.EntityTypeId INNER JOIN
+										 [GenSoft-Creator].dbo.EntityRelationship ON EntityTypeAttributes.Id = EntityRelationship.ChildEntityId
+				WHERE        (EntityType.Id = @entityId)
+
+		delete from [GenSoft-Creator].dbo.EntityTypeAttributes where AttributeId <> @attributeId and EntityTypeId = @entityId
 
 		INSERT INTO [GenSoft-Creator].dbo.EntityTypeAttributes
 								 (AttributeId, EntityTypeId)
@@ -185,8 +195,11 @@ declare @attributeId int, @datatypeId int, @Counter int = 0
 	
 	drop table #Relationships
 
-SELECT DISTINCT ROW_NUMBER() OVER (ORDER BY ParentEntityTypeAttributes.Id) as Id, ParentEntityTypeAttributes.Id AS ParentAttributeId, ChildEntityTypeAttributes.Id AS ChildAttributeId, RelationshipTypes.Id AS RelationshipTypeId
+select ROW_NUMBER() OVER (ORDER BY ParentAttributeId) as Id, ParentAttributeId, ChildAttributeId, RelationshipTypeId
 into #Relationships
+from
+(
+SELECT DISTINCT ParentEntityTypeAttributes.Id AS ParentAttributeId, ChildEntityTypeAttributes.Id AS ChildAttributeId, RelationshipTypes.Id AS RelationshipTypeId
 FROM            [GenSoft-Creator].dbo.Attributes AS ChildAttributes INNER JOIN
                          [GenSoft-Creator].dbo.EntityTypeAttributes AS ChildEntityTypeAttributes ON ChildAttributes.Id = ChildEntityTypeAttributes.AttributeId INNER JOIN
                          [GenSoft-Creator].dbo.Type AS ChildType INNER JOIN
@@ -233,9 +246,15 @@ FROM            [GenSoft-Creator].dbo.Attributes AS ChildAttributes INNER JOIN
 																		 INFORMATION_SCHEMA.COLUMNS.COLUMN_NAME = PrimaryKeys.columnName) as t) AS ParentKeyData ON ParentType.Name = ParentKeyData.TABLE_NAME AND 
                          ParentAttributes.Name = ParentKeyData.COLUMN_NAME LEFT OUTER JOIN
                          [GenSoft-Creator].dbo.RelationshipType as RelationshipTypes ON CASE WHEN ParentKeyData.isidentity = 1 THEN 1 ELSE 2 END = RelationshipTypes.ParentOrdinalityId AND 
-                         CASE WHEN ChildKeyData.isidentity = 1 THEN 1 ELSE 2 END = RelationshipTypes.ChildOrdinalityId
+                         CASE WHEN ChildKeyData.isPrimaryKey = 1 THEN 1 ELSE 2 END = RelationshipTypes.ChildOrdinalityId
+						 
+						 ) as relsource
 
 select * from #Relationships
+
+
+
+
 set @Counter = 0
 	WHILE (1=1)
 	BEGIN 
