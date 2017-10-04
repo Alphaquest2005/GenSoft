@@ -72,7 +72,6 @@
     <Compile Include="Generated Entities\DBType.cs" />
     <Compile Include="Generated Entities\DomainProcess.cs" />
     <Compile Include="Generated Entities\DomainProcessMainEntity.cs" />
-    <Compile Include="Generated Entities\DomainSystemProcess.cs" />
     <Compile Include="Generated Entities\Entity.cs" />
     <Compile Include="Generated Entities\EntityAttribute.cs" />
     <Compile Include="Generated Entities\EntityAttributeChange.cs" />
@@ -95,7 +94,6 @@
     <Compile Include="Generated Entities\ParentEntity.cs" />
     <Compile Include="Generated Entities\PresentationPropertyType.cs" />
     <Compile Include="Generated Entities\PresentationTheme.cs" />
-    <Compile Include="Generated Entities\Process.cs" />
     <Compile Include="Generated Entities\ProcessPath.cs" />
     <Compile Include="Generated Entities\ProcessStep.cs" />
     <Compile Include="Generated Entities\ProcessStepEntity.cs" />

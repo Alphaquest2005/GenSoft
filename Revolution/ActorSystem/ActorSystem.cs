@@ -1,37 +1,15 @@
 ﻿using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using System.Diagnostics;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Reflection;
-using System.Threading.Tasks;
 using SystemInterfaces;
 using Actor.Interfaces;
 using Akka.Actor;
-using Akka.Util.Internal;
-using BuildingSpecifications;
-using Common;
-using Common.DataEntites;
-using Common.Dynamic;
 using DataServices.Actors;
-using DynamicExpresso;
-using EventAggregator;
 using GenSoft.DBContexts;
-using GenSoft.Entities;
 using GenSoft.Expressions;
-using JB.Collections.Reactive;
 using Microsoft.EntityFrameworkCore;
-using MoreLinq;
-using Process.WorkFlow;
-using RevolutionData;
-using RevolutionEntities.Process;
-using Utilities;
 using ViewModel.Interfaces;
-using RevolutionEntities.ViewModels;
-using ViewModel.WorkFlow;
-using Type = System.Type;
 
 namespace ActorBackBone
 {
@@ -83,7 +61,9 @@ namespace ActorBackBone
             {
                 var machineInfo = ctx.Machine.Select(x => ProcessExpressions.CreateMachineInfo(x)).ToList();
 
-                var processInfos = ctx.SystemProcess.Select(x => ProcessExpressions.CreateProcessInfo(x)).ToList();
+                var processInfos = ctx.SystemProcess
+                                .Include(x => x.DomainProcess).ToList()
+                                .Select(x => ProcessExpressions.CreateProcessInfo(x)).ToList();
                 
 
                 Intialize(autoContinue, machineInfo, processInfos, processComplexEvents, processViewModelInfos);

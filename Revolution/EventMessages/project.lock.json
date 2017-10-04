@@ -215,11 +215,19 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
+          "GenSoft.Interface": "1.0.0",
           "SystemInterfaces": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
         }
       },
       "CommonMessages/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
+      },
+      "GenSoft.Interface/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
@@ -236,6 +244,7 @@
         "dependencies": {
           "CommonMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
+          "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.103-pre",
           "ReactiveProperty": "2.9.0",
           "SystemInterfaces": "1.0.0",
@@ -457,11 +466,19 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
+          "GenSoft.Interface": "1.0.0",
           "SystemInterfaces": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
         }
       },
       "CommonMessages/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
+      },
+      "GenSoft.Interface/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
@@ -478,6 +495,7 @@
         "dependencies": {
           "CommonMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
+          "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.103-pre",
           "ReactiveProperty": "2.9.0",
           "SystemInterfaces": "1.0.0",
@@ -964,6 +982,11 @@
       "path": "../CommonMessages/project.json",
       "msbuildProject": "../CommonMessages/CommonMessages.csproj"
     },
+    "GenSoft.Interface/1.0.0": {
+      "type": "project",
+      "path": "../GenSoft.Interface/project.json",
+      "msbuildProject": "../GenSoft.Interface/GenSoft.Interface.csproj"
+    },
     "SystemInterfaces/1.0.0": {
       "type": "project",
       "path": "../SystemInterfaces/project.json",
@@ -1010,8 +1033,14 @@
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\CommonMessages\\CommonMessages.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\CommonMessages\\CommonMessages.csproj"
             },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Interface\\GenSoft.Interface.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Interface\\GenSoft.Interface.csproj"
+            },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj"
             }
           }
         }

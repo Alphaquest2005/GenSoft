@@ -23,12 +23,11 @@ namespace GenSoft.Mappings
 			entityBuilder.Property(t => t.Priority).HasColumnName("Priority").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
 				entityBuilder.HasMany(x => x.DomainProcessMainEntity).WithOne(p => p.DomainProcess).HasForeignKey(c => c.DomainProcessId).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.DomainSystemProcess).WithOne(p => p.DomainProcess).HasForeignKey(c => c.DomainProcessId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.ProcessStep).WithOne(p => p.DomainProcess).HasForeignKey(c => c.DomainProcessId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties
 				//entityBuilder.HasOne(p => p.Application Application).WithMany(p => p.DomainProcess).HasForeignKey(c => c.ApplicationId).OnDelete(DeleteBehavior.Restrict);
-				//entityBuilder.HasOne(p => p.Process Process).WithOne(p => p.DomainProcess).HasForeignKey<Process>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.SystemProcess SystemProcess).WithOne(p => p.DomainProcess).HasForeignKey<SystemProcess>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

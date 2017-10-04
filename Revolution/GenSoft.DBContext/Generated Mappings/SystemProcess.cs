@@ -17,18 +17,18 @@ namespace GenSoft.Mappings
 		{
 			entityBuilder.ToTable("SystemProcess", "dbo");
 			entityBuilder.HasKey(t => t.Id);
-			entityBuilder.Property(t => t.Id).HasColumnName("Id").ValueGeneratedNever();	
+			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.UserId).HasColumnName("UserId").IsRequired();
-			entityBuilder.Property(t => t.Id).HasColumnName("Id").IsRequired();
+			entityBuilder.Property(t => t.Description).HasColumnName("Description").IsRequired().HasMaxLength(255);
+			entityBuilder.Property(t => t.Name).HasColumnName("Name").IsRequired().HasMaxLength(Int32.MaxValue);
 			entityBuilder.Property(t => t.ParentProcessId).HasColumnName("ParentProcessId").IsRequired();
 			entityBuilder.Property(t => t.Symbol).HasColumnName("Symbol").IsRequired().HasMaxLength(Int32.MaxValue);
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasMany(x => x.DomainSystemProcess).WithOne(p => p.SystemProcess).HasForeignKey(c => c.SystemProcessId).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasOne(p => p.DomainProcess).WithOne(p => p.SystemProcess).HasForeignKey<DomainProcess>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.SystemProcessState).WithOne(p => p.SystemProcess).HasForeignKey(c => c.ProcessId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties
 				//entityBuilder.HasOne(p => p.Agent Agent).WithMany(p => p.SystemProcess).HasForeignKey(c => c.UserId).OnDelete(DeleteBehavior.Restrict);
-				//entityBuilder.HasOne(p => p.Process Process).WithOne(p => p.SystemProcess).HasForeignKey<Process>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

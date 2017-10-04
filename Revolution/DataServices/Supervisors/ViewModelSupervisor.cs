@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using SystemInterfaces;
+using Actor.Interfaces;
 using Akka.Actor;
 using Akka.Routing;
 using CommonMessages;
@@ -23,7 +24,7 @@ namespace DataServices.Actors
         
         private IUntypedActorContext ctx = null;
 
-        public ViewModelSupervisor(List<IViewModelInfo> processViewModelInfos, ISystemProcess process, ISystemStarted firstMsg) : base(process)
+        public ViewModelSupervisor(List<IViewModelInfo> processViewModelInfos, ISystemProcess process) : base(process)
         {
             ProcessViewModelInfos = processViewModelInfos;
             ctx = Context;
@@ -37,7 +38,9 @@ namespace DataServices.Actors
             
 
             EventMessageBus.Current.GetEvent<ISystemProcessStarted>(Source).Subscribe(x => HandleProcessViews(x));
-            
+            EventMessageBus.Current.GetEvent<ILoadDomainProcess>(Source).Subscribe(x => HandleDomainViews(x));
+
+
             EventMessageBus.Current.GetEvent<IServiceStarted<IViewModelService>>(Source).Subscribe(x =>
             {
                 EventMessageBus.Current.Publish(new ServiceStarted<IViewModelSupervisor>(this,new StateEventInfo(process.Id, RevolutionData.Context.Actor.Events.ActorStarted), process, Source), Source);
@@ -46,7 +49,29 @@ namespace DataServices.Actors
             
         }
 
-       
+        private void HandleDomainViews(ILoadDomainProcess loadDomainProcess)
+        {
+            try
+            {
+                ProcessViewModelInfos.AddRange(loadDomainProcess.ViewModelInfos);
+
+                //Parallel.ForEach(loadDomainProcess.ViewModelInfos, new ParallelOptions() { MaxDegreeOfParallelism = Environment.ProcessorCount },
+                //    (v) =>
+                //    {
+                //        var msg = new LoadViewModel(v,
+                //            new StateCommandInfo(loadDomainProcess.Process.Id, RevolutionData.Context.ViewModel.Commands.LoadViewModel),
+                //            loadDomainProcess.Process, Source);
+
+                //        EventMessageBus.Current.Publish(msg, Source);
+
+                //    });
+            }
+            catch (Exception ex)
+            {
+                //todo: need  to fix this
+                PublishProcesError(loadDomainProcess, ex, loadDomainProcess.GetType());
+            }
+        }
 
 
         private void HandleProcessViews(ISystemProcessStarted pe)

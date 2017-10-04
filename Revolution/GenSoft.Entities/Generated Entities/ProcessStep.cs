@@ -14,17 +14,17 @@ namespace GenSoft.Entities
 	public partial class ProcessStep: BaseEntity, IProcessStep
 	{
 		public virtual int DomainProcessId { get; set; }
-		public virtual string Name { get; set; }
 		public virtual string Descripton { get; set; }
+		public virtual string Entity { get; set; }
+		public virtual string Name { get; set; }
 		public virtual string Notes { get; set; }
 		public virtual string Symbol { get; set; }
-		public virtual string Entity { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 				public virtual ICollection<EntityView> EntityView {get; set;}
-				public virtual ICollection<ProcessPath> ProcessSteps {get; set;}
 				public virtual ICollection<ProcessPath> NextProcessSteps {get; set;}
+				public virtual ICollection<ProcessPath> ProcessSteps {get; set;}
 				public virtual ICollection<ProcessStepEntity> ProcessStepEntity {get; set;}
 				public virtual ICollection<ProcessStepRelationship> ProcessStepRelationship {get; set;}
 		

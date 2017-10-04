@@ -9,7 +9,7 @@ using Common;
 using Common.DataEntites;
 using Core.Common.UI;
 using FluentValidation;
-
+using GenSoft.Interfaces;
 using JB.Collections.Reactive;
 using Reactive.Bindings;
 using ReactiveUI;
@@ -19,6 +19,7 @@ using Utilities;
 
 using ViewModel.Interfaces;
 using ViewModelInterfaces;
+using ISystemProcess = SystemInterfaces.ISystemProcess;
 
 namespace ViewModels
 {
@@ -31,6 +32,7 @@ namespace ViewModels
         {
             if (LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
             this.WireEvents();
+            
 
             this.State.WhenAnyValue(x => x.Value, x => x.Value.EntitySet).Subscribe(x => UpdateCurrentEntity(x));
             this.ViewModel.EntitySet.WhenAnyValue(x => x.Value).Subscribe(x => UpdateStateEntity(x));
@@ -84,7 +86,7 @@ namespace ViewModels
         public ObservableDictionary<string, dynamic> ChangeTracking => this.ViewModel.ChangeTracking;
         public ObservableList<IDynamicEntity> ParentEntities => this.ViewModel.ParentEntities;
         public IViewAttributeDisplayProperties DisplayProperties => this.ViewModel.DisplayProperties;
-
+        
         public ReactiveProperty<ObservableList<IDynamicEntity>> EntitySet => this.ViewModel.EntitySet;
 
 

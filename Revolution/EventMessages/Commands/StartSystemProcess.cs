@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.Composition;
+using System.Windows.Documents;
 using SystemInterfaces;
 using CommonMessages;
+using ISystemProcess = SystemInterfaces.ISystemProcess;
 
 namespace EventMessages.Commands
 {

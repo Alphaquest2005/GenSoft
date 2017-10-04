@@ -10,6 +10,8 @@ using SystemInterfaces;
 using Common;
 using Core.Common.UI;
 using FluentValidation;
+using GenSoft.Entities;
+using GenSoft.Interfaces;
 using JB.Collections.Reactive;
 using Reactive.Bindings;
 using Reactive.Bindings.Extensions;
@@ -19,6 +21,8 @@ using RevolutionEntities.ViewModels;
 using Utilities;
 using ViewModel.Interfaces;
 using ViewModelInterfaces;
+using ISystemProcess = SystemInterfaces.ISystemProcess;
+using Type = System.Type;
 
 namespace ViewModels
 {
@@ -26,12 +30,13 @@ namespace ViewModels
     public class EntityDetailsViewModel : DynamicViewModel<EntityViewModel>, IEntityViewModel
     {
 
-        public EntityDetailsViewModel(){}
+        public EntityDetailsViewModel() { }
         
-        public EntityDetailsViewModel(ISystemProcess process, IEntityViewInfo viewInfo, List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions, List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications, List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, Type orientation, int priority, IViewAttributeDisplayProperties displayProperties) : base(new EntityViewModel(viewInfo, eventSubscriptions, eventPublications, commandInfo, process, orientation, priority, displayProperties))
+        public EntityDetailsViewModel(ISystemProcess domainProcess, IEntityViewInfo viewInfo, List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions, List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications, List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, Type orientation, int priority, IViewAttributeDisplayProperties displayProperties) : base(new EntityViewModel(viewInfo, eventSubscriptions, eventPublications, commandInfo, domainProcess, orientation, priority, displayProperties))
         {
             if (LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
             ViewInfo = viewInfo;
+            
             this.WireEvents();
             this.State.WhenAnyValue(x => x.Value, x => x.Value.Entity).Subscribe(UpdateCurrentEntity);
             this.ViewModel.CurrentEntity.WhenAnyValue(x => x.Value).Subscribe(UpdateStateEntity);
@@ -81,6 +86,7 @@ namespace ViewModels
         public ObservableDictionary<string, dynamic> ChangeTracking => this.ViewModel.ChangeTracking;
         public ObservableList<IDynamicEntity> ParentEntities => this.ViewModel.ParentEntities;
         public IViewAttributeDisplayProperties DisplayProperties => this.ViewModel.DisplayProperties;
+        
     }
 
    

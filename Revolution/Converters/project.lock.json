@@ -187,6 +187,13 @@
           "SystemInterfaces": "1.0.0"
         }
       },
+      "GenSoft.Interface/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
+      },
       "SystemInterfaces/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1"
@@ -204,6 +211,7 @@
         "dependencies": {
           "CommonMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
+          "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.103-pre",
           "ReactiveProperty": "2.9.0",
           "SystemInterfaces": "1.0.0",
@@ -397,6 +405,13 @@
           "SystemInterfaces": "1.0.0"
         }
       },
+      "GenSoft.Interface/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
+      },
       "SystemInterfaces/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1"
@@ -414,6 +429,7 @@
         "dependencies": {
           "CommonMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
+          "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.103-pre",
           "ReactiveProperty": "2.9.0",
           "SystemInterfaces": "1.0.0",
@@ -842,6 +858,11 @@
       "type": "project",
       "path": "../CommonMessages/project.json",
       "msbuildProject": "../CommonMessages/CommonMessages.csproj"
+    },
+    "GenSoft.Interface/1.0.0": {
+      "type": "project",
+      "path": "../GenSoft.Interface/project.json",
+      "msbuildProject": "../GenSoft.Interface/GenSoft.Interface.csproj"
     },
     "SystemInterfaces/1.0.0": {
       "type": "project",

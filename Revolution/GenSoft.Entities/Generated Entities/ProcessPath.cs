@@ -13,15 +13,15 @@ namespace GenSoft.Entities
 {
 	public partial class ProcessPath: BaseEntity, IProcessPath
 	{
-		public virtual int ProcessStepId { get; set; }
 		public virtual int NextProcessStepId { get; set; }
+		public virtual int ProcessStepId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 		
 			// ---------Parent Relationships
-				public virtual ProcessStep ProcessSteps {get; set;}
 				public virtual ProcessStep NextProcessSteps {get; set;}
+				public virtual ProcessStep ProcessSteps {get; set;}
 	
 
 	}

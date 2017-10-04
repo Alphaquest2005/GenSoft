@@ -2,6 +2,7 @@
 using System.ComponentModel.Composition;
 using SystemInterfaces;
 using FluentValidation;
+using GenSoft.Interfaces;
 using JB.Collections.Reactive;
 using Reactive.Bindings;
 using ViewModel.Interfaces;
@@ -25,6 +26,8 @@ namespace ViewModelInterfaces
         ObservableList<IDynamicEntity> ParentEntities { get; }
 
         IViewAttributeDisplayProperties DisplayProperties { get; }
+
+      
 
     }
 

@@ -41,8 +41,9 @@ namespace Process.WorkFlow
                 "100",
                 1, new List<IProcessExpectedEvent>
                 {
-                    new ProcessExpectedEvent ("ServiceManagerStarted", 1, typeof (IServiceStarted<IServiceManager>), e => e != null, new StateEventInfo(1, RevolutionData.Context.Actor.Events.ActorStarted), new SourceType(typeof(IServiceManager))),
-                    
+                   // new ProcessExpectedEvent ("ServiceManagerStarted", 1, typeof (IServiceStarted<IServiceManager>), e => e != null, new StateEventInfo(1, RevolutionData.Context.Actor.Events.ActorStarted), new SourceType(typeof(IServiceManager))),
+                    new ProcessExpectedEvent("ProcessServiceStarted", 1, typeof(IServiceStarted<IProcessService>),e => e != null, new StateEventInfo(1, RevolutionData.Context.Actor.Events.ActorStarted),new SourceType(typeof(IProcessService))),
+
                 },
                 typeof(ISystemProcessStarted),
                 processInfo:new StateCommandInfo(1,RevolutionData.Context.Process.Commands.StartProcess ),

@@ -10,6 +10,7 @@ using Common;
 using Common.DataEntites;
 using FluentValidation;
 using FluentValidation.Results;
+using GenSoft.Interfaces;
 using JB.Collections.Reactive;
 using Reactive.Bindings;
 using ReactiveUI;
@@ -18,6 +19,7 @@ using RevolutionEntities.Process;
 using RevolutionEntities.ViewModels;
 using ViewModel.Interfaces;
 using ViewModelInterfaces;
+using ISystemProcess = SystemInterfaces.ISystemProcess;
 
 
 namespace Core.Common.UI
@@ -57,7 +59,7 @@ namespace Core.Common.UI
 
         public ObservableList<IDynamicEntity> ParentEntities { get; } = new ObservableList<IDynamicEntity>();
         public IViewAttributeDisplayProperties DisplayProperties { get; }
-
+        
         private ReactiveProperty<IDynamicEntity> _currentEntity = new ReactiveProperty<IDynamicEntity>(null, ReactivePropertyMode.DistinctUntilChanged);
         public ReactiveProperty<IDynamicEntity> CurrentEntity
         {

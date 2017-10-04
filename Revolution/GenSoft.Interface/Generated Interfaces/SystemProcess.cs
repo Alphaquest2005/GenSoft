@@ -15,6 +15,8 @@ namespace GenSoft.Interfaces
 	public partial interface ISystemProcess:SystemInterfaces.IEntity  
 	{
 		int UserId { get;}
+		string Description { get;}
+		string Name { get;}
 		int ParentProcessId { get;}
 		string Symbol { get;}
 

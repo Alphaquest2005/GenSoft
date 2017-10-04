@@ -196,6 +196,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
+          "GenSoft.Interface": "1.0.0",
           "SystemInterfaces": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
         }
@@ -210,6 +211,13 @@
       "ComponentModel.Composition.Hosting.Extension/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1"
+      },
+      "GenSoft.Interface/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
       },
       "SystemInterfaces/1.0.0": {
         "type": "project",
@@ -228,6 +236,7 @@
         "dependencies": {
           "CommonMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
+          "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.103-pre",
           "ReactiveProperty": "2.9.0",
           "SystemInterfaces": "1.0.0",
@@ -430,6 +439,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
+          "GenSoft.Interface": "1.0.0",
           "SystemInterfaces": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
         }
@@ -444,6 +454,13 @@
       "ComponentModel.Composition.Hosting.Extension/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1"
+      },
+      "GenSoft.Interface/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
       },
       "SystemInterfaces/1.0.0": {
         "type": "project",
@@ -462,6 +479,7 @@
         "dependencies": {
           "CommonMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
+          "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.103-pre",
           "ReactiveProperty": "2.9.0",
           "SystemInterfaces": "1.0.0",
@@ -914,6 +932,11 @@
       "type": "project",
       "path": "../MefGeneric-master/MEFGeneric Preview 9/src/ComponentModel.Composition.Hosting.Extension/project.json",
       "msbuildProject": "../MefGeneric-master/MEFGeneric Preview 9/src/ComponentModel.Composition.Hosting.Extension/ComponentModel.Composition.Hosting.Extension.csproj"
+    },
+    "GenSoft.Interface/1.0.0": {
+      "type": "project",
+      "path": "../GenSoft.Interface/project.json",
+      "msbuildProject": "../GenSoft.Interface/GenSoft.Interface.csproj"
     },
     "SystemInterfaces/1.0.0": {
       "type": "project",

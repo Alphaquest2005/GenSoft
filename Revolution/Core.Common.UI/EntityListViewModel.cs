@@ -11,6 +11,7 @@ using SystemInterfaces;
 using Common;
 using FluentValidation;
 using FluentValidation.Results;
+using GenSoft.Interfaces;
 using JB.Collections.Reactive;
 using Reactive.Bindings;
 using ReactiveUI;
@@ -19,6 +20,7 @@ using RevolutionEntities.Process;
 using RevolutionEntities.ViewModels;
 using ViewModel.Interfaces;
 using ViewModelInterfaces;
+using ISystemProcess = SystemInterfaces.ISystemProcess;
 
 
 namespace Core.Common.UI
@@ -175,7 +177,8 @@ namespace Core.Common.UI
         }
 
         public ObservableList<IDynamicEntity> ParentEntities { get; } = new ObservableBindingList<IDynamicEntity>();
-        public IViewAttributeDisplayProperties DisplayProperties { get; } 
+        public IViewAttributeDisplayProperties DisplayProperties { get; }
+        public IDomainProcess DomainProcess { get; }
 
         private ObservableBindingList<IDynamicEntity> _changeTrackingList = new ObservableBindingList<IDynamicEntity>();
         private ReactiveProperty<ObservableList<IDynamicEntity>> _entitySet = new ReactiveProperty<ObservableList<IDynamicEntity>>(new ObservableList<IDynamicEntity>());

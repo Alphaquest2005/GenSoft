@@ -13,16 +13,16 @@ namespace GenSoft.Entities
 {
 	public partial class EntityTypeAttributes: BaseEntity, IEntityTypeAttributes
 	{
-		public virtual int EntityTypeId { get; set; }
 		public virtual int AttributeId { get; set; }
+		public virtual int EntityTypeId { get; set; }
 		public virtual int Priority { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 				public virtual ICollection<ActionParameterEntityTypeAttributes> ActionParameterEntityTypeAttributes {get; set;}
 				public virtual ActionProperties ActionProperties {get; set;}
-				public virtual BaseEntityTypeAttribute BaseEntityTypeAttribute {get; set;}
 				public virtual ICollection<BaseEntityTypeAttribute> BaseEntityTypeAttributes {get; set;}
+				public virtual BaseEntityTypeAttribute BaseEntityTypeAttribute {get; set;}
 				public virtual CalculatedProperties CalculatedProperties {get; set;}
 				public virtual ICollection<CalculatedPropertyParameterEntityTypes> CalculatedPropertyParameterEntityTypes {get; set;}
 				public virtual ICollection<EntityRelationship> EntityRelationship {get; set;}
@@ -31,8 +31,8 @@ namespace GenSoft.Entities
 				public virtual ICollection<ParentEntity> ParentEntity {get; set;}
 		
 			// ---------Parent Relationships
-				public virtual EntityType EntityType {get; set;}
 				public virtual Attributes Attributes {get; set;}
+				public virtual EntityType EntityType {get; set;}
 	
 
 	}

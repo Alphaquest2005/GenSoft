@@ -99,6 +99,7 @@
     <Compile Include="Commands\CleanUpSystemProcess.cs" />
     <Compile Include="Commands\CreateProcessActor.cs" />
     <Compile Include="Commands\LoadEntitySetWithChanges.cs" />
+    <Compile Include="Commands\StartDomainProcess.cs" />
     <Compile Include="Commands\StartSystemProcess.cs" />
     <Compile Include="Commands\RequestProcessLog.cs" />
     <Compile Include="Commands\CreateEntityService.cs" />
@@ -156,9 +157,17 @@
       <Project>{77007560-89DC-4E1F-9313-AE064A048AD4}</Project>
       <Name>CommonMessages</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GenSoft.Interface\GenSoft.Interface.csproj">
+      <Project>{F90CC1C1-1F4E-4719-817B-9A14CE56A5CE}</Project>
+      <Name>GenSoft.Interface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SystemInterfaces\SystemInterfaces.csproj">
       <Project>{e3842263-e081-49ba-a1b4-bbe82b24e2db}</Project>
       <Name>SystemInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewModel.Interfaces\ViewModel.Interfaces.csproj">
+      <Project>{2f936e24-723e-4e7a-b21c-d6f618c74651}</Project>
+      <Name>ViewModel.Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

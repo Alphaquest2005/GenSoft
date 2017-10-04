@@ -79,6 +79,7 @@
     <Compile Include="IComplexEventService.cs" />
     <Compile Include="IComplexEventActionTimedOut.cs" />
     <Compile Include="IComplexEventAction.cs" />
+    <Compile Include="IStartDomainProcess.cs" />
     <Compile Include="IProcessAction.cs" />
     <Compile Include="IActorBackBone.cs" />
     <Compile Include="IComplexEvent.cs" />
@@ -91,6 +92,10 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GenSoft.Interface\GenSoft.Interface.csproj">
+      <Project>{F90CC1C1-1F4E-4719-817B-9A14CE56A5CE}</Project>
+      <Name>GenSoft.Interface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SystemInterfaces\SystemInterfaces.csproj">
       <Project>{e3842263-e081-49ba-a1b4-bbe82b24e2db}</Project>
       <Name>SystemInterfaces</Name>

@@ -65,3 +65,5 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\obj\x64\Debug\Actor.
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\obj\x64\Debug\Actor.Interfaces.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\x64\Debug\ReactiveProperty.DataAnnotations.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\x64\Debug\ReactiveProperty.DataAnnotations.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\x64\Debug\GenSoft.Interfaces.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\x64\Debug\GenSoft.Interfaces.pdb

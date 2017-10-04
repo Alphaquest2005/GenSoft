@@ -11,11 +11,14 @@ using Akka.Actor;
 using Akka.Event;
 using Akka.IO;
 using Akka.Routing;
+using Common.DataEntites;
 using CommonMessages;
 using EFRepository;
 using EventAggregator;
 using EventMessages;
+using EventMessages.Commands;
 using EventMessages.Events;
+using JB.Collections.Reactive;
 using RevolutionEntities.Process;
 using Utilities;
 using ViewMessages;
@@ -31,6 +34,16 @@ namespace DataServices.Actors
             ctx = Context;
             EventMessageBus.Current.GetEvent<IEntityRequest>(Source).Subscribe(handleEntityRequest);
             EventMessageBus.Current.Publish(new ServiceStarted<IEntityDataServiceManager>(this, new StateEventInfo(process.Id, RevolutionData.Context.Actor.Events.ActorStarted), process, Source), Source);
+
+            EventMessageBus.Current.Publish(
+                new LoadEntitySet(
+                    new DynamicEntityType("Test Entity", "Test Entities", new List<IEntityKeyValuePair>(),
+                        new Dictionary<string, List<dynamic>>(),
+                        new ObservableDictionary<string, List<dynamic>>(),
+                        new ObservableDictionary<string, string>()),
+                    new StateCommandInfo(process.Id,
+                        RevolutionData.Context.Entity.Commands.LoadEntitySetWithChanges), process,
+                    Source), Source);
         }
 
         private void handleEntityRequest(IEntityRequest entityRequest)

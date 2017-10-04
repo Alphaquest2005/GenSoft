@@ -163,6 +163,10 @@
       <Project>{e3d04176-3758-4c9d-84f3-7a4d3859eae5}</Project>
       <Name>EventMessages</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GenSoft.Interface\GenSoft.Interface.csproj">
+      <Project>{F90CC1C1-1F4E-4719-817B-9A14CE56A5CE}</Project>
+      <Name>GenSoft.Interface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RevolutionData\RevolutionData.csproj">
       <Project>{959d7f6b-0426-452c-8962-c0f4dadbe3b4}</Project>
       <Name>RevolutionData</Name>

@@ -11,13 +11,10 @@ using GenSoft.Interfaces;
 
 namespace GenSoft.Interfaces
 {
-	[InheritedExport]
-	public partial interface IDomainSystemProcess:SystemInterfaces.IEntity  
-	{
-		int DomainProcessId { get;}
-		int SystemProcessId { get;}
+	//[InheritedExport]
+	//public partial interface IDomainProcess:ISystemProcess
+	//{
+ //       SystemInterfaces.ISystemProcess SystemProcess { get; set; }
 
-
-
-	}
+ //   }
 }

@@ -47,7 +47,7 @@ namespace DataServices.Actors
             try
             {
 
-               ProcessInfos = processInfos;
+                ProcessInfos = processInfos;
                 var ctx = Context;
                 var machineInfo =
                     machineInfos.FirstOrDefault(
@@ -66,54 +66,29 @@ namespace DataServices.Actors
                         new StateEventInfo(systemProcess.Id, RevolutionData.Context.Process.Events.ProcessStarted),
                         systemProcess, Source);
 
-               
-                EventMessageBus.Current.GetEvent<IServiceStarted<IEntityDataServiceManager>>(Source)
-                    .Where(x => x.Process.Id == 1) //only start up process
-                    .Subscribe(x =>
-                    {
-                        //start the data supervisor
-                        EventMessageBus.Current.Publish(
-                            new LoadEntitySet(new DynamicEntityType("Test Entity","Test Entities",new List<IEntityKeyValuePair>(),new Dictionary<string, List<dynamic>>(), new ObservableDictionary<string, List<dynamic>>(),new ObservableDictionary<string, string>()), 
-                                new StateCommandInfo(systemProcess.Id,
-                                    RevolutionData.Context.Entity.Commands.LoadEntitySetWithChanges), systemProcess,
-                                Source), Source);
 
-                        EventMessageBus.Current.Publish(
-                            new ServiceStarted<IServiceManager>(this,
-                                new StateEventInfo(systemProcess.Id,
-                                    RevolutionData.Context.Actor.Events.ActorStarted),
-                                systemProcess, Source), Source);
 
-                        Task.Run(() => ctx.ActorOf(Props.Create<DomainProcessSupervisor>(autoRun, systemProcess),"DomainProcessSupervisor")).ConfigureAwait(false);
 
-                    });
+                Task.Run(() => ctx.ActorOf(Props.Create<DomainProcessSupervisor>(autoRun, systemProcess),
+                    "DomainProcessSupervisor")).ConfigureAwait(false);
 
-                EventMessageBus.Current.GetEvent<IServiceStarted<IProcessService>>(Source)
-                    .Where(x => x.Process.Id == 1) //only start up process
-                    .Subscribe(x =>
-                    {
-                        Task.Run(() => ctx.ActorOf(Props.Create<EntityDataServiceManager>(systemProcess),
-                            "EntityDataServiceManager")).ConfigureAwait(false);
-                    });
-
-                EventMessageBus.Current
-                    .GetEvent<IServiceStarted<IViewModelSupervisor>>(Source)
-                    .Where(z => z.Process.Id == 1).Subscribe(z =>
-                    {
-                        Task.Run(() => ctx.ActorOf(
-                            Props.Create<SystemProcessSupervisor>(autoRun, systemStartedMsg, processInfos,
-                                complexEventActions), "ProcessSupervisor")).ConfigureAwait(false);
-
-        
-
-                    });
+                Task.Run(() => ctx.ActorOf(Props.Create<EntityDataServiceManager>(systemProcess),
+                    "EntityDataServiceManager")).ConfigureAwait(false);
 
                 Task.Run(() => ctx.ActorOf(
-                    Props.Create<ViewModelSupervisor>(viewModelInfos, systemProcess, systemStartedMsg),
+                    Props.Create<SystemProcessSupervisor>(autoRun, systemStartedMsg, processInfos,
+                        complexEventActions), "ProcessSupervisor")).ConfigureAwait(false);
+
+                Task.Run(() => ctx.ActorOf(
+                    Props.Create<ViewModelSupervisor>(viewModelInfos, systemProcess),
                     "ViewModelSupervisor")).ConfigureAwait(false);
 
 
-
+                EventMessageBus.Current.Publish(
+                    new ServiceStarted<IServiceManager>(this,
+                        new StateEventInfo(systemProcess.Id,
+                            RevolutionData.Context.Actor.Events.ActorStarted),
+                        systemProcess, Source), Source);
 
 
 

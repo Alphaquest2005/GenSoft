@@ -17,6 +17,7 @@ using EventMessages.Commands;
 using EventMessages.Events;
 using GenSoft.DBContexts;
 using GenSoft.Entities;
+using GenSoft.Interfaces;
 using JB.Collections.Reactive;
 using Microsoft.EntityFrameworkCore;
 using MoreLinq;
@@ -27,6 +28,8 @@ using RevolutionEntities.ViewModels;
 using Utilities;
 using ViewModel.Interfaces;
 using ViewModel.WorkFlow;
+using ISystemProcess = SystemInterfaces.ISystemProcess;
+using IUser = SystemInterfaces.IUser;
 using Process = System.Diagnostics.Process;
 using SystemProcess = RevolutionEntities.Process.SystemProcess;
 using Type = System.Type;
@@ -41,6 +44,7 @@ namespace DataServices.Actors
         //TODO: Track Actor Shutdown instead of just broadcast
 
         private ISystemProcess SystemProcess { get; }
+        private DomainProcess DomainProcess { get; }
 
         public List<IComplexEventAction> ProcessComplexEvents { get; } = new List<IComplexEventAction>();
         public List<IViewModelInfo> ProcessViewModelInfos { get; } = new List<IViewModelInfo>();
@@ -48,14 +52,16 @@ namespace DataServices.Actors
         public DomainProcessSupervisor(bool autoRun, ISystemProcess process) : base(process)
         {
             
-            var vmres = new List<IViewModelInfo>();
+            
             BuildExpressions();
             List<EntityType> mainEntities;
             DomainProcess domainProcess;
             using (var ctx = new GenSoftDBContext())
             {
-                
-                domainProcess = new DomainProcess(){Process = new GenSoft.Entities.Process() {Name = "AutoProcess", Id = -1}, Id =  -1};
+                var maxProcessId = ctx.SystemProcess.Max(x => x.Id);
+                SystemProcess = new SystemProcess(new SystemProcessInfo(maxProcessId + 1, process.Id, "AutoSystemProcess", "AutoSystemProcess","Auto", process.User.UserId),process.User,process.MachineInfo);
+
+                DomainProcess = new DomainProcess(){SystemProcess = new GenSoft.Entities.SystemProcess() {Name = SystemProcess.Name, Id = SystemProcess.Id}, Id = SystemProcess.Id };
 
                 var parentEntityTypes = ctx.EntityRelationship
                     .Select(x => x.ParentEntity.EntityTypeAttributes.EntityType).Distinct().ToList();
@@ -63,7 +69,7 @@ namespace DataServices.Actors
                     .Select(x => x.EntityTypeAttributes.EntityType).Distinct().ToList();
                 mainEntities = parentEntityTypes.Where(z => !childEntityTypes.Contains(z)).ToList();
 
-                SystemProcess = process;
+               ProcessComplexEvents.Add(Processes.ComplexActions.GetComplexAction("StartProcess", new object[] { SystemProcess.Id }));
 
 
             }
@@ -71,24 +77,31 @@ namespace DataServices.Actors
             mainEntities = mainEntities.ToList();
             EventMessageBus.Current.GetEvent<IMainEntityChanged>(Source).Subscribe(x => OnMainEntityChanged(x));
            
-
-
-
-
+            
             foreach (var mainEntity in mainEntities)
             {
-                ProcessComplexEvents.AddRange(GetDBComplexActions(mainEntity.Id, domainProcess.Id));
-                ProcessViewModelInfos.AddRange(GetDBViewInfos(mainEntity.Id, true, domainProcess.Id));
+
+                ProcessComplexEvents.AddRange(GetDBComplexActions(mainEntity.Id, DomainProcess.Id));
+                ProcessViewModelInfos.AddRange(GetDBViewInfos(mainEntity.Id, true, DomainProcess.Id));
 
             }
 
 
 
+
             ctx = Context;
           
-            EventMessageBus.Current.GetEvent<IStartDomainProcess>(Source).Where(x => autoRun && x.ProcessToBeStartedId == ProcessActions.NullProcess).Subscribe(x => StartParentProcess(x.Process.Id, x.User));
-            EventMessageBus.Current.GetEvent<IStartDomainProcess>(Source).Where(x => !autoRun && x.ProcessToBeStartedId != ProcessActions.NullProcess).Subscribe(x => StartProcess(x.ProcessToBeStartedId,x.User));
-            StartProcess(SystemProcess.Id,SystemProcess.User);
+            EventMessageBus.Current.GetEvent<ILoadDomainProcess>(Source).Where(x => autoRun && x.DomainProcess.Id == ProcessActions.NullProcess).Subscribe(x => StartParentProcess(x.Process.Id, x.User));
+            EventMessageBus.Current.GetEvent<ILoadDomainProcess>(Source).Where(x => !autoRun && x.DomainProcess.Id != ProcessActions.NullProcess).Subscribe(x => StartProcess(x.DomainProcess, x.User));
+            
+            CreateProcesses(DomainProcess);
+
+            
+        }
+
+        private void StartProcess(IDomainProcess domainProcess, IUser objUser)
+        {
+            CreateProcesses(domainProcess as DomainProcess);
         }
 
         private void OnMainEntityChanged(IMainEntityChanged mainEntityChanged)
@@ -103,67 +116,30 @@ namespace DataServices.Actors
 
         private void StartParentProcess(int processId, IUser user)
         {
-            var processSteps = ServiceManager.ProcessInfos.Where(x => x.ParentProcessId == processId);
-            CreateProcesses(user, processSteps, processSteps.First().Id);
-        }
-
-        public List<ISystemProcessInfo> ProcessInfos { get; }
-
-        private void StartProcess(int processId, IUser user)
-        {
-            var processSteps = ProcessInfos.Where(x => x.Id == processId);
-            CreateProcesses(user, processSteps, processId);
-        }
-
-        static ConcurrentDictionary<string,string> existingProcessActors = new ConcurrentDictionary<string, string>();
-
-        private void CreateProcesses(IUser user, IEnumerable<ISystemProcessInfo> processSteps, int processId)
-        {
-            Parallel.ForEach(
-                processSteps.Select(
-                    p =>
-                        new CreateProcessActor(ProcessComplexEvents.Where(x => x.ProcessId == processId).ToList(),
-                            new StateCommandInfo(p.Id, RevolutionData.Context.Actor.Commands.CreateActor),
-                            new SystemProcess(
-                                new RevolutionEntities.Process.Process(p.Id, p.ParentProcessId, p.Name, p.Description, p.Symbol, user),
-                                Source.MachineInfo), Source)), new ParallelOptions() { MaxDegreeOfParallelism = Environment.ProcessorCount },
-                (inMsg) =>
-                {
-
-                    try
-                    {
-                        var actorName = "ProcessActor-" + inMsg.Process.Name.GetSafeActorName();
-                        if (!existingProcessActors.TryAdd(actorName, actorName)) return;
-
-
-                        EventMessageBus.Current.Publish(inMsg, Source);
-                        if (ProcessComplexEvents.All(x => x.ProcessId != inMsg.Process.Id))
-                            throw new ApplicationException(
-                                $"No Complex Events were created for this process:{inMsg.Process.Id}-{inMsg.Process.Name}");
-
-
-                        Task.Run(() => { ctx.ActorOf(Props.Create<ProcessActor>(inMsg), actorName); })
-                            .ConfigureAwait(false);
-
-
-                    }
-                    catch (Exception ex)
-                    {
-                        Debugger.Break();
-                        EventMessageBus.Current.Publish(new ProcessEventFailure(failedEventType: inMsg.GetType(),
-                            failedEventMessage: inMsg,
-                            expectedEventType: typeof (SystemProcessStarted),
-                            exception: ex,
-                            source: Source,
-                            processInfo:
-                                new StateEventInfo(inMsg.Process.Id, RevolutionData.Context.Process.Events.Error)),
-                            Source);
-                    }
-
-                });
+            //var processSteps = ServiceManager.ProcessInfos.Where(x => x.ParentProcessId == processId);
+            //CreateProcesses(user, processSteps, processSteps.First().Id);
         }
 
         
+        
+        private void CreateProcesses(DomainProcess domainProcess)
+        {
+            if (ProcessComplexEvents.All(x => x.ProcessId != domainProcess.Id))
+                throw new ApplicationException(
+                    $"No Complex Events were created for this process:{domainProcess.SystemProcess.Name}");
+
+
+            var inMsg = new LoadDomainProcess(domainProcess,ProcessComplexEvents.Where(x => x.ProcessId == domainProcess.Id).ToList(),
+                ProcessViewModelInfos.Where(x => x.ProcessId == domainProcess.Id).ToList(),
+                new StateCommandInfo(SystemProcess.Id, RevolutionData.Context.Process.Commands.StartProcess),
+                SystemProcess, Source);
+
+            EventMessageBus.Current.Publish(inMsg, Source);
+
+
+        }
+
+
 
 
         private void BuildExpressions()
@@ -364,7 +340,7 @@ namespace DataServices.Actors
                         var cv = CreateEntityViewModel(ctx, cm, res);
                         if (cv != null)
                         {
-                            if (rel.RelationshipType.ChildOrdinalitys.Name == "One" && condensed)
+                            if (rel.RelationshipType.ChildOrdinalitys.Name == "One" || condensed)
                             {
                                 pv.ViewModelInfos.Add(cv);
                             }
@@ -539,9 +515,7 @@ namespace DataServices.Actors
                         AddDynamicEntityTypes(parentType);
 
 
-                        res.Add(Processes.ComplexActions.GetComplexAction("IntializeProcessState",
-                            new object[]
-                                {processId, DynamicEntityType.DynamicEntityTypes[parentType]}));
+                        res.Add(Processes.ComplexActions.GetComplexAction("IntializeProcessState",new object[]{processId, DynamicEntityType.DynamicEntityTypes[parentType]}));
                         res.Add(Processes.ComplexActions.GetComplexAction("UpdateStateList",
                             new object[] { processId, DynamicEntityType.DynamicEntityTypes[parentType] }));
 

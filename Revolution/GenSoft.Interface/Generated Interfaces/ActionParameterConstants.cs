@@ -14,8 +14,8 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IActionParameterConstants:SystemInterfaces.IEntity  
 	{
-		int ActionPropertyId { get;}
 		int ActionParameterId { get;}
+		int ActionPropertyId { get;}
 		string Value { get;}
 
 

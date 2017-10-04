@@ -17,8 +17,8 @@ namespace GenSoft.Entities
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
-				public virtual ICollection<RelationshipType> ParentOrdinalitys {get; set;}
 				public virtual ICollection<RelationshipType> ChildOrdinalitys {get; set;}
+				public virtual ICollection<RelationshipType> ParentOrdinalitys {get; set;}
 		
 			// ---------Parent Relationships
 	
