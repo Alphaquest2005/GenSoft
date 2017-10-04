@@ -21,6 +21,4 @@ namespace EventMessages.Events
 
         public IDynamicEntityType EntityType => Entity?.EntityType;
     }
-
-
 }

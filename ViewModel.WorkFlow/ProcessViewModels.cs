@@ -91,8 +91,8 @@ namespace ViewModel.WorkFlow
         {
             MainWindowViewModelInfo.MainWindowViewModel,
             ScreenViewModelInfo.ScreenViewModel(1),
-            HeaderViewModelInfo.HeaderViewModel(3),
-            FooterViewModelInfo.FooterViewModel(3)
+            HeaderViewModelInfo.HeaderViewModel(1),
+            FooterViewModelInfo.FooterViewModel(1)
         };
 
         public static readonly List<IViewModelInfo> ProcessCache = new List<IViewModelInfo>

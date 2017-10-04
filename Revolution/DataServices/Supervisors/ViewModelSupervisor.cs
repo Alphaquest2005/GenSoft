@@ -55,16 +55,6 @@ namespace DataServices.Actors
             {
                 ProcessViewModelInfos.AddRange(loadDomainProcess.ViewModelInfos);
 
-                //Parallel.ForEach(loadDomainProcess.ViewModelInfos, new ParallelOptions() { MaxDegreeOfParallelism = Environment.ProcessorCount },
-                //    (v) =>
-                //    {
-                //        var msg = new LoadViewModel(v,
-                //            new StateCommandInfo(loadDomainProcess.Process.Id, RevolutionData.Context.ViewModel.Commands.LoadViewModel),
-                //            loadDomainProcess.Process, Source);
-
-                //        EventMessageBus.Current.Publish(msg, Source);
-
-                //    });
             }
             catch (Exception ex)
             {

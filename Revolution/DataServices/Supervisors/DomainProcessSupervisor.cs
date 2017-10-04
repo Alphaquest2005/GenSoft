@@ -43,11 +43,13 @@ namespace DataServices.Actors
 
         //TODO: Track Actor Shutdown instead of just broadcast
 
-        private ISystemProcess SystemProcess { get; }
-        private DomainProcess DomainProcess { get; }
+        private List<SystemProcess> SystemProcess { get; } = new List<SystemProcess>();
+        private List<DomainProcess> DomainProcess { get;  } = new List<DomainProcess>();
 
         public List<IComplexEventAction> ProcessComplexEvents { get; } = new List<IComplexEventAction>();
         public List<IViewModelInfo> ProcessViewModelInfos { get; } = new List<IViewModelInfo>();
+
+        static int maxProcessId = 0;
 
         public DomainProcessSupervisor(bool autoRun, ISystemProcess process) : base(process)
         {
@@ -56,83 +58,145 @@ namespace DataServices.Actors
             BuildExpressions();
             List<EntityType> mainEntities;
             DomainProcess domainProcess;
+            SystemProcess systemProcess;
             using (var ctx = new GenSoftDBContext())
             {
-                var maxProcessId = ctx.SystemProcess.Max(x => x.Id);
-                SystemProcess = new SystemProcess(new SystemProcessInfo(maxProcessId + 1, process.Id, "AutoSystemProcess", "AutoSystemProcess","Auto", process.User.UserId),process.User,process.MachineInfo);
+                maxProcessId = ctx.SystemProcess.Max(x => x.Id);
 
-                DomainProcess = new DomainProcess(){SystemProcess = new GenSoft.Entities.SystemProcess() {Name = SystemProcess.Name, Id = SystemProcess.Id}, Id = SystemProcess.Id };
+                domainProcess = ctx.DomainProcess
+                        .Include(x => x.SystemProcess)
+                        .Include(x => x.DomainProcessMainEntity).ThenInclude(x => x.EntityType)
+                        .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
+                        .FirstOrDefault();
+                if (domainProcess == null)
+                {
+                    maxProcessId += 1;
+                    
+                    systemProcess = new SystemProcess(
+                        new SystemProcessInfo(maxProcessId, process.Id, "AutoSystemProcess",
+                            "AutoSystemProcess", "Auto", process.User.UserId), process.User, process.MachineInfo);
+                    SystemProcess.Add(
+                        systemProcess);
 
-                var parentEntityTypes = ctx.EntityRelationship
-                    .Select(x => x.ParentEntity.EntityTypeAttributes.EntityType).Distinct().ToList();
-                var childEntityTypes = ctx.EntityRelationship
-                    .Select(x => x.EntityTypeAttributes.EntityType).Distinct().ToList();
-                mainEntities = parentEntityTypes.Where(z => !childEntityTypes.Contains(z)).ToList();
+                    domainProcess = new DomainProcess()
+                    {
+                        SystemProcess =
+                            new GenSoft.Entities.SystemProcess() {Name = systemProcess.Name, Id = systemProcess.Id},
+                        Id = systemProcess.Id
+                    };
+                    DomainProcess.Add(domainProcess);
 
-               ProcessComplexEvents.Add(Processes.ComplexActions.GetComplexAction("StartProcess", new object[] { SystemProcess.Id }));
+                    var parentEntityTypes = ctx.EntityRelationship
+                        .Select(x => x.ParentEntity.EntityTypeAttributes.EntityType).Distinct().ToList();
+                    var childEntityTypes = ctx.EntityRelationship
+                        .Select(x => x.EntityTypeAttributes.EntityType).Distinct().ToList();
+                    mainEntities = parentEntityTypes.Where(z => !childEntityTypes.Contains(z)).ToList();
 
+                    
+
+                    foreach (var mainEntity in mainEntities)
+                    {
+
+                        ProcessComplexEvents.AddRange(GetDBComplexActions(mainEntity.Id, domainProcess.Id));
+                        ProcessViewModelInfos.AddRange(GetDBViewInfos(mainEntity.Id, true, domainProcess.Id));
+
+                    }
+
+                   
+                }
+                else
+                {
+                    DomainProcess.Add(domainProcess);
+
+                    systemProcess = new SystemProcess(
+                        new SystemProcessInfo(domainProcess.Id, domainProcess.SystemProcess.ParentProcessId, domainProcess.SystemProcess.Name,
+                            domainProcess.SystemProcess.Description, domainProcess.SystemProcess.Symbol, process.User.UserId), process.User, process.MachineInfo);
+                    SystemProcess.Add(systemProcess);
+                    foreach (var mainEntity in domainProcess.DomainProcessMainEntity)
+                    {
+                        ProcessComplexEvents.AddRange(GetDBComplexActions(mainEntity.EntityType.Id, domainProcess.Id));
+                        ProcessViewModelInfos.AddRange(GetDBViewInfos(mainEntity.EntityType.Id, false, domainProcess.Id));
+                    }
+                    
+                }
 
             }
-
-            mainEntities = mainEntities.ToList();
+            
             EventMessageBus.Current.GetEvent<IMainEntityChanged>(Source).Subscribe(x => OnMainEntityChanged(x));
            
-            
-            foreach (var mainEntity in mainEntities)
-            {
-
-                ProcessComplexEvents.AddRange(GetDBComplexActions(mainEntity.Id, DomainProcess.Id));
-                ProcessViewModelInfos.AddRange(GetDBViewInfos(mainEntity.Id, true, DomainProcess.Id));
-
-            }
-
-
-
 
             ctx = Context;
           
-            EventMessageBus.Current.GetEvent<ILoadDomainProcess>(Source).Where(x => autoRun && x.DomainProcess.Id == ProcessActions.NullProcess).Subscribe(x => StartParentProcess(x.Process.Id, x.User));
-            EventMessageBus.Current.GetEvent<ILoadDomainProcess>(Source).Where(x => !autoRun && x.DomainProcess.Id != ProcessActions.NullProcess).Subscribe(x => StartProcess(x.DomainProcess, x.User));
-            
-            CreateProcesses(DomainProcess);
+          
+            ProcessComplexEvents.Add(
+                Processes.ComplexActions.GetComplexAction("StartProcess", new object[] { systemProcess.Id }));
 
-            
+            CreateProcesses(domainProcess, systemProcess);
+
+
         }
 
-        private void StartProcess(IDomainProcess domainProcess, IUser objUser)
-        {
-            CreateProcesses(domainProcess as DomainProcess);
-        }
 
         private void OnMainEntityChanged(IMainEntityChanged mainEntityChanged)
         {
             using (var ctx = new GenSoftDBContext())
             {
-                var entityType = ctx.EntityType.First(x => x.Type.Name == mainEntityChanged.EntityType.Name);
-                var complexActions = GetDBComplexActions(entityType.Id, SystemProcess.Id);
-                var viewInfos = GetDBViewInfos((int)entityType.Id, true, SystemProcess.Id);
+                 var entityType = ctx.EntityType.First(x => x.Type.Name == mainEntityChanged.EntityType.Name);
+                 var domainProcess = ctx.DomainProcess
+                    .Include(x => x.SystemProcess)
+                    .Include(x => x.DomainProcessMainEntity).ThenInclude(x => x.EntityType)
+                    .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
+                    .FirstOrDefault(x => x.DomainProcessMainEntity.Any(z => z.EntityType == entityType));
+                SystemProcess systemProcess;
+                if (domainProcess == null)
+                {
+
+                    maxProcessId += 1;
+                    
+                    systemProcess = new SystemProcess(
+                        new SystemProcessInfo(maxProcessId, mainEntityChanged.Process.Id, $"AutoProcess-{entityType.EntitySetName}",
+                            $"AutoProcess-{entityType.EntitySetName}", "Auto", mainEntityChanged.User.UserId), mainEntityChanged.User, mainEntityChanged.MachineInfo);
+
+                    SystemProcess.Add(systemProcess);
+
+                    domainProcess = new DomainProcess()
+                    {
+                        SystemProcess = new GenSoft.Entities.SystemProcess() { Name = systemProcess.Name, Id = systemProcess.Id },Id = systemProcess.Id
+                    };
+                    DomainProcess.Add(domainProcess);
+                }
+                systemProcess = new SystemProcess(
+                    new SystemProcessInfo(domainProcess.Id, domainProcess.SystemProcess.ParentProcessId, domainProcess.SystemProcess.Name,
+                        domainProcess.SystemProcess.Description, domainProcess.SystemProcess.Symbol, mainEntityChanged.User.UserId), mainEntityChanged.User, mainEntityChanged.MachineInfo);
+
+                ProcessComplexEvents.AddRange(GetDBComplexActions(entityType.Id, systemProcess.Id));
+                ProcessViewModelInfos.AddRange(GetDBViewInfos((int)entityType.Id, false, systemProcess.Id));
+
+                ProcessComplexEvents.Add(
+                    Processes.ComplexActions.GetComplexAction("StartProcess", new object[] { systemProcess.Id }));
+
+                CreateProcesses(domainProcess, systemProcess);
+
+
             }
         }
 
-        private void StartParentProcess(int processId, IUser user)
-        {
-            //var processSteps = ServiceManager.ProcessInfos.Where(x => x.ParentProcessId == processId);
-            //CreateProcesses(user, processSteps, processSteps.First().Id);
-        }
+      
 
         
         
-        private void CreateProcesses(DomainProcess domainProcess)
+        private void CreateProcesses(DomainProcess domainProcess,SystemProcess systemProcess)
         {
             if (ProcessComplexEvents.All(x => x.ProcessId != domainProcess.Id))
                 throw new ApplicationException(
                     $"No Complex Events were created for this process:{domainProcess.SystemProcess.Name}");
 
 
+            
             var inMsg = new LoadDomainProcess(domainProcess,ProcessComplexEvents.Where(x => x.ProcessId == domainProcess.Id).ToList(),
                 ProcessViewModelInfos.Where(x => x.ProcessId == domainProcess.Id).ToList(),
-                new StateCommandInfo(SystemProcess.Id, RevolutionData.Context.Process.Commands.StartProcess),
-                SystemProcess, Source);
+                new StateCommandInfo(systemProcess.Id, RevolutionData.Context.Process.Commands.StartProcess),
+                systemProcess, Source);
 
             EventMessageBus.Current.Publish(inMsg, Source);
 
@@ -381,11 +445,11 @@ namespace DataServices.Actors
 
 
 
-        static List<string> processedVMIds = new List<string>();
+        static Dictionary<string, IViewModelInfo> processedVMIds = new Dictionary<string, IViewModelInfo>();
 
         private static IViewModelInfo CreateEntityViewModel(GenSoftDBContext ctx, EntityTypeViewModel vm, ConcurrentBag<IViewModelInfo> viewInfos, bool isChild = false)
         {
-            if (processedVMIds.Contains(vm.EntityTypeName)) return null;
+         //   if (processedVMIds.ContainsKey(vm.EntityTypeName)) return processedVMIds[vm.EntityTypeName];
 
 
 
@@ -395,7 +459,7 @@ namespace DataServices.Actors
 
             var res = ProcessViewModels.ProcessViewModelFactory[vm.ViewModelTypeName].Invoke(vm, vp);
 
-            processedVMIds.Add(vm.EntityTypeName);
+        //    processedVMIds.Add(vm.EntityTypeName, res);
             return res;
 
         }

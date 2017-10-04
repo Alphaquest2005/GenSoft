@@ -109,6 +109,7 @@
     <Compile Include="Events\EntityWithChangesUpdated.cs" />
     <Compile Include="Events\FailedCommandData.cs" />
     <Compile Include="Events\FailedMessageData.cs" />
+    <Compile Include="Events\MainEntityChanged.cs" />
     <Compile Include="Events\ProcessStateUpdated.cs" />
     <Compile Include="Commands\CreateEntityViewService.cs" />
     <Compile Include="Events\ProcessLogCreated.cs" />

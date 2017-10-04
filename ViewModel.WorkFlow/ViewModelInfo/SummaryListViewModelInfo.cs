@@ -133,6 +133,24 @@ namespace RevolutionData
                     },
                     commands: new List<IViewModelEventCommand<IViewModel, IEvent>>
                     {
+                        new ViewEventCommand<ISummaryListViewModel, IMainEntityChanged>(
+                            key:"ChangeMainEntity",
+                            commandPredicate:new List<Func<ISummaryListViewModel, bool>>
+                            {
+                              //  v => v.CurrentEntity.Value != null
+                            },
+                            subject:s => Observable.Empty<ReactiveCommand<IViewModel, Unit>>(),
+
+                            messageData: s =>
+                            {
+                               
+                                return new ViewEventCommandParameter(
+                                    new object[] {s.CurrentEntity.Value ?? s.ViewInfo.EntityType.DefaultEntity()},
+                                    new StateCommandInfo(s.Process.Id,
+                                        Context.Process.Commands.CurrentEntityChanged), s.Process,
+                                    s.Source);
+                            }),
+
                         //Todo: supposed to be create from database
                         //new ViewEventCommand<ISummaryListViewModel, IViewRowStateChanged>(
                         //    key:"EditEntity",
@@ -145,7 +163,7 @@ namespace RevolutionData
                         //    messageData: s =>
                         //    {
                         //        s.RowState.Value = s.RowState.Value != RowState.Modified?RowState.Modified: RowState.Loaded;
-                                
+
 
                         //        return new ViewEventCommandParameter(
                         //            new object[] {s,s.RowState.Value},
@@ -154,8 +172,10 @@ namespace RevolutionData
                         //            s.Source);
                         //    }),
 
-                       
-            },
+
+
+
+                    },
                     viewModelType: typeof(ISummaryListViewModel),
                     orientation: typeof(IBodyViewModel),
                     priority: priority,

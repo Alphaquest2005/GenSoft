@@ -39,7 +39,7 @@ namespace DataServices.Actors
         private void HandleDomainProcess(ILoadDomainProcess loadDomainProcess)
         {
             ProcessComplexEvents.AddRange(loadDomainProcess.ComplexEvents);
-            ProcessInfos.Add(new SystemProcessInfo(loadDomainProcess.Process.Id, loadDomainProcess.Process.ParentProcessId, loadDomainProcess.Process.Name, loadDomainProcess.Process.Description, loadDomainProcess.Process.Symbol, loadDomainProcess.Process.User.UserId));
+            if(ProcessInfos.All(x => x.Id != loadDomainProcess.Process.Id))  ProcessInfos.Add(new SystemProcessInfo(loadDomainProcess.Process.Id, loadDomainProcess.Process.ParentProcessId, loadDomainProcess.Process.Name, loadDomainProcess.Process.Description, loadDomainProcess.Process.Symbol, loadDomainProcess.Process.User.UserId));
             StartProcess(loadDomainProcess.Process.Id, loadDomainProcess.User);
         }
 
@@ -62,6 +62,7 @@ namespace DataServices.Actors
 
         private void CreateProcesses(IUser user, IEnumerable<ISystemProcessInfo> processSteps, int processId)
         {
+            if (ProcessComplexEvents.All(x => x.ProcessId != processId)) return;
             Parallel.ForEach(
                 processSteps.Select(
                     p =>
@@ -77,12 +78,14 @@ namespace DataServices.Actors
         {
             try
             {
+               
+
                 var actorName = "ProcessActor-" + inMsg.Process.Name.GetSafeActorName();
                 if (!existingProcessActors.TryAdd(actorName, actorName)) return;
 
 
                 EventMessageBus.Current.Publish(inMsg, Source);
-                if (ProcessComplexEvents.All(x => x.ProcessId != inMsg.Process.Id)) return;
+                
                     //throw new ApplicationException(
                     //    $"No Complex Events were created for this process:{inMsg.Process.Id}-{inMsg.Process.Name}");
 
