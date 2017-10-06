@@ -116,6 +116,38 @@ namespace Process.WorkFlow
                     action: ProcessActions.Actions["ProcessStarted"]);
             }
 
+            public static ComplexEventAction CleanUpProcess(int processId, int nextProcessId)
+            {
+                return new ComplexEventAction(
+                    $"CleanUpProcess-{processId}",
+                    processId, new List<IProcessExpectedEvent>
+                    {
+                        new ProcessExpectedEvent("ProcessServiceStarted", nextProcessId, typeof(IServiceStarted<IProcessService>),
+                            e => e != null, new StateEventInfo(nextProcessId, RevolutionData.Context.Actor.Events.ActorStarted),
+                            new SourceType(typeof(IProcessService))),
+
+                    },
+                    typeof(ICleanUpSystemProcess),
+                    processInfo: new StateCommandInfo(processId, RevolutionData.Context.Process.Commands.CleanUpProcess),
+                    action: ProcessActions.Actions["CleanUpProcess"]);
+            }
+
+            public static ComplexEventAction CleanUpParentProcess(int processId, int nextProcessId)
+            {
+                return new ComplexEventAction(
+                    $"CleanUpParentProcess-{processId}",
+                    processId, new List<IProcessExpectedEvent>
+                    {
+                        new ProcessExpectedEvent("ProcessServiceStarted", nextProcessId, typeof(IServiceStarted<IProcessService>),
+                            e => e != null, new StateEventInfo(nextProcessId, RevolutionData.Context.Actor.Events.ActorStarted),
+                            new SourceType(typeof(IProcessService))),
+
+                    },
+                    typeof(ICleanUpSystemProcess),
+                    processInfo: new StateCommandInfo(processId, RevolutionData.Context.Process.Commands.CleanUpProcess),
+                    action: ProcessActions.Actions["CleanUpParentProcess"]);
+            }
+
             //public static ComplexEventAction IntializePulledProcessState(int processId, string entityName,Type type)
             //{
             //    return (ComplexEventAction)typeof(ComplexActions).GetMethod("IntializePulledProcessState").MakeGenericMethod(type).Invoke(null, new object[] {processId, entityName});

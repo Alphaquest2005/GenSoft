@@ -8,6 +8,7 @@ using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Reactive.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading;
 using System.Threading.Tasks;
 using SystemInterfaces;
 using Actor.Interfaces;
@@ -37,9 +38,10 @@ namespace DataServices.Actors
         public ConcurrentDictionary<Type, IProcessStateMessage> ProcessStateMessages { get; }= new ConcurrentDictionary<Type, IProcessStateMessage>();
         private static IUntypedActorContext ctx = null;
 
-
+        private string ActorName = null;
         public ProcessActor(ICreateProcessActor msg):base(msg.Process)
         {
+            ActorName = msg.ActorName;
             ctx = Context;
             EventMessageBus.Current.GetEvent<IProcessStateMessage>(Source)
                 .Where(x => x.Process.Id == msg.Process.Id)
@@ -74,7 +76,15 @@ namespace DataServices.Actors
             
             _complexEvents = new ReadOnlyCollection<IComplexEventAction>(msg.ComplexEvents);
                 StartActors(_complexEvents);
-            
+            EventMessageBus.Current.GetEvent<ILoadDomainProcess>(Source).Where(x => $"{x.Name}-{x.DomainProcess.Id}".GetSafeActorName() == ActorName).Subscribe(x => HandleDomainProcess(x));
+
+        }
+
+        private void HandleDomainProcess(ILoadDomainProcess loadDomainProcess)
+        {
+            Publish(new ServiceStarted<IProcessService>(this, new StateEventInfo(Process.Id, RevolutionData.Context.Actor.Events.ActorStarted), Process, Source));
+            //_complexEvents = new ReadOnlyCollection<IComplexEventAction>(loadDomainProcess.ComplexEvents);
+            //StartActors(_complexEvents);
         }
 
         ConcurrentQueue<IServiceStarted<IComplexEventService>> startedComplexEventServices = new ConcurrentQueue<IServiceStarted<IComplexEventService>>();
@@ -134,11 +144,14 @@ namespace DataServices.Actors
         private void StartActors(IEnumerable<IComplexEventAction> complexEvents)
         {
             Contract.Requires(complexEvents.Any() && complexEvents != null);
-            Parallel.ForEach(complexEvents, new ParallelOptions() { MaxDegreeOfParallelism = Environment.ProcessorCount },(cp) =>
-            
+            //Parallel.ForEach(complexEvents, new ParallelOptions() { MaxDegreeOfParallelism = Environment.ProcessorCount },(cp) =>
+            //{
+            foreach (var cp in complexEvents)
             {
                 var inMsg = new CreateComplexEventService(new ComplexEventService(cp.Key, cp, Process, Source),
                     new StateCommandInfo(Process.Id, RevolutionData.Context.Actor.Commands.StartActor), Process, Source);
+
+               
                 Publish(inMsg);
                 try
                 {
@@ -149,7 +162,7 @@ namespace DataServices.Actors
                     PublishProcesError(inMsg, ex, typeof (IServiceStarted<IComplexEventService>));
                 }
             }
-            );
+            //);
         }
 
         private void HandleProcessEvents(IProcessSystemMessage pe)
@@ -170,8 +183,21 @@ namespace DataServices.Actors
         {
             try
             {
-               Task.Run(() => ctx.ActorOf(Props.Create<ComplexEventActor>(inMsg),
-                        "ComplexEventActor:-" + inMsg.ComplexEventService.ActorId.GetSafeActorName())).ConfigureAwait(false);
+               Task.Run(() =>
+               {
+                   //var child = ctx.Child("ComplexEventActor:-" + inMsg.ComplexEventService.ActorId.GetSafeActorName());
+                   //if (!Equals(child, ActorRefs.Nobody))
+                   //{
+                   //    while (!child.IsNobody())
+                   //    {
+                   //        ctx.Stop(child);
+                   //        Thread.Sleep(TimeSpan.FromSeconds(2));
+                   //    }
+                       
+                      
+                   //}
+                   ctx.ActorOf(Props.Create<ComplexEventActor>(inMsg),$"ComplexEventActor:-{inMsg.ComplexEventService.ActorId.GetSafeActorName()}-{inMsg.Process.Id}"  );
+               }).ConfigureAwait(false);
                 
             }
             catch (Exception)

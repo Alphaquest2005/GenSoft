@@ -53,7 +53,12 @@ namespace RevolutionData
                 action: async cp =>  await Task.Run(() => new CleanUpSystemProcess(cp.Actor.Process.Id,new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.CleanUpProcess), cp.Actor.Process, cp.Actor.Source)),
                 processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.CleanUpProcess),
                 expectedSourceType: new SourceType(typeof(IComplexEventService)))},
-            
+
+            {"CleanUpParentProcess",   new ProcessAction(
+                action: async cp =>  await Task.Run(() => new CleanUpSystemProcess(cp.Actor.Process.ParentProcessId,new StateCommandInfo(cp.Actor.Process.ParentProcessId, Context.Process.Commands.CleanUpProcess), cp.Actor.Process, cp.Actor.Source)),
+                processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id -1, Context.Process.Commands.CleanUpProcess),
+                expectedSourceType: new SourceType(typeof(IComplexEventService)))},
+
         };
         
         

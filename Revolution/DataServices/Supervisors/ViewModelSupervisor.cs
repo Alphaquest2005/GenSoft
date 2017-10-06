@@ -53,6 +53,11 @@ namespace DataServices.Actors
         {
             try
             {
+                foreach (var itm in ProcessViewModelInfos.Where(x => x.ProcessId == loadDomainProcess.Process.Id).ToList())
+                {
+                    ProcessViewModelInfos.Remove(itm);
+                }
+                
                 ProcessViewModelInfos.AddRange(loadDomainProcess.ViewModelInfos);
 
             }
@@ -68,16 +73,19 @@ namespace DataServices.Actors
         {
             try
             {
-                Parallel.ForEach(ProcessViewModelInfos.Where(x => x.ProcessId == pe.Process.Id),new ParallelOptions() {MaxDegreeOfParallelism = Environment.ProcessorCount},
-                    (v) =>
-                    {
-                        var msg = new LoadViewModel(v,
-                            new StateCommandInfo(pe.Process.Id, RevolutionData.Context.ViewModel.Commands.LoadViewModel),
-                            pe.Process, Source);
-                        
-                        EventMessageBus.Current.Publish(msg, Source);
+                //Parallel.ForEach(ProcessViewModelInfos.Where(x => x.ProcessId == pe.Process.Id),new ParallelOptions() {MaxDegreeOfParallelism = Environment.ProcessorCount},
+                //    (v) =>
+                foreach (var v in ProcessViewModelInfos.Where(x => x.ProcessId == pe.Process.Id))
+               
+                {
+                    var msg = new LoadViewModel(v,
+                        new StateCommandInfo(pe.Process.Id, RevolutionData.Context.ViewModel.Commands.LoadViewModel),
+                        pe.Process, Source);
 
-                    });
+                    EventMessageBus.Current.Publish(msg, Source);
+                }
+
+                //});
             }
             catch (Exception ex)
             {

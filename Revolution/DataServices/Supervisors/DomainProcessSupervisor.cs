@@ -128,8 +128,9 @@ namespace DataServices.Actors
             ctx = Context;
           
           
-            ProcessComplexEvents.Add(
-                Processes.ComplexActions.GetComplexAction("StartProcess", new object[] { systemProcess.Id }));
+            ProcessComplexEvents.Add(Processes.ComplexActions.GetComplexAction("StartProcess", new object[] { systemProcess.Id }));
+            ProcessComplexEvents.Add(Processes.ComplexActions.GetComplexAction("CleanUpParentProcess", new object[] { systemProcess.Id, systemProcess.Id + 1}));
+           // ProcessComplexEvents.Add(Processes.ComplexActions.GetComplexAction("CleanUpProcess", new object[] { systemProcess.Id, systemProcess.Id + 1 }));
 
             CreateProcesses(domainProcess, systemProcess);
 
@@ -139,6 +140,8 @@ namespace DataServices.Actors
 
         private void OnMainEntityChanged(IMainEntityChanged mainEntityChanged)
         {
+            ProcessComplexEvents.Clear();
+            ProcessViewModelInfos.Clear();
             using (var ctx = new GenSoftDBContext())
             {
                  var entityType = ctx.EntityType.First(x => x.Type.Name == mainEntityChanged.EntityType.Name);
@@ -148,32 +151,58 @@ namespace DataServices.Actors
                     .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
                     .FirstOrDefault(x => x.DomainProcessMainEntity.Any(z => z.EntityType == entityType));
                 SystemProcess systemProcess;
+
+                maxProcessId += 1;
                 if (domainProcess == null)
                 {
 
-                    maxProcessId += 1;
+                    
                     
                     systemProcess = new SystemProcess(
                         new SystemProcessInfo(maxProcessId, mainEntityChanged.Process.Id, $"AutoProcess-{entityType.EntitySetName}",
                             $"AutoProcess-{entityType.EntitySetName}", "Auto", mainEntityChanged.User.UserId), mainEntityChanged.User, mainEntityChanged.MachineInfo);
-
-                    SystemProcess.Add(systemProcess);
+                    
 
                     domainProcess = new DomainProcess()
                     {
-                        SystemProcess = new GenSoft.Entities.SystemProcess() { Name = systemProcess.Name, Id = systemProcess.Id },Id = systemProcess.Id
+                        SystemProcess = new GenSoft.Entities.SystemProcess() { Name = systemProcess.Name,
+                            Id = systemProcess.Id,
+                            ParentProcessId = systemProcess.ParentProcessId,
+                            Description = systemProcess.Description,
+                            Symbol = systemProcess.Symbol
+                        },Id = systemProcess.Id
                     };
-                    DomainProcess.Add(domainProcess);
+                    
                 }
-                systemProcess = new SystemProcess(
-                    new SystemProcessInfo(domainProcess.Id, domainProcess.SystemProcess.ParentProcessId, domainProcess.SystemProcess.Name,
+                else
+                {
+                    systemProcess = new SystemProcess(
+                    new SystemProcessInfo(maxProcessId, mainEntityChanged.Process.Id, domainProcess.SystemProcess.Name,
                         domainProcess.SystemProcess.Description, domainProcess.SystemProcess.Symbol, mainEntityChanged.User.UserId), mainEntityChanged.User, mainEntityChanged.MachineInfo);
+                    domainProcess = new DomainProcess()
+                    {
+                        SystemProcess = new GenSoft.Entities.SystemProcess()
+                        {
+                            Name = systemProcess.Name,
+                            Id = systemProcess.Id,
+                            ParentProcessId = systemProcess.ParentProcessId,
+                            Description = systemProcess.Description,
+                            Symbol = systemProcess.Symbol
+                        },
+                        Id = systemProcess.Id
+                    };
+
+                }
+                SystemProcess.Add(systemProcess);
+                DomainProcess.Add(domainProcess);
+
 
                 ProcessComplexEvents.AddRange(GetDBComplexActions(entityType.Id, systemProcess.Id));
                 ProcessViewModelInfos.AddRange(GetDBViewInfos((int)entityType.Id, false, systemProcess.Id));
 
-                ProcessComplexEvents.Add(
-                    Processes.ComplexActions.GetComplexAction("StartProcess", new object[] { systemProcess.Id }));
+                ProcessComplexEvents.Add(Processes.ComplexActions.GetComplexAction("StartProcess", new object[] { systemProcess.Id }));
+                ProcessComplexEvents.Add(Processes.ComplexActions.GetComplexAction("CleanUpParentProcess", new object[] {systemProcess.Id , systemProcess.Id + 1}));
+                // ProcessComplexEvents.Add(Processes.ComplexActions.GetComplexAction("CleanUpProcess", new object[] { systemProcess.Id, systemProcess.Id + 1 }));
 
                 CreateProcesses(domainProcess, systemProcess);
 
@@ -377,7 +406,8 @@ namespace DataServices.Actors
 
         public static List<IViewModelInfo> GetDBViewInfos(int mainEntityId, bool condensed, int processId)
         {
-            var res = new ConcurrentBag<IViewModelInfo>();
+            processedVMIds.Clear();
+            var res = new ConcurrentDictionary<string,IViewModelInfo>();
             using (var ctx = new GenSoftDBContext())
             {
                 var list = ctx.EntityRelationship
@@ -389,7 +419,7 @@ namespace DataServices.Actors
                     .Include(x => x.ParentEntity.EntityTypeAttributes.EntityType.Type)
                     .Include(x => x.ParentEntity.EntityTypeAttributes.EntityType).ThenInclude(x => x.EntityTypeViewModelCommand).ThenInclude(x => x.ViewModelCommands.CommandType)
                     .Include(x => x.ParentEntity.EntityTypeAttributes.Attributes)
-                    .Where(x => x.ParentEntity.EntityTypeAttributes.EntityType.Id == mainEntityId)
+                    .Where(x => x.ParentEntity.EntityTypeAttributes.EntityType.Id == mainEntityId || x.EntityTypeAttributes.EntityType.Id == mainEntityId)
                     .GroupBy(x => x.ParentEntity.EntityTypeAttributes.EntityType)
                     .ToList();
 
@@ -410,17 +440,17 @@ namespace DataServices.Actors
                             }
                             else
                             {
-                                res.Add(cv);
+                                res.AddOrUpdate(cm.EntityTypeName, cv, (k,v) => cv);
                             }
 
 
                         }
 
                     }
-                    res.Add(pv);
+                    res.AddOrUpdate(pm.EntityTypeName, pv, (k, v) => pv);
                 }
             }
-            return res.ToList();
+            return res.Values.ToList();
         }
 
         private static EntityTypeViewModel CreateEntityTypeViewModel(EntityType entityType, List<EntityRelationship> relationships, bool isList, GenSoftDBContext ctx, int processId)
@@ -447,9 +477,9 @@ namespace DataServices.Actors
 
         static Dictionary<string, IViewModelInfo> processedVMIds = new Dictionary<string, IViewModelInfo>();
 
-        private static IViewModelInfo CreateEntityViewModel(GenSoftDBContext ctx, EntityTypeViewModel vm, ConcurrentBag<IViewModelInfo> viewInfos, bool isChild = false)
+        private static IViewModelInfo CreateEntityViewModel(GenSoftDBContext ctx, EntityTypeViewModel vm, ConcurrentDictionary<string, IViewModelInfo> viewInfos, bool isChild = false)
         {
-         //   if (processedVMIds.ContainsKey(vm.EntityTypeName)) return processedVMIds[vm.EntityTypeName];
+            if (processedVMIds.ContainsKey(vm.EntityTypeName)) return processedVMIds[vm.EntityTypeName];
 
 
 
@@ -459,7 +489,7 @@ namespace DataServices.Actors
 
             var res = ProcessViewModels.ProcessViewModelFactory[vm.ViewModelTypeName].Invoke(vm, vp);
 
-        //    processedVMIds.Add(vm.EntityTypeName, res);
+            processedVMIds.Add(vm.EntityTypeName, res);
             return res;
 
         }
@@ -569,7 +599,7 @@ namespace DataServices.Actors
                         .Include(x => x.EntityTypeAttributes.Attributes)
                         .Include(x => x.ParentEntity.EntityTypeAttributes.EntityType.Type)
                         .Include(x => x.ParentEntity.EntityTypeAttributes.Attributes)
-                        .Where(x => x.ParentEntity.EntityTypeAttributes.EntityType.Id == mainEntityId)
+                        .Where(x => x.ParentEntity.EntityTypeAttributes.EntityType.Id == mainEntityId || x.EntityTypeAttributes.EntityType.Id == mainEntityId)
                         .GroupBy(x => x.ParentEntity.EntityTypeAttributes.EntityType)
                         .ToList();
 
@@ -588,8 +618,11 @@ namespace DataServices.Actors
                             var parentExpression = rel.ParentEntity.EntityTypeAttributes.Attributes.Name;
                             var childType = rel.EntityTypeAttributes.EntityType.Type.Name;
 
-                            if (DynamicEntityType.DynamicEntityTypes.ContainsKey(childType)) continue;
-                            AddDynamicEntityTypes(childType);
+                            if (!DynamicEntityType.DynamicEntityTypes.ContainsKey(childType))
+                            {
+                                AddDynamicEntityTypes(childType);
+                            }
+                            
 
 
                             var childExpression = rel.EntityTypeAttributes.Attributes.Name;
@@ -658,7 +691,7 @@ namespace DataServices.Actors
 
                 //}
 
-                return res.ToList();
+                return res.DistinctBy(x => x.Key).ToList();
             }
             catch (Exception e)
             {

@@ -58,15 +58,16 @@ namespace DataServices.Actors
             CreateProcesses(user, processSteps, processId);
         }
 
-        static ConcurrentDictionary<string,string> existingProcessActors = new ConcurrentDictionary<string, string>();
+        //static ConcurrentDictionary<string,string> existingProcessActors = new ConcurrentDictionary<string, string>();
 
         private void CreateProcesses(IUser user, IEnumerable<ISystemProcessInfo> processSteps, int processId)
         {
+           
             if (ProcessComplexEvents.All(x => x.ProcessId != processId)) return;
             Parallel.ForEach(
                 processSteps.Select(
                     p =>
-                        new CreateProcessActor(ProcessComplexEvents.Where(x => x.ProcessId == processId).ToList(),
+                        new CreateProcessActor($"{p.Name.GetSafeActorName()}-{p.Id}", ProcessComplexEvents.Where(x => x.ProcessId == processId).ToList(),
                             new StateCommandInfo(p.Id, RevolutionData.Context.Actor.Commands.CreateActor),
                             new SystemProcess(
                                 new RevolutionEntities.Process.Process(p.Id, p.ParentProcessId, p.Name, p.Description, p.Symbol, user),
@@ -78,19 +79,19 @@ namespace DataServices.Actors
         {
             try
             {
-               
+               // var actorName = "ProcessActor-" + inMsg.Process.Name.GetSafeActorName();
 
-                var actorName = "ProcessActor-" + inMsg.Process.Name.GetSafeActorName();
-                if (!existingProcessActors.TryAdd(actorName, actorName)) return;
+
+                var child = ctx.Child(inMsg.ActorName);
+                if (!Equals(child, ActorRefs.Nobody))
+                {
+                    return;
+                }
 
 
                 EventMessageBus.Current.Publish(inMsg, Source);
                 
-                    //throw new ApplicationException(
-                    //    $"No Complex Events were created for this process:{inMsg.Process.Id}-{inMsg.Process.Name}");
-
-
-                Task.Run(() => { ctx.ActorOf(Props.Create<ProcessActor>(inMsg), actorName); })
+                Task.Run(() => { ctx.ActorOf(Props.Create<ProcessActor>(inMsg), inMsg.ActorName); })
                     .ConfigureAwait(false);
             }
             catch (Exception ex)
