@@ -23,9 +23,9 @@ namespace GenSoft.Mappings
 				entityBuilder.HasOne(p => p.DataType).WithOne(p => p.Type).HasForeignKey<DataType>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasOne(p => p.EntityType).WithOne(p => p.Type).HasForeignKey<EntityType>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasOne(p => p.SourceType).WithOne(p => p.Type).HasForeignKey<SourceType>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.ChildTypes).WithOne(p => p.ChildTypes).HasForeignKey(c => c.ChildTypeId).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.ParentTypes).WithOne(p => p.ParentTypes).HasForeignKey(c => c.ParentTypeId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.Types).WithOne(p => p.Types).HasForeignKey(c => c.TypeId).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasMany(x => x.ParentTypes).WithOne(p => p.ParentTypes).HasForeignKey(c => c.ParentTypeId).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasMany(x => x.ChildTypes).WithOne(p => p.ChildTypes).HasForeignKey(c => c.ChildTypeId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties
 	

@@ -14,8 +14,8 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IViewPropertyValueOptions:SystemInterfaces.IEntity  
 	{
-		string Value { get;}
 		int ViewPropertyId { get;}
+		string Value { get;}
 
 
 

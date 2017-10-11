@@ -18,9 +18,9 @@ namespace GenSoft.Mappings
 			entityBuilder.ToTable("Command", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").ValueGeneratedNever();	
-			entityBuilder.Property(t => t.CommandTypeId).HasColumnName("CommandTypeId").IsRequired();
-			entityBuilder.Property(t => t.EntityId).HasColumnName("EntityId").IsRequired();
 			entityBuilder.Property(t => t.StateActionId).HasColumnName("StateActionId").IsRequired();
+			entityBuilder.Property(t => t.EntityId).HasColumnName("EntityId").IsRequired();
+			entityBuilder.Property(t => t.CommandTypeId).HasColumnName("CommandTypeId").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
 	
 				//----------------Parent Properties

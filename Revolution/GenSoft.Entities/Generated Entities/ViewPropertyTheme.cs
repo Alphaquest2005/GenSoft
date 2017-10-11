@@ -14,8 +14,8 @@ namespace GenSoft.Entities
 	public partial class ViewPropertyTheme: BaseEntity, IViewPropertyTheme
 	{
 		public virtual int PresentationThemeId { get; set; }
-		public virtual int ValueOptionId { get; set; }
 		public virtual int ViewPropertyPresentationPropertyTypeId { get; set; }
+		public virtual int ValueOptionId { get; set; }
 		public virtual int ViewTypeId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
@@ -23,8 +23,8 @@ namespace GenSoft.Entities
 		
 			// ---------Parent Relationships
 				public virtual PresentationTheme PresentationTheme {get; set;}
-				public virtual ViewPropertyValueOptions ViewPropertyValueOptions {get; set;}
 				public virtual ViewPropertyPresentationPropertyType ViewPropertyPresentationPropertyType {get; set;}
+				public virtual ViewPropertyValueOptions ViewPropertyValueOptions {get; set;}
 				public virtual ViewType ViewType {get; set;}
 	
 

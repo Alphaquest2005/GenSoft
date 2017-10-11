@@ -67,7 +67,7 @@ namespace DataServices.Actors
                         .Include(x => x.SystemProcess)
                         .Include(x => x.DomainProcessMainEntity).ThenInclude(x => x.EntityType)
                         .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
-                        .FirstOrDefault();
+                        .FirstOrDefault(x => x.DomainProcessMainEntity.Any());
                 if (domainProcess == null)
                 {
                     maxProcessId += 1;
@@ -222,7 +222,7 @@ namespace DataServices.Actors
 
 
             
-            var inMsg = new LoadDomainProcess(domainProcess,ProcessComplexEvents.Where(x => x.ProcessId == domainProcess.Id).ToList(),
+            var inMsg = new LoadDomainProcess(domainProcess,ProcessComplexEvents.Where(x => x.ProcessId == domainProcess.Id).DistinctBy(x => x.Key).ToList(),
                 ProcessViewModelInfos.Where(x => x.ProcessId == domainProcess.Id).ToList(),
                 new StateCommandInfo(systemProcess.Id, RevolutionData.Context.Process.Commands.StartProcess),
                 systemProcess, Source);
@@ -476,6 +476,7 @@ namespace DataServices.Actors
 
 
         static Dictionary<string, IViewModelInfo> processedVMIds = new Dictionary<string, IViewModelInfo>();
+        static Dictionary<string, IComplexEventAction> processedCEIds = new Dictionary<string, IComplexEventAction>();
 
         private static IViewModelInfo CreateEntityViewModel(GenSoftDBContext ctx, EntityTypeViewModel vm, ConcurrentDictionary<string, IViewModelInfo> viewInfos, bool isChild = false)
         {
@@ -586,7 +587,7 @@ namespace DataServices.Actors
 
             try
             {
-                var res = new ConcurrentBag<IComplexEventAction>();
+                var res = new ConcurrentDictionary<string,IComplexEventAction>();
 
 
                 using (var ctx = new GenSoftDBContext())
@@ -609,9 +610,8 @@ namespace DataServices.Actors
                         AddDynamicEntityTypes(parentType);
 
 
-                        res.Add(Processes.ComplexActions.GetComplexAction("IntializeProcessState",new object[]{processId, DynamicEntityType.DynamicEntityTypes[parentType]}));
-                        res.Add(Processes.ComplexActions.GetComplexAction("UpdateStateList",
-                            new object[] { processId, DynamicEntityType.DynamicEntityTypes[parentType] }));
+                        res.AddOrUpdate($"{parentType}-IntializeProcessState",Processes.ComplexActions.GetComplexAction("IntializeProcessState",new object[]{processId, DynamicEntityType.DynamicEntityTypes[parentType]}));
+                        res.AddOrUpdate($"{parentType}-UpdateStateList",Processes.ComplexActions.GetComplexAction("UpdateStateList",new object[] { processId, DynamicEntityType.DynamicEntityTypes[parentType] }));
 
                         foreach (var rel in r.DistinctBy(x => x.Id))
                         {
@@ -630,10 +630,10 @@ namespace DataServices.Actors
 
                             if (rel.RelationshipType.ChildOrdinalitys.Name == "One")
                             {
-                                res.Add(Processes.ComplexActions.GetComplexAction("UpdateState",
+                                res.AddOrUpdate($"{childType}-UpdateState", Processes.ComplexActions.GetComplexAction("UpdateState",
                                     new object[] { processId, DynamicEntityType.DynamicEntityTypes[childType] }));
 
-                                res.Add(Processes.ComplexActions.GetComplexAction("RequestState",
+                                res.AddOrUpdate($"{parentType}|{childType}-RequestState", Processes.ComplexActions.GetComplexAction("RequestState",
                                     new object[] { processId, parentType, childType, childExpression }));
                             }
                             else
@@ -641,14 +641,14 @@ namespace DataServices.Actors
                                 //res.Add(Processes.ComplexActions.GetComplexAction("IntializeProcessState",
                                 //    new object[]
                                 //        {processId, DynamicEntityType.DynamicEntityTypes[childType]}));
-                                res.Add(Processes.ComplexActions.GetComplexAction("UpdateStateList",
+                                res.AddOrUpdate($"{childType}-UpdateStateList", Processes.ComplexActions.GetComplexAction("UpdateStateList",
                                     new object[] { processId, DynamicEntityType.DynamicEntityTypes[childType] }));
 
-                                res.Add(Processes.ComplexActions.GetComplexAction("RequestStateList",
+                                res.AddOrUpdate($"{parentType}|{childType}-RequestStateList", Processes.ComplexActions.GetComplexAction("RequestStateList",
                                     new object[]
                                         {processId, parentType, childType, parentExpression, childExpression}));
                             }
-                            res.Add(Processes.ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",
+                            res.AddOrUpdate($"{parentType}|{childType}-UpdateStateWhenDataChanges", Processes.ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",
                                 new object[]
                                     {processId, parentType, childType, parentExpression, childExpression}));
 
@@ -691,7 +691,7 @@ namespace DataServices.Actors
 
                 //}
 
-                return res.DistinctBy(x => x.Key).ToList();
+                return res.Values.ToList();
             }
             catch (Exception e)
             {
