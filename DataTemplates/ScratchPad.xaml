@@ -10,10 +10,10 @@
              xmlns:systemInterfaces="clr-namespace:SystemInterfaces;assembly=SystemInterfaces"
              xmlns:viewModels="clr-namespace:ViewModels;assembly=ViewModels"
              Width="1000"
-             Height="533.731"
+             Height="500"
              Background="White"
              mc:Ignorable="d">
 
-    
+
 
 </UserControl>

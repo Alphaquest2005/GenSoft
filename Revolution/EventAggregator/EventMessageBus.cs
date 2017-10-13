@@ -26,9 +26,20 @@ namespace EventAggregator
 
         public void Publish<TEvent>(TEvent sampleEvent, ISource sender) where TEvent : IProcessSystemMessage
         {
-            Contract.Requires(sender != null || sampleEvent != null);
-            Logger.Log(LoggingLevel.Info, $"Sender:{sender.SourceName} | PublishEvent : {typeof(TEvent).GetFriendlyName()}| ProcessInfo:Status-{sampleEvent?.ProcessInfo?.State?.Status}|| ProcessId-{sampleEvent?.Process.Id}");
-            ea.Publish(sampleEvent);
+            try
+            {
+                Contract.Requires(sender != null || sampleEvent != null);
+                Logger.Log(LoggingLevel.Info,
+                    $"Sender:{sender.SourceName} | PublishEvent : {typeof(TEvent).GetFriendlyName()}| ProcessInfo:Status-{sampleEvent?.ProcessInfo?.State?.Status}|| ProcessId-{sampleEvent?.Process.Id}");
+                ea.Publish(sampleEvent);
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+
         }
     }
 }

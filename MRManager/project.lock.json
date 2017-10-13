@@ -640,7 +640,8 @@
           "BootStrapper": "1.0.0",
           "DynamicExpresso.Core": "1.3.3.6",
           "GenSoft.Interface": "1.0.0",
-          "SystemInterfaces": "1.0.0"
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
         }
       },
       "CommonMessages/1.0.0": {
@@ -1671,7 +1672,8 @@
           "BootStrapper": "1.0.0",
           "DynamicExpresso.Core": "1.3.3.6",
           "GenSoft.Interface": "1.0.0",
-          "SystemInterfaces": "1.0.0"
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
         }
       },
       "CommonMessages/1.0.0": {

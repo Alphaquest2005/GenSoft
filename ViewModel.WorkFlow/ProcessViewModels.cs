@@ -27,7 +27,7 @@ namespace ViewModel.WorkFlow
                                                 {
                                                     
                                                 return SummaryListViewModelInfo.SummaryListViewModel(v.SystemProcessId,
-                                                        DynamicEntityType.DynamicEntityTypes[v.EntityTypeName], v.Symbol, v.Description, v.Priority,
+                                                        DynamicEntityType.DynamicEntityTypes[v.EntityTypeName],v.RelationshipOrdinality, v.Symbol, v.Description, v.Priority,
                                                         v.EntityViewModelRelationships,
                                                         v.EntityTypeViewModelCommands,
                                                         vp);
@@ -48,7 +48,7 @@ namespace ViewModel.WorkFlow
                             return EntityDetailsViewModelInfo.EntityDetailsViewModel
                                                     (
                                                         v.SystemProcessId,
-                                                        DynamicEntityType.DynamicEntityTypes[v.EntityTypeName], v.Symbol,
+                                                        DynamicEntityType.DynamicEntityTypes[v.EntityTypeName],v.RelationshipOrdinality, v.Symbol,
                                                         v.Description, v.Priority,
                                                         viewRelationships: v.EntityViewModelRelationships,
                                                        
@@ -69,7 +69,7 @@ namespace ViewModel.WorkFlow
                     {
 
                         return CachedViewModelInfo.CachedViewModel(v.SystemProcessId,
-                            DynamicEntityType.DynamicEntityTypes[v.EntityTypeName], v.Symbol,
+                            DynamicEntityType.DynamicEntityTypes[v.EntityTypeName],v.RelationshipOrdinality, v.Symbol,
                             v.Description, v.Priority,
                             viewRelationships: v.EntityViewModelRelationships,
 

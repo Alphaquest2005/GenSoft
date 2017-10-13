@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using SystemInterfaces;
 using GenSoft.Entities;
 using GenSoft.Interfaces;
 
@@ -25,5 +26,6 @@ namespace RevolutionEntities.ViewModels
         public List<EntityViewModelRelationship> EntityViewModelRelationships { get; set; }
         public List<EntityTypeViewModelCommand> EntityTypeViewModelCommands { get; set; }
         public string ViewModelTypeName { get; set; }
+        public EntityRelationshipOrdinality RelationshipOrdinality { get; set; }
     }
 }

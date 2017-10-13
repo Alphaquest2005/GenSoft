@@ -23,5 +23,12 @@ namespace Utilities
                 source.Insert(idx, item);
             }
         }
+
+        
+    }
+
+    public class InteliList<T> : List<T>, IIntelliList<T>
+    {
+        public T SelectedItem { get; set; }
     }
 }

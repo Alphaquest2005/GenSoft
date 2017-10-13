@@ -30,28 +30,6 @@ namespace Core.Common.UI
             if (LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
             viewModel.ViewModelState.Value = ViewModelState.NotIntialized;
 
-            //    var commands = new ConcurrentBag<IViewModelEventCommand<IViewModel, IEvent>>(viewModel.CommandInfo);
-            //Parallel.ForEach(commands, new ParallelOptions() {MaxDegreeOfParallelism = Environment.ProcessorCount},
-            //    (itm) =>
-            //    {
-            //        var subject = itm.Subject.Invoke(viewModel);
-
-
-            //        if (subject.GetType() == Observable.Empty<ReactiveCommand<IViewModel, Unit>>().GetType())
-            //        {
-            //            var publishMessage = CreateCommandMessageAction<IViewModel>(viewModel, itm);
-            //            var cmd = ReactiveCommand.Create(publishMessage);
-
-            //            viewModel.Commands.Add(itm.Key, cmd);
-            //        }
-            //        else
-            //        {
-            //            var publishMessage = CreateCommandMessageAction<dynamic>(viewModel, itm);
-            //            subject.Where(x => itm.CommandPredicate.All(z => z.Invoke(viewModel)))
-            //                .Subscribe(publishMessage);
-            //        }
-
-            //    });
 
             foreach (var itm in viewModel.CommandInfo)
             {
@@ -91,19 +69,7 @@ namespace Core.Common.UI
             
 
            
-                //var publications =
-                //    new ConcurrentBag<IViewModelEventPublication<IViewModel, IEvent>>(viewModel.EventPublications);
 
-                //Parallel.ForEach(publications,
-                //    new ParallelOptions() {MaxDegreeOfParallelism = Environment.ProcessorCount}, (itm) =>
-                //    {
-
-                //        var subject = itm.Subject.Invoke(viewModel);
-
-                //        var publishMessage = CreatePublishMessageAction(viewModel, itm);
-                //        subject.Where(x => itm.SubjectPredicate.All(z => z.Invoke(viewModel)))
-                //            .Subscribe(publishMessage);
-                //    });
 
             foreach (var itm in viewModel.EventPublications)
             {
@@ -115,7 +81,7 @@ namespace Core.Common.UI
             }
 
             viewModel.ViewModelState.Value = ViewModelState.Intialized;
-            //EventMessageBus.Current.Publish(new ViewModelIntialized(viewModel, new StateEventInfo(viewModel.Process.Id,"ViewModelIntialized", "View Model Initalized","ViewModel Started", RevolutionData.Context.ViewModel.Commands.LoadViewModel),viewModel.Process,viewModel.Source),viewModel.Source);
+           
 
 
 

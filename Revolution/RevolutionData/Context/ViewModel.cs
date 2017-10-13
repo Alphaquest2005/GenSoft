@@ -15,6 +15,7 @@ namespace RevolutionData.Context
             public static IStateCommand CreateViewModel => new StateCommand("CreateViewModel","Create View Model", Events.ViewModelCreated);
             public static IStateCommand LoadViewModel => new StateCommand("LoadViewModel", "Load View Model", Events.ViewModelLoaded);
             public static IStateCommand UnloadViewModel => new StateCommand("UnloadViewModel", "Unload View Model", Events.ViewModelLoaded);
+            public static IStateCommand ChangeVisibility => new StateCommand("ChangeVisibility", "Change View Model Visibility");
         }
         public class Events
         {

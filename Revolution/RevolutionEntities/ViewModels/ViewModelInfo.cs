@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows;
 using SystemInterfaces;
 using Common;
 using ViewModel.Interfaces;
@@ -33,6 +34,8 @@ namespace RevolutionEntities.ViewModels
         public int Priority { get; }
         public List<IViewModelInfo> ViewModelInfos { get; } = new List<IViewModelInfo>();
         public IViewAttributeDisplayProperties DisplayProperties { get; }
+        public ViewModelState ViewModelState { get; set; }
+        public Visibility Visibility { get; set; }
     }
 
     public class ViewInfo : IViewInfo
@@ -53,13 +56,13 @@ namespace RevolutionEntities.ViewModels
 
     public class EntityViewInfo :ViewInfo, IEntityViewInfo
     {
-        public EntityViewInfo(string name, string symbol, string description, IDynamicEntityType entityType) : base(name,symbol,description)
+        public EntityViewInfo(string name, string symbol, string description, IDynamicEntityType entityType, EntityRelationshipOrdinality ordinality) : base(name,symbol,description)
         {
             EntityType = entityType;
-            
+            Ordinality = ordinality;
         }
         public IDynamicEntityType EntityType { get; }
-        
+        public EntityRelationshipOrdinality Ordinality { get; }
     }
 
    

@@ -13,51 +13,229 @@
               Tag="{Binding ViewInfo.Name}"
               Margin="10"
               Background="#4CFFFFFF">
-            <StackPanel Orientation="Horizontal">
-                <Grid Margin="0,10">
-                    <ListBox Margin="0,64,10,0"
-                             IsSynchronizedWithCurrentItem="True"
-                             x:Name="EntityDetailListGRD"
-                             ItemsSource="{Binding EntitySet.Value, Mode=OneWay}"
-                             SelectedItem="{Binding CurrentEntity.Value, Mode=TwoWay}">
-                        <ListBox.ItemContainerStyle>
-                            <Style TargetType="{x:Type ListBoxItem}">
 
-                                <!--<Setter Property="Visibility" Value="{Binding Value, Converter={StaticResource NullVisibilityConverter}}"/>-->
+            <DockPanel>
+                <ScrollViewer DockPanel.Dock="Left" Margin="0,10">
+                <StackPanel >
+                    <StackPanel Orientation="Vertical" Width="123" Margin="10">
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Text="Filter By" FontSize="16"/>
+                            <ComboBox Margin="10,5,5,5" Width="50" >
+                                <ComboBoxItem Content="Item 1"/>
+                                <ComboBoxItem Content="Item 2"/>
+                                <ComboBoxItem Content="Item 3"/>
+                            </ComboBox>
 
-                                <!--  Default Template  -->
-                                <Setter Property="ContentTemplate" Value="{DynamicResource SummaryInfoRDT}" />
-                                <Setter Property="Height" Value="Auto" />
-                                <!--  Triggers to change Template  -->
-                                <Style.Triggers>
-                                    <MultiDataTrigger>
-                                        <MultiDataTrigger.Conditions>
-                                            <Condition Binding="{Binding DataContext.RowState.Value, RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}" Value="{x:Static systemInterfaces:RowState.Loaded}" />
-                                            <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Mode=Self}}" Value="True" />
-                                        </MultiDataTrigger.Conditions>
-                                        <Setter Property="ContentTemplate" Value="{DynamicResource SummaryInfoRDT}" />
-                                        <Setter Property="Visibility" Value="Visible" />
-                                    </MultiDataTrigger>
-                                    <MultiDataTrigger>
-                                        <MultiDataTrigger.Conditions>
-                                            <Condition Binding="{Binding DataContext.RowState.Value, RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}" Value="{x:Static systemInterfaces:RowState.Modified}" />
-                                            <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Mode=Self}}" Value="True" />
-                                        </MultiDataTrigger.Conditions>
-                                        <Setter Property="ContentTemplate" Value="{DynamicResource SummaryInfoWDT}" />
-                                        <Setter Property="Visibility" Value="Visible" />
-                                    </MultiDataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </ListBox.ItemContainerStyle>
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="MouseDoubleClick">
-                                <i:InvokeCommandAction Command="{Binding Commands[EditEntity]}" />
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </ListBox>
-                    <Button Content="" FontSize="30" Width="50" Height="50" Command="{Binding Commands[ChangeMainEntity]}" Margin="0,0,10,451" HorizontalAlignment="Right" VerticalContentAlignment="Top"/>
+
+                        </StackPanel>
+                        <ListBox>
+                            <ListBoxItem Content=" Previous Selection 1"/>
+                            <ListBoxItem Content=" Previous Selection 2"/>
+                            <ListBoxItem Content=" Previous Selection 3"/>
+                        </ListBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Width="123">
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Text="Order By" FontSize="16"/>
+                            <ComboBox Margin="10,5,5,5" Width="50" >
+                                <ComboBoxItem Content="Item 1"/>
+                                <ComboBoxItem Content="Item 2"/>
+                                <ComboBoxItem Content="Item 3"/>
+                            </ComboBox>
+
+
+                        </StackPanel>
+                        <ListBox>
+                            <ListBoxItem Content=" Previous Selection 1"/>
+                            <ListBoxItem Content=" Previous Selection 2"/>
+                            <ListBoxItem Content=" Previous Selection 3"/>
+                        </ListBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Width="123">
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Text="Group By" FontSize="16"/>
+                            <ComboBox Margin="10,5,5,5" Width="50" >
+                                <ComboBoxItem Content="Item 1"/>
+                                <ComboBoxItem Content="Item 2"/>
+                                <ComboBoxItem Content="Item 3"/>
+                            </ComboBox>
+
+
+                        </StackPanel>
+                        <ListBox>
+                            <ListBoxItem Content=" Previous Selection 1"/>
+                            <ListBoxItem Content=" Previous Selection 2"/>
+                            <ListBoxItem Content=" Previous Selection 3"/>
+                        </ListBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Width="123">
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Text="Search" FontSize="16"/>
+                            <ComboBox Margin="10,5,5,5" Width="50" >
+                                <ComboBoxItem Content="Item 1"/>
+                                <ComboBoxItem Content="Item 2"/>
+                                <ComboBoxItem Content="Item 3"/>
+                            </ComboBox>
+
+
+                        </StackPanel>
+                        <ListBox>
+                            <ListBoxItem Content=" Previous Selection 1"/>
+                            <ListBoxItem Content=" Previous Selection 2"/>
+                            <ListBoxItem Content=" Previous Selection 3"/>
+                        </ListBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Width="123">
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Text="View Fields" FontSize="16"/>
+                            <ComboBox Margin="10,5,5,5" Width="50" >
+                                <ComboBoxItem Content="Item 1"/>
+                                <ComboBoxItem Content="Item 2"/>
+                                <ComboBoxItem Content="Item 3"/>
+                            </ComboBox>
+
+
+                        </StackPanel>
+                        <ListBox>
+                            <ListBoxItem Content=" Previous Selection 1"/>
+                            <ListBoxItem Content=" Previous Selection 2"/>
+                            <ListBoxItem Content=" Previous Selection 3"/>
+                        </ListBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Width="123">
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Text="Actions" FontSize="16"/>
+                            <ComboBox Margin="10,5,5,5" Width="50" >
+                                <ComboBoxItem Content="Item 1"/>
+                                <ComboBoxItem Content="Item 2"/>
+                                <ComboBoxItem Content="Item 3"/>
+                            </ComboBox>
+
+
+                        </StackPanel>
+                        <ListBox>
+                            <ListBoxItem Content=" Previous Selection 1"/>
+                            <ListBoxItem Content=" Previous Selection 2"/>
+                            <ListBoxItem Content=" Previous Selection 3"/>
+                        </ListBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Width="123">
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Text="Switch View" FontSize="16"/>
+                            <ComboBox Margin="10,5,5,5" Width="50" >
+                                <ComboBoxItem Content="Item 1"/>
+                                <ComboBoxItem Content="Item 2"/>
+                                <ComboBoxItem Content="Item 3"/>
+                            </ComboBox>
+
+
+                        </StackPanel>
+                        <ListBox>
+                            <ListBoxItem Content=" Previous Selection 1"/>
+                            <ListBoxItem Content=" Previous Selection 2"/>
+                            <ListBoxItem Content=" Previous Selection 3"/>
+                        </ListBox>
+                    </StackPanel>
+                </StackPanel>
+                </ScrollViewer>
+                <Grid DockPanel.Dock="Left" Margin="0,10">
+                    <StackPanel HorizontalAlignment="Left" Height="Auto" Margin="5" VerticalAlignment="Top" Width="Auto">
+                        <TextBlock Text="Entity Name" FontSize="25"/>
+                        <TextBlock Text="Process Documentation" FontSize="16"/>
+                        <TextBlock Text="Search Bar" FontSize="16"/>
+                        <ListBox Margin="10" MaxHeight="300"
+                                 IsSynchronizedWithCurrentItem="True"
+                                 x:Name="EntityDetailListGRD"
+                                 ItemsSource="{Binding EntitySet.Value, Mode=OneWay}"
+                                 SelectedItem="{Binding CurrentEntity.Value, Mode=TwoWay}">
+                            <ListBox.ItemContainerStyle>
+                                <Style TargetType="{x:Type ListBoxItem}">
+
+                                    <!--<Setter Property="Visibility" Value="{Binding Value, Converter={StaticResource NullVisibilityConverter}}"/>-->
+
+                                    <!--  Default Template  -->
+                                    <Setter Property="ContentTemplate" Value="{DynamicResource SummaryInfoRDT}" />
+                                    <Setter Property="Height" Value="Auto" />
+                                    <!--  Triggers to change Template  -->
+                                    <Style.Triggers>
+                                        <MultiDataTrigger>
+                                            <MultiDataTrigger.Conditions>
+                                                <Condition Binding="{Binding DataContext.RowState.Value, RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}" Value="{x:Static systemInterfaces:RowState.Loaded}" />
+                                                <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Mode=Self}}" Value="True" />
+                                            </MultiDataTrigger.Conditions>
+                                            <Setter Property="ContentTemplate" Value="{DynamicResource SummaryInfoRDT}" />
+                                            <Setter Property="Visibility" Value="Visible" />
+                                        </MultiDataTrigger>
+                                        <MultiDataTrigger>
+                                            <MultiDataTrigger.Conditions>
+                                                <Condition Binding="{Binding DataContext.RowState.Value, RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}" Value="{x:Static systemInterfaces:RowState.Modified}" />
+                                                <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Mode=Self}}" Value="True" />
+                                            </MultiDataTrigger.Conditions>
+                                            <Setter Property="ContentTemplate" Value="{DynamicResource SummaryInfoWDT}" />
+                                            <Setter Property="Visibility" Value="Visible" />
+                                        </MultiDataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </ListBox.ItemContainerStyle>
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="MouseDoubleClick">
+                                    <i:InvokeCommandAction Command="{Binding Commands[EditEntity]}" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </ListBox>
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Sum Amount:" Margin="5"/>
+                                <TextBlock Text="$100.00" Margin="5"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Avg. Cost" Margin="5"/>
+                                <TextBlock Text="$11.00" Margin="5" />
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <Button Content="" FontSize="30" Width="50" Height="50" Command="{Binding Commands[ChangeMainEntity]}" Margin="0,0,10,0" HorizontalAlignment="Right" VerticalContentAlignment="Top" VerticalAlignment="Top"/>
+
                 </Grid>
-                <TabControl Width="Auto" Height="Auto" ItemsSource="{Binding ViewModels}" Background="#7FFFFFFF" TabStripPlacement="Left" Margin="0">
+                <Grid DockPanel.Dock="Top" Height="75" VerticalAlignment="Top" Margin="5">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <TextBlock Text="Next Steps:" FontSize="20" Margin="5"/>
+                        <ListBox ItemsSource="{Binding ChildEntityViewModels}" SelectedItem="{Binding SelectedViewModel.Value}">
+                            <ListBox.ItemContainerStyle>
+                                <Style TargetType="{x:Type ListBoxItem}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="true">
+                                            <Setter Property="IsSelected" Value="true" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </ListBox.ItemContainerStyle>
+                            <ListBox.ItemTemplate>
+                                
+                                <DataTemplate>
+                                    <Grid>
+                                        <ToggleButton Content="{Binding Path=ViewInfo.EntityType.EntitySetName}" Command="{Binding DataContext.Commands[ChangeViewModelVisibility], ElementName=SummaryListViewModel}" Margin="10" Width="100" Height="50">
+                                            <!--<ToggleButton.Style>
+                                                <Style TargetType="{x:Type ToggleButton}">
+                                                    <Setter Property="" />
+                                                </Style>
+                                            </ToggleButton.Style>-->
+                                        </ToggleButton>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                            <ListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel IsItemsHost="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" />
+                                </ItemsPanelTemplate>
+                            </ListBox.ItemsPanel>
+                            
+
+                        </ListBox>
+                    </StackPanel>
+                </Grid>
+                <TabControl DockPanel.Dock="Right"  Width="Auto" Height="Auto" ItemsSource="{Binding ExtensionViewModels}" Background="#7FFFFFFF" TabStripPlacement="Left" Margin="0">
                     <TabControl.ItemTemplate>
                         <DataTemplate>
                             <Grid Width="200" Height="100">
@@ -86,7 +264,7 @@
                     </TabControl.ContentTemplate>
 
                 </TabControl>
-            </StackPanel>
+            </DockPanel>
 
 
 

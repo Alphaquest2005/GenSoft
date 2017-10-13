@@ -69,3 +69,5 @@ C:\Prism\GitRepositiory\GenSoft\DesignTimeData\obj\x64\Debug\DesignTimeData.pdb
 C:\Prism\GitRepositiory\GenSoft\DesignTimeData\obj\x64\Debug\DesignTimeData.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\DesignTimeData\bin\x64\Debug\DynamicExpresso.Core.dll
 C:\Prism\GitRepositiory\GenSoft\DesignTimeData\bin\x64\Debug\DynamicExpresso.Core.pdb
+C:\Prism\GitRepositiory\GenSoft\DesignTimeData\bin\x64\Debug\Utilities.dll
+C:\Prism\GitRepositiory\GenSoft\DesignTimeData\bin\x64\Debug\Utilities.pdb

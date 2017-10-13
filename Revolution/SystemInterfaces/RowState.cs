@@ -12,4 +12,11 @@ namespace SystemInterfaces
     {
        Intialized, NotIntialized
     }
+
+    
+
+    public enum EntityRelationshipOrdinality
+    {
+        One = 1, Many = 2
+    }
 }

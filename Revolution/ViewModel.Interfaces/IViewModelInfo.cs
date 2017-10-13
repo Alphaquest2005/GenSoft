@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.Windows;
 using SystemInterfaces;
 
 namespace ViewModel.Interfaces
@@ -22,7 +23,8 @@ namespace ViewModel.Interfaces
         int Priority { get; }
         List<IViewModelInfo> ViewModelInfos { get; }
         IViewAttributeDisplayProperties DisplayProperties { get; }
-
+        ViewModelState ViewModelState { get; set; }
+        Visibility Visibility { get; set; }
     }
 
     
@@ -40,6 +42,6 @@ namespace ViewModel.Interfaces
     public interface IEntityViewInfo:IViewInfo
     {
         IDynamicEntityType EntityType { get; }
-        
+        EntityRelationshipOrdinality Ordinality { get; }
     }
 }

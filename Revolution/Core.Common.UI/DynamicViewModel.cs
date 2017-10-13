@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics.Contracts;
 using System.Dynamic;
+using System.Linq;
 using System.Reactive;
+using System.Windows;
 using SystemInterfaces;
 using Common;
 using Common.Dynamic;
@@ -44,13 +46,22 @@ namespace Core.Common.UI
             //RowState = viewModel.RowState;
             Priority = viewModel.Priority;
 
-           
+            ViewModels.CollectionChanges.Subscribe(x =>
+            {
+                NotifyPropertyChanged(nameof(ExtensionViewModels));
+                
+            });
 
         }
 
+        public List<IEntityViewModel> ExtensionViewModels => ViewModels.Cast<IEntityViewModel>().Where(x => x.ViewInfo.Ordinality == EntityRelationshipOrdinality.One).ToList();
+        public List<IEntityViewModel> ChildEntityViewModels => ViewModels.Cast<IEntityViewModel>().Where(x => x.ViewInfo.Ordinality == EntityRelationshipOrdinality.Many).ToList();
+
         public ReactiveProperty<RowState> RowState { get; } = new ReactiveProperty<RowState>(SystemInterfaces.RowState.Loaded);
         public ObservableList<IViewModel> ViewModels { get; } = new ObservableBindingList<IViewModel>();
+        public ReactiveProperty<dynamic> SelectedViewModel { get; } = new ReactiveProperty<dynamic>();
         public ReactiveProperty<dynamic> ViewModelState { get; } = new ReactiveProperty<dynamic>(SystemInterfaces.ViewModelState.NotIntialized);
+        public ReactiveProperty<dynamic> Visibility { get; } = new ReactiveProperty<dynamic>(System.Windows.Visibility.Collapsed);
 
         public override bool TryGetMember(GetMemberBinder binder, out object result)
         {

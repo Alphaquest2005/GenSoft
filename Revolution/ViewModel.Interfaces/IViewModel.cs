@@ -4,6 +4,7 @@ using System.ComponentModel.Composition;
 using System.Reactive;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using SystemInterfaces;
 using JB.Collections.Reactive;
 using Reactive.Bindings;
@@ -28,7 +29,9 @@ namespace ViewModel.Interfaces
         Type ViewModelType { get; }
         int Priority { get; }
         ObservableList<IViewModel> ViewModels { get; }
+
+        ReactiveProperty<dynamic> SelectedViewModel { get; }
         ReactiveProperty<dynamic> ViewModelState { get; }
-        
+        ReactiveProperty<dynamic> Visibility { get; }
     }
 }

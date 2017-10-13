@@ -6,6 +6,7 @@ using SystemInterfaces;
 using DynamicExpresso;
 using GenSoft.Interfaces;
 using JB.Collections.Reactive;
+using Utilities;
 
 namespace Common.DataEntites
 {
@@ -35,6 +36,8 @@ namespace Common.DataEntites
         public Dictionary<string, List<dynamic>> CalculatedProperties { get; }
         public ObservableDictionary<string, List<dynamic>> CachedProperties { get; }
         public ObservableDictionary<string, string> CachedEntityProperties { get; }
+        public IIntelliList<IDynamicEntityType> ChildEntities { get; } = new InteliList<IDynamicEntityType>();
+        public IIntelliList<IDynamicEntityType> ParentEntities { get; } = new InteliList<IDynamicEntityType>();
     }
 
 }

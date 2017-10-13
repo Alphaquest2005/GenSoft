@@ -114,12 +114,13 @@ namespace DataServices.Actors
 
                 var vm = (TViewModel) Activator.CreateInstance(concreteVM,
                     objects);
-
+                vm.Visibility.Value = vmInfo.Visibility;
                 foreach (var v in vmInfo.ViewModelInfos.Where(x => x != null))
                 {
                     var cvm = (IViewModel) typeof(ViewModelActor).GetMethod("CreateViewModel")
                         .MakeGenericMethod(v.ViewModelType)
                         .Invoke(null, new object[] {vmInfoProcess, v});
+                    cvm.Visibility.Value = v.Visibility;
                     vm.ViewModels.Add(cvm);
                 }
                 return vm;

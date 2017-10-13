@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
+using System.Windows;
 using SystemInterfaces;
 using Actor.Interfaces;
 using Akka.Actor;
@@ -425,41 +426,49 @@ namespace DataServices.Actors
 
                 foreach (var g in list)
                 {
-                    var pm = CreateEntityTypeViewModel(g.Key, new List<EntityRelationship>(), true, ctx, processId);
-                    var pv = CreateEntityViewModel(ctx, pm, res);
+                    var pm = CreateEntityTypeViewModel(g.Key, new List<EntityRelationship>(), true, ctx, processId, EntityRelationshipOrdinality.One);
+                    var pv = CreateEntityViewModel(pm);
                     if (pv == null) continue;
+                    var ppm = CreateEntityTypeViewModel(g.Key, new List<EntityRelationship>(), false, ctx, processId, EntityRelationshipOrdinality.One);
+                    var ppv = CreateEntityViewModel(ppm);
+                    pv.ViewModelInfos.Add(ppv);
                     foreach (var rel in g)
                     {
-                        var cm = CreateEntityTypeViewModel(rel.EntityTypeAttributes.EntityType, new List<EntityRelationship>() { rel }, rel.RelationshipType.ChildOrdinalityId == 2, ctx, processId);
-                        var cv = CreateEntityViewModel(ctx, cm, res);
+                        var cm = CreateEntityTypeViewModel(rel.EntityTypeAttributes.EntityType, new List<EntityRelationship>() { rel }, rel.RelationshipType.ChildOrdinalityId == 2, ctx, processId, rel.RelationshipType.ChildOrdinalitys.Name == "One" ? EntityRelationshipOrdinality.One : EntityRelationshipOrdinality.Many);
+                        var cv = CreateEntityViewModel(cm);
                         if (cv != null)
                         {
                             if (rel.RelationshipType.ChildOrdinalitys.Name == "One" || condensed)
                             {
+                                cv.Visibility = Visibility.Visible;
                                 pv.ViewModelInfos.Add(cv);
                             }
                             else
                             {
-                                res.AddOrUpdate(cm.EntityTypeName, cv, (k,v) => cv);
+                                res.AddOrUpdate(cm.EntityTypeName, cv);
+                                cv.Visibility = Visibility.Collapsed;
+                                pv.ViewModelInfos.Add(cv);
                             }
 
 
                         }
 
+
                     }
-                    res.AddOrUpdate(pm.EntityTypeName, pv, (k, v) => pv);
+                    res.AddOrUpdate(pm.EntityTypeName, pv);
                 }
             }
             return res.Values.ToList();
         }
 
-        private static EntityTypeViewModel CreateEntityTypeViewModel(EntityType entityType, List<EntityRelationship> relationships, bool isList, GenSoftDBContext ctx, int processId)
+        private static EntityTypeViewModel CreateEntityTypeViewModel(EntityType entityType, List<EntityRelationship> relationships, bool isList, GenSoftDBContext ctx, int processId, EntityRelationshipOrdinality ordinality)
         {
             return new EntityTypeViewModel()
             {
                 Description = entityType.EntitySetName,
                 SystemProcessId = processId,
                 EntityTypeName = entityType.Type.Name,
+                RelationshipOrdinality = ordinality,
                 ViewModelTypeName = ctx.ViewModelTypes.First(z => z.DomainEntity == true && z.List == isList).Name,
                 EntityTypeViewModelCommands = entityType.EntityTypeViewModelCommand.ToList(),
                 EntityViewModelRelationships = relationships.Select(x => new EntityViewModelRelationship()
@@ -476,11 +485,11 @@ namespace DataServices.Actors
 
 
         static Dictionary<string, IViewModelInfo> processedVMIds = new Dictionary<string, IViewModelInfo>();
-        static Dictionary<string, IComplexEventAction> processedCEIds = new Dictionary<string, IComplexEventAction>();
+        
 
-        private static IViewModelInfo CreateEntityViewModel(GenSoftDBContext ctx, EntityTypeViewModel vm, ConcurrentDictionary<string, IViewModelInfo> viewInfos, bool isChild = false)
+        private static IViewModelInfo CreateEntityViewModel(EntityTypeViewModel vm)
         {
-            if (processedVMIds.ContainsKey(vm.EntityTypeName)) return processedVMIds[vm.EntityTypeName];
+            if (processedVMIds.ContainsKey($"{vm.EntityTypeName}-{vm.ViewModelTypeName}")) return processedVMIds[vm.EntityTypeName];
 
 
 
@@ -490,7 +499,7 @@ namespace DataServices.Actors
 
             var res = ProcessViewModels.ProcessViewModelFactory[vm.ViewModelTypeName].Invoke(vm, vp);
 
-            processedVMIds.Add(vm.EntityTypeName, res);
+            processedVMIds.Add($"{vm.EntityTypeName}-{vm.ViewModelTypeName}", res);
             return res;
 
         }
@@ -612,8 +621,11 @@ namespace DataServices.Actors
 
                         res.AddOrUpdate($"{parentType}-IntializeProcessState",Processes.ComplexActions.GetComplexAction("IntializeProcessState",new object[]{processId, DynamicEntityType.DynamicEntityTypes[parentType]}));
                         res.AddOrUpdate($"{parentType}-UpdateStateList",Processes.ComplexActions.GetComplexAction("UpdateStateList",new object[] { processId, DynamicEntityType.DynamicEntityTypes[parentType] }));
+                        res.AddOrUpdate($"{parentType}-UpdateState", Processes.ComplexActions.GetComplexAction("UpdateState",new object[] { processId, DynamicEntityType.DynamicEntityTypes[parentType] }));
+                        res.AddOrUpdate($"{parentType}|{parentType}-RequestState", Processes.ComplexActions.GetComplexAction("RequestState",new object[] { processId, parentType, parentType, "Id" }));
 
-                        foreach (var rel in r.DistinctBy(x => x.Id))
+                        var entityRelationships = r.DistinctBy(x => x.Id);
+                        foreach (var rel in entityRelationships)
                         {
                             var parentExpression = rel.ParentEntity.EntityTypeAttributes.Attributes.Name;
                             var childType = rel.EntityTypeAttributes.EntityType.Type.Name;
@@ -621,6 +633,13 @@ namespace DataServices.Actors
                             if (!DynamicEntityType.DynamicEntityTypes.ContainsKey(childType))
                             {
                                 AddDynamicEntityTypes(childType);
+                                if (rel.RelationshipType.ChildOrdinalitys.Name != "One")
+                                {
+                                    DynamicEntityType.DynamicEntityTypes[parentType].ChildEntities
+                                        .Add(DynamicEntityType.DynamicEntityTypes[childType]);
+                                    DynamicEntityType.DynamicEntityTypes[childType].ParentEntities
+                                        .Add(DynamicEntityType.DynamicEntityTypes[parentType]);
+                                }
                             }
                             
 
@@ -638,6 +657,7 @@ namespace DataServices.Actors
                             }
                             else
                             {
+                                
                                 //res.Add(Processes.ComplexActions.GetComplexAction("IntializeProcessState",
                                 //    new object[]
                                 //        {processId, DynamicEntityType.DynamicEntityTypes[childType]}));

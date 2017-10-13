@@ -31,14 +31,14 @@ namespace RevolutionData
     
     public class CachedViewModelInfo
     {
-        public static ViewModelInfo CachedViewModel(int processId, IDynamicEntityType entityType, string symbol, string description, int priority, List<EntityViewModelRelationship> viewRelationships, List<EntityTypeViewModelCommand> viewCommands, IViewAttributeDisplayProperties displayProperties)
+        public static ViewModelInfo CachedViewModel(int processId, IDynamicEntityType entityType, EntityRelationshipOrdinality ordinality, string symbol, string description, int priority, List<EntityViewModelRelationship> viewRelationships, List<EntityTypeViewModelCommand> viewCommands, IViewAttributeDisplayProperties displayProperties)
         {
             try
             {
                 var viewInfo = new ViewModelInfo
                 (
                     processId: processId,
-                    viewInfo: new EntityViewInfo($"{entityType.Name}-CachedViewModel", symbol, description,entityType),
+                    viewInfo: new EntityViewInfo($"{entityType.Name}-CachedViewModel", symbol, description,entityType, ordinality),
                     subscriptions: new List<IViewModelEventSubscription<IViewModel, IEvent>>
                     {
                         //new ViewEventSubscription<ICacheViewModel, IViewModelIntialized>(

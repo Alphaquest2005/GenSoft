@@ -22,6 +22,18 @@ namespace RevolutionData
 
                 new List<IViewModelEventSubscription<IViewModel, IEvent>>
                 {
+                    new ViewEventSubscription<IScreenModel, IViewModelVisibilityChanged>(
+                        "ScreenViewModel-ICurrentEntityChanged",
+                        processId,
+                        e => e != null,
+                        new List<Func<IScreenModel, IViewModelVisibilityChanged, bool>> { },
+                        (s, e) =>
+                        {
+                            foreach (var itm in s.BodyViewModels.Where(x => x.ViewInfo.Name == e.ViewModel.ViewInfo.Name))
+                            {
+                                itm.Visibility.Value = e.Visibility;
+                            }
+                        }),
                     new ViewEventSubscription<IScreenModel, INavigateToView>(
                         "ScreenViewModel-ICurrentEntityChanged",
                         processId,

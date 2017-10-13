@@ -6,6 +6,7 @@
                     xmlns:system="clr-namespace:System;assembly=mscorlib"
                     xmlns:ui="clr-namespace:Core.Common.UI;assembly=Core.Common.UI"
                     xmlns:viewModels="clr-namespace:ViewModels;assembly=ViewModels"
+                    xmlns:interfaces="clr-namespace:ViewModel.Interfaces;assembly=ViewModel.Interfaces"
                     mc:Ignorable="d">
 
     <DataTemplate DataType="{x:Type viewModels:ScreenModel}">
@@ -126,12 +127,13 @@
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemTemplate>
-                            <DataTemplate>
+                            <DataTemplate DataType="{x:Type interfaces:IViewModel}">
                                 <Expander Width="Auto"
                                           Height="550"
                                           Margin="20,010,0,0"
                                           HorizontalAlignment="Left"
                                           VerticalAlignment="Top"
+                                          Visibility="{Binding Visibility.Value}"
                                           ExpandDirection="Right"
                                           Focusable="True"
                                           IsExpanded="True"

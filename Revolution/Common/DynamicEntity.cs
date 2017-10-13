@@ -81,20 +81,20 @@ namespace Common.DataEntites
         //    return base.Equals(other) ;//&& PropertyList.SequenceEqual(other.PropertyList);
         //}
 
-        //public override int GetHashCode()
-        //{
-        //    try
-        //    {
-        //        return (int) (base.GetHashCode() ^ (PropertyList.Any() ? PropertyList.GetHashCode() : 0));
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        Console.WriteLine(e);
-        //        throw;
-        //    }
+        public override int GetHashCode()
+        {
+            try
+            {
+                return (int)(base.GetHashCode() ^ (PropertyList.Any() ? PropertyList.GetHashCode() : 0));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
 
 
-        //}
+        }
 
         //public static bool operator ==(DynamicEntity a, DynamicEntity b)
         //{

@@ -31,14 +31,14 @@ namespace RevolutionData
     
     public class SummaryListViewModelInfo
     {
-        public static ViewModelInfo SummaryListViewModel(int processId, IDynamicEntityType entityType, string symbol, string description, int priority, List<EntityViewModelRelationship> viewRelationships, List<EntityTypeViewModelCommand> viewCommands, IViewAttributeDisplayProperties displayProperties)
+        public static ViewModelInfo SummaryListViewModel(int processId, IDynamicEntityType entityType, EntityRelationshipOrdinality ordinality, string symbol, string description, int priority, List<EntityViewModelRelationship> viewRelationships, List<EntityTypeViewModelCommand> viewCommands, IViewAttributeDisplayProperties displayProperties)
         {
             try
             {
                 var viewInfo = new ViewModelInfo
                 (
                     processId: processId,
-                    viewInfo: new EntityViewInfo($"{entityType.Name}-SummaryListViewModel", symbol, description,entityType),
+                    viewInfo: new EntityViewInfo($"{entityType.Name}-SummaryListViewModel", symbol, description,entityType, ordinality),
                     subscriptions: new List<IViewModelEventSubscription<IViewModel, IEvent>>
                     {
                         //new ViewEventSubscription<ISummaryListViewModel, IViewModelIntialized>(
@@ -149,6 +149,25 @@ namespace RevolutionData
                                     new StateCommandInfo(s.Process.Id,
                                         Context.Process.Commands.CurrentEntityChanged), s.Process,
                                     s.Source);
+                            }),
+
+                        new ViewEventCommand<ISummaryListViewModel, IViewModelVisibilityChanged>(
+                            key:"ChangeViewModelVisibility",
+                            commandPredicate:new List<Func<ISummaryListViewModel, bool>>
+                            {
+                                //  v => v.CurrentEntity.Value != null
+                            },
+                            subject:v => Observable.Empty<ReactiveCommand<IViewModel, Unit>>(),
+
+                            messageData: v =>
+                            {
+
+
+                                return new ViewEventCommandParameter(
+                                    new object[] {v.SelectedViewModel.Value, v.SelectedViewModel.Value.Visibility.Value == Visibility.Visible?Visibility.Collapsed:Visibility.Visible},
+                                    new StateCommandInfo(v.Process.Id,
+                                        Context.ViewModel.Commands.ChangeVisibility), v.Process,
+                                    v.Source);
                             }),
 
                         //Todo: supposed to be create from database
