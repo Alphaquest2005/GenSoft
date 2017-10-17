@@ -3,7 +3,7 @@
     "DynamicExpresso.Core": "1.3.3.6"
   },
   "frameworks": {
-    "net461": {}
+    "net47": {}
   },
   "runtimes": {
     "win-x64": {}

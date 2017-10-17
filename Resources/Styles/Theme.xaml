@@ -18,7 +18,7 @@
 
     
 
-    <ControlTemplate x:Key="LookUpTextBlock" TargetType="{x:Type ComboBox}">
+    <!--<ControlTemplate x:Key="LookUpTextBlock" TargetType="{x:Type ComboBox}">
 		<TextBlock Text="{Binding Text, RelativeSource={RelativeSource TemplatedParent}}"/>
 	</ControlTemplate>
 
@@ -35,7 +35,7 @@
 	<SolidColorBrush x:Key="TextBrush" Color="#FF152937" />
 	<Color x:Key="DisabledColor">#8CFFFFFF</Color>
 
-	<!-- Button -->
+	--><!-- Button --><!--
 	<Style TargetType="Button">
 		<Setter Property="Foreground" Value="{StaticResource TextBrush}" />
 		<Setter Property="Background" Value="#00000000" />
@@ -57,7 +57,7 @@
 									</Storyboard>
 								</VisualState>
 							</VisualStateGroup>
-							<!--<VisualStateGroup x:Name="CommonStates">
+							--><!--<VisualStateGroup x:Name="CommonStates">
 								<VisualStateGroup.Transitions>
 									<VisualTransition GeneratedDuration="00:00:00.3000000"/>
 									<VisualTransition From="MouseOver" GeneratedDuration="00:00:00" To="Pressed"/>
@@ -112,7 +112,7 @@
 										</DoubleAnimationUsingKeyFrames>
 									</Storyboard>
 								</VisualState>
-							</VisualStateGroup>-->
+							</VisualStateGroup>--><!--
 						</VisualStateManager.VisualStateGroups>
 						<Grid.RowDefinitions>
 							<RowDefinition Height="50*" />
@@ -205,7 +205,7 @@
 		</Setter>
 	</Style>
 
-	<!-- Toggle Button -->
+	--><!-- Toggle Button --><!--
 	<Style TargetType="ToggleButton">
 		<Setter Property="Background" Value="#001F3B53" />
 		<Setter Property="Foreground" Value="{StaticResource TextBrush}" />
@@ -437,7 +437,7 @@
 		</Setter>
 	</Style>
 
-	<!--CheckBox-->
+	--><!--CheckBox--><!--
 	<Style TargetType="{x:Type CheckBox}">
 		<Setter Property="SnapsToDevicePixels" Value="true" />
 		<Setter Property="Background" Value="#00FFFFFF" />
@@ -630,7 +630,7 @@
 		</Setter>
 	</Style>
 
-	<!--RadioButton-->
+	--><!--RadioButton--><!--
 	<Style TargetType="{x:Type RadioButton}">
 		<Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
 		<Setter Property="Background" Value="#00F4F4F4" />
@@ -817,7 +817,7 @@
 		</Setter>
 	</Style>
 
-	<!--<Style TargetType="{x:Type Expander}">
+	--><!--<Style TargetType="{x:Type Expander}">
 		<Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
 		<Setter Property="Background" Value="{x:Null}" />
 		<Setter Property="HorizontalContentAlignment" Value="Stretch" />
@@ -861,7 +861,7 @@
 			</Setter.Value>
 		</Setter>
 	</Style>-->
-	<!--Expander-->
+	<!--Expander--><!--
 	<Style TargetType="{x:Type Expander}">
 		<Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
 		<Setter Property="Background" Value="{x:Null}" />
@@ -878,7 +878,7 @@
 								<Grid SnapsToDevicePixels="False" Background="{x:Null}">
 
 									<Grid>
-										<!--<Grid.LayoutTransform>
+										--><!--<Grid.LayoutTransform>
 											<TransformGroup>
 												<TransformGroup.Children>
 													<TransformCollection>
@@ -965,13 +965,13 @@
 													<ScaleTransform ScaleX="1" ScaleY="-1"/>
 												</TransformGroup>
 											</Path.RenderTransform>
-										</Path>-->
+										</Path>--><!--
 									</Grid>
 									<ContentPresenter HorizontalAlignment="Center" Margin="0,4,0,0" VerticalAlignment="Top" SnapsToDevicePixels="True" Grid.Row="1" RecognizesAccessKey="True" />
 								</Grid>
 							</Border>
 							<ControlTemplate.Triggers>
-								<!--<Trigger Property="IsChecked" Value="True">
+								--><!--<Trigger Property="IsChecked" Value="True">
 									<Setter Property="RenderTransformOrigin" TargetName="arrow" Value="0.5,0.5" />
 									<Setter Property="RenderTransform" TargetName="arrow">
 										<Setter.Value>
@@ -1046,7 +1046,7 @@
 										</Setter.Value>
 									</Setter>
 									<Setter Property="Opacity" TargetName="Highlight" Value="1" />
-								</Trigger>-->
+								</Trigger>--><!--
 							</ControlTemplate.Triggers>
 						</ControlTemplate>
 						<ControlTemplate x:Key="ExpanderUpHeaderTemplate" TargetType="{x:Type ToggleButton}">
@@ -1544,12 +1544,12 @@
 
 
 
-	<!-- TextBox -->
+	--><!-- TextBox --><!--
 	<Style TargetType="{x:Type TextBox}">
 
 		<Setter Property="Background" Value="#4CFFFFFF" />
 		<Setter Property="FontSize" Value="14"/>
-		<!--<Setter Property="IsTabStop" Value="False"/>
+		--><!--<Setter Property="IsTabStop" Value="False"/>
 		<Setter Property="BorderThickness" Value="0"/>
 		<Setter Property="Background" Value="Transparent"/>
 		<Setter Property="Padding" Value="-2,0,0,0"/>
@@ -1690,16 +1690,16 @@
 					</ControlTemplate.Triggers>
 				</ControlTemplate>
 			</Setter.Value>
-		</Setter>-->
+		</Setter>--><!--
 	</Style>
 
-	<!-- TextBox -->
+	--><!-- TextBox --><!--
 	<Style TargetType="{x:Type TextBlock}">
 		<Setter Property="FontSize" Value="16"/>
 
 	</Style>
 
-	<!-- PasswordBox -->
+	--><!-- PasswordBox --><!--
 	<Style TargetType="{x:Type PasswordBox}">
 		<Setter Property="Background" Value="#FFFFFFFF" />
 		<Setter Property="BorderBrush" Value="{DynamicResource SecondaryBrush}" />
@@ -1806,7 +1806,7 @@
 		</Setter>
 	</Style>
 
-	<!-- RichTextBox -->
+	--><!-- RichTextBox --><!--
 	<Style TargetType="{x:Type RichTextBox}">
 		<Style.Resources>
 			<Style x:Key="{x:Type FlowDocument}" TargetType="{x:Type FlowDocument}">
@@ -1905,7 +1905,7 @@
 		</Setter>
 	</Style>
 
-	<!-- Thumb -->
+	--><!-- Thumb --><!--
 	<Style TargetType="{x:Type Thumb}">
 		<Setter Property="OverridesDefaultStyle" Value="true" />
 		<Setter Property="Foreground" Value="#FF000000" />
@@ -2025,7 +2025,7 @@
 		<Setter Property="Focusable" Value="True"/>
 	</Style>
 
-	<!-- Slider -->
+	--><!-- Slider --><!--
 	<Style TargetType="{x:Type Slider}">
 		<Style.Resources>
 			<Style x:Key="SliderRepeatButtonStyle" TargetType="{x:Type RepeatButton}">
@@ -2152,7 +2152,7 @@
 		</Style.Triggers>
 	</Style>
 
-	<!-- ScrollBar -->
+	--><!-- ScrollBar --><!--
 	<Style TargetType="{x:Type ScrollBar}">
 		<Style.Resources>
 			<Style x:Key="ScrollBarButton" TargetType="{x:Type RepeatButton}">
@@ -2202,9 +2202,9 @@
 												<DoubleAnimationUsingKeyFrames Duration="00:00:00.001" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
 													<SplineDoubleKeyFrame KeyTime="0" Value="1" />
 												</DoubleAnimationUsingKeyFrames>
-												<!--<ColorAnimationUsingKeyFrames Duration="00:00:00.001" Storyboard.TargetName="rectangle1" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+												--><!--<ColorAnimationUsingKeyFrames Duration="00:00:00.001" Storyboard.TargetName="rectangle1" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
 													<SplineColorKeyFrame KeyTime="0" Value="#49000000" />
-												</ColorAnimationUsingKeyFrames>-->
+												</ColorAnimationUsingKeyFrames>--><!--
 												<DoubleAnimationUsingKeyFrames Duration="00:00:00.001" Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.Opacity)">
 													<SplineDoubleKeyFrame KeyTime="0" Value="1" />
 												</DoubleAnimationUsingKeyFrames>
@@ -2212,9 +2212,9 @@
 										</VisualState>
 										<VisualState x:Name="Pressed">
 											<Storyboard>
-												<!--<ColorAnimationUsingKeyFrames Duration="00:00:00.001" Storyboard.TargetName="rectangle2" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+												--><!--<ColorAnimationUsingKeyFrames Duration="00:00:00.001" Storyboard.TargetName="rectangle2" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
 													<SplineColorKeyFrame KeyTime="0" Value="#FF000000" />
-												</ColorAnimationUsingKeyFrames>-->
+												</ColorAnimationUsingKeyFrames>--><!--
 												<DoubleAnimationUsingKeyFrames Duration="00:00:00.001" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Offset)">
 													<SplineDoubleKeyFrame KeyTime="0" Value="0" />
 												</DoubleAnimationUsingKeyFrames>
@@ -2470,7 +2470,7 @@
 		</Style.Triggers>
 	</Style>
 
-	<!-- ScrollViewer -->
+	--><!-- ScrollViewer --><!--
 	<Style TargetType="{x:Type ScrollViewer}">
 		<Setter Property="Template">
 			<Setter.Value>
@@ -2496,7 +2496,7 @@
 		<Setter Property="Background" Value="#00FFFFFF" />
 	</Style>
 
-	<!-- FlowDocumentScrollViewer -->
+	--><!-- FlowDocumentScrollViewer --><!--
 	<Style TargetType="{x:Type FlowDocumentScrollViewer}">
 		<Setter Property="Background" Value="#00FFFFFF" />
 		<Setter Property="HorizontalContentAlignment" Value="Stretch" />
@@ -2971,7 +2971,7 @@
 		</Setter>
 	</Style>
 
-	<!-- ListBox -->
+	--><!-- ListBox --><!--
 	<Style TargetType="{x:Type ListBox}">
 		<Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
 		<Setter Property="BorderBrush">
@@ -3012,7 +3012,7 @@
 		</Setter>
 	</Style>
 
-	<!-- ListBoxItem -->
+	--><!-- ListBoxItem --><!--
 	<Style TargetType="{x:Type ListBoxItem}" x:Key="ThemeListBoxItem" >
 		<Setter Property="Background" Value="Transparent" />
 		<Setter Property="HorizontalContentAlignment" Value="{Binding Path=HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
@@ -3216,7 +3216,7 @@
 		</Setter>
 	</Style>
 
-	<!-- TabControl -->
+	--><!-- TabControl --><!--
 	<Style TargetType="{x:Type TabControl}">
 		<Setter Property="Background" Value="#FFFFFFFF" />
 		<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
@@ -3291,7 +3291,7 @@
 		</Setter>
 	</Style>
 
-	<!-- TabItem -->
+	--><!-- TabItem --><!--
 	<Style TargetType="{x:Type TabItem}">
 		<Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
 		<Setter Property="Padding" Value="6,1,6,1" />
@@ -3593,7 +3593,7 @@
 		</Setter>
 	</Style>
 
-	<!-- ComboBox -->
+	--><!-- ComboBox --><!--
 	<Style TargetType="{x:Type ComboBox}">
 		<Style.Resources>
 			<Geometry x:Key="DownArrowGeometry">M 0 0 L 3.5 4 L 7 0 Z</Geometry>
@@ -3847,7 +3847,7 @@
 		</Style.Triggers>
 	</Style>
 
-	<!-- ComboBoxItem -->
+	--><!-- ComboBoxItem --><!--
 	<Style TargetType="{x:Type ComboBoxItem}">
 		<Setter Property="HorizontalContentAlignment" Value="{Binding Path=HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
 		<Setter Property="VerticalContentAlignment" Value="{Binding Path=VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
@@ -3942,7 +3942,7 @@
 		</Setter>
 	</Style>
 
-	<!-- Menu -->
+	--><!-- Menu --><!--
 	<Style TargetType="{x:Type Menu}">
 		<Setter Property="Background" Value="#00000000" />
 		<Setter Property="FontFamily" Value="{DynamicResource {x:Static SystemFonts.MenuFontFamilyKey}}" />
@@ -4024,7 +4024,7 @@
 		</Setter>
 	</Style>
 
-	<!-- MenuItem -->
+	--><!-- MenuItem --><!--
 	<Style TargetType="{x:Type MenuItem}">
 		<Style.Resources>
 			<Geometry x:Key="Checkmark">M 0,5.1 L 1.7,5.2 L 3.4,7.1 L 8,0.4 L 9.2,0 L 3.3,10.8 Z</Geometry>
@@ -4686,7 +4686,7 @@
 		</Style.Triggers>
 	</Style>
 
-	<!-- ToolBar -->
+	--><!-- ToolBar --><!--
 	<Style TargetType="{x:Type ToolBar}">
 		<Style.Resources>
 			<Style x:Key="ToolBarVerticalOverflowButtonStyle" TargetType="{x:Type ToggleButton}">
@@ -5100,7 +5100,7 @@
 		</Setter>
 	</Style>
 
-	<!--ToolTip-->
+	--><!--ToolTip--><!--
 	<Style TargetType="ToolTip">
 		<Setter Property="Foreground" Value="{StaticResource TextBrush}" />
 		<Setter Property="Background" Value="{StaticResource PrimaryBrush}" />
@@ -5151,7 +5151,7 @@
 		</Setter>
 	</Style>
 
-	<!-- ProgressBar -->
+	--><!-- ProgressBar --><!--
 	<Style x:Key="{x:Type ProgressBar}" TargetType="{x:Type ProgressBar}">
 		<Setter Property="Foreground" Value="{StaticResource TextBrush}" />
 		<Setter Property="Background">
@@ -5281,7 +5281,7 @@
 		</Setter>
 	</Style>
 
-	<!-- TreeView -->
+	--><!-- TreeView --><!--
 	<Style x:Key="{x:Type TreeView}" TargetType="{x:Type TreeView}">
 		<Setter Property="Background" Value="white" />
 		<Setter Property="Foreground" Value="{StaticResource TextBrush}" />
@@ -5316,7 +5316,7 @@
 		</Setter>
 	</Style>
 
-	<!-- TreeViewItem -->
+	--><!-- TreeViewItem --><!--
 	<Style x:Key="{x:Type TreeViewItem}" TargetType="{x:Type TreeViewItem}">
 		<Setter Property="Padding" Value="3" />
 		<Setter Property="HorizontalContentAlignment" Value="Left" />
@@ -5610,6 +5610,6 @@
 				</ControlTemplate>
 			</Setter.Value>
 		</Setter>
-	</Style>
+	</Style>-->
 
 </ResourceDictionary>

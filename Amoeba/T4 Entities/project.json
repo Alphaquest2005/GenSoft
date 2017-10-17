@@ -3,7 +3,7 @@
     "EntityFramework": "6.1.3"
   },
   "frameworks": {
-    "net461": {}
+    "net47": {}
   },
   "runtimes": {
     "win-x64": {}

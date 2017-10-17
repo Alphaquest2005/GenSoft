@@ -54,13 +54,13 @@ namespace RevolutionData
                         //    }),
 
                         new ViewEventSubscription<ISummaryListViewModel, IUpdateProcessStateList>(
-                            $"{entityType.Name}-IEntityWithChangesUpdated",
+                            $"{entityType.Name}-IUpdateProcessStateList",
                             processId,
                             e => e.EntityType == entityType,
                             new List<Func<ISummaryListViewModel, IUpdateProcessStateList, bool>>(),
                             (v,e) =>
                             {
-                                if (v.State.Value == e.State) return;
+                                if (e.State != null && v.State.Value != null && v.State.Value.EntitySet.SequenceEqual(e.State.EntitySet)) return;
                                 v.State.Value = e.State;
                                 
                             }),
@@ -107,10 +107,11 @@ namespace RevolutionData
                             },
                             messageData:s =>
                             {
+
                                 Application.Current.Dispatcher.BeginInvoke(new Action(() =>
                                 {
                                     //s.EntitySet.Value.Add(BootStrapper.BootStrapper.Container.GetConcreteInstance(typeof(TView)));
-                                    s.NotifyPropertyChanged(nameof(s.EntitySet));
+                                   //s.NotifyPropertyChanged(nameof(s.EntitySet));
                                 }));
 
                                 return new ViewEventPublicationParameter(new object[] {s, s.State.Value},
@@ -161,10 +162,12 @@ namespace RevolutionData
 
                             messageData: v =>
                             {
-
+                                v.SelectedViewModel.Value.Visibility.Value =  v.SelectedViewModel.Value.Visibility.Value == Visibility.Visible
+                                    ? Visibility.Collapsed
+                                    : Visibility.Visible;
 
                                 return new ViewEventCommandParameter(
-                                    new object[] {v.SelectedViewModel.Value, v.SelectedViewModel.Value.Visibility.Value == Visibility.Visible?Visibility.Collapsed:Visibility.Visible},
+                                    new object[] {v.SelectedViewModel.Value, v.SelectedViewModel.Value.Visibility.Value},
                                     new StateCommandInfo(v.Process.Id,
                                         Context.ViewModel.Commands.ChangeVisibility), v.Process,
                                     v.Source);

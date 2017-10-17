@@ -3,7 +3,7 @@
     "Microsoft.EntityFrameworkCore.SqlServer": "2.0.0"
   },
   "frameworks": {
-    "net461": {}
+    "net47": {}
   },
   "runtimes": {
     "win-x64": {}

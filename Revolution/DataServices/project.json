@@ -4,7 +4,7 @@
     "JB.Common.Collections": "0.8.103-pre"
   },
   "frameworks": {
-    "net461": {}
+    "net47": {}
   },
   "runtimes": {
     "win-x64": {}

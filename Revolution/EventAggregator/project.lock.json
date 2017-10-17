@@ -1,7 +1,7 @@
 {
-  "version": 2,
+  "version": 3,
   "targets": {
-    ".NETFramework,Version=v4.6.1": {
+    ".NETFramework,Version=v4.7": {
       "log4net/2.0.8": {
         "type": "package",
         "compile": {
@@ -59,31 +59,31 @@
       },
       "CommonMessages/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "SystemInterfaces": "1.0.0"
         }
       },
       "RevolutionLogger/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "log4net": "2.0.8"
         }
       },
       "SystemInterfaces/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1"
+        "framework": ".NETFramework,Version=v4.7"
       },
       "Utilities/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "SystemInterfaces": "1.0.0"
         }
       }
     },
-    ".NETFramework,Version=v4.6.1/win-x64": {
+    ".NETFramework,Version=v4.7/win-x64": {
       "log4net/2.0.8": {
         "type": "package",
         "compile": {
@@ -141,25 +141,25 @@
       },
       "CommonMessages/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "SystemInterfaces": "1.0.0"
         }
       },
       "RevolutionLogger/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "log4net": "2.0.8"
         }
       },
       "SystemInterfaces/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1"
+        "framework": ".NETFramework,Version=v4.7"
       },
       "Utilities/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "SystemInterfaces": "1.0.0"
         }
@@ -318,7 +318,7 @@
     "": [
       "Reactive.EventAggregator >= 2.0.0"
     ],
-    ".NETFramework,Version=v4.6.1": []
+    ".NETFramework,Version=v4.7": []
   },
   "packageFolders": {
     "C:\\Users\\Alpha\\.nuget\\packages\\": {}
@@ -329,9 +329,19 @@
       "projectName": "EventAggregator",
       "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\EventAggregator\\EventAggregator.csproj",
       "projectJsonPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\EventAggregator\\project.json",
+      "packagesPath": "C:\\Users\\Alpha\\.nuget\\packages\\",
+      "outputPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\EventAggregator\\obj\\",
       "projectStyle": "ProjectJson",
+      "configFilePaths": [
+        "C:\\Users\\Alpha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
       "frameworks": {
-        "net461": {
+        "net47": {
           "projectReferences": {
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\CommonMessages\\CommonMessages.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\CommonMessages\\CommonMessages.csproj"
@@ -353,7 +363,7 @@
       "Reactive.EventAggregator": "2.0.0"
     },
     "frameworks": {
-      "net461": {}
+      "net47": {}
     },
     "runtimes": {
       "win-x64": {

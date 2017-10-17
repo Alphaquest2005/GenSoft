@@ -152,10 +152,7 @@ C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\RevolutionLogger.pdb
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\ComponentModel.Composition.Hosting.Extension.pdb
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\RevolutionData.pdb
 C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Resources.csprojResolveAssemblyReference.cache
-C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Styles\DataGridCustomizations.baml
 C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Styles\non-DataGridCustomizations.baml
-C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Styles\Non-Theme.baml
-C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Styles\Theme.baml
 C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Resources_MarkupCompile.cache
 C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Resources.g.resources
 C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Resources.dll
@@ -288,3 +285,6 @@ C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\System.Xml.XmlDocument.d
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\System.Xml.XmlSerializer.dll
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\System.Xml.XPath.dll
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\System.Xml.XPath.XDocument.dll
+C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Styles\DataGridCustomizations.baml
+C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Styles\Non-Theme.baml
+C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Styles\Theme.baml

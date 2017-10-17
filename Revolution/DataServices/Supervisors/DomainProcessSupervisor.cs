@@ -294,7 +294,7 @@ namespace DataServices.Actors
             }
             catch (Exception e)
             {
-                throw;
+                throw e;
             }
         }
 
@@ -715,7 +715,7 @@ namespace DataServices.Actors
             }
             catch (Exception e)
             {
-                throw;
+                throw e;
             }
         }
 

@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    ".NETFramework,Version=v4.6.1": {
+    ".NETFramework,Version=v4.7": {
       "DynamicExpresso.Core/1.3.3.6": {
         "type": "package",
         "compile": {
@@ -523,25 +523,27 @@
       "System.Linq/4.1.0": {
         "type": "package",
         "frameworkAssemblies": [
-          "System.Core"
+          "System.Core",
+          "mscorlib"
         ],
         "compile": {
-          "ref/net45/_._": {}
+          "ref/net463/System.Linq.dll": {}
         },
         "runtime": {
-          "lib/net45/_._": {}
+          "lib/net463/System.Linq.dll": {}
         }
       },
       "System.Linq.Expressions/4.1.0": {
         "type": "package",
         "frameworkAssemblies": [
-          "System.Core"
+          "System.Core",
+          "mscorlib"
         ],
         "compile": {
-          "ref/net45/_._": {}
+          "ref/net463/System.Linq.Expressions.dll": {}
         },
         "runtime": {
-          "lib/net45/_._": {}
+          "lib/net463/System.Linq.Expressions.dll": {}
         }
       },
       "System.Linq.Queryable/4.0.1": {
@@ -570,11 +572,14 @@
       },
       "System.Reflection/4.1.0": {
         "type": "package",
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
         "compile": {
-          "ref/net45/_._": {}
+          "ref/net462/System.Reflection.dll": {}
         },
         "runtime": {
-          "lib/net45/_._": {}
+          "lib/net462/System.Reflection.dll": {}
         }
       },
       "System.Reflection.Extensions/4.0.1": {
@@ -591,13 +596,14 @@
         "frameworkAssemblies": [
           "System",
           "System.ComponentModel.Composition",
-          "System.Core"
+          "System.Core",
+          "mscorlib"
         ],
         "compile": {
-          "ref/net45/_._": {}
+          "ref/net462/System.Runtime.dll": {}
         },
         "runtime": {
-          "lib/net45/_._": {}
+          "lib/net462/System.Runtime.dll": {}
         }
       },
       "System.Runtime.CompilerServices.Unsafe/4.4.0": {
@@ -612,13 +618,14 @@
       "System.Runtime.Extensions/4.1.0": {
         "type": "package",
         "frameworkAssemblies": [
-          "System"
+          "System",
+          "mscorlib"
         ],
         "compile": {
-          "ref/net45/_._": {}
+          "ref/net462/System.Runtime.Extensions.dll": {}
         },
         "runtime": {
-          "lib/net45/_._": {}
+          "lib/net462/System.Runtime.Extensions.dll": {}
         }
       },
       "System.Threading/4.0.11": {
@@ -637,19 +644,18 @@
       "System.ValueTuple/4.4.0": {
         "type": "package",
         "frameworkAssemblies": [
-          "System",
           "mscorlib"
         ],
         "compile": {
-          "ref/net461/System.ValueTuple.dll": {}
+          "ref/net47/System.ValueTuple.dll": {}
         },
         "runtime": {
-          "lib/net461/System.ValueTuple.dll": {}
+          "lib/net47/System.ValueTuple.dll": {}
         }
       },
       "Actor.Interfaces/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "GenSoft.Interface": "1.0.0",
           "SystemInterfaces": "1.0.0",
@@ -658,7 +664,7 @@
       },
       "BootStrapper/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Actor.Interfaces": "1.0.0",
           "ComponentModel.Composition.Hosting.Extension": "1.0.0",
@@ -670,7 +676,7 @@
       },
       "Common/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "BootStrapper": "1.0.0",
           "DynamicExpresso.Core": "1.3.3.6",
@@ -681,18 +687,18 @@
       },
       "CommonMessages/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "SystemInterfaces": "1.0.0"
         }
       },
       "ComponentModel.Composition.Hosting.Extension/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1"
+        "framework": ".NETFramework,Version=v4.7"
       },
       "Domain.Interfaces/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Common": "1.0.0",
           "SystemInterfaces": "1.0.0"
@@ -700,7 +706,7 @@
       },
       "DomainMessages/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "CommonMessages": "1.0.0",
           "Domain.Interfaces": "1.0.0",
@@ -709,7 +715,7 @@
       },
       "EventAggregator/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "CommonMessages": "1.0.0",
           "Reactive.EventAggregator": "2.0.0",
@@ -720,7 +726,7 @@
       },
       "GenSoft.Entities/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Common": "1.0.0",
           "GenSoft.Interface": "1.0.0",
@@ -730,36 +736,36 @@
       },
       "GenSoft.Interface/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "SystemInterfaces": "1.0.0"
         }
       },
       "RevolutionLogger/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "log4net": "2.0.8"
         }
       },
       "System.Linq.Dynamic/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.5.2"
+        "framework": ".NETFramework,Version=v4.7"
       },
       "SystemInterfaces/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1"
+        "framework": ".NETFramework,Version=v4.7"
       },
       "Utilities/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "SystemInterfaces": "1.0.0"
         }
       },
       "ViewModel.Interfaces/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "CommonMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
@@ -771,7 +777,7 @@
         }
       }
     },
-    ".NETFramework,Version=v4.6.1/win-x64": {
+    ".NETFramework,Version=v4.7/win-x64": {
       "DynamicExpresso.Core/1.3.3.6": {
         "type": "package",
         "compile": {
@@ -1283,25 +1289,27 @@
       "System.Linq/4.1.0": {
         "type": "package",
         "frameworkAssemblies": [
-          "System.Core"
+          "System.Core",
+          "mscorlib"
         ],
         "compile": {
-          "ref/net45/_._": {}
+          "ref/net463/System.Linq.dll": {}
         },
         "runtime": {
-          "lib/net45/_._": {}
+          "lib/net463/System.Linq.dll": {}
         }
       },
       "System.Linq.Expressions/4.1.0": {
         "type": "package",
         "frameworkAssemblies": [
-          "System.Core"
+          "System.Core",
+          "mscorlib"
         ],
         "compile": {
-          "ref/net45/_._": {}
+          "ref/net463/System.Linq.Expressions.dll": {}
         },
         "runtime": {
-          "lib/net45/_._": {}
+          "lib/net463/System.Linq.Expressions.dll": {}
         }
       },
       "System.Linq.Queryable/4.0.1": {
@@ -1330,11 +1338,14 @@
       },
       "System.Reflection/4.1.0": {
         "type": "package",
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
         "compile": {
-          "ref/net45/_._": {}
+          "ref/net462/System.Reflection.dll": {}
         },
         "runtime": {
-          "lib/net45/_._": {}
+          "lib/net462/System.Reflection.dll": {}
         }
       },
       "System.Reflection.Extensions/4.0.1": {
@@ -1351,13 +1362,14 @@
         "frameworkAssemblies": [
           "System",
           "System.ComponentModel.Composition",
-          "System.Core"
+          "System.Core",
+          "mscorlib"
         ],
         "compile": {
-          "ref/net45/_._": {}
+          "ref/net462/System.Runtime.dll": {}
         },
         "runtime": {
-          "lib/net45/_._": {}
+          "lib/net462/System.Runtime.dll": {}
         }
       },
       "System.Runtime.CompilerServices.Unsafe/4.4.0": {
@@ -1372,13 +1384,14 @@
       "System.Runtime.Extensions/4.1.0": {
         "type": "package",
         "frameworkAssemblies": [
-          "System"
+          "System",
+          "mscorlib"
         ],
         "compile": {
-          "ref/net45/_._": {}
+          "ref/net462/System.Runtime.Extensions.dll": {}
         },
         "runtime": {
-          "lib/net45/_._": {}
+          "lib/net462/System.Runtime.Extensions.dll": {}
         }
       },
       "System.Threading/4.0.11": {
@@ -1397,19 +1410,18 @@
       "System.ValueTuple/4.4.0": {
         "type": "package",
         "frameworkAssemblies": [
-          "System",
           "mscorlib"
         ],
         "compile": {
-          "ref/net461/System.ValueTuple.dll": {}
+          "ref/net47/System.ValueTuple.dll": {}
         },
         "runtime": {
-          "lib/net461/System.ValueTuple.dll": {}
+          "lib/net47/System.ValueTuple.dll": {}
         }
       },
       "Actor.Interfaces/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "GenSoft.Interface": "1.0.0",
           "SystemInterfaces": "1.0.0",
@@ -1418,7 +1430,7 @@
       },
       "BootStrapper/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Actor.Interfaces": "1.0.0",
           "ComponentModel.Composition.Hosting.Extension": "1.0.0",
@@ -1430,7 +1442,7 @@
       },
       "Common/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "BootStrapper": "1.0.0",
           "DynamicExpresso.Core": "1.3.3.6",
@@ -1441,18 +1453,18 @@
       },
       "CommonMessages/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "SystemInterfaces": "1.0.0"
         }
       },
       "ComponentModel.Composition.Hosting.Extension/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1"
+        "framework": ".NETFramework,Version=v4.7"
       },
       "Domain.Interfaces/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Common": "1.0.0",
           "SystemInterfaces": "1.0.0"
@@ -1460,7 +1472,7 @@
       },
       "DomainMessages/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "CommonMessages": "1.0.0",
           "Domain.Interfaces": "1.0.0",
@@ -1469,7 +1481,7 @@
       },
       "EventAggregator/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "CommonMessages": "1.0.0",
           "Reactive.EventAggregator": "2.0.0",
@@ -1480,7 +1492,7 @@
       },
       "GenSoft.Entities/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Common": "1.0.0",
           "GenSoft.Interface": "1.0.0",
@@ -1490,36 +1502,36 @@
       },
       "GenSoft.Interface/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "SystemInterfaces": "1.0.0"
         }
       },
       "RevolutionLogger/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "log4net": "2.0.8"
         }
       },
       "System.Linq.Dynamic/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.5.2"
+        "framework": ".NETFramework,Version=v4.7"
       },
       "SystemInterfaces/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1"
+        "framework": ".NETFramework,Version=v4.7"
       },
       "Utilities/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "SystemInterfaces": "1.0.0"
         }
       },
       "ViewModel.Interfaces/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "CommonMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
@@ -3387,7 +3399,7 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 2.0.0",
       "morelinq >= 2.8.0"
     ],
-    ".NETFramework,Version=v4.6.1": []
+    ".NETFramework,Version=v4.7": []
   },
   "packageFolders": {
     "C:\\Users\\Alpha\\.nuget\\packages\\": {}
@@ -3410,7 +3422,7 @@
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net461": {
+        "net47": {
           "projectReferences": {
             "C:\\Prism\\GitRepositiory\\GenSoft\\DomainMessages\\DomainMessages.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\DomainMessages\\DomainMessages.csproj"
@@ -3447,7 +3459,7 @@
       "morelinq": "2.8.0"
     },
     "frameworks": {
-      "net461": {}
+      "net47": {}
     },
     "runtimes": {
       "win-x64": {

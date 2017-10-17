@@ -56,6 +56,7 @@ namespace Core.Common.UI
             //CurrentEntity.Value = state.Entity;
             Application.Current.Dispatcher.BeginInvoke(new Action(() =>
             {
+                if (EntitySet.Value.SequenceEqual(state.EntitySet)) return;
                 EntitySet.Value = new ObservableList<IDynamicEntity>(state.EntitySet.ToList());
                 EntitySet.Value.Reset();
 

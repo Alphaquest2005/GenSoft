@@ -3,7 +3,7 @@
     "FluentValidation.Net35": "1.0.1"
   },
   "frameworks": {
-    "net461": {}
+    "net47": {}
   },
   "runtimes": {
     "win-x64": {}

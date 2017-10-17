@@ -19,7 +19,7 @@ namespace Common.DataEntites
         public virtual RowState RowState { get; set; } = RowState.Loaded;
         public IDynamicEntityType EntityType { get; }
 
-        private readonly Guid _entityGuid = Guid.NewGuid();
+       //private readonly Guid _entityGuid = Guid.NewGuid();
 
         public override bool Equals(object obj)
         {
@@ -28,7 +28,7 @@ namespace Common.DataEntites
             if (ReferenceEquals(other, null)) return false;
             if (ReferenceEquals(this, other)) return true;
             if (GetType() != other.GetType()) return false;
-            if (Id == 0 || other.Id == 0) return false;
+           // if (Id == 0 || other.Id == 0) return false;
             return Id == other.Id;
         }
 
@@ -47,7 +47,8 @@ namespace Common.DataEntites
         public override int GetHashCode()
         {
             // ReSharper disable once cuz of nhibernate
-            return (_entityGuid.ToString()).GetHashCode();
+            // return (_entityGuid.ToString()).GetHashCode();
+            return (Id.ToString()).GetHashCode();
         }
 
         public int CompareTo(object obj)

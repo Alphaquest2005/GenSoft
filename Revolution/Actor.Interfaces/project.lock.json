@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    ".NETFramework,Version=v4.6.1": {
+    ".NETFramework,Version=v4.7": {
       "FluentValidation.Net35/1.0.1": {
         "type": "package",
         "compile": {
@@ -182,25 +182,25 @@
       },
       "CommonMessages/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "SystemInterfaces": "1.0.0"
         }
       },
       "GenSoft.Interface/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "SystemInterfaces": "1.0.0"
         }
       },
       "SystemInterfaces/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1"
+        "framework": ".NETFramework,Version=v4.7"
       },
       "ViewModel.Interfaces/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "CommonMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
@@ -212,7 +212,7 @@
         }
       }
     },
-    ".NETFramework,Version=v4.6.1/win-x64": {
+    ".NETFramework,Version=v4.7/win-x64": {
       "FluentValidation.Net35/1.0.1": {
         "type": "package",
         "compile": {
@@ -393,25 +393,25 @@
       },
       "CommonMessages/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "SystemInterfaces": "1.0.0"
         }
       },
       "GenSoft.Interface/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "SystemInterfaces": "1.0.0"
         }
       },
       "SystemInterfaces/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1"
+        "framework": ".NETFramework,Version=v4.7"
       },
       "ViewModel.Interfaces/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "CommonMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
@@ -863,7 +863,7 @@
   },
   "projectFileDependencyGroups": {
     "": [],
-    ".NETFramework,Version=v4.6.1": []
+    ".NETFramework,Version=v4.7": []
   },
   "packageFolders": {
     "C:\\Users\\Alpha\\.nuget\\packages\\": {}
@@ -886,7 +886,7 @@
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net461": {
+        "net47": {
           "projectReferences": {
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Interface\\GenSoft.Interface.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Interface\\GenSoft.Interface.csproj"
@@ -902,7 +902,7 @@
       }
     },
     "frameworks": {
-      "net461": {}
+      "net47": {}
     },
     "runtimes": {
       "win-x64": {

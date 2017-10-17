@@ -3,7 +3,7 @@
     "log4net": "2.0.8"
   },
   "frameworks": {
-    "net461": {}
+    "net47": {}
   },
   "runtimes": {
     "win-x64": {}

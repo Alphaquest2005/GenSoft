@@ -1,7 +1,7 @@
 {
-  "version": 2,
+  "version": 3,
   "targets": {
-    ".NETFramework,Version=v4.6.1": {
+    ".NETFramework,Version=v4.7": {
       "EntityFramework/6.1.3": {
         "type": "package",
         "frameworkAssemblies": [
@@ -18,11 +18,11 @@
       },
       "LinqSpecs/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.0"
+        "framework": ".NETFramework,Version=v4.7"
       },
       "Specifications/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "LinqSpecs": "1.0.0",
           "T4 Entities": "1.0.0"
@@ -30,14 +30,14 @@
       },
       "T4 Entities/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "EntityFramework": "6.1.3"
         }
       },
       "T4 Repository/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "LinqSpecs": "1.0.0",
           "Specifications": "1.0.0",
@@ -45,7 +45,7 @@
         }
       }
     },
-    ".NETFramework,Version=v4.6.1/win-x64": {
+    ".NETFramework,Version=v4.7/win-x64": {
       "EntityFramework/6.1.3": {
         "type": "package",
         "frameworkAssemblies": [
@@ -62,11 +62,11 @@
       },
       "LinqSpecs/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.0"
+        "framework": ".NETFramework,Version=v4.7"
       },
       "Specifications/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "LinqSpecs": "1.0.0",
           "T4 Entities": "1.0.0"
@@ -74,14 +74,14 @@
       },
       "T4 Entities/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "EntityFramework": "6.1.3"
         }
       },
       "T4 Repository/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
+        "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "LinqSpecs": "1.0.0",
           "Specifications": "1.0.0",
@@ -141,7 +141,7 @@
   },
   "projectFileDependencyGroups": {
     "": [],
-    ".NETFramework,Version=v4.6.1": []
+    ".NETFramework,Version=v4.7": []
   },
   "packageFolders": {
     "C:\\Users\\Alpha\\.nuget\\packages\\": {}
@@ -152,9 +152,19 @@
       "projectName": "T4Utilities",
       "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Amoeba\\T4Utilities\\T4Utilities.csproj",
       "projectJsonPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Amoeba\\T4Utilities\\project.json",
+      "packagesPath": "C:\\Users\\Alpha\\.nuget\\packages\\",
+      "outputPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Amoeba\\T4Utilities\\obj\\",
       "projectStyle": "ProjectJson",
+      "configFilePaths": [
+        "C:\\Users\\Alpha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
       "frameworks": {
-        "net461": {
+        "net47": {
           "projectReferences": {
             "C:\\Prism\\GitRepositiory\\GenSoft\\Amoeba\\T4 Entities\\T4 Entities.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Amoeba\\T4 Entities\\T4 Entities.csproj"
@@ -167,7 +177,7 @@
       }
     },
     "frameworks": {
-      "net461": {}
+      "net47": {}
     },
     "runtimes": {
       "win-x64": {

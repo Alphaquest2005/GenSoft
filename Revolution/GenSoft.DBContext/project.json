@@ -6,7 +6,7 @@
     "morelinq": "2.8.0"
   },
   "frameworks": {
-    "net461": {}
+    "net47": {}
   },
   "runtimes": {
     "win-x64": {}
