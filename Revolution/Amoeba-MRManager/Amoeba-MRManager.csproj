@@ -55,7 +55,6 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -63,6 +62,16 @@
       <DependentUpon>MRManger-DataEntities.tt</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="MRManger-EntityViews.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MRManger-EntityViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MRManger-Expressions.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MRManger-Expressions.tt</DependentUpon>
     </Compile>
     <Compile Include="MRManger-Interfaces.cs">
       <DependentUpon>MRManger-Interfaces.tt</DependentUpon>
@@ -73,6 +82,11 @@
       <DependentUpon>MRManger-DBContext.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="MRManger-Master.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MRManger-Master.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

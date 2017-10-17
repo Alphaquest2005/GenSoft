@@ -104,6 +104,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\Utilit
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\obj\x64\Debug\GenSoft.Entities.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\obj\x64\Debug\GenSoft.Entities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\obj\x64\Debug\GenSoft.Entities.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\obj\x64\Debug\GenSoft.Entities.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\DynamicExpresso.Core.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\DynamicExpresso.Core.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\obj\x64\Debug\GenSoft.Entities.csproj.CoreCompileInputs.cache

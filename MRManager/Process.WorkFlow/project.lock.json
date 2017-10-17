@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.6.1": {
-      "Akka/1.3.0": {
+      "Akka/1.3.1": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "9.0.1",
@@ -103,7 +103,7 @@
           "lib/net40-Client/MefContrib.dll": {}
         }
       },
-      "morelinq/2.7.0": {
+      "morelinq/2.8.0": {
         "type": "package",
         "dependencies": {
           "System.ValueTuple": "4.4.0"
@@ -113,7 +113,13 @@
           "System.Data",
           "System.Data.DataSetExtensions",
           "System.Xml"
-        ]
+        ],
+        "compile": {
+          "lib/net40/MoreLinq.dll": {}
+        },
+        "runtime": {
+          "lib/net40/MoreLinq.dll": {}
+        }
       },
       "Newtonsoft.Json/9.0.1": {
         "type": "package",
@@ -354,7 +360,7 @@
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
           "Actor.Interfaces": "1.0.0",
-          "Akka": "1.3.0",
+          "Akka": "1.3.1",
           "CommonMessages": "1.0.0",
           "GenSoft.Interface": "1.0.0",
           "SystemInterfaces": "1.0.0",
@@ -410,7 +416,7 @@
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0",
-          "morelinq": "2.7.0"
+          "morelinq": "2.8.0"
         }
       },
       "RevolutionLogger/1.0.0": {
@@ -456,8 +462,8 @@
         }
       }
     },
-    ".NETFramework,Version=v4.6.1/win": {
-      "Akka/1.3.0": {
+    ".NETFramework,Version=v4.6.1/win-x64": {
+      "Akka/1.3.1": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "9.0.1",
@@ -558,7 +564,7 @@
           "lib/net40-Client/MefContrib.dll": {}
         }
       },
-      "morelinq/2.7.0": {
+      "morelinq/2.8.0": {
         "type": "package",
         "dependencies": {
           "System.ValueTuple": "4.4.0"
@@ -568,7 +574,13 @@
           "System.Data",
           "System.Data.DataSetExtensions",
           "System.Xml"
-        ]
+        ],
+        "compile": {
+          "lib/net40/MoreLinq.dll": {}
+        },
+        "runtime": {
+          "lib/net40/MoreLinq.dll": {}
+        }
       },
       "Newtonsoft.Json/9.0.1": {
         "type": "package",
@@ -809,7 +821,7 @@
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
           "Actor.Interfaces": "1.0.0",
-          "Akka": "1.3.0",
+          "Akka": "1.3.1",
           "CommonMessages": "1.0.0",
           "GenSoft.Interface": "1.0.0",
           "SystemInterfaces": "1.0.0",
@@ -865,7 +877,7 @@
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0",
-          "morelinq": "2.7.0"
+          "morelinq": "2.8.0"
         }
       },
       "RevolutionLogger/1.0.0": {
@@ -913,12 +925,12 @@
     }
   },
   "libraries": {
-    "Akka/1.3.0": {
-      "sha512": "YWu+CFYlPmn8znS36vtuZSIyEkl5Lg4Ab6JTlhu3VS2ZKbdrL0hgg0UucLYh4YukSZ99yKwzfaENn9VK0wlI9Q==",
+    "Akka/1.3.1": {
+      "sha512": "EgZGceDfM9apst3QplyRBh1MSr60kEi5vX0bJYgxHIruIvykCIFU7l5571VZuc0F/LGuG4ZPdLpbxLVDjB+7Xg==",
       "type": "package",
-      "path": "akka/1.3.0",
+      "path": "akka/1.3.1",
       "files": [
-        "akka.1.3.0.nupkg.sha512",
+        "akka.1.3.1.nupkg.sha512",
         "akka.nuspec",
         "lib/net45/Akka.dll",
         "lib/net45/Akka.xml",
@@ -1028,16 +1040,20 @@
         "lib/sl/MefContrib.Silverlight.pdb"
       ]
     },
-    "morelinq/2.7.0": {
-      "sha512": "sZ0k5XtoA4/lh7pRRS1d9ZQZghHfVM6OUrfJyjntD1uwIjwuoPJKj26Nt7pTyVMLH+g+tjaQz3Dzm97Q0npxPg==",
+    "morelinq/2.8.0": {
+      "sha512": "E91pRvNIaAkcAHEvOkn//LYz3E/b3xyQZCYYBvYygNsL4dPzY1XN0AsWRNezs351HMa2vIuw6FsLYMkbzcKFIw==",
       "type": "package",
-      "path": "morelinq/2.7.0",
+      "path": "morelinq/2.8.0",
       "files": [
+        "lib/net35/MoreLinq.dll",
         "lib/net35/MoreLinq.xml",
+        "lib/net40/MoreLinq.dll",
         "lib/net40/MoreLinq.xml",
+        "lib/netstandard1.0/MoreLinq.dll",
         "lib/netstandard1.0/MoreLinq.xml",
+        "lib/netstandard2.0/MoreLinq.dll",
         "lib/netstandard2.0/MoreLinq.xml",
-        "morelinq.2.7.0.nupkg.sha512",
+        "morelinq.2.8.0.nupkg.sha512",
         "morelinq.nuspec"
       ]
     },
@@ -1671,7 +1687,7 @@
       "net461": {}
     },
     "runtimes": {
-      "win": {
+      "win-x64": {
         "#import": []
       }
     }

@@ -90,7 +90,7 @@
           "lib/net40-Client/MefContrib.dll": {}
         }
       },
-      "morelinq/2.7.0": {
+      "morelinq/2.8.0": {
         "type": "package",
         "dependencies": {
           "System.ValueTuple": "4.4.0"
@@ -100,7 +100,13 @@
           "System.Data",
           "System.Data.DataSetExtensions",
           "System.Xml"
-        ]
+        ],
+        "compile": {
+          "lib/net40/MoreLinq.dll": {}
+        },
+        "runtime": {
+          "lib/net40/MoreLinq.dll": {}
+        }
       },
       "Reactive.EventAggregator/2.0.0": {
         "type": "package",
@@ -448,7 +454,7 @@
           "lib/net40-Client/MefContrib.dll": {}
         }
       },
-      "morelinq/2.7.0": {
+      "morelinq/2.8.0": {
         "type": "package",
         "dependencies": {
           "System.ValueTuple": "4.4.0"
@@ -458,7 +464,13 @@
           "System.Data",
           "System.Data.DataSetExtensions",
           "System.Xml"
-        ]
+        ],
+        "compile": {
+          "lib/net40/MoreLinq.dll": {}
+        },
+        "runtime": {
+          "lib/net40/MoreLinq.dll": {}
+        }
       },
       "Reactive.EventAggregator/2.0.0": {
         "type": "package",
@@ -821,16 +833,20 @@
         "lib/sl/MefContrib.Silverlight.pdb"
       ]
     },
-    "morelinq/2.7.0": {
-      "sha512": "sZ0k5XtoA4/lh7pRRS1d9ZQZghHfVM6OUrfJyjntD1uwIjwuoPJKj26Nt7pTyVMLH+g+tjaQz3Dzm97Q0npxPg==",
+    "morelinq/2.8.0": {
+      "sha512": "E91pRvNIaAkcAHEvOkn//LYz3E/b3xyQZCYYBvYygNsL4dPzY1XN0AsWRNezs351HMa2vIuw6FsLYMkbzcKFIw==",
       "type": "package",
-      "path": "morelinq/2.7.0",
+      "path": "morelinq/2.8.0",
       "files": [
+        "lib/net35/MoreLinq.dll",
         "lib/net35/MoreLinq.xml",
+        "lib/net40/MoreLinq.dll",
         "lib/net40/MoreLinq.xml",
+        "lib/netstandard1.0/MoreLinq.dll",
         "lib/netstandard1.0/MoreLinq.xml",
+        "lib/netstandard2.0/MoreLinq.dll",
         "lib/netstandard2.0/MoreLinq.xml",
-        "morelinq.2.7.0.nupkg.sha512",
+        "morelinq.2.8.0.nupkg.sha512",
         "morelinq.nuspec"
       ]
     },
@@ -1340,7 +1356,7 @@
   "projectFileDependencyGroups": {
     "": [
       "System.Collections.Immutable >= 1.4.0",
-      "morelinq >= 2.7.0"
+      "morelinq >= 2.8.0"
     ],
     ".NETFramework,Version=v4.6.1": []
   },
@@ -1402,7 +1418,7 @@
       }
     },
     "dependencies": {
-      "morelinq": "2.7.0",
+      "morelinq": "2.8.0",
       "System.Collections.Immutable": "1.4.0"
     },
     "frameworks": {

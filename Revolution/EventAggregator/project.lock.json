@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 2,
   "targets": {
     ".NETFramework,Version=v4.6.1": {
       "log4net/2.0.8": {
@@ -329,17 +329,7 @@
       "projectName": "EventAggregator",
       "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\EventAggregator\\EventAggregator.csproj",
       "projectJsonPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\EventAggregator\\project.json",
-      "packagesPath": "C:\\Users\\Alpha\\.nuget\\packages\\",
-      "outputPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\EventAggregator\\obj\\",
       "projectStyle": "ProjectJson",
-      "configFilePaths": [
-        "C:\\Users\\Alpha\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-      ],
-      "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
-      },
       "frameworks": {
         "net461": {
           "projectReferences": {

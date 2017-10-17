@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.6.1": {
-      "Akka/1.3.0": {
+      "Akka/1.3.1": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "9.0.1",
@@ -253,7 +253,7 @@
       }
     },
     ".NETFramework,Version=v4.6.1/win-x64": {
-      "Akka/1.3.0": {
+      "Akka/1.3.1": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "9.0.1",
@@ -505,12 +505,12 @@
     }
   },
   "libraries": {
-    "Akka/1.3.0": {
-      "sha512": "YWu+CFYlPmn8znS36vtuZSIyEkl5Lg4Ab6JTlhu3VS2ZKbdrL0hgg0UucLYh4YukSZ99yKwzfaENn9VK0wlI9Q==",
+    "Akka/1.3.1": {
+      "sha512": "EgZGceDfM9apst3QplyRBh1MSr60kEi5vX0bJYgxHIruIvykCIFU7l5571VZuc0F/LGuG4ZPdLpbxLVDjB+7Xg==",
       "type": "package",
-      "path": "akka/1.3.0",
+      "path": "akka/1.3.1",
       "files": [
-        "akka.1.3.0.nupkg.sha512",
+        "akka.1.3.1.nupkg.sha512",
         "akka.nuspec",
         "lib/net45/Akka.dll",
         "lib/net45/Akka.xml",
@@ -1000,7 +1000,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "Akka >= 1.3.0"
+      "Akka >= 1.3.1"
     ],
     ".NETFramework,Version=v4.6.1": []
   },
@@ -1047,7 +1047,7 @@
       }
     },
     "dependencies": {
-      "Akka": "1.3.0"
+      "Akka": "1.3.1"
     },
     "frameworks": {
       "net461": {}

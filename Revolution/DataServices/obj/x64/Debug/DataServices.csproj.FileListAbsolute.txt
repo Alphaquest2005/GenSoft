@@ -129,8 +129,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\Akka.Persi
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\DynamicExpresso.Core.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\DynamicExpresso.Core.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\FluentValidation.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\Google.ProtocolBuffers.Serialization.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\Google.ProtocolBuffers.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\JB.Common.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\JB.Common.Collections.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\JB.Common.Collections.Reactive.dll
@@ -324,3 +322,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\obj\x64\Debug\DataServic
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\MoreLinq.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\ViewModel.WorkFlow.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\ViewModel.WorkFlow.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\Google.Protobuf.dll

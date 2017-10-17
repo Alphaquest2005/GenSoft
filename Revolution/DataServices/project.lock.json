@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.6.1": {
-      "Akka/1.3.0": {
+      "Akka/1.3.1": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "9.0.1",
@@ -15,13 +15,11 @@
           "lib/net45/Akka.dll": {}
         }
       },
-      "Akka.Persistence/1.1.2.30-beta": {
+      "Akka.Persistence/1.3.1": {
         "type": "package",
         "dependencies": {
-          "Akka": "1.1.2",
-          "Google.ProtocolBuffers": "2.4.1.555",
-          "Newtonsoft.Json": "9.0.1",
-          "System.Collections.Immutable": "1.1.36"
+          "Akka": "1.3.1",
+          "Google.Protobuf": "3.3.0"
         },
         "compile": {
           "lib/net45/Akka.Persistence.dll": {}
@@ -30,11 +28,10 @@
           "lib/net45/Akka.Persistence.dll": {}
         }
       },
-      "Akka.Persistence.Sql.Common/1.1.2.30-beta": {
+      "Akka.Persistence.Sql.Common/1.3.1": {
         "type": "package",
         "dependencies": {
-          "Akka.Persistence": "1.1.2.30-beta",
-          "System.Collections.Immutable": "1.1.36"
+          "Akka.Persistence": "1.3.1"
         },
         "compile": {
           "lib/net45/Akka.Persistence.Sql.Common.dll": {}
@@ -43,15 +40,12 @@
           "lib/net45/Akka.Persistence.Sql.Common.dll": {}
         }
       },
-      "Akka.Persistence.SqlServer/1.1.1.7-beta": {
+      "Akka.Persistence.SqlServer/1.3.1": {
         "type": "package",
         "dependencies": {
-          "Akka": "1.1.2",
-          "Akka.Persistence": "1.1.2.30-beta",
-          "Akka.Persistence.Sql.Common": "1.1.2.30-beta",
-          "Google.ProtocolBuffers": "2.4.1.555",
-          "Newtonsoft.Json": "9.0.1",
-          "System.Collections.Immutable": "1.1.36"
+          "Akka": "1.3.1",
+          "Akka.Persistence": "1.3.1",
+          "Akka.Persistence.Sql.Common": "1.3.1"
         },
         "compile": {
           "lib/net45/Akka.Persistence.SqlServer.dll": {}
@@ -78,15 +72,13 @@
           "lib/net35/FluentValidation.dll": {}
         }
       },
-      "Google.ProtocolBuffers/2.4.1.555": {
+      "Google.Protobuf/3.3.0": {
         "type": "package",
         "compile": {
-          "lib/net40/Google.ProtocolBuffers.Serialization.dll": {},
-          "lib/net40/Google.ProtocolBuffers.dll": {}
+          "lib/net45/Google.Protobuf.dll": {}
         },
         "runtime": {
-          "lib/net40/Google.ProtocolBuffers.Serialization.dll": {},
-          "lib/net40/Google.ProtocolBuffers.dll": {}
+          "lib/net45/Google.Protobuf.dll": {}
         }
       },
       "JB.Common/0.8.103-pre": {
@@ -324,7 +316,7 @@
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "morelinq/2.7.0": {
+      "morelinq/2.8.0": {
         "type": "package",
         "dependencies": {
           "System.ValueTuple": "4.4.0"
@@ -334,7 +326,13 @@
           "System.Data",
           "System.Data.DataSetExtensions",
           "System.Xml"
-        ]
+        ],
+        "compile": {
+          "lib/net40/MoreLinq.dll": {}
+        },
+        "runtime": {
+          "lib/net40/MoreLinq.dll": {}
+        }
       },
       "Newtonsoft.Json/9.0.1": {
         "type": "package",
@@ -850,7 +848,7 @@
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
           "Actor.Interfaces": "1.0.0",
-          "Akka": "1.3.0",
+          "Akka": "1.3.1",
           "CommonMessages": "1.0.0",
           "GenSoft.Interface": "1.0.0",
           "SystemInterfaces": "1.0.0",
@@ -872,7 +870,7 @@
           "RevolutionLogger": "1.0.0",
           "System.Linq.Dynamic": "1.0.0",
           "SystemInterfaces": "1.0.0",
-          "morelinq": "2.7.0"
+          "morelinq": "2.8.0"
         }
       },
       "GenSoft.Entities/1.0.0": {
@@ -954,7 +952,7 @@
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0",
-          "morelinq": "2.7.0"
+          "morelinq": "2.8.0"
         }
       },
       "RevolutionLogger/1.0.0": {
@@ -1043,7 +1041,7 @@
       }
     },
     ".NETFramework,Version=v4.6.1/win-x64": {
-      "Akka/1.3.0": {
+      "Akka/1.3.1": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "9.0.1",
@@ -1056,13 +1054,11 @@
           "lib/net45/Akka.dll": {}
         }
       },
-      "Akka.Persistence/1.1.2.30-beta": {
+      "Akka.Persistence/1.3.1": {
         "type": "package",
         "dependencies": {
-          "Akka": "1.1.2",
-          "Google.ProtocolBuffers": "2.4.1.555",
-          "Newtonsoft.Json": "9.0.1",
-          "System.Collections.Immutable": "1.1.36"
+          "Akka": "1.3.1",
+          "Google.Protobuf": "3.3.0"
         },
         "compile": {
           "lib/net45/Akka.Persistence.dll": {}
@@ -1071,11 +1067,10 @@
           "lib/net45/Akka.Persistence.dll": {}
         }
       },
-      "Akka.Persistence.Sql.Common/1.1.2.30-beta": {
+      "Akka.Persistence.Sql.Common/1.3.1": {
         "type": "package",
         "dependencies": {
-          "Akka.Persistence": "1.1.2.30-beta",
-          "System.Collections.Immutable": "1.1.36"
+          "Akka.Persistence": "1.3.1"
         },
         "compile": {
           "lib/net45/Akka.Persistence.Sql.Common.dll": {}
@@ -1084,15 +1079,12 @@
           "lib/net45/Akka.Persistence.Sql.Common.dll": {}
         }
       },
-      "Akka.Persistence.SqlServer/1.1.1.7-beta": {
+      "Akka.Persistence.SqlServer/1.3.1": {
         "type": "package",
         "dependencies": {
-          "Akka": "1.1.2",
-          "Akka.Persistence": "1.1.2.30-beta",
-          "Akka.Persistence.Sql.Common": "1.1.2.30-beta",
-          "Google.ProtocolBuffers": "2.4.1.555",
-          "Newtonsoft.Json": "9.0.1",
-          "System.Collections.Immutable": "1.1.36"
+          "Akka": "1.3.1",
+          "Akka.Persistence": "1.3.1",
+          "Akka.Persistence.Sql.Common": "1.3.1"
         },
         "compile": {
           "lib/net45/Akka.Persistence.SqlServer.dll": {}
@@ -1119,15 +1111,13 @@
           "lib/net35/FluentValidation.dll": {}
         }
       },
-      "Google.ProtocolBuffers/2.4.1.555": {
+      "Google.Protobuf/3.3.0": {
         "type": "package",
         "compile": {
-          "lib/net40/Google.ProtocolBuffers.Serialization.dll": {},
-          "lib/net40/Google.ProtocolBuffers.dll": {}
+          "lib/net45/Google.Protobuf.dll": {}
         },
         "runtime": {
-          "lib/net40/Google.ProtocolBuffers.Serialization.dll": {},
-          "lib/net40/Google.ProtocolBuffers.dll": {}
+          "lib/net45/Google.Protobuf.dll": {}
         }
       },
       "JB.Common/0.8.103-pre": {
@@ -1365,7 +1355,7 @@
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "morelinq/2.7.0": {
+      "morelinq/2.8.0": {
         "type": "package",
         "dependencies": {
           "System.ValueTuple": "4.4.0"
@@ -1375,7 +1365,13 @@
           "System.Data",
           "System.Data.DataSetExtensions",
           "System.Xml"
-        ]
+        ],
+        "compile": {
+          "lib/net40/MoreLinq.dll": {}
+        },
+        "runtime": {
+          "lib/net40/MoreLinq.dll": {}
+        }
       },
       "Newtonsoft.Json/9.0.1": {
         "type": "package",
@@ -1881,7 +1877,7 @@
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
           "Actor.Interfaces": "1.0.0",
-          "Akka": "1.3.0",
+          "Akka": "1.3.1",
           "CommonMessages": "1.0.0",
           "GenSoft.Interface": "1.0.0",
           "SystemInterfaces": "1.0.0",
@@ -1903,7 +1899,7 @@
           "RevolutionLogger": "1.0.0",
           "System.Linq.Dynamic": "1.0.0",
           "SystemInterfaces": "1.0.0",
-          "morelinq": "2.7.0"
+          "morelinq": "2.8.0"
         }
       },
       "GenSoft.Entities/1.0.0": {
@@ -1985,7 +1981,7 @@
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0",
-          "morelinq": "2.7.0"
+          "morelinq": "2.8.0"
         }
       },
       "RevolutionLogger/1.0.0": {
@@ -2075,12 +2071,12 @@
     }
   },
   "libraries": {
-    "Akka/1.3.0": {
-      "sha512": "YWu+CFYlPmn8znS36vtuZSIyEkl5Lg4Ab6JTlhu3VS2ZKbdrL0hgg0UucLYh4YukSZ99yKwzfaENn9VK0wlI9Q==",
+    "Akka/1.3.1": {
+      "sha512": "EgZGceDfM9apst3QplyRBh1MSr60kEi5vX0bJYgxHIruIvykCIFU7l5571VZuc0F/LGuG4ZPdLpbxLVDjB+7Xg==",
       "type": "package",
-      "path": "akka/1.3.0",
+      "path": "akka/1.3.1",
       "files": [
-        "akka.1.3.0.nupkg.sha512",
+        "akka.1.3.1.nupkg.sha512",
         "akka.nuspec",
         "lib/net45/Akka.dll",
         "lib/net45/Akka.xml",
@@ -2088,36 +2084,43 @@
         "lib/netstandard1.6/Akka.xml"
       ]
     },
-    "Akka.Persistence/1.1.2.30-beta": {
-      "sha512": "fGdsO0m0aYnHV6KHM4KxKAlClJmjqQZZu3eL+qbWXTFk8iA92Y6PuKT64UT1hMK9pBhbL5nHZzGgdwGVAPlnXw==",
+    "Akka.Persistence/1.3.1": {
+      "sha512": "SrGP5WM4lAJA/B3EbHXMJH3tVOCEWBXIPTI/BAKEoULLtFeI+vhQ0opc3Qnwr63MAfQv6kKc73Iea2F+urlk5w==",
       "type": "package",
-      "path": "akka.persistence/1.1.2.30-beta",
+      "path": "akka.persistence/1.3.1",
       "files": [
-        "Akka.Persistence.1.1.2.30-beta.nupkg.sha512",
-        "Akka.Persistence.nuspec",
+        "akka.persistence.1.3.1.nupkg.sha512",
+        "akka.persistence.nuspec",
         "lib/net45/Akka.Persistence.dll",
-        "lib/net45/Akka.Persistence.xml"
+        "lib/net45/Akka.Persistence.xml",
+        "lib/netstandard1.6/Akka.Persistence.dll",
+        "lib/netstandard1.6/Akka.Persistence.xml"
       ]
     },
-    "Akka.Persistence.Sql.Common/1.1.2.30-beta": {
-      "sha512": "Xe/vM0VZZrw8PkdKFXjP/9F8dlicNPspDpPWYfkn81R6ht//2EQnytNvlNXy49W7Sd8lBjc//8i7Z8WrIbqOEA==",
+    "Akka.Persistence.Sql.Common/1.3.1": {
+      "sha512": "4f4CTUw+Xc8fVbxTKwgdw/WGIvxFi62VufLG+dNZaEvgy3G4iRQTObDl+wNQR3YgXCmZ65MLglujw7G+AM4HBA==",
       "type": "package",
-      "path": "akka.persistence.sql.common/1.1.2.30-beta",
+      "path": "akka.persistence.sql.common/1.3.1",
       "files": [
-        "Akka.Persistence.Sql.Common.1.1.2.30-beta.nupkg.sha512",
-        "Akka.Persistence.Sql.Common.nuspec",
+        "akka.persistence.sql.common.1.3.1.nupkg.sha512",
+        "akka.persistence.sql.common.nuspec",
         "lib/net45/Akka.Persistence.Sql.Common.dll",
-        "lib/net45/Akka.Persistence.Sql.Common.xml"
+        "lib/net45/Akka.Persistence.Sql.Common.xml",
+        "lib/netstandard1.6/Akka.Persistence.Sql.Common.dll",
+        "lib/netstandard1.6/Akka.Persistence.Sql.Common.xml"
       ]
     },
-    "Akka.Persistence.SqlServer/1.1.1.7-beta": {
-      "sha512": "/PzBaIR4P3C6FZSzGQmTTmL9g0uCgAF5elfbhodnjXvOQfnu6VXgQZqd7tusecd6c84zDzpZ7IQzW78UlcrJfA==",
+    "Akka.Persistence.SqlServer/1.3.1": {
+      "sha512": "/+mRzTSDpZvG/36GAehY4Wj/AnpN1m+4Y6dqv5gih7nXLspwXAJGU35GrdLippJKEEwdykgJPjKhNK5wL6ikWg==",
       "type": "package",
-      "path": "akka.persistence.sqlserver/1.1.1.7-beta",
+      "path": "akka.persistence.sqlserver/1.3.1",
       "files": [
-        "Akka.Persistence.SqlServer.1.1.1.7-beta.nupkg.sha512",
-        "Akka.Persistence.SqlServer.nuspec",
-        "lib/net45/Akka.Persistence.SqlServer.dll"
+        "akka.persistence.sqlserver.1.3.1.nupkg.sha512",
+        "akka.persistence.sqlserver.nuspec",
+        "lib/net45/Akka.Persistence.SqlServer.dll",
+        "lib/net45/Akka.Persistence.SqlServer.xml",
+        "lib/netstandard1.6/Akka.Persistence.SqlServer.dll",
+        "lib/netstandard1.6/Akka.Persistence.SqlServer.xml"
       ]
     },
     "DynamicExpresso.Core/1.3.3.6": {
@@ -2142,64 +2145,17 @@
         "lib/net35/FluentValidation.dll"
       ]
     },
-    "Google.ProtocolBuffers/2.4.1.555": {
-      "sha512": "JsaOFX3nr6F0nGkGk7stbD2jTpvy7vgBuY+chB6+qsimMPu7YvQ6BgNOjjHd2xFqmByUCUD8pF9D07kPug8N1g==",
+    "Google.Protobuf/3.3.0": {
+      "sha512": "W0TsIYM2ED9dc/FgdbdtP68vUP1JdbwaFscG3DeVtJNlfm8A/ozjAT0H3dWIk0jJd9Zcx6B7XZ1LYERF8PqqJA==",
       "type": "package",
-      "path": "google.protocolbuffers/2.4.1.555",
+      "path": "google.protobuf/3.3.0",
       "files": [
-        "Google.ProtocolBuffers.2.4.1.555.nupkg.sha512",
-        "Google.ProtocolBuffers.nuspec",
-        "lib/cf20/Google.ProtocolBuffers.Serialization.dll",
-        "lib/cf20/Google.ProtocolBuffers.Serialization.xml",
-        "lib/cf20/Google.ProtocolBuffers.dll",
-        "lib/cf20/Google.ProtocolBuffers.xml",
-        "lib/cf35/Google.ProtocolBuffers.Serialization.dll",
-        "lib/cf35/Google.ProtocolBuffers.Serialization.xml",
-        "lib/cf35/Google.ProtocolBuffers.dll",
-        "lib/cf35/Google.ProtocolBuffers.xml",
-        "lib/net20/Google.ProtocolBuffers.Serialization.dll",
-        "lib/net20/Google.ProtocolBuffers.Serialization.xml",
-        "lib/net20/Google.ProtocolBuffers.dll",
-        "lib/net20/Google.ProtocolBuffers.xml",
-        "lib/net35/Google.ProtocolBuffers.Serialization.dll",
-        "lib/net35/Google.ProtocolBuffers.Serialization.xml",
-        "lib/net35/Google.ProtocolBuffers.dll",
-        "lib/net35/Google.ProtocolBuffers.xml",
-        "lib/net40/Google.ProtocolBuffers.Serialization.dll",
-        "lib/net40/Google.ProtocolBuffers.Serialization.xml",
-        "lib/net40/Google.ProtocolBuffers.dll",
-        "lib/net40/Google.ProtocolBuffers.xml",
-        "lib/portable-net40+sl4+sl5+wp7+wp8+win8/Google.ProtocolBuffers.Serialization.dll",
-        "lib/portable-net40+sl4+sl5+wp7+wp8+win8/Google.ProtocolBuffers.Serialization.xml",
-        "lib/portable-net40+sl4+sl5+wp7+wp8+win8/Google.ProtocolBuffers.dll",
-        "lib/portable-net40+sl4+sl5+wp7+wp8+win8/Google.ProtocolBuffers.xml",
-        "lib/sl20/Google.ProtocolBuffers.Serialization.dll",
-        "lib/sl20/Google.ProtocolBuffers.Serialization.xml",
-        "lib/sl20/Google.ProtocolBuffers.dll",
-        "lib/sl20/Google.ProtocolBuffers.xml",
-        "lib/sl30/Google.ProtocolBuffers.Serialization.dll",
-        "lib/sl30/Google.ProtocolBuffers.Serialization.xml",
-        "lib/sl30/Google.ProtocolBuffers.dll",
-        "lib/sl30/Google.ProtocolBuffers.xml",
-        "lib/sl40/Google.ProtocolBuffers.Serialization.dll",
-        "lib/sl40/Google.ProtocolBuffers.Serialization.xml",
-        "lib/sl40/Google.ProtocolBuffers.dll",
-        "lib/sl40/Google.ProtocolBuffers.xml",
-        "tools/CHANGES.txt",
-        "tools/Google.ProtocolBuffers.Serialization.dll",
-        "tools/Google.ProtocolBuffers.dll",
-        "tools/ProtoBench.exe",
-        "tools/ProtoDump.exe",
-        "tools/ProtoGen.exe",
-        "tools/ProtoGen.exe.config",
-        "tools/ProtoMunge.exe",
-        "tools/google/protobuf/compiler/plugin.proto",
-        "tools/google/protobuf/csharp_options.proto",
-        "tools/google/protobuf/descriptor.proto",
-        "tools/license.txt",
-        "tools/protoc-license.txt",
-        "tools/protoc.exe",
-        "tools/tutorial/addressbook.proto"
+        "google.protobuf.3.3.0.nupkg.sha512",
+        "google.protobuf.nuspec",
+        "lib/net45/Google.Protobuf.dll",
+        "lib/net45/Google.Protobuf.xml",
+        "lib/netstandard1.0/Google.Protobuf.dll",
+        "lib/netstandard1.0/Google.Protobuf.xml"
       ]
     },
     "JB.Common/0.8.103-pre": {
@@ -2478,16 +2434,20 @@
         "microsoft.extensions.primitives.nuspec"
       ]
     },
-    "morelinq/2.7.0": {
-      "sha512": "sZ0k5XtoA4/lh7pRRS1d9ZQZghHfVM6OUrfJyjntD1uwIjwuoPJKj26Nt7pTyVMLH+g+tjaQz3Dzm97Q0npxPg==",
+    "morelinq/2.8.0": {
+      "sha512": "E91pRvNIaAkcAHEvOkn//LYz3E/b3xyQZCYYBvYygNsL4dPzY1XN0AsWRNezs351HMa2vIuw6FsLYMkbzcKFIw==",
       "type": "package",
-      "path": "morelinq/2.7.0",
+      "path": "morelinq/2.8.0",
       "files": [
+        "lib/net35/MoreLinq.dll",
         "lib/net35/MoreLinq.xml",
+        "lib/net40/MoreLinq.dll",
         "lib/net40/MoreLinq.xml",
+        "lib/netstandard1.0/MoreLinq.dll",
         "lib/netstandard1.0/MoreLinq.xml",
+        "lib/netstandard2.0/MoreLinq.dll",
         "lib/netstandard2.0/MoreLinq.xml",
-        "morelinq.2.7.0.nupkg.sha512",
+        "morelinq.2.8.0.nupkg.sha512",
         "morelinq.nuspec"
       ]
     },
@@ -4109,7 +4069,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "Akka.Persistence.SqlServer >= 1.1.1.7-beta",
+      "Akka.Persistence.SqlServer >= 1.3.1",
       "JB.Common.Collections >= 0.8.103-pre"
     ],
     ".NETFramework,Version=v4.6.1": []
@@ -4208,7 +4168,7 @@
       }
     },
     "dependencies": {
-      "Akka.Persistence.SqlServer": "1.1.1.7-beta",
+      "Akka.Persistence.SqlServer": "1.3.1",
       "JB.Common.Collections": "0.8.103-pre"
     },
     "frameworks": {

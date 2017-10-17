@@ -29,7 +29,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\zh-Hans\Syst
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\obj\x64\Debug\Converters.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\obj\x64\Debug\Converters.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\obj\x64\Debug\Converters.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\obj\x64\Debug\Converters.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\JB.Common.Collections.Reactive.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\FluentValidation.dll
@@ -56,3 +55,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\SystemInterf
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\ViewModel.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\Utilities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\Utilities.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\obj\x64\Debug\Converters.csproj.CoreCompileInputs.cache

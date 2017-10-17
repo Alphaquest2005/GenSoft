@@ -7,7 +7,7 @@
         "framework": ".NETFramework,Version=v4.6.1"
       }
     },
-    ".NETFramework,Version=v4.6.1/win": {
+    ".NETFramework,Version=v4.6.1/win-x64": {
       "SystemInterfaces/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1"
@@ -59,7 +59,7 @@
       "net461": {}
     },
     "runtimes": {
-      "win": {
+      "win-x64": {
         "#import": []
       }
     }

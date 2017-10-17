@@ -37,8 +37,8 @@ C:\Prism\GitRepositiory\GenSoft\Domain.Interfaces\bin\x64\Debug\Splat.dll
 C:\Prism\GitRepositiory\GenSoft\Domain.Interfaces\bin\x64\Debug\Splat.pdb
 C:\Prism\GitRepositiory\GenSoft\Domain.Interfaces\bin\x64\Debug\Common.dll
 C:\Prism\GitRepositiory\GenSoft\Domain.Interfaces\bin\x64\Debug\Common.pdb
-C:\Prism\GitRepositiory\GenSoft\Domain.Interfaces\obj\x64\Debug\Domain.Interfaces.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Domain.Interfaces\bin\x64\Debug\DynamicExpresso.Core.dll
 C:\Prism\GitRepositiory\GenSoft\Domain.Interfaces\bin\x64\Debug\DynamicExpresso.Core.pdb
 C:\Prism\GitRepositiory\GenSoft\Domain.Interfaces\bin\x64\Debug\Utilities.dll
 C:\Prism\GitRepositiory\GenSoft\Domain.Interfaces\bin\x64\Debug\Utilities.pdb
+C:\Prism\GitRepositiory\GenSoft\Domain.Interfaces\obj\x64\Debug\Domain.Interfaces.csproj.CoreCompileInputs.cache

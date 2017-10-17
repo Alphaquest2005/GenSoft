@@ -34,8 +34,6 @@ C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\ReactivePropert
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\obj\Debug\BuildingSpecifications.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\obj\Debug\BuildingSpecifications.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\obj\Debug\BuildingSpecifications.pdb
-C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\obj\Debug\BuildingSpecifications.csproj.CoreCompileInputs.cache
-C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\netstandard.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\FluentValidation.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\log4net.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\MefContrib.dll
@@ -47,7 +45,13 @@ C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\ReactivePropert
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\ReactiveProperty.NET46.pdb
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\Splat.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\Splat.pdb
+C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\System.ValueTuple.dll
+C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\DynamicExpresso.Core.dll
+C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\DynamicExpresso.Core.pdb
+C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\obj\Debug\BuildingSpecifications.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\MoreLinq.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\Microsoft.Win32.Primitives.dll
+C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\netstandard.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\System.AppContext.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\System.Collections.Concurrent.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\System.Collections.dll
@@ -135,12 +139,9 @@ C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\System.Threadin
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\System.Threading.Thread.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\System.Threading.ThreadPool.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\System.Threading.Timer.dll
-C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\System.ValueTuple.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\System.Xml.ReaderWriter.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\System.Xml.XDocument.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\System.Xml.XmlDocument.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\System.Xml.XmlSerializer.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\System.Xml.XPath.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\System.Xml.XPath.XDocument.dll
-C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\DynamicExpresso.Core.dll
-C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\DynamicExpresso.Core.pdb
