@@ -152,7 +152,7 @@ namespace Process.WorkFlow
             //{
             //    return (ComplexEventAction)typeof(ComplexActions).GetMethod("IntializePulledProcessState").MakeGenericMethod(type).Invoke(null, new object[] {processId, entityName});
             //}
-            public static ComplexEventAction IntializeProcessState(int processId, IDynamicEntityType entityType)
+            public static ComplexEventAction IntializeProcessStateList(int processId, IDynamicEntityType entityType)
             {
                 return new ComplexEventAction(
 
@@ -170,6 +170,28 @@ namespace Process.WorkFlow
                         
                     },
                     expectedMessageType: typeof (IProcessStateMessage),
+                    action: ProcessActions.IntializeProcessStateList(entityType),
+                    processInfo: new StateCommandInfo(processId, RevolutionData.Context.Process.Commands.CreateState));
+            }
+
+            public static ComplexEventAction IntializeProcessState(int processId, IDynamicEntityType entityType)
+            {
+                return new ComplexEventAction(
+
+                    key: $"InitalizeProcessState-{entityType.Name}",
+                    processId: processId,
+                    actionTrigger: ActionTrigger.Any,
+                    events: new List<IProcessExpectedEvent>
+                    {
+                        new ProcessExpectedEvent(key: "ViewModelIntialized",
+                            processId: processId,
+                            eventPredicate: e => e != null && ((IEntityViewInfo)((IViewModelIntialized)e)?.ViewModel.ViewInfo)?.EntityType == entityType  ,
+                            eventType: typeof (IViewModelIntialized),
+                            processInfo: new StateEventInfo(processId, RevolutionData.Context.Process.Events.ProcessStarted),
+                            expectedSourceType: new SourceType(typeof (IComplexEventService))),
+
+                    },
+                    expectedMessageType: typeof(IProcessStateMessage),
                     action: ProcessActions.IntializeProcessState(entityType),
                     processInfo: new StateCommandInfo(processId, RevolutionData.Context.Process.Commands.CreateState));
             }
@@ -229,11 +251,11 @@ namespace Process.WorkFlow
                             expectedSourceType: new SourceType(typeof (IViewModel)),
                             //todo: check this cuz it comes from viewmodel
                             processInfo: new StateEventInfo(processId, Entity.Events.EntityUpdated)),
-                        new ProcessExpectedEvent<IEntityWithChangesFound>(
-                            "CurrentEntity", processId, e => e.Entity != null && e.Entity.Id > 0 && e.Entity.EntityType.Name == currentEntityType,
-                            expectedSourceType: new SourceType(typeof (IViewModel)),
-                            //todo: check this cuz it comes from viewmodel
-                            processInfo: new StateEventInfo(processId, Entity.Events.EntityFound))
+                        //new ProcessExpectedEvent<IEntityWithChangesFound>(
+                        //    "CurrentEntity", processId, e => e.Entity != null && e.Entity.Id > 0 && e.Entity.EntityType.Name == currentEntityType,
+                        //    expectedSourceType: new SourceType(typeof (IViewModel)),
+                        //    //todo: check this cuz it comes from viewmodel
+                        //    processInfo: new StateEventInfo(processId, Entity.Events.EntityFound))
                     },
                     expectedMessageType: typeof(IProcessStateMessage),
                     action: ProcessActions.RequestState(DynamicEntityType.DynamicEntityTypes[viewEntityType],property),
@@ -253,8 +275,6 @@ namespace Process.WorkFlow
                     Console.WriteLine(e);
                     throw;
                 }
-
-
             }
 
             public static ComplexEventAction UpdateStateList(int processId, IDynamicEntityType entityType) 
@@ -354,20 +374,35 @@ namespace Process.WorkFlow
                     key: $"RequestCompositState-{string.Join(",", entities.Select(x => x.EntityType))}",
                     processId: processId,
                     actionTrigger: ActionTrigger.Any,
-                    events: new List<IProcessExpectedEvent>(entities.Select(x => CreateProcessExpectedEvent(processId, entityType)).ToList()),
+                    events: new List<IProcessExpectedEvent>(entities.Select(x => CreateProcessCurrentEntityChangedExpectedEvent(processId, entityType)).ToList()),
                                        
                     expectedMessageType: typeof(IProcessStateMessage),
                     action: ProcessActions.RequestCompositStateList(entityType, changes, entities),
                     processInfo: new StateCommandInfo(processId, RevolutionData.Context.Process.Commands.UpdateState));
             }
 
-            public static IProcessExpectedEvent CreateProcessExpectedEvent(int processId, IDynamicEntityType entityType)
+            public static IProcessExpectedEvent CreateProcessCurrentEntityChangedExpectedEvent(int processId, IDynamicEntityType entityType)
             {
                return new ProcessExpectedEvent<ICurrentEntityChanged>(processId: processId,
                             eventPredicate: e => e.Entity != null && e.EntityType == entityType,
                             processInfo: new StateEventInfo(processId, RevolutionData.Context.Process.Events.CurrentEntityChanged),
                             expectedSourceType: new SourceType(typeof(IComplexEventService)),
                             key: $"CurrentEntity-{entityType.Name}");
+            }
+
+
+            public static ComplexEventAction CreateComplexEventAction(int processId )
+            {
+
+                return new ComplexEventAction(
+                    key: $"RequestCompositState-{string.Join(",", entities.Select(x => x.EntityType))}",
+                    processId: processId,
+                    actionTrigger: ActionTrigger.Any,
+                    events: new List<IProcessExpectedEvent>(entities.Select(x => CreateProcessCurrentEntityChangedExpectedEvent(processId, entityType)).ToList()),
+
+                    expectedMessageType: typeof(IProcessStateMessage),
+                    action: ProcessActions.RequestCompositStateList(entityType, changes, entities),
+                    processInfo: new StateCommandInfo(processId, RevolutionData.Context.Process.Commands.UpdateState));
             }
         }
     }

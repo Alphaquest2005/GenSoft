@@ -78,26 +78,26 @@ namespace RevolutionData
                     },
                     commands: new List<IViewModelEventCommand<IViewModel, IEvent>>
                     {
-                        //new ViewEventCommand<IEntityViewModel, IViewRowStateChanged>(
-                        //    key:"EditEntity",
-                        //    commandPredicate:new List<Func<IEntityViewModel, bool>>
-                        //    {
-                        //        //v => v. != null
-                        //    },
-                        //    subject:s => Observable.Empty<ReactiveCommand<IViewModel, Unit>>(),
+                        new ViewEventCommand<IEntityViewModel, IViewRowStateChanged>(
+                            key:"EditEntity",
+                            commandPredicate:new List<Func<IEntityViewModel, bool>>
+                            {
+                                //v => v. != null
+                            },
+                            subject:s => Observable.Empty<ReactiveCommand<IViewModel, Unit>>(),
 
-                        //    messageData: s =>
-                        //    {
-                        //        s.RowState.Value = s.RowState.Value != RowState.Modified?RowState.Modified: RowState.Unchanged;//new ReactiveProperty<RowState>(rowstate != RowState.Modified?RowState.Modified: RowState.Unchanged);
+                            messageData: s =>
+                            {
+                                s.RowState.Value = s.RowState.Value != RowState.Modified?RowState.Modified: RowState.Unchanged;//new ReactiveProperty<RowState>(rowstate != RowState.Modified?RowState.Modified: RowState.Unchanged);
 
-                        //        return new ViewEventCommandParameter(
-                        //            new object[] {s,s.RowState.Value},
-                        //            new StateCommandInfo(s.Process.Id,
-                        //                Context.Process.Commands.CurrentEntityChanged), s.Process,
-                        //            s.Source);
-                        //    }),
+                                return new ViewEventCommandParameter(
+                                    new object[] {s,s.RowState.Value},
+                                    new StateCommandInfo(s.Process.Id,
+                                        Context.Process.Commands.CurrentEntityChanged), s.Process,
+                                    s.Source);
+                            }),
 
-                        
+
                     },
                     viewModelType: typeof(IEntityViewModel),
                     orientation: typeof(IBodyViewModel),

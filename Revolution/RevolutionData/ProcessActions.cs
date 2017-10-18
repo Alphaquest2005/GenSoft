@@ -89,7 +89,7 @@ namespace RevolutionData
                         processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.Error),
                         expectedSourceType: new SourceType(typeof(IComplexEventService)));
 
-        public static IProcessAction IntializeProcessState(IDynamicEntityType entityType)
+        public static IProcessAction IntializeProcessStateList(IDynamicEntityType entityType)
         {
             return new ProcessAction(
                 action: async cp =>
@@ -103,6 +103,27 @@ namespace RevolutionData
                             Context.Entity.Commands.LoadEntitySetWithChanges),
                 // take shortcut cud be IntialState
                 expectedSourceType: new SourceType(typeof (IComplexEventService)));
+        }
+
+        public static IProcessAction IntializeProcessState(IDynamicEntityType entityType)
+        {
+            return new ProcessAction(
+                action: async cp =>
+                {
+                    var ps = new ProcessStateEntity(
+                        process: cp.Actor.Process,
+                        entity: entityType.DefaultEntity(),
+                        info: new StateInfo(cp.Actor.Process.Id,
+                        new State(name: cp.Actor.Process.Name, status: cp.Actor.Process.Description,
+                            notes: cp.Actor.Process.Description))); ;
+                    return await Task.Run(() => new UpdateProcessStateEntity(ps,
+                        new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),
+                        cp.Actor.Process, cp.Actor.Source));
+
+                },
+                processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.CreateState),
+                // take shortcut cud be IntialState
+                expectedSourceType: new SourceType(typeof(IComplexEventService)));
         }
 
         public static IProcessAction UpdateEntityViewState(IDynamicEntityType entityType) 

@@ -174,25 +174,25 @@ namespace RevolutionData
                             }),
 
                         //Todo: supposed to be create from database
-                        //new ViewEventCommand<ISummaryListViewModel, IViewRowStateChanged>(
-                        //    key:"EditEntity",
-                        //    commandPredicate:new List<Func<ISummaryListViewModel, bool>>
-                        //    {
-                        //      //  v => v.CurrentEntity.Value != null
-                        //    },
-                        //    subject:s => Observable.Empty<ReactiveCommand<IViewModel, Unit>>(),
+                        new ViewEventCommand<ISummaryListViewModel, IViewRowStateChanged>(
+                            key:"EditEntity",
+                            commandPredicate:new List<Func<ISummaryListViewModel, bool>>
+                            {
+                              //  v => v.CurrentEntity.Value != null
+                            },
+                            subject:s => Observable.Empty<ReactiveCommand<IViewModel, Unit>>(),
 
-                        //    messageData: s =>
-                        //    {
-                        //        s.RowState.Value = s.RowState.Value != RowState.Modified?RowState.Modified: RowState.Loaded;
+                            messageData: s =>
+                            {
+                                s.RowState.Value = s.RowState.Value != RowState.Modified?RowState.Modified: RowState.Loaded;
 
 
-                        //        return new ViewEventCommandParameter(
-                        //            new object[] {s,s.RowState.Value},
-                        //            new StateCommandInfo(s.Process.Id,
-                        //                Context.Process.Commands.CurrentEntityChanged), s.Process,
-                        //            s.Source);
-                        //    }),
+                                return new ViewEventCommandParameter(
+                                    new object[] {s,s.RowState.Value},
+                                    new StateCommandInfo(s.Process.Id,
+                                        Context.Process.Commands.CurrentEntityChanged), s.Process,
+                                    s.Source);
+                            }),
 
 
 
