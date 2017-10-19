@@ -67,14 +67,6 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Domain.Interfaces\Domain.Interfaces.csproj">
-      <Project>{e41cf673-fe71-4aae-a8fc-b571a36c1211}</Project>
-      <Name>Domain.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\DomainMessages\DomainMessages.csproj">
-      <Project>{7ee26a5b-63e6-450e-b4bd-66d0205fb492}</Project>
-      <Name>DomainMessages</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Actor.Interfaces\Actor.Interfaces.csproj">
       <Project>{8b10c72d-9f33-4290-b562-44cf1f718fa5}</Project>
       <Name>Actor.Interfaces</Name>

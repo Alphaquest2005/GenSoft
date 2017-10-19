@@ -52,7 +52,7 @@ namespace ViewModel.WorkFlow
                             v.CurrentEntity.Value,
                             v.ChangeTracking.Where(z => v.CurrentEntity.Value.PropertyList.FirstOrDefault(x => x.Key == z.Key)?.Value != z.Value).ToDictionary(x => x.Key, x => x.Value)
                         },
-                        new StateCommandInfo(v.Process.Id, RevolutionData.Context.Entity.Commands.GetEntity), v.Process,
+                        new RevolutionEntities.Process.StateCommandInfo(v.Process.Id, RevolutionData.Context.Entity.Commands.GetEntity), v.Process,
                         v.Source);
                     v.ChangeTracking.Clear();
                     return msg;

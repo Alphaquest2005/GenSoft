@@ -13,16 +13,13 @@ namespace GenSoft.Entities
 {
 	public partial class ActionParameterConstants: BaseEntity, IActionParameterConstants
 	{
-		public virtual int ActionPropertyId { get; set; }
-		public virtual int ActionParameterId { get; set; }
 		public virtual string Value { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 		
 			// ---------Parent Relationships
-				public virtual ActionProperties ActionProperties {get; set;}
-				public virtual ActionParameters ActionParameters {get; set;}
+				public virtual ActionPropertyParameter ActionPropertyParameter {get; set;}
 	
 
 	}

@@ -69,10 +69,14 @@
     <Compile Include="Generated Mappings\CalculatedPropertyParameters.cs" />
     <Compile Include="Generated Mappings\Command.cs" />
     <Compile Include="Generated Mappings\CommandType.cs" />
+    <Compile Include="Generated Mappings\ComplexActionExpectedEventActionParameter.cs" />
+    <Compile Include="Generated Mappings\ComplexEventAction.cs" />
+    <Compile Include="Generated Mappings\ComplexEventActionConstant.cs" />
+    <Compile Include="Generated Mappings\ComplexEventActionExpectedEvents.cs" />
+    <Compile Include="Generated Mappings\ComplexEventActionProcessActions.cs" />
     <Compile Include="Generated Mappings\DataType.cs" />
     <Compile Include="Generated Mappings\DBType.cs" />
     <Compile Include="Generated Mappings\DomainProcess.cs" />
-    <Compile Include="Generated Mappings\DomainProcessMainEntity.cs" />
     <Compile Include="Generated Mappings\Entity.cs" />
     <Compile Include="Generated Mappings\EntityAttribute.cs" />
     <Compile Include="Generated Mappings\EntityAttributeChange.cs" />
@@ -85,24 +89,38 @@
     <Compile Include="Generated Mappings\EntityTypePresentationProperty.cs" />
     <Compile Include="Generated Mappings\EntityTypeViewModelCommand.cs" />
     <Compile Include="Generated Mappings\EntityView.cs" />
+    <Compile Include="Generated Mappings\EventPredicates.cs" />
+    <Compile Include="Generated Mappings\EventType.cs" />
+    <Compile Include="Generated Mappings\ExpectedEventConstants.cs" />
+    <Compile Include="Generated Mappings\ExpectedEventPredicateParameters.cs" />
+    <Compile Include="Generated Mappings\ExpectedEvents.cs" />
+    <Compile Include="Generated Mappings\ExpectedStateEventInfo.cs" />
     <Compile Include="Generated Mappings\FunctionParameter.cs" />
     <Compile Include="Generated Mappings\FunctionParameterConstant.cs" />
     <Compile Include="Generated Mappings\Functions.cs" />
     <Compile Include="Generated Mappings\FunctionSetFunctions.cs" />
     <Compile Include="Generated Mappings\FunctionSets.cs" />
     <Compile Include="Generated Mappings\Machine.cs" />
+    <Compile Include="Generated Mappings\MainEntity.cs" />
     <Compile Include="Generated Mappings\Ordinality.cs" />
     <Compile Include="Generated Mappings\ParentEntity.cs" />
+    <Compile Include="Generated Mappings\PredicateParameters.cs" />
+    <Compile Include="Generated Mappings\Predicates.cs" />
     <Compile Include="Generated Mappings\PresentationPropertyType.cs" />
     <Compile Include="Generated Mappings\PresentationTheme.cs" />
+    <Compile Include="Generated Mappings\ProcessAction.cs" />
     <Compile Include="Generated Mappings\ProcessPath.cs" />
     <Compile Include="Generated Mappings\ProcessStep.cs" />
-    <Compile Include="Generated Mappings\ProcessStepEntity.cs" />
+    <Compile Include="Generated Mappings\ProcessStepComplexActions.cs" />
     <Compile Include="Generated Mappings\ProcessStepParentEntity.cs" />
     <Compile Include="Generated Mappings\ProcessStepRelationship.cs" />
     <Compile Include="Generated Mappings\RelationshipType.cs" />
     <Compile Include="Generated Mappings\SourceType.cs" />
     <Compile Include="Generated Mappings\State.cs" />
+    <Compile Include="Generated Mappings\StateCommandInfo.cs" />
+    <Compile Include="Generated Mappings\StateEventInfo.cs" />
+    <Compile Include="Generated Mappings\StateInfo.cs" />
+    <Compile Include="Generated Mappings\StateInfoNotes.cs" />
     <Compile Include="Generated Mappings\SystemProcess.cs" />
     <Compile Include="Generated Mappings\SystemProcessState.cs" />
     <Compile Include="Generated Mappings\SystemProcessStateInfo.cs" />
@@ -133,10 +151,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\DomainMessages\DomainMessages.csproj">
-      <Project>{7EE26A5B-63E6-450E-B4BD-66D0205FB492}</Project>
-      <Name>DomainMessages</Name>
-    </ProjectReference>
     <ProjectReference Include="..\GenSoft.Entities\GenSoft.Entities.csproj">
       <Project>{8ed4d838-4075-41b4-88a4-731ff303fb54}</Project>
       <Name>GenSoft.Entities</Name>

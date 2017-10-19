@@ -21,4 +21,19 @@ namespace EventMessages.Events
 
         public IDynamicEntityType EntityType => Entity?.EntityType;
     }
+
+    [Export(typeof(IDomainMessage))]
+    public class DomainMessage : ProcessSystemMessage, IDomainMessage
+    {
+        public DomainMessage() { }
+        public string Type { get; }
+        public IDynamicEntity Entity { get; }
+        public DomainMessage(string type,IDynamicEntity entity, IProcessStateInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo, process, source)
+        {
+            Entity = entity;
+            Type = type;
+        }
+
+        public IDynamicEntityType EntityType => Entity?.EntityType;
+    }
 }

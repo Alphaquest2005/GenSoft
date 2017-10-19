@@ -743,23 +743,6 @@
           "reactiveui-core": "7.0.0"
         }
       },
-      "Domain.Interfaces/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "Common": "1.0.0",
-          "SystemInterfaces": "1.0.0"
-        }
-      },
-      "DomainMessages/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "CommonMessages": "1.0.0",
-          "Domain.Interfaces": "1.0.0",
-          "SystemInterfaces": "1.0.0"
-        }
-      },
       "EventAggregator/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -788,7 +771,6 @@
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Common": "1.0.0",
-          "DomainMessages": "1.0.0",
           "EventAggregator": "1.0.0",
           "GenSoft.Entities": "1.0.0",
           "GenSoft.Interface": "1.0.0",
@@ -825,8 +807,6 @@
           "Actor.Interfaces": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
-          "Domain.Interfaces": "1.0.0",
-          "DomainMessages": "1.0.0",
           "EventMessages": "1.0.0",
           "RevolutionEntities": "1.0.0",
           "SystemInterfaces": "1.0.0",
@@ -1640,23 +1620,6 @@
           "reactiveui-core": "7.0.0"
         }
       },
-      "Domain.Interfaces/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "Common": "1.0.0",
-          "SystemInterfaces": "1.0.0"
-        }
-      },
-      "DomainMessages/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "CommonMessages": "1.0.0",
-          "Domain.Interfaces": "1.0.0",
-          "SystemInterfaces": "1.0.0"
-        }
-      },
       "EventAggregator/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -1685,7 +1648,6 @@
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Common": "1.0.0",
-          "DomainMessages": "1.0.0",
           "EventAggregator": "1.0.0",
           "GenSoft.Entities": "1.0.0",
           "GenSoft.Interface": "1.0.0",
@@ -1722,8 +1684,6 @@
           "Actor.Interfaces": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
-          "Domain.Interfaces": "1.0.0",
-          "DomainMessages": "1.0.0",
           "EventMessages": "1.0.0",
           "RevolutionEntities": "1.0.0",
           "SystemInterfaces": "1.0.0",
@@ -3645,16 +3605,6 @@
       "path": "../Revolution/Core.Common.UI/project.json",
       "msbuildProject": "../Revolution/Core.Common.UI/Core.Common.UI.csproj"
     },
-    "Domain.Interfaces/1.0.0": {
-      "type": "project",
-      "path": "../Domain.Interfaces/project.json",
-      "msbuildProject": "../Domain.Interfaces/Domain.Interfaces.csproj"
-    },
-    "DomainMessages/1.0.0": {
-      "type": "project",
-      "path": "../DomainMessages/project.json",
-      "msbuildProject": "../DomainMessages/DomainMessages.csproj"
-    },
     "EventAggregator/1.0.0": {
       "type": "project",
       "path": "../Revolution/EventAggregator/project.json",
@@ -3763,9 +3713,6 @@
       "frameworks": {
         "net47": {
           "projectReferences": {
-            "C:\\Prism\\GitRepositiory\\GenSoft\\DomainMessages\\DomainMessages.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\DomainMessages\\DomainMessages.csproj"
-            },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Actor.Interfaces\\Actor.Interfaces.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Actor.Interfaces\\Actor.Interfaces.csproj"
             },

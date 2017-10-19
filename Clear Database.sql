@@ -6,7 +6,7 @@ where id > 62
 
 DBCC CHECKIDENT (ProcessStepRelationship, RESEED, 0)
 DBCC CHECKIDENT (EntityRelationship, RESEED, 0)
---DBCC CHECKIDENT (Attributes, RESEED, 3)
+DBCC CHECKIDENT (EntityTypeViewModelCommand, RESEED, 1)
 
 DBCC CHECKIDENT (Entity, RESEED, 1)
 DBCC CHECKIDENT (EntityAttribute, RESEED, 2)

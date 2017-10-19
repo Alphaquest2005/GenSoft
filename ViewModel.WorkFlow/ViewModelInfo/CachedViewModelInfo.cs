@@ -103,7 +103,7 @@ namespace RevolutionData
                                 }));
 
                                 return new ViewEventPublicationParameter(new object[] {s, s.State.Value},
-                                    new StateEventInfo(s.Process.Id, Context.View.Events.ProcessStateLoaded), s.Process,
+                                    new RevolutionEntities.Process.StateEventInfo(s.Process.Id, Context.View.Events.ProcessStateLoaded), s.Process,
                                     s.Source);
                             }),
 
@@ -111,7 +111,7 @@ namespace RevolutionData
                             $"{entityType.Name}-IViewModelIntialized",
                             subject:v => v.ViewModelState as dynamic,
                             subjectPredicate:new List<Func<ICacheViewModel, bool>>{ v => v.ViewModelState.Value == ViewModelState.Intialized},
-                            messageData:v => new ViewEventPublicationParameter(new object[] {v.ViewInfo.EntityType},new StateEventInfo(v.Process.Id, Context.View.Events.Intitalized),v.Process,v.Source)),
+                            messageData:v => new ViewEventPublicationParameter(new object[] {v.ViewInfo.EntityType},new RevolutionEntities.Process.StateEventInfo(v.Process.Id, Context.View.Events.Intitalized),v.Process,v.Source)),
 
 
                     },

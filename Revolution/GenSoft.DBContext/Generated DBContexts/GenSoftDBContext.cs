@@ -30,10 +30,14 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.CalculatedPropertyParameters> CalculatedPropertyParameters { get; set; }
 		public DbSet<Entities.Command> Command { get; set; }
 		public DbSet<Entities.CommandType> CommandType { get; set; }
+		public DbSet<Entities.ComplexActionExpectedEventActionParameter> ComplexActionExpectedEventActionParameter { get; set; }
+		public DbSet<Entities.ComplexEventAction> ComplexEventAction { get; set; }
+		public DbSet<Entities.ComplexEventActionConstant> ComplexEventActionConstant { get; set; }
+		public DbSet<Entities.ComplexEventActionExpectedEvents> ComplexEventActionExpectedEvents { get; set; }
+		public DbSet<Entities.ComplexEventActionProcessActions> ComplexEventActionProcessActions { get; set; }
 		public DbSet<Entities.DataType> DataType { get; set; }
 		public DbSet<Entities.DBType> DBType { get; set; }
 		public DbSet<Entities.DomainProcess> DomainProcess { get; set; }
-		public DbSet<Entities.DomainProcessMainEntity> DomainProcessMainEntity { get; set; }
 		public DbSet<Entities.Entity> Entity { get; set; }
 		public DbSet<Entities.EntityAttribute> EntityAttribute { get; set; }
 		public DbSet<Entities.EntityAttributeChange> EntityAttributeChange { get; set; }
@@ -46,24 +50,38 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.EntityTypePresentationProperty> EntityTypePresentationProperty { get; set; }
 		public DbSet<Entities.EntityTypeViewModelCommand> EntityTypeViewModelCommand { get; set; }
 		public DbSet<Entities.EntityView> EntityView { get; set; }
+		public DbSet<Entities.EventPredicates> EventPredicates { get; set; }
+		public DbSet<Entities.EventType> EventType { get; set; }
+		public DbSet<Entities.ExpectedEventConstants> ExpectedEventConstants { get; set; }
+		public DbSet<Entities.ExpectedEventPredicateParameters> ExpectedEventPredicateParameters { get; set; }
+		public DbSet<Entities.ExpectedEvents> ExpectedEvents { get; set; }
+		public DbSet<Entities.ExpectedStateEventInfo> ExpectedStateEventInfo { get; set; }
 		public DbSet<Entities.FunctionParameter> FunctionParameter { get; set; }
 		public DbSet<Entities.FunctionParameterConstant> FunctionParameterConstant { get; set; }
 		public DbSet<Entities.Functions> Functions { get; set; }
 		public DbSet<Entities.FunctionSetFunctions> FunctionSetFunctions { get; set; }
 		public DbSet<Entities.FunctionSets> FunctionSets { get; set; }
 		public DbSet<Entities.Machine> Machine { get; set; }
+		public DbSet<Entities.MainEntity> MainEntity { get; set; }
 		public DbSet<Entities.Ordinality> Ordinality { get; set; }
 		public DbSet<Entities.ParentEntity> ParentEntity { get; set; }
+		public DbSet<Entities.PredicateParameters> PredicateParameters { get; set; }
+		public DbSet<Entities.Predicates> Predicates { get; set; }
 		public DbSet<Entities.PresentationPropertyType> PresentationPropertyType { get; set; }
 		public DbSet<Entities.PresentationTheme> PresentationTheme { get; set; }
+		public DbSet<Entities.ProcessAction> ProcessAction { get; set; }
 		public DbSet<Entities.ProcessPath> ProcessPath { get; set; }
 		public DbSet<Entities.ProcessStep> ProcessStep { get; set; }
-		public DbSet<Entities.ProcessStepEntity> ProcessStepEntity { get; set; }
+		public DbSet<Entities.ProcessStepComplexActions> ProcessStepComplexActions { get; set; }
 		public DbSet<Entities.ProcessStepParentEntity> ProcessStepParentEntity { get; set; }
 		public DbSet<Entities.ProcessStepRelationship> ProcessStepRelationship { get; set; }
 		public DbSet<Entities.RelationshipType> RelationshipType { get; set; }
 		public DbSet<Entities.SourceType> SourceType { get; set; }
 		public DbSet<Entities.State> State { get; set; }
+		public DbSet<Entities.StateCommandInfo> StateCommandInfo { get; set; }
+		public DbSet<Entities.StateEventInfo> StateEventInfo { get; set; }
+		public DbSet<Entities.StateInfo> StateInfo { get; set; }
+		public DbSet<Entities.StateInfoNotes> StateInfoNotes { get; set; }
 		public DbSet<Entities.SystemProcess> SystemProcess { get; set; }
 		public DbSet<Entities.SystemProcessState> SystemProcessState { get; set; }
 		public DbSet<Entities.SystemProcessStateInfo> SystemProcessStateInfo { get; set; }
@@ -104,10 +122,14 @@ namespace GenSoft.DBContexts
 				CalculatedPropertyParametersMap.Map(modelBuilder.Entity<Entities.CalculatedPropertyParameters>());
 				CommandMap.Map(modelBuilder.Entity<Entities.Command>());
 				CommandTypeMap.Map(modelBuilder.Entity<Entities.CommandType>());
+				ComplexActionExpectedEventActionParameterMap.Map(modelBuilder.Entity<Entities.ComplexActionExpectedEventActionParameter>());
+				ComplexEventActionMap.Map(modelBuilder.Entity<Entities.ComplexEventAction>());
+				ComplexEventActionConstantMap.Map(modelBuilder.Entity<Entities.ComplexEventActionConstant>());
+				ComplexEventActionExpectedEventsMap.Map(modelBuilder.Entity<Entities.ComplexEventActionExpectedEvents>());
+				ComplexEventActionProcessActionsMap.Map(modelBuilder.Entity<Entities.ComplexEventActionProcessActions>());
 				DataTypeMap.Map(modelBuilder.Entity<Entities.DataType>());
 				DBTypeMap.Map(modelBuilder.Entity<Entities.DBType>());
 				DomainProcessMap.Map(modelBuilder.Entity<Entities.DomainProcess>());
-				DomainProcessMainEntityMap.Map(modelBuilder.Entity<Entities.DomainProcessMainEntity>());
 				EntityMap.Map(modelBuilder.Entity<Entities.Entity>());
 				EntityAttributeMap.Map(modelBuilder.Entity<Entities.EntityAttribute>());
 				EntityAttributeChangeMap.Map(modelBuilder.Entity<Entities.EntityAttributeChange>());
@@ -120,24 +142,38 @@ namespace GenSoft.DBContexts
 				EntityTypePresentationPropertyMap.Map(modelBuilder.Entity<Entities.EntityTypePresentationProperty>());
 				EntityTypeViewModelCommandMap.Map(modelBuilder.Entity<Entities.EntityTypeViewModelCommand>());
 				EntityViewMap.Map(modelBuilder.Entity<Entities.EntityView>());
+				EventPredicatesMap.Map(modelBuilder.Entity<Entities.EventPredicates>());
+				EventTypeMap.Map(modelBuilder.Entity<Entities.EventType>());
+				ExpectedEventConstantsMap.Map(modelBuilder.Entity<Entities.ExpectedEventConstants>());
+				ExpectedEventPredicateParametersMap.Map(modelBuilder.Entity<Entities.ExpectedEventPredicateParameters>());
+				ExpectedEventsMap.Map(modelBuilder.Entity<Entities.ExpectedEvents>());
+				ExpectedStateEventInfoMap.Map(modelBuilder.Entity<Entities.ExpectedStateEventInfo>());
 				FunctionParameterMap.Map(modelBuilder.Entity<Entities.FunctionParameter>());
 				FunctionParameterConstantMap.Map(modelBuilder.Entity<Entities.FunctionParameterConstant>());
 				FunctionsMap.Map(modelBuilder.Entity<Entities.Functions>());
 				FunctionSetFunctionsMap.Map(modelBuilder.Entity<Entities.FunctionSetFunctions>());
 				FunctionSetsMap.Map(modelBuilder.Entity<Entities.FunctionSets>());
 				MachineMap.Map(modelBuilder.Entity<Entities.Machine>());
+				MainEntityMap.Map(modelBuilder.Entity<Entities.MainEntity>());
 				OrdinalityMap.Map(modelBuilder.Entity<Entities.Ordinality>());
 				ParentEntityMap.Map(modelBuilder.Entity<Entities.ParentEntity>());
+				PredicateParametersMap.Map(modelBuilder.Entity<Entities.PredicateParameters>());
+				PredicatesMap.Map(modelBuilder.Entity<Entities.Predicates>());
 				PresentationPropertyTypeMap.Map(modelBuilder.Entity<Entities.PresentationPropertyType>());
 				PresentationThemeMap.Map(modelBuilder.Entity<Entities.PresentationTheme>());
+				ProcessActionMap.Map(modelBuilder.Entity<Entities.ProcessAction>());
 				ProcessPathMap.Map(modelBuilder.Entity<Entities.ProcessPath>());
 				ProcessStepMap.Map(modelBuilder.Entity<Entities.ProcessStep>());
-				ProcessStepEntityMap.Map(modelBuilder.Entity<Entities.ProcessStepEntity>());
+				ProcessStepComplexActionsMap.Map(modelBuilder.Entity<Entities.ProcessStepComplexActions>());
 				ProcessStepParentEntityMap.Map(modelBuilder.Entity<Entities.ProcessStepParentEntity>());
 				ProcessStepRelationshipMap.Map(modelBuilder.Entity<Entities.ProcessStepRelationship>());
 				RelationshipTypeMap.Map(modelBuilder.Entity<Entities.RelationshipType>());
 				SourceTypeMap.Map(modelBuilder.Entity<Entities.SourceType>());
 				StateMap.Map(modelBuilder.Entity<Entities.State>());
+				StateCommandInfoMap.Map(modelBuilder.Entity<Entities.StateCommandInfo>());
+				StateEventInfoMap.Map(modelBuilder.Entity<Entities.StateEventInfo>());
+				StateInfoMap.Map(modelBuilder.Entity<Entities.StateInfo>());
+				StateInfoNotesMap.Map(modelBuilder.Entity<Entities.StateInfoNotes>());
 				SystemProcessMap.Map(modelBuilder.Entity<Entities.SystemProcess>());
 				SystemProcessStateMap.Map(modelBuilder.Entity<Entities.SystemProcessState>());
 				SystemProcessStateInfoMap.Map(modelBuilder.Entity<Entities.SystemProcessStateInfo>());

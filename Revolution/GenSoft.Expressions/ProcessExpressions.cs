@@ -8,9 +8,13 @@ using Actor.Interfaces;
 using GenSoft.Entities;
 using GenSoft.Interfaces;
 using RevolutionEntities.Process;
+using ComplexEventAction = RevolutionEntities.Process.ComplexEventAction;
 using IProcessStateInfo = SystemInterfaces.IProcessStateInfo;
 using ISourceType = SystemInterfaces.ISourceType;
+using IStateCommandInfo = SystemInterfaces.IStateCommandInfo;
+using ProcessAction = RevolutionEntities.Process.ProcessAction;
 using SourceType = RevolutionEntities.Process.SourceType;
+using StateCommandInfo = RevolutionEntities.Process.StateCommandInfo;
 using SystemProcess = GenSoft.Entities.SystemProcess;
 using Type = System.Type;
 
@@ -77,7 +81,7 @@ namespace GenSoft.Expressions
             = (md, cp) =>
             {
                 var type = Type.GetType(md.MessageType);
-                return (IProcessSystemMessage)Activator.CreateInstance(type, new object[] {new StateEventInfo(cp.Actor.Process.Id, new StateEvent(md.Event.Name, md.Event.Status, md.Event.Notes, CreateStateCommand.Invoke(md.Event.ExpectedEventCommand))),
+                return (IProcessSystemMessage)Activator.CreateInstance(type, new object[] {new RevolutionEntities.Process.StateEventInfo(cp.Actor.Process.Id, new StateEvent(md.Event.Name, md.Event.Status, md.Event.Notes, CreateStateCommand.Invoke(md.Event.ExpectedEventCommand))),
                        cp.Actor.Process, cp.Actor.Source});
 
             };

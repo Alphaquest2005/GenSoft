@@ -21,6 +21,7 @@ namespace GenSoft.Mappings
 			entityBuilder.Property(t => t.ActionPropertyId).HasColumnName("ActionPropertyId").IsRequired();
 			entityBuilder.Property(t => t.ActionParameterId).HasColumnName("ActionParameterId").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
+				entityBuilder.HasOne(p => p.ActionParameterConstants).WithOne(p => p.ActionPropertyParameter).HasForeignKey<ActionParameterConstants>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.ActionParameterEntityTypeAttributes).WithOne(p => p.ActionPropertyParameter).HasForeignKey(c => c.ActionPropertyParameterId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties

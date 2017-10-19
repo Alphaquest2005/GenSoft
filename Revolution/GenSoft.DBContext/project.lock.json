@@ -696,23 +696,6 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7"
       },
-      "Domain.Interfaces/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "Common": "1.0.0",
-          "SystemInterfaces": "1.0.0"
-        }
-      },
-      "DomainMessages/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "CommonMessages": "1.0.0",
-          "Domain.Interfaces": "1.0.0",
-          "SystemInterfaces": "1.0.0"
-        }
-      },
       "EventAggregator/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -1461,23 +1444,6 @@
       "ComponentModel.Composition.Hosting.Extension/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7"
-      },
-      "Domain.Interfaces/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "Common": "1.0.0",
-          "SystemInterfaces": "1.0.0"
-        }
-      },
-      "DomainMessages/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "CommonMessages": "1.0.0",
-          "Domain.Interfaces": "1.0.0",
-          "SystemInterfaces": "1.0.0"
-        }
       },
       "EventAggregator/1.0.0": {
         "type": "project",
@@ -3341,16 +3307,6 @@
       "path": "../MefGeneric-master/MEFGeneric Preview 9/src/ComponentModel.Composition.Hosting.Extension/project.json",
       "msbuildProject": "../MefGeneric-master/MEFGeneric Preview 9/src/ComponentModel.Composition.Hosting.Extension/ComponentModel.Composition.Hosting.Extension.csproj"
     },
-    "Domain.Interfaces/1.0.0": {
-      "type": "project",
-      "path": "../../Domain.Interfaces/project.json",
-      "msbuildProject": "../../Domain.Interfaces/Domain.Interfaces.csproj"
-    },
-    "DomainMessages/1.0.0": {
-      "type": "project",
-      "path": "../../DomainMessages/project.json",
-      "msbuildProject": "../../DomainMessages/DomainMessages.csproj"
-    },
     "EventAggregator/1.0.0": {
       "type": "project",
       "path": "../EventAggregator/project.json",
@@ -3424,9 +3380,6 @@
       "frameworks": {
         "net47": {
           "projectReferences": {
-            "C:\\Prism\\GitRepositiory\\GenSoft\\DomainMessages\\DomainMessages.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\DomainMessages\\DomainMessages.csproj"
-            },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Entities\\GenSoft.Entities.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Entities\\GenSoft.Entities.csproj"
             },

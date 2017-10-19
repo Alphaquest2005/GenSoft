@@ -5,6 +5,8 @@ using Actor.Interfaces;
 using CommonMessages;
 using GenSoft.Interfaces;
 using ViewModel.Interfaces;
+using IComplexEventAction = Actor.Interfaces.IComplexEventAction;
+using IStateCommandInfo = SystemInterfaces.IStateCommandInfo;
 using ISystemProcess = SystemInterfaces.ISystemProcess;
 
 namespace EventMessages.Commands

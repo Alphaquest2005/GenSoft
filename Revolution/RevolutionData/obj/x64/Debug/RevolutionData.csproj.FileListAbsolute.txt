@@ -94,16 +94,12 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\System.V
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\Actor.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\Common.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\CommonMessages.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\Domain.Interfaces.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\DomainMessages.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\EventMessages.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\RevolutionEntities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\SystemInterfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\Utilities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\ViewMessages.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\ViewModel.Interfaces.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\Domain.Interfaces.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\DomainMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\Actor.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\CommonMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\Common.pdb

@@ -14,8 +14,7 @@ namespace Common.DataEntites
     {
         public static ConcurrentDictionary<string,IDynamicEntityType> DynamicEntityTypes { get; } = new ConcurrentDictionary<string, IDynamicEntityType>();
 
-        public static Dictionary<string, dynamic> Functions { get; } = new Dictionary<string, dynamic>();
-
+        
         
 
         public DynamicEntityType(string name, string entitySetName, List<IEntityKeyValuePair> properties, Dictionary<string, List<dynamic>> calculatedProperties, ObservableDictionary<string, List<dynamic>> cachedProperties, ObservableDictionary<string, string> cachedEntityProperties)

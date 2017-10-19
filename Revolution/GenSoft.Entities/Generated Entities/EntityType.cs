@@ -19,11 +19,10 @@ namespace GenSoft.Entities
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 				public virtual DBType DBType {get; set;}
-				public virtual ICollection<DomainProcessMainEntity> DomainProcessMainEntity {get; set;}
 				public virtual ICollection<Entity> Entity {get; set;}
 				public virtual ICollection<EntityTypeAttributes> EntityTypeAttributes {get; set;}
 				public virtual ICollection<EntityTypeViewModelCommand> EntityTypeViewModelCommand {get; set;}
-				public virtual ICollection<ProcessStepEntity> ProcessStepEntity {get; set;}
+				public virtual ICollection<MainEntity> MainEntity {get; set;}
 		
 			// ---------Parent Relationships
 				public virtual Application Application {get; set;}

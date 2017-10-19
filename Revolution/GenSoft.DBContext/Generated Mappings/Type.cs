@@ -22,6 +22,7 @@ namespace GenSoft.Mappings
 		//-------------------Navigation Properties -------------------------------//
 				entityBuilder.HasOne(p => p.DataType).WithOne(p => p.Type).HasForeignKey<DataType>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasOne(p => p.EntityType).WithOne(p => p.Type).HasForeignKey<EntityType>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasOne(p => p.EventType).WithOne(p => p.Type).HasForeignKey<EventType>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasOne(p => p.SourceType).WithOne(p => p.Type).HasForeignKey<SourceType>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.Types).WithOne(p => p.Types).HasForeignKey(c => c.TypeId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.ParentTypes).WithOne(p => p.ParentTypes).HasForeignKey(c => c.ParentTypeId).OnDelete(DeleteBehavior.Restrict);

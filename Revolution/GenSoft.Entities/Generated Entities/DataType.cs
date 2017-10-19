@@ -19,6 +19,7 @@ namespace GenSoft.Entities
 				public virtual ICollection<Attributes> Attributes {get; set;}
 				public virtual ICollection<FunctionParameter> FunctionParameter {get; set;}
 				public virtual ICollection<Functions> Functions {get; set;}
+				public virtual ICollection<PredicateParameters> PredicateParameters {get; set;}
 		
 			// ---------Parent Relationships
 				public virtual Type Type {get; set;}

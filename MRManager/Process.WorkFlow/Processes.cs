@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using SystemInterfaces;
 using Actor.Interfaces;
 using Common.DataEntites;
-using Domain.Interfaces;
 using EventMessages.Commands;
 using EventMessages.Events;
 using RevolutionData;
@@ -85,16 +84,34 @@ namespace Process.WorkFlow
                 processInfo:new StateCommandInfo(1,RevolutionData.Context.Process.Commands.CleanUpProcess ),
                 action: ProcessActions.Actions["CleanUpProcess"]),
 
-            //new ComplexEventAction(
-            //    "104",
-            //    1, new List<IProcessExpectedEvent>
-            //    {
-            //        new ProcessExpectedEvent ("ProcessCompleted", 1, typeof (ISystemProcessCompleted), e => e != null, new StateEventInfo(1, RevolutionData.Context.Process.Events.ProcessCompleted), new SourceType(typeof(IComplexEventService))),
-
-            //    },
-            //    typeof(ISystemProcessCleanedUp),
-            //    processInfo:new StateCommandInfo(1,RevolutionData.Context.Process.Commands.CleanUpProcess ),
-            //    action: ProcessActions.Actions["CleanUpProcess"]),
+           new ComplexEventAction(
+                key:"203",
+                processId: 2,
+                events: new List<IProcessExpectedEvent>
+                {
+                    new ProcessExpectedEvent<IEntityWithChangesFound> (processId: 2,
+                                                        eventPredicate: e => e.Entity != null && e.Changes.Count == 2 && e.Changes.ContainsKey("Password"),
+                                                        processInfo: new StateEventInfo(2, RevolutionData.Context.User.Events.UserFound),
+                                                        expectedSourceType: new SourceType(typeof(IEntityViewRepository)),
+                                                        key: "ValidatedUser")
+                },
+                expectedMessageType: typeof(IProcessStateMessage),
+                action: ProcessActions.SignIn.SetProcessStatetoValidatedUser,
+                processInfo: new StateCommandInfo(2, RevolutionData.Context.Process.Commands.UpdateState)),
+            new ComplexEventAction(
+                key:"204",
+                processId: 2,
+                events: new List<IProcessExpectedEvent>
+                {
+                    new ProcessExpectedEvent<IEntityWithChangesFound> (processId: 2,
+                                                        eventPredicate: e => e.Entity != null && e.Changes.Count == 2 && e.Changes.ContainsKey("Password"),
+                                                        processInfo: new StateEventInfo(2, RevolutionData.Context.User.Events.UserFound),
+                                                        expectedSourceType: new SourceType(typeof(IEntityViewRepository)),
+                                                        key: "ValidatedUser")
+                },
+                expectedMessageType:typeof(IDomainMessage),
+                processInfo:new StateCommandInfo(2, RevolutionData.Context.Domain.Commands.PublishDomainEvent),
+                action: ProcessActions.SignIn.UserValidated),
         };
 
 
@@ -222,7 +239,7 @@ namespace Process.WorkFlow
                             key: "Entity")
                     },
                     expectedMessageType: typeof(IProcessStateMessage),
-                    action: ProcessActions.UpdateEntityViewState(entityType),
+                    action: ProcessActions.UpdateEntityViewState(),
                     processInfo: new StateCommandInfo(processId, RevolutionData.Context.Process.Commands.UpdateState));
             }
 
@@ -294,7 +311,7 @@ namespace Process.WorkFlow
                             processInfo: new StateEventInfo(processId, Entity.Events.EntitySetLoaded))
                     },
                     expectedMessageType: typeof(IProcessStateList),
-                    action: ProcessActions.UpdateEntityViewStateList(entityType),
+                    action: ProcessActions.UpdateEntityViewStateList(),
                     processInfo: new StateCommandInfo(processId, RevolutionData.Context.Process.Commands.UpdateState));
             }
             public static ComplexEventAction RequestStateList(int processId, string currentEntityType, string viewEntityType, string currentProperty, string viewProperty)
@@ -391,18 +408,16 @@ namespace Process.WorkFlow
             }
 
 
-            public static ComplexEventAction CreateComplexEventAction(int processId )
+           
+
+            private static IProcessAction CreateProcessAction(object action)
             {
+                throw new NotImplementedException();
+            }
 
-                return new ComplexEventAction(
-                    key: $"RequestCompositState-{string.Join(",", entities.Select(x => x.EntityType))}",
-                    processId: processId,
-                    actionTrigger: ActionTrigger.Any,
-                    events: new List<IProcessExpectedEvent>(entities.Select(x => CreateProcessCurrentEntityChangedExpectedEvent(processId, entityType)).ToList()),
-
-                    expectedMessageType: typeof(IProcessStateMessage),
-                    action: ProcessActions.RequestCompositStateList(entityType, changes, entities),
-                    processInfo: new StateCommandInfo(processId, RevolutionData.Context.Process.Commands.UpdateState));
+            private static IProcessExpectedEvent CreateProcessExpectedEvent( object o)
+            {
+                throw new NotImplementedException();
             }
         }
     }

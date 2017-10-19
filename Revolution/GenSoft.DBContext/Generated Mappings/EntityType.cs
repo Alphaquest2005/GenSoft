@@ -24,11 +24,10 @@ namespace GenSoft.Mappings
 			entityBuilder.Property(t => t.EntitySetName).HasColumnName("EntitySetName").IsRequired().HasMaxLength(50);
 		//-------------------Navigation Properties -------------------------------//
 				entityBuilder.HasOne(p => p.DBType).WithOne(p => p.EntityType).HasForeignKey<DBType>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.DomainProcessMainEntity).WithOne(p => p.EntityType).HasForeignKey(c => c.EntityTypeId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.Entity).WithOne(p => p.EntityType).HasForeignKey(c => c.EntityTypeId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.EntityTypeAttributes).WithOne(p => p.EntityType).HasForeignKey(c => c.EntityTypeId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.EntityTypeViewModelCommand).WithOne(p => p.EntityType).HasForeignKey(c => c.EntityTypeId).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.ProcessStepEntity).WithOne(p => p.EntityType).HasForeignKey(c => c.EntityId).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasMany(x => x.MainEntity).WithOne(p => p.EntityType).HasForeignKey(c => c.EntityTypeId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties
 				//entityBuilder.HasOne(p => p.Application Application).WithMany(p => p.EntityType).HasForeignKey(c => c.ApplicationId).OnDelete(DeleteBehavior.Restrict);

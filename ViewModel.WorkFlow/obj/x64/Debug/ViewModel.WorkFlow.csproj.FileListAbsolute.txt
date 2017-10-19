@@ -31,7 +31,6 @@ C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\System.ValueTup
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\Actor.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\BootStrapper.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\Common.dll
-C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\DomainMessages.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\EventMessages.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\RevolutionData.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\RevolutionEntities.dll
@@ -41,7 +40,6 @@ C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\ViewMessages.dl
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\ViewModel.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\CommonMessages.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\ComponentModel.Composition.Hosting.Extension.dll
-C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\DomainMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\Actor.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\BootStrapper.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\BootStrapper.dll.config

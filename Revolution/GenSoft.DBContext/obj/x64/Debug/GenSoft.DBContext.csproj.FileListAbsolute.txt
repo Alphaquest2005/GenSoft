@@ -157,14 +157,12 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\Syste
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\System.Security.Cryptography.X509Certificates.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\System.Xml.ReaderWriter.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\Common.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\DomainMessages.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\EventAggregator.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\GenSoft.Entities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\GenSoft.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\RevolutionLogger.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\System.Linq.Dynamic.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\SystemInterfaces.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\DomainMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\GenSoft.Entities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\Common.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\System.Linq.Dynamic.pdb

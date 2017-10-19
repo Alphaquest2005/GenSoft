@@ -326,23 +326,6 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7"
       },
-      "Domain.Interfaces/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "Common": "1.0.0",
-          "SystemInterfaces": "1.0.0"
-        }
-      },
-      "DomainMessages/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "CommonMessages": "1.0.0",
-          "Domain.Interfaces": "1.0.0",
-          "SystemInterfaces": "1.0.0"
-        }
-      },
       "EventAggregator/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -390,8 +373,6 @@
           "Actor.Interfaces": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
-          "Domain.Interfaces": "1.0.0",
-          "DomainMessages": "1.0.0",
           "EventMessages": "1.0.0",
           "RevolutionEntities": "1.0.0",
           "SystemInterfaces": "1.0.0",
@@ -786,23 +767,6 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7"
       },
-      "Domain.Interfaces/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "Common": "1.0.0",
-          "SystemInterfaces": "1.0.0"
-        }
-      },
-      "DomainMessages/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "CommonMessages": "1.0.0",
-          "Domain.Interfaces": "1.0.0",
-          "SystemInterfaces": "1.0.0"
-        }
-      },
       "EventAggregator/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -850,8 +814,6 @@
           "Actor.Interfaces": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
-          "Domain.Interfaces": "1.0.0",
-          "DomainMessages": "1.0.0",
           "EventMessages": "1.0.0",
           "RevolutionEntities": "1.0.0",
           "SystemInterfaces": "1.0.0",
@@ -1546,16 +1508,6 @@
       "path": "../../Revolution/MefGeneric-master/MEFGeneric Preview 9/src/ComponentModel.Composition.Hosting.Extension/project.json",
       "msbuildProject": "../../Revolution/MefGeneric-master/MEFGeneric Preview 9/src/ComponentModel.Composition.Hosting.Extension/ComponentModel.Composition.Hosting.Extension.csproj"
     },
-    "Domain.Interfaces/1.0.0": {
-      "type": "project",
-      "path": "../../Domain.Interfaces/project.json",
-      "msbuildProject": "../../Domain.Interfaces/Domain.Interfaces.csproj"
-    },
-    "DomainMessages/1.0.0": {
-      "type": "project",
-      "path": "../../DomainMessages/project.json",
-      "msbuildProject": "../../DomainMessages/DomainMessages.csproj"
-    },
     "EventAggregator/1.0.0": {
       "type": "project",
       "path": "../../Revolution/EventAggregator/project.json",
@@ -1641,9 +1593,6 @@
       "frameworks": {
         "net47": {
           "projectReferences": {
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Domain.Interfaces\\Domain.Interfaces.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Domain.Interfaces\\Domain.Interfaces.csproj"
-            },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Actor.Interfaces\\Actor.Interfaces.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Actor.Interfaces\\Actor.Interfaces.csproj"
             },
@@ -1673,6 +1622,12 @@
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Interface\\GenSoft.Interface.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Interface\\GenSoft.Interface.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Entities\\GenSoft.Entities.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Entities\\GenSoft.Entities.csproj"
             }
           }
         }

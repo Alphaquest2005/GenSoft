@@ -223,8 +223,6 @@ C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\Core.Common.UI.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\DataServices.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\DataTemplates.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\DesignTimeData.dll
-C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\Domain.Interfaces.dll
-C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\DomainMessages.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\EFRepository.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\EventAggregator.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\EventMessages.dll
@@ -252,8 +250,6 @@ C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\GenSoft.Expressions.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\GenSoft.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\DataTemplates.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\DesignTimeData.pdb
-C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\Domain.Interfaces.pdb
-C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\DomainMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\Resources.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\Actor.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\ActorSystem.pdb

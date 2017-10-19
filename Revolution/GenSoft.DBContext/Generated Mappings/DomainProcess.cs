@@ -22,7 +22,6 @@ namespace GenSoft.Mappings
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").IsRequired();
 			entityBuilder.Property(t => t.Priority).HasColumnName("Priority").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasMany(x => x.DomainProcessMainEntity).WithOne(p => p.DomainProcess).HasForeignKey(c => c.DomainProcessId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.ProcessStep).WithOne(p => p.DomainProcess).HasForeignKey(c => c.DomainProcessId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties

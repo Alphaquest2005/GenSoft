@@ -15,12 +15,13 @@ namespace GenSoft.Entities
 	{
 		public virtual int ActionId { get; set; }
 		public virtual string Name { get; set; }
+		public virtual string Description { get; set; }
 		public virtual int DataTypeId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
-				public virtual ICollection<ActionParameterConstants> ActionParameterConstants {get; set;}
 				public virtual ICollection<ActionPropertyParameter> ActionPropertyParameter {get; set;}
+				public virtual ICollection<ComplexActionExpectedEventActionParameter> ComplexActionExpectedEventActionParameter {get; set;}
 		
 			// ---------Parent Relationships
 				public virtual Action Action {get; set;}

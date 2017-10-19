@@ -99,7 +99,7 @@ namespace EFRepository
 
                             EventMessageBus.Current.Publish(
                                 new EntityWithChangesUpdated(newEntity, msg.Changes,
-                                    new StateEventInfo(msg.Process.Id, EntityEvents.Events.EntityUpdated), msg.Process,
+                                    new RevolutionEntities.Process.StateEventInfo(msg.Process.Id, EntityEvents.Events.EntityUpdated), msg.Process,
                                     Source), Source);
                         }
 
@@ -141,7 +141,7 @@ namespace EFRepository
                 
                     EventMessageBus.Current.Publish(
                         new EntitySetWithChangesLoaded(msg.EntityType,entities, msg.Changes,
-                            new StateEventInfo(msg.Process.Id, EntityEvents.Events.EntityFound), msg.Process,
+                            new RevolutionEntities.Process.StateEventInfo(msg.Process.Id, EntityEvents.Events.EntityFound), msg.Process,
                             Source), Source);
                
             }
@@ -165,7 +165,7 @@ namespace EFRepository
 
                 EventMessageBus.Current.Publish(
                         new EntitySetLoaded(msg.EntityType, viewset, 
-                            new StateEventInfo(msg.Process.Id, EntityEvents.Events.EntityFound), msg.Process,
+                            new RevolutionEntities.Process.StateEventInfo(msg.Process.Id, EntityEvents.Events.EntityFound), msg.Process,
                             Source), Source);
                 
             }
@@ -209,14 +209,14 @@ namespace EFRepository
                 {
                     EventMessageBus.Current.Publish(
                         new EntityWithChangesFound(entity, msg.Changes,
-                            new StateEventInfo(msg.Process.Id, EntityEvents.Events.EntityFound), msg.Process,
+                            new RevolutionEntities.Process.StateEventInfo(msg.Process.Id, EntityEvents.Events.EntityFound), msg.Process,
                             Source), Source);
                 }
                 else
                 {
                     EventMessageBus.Current.Publish(
                         new EntityWithChangesFound(DynamicEntityType.DynamicEntityTypes[msg.EntityType.Name].DefaultEntity(), msg.Changes,
-                            new StateEventInfo(msg.Process.Id, EntityEvents.Events.EntityFound), msg.Process,
+                            new RevolutionEntities.Process.StateEventInfo(msg.Process.Id, EntityEvents.Events.EntityFound), msg.Process,
                             Source), Source);
                 }
             }
