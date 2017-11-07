@@ -43,7 +43,7 @@ namespace RevolutionEntities.Process
             Notes = "";
         }
 
-        public IStateEvent ExpectedEvent { get; }
+        public IStateEvent ExpectedEvent { get; set; }
         public string Name { get; }
         public string Status { get; }
         public string Notes { get; }

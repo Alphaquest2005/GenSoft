@@ -8,6 +8,7 @@ namespace RevolutionEntities.Process
 {
     public class ComplexEventParameters : IComplexEventParameters
     {
+        public ComplexEventParameters() { }
         public ComplexEventParameters(IComplexEventService actor,  ImmutableDictionary<string, dynamic> messages)
         {
             Actor = actor;
@@ -15,8 +16,8 @@ namespace RevolutionEntities.Process
            
         }
 
-        public IComplexEventService Actor { get; }
-        public ImmutableDictionary<string, dynamic> Messages { get; }
+        public IComplexEventService Actor { get; set; }
+        public ImmutableDictionary<string, dynamic> Messages { get; set; }
        //public Action<IComplexEventParameters> Action { get;  }
     }
 }

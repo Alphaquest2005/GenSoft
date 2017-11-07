@@ -382,7 +382,769 @@
         }
       }
     },
+    ".NETFramework,Version=v4.7/win": {
+      "DynamicExpresso.Core/1.3.3.6": {
+        "type": "package",
+        "compile": {
+          "lib/net40/DynamicExpresso.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net40/DynamicExpresso.Core.dll": {}
+        }
+      },
+      "FluentValidation.Net35/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net35/FluentValidation.dll": {}
+        },
+        "runtime": {
+          "lib/net35/FluentValidation.dll": {}
+        }
+      },
+      "JB.Common/0.8.103-pre": {
+        "type": "package",
+        "compile": {
+          "lib/net45/JB.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net45/JB.Common.dll": {}
+        }
+      },
+      "JB.Common.Collections/0.8.103-pre": {
+        "type": "package",
+        "dependencies": {
+          "JB.Common": "0.8.103-pre"
+        },
+        "compile": {
+          "lib/net45/JB.Common.Collections.dll": {}
+        },
+        "runtime": {
+          "lib/net45/JB.Common.Collections.dll": {}
+        }
+      },
+      "JB.Common.Collections.Reactive/0.8.103-pre": {
+        "type": "package",
+        "dependencies": {
+          "JB.Common": "0.8.103-pre",
+          "JB.Common.Collections": "0.8.103-pre",
+          "JB.Common.Reactive": "0.8.103-pre",
+          "Rx-Main": "2.2.5"
+        },
+        "compile": {
+          "lib/net45/JB.Common.Collections.Reactive.dll": {}
+        },
+        "runtime": {
+          "lib/net45/JB.Common.Collections.Reactive.dll": {}
+        }
+      },
+      "JB.Common.Reactive/0.8.103-pre": {
+        "type": "package",
+        "dependencies": {
+          "JB.Common": "0.8.103-pre",
+          "Rx-Main": "2.2.5"
+        },
+        "compile": {
+          "lib/net45/JB.Common.Reactive.dll": {}
+        },
+        "runtime": {
+          "lib/net45/JB.Common.Reactive.dll": {}
+        }
+      },
+      "log4net/2.0.8": {
+        "type": "package",
+        "compile": {
+          "lib/net45-full/log4net.dll": {}
+        },
+        "runtime": {
+          "lib/net45-full/log4net.dll": {}
+        }
+      },
+      "MefContrib/1.2.2.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.Composition"
+        ],
+        "compile": {
+          "lib/net40-Client/MefContrib.dll": {}
+        },
+        "runtime": {
+          "lib/net40-Client/MefContrib.dll": {}
+        }
+      },
+      "morelinq/2.8.0": {
+        "type": "package",
+        "dependencies": {
+          "System.ValueTuple": "4.4.0"
+        },
+        "frameworkAssemblies": [
+          "System",
+          "System.Data",
+          "System.Data.DataSetExtensions",
+          "System.Xml"
+        ],
+        "compile": {
+          "lib/net40/MoreLinq.dll": {}
+        },
+        "runtime": {
+          "lib/net40/MoreLinq.dll": {}
+        }
+      },
+      "Reactive.EventAggregator/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Linq": "2.2.5"
+        },
+        "compile": {
+          "lib/net45/Reactive.EventAggregator.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Reactive.EventAggregator.dll": {}
+        }
+      },
+      "ReactiveProperty/2.9.0": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Main": "2.2.5"
+        },
+        "frameworkAssemblies": [
+          "PresentationCore",
+          "PresentationFramework",
+          "System",
+          "System.ComponentModel.DataAnnotations",
+          "System.Core",
+          "System.Runtime.Serialization",
+          "System.Xaml",
+          "WindowsBase"
+        ],
+        "compile": {
+          "lib/net46/ReactiveProperty.DataAnnotations.dll": {},
+          "lib/net46/ReactiveProperty.NET46.dll": {},
+          "lib/net46/ReactiveProperty.dll": {}
+        },
+        "runtime": {
+          "lib/net46/ReactiveProperty.DataAnnotations.dll": {},
+          "lib/net46/ReactiveProperty.NET46.dll": {},
+          "lib/net46/ReactiveProperty.dll": {}
+        }
+      },
+      "reactiveui-core/7.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Main": "2.2.5",
+          "Rx-Xaml": "2.2.5",
+          "Splat": "[1.4.0, 2.0.0)"
+        },
+        "compile": {
+          "lib/Net45/ReactiveUI.dll": {}
+        },
+        "runtime": {
+          "lib/Net45/ReactiveUI.dll": {}
+        }
+      },
+      "Rx-Core/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Interfaces": "2.2.5"
+        },
+        "compile": {
+          "lib/net45/System.Reactive.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Core.dll": {}
+        }
+      },
+      "Rx-Interfaces/2.2.5": {
+        "type": "package",
+        "compile": {
+          "lib/net45/System.Reactive.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Interfaces.dll": {}
+        }
+      },
+      "Rx-Linq/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Core": "2.2.5",
+          "Rx-Interfaces": "2.2.5"
+        },
+        "compile": {
+          "lib/net45/System.Reactive.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Linq.dll": {}
+        }
+      },
+      "Rx-Main/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Core": "2.2.5",
+          "Rx-Interfaces": "2.2.5",
+          "Rx-Linq": "2.2.5",
+          "Rx-PlatformServices": "2.2.5"
+        }
+      },
+      "Rx-PlatformServices/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Core": "2.2.5",
+          "Rx-Interfaces": "2.2.5"
+        },
+        "compile": {
+          "lib/net45/System.Reactive.PlatformServices.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.PlatformServices.dll": {}
+        }
+      },
+      "Rx-XAML/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Main": "2.2.5"
+        },
+        "frameworkAssemblies": [
+          "WindowsBase"
+        ],
+        "compile": {
+          "lib/net45/System.Reactive.Windows.Threading.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Windows.Threading.dll": {}
+        }
+      },
+      "Splat/1.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/Net45/Splat.dll": {}
+        },
+        "runtime": {
+          "lib/Net45/Splat.dll": {}
+        }
+      },
+      "System.Collections.Immutable/1.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/System.Collections.Immutable.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Collections.Immutable.dll": {}
+        }
+      },
+      "System.ValueTuple/4.4.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net47/System.ValueTuple.dll": {}
+        },
+        "runtime": {
+          "lib/net47/System.ValueTuple.dll": {}
+        }
+      },
+      "Actor.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "GenSoft.Interface": "1.0.0",
+          "SystemInterfaces": "1.0.0",
+          "ViewModel.Interfaces": "1.0.0"
+        }
+      },
+      "BootStrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "Actor.Interfaces": "1.0.0",
+          "ComponentModel.Composition.Hosting.Extension": "1.0.0",
+          "MefContrib": "1.2.2.1",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0",
+          "ViewModel.Interfaces": "1.0.0"
+        }
+      },
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "BootStrapper": "1.0.0",
+          "DynamicExpresso.Core": "1.3.3.6",
+          "GenSoft.Interface": "1.0.0",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
+        }
+      },
+      "CommonMessages/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
+      },
+      "ComponentModel.Composition.Hosting.Extension/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7"
+      },
+      "EventAggregator/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "CommonMessages": "1.0.0",
+          "Reactive.EventAggregator": "2.0.0",
+          "RevolutionLogger": "1.0.0",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
+        }
+      },
+      "GenSoft.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "Common": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
+        }
+      },
+      "GenSoft.Interface/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
+      },
+      "RevolutionEntities/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "Actor.Interfaces": "1.0.0",
+          "BootStrapper": "1.0.0",
+          "Common": "1.0.0",
+          "CommonMessages": "1.0.0",
+          "EventAggregator": "1.0.0",
+          "GenSoft.Entities": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
+          "System.Collections.Immutable": "1.4.0",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0",
+          "ViewModel.Interfaces": "1.0.0",
+          "morelinq": "2.8.0"
+        }
+      },
+      "RevolutionLogger/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "log4net": "2.0.8"
+        }
+      },
+      "SystemInterfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7"
+      },
+      "Utilities/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
+      },
+      "ViewModel.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "CommonMessages": "1.0.0",
+          "FluentValidation.Net35": "1.0.1",
+          "GenSoft.Interface": "1.0.0",
+          "JB.Common.Collections.Reactive": "0.8.103-pre",
+          "ReactiveProperty": "2.9.0",
+          "SystemInterfaces": "1.0.0",
+          "reactiveui-core": "7.0.0"
+        }
+      }
+    },
     ".NETFramework,Version=v4.7/win-x64": {
+      "DynamicExpresso.Core/1.3.3.6": {
+        "type": "package",
+        "compile": {
+          "lib/net40/DynamicExpresso.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net40/DynamicExpresso.Core.dll": {}
+        }
+      },
+      "FluentValidation.Net35/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net35/FluentValidation.dll": {}
+        },
+        "runtime": {
+          "lib/net35/FluentValidation.dll": {}
+        }
+      },
+      "JB.Common/0.8.103-pre": {
+        "type": "package",
+        "compile": {
+          "lib/net45/JB.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net45/JB.Common.dll": {}
+        }
+      },
+      "JB.Common.Collections/0.8.103-pre": {
+        "type": "package",
+        "dependencies": {
+          "JB.Common": "0.8.103-pre"
+        },
+        "compile": {
+          "lib/net45/JB.Common.Collections.dll": {}
+        },
+        "runtime": {
+          "lib/net45/JB.Common.Collections.dll": {}
+        }
+      },
+      "JB.Common.Collections.Reactive/0.8.103-pre": {
+        "type": "package",
+        "dependencies": {
+          "JB.Common": "0.8.103-pre",
+          "JB.Common.Collections": "0.8.103-pre",
+          "JB.Common.Reactive": "0.8.103-pre",
+          "Rx-Main": "2.2.5"
+        },
+        "compile": {
+          "lib/net45/JB.Common.Collections.Reactive.dll": {}
+        },
+        "runtime": {
+          "lib/net45/JB.Common.Collections.Reactive.dll": {}
+        }
+      },
+      "JB.Common.Reactive/0.8.103-pre": {
+        "type": "package",
+        "dependencies": {
+          "JB.Common": "0.8.103-pre",
+          "Rx-Main": "2.2.5"
+        },
+        "compile": {
+          "lib/net45/JB.Common.Reactive.dll": {}
+        },
+        "runtime": {
+          "lib/net45/JB.Common.Reactive.dll": {}
+        }
+      },
+      "log4net/2.0.8": {
+        "type": "package",
+        "compile": {
+          "lib/net45-full/log4net.dll": {}
+        },
+        "runtime": {
+          "lib/net45-full/log4net.dll": {}
+        }
+      },
+      "MefContrib/1.2.2.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.Composition"
+        ],
+        "compile": {
+          "lib/net40-Client/MefContrib.dll": {}
+        },
+        "runtime": {
+          "lib/net40-Client/MefContrib.dll": {}
+        }
+      },
+      "morelinq/2.8.0": {
+        "type": "package",
+        "dependencies": {
+          "System.ValueTuple": "4.4.0"
+        },
+        "frameworkAssemblies": [
+          "System",
+          "System.Data",
+          "System.Data.DataSetExtensions",
+          "System.Xml"
+        ],
+        "compile": {
+          "lib/net40/MoreLinq.dll": {}
+        },
+        "runtime": {
+          "lib/net40/MoreLinq.dll": {}
+        }
+      },
+      "Reactive.EventAggregator/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Linq": "2.2.5"
+        },
+        "compile": {
+          "lib/net45/Reactive.EventAggregator.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Reactive.EventAggregator.dll": {}
+        }
+      },
+      "ReactiveProperty/2.9.0": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Main": "2.2.5"
+        },
+        "frameworkAssemblies": [
+          "PresentationCore",
+          "PresentationFramework",
+          "System",
+          "System.ComponentModel.DataAnnotations",
+          "System.Core",
+          "System.Runtime.Serialization",
+          "System.Xaml",
+          "WindowsBase"
+        ],
+        "compile": {
+          "lib/net46/ReactiveProperty.DataAnnotations.dll": {},
+          "lib/net46/ReactiveProperty.NET46.dll": {},
+          "lib/net46/ReactiveProperty.dll": {}
+        },
+        "runtime": {
+          "lib/net46/ReactiveProperty.DataAnnotations.dll": {},
+          "lib/net46/ReactiveProperty.NET46.dll": {},
+          "lib/net46/ReactiveProperty.dll": {}
+        }
+      },
+      "reactiveui-core/7.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Main": "2.2.5",
+          "Rx-Xaml": "2.2.5",
+          "Splat": "[1.4.0, 2.0.0)"
+        },
+        "compile": {
+          "lib/Net45/ReactiveUI.dll": {}
+        },
+        "runtime": {
+          "lib/Net45/ReactiveUI.dll": {}
+        }
+      },
+      "Rx-Core/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Interfaces": "2.2.5"
+        },
+        "compile": {
+          "lib/net45/System.Reactive.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Core.dll": {}
+        }
+      },
+      "Rx-Interfaces/2.2.5": {
+        "type": "package",
+        "compile": {
+          "lib/net45/System.Reactive.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Interfaces.dll": {}
+        }
+      },
+      "Rx-Linq/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Core": "2.2.5",
+          "Rx-Interfaces": "2.2.5"
+        },
+        "compile": {
+          "lib/net45/System.Reactive.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Linq.dll": {}
+        }
+      },
+      "Rx-Main/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Core": "2.2.5",
+          "Rx-Interfaces": "2.2.5",
+          "Rx-Linq": "2.2.5",
+          "Rx-PlatformServices": "2.2.5"
+        }
+      },
+      "Rx-PlatformServices/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Core": "2.2.5",
+          "Rx-Interfaces": "2.2.5"
+        },
+        "compile": {
+          "lib/net45/System.Reactive.PlatformServices.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.PlatformServices.dll": {}
+        }
+      },
+      "Rx-XAML/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Main": "2.2.5"
+        },
+        "frameworkAssemblies": [
+          "WindowsBase"
+        ],
+        "compile": {
+          "lib/net45/System.Reactive.Windows.Threading.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Windows.Threading.dll": {}
+        }
+      },
+      "Splat/1.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/Net45/Splat.dll": {}
+        },
+        "runtime": {
+          "lib/Net45/Splat.dll": {}
+        }
+      },
+      "System.Collections.Immutable/1.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/System.Collections.Immutable.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Collections.Immutable.dll": {}
+        }
+      },
+      "System.ValueTuple/4.4.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net47/System.ValueTuple.dll": {}
+        },
+        "runtime": {
+          "lib/net47/System.ValueTuple.dll": {}
+        }
+      },
+      "Actor.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "GenSoft.Interface": "1.0.0",
+          "SystemInterfaces": "1.0.0",
+          "ViewModel.Interfaces": "1.0.0"
+        }
+      },
+      "BootStrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "Actor.Interfaces": "1.0.0",
+          "ComponentModel.Composition.Hosting.Extension": "1.0.0",
+          "MefContrib": "1.2.2.1",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0",
+          "ViewModel.Interfaces": "1.0.0"
+        }
+      },
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "BootStrapper": "1.0.0",
+          "DynamicExpresso.Core": "1.3.3.6",
+          "GenSoft.Interface": "1.0.0",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
+        }
+      },
+      "CommonMessages/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
+      },
+      "ComponentModel.Composition.Hosting.Extension/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7"
+      },
+      "EventAggregator/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "CommonMessages": "1.0.0",
+          "Reactive.EventAggregator": "2.0.0",
+          "RevolutionLogger": "1.0.0",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
+        }
+      },
+      "GenSoft.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "Common": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
+        }
+      },
+      "GenSoft.Interface/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
+      },
+      "RevolutionEntities/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "Actor.Interfaces": "1.0.0",
+          "BootStrapper": "1.0.0",
+          "Common": "1.0.0",
+          "CommonMessages": "1.0.0",
+          "EventAggregator": "1.0.0",
+          "GenSoft.Entities": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
+          "System.Collections.Immutable": "1.4.0",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0",
+          "ViewModel.Interfaces": "1.0.0",
+          "morelinq": "2.8.0"
+        }
+      },
+      "RevolutionLogger/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "log4net": "2.0.8"
+        }
+      },
+      "SystemInterfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7"
+      },
+      "Utilities/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
+      },
+      "ViewModel.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "CommonMessages": "1.0.0",
+          "FluentValidation.Net35": "1.0.1",
+          "GenSoft.Interface": "1.0.0",
+          "JB.Common.Collections.Reactive": "0.8.103-pre",
+          "ReactiveProperty": "2.9.0",
+          "SystemInterfaces": "1.0.0",
+          "reactiveui-core": "7.0.0"
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7/win-x86": {
       "DynamicExpresso.Core/1.3.3.6": {
         "type": "package",
         "compile": {
@@ -1442,7 +2204,13 @@
       "net47": {}
     },
     "runtimes": {
+      "win": {
+        "#import": []
+      },
       "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
         "#import": []
       }
     }

@@ -1,0 +1,11 @@
+C:\Prism\GitRepositiory\GenSoft\ValidationSets\bin\x86\Debug\ValidationSets.dll
+C:\Prism\GitRepositiory\GenSoft\ValidationSets\bin\x86\Debug\ValidationSets.pdb
+C:\Prism\GitRepositiory\GenSoft\ValidationSets\bin\x86\Debug\FluentValidation.dll
+C:\Prism\GitRepositiory\GenSoft\ValidationSets\bin\x86\Debug\SystemInterfaces.dll
+C:\Prism\GitRepositiory\GenSoft\ValidationSets\bin\x86\Debug\JB.Common.Collections.Reactive.dll
+C:\Prism\GitRepositiory\GenSoft\ValidationSets\bin\x86\Debug\SystemInterfaces.pdb
+C:\Prism\GitRepositiory\GenSoft\ValidationSets\bin\x86\Debug\JB.Common.Collections.Reactive.xml
+C:\Prism\GitRepositiory\GenSoft\ValidationSets\obj\x86\Debug\ValidationSets.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\GenSoft\ValidationSets\obj\x86\Debug\ValidationSets.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\ValidationSets\obj\x86\Debug\ValidationSets.dll
+C:\Prism\GitRepositiory\GenSoft\ValidationSets\obj\x86\Debug\ValidationSets.pdb

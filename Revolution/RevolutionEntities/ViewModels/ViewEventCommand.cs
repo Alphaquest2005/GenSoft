@@ -12,9 +12,9 @@ namespace RevolutionEntities.ViewModels
         public ViewEventCommand(string key, List<Func<TViewModel, bool>> commandPredicate, Func<TViewModel, IObservable<dynamic>> subject, Func<TViewModel, IViewEventCommandParameter> messageData) : base(key, subject, commandPredicate, messageData)
         {
            
-            MessageData = (Func<IViewModel, IViewEventCommandParameter>)base.MessageData.Convert(typeof(IViewModel), typeof(IViewEventCommandParameter));
-            CommandPredicate = base.CommandPredicate.Select(x => (Func<IViewModel, bool>)x.Convert(typeof(IViewModel), typeof(bool))).ToList();
-            Subject = (Func<IViewModel, IObservable<dynamic>>)base.Subject.Convert(typeof(IViewModel), typeof(IObservable<dynamic>));
+            MessageData = (Func<IViewModel, IViewEventCommandParameter>)base.MessageData.Convert(typeof(IViewModel));
+            CommandPredicate = base.CommandPredicate.Select(x => (Func<IViewModel, bool>)x.Convert(typeof(IViewModel))).ToList();
+            Subject = (Func<IViewModel, IObservable<dynamic>>)base.Subject.Convert(typeof(IViewModel));
         }
 
        

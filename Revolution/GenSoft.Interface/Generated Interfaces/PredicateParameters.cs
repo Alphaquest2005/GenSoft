@@ -17,6 +17,7 @@ namespace GenSoft.Interfaces
 		int DataTypeId { get;}
 		int PredicateId { get;}
 		string Name { get;}
+		string Description { get;}
 
 
 

@@ -16,6 +16,7 @@ namespace GenSoft.Entities
 		public virtual int DataTypeId { get; set; }
 		public virtual int PredicateId { get; set; }
 		public virtual string Name { get; set; }
+		public virtual string Description { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships

@@ -3,6 +3,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,10 +13,12 @@ using Akka.Actor;
 using Akka.Util.Internal;
 using Common;
 using Common.DataEntites;
+using Common.Dynamic;
 using DynamicExpresso;
 using EventAggregator;
 using EventMessages.Commands;
 using EventMessages.Events;
+using FluentValidation.Validators;
 using GenSoft.DBContexts;
 using GenSoft.Entities;
 using GenSoft.Interfaces;
@@ -29,13 +32,16 @@ using RevolutionEntities.ViewModels;
 using Utilities;
 using ViewModel.Interfaces;
 using ViewModel.WorkFlow;
+using Z.Expressions;
 using ComplexEventAction = RevolutionEntities.Process.ComplexEventAction;
 using IComplexEventAction = Actor.Interfaces.IComplexEventAction;
 using IProcessAction = Actor.Interfaces.IProcessAction;
+using IStateCommandInfo = SystemInterfaces.IStateCommandInfo;
 using ISystemProcess = SystemInterfaces.ISystemProcess;
 using IUser = SystemInterfaces.IUser;
 using Process = System.Diagnostics.Process;
 using ProcessAction = GenSoft.Entities.ProcessAction;
+using StateCommandInfo = GenSoft.Entities.StateCommandInfo;
 using StateEventInfo = RevolutionEntities.Process.StateEventInfo;
 using SystemProcess = RevolutionEntities.Process.SystemProcess;
 using Type = System.Type;
@@ -79,7 +85,18 @@ namespace DataServices.Actors
 
                 domainProcess = ctx.DomainProcess
                         .Include(x => x.SystemProcess)
-                        .Include(x => x.ProcessStep).ThenInclude(x => x.Entity)
+                        .Include(x => x.ProcessStep).ThenInclude(x => x.MainEntity.EntityType.Type)
+                        .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents).ThenInclude(x => x.ExpectedEvents.EventType.Type)
+                        .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents).ThenInclude(x => x.StateEventInfo.StateInfo)
+                        .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents).ThenInclude(x => x.ExpectedEvents.ExpectedEventPredicateParameters).ThenInclude(x => x.EventPredicates)
+                        .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents).ThenInclude(x => x.ExpectedEvents.ExpectedEventPredicateParameters).ThenInclude(x => x.ExpectedEventConstants)
+                        .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents).ThenInclude(x => x.ExpectedEvents.EventType.EventPredicates).ThenInclude(x => x.Predicates.PredicateParameters).ThenInclude(x => x.ExpectedEventPredicateParameters)
+                        .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents).ThenInclude(x => x.ExpectedEvents.EventType.EventPredicates).ThenInclude(x => x.Predicates.PredicateParameters).ThenInclude(x => x.DataType.Type)
+                        .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.EventType.Type)
+                    .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ComplexEventAction).ThenInclude(x => x.ProcessStepComplexActions)
+                    .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ProcessAction.ActionSet)
+                    .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ProcessAction.ProcessActionComplexParameterAction)
+                    .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ProcessAction.ProcessActionStateCommandInfo.StateCommandInfo.StateInfo)
                         .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
                         .FirstOrDefault(x => x.ProcessStep.Any());
                 if (domainProcess == null)
@@ -177,7 +194,8 @@ namespace DataServices.Actors
 
         public static IProcessExpectedEvent ProcessExpectedEvent<TEventType>(int processId, ComplexEventActionExpectedEvents ce,EntityType entityType) where TEventType: IProcessSystemMessage
         {
-            Func<TEventType, bool> eventPredicate = CreateExpectedEventPredicate<TEventType>(ce.ExpectedEvents);
+            Func <TEventType, bool> eventPredicate = CreateExpectedEventPredicate<TEventType>(ce.ExpectedEvents);
+            
             return new ProcessExpectedEvent<TEventType>(processId: processId,
                 eventPredicate: eventPredicate,
                 processInfo: new RevolutionEntities.Process.StateEventInfo(processId,
@@ -186,11 +204,75 @@ namespace DataServices.Actors
                 key: $"{ce.ExpectedEvents.EventType.Type.Name}-{entityType.Type.Name}");
         }
 
-        private static Func<TEventType, bool> CreateExpectedEventPredicate<TEventType>(ExpectedEvents ceExpectedEvents)
+        private static Func<TEventType, bool> CreateExpectedEventPredicate<TEventType>(ExpectedEvents expectedEvents) where TEventType : IProcessSystemMessage
         {
-            throw new NotImplementedException();
+            //e => e.Entity != null && e.Changes.Count == 2 && e.Changes.ContainsKey("Password")
+            foreach (var ep in expectedEvents.EventType.EventPredicates)
+            {
+                var body = CreateExpectedEventPredicateBody(ep.Predicates, expectedEvents.ExpectedEventPredicateParameters.Where(x => x.EventPredicateId == ep.Id).ToList());
+                var res = CreatePredicate(body, ep.Predicates.PredicateParameters.ToList());
+                return res;
+            }
+            return null;
+            
         }
 
+        private static dynamic CreatePredicate(string body, List<PredicateParameters> predicateParameters)
+        {
+            try
+            {
+
+                var interpreter = new Interpreter();
+                if (body.Contains("const") || body.Contains("param"))
+                {
+                    return "\"EntityParameter or constant not assigned to entity attribute\"";
+
+                }
+                var returnType = typeof(bool);
+                var parameters = predicateParameters.Where(x => !x.Name.Contains("Const"));
+                var argType = parameters.Select(x => CreateTypesFromDbType(x.DataTypeId)).ToList();
+                argType.Add(returnType);
+                var funcType = GetTypeByName($"Func`{argType.Count}").First(x => x.IsGenericTypeDefinition == true);
+                var expType = funcType.MakeGenericType(argType.ToArray());
+                var exp = typeof(Interpreter).GetMethod("ParseAsDelegate").MakeGenericMethod(expType)
+                    .Invoke(interpreter, new object[] { body, parameters.Select(x => x.Name).ToArray() });
+
+
+                return exp;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        private static string CreateExpectedEventPredicateBody(Predicates predicates, List<ExpectedEventPredicateParameters> predicateParameters)
+        {
+            var paramlst = new Dictionary<string, string>();
+            foreach (var p in predicateParameters)
+            {
+                        var c = p.ExpectedEventConstants.Value;
+                        paramlst.AddOrSet(p.PredicateParameters.Name, $"\"{c}\"");
+                   
+
+                    //var pEntityParameters =
+                    //    cp.CalculatedPropertyParameters.Where(x => x.FunctionParameterId == p.Id)
+                    //        .DistinctBy(x => x.Id).ToList();
+                    //for (int j = 0; j < pEntityParameters.Count(); j++)
+                    //{
+                    //    var param = pEntityParameters[j];
+                    //    var cparameter = param.CalculatedPropertyParameterEntityTypes.DistinctBy(x => x.Id)
+                    //        .FirstOrDefault(x => x.CalculatedPropertyParameterId == param.Id)
+                    //        ?.EntityTypeAttributes.Attributes.Name;
+
+                    //    if (cparameter != null) paramlst.AddOrSet($"param{j}", $"\"{cparameter}\"");
+                    //}
+                
+            }
+            var newBody = paramlst.Aggregate(predicates.Body, (current, p) => current.Replace(p.Key, p.Value));
+
+            return newBody;
+        }
 
         private void OnMainEntityChanged(IMainEntityChanged mainEntityChanged)
         {
@@ -292,10 +374,10 @@ namespace DataServices.Actors
         private void BuildExpressions()
         {
             BuildFunctions();
-            BuildActions();
+           // BuildActions();
             BuildStateCommandInfo();
             BuildStateEventInfo();
-            BuildProcessActions();
+            //BuildProcessActions();
       
         }
 
@@ -308,13 +390,50 @@ namespace DataServices.Actors
                 actionTrigger: ActionTrigger.Any,
                 events: cpEvents,
                 expectedMessageType: typeof(SystemInterfaces.IEntity).Assembly.GetType($"SystemInterfaces.{complexEventAction.EventType.Type.Name}"),
-                action: CreateProcessAction(complexEventAction.ProcessAction),
-                processInfo: new RevolutionEntities.Process.StateCommandInfo(processId, StateCommands[complexEventAction.ProcessAction.StateCommandInfo.StateInfo.Name]));
+                action: CreateProcessAction(processId,complexEventAction.ProcessAction),
+                processInfo: new RevolutionEntities.Process.StateCommandInfo(processId, StateCommands[complexEventAction.ProcessAction.ProcessActionStateCommandInfo.StateCommandInfo.StateInfo.Name]));
         }
 
-        private IProcessAction CreateProcessAction(ProcessAction processAction)
+        private IProcessAction CreateProcessAction(int processId, ProcessAction processAction)
+        {
+            return new RevolutionEntities.Process.ProcessAction(CreateComplexEventParametersAction(processAction.ProcessActionComplexParameterAction),
+                processAction.ProcessActionStateCommandInfo != null
+                ? (cp => new RevolutionEntities.Process.StateCommandInfo(cp.Actor.Process.Id, StateCommands[processAction.ProcessActionStateCommandInfo.StateCommandInfo.StateInfo.Name]))
+                : CreateComplexEventParameterStateCommand(processId, processAction.ProcessActionComplexParameterAction),
+                new RevolutionEntities.Process.SourceType(typeof(IComplexEventService)));
+        }
+
+        private Func<IComplexEventParameters, IStateCommandInfo> CreateComplexEventParameterStateCommand(int processId, ProcessActionComplexParameterAction stateCommand)
         {
             throw new NotImplementedException();
+        }
+
+        private Func<IComplexEventParameters, Task<IProcessSystemMessage>> CreateComplexEventParametersAction(
+            ProcessActionComplexParameterAction cpAction)
+        {
+            try
+            {
+                var interpreter = new Interpreter();
+                interpreter.Reference(typeof(DomainMessage));
+
+
+                var body = @" new DomainMessage(""UserValidated"",cp.Messages[""ValidatedUser""].Entity,
+                                new StateEventInfo(5, Context.Domain.Events.DomainEventPublished),
+                                cp.Actor.Process, cp.Actor.Source)";
+
+
+                var res = interpreter.ParseAsDelegate<Func<IComplexEventParameters, IProcessSystemMessage>>(body, "cp");
+
+                
+                return async cp => await Task.Run(() => res(cp));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+
+            
         }
 
         private void BuildProcessActions()
@@ -324,36 +443,68 @@ namespace DataServices.Actors
 
         private void BuildStateEventInfo()
         {
-            using (var ctx = new GenSoftDBContext())
+            try
             {
-                var lst = ctx.StateEventInfo
-                    .Include(x => x.StateInfo)
-                    .Include(x => x.StateCommandInfo.StateInfo)
-                    .ToList();
-
-                foreach (var f in lst)
+                using (var ctx = new GenSoftDBContext())
                 {
-                    var res = new StateEvent(f.StateInfo.Name, f.StateInfo.Status, f.StateInfo.StateInfoNotes?.Notes, StateCommands[f.StateCommandInfo.StateInfo.Name]);
-                    StateEvents.Add(f.StateInfo.Name, res);
+                    var lst = ctx.StateEventInfo
+                        .Include(x => x.StateInfo)
+                        .Include(x => x.StateCommandInfo.StateInfo)
+                        .ToList();
+
+                    foreach (var f in lst.Where(x => !StateEvents.ContainsKey(x.StateInfo.Name)).ToList())
+                    {
+                        CreateStateEvent(f, StateCommands[f.StateCommandInfo.StateInfo.Name]);
+                    }
                 }
             }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+
+        }
+
+        private static StateEvent CreateStateEvent(GenSoft.Entities.StateEventInfo f, StateCommand command)
+        {
+            if (StateEvents.ContainsKey(f.StateInfo.Name))return StateEvents[f.StateInfo.Name];
+
+            var stateEvent = new StateEvent(f.StateInfo.Name, f.StateInfo.Status, f.StateInfo.StateInfoNotes?.Notes, command);
+            StateEvents.Add( f.StateInfo.Name, stateEvent);
+            return stateEvent;
         }
 
         private void BuildStateCommandInfo()
         {
-            using (var ctx = new GenSoftDBContext())
+            try
             {
-                var lst = ctx.StateCommandInfo
-                    .Include(x => x.StateInfo)
-                    .Include(x => x.ExpectedStateEventInfo.StateEventInfo.StateInfo)
-                    .ToList();
-
-                foreach (var f in lst)
+                using (var ctx = new GenSoftDBContext())
                 {
-                    var res = new StateCommand(f.StateInfo.Name, f.StateInfo.Status, StateEvents[f.ExpectedStateEventInfo.StateEventInfo.StateInfo.Name]);
-                    StateCommands.Add(f.StateInfo.Name, res);
+                    var lst = ctx.StateCommandInfo
+                        .Include(x => x.StateInfo)
+                        .Include(x => x.ExpectedStateEventInfo.StateEventInfo.StateInfo)
+                        .ToList();
+
+                    foreach (var f in lst)
+                    {
+
+                        var res = new StateCommand(f.StateInfo.Name, f.StateInfo.Status);
+                        if (f.ExpectedStateEventInfo?.StateEventInfo != null)
+                        {
+                            var se = CreateStateEvent(f.ExpectedStateEventInfo.StateEventInfo, res);
+                            res.ExpectedEvent = se;
+                        }
+                        StateCommands.Add(f.StateInfo.Name, res);
+                    }
                 }
             }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+
         }
 
         private static void BuildActions()
@@ -374,7 +525,7 @@ namespace DataServices.Actors
             }
         }
 
-        private static object CreateAction(string body, List<ActionParameters> actionParameters)
+        private static dynamic CreateAction(string body, List<ActionParameters> actionParameters)
         {
             throw new NotImplementedException();
         }
@@ -542,7 +693,7 @@ namespace DataServices.Actors
                 var assemblyTypes = a.GetTypes();
                 returnVal.AddRange(assemblyTypes.Where(t => t.Name.ToLower() == className.ToLower()));//|| t.FullName.ToLower().Contains(className.ToLower()) 
             }
-
+            
             return returnVal.ToArray();
         }
 

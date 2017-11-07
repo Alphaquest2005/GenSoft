@@ -1,0 +1,6 @@
+C:\Prism\GitRepositiory\GenSoft\Revolution\ExpressionComputations\bin\x86\Debug\ExpressionComputations.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\ExpressionComputations\bin\x86\Debug\ExpressionComputations.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\ExpressionComputations\obj\x86\Debug\ExpressionComputations.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\ExpressionComputations\obj\x86\Debug\ExpressionComputations.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\ExpressionComputations\obj\x86\Debug\ExpressionComputations.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\ExpressionComputations\obj\x86\Debug\ExpressionComputations.csprojResolveAssemblyReference.cache

@@ -4,17 +4,17 @@
 library
 C#
 .cs
-C:\Prism\GitRepositiory\MRManager\DataTemplates\obj\Debug\
+C:\Prism\GitRepositiory\GenSoft\DataTemplates\obj\Debug\
 DataTemplates
 none
 false
 DEBUG;TRACE
 
-40-965065266
+171453157493
 
-61164895660
-100865883961
-Custom\SummaryInterviewInfoDT.xaml;Custom\SummaryPatientSyntomInfoDT.xaml;Custom\SummaryPatientVisitInfoDT.xaml;Custom\SummaryPatientInfo.xaml;CustomTemplatesResource.xaml;AllDataTemplatesResource.xaml;AllEntityViewDataTemplatesResource.xaml;Custom\FooterVDT.xaml;Custom\InterviewInfoWDT.xaml;Custom\PatientDetailsInfoVDT.xaml;Custom\PatientDetailsInfoWDT.xaml;Custom\PatientSummaryInfoWDT.xaml;Custom\PatientSyntomInfoWDT.xaml;Custom\PatientSyntomInfoRDT.xaml;Custom\PatientVisitInfoWDT.xaml;Custom\SystemInfoWDT.xaml;Custom\SystemInfoRDT.xaml;Custom\PatientVisitInfoRDT.xaml;Custom\PatientSyntomListVDT.xaml;Custom\PatientVisitListVDT.xaml;Custom\QuestionInfoWDT.xaml;Custom\QuestionInfoRDT.xaml;Custom\InterviewInfoRDT.xaml;Custom\QuestionListVDT.xaml;Custom\InterviewListVDT.xaml;Custom\PatientDetailsInfoRDT.xaml;Custom\PatientSummaryInfoRDT.xaml;Custom\PatientSummaryInfoListVDT.xaml;Custom\PS-ForeignAddressInfoTpl.xaml;Custom\PS-ForeignPhoneNumberInfoTpl.xaml;Custom\PS-NextOfKinInfoTpl.xaml;Custom\PS-NonResidentPatientInfoTpl.xaml;Custom\PS-PersonAddressInfoTpl.xaml;Custom\PS-PersonPhoneNumberInfoTpl.xaml;Custom\QuestionaireVDT.xaml;Custom\ResponseOptionWDT.xaml;Custom\ResponseOptionRDT.xaml;Custom\HeaderVDT.xaml;Custom\SignInInfoRDT.xaml;ScratchPad.xaml;
+6-1874260437
+173-216240648
+Custom\CommandDT.xaml;Custom\EntityDetailWDT.xaml;Custom\EntityDetailRDT.xaml;Custom\ScreenDT.xaml;CustomTemplatesResource.xaml;AllDataTemplatesResource.xaml;AllEntityViewDataTemplatesResource.xaml;Custom\FooterVDT.xaml;Custom\EntityDetailListVDT.xaml;Custom\EntityDetailListWDT.xaml;Custom\FooterInfoRDT.xaml;Custom\SummaryInfoWDT.xaml;Custom\EntityDetailListRDT.xaml;Custom\SummaryInfoRDT.xaml;Custom\SummaryInfoListVDT.xaml;Custom\HeaderVDT.xaml;ScratchPad.xaml;
 
-False
+True
 

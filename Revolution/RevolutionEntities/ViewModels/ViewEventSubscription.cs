@@ -15,7 +15,7 @@ namespace RevolutionEntities.ViewModels
         {
             
             Action = (Action<IViewModel, IEvent>)base.Action.Convert(typeof(IViewModel), typeof(IEvent));
-           EventPredicate = (Func<IEvent, bool>)base.EventPredicate.Convert(typeof(IEvent), typeof(bool));
+           EventPredicate = (Func<IEvent, bool>)base.EventPredicate.Convert(typeof(IEvent));
            ActionPredicate = base.ActionPredicate.Select(x => (Func<IViewModel, IEvent, bool>)x.Convert(typeof(IViewModel), typeof(IEvent), typeof(bool))).ToList();
         }
 

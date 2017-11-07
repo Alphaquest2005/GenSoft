@@ -3,3 +3,6 @@
 ################################################################################
 
 /MRManager/.vs/MRManager/v15/Server/sqlite3
+/MRManager/.vs/MRManager/v15/sqlite3/storage.ide-wal
+/MRManager/.vs/MRManager/v15/sqlite3/storage.ide-shm
+/MRManager/.vs/MRManager/v15/sqlite3/db.lock

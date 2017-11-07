@@ -31,9 +31,8 @@ namespace GenSoft.DBContexts
 			{
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[Action] ON
-						Insert Into dbo.[Action] (Id,Name,Description,Body) Values('2','CreateProcessStateEntity','Create ProcessStateEntity','new UpdateProcessStateEntity(new ProcessStateEntity(cp.Actor.Process, cp.Messages["Param0"].Entity,  new StateInfo(cp.Actor.Process.Id, $"Param1", $"Param2", $"Param3")),  new StateCommandInfo(cp.Actor.Process.Id, CommandInfo["UpdateState"]), cp.Actor.Process, cp.Actor.Source)')
-						Insert Into dbo.[Action] (Id,Name,Description,Body) Values('4','DomainEventPublished','Publish Domain Message','new DomainMessage("Param1",cp.Messages["Param0"].Entity,
-new StateEventInfo(cp.Actor.Process.Id, EventInfo["DomainEventPublished"]), cp.Actor.Process, cp.Actor.Source)')
+						Insert Into dbo.[Action] (Id,Name,Description,Body) Values('2','CreateProcessStateEntity','Create ProcessStateEntity','new UpdateProcessStateEntity(new ProcessStateEntity(cp.Actor.Process, cp.Messages[""Param0""].Entity,  new StateInfo(cp.Actor.Process.Id, $""Param1"", $""Param2"", $""Param3"")),  new StateCommandInfo(cp.Actor.Process.Id, CommandInfo[""UpdateState""]), cp.Actor.Process, cp.Actor.Source)')
+						Insert Into dbo.[Action] (Id,Name,Description,Body) Values('4','DomainEventPublished','Publish Domain Message','new DomainMessage(""Param1"",cp.Messages[""Param0""].Entity,new StateEventInfo(cp.Actor.Process.Id, EventInfo[""DomainEventPublished""]), cp.Actor.Process, cp.Actor.Source)')
 					SET IDENTITY_INSERT dbo.[Action] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[ActionSet] ON
@@ -113,6 +112,7 @@ new StateEventInfo(cp.Actor.Process.Id, EventInfo["DomainEventPublished"]), cp.A
 						Insert Into dbo.[Type] (Id,Name) Values('10','IEntityWithChangesFound')
 						Insert Into dbo.[Type] (Id,Name) Values('11','IProcessStateMessage')
 						Insert Into dbo.[Type] (Id,Name) Values('12','IDomainMessage')
+						Insert Into dbo.[Type] (Id,Name) Values('13','IProcessSystemMessage')
 						Insert Into dbo.[Type] (Id,Name) Values('50','Func`2')
 						Insert Into dbo.[Type] (Id,Name) Values('51','List`1')
 						Insert Into dbo.[Type] (Id,Name) Values('52','Object')
@@ -157,14 +157,9 @@ new StateEventInfo(cp.Actor.Process.Id, EventInfo["DomainEventPublished"]), cp.A
 						Insert Into dbo.[ActionSetActions] (ActionId,Id,ActionSetId) Values('4','3','5')
 					SET IDENTITY_INSERT dbo.[ActionSetActions] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
-						Insert Into dbo.[StateCommandInfo] (Id) Values('1')
-						Insert Into dbo.[StateCommandInfo] (Id) Values('3')
-						Insert Into dbo.[StateCommandInfo] (Id) Values('6')
-");
-				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[ProcessAction] ON
-						Insert Into dbo.[ProcessAction] (ActionSetId,Id,Name,StateComandInfoId) Values('4','1','Set Validated User','3')
-						Insert Into dbo.[ProcessAction] (ActionSetId,Id,Name,StateComandInfoId) Values('5','3','PublishValidatedUser','1')
+						Insert Into dbo.[ProcessAction] (ActionSetId,Id,Name) Values('4','1','Set Validated User')
+						Insert Into dbo.[ProcessAction] (ActionSetId,Id,Name) Values('5','3','PublishValidatedUser')
 					SET IDENTITY_INSERT dbo.[ProcessAction] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 						Insert Into dbo.[EventType] (Id) Values('10')
@@ -176,6 +171,19 @@ new StateEventInfo(cp.Actor.Process.Id, EventInfo["DomainEventPublished"]), cp.A
 						Insert Into dbo.[ComplexEventActionProcessActions] (ComplexEventActionId,Id,ProcessActionId,ExpectedEventTypeId) Values('1','1','1','11')
 						Insert Into dbo.[ComplexEventActionProcessActions] (ComplexEventActionId,Id,ProcessActionId,ExpectedEventTypeId) Values('1','2','3','12')
 					SET IDENTITY_INSERT dbo.[ComplexEventActionProcessActions] OFF");
+				Instance.Database.ExecuteSqlCommand(@"
+						Insert Into dbo.[ProcessActionComplexParameterAction] (Id,Body,ParameterName) Values('1','new UpdateProcessStateEntity(new ProcessStateEntity(cp.Actor.Process, cp.Messages[""ValidatedUser""].Entity,                        new StateInfo(cp.Actor.Process.Id, ""UserValidated"",                            $""User: {{cp.Messages[""ValidatedUser""].Entity.Usersignin}} Validated"", ""User Validated"")),                    new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),                    cp.Actor.Process, cp.Actor.Source)','cp')
+						Insert Into dbo.[ProcessActionComplexParameterAction] (Id,Body,ParameterName) Values('3','new DomainMessage(""UserValidated"",cp.Messages[""ValidatedUser""].Entity, new StateEventInfo(cp.Actor.Process.Id, Context.Domain.Events.DomainEventPublished), cp.Actor.Process, cp.Actor.Source)','cp')
+");
+				Instance.Database.ExecuteSqlCommand(@"
+						Insert Into dbo.[StateCommandInfo] (Id) Values('1')
+						Insert Into dbo.[StateCommandInfo] (Id) Values('3')
+						Insert Into dbo.[StateCommandInfo] (Id) Values('6')
+");
+				Instance.Database.ExecuteSqlCommand(@"
+						Insert Into dbo.[ProcessActionStateCommandInfo] (Id,StateComandInfoId) Values('1','3')
+						Insert Into dbo.[ProcessActionStateCommandInfo] (Id,StateComandInfoId) Values('3','1')
+");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[SystemProcess] ON
 						Insert Into dbo.[SystemProcess] (UserId,Id,ParentProcessId,Symbol,Name,Description) Values('0','1','0','Start','Starting System','Prepare system for Intial Use')
@@ -262,7 +270,7 @@ new StateEventInfo(cp.Actor.Process.Id, EventInfo["DomainEventPublished"]), cp.A
 					SET IDENTITY_INSERT dbo.[ComplexActionExpectedEventActionParameter] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 						Insert Into dbo.[ComplexEventActionConstant] (Id,Value) Values('2','UserValidated')
-						Insert Into dbo.[ComplexEventActionConstant] (Id,Value) Values('3','User: {cp.Messages["Param0"].Entity.UserName} Validated')
+						Insert Into dbo.[ComplexEventActionConstant] (Id,Value) Values('3','User: {{cp.Messages[""Param0""].Entity.UserName}} Validated')
 						Insert Into dbo.[ComplexEventActionConstant] (Id,Value) Values('4','User Validated')
 						Insert Into dbo.[ComplexEventActionConstant] (Id,Value) Values('6','UserValidated')
 ");
@@ -281,6 +289,8 @@ new StateEventInfo(cp.Actor.Process.Id, EventInfo["DomainEventPublished"]), cp.A
 						Insert Into dbo.[DataType] (Id) Values('5')
 						Insert Into dbo.[DataType] (Id) Values('6')
 						Insert Into dbo.[DataType] (Id) Values('7')
+						Insert Into dbo.[DataType] (Id) Values('10')
+						Insert Into dbo.[DataType] (Id) Values('13')
 						Insert Into dbo.[DataType] (Id) Values('50')
 						Insert Into dbo.[DataType] (Id) Values('51')
 						Insert Into dbo.[DataType] (Id) Values('52')
@@ -293,7 +303,8 @@ new StateEventInfo(cp.Actor.Process.Id, EventInfo["DomainEventPublished"]), cp.A
 ");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[PredicateParameters] ON
-						Insert Into dbo.[PredicateParameters] (DataTypeId,Id,PredicateId,Name) Values('6','1','1','FieldName')
+						Insert Into dbo.[PredicateParameters] (DataTypeId,Id,PredicateId,Name,Description) Values('6','1','1','Const0','FieldName')
+						Insert Into dbo.[PredicateParameters] (DataTypeId,Id,PredicateId,Name,Description) Values('10','3','1','e','Message')
 					SET IDENTITY_INSERT dbo.[PredicateParameters] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[ExpectedEventPredicateParameters] ON
@@ -435,7 +446,7 @@ new StateEventInfo(cp.Actor.Process.Id, EventInfo["DomainEventPublished"]), cp.A
 					SET IDENTITY_INSERT dbo.[Attributes] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[Entity] ON
-						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('1','4',cast((select Value from AmoebaDB.dbo.TestValues where Id = 1057923) as varbinary(max)))
+						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('1','4',cast((select Value from AmoebaDB.dbo.TestValues where Id = 1068038) as varbinary(max)))
 					SET IDENTITY_INSERT dbo.[Entity] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[EntityAttribute] ON
@@ -568,7 +579,7 @@ new StateEventInfo(cp.Actor.Process.Id, EventInfo["DomainEventPublished"]), cp.A
 						Insert Into dbo.[Functions] (ReturnDataTypeId,Id,Name,Description,Body) Values('6','2','StringJoin','Concat with character','string.Join(const0, x)')
 						Insert Into dbo.[Functions] (ReturnDataTypeId,Id,Name,Description,Body) Values('7','3','String2Date','Convert String To Date','DateTime.Parse(x)')
 						Insert Into dbo.[Functions] (ReturnDataTypeId,Id,Name,Description,Body) Values('6','4','GetDynamicEntityProperty','Get Dynamic Entity Property','IDynamicEntity.Properties[param0]')
-						Insert Into dbo.[Functions] (ReturnDataTypeId,Id,Name,Description,Body) Values('56','7','CreateList','Create New List','(IDynamicEntity.Properties[param0].ToString() +"","" + IDynamicEntity.Properties[param1].ToString()).Split('','')')
+						Insert Into dbo.[Functions] (ReturnDataTypeId,Id,Name,Description,Body) Values('56','7','CreateList','Create New List','(IDynamicEntity.Properties[param0].ToString() +"""","""" + IDynamicEntity.Properties[param1].ToString()).Split('','')')
 					SET IDENTITY_INSERT dbo.[Functions] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[FunctionParameter] ON

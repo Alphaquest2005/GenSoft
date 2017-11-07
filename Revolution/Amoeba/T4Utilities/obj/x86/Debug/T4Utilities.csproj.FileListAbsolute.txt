@@ -1,0 +1,2 @@
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4Utilities\obj\x86\Debug\T4Utilities.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4Utilities\obj\x86\Debug\T4Utilities.csproj.CoreCompileInputs.cache

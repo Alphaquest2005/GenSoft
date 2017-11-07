@@ -419,3 +419,4 @@ C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\System.Xml.XmlDocument.d
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\System.Xml.XmlSerializer.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\System.Xml.XPath.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\System.Xml.XPath.XDocument.dll
+C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\Z.Expressions.Eval.dll

@@ -10,3 +10,7 @@ C:\Prism\GitRepositiory\MRManager\Revolution\XamlGenericTypeExtension\obj\Debug\
 C:\Prism\GitRepositiory\MRManager\Revolution\XamlGenericTypeExtension\obj\Debug\XamlGenericTypeExtension.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\XamlGenericTypeExtension\obj\Debug\XamlGenericTypeExtension.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\XamlGenericTypeExtension\obj\Debug\XamlGenericTypeExtension.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\XamlGenericTypeExtension\bin\Debug\XamlGenericTypeExtension.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\XamlGenericTypeExtension\bin\Debug\XamlGenericTypeExtension.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\XamlGenericTypeExtension\obj\Debug\XamlGenericTypeExtension.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\XamlGenericTypeExtension\obj\Debug\XamlGenericTypeExtension.csproj.CoreCompileInputs.cache

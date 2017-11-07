@@ -212,7 +212,7 @@ else
 								    }
 								    else
 								    {
-#>'<#=val.Value.Replace("'", "''") #>'<#=val == grp.Last() ? "" : "," #><#+
+#>'<#=val.Value.Replace("'", "''").Replace("\"", "\"\"").Replace("\r\n", "").Replace("{", "{{").Replace("}", "}}") #>'<#=val == grp.Last() ? "" : "," #><#+
 								    }
 								}
 #>)

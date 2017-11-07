@@ -2,7 +2,9 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.7": {},
-    ".NETFramework,Version=v4.7/win-x64": {}
+    ".NETFramework,Version=v4.7/win": {},
+    ".NETFramework,Version=v4.7/win-x64": {},
+    ".NETFramework,Version=v4.7/win-x86": {}
   },
   "libraries": {},
   "projectFileDependencyGroups": {
@@ -34,7 +36,13 @@
       "net47": {}
     },
     "runtimes": {
+      "win": {
+        "#import": []
+      },
       "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
         "#import": []
       }
     }

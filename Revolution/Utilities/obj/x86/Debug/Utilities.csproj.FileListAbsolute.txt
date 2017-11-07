@@ -1,0 +1,10 @@
+C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\bin\x86\Debug\Utilities.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\bin\x86\Debug\Utilities.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\bin\x86\Debug\SystemInterfaces.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\bin\x86\Debug\JB.Common.Collections.Reactive.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\bin\x86\Debug\SystemInterfaces.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\bin\x86\Debug\JB.Common.Collections.Reactive.xml
+C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\obj\x86\Debug\Utilities.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\obj\x86\Debug\Utilities.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\obj\x86\Debug\Utilities.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\obj\x86\Debug\Utilities.pdb

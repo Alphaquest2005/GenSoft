@@ -17,7 +17,7 @@ namespace GenSoft.Entities
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 				public virtual ExpectedStateEventInfo ExpectedStateEventInfo {get; set;}
-				public virtual ICollection<ProcessAction> ProcessAction {get; set;}
+				public virtual ICollection<ProcessActionStateCommandInfo> ProcessActionStateCommandInfo {get; set;}
 				public virtual ICollection<StateEventInfo> StateEventInfo {get; set;}
 		
 			// ---------Parent Relationships

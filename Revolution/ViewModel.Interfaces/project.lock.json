@@ -199,7 +199,403 @@
         "framework": ".NETFramework,Version=v4.7"
       }
     },
+    ".NETFramework,Version=v4.7/win": {
+      "FluentValidation.Net35/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net35/FluentValidation.dll": {}
+        },
+        "runtime": {
+          "lib/net35/FluentValidation.dll": {}
+        }
+      },
+      "JB.Common/0.8.103-pre": {
+        "type": "package",
+        "compile": {
+          "lib/net45/JB.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net45/JB.Common.dll": {}
+        }
+      },
+      "JB.Common.Collections/0.8.103-pre": {
+        "type": "package",
+        "dependencies": {
+          "JB.Common": "0.8.103-pre"
+        },
+        "compile": {
+          "lib/net45/JB.Common.Collections.dll": {}
+        },
+        "runtime": {
+          "lib/net45/JB.Common.Collections.dll": {}
+        }
+      },
+      "JB.Common.Collections.Reactive/0.8.103-pre": {
+        "type": "package",
+        "dependencies": {
+          "JB.Common": "0.8.103-pre",
+          "JB.Common.Collections": "0.8.103-pre",
+          "JB.Common.Reactive": "0.8.103-pre",
+          "Rx-Main": "2.2.5"
+        },
+        "compile": {
+          "lib/net45/JB.Common.Collections.Reactive.dll": {}
+        },
+        "runtime": {
+          "lib/net45/JB.Common.Collections.Reactive.dll": {}
+        }
+      },
+      "JB.Common.Reactive/0.8.103-pre": {
+        "type": "package",
+        "dependencies": {
+          "JB.Common": "0.8.103-pre",
+          "Rx-Main": "2.2.5"
+        },
+        "compile": {
+          "lib/net45/JB.Common.Reactive.dll": {}
+        },
+        "runtime": {
+          "lib/net45/JB.Common.Reactive.dll": {}
+        }
+      },
+      "ReactiveProperty/2.9.0": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Main": "2.2.5"
+        },
+        "frameworkAssemblies": [
+          "PresentationCore",
+          "PresentationFramework",
+          "System",
+          "System.ComponentModel.DataAnnotations",
+          "System.Core",
+          "System.Runtime.Serialization",
+          "System.Xaml",
+          "WindowsBase"
+        ],
+        "compile": {
+          "lib/net46/ReactiveProperty.DataAnnotations.dll": {},
+          "lib/net46/ReactiveProperty.NET46.dll": {},
+          "lib/net46/ReactiveProperty.dll": {}
+        },
+        "runtime": {
+          "lib/net46/ReactiveProperty.DataAnnotations.dll": {},
+          "lib/net46/ReactiveProperty.NET46.dll": {},
+          "lib/net46/ReactiveProperty.dll": {}
+        }
+      },
+      "reactiveui-core/7.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Main": "2.2.5",
+          "Rx-Xaml": "2.2.5",
+          "Splat": "[1.4.0, 2.0.0)"
+        },
+        "compile": {
+          "lib/Net45/ReactiveUI.dll": {}
+        },
+        "runtime": {
+          "lib/Net45/ReactiveUI.dll": {}
+        }
+      },
+      "Rx-Core/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Interfaces": "2.2.5"
+        },
+        "compile": {
+          "lib/net45/System.Reactive.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Core.dll": {}
+        }
+      },
+      "Rx-Interfaces/2.2.5": {
+        "type": "package",
+        "compile": {
+          "lib/net45/System.Reactive.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Interfaces.dll": {}
+        }
+      },
+      "Rx-Linq/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Core": "2.2.5",
+          "Rx-Interfaces": "2.2.5"
+        },
+        "compile": {
+          "lib/net45/System.Reactive.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Linq.dll": {}
+        }
+      },
+      "Rx-Main/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Core": "2.2.5",
+          "Rx-Interfaces": "2.2.5",
+          "Rx-Linq": "2.2.5",
+          "Rx-PlatformServices": "2.2.5"
+        }
+      },
+      "Rx-PlatformServices/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Core": "2.2.5",
+          "Rx-Interfaces": "2.2.5"
+        },
+        "compile": {
+          "lib/net45/System.Reactive.PlatformServices.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.PlatformServices.dll": {}
+        }
+      },
+      "Rx-XAML/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Main": "2.2.5"
+        },
+        "frameworkAssemblies": [
+          "WindowsBase"
+        ],
+        "compile": {
+          "lib/net45/System.Reactive.Windows.Threading.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Windows.Threading.dll": {}
+        }
+      },
+      "Splat/1.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/Net45/Splat.dll": {}
+        },
+        "runtime": {
+          "lib/Net45/Splat.dll": {}
+        }
+      },
+      "CommonMessages/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
+      },
+      "GenSoft.Interface/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
+      },
+      "SystemInterfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7"
+      }
+    },
     ".NETFramework,Version=v4.7/win-x64": {
+      "FluentValidation.Net35/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net35/FluentValidation.dll": {}
+        },
+        "runtime": {
+          "lib/net35/FluentValidation.dll": {}
+        }
+      },
+      "JB.Common/0.8.103-pre": {
+        "type": "package",
+        "compile": {
+          "lib/net45/JB.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net45/JB.Common.dll": {}
+        }
+      },
+      "JB.Common.Collections/0.8.103-pre": {
+        "type": "package",
+        "dependencies": {
+          "JB.Common": "0.8.103-pre"
+        },
+        "compile": {
+          "lib/net45/JB.Common.Collections.dll": {}
+        },
+        "runtime": {
+          "lib/net45/JB.Common.Collections.dll": {}
+        }
+      },
+      "JB.Common.Collections.Reactive/0.8.103-pre": {
+        "type": "package",
+        "dependencies": {
+          "JB.Common": "0.8.103-pre",
+          "JB.Common.Collections": "0.8.103-pre",
+          "JB.Common.Reactive": "0.8.103-pre",
+          "Rx-Main": "2.2.5"
+        },
+        "compile": {
+          "lib/net45/JB.Common.Collections.Reactive.dll": {}
+        },
+        "runtime": {
+          "lib/net45/JB.Common.Collections.Reactive.dll": {}
+        }
+      },
+      "JB.Common.Reactive/0.8.103-pre": {
+        "type": "package",
+        "dependencies": {
+          "JB.Common": "0.8.103-pre",
+          "Rx-Main": "2.2.5"
+        },
+        "compile": {
+          "lib/net45/JB.Common.Reactive.dll": {}
+        },
+        "runtime": {
+          "lib/net45/JB.Common.Reactive.dll": {}
+        }
+      },
+      "ReactiveProperty/2.9.0": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Main": "2.2.5"
+        },
+        "frameworkAssemblies": [
+          "PresentationCore",
+          "PresentationFramework",
+          "System",
+          "System.ComponentModel.DataAnnotations",
+          "System.Core",
+          "System.Runtime.Serialization",
+          "System.Xaml",
+          "WindowsBase"
+        ],
+        "compile": {
+          "lib/net46/ReactiveProperty.DataAnnotations.dll": {},
+          "lib/net46/ReactiveProperty.NET46.dll": {},
+          "lib/net46/ReactiveProperty.dll": {}
+        },
+        "runtime": {
+          "lib/net46/ReactiveProperty.DataAnnotations.dll": {},
+          "lib/net46/ReactiveProperty.NET46.dll": {},
+          "lib/net46/ReactiveProperty.dll": {}
+        }
+      },
+      "reactiveui-core/7.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Main": "2.2.5",
+          "Rx-Xaml": "2.2.5",
+          "Splat": "[1.4.0, 2.0.0)"
+        },
+        "compile": {
+          "lib/Net45/ReactiveUI.dll": {}
+        },
+        "runtime": {
+          "lib/Net45/ReactiveUI.dll": {}
+        }
+      },
+      "Rx-Core/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Interfaces": "2.2.5"
+        },
+        "compile": {
+          "lib/net45/System.Reactive.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Core.dll": {}
+        }
+      },
+      "Rx-Interfaces/2.2.5": {
+        "type": "package",
+        "compile": {
+          "lib/net45/System.Reactive.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Interfaces.dll": {}
+        }
+      },
+      "Rx-Linq/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Core": "2.2.5",
+          "Rx-Interfaces": "2.2.5"
+        },
+        "compile": {
+          "lib/net45/System.Reactive.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Linq.dll": {}
+        }
+      },
+      "Rx-Main/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Core": "2.2.5",
+          "Rx-Interfaces": "2.2.5",
+          "Rx-Linq": "2.2.5",
+          "Rx-PlatformServices": "2.2.5"
+        }
+      },
+      "Rx-PlatformServices/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Core": "2.2.5",
+          "Rx-Interfaces": "2.2.5"
+        },
+        "compile": {
+          "lib/net45/System.Reactive.PlatformServices.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.PlatformServices.dll": {}
+        }
+      },
+      "Rx-XAML/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Rx-Main": "2.2.5"
+        },
+        "frameworkAssemblies": [
+          "WindowsBase"
+        ],
+        "compile": {
+          "lib/net45/System.Reactive.Windows.Threading.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Windows.Threading.dll": {}
+        }
+      },
+      "Splat/1.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/Net45/Splat.dll": {}
+        },
+        "runtime": {
+          "lib/Net45/Splat.dll": {}
+        }
+      },
+      "CommonMessages/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
+      },
+      "GenSoft.Interface/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        }
+      },
+      "SystemInterfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7"
+      }
+    },
+    ".NETFramework,Version=v4.7/win-x86": {
       "FluentValidation.Net35/1.0.1": {
         "type": "package",
         "compile": {
@@ -885,7 +1281,13 @@
       "net47": {}
     },
     "runtimes": {
+      "win": {
+        "#import": []
+      },
       "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
         "#import": []
       }
     }

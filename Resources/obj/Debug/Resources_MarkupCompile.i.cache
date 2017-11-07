@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\Prism\GitRepositiory\MRManager\Resources\obj\Debug\
+C:\Prism\GitRepositiory\GenSoft\Resources\obj\Debug\
 Resources
 none
 false
@@ -12,8 +12,8 @@ DEBUG;TRACE
 
 4-69858258
 
-5-830266266
-90-183100933
+5425544933
+1661899822529
 Styles\DataGridCustomizations.xaml;Styles\non-DataGridCustomizations.xaml;Styles\Non-Theme.xaml;Styles\Theme.xaml;
 
 False

@@ -28,3 +28,9 @@ C:\Prism\GitRepositiory\MRManager\Revolution\SystemInterfaces\obj\Debug\SystemIn
 C:\Prism\GitRepositiory\MRManager\Revolution\SystemInterfaces\obj\Debug\SystemInterfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\SystemInterfaces\obj\Debug\SystemInterfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\SystemInterfaces\obj\Debug\SystemInterfaces.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\SystemInterfaces\bin\Debug\SystemInterfaces.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\SystemInterfaces\bin\Debug\SystemInterfaces.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\SystemInterfaces\bin\Debug\JB.Common.Collections.Reactive.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\SystemInterfaces\bin\Debug\JB.Common.Collections.Reactive.xml
+C:\Prism\GitRepositiory\GenSoft\Revolution\SystemInterfaces\obj\Debug\SystemInterfaces.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\SystemInterfaces\obj\Debug\SystemInterfaces.csproj.CoreCompileInputs.cache

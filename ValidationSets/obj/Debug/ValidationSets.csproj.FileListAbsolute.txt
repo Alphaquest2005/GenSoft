@@ -57,3 +57,12 @@ C:\Prism\GitRepositiory\MRManager\ValidationSets\obj\Debug\ValidationSets.dll
 C:\Prism\GitRepositiory\MRManager\ValidationSets\obj\Debug\ValidationSets.pdb
 C:\Prism\GitRepositiory\GenSoft\ValidationSets\obj\Debug\ValidationSets.dll
 C:\Prism\GitRepositiory\GenSoft\ValidationSets\obj\Debug\ValidationSets.pdb
+C:\Prism\GitRepositiory\GenSoft\ValidationSets\bin\Debug\ValidationSets.dll
+C:\Prism\GitRepositiory\GenSoft\ValidationSets\bin\Debug\ValidationSets.pdb
+C:\Prism\GitRepositiory\GenSoft\ValidationSets\bin\Debug\FluentValidation.dll
+C:\Prism\GitRepositiory\GenSoft\ValidationSets\bin\Debug\SystemInterfaces.dll
+C:\Prism\GitRepositiory\GenSoft\ValidationSets\bin\Debug\JB.Common.Collections.Reactive.dll
+C:\Prism\GitRepositiory\GenSoft\ValidationSets\bin\Debug\SystemInterfaces.pdb
+C:\Prism\GitRepositiory\GenSoft\ValidationSets\bin\Debug\JB.Common.Collections.Reactive.xml
+C:\Prism\GitRepositiory\GenSoft\ValidationSets\obj\Debug\ValidationSets.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\GenSoft\ValidationSets\obj\Debug\ValidationSets.csproj.CoreCompileInputs.cache

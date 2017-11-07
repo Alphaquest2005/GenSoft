@@ -1,0 +1,1 @@
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba-MRManager\obj\x86\Debug\Amoeba-MRManager.csproj.CoreCompileInputs.cache

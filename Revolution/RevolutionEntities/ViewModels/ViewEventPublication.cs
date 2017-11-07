@@ -13,9 +13,9 @@ namespace RevolutionEntities.ViewModels
         public ViewEventPublication(string key, Func<TViewModel, IObservable<dynamic>> subject, IEnumerable<Func<TViewModel, bool>> subjectPredicate, Func<TViewModel, IViewEventPublicationParameter> messageData)
                                     :base(key, subject, subjectPredicate, messageData)
         {
-            MessageData =  (Func<IViewModel, IViewEventPublicationParameter>)base.MessageData.Convert(typeof(IViewModel), typeof(IViewEventPublicationParameter));
-            SubjectPredicate = base.SubjectPredicate.Select(x => (Func<IViewModel, bool>)x.Convert(typeof(IViewModel), typeof(bool))).ToList();
-            Subject = (Func<IViewModel, IObservable<dynamic>>)base.Subject.Convert(typeof(IViewModel), typeof(IObservable<dynamic>)); 
+            MessageData =  (Func<IViewModel, IViewEventPublicationParameter>)base.MessageData.Convert(typeof(IViewModel));
+            SubjectPredicate = base.SubjectPredicate.Select(x => (Func<IViewModel, bool>)x.Convert(typeof(IViewModel))).ToList();
+            Subject = (Func<IViewModel, IObservable<dynamic>>)base.Subject.Convert(typeof(IViewModel)); 
         }
 
 

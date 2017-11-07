@@ -16,7 +16,6 @@ namespace GenSoft.Interfaces
 	{
 		int ActionSetId { get;}
 		string Name { get;}
-		int StateComandInfoId { get;}
 
 
 

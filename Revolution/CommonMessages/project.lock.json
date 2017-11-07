@@ -7,7 +7,19 @@
         "framework": ".NETFramework,Version=v4.7"
       }
     },
+    ".NETFramework,Version=v4.7/win": {
+      "SystemInterfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7"
+      }
+    },
     ".NETFramework,Version=v4.7/win-x64": {
+      "SystemInterfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7"
+      }
+    },
+    ".NETFramework,Version=v4.7/win-x86": {
       "SystemInterfaces/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7"
@@ -59,7 +71,13 @@
       "net47": {}
     },
     "runtimes": {
+      "win": {
+        "#import": []
+      },
       "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
         "#import": []
       }
     }

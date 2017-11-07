@@ -48,6 +48,24 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -389,6 +407,8 @@
 ..\GenSoft.DBContext\Generated Mappings\PresentationPropertyType.cs
 ..\GenSoft.DBContext\Generated Mappings\PresentationTheme.cs
 ..\GenSoft.DBContext\Generated Mappings\ProcessAction.cs
+..\GenSoft.DBContext\Generated Mappings\ProcessActionComplexParameterAction.cs
+..\GenSoft.DBContext\Generated Mappings\ProcessActionStateCommandInfo.cs
 ..\GenSoft.DBContext\Generated Mappings\ProcessPath.cs
 ..\GenSoft.DBContext\Generated Mappings\ProcessStep.cs
 ..\GenSoft.DBContext\Generated Mappings\ProcessStepComplexActions.cs
@@ -474,6 +494,8 @@
 ..\GenSoft.Entities\Generated Entities\PresentationPropertyType.cs
 ..\GenSoft.Entities\Generated Entities\PresentationTheme.cs
 ..\GenSoft.Entities\Generated Entities\ProcessAction.cs
+..\GenSoft.Entities\Generated Entities\ProcessActionComplexParameterAction.cs
+..\GenSoft.Entities\Generated Entities\ProcessActionStateCommandInfo.cs
 ..\GenSoft.Entities\Generated Entities\ProcessPath.cs
 ..\GenSoft.Entities\Generated Entities\ProcessStep.cs
 ..\GenSoft.Entities\Generated Entities\ProcessStepComplexActions.cs
@@ -564,6 +586,8 @@
 ..\GenSoft.Interface\Generated Interfaces\PresentationPropertyType.cs
 ..\GenSoft.Interface\Generated Interfaces\PresentationTheme.cs
 ..\GenSoft.Interface\Generated Interfaces\ProcessAction.cs
+..\GenSoft.Interface\Generated Interfaces\ProcessActionComplexParameterAction.cs
+..\GenSoft.Interface\Generated Interfaces\ProcessActionStateCommandInfo.cs
 ..\GenSoft.Interface\Generated Interfaces\ProcessPath.cs
 ..\GenSoft.Interface\Generated Interfaces\ProcessStep.cs
 ..\GenSoft.Interface\Generated Interfaces\ProcessStepComplexActions.cs

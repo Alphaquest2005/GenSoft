@@ -48,6 +48,24 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition">
@@ -120,6 +138,8 @@
     <Compile Include="Generated Interfaces\PresentationPropertyType.cs" />
     <Compile Include="Generated Interfaces\PresentationTheme.cs" />
     <Compile Include="Generated Interfaces\ProcessAction.cs" />
+    <Compile Include="Generated Interfaces\ProcessActionComplexParameterAction.cs" />
+    <Compile Include="Generated Interfaces\ProcessActionStateCommandInfo.cs" />
     <Compile Include="Generated Interfaces\ProcessPath.cs" />
     <Compile Include="Generated Interfaces\ProcessStep.cs" />
     <Compile Include="Generated Interfaces\ProcessStepComplexActions.cs" />

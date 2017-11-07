@@ -70,6 +70,8 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.PresentationPropertyType> PresentationPropertyType { get; set; }
 		public DbSet<Entities.PresentationTheme> PresentationTheme { get; set; }
 		public DbSet<Entities.ProcessAction> ProcessAction { get; set; }
+		public DbSet<Entities.ProcessActionComplexParameterAction> ProcessActionComplexParameterAction { get; set; }
+		public DbSet<Entities.ProcessActionStateCommandInfo> ProcessActionStateCommandInfo { get; set; }
 		public DbSet<Entities.ProcessPath> ProcessPath { get; set; }
 		public DbSet<Entities.ProcessStep> ProcessStep { get; set; }
 		public DbSet<Entities.ProcessStepComplexActions> ProcessStepComplexActions { get; set; }
@@ -162,6 +164,8 @@ namespace GenSoft.DBContexts
 				PresentationPropertyTypeMap.Map(modelBuilder.Entity<Entities.PresentationPropertyType>());
 				PresentationThemeMap.Map(modelBuilder.Entity<Entities.PresentationTheme>());
 				ProcessActionMap.Map(modelBuilder.Entity<Entities.ProcessAction>());
+				ProcessActionComplexParameterActionMap.Map(modelBuilder.Entity<Entities.ProcessActionComplexParameterAction>());
+				ProcessActionStateCommandInfoMap.Map(modelBuilder.Entity<Entities.ProcessActionStateCommandInfo>());
 				ProcessPathMap.Map(modelBuilder.Entity<Entities.ProcessPath>());
 				ProcessStepMap.Map(modelBuilder.Entity<Entities.ProcessStep>());
 				ProcessStepComplexActionsMap.Map(modelBuilder.Entity<Entities.ProcessStepComplexActions>());

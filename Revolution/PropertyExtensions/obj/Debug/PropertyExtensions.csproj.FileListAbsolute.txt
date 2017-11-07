@@ -9,3 +9,7 @@ C:\Prism\GitRepositiory\MRManager\Revolution\PropertyExtensions\obj\Debug\Proper
 C:\Prism\GitRepositiory\MRManager\Revolution\PropertyExtensions\obj\Debug\PropertyExtensions.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\PropertyExtensions\obj\Debug\PropertyExtensions.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\PropertyExtensions\obj\Debug\PropertyExtensions.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\PropertyExtensions\bin\Debug\PropertyExtensions.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\PropertyExtensions\bin\Debug\PropertyExtensions.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\PropertyExtensions\obj\Debug\PropertyExtensions.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\PropertyExtensions\obj\Debug\PropertyExtensions.csproj.CoreCompileInputs.cache

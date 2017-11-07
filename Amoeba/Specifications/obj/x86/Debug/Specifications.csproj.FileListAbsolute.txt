@@ -1,0 +1,14 @@
+C:\Prism\GitRepositiory\GenSoft\Amoeba\Specifications\bin\x86\Debug\Specifications.dll
+C:\Prism\GitRepositiory\GenSoft\Amoeba\Specifications\bin\x86\Debug\Specifications.pdb
+C:\Prism\GitRepositiory\GenSoft\Amoeba\Specifications\bin\x86\Debug\EntityFramework.SqlServer.dll
+C:\Prism\GitRepositiory\GenSoft\Amoeba\Specifications\bin\x86\Debug\EntityFramework.dll
+C:\Prism\GitRepositiory\GenSoft\Amoeba\Specifications\bin\x86\Debug\LinqSpecs.dll
+C:\Prism\GitRepositiory\GenSoft\Amoeba\Specifications\bin\x86\Debug\T4Entities.dll
+C:\Prism\GitRepositiory\GenSoft\Amoeba\Specifications\bin\x86\Debug\LinqSpecs.pdb
+C:\Prism\GitRepositiory\GenSoft\Amoeba\Specifications\bin\x86\Debug\LinqSpecs.xml
+C:\Prism\GitRepositiory\GenSoft\Amoeba\Specifications\bin\x86\Debug\T4Entities.pdb
+C:\Prism\GitRepositiory\GenSoft\Amoeba\Specifications\bin\x86\Debug\T4Entities.dll.config
+C:\Prism\GitRepositiory\GenSoft\Amoeba\Specifications\obj\x86\Debug\Specifications.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\GenSoft\Amoeba\Specifications\obj\x86\Debug\Specifications.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\Amoeba\Specifications\obj\x86\Debug\Specifications.dll
+C:\Prism\GitRepositiory\GenSoft\Amoeba\Specifications\obj\x86\Debug\Specifications.pdb

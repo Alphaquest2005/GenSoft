@@ -21,7 +21,7 @@ namespace GenSoft.Mappings
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
 				entityBuilder.HasOne(p => p.ExpectedStateEventInfo).WithOne(p => p.StateCommandInfo).HasForeignKey<ExpectedStateEventInfo>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.ProcessAction).WithOne(p => p.StateCommandInfo).HasForeignKey(c => c.StateComandInfoId).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasMany(x => x.ProcessActionStateCommandInfo).WithOne(p => p.StateCommandInfo).HasForeignKey(c => c.StateComandInfoId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.StateEventInfo).WithOne(p => p.StateCommandInfo).HasForeignKey(c => c.ExpectedStateCommandInfoId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties

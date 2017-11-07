@@ -45,7 +45,7 @@ namespace RevolutionEntities.Process
         public ProcessExpectedEvent(string key, int processId, Func<TEvent, bool> eventPredicate, IProcessStateInfo processInfo, ISourceType expectedSourceType) 
             : base(key,processId,
             typeof(TEvent),
-            (Func<IProcessSystemMessage,bool>) eventPredicate.Convert(typeof(IProcessSystemMessage),typeof(bool)),processInfo, expectedSourceType)
+            (Func<IProcessSystemMessage,bool>) eventPredicate.Convert(typeof(IProcessSystemMessage)),processInfo, expectedSourceType)
         {
         }
     }

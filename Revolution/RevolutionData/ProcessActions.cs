@@ -294,17 +294,18 @@ namespace RevolutionData
                 );
 
             public static IProcessAction SetProcessStatetoValidatedUser => new ProcessAction(
-                action: async cp =>
-                {
-                    var ps = new ProcessStateEntity(cp.Actor.Process, cp.Messages["ValidatedUser"].Entity,
-                        new StateInfo(cp.Actor.Process.Id, "UserValidated",
-                            $"User: {cp.Messages["ValidatedUser"].Entity.Usersignin} Validated", "User Validated"));
-                    return await Task.Run(() => new UpdateProcessStateEntity(ps,
-                        new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),
-                        cp.Actor.Process, cp.Actor.Source));
-                },
+                action: async cp => await Task.Run(() => UpdateProcessStateEntity(cp)),
                 processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),
                 expectedSourceType: new SourceType(typeof(IComplexEventService)));
+
+            private static UpdateProcessStateEntity UpdateProcessStateEntity(IComplexEventParameters cp)
+            {
+                return new UpdateProcessStateEntity(new ProcessStateEntity(cp.Actor.Process, cp.Messages["ValidatedUser"].Entity,
+                        new StateInfo(cp.Actor.Process.Id, "UserValidated",
+                            $"User: {cp.Messages["ValidatedUser"].Entity.Usersignin} Validated", "User Validated")),
+                    new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),
+                    cp.Actor.Process, cp.Actor.Source);
+            }
 
 
             public static IProcessAction UserValidated => new ProcessAction(
