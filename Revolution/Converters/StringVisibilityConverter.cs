@@ -88,7 +88,7 @@ namespace Converters
         public object Convert(object[] value, Type targetType, object parameter, CultureInfo culture)
         {
             var prop = value[0] as string;
-            var cachelst = value[1] as IObservableDictionary<string, string>;
+            var cachelst = value[1] as IObservableReadOnlyDictionary<string, string>;
             var cachedProperties = value[2] as IObservableList<IViewModel>;
             if (prop != null && cachelst != null && cachedProperties != null && cachelst.ContainsKey(prop))
             {
@@ -107,7 +107,7 @@ namespace Converters
         public object Convert(object[] value, Type targetType, object parameter, CultureInfo culture)
         {
             var prop = value[0] as string;
-            var cachelst = value[1] as IObservableDictionary<string, string>;
+            var cachelst = value[1] as IObservableReadOnlyDictionary<string, string>;
             
             if (prop != null && cachelst != null && cachelst.ContainsKey(prop))
             {
@@ -126,7 +126,7 @@ namespace Converters
         public object Convert(object[] value, Type targetType, object parameter, CultureInfo culture)
         {
             var prop = value[0] as string;
-            var cachelst = value[1] as IObservableDictionary<string, string>;
+            var cachelst = value[1] as IObservableReadOnlyDictionary<string, string>;
             var cachedProperties = value[2] as IObservableList<IViewModel>;
             var val = value[3] as int? ?? 0;
             if (prop == null || cachelst == null || cachedProperties == null || !cachelst.ContainsKey(prop) ||

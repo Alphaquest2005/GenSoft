@@ -1,9 +1,9 @@
 ﻿{
   "dependencies": {
     "JB.Common": "0.7.0",
-    "JB.Common.Collections": "0.8.103-pre",
-    "JB.Common.Collections.Reactive": "0.8.103-pre",
-    "JB.Common.Reactive": "0.8.103-pre",
+    "JB.Common.Collections": "0.7.0",
+    "JB.Common.Collections.Reactive": "0.7.0",
+    "JB.Common.Reactive": "0.7.0",
     "Rx-Core": "2.2.5",
     "Rx-Interfaces": "2.2.5",
     "Rx-Linq": "2.2.5",
@@ -14,6 +14,8 @@
     "net47": {}
   },
   "runtimes": {
-    "win-x64": {},"win": {},"win-x86": {}
+    "win-x64": {},
+    "win": {},
+    "win-x86": {}
   }
 }

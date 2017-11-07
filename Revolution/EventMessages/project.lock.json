@@ -24,7 +24,7 @@
           "lib/net35/FluentValidation.dll": {}
         }
       },
-      "JB.Common/0.8.103-pre": {
+      "JB.Common/0.7.0": {
         "type": "package",
         "compile": {
           "lib/net45/JB.Common.dll": {}
@@ -33,10 +33,10 @@
           "lib/net45/JB.Common.dll": {}
         }
       },
-      "JB.Common.Collections/0.8.103-pre": {
+      "JB.Common.Collections/0.7.0": {
         "type": "package",
         "dependencies": {
-          "JB.Common": "0.8.103-pre"
+          "JB.Common": "0.7.0"
         },
         "compile": {
           "lib/net45/JB.Common.Collections.dll": {}
@@ -45,12 +45,12 @@
           "lib/net45/JB.Common.Collections.dll": {}
         }
       },
-      "JB.Common.Collections.Reactive/0.8.103-pre": {
+      "JB.Common.Collections.Reactive/0.7.0": {
         "type": "package",
         "dependencies": {
-          "JB.Common": "0.8.103-pre",
-          "JB.Common.Collections": "0.8.103-pre",
-          "JB.Common.Reactive": "0.8.103-pre",
+          "JB.Common": "0.7.0",
+          "JB.Common.Collections": "0.7.0",
+          "JB.Common.Reactive": "0.7.0",
           "Rx-Main": "2.2.5"
         },
         "compile": {
@@ -60,10 +60,10 @@
           "lib/net45/JB.Common.Collections.Reactive.dll": {}
         }
       },
-      "JB.Common.Reactive/0.8.103-pre": {
+      "JB.Common.Reactive/0.7.0": {
         "type": "package",
         "dependencies": {
-          "JB.Common": "0.8.103-pre",
+          "JB.Common": "0.7.0",
           "Rx-Main": "2.2.5"
         },
         "compile": {
@@ -245,7 +245,7 @@
           "CommonMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
           "GenSoft.Interface": "1.0.0",
-          "JB.Common.Collections.Reactive": "0.8.103-pre",
+          "JB.Common.Collections.Reactive": "0.7.0",
           "ReactiveProperty": "2.9.0",
           "SystemInterfaces": "1.0.0",
           "reactiveui-core": "7.0.0"
@@ -275,7 +275,7 @@
           "lib/net35/FluentValidation.dll": {}
         }
       },
-      "JB.Common/0.8.103-pre": {
+      "JB.Common/0.7.0": {
         "type": "package",
         "compile": {
           "lib/net45/JB.Common.dll": {}
@@ -284,10 +284,10 @@
           "lib/net45/JB.Common.dll": {}
         }
       },
-      "JB.Common.Collections/0.8.103-pre": {
+      "JB.Common.Collections/0.7.0": {
         "type": "package",
         "dependencies": {
-          "JB.Common": "0.8.103-pre"
+          "JB.Common": "0.7.0"
         },
         "compile": {
           "lib/net45/JB.Common.Collections.dll": {}
@@ -296,12 +296,12 @@
           "lib/net45/JB.Common.Collections.dll": {}
         }
       },
-      "JB.Common.Collections.Reactive/0.8.103-pre": {
+      "JB.Common.Collections.Reactive/0.7.0": {
         "type": "package",
         "dependencies": {
-          "JB.Common": "0.8.103-pre",
-          "JB.Common.Collections": "0.8.103-pre",
-          "JB.Common.Reactive": "0.8.103-pre",
+          "JB.Common": "0.7.0",
+          "JB.Common.Collections": "0.7.0",
+          "JB.Common.Reactive": "0.7.0",
           "Rx-Main": "2.2.5"
         },
         "compile": {
@@ -311,10 +311,10 @@
           "lib/net45/JB.Common.Collections.Reactive.dll": {}
         }
       },
-      "JB.Common.Reactive/0.8.103-pre": {
+      "JB.Common.Reactive/0.7.0": {
         "type": "package",
         "dependencies": {
-          "JB.Common": "0.8.103-pre",
+          "JB.Common": "0.7.0",
           "Rx-Main": "2.2.5"
         },
         "compile": {
@@ -496,7 +496,7 @@
           "CommonMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
           "GenSoft.Interface": "1.0.0",
-          "JB.Common.Collections.Reactive": "0.8.103-pre",
+          "JB.Common.Collections.Reactive": "0.7.0",
           "ReactiveProperty": "2.9.0",
           "SystemInterfaces": "1.0.0",
           "reactiveui-core": "7.0.0"
@@ -526,7 +526,7 @@
           "lib/net35/FluentValidation.dll": {}
         }
       },
-      "JB.Common/0.8.103-pre": {
+      "JB.Common/0.7.0": {
         "type": "package",
         "compile": {
           "lib/net45/JB.Common.dll": {}
@@ -535,10 +535,10 @@
           "lib/net45/JB.Common.dll": {}
         }
       },
-      "JB.Common.Collections/0.8.103-pre": {
+      "JB.Common.Collections/0.7.0": {
         "type": "package",
         "dependencies": {
-          "JB.Common": "0.8.103-pre"
+          "JB.Common": "0.7.0"
         },
         "compile": {
           "lib/net45/JB.Common.Collections.dll": {}
@@ -547,12 +547,12 @@
           "lib/net45/JB.Common.Collections.dll": {}
         }
       },
-      "JB.Common.Collections.Reactive/0.8.103-pre": {
+      "JB.Common.Collections.Reactive/0.7.0": {
         "type": "package",
         "dependencies": {
-          "JB.Common": "0.8.103-pre",
-          "JB.Common.Collections": "0.8.103-pre",
-          "JB.Common.Reactive": "0.8.103-pre",
+          "JB.Common": "0.7.0",
+          "JB.Common.Collections": "0.7.0",
+          "JB.Common.Reactive": "0.7.0",
           "Rx-Main": "2.2.5"
         },
         "compile": {
@@ -562,10 +562,10 @@
           "lib/net45/JB.Common.Collections.Reactive.dll": {}
         }
       },
-      "JB.Common.Reactive/0.8.103-pre": {
+      "JB.Common.Reactive/0.7.0": {
         "type": "package",
         "dependencies": {
-          "JB.Common": "0.8.103-pre",
+          "JB.Common": "0.7.0",
           "Rx-Main": "2.2.5"
         },
         "compile": {
@@ -747,7 +747,7 @@
           "CommonMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
           "GenSoft.Interface": "1.0.0",
-          "JB.Common.Collections.Reactive": "0.8.103-pre",
+          "JB.Common.Collections.Reactive": "0.7.0",
           "ReactiveProperty": "2.9.0",
           "SystemInterfaces": "1.0.0",
           "reactiveui-core": "7.0.0"
@@ -777,7 +777,7 @@
           "lib/net35/FluentValidation.dll": {}
         }
       },
-      "JB.Common/0.8.103-pre": {
+      "JB.Common/0.7.0": {
         "type": "package",
         "compile": {
           "lib/net45/JB.Common.dll": {}
@@ -786,10 +786,10 @@
           "lib/net45/JB.Common.dll": {}
         }
       },
-      "JB.Common.Collections/0.8.103-pre": {
+      "JB.Common.Collections/0.7.0": {
         "type": "package",
         "dependencies": {
-          "JB.Common": "0.8.103-pre"
+          "JB.Common": "0.7.0"
         },
         "compile": {
           "lib/net45/JB.Common.Collections.dll": {}
@@ -798,12 +798,12 @@
           "lib/net45/JB.Common.Collections.dll": {}
         }
       },
-      "JB.Common.Collections.Reactive/0.8.103-pre": {
+      "JB.Common.Collections.Reactive/0.7.0": {
         "type": "package",
         "dependencies": {
-          "JB.Common": "0.8.103-pre",
-          "JB.Common.Collections": "0.8.103-pre",
-          "JB.Common.Reactive": "0.8.103-pre",
+          "JB.Common": "0.7.0",
+          "JB.Common.Collections": "0.7.0",
+          "JB.Common.Reactive": "0.7.0",
           "Rx-Main": "2.2.5"
         },
         "compile": {
@@ -813,10 +813,10 @@
           "lib/net45/JB.Common.Collections.Reactive.dll": {}
         }
       },
-      "JB.Common.Reactive/0.8.103-pre": {
+      "JB.Common.Reactive/0.7.0": {
         "type": "package",
         "dependencies": {
-          "JB.Common": "0.8.103-pre",
+          "JB.Common": "0.7.0",
           "Rx-Main": "2.2.5"
         },
         "compile": {
@@ -998,7 +998,7 @@
           "CommonMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
           "GenSoft.Interface": "1.0.0",
-          "JB.Common.Collections.Reactive": "0.8.103-pre",
+          "JB.Common.Collections.Reactive": "0.7.0",
           "ReactiveProperty": "2.9.0",
           "SystemInterfaces": "1.0.0",
           "reactiveui-core": "7.0.0"
@@ -1030,45 +1030,45 @@
         "lib/net35/FluentValidation.dll"
       ]
     },
-    "JB.Common/0.8.103-pre": {
-      "sha512": "bAOuu4oXHZ/A2GlxMqUgkl//5ZQBLLbaAxKdBzO0E9Wx8s8CEGgTkCQRLtACNTGKkwQ6iLgakI3tKY1/UBq/OQ==",
+    "JB.Common/0.7.0": {
+      "sha512": "EXOjAjcw25hy9HgFGyco41PCPSmi2F83ZxLBoARVI2g0dDCjILd3uzZJNc+cL7Hlh42lKoXQg9b04q5enCYNxA==",
       "type": "package",
-      "path": "jb.common/0.8.103-pre",
+      "path": "jb.common/0.7.0",
       "files": [
-        "JB.Common.0.8.103-pre.nupkg.sha512",
+        "JB.Common.0.7.0.nupkg.sha512",
         "JB.Common.nuspec",
         "lib/net45/JB.Common.XML",
         "lib/net45/JB.Common.dll"
       ]
     },
-    "JB.Common.Collections/0.8.103-pre": {
-      "sha512": "0rN4LtAouALwVsLwSJL9K9pZ7CmZWdpq2lkbHyB88ismmvng72C/wjq5nfTc9bBUuy7xWJymxG15zPFr/cuNBg==",
+    "JB.Common.Collections/0.7.0": {
+      "sha512": "v34gPgtd+Pm/NYT1GqO01qhx5HItybyuvwuPZHJxEckOOCMIrzeMDGnAG7dDJN6Edv+06bwuJ7wjHKqOqOx77w==",
       "type": "package",
-      "path": "jb.common.collections/0.8.103-pre",
+      "path": "jb.common.collections/0.7.0",
       "files": [
-        "JB.Common.Collections.0.8.103-pre.nupkg.sha512",
+        "JB.Common.Collections.0.7.0.nupkg.sha512",
         "JB.Common.Collections.nuspec",
         "lib/net45/JB.Common.Collections.XML",
         "lib/net45/JB.Common.Collections.dll"
       ]
     },
-    "JB.Common.Collections.Reactive/0.8.103-pre": {
-      "sha512": "sGNu3hu93TKnrt8VxidIv6+ibwhQ2uyxER9qjxqc02E1yiistSd61Ac1CmSQbZosZL6NW3f5UGxgAMFM/LxhSw==",
+    "JB.Common.Collections.Reactive/0.7.0": {
+      "sha512": "fBZCZXJ4onSSu3Agdz88a0eo/vEHM7T/PXoRg0EH/s0UvDX0+Qexx1R6357Qr9tp7oJLLYDcpqi0kGdJ3GWeew==",
       "type": "package",
-      "path": "jb.common.collections.reactive/0.8.103-pre",
+      "path": "jb.common.collections.reactive/0.7.0",
       "files": [
-        "JB.Common.Collections.Reactive.0.8.103-pre.nupkg.sha512",
+        "JB.Common.Collections.Reactive.0.7.0.nupkg.sha512",
         "JB.Common.Collections.Reactive.nuspec",
         "lib/net45/JB.Common.Collections.Reactive.XML",
         "lib/net45/JB.Common.Collections.Reactive.dll"
       ]
     },
-    "JB.Common.Reactive/0.8.103-pre": {
-      "sha512": "0j6sxbqv5c65knnnJ3gG9qFY/nApkyuAnJY+8/6qVPT5LTGcaCiQLPfP7sGPCKapOJcFYQLZUdJGz7BqEJfRiw==",
+    "JB.Common.Reactive/0.7.0": {
+      "sha512": "DIQ1hth6caVUhiNqsgyJcxTSgS8ddqnmfQSjodD3bDwVXATa7t+o0UzXy7w77KZFwPH3ik+0H26c7LSXrlNczA==",
       "type": "package",
-      "path": "jb.common.reactive/0.8.103-pre",
+      "path": "jb.common.reactive/0.7.0",
       "files": [
-        "JB.Common.Reactive.0.8.103-pre.nupkg.sha512",
+        "JB.Common.Reactive.0.7.0.nupkg.sha512",
         "JB.Common.Reactive.nuspec",
         "lib/net45/JB.Common.Reactive.XML",
         "lib/net45/JB.Common.Reactive.dll"

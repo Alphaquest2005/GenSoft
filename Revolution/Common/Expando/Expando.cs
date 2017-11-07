@@ -40,6 +40,7 @@ using System.Linq;
 using System.Dynamic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using SystemInterfaces;
 using Common.Annotations;
 using ICollection = System.Collections.ICollection;
 
@@ -64,7 +65,7 @@ namespace Common.Dynamic
     /// Dictionary: Any of the extended properties are accessible via IDictionary interface
     /// </summary>
     [Serializable]
-    public class Expando : DynamicObject, IDynamicMetaObjectProvider, INotifyPropertyChanged
+    public class Expando : DynamicObject, IDynamicMetaObjectProvider, INotifyPropertyChanged, IExpando
     {
         /// <summary>
         /// Instance of object passed in
