@@ -23,6 +23,7 @@ namespace GenSoft.Mappings
 			entityBuilder.Property(t => t.ParameterName).HasColumnName("ParameterName").IsRequired().HasMaxLength(50);
 			entityBuilder.Property(t => t.ParameterName).HasColumnName("ParameterName").IsRequired().HasMaxLength(50);
 		//-------------------Navigation Properties -------------------------------//
+				entityBuilder.HasMany(x => x.ProcessActionComplexParameterReferenceTypes).WithOne(p => p.ProcessActionComplexParameterAction).HasForeignKey(c => c.ProcessActionCPActionId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties
 				//entityBuilder.HasOne(p => p.ProcessAction ProcessAction).WithOne(p => p.ProcessActionComplexParameterAction).HasForeignKey<ProcessAction>(c => c.Id).OnDelete(DeleteBehavior.Restrict);

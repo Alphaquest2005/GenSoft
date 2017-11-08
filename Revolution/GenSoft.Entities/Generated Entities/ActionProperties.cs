@@ -20,8 +20,8 @@ namespace GenSoft.Entities
 				public virtual ICollection<ActionPropertyParameter> ActionPropertyParameter {get; set;}
 		
 			// ---------Parent Relationships
-				public virtual EntityTypeAttributes EntityTypeAttributes {get; set;}
 				public virtual ActionSet ActionSet {get; set;}
+				public virtual EntityTypeAttributes EntityTypeAttributes {get; set;}
 	
 
 	}

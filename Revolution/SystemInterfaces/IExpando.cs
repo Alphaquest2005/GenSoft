@@ -102,5 +102,7 @@ namespace SystemInterfaces
         bool TrySetIndex(SetIndexBinder binder, object[] indexes, object value);
         bool TryDeleteIndex(DeleteIndexBinder binder, object[] indexes);
         DynamicMetaObject GetMetaObject(Expression parameter);
+
+        Dictionary<string, object> Properties { get; }
     }
 }

@@ -14,9 +14,9 @@ namespace GenSoft.Entities
 	public partial class PredicateParameters: BaseEntity, IPredicateParameters
 	{
 		public virtual int DataTypeId { get; set; }
-		public virtual int PredicateId { get; set; }
-		public virtual string Name { get; set; }
 		public virtual string Description { get; set; }
+		public virtual string Name { get; set; }
+		public virtual int PredicateId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships

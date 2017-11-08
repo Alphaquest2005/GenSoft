@@ -14,8 +14,8 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IDBType:SystemInterfaces.IEntity  
 	{
-		string TableName { get;}
 		string SchemaName { get;}
+		string TableName { get;}
 
 
 

@@ -15,8 +15,8 @@ namespace GenSoft.Interfaces
 	public partial interface IComplexEventActionProcessActions:SystemInterfaces.IEntity  
 	{
 		int ComplexEventActionId { get;}
-		int ProcessActionId { get;}
 		int ExpectedEventTypeId { get;}
+		int ProcessActionId { get;}
 
 
 

@@ -173,7 +173,13 @@ namespace EFRepository
 
         private static IQueryable<Entity> GetEntities(GenSoftDBContext ctx, int? viewId)
         {
-            return ctx.Entity.Where(x => x.EntityTypeId == viewId).Where(x => x.EntityAttribute.Any(z => z.Attributes.EntityId != null));
+            var entities = ctx.Entity.Include(x => x.EntityAttribute)
+                .ThenInclude(x => x.Attributes).ThenInclude(x => x.EntityId)
+                .ThenInclude(x => x.Attributes).ThenInclude(x => x.EntityName);
+            
+            return entities
+                    .Where(x => x.EntityTypeId == viewId)
+                    .Where(x => x.EntityAttribute.Any(z => z.Attributes.EntityId != null));
         }
 
         public static void LoadEntitySetWithFilter(ILoadEntitySetWithFilter msg)
@@ -229,8 +235,7 @@ namespace EFRepository
 
             var viewEntityAttributes = GetViewEntityAttributes(ctx, entityTypeId);
 
-            var res = GetEntities(ctx, entityTypeId).Include(x => x.EntityAttribute).ThenInclude(x => x.Attributes)
-                .AsQueryable();
+            var res = GetEntities(ctx, entityTypeId).AsQueryable();
             res = changes.Aggregate(res,
                 (current, c) => current.Where(
                     x => x.EntityAttribute.Any(z => z.Attributes.Name == c.Key && z.Value.ToString() == c.Value.ToString())));

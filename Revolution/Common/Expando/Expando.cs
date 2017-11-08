@@ -529,5 +529,7 @@ namespace Common.Dynamic
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        Dictionary<string, object> IExpando.Properties => Properties;
     }
 }

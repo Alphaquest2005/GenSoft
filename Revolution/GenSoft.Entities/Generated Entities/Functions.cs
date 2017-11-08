@@ -14,9 +14,9 @@ namespace GenSoft.Entities
 	public partial class Functions: BaseEntity, IFunctions
 	{
 		public virtual int ReturnDataTypeId { get; set; }
-		public virtual string Name { get; set; }
-		public virtual string Description { get; set; }
 		public virtual string Body { get; set; }
+		public virtual string Description { get; set; }
+		public virtual string Name { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships

@@ -18,14 +18,14 @@ namespace GenSoft.Mappings
 			entityBuilder.ToTable("ActionProperties", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").ValueGeneratedNever();	
-			entityBuilder.Property(t => t.Id).HasColumnName("Id").IsRequired();
 			entityBuilder.Property(t => t.ActionSetId).HasColumnName("ActionSetId").IsRequired();
+			entityBuilder.Property(t => t.Id).HasColumnName("Id").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
 				entityBuilder.HasMany(x => x.ActionPropertyParameter).WithOne(p => p.ActionProperties).HasForeignKey(c => c.ActionPropertyId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties
-				//entityBuilder.HasOne(p => p.EntityTypeAttributes EntityTypeAttributes).WithOne(p => p.ActionProperties).HasForeignKey<EntityTypeAttributes>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 				//entityBuilder.HasOne(p => p.ActionSet ActionSet).WithMany(p => p.ActionProperties).HasForeignKey(c => c.ActionSetId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.EntityTypeAttributes EntityTypeAttributes).WithOne(p => p.ActionProperties).HasForeignKey<EntityTypeAttributes>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

@@ -14,8 +14,8 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IProcessPath:SystemInterfaces.IEntity  
 	{
-		int ProcessStepId { get;}
 		int NextProcessStepId { get;}
+		int ProcessStepId { get;}
 
 
 

@@ -139,12 +139,15 @@
     <Compile Include="Generated Interfaces\PresentationTheme.cs" />
     <Compile Include="Generated Interfaces\ProcessAction.cs" />
     <Compile Include="Generated Interfaces\ProcessActionComplexParameterAction.cs" />
+    <Compile Include="Generated Interfaces\ProcessActionComplexParameterReferenceTypes.cs" />
     <Compile Include="Generated Interfaces\ProcessActionStateCommandInfo.cs" />
     <Compile Include="Generated Interfaces\ProcessPath.cs" />
     <Compile Include="Generated Interfaces\ProcessStep.cs" />
     <Compile Include="Generated Interfaces\ProcessStepComplexActions.cs" />
     <Compile Include="Generated Interfaces\ProcessStepParentEntity.cs" />
     <Compile Include="Generated Interfaces\ProcessStepRelationship.cs" />
+    <Compile Include="Generated Interfaces\ReferenceTypeName.cs" />
+    <Compile Include="Generated Interfaces\ReferenceTypes.cs" />
     <Compile Include="Generated Interfaces\RelationshipType.cs" />
     <Compile Include="Generated Interfaces\SourceType.cs" />
     <Compile Include="Generated Interfaces\State.cs" />

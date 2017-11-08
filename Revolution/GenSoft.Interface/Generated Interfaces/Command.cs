@@ -14,9 +14,9 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface ICommand:SystemInterfaces.IEntity  
 	{
-		int StateActionId { get;}
-		int EntityId { get;}
 		int CommandTypeId { get;}
+		int EntityId { get;}
+		int StateActionId { get;}
 
 
 

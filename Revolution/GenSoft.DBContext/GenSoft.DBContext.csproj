@@ -128,12 +128,15 @@
     <Compile Include="Generated Mappings\PresentationTheme.cs" />
     <Compile Include="Generated Mappings\ProcessAction.cs" />
     <Compile Include="Generated Mappings\ProcessActionComplexParameterAction.cs" />
+    <Compile Include="Generated Mappings\ProcessActionComplexParameterReferenceTypes.cs" />
     <Compile Include="Generated Mappings\ProcessActionStateCommandInfo.cs" />
     <Compile Include="Generated Mappings\ProcessPath.cs" />
     <Compile Include="Generated Mappings\ProcessStep.cs" />
     <Compile Include="Generated Mappings\ProcessStepComplexActions.cs" />
     <Compile Include="Generated Mappings\ProcessStepParentEntity.cs" />
     <Compile Include="Generated Mappings\ProcessStepRelationship.cs" />
+    <Compile Include="Generated Mappings\ReferenceTypeName.cs" />
+    <Compile Include="Generated Mappings\ReferenceTypes.cs" />
     <Compile Include="Generated Mappings\RelationshipType.cs" />
     <Compile Include="Generated Mappings\SourceType.cs" />
     <Compile Include="Generated Mappings\State.cs" />

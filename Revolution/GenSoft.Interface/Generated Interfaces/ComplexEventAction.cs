@@ -14,8 +14,8 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IComplexEventAction:SystemInterfaces.IEntity  
 	{
-		string Name { get;}
 		int ActionTriggerId { get;}
+		string Name { get;}
 
 
 

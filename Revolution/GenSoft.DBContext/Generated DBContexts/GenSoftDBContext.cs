@@ -71,12 +71,15 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.PresentationTheme> PresentationTheme { get; set; }
 		public DbSet<Entities.ProcessAction> ProcessAction { get; set; }
 		public DbSet<Entities.ProcessActionComplexParameterAction> ProcessActionComplexParameterAction { get; set; }
+		public DbSet<Entities.ProcessActionComplexParameterReferenceTypes> ProcessActionComplexParameterReferenceTypes { get; set; }
 		public DbSet<Entities.ProcessActionStateCommandInfo> ProcessActionStateCommandInfo { get; set; }
 		public DbSet<Entities.ProcessPath> ProcessPath { get; set; }
 		public DbSet<Entities.ProcessStep> ProcessStep { get; set; }
 		public DbSet<Entities.ProcessStepComplexActions> ProcessStepComplexActions { get; set; }
 		public DbSet<Entities.ProcessStepParentEntity> ProcessStepParentEntity { get; set; }
 		public DbSet<Entities.ProcessStepRelationship> ProcessStepRelationship { get; set; }
+		public DbSet<Entities.ReferenceTypeName> ReferenceTypeName { get; set; }
+		public DbSet<Entities.ReferenceTypes> ReferenceTypes { get; set; }
 		public DbSet<Entities.RelationshipType> RelationshipType { get; set; }
 		public DbSet<Entities.SourceType> SourceType { get; set; }
 		public DbSet<Entities.State> State { get; set; }
@@ -165,12 +168,15 @@ namespace GenSoft.DBContexts
 				PresentationThemeMap.Map(modelBuilder.Entity<Entities.PresentationTheme>());
 				ProcessActionMap.Map(modelBuilder.Entity<Entities.ProcessAction>());
 				ProcessActionComplexParameterActionMap.Map(modelBuilder.Entity<Entities.ProcessActionComplexParameterAction>());
+				ProcessActionComplexParameterReferenceTypesMap.Map(modelBuilder.Entity<Entities.ProcessActionComplexParameterReferenceTypes>());
 				ProcessActionStateCommandInfoMap.Map(modelBuilder.Entity<Entities.ProcessActionStateCommandInfo>());
 				ProcessPathMap.Map(modelBuilder.Entity<Entities.ProcessPath>());
 				ProcessStepMap.Map(modelBuilder.Entity<Entities.ProcessStep>());
 				ProcessStepComplexActionsMap.Map(modelBuilder.Entity<Entities.ProcessStepComplexActions>());
 				ProcessStepParentEntityMap.Map(modelBuilder.Entity<Entities.ProcessStepParentEntity>());
 				ProcessStepRelationshipMap.Map(modelBuilder.Entity<Entities.ProcessStepRelationship>());
+				ReferenceTypeNameMap.Map(modelBuilder.Entity<Entities.ReferenceTypeName>());
+				ReferenceTypesMap.Map(modelBuilder.Entity<Entities.ReferenceTypes>());
 				RelationshipTypeMap.Map(modelBuilder.Entity<Entities.RelationshipType>());
 				SourceTypeMap.Map(modelBuilder.Entity<Entities.SourceType>());
 				StateMap.Map(modelBuilder.Entity<Entities.State>());

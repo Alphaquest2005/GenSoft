@@ -19,9 +19,9 @@ namespace GenSoft.Mappings
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.DataTypeId).HasColumnName("DataTypeId").IsRequired();
-			entityBuilder.Property(t => t.PredicateId).HasColumnName("PredicateId").IsRequired();
-			entityBuilder.Property(t => t.Name).HasColumnName("Name").IsRequired().HasMaxLength(50);
 			entityBuilder.Property(t => t.Description).HasColumnName("Description").IsRequired().HasMaxLength(255);
+			entityBuilder.Property(t => t.Name).HasColumnName("Name").IsRequired().HasMaxLength(50);
+			entityBuilder.Property(t => t.PredicateId).HasColumnName("PredicateId").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
 				entityBuilder.HasMany(x => x.ExpectedEventPredicateParameters).WithOne(p => p.PredicateParameters).HasForeignKey(c => c.PredicateParameterId).OnDelete(DeleteBehavior.Restrict);
 	

@@ -41,8 +41,8 @@ using ISystemProcess = SystemInterfaces.ISystemProcess;
 using IUser = SystemInterfaces.IUser;
 using Process = System.Diagnostics.Process;
 using ProcessAction = GenSoft.Entities.ProcessAction;
-using StateCommandInfo = GenSoft.Entities.StateCommandInfo;
 using StateEventInfo = RevolutionEntities.Process.StateEventInfo;
+using StateInfo = RevolutionEntities.Process.StateInfo;
 using SystemProcess = RevolutionEntities.Process.SystemProcess;
 using Type = System.Type;
 
@@ -96,6 +96,8 @@ namespace DataServices.Actors
                     .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ComplexEventAction).ThenInclude(x => x.ProcessStepComplexActions)
                     .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ProcessAction.ActionSet)
                     .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ProcessAction.ProcessActionComplexParameterAction)
+                    .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ProcessAction.ProcessActionComplexParameterAction.ProcessActionComplexParameterReferenceTypes).ThenInclude(x => x.ReferenceTypes.ReferenceTypeName)
+                    .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ProcessAction.ProcessActionComplexParameterAction.ProcessActionComplexParameterReferenceTypes).ThenInclude(x => x.ReferenceTypes.DataType.Type)
                     .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ProcessAction.ProcessActionStateCommandInfo.StateCommandInfo.StateInfo)
                         .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
                         .FirstOrDefault(x => x.ProcessStep.Any());
@@ -414,16 +416,37 @@ namespace DataServices.Actors
             try
             {
                 var interpreter = new Interpreter();
-                interpreter.Reference(typeof(DomainMessage));
+
+                foreach (var r in cpAction.ProcessActionComplexParameterReferenceTypes)
+                {
+                    if (r.ReferenceTypes.ReferenceTypeName != null)
+                    {
+                        interpreter.Reference(new ReferenceType(r.ReferenceTypes.ReferenceTypeName.Name, GetTypeByName(r.ReferenceTypes.DataType.Type.Name)[0]));
+                    }
+                    else
+                    {
+                        interpreter.Reference(GetTypeByName(r.ReferenceTypes.DataType.Type.Name)[0]);
+                    }
+                }
+
+                //interpreter.Reference(typeof(UpdateProcessStateEntity));
+                //interpreter.Reference(typeof(ProcessStateEntity));
+                //interpreter.Reference(typeof(IDynamicEntity));
+                //interpreter.Reference(typeof(IDynamicComplexEventParameters));
+                //interpreter.Reference(typeof(Expando));
+                //interpreter.Reference(typeof(RevolutionEntities.Process.StateInfo));
+                //interpreter.Reference(typeof(RevolutionEntities.Process.StateCommandInfo));
+                //interpreter.Reference(new ReferenceType("Commands", typeof(RevolutionData.Context.Process.Commands)));
 
 
-                var body = @" new DomainMessage(""UserValidated"",cp.Messages[""ValidatedUser""].Entity,
-                                new StateEventInfo(5, Context.Domain.Events.DomainEventPublished),
-                                cp.Actor.Process, cp.Actor.Source)";
+                //var body = @"new UpdateProcessStateEntity(new ProcessStateEntity(cp.Actor.Process, cp.Messages[""ValidatedUser""].Properties[""Entity""] as IDynamicEntity,
+                //new StateInfo(cp.Actor.Process.Id, ""UserValidated"",
+                //    ""User: "" + (cp.Messages[""ValidatedUser""].Properties[""Entity""] as IDynamicEntity).Properties[""Usersignin""] + "" Validated"", ""User Validated"")),
+                //new StateCommandInfo(cp.Actor.Process.Id, Commands.UpdateState),
+                //cp.Actor.Process, cp.Actor.Source)";
 
 
-                var res = interpreter.ParseAsDelegate<Func<IComplexEventParameters, IProcessSystemMessage>>(body, "cp");
-
+                var res =(Func<IComplexEventParameters, IProcessSystemMessage>) interpreter.ParseAsDelegate<Func<IDynamicComplexEventParameters, IProcessSystemMessage>>(cpAction.Body, cpAction.ParameterName).Convert(typeof(IComplexEventParameters));
                 
                 return async cp => await Task.Run(() => res(cp));
             }
@@ -691,7 +714,7 @@ namespace DataServices.Actors
             foreach (var a in AppDomain.CurrentDomain.GetAssemblies())
             {
                 var assemblyTypes = a.GetTypes();
-                returnVal.AddRange(assemblyTypes.Where(t => t.Name.ToLower() == className.ToLower()));//|| t.FullName.ToLower().Contains(className.ToLower()) 
+                returnVal.AddRange(assemblyTypes.Where(t => t.Name.ToLower() == className.ToLower() || t.FullName.ToLower() == className.ToLower()));//|| t.FullName.ToLower().Contains(className.ToLower()) 
             }
             
             return returnVal.ToArray();

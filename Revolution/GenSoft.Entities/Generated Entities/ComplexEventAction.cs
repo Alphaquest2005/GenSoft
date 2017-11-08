@@ -13,8 +13,8 @@ namespace GenSoft.Entities
 {
 	public partial class ComplexEventAction: BaseEntity, IComplexEventAction
 	{
-		public virtual string Name { get; set; }
 		public virtual int ActionTriggerId { get; set; }
+		public virtual string Name { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships

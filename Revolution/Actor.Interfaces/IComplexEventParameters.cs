@@ -11,6 +11,10 @@ namespace Actor.Interfaces
     {
         IComplexEventService Actor { get; }
         ImmutableDictionary<string, dynamic> Messages { get; }
-        
+    }
+
+    public interface IDynamicComplexEventParameters:IComplexEventParameters
+    {
+        new ImmutableDictionary<string, IExpando> Messages { get; }
     }
 }

@@ -31,16 +31,16 @@ namespace GenSoft.DBContexts
 			{
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[Action] ON
-						Insert Into dbo.[Action] (Id,Name,Description,Body) Values('2','CreateProcessStateEntity','Create ProcessStateEntity','new UpdateProcessStateEntity(new ProcessStateEntity(cp.Actor.Process, cp.Messages[""Param0""].Entity,  new StateInfo(cp.Actor.Process.Id, $""Param1"", $""Param2"", $""Param3"")),  new StateCommandInfo(cp.Actor.Process.Id, CommandInfo[""UpdateState""]), cp.Actor.Process, cp.Actor.Source)')
-						Insert Into dbo.[Action] (Id,Name,Description,Body) Values('4','DomainEventPublished','Publish Domain Message','new DomainMessage(""Param1"",cp.Messages[""Param0""].Entity,new StateEventInfo(cp.Actor.Process.Id, EventInfo[""DomainEventPublished""]), cp.Actor.Process, cp.Actor.Source)')
+						Insert Into dbo.[Action] (Body,Description,Id,Name) Values('new UpdateProcessStateEntity(new ProcessStateEntity(cp.Actor.Process, cp.Messages[""Param0""].Entity,  new StateInfo(cp.Actor.Process.Id, $""Param1"", $""Param2"", $""Param3"")),  new StateCommandInfo(cp.Actor.Process.Id, CommandInfo[""UpdateState""]), cp.Actor.Process, cp.Actor.Source)','Create ProcessStateEntity','2','CreateProcessStateEntity')
+						Insert Into dbo.[Action] (Body,Description,Id,Name) Values('new DomainMessage(""Param1"",cp.Messages[""Param0""].Entity,new StateEventInfo(cp.Actor.Process.Id, EventInfo[""DomainEventPublished""]), cp.Actor.Process, cp.Actor.Source)','Publish Domain Message','4','DomainEventPublished')
 					SET IDENTITY_INSERT dbo.[Action] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[ActionSet] ON
 						Insert Into dbo.[ActionSet] (Id,Name) Values('1','StartProcess')
 						Insert Into dbo.[ActionSet] (Id,Name) Values('2','StartNextProcess')
 						Insert Into dbo.[ActionSet] (Id,Name) Values('3','CleanUpProcess')
-						Insert Into dbo.[ActionSet] (Id,Name) Values('4','Set Process State to Validated User')
 						Insert Into dbo.[ActionSet] (Id,Name) Values('5','Publish User Validated')
+						Insert Into dbo.[ActionSet] (Id,Name) Values('4','Set Process State to Validated User')
 					SET IDENTITY_INSERT dbo.[ActionSet] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[Agent] ON
@@ -49,24 +49,24 @@ namespace GenSoft.DBContexts
 					SET IDENTITY_INSERT dbo.[Agent] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[Application] ON
-						Insert Into dbo.[Application] (Id,Name,DBName) Values('1','GenSoft-Creator','GenSoft-Creator')
-						Insert Into dbo.[Application] (Id,Name,DBName) Values('2','PayrollDB','GenSoft-PayrollDB')
-						Insert Into dbo.[Application] (Id,Name,DBName) Values('3','MRManager','GenSoft-MRManager')
+						Insert Into dbo.[Application] (DBName,Id,Name) Values('GenSoft-Creator','1','GenSoft-Creator')
+						Insert Into dbo.[Application] (DBName,Id,Name) Values('GenSoft-PayrollDB','2','PayrollDB')
+						Insert Into dbo.[Application] (DBName,Id,Name) Values('GenSoft-MRManager','3','MRManager')
 					SET IDENTITY_INSERT dbo.[Application] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[CommandType] ON
 						Insert Into dbo.[CommandType] (Id,Name) Values('1','IGetEntityWithChanges')
-						Insert Into dbo.[CommandType] (Id,Name) Values('2','IUpdateEntityWithChanges')
 						Insert Into dbo.[CommandType] (Id,Name) Values('3','IViewRowStateChanged')
+						Insert Into dbo.[CommandType] (Id,Name) Values('2','IUpdateEntityWithChanges')
 					SET IDENTITY_INSERT dbo.[CommandType] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[ComplexEventAction] ON
-						Insert Into dbo.[ComplexEventAction] (Id,Name,ActionTriggerId) Values('1','SignIn','1')
+						Insert Into dbo.[ComplexEventAction] (ActionTriggerId,Id,Name) Values('1','1','SignIn')
 					SET IDENTITY_INSERT dbo.[ComplexEventAction] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[FunctionSets] ON
-						Insert Into dbo.[FunctionSets] (Id,Name) Values('1','Age')
 						Insert Into dbo.[FunctionSets] (Id,Name) Values('2','2 Field Entity Name')
+						Insert Into dbo.[FunctionSets] (Id,Name) Values('1','Age')
 						Insert Into dbo.[FunctionSets] (Id,Name) Values('3','1 Field Entity  Name')
 					SET IDENTITY_INSERT dbo.[FunctionSets] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
@@ -76,13 +76,13 @@ namespace GenSoft.DBContexts
 					SET IDENTITY_INSERT dbo.[Ordinality] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[Predicates] ON
-						Insert Into dbo.[Predicates] (Id,Name,Description,Body) Values('1','UserFound','User Found','e.Entity != null && e.Changes.Count == 2 && e.Changes.ContainsKey(Const0)')
+						Insert Into dbo.[Predicates] (Id,Body,Description,Name) Values('1','e.Entity != null && e.Changes.Count == 2 && e.Changes.ContainsKey(Const0)','User Found','UserFound')
 					SET IDENTITY_INSERT dbo.[Predicates] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[PresentationPropertyType] ON
 						Insert Into dbo.[PresentationPropertyType] (Id,Name) Values('1','AttributeGrid')
-						Insert Into dbo.[PresentationPropertyType] (Id,Name) Values('2','AttributeLabel')
 						Insert Into dbo.[PresentationPropertyType] (Id,Name) Values('3','AttributeValue')
+						Insert Into dbo.[PresentationPropertyType] (Id,Name) Values('2','AttributeLabel')
 					SET IDENTITY_INSERT dbo.[PresentationPropertyType] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[PresentationTheme] ON
@@ -91,28 +91,38 @@ namespace GenSoft.DBContexts
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[State] ON
 						Insert Into dbo.[State] (Id,Name) Values('1','Started')
-						Insert Into dbo.[State] (Id,Name) Values('2','Loaded')
 						Insert Into dbo.[State] (Id,Name) Values('3','Completed')
+						Insert Into dbo.[State] (Id,Name) Values('2','Loaded')
 					SET IDENTITY_INSERT dbo.[State] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[StateInfo] ON
 						Insert Into dbo.[StateInfo] (Id,Name,Status) Values('1','PublishMessage','Publish Message')
 						Insert Into dbo.[StateInfo] (Id,Name,Status) Values('2','DomainEventPublished','Domain Event Published')
 						Insert Into dbo.[StateInfo] (Id,Name,Status) Values('3','UpdateState','Update State')
+						Insert Into dbo.[StateInfo] (Id,Name,Status) Values('6','GetEntity','Get Entity')
 						Insert Into dbo.[StateInfo] (Id,Name,Status) Values('4','StateUpdated','State Updated')
 						Insert Into dbo.[StateInfo] (Id,Name,Status) Values('5','EntityFound','Entity Found')
-						Insert Into dbo.[StateInfo] (Id,Name,Status) Values('6','GetEntity','Get Entity')
 					SET IDENTITY_INSERT dbo.[StateInfo] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[Type] ON
-						Insert Into dbo.[Type] (Id,Name) Values('4','SignIn')
 						Insert Into dbo.[Type] (Id,Name) Values('5','int32')
+						Insert Into dbo.[Type] (Id,Name) Values('4','SignIn')
 						Insert Into dbo.[Type] (Id,Name) Values('6','string')
 						Insert Into dbo.[Type] (Id,Name) Values('7','DateTime')
 						Insert Into dbo.[Type] (Id,Name) Values('10','IEntityWithChangesFound')
 						Insert Into dbo.[Type] (Id,Name) Values('11','IProcessStateMessage')
 						Insert Into dbo.[Type] (Id,Name) Values('12','IDomainMessage')
 						Insert Into dbo.[Type] (Id,Name) Values('13','IProcessSystemMessage')
+						Insert Into dbo.[Type] (Id,Name) Values('14','DomainMessage')
+						Insert Into dbo.[Type] (Id,Name) Values('15','StateEventInfo')
+						Insert Into dbo.[Type] (Id,Name) Values('16','IDynamicComplexEventParameters')
+						Insert Into dbo.[Type] (Id,Name) Values('17','Expando')
+						Insert Into dbo.[Type] (Id,Name) Values('18','RevolutionData.Context.Domain+Events')
+						Insert Into dbo.[Type] (Id,Name) Values('19','UpdateProcessStateEntity')
+						Insert Into dbo.[Type] (Id,Name) Values('20','ProcessStateEntity')
+						Insert Into dbo.[Type] (Id,Name) Values('21','RevolutionEntities.Process.StateInfo')
+						Insert Into dbo.[Type] (Id,Name) Values('22','RevolutionData.Context.Process+Commands')
+						Insert Into dbo.[Type] (Id,Name) Values('23','RevolutionEntities.Process.StateCommandInfo')
 						Insert Into dbo.[Type] (Id,Name) Values('50','Func`2')
 						Insert Into dbo.[Type] (Id,Name) Values('51','List`1')
 						Insert Into dbo.[Type] (Id,Name) Values('52','Object')
@@ -125,10 +135,10 @@ namespace GenSoft.DBContexts
 					SET IDENTITY_INSERT dbo.[Type] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[ViewModelTypes] ON
-						Insert Into dbo.[ViewModelTypes] (Id,Name,List,DomainEntity) Values('1','ObservableViewModel','0','0')
-						Insert Into dbo.[ViewModelTypes] (Id,Name,List,DomainEntity) Values('2','EntityViewModel','0','1')
-						Insert Into dbo.[ViewModelTypes] (Id,Name,List,DomainEntity) Values('3','SummaryListViewModel','1','1')
-						Insert Into dbo.[ViewModelTypes] (Id,Name,List,DomainEntity) Values('4','CachedViewModel','1','1')
+						Insert Into dbo.[ViewModelTypes] (Id,DomainEntity,List,Name) Values('4','1','1','CachedViewModel')
+						Insert Into dbo.[ViewModelTypes] (Id,DomainEntity,List,Name) Values('3','1','1','SummaryListViewModel')
+						Insert Into dbo.[ViewModelTypes] (Id,DomainEntity,List,Name) Values('2','1','0','EntityViewModel')
+						Insert Into dbo.[ViewModelTypes] (Id,DomainEntity,List,Name) Values('1','0','0','ObservableViewModel')
 					SET IDENTITY_INSERT dbo.[ViewModelTypes] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[ViewProperty] ON
@@ -144,17 +154,17 @@ namespace GenSoft.DBContexts
 					SET IDENTITY_INSERT dbo.[ViewType] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[ActionParameters] ON
-						Insert Into dbo.[ActionParameters] (ActionId,Id,Name,Description,DataTypeId) Values('2','1','Param0','Message Name','6')
-						Insert Into dbo.[ActionParameters] (ActionId,Id,Name,Description,DataTypeId) Values('2','2','Param1','StateInfo Name','6')
-						Insert Into dbo.[ActionParameters] (ActionId,Id,Name,Description,DataTypeId) Values('2','3','Param2','StateInfo status','6')
-						Insert Into dbo.[ActionParameters] (ActionId,Id,Name,Description,DataTypeId) Values('2','4','Param3','StateInfo Notes','6')
-						Insert Into dbo.[ActionParameters] (ActionId,Id,Name,Description,DataTypeId) Values('4','5','Param0','Message Name','6')
-						Insert Into dbo.[ActionParameters] (ActionId,Id,Name,Description,DataTypeId) Values('4','6','Param1','StateInfo Name','6')
+						Insert Into dbo.[ActionParameters] (ActionId,DataTypeId,Description,Id,Name) Values('2','6','Message Name','1','Param0')
+						Insert Into dbo.[ActionParameters] (ActionId,DataTypeId,Description,Id,Name) Values('2','6','StateInfo Name','2','Param1')
+						Insert Into dbo.[ActionParameters] (ActionId,DataTypeId,Description,Id,Name) Values('2','6','StateInfo status','3','Param2')
+						Insert Into dbo.[ActionParameters] (ActionId,DataTypeId,Description,Id,Name) Values('2','6','StateInfo Notes','4','Param3')
+						Insert Into dbo.[ActionParameters] (ActionId,DataTypeId,Description,Id,Name) Values('4','6','Message Name','5','Param0')
+						Insert Into dbo.[ActionParameters] (ActionId,DataTypeId,Description,Id,Name) Values('4','6','StateInfo Name','6','Param1')
 					SET IDENTITY_INSERT dbo.[ActionParameters] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[ActionSetActions] ON
-						Insert Into dbo.[ActionSetActions] (ActionId,Id,ActionSetId) Values('2','2','4')
-						Insert Into dbo.[ActionSetActions] (ActionId,Id,ActionSetId) Values('4','3','5')
+						Insert Into dbo.[ActionSetActions] (ActionId,ActionSetId,Id) Values('2','4','2')
+						Insert Into dbo.[ActionSetActions] (ActionId,ActionSetId,Id) Values('4','5','3')
 					SET IDENTITY_INSERT dbo.[ActionSetActions] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[ProcessAction] ON
@@ -168,12 +178,12 @@ namespace GenSoft.DBContexts
 ");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[ComplexEventActionProcessActions] ON
-						Insert Into dbo.[ComplexEventActionProcessActions] (ComplexEventActionId,Id,ProcessActionId,ExpectedEventTypeId) Values('1','1','1','11')
-						Insert Into dbo.[ComplexEventActionProcessActions] (ComplexEventActionId,Id,ProcessActionId,ExpectedEventTypeId) Values('1','2','3','12')
+						Insert Into dbo.[ComplexEventActionProcessActions] (ComplexEventActionId,ExpectedEventTypeId,Id,ProcessActionId) Values('1','11','1','1')
+						Insert Into dbo.[ComplexEventActionProcessActions] (ComplexEventActionId,ExpectedEventTypeId,Id,ProcessActionId) Values('1','12','2','3')
 					SET IDENTITY_INSERT dbo.[ComplexEventActionProcessActions] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
-						Insert Into dbo.[ProcessActionComplexParameterAction] (Id,Body,ParameterName) Values('1','new UpdateProcessStateEntity(new ProcessStateEntity(cp.Actor.Process, cp.Messages[""ValidatedUser""].Entity,                        new StateInfo(cp.Actor.Process.Id, ""UserValidated"",                            $""User: {{cp.Messages[""ValidatedUser""].Entity.Usersignin}} Validated"", ""User Validated"")),                    new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),                    cp.Actor.Process, cp.Actor.Source)','cp')
-						Insert Into dbo.[ProcessActionComplexParameterAction] (Id,Body,ParameterName) Values('3','new DomainMessage(""UserValidated"",cp.Messages[""ValidatedUser""].Entity, new StateEventInfo(cp.Actor.Process.Id, Context.Domain.Events.DomainEventPublished), cp.Actor.Process, cp.Actor.Source)','cp')
+						Insert Into dbo.[ProcessActionComplexParameterAction] (Id,Body,ParameterName) Values('3','new DomainMessage(""UserValidated"",cp.Messages[""ValidatedUser""].Properties[""Entity""] as IDynamicEntity, new StateEventInfo(5, Events.DomainEventPublished), cp.Actor.Process, cp.Actor.Source)','cp')
+						Insert Into dbo.[ProcessActionComplexParameterAction] (Id,Body,ParameterName) Values('1','new UpdateProcessStateEntity(new ProcessStateEntity(cp.Actor.Process, cp.Messages[""ValidatedUser""].Properties[""Entity""] as IDynamicEntity,new StateInfo(cp.Actor.Process.Id, ""UserValidated"",""User: "" + (cp.Messages[""ValidatedUser""].Properties[""Entity""] as IDynamicEntity).Properties[""Usersignin""] + "" Validated"", ""User Validated"")),new StateCommandInfo(cp.Actor.Process.Id, Commands.UpdateState),cp.Actor.Process, cp.Actor.Source)','cp')
 ");
 				Instance.Database.ExecuteSqlCommand(@"
 						Insert Into dbo.[StateCommandInfo] (Id) Values('1')
@@ -186,9 +196,9 @@ namespace GenSoft.DBContexts
 ");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[SystemProcess] ON
-						Insert Into dbo.[SystemProcess] (UserId,Id,ParentProcessId,Symbol,Name,Description) Values('0','1','0','Start','Starting System','Prepare system for Intial Use')
-						Insert Into dbo.[SystemProcess] (UserId,Id,ParentProcessId,Symbol,Name,Description) Values('0','2','3','BP','Branch Payroll','Process Branch Payroll')
-						Insert Into dbo.[SystemProcess] (UserId,Id,ParentProcessId,Symbol,Name,Description) Values('0','4','1','SignIn','Sign In','Sign In')
+						Insert Into dbo.[SystemProcess] (UserId,Description,Id,Name,ParentProcessId,Symbol) Values('0','Sign In','4','Sign In','1','SignIn')
+						Insert Into dbo.[SystemProcess] (UserId,Description,Id,Name,ParentProcessId,Symbol) Values('0','Prepare system for Intial Use','1','Starting System','0','Start')
+						Insert Into dbo.[SystemProcess] (UserId,Description,Id,Name,ParentProcessId,Symbol) Values('0','Process Branch Payroll','2','Branch Payroll','3','BP')
 					SET IDENTITY_INSERT dbo.[SystemProcess] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 						Insert Into dbo.[DomainProcess] (ApplicationId,Id,Priority) Values('2','2','2')
@@ -196,19 +206,19 @@ namespace GenSoft.DBContexts
 ");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[ProcessStep] ON
-						Insert Into dbo.[ProcessStep] (DomainProcessId,Id,Name,Descripton,Notes,Symbol,Entity) Values('2','2','Select Branch','Select Branch','List of Branches','B         ','Branch')
-						Insert Into dbo.[ProcessStep] (DomainProcessId,Id,Name,Descripton,Notes,Symbol,Entity) Values('2','3','Filter PayrollJobs','Branch PayrollJobs','List of PayrollJobs Per Branch','P         ','PayrollJob')
-						Insert Into dbo.[ProcessStep] (DomainProcessId,Id,Name,Descripton,Notes,Symbol,Entity) Values('4','4','User Sign In','User Sign In','User Sign In','U','SignIn')
+						Insert Into dbo.[ProcessStep] (DomainProcessId,Descripton,Entity,Id,Name,Notes,Symbol) Values('4','User Sign In','SignIn','4','User Sign In','User Sign In','U')
+						Insert Into dbo.[ProcessStep] (DomainProcessId,Descripton,Entity,Id,Name,Notes,Symbol) Values('2','Branch PayrollJobs','PayrollJob','3','Filter PayrollJobs','List of PayrollJobs Per Branch','P         ')
+						Insert Into dbo.[ProcessStep] (DomainProcessId,Descripton,Entity,Id,Name,Notes,Symbol) Values('2','Select Branch','Branch','2','Select Branch','List of Branches','B         ')
 					SET IDENTITY_INSERT dbo.[ProcessStep] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
-						Insert Into dbo.[EntityType] (ApplicationId,Id,EntitySetName) Values('2','4','SignIns')
+						Insert Into dbo.[EntityType] (ApplicationId,EntitySetName,Id) Values('2','SignIns','4')
 ");
 				Instance.Database.ExecuteSqlCommand(@"
 						Insert Into dbo.[MainEntity] (EntityTypeId,Id) Values('4','4')
 ");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[ProcessPath] ON
-						Insert Into dbo.[ProcessPath] (Id,ProcessStepId,NextProcessStepId) Values('1','2','3')
+						Insert Into dbo.[ProcessPath] (Id,NextProcessStepId,ProcessStepId) Values('1','3','2')
 					SET IDENTITY_INSERT dbo.[ProcessPath] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[ProcessStepComplexActions] ON
@@ -216,31 +226,31 @@ namespace GenSoft.DBContexts
 					SET IDENTITY_INSERT dbo.[ProcessStepComplexActions] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[SystemProcessState] ON
-						Insert Into dbo.[SystemProcessState] (StateId,Id,Name,ProcessId) Values('1','1','ServiceManagerStarted','1')
-						Insert Into dbo.[SystemProcessState] (StateId,Id,Name,ProcessId) Values('1','2','Process0Started','1')
-						Insert Into dbo.[SystemProcessState] (StateId,Id,Name,ProcessId) Values('1','3','ScreenViewCreated','1')
-						Insert Into dbo.[SystemProcessState] (StateId,Id,Name,ProcessId) Values('2','4','ScreenViewLoaded','1')
 						Insert Into dbo.[SystemProcessState] (StateId,Id,Name,ProcessId) Values('3','5','Process0Completed','1')
+						Insert Into dbo.[SystemProcessState] (StateId,Id,Name,ProcessId) Values('2','4','ScreenViewLoaded','1')
+						Insert Into dbo.[SystemProcessState] (StateId,Id,Name,ProcessId) Values('1','3','ScreenViewCreated','1')
+						Insert Into dbo.[SystemProcessState] (StateId,Id,Name,ProcessId) Values('1','2','Process0Started','1')
+						Insert Into dbo.[SystemProcessState] (StateId,Id,Name,ProcessId) Values('1','1','ServiceManagerStarted','1')
 					SET IDENTITY_INSERT dbo.[SystemProcessState] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
-						Insert Into dbo.[SystemProcessStateInfo] (Id,Description,Notes) Values('1','Service Manager Started','Service Manager Started')
 						Insert Into dbo.[SystemProcessStateInfo] (Id,Description,Notes) Values('2','ProcessStarted','Process 0 Started ')
 						Insert Into dbo.[SystemProcessStateInfo] (Id,Description,Notes) Values('3','ScreenView Created','This view contains all views')
+						Insert Into dbo.[SystemProcessStateInfo] (Id,Description,Notes) Values('1','Service Manager Started','Service Manager Started')
 ");
 				Instance.Database.ExecuteSqlCommand(@"
 						Insert Into dbo.[User] (Id,Password) Values('2','test')
 ");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[ApplicationSetting] ON
-						Insert Into dbo.[ApplicationSetting] (ApplicationId,Id,AutoRun) Values('2','1','1')
+						Insert Into dbo.[ApplicationSetting] (ApplicationId,AutoRun,Id) Values('2','1','1')
 					SET IDENTITY_INSERT dbo.[ApplicationSetting] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[ViewModelCommands] ON
-						Insert Into dbo.[ViewModelCommands] (CommandTypeId,Id,RequireAllFields,ExistingEntities,Name) Values('1','1','1','0','FindAll')
-						Insert Into dbo.[ViewModelCommands] (CommandTypeId,Id,RequireAllFields,ExistingEntities,Name) Values('2','2','0','1','UpdatePartial')
-						Insert Into dbo.[ViewModelCommands] (CommandTypeId,Id,RequireAllFields,ExistingEntities,Name) Values('2','3','1','0','CreateAll')
-						Insert Into dbo.[ViewModelCommands] (CommandTypeId,Id,RequireAllFields,ExistingEntities,Name) Values('2','4','0','0','CreatePartial')
-						Insert Into dbo.[ViewModelCommands] (CommandTypeId,Id,RequireAllFields,ExistingEntities,Name) Values('3','5','0','0','EditEntity')
+						Insert Into dbo.[ViewModelCommands] (CommandTypeId,ExistingEntities,Id,Name,RequireAllFields) Values('1','0','1','FindAll','1')
+						Insert Into dbo.[ViewModelCommands] (CommandTypeId,ExistingEntities,Id,Name,RequireAllFields) Values('2','1','2','UpdatePartial','0')
+						Insert Into dbo.[ViewModelCommands] (CommandTypeId,ExistingEntities,Id,Name,RequireAllFields) Values('2','0','3','CreateAll','1')
+						Insert Into dbo.[ViewModelCommands] (CommandTypeId,ExistingEntities,Id,Name,RequireAllFields) Values('3','0','5','EditEntity','0')
+						Insert Into dbo.[ViewModelCommands] (CommandTypeId,ExistingEntities,Id,Name,RequireAllFields) Values('2','0','4','CreatePartial','0')
 					SET IDENTITY_INSERT dbo.[ViewModelCommands] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[EntityTypeViewModelCommand] ON
@@ -251,9 +261,9 @@ namespace GenSoft.DBContexts
 						Insert Into dbo.[ExpectedEvents] (Id,EventTypeId,Name) Values('1','10','Entity')
 					SET IDENTITY_INSERT dbo.[ExpectedEvents] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
-						Insert Into dbo.[StateEventInfo] (Id,ExpectedStateCommandInfoId) Values('2','1')
-						Insert Into dbo.[StateEventInfo] (Id,ExpectedStateCommandInfoId) Values('4','3')
 						Insert Into dbo.[StateEventInfo] (Id,ExpectedStateCommandInfoId) Values('5','6')
+						Insert Into dbo.[StateEventInfo] (Id,ExpectedStateCommandInfoId) Values('4','3')
+						Insert Into dbo.[StateEventInfo] (Id,ExpectedStateCommandInfoId) Values('2','1')
 ");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[ComplexEventActionExpectedEvents] ON
@@ -261,29 +271,29 @@ namespace GenSoft.DBContexts
 					SET IDENTITY_INSERT dbo.[ComplexEventActionExpectedEvents] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[ComplexActionExpectedEventActionParameter] ON
-						Insert Into dbo.[ComplexActionExpectedEventActionParameter] (ActionParameterId,Id,ComplexActionExpectedEventId) Values('1','1','2')
-						Insert Into dbo.[ComplexActionExpectedEventActionParameter] (ActionParameterId,Id,ComplexActionExpectedEventId) Values('2','2','2')
-						Insert Into dbo.[ComplexActionExpectedEventActionParameter] (ActionParameterId,Id,ComplexActionExpectedEventId) Values('3','3','2')
-						Insert Into dbo.[ComplexActionExpectedEventActionParameter] (ActionParameterId,Id,ComplexActionExpectedEventId) Values('4','4','2')
-						Insert Into dbo.[ComplexActionExpectedEventActionParameter] (ActionParameterId,Id,ComplexActionExpectedEventId) Values('5','5','2')
-						Insert Into dbo.[ComplexActionExpectedEventActionParameter] (ActionParameterId,Id,ComplexActionExpectedEventId) Values('6','6','2')
+						Insert Into dbo.[ComplexActionExpectedEventActionParameter] (ActionParameterId,ComplexActionExpectedEventId,Id) Values('1','2','1')
+						Insert Into dbo.[ComplexActionExpectedEventActionParameter] (ActionParameterId,ComplexActionExpectedEventId,Id) Values('2','2','2')
+						Insert Into dbo.[ComplexActionExpectedEventActionParameter] (ActionParameterId,ComplexActionExpectedEventId,Id) Values('3','2','3')
+						Insert Into dbo.[ComplexActionExpectedEventActionParameter] (ActionParameterId,ComplexActionExpectedEventId,Id) Values('4','2','4')
+						Insert Into dbo.[ComplexActionExpectedEventActionParameter] (ActionParameterId,ComplexActionExpectedEventId,Id) Values('6','2','6')
+						Insert Into dbo.[ComplexActionExpectedEventActionParameter] (ActionParameterId,ComplexActionExpectedEventId,Id) Values('5','2','5')
 					SET IDENTITY_INSERT dbo.[ComplexActionExpectedEventActionParameter] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 						Insert Into dbo.[ComplexEventActionConstant] (Id,Value) Values('2','UserValidated')
+						Insert Into dbo.[ComplexEventActionConstant] (Id,Value) Values('6','UserValidated')
 						Insert Into dbo.[ComplexEventActionConstant] (Id,Value) Values('3','User: {{cp.Messages[""Param0""].Entity.UserName}} Validated')
 						Insert Into dbo.[ComplexEventActionConstant] (Id,Value) Values('4','User Validated')
-						Insert Into dbo.[ComplexEventActionConstant] (Id,Value) Values('6','UserValidated')
 ");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[RelationshipType] ON
-						Insert Into dbo.[RelationshipType] (Id,Name,ParentOrdinalityId,ChildOrdinalityId) Values('1','One-One','1','1')
-						Insert Into dbo.[RelationshipType] (Id,Name,ParentOrdinalityId,ChildOrdinalityId) Values('2','One-Many','1','2')
-						Insert Into dbo.[RelationshipType] (Id,Name,ParentOrdinalityId,ChildOrdinalityId) Values('3','Many-Many','2','2')
-						Insert Into dbo.[RelationshipType] (Id,Name,ParentOrdinalityId,ChildOrdinalityId) Values('1002','Many-One','2','1')
+						Insert Into dbo.[RelationshipType] (Id,ChildOrdinalityId,Name,ParentOrdinalityId) Values('1002','1','Many-One','2')
+						Insert Into dbo.[RelationshipType] (Id,ChildOrdinalityId,Name,ParentOrdinalityId) Values('3','2','Many-Many','2')
+						Insert Into dbo.[RelationshipType] (Id,ChildOrdinalityId,Name,ParentOrdinalityId) Values('2','2','One-Many','1')
+						Insert Into dbo.[RelationshipType] (Id,ChildOrdinalityId,Name,ParentOrdinalityId) Values('1','1','One-One','1')
 					SET IDENTITY_INSERT dbo.[RelationshipType] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[EventPredicates] ON
-						Insert Into dbo.[EventPredicates] (Id,EventTypeId,PredicateId) Values('1','10','1')
+						Insert Into dbo.[EventPredicates] (EventTypeId,Id,PredicateId) Values('10','1','1')
 					SET IDENTITY_INSERT dbo.[EventPredicates] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 						Insert Into dbo.[DataType] (Id) Values('5')
@@ -291,6 +301,16 @@ namespace GenSoft.DBContexts
 						Insert Into dbo.[DataType] (Id) Values('7')
 						Insert Into dbo.[DataType] (Id) Values('10')
 						Insert Into dbo.[DataType] (Id) Values('13')
+						Insert Into dbo.[DataType] (Id) Values('14')
+						Insert Into dbo.[DataType] (Id) Values('15')
+						Insert Into dbo.[DataType] (Id) Values('16')
+						Insert Into dbo.[DataType] (Id) Values('17')
+						Insert Into dbo.[DataType] (Id) Values('18')
+						Insert Into dbo.[DataType] (Id) Values('19')
+						Insert Into dbo.[DataType] (Id) Values('20')
+						Insert Into dbo.[DataType] (Id) Values('21')
+						Insert Into dbo.[DataType] (Id) Values('22')
+						Insert Into dbo.[DataType] (Id) Values('23')
 						Insert Into dbo.[DataType] (Id) Values('50')
 						Insert Into dbo.[DataType] (Id) Values('51')
 						Insert Into dbo.[DataType] (Id) Values('52')
@@ -303,67 +323,67 @@ namespace GenSoft.DBContexts
 ");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[PredicateParameters] ON
-						Insert Into dbo.[PredicateParameters] (DataTypeId,Id,PredicateId,Name,Description) Values('6','1','1','Const0','FieldName')
-						Insert Into dbo.[PredicateParameters] (DataTypeId,Id,PredicateId,Name,Description) Values('10','3','1','e','Message')
+						Insert Into dbo.[PredicateParameters] (DataTypeId,Description,Id,Name,PredicateId) Values('6','FieldName','1','Const0','1')
+						Insert Into dbo.[PredicateParameters] (DataTypeId,Description,Id,Name,PredicateId) Values('10','Message','3','e','1')
 					SET IDENTITY_INSERT dbo.[PredicateParameters] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[ExpectedEventPredicateParameters] ON
-						Insert Into dbo.[ExpectedEventPredicateParameters] (EventPredicateId,Id,ExpectedEventId,PredicateParameterId) Values('1','1','1','1')
+						Insert Into dbo.[ExpectedEventPredicateParameters] (EventPredicateId,ExpectedEventId,Id,PredicateParameterId) Values('1','1','1','1')
 					SET IDENTITY_INSERT dbo.[ExpectedEventPredicateParameters] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 						Insert Into dbo.[ExpectedEventConstants] (Id,Value) Values('1','Password')
 ");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[ViewPropertyPresentationPropertyType] ON
-						Insert Into dbo.[ViewPropertyPresentationPropertyType] (Id,ViewPropertyId,PresentationPropertyTypeId) Values('1','1','1')
-						Insert Into dbo.[ViewPropertyPresentationPropertyType] (Id,ViewPropertyId,PresentationPropertyTypeId) Values('2','1','2')
-						Insert Into dbo.[ViewPropertyPresentationPropertyType] (Id,ViewPropertyId,PresentationPropertyTypeId) Values('3','1','3')
-						Insert Into dbo.[ViewPropertyPresentationPropertyType] (Id,ViewPropertyId,PresentationPropertyTypeId) Values('5','2','2')
-						Insert Into dbo.[ViewPropertyPresentationPropertyType] (Id,ViewPropertyId,PresentationPropertyTypeId) Values('6','2','3')
-						Insert Into dbo.[ViewPropertyPresentationPropertyType] (Id,ViewPropertyId,PresentationPropertyTypeId) Values('7','3','2')
-						Insert Into dbo.[ViewPropertyPresentationPropertyType] (Id,ViewPropertyId,PresentationPropertyTypeId) Values('8','3','3')
-						Insert Into dbo.[ViewPropertyPresentationPropertyType] (Id,ViewPropertyId,PresentationPropertyTypeId) Values('9','4','3')
+						Insert Into dbo.[ViewPropertyPresentationPropertyType] (Id,PresentationPropertyTypeId,ViewPropertyId) Values('1','1','1')
+						Insert Into dbo.[ViewPropertyPresentationPropertyType] (Id,PresentationPropertyTypeId,ViewPropertyId) Values('2','2','1')
+						Insert Into dbo.[ViewPropertyPresentationPropertyType] (Id,PresentationPropertyTypeId,ViewPropertyId) Values('3','3','1')
+						Insert Into dbo.[ViewPropertyPresentationPropertyType] (Id,PresentationPropertyTypeId,ViewPropertyId) Values('5','2','2')
+						Insert Into dbo.[ViewPropertyPresentationPropertyType] (Id,PresentationPropertyTypeId,ViewPropertyId) Values('6','3','2')
+						Insert Into dbo.[ViewPropertyPresentationPropertyType] (Id,PresentationPropertyTypeId,ViewPropertyId) Values('9','3','4')
+						Insert Into dbo.[ViewPropertyPresentationPropertyType] (Id,PresentationPropertyTypeId,ViewPropertyId) Values('7','2','3')
+						Insert Into dbo.[ViewPropertyPresentationPropertyType] (Id,PresentationPropertyTypeId,ViewPropertyId) Values('8','3','3')
 					SET IDENTITY_INSERT dbo.[ViewPropertyPresentationPropertyType] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[ViewPropertyValueOptions] ON
-						Insert Into dbo.[ViewPropertyValueOptions] (Id,ViewPropertyId,Value) Values('1','1','Collapsed')
-						Insert Into dbo.[ViewPropertyValueOptions] (Id,ViewPropertyId,Value) Values('2','1','Hidden')
-						Insert Into dbo.[ViewPropertyValueOptions] (Id,ViewPropertyId,Value) Values('3','2','16')
-						Insert Into dbo.[ViewPropertyValueOptions] (Id,ViewPropertyId,Value) Values('4','2','18')
-						Insert Into dbo.[ViewPropertyValueOptions] (Id,ViewPropertyId,Value) Values('5','2','14')
-						Insert Into dbo.[ViewPropertyValueOptions] (Id,ViewPropertyId,Value) Values('6','3','Bold')
-						Insert Into dbo.[ViewPropertyValueOptions] (Id,ViewPropertyId,Value) Values('7','3','Normal')
-						Insert Into dbo.[ViewPropertyValueOptions] (Id,ViewPropertyId,Value) Values('8','1','Visible')
-						Insert Into dbo.[ViewPropertyValueOptions] (Id,ViewPropertyId,Value) Values('10','4','TextBox')
-						Insert Into dbo.[ViewPropertyValueOptions] (Id,ViewPropertyId,Value) Values('11','4','ComboBox')
-						Insert Into dbo.[ViewPropertyValueOptions] (Id,ViewPropertyId,Value) Values('12','4','CheckBox')
-						Insert Into dbo.[ViewPropertyValueOptions] (Id,ViewPropertyId,Value) Values('13','4','DatePicker')
-						Insert Into dbo.[ViewPropertyValueOptions] (Id,ViewPropertyId,Value) Values('14','4','TextBlock')
-						Insert Into dbo.[ViewPropertyValueOptions] (Id,ViewPropertyId,Value) Values('15','4','EntityComboBox')
-						Insert Into dbo.[ViewPropertyValueOptions] (Id,ViewPropertyId,Value) Values('16','4','LookUpTextBlock')
+						Insert Into dbo.[ViewPropertyValueOptions] (Id,Value,ViewPropertyId) Values('2','Hidden','1')
+						Insert Into dbo.[ViewPropertyValueOptions] (Id,Value,ViewPropertyId) Values('3','16','2')
+						Insert Into dbo.[ViewPropertyValueOptions] (Id,Value,ViewPropertyId) Values('1','Collapsed','1')
+						Insert Into dbo.[ViewPropertyValueOptions] (Id,Value,ViewPropertyId) Values('15','EntityComboBox','4')
+						Insert Into dbo.[ViewPropertyValueOptions] (Id,Value,ViewPropertyId) Values('13','DatePicker','4')
+						Insert Into dbo.[ViewPropertyValueOptions] (Id,Value,ViewPropertyId) Values('14','TextBlock','4')
+						Insert Into dbo.[ViewPropertyValueOptions] (Id,Value,ViewPropertyId) Values('16','LookUpTextBlock','4')
+						Insert Into dbo.[ViewPropertyValueOptions] (Id,Value,ViewPropertyId) Values('4','18','2')
+						Insert Into dbo.[ViewPropertyValueOptions] (Id,Value,ViewPropertyId) Values('5','14','2')
+						Insert Into dbo.[ViewPropertyValueOptions] (Id,Value,ViewPropertyId) Values('6','Bold','3')
+						Insert Into dbo.[ViewPropertyValueOptions] (Id,Value,ViewPropertyId) Values('7','Normal','3')
+						Insert Into dbo.[ViewPropertyValueOptions] (Id,Value,ViewPropertyId) Values('8','Visible','1')
+						Insert Into dbo.[ViewPropertyValueOptions] (Id,Value,ViewPropertyId) Values('10','TextBox','4')
+						Insert Into dbo.[ViewPropertyValueOptions] (Id,Value,ViewPropertyId) Values('11','ComboBox','4')
+						Insert Into dbo.[ViewPropertyValueOptions] (Id,Value,ViewPropertyId) Values('12','CheckBox','4')
 					SET IDENTITY_INSERT dbo.[ViewPropertyValueOptions] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[ViewModelPropertyPresentationType] ON
-						Insert Into dbo.[ViewModelPropertyPresentationType] (PresentationThemeId,Id,ViewPropertyPresentationPropertyTypeId,ValueOptionId,ViewTypeId,ViewModelTypeId) Values('1','4','8','6','1','3')
+						Insert Into dbo.[ViewModelPropertyPresentationType] (PresentationThemeId,Id,ValueOptionId,ViewModelTypeId,ViewPropertyPresentationPropertyTypeId,ViewTypeId) Values('1','4','6','3','8','1')
 					SET IDENTITY_INSERT dbo.[ViewModelPropertyPresentationType] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[ViewPropertyTheme] ON
-						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ViewPropertyPresentationPropertyTypeId,ValueOptionId,ViewTypeId) Values('1','1','1','8','1')
-						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ViewPropertyPresentationPropertyTypeId,ValueOptionId,ViewTypeId) Values('1','2','2','8','1')
-						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ViewPropertyPresentationPropertyTypeId,ValueOptionId,ViewTypeId) Values('1','3','3','8','1')
-						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ViewPropertyPresentationPropertyTypeId,ValueOptionId,ViewTypeId) Values('1','4','5','4','1')
-						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ViewPropertyPresentationPropertyTypeId,ValueOptionId,ViewTypeId) Values('1','5','6','4','1')
-						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ViewPropertyPresentationPropertyTypeId,ValueOptionId,ViewTypeId) Values('1','6','7','7','1')
-						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ViewPropertyPresentationPropertyTypeId,ValueOptionId,ViewTypeId) Values('1','7','8','7','1')
-						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ViewPropertyPresentationPropertyTypeId,ValueOptionId,ViewTypeId) Values('1','8','9','14','1')
-						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ViewPropertyPresentationPropertyTypeId,ValueOptionId,ViewTypeId) Values('1','9','1','8','2')
-						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ViewPropertyPresentationPropertyTypeId,ValueOptionId,ViewTypeId) Values('1','10','2','8','2')
-						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ViewPropertyPresentationPropertyTypeId,ValueOptionId,ViewTypeId) Values('1','11','3','8','2')
-						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ViewPropertyPresentationPropertyTypeId,ValueOptionId,ViewTypeId) Values('1','12','5','4','2')
-						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ViewPropertyPresentationPropertyTypeId,ValueOptionId,ViewTypeId) Values('1','13','6','4','2')
-						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ViewPropertyPresentationPropertyTypeId,ValueOptionId,ViewTypeId) Values('1','14','7','7','2')
-						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ViewPropertyPresentationPropertyTypeId,ValueOptionId,ViewTypeId) Values('1','15','8','7','2')
-						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ViewPropertyPresentationPropertyTypeId,ValueOptionId,ViewTypeId) Values('1','16','9','10','2')
+						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ValueOptionId,ViewPropertyPresentationPropertyTypeId,ViewTypeId) Values('1','15','7','8','2')
+						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ValueOptionId,ViewPropertyPresentationPropertyTypeId,ViewTypeId) Values('1','16','10','9','2')
+						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ValueOptionId,ViewPropertyPresentationPropertyTypeId,ViewTypeId) Values('1','14','7','7','2')
+						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ValueOptionId,ViewPropertyPresentationPropertyTypeId,ViewTypeId) Values('1','13','4','6','2')
+						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ValueOptionId,ViewPropertyPresentationPropertyTypeId,ViewTypeId) Values('1','12','4','5','2')
+						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ValueOptionId,ViewPropertyPresentationPropertyTypeId,ViewTypeId) Values('1','11','8','3','2')
+						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ValueOptionId,ViewPropertyPresentationPropertyTypeId,ViewTypeId) Values('1','10','8','2','2')
+						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ValueOptionId,ViewPropertyPresentationPropertyTypeId,ViewTypeId) Values('1','9','8','1','2')
+						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ValueOptionId,ViewPropertyPresentationPropertyTypeId,ViewTypeId) Values('1','8','14','9','1')
+						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ValueOptionId,ViewPropertyPresentationPropertyTypeId,ViewTypeId) Values('1','7','7','8','1')
+						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ValueOptionId,ViewPropertyPresentationPropertyTypeId,ViewTypeId) Values('1','6','7','7','1')
+						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ValueOptionId,ViewPropertyPresentationPropertyTypeId,ViewTypeId) Values('1','5','4','6','1')
+						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ValueOptionId,ViewPropertyPresentationPropertyTypeId,ViewTypeId) Values('1','4','4','5','1')
+						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ValueOptionId,ViewPropertyPresentationPropertyTypeId,ViewTypeId) Values('1','3','8','3','1')
+						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ValueOptionId,ViewPropertyPresentationPropertyTypeId,ViewTypeId) Values('1','1','8','1','1')
+						Insert Into dbo.[ViewPropertyTheme] (PresentationThemeId,Id,ValueOptionId,ViewPropertyPresentationPropertyTypeId,ViewTypeId) Values('1','2','8','2','1')
 					SET IDENTITY_INSERT dbo.[ViewPropertyTheme] OFF");
 		
 			//No test data for StateInfoNotes
@@ -375,9 +395,9 @@ namespace GenSoft.DBContexts
 			//No test data for SourceType
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[TypeArguement] ON
-						Insert Into dbo.[TypeArguement] (TypeId,Id,ParentTypeId,ChildTypeId) Values('53','53','51','52')
-						Insert Into dbo.[TypeArguement] (TypeId,Id,ParentTypeId,ChildTypeId) Values('56','54','55','6')
-						Insert Into dbo.[TypeArguement] (TypeId,Id,ParentTypeId,ChildTypeId) Values('58','56','51','6')
+						Insert Into dbo.[TypeArguement] (ChildTypeId,Id,ParentTypeId,TypeId) Values('52','53','51','53')
+						Insert Into dbo.[TypeArguement] (ChildTypeId,Id,ParentTypeId,TypeId) Values('6','54','55','56')
+						Insert Into dbo.[TypeArguement] (ChildTypeId,Id,ParentTypeId,TypeId) Values('6','56','51','58')
 					SET IDENTITY_INSERT dbo.[TypeArguement] OFF");
 		
 			//No test data for ActionParameterConstants
@@ -385,73 +405,74 @@ namespace GenSoft.DBContexts
 			//No test data for ActionParameterEntityTypeAttributes
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[Attributes] ON
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('1','Id','5')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('2','UserName','6')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('3','Password','6')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('4','AccountId','5')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('5','EntryTime','7')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('6','Memo','6')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('7','PayrollItemId','5')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('8','TradeDate','7')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('9','AccountNumber','6')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('10','AccountTypeId','5')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('11','InstitutionId','5')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('12','Name','6')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('13','EmployeeId','5')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('14','PayeeInstitutionId','5')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('15','CurrentPayrollJobId','5')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('16','Address','6')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('17','PhoneNumber','6')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('18','ShortName','6')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('19','EmailBody','6')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('20','FromEmailAddress','6')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('21','Key','6')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('22','Subject','6')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('23','ToEmailAddress','6')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('24','BranchId','5')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('25','DriversLicence','6')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('26','DriversLicenceClass','6')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('27','EmailAddress','6')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('28','EmploymentStartDate','7')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('29','EntryDateTime','7')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('30','FirstName','6')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('31','LastName','6')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('32','MiddleName','6')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('33','UnionMember','62')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('34','Priority','6')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('35','ChargeTypeId','5')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('36','CreditAccountId','5')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('37','DebitAccountId','5')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('38','EndDate','7')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('39','PayrollJobTypeId','5')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('40','PayrollSetupItemId','5')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('41','RateRounding','6')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('42','StartDate','7')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('43','ParentPayrollItemId','5')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('44','ApplyToTaxableBenefits','62')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('45','IncomeDeduction','62')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('46','IsTaxableBenefit','62')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('47','PayrollJobId','5')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('48','Status','6')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('49','EmailTemplateId','5')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('50','CheckedBy','5')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('51','PaymentDate','7')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('52','PreparedBy','6')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('53','CompanyAccountId','5')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('54','CompanyLineItemDescription','6')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('55','DebitCredit','62')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('56','EmployeeAccountType','6')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('57','PayrollItemAccountId','5')
-						Insert Into dbo.[Attributes] (Id,Name,DataTypeId) Values('58','RecuranceDays','6')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('5','1','Id')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('6','2','UserName')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('6','3','Password')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('5','4','AccountId')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('7','5','EntryTime')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('6','6','Memo')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('5','7','PayrollItemId')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('7','8','TradeDate')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('6','9','AccountNumber')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('5','10','AccountTypeId')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('5','11','InstitutionId')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('6','12','Name')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('5','13','EmployeeId')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('5','14','PayeeInstitutionId')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('5','15','CurrentPayrollJobId')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('6','16','Address')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('6','17','PhoneNumber')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('6','18','ShortName')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('6','19','EmailBody')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('6','20','FromEmailAddress')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('6','21','Key')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('6','22','Subject')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('6','23','ToEmailAddress')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('5','24','BranchId')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('6','25','DriversLicence')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('6','26','DriversLicenceClass')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('6','27','EmailAddress')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('7','28','EmploymentStartDate')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('7','29','EntryDateTime')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('6','30','FirstName')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('6','31','LastName')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('6','32','MiddleName')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('62','33','UnionMember')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('6','34','Priority')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('5','35','ChargeTypeId')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('5','36','CreditAccountId')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('5','37','DebitAccountId')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('7','38','EndDate')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('5','39','PayrollJobTypeId')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('5','40','PayrollSetupItemId')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('6','41','RateRounding')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('7','42','StartDate')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('5','43','ParentPayrollItemId')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('62','44','ApplyToTaxableBenefits')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('62','45','IncomeDeduction')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('62','46','IsTaxableBenefit')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('5','47','PayrollJobId')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('6','48','Status')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('5','49','EmailTemplateId')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('5','50','CheckedBy')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('7','51','PaymentDate')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('6','52','PreparedBy')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('5','53','CompanyAccountId')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('6','54','CompanyLineItemDescription')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('62','55','DebitCredit')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('6','56','EmployeeAccountType')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('5','57','PayrollItemAccountId')
+						Insert Into dbo.[Attributes] (DataTypeId,Id,Name) Values('6','58','RecuranceDays')
 					SET IDENTITY_INSERT dbo.[Attributes] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[Entity] ON
-						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('1','4',cast((select Value from AmoebaDB.dbo.TestValues where Id = 1068038) as varbinary(max)))
+						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('1','4',cast((select Value from AmoebaDB.dbo.TestValues where Id = 1073623) as varbinary(max)))
 					SET IDENTITY_INSERT dbo.[Entity] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[EntityAttribute] ON
-						Insert Into dbo.[EntityAttribute] (AttributeId,Id,EntityId,Value) Values('2','1','1','joe')
-						Insert Into dbo.[EntityAttribute] (AttributeId,Id,EntityId,Value) Values('3','2','1','test')
+						Insert Into dbo.[EntityAttribute] (AttributeId,EntityId,Id,Value) Values('2','1','1','joe')
+						Insert Into dbo.[EntityAttribute] (AttributeId,EntityId,Id,Value) Values('3','1','2','test')
+						Insert Into dbo.[EntityAttribute] (AttributeId,EntityId,Id,Value) Values('1','1','3','1')
 					SET IDENTITY_INSERT dbo.[EntityAttribute] OFF");
 		
 			//No test data for EntityAttributeChange
@@ -466,8 +487,9 @@ namespace GenSoft.DBContexts
 			//No test data for EntityName
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[EntityTypeAttributes] ON
-						Insert Into dbo.[EntityTypeAttributes] (Id,EntityTypeId,AttributeId,Priority) Values('1','4','2','1')
-						Insert Into dbo.[EntityTypeAttributes] (Id,EntityTypeId,AttributeId,Priority) Values('2','4','3','2')
+						Insert Into dbo.[EntityTypeAttributes] (Id,AttributeId,EntityTypeId,Priority) Values('1','2','4','1')
+						Insert Into dbo.[EntityTypeAttributes] (Id,AttributeId,EntityTypeId,Priority) Values('2','3','4','2')
+						Insert Into dbo.[EntityTypeAttributes] (Id,AttributeId,EntityTypeId,Priority) Values('3','1','4','0')
 					SET IDENTITY_INSERT dbo.[EntityTypeAttributes] OFF");
 		
 			//No test data for ActionProperties
@@ -564,8 +586,8 @@ namespace GenSoft.DBContexts
 		
 			//No test data for EntityView
 				Instance.Database.ExecuteSqlCommand(@"
-						Insert Into dbo.[ExpectedStateEventInfo] (Id,ExpectedStateEventInfoId) Values('1','2')
-						Insert Into dbo.[ExpectedStateEventInfo] (Id,ExpectedStateEventInfoId) Values('3','4')
+						Insert Into dbo.[ExpectedStateEventInfo] (ExpectedStateEventInfoId,Id) Values('2','1')
+						Insert Into dbo.[ExpectedStateEventInfo] (ExpectedStateEventInfoId,Id) Values('4','3')
 ");
 		
 			//No test data for CalculatedProperties
@@ -575,19 +597,19 @@ namespace GenSoft.DBContexts
 			//No test data for FunctionParameterConstant
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[Functions] ON
-						Insert Into dbo.[Functions] (ReturnDataTypeId,Id,Name,Description,Body) Values('5','1','YearsDateDiff','Calculate Number of Years from Current Date','DateTime.Now.Year - x.Date.Year')
-						Insert Into dbo.[Functions] (ReturnDataTypeId,Id,Name,Description,Body) Values('6','2','StringJoin','Concat with character','string.Join(const0, x)')
-						Insert Into dbo.[Functions] (ReturnDataTypeId,Id,Name,Description,Body) Values('7','3','String2Date','Convert String To Date','DateTime.Parse(x)')
-						Insert Into dbo.[Functions] (ReturnDataTypeId,Id,Name,Description,Body) Values('6','4','GetDynamicEntityProperty','Get Dynamic Entity Property','IDynamicEntity.Properties[param0]')
-						Insert Into dbo.[Functions] (ReturnDataTypeId,Id,Name,Description,Body) Values('56','7','CreateList','Create New List','(IDynamicEntity.Properties[param0].ToString() +"""","""" + IDynamicEntity.Properties[param1].ToString()).Split('','')')
+						Insert Into dbo.[Functions] (ReturnDataTypeId,Body,Description,Id,Name) Values('5','DateTime.Now.Year - x.Date.Year','Calculate Number of Years from Current Date','1','YearsDateDiff')
+						Insert Into dbo.[Functions] (ReturnDataTypeId,Body,Description,Id,Name) Values('6','string.Join(const0, x)','Concat with character','2','StringJoin')
+						Insert Into dbo.[Functions] (ReturnDataTypeId,Body,Description,Id,Name) Values('7','DateTime.Parse(x)','Convert String To Date','3','String2Date')
+						Insert Into dbo.[Functions] (ReturnDataTypeId,Body,Description,Id,Name) Values('6','IDynamicEntity.Properties[param0]','Get Dynamic Entity Property','4','GetDynamicEntityProperty')
+						Insert Into dbo.[Functions] (ReturnDataTypeId,Body,Description,Id,Name) Values('56','(IDynamicEntity.Properties[param0].ToString() +"""","""" + IDynamicEntity.Properties[param1].ToString()).Split('','')','Create New List','7','CreateList')
 					SET IDENTITY_INSERT dbo.[Functions] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[FunctionParameter] ON
-						Insert Into dbo.[FunctionParameter] (Id,FunctionId,Name,DataTypeId) Values('1','4','IDynamicEntity','57')
-						Insert Into dbo.[FunctionParameter] (Id,FunctionId,Name,DataTypeId) Values('2','2','x','56')
-						Insert Into dbo.[FunctionParameter] (Id,FunctionId,Name,DataTypeId) Values('5','1','x','7')
-						Insert Into dbo.[FunctionParameter] (Id,FunctionId,Name,DataTypeId) Values('6','3','x','6')
-						Insert Into dbo.[FunctionParameter] (Id,FunctionId,Name,DataTypeId) Values('11','7','IDynamicEntity','57')
+						Insert Into dbo.[FunctionParameter] (Id,DataTypeId,FunctionId,Name) Values('1','57','4','IDynamicEntity')
+						Insert Into dbo.[FunctionParameter] (Id,DataTypeId,FunctionId,Name) Values('2','56','2','x')
+						Insert Into dbo.[FunctionParameter] (Id,DataTypeId,FunctionId,Name) Values('5','7','1','x')
+						Insert Into dbo.[FunctionParameter] (Id,DataTypeId,FunctionId,Name) Values('11','57','7','IDynamicEntity')
+						Insert Into dbo.[FunctionParameter] (Id,DataTypeId,FunctionId,Name) Values('6','6','3','x')
 					SET IDENTITY_INSERT dbo.[FunctionParameter] OFF");
 		
 			//No test data for CalculatedProperties
@@ -595,12 +617,12 @@ namespace GenSoft.DBContexts
 			//No test data for CalculatedProperties
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[FunctionSetFunctions] ON
-						Insert Into dbo.[FunctionSetFunctions] (FunctionId,Id,FunctionSetId) Values('4','2','1')
-						Insert Into dbo.[FunctionSetFunctions] (FunctionId,Id,FunctionSetId) Values('3','3','1')
-						Insert Into dbo.[FunctionSetFunctions] (FunctionId,Id,FunctionSetId) Values('1','4','1')
-						Insert Into dbo.[FunctionSetFunctions] (FunctionId,Id,FunctionSetId) Values('7','6','2')
-						Insert Into dbo.[FunctionSetFunctions] (FunctionId,Id,FunctionSetId) Values('2','8','2')
-						Insert Into dbo.[FunctionSetFunctions] (FunctionId,Id,FunctionSetId) Values('4','9','3')
+						Insert Into dbo.[FunctionSetFunctions] (FunctionId,FunctionSetId,Id) Values('4','1','2')
+						Insert Into dbo.[FunctionSetFunctions] (FunctionId,FunctionSetId,Id) Values('3','1','3')
+						Insert Into dbo.[FunctionSetFunctions] (FunctionId,FunctionSetId,Id) Values('1','1','4')
+						Insert Into dbo.[FunctionSetFunctions] (FunctionId,FunctionSetId,Id) Values('7','2','6')
+						Insert Into dbo.[FunctionSetFunctions] (FunctionId,FunctionSetId,Id) Values('4','3','9')
+						Insert Into dbo.[FunctionSetFunctions] (FunctionId,FunctionSetId,Id) Values('2','2','8')
 					SET IDENTITY_INSERT dbo.[FunctionSetFunctions] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[Machine] ON
@@ -608,10 +630,45 @@ namespace GenSoft.DBContexts
 					SET IDENTITY_INSERT dbo.[Machine] OFF");
 		
 			//No test data for ParentEntity
+				Instance.Database.ExecuteSqlCommand(@"
+					SET IDENTITY_INSERT dbo.[ProcessActionComplexParameterReferenceTypes] ON
+						Insert Into dbo.[ProcessActionComplexParameterReferenceTypes] (ProcessActionCPActionId,Id,ReferenceTypeId) Values('1','13','4')
+						Insert Into dbo.[ProcessActionComplexParameterReferenceTypes] (ProcessActionCPActionId,Id,ReferenceTypeId) Values('1','14','11')
+						Insert Into dbo.[ProcessActionComplexParameterReferenceTypes] (ProcessActionCPActionId,Id,ReferenceTypeId) Values('1','12','3')
+						Insert Into dbo.[ProcessActionComplexParameterReferenceTypes] (ProcessActionCPActionId,Id,ReferenceTypeId) Values('1','11','5')
+						Insert Into dbo.[ProcessActionComplexParameterReferenceTypes] (ProcessActionCPActionId,Id,ReferenceTypeId) Values('1','10','10')
+						Insert Into dbo.[ProcessActionComplexParameterReferenceTypes] (ProcessActionCPActionId,Id,ReferenceTypeId) Values('1','9','9')
+						Insert Into dbo.[ProcessActionComplexParameterReferenceTypes] (ProcessActionCPActionId,Id,ReferenceTypeId) Values('1','8','8')
+						Insert Into dbo.[ProcessActionComplexParameterReferenceTypes] (ProcessActionCPActionId,Id,ReferenceTypeId) Values('1','7','7')
+						Insert Into dbo.[ProcessActionComplexParameterReferenceTypes] (ProcessActionCPActionId,Id,ReferenceTypeId) Values('3','6','6')
+						Insert Into dbo.[ProcessActionComplexParameterReferenceTypes] (ProcessActionCPActionId,Id,ReferenceTypeId) Values('3','5','5')
+						Insert Into dbo.[ProcessActionComplexParameterReferenceTypes] (ProcessActionCPActionId,Id,ReferenceTypeId) Values('3','4','4')
+						Insert Into dbo.[ProcessActionComplexParameterReferenceTypes] (ProcessActionCPActionId,Id,ReferenceTypeId) Values('3','3','3')
+						Insert Into dbo.[ProcessActionComplexParameterReferenceTypes] (ProcessActionCPActionId,Id,ReferenceTypeId) Values('3','2','2')
+						Insert Into dbo.[ProcessActionComplexParameterReferenceTypes] (ProcessActionCPActionId,Id,ReferenceTypeId) Values('3','1','1')
+					SET IDENTITY_INSERT dbo.[ProcessActionComplexParameterReferenceTypes] OFF");
 		
 			//No test data for ProcessStepParentEntity
 		
 			//No test data for ProcessStepRelationship
+				Instance.Database.ExecuteSqlCommand(@"
+						Insert Into dbo.[ReferenceTypeName] (Id,Name) Values('6','Events')
+						Insert Into dbo.[ReferenceTypeName] (Id,Name) Values('10','Commands')
+");
+				Instance.Database.ExecuteSqlCommand(@"
+					SET IDENTITY_INSERT dbo.[ReferenceTypes] ON
+						Insert Into dbo.[ReferenceTypes] (DataTypId,Id) Values('14','1')
+						Insert Into dbo.[ReferenceTypes] (DataTypId,Id) Values('15','2')
+						Insert Into dbo.[ReferenceTypes] (DataTypId,Id) Values('16','3')
+						Insert Into dbo.[ReferenceTypes] (DataTypId,Id) Values('17','4')
+						Insert Into dbo.[ReferenceTypes] (DataTypId,Id) Values('57','5')
+						Insert Into dbo.[ReferenceTypes] (DataTypId,Id) Values('18','6')
+						Insert Into dbo.[ReferenceTypes] (DataTypId,Id) Values('19','7')
+						Insert Into dbo.[ReferenceTypes] (DataTypId,Id) Values('20','8')
+						Insert Into dbo.[ReferenceTypes] (DataTypId,Id) Values('21','9')
+						Insert Into dbo.[ReferenceTypes] (DataTypId,Id) Values('22','10')
+						Insert Into dbo.[ReferenceTypes] (DataTypId,Id) Values('23','11')
+					SET IDENTITY_INSERT dbo.[ReferenceTypes] OFF");
 		
 			//No test data for SourceType
 		
