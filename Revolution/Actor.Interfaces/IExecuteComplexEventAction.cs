@@ -11,6 +11,6 @@ namespace Actor.Interfaces
     public interface IExecuteComplexEventAction : IProcessSystemMessage
     {
         IProcessAction Action { get; }
-        IComplexEventParameters ComplexEventParameters { get; }
+        IDynamicComplexEventParameters ComplexEventParameters { get; }
     }
 }

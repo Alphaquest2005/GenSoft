@@ -42,6 +42,8 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using SystemInterfaces;
 using Common.Annotations;
+using Common.DataEntites;
+using DynamicObject = System.Dynamic.DynamicObject;
 using ICollection = System.Collections.ICollection;
 
 namespace Common.Dynamic
@@ -530,6 +532,8 @@ namespace Common.Dynamic
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        Dictionary<string, object> IExpando.Properties => Properties;
+        Dictionary<string, IDynamicValue> IExpando.Properties => Properties.ToDictionary(x => x.Key, z => new DynamicValue(z.Value.GetType(), z.Value) as IDynamicValue);
     }
+
+
 }

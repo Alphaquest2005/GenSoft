@@ -27,6 +27,7 @@ using Microsoft.EntityFrameworkCore;
 using MoreLinq;
 using Process.WorkFlow;
 using RevolutionData;
+using RevolutionData.Context;
 using RevolutionEntities.Process;
 using RevolutionEntities.ViewModels;
 using Utilities;
@@ -41,6 +42,7 @@ using ISystemProcess = SystemInterfaces.ISystemProcess;
 using IUser = SystemInterfaces.IUser;
 using Process = System.Diagnostics.Process;
 using ProcessAction = GenSoft.Entities.ProcessAction;
+using StateCommandInfo = RevolutionEntities.Process.StateCommandInfo;
 using StateEventInfo = RevolutionEntities.Process.StateEventInfo;
 using StateInfo = RevolutionEntities.Process.StateInfo;
 using SystemProcess = RevolutionEntities.Process.SystemProcess;
@@ -57,7 +59,7 @@ namespace DataServices.Actors
 
         public static Dictionary<string, ComplexEventAction> ComplexEventActions { get; } = new Dictionary<string, ComplexEventAction>();
 
-        public static Dictionary<string, Func<IComplexEventParameters, Task<IProcessSystemMessage>>> ProcessActions = new Dictionary<string, Func<IComplexEventParameters, Task<IProcessSystemMessage>>>();
+        public static Dictionary<string, Func<IDynamicComplexEventParameters, Task<IProcessSystemMessage>>> ProcessActions = new Dictionary<string, Func<IDynamicComplexEventParameters, Task<IProcessSystemMessage>>>();
         public static Dictionary<string, StateCommand> StateCommands { get; } = new Dictionary<string, StateCommand>();
         public static Dictionary<string, StateEvent> StateEvents { get; } = new Dictionary<string, StateEvent>();
 
@@ -188,7 +190,7 @@ namespace DataServices.Actors
 
         private IProcessExpectedEvent CreateProcessExpectedEvent(int processId, ComplexEventActionExpectedEvents ce, EntityType entityType)
         {
-            var eventType = GetTypeByName(ce.ExpectedEvents.EventType.Type.Name).FirstOrDefault();
+            var eventType = TypeNameExtensions.GetTypeByName(ce.ExpectedEvents.EventType.Type.Name).FirstOrDefault();
             var res = typeof(DomainProcessSupervisor).GetMethod("ProcessExpectedEvent").MakeGenericMethod(eventType)
                 .Invoke(null, new object[] {processId, ce, entityType});
             return res as IProcessExpectedEvent;
@@ -234,7 +236,7 @@ namespace DataServices.Actors
                 var parameters = predicateParameters.Where(x => !x.Name.Contains("Const"));
                 var argType = parameters.Select(x => CreateTypesFromDbType(x.DataTypeId)).ToList();
                 argType.Add(returnType);
-                var funcType = GetTypeByName($"Func`{argType.Count}").First(x => x.IsGenericTypeDefinition == true);
+                var funcType = TypeNameExtensions.GetTypeByName($"Func`{argType.Count}").First(x => x.IsGenericTypeDefinition == true);
                 var expType = funcType.MakeGenericType(argType.ToArray());
                 var exp = typeof(Interpreter).GetMethod("ParseAsDelegate").MakeGenericMethod(expType)
                     .Invoke(interpreter, new object[] { body, parameters.Select(x => x.Name).ToArray() });
@@ -405,12 +407,12 @@ namespace DataServices.Actors
                 new RevolutionEntities.Process.SourceType(typeof(IComplexEventService)));
         }
 
-        private Func<IComplexEventParameters, IStateCommandInfo> CreateComplexEventParameterStateCommand(int processId, ProcessActionComplexParameterAction stateCommand)
+        private Func<IDynamicComplexEventParameters, IStateCommandInfo> CreateComplexEventParameterStateCommand(int processId, ProcessActionComplexParameterAction stateCommand)
         {
             throw new NotImplementedException();
         }
 
-        private Func<IComplexEventParameters, Task<IProcessSystemMessage>> CreateComplexEventParametersAction(
+        private Func<IDynamicComplexEventParameters, Task<IProcessSystemMessage>> CreateComplexEventParametersAction(
             ProcessActionComplexParameterAction cpAction)
         {
             try
@@ -421,11 +423,11 @@ namespace DataServices.Actors
                 {
                     if (r.ReferenceTypes.ReferenceTypeName != null)
                     {
-                        interpreter.Reference(new ReferenceType(r.ReferenceTypes.ReferenceTypeName.Name, GetTypeByName(r.ReferenceTypes.DataType.Type.Name)[0]));
+                        interpreter.Reference(new ReferenceType(r.ReferenceTypes.ReferenceTypeName.Name, TypeNameExtensions.GetTypeByName(r.ReferenceTypes.DataType.Type.Name)[0]));
                     }
                     else
                     {
-                        interpreter.Reference(GetTypeByName(r.ReferenceTypes.DataType.Type.Name)[0]);
+                        interpreter.Reference(TypeNameExtensions.GetTypeByName(r.ReferenceTypes.DataType.Type.Name)[0]);
                     }
                 }
 
@@ -445,9 +447,14 @@ namespace DataServices.Actors
                 //new StateCommandInfo(cp.Actor.Process.Id, Commands.UpdateState),
                 //cp.Actor.Process, cp.Actor.Source)";
 
+                //IProcessSystemMessage res
+                //        (IDynamicComplexEventParameters cp)
+                //            => new UpdateProcessStateEntity(
+                //        new ProcessStateEntity(cp.Actor.Process, (IDynamicEntity)cp.Messages["IEntityWithChangesFound-SignIn"].Properties["Entity"].Value,
+                //            new StateInfo(cp.Actor.Process.Id, "UserValidated", "User: " + ((IDynamicEntity)cp.Messages["IEntityWithChangesFound-SignIn"].Properties["Entity"].Value).Properties["UserName"] + " Validated", "User Validated")),
+                //        new StateCommandInfo(cp.Actor.Process.Id, RevolutionData.Context.Process.Commands.UpdateState), cp.Actor.Process, cp.Actor.Source);
+                 var res = interpreter.ParseAsDelegate<Func<IDynamicComplexEventParameters, IProcessSystemMessage>>(cpAction.Body, cpAction.ParameterName);
 
-                var res =(Func<IComplexEventParameters, IProcessSystemMessage>) interpreter.ParseAsDelegate<Func<IDynamicComplexEventParameters, IProcessSystemMessage>>(cpAction.Body, cpAction.ParameterName).Convert(typeof(IComplexEventParameters));
-                
                 return async cp => await Task.Run(() => res(cp));
             }
             catch (Exception e)
@@ -599,7 +606,7 @@ namespace DataServices.Actors
                 var parameters = FunctionParameter;
                 var argType = parameters.Select(x => CreateTypesFromDbType(x.DataTypeId)).ToList();
                 argType.Add(returnType);
-                var funcType = GetTypeByName($"Func`{argType.Count}")
+                var funcType = TypeNameExtensions.GetTypeByName($"Func`{argType.Count}")
                     .First(x => x.IsGenericTypeDefinition == true);
                 var expType = funcType.MakeGenericType(argType.ToArray());
                 var exp = typeof(Interpreter).GetMethod("ParseAsDelegate").MakeGenericMethod(expType)
@@ -670,7 +677,7 @@ namespace DataServices.Actors
                 {
 
 
-                    var res = GetTypeByName(dataType.Type.Name);
+                    var res = TypeNameExtensions.GetTypeByName(dataType.Type.Name);
                     if (res == null) Debugger.Break();
                     DBTypes.Add(dataTypeId, res[0]);
                     return res[0];
@@ -707,18 +714,7 @@ namespace DataServices.Actors
             }
         }
 
-        public static Type[] GetTypeByName(string className)
-        {
-            var returnVal = new List<Type>();
 
-            foreach (var a in AppDomain.CurrentDomain.GetAssemblies())
-            {
-                var assemblyTypes = a.GetTypes();
-                returnVal.AddRange(assemblyTypes.Where(t => t.Name.ToLower() == className.ToLower() || t.FullName.ToLower() == className.ToLower()));//|| t.FullName.ToLower().Contains(className.ToLower()) 
-            }
-            
-            return returnVal.ToArray();
-        }
 
 
         public static List<IViewModelInfo> GetDBViewInfos(int mainEntityId, bool condensed, int processId)

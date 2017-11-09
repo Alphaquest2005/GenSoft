@@ -99,16 +99,16 @@ namespace GenSoft.DBContexts
 						Insert Into dbo.[StateInfo] (Id,Name,Status) Values('1','PublishMessage','Publish Message')
 						Insert Into dbo.[StateInfo] (Id,Name,Status) Values('2','DomainEventPublished','Domain Event Published')
 						Insert Into dbo.[StateInfo] (Id,Name,Status) Values('3','UpdateState','Update State')
-						Insert Into dbo.[StateInfo] (Id,Name,Status) Values('6','GetEntity','Get Entity')
 						Insert Into dbo.[StateInfo] (Id,Name,Status) Values('4','StateUpdated','State Updated')
 						Insert Into dbo.[StateInfo] (Id,Name,Status) Values('5','EntityFound','Entity Found')
+						Insert Into dbo.[StateInfo] (Id,Name,Status) Values('6','GetEntity','Get Entity')
 					SET IDENTITY_INSERT dbo.[StateInfo] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[Type] ON
 						Insert Into dbo.[Type] (Id,Name) Values('5','int32')
-						Insert Into dbo.[Type] (Id,Name) Values('4','SignIn')
 						Insert Into dbo.[Type] (Id,Name) Values('6','string')
 						Insert Into dbo.[Type] (Id,Name) Values('7','DateTime')
+						Insert Into dbo.[Type] (Id,Name) Values('4','SignIn')
 						Insert Into dbo.[Type] (Id,Name) Values('10','IEntityWithChangesFound')
 						Insert Into dbo.[Type] (Id,Name) Values('11','IProcessStateMessage')
 						Insert Into dbo.[Type] (Id,Name) Values('12','IDomainMessage')
@@ -123,6 +123,8 @@ namespace GenSoft.DBContexts
 						Insert Into dbo.[Type] (Id,Name) Values('21','RevolutionEntities.Process.StateInfo')
 						Insert Into dbo.[Type] (Id,Name) Values('22','RevolutionData.Context.Process+Commands')
 						Insert Into dbo.[Type] (Id,Name) Values('23','RevolutionEntities.Process.StateCommandInfo')
+						Insert Into dbo.[Type] (Id,Name) Values('24','IDynamicObject')
+						Insert Into dbo.[Type] (Id,Name) Values('25','IDynamicValue')
 						Insert Into dbo.[Type] (Id,Name) Values('50','Func`2')
 						Insert Into dbo.[Type] (Id,Name) Values('51','List`1')
 						Insert Into dbo.[Type] (Id,Name) Values('52','Object')
@@ -182,8 +184,9 @@ namespace GenSoft.DBContexts
 						Insert Into dbo.[ComplexEventActionProcessActions] (ComplexEventActionId,ExpectedEventTypeId,Id,ProcessActionId) Values('1','12','2','3')
 					SET IDENTITY_INSERT dbo.[ComplexEventActionProcessActions] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
-						Insert Into dbo.[ProcessActionComplexParameterAction] (Id,Body,ParameterName) Values('3','new DomainMessage(""UserValidated"",cp.Messages[""ValidatedUser""].Properties[""Entity""] as IDynamicEntity, new StateEventInfo(5, Events.DomainEventPublished), cp.Actor.Process, cp.Actor.Source)','cp')
-						Insert Into dbo.[ProcessActionComplexParameterAction] (Id,Body,ParameterName) Values('1','new UpdateProcessStateEntity(new ProcessStateEntity(cp.Actor.Process, cp.Messages[""ValidatedUser""].Properties[""Entity""] as IDynamicEntity,new StateInfo(cp.Actor.Process.Id, ""UserValidated"",""User: "" + (cp.Messages[""ValidatedUser""].Properties[""Entity""] as IDynamicEntity).Properties[""Usersignin""] + "" Validated"", ""User Validated"")),new StateCommandInfo(cp.Actor.Process.Id, Commands.UpdateState),cp.Actor.Process, cp.Actor.Source)','cp')
+						Insert Into dbo.[ProcessActionComplexParameterAction] (Id,Body,ParameterName) Values('3','new DomainMessage(""UserValidated"", (IDynamicEntity)cp.Messages[""IEntityWithChangesFound-SignIn""].Properties[""Entity""].Value, new StateEventInfo(cp.Actor.Process.Id, Events.DomainEventPublished), cp.Actor.Process, cp.Actor.Source)','cp')
+						Insert Into dbo.[ProcessActionComplexParameterAction] (Id,Body,ParameterName) Values('1','new UpdateProcessStateEntity(new ProcessStateEntity(cp.Actor.Process, (IDynamicEntity)cp.Messages[""IEntityWithChangesFound-SignIn""].Properties[""Entity""].Value, new StateInfo(cp.Actor.Process.Id, ""UserValidated"", ""User: "" + ((IDynamicEntity)cp.Messages[""IEntityWithChangesFound-SignIn""].Properties[""Entity""].Value).Properties[""UserName""] + "" Validated"", ""User Validated"")),
+ new StateCommandInfo(cp.Actor.Process.Id, Commands.UpdateState), cp.Actor.Process, cp.Actor.Source)','cp')
 ");
 				Instance.Database.ExecuteSqlCommand(@"
 						Insert Into dbo.[StateCommandInfo] (Id) Values('1')
@@ -191,14 +194,14 @@ namespace GenSoft.DBContexts
 						Insert Into dbo.[StateCommandInfo] (Id) Values('6')
 ");
 				Instance.Database.ExecuteSqlCommand(@"
-						Insert Into dbo.[ProcessActionStateCommandInfo] (Id,StateComandInfoId) Values('1','3')
 						Insert Into dbo.[ProcessActionStateCommandInfo] (Id,StateComandInfoId) Values('3','1')
+						Insert Into dbo.[ProcessActionStateCommandInfo] (Id,StateComandInfoId) Values('1','3')
 ");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[SystemProcess] ON
+						Insert Into dbo.[SystemProcess] (UserId,Description,Id,Name,ParentProcessId,Symbol) Values('0','Process Branch Payroll','2','Branch Payroll','3','BP')
 						Insert Into dbo.[SystemProcess] (UserId,Description,Id,Name,ParentProcessId,Symbol) Values('0','Sign In','4','Sign In','1','SignIn')
 						Insert Into dbo.[SystemProcess] (UserId,Description,Id,Name,ParentProcessId,Symbol) Values('0','Prepare system for Intial Use','1','Starting System','0','Start')
-						Insert Into dbo.[SystemProcess] (UserId,Description,Id,Name,ParentProcessId,Symbol) Values('0','Process Branch Payroll','2','Branch Payroll','3','BP')
 					SET IDENTITY_INSERT dbo.[SystemProcess] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 						Insert Into dbo.[DomainProcess] (ApplicationId,Id,Priority) Values('2','2','2')
@@ -311,6 +314,8 @@ namespace GenSoft.DBContexts
 						Insert Into dbo.[DataType] (Id) Values('21')
 						Insert Into dbo.[DataType] (Id) Values('22')
 						Insert Into dbo.[DataType] (Id) Values('23')
+						Insert Into dbo.[DataType] (Id) Values('24')
+						Insert Into dbo.[DataType] (Id) Values('25')
 						Insert Into dbo.[DataType] (Id) Values('50')
 						Insert Into dbo.[DataType] (Id) Values('51')
 						Insert Into dbo.[DataType] (Id) Values('52')
@@ -466,7 +471,7 @@ namespace GenSoft.DBContexts
 					SET IDENTITY_INSERT dbo.[Attributes] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[Entity] ON
-						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('1','4',cast((select Value from AmoebaDB.dbo.TestValues where Id = 1073623) as varbinary(max)))
+						Insert Into dbo.[Entity] (Id,EntityTypeId,EntryDateTimeStamp) Values('1','4',cast((select Value from AmoebaDB.dbo.TestValues where Id = 1079444) as varbinary(max)))
 					SET IDENTITY_INSERT dbo.[Entity] OFF");
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[EntityAttribute] ON
@@ -632,8 +637,12 @@ namespace GenSoft.DBContexts
 			//No test data for ParentEntity
 				Instance.Database.ExecuteSqlCommand(@"
 					SET IDENTITY_INSERT dbo.[ProcessActionComplexParameterReferenceTypes] ON
-						Insert Into dbo.[ProcessActionComplexParameterReferenceTypes] (ProcessActionCPActionId,Id,ReferenceTypeId) Values('1','13','4')
+						Insert Into dbo.[ProcessActionComplexParameterReferenceTypes] (ProcessActionCPActionId,Id,ReferenceTypeId) Values('3','17','13')
+						Insert Into dbo.[ProcessActionComplexParameterReferenceTypes] (ProcessActionCPActionId,Id,ReferenceTypeId) Values('1','18','13')
+						Insert Into dbo.[ProcessActionComplexParameterReferenceTypes] (ProcessActionCPActionId,Id,ReferenceTypeId) Values('1','16','12')
+						Insert Into dbo.[ProcessActionComplexParameterReferenceTypes] (ProcessActionCPActionId,Id,ReferenceTypeId) Values('3','15','12')
 						Insert Into dbo.[ProcessActionComplexParameterReferenceTypes] (ProcessActionCPActionId,Id,ReferenceTypeId) Values('1','14','11')
+						Insert Into dbo.[ProcessActionComplexParameterReferenceTypes] (ProcessActionCPActionId,Id,ReferenceTypeId) Values('1','13','4')
 						Insert Into dbo.[ProcessActionComplexParameterReferenceTypes] (ProcessActionCPActionId,Id,ReferenceTypeId) Values('1','12','3')
 						Insert Into dbo.[ProcessActionComplexParameterReferenceTypes] (ProcessActionCPActionId,Id,ReferenceTypeId) Values('1','11','5')
 						Insert Into dbo.[ProcessActionComplexParameterReferenceTypes] (ProcessActionCPActionId,Id,ReferenceTypeId) Values('1','10','10')
@@ -668,6 +677,8 @@ namespace GenSoft.DBContexts
 						Insert Into dbo.[ReferenceTypes] (DataTypId,Id) Values('21','9')
 						Insert Into dbo.[ReferenceTypes] (DataTypId,Id) Values('22','10')
 						Insert Into dbo.[ReferenceTypes] (DataTypId,Id) Values('23','11')
+						Insert Into dbo.[ReferenceTypes] (DataTypId,Id) Values('24','12')
+						Insert Into dbo.[ReferenceTypes] (DataTypId,Id) Values('25','13')
 					SET IDENTITY_INSERT dbo.[ReferenceTypes] OFF");
 		
 			//No test data for SourceType

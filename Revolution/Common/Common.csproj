@@ -86,6 +86,7 @@
     <Compile Include="DynamicEntityCore.cs" />
     <Compile Include="DynamicEntityType.cs" />
     <Compile Include="DynamicEntityTypeExtenstions.cs" />
+    <Compile Include="DynamicValue.cs" />
     <Compile Include="EntityKeyValuePair.cs" />
     <Compile Include="EntityExtensions.cs" />
     <Compile Include="Expando\Expando.cs" />

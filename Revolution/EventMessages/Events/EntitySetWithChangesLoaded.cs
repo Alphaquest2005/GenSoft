@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SystemInterfaces;
+using Common.DataEntites;
 using CommonMessages;
 
 namespace EventMessages.Events
@@ -16,7 +17,8 @@ namespace EventMessages.Events
         public List<IDynamicEntity> EntitySet { get; }
         public Dictionary<string, object> Changes { get; }
 
-        public EntitySetWithChangesLoaded(IDynamicEntityType entityType,List<IDynamicEntity> entitySet, Dictionary<string, object> changes, IStateEventInfo stateEventInfo, ISystemProcess process, ISystemSource source):base(stateEventInfo,process, source)
+        public EntitySetWithChangesLoaded(IDynamicEntityType entityType,List<IDynamicEntity> entitySet, Dictionary<string, object> changes, IStateEventInfo stateEventInfo, ISystemProcess process, ISystemSource source)
+            :base(new DynamicObject("EntitySetWithChangesLoaded", new Dictionary<string, object>() { { "EntitySet", entitySet }, { "EntityType", entityType }, { "Changes", changes } }), stateEventInfo, process, source)
         {
             EntitySet = entitySet;
             Changes = changes;

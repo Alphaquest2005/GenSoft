@@ -73,3 +73,7 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\obj\x64\Debug\ViewMessag
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\ReactiveProperty.DataAnnotations.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\ReactiveProperty.DataAnnotations.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\obj\x64\Debug\ViewMessages.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\DynamicExpresso.Core.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\DynamicExpresso.Core.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\Common.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\Common.pdb

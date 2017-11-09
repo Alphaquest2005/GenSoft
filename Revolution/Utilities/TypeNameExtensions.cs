@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Utilities
 {
@@ -65,6 +66,19 @@ namespace Utilities
             
             
             return (T)(object)ttype;
+        }
+
+        public static Type[] GetTypeByName(string className)
+        {
+            var returnVal = new List<Type>();
+
+            foreach (var a in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                var assemblyTypes = a.GetTypes();
+                returnVal.AddRange(assemblyTypes.Where(t => t.Name.ToLower() == className.ToLower() || t.FullName.ToLower() == className.ToLower()));//|| t.FullName.ToLower().Contains(className.ToLower()) 
+            }
+
+            return returnVal.ToArray();
         }
     }
 }

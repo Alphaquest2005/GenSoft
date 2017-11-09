@@ -73,11 +73,11 @@ namespace GenSoft.Expressions
                                         CreateProcessInfoFromComplexEventData.Invoke(pd.CommandData),
                                         CreateSourceType.Invoke(pd.ExpectedSourceType));
 
-        public static Func<MessageData, Func<IComplexEventParameters, Task<IProcessSystemMessage>>>
+        public static Func<MessageData, Func<IDynamicComplexEventParameters, Task<IProcessSystemMessage>>>
             CreateActionFromComplexEvent =
                 (cpd) => async cp => await Task.Run(() => CreateEvent.Invoke(cpd, cp));
 
-        public static Func<MessageData, IComplexEventParameters, IProcessSystemMessage> CreateEvent
+        public static Func<MessageData, IDynamicComplexEventParameters, IProcessSystemMessage> CreateEvent
             = (md, cp) =>
             {
                 var type = Type.GetType(md.MessageType);
@@ -86,14 +86,14 @@ namespace GenSoft.Expressions
 
             };
 
-        public static Func<MessageData, IComplexEventParameters, IStateCommandInfo> CreateCommand
+        public static Func<MessageData, IDynamicComplexEventParameters, IStateCommandInfo> CreateCommand
             = (md, cp) => new StateCommandInfo(cp.Actor.Process.Id, new StateCommand(md.Event.Name, md.Event.Status, CreateStateEvent(md.Event)));
 
         public static Func<EventData, IStateEvent> CreateStateEvent = (ed) => new StateEvent(ed.Name, ed.Status, ed.Notes, CreateStateCommand(ed.ExpectedEventCommand));
 
         public static Func<EventData, IStateCommand> CreateStateCommand = (ed) => new StateCommand(ed.Name, ed.Status, CreateStateEvent.Invoke(ed.ExpectedEventCommand));
 
-        public static Func<MessageData, Func<IComplexEventParameters, IStateCommandInfo>>
+        public static Func<MessageData, Func<IDynamicComplexEventParameters, IStateCommandInfo>>
             CreateProcessInfoFromComplexEventData = (md) => cp => CreateCommand.Invoke(md, cp);
 
         public static Func<TypeData, ISourceType> CreateSourceType = (td) => new SourceType(Type.GetType(td.TypeString));

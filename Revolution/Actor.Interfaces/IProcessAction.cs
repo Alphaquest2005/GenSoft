@@ -10,8 +10,8 @@ namespace Actor.Interfaces
     
     public interface IProcessAction
     {
-        Func<IComplexEventParameters, Task<IProcessSystemMessage>> Action { get; set; }
-        Func<IComplexEventParameters, IProcessStateInfo> ProcessInfo { get; set; }
+        Func<IDynamicComplexEventParameters, Task<IProcessSystemMessage>> Action { get; set; }
+        Func<IDynamicComplexEventParameters, IProcessStateInfo> ProcessInfo { get; set; }
         ISourceType ExpectedSourceType { get; set; }
     }
 }

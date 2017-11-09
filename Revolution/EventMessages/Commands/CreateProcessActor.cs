@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using SystemInterfaces;
 using CommonMessages;
 using Actor.Interfaces;
+using Common.DataEntites;
 
 namespace EventMessages.Commands
 {
@@ -16,7 +17,8 @@ namespace EventMessages.Commands
     {
         public CreateProcessActor(){}
 
-        public CreateProcessActor(string actorName, IList<IComplexEventAction> complexEvents, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source):base(processInfo,process, source)
+        public CreateProcessActor(string actorName, IList<IComplexEventAction> complexEvents, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source)
+            :base(new DynamicObject("CreateProcessActor", new Dictionary<string, object>() { { "ActorName", actorName }, { "ComplexEvents", complexEvents } }), processInfo,process, source)
         {
             ComplexEvents = complexEvents;
             ActorName = actorName;

@@ -367,7 +367,7 @@ namespace Process.WorkFlow
                         async cp =>
                         {
                             var key = viewProperty;
-                            var value = cp.Messages["UpdatedEntity"].Entity.Properties[currentProperty];
+                            var value = cp.Messages["UpdatedEntity"].Properties["Entity"].GetValue<IDynamicEntity>().Properties[currentProperty];
                             var changes = new Dictionary<string, dynamic>() { { key, value } };
 
                             return await Task.Run(() => new GetEntitySetWithChanges("ExactMatch",entityType,changes,

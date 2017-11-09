@@ -13,11 +13,13 @@ using Common.Dynamic;
 using EventMessages;
 using EventMessages.Commands;
 using EventMessages.Events;
+using JB.Collections.Reactive;
 using RevolutionEntities;
 using RevolutionEntities.Process;
 using RevolutionEntities.ViewModels;
 using Utilities;
 using ViewModel.Interfaces;
+
 
 namespace RevolutionData
 {
@@ -67,8 +69,8 @@ namespace RevolutionData
         public static IProcessAction DisplayError => new ProcessAction(
                         action: async cp =>
                         {
-                            MessageBox.Show(cp.Messages["ProcessEventError"].Exception.Message + "-----" +
-                                            cp.Messages["ProcessEventError"].Exception.StackTrace);
+                            MessageBox.Show(cp.Messages["ProcessEventError"].Properties["Exception"].GetValue<Exception>().Message + "-----" +
+                                            cp.Messages["ProcessEventError"].Properties["Exception"].GetValue<Exception>().StackTrace);
                             
                             return await Task.Run(() => new FailedMessageData(cp, new StateEventInfo(cp.Actor.Process.Id,Context.Process.Events.Error), cp.Actor.Process,cp.Actor.Source));
                         }, 
@@ -79,8 +81,8 @@ namespace RevolutionData
                         {
                             Application.Current.Dispatcher.Invoke(() =>
                             {
-                                    MessageBox.Show(cp.Messages["ProcessEventError"].Exception.Message + "-----" +
-                                            cp.Messages["ProcessEventError"].Exception.StackTrace);
+                                    MessageBox.Show(cp.Messages["ProcessEventError"].Properties["Exception"].GetValue<Exception>().Message + "-----" +
+                                            cp.Messages["ProcessEventError"].Properties["Exception"].GetValue<Exception>().StackTrace);
                                         Application.Current?.Shutdown();
                             
                             });
@@ -133,8 +135,8 @@ namespace RevolutionData
                     {
                         var ps = new ProcessStateEntity(
                              process: cp.Actor.Process,
-                             entity: cp.Messages["Entity"].Entity,
-                             info: new StateInfo(cp.Actor.Process.Id, new State($"Loaded {cp.Messages["Entity"].Entity.EntityType} Data", $"Loaded{cp.Messages["Entity"].Entity.EntityType}", "")));
+                             entity: cp.Messages["Entity"].Properties["Entity"].GetValue<IDynamicEntity>(),
+                             info: new StateInfo(cp.Actor.Process.Id, new State($"Loaded {cp.Messages["Entity"].Properties["Entity"].GetValue<IDynamicEntity>().EntityType} Data", $"Loaded{cp.Messages["Entity"].Properties["Entity"].GetValue<IDynamicEntity>().EntityType}", "")));
                         return await Task.Run(() => new UpdateProcessStateEntity(
                                     state: ps,
                                     process: cp.Actor.Process,
@@ -155,15 +157,15 @@ namespace RevolutionData
                 action: async cp =>
                     {
                         //v.EntitySet.Value.Add(entityType.DefaultEntity());
-                        cp.Messages["EntityViewSet"].EntitySet.Add(cp.Messages["EntityViewSet"].EntityType.DefaultEntity());
+                        cp.Messages["EntityViewSet"].Properties["EntitySet"].GetValue<List<IDynamicEntity>>().Add(cp.Messages["EntityViewSet"].Properties["EntityType"].GetValue<IDynamicEntityType>().DefaultEntity());
                         var ps = new ProcessStateList(
                              process: cp.Actor.Process,
-                             entity: ((List<IDynamicEntity>)cp.Messages["EntityViewSet"].EntitySet).FirstOrDefault(),
-                             entitySet: cp.Messages["EntityViewSet"].EntitySet,
+                             entity: ((List<IDynamicEntity>)cp.Messages["EntityViewSet"].Properties["EntitySet"].GetValue<List<IDynamicEntity>>()).FirstOrDefault(),
+                             entitySet: cp.Messages["EntityViewSet"].Properties["EntitySet"].GetValue<List<IDynamicEntity>>(),
                              selectedEntities: new List<IDynamicEntity>(),
-                             stateInfo: new StateInfo(cp.Actor.Process.Id, new State($"Loaded {cp.Messages["EntityViewSet"].EntityType} Data", $"Loaded{cp.Messages["EntityViewSet"].EntityType}", "")));
+                             stateInfo: new StateInfo(cp.Actor.Process.Id, new State($"Loaded {cp.Messages["EntityViewSet"].Properties["EntityType"].GetValue<IDynamicEntityType>()} Data", $"Loaded{cp.Messages["EntityViewSet"].Properties["EntityType"].GetValue<IDynamicEntityType>()}", "")));
                         return await Task.Run(() => new UpdateProcessStateList(
-                                    entityType: cp.Messages["EntityViewSet"].EntityType,
+                                    entityType: cp.Messages["EntityViewSet"].Properties["EntityType"].GetValue<IDynamicEntityType>(),
                                     state: ps,
                                     process: cp.Actor.Process,
                                     processInfo: new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),
@@ -184,7 +186,7 @@ namespace RevolutionData
                 {
 
                     var key = property;
-                    var value = cp.Messages["CurrentEntity"].Entity.Properties["Id"];
+                    var value = cp.Messages["CurrentEntity"].Properties["Entity"].GetValue<IDynamicEntity>().Properties["Id"];
                     var changes = new Dictionary<string, dynamic>() { { key, value } };
                     return await Task.Run(() => new GetEntityWithChanges(entityType.DefaultEntity(),changes,
                          new StateCommandInfo(cp.Actor.Process.Id, Context.Entity.Commands.GetEntity),
@@ -208,7 +210,7 @@ namespace RevolutionData
 
                     var key = viewProperty;
                     
-                    var value = cp.Messages["CurrentEntity"].Entity[currentProperty];
+                    var value = cp.Messages["CurrentEntity"].Properties["Entity"].GetValue<IDynamicEntity>().Properties[currentProperty];
                     var changes = new Dictionary<string, dynamic>() { {key,value} };
                     return await Task.Run(() => new GetEntitySetWithChanges("ExactMatch", entityType,changes,
                         new StateCommandInfo(cp.Actor.Process.Id, Context.Entity.Commands.GetEntity),
@@ -229,7 +231,7 @@ namespace RevolutionData
                 action: async cp =>
                 {
                     
-                        var centity = cp.Messages.FirstOrDefault(x => x.Key.Contains("CurrentEntity")).Value?.Entity;
+                        var centity = cp.Messages.FirstOrDefault(x => x.Key.Contains("CurrentEntity")).Value?.Properties["Entity"].GetValue<IDynamicEntity>();
                         var entitytype = centity.EntityType;
                         var ve = entities.FirstOrDefault(x => x.EntityType == entitytype);
                         var key = ve.Property;
@@ -282,9 +284,9 @@ namespace RevolutionData
             public static IProcessAction UserNameFound => new ProcessAction(
                 action: async cp =>
                 {
-                    var ps = new ProcessStateEntity(cp.Actor.Process, cp.Messages["UserNameFound"].Entity,
+                    var ps = new ProcessStateEntity(cp.Actor.Process, cp.Messages["UserNameFound"].Properties["Entity"].GetValue<IDynamicEntity>(),
                         new StateInfo(cp.Actor.Process.Id, "WelcomeUser",
-                            $"Welcome {cp.Messages["UserNameFound"].Entity.Usersignin}", "Please Enter your Password"));
+                            $"Welcome {cp.Messages["UserNameFound"].Properties["Entity"].GetValue<IDynamicEntity>().Properties["UserName"]}", "Please Enter your Password"));
                     return await Task.Run(() => new UpdateProcessStateEntity(ps,
                         new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),
                         cp.Actor.Process, cp.Actor.Source));
@@ -298,11 +300,11 @@ namespace RevolutionData
                 processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),
                 expectedSourceType: new SourceType(typeof(IComplexEventService)));
 
-            private static UpdateProcessStateEntity UpdateProcessStateEntity(IComplexEventParameters cp)
+            private static UpdateProcessStateEntity UpdateProcessStateEntity(IDynamicComplexEventParameters cp)
             {
-                return new UpdateProcessStateEntity(new ProcessStateEntity(cp.Actor.Process, cp.Messages["ValidatedUser"].Entity,
+                return new UpdateProcessStateEntity(new ProcessStateEntity(cp.Actor.Process, cp.Messages["ValidatedUser"].Properties["Entity"].GetValue<IDynamicEntity>(), 
                         new StateInfo(cp.Actor.Process.Id, "UserValidated",
-                            $"User: {cp.Messages["ValidatedUser"].Entity.Usersignin} Validated", "User Validated")),
+                            $"User: {cp.Messages["ValidatedUser"].Properties["Entity"].GetValue<IDynamicEntity>().Properties["UserName"]} Validated", "User Validated")),
                     new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),
                     cp.Actor.Process, cp.Actor.Source);
             }
@@ -310,7 +312,7 @@ namespace RevolutionData
 
             public static IProcessAction UserValidated => new ProcessAction(
                 action: async cp =>
-                         await Task.Run(() => new DomainMessage("UserValidated",cp.Messages["ValidatedUser"].Entity,
+                         await Task.Run(() => new DomainMessage("UserValidated",cp.Messages["ValidatedUser"].Properties["Entity"].GetValue<IDynamicEntity>(),
                             new StateEventInfo(cp.Actor.Process.Id, Context.Domain.Events.DomainEventPublished),
                             cp.Actor.Process, cp.Actor.Source)),
                 processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Domain.Commands.PublishDomainEvent),

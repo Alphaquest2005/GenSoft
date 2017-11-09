@@ -80,7 +80,7 @@ namespace DataServices.Actors
             expectedEvent.Validate(message);
             InMessages.AddOrUpdate(expectedEvent.Key, message, (k, v) => message);
             if (ComplexEventAction.ActionTrigger != ActionTrigger.Any && InMessages.Count() != ComplexEventAction.Events.Count) return;
-            await ExecuteAction(InMessages.ToImmutableDictionary(x => x.Key, x => x.Value as object)).ConfigureAwait(false);
+            await ExecuteAction(InMessages.ToImmutableDictionary(x => x.Key, x => x.Value.Message)).ConfigureAwait(false);
 
             if (ComplexEventAction.ActionTrigger == ActionTrigger.All)
             {
@@ -94,11 +94,11 @@ namespace DataServices.Actors
 
         }
 
-        private async Task ExecuteAction(ImmutableDictionary<string, object> msgs)
+        private async Task ExecuteAction(ImmutableDictionary<string, IDynamicObject> msgs)
         {
             // if (!ComplexEventAction.Events.All(z => z.Raised())) return;
 
-            var inMsg = new ExecuteComplexEventAction(ComplexEventAction.Action, new ComplexEventParameters(this,  msgs), new StateCommandInfo(Process.Id, RevolutionData.Context.Actor.Commands.CreateAction), Process, Source);
+            var inMsg = new ExecuteComplexEventAction(ComplexEventAction.Action, new DynamicComplexEventParameters(this,  msgs), new StateCommandInfo(Process.Id, RevolutionData.Context.Actor.Commands.CreateAction), Process, Source);
 
             Publish(inMsg);
             try

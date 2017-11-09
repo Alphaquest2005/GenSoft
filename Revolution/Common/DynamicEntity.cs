@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using SystemInterfaces;
 using JB.Collections.Reactive;
 
@@ -107,5 +108,17 @@ namespace Common.DataEntites
         //{
         //    return !(a == b);
         //}
+    }
+
+    public class DynamicObject : IDynamicObject
+    {
+        public DynamicObject(string type, Dictionary<string, object> values)
+        {
+            Type = type;
+            Properties = values.ToDictionary(x => x.Key, z => new DynamicValue(z.Value.GetType(), z.Value) as IDynamicValue);
+        }
+
+        public string Type { get; }
+        public Dictionary<string, IDynamicValue> Properties { get; }
     }
 }

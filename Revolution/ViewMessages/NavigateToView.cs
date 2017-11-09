@@ -1,6 +1,8 @@
-﻿using CommonMessages;
+﻿using System.Collections.Generic;
+using CommonMessages;
 using System.ComponentModel.Composition;
 using SystemInterfaces;
+using Common.DataEntites;
 using ViewModel.Interfaces;
 
 namespace ViewMessages
@@ -11,7 +13,8 @@ namespace ViewMessages
     public class NavigateToView: ProcessSystemMessage, INavigateToView
     {
         public NavigateToView() { }
-        public NavigateToView(string view, IProcessStateInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo, process, source)
+        public NavigateToView(string view, IProcessStateInfo processInfo, ISystemProcess process, ISystemSource source) 
+            : base(new DynamicObject("ViewStateLoaded", new Dictionary<string, object>() { { "View", view }}), processInfo, process, source)
         {
             View = view;
         }

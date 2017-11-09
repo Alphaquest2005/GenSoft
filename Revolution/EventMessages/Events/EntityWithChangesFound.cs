@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using SystemInterfaces;
+using Common.DataEntites;
 using CommonMessages;
 
 namespace EventMessages.Events
@@ -9,7 +10,8 @@ namespace EventMessages.Events
     public class EntityWithChangesFound : ProcessSystemMessage, IEntityWithChangesFound 
     {
         public EntityWithChangesFound() { }
-        public EntityWithChangesFound(IDynamicEntity entity, Dictionary<string, dynamic> changes, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
+        public EntityWithChangesFound(IDynamicEntity entity, Dictionary<string, dynamic> changes, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) 
+            : base(new DynamicObject("EntityWithChangesFound", new Dictionary<string, object>() { { "Entity", entity }, { "EntityType", entity.EntityType }, { "Changes", changes } }), processInfo, process, source)
         {
             Entity = entity;
             Changes = changes;

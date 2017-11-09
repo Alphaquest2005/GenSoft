@@ -7,14 +7,15 @@ using SystemInterfaces;
 namespace Actor.Interfaces
 {
     
-    public interface IComplexEventParameters
+    //public interface IDynamicComplexEventParameters
+    //{
+    //    IComplexEventService Actor { get; }
+    //    ImmutableDictionary<string, dynamic> Messages { get; }
+    //}
+
+    public interface IDynamicComplexEventParameters//:IDynamicComplexEventParameters
     {
         IComplexEventService Actor { get; }
-        ImmutableDictionary<string, dynamic> Messages { get; }
-    }
-
-    public interface IDynamicComplexEventParameters:IComplexEventParameters
-    {
-        new ImmutableDictionary<string, IExpando> Messages { get; }
+        ImmutableDictionary<string, IDynamicObject> Messages { get; }
     }
 }

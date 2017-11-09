@@ -1,7 +1,9 @@
-﻿using System.ComponentModel.Composition;
+﻿using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using System.Diagnostics.Contracts;
 using SystemInterfaces;
 using Actor.Interfaces;
+using Common.DataEntites;
 using CommonMessages;
 
 namespace EventMessages.Events
@@ -12,7 +14,7 @@ namespace EventMessages.Events
         public ComplexEventActionTimedOut() { }
         public IComplexEventAction Action { get; }
         
-        public ComplexEventActionTimedOut(IComplexEventAction action, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
+        public ComplexEventActionTimedOut(IComplexEventAction action, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) : base(new DynamicObject("ComplexEventActionTimedOut", new Dictionary<string, object>(){{ "Action", action } }), processInfo,process, source)
         {
             Contract.Requires(action != null);
             Action = action;

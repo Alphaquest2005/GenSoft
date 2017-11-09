@@ -82,7 +82,9 @@
     <Compile Include="Commands\LoadViewModel.cs" />
     <Compile Include="Commands\UnloadViewModel.cs" />
     <Compile Include="Events\ViewModelCreated.cs" />
+    <Compile Include="Events\ViewModelStateChanged.cs" />
     <Compile Include="Events\ViewModelUnloaded.cs" />
+    <Compile Include="Events\ViewModelVisibilityChanged.cs" />
     <Compile Include="Events\ViewRowStateChanged.cs" />
     <Compile Include="NavigateToView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,6 +97,10 @@
     <ProjectReference Include="..\CommonMessages\CommonMessages.csproj">
       <Project>{77007560-89DC-4E1F-9313-AE064A048AD4}</Project>
       <Name>CommonMessages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{CB6D5FBC-0C13-437D-B4F3-A0EC4D5673B3}</Project>
+      <Name>Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\SystemInterfaces\SystemInterfaces.csproj">
       <Project>{e3842263-e081-49ba-a1b4-bbe82b24e2db}</Project>

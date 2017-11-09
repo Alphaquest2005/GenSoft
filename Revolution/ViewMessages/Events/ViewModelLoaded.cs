@@ -1,5 +1,7 @@
-﻿using System.ComponentModel.Composition;
+﻿using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using SystemInterfaces;
+using Common.DataEntites;
 using CommonMessages;
 using ViewModel.Interfaces;
 using ViewModelInterfaces;
@@ -11,7 +13,8 @@ namespace ViewMessages
     {
         //occurs when viewmodel loaded in View
         public ViewModelLoaded() { }
-        public ViewModelLoaded(TLoadingViewModel loadingViewModel, TViewModel viewModel, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
+        public ViewModelLoaded(TLoadingViewModel loadingViewModel, TViewModel viewModel, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) 
+            : base(new DynamicObject("ViewModelCreated", new Dictionary<string, object>() { { "ViewModel", viewModel }, { "LoadingViewModel", loadingViewModel } }), processInfo, process, source)
         {
             LoadingViewModel = loadingViewModel;
             ViewModel = viewModel;
@@ -27,7 +30,8 @@ namespace ViewMessages
     {
         //occurs when viewmodel loaded in View
         public ViewModelIntialized() { }
-        public ViewModelIntialized(IViewModel viewModel, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo, process, source)
+        public ViewModelIntialized(IViewModel viewModel, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) 
+            : base(new DynamicObject("ViewModelIntialized", new Dictionary<string, object>() { { "ViewModel", viewModel } }), processInfo, process, source)
         {
             ViewModel = viewModel;
         }

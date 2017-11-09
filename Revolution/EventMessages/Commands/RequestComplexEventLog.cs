@@ -1,5 +1,7 @@
-﻿using System.ComponentModel.Composition;
+﻿using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using SystemInterfaces;
+using Common.DataEntites;
 using CommonMessages;
 
 namespace EventMessages.Commands
@@ -9,7 +11,7 @@ namespace EventMessages.Commands
     public class RequestComplexEventLog : ProcessSystemMessage, IRequestComplexEventLog
     {
         public RequestComplexEventLog() { }
-        public RequestComplexEventLog(IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
+        public RequestComplexEventLog(IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(new DynamicObject("RequestComplexEventLog", new Dictionary<string, object>()), processInfo,process, source)
         {
         }
     }

@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using SystemInterfaces;
+using Common.DataEntites;
 using CommonMessages;
 
 namespace EventMessages.Events
@@ -8,7 +10,8 @@ namespace EventMessages.Events
     public class UpdateProcessStateList : ProcessSystemMessage, IUpdateProcessStateList
     {
         public UpdateProcessStateList() { }
-        public UpdateProcessStateList(IDynamicEntityType entityType,IProcessStateList state, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo, process, source)
+        public UpdateProcessStateList(IDynamicEntityType entityType,IProcessStateList state, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) 
+            : base(new DynamicObject("UpdateProcessStateList", new Dictionary<string, object>() { { "State", state }, { "EntityType", entityType}}), processInfo, process, source)
         {
             State = state;
             EntityType = entityType;

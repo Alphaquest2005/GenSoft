@@ -3,6 +3,7 @@ using System.ComponentModel.Composition;
 using SystemInterfaces;
 using CommonMessages;
 using System.Diagnostics.Contracts;
+using Common.DataEntites;
 
 namespace EventMessages.Events
 {
@@ -10,7 +11,8 @@ namespace EventMessages.Events
     public class EntityWithChangesUpdated: ProcessSystemMessage, IEntityWithChangesUpdated
     {
         public EntityWithChangesUpdated() { }
-        public EntityWithChangesUpdated(IDynamicEntityCore entity, Dictionary<string, dynamic> changes, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo, process, source)
+        public EntityWithChangesUpdated(IDynamicEntityCore entity, Dictionary<string, dynamic> changes, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) 
+            : base(new DynamicObject("EntityWithChangesUpdated", new Dictionary<string, object>() { { "Entity", entity }, { "EntityType", entity.EntityType }, { "Changes", changes } }), processInfo, process, source)
         {
             Contract.Requires(entity != null);
             Entity = entity;

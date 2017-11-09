@@ -2,6 +2,7 @@
 using System.ComponentModel.Composition;
 using SystemInterfaces;
 using Actor.Interfaces;
+using Common.DataEntites;
 using CommonMessages;
 using GenSoft.Interfaces;
 using ViewModel.Interfaces;
@@ -23,7 +24,7 @@ namespace EventMessages.Commands
         }
        
 
-        public LoadDomainProcess(IDomainProcess domainProcess, List<IComplexEventAction> complexEvents, List<IViewModelInfo> viewModelInfos, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo, process, source)
+        public LoadDomainProcess(IDomainProcess domainProcess, List<IComplexEventAction> complexEvents, List<IViewModelInfo> viewModelInfos, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(new DynamicObject("LoadDomainProcess", new Dictionary<string, object>() { { "DomainProcess", domainProcess }, { "ComplexEvents", complexEvents }, { "ViewModelInfos", viewModelInfos } }), processInfo, process, source)
         {
             DomainProcess = domainProcess;
             ComplexEvents = complexEvents;

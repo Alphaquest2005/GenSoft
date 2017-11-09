@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SystemInterfaces;
+using Common.DataEntites;
 using CommonMessages;
 
 namespace EventMessages.Events
@@ -14,24 +15,10 @@ namespace EventMessages.Events
     {
         public CurrentEntityChanged() { }
         public IDynamicEntity Entity { get; }
-        public CurrentEntityChanged(IDynamicEntity entity, IProcessStateInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo, process, source)
+        public CurrentEntityChanged(IDynamicEntity entity, IProcessStateInfo processInfo, ISystemProcess process, ISystemSource source) 
+            : base(new DynamicObject("CurrentEntityChanged", new Dictionary<string, object>() { { "Entity", entity }, { "EntityType", entity.EntityType } }), processInfo, process, source)
         {
             Entity = entity;
-        }
-
-        public IDynamicEntityType EntityType => Entity?.EntityType;
-    }
-
-    [Export(typeof(IDomainMessage))]
-    public class DomainMessage : ProcessSystemMessage, IDomainMessage
-    {
-        public DomainMessage() { }
-        public string Type { get; }
-        public IDynamicEntity Entity { get; }
-        public DomainMessage(string type,IDynamicEntity entity, IProcessStateInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo, process, source)
-        {
-            Entity = entity;
-            Type = type;
         }
 
         public IDynamicEntityType EntityType => Entity?.EntityType;

@@ -1,6 +1,7 @@
-﻿using System.ComponentModel.Composition;
-using System.Windows;
+﻿using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using SystemInterfaces;
+using Common.DataEntites;
 using CommonMessages;
 using ViewModel.Interfaces;
 
@@ -12,37 +13,11 @@ namespace ViewMessages
         public IViewModel ViewModel { get; }
         public RowState RowState { get; }
         public ViewRowStateChanged() { }
-        public ViewRowStateChanged(IViewModel viewModel, RowState rowState, IProcessStateInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo, process, source)
+        public ViewRowStateChanged(IViewModel viewModel, RowState rowState, IProcessStateInfo processInfo, ISystemProcess process, ISystemSource source) 
+            : base(new DynamicObject("ViewRowStateChanged", new Dictionary<string, object>() { { "ViewModel", viewModel }, { "RowState", rowState } }), processInfo, process, source)
         {
             ViewModel = viewModel;
             RowState = rowState;
-        }
-    }
-
-    [Export(typeof(IViewModelVisibilityChanged))]
-    public class ViewModelVisibilityChanged : ProcessSystemMessage, IViewModelVisibilityChanged
-    {
-        public IViewModel ViewModel { get; }
-        public Visibility Visibility { get; }
-        public ViewModelVisibilityChanged() { }
-        public ViewModelVisibilityChanged(IViewModel viewModel, Visibility visibility, IProcessStateInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo, process, source)
-        {
-            ViewModel = viewModel;
-            Visibility = visibility;
-        }
-    }
-
-    [Export(typeof(IViewModelStateChanged))]
-    public class ViewModelStateChanged : ProcessSystemMessage, IViewModelStateChanged
-    {
-        public IViewModel ViewModel { get; }
-        public ViewModelState ViewModelState { get; }
-        
-        public ViewModelStateChanged() { }
-        public ViewModelStateChanged(IViewModel viewModel, ViewModelState viewModelState, IProcessStateInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo, process, source)
-        {
-            ViewModel = viewModel;
-            ViewModelState = viewModelState;
         }
     }
 }

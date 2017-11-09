@@ -1,5 +1,7 @@
-﻿using System.ComponentModel.Composition;
+﻿using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using SystemInterfaces;
+using Common.DataEntites;
 using CommonMessages;
 
 namespace EventMessages.Events
@@ -9,7 +11,8 @@ namespace EventMessages.Events
     public class SystemProcessCleanedUp : ProcessSystemMessage, ISystemProcessCleanedUp
     {
         public SystemProcessCleanedUp() { }
-        public SystemProcessCleanedUp(IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo, process, source)
+        public SystemProcessCleanedUp(IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) 
+            : base(new DynamicObject("SystemProcessCleanedUp", new Dictionary<string, object>()), processInfo, process, source)
         {
         }
     }

@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using SystemInterfaces;
+using Common.DataEntites;
 using CommonMessages;
 
 namespace EventMessages.Events
@@ -12,7 +14,8 @@ namespace EventMessages.Events
         public IDynamicEntityType EntityType { get;}
         public IProcessStateMessage StateMessage { get; }
 
-        public ProcessStateUpdated(IDynamicEntityType entityType, IProcessStateMessage stateMessage, IStateEventInfo stateEventInfo, ISystemProcess process, ISystemSource source):base(stateEventInfo, process, source)
+        public ProcessStateUpdated(IDynamicEntityType entityType, IProcessStateMessage stateMessage, IStateEventInfo stateEventInfo, ISystemProcess process, ISystemSource source)
+            :base(new DynamicObject("ProcessStateUpdated", new Dictionary<string, object>() { { "EntityType", entityType }, { "StateMessage", stateMessage } }), stateEventInfo, process, source)
         {
             this.EntityType = entityType;
             StateMessage = stateMessage;

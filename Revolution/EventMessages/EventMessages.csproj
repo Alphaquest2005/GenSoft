@@ -122,6 +122,7 @@
     <Compile Include="Commands\RequestProcessLog.cs" />
     <Compile Include="Commands\CreateEntityService.cs" />
     <Compile Include="Events\ActorTerminated.cs" />
+    <Compile Include="Events\DomainMessage.cs" />
     <Compile Include="Events\EntitySetWithChangesLoaded.cs" />
     <Compile Include="Events\CurrentEntityChanged.cs" />
     <Compile Include="Events\EntityWithChangesUpdated.cs" />
@@ -129,7 +130,6 @@
     <Compile Include="Events\FailedMessageData.cs" />
     <Compile Include="Events\MainEntityChanged.cs" />
     <Compile Include="Events\ProcessStateUpdated.cs" />
-    <Compile Include="Commands\CreateEntityViewService.cs" />
     <Compile Include="Events\ProcessLogCreated.cs" />
     <Compile Include="Events\ComplexEventLogCreated.cs" />
     <Compile Include="Commands\RequestComplexEventLog.cs" />
@@ -176,6 +176,10 @@
       <Project>{77007560-89DC-4E1F-9313-AE064A048AD4}</Project>
       <Name>CommonMessages</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{cb6d5fbc-0c13-437d-b4f3-a0ec4d5673b3}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GenSoft.Interface\GenSoft.Interface.csproj">
       <Project>{F90CC1C1-1F4E-4719-817B-9A14CE56A5CE}</Project>
       <Name>GenSoft.Interface</Name>
@@ -190,6 +194,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition">
       <HintPath>..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.ComponentModel.Composition.dll</HintPath>

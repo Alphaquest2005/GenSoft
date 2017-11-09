@@ -8,7 +8,7 @@ namespace CommonMessages
     {
         public ProcessSystemMessage() {}
 
-        public ProcessSystemMessage(IProcessStateInfo processInfo,ISystemProcess process, ISystemSource source) : base(source.MachineInfo,source)
+        public ProcessSystemMessage(IDynamicObject message, IProcessStateInfo processInfo, ISystemProcess process, ISystemSource source) : base(message, source.MachineInfo,source)
         {
             Process = process;
             ProcessInfo = processInfo;

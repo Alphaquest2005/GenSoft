@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq.Expressions;
 using SystemInterfaces;
+using Common.DataEntites;
 using CommonMessages;
 
 namespace EventMessages.Events
@@ -15,7 +16,8 @@ namespace EventMessages.Events
         public IList<IDynamicEntity> Entities { get; }
         public IList<Expression<Func<IDynamicEntity, dynamic>>> Includes { get; }
         //Todo: include filter just to match name
-        public EntitySetWithFilterWithIncludesLoaded(IDynamicEntityType entityType, IList<IDynamicEntity> entities, IList<Expression<Func<IDynamicEntity, dynamic>>> includes, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo,process, source)
+        public EntitySetWithFilterWithIncludesLoaded(IDynamicEntityType entityType, IList<IDynamicEntity> entities, IList<Expression<Func<IDynamicEntity, dynamic>>> includes, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source)
+            : base(new DynamicObject("EntitySetWithFilterWithIncludesLoaded", new Dictionary<string, object>() { { "EntitySet", entities }, { "EntityType", entityType }, { "Includes", includes } }), processInfo, process, source)
         {
             Entities = entities;
             Includes = includes;

@@ -1,5 +1,7 @@
-﻿using System.ComponentModel.Composition;
+﻿using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using SystemInterfaces;
+using Common.DataEntites;
 using CommonMessages;
 
 namespace EventMessages.Events
@@ -11,7 +13,8 @@ namespace EventMessages.Events
         public dynamic Data { get; set; }
 
 
-        public FailedCommandData(dynamic data, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(processInfo, process, source)
+        public FailedCommandData(dynamic data, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source)
+            : base(new DynamicObject("FailedCommandData", new Dictionary<string, object>() { { "Data", data }}), processInfo, process, source)
         {
             Data = data;
         }
