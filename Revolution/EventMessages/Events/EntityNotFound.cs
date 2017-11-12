@@ -12,7 +12,8 @@ namespace EventMessages.Events
     public class EntityNotFound : ProcessSystemMessage, IEntityNotFound
     {
         public EntityNotFound() { }
-        public EntityNotFound(IDynamicEntity entity, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) : base(new DynamicObject("EntityNotFound", new Dictionary<string, object>() { { "Entity", entity }, { "EntityType", entity.EntityType } }), processInfo, process, source)
+        public EntityNotFound(IDynamicEntity entity, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) 
+            : base(new DynamicObject("EntityNotFound", new Dictionary<string, object>() { { "Entity", entity }, { "EntityType", entity.EntityType } }), processInfo, process, source)
         {
             Entity = entity;
         }

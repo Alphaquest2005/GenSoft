@@ -14,7 +14,7 @@ namespace ViewMessages
         //occurs when viewmodel loaded in View
         public ViewModelLoaded() { }
         public ViewModelLoaded(TLoadingViewModel loadingViewModel, TViewModel viewModel, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) 
-            : base(new DynamicObject("ViewModelCreated", new Dictionary<string, object>() { { "ViewModel", viewModel }, { "LoadingViewModel", loadingViewModel } }), processInfo, process, source)
+            : base(new DynamicObject("ViewModelLoaded", new Dictionary<string, object>() { { "ViewModel", viewModel }, { "LoadingViewModel", loadingViewModel } }), processInfo, process, source)
         {
             LoadingViewModel = loadingViewModel;
             ViewModel = viewModel;

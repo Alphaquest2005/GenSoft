@@ -64,15 +64,30 @@ namespace DataServices.Actors
         {
            
             if (ProcessComplexEvents.All(x => x.ProcessId != processId)) return;
-            Parallel.ForEach(
-                processSteps.Select(
-                    p =>
-                        new CreateProcessActor($"{p.Name.GetSafeActorName()}-{p.Id}", ProcessComplexEvents.Where(x => x.ProcessId == processId).ToList(),
-                            new StateCommandInfo(p.Id, RevolutionData.Context.Actor.Commands.CreateActor),
-                            new SystemProcess(
-                                new RevolutionEntities.Process.Process(p.Id, p.ParentProcessId, p.Name, p.Description, p.Symbol, user),
-                                Source.MachineInfo), Source)), new ParallelOptions() { MaxDegreeOfParallelism = Environment.ProcessorCount },
-                PublishActor);
+            //Parallel.ForEach(
+            //    processSteps.Select(
+            //        p =>
+            //            new CreateProcessActor($"{p.Name.GetSafeActorName()}-{p.Id}", ProcessComplexEvents.Where(x => x.ProcessId == processId).ToList(),
+            //                new StateCommandInfo(p.Id, RevolutionData.Context.Actor.Commands.CreateActor),
+            //                new SystemProcess(
+            //                    new RevolutionEntities.Process.Process(p.Id, p.ParentProcessId, p.Name, p.Description, p.Symbol, user),
+            //                    Source.MachineInfo), Source)), new ParallelOptions() { MaxDegreeOfParallelism = Environment.ProcessorCount },
+            //    PublishActor);
+
+            var cpLst = ProcessComplexEvents.Where(x => x.ProcessId == processId).ToList();
+
+            var lst = processSteps.Select(
+                p => new CreateProcessActor($"{p.Name.GetSafeActorName()}:{p.Id}",
+                    cpLst,
+                    new StateCommandInfo(p.Id, RevolutionData.Context.Actor.Commands.CreateActor),
+                    new SystemProcess(
+                        new RevolutionEntities.Process.Process(p.Id, p.ParentProcessId, p.Name, p.Description,
+                            p.Symbol, user),
+                        Source.MachineInfo), Source));
+            foreach (var p in lst)
+            {
+                PublishActor(p);
+            }
         }
 
         private void PublishActor(CreateProcessActor inMsg)
@@ -83,16 +98,16 @@ namespace DataServices.Actors
 
 
                 var child = ctx.Child(inMsg.ActorName);
-                if (!Equals(child, ActorRefs.Nobody))
+                if (Equals(child, ActorRefs.Nobody))
                 {
-                    return;
+                     Task.Run(() => { ctx.ActorOf(Props.Create<ProcessActor>(inMsg), inMsg.ActorName); })
+                    .ConfigureAwait(false);
                 }
 
 
                 EventMessageBus.Current.Publish(inMsg, Source);
                 
-                Task.Run(() => { ctx.ActorOf(Props.Create<ProcessActor>(inMsg), inMsg.ActorName); })
-                    .ConfigureAwait(false);
+               
             }
             catch (Exception ex)
             {

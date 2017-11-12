@@ -12,7 +12,8 @@ namespace EventMessages.Events
         public ComplexEventLogCreated() { }
         public IEnumerable<IComplexEventLog> EventLog { get; }
 
-        public ComplexEventLogCreated(IEnumerable<IComplexEventLog> logs, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) : base(new DynamicObject("ComplexEventLogCreated", new Dictionary<string, object>(){{ "EventLog", logs } }), processInfo,process, source)
+        public ComplexEventLogCreated(IEnumerable<IComplexEventLog> logs, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) 
+            : base(new DynamicObject("ComplexEventLogCreated", new Dictionary<string, object>(){{ "EventLog", logs } }), processInfo,process, source)
         {
             EventLog = logs;
         }

@@ -34,6 +34,7 @@ using Utilities;
 using ViewModel.Interfaces;
 using ViewModel.WorkFlow;
 using Z.Expressions;
+using ActionTrigger = Actor.Interfaces.ActionTrigger;
 using ComplexEventAction = RevolutionEntities.Process.ComplexEventAction;
 using IComplexEventAction = Actor.Interfaces.IComplexEventAction;
 using IProcessAction = Actor.Interfaces.IProcessAction;
@@ -79,15 +80,15 @@ namespace DataServices.Actors
             
             BuildExpressions();
             List<EntityType> mainEntities;
-            DomainProcess domainProcess;
-            SystemProcess systemProcess;
+            
             using (var ctx = new GenSoftDBContext())
             {
                 maxProcessId = ctx.SystemProcess.Max(x => x.Id);
 
-                domainProcess = ctx.DomainProcess
+               _domainProcessLst = ctx.DomainProcess
                         .Include(x => x.SystemProcess)
                         .Include(x => x.ProcessStep).ThenInclude(x => x.MainEntity.EntityType.Type)
+                        .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ActionTrigger)
                         .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents).ThenInclude(x => x.ExpectedEvents.EventType.Type)
                         .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents).ThenInclude(x => x.StateEventInfo.StateInfo)
                         .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents).ThenInclude(x => x.ExpectedEvents.ExpectedEventPredicateParameters).ThenInclude(x => x.EventPredicates)
@@ -102,9 +103,11 @@ namespace DataServices.Actors
                     .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ProcessAction.ProcessActionComplexParameterAction.ProcessActionComplexParameterReferenceTypes).ThenInclude(x => x.ReferenceTypes.DataType.Type)
                     .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ProcessAction.ProcessActionStateCommandInfo.StateCommandInfo.StateInfo)
                         .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
-                        .FirstOrDefault(x => x.ProcessStep.Any());
-                if (domainProcess == null)
+                        .Where(x => x.ProcessStep.Any()).ToList();
+                if (!_domainProcessLst.Any())
                 {
+                    DomainProcess domainProcess;
+                    SystemProcess systemProcess;
                     maxProcessId += 1;
                     
                     systemProcess = new SystemProcess(
@@ -137,55 +140,85 @@ namespace DataServices.Actors
 
                     }
 
-                   
+                    IntializeProcess(domainProcess, systemProcess);
                 }
                 else
                 {
-                    DomainProcess.Add(domainProcess);
-
-                    systemProcess = new SystemProcess(
-                        new SystemProcessInfo(domainProcess.Id, domainProcess.SystemProcess.ParentProcessId, domainProcess.SystemProcess.Name,
-                            domainProcess.SystemProcess.Description, domainProcess.SystemProcess.Symbol, process.User.UserId), process.User, process.MachineInfo);
-                    SystemProcess.Add(systemProcess);
-                    foreach (var processStep in domainProcess.ProcessStep)
-                    {
-                        foreach (var pcp in processStep.ProcessStepComplexActions)
-                        {
-                            var cpEvents = new List<IProcessExpectedEvent>();
-                            foreach (var ce in pcp.ComplexEventAction.ComplexEventActionExpectedEvents)
-                            {
-                                cpEvents.Add(CreateProcessExpectedEvent(pcp.ProcessStep.DomainProcessId, ce, processStep.MainEntity.EntityType));
-                            }
-                            foreach (var cp in pcp.ComplexEventAction.ComplexEventActionProcessActions)
-                            {
-                                var complexEventAction = CreateComplexEventAction(pcp.ProcessStep.DomainProcessId, cp, cpEvents);
-                                ComplexEventActions.Add(cp.ProcessAction.Name,complexEventAction);
-                                ProcessComplexEvents.Add(complexEventAction);
-                            }
-                            
-                        }
-                        
-                        ProcessComplexEvents.AddRange(GetDBComplexActions(processStep.MainEntity.EntityType.Id, domainProcess.Id));
-                        ProcessViewModelInfos.AddRange(GetDBViewInfos(processStep.MainEntity.EntityType.Id, false, domainProcess.Id));
-                    }
+                   LoadDomainProcess(_domainProcessLst.FirstOrDefault(), process.User);
                     
                 }
 
             }
-            
+
+            EventMessageBus.Current.GetEvent<IStartSystemProcess>(Source).Where(x => autoRun && x.ProcessToBeStartedId == RevolutionData.ProcessActions.NullProcess).Subscribe(x => StartParentProcess(x.Process.Id, x.User));
+            EventMessageBus.Current.GetEvent<IStartSystemProcess>(Source).Where(x => !autoRun && x.ProcessToBeStartedId != RevolutionData.ProcessActions.NullProcess).Subscribe(x => StartProcess(x.ProcessToBeStartedId, x.User));
+
             EventMessageBus.Current.GetEvent<IMainEntityChanged>(Source).Subscribe(x => OnMainEntityChanged(x));
            
 
             ctx = Context;
-          
-          
-            ProcessComplexEvents.Add(Processes.ComplexActions.GetComplexAction("StartProcess", new object[] { systemProcess.Id }));
-            ProcessComplexEvents.Add(Processes.ComplexActions.GetComplexAction("CleanUpParentProcess", new object[] { systemProcess.Id, systemProcess.Id + 1}));
-           // ProcessComplexEvents.Add(Processes.ComplexActions.GetComplexAction("CleanUpProcess", new object[] { systemProcess.Id, systemProcess.Id + 1 }));
+        }
+
+        private List<DomainProcess> _domainProcessLst;
+
+        private void StartProcess(int objProcessToBeStartedId, IUser user)
+        {
+            var dp = _domainProcessLst.First(x => x.Id == objProcessToBeStartedId);
+            LoadDomainProcess(dp,user);
+        }
+
+        private void StartParentProcess(int processId, IUser user)
+        {
+            var dp = _domainProcessLst.First(x => x.SystemProcess.ParentProcessId == processId);
+            LoadDomainProcess(dp, user);
+        }
+
+        private void LoadDomainProcess(DomainProcess domainProcess, IUser user)
+        {
+            DomainProcess.Add(domainProcess);
+
+            var systemProcess = new SystemProcess(
+                new SystemProcessInfo(domainProcess.Id, domainProcess.SystemProcess.ParentProcessId,
+                    domainProcess.SystemProcess.Name,
+                    domainProcess.SystemProcess.Description, domainProcess.SystemProcess.Symbol,
+                    user.UserId), Process.User, Process.MachineInfo);
+            SystemProcess.Add(systemProcess);
+            foreach (var processStep in domainProcess.ProcessStep)
+            {
+                foreach (var pcp in processStep.ProcessStepComplexActions)
+                {
+                    var cpEvents = new List<IProcessExpectedEvent>();
+                    foreach (var ce in pcp.ComplexEventAction.ComplexEventActionExpectedEvents)
+                    {
+                        cpEvents.Add(CreateProcessExpectedEvent(pcp.ProcessStep.DomainProcessId, ce,
+                            processStep.MainEntity.EntityType));
+                    }
+                    foreach (var cp in pcp.ComplexEventAction.ComplexEventActionProcessActions)
+                    {
+                        var complexEventAction =
+                            CreateComplexEventAction(pcp.ProcessStep.DomainProcessId, cp, cpEvents);
+                        ComplexEventActions.Add(cp.ProcessAction.Name, complexEventAction);
+                        ProcessComplexEvents.Add(complexEventAction);
+                    }
+                }
+
+                ProcessComplexEvents.AddRange(GetDBComplexActions(processStep.MainEntity.EntityType.Id,
+                    domainProcess.Id));
+                ProcessViewModelInfos.AddRange(GetDBViewInfos(processStep.MainEntity.EntityType.Id, false,
+                    domainProcess.Id));
+            }
+            IntializeProcess(domainProcess, systemProcess);
+        }
+
+        private void IntializeProcess(DomainProcess domainProcess, SystemProcess systemProcess)
+        {
+            ProcessComplexEvents.Add(
+                Processes.ComplexActions.GetComplexAction("StartProcess", new object[] {systemProcess.Id}));
+            ProcessComplexEvents.Add(Processes.ComplexActions.GetComplexAction("CleanUpParentProcess",
+                new object[] {systemProcess.Id, systemProcess.Id + 1}));
+            // ProcessComplexEvents.Add(Processes.ComplexActions.GetComplexAction("CleanUpProcess", new object[] { systemProcess.Id, systemProcess.Id + 1 }));
 
             CreateProcesses(domainProcess, systemProcess);
-
-
         }
 
         private IProcessExpectedEvent CreateProcessExpectedEvent(int processId, ComplexEventActionExpectedEvents ce, EntityType entityType)
@@ -389,9 +422,9 @@ namespace DataServices.Actors
         private ComplexEventAction CreateComplexEventAction(int processId, ComplexEventActionProcessActions complexEventAction, IList<IProcessExpectedEvent> cpEvents)
         {
             return new ComplexEventAction(
-                key: $"CustomComplexEvent-{complexEventAction.ComplexEventAction.Name}",
+                key: $"CustomComplexEvent:{complexEventAction.ComplexEventAction.Name}-{complexEventAction.ProcessAction.Name}",
                 processId: processId,
-                actionTrigger: ActionTrigger.Any,
+                actionTrigger: complexEventAction.ComplexEventAction.ActionTrigger.Name == "Any"?ActionTrigger.Any:ActionTrigger.All,
                 events: cpEvents,
                 expectedMessageType: typeof(SystemInterfaces.IEntity).Assembly.GetType($"SystemInterfaces.{complexEventAction.EventType.Type.Name}"),
                 action: CreateProcessAction(processId,complexEventAction.ProcessAction),

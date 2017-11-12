@@ -24,7 +24,8 @@ namespace EventMessages.Commands
         }
        
 
-        public LoadDomainProcess(IDomainProcess domainProcess, List<IComplexEventAction> complexEvents, List<IViewModelInfo> viewModelInfos, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(new DynamicObject("LoadDomainProcess", new Dictionary<string, object>() { { "DomainProcess", domainProcess }, { "ComplexEvents", complexEvents }, { "ViewModelInfos", viewModelInfos } }), processInfo, process, source)
+        public LoadDomainProcess(IDomainProcess domainProcess, List<IComplexEventAction> complexEvents, List<IViewModelInfo> viewModelInfos, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) 
+            : base(new DynamicObject("LoadDomainProcess", new Dictionary<string, object>() { { "DomainProcess", domainProcess }, { "ComplexEvents", complexEvents }, { "ViewModelInfos", viewModelInfos } }), processInfo, process, source)
         {
             DomainProcess = domainProcess;
             ComplexEvents = complexEvents;

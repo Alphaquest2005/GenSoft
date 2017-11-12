@@ -88,6 +88,7 @@
     <Compile Include="Generated Interfaces\ActionPropertyParameter.cs" />
     <Compile Include="Generated Interfaces\ActionSet.cs" />
     <Compile Include="Generated Interfaces\ActionSetActions.cs" />
+    <Compile Include="Generated Interfaces\ActionTrigger.cs" />
     <Compile Include="Generated Interfaces\Agent.cs" />
     <Compile Include="Generated Interfaces\Application.cs" />
     <Compile Include="Generated Interfaces\ApplicationSetting.cs" />

@@ -18,7 +18,8 @@ namespace EventMessages.Commands
         }
         public Dictionary<string, dynamic> Changes { get; }
         
-        public AddOrGetEntityWithChanges(IDynamicEntityType entityType, Dictionary<string, dynamic> changes, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(new DynamicObject("AddOrGetEntityWithChanges", new Dictionary<string, object>(){{ "Changes", changes }, { "EntityType", entityType } }),processInfo, process, source)
+        public AddOrGetEntityWithChanges(IDynamicEntityType entityType, Dictionary<string, dynamic> changes, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) 
+            : base(new DynamicObject("AddOrGetEntityWithChanges", new Dictionary<string, object>(){{ "Changes", changes }, { "EntityType", entityType } }),processInfo, process, source)
         {
             Contract.Requires(changes.Count > 0);
             Changes = changes;

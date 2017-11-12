@@ -17,8 +17,10 @@ namespace DataServices.Actors
         public BaseSupervisor(ISystemProcess process)
         {
             Source = new Source(Guid.NewGuid(), $"Supervisor:{typeof(T).GetFriendlyName()}", new SourceType(typeof(BaseSupervisor<T>)),process,process.MachineInfo);
+            Process = process;
         }
 
+        public ISystemProcess Process { get; }
         public ISystemSource Source { get; }
 
         internal void PublishProcesError(IProcessSystemMessage msg, Exception ex, Type expectedMessageType)

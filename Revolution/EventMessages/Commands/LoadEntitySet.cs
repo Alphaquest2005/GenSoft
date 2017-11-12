@@ -13,7 +13,8 @@ namespace EventMessages.Commands
     public class LoadEntitySet : ProcessSystemMessage, ILoadEntitySet
     { 
         public LoadEntitySet() { }
-        public LoadEntitySet(IDynamicEntityType entityType, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(new DynamicObject("LoadEntitySet", new Dictionary<string, object>() { { "EntityType", entityType }}), processInfo,process, source)
+        public LoadEntitySet(IDynamicEntityType entityType, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) 
+            : base(new DynamicObject("LoadEntitySet", new Dictionary<string, object>() { { "EntityType", entityType }}), processInfo,process, source)
         {
             EntityType = entityType;
         }

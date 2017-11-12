@@ -60,6 +60,10 @@ namespace DataServices.Actors
                 .Where(x => x.Process.Id == msg.Process.Id)
                 .Subscribe(x => NotifyServiceStarted(x));
 
+            EventMessageBus.Current.GetEvent<ICreateProcessActor>(Source)
+                .Where(x => x.Process.Id == msg.Process.Id)
+                .Where(x => x.ActorName == this.ActorName).Subscribe(UpdateActor);
+
             EventMessageBus.Current.GetEvent<ICleanUpSystemProcess>(Source).Where(x => x.ProcessToBeCleanedUpId == Process.Id).Subscribe(x => Self.GracefulStop(TimeSpan.FromSeconds((double)EventTimeOut.ShortWait)));
 
             EventMessageBus.Current.GetEvent<IServiceStarted<IProcessService>>(Source)
@@ -80,6 +84,15 @@ namespace DataServices.Actors
 
         }
 
+        private void UpdateActor(ICreateProcessActor createProcessActor)
+        {
+            var lst = new List<IComplexEventAction>(_complexEvents);
+            var newLst = createProcessActor.ComplexEvents.Where(x => _complexEvents.All(z => z.Key != x.Key)).ToList();
+            lst.AddRange(newLst);
+            _complexEvents = new ReadOnlyCollection<IComplexEventAction>(lst);
+            StartActors(newLst);
+        }
+
         private void HandleDomainProcess(ILoadDomainProcess loadDomainProcess)
         {
             Publish(new ServiceStarted<IProcessService>(this, new StateEventInfo(Process.Id, RevolutionData.Context.Actor.Events.ActorStarted), Process, Source));
@@ -93,7 +106,7 @@ namespace DataServices.Actors
             startedComplexEventServices.Enqueue(service);
             if (startedComplexEventServices.Count != _complexEvents.Count()) return;
             Publish(new ServiceStarted<IProcessService>(this,new StateEventInfo(Process.Id, RevolutionData.Context.Actor.Events.ActorStarted), Process, Source));
-            startedComplexEventServices = new ConcurrentQueue<IServiceStarted<IComplexEventService>>();
+            
         }
 
 

@@ -23,6 +23,7 @@ namespace GenSoft.Entities
 				public virtual ICollection<ProcessStepComplexActions> ProcessStepComplexActions {get; set;}
 		
 			// ---------Parent Relationships
+				public virtual ActionTrigger ActionTrigger {get; set;}
 	
 
 	}

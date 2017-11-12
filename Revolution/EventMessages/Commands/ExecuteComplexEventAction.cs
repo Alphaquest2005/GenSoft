@@ -15,7 +15,8 @@ namespace EventMessages.Commands
         public IDynamicComplexEventParameters ComplexEventParameters { get; }
 
 
-        public ExecuteComplexEventAction(IProcessAction action, IDynamicComplexEventParameters complexEventParameters, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(new DynamicObject("ExecuteComplexEventAction", new Dictionary<string, object>() { { "Action", action }, { "ComplexEventParameters", complexEventParameters } }), processInfo ,process, source)
+        public ExecuteComplexEventAction(IProcessAction action, IDynamicComplexEventParameters complexEventParameters, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) 
+            : base(new DynamicObject("ExecuteComplexEventAction", new Dictionary<string, object>() { { "Action", action }, { "ComplexEventParameters", complexEventParameters } }), processInfo ,process, source)
         {
             Action = action;
             ComplexEventParameters = complexEventParameters;

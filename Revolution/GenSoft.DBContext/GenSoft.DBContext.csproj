@@ -77,6 +77,7 @@
     <Compile Include="Generated Mappings\ActionPropertyParameter.cs" />
     <Compile Include="Generated Mappings\ActionSet.cs" />
     <Compile Include="Generated Mappings\ActionSetActions.cs" />
+    <Compile Include="Generated Mappings\ActionTrigger.cs" />
     <Compile Include="Generated Mappings\Agent.cs" />
     <Compile Include="Generated Mappings\Application.cs" />
     <Compile Include="Generated Mappings\ApplicationSetting.cs" />

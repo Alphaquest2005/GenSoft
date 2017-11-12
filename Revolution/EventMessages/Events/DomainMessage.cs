@@ -12,7 +12,8 @@ namespace EventMessages.Events
         public DomainMessage() { }
         public string Type { get; }
         public IDynamicEntity Entity { get; }
-        public DomainMessage(string type,IDynamicEntity entity, IProcessStateInfo processInfo, ISystemProcess process, ISystemSource source) : base(new DynamicObject("CurrentEntityChanged", new Dictionary<string, object>() { { "Type", type }, { "Entity", entity }, { "EntityType", entity.EntityType } }), processInfo, process, source)
+        public DomainMessage(string type,IDynamicEntity entity, IProcessStateInfo processInfo, ISystemProcess process, ISystemSource source) 
+            : base(new DynamicObject("DomainMessage", new Dictionary<string, object>() { { "Type", type }, { "Entity", entity }, { "EntityType", entity.EntityType } }), processInfo, process, source)
         {
             Entity = entity;
             Type = type;

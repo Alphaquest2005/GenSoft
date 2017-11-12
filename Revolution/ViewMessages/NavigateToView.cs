@@ -14,7 +14,7 @@ namespace ViewMessages
     {
         public NavigateToView() { }
         public NavigateToView(string view, IProcessStateInfo processInfo, ISystemProcess process, ISystemSource source) 
-            : base(new DynamicObject("ViewStateLoaded", new Dictionary<string, object>() { { "View", view }}), processInfo, process, source)
+            : base(new DynamicObject("NavigateToView", new Dictionary<string, object>() { { "View", view }}), processInfo, process, source)
         {
             View = view;
         }

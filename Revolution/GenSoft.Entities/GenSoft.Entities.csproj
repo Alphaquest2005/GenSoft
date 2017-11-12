@@ -76,6 +76,7 @@
     <Compile Include="Generated Entities\ActionPropertyParameter.cs" />
     <Compile Include="Generated Entities\ActionSet.cs" />
     <Compile Include="Generated Entities\ActionSetActions.cs" />
+    <Compile Include="Generated Entities\ActionTrigger.cs" />
     <Compile Include="Generated Entities\Agent.cs" />
     <Compile Include="Generated Entities\Application.cs" />
     <Compile Include="Generated Entities\ApplicationSetting.cs" />

@@ -12,7 +12,8 @@ namespace EventMessages.Commands
     public class RequestProcessState : ProcessSystemMessage, IRequestProcessState
     {
         public RequestProcessState() { }
-        public RequestProcessState(IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) : base(new DynamicObject("RequestProcessState", new Dictionary<string, object>()), processInfo,process, source)
+        public RequestProcessState(IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) 
+            : base(new DynamicObject("RequestProcessState", new Dictionary<string, object>()), processInfo,process, source)
         {
         }
 

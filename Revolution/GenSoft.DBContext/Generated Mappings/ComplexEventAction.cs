@@ -26,6 +26,7 @@ namespace GenSoft.Mappings
 				entityBuilder.HasMany(x => x.ProcessStepComplexActions).WithOne(p => p.ComplexEventAction).HasForeignKey(c => c.ComplexEventActionId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties
+				//entityBuilder.HasOne(p => p.ActionTrigger ActionTrigger).WithMany(p => p.ComplexEventAction).HasForeignKey(c => c.ActionTriggerId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

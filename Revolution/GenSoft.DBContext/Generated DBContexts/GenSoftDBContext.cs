@@ -20,6 +20,7 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.ActionPropertyParameter> ActionPropertyParameter { get; set; }
 		public DbSet<Entities.ActionSet> ActionSet { get; set; }
 		public DbSet<Entities.ActionSetActions> ActionSetActions { get; set; }
+		public DbSet<Entities.ActionTrigger> ActionTrigger { get; set; }
 		public DbSet<Entities.Agent> Agent { get; set; }
 		public DbSet<Entities.Application> Application { get; set; }
 		public DbSet<Entities.ApplicationSetting> ApplicationSetting { get; set; }
@@ -117,6 +118,7 @@ namespace GenSoft.DBContexts
 				ActionPropertyParameterMap.Map(modelBuilder.Entity<Entities.ActionPropertyParameter>());
 				ActionSetMap.Map(modelBuilder.Entity<Entities.ActionSet>());
 				ActionSetActionsMap.Map(modelBuilder.Entity<Entities.ActionSetActions>());
+				ActionTriggerMap.Map(modelBuilder.Entity<Entities.ActionTrigger>());
 				AgentMap.Map(modelBuilder.Entity<Entities.Agent>());
 				ApplicationMap.Map(modelBuilder.Entity<Entities.Application>());
 				ApplicationSettingMap.Map(modelBuilder.Entity<Entities.ApplicationSetting>());

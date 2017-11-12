@@ -14,7 +14,8 @@ namespace EventMessages.Events
         public ComplexEventActionTimedOut() { }
         public IComplexEventAction Action { get; }
         
-        public ComplexEventActionTimedOut(IComplexEventAction action, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) : base(new DynamicObject("ComplexEventActionTimedOut", new Dictionary<string, object>(){{ "Action", action } }), processInfo,process, source)
+        public ComplexEventActionTimedOut(IComplexEventAction action, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) 
+            : base(new DynamicObject("ComplexEventActionTimedOut", new Dictionary<string, object>(){{ "Action", action } }), processInfo,process, source)
         {
             Contract.Requires(action != null);
             Action = action;

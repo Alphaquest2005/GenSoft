@@ -357,6 +357,7 @@
 ..\GenSoft.DBContext\Generated Mappings\ActionPropertyParameter.cs
 ..\GenSoft.DBContext\Generated Mappings\ActionSet.cs
 ..\GenSoft.DBContext\Generated Mappings\ActionSetActions.cs
+..\GenSoft.DBContext\Generated Mappings\ActionTrigger.cs
 ..\GenSoft.DBContext\Generated Mappings\Agent.cs
 ..\GenSoft.DBContext\Generated Mappings\Application.cs
 ..\GenSoft.DBContext\Generated Mappings\ApplicationSetting.cs
@@ -447,6 +448,7 @@
 ..\GenSoft.Entities\Generated Entities\ActionPropertyParameter.cs
 ..\GenSoft.Entities\Generated Entities\ActionSet.cs
 ..\GenSoft.Entities\Generated Entities\ActionSetActions.cs
+..\GenSoft.Entities\Generated Entities\ActionTrigger.cs
 ..\GenSoft.Entities\Generated Entities\Agent.cs
 ..\GenSoft.Entities\Generated Entities\Application.cs
 ..\GenSoft.Entities\Generated Entities\ApplicationSetting.cs
@@ -542,6 +544,7 @@
 ..\GenSoft.Interface\Generated Interfaces\ActionPropertyParameter.cs
 ..\GenSoft.Interface\Generated Interfaces\ActionSet.cs
 ..\GenSoft.Interface\Generated Interfaces\ActionSetActions.cs
+..\GenSoft.Interface\Generated Interfaces\ActionTrigger.cs
 ..\GenSoft.Interface\Generated Interfaces\Agent.cs
 ..\GenSoft.Interface\Generated Interfaces\Application.cs
 ..\GenSoft.Interface\Generated Interfaces\ApplicationSetting.cs
