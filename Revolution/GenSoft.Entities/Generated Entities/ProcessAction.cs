@@ -13,17 +13,16 @@ namespace GenSoft.Entities
 {
 	public partial class ProcessAction: BaseEntity, IProcessAction
 	{
-		public virtual int ActionSetId { get; set; }
+		public virtual int ActionId { get; set; }
 		public virtual string Name { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 				public virtual ICollection<ComplexEventActionProcessActions> ComplexEventActionProcessActions {get; set;}
-				public virtual ProcessActionComplexParameterAction ProcessActionComplexParameterAction {get; set;}
 				public virtual ProcessActionStateCommandInfo ProcessActionStateCommandInfo {get; set;}
 		
 			// ---------Parent Relationships
-				public virtual ActionSet ActionSet {get; set;}
+				public virtual Action Action {get; set;}
 	
 
 	}

@@ -19,15 +19,15 @@ namespace GenSoft.Mappings
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.ActionId).HasColumnName("ActionId").IsRequired();
-			entityBuilder.Property(t => t.DataTypeId).HasColumnName("DataTypeId").IsRequired();
 			entityBuilder.Property(t => t.Description).HasColumnName("Description").IsRequired().HasMaxLength(255);
-			entityBuilder.Property(t => t.Name).HasColumnName("Name").IsRequired().HasMaxLength(50);
+			entityBuilder.Property(t => t.ParameterId).HasColumnName("ParameterId").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
 				entityBuilder.HasMany(x => x.ActionPropertyParameter).WithOne(p => p.ActionParameters).HasForeignKey(c => c.ActionParameterId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.ComplexActionExpectedEventActionParameter).WithOne(p => p.ActionParameters).HasForeignKey(c => c.ActionParameterId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties
 				//entityBuilder.HasOne(p => p.Action Action).WithMany(p => p.ActionParameters).HasForeignKey(c => c.ActionId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.Parameters Parameters).WithMany(p => p.ActionParameters).HasForeignKey(c => c.ParameterId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

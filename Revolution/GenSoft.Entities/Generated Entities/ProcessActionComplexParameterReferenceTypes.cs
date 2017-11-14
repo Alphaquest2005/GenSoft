@@ -21,7 +21,6 @@ namespace GenSoft.Entities
 		
 			// ---------Parent Relationships
 				public virtual ProcessActionComplexParameterAction ProcessActionComplexParameterAction {get; set;}
-				public virtual ReferenceTypes ReferenceTypes {get; set;}
 	
 
 	}

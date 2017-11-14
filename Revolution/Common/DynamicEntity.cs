@@ -115,7 +115,7 @@ namespace Common.DataEntites
         public DynamicObject(string type, Dictionary<string, object> values)
         {
             Type = type;
-            Properties = values.ToDictionary(x => x.Key, z => new DynamicValue(z.Value.GetType(), z.Value) as IDynamicValue);
+            Properties = values.ToDictionary(x => x.Key, z => new DynamicValue(z.Value?.GetType(), z.Value) as IDynamicValue);
         }
 
         public string Type { get; }

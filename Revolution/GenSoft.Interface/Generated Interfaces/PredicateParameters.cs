@@ -14,9 +14,7 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IPredicateParameters:SystemInterfaces.IEntity  
 	{
-		int DataTypeId { get;}
-		string Description { get;}
-		string Name { get;}
+		int ParameterId { get;}
 		int PredicateId { get;}
 
 

@@ -19,7 +19,18 @@ namespace Utilities
             else
             {
                 var idx = source.IndexOf(existingEntity);
-                source.Remove(existingEntity);
+                if (source.Count == 1)
+                {
+                    source.Clear();
+                }
+                else
+                {
+                    var res = source.ToList();
+                    res.Remove(existingEntity);
+                    res.Insert(idx, item);
+                    source = res;
+                    return;
+                }
                 source.Insert(idx, item);
             }
         }

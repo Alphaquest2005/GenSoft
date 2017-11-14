@@ -8,7 +8,7 @@ namespace Common.DataEntites
     {
         public DynamicValue(Type type, object value)
         {
-            Type = type.FullName;
+            Type = type?.FullName;
             Value = value;
         }
 

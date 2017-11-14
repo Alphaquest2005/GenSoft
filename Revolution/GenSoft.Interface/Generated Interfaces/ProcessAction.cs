@@ -14,7 +14,7 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IProcessAction:SystemInterfaces.IEntity  
 	{
-		int ActionSetId { get;}
+		int ActionId { get;}
 		string Name { get;}
 
 

@@ -24,7 +24,6 @@ namespace GenSoft.Mappings
 	
 				//----------------Parent Properties
 				//entityBuilder.HasOne(p => p.ProcessActionComplexParameterAction ProcessActionComplexParameterAction).WithMany(p => p.ProcessActionComplexParameterReferenceTypes).HasForeignKey(c => c.ProcessActionCPActionId).OnDelete(DeleteBehavior.Restrict);
-				//entityBuilder.HasOne(p => p.ReferenceTypes ReferenceTypes).WithMany(p => p.ProcessActionComplexParameterReferenceTypes).HasForeignKey(c => c.ReferenceTypeId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

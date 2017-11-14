@@ -14,9 +14,8 @@ namespace GenSoft.Entities
 	public partial class ActionParameters: BaseEntity, IActionParameters
 	{
 		public virtual int ActionId { get; set; }
-		public virtual int DataTypeId { get; set; }
 		public virtual string Description { get; set; }
-		public virtual string Name { get; set; }
+		public virtual int ParameterId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
@@ -25,6 +24,7 @@ namespace GenSoft.Entities
 		
 			// ---------Parent Relationships
 				public virtual Action Action {get; set;}
+				public virtual Parameters Parameters {get; set;}
 	
 
 	}

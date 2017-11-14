@@ -74,6 +74,7 @@
     <Compile Include="Generated Entities\ActionParameters.cs" />
     <Compile Include="Generated Entities\ActionProperties.cs" />
     <Compile Include="Generated Entities\ActionPropertyParameter.cs" />
+    <Compile Include="Generated Entities\ActionReferenceTypes.cs" />
     <Compile Include="Generated Entities\ActionSet.cs" />
     <Compile Include="Generated Entities\ActionSetActions.cs" />
     <Compile Include="Generated Entities\ActionTrigger.cs" />
@@ -121,6 +122,7 @@
     <Compile Include="Generated Entities\Machine.cs" />
     <Compile Include="Generated Entities\MainEntity.cs" />
     <Compile Include="Generated Entities\Ordinality.cs" />
+    <Compile Include="Generated Entities\Parameters.cs" />
     <Compile Include="Generated Entities\ParentEntity.cs" />
     <Compile Include="Generated Entities\PredicateParameters.cs" />
     <Compile Include="Generated Entities\Predicates.cs" />

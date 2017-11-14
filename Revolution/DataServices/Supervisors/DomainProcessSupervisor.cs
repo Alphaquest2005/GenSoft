@@ -34,6 +34,7 @@ using Utilities;
 using ViewModel.Interfaces;
 using ViewModel.WorkFlow;
 using Z.Expressions;
+using Action = GenSoft.Entities.Action;
 using ActionTrigger = Actor.Interfaces.ActionTrigger;
 using ComplexEventAction = RevolutionEntities.Process.ComplexEventAction;
 using IComplexEventAction = Actor.Interfaces.IComplexEventAction;
@@ -94,14 +95,15 @@ namespace DataServices.Actors
                         .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents).ThenInclude(x => x.ExpectedEvents.ExpectedEventPredicateParameters).ThenInclude(x => x.EventPredicates)
                         .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents).ThenInclude(x => x.ExpectedEvents.ExpectedEventPredicateParameters).ThenInclude(x => x.ExpectedEventConstants)
                         .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents).ThenInclude(x => x.ExpectedEvents.EventType.EventPredicates).ThenInclude(x => x.Predicates.PredicateParameters).ThenInclude(x => x.ExpectedEventPredicateParameters)
-                        .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents).ThenInclude(x => x.ExpectedEvents.EventType.EventPredicates).ThenInclude(x => x.Predicates.PredicateParameters).ThenInclude(x => x.DataType.Type)
+                        .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents).ThenInclude(x => x.ExpectedEvents.EventType.EventPredicates).ThenInclude(x => x.Predicates.PredicateParameters).ThenInclude(x => x.Parameters).ThenInclude(x => x.DataType.Type)
                         .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.EventType.Type)
                     .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ComplexEventAction).ThenInclude(x => x.ProcessStepComplexActions)
-                    .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ProcessAction.ActionSet)
-                    .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ProcessAction.ProcessActionComplexParameterAction)
-                    .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ProcessAction.ProcessActionComplexParameterAction.ProcessActionComplexParameterReferenceTypes).ThenInclude(x => x.ReferenceTypes.ReferenceTypeName)
-                    .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ProcessAction.ProcessActionComplexParameterAction.ProcessActionComplexParameterReferenceTypes).ThenInclude(x => x.ReferenceTypes.DataType.Type)
-                    .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ProcessAction.ProcessActionStateCommandInfo.StateCommandInfo.StateInfo)
+                    .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ProcessAction.Action.ActionParameters)
+                   .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ProcessAction.Action.ActionParameters).ThenInclude(x => x.Parameters).ThenInclude(x => x.DataType.Type)
+                   .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ProcessAction.Action.ActionReferenceTypes)
+                   .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ProcessAction.Action.ActionReferenceTypes).ThenInclude(x => x.ReferenceTypes.DataType.Type)
+                   .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ProcessAction.Action.ActionReferenceTypes).ThenInclude(x => x.ReferenceTypes.ReferenceTypeName)
+                   .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ProcessAction.ProcessActionStateCommandInfo.StateCommandInfo.StateInfo)
                         .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
                         .Where(x => x.ProcessStep.Any()).ToList();
                 if (!_domainProcessLst.Any())
@@ -213,11 +215,12 @@ namespace DataServices.Actors
         private void IntializeProcess(DomainProcess domainProcess, SystemProcess systemProcess)
         {
             ProcessComplexEvents.Add(
-                Processes.ComplexActions.GetComplexAction("StartProcess", new object[] {systemProcess.Id}));
+                Processes.ComplexActions.GetComplexAction("StartNextProcess", new object[] { systemProcess.Id }));
+            ProcessComplexEvents.Add(
+                Processes.ComplexActions.GetComplexAction("ProcessStarted", new object[] {systemProcess.Id}));
             ProcessComplexEvents.Add(Processes.ComplexActions.GetComplexAction("CleanUpParentProcess",
-                new object[] {systemProcess.Id, systemProcess.Id + 1}));
-            // ProcessComplexEvents.Add(Processes.ComplexActions.GetComplexAction("CleanUpProcess", new object[] { systemProcess.Id, systemProcess.Id + 1 }));
-
+                new object[] {systemProcess.ParentProcessId, systemProcess.Id}));
+            
             CreateProcesses(domainProcess, systemProcess);
         }
 
@@ -242,12 +245,14 @@ namespace DataServices.Actors
         }
 
         private static Func<TEventType, bool> CreateExpectedEventPredicate<TEventType>(ExpectedEvents expectedEvents) where TEventType : IProcessSystemMessage
-        {
+            {
             //e => e.Entity != null && e.Changes.Count == 2 && e.Changes.ContainsKey("Password")
             foreach (var ep in expectedEvents.EventType.EventPredicates)
             {
-                var body = CreateExpectedEventPredicateBody(ep.Predicates, expectedEvents.ExpectedEventPredicateParameters.Where(x => x.EventPredicateId == ep.Id).ToList());
-                var res = CreatePredicate(body, ep.Predicates.PredicateParameters.ToList());
+                var expectedEventPredicateParameters = expectedEvents.ExpectedEventPredicateParameters.Where(x => x.EventPredicateId == ep.Id).ToList();
+                var body = CreateExpectedEventPredicateBody(ep.Predicates, expectedEventPredicateParameters);
+                var predicateParameters = expectedEventPredicateParameters.Select(x => x.PredicateParameters).ToList();
+                var res = CreatePredicate(body, predicateParameters);
                 return res;
             }
             return null;
@@ -266,13 +271,13 @@ namespace DataServices.Actors
 
                 }
                 var returnType = typeof(bool);
-                var parameters = predicateParameters.Where(x => !x.Name.Contains("Const"));
-                var argType = parameters.Select(x => CreateTypesFromDbType(x.DataTypeId)).ToList();
+                var parameters = predicateParameters.Where(x => !x.Parameters.Name.Contains("Const"));
+                var argType = parameters.Select(x => CreateTypesFromDbType(x.Parameters.DataTypeId)).ToList();
                 argType.Add(returnType);
                 var funcType = TypeNameExtensions.GetTypeByName($"Func`{argType.Count}").First(x => x.IsGenericTypeDefinition == true);
                 var expType = funcType.MakeGenericType(argType.ToArray());
                 var exp = typeof(Interpreter).GetMethod("ParseAsDelegate").MakeGenericMethod(expType)
-                    .Invoke(interpreter, new object[] { body, parameters.Select(x => x.Name).ToArray() });
+                    .Invoke(interpreter, new object[] { body, parameters.Select(x => x.Parameters.Name).ToArray() });
 
 
                 return exp;
@@ -288,11 +293,13 @@ namespace DataServices.Actors
             var paramlst = new Dictionary<string, string>();
             foreach (var p in predicateParameters)
             {
-                        var c = p.ExpectedEventConstants.Value;
-                        paramlst.AddOrSet(p.PredicateParameters.Name, $"\"{c}\"");
-                   
+                if (p.ExpectedEventConstants != null)
+                {
+                    var c = p.ExpectedEventConstants.Value;
+                    paramlst.AddOrSet(p.PredicateParameters.Parameters.Name, $"\"{c}\"");
+                }
 
-                    //var pEntityParameters =
+                //var pEntityParameters =
                     //    cp.CalculatedPropertyParameters.Where(x => x.FunctionParameterId == p.Id)
                     //        .DistinctBy(x => x.Id).ToList();
                     //for (int j = 0; j < pEntityParameters.Count(); j++)
@@ -373,13 +380,8 @@ namespace DataServices.Actors
                 ProcessComplexEvents.AddRange(GetDBComplexActions(entityType.Id, systemProcess.Id));
                 ProcessViewModelInfos.AddRange(GetDBViewInfos((int)entityType.Id, false, systemProcess.Id));
 
-                ProcessComplexEvents.Add(Processes.ComplexActions.GetComplexAction("StartProcess", new object[] { systemProcess.Id }));
-                ProcessComplexEvents.Add(Processes.ComplexActions.GetComplexAction("CleanUpParentProcess", new object[] {systemProcess.Id , systemProcess.Id + 1}));
-                // ProcessComplexEvents.Add(Processes.ComplexActions.GetComplexAction("CleanUpProcess", new object[] { systemProcess.Id, systemProcess.Id + 1 }));
-
-                CreateProcesses(domainProcess, systemProcess);
-
-
+                IntializeProcess(domainProcess, systemProcess);
+           
             }
         }
 
@@ -433,37 +435,45 @@ namespace DataServices.Actors
 
         private IProcessAction CreateProcessAction(int processId, ProcessAction processAction)
         {
-            return new RevolutionEntities.Process.ProcessAction(CreateComplexEventParametersAction(processAction.ProcessActionComplexParameterAction),
+            return new RevolutionEntities.Process.ProcessAction(CreateComplexEventParametersAction(processAction.Action),
                 processAction.ProcessActionStateCommandInfo != null
                 ? (cp => new RevolutionEntities.Process.StateCommandInfo(cp.Actor.Process.Id, StateCommands[processAction.ProcessActionStateCommandInfo.StateCommandInfo.StateInfo.Name]))
-                : CreateComplexEventParameterStateCommand(processId, processAction.ProcessActionComplexParameterAction),
+                : CreateComplexEventParameterStateCommand(processId, processAction.Action),
                 new RevolutionEntities.Process.SourceType(typeof(IComplexEventService)));
         }
 
-        private Func<IDynamicComplexEventParameters, IStateCommandInfo> CreateComplexEventParameterStateCommand(int processId, ProcessActionComplexParameterAction stateCommand)
+        private Func<IDynamicComplexEventParameters, IStateCommandInfo> CreateComplexEventParameterStateCommand(int processId, Action stateCommand)
         {
             throw new NotImplementedException();
         }
 
         private Func<IDynamicComplexEventParameters, Task<IProcessSystemMessage>> CreateComplexEventParametersAction(
-            ProcessActionComplexParameterAction cpAction)
+            Action action)
         {
             try
             {
-                var interpreter = new Interpreter();
+                var actions = new List<Func<IDynamicComplexEventParameters, IProcessSystemMessage>>();
 
-                foreach (var r in cpAction.ProcessActionComplexParameterReferenceTypes)
-                {
-                    if (r.ReferenceTypes.ReferenceTypeName != null)
+                
+                    var interpreter = new Interpreter();
+                    foreach (var r in action.ActionReferenceTypes)
                     {
-                        interpreter.Reference(new ReferenceType(r.ReferenceTypes.ReferenceTypeName.Name, TypeNameExtensions.GetTypeByName(r.ReferenceTypes.DataType.Type.Name)[0]));
+                        if (r.ReferenceTypes.ReferenceTypeName != null)
+                        {
+                            interpreter.Reference(new ReferenceType(r.ReferenceTypes.ReferenceTypeName.Name,
+                                TypeNameExtensions.GetTypeByName(r.ReferenceTypes.DataType.Type.Name)[0]));
+                        }
+                        else
+                        {
+                            interpreter.Reference(
+                                TypeNameExtensions.GetTypeByName(r.ReferenceTypes.DataType.Type.Name)[0]);
+                        }
                     }
-                    else
-                    {
-                        interpreter.Reference(TypeNameExtensions.GetTypeByName(r.ReferenceTypes.DataType.Type.Name)[0]);
-                    }
-                }
 
+
+                var res = interpreter.ParseAsDelegate<Func<IDynamicComplexEventParameters, IProcessSystemMessage>>(action.Body, action.ParameterName);
+
+               
                 //interpreter.Reference(typeof(UpdateProcessStateEntity));
                 //interpreter.Reference(typeof(ProcessStateEntity));
                 //interpreter.Reference(typeof(IDynamicEntity));
@@ -486,7 +496,7 @@ namespace DataServices.Actors
                 //        new ProcessStateEntity(cp.Actor.Process, (IDynamicEntity)cp.Messages["IEntityWithChangesFound-SignIn"].Properties["Entity"].Value,
                 //            new StateInfo(cp.Actor.Process.Id, "UserValidated", "User: " + ((IDynamicEntity)cp.Messages["IEntityWithChangesFound-SignIn"].Properties["Entity"].Value).Properties["UserName"] + " Validated", "User Validated")),
                 //        new StateCommandInfo(cp.Actor.Process.Id, RevolutionData.Context.Process.Commands.UpdateState), cp.Actor.Process, cp.Actor.Source);
-                 var res = interpreter.ParseAsDelegate<Func<IDynamicComplexEventParameters, IProcessSystemMessage>>(cpAction.Body, cpAction.ParameterName);
+                
 
                 return async cp => await Task.Run(() => res(cp));
             }
@@ -855,7 +865,7 @@ namespace DataServices.Actors
 
             var res = ProcessViewModels.ProcessViewModelFactory[vm.ViewModelTypeName].Invoke(vm, vp);
 
-            processedVMIds.Add($"{vm.EntityTypeName}-{vm.ViewModelTypeName}", res);
+            processedVMIds.AddOrSet($"{vm.EntityTypeName}-{vm.ViewModelTypeName}", res);
             return res;
 
         }

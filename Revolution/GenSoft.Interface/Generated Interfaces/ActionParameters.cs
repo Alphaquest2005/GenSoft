@@ -15,9 +15,8 @@ namespace GenSoft.Interfaces
 	public partial interface IActionParameters:SystemInterfaces.IEntity  
 	{
 		int ActionId { get;}
-		int DataTypeId { get;}
 		string Description { get;}
-		string Name { get;}
+		int ParameterId { get;}
 
 
 

@@ -18,7 +18,6 @@ namespace GenSoft.Mappings
 			entityBuilder.ToTable("ProcessActionComplexParameterAction", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").ValueGeneratedNever();	
-			entityBuilder.Property(t => t.Id).HasColumnName("Id").IsRequired();
 			entityBuilder.Property(t => t.Body).HasColumnName("Body").IsRequired().HasMaxLength(Int32.MaxValue);
 			entityBuilder.Property(t => t.ParameterName).HasColumnName("ParameterName").IsRequired().HasMaxLength(50);
 			entityBuilder.Property(t => t.ParameterName).HasColumnName("ParameterName").IsRequired().HasMaxLength(50);
@@ -26,7 +25,6 @@ namespace GenSoft.Mappings
 				entityBuilder.HasMany(x => x.ProcessActionComplexParameterReferenceTypes).WithOne(p => p.ProcessActionComplexParameterAction).HasForeignKey(c => c.ProcessActionCPActionId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties
-				//entityBuilder.HasOne(p => p.ProcessAction ProcessAction).WithOne(p => p.ProcessActionComplexParameterAction).HasForeignKey<ProcessAction>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

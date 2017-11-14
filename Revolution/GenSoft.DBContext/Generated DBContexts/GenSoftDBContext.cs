@@ -18,6 +18,7 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.ActionParameters> ActionParameters { get; set; }
 		public DbSet<Entities.ActionProperties> ActionProperties { get; set; }
 		public DbSet<Entities.ActionPropertyParameter> ActionPropertyParameter { get; set; }
+		public DbSet<Entities.ActionReferenceTypes> ActionReferenceTypes { get; set; }
 		public DbSet<Entities.ActionSet> ActionSet { get; set; }
 		public DbSet<Entities.ActionSetActions> ActionSetActions { get; set; }
 		public DbSet<Entities.ActionTrigger> ActionTrigger { get; set; }
@@ -65,6 +66,7 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.Machine> Machine { get; set; }
 		public DbSet<Entities.MainEntity> MainEntity { get; set; }
 		public DbSet<Entities.Ordinality> Ordinality { get; set; }
+		public DbSet<Entities.Parameters> Parameters { get; set; }
 		public DbSet<Entities.ParentEntity> ParentEntity { get; set; }
 		public DbSet<Entities.PredicateParameters> PredicateParameters { get; set; }
 		public DbSet<Entities.Predicates> Predicates { get; set; }
@@ -116,6 +118,7 @@ namespace GenSoft.DBContexts
 				ActionParametersMap.Map(modelBuilder.Entity<Entities.ActionParameters>());
 				ActionPropertiesMap.Map(modelBuilder.Entity<Entities.ActionProperties>());
 				ActionPropertyParameterMap.Map(modelBuilder.Entity<Entities.ActionPropertyParameter>());
+				ActionReferenceTypesMap.Map(modelBuilder.Entity<Entities.ActionReferenceTypes>());
 				ActionSetMap.Map(modelBuilder.Entity<Entities.ActionSet>());
 				ActionSetActionsMap.Map(modelBuilder.Entity<Entities.ActionSetActions>());
 				ActionTriggerMap.Map(modelBuilder.Entity<Entities.ActionTrigger>());
@@ -163,6 +166,7 @@ namespace GenSoft.DBContexts
 				MachineMap.Map(modelBuilder.Entity<Entities.Machine>());
 				MainEntityMap.Map(modelBuilder.Entity<Entities.MainEntity>());
 				OrdinalityMap.Map(modelBuilder.Entity<Entities.Ordinality>());
+				ParametersMap.Map(modelBuilder.Entity<Entities.Parameters>());
 				ParentEntityMap.Map(modelBuilder.Entity<Entities.ParentEntity>());
 				PredicateParametersMap.Map(modelBuilder.Entity<Entities.PredicateParameters>());
 				PredicatesMap.Map(modelBuilder.Entity<Entities.Predicates>());

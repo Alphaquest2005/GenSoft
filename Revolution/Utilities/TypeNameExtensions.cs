@@ -71,12 +71,28 @@ namespace Utilities
         public static Type[] GetTypeByName(string className)
         {
             var returnVal = new List<Type>();
-
-            foreach (var a in AppDomain.CurrentDomain.GetAssemblies())
+            if (className.Contains('`') && className.Contains("[["))
             {
-                var assemblyTypes = a.GetTypes();
-                returnVal.AddRange(assemblyTypes.Where(t => t.Name.ToLower() == className.ToLower() || t.FullName.ToLower() == className.ToLower()));//|| t.FullName.ToLower().Contains(className.ToLower()) 
+                var genClassName = className.Substring(0, className.IndexOf("[["));
+                var genType = GetTypeByName(genClassName)[0];
+                var subClassName = className.Substring(className.IndexOf("[[") + 2,className.IndexOf(',')  - (className.IndexOf("[[") + 2));
+                var subType = GetTypeByName(subClassName)[0];
+                return new Type[]{genType.MakeGenericType(subType)};
+
             }
+            else
+            {
+                foreach (var a in AppDomain.CurrentDomain.GetAssemblies())
+                {
+                    var assemblyTypes = a.GetTypes();
+                    returnVal.AddRange(assemblyTypes.Where(t =>
+                        t.Name.ToLower() == className.ToLower() ||
+                        t.FullName.ToLower() ==
+                        className.ToLower())); //|| t.FullName.ToLower().Contains(className.ToLower()) 
+                }
+            }
+
+
 
             return returnVal.ToArray();
         }

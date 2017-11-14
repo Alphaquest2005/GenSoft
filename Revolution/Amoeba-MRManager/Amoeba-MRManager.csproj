@@ -355,6 +355,7 @@
 ..\GenSoft.DBContext\Generated Mappings\ActionParameters.cs
 ..\GenSoft.DBContext\Generated Mappings\ActionProperties.cs
 ..\GenSoft.DBContext\Generated Mappings\ActionPropertyParameter.cs
+..\GenSoft.DBContext\Generated Mappings\ActionReferenceTypes.cs
 ..\GenSoft.DBContext\Generated Mappings\ActionSet.cs
 ..\GenSoft.DBContext\Generated Mappings\ActionSetActions.cs
 ..\GenSoft.DBContext\Generated Mappings\ActionTrigger.cs
@@ -402,6 +403,7 @@
 ..\GenSoft.DBContext\Generated Mappings\Machine.cs
 ..\GenSoft.DBContext\Generated Mappings\MainEntity.cs
 ..\GenSoft.DBContext\Generated Mappings\Ordinality.cs
+..\GenSoft.DBContext\Generated Mappings\Parameters.cs
 ..\GenSoft.DBContext\Generated Mappings\ParentEntity.cs
 ..\GenSoft.DBContext\Generated Mappings\PredicateParameters.cs
 ..\GenSoft.DBContext\Generated Mappings\Predicates.cs
@@ -446,6 +448,7 @@
 ..\GenSoft.Entities\Generated Entities\ActionParameters.cs
 ..\GenSoft.Entities\Generated Entities\ActionProperties.cs
 ..\GenSoft.Entities\Generated Entities\ActionPropertyParameter.cs
+..\GenSoft.Entities\Generated Entities\ActionReferenceTypes.cs
 ..\GenSoft.Entities\Generated Entities\ActionSet.cs
 ..\GenSoft.Entities\Generated Entities\ActionSetActions.cs
 ..\GenSoft.Entities\Generated Entities\ActionTrigger.cs
@@ -493,6 +496,7 @@
 ..\GenSoft.Entities\Generated Entities\Machine.cs
 ..\GenSoft.Entities\Generated Entities\MainEntity.cs
 ..\GenSoft.Entities\Generated Entities\Ordinality.cs
+..\GenSoft.Entities\Generated Entities\Parameters.cs
 ..\GenSoft.Entities\Generated Entities\ParentEntity.cs
 ..\GenSoft.Entities\Generated Entities\PredicateParameters.cs
 ..\GenSoft.Entities\Generated Entities\Predicates.cs
@@ -542,6 +546,7 @@
 ..\GenSoft.Interface\Generated Interfaces\ActionParameters.cs
 ..\GenSoft.Interface\Generated Interfaces\ActionProperties.cs
 ..\GenSoft.Interface\Generated Interfaces\ActionPropertyParameter.cs
+..\GenSoft.Interface\Generated Interfaces\ActionReferenceTypes.cs
 ..\GenSoft.Interface\Generated Interfaces\ActionSet.cs
 ..\GenSoft.Interface\Generated Interfaces\ActionSetActions.cs
 ..\GenSoft.Interface\Generated Interfaces\ActionTrigger.cs
@@ -589,6 +594,7 @@
 ..\GenSoft.Interface\Generated Interfaces\Machine.cs
 ..\GenSoft.Interface\Generated Interfaces\MainEntity.cs
 ..\GenSoft.Interface\Generated Interfaces\Ordinality.cs
+..\GenSoft.Interface\Generated Interfaces\Parameters.cs
 ..\GenSoft.Interface\Generated Interfaces\ParentEntity.cs
 ..\GenSoft.Interface\Generated Interfaces\PredicateParameters.cs
 ..\GenSoft.Interface\Generated Interfaces\Predicates.cs

@@ -36,7 +36,7 @@ namespace RevolutionData
                         processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.StartProcess),
                         expectedSourceType: new SourceType(typeof(IComplexEventService)))},
             {"StartProcess", new ProcessAction(
-                action: async cp => await Task.Run(() => new StartSystemProcess(NullProcess,
+                action: async cp => await Task.Run(() => new StartSystemProcess(RevolutionData.ProcessActions.NullProcess,
                     new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.StartProcess),
                     cp.Actor.Process, cp.Actor.Source)),
                 processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.StartProcess),

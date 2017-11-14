@@ -17,6 +17,7 @@ namespace GenSoft.Interfaces
 		string Body { get;}
 		string Description { get;}
 		string Name { get;}
+		string ParameterName { get;}
 
 
 

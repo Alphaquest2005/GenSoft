@@ -169,7 +169,7 @@ namespace RevolutionData
                         }),
 
                     new ViewEventSubscription<IScreenModel, ICleanUpSystemProcess>(
-                        "ScreenViewModel-ICurrentEntityChanged",
+                        "ScreenViewModel-ICleanUpSystemProcess",
                         processId,
                         e => e != null,
                         new List<Func<IScreenModel, ICleanUpSystemProcess, bool>> { },
@@ -270,24 +270,29 @@ namespace RevolutionData
 
         private static void ClearScreenModels(IScreenModel s, ICleanUpSystemProcess e)
         {
-            s.BodyViewModels.RemoveRange(
-                s.BodyViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId));
+            
+                s.BodyViewModels.Clear();
+            
+                //s.BodyViewModels.RemoveRange(
+                //s.BodyViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId).ToList());
+           
+            
             s.BodyViewModels.Reset();
             s.LeftViewModels.RemoveRange(
-                s.LeftViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId));
+                s.LeftViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId).ToList());
             s.LeftViewModels.Reset();
             s.HeaderViewModels.RemoveRange(
-                s.HeaderViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId));
+                s.HeaderViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId).ToList());
             s.HeaderViewModels.Reset();
             s.RightViewModels.RemoveRange(
-                s.RightViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId));
+                s.RightViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId).ToList());
             s.RightViewModels.Reset();
             s.FooterViewModels.RemoveRange(
-                s.FooterViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId));
+                s.FooterViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId).ToList());
             s.FooterViewModels.Reset();
 
             s.CacheViewModels.RemoveRange(
-                s.CacheViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId));
+                s.CacheViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId).ToList());
             s.CacheViewModels.Reset();
         }
     }

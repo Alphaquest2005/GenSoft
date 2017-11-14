@@ -86,6 +86,7 @@
     <Compile Include="Generated Interfaces\ActionParameters.cs" />
     <Compile Include="Generated Interfaces\ActionProperties.cs" />
     <Compile Include="Generated Interfaces\ActionPropertyParameter.cs" />
+    <Compile Include="Generated Interfaces\ActionReferenceTypes.cs" />
     <Compile Include="Generated Interfaces\ActionSet.cs" />
     <Compile Include="Generated Interfaces\ActionSetActions.cs" />
     <Compile Include="Generated Interfaces\ActionTrigger.cs" />
@@ -133,6 +134,7 @@
     <Compile Include="Generated Interfaces\Machine.cs" />
     <Compile Include="Generated Interfaces\MainEntity.cs" />
     <Compile Include="Generated Interfaces\Ordinality.cs" />
+    <Compile Include="Generated Interfaces\Parameters.cs" />
     <Compile Include="Generated Interfaces\ParentEntity.cs" />
     <Compile Include="Generated Interfaces\PredicateParameters.cs" />
     <Compile Include="Generated Interfaces\Predicates.cs" />

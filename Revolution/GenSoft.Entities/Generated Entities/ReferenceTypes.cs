@@ -17,7 +17,7 @@ namespace GenSoft.Entities
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
-				public virtual ICollection<ProcessActionComplexParameterReferenceTypes> ProcessActionComplexParameterReferenceTypes {get; set;}
+				public virtual ICollection<ActionReferenceTypes> ActionReferenceTypes {get; set;}
 				public virtual ReferenceTypeName ReferenceTypeName {get; set;}
 		
 			// ---------Parent Relationships

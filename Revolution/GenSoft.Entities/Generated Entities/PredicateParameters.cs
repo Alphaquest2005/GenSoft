@@ -13,9 +13,7 @@ namespace GenSoft.Entities
 {
 	public partial class PredicateParameters: BaseEntity, IPredicateParameters
 	{
-		public virtual int DataTypeId { get; set; }
-		public virtual string Description { get; set; }
-		public virtual string Name { get; set; }
+		public virtual int ParameterId { get; set; }
 		public virtual int PredicateId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
@@ -23,7 +21,7 @@ namespace GenSoft.Entities
 				public virtual ICollection<ExpectedEventPredicateParameters> ExpectedEventPredicateParameters {get; set;}
 		
 			// ---------Parent Relationships
-				public virtual DataType DataType {get; set;}
+				public virtual Parameters Parameters {get; set;}
 				public virtual Predicates Predicates {get; set;}
 	
 

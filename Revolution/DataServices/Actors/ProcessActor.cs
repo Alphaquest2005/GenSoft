@@ -64,7 +64,7 @@ namespace DataServices.Actors
                 .Where(x => x.Process.Id == msg.Process.Id)
                 .Where(x => x.ActorName == this.ActorName).Subscribe(UpdateActor);
 
-            EventMessageBus.Current.GetEvent<ICleanUpSystemProcess>(Source).Where(x => x.ProcessToBeCleanedUpId == Process.Id).Subscribe(x => Self.GracefulStop(TimeSpan.FromSeconds((double)EventTimeOut.ShortWait)));
+            //EventMessageBus.Current.GetEvent<ICleanUpSystemProcess>(Source).Where(x => x.ProcessToBeCleanedUpId == Process.Id).Subscribe(x => Self.GracefulStop(TimeSpan.FromSeconds((double)EventTimeOut.ShortWait)));
 
             EventMessageBus.Current.GetEvent<IServiceStarted<IProcessService>>(Source)
                 .Where(x => x.Process.Id == msg.Process.Id)

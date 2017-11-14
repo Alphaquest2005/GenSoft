@@ -19,7 +19,6 @@ namespace GenSoft.Entities
 			// ---------Child Relationships
 				public virtual ICollection<ActionProperties> ActionProperties {get; set;}
 				public virtual ICollection<ActionSetActions> ActionSetActions {get; set;}
-				public virtual ICollection<ProcessAction> ProcessAction {get; set;}
 		
 			// ---------Parent Relationships
 	

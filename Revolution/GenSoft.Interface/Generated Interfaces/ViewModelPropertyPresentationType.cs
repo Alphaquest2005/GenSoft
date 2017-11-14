@@ -15,10 +15,10 @@ namespace GenSoft.Interfaces
 	public partial interface IViewModelPropertyPresentationType:SystemInterfaces.IEntity  
 	{
 		int PresentationThemeId { get;}
-		int ValueOptionId { get;}
 		int ViewModelTypeId { get;}
 		int ViewPropertyPresentationPropertyTypeId { get;}
 		int ViewTypeId { get;}
+		int ValueOptionId { get;}
 
 
 

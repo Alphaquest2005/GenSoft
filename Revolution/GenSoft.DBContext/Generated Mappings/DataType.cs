@@ -23,7 +23,7 @@ namespace GenSoft.Mappings
 				entityBuilder.HasMany(x => x.Attributes).WithOne(p => p.DataType).HasForeignKey(c => c.DataTypeId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.FunctionParameter).WithOne(p => p.DataType).HasForeignKey(c => c.DataTypeId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.Functions).WithOne(p => p.DataType).HasForeignKey(c => c.ReturnDataTypeId).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.PredicateParameters).WithOne(p => p.DataType).HasForeignKey(c => c.DataTypeId).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasMany(x => x.Parameters).WithOne(p => p.DataType).HasForeignKey(c => c.DataTypeId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.ReferenceTypes).WithOne(p => p.DataType).HasForeignKey(c => c.DataTypId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties
