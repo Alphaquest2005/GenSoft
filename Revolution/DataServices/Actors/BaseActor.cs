@@ -30,7 +30,7 @@ namespace DataServices.Actors
         {
             Process = process;
             Source = new Source(Guid.NewGuid(), "PersistentActor" + typeof(T).GetFriendlyName(), new SourceType(typeof(BaseActor<T>)),process, process.MachineInfo);
-           // EventMessageBus.Current.GetEvent<ICleanUpSystemProcess>(Source).Where(x => x.ProcessToBeCleanedUpId == process.Id).Subscribe(x => Self.GracefulStop(TimeSpan.FromSeconds((double)EventTimeOut.ShortWait)));
+            //EventMessageBus.Current.GetEvent<ICleanUpSystemProcess>(Source).Where(x => x.ProcessToBeCleanedUpId == process.Id).Subscribe(x => Self.GracefulStop(TimeSpan.FromSeconds((double)EventTimeOut.ShortWait)));
         }
         internal void PublishProcesError(IProcessSystemMessage msg, Exception ex, Type expectedMessageType)
         {

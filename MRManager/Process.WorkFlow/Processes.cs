@@ -73,16 +73,16 @@ namespace Process.WorkFlow
                 processInfo:new StateCommandInfo(1,RevolutionData.Context.Process.Commands.StartProcess),
                 action: ProcessActions.Actions["StartProcess"]),
 
-            //new ComplexEventAction(
-            //    "104",
-            //    1, new List<IProcessExpectedEvent>
-            //    {
-            //        new ProcessExpectedEvent ("ProcessCompleted", 1, typeof (ISystemProcessCompleted), e => e != null  && e.Process.Id == 1, new StateEventInfo(1, RevolutionData.Context.Process.Events.ProcessCompleted), new SourceType(typeof(IComplexEventService))),
+            new ComplexEventAction(
+                "104",
+                1, new List<IProcessExpectedEvent>
+                {
+                    new ProcessExpectedEvent ("ProcessCompleted", 1, typeof (ISystemProcessCompleted), e => e != null  && e.Process.Id == 1, new StateEventInfo(1, RevolutionData.Context.Process.Events.ProcessCompleted), new SourceType(typeof(IComplexEventService))),
 
-            //    },
-            //    typeof(ISystemProcessCleanedUp),
-            //    processInfo:new StateCommandInfo(1,RevolutionData.Context.Process.Commands.CleanUpProcess ),
-            //    action: ProcessActions.Actions["CleanUpProcess"]),
+                },
+                typeof(ISystemProcessCleanedUp),
+                processInfo:new StateCommandInfo(1,RevolutionData.Context.Process.Commands.CleanUpProcess ),
+                action: ProcessActions.Actions["CleanUpProcess"]),
 
            //new ComplexEventAction(
            //     key:"203",
@@ -122,17 +122,30 @@ namespace Process.WorkFlow
             //        typeof(ISystemProcessStarted),
             //        processInfo:new StateCommandInfo(4,RevolutionData.Context.Process.Commands.StartProcess),
             //        action: ProcessActions.Actions["StartProcess"]),
-            new ComplexEventAction(
-                "205",
-                4, new List<IProcessExpectedEvent>
-                {
-                   // new ProcessExpectedEvent ("ProcessStarted", 4, typeof (ISystemProcessStarted), e => e != null  && e.Process.Id == 4, new StateEventInfo(4, RevolutionData.Context.Process.Events.ProcessStarted), new SourceType(typeof(IProcessService))),
-                    new ProcessExpectedEvent ("UserValidated", 4, typeof (IDomainMessage), e => e != null  && e.Process.Id == 4 && e.Message.Properties["Type"].Value.ToString() == "UserValidated", new StateEventInfo(4, RevolutionData.Context.User.Events.UserFound), new SourceType(typeof(IComplexEventService) )),
+            //new ComplexEventAction(
+            //    "205",
+            //    4, new List<IProcessExpectedEvent>
+            //    {
+            //       // new ProcessExpectedEvent ("ProcessStarted", 4, typeof (ISystemProcessStarted), e => e != null  && e.Process.Id == 4, new StateEventInfo(4, RevolutionData.Context.Process.Events.ProcessStarted), new SourceType(typeof(IProcessService))),
+            //        new ProcessExpectedEvent ("UserValidated", 4, typeof (IDomainMessage), e => e != null  && e.Process.Id == 4 && e.Message.Properties["Type"].Value.ToString() == "UserValidated", new StateEventInfo(4, RevolutionData.Context.User.Events.UserFound), new SourceType(typeof(IComplexEventService) )),
 
-                },
-                typeof(ISystemProcessCompleted),
-                processInfo:new StateCommandInfo(4,RevolutionData.Context.Process.Commands.CompleteProcess ),
-                action: ProcessActions.Actions["CompleteProcess"]),
+            //    },
+            //    typeof(ISystemProcessCompleted),
+            //    processInfo:new StateCommandInfo(4,RevolutionData.Context.Process.Commands.CompleteProcess ),
+            //    action: ProcessActions.Actions["CompleteProcess"]),
+
+
+            //new ComplexEventAction(
+            //    "206",
+            //    4, new List<IProcessExpectedEvent>
+            //    {
+            //       // new ProcessExpectedEvent ("ProcessStarted", 4, typeof (ISystemProcessStarted), e => e != null  && e.Process.Id == 4, new StateEventInfo(4, RevolutionData.Context.Process.Events.ProcessStarted), new SourceType(typeof(IProcessService))),
+            //        new ProcessExpectedEvent ("UserValidated", 4, typeof (IDomainMessage), e => e != null  && e.Process.Id == 4 && e.Message.Properties["Type"].Value.ToString() == "UserValidated", new StateEventInfo(4, RevolutionData.Context.User.Events.UserFound), new SourceType(typeof(IComplexEventService) )),
+
+            //    },
+            //    typeof(ISystemProcessCompleted),
+            //    processInfo:new StateCommandInfo(4,RevolutionData.Context.Process.Commands.CompleteProcess ),
+            //    action: ProcessActions.Actions["StartProcessWithValidatedUser"]),
         };
 
 

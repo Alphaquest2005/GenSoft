@@ -49,6 +49,7 @@ using StateEventInfo = RevolutionEntities.Process.StateEventInfo;
 using StateInfo = RevolutionEntities.Process.StateInfo;
 using SystemProcess = RevolutionEntities.Process.SystemProcess;
 using Type = System.Type;
+using User = RevolutionEntities.Process.User;
 
 
 namespace DataServices.Actors
@@ -183,7 +184,7 @@ namespace DataServices.Actors
                 new SystemProcessInfo(domainProcess.Id, domainProcess.SystemProcess.ParentProcessId,
                     domainProcess.SystemProcess.Name,
                     domainProcess.SystemProcess.Description, domainProcess.SystemProcess.Symbol,
-                    user.UserId), Process.User, Process.MachineInfo);
+                    user.UserId), user, Process.MachineInfo);
             SystemProcess.Add(systemProcess);
             foreach (var processStep in domainProcess.ProcessStep)
             {
@@ -209,7 +210,12 @@ namespace DataServices.Actors
                 ProcessViewModelInfos.AddRange(GetDBViewInfos(processStep.MainEntity.EntityType.Id, false,
                     domainProcess.Id));
             }
-            IntializeProcess(domainProcess, systemProcess);
+            // Do not intitalize domain specified processes IntializeProcess(domainProcess, systemProcess);
+            ProcessComplexEvents.Add(
+                Processes.ComplexActions.GetComplexAction("ProcessStarted", new object[] { systemProcess.Id }));
+            ProcessComplexEvents.Add(Processes.ComplexActions.GetComplexAction("CleanUpParentProcess",
+                new object[] { systemProcess.ParentProcessId, systemProcess.Id }));
+            CreateProcesses(domainProcess, systemProcess);
         }
 
         private void IntializeProcess(DomainProcess domainProcess, SystemProcess systemProcess)
@@ -469,36 +475,13 @@ namespace DataServices.Actors
                                 TypeNameExtensions.GetTypeByName(r.ReferenceTypes.DataType.Type.Name)[0]);
                         }
                     }
-
-
-                var res = interpreter.ParseAsDelegate<Func<IDynamicComplexEventParameters, IProcessSystemMessage>>(action.Body, action.ParameterName);
-
-               
-                //interpreter.Reference(typeof(UpdateProcessStateEntity));
-                //interpreter.Reference(typeof(ProcessStateEntity));
-                //interpreter.Reference(typeof(IDynamicEntity));
-                //interpreter.Reference(typeof(IDynamicComplexEventParameters));
-                //interpreter.Reference(typeof(Expando));
-                //interpreter.Reference(typeof(RevolutionEntities.Process.StateInfo));
-                //interpreter.Reference(typeof(RevolutionEntities.Process.StateCommandInfo));
-                //interpreter.Reference(new ReferenceType("Commands", typeof(RevolutionData.Context.Process.Commands)));
-
-
-                //var body = @"new UpdateProcessStateEntity(new ProcessStateEntity(cp.Actor.Process, cp.Messages[""ValidatedUser""].Properties[""Entity""] as IDynamicEntity,
-                //new StateInfo(cp.Actor.Process.Id, ""UserValidated"",
-                //    ""User: "" + (cp.Messages[""ValidatedUser""].Properties[""Entity""] as IDynamicEntity).Properties[""Usersignin""] + "" Validated"", ""User Validated"")),
-                //new StateCommandInfo(cp.Actor.Process.Id, Commands.UpdateState),
-                //cp.Actor.Process, cp.Actor.Source)";
-
-                //IProcessSystemMessage res
-                //        (IDynamicComplexEventParameters cp)
-                //            => new UpdateProcessStateEntity(
-                //        new ProcessStateEntity(cp.Actor.Process, (IDynamicEntity)cp.Messages["IEntityWithChangesFound-SignIn"].Properties["Entity"].Value,
-                //            new StateInfo(cp.Actor.Process.Id, "UserValidated", "User: " + ((IDynamicEntity)cp.Messages["IEntityWithChangesFound-SignIn"].Properties["Entity"].Value).Properties["UserName"] + " Validated", "User Validated")),
-                //        new StateCommandInfo(cp.Actor.Process.Id, RevolutionData.Context.Process.Commands.UpdateState), cp.Actor.Process, cp.Actor.Source);
+                interpreter.Reference(typeof(SystemProcess));
                 
-
-                return async cp => await Task.Run(() => res(cp));
+                var body = action.Body;
+                var res = interpreter.ParseAsDelegate<Func<IDynamicComplexEventParameters, IProcessSystemMessage>>(body, action.ParameterName);
+               var restuple = new Tuple<Action, Func<IDynamicComplexEventParameters, IProcessSystemMessage>>(action, res);
+             
+                return async cp => await Task.Run(() => restuple.Item2(cp));
             }
             catch (Exception e)
             {

@@ -6,18 +6,12 @@ namespace RevolutionEntities.Process
 {
     public class User: IUser
     {
-        private string Username { get; }
-        private string Password { get; }
 
-        public IPerson Person { get; }
-
-        public User(IPerson person, string password, string userId)
+        public User(string userId)
         {
-            Contract.Requires(person != null);
-            Username = person.Name;
-            Password = password;
+            Contract.Requires(!string.IsNullOrEmpty(userId));
+           
             UserId = userId;
-            Person = person;
         }
         
         public string UserId { get; }

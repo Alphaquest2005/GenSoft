@@ -42,8 +42,8 @@ namespace RevolutionData
                 processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.StartProcess),
                 expectedSourceType: new SourceType(typeof(IComplexEventService))) },
             {"StartProcessWithValidatedUser",  new ProcessAction(
-                       action: async cp =>  await Task.Run(() => new StartSystemProcess(NullProcess,//HACK: to keep this generic, the process that was used to create action will be used
-                           new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.StartProcess), cp.Actor.Process, cp.Actor.Source)),
+                       action: async cp =>  await Task.Run(() => new StartSystemProcess(NullProcess,
+                           new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.StartProcess), new SystemProcess( new SystemProcessInfo( cp.Actor.Process.Id, cp.Actor.Process.ParentProcessId,  cp.Actor.Process.Name,  cp.Actor.Process.Description,  cp.Actor.Process.Symbol, (cp.Messages["UserValidated"].Properties["Entity"].Value as IDynamicEntity).Properties["UserName"].ToString()),new User((cp.Messages["UserValidated"].Properties["Entity"].Value as IDynamicEntity).Properties["UserName"].ToString()), cp.Actor.Process.MachineInfo), cp.Actor.Source)),
                        processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.StartProcess),
                        expectedSourceType: new SourceType(typeof(IComplexEventService)))},
             {"CompleteProcess",  new ProcessAction(
