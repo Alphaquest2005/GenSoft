@@ -19,7 +19,6 @@ namespace GenSoft.Entities
 			// ---------Child Relationships
 		
 			// ---------Parent Relationships
-				public virtual ComplexActionExpectedEventActionParameter ComplexActionExpectedEventActionParameter {get; set;}
 	
 
 	}

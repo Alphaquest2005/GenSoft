@@ -89,7 +89,6 @@
     <Compile Include="Generated Mappings\CalculatedPropertyParameters.cs" />
     <Compile Include="Generated Mappings\Command.cs" />
     <Compile Include="Generated Mappings\CommandType.cs" />
-    <Compile Include="Generated Mappings\ComplexActionExpectedEventActionParameter.cs" />
     <Compile Include="Generated Mappings\ComplexEventAction.cs" />
     <Compile Include="Generated Mappings\ComplexEventActionConstant.cs" />
     <Compile Include="Generated Mappings\ComplexEventActionExpectedEvents.cs" />
@@ -130,8 +129,6 @@
     <Compile Include="Generated Mappings\PresentationPropertyType.cs" />
     <Compile Include="Generated Mappings\PresentationTheme.cs" />
     <Compile Include="Generated Mappings\ProcessAction.cs" />
-    <Compile Include="Generated Mappings\ProcessActionComplexParameterAction.cs" />
-    <Compile Include="Generated Mappings\ProcessActionComplexParameterReferenceTypes.cs" />
     <Compile Include="Generated Mappings\ProcessActionStateCommandInfo.cs" />
     <Compile Include="Generated Mappings\ProcessPath.cs" />
     <Compile Include="Generated Mappings\ProcessStep.cs" />

@@ -369,7 +369,6 @@
 ..\GenSoft.DBContext\Generated Mappings\CalculatedPropertyParameters.cs
 ..\GenSoft.DBContext\Generated Mappings\Command.cs
 ..\GenSoft.DBContext\Generated Mappings\CommandType.cs
-..\GenSoft.DBContext\Generated Mappings\ComplexActionExpectedEventActionParameter.cs
 ..\GenSoft.DBContext\Generated Mappings\ComplexEventAction.cs
 ..\GenSoft.DBContext\Generated Mappings\ComplexEventActionConstant.cs
 ..\GenSoft.DBContext\Generated Mappings\ComplexEventActionExpectedEvents.cs
@@ -410,8 +409,6 @@
 ..\GenSoft.DBContext\Generated Mappings\PresentationPropertyType.cs
 ..\GenSoft.DBContext\Generated Mappings\PresentationTheme.cs
 ..\GenSoft.DBContext\Generated Mappings\ProcessAction.cs
-..\GenSoft.DBContext\Generated Mappings\ProcessActionComplexParameterAction.cs
-..\GenSoft.DBContext\Generated Mappings\ProcessActionComplexParameterReferenceTypes.cs
 ..\GenSoft.DBContext\Generated Mappings\ProcessActionStateCommandInfo.cs
 ..\GenSoft.DBContext\Generated Mappings\ProcessPath.cs
 ..\GenSoft.DBContext\Generated Mappings\ProcessStep.cs
@@ -462,7 +459,6 @@
 ..\GenSoft.Entities\Generated Entities\CalculatedPropertyParameters.cs
 ..\GenSoft.Entities\Generated Entities\Command.cs
 ..\GenSoft.Entities\Generated Entities\CommandType.cs
-..\GenSoft.Entities\Generated Entities\ComplexActionExpectedEventActionParameter.cs
 ..\GenSoft.Entities\Generated Entities\ComplexEventAction.cs
 ..\GenSoft.Entities\Generated Entities\ComplexEventActionConstant.cs
 ..\GenSoft.Entities\Generated Entities\ComplexEventActionExpectedEvents.cs
@@ -503,8 +499,6 @@
 ..\GenSoft.Entities\Generated Entities\PresentationPropertyType.cs
 ..\GenSoft.Entities\Generated Entities\PresentationTheme.cs
 ..\GenSoft.Entities\Generated Entities\ProcessAction.cs
-..\GenSoft.Entities\Generated Entities\ProcessActionComplexParameterAction.cs
-..\GenSoft.Entities\Generated Entities\ProcessActionComplexParameterReferenceTypes.cs
 ..\GenSoft.Entities\Generated Entities\ProcessActionStateCommandInfo.cs
 ..\GenSoft.Entities\Generated Entities\ProcessPath.cs
 ..\GenSoft.Entities\Generated Entities\ProcessStep.cs
@@ -560,7 +554,6 @@
 ..\GenSoft.Interface\Generated Interfaces\CalculatedPropertyParameters.cs
 ..\GenSoft.Interface\Generated Interfaces\Command.cs
 ..\GenSoft.Interface\Generated Interfaces\CommandType.cs
-..\GenSoft.Interface\Generated Interfaces\ComplexActionExpectedEventActionParameter.cs
 ..\GenSoft.Interface\Generated Interfaces\ComplexEventAction.cs
 ..\GenSoft.Interface\Generated Interfaces\ComplexEventActionConstant.cs
 ..\GenSoft.Interface\Generated Interfaces\ComplexEventActionExpectedEvents.cs
@@ -601,8 +594,6 @@
 ..\GenSoft.Interface\Generated Interfaces\PresentationPropertyType.cs
 ..\GenSoft.Interface\Generated Interfaces\PresentationTheme.cs
 ..\GenSoft.Interface\Generated Interfaces\ProcessAction.cs
-..\GenSoft.Interface\Generated Interfaces\ProcessActionComplexParameterAction.cs
-..\GenSoft.Interface\Generated Interfaces\ProcessActionComplexParameterReferenceTypes.cs
 ..\GenSoft.Interface\Generated Interfaces\ProcessActionStateCommandInfo.cs
 ..\GenSoft.Interface\Generated Interfaces\ProcessPath.cs
 ..\GenSoft.Interface\Generated Interfaces\ProcessStep.cs

@@ -22,7 +22,6 @@ namespace GenSoft.Mappings
 			entityBuilder.Property(t => t.ExpectedEventId).HasColumnName("ExpectedEventId").IsRequired();
 			entityBuilder.Property(t => t.StateEventInfoId).HasColumnName("StateEventInfoId").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasMany(x => x.ComplexActionExpectedEventActionParameter).WithOne(p => p.ComplexEventActionExpectedEvents).HasForeignKey(c => c.ComplexActionExpectedEventId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties
 				//entityBuilder.HasOne(p => p.ComplexEventAction ComplexEventAction).WithMany(p => p.ComplexEventActionExpectedEvents).HasForeignKey(c => c.ComplexEventActionId).OnDelete(DeleteBehavior.Restrict);

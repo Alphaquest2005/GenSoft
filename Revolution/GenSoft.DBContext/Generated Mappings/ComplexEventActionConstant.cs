@@ -18,12 +18,10 @@ namespace GenSoft.Mappings
 			entityBuilder.ToTable("ComplexEventActionConstant", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").ValueGeneratedNever();	
-			entityBuilder.Property(t => t.Id).HasColumnName("Id").IsRequired();
 			entityBuilder.Property(t => t.Value).HasColumnName("Value").IsRequired().HasMaxLength(Int32.MaxValue);
 		//-------------------Navigation Properties -------------------------------//
 	
 				//----------------Parent Properties
-				//entityBuilder.HasOne(p => p.ComplexActionExpectedEventActionParameter ComplexActionExpectedEventActionParameter).WithOne(p => p.ComplexEventActionConstant).HasForeignKey<ComplexActionExpectedEventActionParameter>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

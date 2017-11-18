@@ -9,6 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Windows;
 using SystemInterfaces;
 using Common;
+using Common.DataEntites;
 using FluentValidation;
 using FluentValidation.Results;
 using GenSoft.Interfaces;
@@ -108,7 +109,7 @@ namespace Core.Common.UI
 
         ReactiveProperty<IProcessStateEntity> IEntityViewModel.State => new ReactiveProperty<IProcessStateEntity>(new ProcessStateEntity(State.Value.Process, CurrentEntity.Value, State.Value.StateInfo.ToStateInfo()));
 
-        private ReactiveProperty<IDynamicEntity> _currentEntity = new ReactiveProperty<IDynamicEntity>(null, ReactivePropertyMode.DistinctUntilChanged);
+        private ReactiveProperty<IDynamicEntity> _currentEntity = new ReactiveProperty<IDynamicEntity>(DynamicEntity.NullEntity, ReactivePropertyMode.DistinctUntilChanged);
         public ReactiveProperty<IDynamicEntity> CurrentEntity
         {
             get { return _currentEntity; }

@@ -20,7 +20,6 @@ namespace GenSoft.Entities
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 				public virtual ICollection<ActionPropertyParameter> ActionPropertyParameter {get; set;}
-				public virtual ICollection<ComplexActionExpectedEventActionParameter> ComplexActionExpectedEventActionParameter {get; set;}
 		
 			// ---------Parent Relationships
 				public virtual Action Action {get; set;}

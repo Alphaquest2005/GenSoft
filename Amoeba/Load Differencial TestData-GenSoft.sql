@@ -1,12 +1,18 @@
 --------------------------------------Insert Test Data --------------------------------------------------
 declare @AppName varchar(50), @UpdateTable varchar(50)
 set @AppName = 'GenSoft'
+
+
 --set @UpdateTable = 'Action'
-set @UpdateTable = 'ComplexEventActionProcessActions'
+--set @UpdateTable = 'ProcessStepComplexActions'
+--set @UpdateTable = 'ComplexEventActionProcessActions'
 --set @UpdateTable = 'ActionReferenceTypes'
 --set @UpdateTable = 'ReferenceTypes'
 --set @UpdateTable = 'DataType'
 --set @UpdateTable = 'Type'
+--set @UpdateTable = 'ProcessPath'
+--set @UpdateTable = 'ProcessStep'
+set @UpdateTable = 'MainEntity'
 
 declare @appId int
 set @appId = (select Id from AmoebaDB.dbo.Applications where Name = @AppName)

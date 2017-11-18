@@ -23,7 +23,6 @@ namespace GenSoft.Mappings
 			entityBuilder.Property(t => t.ParameterId).HasColumnName("ParameterId").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
 				entityBuilder.HasMany(x => x.ActionPropertyParameter).WithOne(p => p.ActionParameters).HasForeignKey(c => c.ActionParameterId).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.ComplexActionExpectedEventActionParameter).WithOne(p => p.ActionParameters).HasForeignKey(c => c.ActionParameterId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties
 				//entityBuilder.HasOne(p => p.Action Action).WithMany(p => p.ActionParameters).HasForeignKey(c => c.ActionId).OnDelete(DeleteBehavior.Restrict);

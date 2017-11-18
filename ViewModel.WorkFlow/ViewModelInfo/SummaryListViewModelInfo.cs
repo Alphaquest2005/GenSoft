@@ -62,7 +62,8 @@ namespace RevolutionData
                             {
                                 if (e.State != null && v.State.Value != null && v.State.Value.EntitySet.SequenceEqual(e.State.EntitySet)) return;
                                 v.State.Value = e.State;
-                                
+                                v.CurrentEntity.Value = v.EntitySet.Value.First();
+
                             }),
 
 
@@ -123,7 +124,7 @@ namespace RevolutionData
                             key:"CurrentEntityChanged",
                             subject:v =>  v.CurrentEntity,//.WhenAnyValue(x => x.Value),
                             subjectPredicate:new List<Func<ISummaryListViewModel, bool>>{},
-                            messageData:s => new ViewEventPublicationParameter(new object[] {s.CurrentEntity.Value},new RevolutionEntities.Process.StateEventInfo(s.Process.Id, Context.View.Events.CurrentEntityChanged),s.Process,s.Source)),
+                            messageData:s => new ViewEventPublicationParameter(new object[] {s.CurrentEntity.Value ?? DynamicEntity.NullEntity},new RevolutionEntities.Process.StateEventInfo(s.Process.Id, Context.View.Events.CurrentEntityChanged),s.Process,s.Source)),
 
                         new ViewEventPublication<ISummaryListViewModel, IViewModelIntialized>(
                             key:$"{entityType.Name}-IViewModelIntialized",

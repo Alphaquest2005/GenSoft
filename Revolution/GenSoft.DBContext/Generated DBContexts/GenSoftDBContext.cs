@@ -32,7 +32,6 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.CalculatedPropertyParameters> CalculatedPropertyParameters { get; set; }
 		public DbSet<Entities.Command> Command { get; set; }
 		public DbSet<Entities.CommandType> CommandType { get; set; }
-		public DbSet<Entities.ComplexActionExpectedEventActionParameter> ComplexActionExpectedEventActionParameter { get; set; }
 		public DbSet<Entities.ComplexEventAction> ComplexEventAction { get; set; }
 		public DbSet<Entities.ComplexEventActionConstant> ComplexEventActionConstant { get; set; }
 		public DbSet<Entities.ComplexEventActionExpectedEvents> ComplexEventActionExpectedEvents { get; set; }
@@ -73,8 +72,6 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.PresentationPropertyType> PresentationPropertyType { get; set; }
 		public DbSet<Entities.PresentationTheme> PresentationTheme { get; set; }
 		public DbSet<Entities.ProcessAction> ProcessAction { get; set; }
-		public DbSet<Entities.ProcessActionComplexParameterAction> ProcessActionComplexParameterAction { get; set; }
-		public DbSet<Entities.ProcessActionComplexParameterReferenceTypes> ProcessActionComplexParameterReferenceTypes { get; set; }
 		public DbSet<Entities.ProcessActionStateCommandInfo> ProcessActionStateCommandInfo { get; set; }
 		public DbSet<Entities.ProcessPath> ProcessPath { get; set; }
 		public DbSet<Entities.ProcessStep> ProcessStep { get; set; }
@@ -132,7 +129,6 @@ namespace GenSoft.DBContexts
 				CalculatedPropertyParametersMap.Map(modelBuilder.Entity<Entities.CalculatedPropertyParameters>());
 				CommandMap.Map(modelBuilder.Entity<Entities.Command>());
 				CommandTypeMap.Map(modelBuilder.Entity<Entities.CommandType>());
-				ComplexActionExpectedEventActionParameterMap.Map(modelBuilder.Entity<Entities.ComplexActionExpectedEventActionParameter>());
 				ComplexEventActionMap.Map(modelBuilder.Entity<Entities.ComplexEventAction>());
 				ComplexEventActionConstantMap.Map(modelBuilder.Entity<Entities.ComplexEventActionConstant>());
 				ComplexEventActionExpectedEventsMap.Map(modelBuilder.Entity<Entities.ComplexEventActionExpectedEvents>());
@@ -173,8 +169,6 @@ namespace GenSoft.DBContexts
 				PresentationPropertyTypeMap.Map(modelBuilder.Entity<Entities.PresentationPropertyType>());
 				PresentationThemeMap.Map(modelBuilder.Entity<Entities.PresentationTheme>());
 				ProcessActionMap.Map(modelBuilder.Entity<Entities.ProcessAction>());
-				ProcessActionComplexParameterActionMap.Map(modelBuilder.Entity<Entities.ProcessActionComplexParameterAction>());
-				ProcessActionComplexParameterReferenceTypesMap.Map(modelBuilder.Entity<Entities.ProcessActionComplexParameterReferenceTypes>());
 				ProcessActionStateCommandInfoMap.Map(modelBuilder.Entity<Entities.ProcessActionStateCommandInfo>());
 				ProcessPathMap.Map(modelBuilder.Entity<Entities.ProcessPath>());
 				ProcessStepMap.Map(modelBuilder.Entity<Entities.ProcessStep>());

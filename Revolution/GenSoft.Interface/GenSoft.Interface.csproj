@@ -100,7 +100,6 @@
     <Compile Include="Generated Interfaces\CalculatedPropertyParameters.cs" />
     <Compile Include="Generated Interfaces\Command.cs" />
     <Compile Include="Generated Interfaces\CommandType.cs" />
-    <Compile Include="Generated Interfaces\ComplexActionExpectedEventActionParameter.cs" />
     <Compile Include="Generated Interfaces\ComplexEventAction.cs" />
     <Compile Include="Generated Interfaces\ComplexEventActionConstant.cs" />
     <Compile Include="Generated Interfaces\ComplexEventActionExpectedEvents.cs" />
@@ -141,8 +140,6 @@
     <Compile Include="Generated Interfaces\PresentationPropertyType.cs" />
     <Compile Include="Generated Interfaces\PresentationTheme.cs" />
     <Compile Include="Generated Interfaces\ProcessAction.cs" />
-    <Compile Include="Generated Interfaces\ProcessActionComplexParameterAction.cs" />
-    <Compile Include="Generated Interfaces\ProcessActionComplexParameterReferenceTypes.cs" />
     <Compile Include="Generated Interfaces\ProcessActionStateCommandInfo.cs" />
     <Compile Include="Generated Interfaces\ProcessPath.cs" />
     <Compile Include="Generated Interfaces\ProcessStep.cs" />

@@ -14,20 +14,20 @@ namespace GenSoft.Entities
 	public partial class ViewModelPropertyPresentationType: BaseEntity, IViewModelPropertyPresentationType
 	{
 		public virtual int PresentationThemeId { get; set; }
+		public virtual int ValueOptionId { get; set; }
 		public virtual int ViewModelTypeId { get; set; }
 		public virtual int ViewPropertyPresentationPropertyTypeId { get; set; }
 		public virtual int ViewTypeId { get; set; }
-		public virtual int ValueOptionId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 		
 			// ---------Parent Relationships
 				public virtual PresentationTheme PresentationTheme {get; set;}
+				public virtual ViewPropertyValueOptions ViewPropertyValueOptions {get; set;}
 				public virtual ViewModelTypes ViewModelTypes {get; set;}
 				public virtual ViewPropertyPresentationPropertyType ViewPropertyPresentationPropertyType {get; set;}
 				public virtual ViewType ViewType {get; set;}
-				public virtual ViewPropertyValueOptions ViewPropertyValueOptions {get; set;}
 	
 
 	}

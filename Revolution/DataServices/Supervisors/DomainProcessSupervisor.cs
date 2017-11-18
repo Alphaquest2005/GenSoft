@@ -127,10 +127,9 @@ namespace DataServices.Actors
                     };
                     DomainProcess.Add(domainProcess);
 
-                    var parentEntityTypes = ctx.EntityRelationship
-                        .Select(x => x.ParentEntity.EntityTypeAttributes.EntityType).Distinct().ToList();
-                    var childEntityTypes = ctx.EntityRelationship
-                        .Select(x => x.EntityTypeAttributes.EntityType).Distinct().ToList();
+                    
+                    var parentEntityTypes = ctx.EntityRelationship.Select(x => x.ParentEntity.EntityTypeAttributes.EntityType).Distinct().ToList();
+                    var childEntityTypes = ctx.EntityRelationship.Select(x => x.EntityTypeAttributes.EntityType).Distinct().ToList();
                     mainEntities = parentEntityTypes.Where(z => !childEntityTypes.Contains(z)).ToList();
 
                     
@@ -767,6 +766,7 @@ namespace DataServices.Actors
                     var pm = CreateEntityTypeViewModel(g.Key, new List<EntityRelationship>(), true, ctx, processId, EntityRelationshipOrdinality.One);
                     var pv = CreateEntityViewModel(pm);
                     if (pv == null) continue;
+                    res.AddOrUpdate(pm.EntityTypeName, pv);
                     var ppm = CreateEntityTypeViewModel(g.Key, new List<EntityRelationship>(), false, ctx, processId, EntityRelationshipOrdinality.One);
                     var ppv = CreateEntityViewModel(ppm);
                     pv.ViewModelInfos.Add(ppv);
@@ -791,9 +791,8 @@ namespace DataServices.Actors
 
                         }
 
-
                     }
-                    res.AddOrUpdate(pm.EntityTypeName, pv);
+                   
                 }
                 if (list.Any()) return res.Values.ToList();
                 {
@@ -848,7 +847,7 @@ namespace DataServices.Actors
 
             var res = ProcessViewModels.ProcessViewModelFactory[vm.ViewModelTypeName].Invoke(vm, vp);
 
-            processedVMIds.AddOrSet($"{vm.EntityTypeName}-{vm.ViewModelTypeName}", res);
+            processedVMIds.Add($"{vm.EntityTypeName}-{vm.ViewModelTypeName}", res);
             return res;
 
         }

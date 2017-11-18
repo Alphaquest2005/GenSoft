@@ -88,7 +88,6 @@
     <Compile Include="Generated Entities\CalculatedPropertyParameters.cs" />
     <Compile Include="Generated Entities\Command.cs" />
     <Compile Include="Generated Entities\CommandType.cs" />
-    <Compile Include="Generated Entities\ComplexActionExpectedEventActionParameter.cs" />
     <Compile Include="Generated Entities\ComplexEventAction.cs" />
     <Compile Include="Generated Entities\ComplexEventActionConstant.cs" />
     <Compile Include="Generated Entities\ComplexEventActionExpectedEvents.cs" />
@@ -129,8 +128,6 @@
     <Compile Include="Generated Entities\PresentationPropertyType.cs" />
     <Compile Include="Generated Entities\PresentationTheme.cs" />
     <Compile Include="Generated Entities\ProcessAction.cs" />
-    <Compile Include="Generated Entities\ProcessActionComplexParameterAction.cs" />
-    <Compile Include="Generated Entities\ProcessActionComplexParameterReferenceTypes.cs" />
     <Compile Include="Generated Entities\ProcessActionStateCommandInfo.cs" />
     <Compile Include="Generated Entities\ProcessPath.cs" />
     <Compile Include="Generated Entities\ProcessStep.cs" />

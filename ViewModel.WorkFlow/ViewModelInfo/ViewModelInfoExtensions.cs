@@ -22,8 +22,8 @@ namespace ViewModel.WorkFlow
     {
         public static IViewModelEventCommand<IViewModel, IEvent> CreateCustomCommand<TViewModel>(ViewModelCommands cmd, List<EntityViewModelRelationship> parentEntites) where TViewModel : IEntityViewModel
         {
-            var cmdPredicates = new List<Func<TViewModel, bool>>();
-            if (cmd.ExistingEntities) cmdPredicates.Add(v => v.CurrentEntity.Value.Id != 0);
+            var cmdPredicates = new List<Func<TViewModel, bool>>(){v => v.CurrentEntity.Value != null};
+            if (cmd.ExistingEntities) cmdPredicates.Add(v => v.CurrentEntity.Value?.Id != 0);
             else cmdPredicates.Add(v => v.CurrentEntity.Value?.Id <= 0);
 
             if (cmd.RequireAllFields) cmdPredicates.Add(v => v.ChangeTracking.Count == v.CurrentEntity.Value.PropertyList.Count(x => x.Key != nameof(IDynamicEntity.Id)));

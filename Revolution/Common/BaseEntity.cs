@@ -15,7 +15,7 @@ namespace Common.DataEntites
         [NotMapped]
         public virtual RowState RowState { get; set; } = RowState.Loaded;
 
-        private readonly Guid _entityGuid = Guid.NewGuid();
+       // private readonly Guid _entityGuid = Guid.NewGuid();
 
         public override bool Equals(object obj)
         {
@@ -43,7 +43,8 @@ namespace Common.DataEntites
         public override int GetHashCode()
         {
             // ReSharper disable once cuz of nhibernate
-            return (_entityGuid.ToString()).GetHashCode();
+           return (int)(Id.GetHashCode() );
+            // return (_entityGuid.ToString()).GetHashCode();
         }
 
         public int CompareTo(object obj)

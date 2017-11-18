@@ -45,6 +45,11 @@ namespace Common.DataEntites
             }
         }
 
+        public static IDynamicEntity NullEntity => new DynamicEntity(
+            new DynamicEntityType("NullEntity", "NullEntitySet", new List<IEntityKeyValuePair>(),
+                new Dictionary<string, List<dynamic>>(), new ObservableDictionary<string, List<dynamic>>(),
+                new ObservableDictionary<string, string>()), 0, new Dictionary<string, object>());
+
 
         private void SetCalculatedProperties()
         {

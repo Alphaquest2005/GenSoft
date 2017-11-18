@@ -216,11 +216,7 @@
                                 <DataTemplate>
                                     <Grid>
                                         <ToggleButton Content="{Binding Path=ViewInfo.EntityType.EntitySetName}" Command="{Binding DataContext.Commands[ChangeViewModelVisibility], ElementName=SummaryListViewModel}" Margin="10" Width="100" Height="50">
-                                            <!--<ToggleButton.Style>
-                                                <Style TargetType="{x:Type ToggleButton}">
-                                                    <Setter Property="" />
-                                                </Style>
-                                            </ToggleButton.Style>-->
+                                           
                                         </ToggleButton>
                                     </Grid>
                                 </DataTemplate>
