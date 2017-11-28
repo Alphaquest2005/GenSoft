@@ -367,3 +367,7 @@ C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\System.Xml.XmlDocume
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\System.Xml.XmlSerializer.dll
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\System.Xml.XPath.dll
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\System.Xml.XPath.XDocument.dll
+C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\DomainUtilities.dll
+C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\GenSoft.DBContext.dll
+C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\DomainUtilities.pdb
+C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\GenSoft.DBContext.pdb

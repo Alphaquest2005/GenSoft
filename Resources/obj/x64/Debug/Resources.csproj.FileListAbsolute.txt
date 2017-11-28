@@ -288,3 +288,7 @@ C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\System.Xml.XPath.XDocume
 C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Styles\DataGridCustomizations.baml
 C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Styles\Non-Theme.baml
 C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Styles\Theme.baml
+C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\DomainUtilities.dll
+C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\GenSoft.DBContext.dll
+C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\DomainUtilities.pdb
+C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\GenSoft.DBContext.pdb

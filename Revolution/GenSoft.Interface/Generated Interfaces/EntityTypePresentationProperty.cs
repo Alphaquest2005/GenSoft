@@ -16,7 +16,6 @@ namespace GenSoft.Interfaces
 	{
 		int EntityTypeAttributeId { get;}
 		int PresentationThemeId { get;}
-		int ValueOptionId { get;}
 		int ViewPropertyPresentationPropertyTypeId { get;}
 		int ViewTypeId { get;}
 

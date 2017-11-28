@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using Common.DataEntites;
 using Common.Dynamic;
+using DomainUtilities;
 using EventMessages;
 using EventMessages.Commands;
 using EventMessages.Events;

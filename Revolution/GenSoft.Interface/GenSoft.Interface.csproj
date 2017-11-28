@@ -104,6 +104,7 @@
     <Compile Include="Generated Interfaces\ComplexEventActionConstant.cs" />
     <Compile Include="Generated Interfaces\ComplexEventActionExpectedEvents.cs" />
     <Compile Include="Generated Interfaces\ComplexEventActionProcessActions.cs" />
+    <Compile Include="Generated Interfaces\ConfigurationPropertyPresentation.cs" />
     <Compile Include="Generated Interfaces\DataType.cs" />
     <Compile Include="Generated Interfaces\DBType.cs" />
     <Compile Include="Generated Interfaces\DomainProcess.cs" />
@@ -146,6 +147,8 @@
     <Compile Include="Generated Interfaces\ProcessStepComplexActions.cs" />
     <Compile Include="Generated Interfaces\ProcessStepParentEntity.cs" />
     <Compile Include="Generated Interfaces\ProcessStepRelationship.cs" />
+    <Compile Include="Generated Interfaces\PropertyValue.cs" />
+    <Compile Include="Generated Interfaces\PropertyValueOption.cs" />
     <Compile Include="Generated Interfaces\ReferenceTypeName.cs" />
     <Compile Include="Generated Interfaces\ReferenceTypes.cs" />
     <Compile Include="Generated Interfaces\RelationshipType.cs" />

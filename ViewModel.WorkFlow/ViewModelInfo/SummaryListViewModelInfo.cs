@@ -10,6 +10,7 @@ using BootStrapper;
 using Common;
 using Common.DataEntites;
 using Common.Dynamic;
+using DomainUtilities;
 using GenSoft.Entities;
 using GenSoft.Interfaces;
 using JB.Collections.Reactive;

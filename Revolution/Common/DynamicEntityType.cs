@@ -17,11 +17,11 @@ namespace Common.DataEntites
         
         
 
-        public DynamicEntityType(string name, string entitySetName, List<IEntityKeyValuePair> properties, Dictionary<string, List<dynamic>> calculatedProperties, ObservableDictionary<string, List<dynamic>> cachedProperties, ObservableDictionary<string, string> cachedEntityProperties)
+        public DynamicEntityType(string name, string entitySetName, List<IEntityKeyValuePair> properties, Dictionary<string, List<dynamic>> calculatedProperties, ObservableDictionary<string, Dictionary<int, dynamic>> cachedProperties, ObservableDictionary<string, string> propertyParentEntityType)
         {
             Name = name;
             Properties = properties;
-            CachedEntityProperties = cachedEntityProperties;
+            PropertyParentEntityType = propertyParentEntityType;
             CachedProperties = cachedProperties;
             CalculatedProperties = calculatedProperties;
             EntitySetName = entitySetName;
@@ -33,8 +33,8 @@ namespace Common.DataEntites
         public string EntitySetName { get; }
         public List<IEntityKeyValuePair> Properties { get; }
         public Dictionary<string, List<dynamic>> CalculatedProperties { get; }
-        public ObservableDictionary<string, List<dynamic>> CachedProperties { get; }
-        public ObservableDictionary<string, string> CachedEntityProperties { get; }
+        public ObservableDictionary<string, Dictionary<int, dynamic>> CachedProperties { get; }
+        public ObservableDictionary<string, string> PropertyParentEntityType { get; }
         public IIntelliList<IDynamicEntityType> ChildEntities { get; } = new InteliList<IDynamicEntityType>();
         public IIntelliList<IDynamicEntityType> ParentEntities { get; } = new InteliList<IDynamicEntityType>();
     }

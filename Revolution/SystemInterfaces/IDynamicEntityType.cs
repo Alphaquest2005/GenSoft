@@ -13,8 +13,8 @@ namespace SystemInterfaces
         
         Dictionary<string, List<dynamic>> CalculatedProperties { get; }
 
-        ObservableDictionary<string, List<dynamic>> CachedProperties { get; }
-        ObservableDictionary<string, string> CachedEntityProperties { get; }
+        ObservableDictionary<string, Dictionary<int, dynamic>> CachedProperties { get; }
+        ObservableDictionary<string, string> PropertyParentEntityType { get; }
         IIntelliList<IDynamicEntityType> ChildEntities { get;  }
         IIntelliList<IDynamicEntityType> ParentEntities { get;  }
     }

@@ -98,6 +98,10 @@
       <Project>{cb6d5fbc-0c13-437d-b4f3-a0ec4d5673b3}</Project>
       <Name>Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DomainUtilities\DomainUtilities.csproj">
+      <Project>{4FAC145F-FB23-4F9D-9A8B-0BA4BF41D89E}</Project>
+      <Name>DomainUtilities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DynamicLinq\System.Linq.Dynamic\System.Linq.Dynamic.csproj">
       <Project>{17c0d5de-c72d-4a06-a12c-445ebcf3b9ea}</Project>
       <Name>System.Linq.Dynamic</Name>

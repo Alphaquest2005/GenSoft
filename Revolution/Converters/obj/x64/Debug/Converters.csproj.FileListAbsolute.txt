@@ -56,3 +56,7 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\ViewModel.In
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\Utilities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\Utilities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\obj\x64\Debug\Converters.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\DynamicExpresso.Core.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\DynamicExpresso.Core.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\Common.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\Common.pdb

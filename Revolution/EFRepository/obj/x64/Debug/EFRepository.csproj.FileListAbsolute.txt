@@ -289,3 +289,5 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\System.Xml
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\DynamicExpresso.Core.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\DynamicExpresso.Core.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\MoreLinq.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\DomainUtilities.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\DomainUtilities.pdb

@@ -188,3 +188,5 @@ C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\System.Xml.XmlD
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\System.Xml.XmlSerializer.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\System.Xml.XPath.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\System.Xml.XPath.XDocument.dll
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\DomainUtilities.dll
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\DomainUtilities.pdb

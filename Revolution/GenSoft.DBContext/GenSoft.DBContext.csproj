@@ -93,6 +93,7 @@
     <Compile Include="Generated Mappings\ComplexEventActionConstant.cs" />
     <Compile Include="Generated Mappings\ComplexEventActionExpectedEvents.cs" />
     <Compile Include="Generated Mappings\ComplexEventActionProcessActions.cs" />
+    <Compile Include="Generated Mappings\ConfigurationPropertyPresentation.cs" />
     <Compile Include="Generated Mappings\DataType.cs" />
     <Compile Include="Generated Mappings\DBType.cs" />
     <Compile Include="Generated Mappings\DomainProcess.cs" />
@@ -135,6 +136,8 @@
     <Compile Include="Generated Mappings\ProcessStepComplexActions.cs" />
     <Compile Include="Generated Mappings\ProcessStepParentEntity.cs" />
     <Compile Include="Generated Mappings\ProcessStepRelationship.cs" />
+    <Compile Include="Generated Mappings\PropertyValue.cs" />
+    <Compile Include="Generated Mappings\PropertyValueOption.cs" />
     <Compile Include="Generated Mappings\ReferenceTypeName.cs" />
     <Compile Include="Generated Mappings\ReferenceTypes.cs" />
     <Compile Include="Generated Mappings\RelationshipType.cs" />

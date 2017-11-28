@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using SystemInterfaces;
 using Common;
 using Common.DataEntites;
+using DomainUtilities;
 using FluentValidation;
 using FluentValidation.Results;
 using GenSoft.Interfaces;

@@ -39,7 +39,7 @@ namespace DataServices.Actors
                 new LoadEntitySet(
                     new DynamicEntityType("Test Entity", "Test Entities", new List<IEntityKeyValuePair>(),
                         new Dictionary<string, List<dynamic>>(),
-                        new ObservableDictionary<string, List<dynamic>>(),
+                        new ObservableDictionary<string, Dictionary<int, dynamic>>(),
                         new ObservableDictionary<string, string>()),
                     new StateCommandInfo(process.Id,
                         RevolutionData.Context.Entity.Commands.LoadEntitySetWithChanges), process,

@@ -318,3 +318,5 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\ViewModel.W
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\ViewModel.WorkFlow.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Google.Protobuf.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Z.Expressions.Eval.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\DomainUtilities.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\DomainUtilities.pdb

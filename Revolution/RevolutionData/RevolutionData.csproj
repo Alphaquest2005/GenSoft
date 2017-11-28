@@ -97,6 +97,10 @@
       <Project>{cb6d5fbc-0c13-437d-b4f3-a0ec4d5673b3}</Project>
       <Name>Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DomainUtilities\DomainUtilities.csproj">
+      <Project>{4FAC145F-FB23-4F9D-9A8B-0BA4BF41D89E}</Project>
+      <Name>DomainUtilities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EventMessages\EventMessages.csproj">
       <Project>{e3d04176-3758-4c9d-84f3-7a4d3859eae5}</Project>
       <Name>EventMessages</Name>

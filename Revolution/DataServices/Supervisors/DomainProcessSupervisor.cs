@@ -50,15 +50,14 @@ using StateInfo = RevolutionEntities.Process.StateInfo;
 using SystemProcess = RevolutionEntities.Process.SystemProcess;
 using Type = System.Type;
 using User = RevolutionEntities.Process.User;
-
+using DomainUtilities;
 
 namespace DataServices.Actors
 {
     public class DomainProcessSupervisor : BaseSupervisor<DomainProcessSupervisor>
     {
         private IUntypedActorContext ctx = null;
-        public static Dictionary<string, dynamic> Functions { get; } = new Dictionary<string, dynamic>();
-        public static Dictionary<string, dynamic> Actions { get; } = new Dictionary<string, dynamic>();
+       
 
         public static Dictionary<string, ComplexEventAction> ComplexEventActions { get; } = new Dictionary<string, ComplexEventAction>();
 
@@ -257,41 +256,14 @@ namespace DataServices.Actors
                 var expectedEventPredicateParameters = expectedEvents.ExpectedEventPredicateParameters.Where(x => x.EventPredicateId == ep.Id).ToList();
                 var body = CreateExpectedEventPredicateBody(ep.Predicates, expectedEventPredicateParameters);
                 var predicateParameters = expectedEventPredicateParameters.Select(x => x.PredicateParameters).ToList();
-                var res = CreatePredicate(body, predicateParameters);
+                var res = DynamicEntityTypeExtensions.CreatePredicate(body, predicateParameters);
                 return res;
             }
             return null;
             
         }
 
-        private static dynamic CreatePredicate(string body, List<PredicateParameters> predicateParameters)
-        {
-            try
-            {
 
-                var interpreter = new Interpreter();
-                if (body.Contains("const") || body.Contains("param"))
-                {
-                    return "\"EntityParameter or constant not assigned to entity attribute\"";
-
-                }
-                var returnType = typeof(bool);
-                var parameters = predicateParameters.Where(x => !x.Parameters.Name.Contains("Const"));
-                var argType = parameters.Select(x => CreateTypesFromDbType(x.Parameters.DataTypeId)).ToList();
-                argType.Add(returnType);
-                var funcType = TypeNameExtensions.GetTypeByName($"Func`{argType.Count}").First(x => x.IsGenericTypeDefinition == true);
-                var expType = funcType.MakeGenericType(argType.ToArray());
-                var exp = typeof(Interpreter).GetMethod("ParseAsDelegate").MakeGenericMethod(expType)
-                    .Invoke(interpreter, new object[] { body, parameters.Select(x => x.Parameters.Name).ToArray() });
-
-
-                return exp;
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-        }
 
         private static string CreateExpectedEventPredicateBody(Predicates predicates, List<ExpectedEventPredicateParameters> predicateParameters)
         {
@@ -575,7 +547,7 @@ namespace DataServices.Actors
                     var actionParameters = f.ActionParameters.ToList();
 
                     var res = CreateAction(f.Body, actionParameters);
-                    Functions.Add(f.Name, res);
+                    DynamicEntityTypeExtensions.Functions.Add(f.Name, res);
                 }
             }
         }
@@ -611,133 +583,14 @@ namespace DataServices.Actors
                     var FunctionParameter = f.FunctionParameter
                         .DistinctBy(x => x.Id).ToList();
 
-                    var res = CreateFunction(f.Body, FunctionParameter, f.ReturnDataTypeId);
-                    Functions.Add(f.Name, res);
+                    var res = DynamicEntityTypeExtensions.CreateFunction(f.Body, FunctionParameter, f.ReturnDataTypeId);
+                    DynamicEntityTypeExtensions.Functions.Add(f.Name, res);
                 }
             }
         }
-        private static dynamic CreateFunction(string body, List<FunctionParameter> FunctionParameter, int returnDataTypeId)
-        {
-            try
-            {
-
-                var interpreter = new Interpreter();
-                if (body.Contains("const") || body.Contains("param"))
-                {
-                    return "\"EntityParameter or constant not assigned to entity attribute\"";
-
-                }
-                var returnType = CreateTypesFromDbType(returnDataTypeId);
-                var parameters = FunctionParameter;
-                var argType = parameters.Select(x => CreateTypesFromDbType(x.DataTypeId)).ToList();
-                argType.Add(returnType);
-                var funcType = TypeNameExtensions.GetTypeByName($"Func`{argType.Count}")
-                    .First(x => x.IsGenericTypeDefinition == true);
-                var expType = funcType.MakeGenericType(argType.ToArray());
-                var exp = typeof(Interpreter).GetMethod("ParseAsDelegate").MakeGenericMethod(expType)
-                    .Invoke(interpreter, new object[] { body, parameters.Select(x => x.Name).ToArray() });
+     
 
 
-                return exp;
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-        }
-
-        private static string CreateCPFunctionBody(string body, List<FunctionParameter> FunctionParameter, int calculatedPropertyId)
-        {
-            var paramlst = new Dictionary<string, string>();
-
-
-            foreach (var p in FunctionParameter)
-            {
-                var cpList = p.CalculatedPropertyParameters.DistinctBy(x => x.Id)
-                    .Where(x => x.CalculatedPropertyId == calculatedPropertyId).Select(x => x.CalculatedProperties).DistinctBy(x => x.Id).ToList();
-                foreach (var cp in cpList)
-                {
-                    var pconst = cp.FunctionParameterConstant.DistinctBy(x => x.Id)
-                        .Where(q => q.FunctionParameterId == p.Id).ToList();
-                    for (int j = 0; j < pconst.Count(); j++)
-                    {
-                        var c = pconst[j];
-                        paramlst.AddOrSet($"const{j}", $"\"{c.Value}\"");
-                    }
-
-                    var pEntityParameters =
-                        cp.CalculatedPropertyParameters.Where(x => x.FunctionParameterId == p.Id)
-                            .DistinctBy(x => x.Id).ToList();
-                    for (int j = 0; j < pEntityParameters.Count(); j++)
-                    {
-                        var param = pEntityParameters[j];
-                        var cparameter = param.CalculatedPropertyParameterEntityTypes.DistinctBy(x => x.Id)
-                            .FirstOrDefault(x => x.CalculatedPropertyParameterId == param.Id)
-                            ?.EntityTypeAttributes.Attributes.Name;
-
-                        if (cparameter != null) paramlst.AddOrSet($"param{j}", $"\"{cparameter}\"");
-                    }
-                }
-            }
-            var newBody = paramlst.Aggregate(body, (current, p) => current.Replace(p.Key, p.Value));
-
-            return newBody;
-        }
-
-
-        static Dictionary<int, Type> DBTypes = new Dictionary<int, Type>();
-        private static Type CreateTypesFromDbType(int dataTypeId)
-        {
-            if (DBTypes.ContainsKey(dataTypeId)) return DBTypes[dataTypeId];
-
-            var typedic = new Dictionary<Tuple<int, Type>, List<Type>>();
-
-            using (var ctx = new GenSoftDBContext())
-            {
-                var dataType = ctx.DataType
-                    .Include(x => x.Type.Types).ThenInclude(x => x.ChildTypes)
-                    .Include(x => x.Type.Types).ThenInclude(x => x.ParentTypes)
-                    .First(x => x.Id == dataTypeId);
-                if (dataType.Type.Types.Count == 0)
-                {
-
-
-                    var res = TypeNameExtensions.GetTypeByName(dataType.Type.Name);
-                    if (res == null) Debugger.Break();
-                    DBTypes.Add(dataTypeId, res[0]);
-                    return res[0];
-                }
-                else
-                {
-
-                    foreach (var typeArguements in dataType.Type.Types.DistinctBy(x => x.Id))
-                    {
-                        var parentType = new Tuple<int, Type>(typeArguements.ParentTypeId, CreateTypesFromDbType(typeArguements.ParentTypeId));
-                        var childType = CreateTypesFromDbType(typeArguements.ChildTypeId);
-                        if (typedic.ContainsKey(parentType))
-                        {
-                            typedic[parentType].Add(childType);
-                        }
-                        else
-                        {
-                            typedic.Add(parentType, new List<Type>() { childType });
-                        }
-
-                    }
-
-                    if (typedic.Count > 1) Debugger.Break();
-
-                    var t = typedic.First();
-                    var res = t.Key.Item2 == typeof(Array)
-                        ? t.Value[0].MakeArrayType()
-                        : t.Key.Item2.MakeGenericType(t.Value.ToArray());
-
-                    DBTypes.Add(dataType.Id, res);
-                    return res;
-
-                }
-            }
-        }
 
 
 
@@ -964,7 +817,7 @@ namespace DataServices.Actors
                     foreach (var r in list)
                     {
                         var parentType = r.Key.Type.Name;
-                        AddDynamicEntityTypes(parentType);
+                        DynamicEntityTypeExtensions.AddDynamicEntityTypes(parentType);
 
 
                         res.AddOrUpdate($"{parentType}-IntializeProcessStateList",Processes.ComplexActions.GetComplexAction("IntializeProcessStateList",new object[]{processId, DynamicEntityType.DynamicEntityTypes[parentType]}));
@@ -980,7 +833,7 @@ namespace DataServices.Actors
 
                             if (!DynamicEntityType.DynamicEntityTypes.ContainsKey(childType))
                             {
-                                AddDynamicEntityTypes(childType);
+                                DynamicEntityTypeExtensions.AddDynamicEntityTypes(childType);
                                 if (rel.RelationshipType.ChildOrdinalitys.Name != "One")
                                 {
                                     DynamicEntityType.DynamicEntityTypes[parentType].ChildEntities
@@ -1030,48 +883,14 @@ namespace DataServices.Actors
                             .Include(x => x.EntityTypeAttributes).ThenInclude(x => x.Attributes)
                             .First(x => x.Id == mainEntityId);
                         var parentType = mainEntity.Type.Name;
-                        AddDynamicEntityTypes(parentType);
+                        DynamicEntityTypeExtensions.AddDynamicEntityTypes(parentType);
 
                         res.AddOrUpdate($"{parentType}-IntializeProcessState", Processes.ComplexActions.GetComplexAction("IntializeProcessState", new object[] { processId, DynamicEntityType.DynamicEntityTypes[parentType] }));
                         res.AddOrUpdate($"{parentType}-UpdateState", Processes.ComplexActions.GetComplexAction("UpdateState", new object[] { processId, DynamicEntityType.DynamicEntityTypes[parentType] }));
                         res.AddOrUpdate($"{parentType}|{parentType}-RequestState", Processes.ComplexActions.GetComplexAction("RequestState", new object[] { processId, parentType, parentType, "Id" }));
                     }
                 }
-
                 
-                //using (var ctx = new GenSoftDBContext())
-                //{
-
-                //    Parallel.ForEach(ctx.EntityRelationship
-                //        .Include(
-                //            "ChildEntity.EntityType.DomainEntityType.ProcessStateDomainEntityTypes.ProcessState.Process")
-                //        .Where(x => x.EntityTypeAttributes.EntityType.CompositeRequest != null)
-                //        .GroupBy(x => x.EntityTypeAttributes.EntityType).Where(g => g.Count() > 1), (g) =>
-                //    {
-
-                //        foreach (var processId in g.Key.DomainEntityType
-                //            .ProcessStateDomainEntityTypes.Select(x => x.ProcessState.Process.Id).Distinct())
-                //        {
-                //            var childType = g.Key.Type.Name;
-                //            var parentEntities = g.Select(p =>
-                //                new ViewModelEntity()
-                //                {
-                //                    EntityType =
-                //                        DynamicEntityType.DynamicEntityTypes[p.ParentEntity.EntityType.Type.Name],
-                //                    Property = p.EntityTypeAttributes.Attributes.Name
-                //                }
-                //            ).ToList();
-
-                //            res.Add(Processes.ComplexActions.GetComplexAction("RequestCompositeStateList",
-                //                new object[]
-                //                {
-                //                    processId, DynamicEntityType.DynamicEntityTypes[childType],
-                //                    new Dictionary<string, dynamic>(), parentEntities
-                //                }));
-                //        }
-                //    });
-
-                //}
 
                 return res.Values.ToList();
             }
@@ -1081,269 +900,9 @@ namespace DataServices.Actors
             }
         }
 
-        private static void AddDynamicEntityTypes(string entityType)
-        {
-
-            using (var ctx = new GenSoftDBContext())
-            {
-                try
-                {
-                    var viewType = ctx.EntityType
-                        .Include(x => x.Type)
-                        .Include(x => x.EntityTypeAttributes).ThenInclude(x => x.Attributes)
-                        .Include(x => x.EntityTypeAttributes)
-                        .Include(x => x.EntityTypeAttributes)
-                        .ThenInclude(x => x.CalculatedProperties.CalculatedPropertyParameters)
-                        .ThenInclude(x => x.FunctionParameter)
-                        .Include(x => x.EntityTypeAttributes)
-                        .ThenInclude(x => x.CalculatedProperties.CalculatedPropertyParameters)
-                        .ThenInclude(x => x.CalculatedPropertyParameterEntityTypes)
-                        .ThenInclude(x => x.EntityTypeAttributes.Attributes)
-                        .Include(x => x.EntityTypeAttributes)
-                        .ThenInclude(x => x.CalculatedProperties.FunctionParameterConstant)
-                        .Include(x => x.EntityTypeAttributes)
-                        .ThenInclude(x => x.CalculatedProperties.FunctionSets.FunctionSetFunctions)
-                        .ThenInclude(x => x.Functions)
-                        .Include(x => x.EntityTypeAttributes)
-                        .ThenInclude(x => x.CalculatedPropertyParameterEntityTypes)
-                        .Include(x => x.EntityTypeAttributes).ThenInclude(x => x.EntityTypeAttributeCache)
-                        .FirstOrDefault(x => x.Type.Name == entityType);
-                    if (viewType == null) return;
-
-                    var viewset = ctx.EntityTypeAttributes
-                        .Where(x => x.EntityTypeId == viewType.Id)
-                        .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
-                        .Select(x => x.AttributeId).ToList();
-
-                    if (!viewset.Any()) return;
-                    var tes =
-
-                        ctx.Entity
-                            .FirstOrDefault(x => x.Id == 0)
-                            ?.EntityAttribute
-                            .Where(z => viewset.Contains(z.AttributeId))
-                            .OrderBy(d => viewset.IndexOf(d.AttributeId))
-                            .Select(z => new EntityKeyValuePair(z.Attributes.Name, z.Value,
-                                (ViewAttributeDisplayProperties)CreateEntityAttributeViewProperties(z.Id),
-                                z.Attributes.EntityId != null, z.Attributes.EntityName != null) as IEntityKeyValuePair)
-                            .ToList()
-                        ??
-                        ctx.EntityTypeAttributes
-                            .Where(x => x.EntityTypeId == viewType.Id)
-                            .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
-                            .Select(z =>
-                                new EntityKeyValuePair(z.Attributes.Name,
-                                    null,
-                                    (ViewAttributeDisplayProperties)CreateEntityAttributeViewProperties(z.Id),
-                                    z.Attributes.EntityId != null,
-                                    z.Attributes.EntityName != null) as IEntityKeyValuePair).ToList();
-
-                    var calPropDef = CreateCalculatedProperties(viewType);
-
-                    var cachedProperties = CreateCachedProperties(viewType);
-                    var cachedEntityProperties = CreateCachedEntityProperties(viewType);
+        
 
 
-                    var dynamicEntityType = new DynamicEntityType(viewType.Type.Name,
-                        viewType.EntitySetName, tes, calPropDef, cachedProperties, cachedEntityProperties);
-
-
-
-                    DynamicEntityType.DynamicEntityTypes.AddOrSet(entityType, dynamicEntityType);
-                }
-                catch (Exception)
-                {
-
-                    throw;
-                }
-            }
-        }
-
-        private static ObservableDictionary<string, List<dynamic>> CreateCachedProperties(EntityType viewType)
-        {
-            var res = new ObservableDictionary<string, List<dynamic>>();
-
-
-            var lst = viewType.EntityTypeAttributes
-                .Where(x => x.EntityTypeAttributeCache != null).DistinctBy(x => x.Id).ToList();
-
-
-            using (var ctx = new GenSoftDBContext())
-            {
-                foreach (var cp in lst)
-                {
-                    var elst = ctx.EntityAttribute
-                        .Where(x => x.AttributeId == cp.AttributeId)
-                        .Select(x => new { Key = x.Attributes.Name, Value = x.Value })
-                        .GroupBy(x => x.Key)
-                        .ToDictionary(x => x.Key, x => x.Select(z => (dynamic)z.Value).ToList());
-                    foreach (var itm in elst)
-                    {
-                        res.Add(itm.Key, itm.Value);
-                    }
-
-                }
-            }
-
-
-            return res;
-        }
-
-        private static ObservableDictionary<string, string> CreateCachedEntityProperties(EntityType viewType)
-        {
-            var res = new ObservableDictionary<string, string>();
-
-
-
-
-
-            //using (var ctx = new GenSoftDBContext())
-            //{
-
-            //    var lst = ctx.EntityTypeAttributes
-            //        .Include(x => x.Attributes)
-            //        .Include(x => x.ParentEntity).ThenInclude(x => x.EntityTypeAttributes.EntityType.Type)
-            //        .Where(x => x.EntityTypeId == viewType.Id && !x.ParentEntity.Any())
-            //        .Select(x => new { Attribute = x.Attributes.Name, ParentEntities = x.ParentEntity.Select(z => z.EntityTypeAttributes.EntityType).ToList() }).ToList();
-
-            //    foreach (var p in lst)
-            //    {
-            //        var cache =
-            //        ctx.EntityTypeViewModel
-            //        .Include(x => x.ProcessStateDomainEntityTypes.DomainEntityType.EntityType.Type)
-            //        .Where(x => x.ViewModelTypes.Name == "CachedViewModel" &&
-            //                                           p.ParentEntities.Select(z => z.EntityTypeId).Contains(x.ProcessStateDomainEntityTypes
-            //                                                   .DomainEntityTypeId))
-            //        .Select(x => x.ProcessStateDomainEntityTypes.DomainEntityType.EntityType.Type.Name).FirstOrDefault();
-            //        if (cache != null) res.Add(p.Attribute, cache);
-            //    }
-
-            //}
-
-
-            return res;
-        }
-
-        private static IViewAttributeDisplayProperties CreateEntityAttributeViewProperties(int entityTypeAttributeId)
-        {
-            return new ViewAttributeDisplayProperties(
-                CreateEntityAttributeDisplayProperties(entityTypeAttributeId, "Read"),
-                CreateEntityAttributeDisplayProperties(entityTypeAttributeId, "Write")
-            );
-
-        }
-
-        private static AttributeDisplayProperties CreateEntityAttributeDisplayProperties(int entityTypeAttributeId, string viewType)
-        {
-
-            return new AttributeDisplayProperties(
-                CreateEntityTypeAttributeDisplayProperties(entityTypeAttributeId, viewType)
-            );
-
-
-        }
-
-        private static Dictionary<string, Dictionary<string, string>> CreateEntityTypeAttributeDisplayProperties(
-            int entityTypeAttributeId, string viewType)
-        {
-            using (var ctx = new GenSoftDBContext())
-            {
-                var basicTheme = ctx.ViewPropertyTheme
-                    .Include(x => x.ViewPropertyValueOptions)
-                    .Include(x => x.ViewPropertyPresentationPropertyType.PresentationPropertyType)
-                    .Include(x => x.ViewPropertyPresentationPropertyType.ViewProperty)
-                    .Where(x => x.ViewType.Name == viewType)
-                    .Select(x => new
-                    {
-                        PresentationPropertyName = x.ViewPropertyPresentationPropertyType.PresentationPropertyType.Name,
-                        ViewPropertyName = x.ViewPropertyPresentationPropertyType.ViewProperty.Name,
-                        Value = (string)null
-                    }).GroupBy(x => x.PresentationPropertyName)
-                    .Select(x => new { x.Key, Value = x.ToDictionary(z => z.ViewPropertyName, z => z.Value) }).ToDictionary(x => x.Key, x => x.Value);
-
-                var entityAttributeTheme =
-                    ctx.EntityTypePresentationProperty
-                        .Include(x => x.ViewPropertyValueOptions)
-                        .Include(x => x.ViewPropertyPresentationPropertyType.PresentationPropertyType)
-                        .Include(x => x.ViewPropertyPresentationPropertyType.ViewProperty)
-                        .Where(x => x.ViewType.Name == viewType && x.EntityTypeAttributeId == entityTypeAttributeId)
-                        .Select(x => new
-                        {
-                            PresentationPropertyName = x.ViewPropertyPresentationPropertyType.PresentationPropertyType
-                                .Name,
-                            ViewPropertyName = x.ViewPropertyPresentationPropertyType.ViewProperty.Name,
-                            x.ViewPropertyValueOptions.Value
-                        }).GroupBy(x => x.PresentationPropertyName)
-                        .Select(x => new { x.Key, Value = x.ToDictionary(z => z.ViewPropertyName, z => z.Value) })
-                        .ToDictionary(x => x.Key, x => x.Value);
-
-                foreach (var vt in entityAttributeTheme)
-                {
-
-
-                    if (!basicTheme.ContainsKey(vt.Key))
-                    {
-
-                        basicTheme.Add(vt.Key, vt.Value);
-                    }
-                    else
-                    {
-                        var bt = basicTheme[vt.Key];
-                        foreach (var etitm in vt.Value)
-                        {
-                            if (bt.ContainsKey(etitm.Key))
-                            {
-
-                                bt[etitm.Key] = etitm.Value;
-
-                            }
-                            else
-                            {
-                                bt.Add(etitm.Key, etitm.Value);
-                            }
-                        }
-                    }
-
-
-                }
-
-                return basicTheme;
-            }
-        }
-
-
-        private static Dictionary<string, List<dynamic>> CreateCalculatedProperties(EntityType viewType)
-        {
-
-            var calprops = new Dictionary<string, List<dynamic>>();
-
-
-            var lst = viewType.EntityTypeAttributes
-                .Where(x => x.CalculatedProperties != null)
-                .Select(x => x.CalculatedProperties).DistinctBy(x => x.Id).ToList();
-            foreach (var cp in lst)
-            {
-                var flst = cp
-                    .FunctionSets
-                    .FunctionSetFunctions
-                    .DistinctBy(x => x.Id)
-                    .Select(f =>
-                        Functions.ContainsKey(f.Functions.Name)
-                            ? Functions[f.Functions.Name]
-                            : CreateFunction(
-                                CreateCPFunctionBody(
-                                    f.Functions.Body,
-                                    f.Functions.FunctionParameter.ToList(),
-                                    cp.Id),
-                                f.Functions.FunctionParameter.ToList(),
-                                f.Functions.ReturnDataTypeId)).ToList();
-
-                calprops.Add(cp.EntityTypeAttributes.Attributes.Name, flst);
-            }
-
-
-            return calprops;
-        }
     }
 
 

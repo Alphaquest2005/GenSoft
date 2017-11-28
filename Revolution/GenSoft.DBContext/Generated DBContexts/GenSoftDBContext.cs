@@ -36,6 +36,7 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.ComplexEventActionConstant> ComplexEventActionConstant { get; set; }
 		public DbSet<Entities.ComplexEventActionExpectedEvents> ComplexEventActionExpectedEvents { get; set; }
 		public DbSet<Entities.ComplexEventActionProcessActions> ComplexEventActionProcessActions { get; set; }
+		public DbSet<Entities.ConfigurationPropertyPresentation> ConfigurationPropertyPresentation { get; set; }
 		public DbSet<Entities.DataType> DataType { get; set; }
 		public DbSet<Entities.DBType> DBType { get; set; }
 		public DbSet<Entities.DomainProcess> DomainProcess { get; set; }
@@ -78,6 +79,8 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.ProcessStepComplexActions> ProcessStepComplexActions { get; set; }
 		public DbSet<Entities.ProcessStepParentEntity> ProcessStepParentEntity { get; set; }
 		public DbSet<Entities.ProcessStepRelationship> ProcessStepRelationship { get; set; }
+		public DbSet<Entities.PropertyValue> PropertyValue { get; set; }
+		public DbSet<Entities.PropertyValueOption> PropertyValueOption { get; set; }
 		public DbSet<Entities.ReferenceTypeName> ReferenceTypeName { get; set; }
 		public DbSet<Entities.ReferenceTypes> ReferenceTypes { get; set; }
 		public DbSet<Entities.RelationshipType> RelationshipType { get; set; }
@@ -133,6 +136,7 @@ namespace GenSoft.DBContexts
 				ComplexEventActionConstantMap.Map(modelBuilder.Entity<Entities.ComplexEventActionConstant>());
 				ComplexEventActionExpectedEventsMap.Map(modelBuilder.Entity<Entities.ComplexEventActionExpectedEvents>());
 				ComplexEventActionProcessActionsMap.Map(modelBuilder.Entity<Entities.ComplexEventActionProcessActions>());
+				ConfigurationPropertyPresentationMap.Map(modelBuilder.Entity<Entities.ConfigurationPropertyPresentation>());
 				DataTypeMap.Map(modelBuilder.Entity<Entities.DataType>());
 				DBTypeMap.Map(modelBuilder.Entity<Entities.DBType>());
 				DomainProcessMap.Map(modelBuilder.Entity<Entities.DomainProcess>());
@@ -175,6 +179,8 @@ namespace GenSoft.DBContexts
 				ProcessStepComplexActionsMap.Map(modelBuilder.Entity<Entities.ProcessStepComplexActions>());
 				ProcessStepParentEntityMap.Map(modelBuilder.Entity<Entities.ProcessStepParentEntity>());
 				ProcessStepRelationshipMap.Map(modelBuilder.Entity<Entities.ProcessStepRelationship>());
+				PropertyValueMap.Map(modelBuilder.Entity<Entities.PropertyValue>());
+				PropertyValueOptionMap.Map(modelBuilder.Entity<Entities.PropertyValueOption>());
 				ReferenceTypeNameMap.Map(modelBuilder.Entity<Entities.ReferenceTypeName>());
 				ReferenceTypesMap.Map(modelBuilder.Entity<Entities.ReferenceTypes>());
 				RelationshipTypeMap.Map(modelBuilder.Entity<Entities.RelationshipType>());

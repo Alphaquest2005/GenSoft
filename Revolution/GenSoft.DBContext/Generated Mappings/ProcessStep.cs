@@ -29,8 +29,8 @@ namespace GenSoft.Mappings
 				entityBuilder.HasOne(p => p.MainEntity).WithOne(p => p.ProcessStep).HasForeignKey<MainEntity>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.NextProcessSteps).WithOne(p => p.NextProcessSteps).HasForeignKey(c => c.NextProcessStepId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.ProcessSteps).WithOne(p => p.ProcessSteps).HasForeignKey(c => c.ProcessStepId).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.ProcessStepComplexActions).WithOne(p => p.ProcessStep).HasForeignKey(c => c.ProcessStepId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.ProcessStepRelationship).WithOne(p => p.ProcessStep).HasForeignKey(c => c.ProcessStepId).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasMany(x => x.ProcessStepComplexActions).WithOne(p => p.ProcessStep).HasForeignKey(c => c.ProcessStepId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties
 				//entityBuilder.HasOne(p => p.DomainProcess DomainProcess).WithMany(p => p.ProcessStep).HasForeignKey(c => c.DomainProcessId).OnDelete(DeleteBehavior.Restrict);

@@ -173,6 +173,10 @@
       <Project>{CB6D5FBC-0C13-437D-B4F3-A0EC4D5673B3}</Project>
       <Name>Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DomainUtilities\DomainUtilities.csproj">
+      <Project>{4FAC145F-FB23-4F9D-9A8B-0BA4BF41D89E}</Project>
+      <Name>DomainUtilities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EventAggregator\EventAggregator.csproj">
       <Project>{31E6B370-01F0-4489-832F-436CB97A6718}</Project>
       <Name>EventAggregator</Name>

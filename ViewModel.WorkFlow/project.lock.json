@@ -726,6 +726,7 @@
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
@@ -742,6 +743,17 @@
           "ViewMessages": "1.0.0",
           "ViewModel.Interfaces": "1.0.0",
           "reactiveui-core": "7.0.0"
+        }
+      },
+      "DomainUtilities/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Common": "1.0.0",
+          "GenSoft.DBContext": "1.0.0",
+          "GenSoft.Entities": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
         }
       },
       "EventAggregator/1.0.0": {
@@ -809,6 +821,7 @@
           "Actor.Interfaces": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "EventMessages": "1.0.0",
           "RevolutionEntities": "1.0.0",
           "SystemInterfaces": "1.0.0",
@@ -1606,6 +1619,7 @@
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
@@ -1622,6 +1636,17 @@
           "ViewMessages": "1.0.0",
           "ViewModel.Interfaces": "1.0.0",
           "reactiveui-core": "7.0.0"
+        }
+      },
+      "DomainUtilities/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Common": "1.0.0",
+          "GenSoft.DBContext": "1.0.0",
+          "GenSoft.Entities": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
         }
       },
       "EventAggregator/1.0.0": {
@@ -1689,6 +1714,7 @@
           "Actor.Interfaces": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "EventMessages": "1.0.0",
           "RevolutionEntities": "1.0.0",
           "SystemInterfaces": "1.0.0",
@@ -2486,6 +2512,7 @@
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
@@ -2502,6 +2529,17 @@
           "ViewMessages": "1.0.0",
           "ViewModel.Interfaces": "1.0.0",
           "reactiveui-core": "7.0.0"
+        }
+      },
+      "DomainUtilities/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Common": "1.0.0",
+          "GenSoft.DBContext": "1.0.0",
+          "GenSoft.Entities": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
         }
       },
       "EventAggregator/1.0.0": {
@@ -2569,6 +2607,7 @@
           "Actor.Interfaces": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "EventMessages": "1.0.0",
           "RevolutionEntities": "1.0.0",
           "SystemInterfaces": "1.0.0",
@@ -3366,6 +3405,7 @@
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
@@ -3382,6 +3422,17 @@
           "ViewMessages": "1.0.0",
           "ViewModel.Interfaces": "1.0.0",
           "reactiveui-core": "7.0.0"
+        }
+      },
+      "DomainUtilities/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Common": "1.0.0",
+          "GenSoft.DBContext": "1.0.0",
+          "GenSoft.Entities": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
         }
       },
       "EventAggregator/1.0.0": {
@@ -3449,6 +3500,7 @@
           "Actor.Interfaces": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "EventMessages": "1.0.0",
           "RevolutionEntities": "1.0.0",
           "SystemInterfaces": "1.0.0",
@@ -5371,6 +5423,11 @@
       "path": "../Revolution/Core.Common.UI/project.json",
       "msbuildProject": "../Revolution/Core.Common.UI/Core.Common.UI.csproj"
     },
+    "DomainUtilities/1.0.0": {
+      "type": "project",
+      "path": "../Revolution/DomainUtilities/DomainUtilities.csproj",
+      "msbuildProject": "../Revolution/DomainUtilities/DomainUtilities.csproj"
+    },
     "EventAggregator/1.0.0": {
       "type": "project",
       "path": "../Revolution/EventAggregator/project.json",
@@ -5520,6 +5577,9 @@
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\DomainUtilities\\DomainUtilities.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\DomainUtilities\\DomainUtilities.csproj"
             }
           }
         }

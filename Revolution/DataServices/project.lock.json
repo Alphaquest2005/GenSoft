@@ -783,6 +783,7 @@
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
@@ -809,6 +810,17 @@
           "SystemInterfaces": "1.0.0"
         }
       },
+      "DomainUtilities/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Common": "1.0.0",
+          "GenSoft.DBContext": "1.0.0",
+          "GenSoft.Entities": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
+        }
+      },
       "EFRepository/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -816,6 +828,7 @@
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
           "GenSoft.DBContext": "1.0.0",
@@ -927,6 +940,7 @@
           "Actor.Interfaces": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "EventMessages": "1.0.0",
           "RevolutionEntities": "1.0.0",
           "SystemInterfaces": "1.0.0",
@@ -1016,6 +1030,7 @@
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "Core.Common.UI": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "EventMessages": "1.0.0",
           "GenSoft.DBContext": "1.0.0",
           "GenSoft.Entities": "1.0.0",
@@ -1810,6 +1825,7 @@
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
@@ -1836,6 +1852,17 @@
           "SystemInterfaces": "1.0.0"
         }
       },
+      "DomainUtilities/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Common": "1.0.0",
+          "GenSoft.DBContext": "1.0.0",
+          "GenSoft.Entities": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
+        }
+      },
       "EFRepository/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -1843,6 +1870,7 @@
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
           "GenSoft.DBContext": "1.0.0",
@@ -1954,6 +1982,7 @@
           "Actor.Interfaces": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "EventMessages": "1.0.0",
           "RevolutionEntities": "1.0.0",
           "SystemInterfaces": "1.0.0",
@@ -2043,6 +2072,7 @@
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "Core.Common.UI": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "EventMessages": "1.0.0",
           "GenSoft.DBContext": "1.0.0",
           "GenSoft.Entities": "1.0.0",
@@ -2837,6 +2867,7 @@
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
@@ -2863,6 +2894,17 @@
           "SystemInterfaces": "1.0.0"
         }
       },
+      "DomainUtilities/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Common": "1.0.0",
+          "GenSoft.DBContext": "1.0.0",
+          "GenSoft.Entities": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
+        }
+      },
       "EFRepository/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -2870,6 +2912,7 @@
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
           "GenSoft.DBContext": "1.0.0",
@@ -2981,6 +3024,7 @@
           "Actor.Interfaces": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "EventMessages": "1.0.0",
           "RevolutionEntities": "1.0.0",
           "SystemInterfaces": "1.0.0",
@@ -3070,6 +3114,7 @@
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "Core.Common.UI": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "EventMessages": "1.0.0",
           "GenSoft.DBContext": "1.0.0",
           "GenSoft.Entities": "1.0.0",
@@ -3864,6 +3909,7 @@
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
@@ -3890,6 +3936,17 @@
           "SystemInterfaces": "1.0.0"
         }
       },
+      "DomainUtilities/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Common": "1.0.0",
+          "GenSoft.DBContext": "1.0.0",
+          "GenSoft.Entities": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
+        }
+      },
       "EFRepository/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -3897,6 +3954,7 @@
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
           "GenSoft.DBContext": "1.0.0",
@@ -4008,6 +4066,7 @@
           "Actor.Interfaces": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "EventMessages": "1.0.0",
           "RevolutionEntities": "1.0.0",
           "SystemInterfaces": "1.0.0",
@@ -4097,6 +4156,7 @@
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "Core.Common.UI": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "EventMessages": "1.0.0",
           "GenSoft.DBContext": "1.0.0",
           "GenSoft.Entities": "1.0.0",
@@ -6029,6 +6089,11 @@
       "path": "../../DesignTimeData/project.json",
       "msbuildProject": "../../DesignTimeData/DesignTimeData.csproj"
     },
+    "DomainUtilities/1.0.0": {
+      "type": "project",
+      "path": "../DomainUtilities/DomainUtilities.csproj",
+      "msbuildProject": "../DomainUtilities/DomainUtilities.csproj"
+    },
     "EFRepository/1.0.0": {
       "type": "project",
       "path": "../EFRepository/project.json",
@@ -6217,6 +6282,9 @@
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\DomainUtilities\\DomainUtilities.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\DomainUtilities\\DomainUtilities.csproj"
             }
           }
         }
