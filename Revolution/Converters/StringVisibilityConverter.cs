@@ -88,15 +88,16 @@ namespace Converters
     {
         public object Convert(object[] value, Type targetType, object parameter, CultureInfo culture)
         {
-            var prop = value[0] as string;
-            var cachelst = value[1] as IObservableReadOnlyDictionary<string, string>;
-            var cachedProperties = value[2] as IObservableList<IViewModel>;
-            if (prop != null && cachelst != null && cachedProperties != null && cachelst.ContainsKey(prop))
-            {
-                var cache = cachedProperties.Cast<ICacheViewModel>().FirstOrDefault(x => x.ViewInfo.EntityType.Name == cachelst[prop]);
-                if (cache != null) return cache.EntitySet.Value;
-            }
-            return null;
+            if (!(value[0] is string prop) 
+                || !(value[1] is ObservableDictionary<string, Dictionary<int, dynamic>> cachedProperties) 
+                || !(value[2] is ObservableDictionary<string, string> propertyParentEntityTypes) 
+                || !propertyParentEntityTypes.ContainsKey(prop) ) return null;
+
+
+            return DynamicEntityType.DynamicEntityTypes[propertyParentEntityTypes[prop]].CachedProperties.ContainsKey("Name")
+                ? DynamicEntityType.DynamicEntityTypes[propertyParentEntityTypes[prop]].CachedProperties["Name"]
+                : null;
+
         }
 
 

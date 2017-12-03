@@ -6241,6 +6241,9 @@
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Core.Common.UI\\Core.Common.UI.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Core.Common.UI\\Core.Common.UI.csproj"
             },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\DomainUtilities\\DomainUtilities.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\DomainUtilities\\DomainUtilities.csproj"
+            },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\DynamicLinq\\System.Linq.Dynamic\\System.Linq.Dynamic.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\DynamicLinq\\System.Linq.Dynamic\\System.Linq.Dynamic.csproj"
             },
@@ -6282,9 +6285,6 @@
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\DomainUtilities\\DomainUtilities.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\DomainUtilities\\DomainUtilities.csproj"
             }
           }
         }

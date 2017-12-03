@@ -14,7 +14,7 @@
         </DataTemplate.Resources>
 
         <Grid Width="469"
-              Height="Auto">
+              Height="Auto" MaxHeight="300">
             <Grid.Background>
                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
                     <GradientStop Offset="0.907" Color="#33000000" />
