@@ -1,27 +1,19 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Reactive;
 using System.Reactive.Linq;
 using System.Windows;
 using SystemInterfaces;
-using BootStrapper;
 using Common;
 using Common.DataEntites;
-using Common.Dynamic;
 using DomainUtilities;
 using GenSoft.Entities;
-using GenSoft.Interfaces;
 using JB.Collections.Reactive;
-using MoreLinq;
-using ReactiveUI;
-using RevolutionEntities.Process;
+using Reactive.Bindings;
 using RevolutionEntities.ViewModels;
 using Utilities;
 using ViewModel.Interfaces;
 using ViewModel.WorkFlow;
-using ViewModelInterfaces;
 using Action = System.Action;
 using Application = System.Windows.Application;
 using IEvent = SystemInterfaces.IEvent;
@@ -142,7 +134,7 @@ namespace RevolutionData
                             {
                               //  v => v.CurrentEntity.Value != null
                             },
-                            subject:s => Observable.Empty<ReactiveCommand<IViewModel, Unit>>(),
+                            subject:s => Observable.Empty<ReactiveCommand<IViewModel>>(),
 
                             messageData: s =>
                             {
@@ -160,7 +152,7 @@ namespace RevolutionData
                             {
                                 //  v => v.CurrentEntity.Value != null
                             },
-                            subject:v => Observable.Empty<ReactiveCommand<IViewModel, Unit>>(),
+                            subject:v => Observable.Empty<ReactiveCommand<IViewModel>>(),
 
                             messageData: v =>
                             {
@@ -182,7 +174,7 @@ namespace RevolutionData
                             {
                               //  v => v.CurrentEntity.Value != null
                             },
-                            subject:s => Observable.Empty<ReactiveCommand<IViewModel, Unit>>(),
+                            subject:s => Observable.Empty<ReactiveCommand<IViewModel>>(),
 
                             messageData: s =>
                             {

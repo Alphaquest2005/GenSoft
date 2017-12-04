@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using SystemInterfaces;
 using Actor.Interfaces;
 using GenSoft.Entities;
-using GenSoft.Interfaces;
 using RevolutionEntities.Process;
 using ComplexEventAction = RevolutionEntities.Process.ComplexEventAction;
 using IProcessStateInfo = SystemInterfaces.IProcessStateInfo;

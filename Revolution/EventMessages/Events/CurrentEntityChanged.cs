@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Diagnostics.Contracts;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SystemInterfaces;
 using Common.DataEntites;
 using CommonMessages;
@@ -17,12 +13,12 @@ namespace EventMessages.Events
         public CurrentEntityChanged() { }
         public IDynamicEntity Entity { get; }
         public CurrentEntityChanged(IDynamicEntity entity, IProcessStateInfo processInfo, ISystemProcess process, ISystemSource source) 
-            : base(new DynamicObject("CurrentEntityChanged", new Dictionary<string, object>() { { "Entity", entity }, { "EntityType", entity.EntityType } }), processInfo, process, source)
+            : base(new DynamicObject("CurrentEntityChanged", new Dictionary<string, object>() { { "Entity", entity }, { "EntityType", entity?.EntityType ?? DynamicEntity.NullEntity.EntityType } }), processInfo, process, source)
         {
             Contract.Requires(entity != null);
             Entity = entity;
         }
 
-        public IDynamicEntityType EntityType => Entity?.EntityType;
+        public IDynamicEntityType EntityType => Entity?.EntityType ?? DynamicEntity.NullEntity.EntityType;
     }
 }

@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.Composition;
-
-namespace ViewModel.Interfaces
+﻿namespace ViewModel.Interfaces
 {
     
     public interface IViewModelEvent<T>

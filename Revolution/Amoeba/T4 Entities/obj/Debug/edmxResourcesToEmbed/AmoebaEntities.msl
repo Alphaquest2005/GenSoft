@@ -46,9 +46,9 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="EntityRelationships">
+    <EntitySetMapping Name="EntityRelationship">
       <EntityTypeMapping TypeName="AmoebaDBModel.EntityRelationship">
-        <MappingFragment StoreEntitySet="EntityRelationships">
+        <MappingFragment StoreEntitySet="EntityRelationship">
           <ScalarProperty Name="RelationshipTypeId" ColumnName="RelationshipTypeId" />
           <ScalarProperty Name="ChildEntityPropertyId" ColumnName="ChildEntityPropertyId" />
           <ScalarProperty Name="ParentEntityPropertyId" ColumnName="ParentEntityPropertyId" />
@@ -165,7 +165,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="EntityViewPropertyFunctionParameters">
+    <EntitySetMapping Name="EntityViewPropertyFunctionParameter">
       <EntityTypeMapping TypeName="AmoebaDBModel.EntityViewPropertyFunctionParameter">
         <MappingFragment StoreEntitySet="EntityViewPropertyFunctionParameter">
           <ScalarProperty Name="FunctionParameterId" ColumnName="FunctionParameterId" />
@@ -182,9 +182,9 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="FunctionParameters">
+    <EntitySetMapping Name="FunctionParameter">
       <EntityTypeMapping TypeName="AmoebaDBModel.FunctionParameter">
-        <MappingFragment StoreEntitySet="FunctionParameters">
+        <MappingFragment StoreEntitySet="FunctionParameter">
           <ScalarProperty Name="ParameterId" ColumnName="ParameterId" />
           <ScalarProperty Name="FunctionId" ColumnName="FunctionId" />
           <ScalarProperty Name="Id" ColumnName="Id" />

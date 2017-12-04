@@ -2,23 +2,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.ComponentModel.Composition;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using SystemInterfaces;
-using Common;
 using Common.DataEntites;
-using FluentValidation;
 using FluentValidation.Results;
 using GenSoft.Interfaces;
 using JB.Collections.Reactive;
 using Reactive.Bindings;
-using ReactiveUI;
-using RevolutionEntities;
 using RevolutionEntities.Process;
-using RevolutionEntities.ViewModels;
 using ViewModel.Interfaces;
 using ViewModelInterfaces;
 using ISystemProcess = SystemInterfaces.ISystemProcess;
@@ -44,9 +38,9 @@ namespace Core.Common.UI
         {
             DisplayProperties = displayProperties;
             ViewInfo = viewInfo;
-            State.WhenAnyValue(x => x.Value).Subscribe(x => UpdateLocalState(x));
-            CurrentEntity.WhenAnyValue(x => x.Value).Subscribe(x => ChangeTracking.Clear());
-            
+            State.Subscribe(x => UpdateLocalState(x));
+            CurrentEntity.Subscribe(x => ChangeTracking.Clear());
+            CurrentProperty.Subscribe(x => OnValueChanged(x));
             _instance = this;
         }
 
@@ -67,24 +61,15 @@ namespace Core.Common.UI
         }
 
 
-        private IEntityKeyValuePair _currentProperty;
-
-        public IEntityKeyValuePair CurrentProperty
-        {
-            get { return _currentProperty; }
-            set
-            {
-                _currentProperty = value;
-                _currentProperty?.WhenAnyValue(x => x.Value).Subscribe(x => OnValueChanged(x));
-            }
-        }
+        public ReactiveProperty<IEntityKeyValuePair> CurrentProperty { get; } = new ReactiveProperty<IEntityKeyValuePair>();
+      
 
 
 
         private void OnValueChanged(object entityKeyValuePair)
         {
             if (RowState.Value == SystemInterfaces.RowState.Modified)
-                ChangeTracking.AddOrUpdate(_currentProperty.Key, _currentProperty.Value);
+                ChangeTracking.AddOrUpdate(CurrentProperty.Value.Key, CurrentProperty.Value.Value);
         }
 
 
@@ -96,35 +81,21 @@ namespace Core.Common.UI
         //HACK:NEVER USER THIS IMPLEMENTATION - FOR SOME FUCKED UP REASON IT NOT RAISING CHANGE NOTIFICATIONS EVEN IF YOU NEVER CALL THE SETTER....
         // public ReactiveProperty<IProcessStateList> State => new ReactiveProperty<IProcessStateList>();
 
-        private ReactiveProperty<IProcessStateList> _state = new ReactiveProperty<IProcessStateList>();
+        
         public new IEntityViewInfo ViewInfo { get; }
 
-        public ReactiveProperty<IProcessStateList> State
-        {
-            get { return _state; }
-            set { this.RaiseAndSetIfChanged(ref _state, value);}
-        }
+        public ReactiveProperty<IProcessStateList> State { get; } = new ReactiveProperty<IProcessStateList>();
 
         
 
-        ReactiveProperty<IProcessStateEntity> IEntityViewModel.State => new ReactiveProperty<IProcessStateEntity>(new ProcessStateEntity(State.Value.Process, CurrentEntity.Value, State.Value.StateInfo.ToStateInfo()));
+        ReactiveProperty<IProcessStateEntity> IEntityViewModel.State { get; } = new ReactiveProperty<IProcessStateEntity>();
 
-        private ReactiveProperty<IDynamicEntity> _currentEntity = new ReactiveProperty<IDynamicEntity>(DynamicEntity.NullEntity, ReactivePropertyMode.DistinctUntilChanged);
-        public ReactiveProperty<IDynamicEntity> CurrentEntity
-        {
-            get { return _currentEntity; }
-            set { this.RaiseAndSetIfChanged(ref _currentEntity, value); }
-        }
+        public ReactiveProperty<IDynamicEntity> CurrentEntity { get; } = new ReactiveProperty<IDynamicEntity>();
+        
+        public virtual ReactiveProperty<ObservableList<IDynamicEntity>> EntitySet { get; } = new ReactiveProperty<ObservableList<IDynamicEntity>>(new ObservableList<IDynamicEntity>());
+        
 
-
-        public virtual ReactiveProperty<ObservableList<IDynamicEntity>> EntitySet
-        {
-            get { return _entitySet; }
-            set { this.RaiseAndSetIfChanged(ref _entitySet, value); }
-        }
-
-
-        public ReactiveProperty<ObservableList<IDynamicEntity>> SelectedEntities => new ReactiveProperty<ObservableList<IDynamicEntity>>(new ObservableList<IDynamicEntity>());
+        public ReactiveProperty<ObservableList<IDynamicEntity>> SelectedEntities { get; } = new ReactiveProperty<ObservableList<IDynamicEntity>>(new ObservableList<IDynamicEntity>());
 
 
         public dynamic GetValue([CallerMemberName] string property = "UnspecifiedProperty")
@@ -166,7 +137,7 @@ namespace Core.Common.UI
             {
                 ChangeTracking[property] = value;
             }
-            this.RaisePropertyChanged(property);
+            this.OnPropertyChanged(property);
         }
 
 
@@ -175,7 +146,7 @@ namespace Core.Common.UI
         public ObservableDictionary<string, dynamic> ChangeTracking { get; } = new ObservableDictionary<string, dynamic>();
         public void NotifyPropertyChanged(string propertyName)
         {
-            this.RaisePropertyChanged(propertyName);
+            this.OnPropertyChanged(propertyName);
         }
 
         public ObservableList<IDynamicEntity> ParentEntities { get; } = new ObservableBindingList<IDynamicEntity>();
@@ -183,8 +154,7 @@ namespace Core.Common.UI
         public IDomainProcess DomainProcess { get; }
 
         private ObservableBindingList<IDynamicEntity> _changeTrackingList = new ObservableBindingList<IDynamicEntity>();
-        private ReactiveProperty<ObservableList<IDynamicEntity>> _entitySet = new ReactiveProperty<ObservableList<IDynamicEntity>>(new ObservableList<IDynamicEntity>());
-
+        
 
         public ObservableBindingList<IDynamicEntity> ChangeTrackingList
         {

@@ -2,7 +2,6 @@ C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\ViewModel.WorkF
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\ViewModel.WorkFlow.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\Akka.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\FluentValidation.dll
-C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\JB.Common.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\JB.Common.Collections.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\JB.Common.Collections.Reactive.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\JB.Common.Reactive.dll
@@ -12,20 +11,11 @@ C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\MefContrib.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\MoreLinq.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\Newtonsoft.Json.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\Reactive.EventAggregator.dll
-C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\ReactiveProperty.DataAnnotations.dll
-C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\ReactiveProperty.DataAnnotations.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\ReactiveProperty.NET46.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\ReactiveProperty.NET46.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\ReactiveProperty.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\ReactiveProperty.pdb
-C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\ReactiveUI.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\System.Reactive.Core.dll
-C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\System.Reactive.Interfaces.dll
-C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\System.Reactive.Linq.dll
-C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\System.Reactive.PlatformServices.dll
-C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\System.Reactive.Windows.Threading.dll
-C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\Splat.dll
-C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\Splat.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\System.Collections.Immutable.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\System.ValueTuple.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\Actor.Interfaces.dll
@@ -190,3 +180,8 @@ C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\System.Xml.XPat
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\System.Xml.XPath.XDocument.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\DomainUtilities.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\DomainUtilities.pdb
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\System.Reactive.dll
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\DomainUtilities.dll.config
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\JB.Common.Collections.xml
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\JB.Common.Collections.Reactive.xml
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\JB.Common.Reactive.xml

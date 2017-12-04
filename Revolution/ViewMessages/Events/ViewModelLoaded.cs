@@ -4,7 +4,6 @@ using SystemInterfaces;
 using Common.DataEntites;
 using CommonMessages;
 using ViewModel.Interfaces;
-using ViewModelInterfaces;
 
 namespace ViewMessages
 {

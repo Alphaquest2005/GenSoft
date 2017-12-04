@@ -1,7 +1,4 @@
-﻿using System;
-using SystemInterfaces;
-
-namespace RevolutionEntities.Process
+﻿namespace RevolutionEntities.Process
 {
 
 }

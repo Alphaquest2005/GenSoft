@@ -3,14 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using SystemInterfaces;
 using Core.Common.UI;
-using FluentValidation;
-
 using JB.Collections.Reactive;
 using Reactive.Bindings;
-using ReactiveUI;
+
 
 using ViewModel.Interfaces;
-using ViewModelInterfaces;
 
 namespace ViewModels
 {

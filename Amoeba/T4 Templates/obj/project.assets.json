@@ -1,0 +1,457 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.7": {
+      "EntityFramework/6.2.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations"
+        ],
+        "compile": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        }
+      },
+      "LinqSpecs/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "compile": {
+          "bin/placeholder/LinqSpecs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LinqSpecs.dll": {}
+        }
+      },
+      "Specifications/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "LinqSpecs": "1.0.0",
+          "T4 Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Specifications.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Specifications.dll": {}
+        }
+      },
+      "T4 Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "EntityFramework": "6.2.0"
+        },
+        "compile": {
+          "bin/placeholder/T4 Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/T4 Entities.dll": {}
+        }
+      },
+      "T4 Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "LinqSpecs": "1.0.0",
+          "Specifications": "1.0.0",
+          "T4 Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/T4 Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/T4 Repository.dll": {}
+        }
+      },
+      "T4Utilities/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "T4 Entities": "1.0.0",
+          "T4 Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/T4Utilities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/T4Utilities.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7/win": {
+      "EntityFramework/6.2.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations"
+        ],
+        "compile": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        }
+      },
+      "LinqSpecs/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "compile": {
+          "bin/placeholder/LinqSpecs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LinqSpecs.dll": {}
+        }
+      },
+      "Specifications/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "LinqSpecs": "1.0.0",
+          "T4 Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Specifications.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Specifications.dll": {}
+        }
+      },
+      "T4 Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "EntityFramework": "6.2.0"
+        },
+        "compile": {
+          "bin/placeholder/T4 Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/T4 Entities.dll": {}
+        }
+      },
+      "T4 Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "LinqSpecs": "1.0.0",
+          "Specifications": "1.0.0",
+          "T4 Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/T4 Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/T4 Repository.dll": {}
+        }
+      },
+      "T4Utilities/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "T4 Entities": "1.0.0",
+          "T4 Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/T4Utilities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/T4Utilities.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7/win-x64": {
+      "EntityFramework/6.2.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations"
+        ],
+        "compile": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        }
+      },
+      "LinqSpecs/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "compile": {
+          "bin/placeholder/LinqSpecs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LinqSpecs.dll": {}
+        }
+      },
+      "Specifications/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "LinqSpecs": "1.0.0",
+          "T4 Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Specifications.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Specifications.dll": {}
+        }
+      },
+      "T4 Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "EntityFramework": "6.2.0"
+        },
+        "compile": {
+          "bin/placeholder/T4 Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/T4 Entities.dll": {}
+        }
+      },
+      "T4 Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "LinqSpecs": "1.0.0",
+          "Specifications": "1.0.0",
+          "T4 Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/T4 Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/T4 Repository.dll": {}
+        }
+      },
+      "T4Utilities/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "T4 Entities": "1.0.0",
+          "T4 Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/T4Utilities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/T4Utilities.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7/win-x86": {
+      "EntityFramework/6.2.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations"
+        ],
+        "compile": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        }
+      },
+      "LinqSpecs/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "compile": {
+          "bin/placeholder/LinqSpecs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LinqSpecs.dll": {}
+        }
+      },
+      "Specifications/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "LinqSpecs": "1.0.0",
+          "T4 Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Specifications.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Specifications.dll": {}
+        }
+      },
+      "T4 Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "EntityFramework": "6.2.0"
+        },
+        "compile": {
+          "bin/placeholder/T4 Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/T4 Entities.dll": {}
+        }
+      },
+      "T4 Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "LinqSpecs": "1.0.0",
+          "Specifications": "1.0.0",
+          "T4 Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/T4 Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/T4 Repository.dll": {}
+        }
+      },
+      "T4Utilities/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "T4 Entities": "1.0.0",
+          "T4 Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/T4Utilities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/T4Utilities.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "EntityFramework/6.2.0": {
+      "sha512": "ptGyXOf26qLrtn+2doAmylIlCxOnBJANwlyyLrXDmqIk9O18IzLWHyxDwwAyhgXkxmbiaA0WNpRy67WRReInBw==",
+      "type": "package",
+      "path": "entityframework/6.2.0",
+      "files": [
+        "content/net40/App.config.transform",
+        "content/net40/Web.config.transform",
+        "entityframework.6.2.0.nupkg.sha512",
+        "entityframework.nuspec",
+        "lib/net40/EntityFramework.SqlServer.dll",
+        "lib/net40/EntityFramework.SqlServer.xml",
+        "lib/net40/EntityFramework.dll",
+        "lib/net40/EntityFramework.xml",
+        "lib/net45/EntityFramework.SqlServer.dll",
+        "lib/net45/EntityFramework.SqlServer.xml",
+        "lib/net45/EntityFramework.dll",
+        "lib/net45/EntityFramework.xml",
+        "tools/EntityFramework.PowerShell.Utility.dll",
+        "tools/EntityFramework.PowerShell.dll",
+        "tools/EntityFramework.psd1",
+        "tools/EntityFramework.psm1",
+        "tools/about_EntityFramework.help.txt",
+        "tools/init.ps1",
+        "tools/install.ps1",
+        "tools/migrate.exe"
+      ]
+    },
+    "LinqSpecs/1.0.0": {
+      "type": "project",
+      "path": "../../Revolution/LinqSpecs/LinqSpecs.csproj",
+      "msbuildProject": "../../Revolution/LinqSpecs/LinqSpecs.csproj"
+    },
+    "Specifications/1.0.0": {
+      "type": "project",
+      "path": "../Specifications/Specifications.csproj",
+      "msbuildProject": "../Specifications/Specifications.csproj"
+    },
+    "T4 Entities/1.0.0": {
+      "type": "project",
+      "path": "../T4 Entities/T4 Entities.csproj",
+      "msbuildProject": "../T4 Entities/T4 Entities.csproj"
+    },
+    "T4 Repository/1.0.0": {
+      "type": "project",
+      "path": "../T4 Repository/T4 Repository.csproj",
+      "msbuildProject": "../T4 Repository/T4 Repository.csproj"
+    },
+    "T4Utilities/1.0.0": {
+      "type": "project",
+      "path": "../T4Utilities/T4Utilities.csproj",
+      "msbuildProject": "../T4Utilities/T4Utilities.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.7": [
+      "LinqSpecs >= 1.0.0",
+      "Specifications >= 1.0.0",
+      "T4 Entities >= 1.0.0",
+      "T4 Repository >= 1.0.0",
+      "T4Utilities >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Alpha\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Prism\\GitRepositiory\\GenSoft\\Amoeba\\T4 Templates\\T4 Templates.csproj",
+      "projectName": "T4 Templates",
+      "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Amoeba\\T4 Templates\\T4 Templates.csproj",
+      "packagesPath": "C:\\Users\\Alpha\\.nuget\\packages\\",
+      "outputPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Amoeba\\T4 Templates\\obj\\",
+      "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
+      "configFilePaths": [
+        "C:\\Users\\Alpha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net47"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net47": {
+          "projectReferences": {
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Amoeba\\T4Utilities\\T4Utilities.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Amoeba\\T4Utilities\\T4Utilities.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\LinqSpecs\\LinqSpecs.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\LinqSpecs\\LinqSpecs.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Amoeba\\Specifications\\Specifications.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Amoeba\\Specifications\\Specifications.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Amoeba\\T4 Entities\\T4 Entities.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Amoeba\\T4 Entities\\T4 Entities.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Amoeba\\T4 Repository\\T4 Repository.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Amoeba\\T4 Repository\\T4 Repository.csproj"
+            }
+          }
+        }
+      }
+    },
+    "frameworks": {
+      "net47": {}
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      },
+      "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
+        "#import": []
+      }
+    }
+  }
+}

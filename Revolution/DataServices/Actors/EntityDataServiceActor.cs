@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Reactive.Linq;
 using SystemInterfaces;
 using Actor.Interfaces;
-using Akka.Actor;
-using CommonMessages;
 using EventAggregator;
 using EventMessages.Events;
-using RevolutionData;
 using RevolutionEntities.Process;
 
 namespace DataServices.Actors

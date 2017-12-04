@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.Composition;
-
-namespace SystemInterfaces
+﻿namespace SystemInterfaces
 {
     
     public interface IStartService<TService> where TService:IService<TService>

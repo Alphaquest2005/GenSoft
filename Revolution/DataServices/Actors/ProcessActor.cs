@@ -3,28 +3,20 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Reactive.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Threading;
 using System.Threading.Tasks;
 using SystemInterfaces;
 using Actor.Interfaces;
 using Akka.Actor;
-using CommonMessages;
 using DataServices.Utils;
 using EventAggregator;
-using EventMessages;
 using EventMessages.Commands;
 using EventMessages.Events;
-using RevolutionData;
 using RevolutionEntities.Process;
-using StartUp.Messages;
 using Utilities;
 using IProcessService = Actor.Interfaces.IProcessService;
-using ProcessStateInfo = RevolutionEntities.Process.ProcessStateInfo;
 
 namespace DataServices.Actors
 {

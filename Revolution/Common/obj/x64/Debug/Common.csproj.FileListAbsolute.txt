@@ -44,14 +44,10 @@ C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\x64\Debug\ViewModel.Inte
 C:\Prism\GitRepositiory\MRManager\Revolution\Common\bin\x64\Debug\Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\x64\Debug\Common.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\x64\Debug\Common.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\x64\Debug\JB.Common.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\x64\Debug\JB.Common.Collections.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\x64\Debug\JB.Common.Collections.Reactive.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\x64\Debug\JB.Common.Reactive.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\x64\Debug\System.Reactive.Core.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\x64\Debug\System.Reactive.Interfaces.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\x64\Debug\System.Reactive.Linq.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\x64\Debug\System.Reactive.PlatformServices.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\x64\Debug\SystemInterfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\x64\Debug\SystemInterfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\obj\x64\Debug\Common.csprojResolveAssemblyReference.cache
@@ -64,3 +60,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\x64\Debug\DynamicExpresso.
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\x64\Debug\Utilities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\x64\Debug\Utilities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\obj\x64\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\x64\Debug\JB.Common.Collections.xml
+C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\x64\Debug\JB.Common.Collections.Reactive.xml
+C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\x64\Debug\JB.Common.Reactive.xml

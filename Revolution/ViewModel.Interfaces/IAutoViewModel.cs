@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Composition;
-using System.Text;
-using System.Threading.Tasks;
-using SystemInterfaces;
+﻿using SystemInterfaces;
 using JB.Collections.Reactive;
 
 namespace ViewModel.Interfaces

@@ -81,8 +81,6 @@ C:\Prism\GitRepositiory\MRManager\Revolution\ViewModel.Interfaces\bin\Debug\Syst
 C:\Prism\GitRepositiory\MRManager\Revolution\ViewModel.Interfaces\obj\Debug\ViewModel.Interfaces.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\MRManager\Revolution\ViewModel.Interfaces\obj\Debug\ViewModel.Interfaces.dll
 C:\Prism\GitRepositiory\MRManager\Revolution\ViewModel.Interfaces\obj\Debug\ViewModel.Interfaces.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\obj\Debug\ViewModel.Interfaces.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\obj\Debug\ViewModel.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\ViewModel.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\ViewModel.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\FluentValidation.dll
@@ -90,20 +88,15 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\JB.Com
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\JB.Common.Collections.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\JB.Common.Collections.Reactive.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\JB.Common.Reactive.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\ReactiveProperty.DataAnnotations.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\ReactiveProperty.DataAnnotations.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\ReactiveProperty.NET46.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\ReactiveProperty.NET46.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\ReactiveProperty.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\ReactiveProperty.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\ReactiveUI.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\System.Reactive.Core.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\System.Reactive.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\System.Reactive.Linq.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\System.Reactive.PlatformServices.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\System.Reactive.Windows.Threading.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\Splat.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\Splat.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\CommonMessages.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\GenSoft.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\SystemInterfaces.dll
@@ -112,3 +105,5 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\GenSof
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\SystemInterfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\obj\Debug\ViewModel.Interfaces.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\obj\Debug\ViewModel.Interfaces.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\obj\Debug\ViewModel.Interfaces.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\obj\Debug\ViewModel.Interfaces.pdb

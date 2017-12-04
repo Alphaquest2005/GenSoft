@@ -9,9 +9,7 @@ using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using SystemInterfaces;
 using Core.Common.UI;
-using CommonMessages;
 using JB.Collections.Reactive;
-using RevolutionEntities.Process;
 using ViewModel.Interfaces;
 
 

@@ -1,16 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reactive;
 using System.Reactive.Linq;
 using System.Windows;
 using SystemInterfaces;
 using Common;
 using JB.Collections.Reactive;
-using ReactiveUI;
+using Reactive.Bindings;
 using RevolutionEntities.Process;
 using RevolutionEntities.ViewModels;
-using ViewMessages;
 using ViewModel.Interfaces;
 
 namespace RevolutionData
@@ -67,7 +65,7 @@ namespace RevolutionData
                     new ViewEventCommand<IHeaderViewModel, INavigateToView>(
                         key: "NavigateToView",
                         commandPredicate: new List<Func<IHeaderViewModel, bool>> { },
-                        subject: s => Observable.Empty<ReactiveCommand<IViewModel, Unit>>(),
+                        subject: s => Observable.Empty<ReactiveCommand<IViewModel>>(),
 
                         messageData: s =>
                         {

@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Actor.Interfaces;
-using Common.Dynamic;
-using RevolutionEntities.Process;
+﻿using Common.Dynamic;
 
 namespace BuildingSpecifications
 {

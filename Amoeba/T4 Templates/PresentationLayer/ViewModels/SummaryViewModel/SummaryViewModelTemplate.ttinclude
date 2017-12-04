@@ -31,7 +31,7 @@ using EventMessages;
 using EF.Entities;
 using Entity.Expressions;
 using JB.Collections.Reactive;
-using ReactiveUI;
+
 using ViewModelInterfaces;
 
 namespace ViewModels

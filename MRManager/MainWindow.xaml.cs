@@ -1,10 +1,6 @@
-﻿using System;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.IO;
 using System.Windows;
 using System.Windows.Input;
-using SystemInterfaces;
 using Core.Common.UI;
 
 using RevolutionLogger;

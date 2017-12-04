@@ -1,31 +1,16 @@
 ﻿using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Reactive.Linq;
-using System.Reflection;
 using System.Threading.Tasks;
 using SystemInterfaces;
 using Actor.Interfaces;
 using Akka.Actor;
 using Common;
-using Common.DataEntites;
-using CommonMessages;
-using EFRepository;
 using EventAggregator;
-using EventMessages;
-using EventMessages.Commands;
 using EventMessages.Events;
-using JB.Collections.Reactive;
-using Reactive.Bindings;
-using ReactiveUI;
-using RevolutionData;
 using RevolutionEntities.Process;
-using StartUp.Messages;
 using ViewModel.Interfaces;
-using Process = RevolutionEntities.Process.Process;
 
 
 namespace DataServices.Actors

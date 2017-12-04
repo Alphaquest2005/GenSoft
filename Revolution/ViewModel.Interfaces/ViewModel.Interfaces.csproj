@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -67,6 +68,10 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="JB.Common.Collections.Reactive, Version=0.8.107.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\MRManager\packages\JB.Common.Collections.Reactive.0.8.107-pre\lib\net46\JB.Common.Collections.Reactive.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
@@ -125,10 +130,21 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="project.json" />
+    <Folder Include="Custom\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Custom\" />
+    <PackageReference Include="FluentValidation.Net35">
+      <Version>1.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="JB.Common.Collections.Reactive">
+      <Version>0.8.107-pre</Version>
+    </PackageReference>
+    <PackageReference Include="JB.Common.Reactive">
+      <Version>0.8.107-pre</Version>
+    </PackageReference>
+    <PackageReference Include="ReactiveProperty">
+      <Version>3.6.0</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

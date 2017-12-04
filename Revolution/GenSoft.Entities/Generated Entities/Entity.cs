@@ -6,7 +6,6 @@
 using System;
 using System.Collections.Generic;
 using Common.DataEntites;
-using GenSoft.Entities;
 using GenSoft.Interfaces;
 
 namespace GenSoft.Entities

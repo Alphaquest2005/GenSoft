@@ -5,22 +5,14 @@
 
 
 using System;
-using System.Collections.Generic;
-using System.ComponentModel.Composition;
 using System.Linq;
-using System.Windows;
-using System.Windows.Input;
 using SystemInterfaces;
-using CommonMessages;
 using Core.Common.UI;
 using EventAggregator;
-using JB.Collections.Reactive;
 using Process.WorkFlow;
 using Reactive.Bindings;
-using RevolutionData;
 using RevolutionEntities.Process;
 using RevolutionEntities.ViewModels;
-using ViewMessages;
 using ViewModel.Interfaces;
 using ViewModel.WorkFlow;
 

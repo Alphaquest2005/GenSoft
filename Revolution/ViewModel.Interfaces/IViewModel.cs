@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.Composition;
-using System.Reactive;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using SystemInterfaces;
 using JB.Collections.Reactive;
 using Reactive.Bindings;
-using ReactiveUI;
+
 
 namespace ViewModel.Interfaces
 {
@@ -20,7 +15,7 @@ namespace ViewModel.Interfaces
         
         List<IViewModelEventSubscription<IViewModel, IEvent>> EventSubscriptions { get; }
         List<IViewModelEventPublication<IViewModel, IEvent>> EventPublications { get; }
-        Dictionary<string, ReactiveCommand<IViewModel, Unit>> Commands { get; }
+        Dictionary<string, ReactiveCommand<IViewModel>> Commands { get; }
         List<IViewModelEventCommand<IViewModel, IEvent>> CommandInfo { get; }
 
         

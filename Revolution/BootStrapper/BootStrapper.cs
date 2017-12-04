@@ -6,8 +6,6 @@ using System.Linq;
 using System.Reflection;
 using SystemInterfaces;
 using Actor.Interfaces;
-using MefContrib.Hosting.Generics;
-using Utilities;
 using ViewModel.Interfaces;
 
 

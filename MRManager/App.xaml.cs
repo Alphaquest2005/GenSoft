@@ -1,6 +1,4 @@
-﻿using System.IO;
-using System.Windows;
-using RevolutionLogger;
+﻿using System.Windows;
 
 namespace Amoeba
 {

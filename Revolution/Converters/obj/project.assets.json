@@ -1,0 +1,1351 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.7": {
+      "DynamicExpresso.Core/1.3.4.7": {
+        "type": "package",
+        "compile": {
+          "lib/net40/DynamicExpresso.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net40/DynamicExpresso.Core.dll": {}
+        }
+      },
+      "FluentValidation.Net35/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net35/FluentValidation.dll": {}
+        },
+        "runtime": {
+          "lib/net35/FluentValidation.dll": {}
+        }
+      },
+      "JB.Common/0.8.107-pre": {
+        "type": "package",
+        "compile": {
+          "lib/net46/JB.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net46/JB.Common.dll": {}
+        }
+      },
+      "JB.Common.Collections/0.8.107-pre": {
+        "type": "package",
+        "dependencies": {
+          "JB.Common": "0.8.107-pre"
+        },
+        "compile": {
+          "lib/net46/JB.Common.Collections.dll": {}
+        },
+        "runtime": {
+          "lib/net46/JB.Common.Collections.dll": {}
+        }
+      },
+      "JB.Common.Collections.Reactive/0.8.107-pre": {
+        "type": "package",
+        "dependencies": {
+          "JB.Common": "0.8.107-pre",
+          "JB.Common.Collections": "0.8.107-pre",
+          "JB.Common.Reactive": "0.8.107-pre",
+          "System.Reactive": "3.1.1"
+        },
+        "compile": {
+          "lib/net46/JB.Common.Collections.Reactive.dll": {}
+        },
+        "runtime": {
+          "lib/net46/JB.Common.Collections.Reactive.dll": {}
+        }
+      },
+      "JB.Common.Reactive/0.8.107-pre": {
+        "type": "package",
+        "dependencies": {
+          "JB.Common": "0.8.107-pre",
+          "System.Reactive": "3.1.1"
+        },
+        "compile": {
+          "lib/net46/JB.Common.Reactive.dll": {}
+        },
+        "runtime": {
+          "lib/net46/JB.Common.Reactive.dll": {}
+        }
+      },
+      "ReactiveProperty/3.6.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive": "3.1.1"
+        },
+        "frameworkAssemblies": [
+          "PresentationCore",
+          "PresentationFramework",
+          "System",
+          "System.ComponentModel.DataAnnotations",
+          "System.Core",
+          "System.Runtime.Serialization",
+          "System.Xaml",
+          "WindowsBase"
+        ],
+        "compile": {
+          "lib/net46/ReactiveProperty.NET46.dll": {},
+          "lib/net46/ReactiveProperty.dll": {}
+        },
+        "runtime": {
+          "lib/net46/ReactiveProperty.NET46.dll": {},
+          "lib/net46/ReactiveProperty.dll": {}
+        }
+      },
+      "System.Reactive/3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.PlatformServices": "3.1.1",
+          "System.Reactive.Windows.Threading": "3.1.1"
+        }
+      },
+      "System.Reactive.Core/3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.Interfaces": "3.1.1"
+        },
+        "compile": {
+          "lib/net46/System.Reactive.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Reactive.Core.dll": {}
+        }
+      },
+      "System.Reactive.Interfaces/3.1.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/System.Reactive.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Interfaces.dll": {}
+        }
+      },
+      "System.Reactive.Linq/3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.Core": "3.1.1"
+        },
+        "compile": {
+          "lib/net46/System.Reactive.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Reactive.Linq.dll": {}
+        }
+      },
+      "System.Reactive.PlatformServices/3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.Linq": "3.1.1"
+        },
+        "compile": {
+          "lib/net46/System.Reactive.PlatformServices.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Reactive.PlatformServices.dll": {}
+        }
+      },
+      "System.Reactive.Windows.Threading/3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.Core": "3.1.1"
+        },
+        "frameworkAssemblies": [
+          "System.Windows",
+          "WindowsBase"
+        ],
+        "compile": {
+          "lib/net45/System.Reactive.Windows.Threading.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Windows.Threading.dll": {}
+        }
+      },
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "DynamicExpresso.Core": "1.3.4.7",
+          "GenSoft.Interface": "1.0.0",
+          "JB.Common.Collections.Reactive": "0.8.107-pre",
+          "JB.Common.Reactive": "0.8.107-pre",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.dll": {}
+        }
+      },
+      "CommonMessages/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CommonMessages.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CommonMessages.dll": {}
+        }
+      },
+      "GenSoft.Interface/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GenSoft.Interface.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GenSoft.Interface.dll": {}
+        }
+      },
+      "SystemInterfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "JB.Common.Collections.Reactive": "0.8.107-pre"
+        },
+        "compile": {
+          "bin/placeholder/SystemInterfaces.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SystemInterfaces.dll": {}
+        }
+      },
+      "Utilities/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Utilities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Utilities.dll": {}
+        }
+      },
+      "ViewModel.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "CommonMessages": "1.0.0",
+          "FluentValidation.Net35": "1.0.1",
+          "GenSoft.Interface": "1.0.0",
+          "JB.Common.Collections.Reactive": "0.8.107-pre",
+          "JB.Common.Reactive": "0.8.107-pre",
+          "ReactiveProperty": "3.6.0",
+          "SystemInterfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ViewModel.Interfaces.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViewModel.Interfaces.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7/win": {
+      "DynamicExpresso.Core/1.3.4.7": {
+        "type": "package",
+        "compile": {
+          "lib/net40/DynamicExpresso.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net40/DynamicExpresso.Core.dll": {}
+        }
+      },
+      "FluentValidation.Net35/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net35/FluentValidation.dll": {}
+        },
+        "runtime": {
+          "lib/net35/FluentValidation.dll": {}
+        }
+      },
+      "JB.Common/0.8.107-pre": {
+        "type": "package",
+        "compile": {
+          "lib/net46/JB.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net46/JB.Common.dll": {}
+        }
+      },
+      "JB.Common.Collections/0.8.107-pre": {
+        "type": "package",
+        "dependencies": {
+          "JB.Common": "0.8.107-pre"
+        },
+        "compile": {
+          "lib/net46/JB.Common.Collections.dll": {}
+        },
+        "runtime": {
+          "lib/net46/JB.Common.Collections.dll": {}
+        }
+      },
+      "JB.Common.Collections.Reactive/0.8.107-pre": {
+        "type": "package",
+        "dependencies": {
+          "JB.Common": "0.8.107-pre",
+          "JB.Common.Collections": "0.8.107-pre",
+          "JB.Common.Reactive": "0.8.107-pre",
+          "System.Reactive": "3.1.1"
+        },
+        "compile": {
+          "lib/net46/JB.Common.Collections.Reactive.dll": {}
+        },
+        "runtime": {
+          "lib/net46/JB.Common.Collections.Reactive.dll": {}
+        }
+      },
+      "JB.Common.Reactive/0.8.107-pre": {
+        "type": "package",
+        "dependencies": {
+          "JB.Common": "0.8.107-pre",
+          "System.Reactive": "3.1.1"
+        },
+        "compile": {
+          "lib/net46/JB.Common.Reactive.dll": {}
+        },
+        "runtime": {
+          "lib/net46/JB.Common.Reactive.dll": {}
+        }
+      },
+      "ReactiveProperty/3.6.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive": "3.1.1"
+        },
+        "frameworkAssemblies": [
+          "PresentationCore",
+          "PresentationFramework",
+          "System",
+          "System.ComponentModel.DataAnnotations",
+          "System.Core",
+          "System.Runtime.Serialization",
+          "System.Xaml",
+          "WindowsBase"
+        ],
+        "compile": {
+          "lib/net46/ReactiveProperty.NET46.dll": {},
+          "lib/net46/ReactiveProperty.dll": {}
+        },
+        "runtime": {
+          "lib/net46/ReactiveProperty.NET46.dll": {},
+          "lib/net46/ReactiveProperty.dll": {}
+        }
+      },
+      "System.Reactive/3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.PlatformServices": "3.1.1",
+          "System.Reactive.Windows.Threading": "3.1.1"
+        }
+      },
+      "System.Reactive.Core/3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.Interfaces": "3.1.1"
+        },
+        "compile": {
+          "lib/net46/System.Reactive.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Reactive.Core.dll": {}
+        }
+      },
+      "System.Reactive.Interfaces/3.1.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/System.Reactive.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Interfaces.dll": {}
+        }
+      },
+      "System.Reactive.Linq/3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.Core": "3.1.1"
+        },
+        "compile": {
+          "lib/net46/System.Reactive.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Reactive.Linq.dll": {}
+        }
+      },
+      "System.Reactive.PlatformServices/3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.Linq": "3.1.1"
+        },
+        "compile": {
+          "lib/net46/System.Reactive.PlatformServices.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Reactive.PlatformServices.dll": {}
+        }
+      },
+      "System.Reactive.Windows.Threading/3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.Core": "3.1.1"
+        },
+        "frameworkAssemblies": [
+          "System.Windows",
+          "WindowsBase"
+        ],
+        "compile": {
+          "lib/net45/System.Reactive.Windows.Threading.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Windows.Threading.dll": {}
+        }
+      },
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "DynamicExpresso.Core": "1.3.4.7",
+          "GenSoft.Interface": "1.0.0",
+          "JB.Common.Collections.Reactive": "0.8.107-pre",
+          "JB.Common.Reactive": "0.8.107-pre",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.dll": {}
+        }
+      },
+      "CommonMessages/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CommonMessages.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CommonMessages.dll": {}
+        }
+      },
+      "GenSoft.Interface/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GenSoft.Interface.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GenSoft.Interface.dll": {}
+        }
+      },
+      "SystemInterfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "JB.Common.Collections.Reactive": "0.8.107-pre"
+        },
+        "compile": {
+          "bin/placeholder/SystemInterfaces.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SystemInterfaces.dll": {}
+        }
+      },
+      "Utilities/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Utilities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Utilities.dll": {}
+        }
+      },
+      "ViewModel.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "CommonMessages": "1.0.0",
+          "FluentValidation.Net35": "1.0.1",
+          "GenSoft.Interface": "1.0.0",
+          "JB.Common.Collections.Reactive": "0.8.107-pre",
+          "JB.Common.Reactive": "0.8.107-pre",
+          "ReactiveProperty": "3.6.0",
+          "SystemInterfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ViewModel.Interfaces.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViewModel.Interfaces.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7/win-x64": {
+      "DynamicExpresso.Core/1.3.4.7": {
+        "type": "package",
+        "compile": {
+          "lib/net40/DynamicExpresso.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net40/DynamicExpresso.Core.dll": {}
+        }
+      },
+      "FluentValidation.Net35/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net35/FluentValidation.dll": {}
+        },
+        "runtime": {
+          "lib/net35/FluentValidation.dll": {}
+        }
+      },
+      "JB.Common/0.8.107-pre": {
+        "type": "package",
+        "compile": {
+          "lib/net46/JB.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net46/JB.Common.dll": {}
+        }
+      },
+      "JB.Common.Collections/0.8.107-pre": {
+        "type": "package",
+        "dependencies": {
+          "JB.Common": "0.8.107-pre"
+        },
+        "compile": {
+          "lib/net46/JB.Common.Collections.dll": {}
+        },
+        "runtime": {
+          "lib/net46/JB.Common.Collections.dll": {}
+        }
+      },
+      "JB.Common.Collections.Reactive/0.8.107-pre": {
+        "type": "package",
+        "dependencies": {
+          "JB.Common": "0.8.107-pre",
+          "JB.Common.Collections": "0.8.107-pre",
+          "JB.Common.Reactive": "0.8.107-pre",
+          "System.Reactive": "3.1.1"
+        },
+        "compile": {
+          "lib/net46/JB.Common.Collections.Reactive.dll": {}
+        },
+        "runtime": {
+          "lib/net46/JB.Common.Collections.Reactive.dll": {}
+        }
+      },
+      "JB.Common.Reactive/0.8.107-pre": {
+        "type": "package",
+        "dependencies": {
+          "JB.Common": "0.8.107-pre",
+          "System.Reactive": "3.1.1"
+        },
+        "compile": {
+          "lib/net46/JB.Common.Reactive.dll": {}
+        },
+        "runtime": {
+          "lib/net46/JB.Common.Reactive.dll": {}
+        }
+      },
+      "ReactiveProperty/3.6.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive": "3.1.1"
+        },
+        "frameworkAssemblies": [
+          "PresentationCore",
+          "PresentationFramework",
+          "System",
+          "System.ComponentModel.DataAnnotations",
+          "System.Core",
+          "System.Runtime.Serialization",
+          "System.Xaml",
+          "WindowsBase"
+        ],
+        "compile": {
+          "lib/net46/ReactiveProperty.NET46.dll": {},
+          "lib/net46/ReactiveProperty.dll": {}
+        },
+        "runtime": {
+          "lib/net46/ReactiveProperty.NET46.dll": {},
+          "lib/net46/ReactiveProperty.dll": {}
+        }
+      },
+      "System.Reactive/3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.PlatformServices": "3.1.1",
+          "System.Reactive.Windows.Threading": "3.1.1"
+        }
+      },
+      "System.Reactive.Core/3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.Interfaces": "3.1.1"
+        },
+        "compile": {
+          "lib/net46/System.Reactive.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Reactive.Core.dll": {}
+        }
+      },
+      "System.Reactive.Interfaces/3.1.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/System.Reactive.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Interfaces.dll": {}
+        }
+      },
+      "System.Reactive.Linq/3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.Core": "3.1.1"
+        },
+        "compile": {
+          "lib/net46/System.Reactive.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Reactive.Linq.dll": {}
+        }
+      },
+      "System.Reactive.PlatformServices/3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.Linq": "3.1.1"
+        },
+        "compile": {
+          "lib/net46/System.Reactive.PlatformServices.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Reactive.PlatformServices.dll": {}
+        }
+      },
+      "System.Reactive.Windows.Threading/3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.Core": "3.1.1"
+        },
+        "frameworkAssemblies": [
+          "System.Windows",
+          "WindowsBase"
+        ],
+        "compile": {
+          "lib/net45/System.Reactive.Windows.Threading.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Windows.Threading.dll": {}
+        }
+      },
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "DynamicExpresso.Core": "1.3.4.7",
+          "GenSoft.Interface": "1.0.0",
+          "JB.Common.Collections.Reactive": "0.8.107-pre",
+          "JB.Common.Reactive": "0.8.107-pre",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.dll": {}
+        }
+      },
+      "CommonMessages/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CommonMessages.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CommonMessages.dll": {}
+        }
+      },
+      "GenSoft.Interface/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GenSoft.Interface.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GenSoft.Interface.dll": {}
+        }
+      },
+      "SystemInterfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "JB.Common.Collections.Reactive": "0.8.107-pre"
+        },
+        "compile": {
+          "bin/placeholder/SystemInterfaces.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SystemInterfaces.dll": {}
+        }
+      },
+      "Utilities/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Utilities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Utilities.dll": {}
+        }
+      },
+      "ViewModel.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "CommonMessages": "1.0.0",
+          "FluentValidation.Net35": "1.0.1",
+          "GenSoft.Interface": "1.0.0",
+          "JB.Common.Collections.Reactive": "0.8.107-pre",
+          "JB.Common.Reactive": "0.8.107-pre",
+          "ReactiveProperty": "3.6.0",
+          "SystemInterfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ViewModel.Interfaces.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViewModel.Interfaces.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7/win-x86": {
+      "DynamicExpresso.Core/1.3.4.7": {
+        "type": "package",
+        "compile": {
+          "lib/net40/DynamicExpresso.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net40/DynamicExpresso.Core.dll": {}
+        }
+      },
+      "FluentValidation.Net35/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net35/FluentValidation.dll": {}
+        },
+        "runtime": {
+          "lib/net35/FluentValidation.dll": {}
+        }
+      },
+      "JB.Common/0.8.107-pre": {
+        "type": "package",
+        "compile": {
+          "lib/net46/JB.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net46/JB.Common.dll": {}
+        }
+      },
+      "JB.Common.Collections/0.8.107-pre": {
+        "type": "package",
+        "dependencies": {
+          "JB.Common": "0.8.107-pre"
+        },
+        "compile": {
+          "lib/net46/JB.Common.Collections.dll": {}
+        },
+        "runtime": {
+          "lib/net46/JB.Common.Collections.dll": {}
+        }
+      },
+      "JB.Common.Collections.Reactive/0.8.107-pre": {
+        "type": "package",
+        "dependencies": {
+          "JB.Common": "0.8.107-pre",
+          "JB.Common.Collections": "0.8.107-pre",
+          "JB.Common.Reactive": "0.8.107-pre",
+          "System.Reactive": "3.1.1"
+        },
+        "compile": {
+          "lib/net46/JB.Common.Collections.Reactive.dll": {}
+        },
+        "runtime": {
+          "lib/net46/JB.Common.Collections.Reactive.dll": {}
+        }
+      },
+      "JB.Common.Reactive/0.8.107-pre": {
+        "type": "package",
+        "dependencies": {
+          "JB.Common": "0.8.107-pre",
+          "System.Reactive": "3.1.1"
+        },
+        "compile": {
+          "lib/net46/JB.Common.Reactive.dll": {}
+        },
+        "runtime": {
+          "lib/net46/JB.Common.Reactive.dll": {}
+        }
+      },
+      "ReactiveProperty/3.6.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive": "3.1.1"
+        },
+        "frameworkAssemblies": [
+          "PresentationCore",
+          "PresentationFramework",
+          "System",
+          "System.ComponentModel.DataAnnotations",
+          "System.Core",
+          "System.Runtime.Serialization",
+          "System.Xaml",
+          "WindowsBase"
+        ],
+        "compile": {
+          "lib/net46/ReactiveProperty.NET46.dll": {},
+          "lib/net46/ReactiveProperty.dll": {}
+        },
+        "runtime": {
+          "lib/net46/ReactiveProperty.NET46.dll": {},
+          "lib/net46/ReactiveProperty.dll": {}
+        }
+      },
+      "System.Reactive/3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.PlatformServices": "3.1.1",
+          "System.Reactive.Windows.Threading": "3.1.1"
+        }
+      },
+      "System.Reactive.Core/3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.Interfaces": "3.1.1"
+        },
+        "compile": {
+          "lib/net46/System.Reactive.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Reactive.Core.dll": {}
+        }
+      },
+      "System.Reactive.Interfaces/3.1.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/System.Reactive.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Interfaces.dll": {}
+        }
+      },
+      "System.Reactive.Linq/3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.Core": "3.1.1"
+        },
+        "compile": {
+          "lib/net46/System.Reactive.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Reactive.Linq.dll": {}
+        }
+      },
+      "System.Reactive.PlatformServices/3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.Linq": "3.1.1"
+        },
+        "compile": {
+          "lib/net46/System.Reactive.PlatformServices.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Reactive.PlatformServices.dll": {}
+        }
+      },
+      "System.Reactive.Windows.Threading/3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive.Core": "3.1.1"
+        },
+        "frameworkAssemblies": [
+          "System.Windows",
+          "WindowsBase"
+        ],
+        "compile": {
+          "lib/net45/System.Reactive.Windows.Threading.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Reactive.Windows.Threading.dll": {}
+        }
+      },
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "DynamicExpresso.Core": "1.3.4.7",
+          "GenSoft.Interface": "1.0.0",
+          "JB.Common.Collections.Reactive": "0.8.107-pre",
+          "JB.Common.Reactive": "0.8.107-pre",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.dll": {}
+        }
+      },
+      "CommonMessages/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CommonMessages.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CommonMessages.dll": {}
+        }
+      },
+      "GenSoft.Interface/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GenSoft.Interface.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GenSoft.Interface.dll": {}
+        }
+      },
+      "SystemInterfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "JB.Common.Collections.Reactive": "0.8.107-pre"
+        },
+        "compile": {
+          "bin/placeholder/SystemInterfaces.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SystemInterfaces.dll": {}
+        }
+      },
+      "Utilities/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "SystemInterfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Utilities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Utilities.dll": {}
+        }
+      },
+      "ViewModel.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "CommonMessages": "1.0.0",
+          "FluentValidation.Net35": "1.0.1",
+          "GenSoft.Interface": "1.0.0",
+          "JB.Common.Collections.Reactive": "0.8.107-pre",
+          "JB.Common.Reactive": "0.8.107-pre",
+          "ReactiveProperty": "3.6.0",
+          "SystemInterfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ViewModel.Interfaces.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViewModel.Interfaces.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DynamicExpresso.Core/1.3.4.7": {
+      "sha512": "2o6UcIFlnJQ4KgyMETFsFPSDav9FA1v57WQ4Mtyfnoj+1Y6+TeuwYYxuxvxbI2AINNjEyd5U2/KW5NYt2eFztA==",
+      "type": "package",
+      "path": "dynamicexpresso.core/1.3.4.7",
+      "files": [
+        "dynamicexpresso.core.1.3.4.7.nupkg.sha512",
+        "dynamicexpresso.core.nuspec",
+        "lib/net40/DynamicExpresso.Core.XML",
+        "lib/net40/DynamicExpresso.Core.dll",
+        "lib/net40/DynamicExpresso.Core.pdb"
+      ]
+    },
+    "FluentValidation.Net35/1.0.1": {
+      "sha512": "fNgG7n+vDG55/pGcQtyKQWBhlBGWUavN7YfQwUjytGazAQftHzc1soUtKufcY6TXREBwNm/VOVN/w9u5ndjOeA==",
+      "type": "package",
+      "path": "fluentvalidation.net35/1.0.1",
+      "files": [
+        "FluentValidation.Net35.1.0.1.nupkg.sha512",
+        "FluentValidation.Net35.nuspec",
+        "lib/net35/FluentValidation.dll"
+      ]
+    },
+    "JB.Common/0.8.107-pre": {
+      "sha512": "CrGE0xOfUjeV8PVyxtMZWG02bYtwyVl2J1vFtLTx4a4UWx6YJjBdIQ77Ze6HxVhoB4caZNorjY6X/gw7IMYnRA==",
+      "type": "package",
+      "path": "jb.common/0.8.107-pre",
+      "files": [
+        "JB.Common.0.8.107-pre.nupkg.sha512",
+        "JB.Common.nuspec",
+        "lib/net46/JB.Common.XML",
+        "lib/net46/JB.Common.dll"
+      ]
+    },
+    "JB.Common.Collections/0.8.107-pre": {
+      "sha512": "dsswdlRryb15KWEY8VEPm95Ji86dTQ4zTkk5ZuljO78xWECfT93+464K/VGYFQ/zdS6i9K37b7Eaktbu2TWo2g==",
+      "type": "package",
+      "path": "jb.common.collections/0.8.107-pre",
+      "files": [
+        "JB.Common.Collections.0.8.107-pre.nupkg.sha512",
+        "JB.Common.Collections.nuspec",
+        "lib/net46/JB.Common.Collections.XML",
+        "lib/net46/JB.Common.Collections.dll"
+      ]
+    },
+    "JB.Common.Collections.Reactive/0.8.107-pre": {
+      "sha512": "lvjXA+Zt79/v3eAAc1AbyGaTKVqgruh/c/sNAA77XVYyZ2NLG/EHlSExUfDc2VzaH11InmMaONMt7Zk3UispHg==",
+      "type": "package",
+      "path": "jb.common.collections.reactive/0.8.107-pre",
+      "files": [
+        "JB.Common.Collections.Reactive.0.8.107-pre.nupkg.sha512",
+        "JB.Common.Collections.Reactive.nuspec",
+        "lib/net46/JB.Common.Collections.Reactive.XML",
+        "lib/net46/JB.Common.Collections.Reactive.dll"
+      ]
+    },
+    "JB.Common.Reactive/0.8.107-pre": {
+      "sha512": "gyMdoLbIk/bQJSbrGjTyvxE/ZVpGDWr5bS5AX4NNrLJzBzUOOSSxPFnNeZ+lDWNyWPsl6cBQeebBUXVzTb8SFQ==",
+      "type": "package",
+      "path": "jb.common.reactive/0.8.107-pre",
+      "files": [
+        "JB.Common.Reactive.0.8.107-pre.nupkg.sha512",
+        "JB.Common.Reactive.nuspec",
+        "lib/net46/JB.Common.Reactive.XML",
+        "lib/net46/JB.Common.Reactive.dll"
+      ]
+    },
+    "ReactiveProperty/3.6.0": {
+      "sha512": "5WCPLBSvEMmiRBc+DRT1wXKMfmiaVi8FNghJdb6LfFjZxuNsPb98WpVn+IrgHwd+ve1KMPrkTTPA8+edumhEHw==",
+      "type": "package",
+      "path": "reactiveproperty/3.6.0",
+      "files": [
+        "Docs/ReadMe.txt",
+        "LICENSE.txt",
+        "ReactiveProperty.3.6.0.nupkg.sha512",
+        "ReactiveProperty.nuspec",
+        "Snippet/csharp5/AsyncReactiveCommand.snippet",
+        "Snippet/csharp5/AsyncReactiveCommandGeneric.snippet",
+        "Snippet/csharp5/ReactiveCollection.snippet",
+        "Snippet/csharp5/ReactiveCommand.snippet",
+        "Snippet/csharp5/ReactiveCommandGeneric.snippet",
+        "Snippet/csharp5/ReactiveProperty.snippet",
+        "Snippet/csharp5/ReadOnlyReactiveCollection.snippet",
+        "Snippet/csharp5/ReadOnlyReactiveProperty.snippet",
+        "Snippet/csharp6/AsyncReactiveCommand.snippet",
+        "Snippet/csharp6/AsyncReactiveCommandGeneric.snippet",
+        "Snippet/csharp6/ReactiveCollection.snippet",
+        "Snippet/csharp6/ReactiveCommand.snippet",
+        "Snippet/csharp6/ReactiveCommandGeneric.snippet",
+        "Snippet/csharp6/ReactiveProperty.snippet",
+        "Snippet/csharp6/ReadOnlyReactiveCollection.snippet",
+        "Snippet/csharp6/ReadOnlyReactiveProperty.snippet",
+        "lib/MonoAndroid/ReactiveProperty.Android.XML",
+        "lib/MonoAndroid/ReactiveProperty.Android.dll",
+        "lib/MonoAndroid/ReactiveProperty.Android.pdb",
+        "lib/MonoAndroid/ReactiveProperty.XML",
+        "lib/MonoAndroid/ReactiveProperty.dll",
+        "lib/MonoAndroid/ReactiveProperty.pdb",
+        "lib/MonoTouch/ReactiveProperty.XML",
+        "lib/MonoTouch/ReactiveProperty.dll",
+        "lib/MonoTouch/ReactiveProperty.iOS.XML",
+        "lib/MonoTouch/ReactiveProperty.iOS.dll",
+        "lib/MonoTouch/ReactiveProperty.iOS.pdb",
+        "lib/MonoTouch/ReactiveProperty.pdb",
+        "lib/Xamarin.Mac20/ReactiveProperty.XML",
+        "lib/Xamarin.Mac20/ReactiveProperty.dll",
+        "lib/Xamarin.Mac20/ReactiveProperty.pdb",
+        "lib/Xamarin.iOS10/ReactiveProperty.XML",
+        "lib/Xamarin.iOS10/ReactiveProperty.dll",
+        "lib/Xamarin.iOS10/ReactiveProperty.iOS.XML",
+        "lib/Xamarin.iOS10/ReactiveProperty.iOS.dll",
+        "lib/Xamarin.iOS10/ReactiveProperty.iOS.pdb",
+        "lib/Xamarin.iOS10/ReactiveProperty.pdb",
+        "lib/net45/ReactiveProperty.NET45.XML",
+        "lib/net45/ReactiveProperty.NET45.dll",
+        "lib/net45/ReactiveProperty.NET45.pdb",
+        "lib/net45/ReactiveProperty.XML",
+        "lib/net45/ReactiveProperty.dll",
+        "lib/net45/ReactiveProperty.pdb",
+        "lib/net46/ReactiveProperty.NET46.XML",
+        "lib/net46/ReactiveProperty.NET46.dll",
+        "lib/net46/ReactiveProperty.NET46.pdb",
+        "lib/net46/ReactiveProperty.XML",
+        "lib/net46/ReactiveProperty.dll",
+        "lib/net46/ReactiveProperty.pdb",
+        "lib/netstandard1.1/ReactiveProperty.XML",
+        "lib/netstandard1.1/ReactiveProperty.dll",
+        "lib/netstandard1.1/ReactiveProperty.pdb",
+        "lib/portable-net45+win81+MonoTouch+MonoAndroid/ReactiveProperty.XML",
+        "lib/portable-net45+win81+MonoTouch+MonoAndroid/ReactiveProperty.dll",
+        "lib/portable-net45+win81+MonoTouch+MonoAndroid/ReactiveProperty.pdb",
+        "lib/uap10.0/ReactiveProperty.UWP.XML",
+        "lib/uap10.0/ReactiveProperty.UWP.dll",
+        "lib/uap10.0/ReactiveProperty.UWP.pdb",
+        "lib/uap10.0/ReactiveProperty.XML",
+        "lib/uap10.0/ReactiveProperty.dll",
+        "lib/uap10.0/ReactiveProperty.pdb"
+      ]
+    },
+    "System.Reactive/3.1.1": {
+      "sha512": "elkQdVQoBVX39BHrYHMc3Rnbb7a9qBJIwNCvhq1psPMOEPo62/VHB0lJu671x3fOrGL4V/85n6p2Az1tw7Kvmg==",
+      "type": "package",
+      "path": "system.reactive/3.1.1",
+      "files": [
+        "System.Reactive.3.1.1.nupkg.sha512",
+        "System.Reactive.nuspec"
+      ]
+    },
+    "System.Reactive.Core/3.1.1": {
+      "sha512": "CKWC+UP1aM75taNX+sTBn2P97uHIUjKxq+z45iy7P91QGFqNFleR2tsqIC76HMVvYl7o8oWyMiycdsc9rC1Z/g==",
+      "type": "package",
+      "path": "system.reactive.core/3.1.1",
+      "files": [
+        "System.Reactive.Core.3.1.1.nupkg.sha512",
+        "System.Reactive.Core.nuspec",
+        "lib/net45/System.Reactive.Core.dll",
+        "lib/net45/System.Reactive.Core.xml",
+        "lib/net46/System.Reactive.Core.dll",
+        "lib/net46/System.Reactive.Core.xml",
+        "lib/netcore451/System.Reactive.Core.dll",
+        "lib/netcore451/System.Reactive.Core.xml",
+        "lib/netcoreapp1.0/System.Reactive.Core.dll",
+        "lib/netcoreapp1.0/System.Reactive.Core.xml",
+        "lib/netstandard1.0/System.Reactive.Core.dll",
+        "lib/netstandard1.0/System.Reactive.Core.xml",
+        "lib/netstandard1.1/System.Reactive.Core.dll",
+        "lib/netstandard1.1/System.Reactive.Core.xml",
+        "lib/netstandard1.3/System.Reactive.Core.dll",
+        "lib/netstandard1.3/System.Reactive.Core.xml",
+        "lib/uap10.0/System.Reactive.Core.dll",
+        "lib/uap10.0/System.Reactive.Core.xml",
+        "lib/wpa81/System.Reactive.Core.dll",
+        "lib/wpa81/System.Reactive.Core.xml"
+      ]
+    },
+    "System.Reactive.Interfaces/3.1.1": {
+      "sha512": "aNVY3QoRznGFeQ+w+bMqhD8ElNWoyYq+7XTQIoxKKjBOyTOjUqIMEf1wvSdtwC4y92zg2W9q38b4Sr6cYNHVLg==",
+      "type": "package",
+      "path": "system.reactive.interfaces/3.1.1",
+      "files": [
+        "System.Reactive.Interfaces.3.1.1.nupkg.sha512",
+        "System.Reactive.Interfaces.nuspec",
+        "lib/net45/System.Reactive.Interfaces.dll",
+        "lib/net45/System.Reactive.Interfaces.xml",
+        "lib/netstandard1.0/System.Reactive.Interfaces.dll",
+        "lib/netstandard1.0/System.Reactive.Interfaces.xml"
+      ]
+    },
+    "System.Reactive.Linq/3.1.1": {
+      "sha512": "HwsZsoYRg51cLGBOEa0uoZ5+d4CMcHEg/KrbqePhLxoz/SLA+ULISphBtn3woABPATOQ6j5YgGZWh4jxnJ3KYQ==",
+      "type": "package",
+      "path": "system.reactive.linq/3.1.1",
+      "files": [
+        "System.Reactive.Linq.3.1.1.nupkg.sha512",
+        "System.Reactive.Linq.nuspec",
+        "lib/net45/System.Reactive.Linq.dll",
+        "lib/net45/System.Reactive.Linq.xml",
+        "lib/net46/System.Reactive.Linq.dll",
+        "lib/net46/System.Reactive.Linq.xml",
+        "lib/netstandard1.0/System.Reactive.Linq.dll",
+        "lib/netstandard1.0/System.Reactive.Linq.xml",
+        "lib/netstandard1.1/System.Reactive.Linq.dll",
+        "lib/netstandard1.1/System.Reactive.Linq.xml",
+        "lib/netstandard1.3/System.Reactive.Linq.dll",
+        "lib/netstandard1.3/System.Reactive.Linq.xml"
+      ]
+    },
+    "System.Reactive.PlatformServices/3.1.1": {
+      "sha512": "jCJ3iGDLb4duOxZ/Uo3O7PssWE48uRp0fw92AlIwrMNaZRUmZNkZyqbl0nUT+joFARBYun8XiVIDQreMJKBedA==",
+      "type": "package",
+      "path": "system.reactive.platformservices/3.1.1",
+      "files": [
+        "System.Reactive.PlatformServices.3.1.1.nupkg.sha512",
+        "System.Reactive.PlatformServices.nuspec",
+        "lib/net45/System.Reactive.PlatformServices.dll",
+        "lib/net45/System.Reactive.PlatformServices.xml",
+        "lib/net46/System.Reactive.PlatformServices.dll",
+        "lib/net46/System.Reactive.PlatformServices.xml",
+        "lib/netcore451/System.Reactive.PlatformServices.dll",
+        "lib/netcore451/System.Reactive.PlatformServices.xml",
+        "lib/netcoreapp1.0/System.Reactive.PlatformServices.dll",
+        "lib/netcoreapp1.0/System.Reactive.PlatformServices.xml",
+        "lib/netstandard1.0/System.Reactive.PlatformServices.dll",
+        "lib/netstandard1.0/System.Reactive.PlatformServices.xml",
+        "lib/netstandard1.3/System.Reactive.PlatformServices.dll",
+        "lib/netstandard1.3/System.Reactive.PlatformServices.xml",
+        "lib/uap10.0/System.Reactive.PlatformServices.dll",
+        "lib/uap10.0/System.Reactive.PlatformServices.xml",
+        "lib/wpa81/System.Reactive.PlatformServices.dll",
+        "lib/wpa81/System.Reactive.PlatformServices.xml"
+      ]
+    },
+    "System.Reactive.Windows.Threading/3.1.1": {
+      "sha512": "y1TtaYaFKJBH0L3wbLVCV2Le5cNIyVczwZAULboPyFdKTIiRb7OGAZYigly8SjNC3NHwzrTHcF8WlkL0WjGUmA==",
+      "type": "package",
+      "path": "system.reactive.windows.threading/3.1.1",
+      "files": [
+        "System.Reactive.Windows.Threading.3.1.1.nupkg.sha512",
+        "System.Reactive.Windows.Threading.nuspec",
+        "lib/net45/System.Reactive.Windows.Threading.dll",
+        "lib/net45/System.Reactive.Windows.Threading.xml",
+        "lib/netcore451/System.Reactive.Windows.Threading.dll",
+        "lib/netcore451/System.Reactive.Windows.Threading.xml",
+        "lib/uap10.0/System.Reactive.Windows.Threading.dll",
+        "lib/uap10.0/System.Reactive.Windows.Threading.xml",
+        "lib/wpa81/System.Reactive.Windows.Threading.dll",
+        "lib/wpa81/System.Reactive.Windows.Threading.xml"
+      ]
+    },
+    "Common/1.0.0": {
+      "type": "project",
+      "path": "../Common/Common.csproj",
+      "msbuildProject": "../Common/Common.csproj"
+    },
+    "CommonMessages/1.0.0": {
+      "type": "project",
+      "path": "../CommonMessages/CommonMessages.csproj",
+      "msbuildProject": "../CommonMessages/CommonMessages.csproj"
+    },
+    "GenSoft.Interface/1.0.0": {
+      "type": "project",
+      "path": "../GenSoft.Interface/GenSoft.Interface.csproj",
+      "msbuildProject": "../GenSoft.Interface/GenSoft.Interface.csproj"
+    },
+    "SystemInterfaces/1.0.0": {
+      "type": "project",
+      "path": "../SystemInterfaces/SystemInterfaces.csproj",
+      "msbuildProject": "../SystemInterfaces/SystemInterfaces.csproj"
+    },
+    "Utilities/1.0.0": {
+      "type": "project",
+      "path": "../Utilities/Utilities.csproj",
+      "msbuildProject": "../Utilities/Utilities.csproj"
+    },
+    "ViewModel.Interfaces/1.0.0": {
+      "type": "project",
+      "path": "../ViewModel.Interfaces/ViewModel.Interfaces.csproj",
+      "msbuildProject": "../ViewModel.Interfaces/ViewModel.Interfaces.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.7": [
+      "Common >= 1.0.0",
+      "SystemInterfaces >= 1.0.0",
+      "Utilities >= 1.0.0",
+      "ViewModel.Interfaces >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Alpha\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Converters\\Converters.csproj",
+      "projectName": "Converters",
+      "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Converters\\Converters.csproj",
+      "packagesPath": "C:\\Users\\Alpha\\.nuget\\packages\\",
+      "outputPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Converters\\obj\\",
+      "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
+      "configFilePaths": [
+        "C:\\Users\\Alpha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net47"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net47": {
+          "projectReferences": {
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Common\\Common.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Common\\Common.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Utilities\\Utilities.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Utilities\\Utilities.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj"
+            }
+          }
+        }
+      }
+    },
+    "frameworks": {
+      "net47": {}
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      },
+      "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
+        "#import": []
+      }
+    }
+  }
+}

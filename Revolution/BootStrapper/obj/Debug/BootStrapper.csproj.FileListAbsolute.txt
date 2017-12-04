@@ -178,8 +178,6 @@ C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\bin\Debug\log4net.xml
 C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\obj\Debug\BootStrapper.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\obj\Debug\BootStrapper.dll
 C:\Prism\GitRepositiory\MRManager\Revolution\BootStrapper\obj\Debug\BootStrapper.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\obj\Debug\BootStrapper.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\obj\Debug\BootStrapper.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\BootStrapper.dll.config
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\BootStrapper.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\BootStrapper.pdb
@@ -190,20 +188,15 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\JB.Common.Coll
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\JB.Common.Reactive.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\MefContrib.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\MefContrib.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\ReactiveProperty.DataAnnotations.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\ReactiveProperty.DataAnnotations.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\ReactiveProperty.NET46.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\ReactiveProperty.NET46.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\ReactiveProperty.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\ReactiveProperty.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\ReactiveUI.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\System.Reactive.Core.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\System.Reactive.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\System.Reactive.Linq.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\System.Reactive.PlatformServices.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\System.Reactive.Windows.Threading.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\Splat.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\Splat.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\Actor.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\ComponentModel.Composition.Hosting.Extension.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\SystemInterfaces.dll
@@ -222,3 +215,5 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\GenSoft.Interf
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\Akka.xml
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\obj\Debug\BootStrapper.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\obj\Debug\BootStrapper.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\obj\Debug\BootStrapper.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\obj\Debug\BootStrapper.pdb

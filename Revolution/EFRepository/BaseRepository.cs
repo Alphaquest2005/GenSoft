@@ -2,11 +2,9 @@ using System;
 using SystemInterfaces;
 using Common;
 using EventAggregator;
-using EventMessages;
 using EventMessages.Events;
 using RevolutionEntities.Process;
 using RevolutionLogger;
-using Utilities;
 
 namespace EFRepository
 {

@@ -1,11 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Diagnostics.Contracts;
-using System.Linq;
-using SystemInterfaces;
-using CommonMessages;
-
-
-namespace EventMessages.Events
+﻿namespace EventMessages.Events
 {
     
     //public class GotMedia : ProcessSystemMessage

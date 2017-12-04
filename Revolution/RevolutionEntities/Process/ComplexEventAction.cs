@@ -1,10 +1,7 @@
 using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Linq;
 using SystemInterfaces;
 using Actor.Interfaces;
-using ViewModel.Interfaces;
 
 namespace RevolutionEntities.Process
 {

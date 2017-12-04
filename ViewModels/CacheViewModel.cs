@@ -2,20 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
-using System.Linq;
-using System.Windows;
 using SystemInterfaces;
-using Common;
 using Core.Common.UI;
-using FluentValidation;
-using GenSoft.Interfaces;
 using JB.Collections.Reactive;
 using Reactive.Bindings;
-using ReactiveUI;
-using RevolutionEntities.Process;
-using RevolutionEntities.ViewModels;
-using Utilities;
-
 using ViewModel.Interfaces;
 using ViewModelInterfaces;
 using ISystemProcess = SystemInterfaces.ISystemProcess;
@@ -47,7 +37,7 @@ namespace ViewModels
         }
 
         public ReactiveProperty<IDynamicEntity> CurrentEntity => this.ViewModel.CurrentEntity;
-        public IEntityKeyValuePair CurrentProperty => this.ViewModel.CurrentProperty;
+        public ReactiveProperty<IEntityKeyValuePair> CurrentProperty => this.ViewModel.CurrentProperty;
 
 
         public ObservableDictionary<string, dynamic> ChangeTracking => this.ViewModel.ChangeTracking;

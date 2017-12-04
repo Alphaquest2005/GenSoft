@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.Composition;
-
-namespace SystemInterfaces
+﻿namespace SystemInterfaces
 {
     
     public interface ISystemProcessCompleted : IProcessSystemMessage

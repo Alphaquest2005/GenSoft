@@ -1,14 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using SystemInterfaces;
-using Akka.Util.Internal;
 using Common;
 using Common.DataEntites;
-using GenSoft.DBContexts;
-using GenSoft.Entities;
-using GenSoft.Interfaces;
-using MoreLinq;
 using RevolutionData;
 using ViewModel.Interfaces;
 using RevolutionEntities.ViewModels;

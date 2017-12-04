@@ -37,7 +37,7 @@ using EventAggregator;
 using EventMessages;
 
 using JB.Collections.Reactive;
-using ReactiveUI;
+
 using System.Linq;
 using DesignTime;
 

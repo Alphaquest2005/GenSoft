@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.Composition;
-using SystemInterfaces;
+﻿using SystemInterfaces;
 using JB.Collections.Reactive;
 using Reactive.Bindings;
 

@@ -11,8 +11,6 @@ C:\Prism\GitRepositiory\MRManager\Revolution\Actor.Interfaces\bin\Debug\System.C
 C:\Prism\GitRepositiory\MRManager\Revolution\Actor.Interfaces\obj\Debug\Actor.Interfaces.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\MRManager\Revolution\Actor.Interfaces\obj\Debug\Actor.Interfaces.dll
 C:\Prism\GitRepositiory\MRManager\Revolution\Actor.Interfaces\obj\Debug\Actor.Interfaces.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\obj\Debug\Actor.Interfaces.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\obj\Debug\Actor.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\Actor.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\Actor.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\FluentValidation.dll
@@ -20,20 +18,15 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\JB.Common.
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\JB.Common.Collections.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\JB.Common.Collections.Reactive.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\JB.Common.Reactive.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\ReactiveProperty.DataAnnotations.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\ReactiveProperty.DataAnnotations.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\ReactiveProperty.NET46.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\ReactiveProperty.NET46.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\ReactiveProperty.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\ReactiveProperty.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\ReactiveUI.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\System.Reactive.Core.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\System.Reactive.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\System.Reactive.Linq.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\System.Reactive.PlatformServices.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\System.Reactive.Windows.Threading.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\Splat.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\Splat.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\Akka.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\GenSoft.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\System.Collections.Immutable.dll
@@ -46,3 +39,5 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\Akka.xml
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\System.Collections.Immutable.xml
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\obj\Debug\Actor.Interfaces.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\obj\Debug\Actor.Interfaces.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\obj\Debug\Actor.Interfaces.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\obj\Debug\Actor.Interfaces.pdb

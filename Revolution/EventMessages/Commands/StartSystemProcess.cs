@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using System.Windows.Documents;
 using SystemInterfaces;
 using Common.DataEntites;
 using CommonMessages;

@@ -1,21 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Dynamic;
-using System.Reflection;
 using SystemInterfaces;
-using Common;
 using Common.DataEntites;
-using Common.Dynamic;
 using DomainUtilities;
 using EventAggregator;
-using EventMessages.Commands;
 using EventMessages.Events;
 using GenSoft.DBContexts;
 using GenSoft.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
-using RevolutionEntities.Process;
 using Entity = GenSoft.Entities.Entity;
 using EntityEvents = RevolutionData.Context.Entity;
 

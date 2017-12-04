@@ -3,22 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
 using System.Diagnostics;
-using System.Linq;
-using System.Reactive.Linq;
-using System.Windows;
 using SystemInterfaces;
-using Common;
 using Core.Common.UI;
-using FluentValidation;
-using GenSoft.Entities;
-using GenSoft.Interfaces;
 using JB.Collections.Reactive;
 using Reactive.Bindings;
-using Reactive.Bindings.Extensions;
-using ReactiveUI;
-using RevolutionEntities.Process;
-using RevolutionEntities.ViewModels;
-using Utilities;
 using ViewModel.Interfaces;
 using ViewModelInterfaces;
 using ISystemProcess = SystemInterfaces.ISystemProcess;
@@ -30,16 +18,27 @@ namespace ViewModels
     public class EntityDetailsViewModel : DynamicViewModel<EntityViewModel>, IEntityViewModel
     {
 
-        public EntityDetailsViewModel() { }
-        
-        public EntityDetailsViewModel(ISystemProcess domainProcess, IEntityViewInfo viewInfo, List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions, List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications, List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, Type orientation, int priority, IViewAttributeDisplayProperties displayProperties) : base(new EntityViewModel(viewInfo, eventSubscriptions, eventPublications, commandInfo, domainProcess, orientation, priority, displayProperties))
+        public EntityDetailsViewModel(){}
+
+        public EntityDetailsViewModel(ISystemProcess domainProcess, IEntityViewInfo viewInfo,
+            List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions,
+            List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications,
+            List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, Type orientation, int priority,
+            IViewAttributeDisplayProperties displayProperties) : base(new EntityViewModel(viewInfo, eventSubscriptions,
+            eventPublications, commandInfo, domainProcess, orientation, priority, displayProperties))
         {
             if (LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
             ViewInfo = viewInfo;
-            
+
+            State = this.ViewModel.State;
+            CurrentEntity = this.ViewModel.CurrentEntity;
+            ChangeTracking = this.ViewModel.ChangeTracking;
+            DisplayProperties = this.ViewModel.DisplayProperties;
+            ParentEntities = this.ViewModel.ParentEntities;
             this.WireEvents();
-            this.State.WhenAnyValue(x => x.Value, x => x.Value.Entity).Subscribe(UpdateCurrentEntity);
-            this.ViewModel.CurrentEntity.WhenAnyValue(x => x.Value).Subscribe(UpdateStateEntity);
+            this.State.Subscribe(x => UpdateCurrentEntity(x));
+            this.ViewModel.CurrentEntity.Subscribe(UpdateStateEntity);
+            CurrentProperty.Subscribe(x => OnValueChanged(x));
 
         }
 
@@ -49,43 +48,36 @@ namespace ViewModels
                 State.Value.Entity = dynamicEntity;
         }
 
-        private void UpdateCurrentEntity(Tuple<IProcessStateEntity,IDynamicEntity> processStateEntity)
+        private void UpdateCurrentEntity(IProcessStateEntity processStateEntity)
         {
-            if(!Equals(ViewModel.CurrentEntity.Value, processStateEntity.Item1.Entity))
-            if(processStateEntity?.Item1?.Entity == null) Debugger.Break();
-            this.ViewModel.CurrentEntity.Value = processStateEntity.Item1.Entity;
+            if(!Equals(ViewModel.CurrentEntity.Value, processStateEntity?.Entity))
+            if(processStateEntity?.Entity == null) Debugger.Break();
+            this.ViewModel.CurrentEntity.Value = processStateEntity?.Entity;
         }
 
 
         public new IEntityViewInfo ViewInfo { get; }
-        public ReactiveProperty<IProcessStateEntity> State => this.ViewModel.State;
+        public ReactiveProperty<IProcessStateEntity> State { get; } 
 
         //potential problem state different from current entity!
-        public ReactiveProperty<IDynamicEntity> CurrentEntity => this.ViewModel.CurrentEntity;
+        public ReactiveProperty<IDynamicEntity> CurrentEntity { get; } 
 
-        private IEntityKeyValuePair _currentProperty;
+      
 
-        public IEntityKeyValuePair CurrentProperty
-        {
-            get { return _currentProperty; }
-            set
-            {
-                _currentProperty = value;
-                _currentProperty?.WhenAnyValue(x => x.Value).Subscribe(x => OnValueChanged(x));}
-        }
+        public ReactiveProperty<IEntityKeyValuePair> CurrentProperty { get; } = new ReactiveProperty<IEntityKeyValuePair>();
 
 
 
         private void OnValueChanged(object entityKeyValuePair)
         {
             if(RowState.Value == SystemInterfaces.RowState.Modified)
-            ChangeTracking.AddOrUpdate(_currentProperty.Key, _currentProperty.Value);
+            ChangeTracking.AddOrUpdate(CurrentProperty.Value.Key, CurrentProperty.Value.Value);
         }
 
 
-        public ObservableDictionary<string, dynamic> ChangeTracking => this.ViewModel.ChangeTracking;
-        public ObservableList<IDynamicEntity> ParentEntities => this.ViewModel.ParentEntities;
-        public IViewAttributeDisplayProperties DisplayProperties => this.ViewModel.DisplayProperties;
+        public ObservableDictionary<string, dynamic> ChangeTracking { get; } 
+        public ObservableList<IDynamicEntity> ParentEntities { get; }
+        public IViewAttributeDisplayProperties DisplayProperties { get; }
         
     }
 

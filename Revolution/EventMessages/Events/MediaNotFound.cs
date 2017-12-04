@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using SystemInterfaces;
-using CommonMessages;
-
-namespace EventMessages.Events
+﻿namespace EventMessages.Events
 {
     
     //public class MediaNotFound : ProcessSystemMessage

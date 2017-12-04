@@ -1,16 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-
-using System.Text;
-using System.Threading.Tasks;
 using SystemInterfaces;
-using Akka.Event;
-using Core.Common.UI;
 using GenSoft.Entities;
-using GenSoft.Interfaces;
-using RevolutionEntities.Process;
 using RevolutionEntities.ViewModels;
 using ViewModel.Interfaces;
 using ViewModelInterfaces;

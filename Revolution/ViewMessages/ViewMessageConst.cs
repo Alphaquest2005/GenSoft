@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.Composition;
-
-namespace ViewMessages
+﻿namespace ViewMessages
 {
     
     public class ViewMessageConst

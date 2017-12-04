@@ -4,14 +4,12 @@ using System.ComponentModel;
 using System.Diagnostics.Contracts;
 using System.Dynamic;
 using System.Linq;
-using System.Reactive;
-using System.Windows;
 using SystemInterfaces;
 using Common;
 using Common.Dynamic;
 using JB.Collections.Reactive;
 using Reactive.Bindings;
-using ReactiveUI;
+
 using RevolutionEntities.Process;
 using Utilities;
 using ViewModel.Interfaces;
@@ -51,8 +49,10 @@ namespace Core.Common.UI
                 NotifyPropertyChanged(nameof(ExtensionViewModels));
                 
             });
-
+            
         }
+
+        
 
         public List<IEntityViewModel> ExtensionViewModels => ViewModels.Cast<IEntityViewModel>().Where(x => x.ViewInfo.Ordinality == EntityRelationshipOrdinality.One).ToList();
         public List<IEntityViewModel> ChildEntityViewModels => ViewModels.Cast<IEntityViewModel>().Where(x => x.ViewInfo.Ordinality == EntityRelationshipOrdinality.Many).ToList();
@@ -62,6 +62,8 @@ namespace Core.Common.UI
         public ReactiveProperty<dynamic> SelectedViewModel { get; } = new ReactiveProperty<dynamic>();
         public ReactiveProperty<dynamic> ViewModelState { get; } = new ReactiveProperty<dynamic>(SystemInterfaces.ViewModelState.NotIntialized);
         public ReactiveProperty<dynamic> Visibility { get; } = new ReactiveProperty<dynamic>(System.Windows.Visibility.Collapsed);
+
+       
 
         public override bool TryGetMember(GetMemberBinder binder, out object result)
         {
@@ -95,7 +97,7 @@ namespace Core.Common.UI
         public ISystemProcess Process { get; }
         public List<IViewModelEventSubscription<IViewModel, IEvent>> EventSubscriptions { get; }
         public List<IViewModelEventPublication<IViewModel, IEvent>> EventPublications { get; }
-        public Dictionary<string, ReactiveCommand<IViewModel, Unit>> Commands { get; }
+        public Dictionary<string, ReactiveCommand<IViewModel>> Commands { get; }
         public List<IViewModelEventCommand<IViewModel, IEvent>> CommandInfo { get; }
         public Type Orientation { get; }
         public Type ViewModelType { get; }

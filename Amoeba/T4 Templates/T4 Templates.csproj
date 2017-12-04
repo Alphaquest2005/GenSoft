@@ -11,9 +11,9 @@
     <AssemblyName>T4Templates</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <NuGetPackageImportStamp></NuGetPackageImportStamp>
     <TargetFrameworkProfile />
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -307,7 +307,6 @@
     <None Include="PresentationLayer\ViewModels\Model\NavigationViewModelTemplate.ttinclude" />
     <None Include="PresentationLayer\ViewModels\Model\InstanceViewModelTemplate.ttinclude" />
     <None Include="PresentationLayer\ViewModels\Model\EntityViewModelTemplate.ttinclude" />
-    <None Include="project.json" />
     <None Include="UnitTests\ExpressionUnitTests\CreateExpressionUnitTests.ttinclude" />
     <None Include="UnitTests\ExpressionUnitTests\EntityViewExpressionUnitTestTemplate.ttinclude" />
     <None Include="UnitTests\ExpressionUnitTests\AutoExpressionUnitTestTemplate.ttinclude" />

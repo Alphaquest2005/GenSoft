@@ -1,9 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel;
-using SystemInterfaces;
-using CommonMessages;
-
-namespace EventMessages.Commands
+﻿namespace EventMessages.Commands
 {
    
 

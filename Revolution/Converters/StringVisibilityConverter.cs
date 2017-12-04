@@ -6,8 +6,6 @@ using System.Windows;
 using System.Windows.Data;
 using Common.DataEntites;
 using JB.Collections.Reactive;
-using Utilities;
-using ViewModel.Interfaces;
 
 namespace Converters
 {

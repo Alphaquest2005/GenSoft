@@ -1,8 +1,6 @@
-using System;
 using System.Collections.Generic;
 using SystemInterfaces;
 using GenSoft.Entities;
-using GenSoft.Interfaces;
 
 namespace RevolutionEntities.ViewModels
 {

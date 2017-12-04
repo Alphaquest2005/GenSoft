@@ -1,20 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Reactive;
 using System.Reactive.Linq;
-using System.Windows;
 using SystemInterfaces;
-using BootStrapper;
 using Common;
 using Common.DataEntites;
-using Common.Dynamic;
 using GenSoft.Entities;
-using GenSoft.Interfaces;
 using MoreLinq;
-using ReactiveUI;
-using RevolutionEntities.Process;
+using Reactive.Bindings;
 using RevolutionEntities.ViewModels;
 using Utilities;
 using ViewModel.Interfaces;
@@ -84,7 +77,7 @@ namespace RevolutionData
                             {
                                 //v => v. != null
                             },
-                            subject:s => Observable.Empty<ReactiveCommand<IViewModel, Unit>>(),
+                            subject:s => Observable.Empty<ReactiveCommand<IViewModel>>(),
 
                             messageData: s =>
                             {

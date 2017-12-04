@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.Composition;
-
-namespace ViewModelInterfaces
+﻿namespace ViewModelInterfaces
 {
     
     public interface IStartViewModelLocator

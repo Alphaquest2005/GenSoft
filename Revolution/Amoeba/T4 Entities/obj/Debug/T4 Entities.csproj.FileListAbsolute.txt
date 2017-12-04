@@ -32,3 +32,10 @@ C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4 Entities\bin\Debug\EntityFram
 C:\Prism\GitRepositiory\MRManager-Amoeba\Amoeba\T4 Entities\obj\Debug\T4 Entities.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Entities\obj\Debug\T4Entities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Entities\obj\Debug\T4Entities.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Entities\bin\Debug\T4Entities.dll.config
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Entities\bin\Debug\T4Entities.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Entities\bin\Debug\T4Entities.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Entities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Entities\bin\Debug\EntityFramework.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Entities\obj\Debug\T4 Entities.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Entities\obj\Debug\T4 Entities.csproj.CoreCompileInputs.cache

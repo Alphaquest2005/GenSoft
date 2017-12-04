@@ -30,7 +30,7 @@
                      IsSynchronizedWithCurrentItem="True"
                      ItemTemplate="{DynamicResource EntityDetailWDT}"
                      ItemsSource="{Binding State.Value.Entity.PropertyList}"
-                     SelectedItem="{Binding CurrentProperty,  Mode=TwoWay, IsAsync=True}"/>
+                     SelectedItem="{Binding CurrentProperty.Value,  Mode=TwoWay, IsAsync=True}"/>
             
         </Grid>
 

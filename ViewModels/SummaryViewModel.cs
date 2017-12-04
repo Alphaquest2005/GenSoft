@@ -3,20 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
 using System.Linq;
-using System.Windows;
 using SystemInterfaces;
-using Common;
-using Common.DataEntites;
 using Core.Common.UI;
-using FluentValidation;
-using GenSoft.Interfaces;
 using JB.Collections.Reactive;
 using Reactive.Bindings;
-using ReactiveUI;
-using RevolutionEntities.Process;
-using RevolutionEntities.ViewModels;
-using Utilities;
 
+using RevolutionEntities.Process;
 using ViewModel.Interfaces;
 using ViewModelInterfaces;
 using ISystemProcess = SystemInterfaces.ISystemProcess;
@@ -28,15 +20,32 @@ namespace ViewModels
     {
 
         public SummaryListViewModel() { }
-        public SummaryListViewModel(ISystemProcess process, IEntityViewInfo viewInfo, List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions, List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications, List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, Type orientation, int priority, IViewAttributeDisplayProperties displayProperties) : base(new EntityListViewModel(viewInfo, eventSubscriptions, eventPublications, commandInfo, process, orientation, priority, displayProperties))
+
+        public SummaryListViewModel(ISystemProcess process, IEntityViewInfo viewInfo,
+            List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions,
+            List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications,
+            List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, Type orientation, int priority,
+            IViewAttributeDisplayProperties displayProperties) : base(new EntityListViewModel(viewInfo,
+            eventSubscriptions, eventPublications, commandInfo, process, orientation, priority, displayProperties))
         {
             if (LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
-            this.WireEvents();
-            
 
-            this.State.WhenAnyValue(x => x.Value, x => x.Value.EntitySet).Subscribe(x => UpdateCurrentEntity(x));
-            this.ViewModel.EntitySet.WhenAnyValue(x => x.Value).Subscribe(x => UpdateStateEntity(x));
-            this.CurrentEntity.WhenAnyValue(x => x.Value).Subscribe(x => Currentvaluechanged(x));
+
+            State = this.ViewModel.State;
+            CurrentEntity = this.ViewModel.CurrentEntity;
+            ChangeTracking = this.ViewModel.ChangeTracking;
+            ParentEntities = this.ViewModel.ParentEntities;
+            DisplayProperties = this.ViewModel.DisplayProperties;
+            EntitySet = this.ViewModel.EntitySet;
+            SelectedEntities = this.ViewModel.SelectedEntities;
+            ChangeTrackingList = this.ViewModel.ChangeTrackingList;
+
+            this.WireEvents();
+
+            this.State.Subscribe(x => UpdateCurrentEntity(x));
+            this.ViewModel.EntitySet.Subscribe(x => UpdateStateEntity(x));
+            this.CurrentEntity.Subscribe(x => Currentvaluechanged(x));
+            this.CurrentProperty.Subscribe(x => OnValueChanged(x));
         }
 
         private void Currentvaluechanged(IDynamicEntity dynamicEntity)
@@ -50,54 +59,46 @@ namespace ViewModels
             //    State.Value.EntitySet = dynamicEntities;
         }
 
-        private void UpdateCurrentEntity(Tuple<IProcessStateList, IEnumerable<IDynamicEntity>> processStateEntity)
+        private void UpdateCurrentEntity(IProcessStateList processStateEntity)
         {
-            if (!this.ViewModel.EntitySet.Value.ToList().SequenceEqual(processStateEntity.Item1.EntitySet.ToList()))
-                this.ViewModel.EntitySet.Value = new ObservableList<IDynamicEntity>(processStateEntity.Item1.EntitySet.ToList());
-
-           
+            var res = processStateEntity?.EntitySet.ToList() ?? new List<IDynamicEntity>();
+            if (!this.ViewModel.EntitySet.Value.ToList().SequenceEqual(res))
+                this.ViewModel.EntitySet.Value = new ObservableList<IDynamicEntity>(res);
+            
         }
 
 
         public new IEntityViewInfo ViewInfo => this.ViewModel.ViewInfo;
-        public ReactiveProperty<IProcessStateList> State => this.ViewModel.State;
+        public ReactiveProperty<IProcessStateList> State { get;  }
 
-        private IEntityKeyValuePair _currentProperty;
-
-        public IEntityKeyValuePair CurrentProperty
-        {
-            get { return _currentProperty; }
-            set
-            {
-                _currentProperty = value;
-                _currentProperty?.WhenAnyValue(x => x.Value).Subscribe(x => OnValueChanged(x));
-            }
-        }
+        public ReactiveProperty<IEntityKeyValuePair> CurrentProperty { get; } = new ReactiveProperty<IEntityKeyValuePair>();
+        
 
 
 
         private void OnValueChanged(object entityKeyValuePair)
         {
             if (RowState.Value == SystemInterfaces.RowState.Modified)
-                ChangeTracking.AddOrUpdate(_currentProperty.Key, _currentProperty.Value);
+                ChangeTracking.AddOrUpdate(CurrentProperty.Value.Key, CurrentProperty.Value);
         }
 
 
-        ReactiveProperty<IProcessStateEntity> IEntityViewModel.State => new ReactiveProperty<IProcessStateEntity>(new ProcessStateEntity(State.Value.Process, CurrentEntity.Value, State.Value.StateInfo.ToStateInfo()));
+        ReactiveProperty<IProcessStateEntity> IEntityViewModel.State { get; } = new ReactiveProperty<IProcessStateEntity>();
+        //new ReactiveProperty<IProcessStateEntity>(new ProcessStateEntity(State.Value.Process, CurrentEntity.Value, State.Value.StateInfo.ToStateInfo()));
 
-        public ReactiveProperty<IDynamicEntity> CurrentEntity => this.ViewModel.CurrentEntity;
+        public ReactiveProperty<IDynamicEntity> CurrentEntity { get; } 
 
 
-        public ObservableDictionary<string, dynamic> ChangeTracking => this.ViewModel.ChangeTracking;
-        public ObservableList<IDynamicEntity> ParentEntities => this.ViewModel.ParentEntities;
-        public IViewAttributeDisplayProperties DisplayProperties => this.ViewModel.DisplayProperties;
+        public ObservableDictionary<string, dynamic> ChangeTracking { get; } 
+        public ObservableList<IDynamicEntity> ParentEntities { get; }
+        public IViewAttributeDisplayProperties DisplayProperties { get; }
         
-        public ReactiveProperty<ObservableList<IDynamicEntity>> EntitySet => this.ViewModel.EntitySet;
+        public ReactiveProperty<ObservableList<IDynamicEntity>> EntitySet { get; }
 
 
 
-        public ReactiveProperty<ObservableList<IDynamicEntity>> SelectedEntities => this.ViewModel.SelectedEntities;
-        public ObservableBindingList<IDynamicEntity> ChangeTrackingList => this.ViewModel.ChangeTrackingList;
+        public ReactiveProperty<ObservableList<IDynamicEntity>> SelectedEntities { get; } 
+        public ObservableBindingList<IDynamicEntity> ChangeTrackingList { get; }
 
         
     }

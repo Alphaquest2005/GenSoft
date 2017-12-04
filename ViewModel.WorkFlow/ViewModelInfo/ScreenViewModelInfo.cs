@@ -7,7 +7,6 @@ using Common;
 using RevolutionEntities.Process;
 using RevolutionEntities.ViewModels;
 using ViewModel.Interfaces;
-using ViewModelInterfaces;
 
 namespace RevolutionData
 {

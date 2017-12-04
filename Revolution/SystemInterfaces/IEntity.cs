@@ -1,10 +1,5 @@
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.ComponentModel.Composition;
-using System.Linq;
-using System.Net.Mime;
-using System.Windows.Markup;
 using JB.Collections.Reactive;
 
 namespace SystemInterfaces

@@ -3,22 +3,17 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Reactive;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
 using SystemInterfaces;
 using BootStrapper;
 using CommonMessages;
 using EventAggregator;
-using EventMessages;
-using EventMessages.Commands;
 using EventMessages.Events;
 using Reactive.Bindings;
-using ReactiveUI;
+
 using RevolutionEntities.Process;
-using ViewMessages;
 using ViewModel.Interfaces;
-using ReactiveCommand = ReactiveUI.ReactiveCommand;
 
 
 namespace Core.Common.UI
@@ -36,18 +31,18 @@ namespace Core.Common.UI
                 var subject = itm.Subject.Invoke(viewModel);
 
 
-                if (subject.GetType() == Observable.Empty<ReactiveCommand<IViewModel, Unit>>().GetType())
+                if (subject.GetType() == Observable.Empty<ReactiveCommand<IViewModel>>().GetType())
                 {
                     var publishMessage = CreateCommandMessageAction<IViewModel>(viewModel, itm);
-                    var cmd = ReactiveCommand.Create(publishMessage);
-
+                    var cmd = new ReactiveCommand<IViewModel>();
+                    cmd.Subscribe(publishMessage);
                     viewModel.Commands.Add(itm.Key, cmd);
                 }
                 else
                 {
                     var publishMessage = CreateCommandMessageAction<dynamic>(viewModel, itm);
                     subject.Where(x => itm.CommandPredicate.All(z => z.Invoke(viewModel)))
-                        .Subscribe(publishMessage);
+                        .Subscribe<dynamic>(publishMessage);
                 }
             }
 
@@ -77,7 +72,7 @@ namespace Core.Common.UI
 
                 var publishMessage = CreatePublishMessageAction(viewModel, itm);
                 subject.Where(x => itm.SubjectPredicate.All(z => z.Invoke(viewModel)))
-                    .Subscribe(publishMessage);
+                    .Subscribe<dynamic>(publishMessage);
             }
 
             viewModel.ViewModelState.Value = ViewModelState.Intialized;

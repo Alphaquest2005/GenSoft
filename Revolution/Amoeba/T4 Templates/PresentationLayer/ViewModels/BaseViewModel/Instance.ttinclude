@@ -29,7 +29,7 @@ using <#=AppName#>.Entities;
 using EventAggregator;
 using EventMessages;
 
-using ReactiveUI;
+
 
 namespace ViewModels
 {

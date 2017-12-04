@@ -1,6 +1,4 @@
-using System;
 using SystemInterfaces;
-using GenSoft.Interfaces;
 
 namespace RevolutionEntities.ViewModels
 {

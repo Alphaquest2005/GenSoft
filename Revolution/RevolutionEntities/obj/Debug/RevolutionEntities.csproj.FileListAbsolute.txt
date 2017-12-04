@@ -115,8 +115,6 @@ C:\Prism\GitRepositiory\MRManager\Revolution\RevolutionEntities\bin\Debug\log4ne
 C:\Prism\GitRepositiory\MRManager\Revolution\RevolutionEntities\obj\Debug\RevolutionEntities.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\MRManager\Revolution\RevolutionEntities\obj\Debug\RevolutionEntities.dll
 C:\Prism\GitRepositiory\MRManager\Revolution\RevolutionEntities\obj\Debug\RevolutionEntities.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\obj\Debug\RevolutionEntities.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\obj\Debug\RevolutionEntities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\RevolutionEntities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\RevolutionEntities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\DynamicExpresso.Core.dll
@@ -131,21 +129,16 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\MefContr
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\MefContrib.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\MoreLinq.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\Reactive.EventAggregator.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\ReactiveProperty.DataAnnotations.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\ReactiveProperty.DataAnnotations.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\ReactiveProperty.NET46.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\ReactiveProperty.NET46.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\ReactiveProperty.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\ReactiveProperty.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\ReactiveUI.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\System.Collections.Immutable.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\System.Reactive.Core.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\System.Reactive.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\System.Reactive.Linq.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\System.Reactive.PlatformServices.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\System.Reactive.Windows.Threading.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\Splat.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\Splat.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\System.Collections.Immutable.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\System.ValueTuple.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\System.Security.Cryptography.Algorithms.dll
@@ -272,3 +265,5 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\Componen
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\RevolutionLogger.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\obj\Debug\RevolutionEntities.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\obj\Debug\RevolutionEntities.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\obj\Debug\RevolutionEntities.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\obj\Debug\RevolutionEntities.pdb
