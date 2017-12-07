@@ -58,11 +58,11 @@ namespace RevolutionData
                     },
                     publications: new List<IViewModelEventPublication<IViewModel, IEvent>>
                     {
-                        new ViewEventPublication<IEntityViewModel, ICurrentEntityChanged>(
-                            key:$"{entityType.Name}-CurrentEntityChanged",
-                            subject:v =>  (IObservable<dynamic>)v.CurrentEntity,//.WhenAnyValue(x => x.Value),
-                            subjectPredicate:new List<Func<IEntityViewModel, bool>>{},
-                            messageData:s => new ViewEventPublicationParameter(new object[] {s.CurrentEntity.Value},new RevolutionEntities.Process.StateEventInfo(s.Process.Id, Context.View.Events.CurrentEntityChanged),s.Process,s.Source)),
+                        //new ViewEventPublication<IEntityViewModel, ICurrentEntityChanged>(
+                        //    key:$"{entityType.Name}-CurrentEntityChanged",
+                        //    subject:v =>  (IObservable<dynamic>)v.CurrentEntity,//.WhenAnyValue(x => x.Value),
+                        //    subjectPredicate:new List<Func<IEntityViewModel, bool>>{},
+                        //    messageData:s => new ViewEventPublicationParameter(new object[] {s.CurrentEntity.Value},new RevolutionEntities.Process.StateEventInfo(s.Process.Id, Context.View.Events.CurrentEntityChanged),s.Process,s.Source)),
                         new ViewEventPublication<IEntityViewModel, ILoadEntitySet>(
                             $"{entityType.Name}-IViewModelIntialized",
                             subject:v => v.ViewModelState as dynamic,

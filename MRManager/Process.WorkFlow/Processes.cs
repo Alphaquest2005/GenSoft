@@ -80,68 +80,7 @@ namespace Process.WorkFlow
                 processInfo:new StateCommandInfo(1,RevolutionData.Context.Process.Commands.CleanUpProcess ),
                 action: ProcessActions.Actions["CleanUpProcess"]),
 
-           //new ComplexEventAction(
-           //     key:"203",
-           //     processId: 2,
-           //     events: new List<IProcessExpectedEvent>
-           //     {
-           //         new ProcessExpectedEvent<IEntityWithChangesFound> (processId: 2,
-           //                                             eventPredicate: e => e.Entity != null && e.Changes.Count == 2 && e.Changes.ContainsKey("Password"),
-           //                                             processInfo: new StateEventInfo(2, RevolutionData.Context.User.Events.UserFound),
-           //                                             expectedSourceType: new SourceType(typeof(IEntityViewRepository)),
-           //                                             key: "ValidatedUser")
-           //     },
-           //     expectedMessageType: typeof(IProcessStateMessage),
-           //     action: ProcessActions.SignIn.SetProcessStatetoValidatedUser,
-           //     processInfo: new StateCommandInfo(2, RevolutionData.Context.Process.Commands.UpdateState)),
-            //new ComplexEventAction(
-            //    key:"206",
-            //    processId: 4,
-            //    events: new List<IProcessExpectedEvent>
-            //    {
-            //        new ProcessExpectedEvent<IEntityWithChangesFound> (processId: 4,
-            //                                            eventPredicate: e => e.Entity != null && e.Changes.Count == 2 && e.Changes.ContainsKey("Password"),
-            //                                            processInfo: new StateEventInfo(2, RevolutionData.Context.User.Events.UserFound),
-            //                                            expectedSourceType: new SourceType(typeof(IEntityViewRepository)),
-            //                                            key: "ValidatedUser")
-            //    },
-            //    expectedMessageType:typeof(IDomainMessage),
-            //    processInfo:new StateCommandInfo(4, RevolutionData.Context.Domain.Commands.PublishDomainEvent),
-            //    action: ProcessActions.SignIn.UserValidated),
-            // new ComplexEventAction(
-            //     "204",
-            //        4, new List<IProcessExpectedEvent>
-            //        {
-            //            new ProcessExpectedEvent ("ProcessCompleted", 4, typeof (ISystemProcessCompleted), e => e != null, new StateEventInfo(4, RevolutionData.Context.Process.Events.ProcessCompleted), new SourceType(typeof(IComplexEventService))),
 
-            //        },
-            //        typeof(ISystemProcessStarted),
-            //        processInfo:new StateCommandInfo(4,RevolutionData.Context.Process.Commands.StartProcess),
-            //        action: ProcessActions.Actions["StartProcess"]),
-            //new ComplexEventAction(
-            //    "205",
-            //    4, new List<IProcessExpectedEvent>
-            //    {
-            //       // new ProcessExpectedEvent ("ProcessStarted", 4, typeof (ISystemProcessStarted), e => e != null  && e.Process.Id == 4, new StateEventInfo(4, RevolutionData.Context.Process.Events.ProcessStarted), new SourceType(typeof(IProcessService))),
-            //        new ProcessExpectedEvent ("UserValidated", 4, typeof (IDomainMessage), e => e != null  && e.Process.Id == 4 && e.Message.Properties["Type"].Value.ToString() == "UserValidated", new StateEventInfo(4, RevolutionData.Context.User.Events.UserFound), new SourceType(typeof(IComplexEventService) )),
-
-            //    },
-            //    typeof(ISystemProcessCompleted),
-            //    processInfo:new StateCommandInfo(4,RevolutionData.Context.Process.Commands.CompleteProcess ),
-            //    action: ProcessActions.Actions["CompleteProcess"]),
-
-
-            //new ComplexEventAction(
-            //    "206",
-            //    4, new List<IProcessExpectedEvent>
-            //    {
-            //       // new ProcessExpectedEvent ("ProcessStarted", 4, typeof (ISystemProcessStarted), e => e != null  && e.Process.Id == 4, new StateEventInfo(4, RevolutionData.Context.Process.Events.ProcessStarted), new SourceType(typeof(IProcessService))),
-            //        new ProcessExpectedEvent ("UserValidated", 4, typeof (IDomainMessage), e => e != null  && e.Process.Id == 4 && e.Message.Properties["Type"].Value.ToString() == "UserValidated", new StateEventInfo(4, RevolutionData.Context.User.Events.UserFound), new SourceType(typeof(IComplexEventService) )),
-
-            //    },
-            //    typeof(ISystemProcessCompleted),
-            //    processInfo:new StateCommandInfo(4,RevolutionData.Context.Process.Commands.CompleteProcess ),
-            //    action: ProcessActions.Actions["StartProcessWithValidatedUser"]),
         };
 
 
@@ -205,7 +144,7 @@ namespace Process.WorkFlow
                         new ProcessExpectedEvent("ProcessServiceStarted", nextProcessId, typeof(IServiceStarted<IProcessService>),
                             e => e != null , new StateEventInfo(nextProcessId, RevolutionData.Context.Actor.Events.ActorStarted),
                             new SourceType(typeof(IProcessService))),
-                        //new ProcessExpectedEvent ("ProcessCompleted", nextProcessId, typeof (ISystemProcessCompleted), e => e != null && e.Process.Id == nextProcessId, new StateEventInfo(nextProcessId, RevolutionData.Context.Process.Events.ProcessCompleted), new SourceType(typeof(IComplexEventService))),
+                       
 
                     },
                     typeof(ICleanUpSystemProcess),

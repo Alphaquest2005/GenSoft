@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Immutable;
 using System.Diagnostics;
+using System.Reactive.Linq;
 using SystemInterfaces;
 using Actor.Interfaces;
+using Akka.Actor;
 using Akka.Persistence;
 using Common;
 using EventAggregator;
 using EventMessages.Commands;
 using EventMessages.Events;
+using RevolutionData;
 using RevolutionEntities.Process;
 using RevolutionLogger;
 using Utilities;

@@ -50,7 +50,7 @@
     <Property Name="EntityId" Type="int" Nullable="false" />
     <Property Name="PropertyName" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
-  <EntityType Name="EntityRelationship">
+  <EntityType Name="EntityRelationships">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -112,7 +112,7 @@
     <Property Name="Id" Type="int" Nullable="false" />
     <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
-  <EntityType Name="FunctionParameter">
+  <EntityType Name="FunctionParameters">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -308,14 +308,14 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_EntityRelationship_RelationshipTypes">
+  <Association Name="FK_EntityRelationships_RelationshipTypes">
     <End Role="RelationshipTypes" Type="Self.RelationshipTypes" Multiplicity="1" />
-    <End Role="EntityRelationship" Type="Self.EntityRelationship" Multiplicity="*" />
+    <End Role="EntityRelationships" Type="Self.EntityRelationships" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="RelationshipTypes">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="EntityRelationship">
+      <Dependent Role="EntityRelationships">
         <PropertyRef Name="RelationshipTypeId" />
       </Dependent>
     </ReferentialConstraint>
@@ -412,11 +412,11 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_EntityViewPropertyFunctionParameter_FunctionParameter">
-    <End Role="FunctionParameter" Type="Self.FunctionParameter" Multiplicity="1" />
+  <Association Name="FK_EntityViewPropertyFunctionParameter_FunctionParameters">
+    <End Role="FunctionParameters" Type="Self.FunctionParameters" Multiplicity="1" />
     <End Role="EntityViewPropertyFunctionParameter" Type="Self.EntityViewPropertyFunctionParameter" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="FunctionParameter">
+      <Principal Role="FunctionParameters">
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="EntityViewPropertyFunctionParameter">
@@ -460,26 +460,26 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_FunctionParameter_Functions">
+  <Association Name="FK_FunctionParameters_Functions">
     <End Role="Functions" Type="Self.Functions" Multiplicity="1" />
-    <End Role="FunctionParameter" Type="Self.FunctionParameter" Multiplicity="*" />
+    <End Role="FunctionParameters" Type="Self.FunctionParameters" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Functions">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="FunctionParameter">
+      <Dependent Role="FunctionParameters">
         <PropertyRef Name="FunctionId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_FunctionParameter_Parameters">
+  <Association Name="FK_FunctionParameters_Parameters">
     <End Role="Parameters" Type="Self.Parameters" Multiplicity="1" />
-    <End Role="FunctionParameter" Type="Self.FunctionParameter" Multiplicity="*" />
+    <End Role="FunctionParameters" Type="Self.FunctionParameters" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Parameters">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="FunctionParameter">
+      <Dependent Role="FunctionParameters">
         <PropertyRef Name="ParameterId" />
       </Dependent>
     </ReferentialConstraint>
@@ -603,7 +603,7 @@
     <EntitySet Name="DataTypes" EntityType="Self.DataTypes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Entities" EntityType="Self.Entities" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="EntityProperties" EntityType="Self.EntityProperties" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="EntityRelationship" EntityType="Self.EntityRelationship" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EntityRelationships" EntityType="Self.EntityRelationships" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="EntityView" EntityType="Self.EntityView" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="EntityViewEntityProperties" EntityType="Self.EntityViewEntityProperties" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="EntityViewProperties" EntityType="Self.EntityViewProperties" Schema="dbo" store:Type="Tables" />
@@ -611,7 +611,7 @@
     <EntitySet Name="EntityViewPropertyFunctionParameter" EntityType="Self.EntityViewPropertyFunctionParameter" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="EntityViewViewProperties" EntityType="Self.EntityViewViewProperties" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FunctionBody" EntityType="Self.FunctionBody" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="FunctionParameter" EntityType="Self.FunctionParameter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FunctionParameters" EntityType="Self.FunctionParameters" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FunctionReturnType" EntityType="Self.FunctionReturnType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Functions" EntityType="Self.Functions" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FunctionSetFunctions" EntityType="Self.FunctionSetFunctions" Schema="dbo" store:Type="Tables" />
@@ -650,9 +650,9 @@
       <End Role="Entities" EntitySet="Entities" />
       <End Role="EntityProperties" EntitySet="EntityProperties" />
     </AssociationSet>
-    <AssociationSet Name="FK_EntityRelationship_RelationshipTypes" Association="Self.FK_EntityRelationship_RelationshipTypes">
+    <AssociationSet Name="FK_EntityRelationships_RelationshipTypes" Association="Self.FK_EntityRelationships_RelationshipTypes">
       <End Role="RelationshipTypes" EntitySet="RelationshipTypes" />
-      <End Role="EntityRelationship" EntitySet="EntityRelationship" />
+      <End Role="EntityRelationships" EntitySet="EntityRelationships" />
     </AssociationSet>
     <AssociationSet Name="FK_EntityView_Entities" Association="Self.FK_EntityView_Entities">
       <End Role="Entities" EntitySet="Entities" />
@@ -682,8 +682,8 @@
       <End Role="EntityViewPropertyFunction" EntitySet="EntityViewPropertyFunction" />
       <End Role="EntityViewPropertyFunctionParameter" EntitySet="EntityViewPropertyFunctionParameter" />
     </AssociationSet>
-    <AssociationSet Name="FK_EntityViewPropertyFunctionParameter_FunctionParameter" Association="Self.FK_EntityViewPropertyFunctionParameter_FunctionParameter">
-      <End Role="FunctionParameter" EntitySet="FunctionParameter" />
+    <AssociationSet Name="FK_EntityViewPropertyFunctionParameter_FunctionParameters" Association="Self.FK_EntityViewPropertyFunctionParameter_FunctionParameters">
+      <End Role="FunctionParameters" EntitySet="FunctionParameters" />
       <End Role="EntityViewPropertyFunctionParameter" EntitySet="EntityViewPropertyFunctionParameter" />
     </AssociationSet>
     <AssociationSet Name="FK_EntityViewViewProperties_EntityViewProperties" Association="Self.FK_EntityViewViewProperties_EntityViewProperties">
@@ -698,13 +698,13 @@
       <End Role="Functions" EntitySet="Functions" />
       <End Role="FunctionBody" EntitySet="FunctionBody" />
     </AssociationSet>
-    <AssociationSet Name="FK_FunctionParameter_Functions" Association="Self.FK_FunctionParameter_Functions">
+    <AssociationSet Name="FK_FunctionParameters_Functions" Association="Self.FK_FunctionParameters_Functions">
       <End Role="Functions" EntitySet="Functions" />
-      <End Role="FunctionParameter" EntitySet="FunctionParameter" />
+      <End Role="FunctionParameters" EntitySet="FunctionParameters" />
     </AssociationSet>
-    <AssociationSet Name="FK_FunctionParameter_Parameters" Association="Self.FK_FunctionParameter_Parameters">
+    <AssociationSet Name="FK_FunctionParameters_Parameters" Association="Self.FK_FunctionParameters_Parameters">
       <End Role="Parameters" EntitySet="Parameters" />
-      <End Role="FunctionParameter" EntitySet="FunctionParameter" />
+      <End Role="FunctionParameters" EntitySet="FunctionParameters" />
     </AssociationSet>
     <AssociationSet Name="FK_FunctionReturnType_DataTypes" Association="Self.FK_FunctionReturnType_DataTypes">
       <End Role="DataTypes" EntitySet="DataTypes" />

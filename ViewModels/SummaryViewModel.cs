@@ -41,31 +41,13 @@ namespace ViewModels
             ChangeTrackingList = this.ViewModel.ChangeTrackingList;
 
             this.WireEvents();
-
-            this.State.Subscribe(x => UpdateCurrentEntity(x));
-            this.ViewModel.EntitySet.Subscribe(x => UpdateStateEntity(x));
-            this.CurrentEntity.Subscribe(x => Currentvaluechanged(x));
+            
             this.CurrentProperty.Subscribe(x => OnValueChanged(x));
         }
 
-        private void Currentvaluechanged(IDynamicEntity dynamicEntity)
-        {
-           
-        }
 
-        private void UpdateStateEntity(ObservableList<IDynamicEntity> dynamicEntities)
-        {
-            //if (State.Value.EntitySet != dynamicEntities)
-            //    State.Value.EntitySet = dynamicEntities;
-        }
 
-        private void UpdateCurrentEntity(IProcessStateList processStateEntity)
-        {
-            var res = processStateEntity?.EntitySet.ToList() ?? new List<IDynamicEntity>();
-            if (!this.ViewModel.EntitySet.Value.ToList().SequenceEqual(res))
-                this.ViewModel.EntitySet.Value = new ObservableList<IDynamicEntity>(res);
-            
-        }
+
 
 
         public new IEntityViewInfo ViewInfo => this.ViewModel.ViewInfo;

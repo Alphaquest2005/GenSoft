@@ -14,6 +14,7 @@ using DataServices.Utils;
 using EventAggregator;
 using EventMessages.Commands;
 using EventMessages.Events;
+using RevolutionData;
 using RevolutionEntities.Process;
 using Utilities;
 using IProcessService = Actor.Interfaces.IProcessService;

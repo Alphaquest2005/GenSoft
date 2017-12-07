@@ -55,7 +55,7 @@ namespace RevolutionData
                             {
                                 if (e.State != null && v.State.Value != null && v.State.Value.EntitySet.SequenceEqual(e.State.EntitySet)) return;
                                 v.State.Value = e.State;
-                                v.CurrentEntity.Value = v.EntitySet.Value.First();
+                                if(v.EntitySet.Value.Any()) v.CurrentEntity.Value = v.EntitySet.Value.First();
 
                             }),
 

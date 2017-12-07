@@ -4299,8 +4299,8 @@
       "type": "package",
       "path": "fluentvalidation.net35/1.0.1",
       "files": [
-        "fluentvalidation.net35.1.0.1.nupkg.sha512",
-        "fluentvalidation.net35.nuspec",
+        "FluentValidation.Net35.1.0.1.nupkg.sha512",
+        "FluentValidation.Net35.nuspec",
         "lib/net35/FluentValidation.dll"
       ]
     },
@@ -4375,13 +4375,13 @@
       "type": "package",
       "path": "mefcontrib/1.2.2.1",
       "files": [
+        "MefContrib.1.2.2.1.nupkg.sha512",
+        "MefContrib.nuspec",
         "lib/net40-Client/MefContrib.dll",
         "lib/net40-Client/MefContrib.pdb",
         "lib/net40-Client/MefContrib.xml",
         "lib/sl/MefContrib.Silverlight.dll",
-        "lib/sl/MefContrib.Silverlight.pdb",
-        "mefcontrib.1.2.2.1.nupkg.sha512",
-        "mefcontrib.nuspec"
+        "lib/sl/MefContrib.Silverlight.pdb"
       ]
     },
     "Microsoft.CSharp/4.4.0": {
@@ -4602,6 +4602,8 @@
       "type": "package",
       "path": "newtonsoft.json/9.0.1",
       "files": [
+        "Newtonsoft.Json.9.0.1.nupkg.sha512",
+        "Newtonsoft.Json.nuspec",
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
         "lib/net35/Newtonsoft.Json.dll",
@@ -4616,8 +4618,6 @@
         "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.xml",
         "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll",
         "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.xml",
-        "newtonsoft.json.9.0.1.nupkg.sha512",
-        "newtonsoft.json.nuspec",
         "tools/install.ps1"
       ]
     },
@@ -4643,6 +4643,8 @@
       "files": [
         "Docs/ReadMe.txt",
         "LICENSE.txt",
+        "ReactiveProperty.3.6.0.nupkg.sha512",
+        "ReactiveProperty.nuspec",
         "Snippet/csharp5/AsyncReactiveCommand.snippet",
         "Snippet/csharp5/AsyncReactiveCommandGeneric.snippet",
         "Snippet/csharp5/ReactiveCollection.snippet",
@@ -4703,9 +4705,7 @@
         "lib/uap10.0/ReactiveProperty.UWP.pdb",
         "lib/uap10.0/ReactiveProperty.XML",
         "lib/uap10.0/ReactiveProperty.dll",
-        "lib/uap10.0/ReactiveProperty.pdb",
-        "reactiveproperty.3.6.0.nupkg.sha512",
-        "reactiveproperty.nuspec"
+        "lib/uap10.0/ReactiveProperty.pdb"
       ]
     },
     "Remotion.Linq/2.1.1": {

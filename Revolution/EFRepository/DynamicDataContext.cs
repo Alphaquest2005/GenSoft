@@ -248,9 +248,10 @@ namespace EFRepository
                 var viewEntityAttributes = GetViewEntityAttributes(ctx, entityTypeId);
 
                 var res = GetEntities(ctx, entityTypeId).AsQueryable();
-
+                // include entity.Id and Attribute "ID" to avoid confusion
                 var cres = changes.Where(x => x.Key == "Id").Aggregate(res,
-                    (current, c) => current.Where(x => x.Id.ToString() == c.Value.ToString()));
+                    (current, c) => current.Where(x => x.Id.ToString() == c.Value.ToString() || (x.EntityAttribute.Any(z =>
+                                                           z.Attributes.Name == c.Key && z.Value.ToString() == c.Value.ToString()))));
 
                 var ccres = changes.Where(x => x.Key != "Id").Aggregate(cres,
                     (current, c) => current.Where(
