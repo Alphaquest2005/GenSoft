@@ -4819,8 +4819,8 @@
       "type": "package",
       "path": "fluentvalidation.net35/1.0.1",
       "files": [
-        "FluentValidation.Net35.1.0.1.nupkg.sha512",
-        "FluentValidation.Net35.nuspec",
+        "fluentvalidation.net35.1.0.1.nupkg.sha512",
+        "fluentvalidation.net35.nuspec",
         "lib/net35/FluentValidation.dll"
       ]
     },
@@ -4895,13 +4895,13 @@
       "type": "package",
       "path": "mefcontrib/1.2.2.1",
       "files": [
-        "MefContrib.1.2.2.1.nupkg.sha512",
-        "MefContrib.nuspec",
         "lib/net40-Client/MefContrib.dll",
         "lib/net40-Client/MefContrib.pdb",
         "lib/net40-Client/MefContrib.xml",
         "lib/sl/MefContrib.Silverlight.dll",
-        "lib/sl/MefContrib.Silverlight.pdb"
+        "lib/sl/MefContrib.Silverlight.pdb",
+        "mefcontrib.1.2.2.1.nupkg.sha512",
+        "mefcontrib.nuspec"
       ]
     },
     "Microsoft.CSharp/4.4.0": {
@@ -5122,8 +5122,6 @@
       "type": "package",
       "path": "newtonsoft.json/9.0.1",
       "files": [
-        "Newtonsoft.Json.9.0.1.nupkg.sha512",
-        "Newtonsoft.Json.nuspec",
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
         "lib/net35/Newtonsoft.Json.dll",
@@ -5138,6 +5136,8 @@
         "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.xml",
         "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll",
         "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.9.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec",
         "tools/install.ps1"
       ]
     },
@@ -5146,14 +5146,14 @@
       "type": "package",
       "path": "reactive.eventaggregator/3.0.0",
       "files": [
-        "Reactive.EventAggregator.3.0.0.nupkg.sha512",
-        "Reactive.EventAggregator.nuspec",
         "lib/net45/Reactive.EventAggregator.dll",
         "lib/portable-Net45+winrt45+wp8+wpa81/Reactive.EventAggregator.dll",
         "lib/portable-win81+wpa81/Reactive.EventAggregator.dll",
         "lib/portable-windows8+net45+wp8/Reactive.EventAggregator.dll",
         "lib/windows8/Reactive.EventAggregator.dll",
-        "lib/windowsphone8/Reactive.EventAggregator.dll"
+        "lib/windowsphone8/Reactive.EventAggregator.dll",
+        "reactive.eventaggregator.3.0.0.nupkg.sha512",
+        "reactive.eventaggregator.nuspec"
       ]
     },
     "ReactiveProperty/3.6.0": {
@@ -5163,8 +5163,6 @@
       "files": [
         "Docs/ReadMe.txt",
         "LICENSE.txt",
-        "ReactiveProperty.3.6.0.nupkg.sha512",
-        "ReactiveProperty.nuspec",
         "Snippet/csharp5/AsyncReactiveCommand.snippet",
         "Snippet/csharp5/AsyncReactiveCommandGeneric.snippet",
         "Snippet/csharp5/ReactiveCollection.snippet",
@@ -5225,7 +5223,9 @@
         "lib/uap10.0/ReactiveProperty.UWP.pdb",
         "lib/uap10.0/ReactiveProperty.XML",
         "lib/uap10.0/ReactiveProperty.dll",
-        "lib/uap10.0/ReactiveProperty.pdb"
+        "lib/uap10.0/ReactiveProperty.pdb",
+        "reactiveproperty.3.6.0.nupkg.sha512",
+        "reactiveproperty.nuspec"
       ]
     },
     "Remotion.Linq/2.1.1": {
@@ -5233,8 +5233,6 @@
       "type": "package",
       "path": "remotion.linq/2.1.1",
       "files": [
-        "Remotion.Linq.2.1.1.nupkg.sha512",
-        "Remotion.Linq.nuspec",
         "lib/net35/Remotion.Linq.XML",
         "lib/net35/Remotion.Linq.dll",
         "lib/net40/Remotion.Linq.XML",
@@ -5244,7 +5242,9 @@
         "lib/netstandard1.0/Remotion.Linq.dll",
         "lib/netstandard1.0/Remotion.Linq.xml",
         "lib/portable-net45+win+wpa81+wp80/Remotion.Linq.dll",
-        "lib/portable-net45+win+wpa81+wp80/Remotion.Linq.xml"
+        "lib/portable-net45+win+wpa81+wp80/Remotion.Linq.xml",
+        "remotion.linq.2.1.1.nupkg.sha512",
+        "remotion.linq.nuspec"
       ]
     },
     "Rx-Core/2.2.5": {
@@ -5252,8 +5252,6 @@
       "type": "package",
       "path": "rx-core/2.2.5",
       "files": [
-        "Rx-Core.2.2.5.nupkg.sha512",
-        "Rx-Core.nuspec",
         "lib/net40/System.Reactive.Core.XML",
         "lib/net40/System.Reactive.Core.dll",
         "lib/net45/System.Reactive.Core.XML",
@@ -5273,7 +5271,9 @@
         "lib/windowsphone71/System.Reactive.Core.XML",
         "lib/windowsphone71/System.Reactive.Core.dll",
         "lib/windowsphone8/System.Reactive.Core.XML",
-        "lib/windowsphone8/System.Reactive.Core.dll"
+        "lib/windowsphone8/System.Reactive.Core.dll",
+        "rx-core.2.2.5.nupkg.sha512",
+        "rx-core.nuspec"
       ]
     },
     "Rx-Interfaces/2.2.5": {
@@ -5281,8 +5281,6 @@
       "type": "package",
       "path": "rx-interfaces/2.2.5",
       "files": [
-        "Rx-Interfaces.2.2.5.nupkg.sha512",
-        "Rx-Interfaces.nuspec",
         "lib/net40/System.Reactive.Interfaces.XML",
         "lib/net40/System.Reactive.Interfaces.dll",
         "lib/net45/System.Reactive.Interfaces.XML",
@@ -5302,7 +5300,9 @@
         "lib/windowsphone71/System.Reactive.Interfaces.XML",
         "lib/windowsphone71/System.Reactive.Interfaces.dll",
         "lib/windowsphone8/System.Reactive.Interfaces.XML",
-        "lib/windowsphone8/System.Reactive.Interfaces.dll"
+        "lib/windowsphone8/System.Reactive.Interfaces.dll",
+        "rx-interfaces.2.2.5.nupkg.sha512",
+        "rx-interfaces.nuspec"
       ]
     },
     "Rx-Linq/2.2.5": {
@@ -5310,8 +5310,6 @@
       "type": "package",
       "path": "rx-linq/2.2.5",
       "files": [
-        "Rx-Linq.2.2.5.nupkg.sha512",
-        "Rx-Linq.nuspec",
         "lib/net40/System.Reactive.Linq.XML",
         "lib/net40/System.Reactive.Linq.dll",
         "lib/net45/System.Reactive.Linq.XML",
@@ -5331,7 +5329,9 @@
         "lib/windowsphone71/System.Reactive.Linq.XML",
         "lib/windowsphone71/System.Reactive.Linq.dll",
         "lib/windowsphone8/System.Reactive.Linq.XML",
-        "lib/windowsphone8/System.Reactive.Linq.dll"
+        "lib/windowsphone8/System.Reactive.Linq.dll",
+        "rx-linq.2.2.5.nupkg.sha512",
+        "rx-linq.nuspec"
       ]
     },
     "Rx-Main/2.2.5": {
@@ -5339,8 +5339,8 @@
       "type": "package",
       "path": "rx-main/2.2.5",
       "files": [
-        "Rx-Main.2.2.5.nupkg.sha512",
-        "Rx-Main.nuspec"
+        "rx-main.2.2.5.nupkg.sha512",
+        "rx-main.nuspec"
       ]
     },
     "Rx-PlatformServices/2.2.5": {
@@ -5348,8 +5348,6 @@
       "type": "package",
       "path": "rx-platformservices/2.2.5",
       "files": [
-        "Rx-PlatformServices.2.2.5.nupkg.sha512",
-        "Rx-PlatformServices.nuspec",
         "lib/net40/System.Reactive.PlatformServices.XML",
         "lib/net40/System.Reactive.PlatformServices.dll",
         "lib/net45/System.Reactive.PlatformServices.XML",
@@ -5369,7 +5367,9 @@
         "lib/windowsphone71/System.Reactive.PlatformServices.XML",
         "lib/windowsphone71/System.Reactive.PlatformServices.dll",
         "lib/windowsphone8/System.Reactive.PlatformServices.XML",
-        "lib/windowsphone8/System.Reactive.PlatformServices.dll"
+        "lib/windowsphone8/System.Reactive.PlatformServices.dll",
+        "rx-platformservices.2.2.5.nupkg.sha512",
+        "rx-platformservices.nuspec"
       ]
     },
     "System.Collections/4.0.11": {
@@ -5377,8 +5377,6 @@
       "type": "package",
       "path": "system.collections/4.0.11",
       "files": [
-        "System.Collections.4.0.11.nupkg.sha512",
-        "System.Collections.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5435,7 +5433,9 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._"
+        "ref/xamarinwatchos10/_._",
+        "system.collections.4.0.11.nupkg.sha512",
+        "system.collections.nuspec"
       ]
     },
     "System.Collections.Immutable/1.4.0": {
@@ -5615,8 +5615,6 @@
       "type": "package",
       "path": "system.diagnostics.debug/4.0.11",
       "files": [
-        "System.Diagnostics.Debug.4.0.11.nupkg.sha512",
-        "System.Diagnostics.Debug.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5673,7 +5671,9 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._"
+        "ref/xamarinwatchos10/_._",
+        "system.diagnostics.debug.4.0.11.nupkg.sha512",
+        "system.diagnostics.debug.nuspec"
       ]
     },
     "System.Diagnostics.DiagnosticSource/4.4.1": {
@@ -5706,8 +5706,6 @@
       "type": "package",
       "path": "system.interactive.async/3.1.1",
       "files": [
-        "System.Interactive.Async.3.1.1.nupkg.sha512",
-        "System.Interactive.Async.nuspec",
         "lib/net45/System.Interactive.Async.dll",
         "lib/net45/System.Interactive.Async.xml",
         "lib/net46/System.Interactive.Async.dll",
@@ -5715,7 +5713,9 @@
         "lib/netstandard1.0/System.Interactive.Async.dll",
         "lib/netstandard1.0/System.Interactive.Async.xml",
         "lib/netstandard1.3/System.Interactive.Async.dll",
-        "lib/netstandard1.3/System.Interactive.Async.xml"
+        "lib/netstandard1.3/System.Interactive.Async.xml",
+        "system.interactive.async.3.1.1.nupkg.sha512",
+        "system.interactive.async.nuspec"
       ]
     },
     "System.Linq/4.1.0": {
@@ -5723,8 +5723,6 @@
       "type": "package",
       "path": "system.linq/4.1.0",
       "files": [
-        "System.Linq.4.1.0.nupkg.sha512",
-        "System.Linq.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5785,7 +5783,9 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._"
+        "ref/xamarinwatchos10/_._",
+        "system.linq.4.1.0.nupkg.sha512",
+        "system.linq.nuspec"
       ]
     },
     "System.Linq.Expressions/4.1.0": {
@@ -5793,8 +5793,6 @@
       "type": "package",
       "path": "system.linq.expressions/4.1.0",
       "files": [
-        "System.Linq.Expressions.4.1.0.nupkg.sha512",
-        "System.Linq.Expressions.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5867,7 +5865,9 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "runtimes/aot/lib/netcore50/System.Linq.Expressions.dll"
+        "runtimes/aot/lib/netcore50/System.Linq.Expressions.dll",
+        "system.linq.expressions.4.1.0.nupkg.sha512",
+        "system.linq.expressions.nuspec"
       ]
     },
     "System.Linq.Queryable/4.0.1": {
@@ -5875,8 +5875,6 @@
       "type": "package",
       "path": "system.linq.queryable/4.0.1",
       "files": [
-        "System.Linq.Queryable.4.0.1.nupkg.sha512",
-        "System.Linq.Queryable.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/monoandroid10/_._",
@@ -5924,7 +5922,9 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._"
+        "ref/xamarinwatchos10/_._",
+        "system.linq.queryable.4.0.1.nupkg.sha512",
+        "system.linq.queryable.nuspec"
       ]
     },
     "System.ObjectModel/4.0.12": {
@@ -5932,8 +5932,6 @@
       "type": "package",
       "path": "system.objectmodel/4.0.12",
       "files": [
-        "System.ObjectModel.4.0.12.nupkg.sha512",
-        "System.ObjectModel.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5992,7 +5990,9 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._"
+        "ref/xamarinwatchos10/_._",
+        "system.objectmodel.4.0.12.nupkg.sha512",
+        "system.objectmodel.nuspec"
       ]
     },
     "System.Reactive/3.1.1": {
@@ -6110,8 +6110,6 @@
       "type": "package",
       "path": "system.reflection/4.1.0",
       "files": [
-        "System.Reflection.4.1.0.nupkg.sha512",
-        "System.Reflection.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -6181,7 +6179,9 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._"
+        "ref/xamarinwatchos10/_._",
+        "system.reflection.4.1.0.nupkg.sha512",
+        "system.reflection.nuspec"
       ]
     },
     "System.Reflection.Extensions/4.0.1": {
@@ -6189,8 +6189,6 @@
       "type": "package",
       "path": "system.reflection.extensions/4.0.1",
       "files": [
-        "System.Reflection.Extensions.4.0.1.nupkg.sha512",
-        "System.Reflection.Extensions.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -6236,7 +6234,9 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._"
+        "ref/xamarinwatchos10/_._",
+        "system.reflection.extensions.4.0.1.nupkg.sha512",
+        "system.reflection.extensions.nuspec"
       ]
     },
     "System.Runtime/4.1.0": {
@@ -6244,8 +6244,6 @@
       "type": "package",
       "path": "system.runtime/4.1.0",
       "files": [
-        "System.Runtime.4.1.0.nupkg.sha512",
-        "System.Runtime.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -6326,7 +6324,9 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._"
+        "ref/xamarinwatchos10/_._",
+        "system.runtime.4.1.0.nupkg.sha512",
+        "system.runtime.nuspec"
       ]
     },
     "System.Runtime.CompilerServices.Unsafe/4.4.0": {
@@ -6355,8 +6355,6 @@
       "type": "package",
       "path": "system.runtime.extensions/4.1.0",
       "files": [
-        "System.Runtime.Extensions.4.1.0.nupkg.sha512",
-        "System.Runtime.Extensions.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -6426,7 +6424,9 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._"
+        "ref/xamarinwatchos10/_._",
+        "system.runtime.extensions.4.1.0.nupkg.sha512",
+        "system.runtime.extensions.nuspec"
       ]
     },
     "System.Threading/4.0.11": {
@@ -6434,8 +6434,6 @@
       "type": "package",
       "path": "system.threading/4.0.11",
       "files": [
-        "System.Threading.4.0.11.nupkg.sha512",
-        "System.Threading.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -6495,7 +6493,9 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "runtimes/aot/lib/netcore50/System.Threading.dll"
+        "runtimes/aot/lib/netcore50/System.Threading.dll",
+        "system.threading.4.0.11.nupkg.sha512",
+        "system.threading.nuspec"
       ]
     },
     "System.ValueTuple/4.4.0": {

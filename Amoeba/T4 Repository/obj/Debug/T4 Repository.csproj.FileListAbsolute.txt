@@ -50,3 +50,18 @@ C:\Prism\GitRepositiory\MRManager\Amoeba\T4 Repository\obj\Debug\T4Repository.dl
 C:\Prism\GitRepositiory\MRManager\Amoeba\T4 Repository\obj\Debug\T4Repository.pdb
 C:\Prism\GitRepositiory\GenSoft\Amoeba\T4 Repository\obj\Debug\T4Repository.dll
 C:\Prism\GitRepositiory\GenSoft\Amoeba\T4 Repository\obj\Debug\T4Repository.pdb
+C:\Prism\GitRepositiory\GenSoft\Amoeba\T4 Repository\bin\Debug\T4Repository.dll.config
+C:\Prism\GitRepositiory\GenSoft\Amoeba\T4 Repository\bin\Debug\T4Repository.dll
+C:\Prism\GitRepositiory\GenSoft\Amoeba\T4 Repository\bin\Debug\T4Repository.pdb
+C:\Prism\GitRepositiory\GenSoft\Amoeba\T4 Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Prism\GitRepositiory\GenSoft\Amoeba\T4 Repository\bin\Debug\EntityFramework.dll
+C:\Prism\GitRepositiory\GenSoft\Amoeba\T4 Repository\bin\Debug\LinqSpecs.dll
+C:\Prism\GitRepositiory\GenSoft\Amoeba\T4 Repository\bin\Debug\Specifications.dll
+C:\Prism\GitRepositiory\GenSoft\Amoeba\T4 Repository\bin\Debug\T4Entities.dll
+C:\Prism\GitRepositiory\GenSoft\Amoeba\T4 Repository\bin\Debug\LinqSpecs.pdb
+C:\Prism\GitRepositiory\GenSoft\Amoeba\T4 Repository\bin\Debug\LinqSpecs.xml
+C:\Prism\GitRepositiory\GenSoft\Amoeba\T4 Repository\bin\Debug\Specifications.pdb
+C:\Prism\GitRepositiory\GenSoft\Amoeba\T4 Repository\bin\Debug\T4Entities.pdb
+C:\Prism\GitRepositiory\GenSoft\Amoeba\T4 Repository\bin\Debug\T4Entities.dll.config
+C:\Prism\GitRepositiory\GenSoft\Amoeba\T4 Repository\obj\Debug\T4 Repository.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\GenSoft\Amoeba\T4 Repository\obj\Debug\T4 Repository.csproj.CoreCompileInputs.cache

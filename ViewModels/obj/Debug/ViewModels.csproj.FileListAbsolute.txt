@@ -222,7 +222,6 @@ C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\Debug\System.Xml.XPath.XDocument.
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\Debug\Common.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\Debug\CommonMessages.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\Debug\Core.Common.UI.dll
-C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\Debug\DesignTimeData.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\Debug\EventAggregator.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\Debug\EventMessages.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\Debug\GenSoft.Entities.dll
@@ -242,7 +241,6 @@ C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\Debug\BootStrapper.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\Debug\RevolutionLogger.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\Debug\GenSoft.DBContext.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\Debug\ComponentModel.Composition.Hosting.Extension.dll
-C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\Debug\DesignTimeData.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\Debug\Process.WorkFlow.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\Debug\CommonMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\Debug\Common.pdb
@@ -274,3 +272,5 @@ C:\Prism\GitRepositiory\GenSoft\ViewModels\obj\Debug\ViewModels.csprojResolveAss
 C:\Prism\GitRepositiory\GenSoft\ViewModels\obj\Debug\ViewModels.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\ViewModels\obj\Debug\ViewModels.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\obj\Debug\ViewModels.pdb
+C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\Debug\DesignTimeData.dll
+C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\Debug\DesignTimeData.pdb

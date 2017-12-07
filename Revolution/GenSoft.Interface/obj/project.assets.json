@@ -536,8 +536,8 @@
       "type": "package",
       "path": "jb.common/0.8.107-pre",
       "files": [
-        "JB.Common.0.8.107-pre.nupkg.sha512",
-        "JB.Common.nuspec",
+        "jb.common.0.8.107-pre.nupkg.sha512",
+        "jb.common.nuspec",
         "lib/net46/JB.Common.XML",
         "lib/net46/JB.Common.dll"
       ]
@@ -547,8 +547,8 @@
       "type": "package",
       "path": "jb.common.collections/0.8.107-pre",
       "files": [
-        "JB.Common.Collections.0.8.107-pre.nupkg.sha512",
-        "JB.Common.Collections.nuspec",
+        "jb.common.collections.0.8.107-pre.nupkg.sha512",
+        "jb.common.collections.nuspec",
         "lib/net46/JB.Common.Collections.XML",
         "lib/net46/JB.Common.Collections.dll"
       ]
@@ -558,8 +558,8 @@
       "type": "package",
       "path": "jb.common.collections.reactive/0.8.107-pre",
       "files": [
-        "JB.Common.Collections.Reactive.0.8.107-pre.nupkg.sha512",
-        "JB.Common.Collections.Reactive.nuspec",
+        "jb.common.collections.reactive.0.8.107-pre.nupkg.sha512",
+        "jb.common.collections.reactive.nuspec",
         "lib/net46/JB.Common.Collections.Reactive.XML",
         "lib/net46/JB.Common.Collections.Reactive.dll"
       ]
@@ -569,8 +569,8 @@
       "type": "package",
       "path": "jb.common.reactive/0.8.107-pre",
       "files": [
-        "JB.Common.Reactive.0.8.107-pre.nupkg.sha512",
-        "JB.Common.Reactive.nuspec",
+        "jb.common.reactive.0.8.107-pre.nupkg.sha512",
+        "jb.common.reactive.nuspec",
         "lib/net46/JB.Common.Reactive.XML",
         "lib/net46/JB.Common.Reactive.dll"
       ]
@@ -580,8 +580,8 @@
       "type": "package",
       "path": "system.reactive/3.1.1",
       "files": [
-        "System.Reactive.3.1.1.nupkg.sha512",
-        "System.Reactive.nuspec"
+        "system.reactive.3.1.1.nupkg.sha512",
+        "system.reactive.nuspec"
       ]
     },
     "System.Reactive.Core/3.1.1": {
@@ -589,8 +589,6 @@
       "type": "package",
       "path": "system.reactive.core/3.1.1",
       "files": [
-        "System.Reactive.Core.3.1.1.nupkg.sha512",
-        "System.Reactive.Core.nuspec",
         "lib/net45/System.Reactive.Core.dll",
         "lib/net45/System.Reactive.Core.xml",
         "lib/net46/System.Reactive.Core.dll",
@@ -608,7 +606,9 @@
         "lib/uap10.0/System.Reactive.Core.dll",
         "lib/uap10.0/System.Reactive.Core.xml",
         "lib/wpa81/System.Reactive.Core.dll",
-        "lib/wpa81/System.Reactive.Core.xml"
+        "lib/wpa81/System.Reactive.Core.xml",
+        "system.reactive.core.3.1.1.nupkg.sha512",
+        "system.reactive.core.nuspec"
       ]
     },
     "System.Reactive.Interfaces/3.1.1": {
@@ -616,12 +616,12 @@
       "type": "package",
       "path": "system.reactive.interfaces/3.1.1",
       "files": [
-        "System.Reactive.Interfaces.3.1.1.nupkg.sha512",
-        "System.Reactive.Interfaces.nuspec",
         "lib/net45/System.Reactive.Interfaces.dll",
         "lib/net45/System.Reactive.Interfaces.xml",
         "lib/netstandard1.0/System.Reactive.Interfaces.dll",
-        "lib/netstandard1.0/System.Reactive.Interfaces.xml"
+        "lib/netstandard1.0/System.Reactive.Interfaces.xml",
+        "system.reactive.interfaces.3.1.1.nupkg.sha512",
+        "system.reactive.interfaces.nuspec"
       ]
     },
     "System.Reactive.Linq/3.1.1": {
@@ -629,8 +629,6 @@
       "type": "package",
       "path": "system.reactive.linq/3.1.1",
       "files": [
-        "System.Reactive.Linq.3.1.1.nupkg.sha512",
-        "System.Reactive.Linq.nuspec",
         "lib/net45/System.Reactive.Linq.dll",
         "lib/net45/System.Reactive.Linq.xml",
         "lib/net46/System.Reactive.Linq.dll",
@@ -640,7 +638,9 @@
         "lib/netstandard1.1/System.Reactive.Linq.dll",
         "lib/netstandard1.1/System.Reactive.Linq.xml",
         "lib/netstandard1.3/System.Reactive.Linq.dll",
-        "lib/netstandard1.3/System.Reactive.Linq.xml"
+        "lib/netstandard1.3/System.Reactive.Linq.xml",
+        "system.reactive.linq.3.1.1.nupkg.sha512",
+        "system.reactive.linq.nuspec"
       ]
     },
     "System.Reactive.PlatformServices/3.1.1": {
@@ -648,8 +648,6 @@
       "type": "package",
       "path": "system.reactive.platformservices/3.1.1",
       "files": [
-        "System.Reactive.PlatformServices.3.1.1.nupkg.sha512",
-        "System.Reactive.PlatformServices.nuspec",
         "lib/net45/System.Reactive.PlatformServices.dll",
         "lib/net45/System.Reactive.PlatformServices.xml",
         "lib/net46/System.Reactive.PlatformServices.dll",
@@ -665,7 +663,9 @@
         "lib/uap10.0/System.Reactive.PlatformServices.dll",
         "lib/uap10.0/System.Reactive.PlatformServices.xml",
         "lib/wpa81/System.Reactive.PlatformServices.dll",
-        "lib/wpa81/System.Reactive.PlatformServices.xml"
+        "lib/wpa81/System.Reactive.PlatformServices.xml",
+        "system.reactive.platformservices.3.1.1.nupkg.sha512",
+        "system.reactive.platformservices.nuspec"
       ]
     },
     "System.Reactive.Windows.Threading/3.1.1": {
@@ -673,8 +673,6 @@
       "type": "package",
       "path": "system.reactive.windows.threading/3.1.1",
       "files": [
-        "System.Reactive.Windows.Threading.3.1.1.nupkg.sha512",
-        "System.Reactive.Windows.Threading.nuspec",
         "lib/net45/System.Reactive.Windows.Threading.dll",
         "lib/net45/System.Reactive.Windows.Threading.xml",
         "lib/netcore451/System.Reactive.Windows.Threading.dll",
@@ -682,7 +680,9 @@
         "lib/uap10.0/System.Reactive.Windows.Threading.dll",
         "lib/uap10.0/System.Reactive.Windows.Threading.xml",
         "lib/wpa81/System.Reactive.Windows.Threading.dll",
-        "lib/wpa81/System.Reactive.Windows.Threading.xml"
+        "lib/wpa81/System.Reactive.Windows.Threading.xml",
+        "system.reactive.windows.threading.3.1.1.nupkg.sha512",
+        "system.reactive.windows.threading.nuspec"
       ]
     },
     "SystemInterfaces/1.0.0": {

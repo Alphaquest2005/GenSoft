@@ -848,8 +848,8 @@
       "type": "package",
       "path": "fluentvalidation.net35/1.0.1",
       "files": [
-        "FluentValidation.Net35.1.0.1.nupkg.sha512",
-        "FluentValidation.Net35.nuspec",
+        "fluentvalidation.net35.1.0.1.nupkg.sha512",
+        "fluentvalidation.net35.nuspec",
         "lib/net35/FluentValidation.dll"
       ]
     },
@@ -904,8 +904,6 @@
       "files": [
         "Docs/ReadMe.txt",
         "LICENSE.txt",
-        "ReactiveProperty.3.6.0.nupkg.sha512",
-        "ReactiveProperty.nuspec",
         "Snippet/csharp5/AsyncReactiveCommand.snippet",
         "Snippet/csharp5/AsyncReactiveCommandGeneric.snippet",
         "Snippet/csharp5/ReactiveCollection.snippet",
@@ -966,7 +964,9 @@
         "lib/uap10.0/ReactiveProperty.UWP.pdb",
         "lib/uap10.0/ReactiveProperty.XML",
         "lib/uap10.0/ReactiveProperty.dll",
-        "lib/uap10.0/ReactiveProperty.pdb"
+        "lib/uap10.0/ReactiveProperty.pdb",
+        "reactiveproperty.3.6.0.nupkg.sha512",
+        "reactiveproperty.nuspec"
       ]
     },
     "System.Reactive/3.1.1": {
