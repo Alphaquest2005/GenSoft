@@ -674,7 +674,7 @@ namespace DataServices.Actors
 
         private static IViewModelInfo CreateEntityViewModel(EntityTypeViewModel vm)
         {
-            if (processedVMIds.ContainsKey($"{vm.EntityTypeName}-{vm.ViewModelTypeName}")) return processedVMIds[$"{vm.EntityTypeName}-{vm.ViewModelTypeName}"];
+           // if (processedVMIds.ContainsKey($"{vm.EntityTypeName}-{vm.ViewModelTypeName}")) return processedVMIds[$"{vm.EntityTypeName}-{vm.ViewModelTypeName}"];
 
 
 
@@ -684,7 +684,7 @@ namespace DataServices.Actors
 
             var res = ProcessViewModels.ProcessViewModelFactory[vm.ViewModelTypeName].Invoke(vm, vp);
 
-            processedVMIds.Add($"{vm.EntityTypeName}-{vm.ViewModelTypeName}", res);
+            processedVMIds.AddOrSet($"{vm.EntityTypeName}-{vm.ViewModelTypeName}", res);
             return res;
 
         }

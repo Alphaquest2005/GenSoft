@@ -74,7 +74,7 @@ namespace EFRepository
                                 {
                                     AttributeId = attibute.Id,
                                     EntityId = entity.Id,
-                                    Value = change.Value.ToString()
+                                    Value = change.Value is IEntityKeyValuePair?((IEntityKeyValuePair)change.Value).Value.ToString():change.Value.ToString()
                                 }).Entity;
                             entity.EntityAttribute.Add(entityAttribute);
                         }
