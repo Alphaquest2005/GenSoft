@@ -82,13 +82,13 @@ namespace Process.WorkFlow
 
             new ComplexEventAction(
                 "105",
-                1, new List<IProcessExpectedEvent>
+                4, new List<IProcessExpectedEvent>
                 {
-                    new ProcessExpectedEvent ("ProcessCompleted", 1, typeof (ISystemProcessCompleted), e => e != null  && e.Process.Id == 1, new StateEventInfo(1, RevolutionData.Context.Process.Events.ProcessCompleted), new SourceType(typeof(IComplexEventService))),
+                    new ProcessExpectedEvent<IViewModelIntialized> ("ViewModelIntialized", 4, e => e != null  && e.Process.Id == 1, new StateEventInfo(4, RevolutionData.Context.Process.Events.ProcessCompleted), new SourceType(typeof(IComplexEventService))),
 
                 },
                 typeof(ISystemProcessStarted),
-                processInfo:new StateCommandInfo(1,RevolutionData.Context.Process.Commands.StartProcess),
+                processInfo:new StateCommandInfo(4,RevolutionData.Context.Entity.Commands.LoadEntitySet),
                 action: ProcessActions.IntializeProcessStateList("Application")),
 
 

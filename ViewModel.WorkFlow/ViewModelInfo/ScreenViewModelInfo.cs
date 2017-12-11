@@ -52,12 +52,22 @@ namespace RevolutionData
                         {
                             if (Application.Current == null)
                             {
-                                s.HeaderViewModels.Add(e.ViewModel);
+                                s.HeaderViewModels.Insert(e.ViewModel.Priority, e.ViewModel);
                             }
                             else
                             {
-                                Application.Current.Dispatcher.BeginInvoke(
-                                    new Action(() => s.HeaderViewModels.Add(e.ViewModel)));
+                                Application.Current.Dispatcher.BeginInvoke(new Action(() =>
+                                {
+                                    var last = s.HeaderViewModels.FirstOrDefault(x => x.Priority > e.ViewModel.Priority);
+                                    if (last == null)
+                                    {
+                                        s.HeaderViewModels.Add(e.ViewModel);
+                                    }
+                                    else
+                                    {
+                                        s.HeaderViewModels.Insert(s.HeaderViewModels.IndexOf(last), e.ViewModel);
+                                    }
+                                }));
                             }
                         }),
                     new ViewEventSubscription<IScreenModel, IViewModelCreated<IViewModel>>(
@@ -72,12 +82,22 @@ namespace RevolutionData
                         {
                             if (Application.Current == null)
                             {
-                                s.LeftViewModels.Add(e.ViewModel);
+                                s.LeftViewModels.Insert(e.ViewModel.Priority, e.ViewModel);
                             }
                             else
                             {
-                                Application.Current.Dispatcher.BeginInvoke(
-                                    new Action(() => s.LeftViewModels.Add(e.ViewModel)));
+                                Application.Current.Dispatcher.BeginInvoke(new Action(() =>
+                                {
+                                    var last = s.LeftViewModels.FirstOrDefault(x => x.Priority > e.ViewModel.Priority);
+                                    if (last == null)
+                                    {
+                                        s.LeftViewModels.Add(e.ViewModel);
+                                    }
+                                    else
+                                    {
+                                        s.LeftViewModels.Insert(s.LeftViewModels.IndexOf(last), e.ViewModel);
+                                    }
+                                }));
                             }
                         }),
                     new ViewEventSubscription<IScreenModel, IViewModelCreated<IViewModel>>(
@@ -89,12 +109,22 @@ namespace RevolutionData
                         {
                             if (Application.Current == null)
                             {
-                                s.RightViewModels.Add(e.ViewModel);
+                                s.RightViewModels.Insert(e.ViewModel.Priority, e.ViewModel);
                             }
                             else
                             {
-                                Application.Current.Dispatcher.BeginInvoke(
-                                    new Action(() => s.RightViewModels.Add(e.ViewModel)));
+                                Application.Current.Dispatcher.BeginInvoke(new Action(() =>
+                                {
+                                    var last = s.RightViewModels.FirstOrDefault(x => x.Priority > e.ViewModel.Priority);
+                                    if (last == null)
+                                    {
+                                        s.RightViewModels.Add(e.ViewModel);
+                                    }
+                                    else
+                                    {
+                                        s.RightViewModels.Insert(s.RightViewModels.IndexOf(last), e.ViewModel);
+                                    }
+                                }));
                             }
                         }),
                     new ViewEventSubscription<IScreenModel, IViewModelCreated<IViewModel>>(
@@ -106,12 +136,22 @@ namespace RevolutionData
                         {
                             if (Application.Current == null)
                             {
-                                s.FooterViewModels.Add(e.ViewModel);
+                                s.FooterViewModels.Insert(e.ViewModel.Priority, e.ViewModel);
                             }
                             else
                             {
-                                Application.Current.Dispatcher.BeginInvoke(
-                                    new Action(() => s.FooterViewModels.Add(e.ViewModel)));
+                                Application.Current.Dispatcher.BeginInvoke(new Action(() =>
+                                {
+                                    var last = s.FooterViewModels.FirstOrDefault(x => x.Priority > e.ViewModel.Priority);
+                                    if (last == null)
+                                    {
+                                        s.FooterViewModels.Add(e.ViewModel);
+                                    }
+                                    else
+                                    {
+                                        s.FooterViewModels.Insert(s.FooterViewModels.IndexOf(last), e.ViewModel);
+                                    }
+                                }));
                             }
                         }),
                     new ViewEventSubscription<IScreenModel, IViewModelCreated<IViewModel>>(
@@ -247,30 +287,8 @@ namespace RevolutionData
 
         private static void ClearScreenModels(IScreenModel s, ICleanUpSystemProcess e)
         {
-            
-                s.BodyViewModels.Clear();
-            
-                //s.BodyViewModels.RemoveRange(
-                //s.BodyViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId).ToList());
-           
-            
-            s.BodyViewModels.Reset();
-            s.LeftViewModels.RemoveRange(
-                s.LeftViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId).ToList());
-            s.LeftViewModels.Reset();
-            s.HeaderViewModels.RemoveRange(
-                s.HeaderViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId).ToList());
-            s.HeaderViewModels.Reset();
-            s.RightViewModels.RemoveRange(
-                s.RightViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId).ToList());
-            s.RightViewModels.Reset();
-            s.FooterViewModels.RemoveRange(
-                s.FooterViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId).ToList());
-            s.FooterViewModels.Reset();
-
-            s.CacheViewModels.RemoveRange(
-                s.CacheViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUpId).ToList());
-            s.CacheViewModels.Reset();
+           s.BodyViewModels.Clear();
+           s.BodyViewModels.Reset();
         }
     }
 }
