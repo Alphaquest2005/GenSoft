@@ -84,12 +84,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LinqSpecs\LinqSpecs.csproj">
-      <Project>{49ba2d36-de2b-4995-9ff8-86c35bc55180}</Project>
+    <ProjectReference Include="..\..\LinqSpecs\LinqSpecs.csproj">
+      <Project>{d60875a3-0de2-409d-86a0-f540224d054c}</Project>
       <Name>LinqSpecs</Name>
     </ProjectReference>
     <ProjectReference Include="..\T4 Entities\T4 Entities.csproj">
-      <Project>{492d62c4-38c5-46ca-880e-6817ea791069}</Project>
+      <Project>{dbf39844-950f-48a8-a777-a294bd3fc91a}</Project>
       <Name>T4 Entities</Name>
     </ProjectReference>
   </ItemGroup>

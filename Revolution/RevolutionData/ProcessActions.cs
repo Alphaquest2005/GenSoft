@@ -83,6 +83,13 @@ namespace RevolutionData
                         processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.Error),
                         expectedSourceType: new SourceType(typeof(IComplexEventService)));
 
+        public static IProcessAction IntializeProcessStateList(string entityType)
+        {
+            DynamicEntityTypeExtensions.AddDynamicEntityTypes(entityType);
+            var res = DynamicEntityType.DynamicEntityTypes[entityType];
+            return IntializeProcessStateList(res);
+        }
+
         public static IProcessAction IntializeProcessStateList(IDynamicEntityType entityType)
         {
             return new ProcessAction(

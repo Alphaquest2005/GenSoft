@@ -50,6 +50,7 @@ namespace T4Repository
                                               .Include("Entity.EntityViews.EntityViewProperties.EntityViewPropertyFunctions")
                                               .Include("Entity.EntityViews.EntityViewProperties.EntityViewPropertyFunctions.Function")
                                               .Include("Entity.EntityViews.EntityViewProperties.EntityViewPropertyFunctions.EntityViewPropertyFunctionParameter.FunctionParameter.Parameter.DataType")
+                                              
                                               .Include("Entity.EntityViews.EntityViewProperties.EntityViewPropertyFunctions.EntityViewPropertyFunctionParameter.FunctionParameter.Function.ReturnDataType.DataType")
                                               .Include("Entity.EntityViews.EntityViewProperties.EntityViewPropertyFunctions.EntityViewPropertyFunctionParameter")
                                               .Include("Entity.EntityProperties.TestValues")

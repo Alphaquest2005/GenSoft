@@ -16,6 +16,16 @@
           "lib/net45/EntityFramework.dll": {}
         }
       },
+      "LinqSpecs/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "compile": {
+          "bin/placeholder/LinqSpecs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LinqSpecs.dll": {}
+        }
+      },
       "T4 Entities/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -43,6 +53,16 @@
         "runtime": {
           "lib/net45/EntityFramework.SqlServer.dll": {},
           "lib/net45/EntityFramework.dll": {}
+        }
+      },
+      "LinqSpecs/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "compile": {
+          "bin/placeholder/LinqSpecs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LinqSpecs.dll": {}
         }
       },
       "T4 Entities/1.0.0": {
@@ -74,6 +94,16 @@
           "lib/net45/EntityFramework.dll": {}
         }
       },
+      "LinqSpecs/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "compile": {
+          "bin/placeholder/LinqSpecs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LinqSpecs.dll": {}
+        }
+      },
       "T4 Entities/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -101,6 +131,16 @@
         "runtime": {
           "lib/net45/EntityFramework.SqlServer.dll": {},
           "lib/net45/EntityFramework.dll": {}
+        }
+      },
+      "LinqSpecs/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "compile": {
+          "bin/placeholder/LinqSpecs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LinqSpecs.dll": {}
         }
       },
       "T4 Entities/1.0.0": {
@@ -146,14 +186,20 @@
         "tools/migrate.exe"
       ]
     },
+    "LinqSpecs/1.0.0": {
+      "type": "project",
+      "path": "../../LinqSpecs/LinqSpecs.csproj",
+      "msbuildProject": "../../LinqSpecs/LinqSpecs.csproj"
+    },
     "T4 Entities/1.0.0": {
       "type": "project",
-      "path": "../../../Amoeba/T4 Entities/T4 Entities.csproj",
-      "msbuildProject": "../../../Amoeba/T4 Entities/T4 Entities.csproj"
+      "path": "../T4 Entities/T4 Entities.csproj",
+      "msbuildProject": "../T4 Entities/T4 Entities.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7": [
+      "LinqSpecs >= 1.0.0",
       "T4 Entities >= 1.0.0"
     ]
   },
@@ -184,8 +230,11 @@
       "frameworks": {
         "net47": {
           "projectReferences": {
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Amoeba\\T4 Entities\\T4 Entities.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Amoeba\\T4 Entities\\T4 Entities.csproj"
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\LinqSpecs\\LinqSpecs.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\LinqSpecs\\LinqSpecs.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Amoeba\\T4 Entities\\T4 Entities.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Amoeba\\T4 Entities\\T4 Entities.csproj"
             }
           }
         }

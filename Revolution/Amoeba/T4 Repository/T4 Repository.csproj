@@ -4,14 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F321D5AD-2A83-47CE-98C3-7442E0552CE5}</ProjectGuid>
+    <ProjectGuid>{288D0E9B-0371-486C-8933-1BF893BE86EC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>T4Repository</RootNamespace>
     <AssemblyName>T4Repository</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -70,25 +71,32 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="project.json" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LinqSpecs\LinqSpecs.csproj">
-      <Project>{49ba2d36-de2b-4995-9ff8-86c35bc55180}</Project>
+    <ProjectReference Include="..\..\LinqSpecs\LinqSpecs.csproj">
+      <Project>{d60875a3-0de2-409d-86a0-f540224d054c}</Project>
       <Name>LinqSpecs</Name>
     </ProjectReference>
     <ProjectReference Include="..\Specifications\Specifications.csproj">
-      <Project>{13fbad97-e771-4506-9313-7c6066c38f72}</Project>
+      <Project>{2d293661-bc54-402e-a795-161089864f2d}</Project>
       <Name>Specifications</Name>
     </ProjectReference>
     <ProjectReference Include="..\T4 Entities\T4 Entities.csproj">
-      <Project>{492d62c4-38c5-46ca-880e-6817ea791069}</Project>
+      <Project>{dbf39844-950f-48a8-a777-a294bd3fc91a}</Project>
       <Name>T4 Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="EntityFramework">
+      <Version>6.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="morelinq">
+      <Version>2.8.0</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

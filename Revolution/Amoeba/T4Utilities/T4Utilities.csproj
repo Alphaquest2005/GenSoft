@@ -84,11 +84,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\T4 Entities\T4 Entities.csproj">
-      <Project>{492d62c4-38c5-46ca-880e-6817ea791069}</Project>
+      <Project>{dbf39844-950f-48a8-a777-a294bd3fc91a}</Project>
       <Name>T4 Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\T4 Repository\T4 Repository.csproj">
-      <Project>{f321d5ad-2a83-47ce-98c3-7442e0552ce5}</Project>
+      <Project>{288d0e9b-0371-486c-8933-1bf893be86ec}</Project>
       <Name>T4 Repository</Name>
     </ProjectReference>
   </ItemGroup>

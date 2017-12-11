@@ -27,56 +27,19 @@ namespace RevolutionData
                 new ViewInfo("HeaderViewModel", "", ""),
                 new List<IViewModelEventSubscription<IViewModel, IEvent>>
                 {
-                    new ViewEventSubscription<IHeaderViewModel, ICurrentEntityChanged>(
-                        "Header-ICurrentEntityChanged",
+                    new ViewEventSubscription<IHeaderViewModel, IUpdateProcessStateList>(
+                        $"HeaderViewModel-IUpdateProcessStateList",
                         processId,
-                        e => e.Entity != null && e.Entity.Id > 0 ,
-                        new List<Func<IHeaderViewModel, ICurrentEntityChanged, bool>>(),
-                        (v, e) =>
+                        e => e.EntityType.Name == "Application",
+                        new List<Func<IHeaderViewModel, IUpdateProcessStateList, bool>>(),
+                        (v,e) =>
                         {
-                            Application.Current.Dispatcher.Invoke(() =>
-                            {
-                                var res = v.Entities.Value.ToList();
-                                var existingEntity = res.FirstOrDefault(x => x.EntityType.Name == e.EntityType.Name);
-                                if (existingEntity == null)
-                                {
-                                    v.Entities.Value.Add(e.Entity);
-                                    v.Entities.Value.Reset();
-                                }
-                                else
-                                {
-                                    var idx = res.IndexOf(existingEntity);
-                                    res[idx] = e.Entity;
-                                    v.Entities.Value = new ObservableList<IDynamicEntity>(res);
-                                }
-                            });
-
-
-
+                            if (e.State != null && v.Entities.Value != null && v.Entities.Value.SequenceEqual(e.State.EntitySet)) return;
+                            v.Entities.Value = new ObservableList<IDynamicEntity>(e.State.EntitySet.ToList());
                         }),
-
-
                 },
-                new List<IViewModelEventPublication<IViewModel, IEvent>> { },
-                new List<IViewModelEventCommand<IViewModel, IEvent>>
-                {
-
-
-                    new ViewEventCommand<IHeaderViewModel, INavigateToView>(
-                        key: "NavigateToView",
-                        commandPredicate: new List<Func<IHeaderViewModel, bool>> { },
-                        subject: s => Observable.Empty<ReactiveCommand<IViewModel>>(),
-
-                        messageData: s =>
-                        {
-                            return new ViewEventCommandParameter(
-                                new object[] {$"{s.CurrentEntity.Value.EntityType.Name}-SummaryListViewModel"},
-                                new StateCommandInfo(s.Process.Id,
-                                    Context.View.Commands.NavigateToView), s.Process,
-                                s.Source);
-                        }),
-
-                },
+                new List<IViewModelEventPublication<IViewModel, IEvent>> {},
+                new List<IViewModelEventCommand<IViewModel, IEvent>> {},
                 typeof(IHeaderViewModel),
                 typeof(IHeaderViewModel), 0,
                 new ViewAttributeDisplayProperties(

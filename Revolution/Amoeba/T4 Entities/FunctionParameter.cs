@@ -17,14 +17,14 @@ namespace T4Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public FunctionParameter()
         {
-            this.EntityViewPropertyFunctionParameter = new HashSet<EntityViewPropertyFunctionParameter>();
+            this.EntityViewPropertyFunctionParameters = new HashSet<EntityViewPropertyFunctionParameter>();
         }
     
         public int FunctionId { get; set; }
         public int ParameterId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EntityViewPropertyFunctionParameter> EntityViewPropertyFunctionParameter { get; set; }
+        public virtual ICollection<EntityViewPropertyFunctionParameter> EntityViewPropertyFunctionParameters { get; set; }
         public virtual Function Function { get; set; }
         public virtual Parameter Parameter { get; set; }
     }

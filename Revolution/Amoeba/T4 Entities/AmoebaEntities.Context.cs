@@ -31,7 +31,6 @@ namespace T4Entities
         public virtual DbSet<DataType> DataTypes { get; set; }
         public virtual DbSet<Entity> Entities { get; set; }
         public virtual DbSet<EntityProperty> EntityProperties { get; set; }
-        public virtual DbSet<EntityRelationship> EntityRelationship { get; set; }
         public virtual DbSet<ModelType> ModelTypes { get; set; }
         public virtual DbSet<Setting> Settings { get; set; }
         public virtual DbSet<Project> Projects { get; set; }
@@ -46,12 +45,13 @@ namespace T4Entities
         public virtual DbSet<EntityViewPropertyFunction> EntityViewPropertyFunctions { get; set; }
         public virtual DbSet<EntityViewPropertyFunctionParameter> EntityViewPropertyFunctionParameter { get; set; }
         public virtual DbSet<FunctionBody> FunctionBodies { get; set; }
-        public virtual DbSet<FunctionParameter> FunctionParameter { get; set; }
         public virtual DbSet<Function> Functions { get; set; }
         public virtual DbSet<FunctionSetFunction> FunctionSetFunctions { get; set; }
         public virtual DbSet<Operator> Operators { get; set; }
         public virtual DbSet<Parameter> Parameters { get; set; }
         public virtual DbSet<FunctionReturnType> FunctionReturnTypes { get; set; }
         public virtual DbSet<EntityViewProperty> EntityViewProperties { get; set; }
+        public virtual DbSet<FunctionParameter> FunctionParameters { get; set; }
+        public virtual DbSet<EntityRelationship> EntityRelationships { get; set; }
     }
 }

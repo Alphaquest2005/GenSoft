@@ -96,6 +96,7 @@
     <Compile Include="Generated Entities\ConfigurationPropertyPresentation.cs" />
     <Compile Include="Generated Entities\DataType.cs" />
     <Compile Include="Generated Entities\DBType.cs" />
+    <Compile Include="Generated Entities\DefaultApplication.cs" />
     <Compile Include="Generated Entities\DomainProcess.cs" />
     <Compile Include="Generated Entities\Entity.cs" />
     <Compile Include="Generated Entities\EntityAttribute.cs" />
@@ -161,6 +162,11 @@
     <Compile Include="Generated Entities\ViewPropertyTheme.cs" />
     <Compile Include="Generated Entities\ViewPropertyValueOptions.cs" />
     <Compile Include="Generated Entities\ViewType.cs" />
+    <Compile Include="MRManger-DataEntities.cs">
+      <DependentUpon>MRManger-DataEntities.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -184,7 +190,12 @@
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="MRManger-DataEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MRManger-DataEntities.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

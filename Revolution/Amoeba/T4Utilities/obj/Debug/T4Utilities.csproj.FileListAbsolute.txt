@@ -93,3 +93,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4Utilities\obj\Debug\T4Utilit
 C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4Utilities\obj\Debug\T4Utilities.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4Utilities\obj\Debug\T4Utilities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4Utilities\obj\Debug\T4Utilities.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4Utilities\bin\Debug\System.ValueTuple.dll

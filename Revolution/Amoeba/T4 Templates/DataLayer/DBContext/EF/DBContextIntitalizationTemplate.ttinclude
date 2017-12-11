@@ -78,7 +78,7 @@ else
 	var res = new List<Entity>();
 
 	var mainEntities = ml as IList<Entity> ?? ml.ToList();
-	mainEntities.ForEach((x) =>
+	mainEntities.DistinctBy(x => x.Id).ForEach((x) =>
 	{
 		InsertEntitySampleData(x, res);
 		

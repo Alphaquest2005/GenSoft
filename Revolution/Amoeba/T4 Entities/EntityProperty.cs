@@ -17,22 +17,18 @@ namespace T4Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public EntityProperty()
         {
-            this.ParentRelationships = new HashSet<EntityRelationship>();
-            this.ChildRelationships = new HashSet<EntityRelationship>();
             this.DataProperties = new HashSet<DataProperty>();
             this.PresentationProperties = new HashSet<PresentationProperty>();
             this.TestValues = new HashSet<TestValue>();
             this.EntityViewProperties = new HashSet<EntityViewProperty>();
+            this.ParentRelationships = new HashSet<EntityRelationship>();
+            this.ChildRelationships = new HashSet<EntityRelationship>();
         }
     
         public int EntityId { get; set; }
         public string PropertyName { get; set; }
     
         public virtual Entity Entity { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EntityRelationship> ParentRelationships { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EntityRelationship> ChildRelationships { get; set; }
         public virtual PresentationProperty PresentationProperty { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DataProperty> DataProperties { get; set; }
@@ -42,5 +38,9 @@ namespace T4Entities
         public virtual ICollection<TestValue> TestValues { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EntityViewProperty> EntityViewProperties { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<EntityRelationship> ParentRelationships { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<EntityRelationship> ChildRelationships { get; set; }
     }
 }

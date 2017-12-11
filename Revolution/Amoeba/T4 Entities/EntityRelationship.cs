@@ -18,8 +18,8 @@ namespace T4Entities
         public int ChildEntityPropertyId { get; set; }
         public int RelationshipTypeId { get; set; }
     
+        public virtual RelationshipType RelationshipType { get; set; }
         public virtual EntityProperty ChildProperty { get; set; }
         public virtual EntityProperty ParentProperty { get; set; }
-        public virtual RelationshipType RelationshipType { get; set; }
     }
 }

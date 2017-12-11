@@ -17,12 +17,12 @@ namespace T4Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public RelationshipType()
         {
-            this.EntityRelationship1 = new HashSet<EntityRelationship>();
+            this.EntityRelationships = new HashSet<EntityRelationship>();
         }
     
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EntityRelationship> EntityRelationship1 { get; set; }
+        public virtual ICollection<EntityRelationship> EntityRelationships { get; set; }
     }
 }

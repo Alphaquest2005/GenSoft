@@ -11,7 +11,8 @@
     <AssemblyName>T4Templates</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <NuGetPackageImportStamp></NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
@@ -320,24 +321,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LinqSpecs\LinqSpecs.csproj">
-      <Project>{49ba2d36-de2b-4995-9ff8-86c35bc55180}</Project>
+    <ProjectReference Include="..\..\LinqSpecs\LinqSpecs.csproj">
+      <Project>{d60875a3-0de2-409d-86a0-f540224d054c}</Project>
       <Name>LinqSpecs</Name>
     </ProjectReference>
-    <ProjectReference Include="..\T4Utilities\T4Utilities.csproj">
-      <Project>{dee7e1e7-baba-4320-ba9e-e10c55e80252}</Project>
-      <Name>T4Utilities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Specifications\Specifications.csproj">
-      <Project>{13fbad97-e771-4506-9313-7c6066c38f72}</Project>
-      <Name>Specifications</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\T4 Entities\T4 Entities.csproj">
-      <Project>{492d62c4-38c5-46ca-880e-6817ea791069}</Project>
-      <Name>T4 Entities</Name>
-    </ProjectReference>
     <ProjectReference Include="..\T4 Repository\T4 Repository.csproj">
-      <Project>{f321d5ad-2a83-47ce-98c3-7442e0552ce5}</Project>
+      <Project>{288d0e9b-0371-486c-8933-1bf893be86ec}</Project>
       <Name>T4 Repository</Name>
     </ProjectReference>
   </ItemGroup>

@@ -18,7 +18,7 @@ namespace T4Entities
         public Function()
         {
             this.EntityViewPropertyFunctions = new HashSet<EntityViewPropertyFunction>();
-            this.FunctionParameter = new HashSet<FunctionParameter>();
+            this.FunctionParameters = new HashSet<FunctionParameter>();
         }
     
         public string Name { get; set; }
@@ -26,8 +26,8 @@ namespace T4Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EntityViewPropertyFunction> EntityViewPropertyFunctions { get; set; }
         public virtual FunctionBody FunctionBody { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FunctionParameter> FunctionParameter { get; set; }
         public virtual FunctionReturnType ReturnDataType { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FunctionParameter> FunctionParameters { get; set; }
     }
 }

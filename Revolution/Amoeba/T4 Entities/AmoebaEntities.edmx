@@ -55,7 +55,7 @@
           <Property Name="EntityId" Type="int" Nullable="false" />
           <Property Name="PropertyName" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <EntityType Name="EntityRelationship">
+        <EntityType Name="EntityRelationships">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -117,7 +117,7 @@
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
-        <EntityType Name="FunctionParameter">
+        <EntityType Name="FunctionParameters">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -261,6 +261,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ChildEntities">
+          <End Role="EntityProperties" Type="Self.EntityProperties" Multiplicity="1" />
+          <End Role="EntityRelationships" Type="Self.EntityRelationships" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EntityProperties">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EntityRelationships">
+              <PropertyRef Name="ChildEntityPropertyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_DataProperties_DataTypes">
           <End Role="DataTypes" Type="Self.DataTypes" Multiplicity="1" />
           <End Role="DataProperties" Type="Self.DataProperties" Multiplicity="*" />
@@ -313,14 +325,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_EntityRelationship_RelationshipTypes">
+        <Association Name="FK_EntityRelationships_RelationshipTypes">
           <End Role="RelationshipTypes" Type="Self.RelationshipTypes" Multiplicity="1" />
-          <End Role="EntityRelationship" Type="Self.EntityRelationship" Multiplicity="*" />
+          <End Role="EntityRelationships" Type="Self.EntityRelationships" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RelationshipTypes">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="EntityRelationship">
+            <Dependent Role="EntityRelationships">
               <PropertyRef Name="RelationshipTypeId" />
             </Dependent>
           </ReferentialConstraint>
@@ -421,11 +433,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_EntityViewPropertyFunctionParameter_FunctionParameter">
-          <End Role="FunctionParameter" Type="Self.FunctionParameter" Multiplicity="1" />
+        <Association Name="FK_EntityViewPropertyFunctionParameter_FunctionParameters">
+          <End Role="FunctionParameters" Type="Self.FunctionParameters" Multiplicity="1" />
           <End Role="EntityViewPropertyFunctionParameter" Type="Self.EntityViewPropertyFunctionParameter" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="FunctionParameter">
+            <Principal Role="FunctionParameters">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="EntityViewPropertyFunctionParameter">
@@ -473,28 +485,28 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_FunctionParameter_Functions">
+        <Association Name="FK_FunctionParameters_Functions">
           <End Role="Functions" Type="Self.Functions" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="FunctionParameter" Type="Self.FunctionParameter" Multiplicity="*" />
+          <End Role="FunctionParameters" Type="Self.FunctionParameters" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Functions">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="FunctionParameter">
+            <Dependent Role="FunctionParameters">
               <PropertyRef Name="FunctionId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_FunctionParameter_Parameters">
+        <Association Name="FK_FunctionParameters_Parameters">
           <End Role="Parameters" Type="Self.Parameters" Multiplicity="1" />
-          <End Role="FunctionParameter" Type="Self.FunctionParameter" Multiplicity="*" />
+          <End Role="FunctionParameters" Type="Self.FunctionParameters" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Parameters">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="FunctionParameter">
+            <Dependent Role="FunctionParameters">
               <PropertyRef Name="ParameterId" />
             </Dependent>
           </ReferentialConstraint>
@@ -534,6 +546,18 @@
             </Principal>
             <Dependent Role="Parameters">
               <PropertyRef Name="DataTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ParentEntities">
+          <End Role="EntityProperties" Type="Self.EntityProperties" Multiplicity="1" />
+          <End Role="EntityRelationships" Type="Self.EntityRelationships" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EntityProperties">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EntityRelationships">
+              <PropertyRef Name="ParentEntityPropertyId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -620,7 +644,7 @@
           <EntitySet Name="DataTypes" EntityType="Self.DataTypes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Entities" EntityType="Self.Entities" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EntityProperties" EntityType="Self.EntityProperties" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="EntityRelationship" EntityType="Self.EntityRelationship" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EntityRelationships" EntityType="Self.EntityRelationships" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EntityView" EntityType="Self.EntityView" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EntityViewEntityProperties" EntityType="Self.EntityViewEntityProperties" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EntityViewProperties" EntityType="Self.EntityViewProperties" Schema="dbo" store:Type="Tables" />
@@ -628,7 +652,7 @@
           <EntitySet Name="EntityViewPropertyFunctionParameter" EntityType="Self.EntityViewPropertyFunctionParameter" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EntityViewViewProperties" EntityType="Self.EntityViewViewProperties" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FunctionBody" EntityType="Self.FunctionBody" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="FunctionParameter" EntityType="Self.FunctionParameter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FunctionParameters" EntityType="Self.FunctionParameters" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FunctionReturnType" EntityType="Self.FunctionReturnType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Functions" EntityType="Self.Functions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FunctionSetFunctions" EntityType="Self.FunctionSetFunctions" Schema="dbo" store:Type="Tables" />
@@ -651,6 +675,10 @@
             <End Role="Entities" EntitySet="Entities" />
             <End Role="ApplicationEntities" EntitySet="ApplicationEntities" />
           </AssociationSet>
+          <AssociationSet Name="FK_ChildEntities" Association="Self.FK_ChildEntities">
+            <End Role="EntityProperties" EntitySet="EntityProperties" />
+            <End Role="EntityRelationships" EntitySet="EntityRelationships" />
+          </AssociationSet>
           <AssociationSet Name="FK_DataProperties_DataTypes" Association="Self.FK_DataProperties_DataTypes">
             <End Role="DataTypes" EntitySet="DataTypes" />
             <End Role="DataProperties" EntitySet="DataProperties" />
@@ -667,9 +695,9 @@
             <End Role="Entities" EntitySet="Entities" />
             <End Role="EntityProperties" EntitySet="EntityProperties" />
           </AssociationSet>
-          <AssociationSet Name="FK_EntityRelationship_RelationshipTypes" Association="Self.FK_EntityRelationship_RelationshipTypes">
+          <AssociationSet Name="FK_EntityRelationships_RelationshipTypes" Association="Self.FK_EntityRelationships_RelationshipTypes">
             <End Role="RelationshipTypes" EntitySet="RelationshipTypes" />
-            <End Role="EntityRelationship" EntitySet="EntityRelationship" />
+            <End Role="EntityRelationships" EntitySet="EntityRelationships" />
           </AssociationSet>
           <AssociationSet Name="FK_EntityView_Entities" Association="Self.FK_EntityView_Entities">
             <End Role="Entities" EntitySet="Entities" />
@@ -699,8 +727,8 @@
             <End Role="EntityViewPropertyFunction" EntitySet="EntityViewPropertyFunction" />
             <End Role="EntityViewPropertyFunctionParameter" EntitySet="EntityViewPropertyFunctionParameter" />
           </AssociationSet>
-          <AssociationSet Name="FK_EntityViewPropertyFunctionParameter_FunctionParameter" Association="Self.FK_EntityViewPropertyFunctionParameter_FunctionParameter">
-            <End Role="FunctionParameter" EntitySet="FunctionParameter" />
+          <AssociationSet Name="FK_EntityViewPropertyFunctionParameter_FunctionParameters" Association="Self.FK_EntityViewPropertyFunctionParameter_FunctionParameters">
+            <End Role="FunctionParameters" EntitySet="FunctionParameters" />
             <End Role="EntityViewPropertyFunctionParameter" EntitySet="EntityViewPropertyFunctionParameter" />
           </AssociationSet>
           <AssociationSet Name="FK_EntityViewViewProperties_EntityViewProperties" Association="Self.FK_EntityViewViewProperties_EntityViewProperties">
@@ -715,13 +743,13 @@
             <End Role="Functions" EntitySet="Functions" />
             <End Role="FunctionBody" EntitySet="FunctionBody" />
           </AssociationSet>
-          <AssociationSet Name="FK_FunctionParameter_Functions" Association="Self.FK_FunctionParameter_Functions">
+          <AssociationSet Name="FK_FunctionParameters_Functions" Association="Self.FK_FunctionParameters_Functions">
             <End Role="Functions" EntitySet="Functions" />
-            <End Role="FunctionParameter" EntitySet="FunctionParameter" />
+            <End Role="FunctionParameters" EntitySet="FunctionParameters" />
           </AssociationSet>
-          <AssociationSet Name="FK_FunctionParameter_Parameters" Association="Self.FK_FunctionParameter_Parameters">
+          <AssociationSet Name="FK_FunctionParameters_Parameters" Association="Self.FK_FunctionParameters_Parameters">
             <End Role="Parameters" EntitySet="Parameters" />
-            <End Role="FunctionParameter" EntitySet="FunctionParameter" />
+            <End Role="FunctionParameters" EntitySet="FunctionParameters" />
           </AssociationSet>
           <AssociationSet Name="FK_FunctionReturnType_DataTypes" Association="Self.FK_FunctionReturnType_DataTypes">
             <End Role="DataTypes" EntitySet="DataTypes" />
@@ -734,6 +762,10 @@
           <AssociationSet Name="FK_Parameters_DataTypes" Association="Self.FK_Parameters_DataTypes">
             <End Role="DataTypes" EntitySet="DataTypes" />
             <End Role="Parameters" EntitySet="Parameters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ParentEntities" Association="Self.FK_ParentEntities">
+            <End Role="EntityProperties" EntitySet="EntityProperties" />
+            <End Role="EntityRelationships" EntitySet="EntityRelationships" />
           </AssociationSet>
           <AssociationSet Name="FK_PresentationProperties_EntityProperties" Association="Self.FK_PresentationProperties_EntityProperties">
             <End Role="EntityProperties" EntitySet="EntityProperties" />
@@ -814,26 +846,14 @@
           <Property Name="EntityId" Type="Int32" Nullable="false" />
           <Property Name="PropertyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Entity" Relationship="Self.FK_EntityProperties_Entities" FromRole="EntityProperties" ToRole="Entities" />
-          <NavigationProperty Name="ParentRelationships" Relationship="AmoebaDBModel.FK_ChildProperty" FromRole="EntityProperty" ToRole="EntityRelationship" />
-          <NavigationProperty Name="ChildRelationships" Relationship="AmoebaDBModel.FK_ParentProperty" FromRole="EntityProperty" ToRole="EntityRelationship" />
           <NavigationProperty Name="PresentationProperty" Relationship="AmoebaDBModel.EntityPropertyPresentationProperty" FromRole="EntityProperty" ToRole="PresentationProperty" />
           <NavigationProperty Name="DataProperties" Relationship="AmoebaDBModel.FK_DataProperties_EntityProperties1" FromRole="EntityProperty" ToRole="DataProperty" />
           <NavigationProperty Name="PresentationProperties" Relationship="AmoebaDBModel.FK_PresentationProperties_EntityProperties" FromRole="EntityProperty" ToRole="PresentationProperty" />
           <NavigationProperty Name="TestValues" Relationship="AmoebaDBModel.FK_TestData_EntityProperties" FromRole="EntityProperty" ToRole="TestValue" />
           <NavigationProperty Name="EntityViewProperties" Relationship="AmoebaDBModel.EntityViewEntityProperties" FromRole="EntityProperty" ToRole="EntityViewProperty" />
+          <NavigationProperty Name="ParentRelationships" Relationship="AmoebaDBModel.FK_ChildEntities" FromRole="EntityProperty" ToRole="EntityRelationship" />
+          <NavigationProperty Name="ChildRelationships" Relationship="AmoebaDBModel.FK_ParentEntities" FromRole="EntityProperty" ToRole="EntityRelationship" />
           </EntityType>
-        <EntityType Name="EntityRelationship">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ParentEntityPropertyId" Type="Int32" Nullable="false" />
-          <Property Name="ChildEntityPropertyId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ChildProperty" Relationship="AmoebaDBModel.FK_ChildProperty" FromRole="EntityRelationship" ToRole="EntityProperty" />
-          <NavigationProperty Name="ParentProperty" Relationship="AmoebaDBModel.FK_ParentProperty" FromRole="EntityRelationship" ToRole="EntityProperty" />
-          <Property Name="RelationshipTypeId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="RelationshipType" Relationship="AmoebaDBModel.FK_EntityRelationship_RelationshipTypes1" FromRole="EntityRelationship" ToRole="RelationshipType" />
-        </EntityType>
         <EntityType Name="ModelType">
           <Key>
             <PropertyRef Name="Id" />
@@ -886,7 +906,6 @@
           <EntitySet Name="DataTypes" EntityType="Self.DataType" />
           <EntitySet Name="Entities" EntityType="Self.Entity" />
           <EntitySet Name="EntityProperties" EntityType="Self.EntityProperty" />
-          <EntitySet Name="EntityRelationship" EntityType="Self.EntityRelationship" />
           <EntitySet Name="ModelTypes" EntityType="Self.ModelType" />
           <AssociationSet Name="FK_ApplicationEntities_Applications" Association="Self.FK_ApplicationEntities_Applications">
             <End Role="Applications" EntitySet="Applications" />
@@ -924,19 +943,7 @@
             <End Role="ModelType" EntitySet="ModelTypes" />
             <End Role="DataProperty" EntitySet="DataProperties" />
           </AssociationSet>
-          <AssociationSet Name="FK_ChildProperty" Association="AmoebaDBModel.FK_ChildProperty">
-            <End Role="EntityProperty" EntitySet="EntityProperties" />
-            <End Role="EntityRelationship" EntitySet="EntityRelationship" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ParentProperty" Association="AmoebaDBModel.FK_ParentProperty">
-            <End Role="EntityProperty" EntitySet="EntityProperties" />
-            <End Role="EntityRelationship" EntitySet="EntityRelationship" />
-          </AssociationSet>
           <EntitySet Name="RelationshipTypes" EntityType="AmoebaDBModel.RelationshipType" />
-          <AssociationSet Name="FK_EntityRelationship_RelationshipTypes1" Association="AmoebaDBModel.FK_EntityRelationship_RelationshipTypes1">
-            <End Role="RelationshipType" EntitySet="RelationshipTypes" />
-            <End Role="EntityRelationship" EntitySet="EntityRelationship" />
-          </AssociationSet>
           <EntitySet Name="PresentationProperties" EntityType="AmoebaDBModel.PresentationProperty" />
           <EntitySet Name="FunctionSets" EntityType="AmoebaDBModel.FunctionSet" />
           <AssociationSet Name="EntityPropertyPresentationProperty" Association="AmoebaDBModel.EntityPropertyPresentationProperty">
@@ -965,7 +972,6 @@
           <EntitySet Name="EntityViewPropertyFunctions" EntityType="AmoebaDBModel.EntityViewPropertyFunction" />
           <EntitySet Name="EntityViewPropertyFunctionParameter" EntityType="AmoebaDBModel.EntityViewPropertyFunctionParameter" />
           <EntitySet Name="FunctionBodies" EntityType="AmoebaDBModel.FunctionBody" />
-          <EntitySet Name="FunctionParameter" EntityType="AmoebaDBModel.FunctionParameter" />
           <EntitySet Name="Functions" EntityType="AmoebaDBModel.Function" />
           <EntitySet Name="FunctionSetFunctions" EntityType="AmoebaDBModel.FunctionSetFunction" />
           <EntitySet Name="Operators" EntityType="AmoebaDBModel.Operator" />
@@ -982,21 +988,9 @@
             <End Role="EntityViewPropertyFunction" EntitySet="EntityViewPropertyFunctions" />
             <End Role="EntityViewPropertyFunctionParameter" EntitySet="EntityViewPropertyFunctionParameter" />
           </AssociationSet>
-          <AssociationSet Name="FK_EntityViewPropertyFunctionParameter_FunctionParameter" Association="AmoebaDBModel.FK_EntityViewPropertyFunctionParameter_FunctionParameter">
-            <End Role="FunctionParameter" EntitySet="FunctionParameter" />
-            <End Role="EntityViewPropertyFunctionParameter" EntitySet="EntityViewPropertyFunctionParameter" />
-          </AssociationSet>
           <AssociationSet Name="FK_FunctionBody_Functions" Association="AmoebaDBModel.FK_FunctionBody_Functions">
             <End Role="Function" EntitySet="Functions" />
             <End Role="FunctionBody" EntitySet="FunctionBodies" />
-          </AssociationSet>
-          <AssociationSet Name="FK_FunctionParameter_Functions" Association="AmoebaDBModel.FK_FunctionParameter_Functions">
-            <End Role="Function" EntitySet="Functions" />
-            <End Role="FunctionParameter" EntitySet="FunctionParameter" />
-          </AssociationSet>
-          <AssociationSet Name="FK_FunctionParameter_Parameters" Association="AmoebaDBModel.FK_FunctionParameter_Parameters">
-            <End Role="Parameter" EntitySet="Parameters" />
-            <End Role="FunctionParameter" EntitySet="FunctionParameter" />
           </AssociationSet>
           <AssociationSet Name="FK_Parameters_DataTypes" Association="AmoebaDBModel.FK_Parameters_DataTypes">
             <End Role="DataType" EntitySet="DataTypes" />
@@ -1027,6 +1021,32 @@
           <AssociationSet Name="EntityViewViewProperties" Association="AmoebaDBModel.EntityViewViewProperties">
             <End Role="EntityViewProperty" EntitySet="EntityViewProperties" />
             <End Role="EntityViewProperty1" EntitySet="EntityViewProperties" />
+          </AssociationSet>
+          <EntitySet Name="FunctionParameters" EntityType="AmoebaDBModel.FunctionParameter" />
+          <AssociationSet Name="FK_EntityViewPropertyFunctionParameter_FunctionParameters" Association="AmoebaDBModel.FK_EntityViewPropertyFunctionParameter_FunctionParameters">
+            <End Role="FunctionParameter" EntitySet="FunctionParameters" />
+            <End Role="EntityViewPropertyFunctionParameter" EntitySet="EntityViewPropertyFunctionParameter" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FunctionParameters_Functions" Association="AmoebaDBModel.FK_FunctionParameters_Functions">
+            <End Role="Function" EntitySet="Functions" />
+            <End Role="FunctionParameter" EntitySet="FunctionParameters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FunctionParameters_Parameters" Association="AmoebaDBModel.FK_FunctionParameters_Parameters">
+            <End Role="Parameter" EntitySet="Parameters" />
+            <End Role="FunctionParameter" EntitySet="FunctionParameters" />
+          </AssociationSet>
+          <EntitySet Name="EntityRelationships" EntityType="AmoebaDBModel.EntityRelationship" />
+          <AssociationSet Name="FK_EntityRelationships_RelationshipTypes" Association="AmoebaDBModel.FK_EntityRelationships_RelationshipTypes">
+            <End Role="RelationshipType" EntitySet="RelationshipTypes" />
+            <End Role="EntityRelationship" EntitySet="EntityRelationships" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChildEntities" Association="AmoebaDBModel.FK_ChildEntities">
+            <End Role="EntityProperty" EntitySet="EntityProperties" />
+            <End Role="EntityRelationship" EntitySet="EntityRelationships" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ParentEntities" Association="AmoebaDBModel.FK_ParentEntities">
+            <End Role="EntityProperty" EntitySet="EntityProperties" />
+            <End Role="EntityRelationship" EntitySet="EntityRelationships" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="Setting">
@@ -1133,50 +1153,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ChildProperty">
-          <End Type="AmoebaDBModel.EntityProperty" Role="EntityProperty" Multiplicity="1" />
-          <End Type="AmoebaDBModel.EntityRelationship" Role="EntityRelationship" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="EntityProperty">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="EntityRelationship">
-              <PropertyRef Name="ChildEntityPropertyId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ParentProperty">
-          <End Type="AmoebaDBModel.EntityProperty" Role="EntityProperty" Multiplicity="1" />
-          <End Type="AmoebaDBModel.EntityRelationship" Role="EntityRelationship" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="EntityProperty">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="EntityRelationship">
-              <PropertyRef Name="ParentEntityPropertyId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="RelationshipType">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="EntityRelationship1" Relationship="AmoebaDBModel.FK_EntityRelationship_RelationshipTypes1" FromRole="RelationshipType" ToRole="EntityRelationship" />
+          <NavigationProperty Name="EntityRelationships" Relationship="AmoebaDBModel.FK_EntityRelationships_RelationshipTypes" FromRole="RelationshipType" ToRole="EntityRelationship" />
         </EntityType>
-        <Association Name="FK_EntityRelationship_RelationshipTypes1">
-          <End Type="AmoebaDBModel.RelationshipType" Role="RelationshipType" Multiplicity="1" />
-          <End Type="AmoebaDBModel.EntityRelationship" Role="EntityRelationship" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="RelationshipType">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="EntityRelationship">
-              <PropertyRef Name="RelationshipTypeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="PresentationProperty">
           <Key>
             <PropertyRef Name="Id" />
@@ -1308,7 +1292,7 @@
           <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="FunctionParameterId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="EntityViewPropertyFunction" Relationship="AmoebaDBModel.FK_EntityViewPropertyFunctionParameter_EntityViewPropertyFunction" FromRole="EntityViewPropertyFunctionParameter" ToRole="EntityViewPropertyFunction" />
-          <NavigationProperty Name="FunctionParameter" Relationship="AmoebaDBModel.FK_EntityViewPropertyFunctionParameter_FunctionParameter" FromRole="EntityViewPropertyFunctionParameter" ToRole="FunctionParameter" />
+          <NavigationProperty Name="FunctionParameter" Relationship="AmoebaDBModel.FK_EntityViewPropertyFunctionParameter_FunctionParameters" FromRole="EntityViewPropertyFunctionParameter" ToRole="FunctionParameter" />
         </EntityType>
         <EntityType Name="FunctionBody">
           <Key>
@@ -1318,17 +1302,6 @@
           <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Function" Relationship="AmoebaDBModel.FK_FunctionBody_Functions" FromRole="FunctionBody" ToRole="Function" />
         </EntityType>
-        <EntityType Name="FunctionParameter">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FunctionId" Type="Int32" Nullable="false" />
-          <Property Name="ParameterId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="EntityViewPropertyFunctionParameter" Relationship="AmoebaDBModel.FK_EntityViewPropertyFunctionParameter_FunctionParameter" FromRole="FunctionParameter" ToRole="EntityViewPropertyFunctionParameter" />
-          <NavigationProperty Name="Function" Relationship="AmoebaDBModel.FK_FunctionParameter_Functions" FromRole="FunctionParameter" ToRole="Function" />
-          <NavigationProperty Name="Parameter" Relationship="AmoebaDBModel.FK_FunctionParameter_Parameters" FromRole="FunctionParameter" ToRole="Parameter" />
-        </EntityType>
         <EntityType Name="Function">
           <Key>
             <PropertyRef Name="Id" />
@@ -1337,8 +1310,8 @@
           <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="EntityViewPropertyFunctions" Relationship="AmoebaDBModel.FK_EntityViewPropertyFunction_Functions" FromRole="Function" ToRole="EntityViewPropertyFunction" />
           <NavigationProperty Name="FunctionBody" Relationship="AmoebaDBModel.FK_FunctionBody_Functions" FromRole="Function" ToRole="FunctionBody" />
-          <NavigationProperty Name="FunctionParameter" Relationship="AmoebaDBModel.FK_FunctionParameter_Functions" FromRole="Function" ToRole="FunctionParameter" />
           <NavigationProperty Name="ReturnDataType" Relationship="AmoebaDBModel.FK_FunctionReturnType_Functions" FromRole="Function" ToRole="FunctionReturnType" />
+          <NavigationProperty Name="FunctionParameters" Relationship="AmoebaDBModel.FK_FunctionParameters_Functions" FromRole="Function" ToRole="FunctionParameter" />
         </EntityType>
         <EntityType Name="FunctionSetFunction">
           <Key>
@@ -1361,9 +1334,9 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="FunctionParameter" Relationship="AmoebaDBModel.FK_FunctionParameter_Parameters" FromRole="Parameter" ToRole="FunctionParameter" />
           <Property Name="DataTypeId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="DataType" Relationship="AmoebaDBModel.FK_Parameters_DataTypes" FromRole="Parameter" ToRole="DataType" />
+          <NavigationProperty Name="FunctionParameters" Relationship="AmoebaDBModel.FK_FunctionParameters_Parameters" FromRole="Parameter" ToRole="FunctionParameter" />
         </EntityType>
         <Association Name="FK_EntityView_Entities">
           <End Type="AmoebaDBModel.Entity" Role="Entity" Multiplicity="1" />
@@ -1401,18 +1374,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_EntityViewPropertyFunctionParameter_FunctionParameter">
-          <End Type="AmoebaDBModel.FunctionParameter" Role="FunctionParameter" Multiplicity="1" />
-          <End Type="AmoebaDBModel.EntityViewPropertyFunctionParameter" Role="EntityViewPropertyFunctionParameter" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="FunctionParameter">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="EntityViewPropertyFunctionParameter">
-              <PropertyRef Name="FunctionParameterId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_FunctionBody_Functions">
           <End Type="AmoebaDBModel.Function" Role="Function" Multiplicity="1" />
           <End Type="AmoebaDBModel.FunctionBody" Role="FunctionBody" Multiplicity="0..1" />
@@ -1422,30 +1383,6 @@
             </Principal>
             <Dependent Role="FunctionBody">
               <PropertyRef Name="Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_FunctionParameter_Functions">
-          <End Type="AmoebaDBModel.Function" Role="Function" Multiplicity="1" />
-          <End Type="AmoebaDBModel.FunctionParameter" Role="FunctionParameter" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Function">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="FunctionParameter">
-              <PropertyRef Name="FunctionId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_FunctionParameter_Parameters">
-          <End Type="AmoebaDBModel.Parameter" Role="Parameter" Multiplicity="1" />
-          <End Type="AmoebaDBModel.FunctionParameter" Role="FunctionParameter" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Parameter">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="FunctionParameter">
-              <PropertyRef Name="ParameterId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1543,6 +1480,103 @@
           <End Type="AmoebaDBModel.EntityViewProperty" Role="EntityViewProperty" Multiplicity="*" />
           <End Type="AmoebaDBModel.EntityViewProperty" Role="EntityViewProperty1" Multiplicity="0..1" />
         </Association>
+        <EntityType Name="FunctionParameter">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FunctionId" Type="Int32" Nullable="false" />
+          <Property Name="ParameterId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="EntityViewPropertyFunctionParameters" Relationship="AmoebaDBModel.FK_EntityViewPropertyFunctionParameter_FunctionParameters" FromRole="FunctionParameter" ToRole="EntityViewPropertyFunctionParameter" />
+          <NavigationProperty Name="Function" Relationship="AmoebaDBModel.FK_FunctionParameters_Functions" FromRole="FunctionParameter" ToRole="Function" />
+          <NavigationProperty Name="Parameter" Relationship="AmoebaDBModel.FK_FunctionParameters_Parameters" FromRole="FunctionParameter" ToRole="Parameter" />
+        </EntityType>
+        <Association Name="FK_EntityViewPropertyFunctionParameter_FunctionParameters">
+          <End Type="AmoebaDBModel.FunctionParameter" Role="FunctionParameter" Multiplicity="1" />
+          <End Type="AmoebaDBModel.EntityViewPropertyFunctionParameter" Role="EntityViewPropertyFunctionParameter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FunctionParameter">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EntityViewPropertyFunctionParameter">
+              <PropertyRef Name="FunctionParameterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FunctionParameters_Functions">
+          <End Type="AmoebaDBModel.Function" Role="Function" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="AmoebaDBModel.FunctionParameter" Role="FunctionParameter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Function">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FunctionParameter">
+              <PropertyRef Name="FunctionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FunctionParameters_Parameters">
+          <End Type="AmoebaDBModel.Parameter" Role="Parameter" Multiplicity="1" />
+          <End Type="AmoebaDBModel.FunctionParameter" Role="FunctionParameter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parameter">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FunctionParameter">
+              <PropertyRef Name="ParameterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="EntityRelationship">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ParentEntityPropertyId" Type="Int32" Nullable="false" />
+          <Property Name="ChildEntityPropertyId" Type="Int32" Nullable="false" />
+          <Property Name="RelationshipTypeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="RelationshipType" Relationship="AmoebaDBModel.FK_EntityRelationships_RelationshipTypes" FromRole="EntityRelationship" ToRole="RelationshipType" />
+          <NavigationProperty Name="ChildProperty" Relationship="AmoebaDBModel.FK_ChildEntities" FromRole="EntityRelationship" ToRole="EntityProperty" />
+          <NavigationProperty Name="ParentProperty" Relationship="AmoebaDBModel.FK_ParentEntities" FromRole="EntityRelationship" ToRole="EntityProperty" />
+        </EntityType>
+        <Association Name="FK_EntityRelationships_RelationshipTypes">
+          <End Type="AmoebaDBModel.RelationshipType" Role="RelationshipType" Multiplicity="1" />
+          <End Type="AmoebaDBModel.EntityRelationship" Role="EntityRelationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RelationshipType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EntityRelationship">
+              <PropertyRef Name="RelationshipTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChildEntities">
+          <End Type="AmoebaDBModel.EntityProperty" Role="EntityProperty" Multiplicity="1" />
+          <End Type="AmoebaDBModel.EntityRelationship" Role="EntityRelationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EntityProperty">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EntityRelationship">
+              <PropertyRef Name="ChildEntityPropertyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ParentEntities">
+          <End Type="AmoebaDBModel.EntityProperty" Role="EntityProperty" Multiplicity="1" />
+          <End Type="AmoebaDBModel.EntityRelationship" Role="EntityRelationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EntityProperty">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EntityRelationship">
+              <PropertyRef Name="ParentEntityPropertyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1592,16 +1626,6 @@
                 <ScalarProperty Name="PropertyName" ColumnName="PropertyName" />
                 <ScalarProperty Name="EntityId" ColumnName="EntityId" />
               </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="EntityRelationship">
-            <EntityTypeMapping TypeName="AmoebaDBModel.EntityRelationship">
-              <MappingFragment StoreEntitySet="EntityRelationship">
-                <ScalarProperty Name="RelationshipTypeId" ColumnName="RelationshipTypeId" />
-                <ScalarProperty Name="ChildEntityPropertyId" ColumnName="ChildEntityPropertyId" />
-                <ScalarProperty Name="ParentEntityPropertyId" ColumnName="ParentEntityPropertyId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ModelTypes">
@@ -1730,15 +1754,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="FunctionParameter">
-            <EntityTypeMapping TypeName="AmoebaDBModel.FunctionParameter">
-              <MappingFragment StoreEntitySet="FunctionParameter">
-                <ScalarProperty Name="ParameterId" ColumnName="ParameterId" />
-                <ScalarProperty Name="FunctionId" ColumnName="FunctionId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Functions">
             <EntityTypeMapping TypeName="AmoebaDBModel.Function">
               <MappingFragment StoreEntitySet="Functions">
@@ -1808,6 +1823,25 @@
             </EndProperty>
             <Condition ColumnName="EntityViewPropertyId" IsNull="false" />
           </AssociationSetMapping>
+          <EntitySetMapping Name="FunctionParameters">
+            <EntityTypeMapping TypeName="AmoebaDBModel.FunctionParameter">
+              <MappingFragment StoreEntitySet="FunctionParameters">
+                <ScalarProperty Name="ParameterId" ColumnName="ParameterId" />
+                <ScalarProperty Name="FunctionId" ColumnName="FunctionId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EntityRelationships">
+            <EntityTypeMapping TypeName="AmoebaDBModel.EntityRelationship">
+              <MappingFragment StoreEntitySet="EntityRelationships">
+                <ScalarProperty Name="RelationshipTypeId" ColumnName="RelationshipTypeId" />
+                <ScalarProperty Name="ChildEntityPropertyId" ColumnName="ChildEntityPropertyId" />
+                <ScalarProperty Name="ParentEntityPropertyId" ColumnName="ParentEntityPropertyId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
