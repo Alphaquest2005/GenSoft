@@ -87,7 +87,6 @@
     <Compile Include="FooterViewModel.cs" />
     <Compile Include="HeaderViewModel.cs" />
     <Compile Include="EntityDetailsModel.cs" />
-    <Compile Include="CacheViewModel.cs" />
     <Compile Include="SummaryViewModel.cs" />
     <Compile Include="System ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

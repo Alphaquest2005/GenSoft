@@ -147,25 +147,7 @@ namespace RevolutionData
                             }
                         }),
 
-                    new ViewEventSubscription<IScreenModel, IViewModelCreated<IViewModel>>(
-                        "ScreenViewModel-ICurrentEntityChanged", processId, e => e != null,
-                        new List<Func<IScreenModel, IViewModelCreated<IViewModel>, bool>>
-                        {
-                            (s, e) => s.Process.Id != e.ViewModel.Process.Id &&
-                                      e.ViewModel.Orientation == typeof(ICacheViewModel)
-                        }, (s, e) =>
-                        {
-                           if (Application.Current == null)
-                            {
-                                
-                                s.CacheViewModels.Add(e.ViewModel);
-                            }
-                            else
-                            {
-                                Application.Current.Dispatcher.BeginInvoke(
-                                    new Action(() => s.CacheViewModels.Add(e.ViewModel)));
-                            }
-                        }),
+                    
 
                     new ViewEventSubscription<IScreenModel, ICleanUpSystemProcess>(
                         "ScreenViewModel-ICleanUpSystemProcess",

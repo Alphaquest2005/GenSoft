@@ -84,7 +84,6 @@
     <Compile Include="Interfaces\ISigninViewModel.cs" />
     <Compile Include="ProcessViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModelInfo\CachedViewModelInfo.cs" />
     <Compile Include="ViewModelInfo\ViewModelInfoExtensions.cs" />
     <Compile Include="ViewModelInfo\EntityDetailsViewModelInfo.cs" />
     <Compile Include="ViewModelInfo\SummaryListViewModelInfo.cs" />

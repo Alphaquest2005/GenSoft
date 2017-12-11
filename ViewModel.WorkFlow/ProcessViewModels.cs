@@ -56,26 +56,7 @@ namespace ViewModel.WorkFlow
                         
                     }
                 },
-                { "CachedViewModel", (v, vp) =>
-                {
-                    try
-                    {
-
-                        return CachedViewModelInfo.CachedViewModel(v.SystemProcessId,
-                            DynamicEntityType.DynamicEntityTypes[v.EntityTypeName],v.RelationshipOrdinality, v.Symbol,
-                            v.Description, v.Priority,
-                            viewRelationships: v.EntityViewModelRelationships,
-
-                            viewCommands: v.EntityTypeViewModelCommands,
-                            displayProperties: vp);
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(e);
-                        throw;
-                    }
-
-                }},
+               
             };
 
 
