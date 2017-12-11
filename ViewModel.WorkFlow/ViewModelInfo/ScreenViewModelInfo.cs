@@ -118,7 +118,8 @@ namespace RevolutionData
                         "ScreenViewModel-ICurrentEntityChanged", processId, e => e != null,
                         new List<Func<IScreenModel, IViewModelCreated<IViewModel>, bool>>
                         {
-                            (s, e) => e.ViewModel.Orientation == typeof(IBodyViewModel)
+                            (s, e) => e.Process.Id != s.Process.Id &&
+                                    e.ViewModel.Orientation == typeof(IBodyViewModel)
                         }, (s, e) =>
                         {
                             if (Application.Current == null)
