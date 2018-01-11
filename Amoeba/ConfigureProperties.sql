@@ -1,19 +1,10 @@
 
 
-
-SELECT        ChildEntityId
-FROM            EntityRelationsView
-WHERE        (Relationship = 'One-Many') AND (ChildEntity = 'BranchCurrentPayrollJob')
-
-SELECT        Application, Id, Attribute, Type
-FROM            EntityTypeAttributesView
-WHERE        (Type = 'BranchCurrentPayrollJob')
-
 ---- Set Lookup Textblock for entities
-delete from EntityTypePresentationProperty where ViewPropertyPresentationPropertyTypeId = 9
+delete from EntityTypePresentationProperty 
 
-insert into EntityTypePresentationProperty(ViewPropertyPresentationPropertyTypeId, PresentationThemeId,ValueOptionId,ViewTypeId,EntityTypeAttributeId)
-SELECT        [ConfigurationPropertyPresentation].ViewPropertyPresentationPropertyTypeId, [ConfigurationPropertyPresentation].PresentationThemeId, [ConfigurationPropertyPresentation].ValueOptionId, 
+insert into EntityTypePresentationProperty(ViewPropertyPresentationPropertyTypeId, PresentationThemeId,ViewTypeId,EntityTypeAttributeId)
+SELECT        [ConfigurationPropertyPresentation].ViewPropertyPresentationPropertyTypeId, [ConfigurationPropertyPresentation].PresentationThemeId,  
                          [ConfigurationPropertyPresentation].ViewTypeId, t.ChildEntityId
 FROM            [ConfigurationPropertyPresentation] CROSS JOIN
                          (SELECT        ChildEntityId
@@ -21,9 +12,16 @@ FROM            EntityRelationsView
 WHERE        (Relationship = 'One-Many')) t
 where [ConfigurationPropertyPresentation].Id = 1
 
+insert into PropertyValueOption(Id, ValueOptionId)
+SELECT        EntityTypePresentationProperty.Id, ConfigurationPropertyPresentation.ValueOptionId
+FROM            EntityTypePresentationProperty INNER JOIN
+                         ConfigurationPropertyPresentation ON EntityTypePresentationProperty.ViewPropertyPresentationPropertyTypeId = ConfigurationPropertyPresentation.ViewPropertyPresentationPropertyTypeId AND 
+                         EntityTypePresentationProperty.ViewTypeId = ConfigurationPropertyPresentation.ViewTypeId
+WHERE        (EntityTypePresentationProperty.ViewPropertyPresentationPropertyTypeId = 9) AND (EntityTypePresentationProperty.ViewTypeId = 1)
+
 ------- set ID Label invisible
-insert into EntityTypePresentationProperty(ViewPropertyPresentationPropertyTypeId, PresentationThemeId,ValueOptionId,ViewTypeId,EntityTypeAttributeId)
-SELECT        [ConfigurationPropertyPresentation].ViewPropertyPresentationPropertyTypeId, [ConfigurationPropertyPresentation].PresentationThemeId, [ConfigurationPropertyPresentation].ValueOptionId, 
+insert into EntityTypePresentationProperty(ViewPropertyPresentationPropertyTypeId, PresentationThemeId,ViewTypeId,EntityTypeAttributeId)
+SELECT        [ConfigurationPropertyPresentation].ViewPropertyPresentationPropertyTypeId, [ConfigurationPropertyPresentation].PresentationThemeId, 
                          [ConfigurationPropertyPresentation].ViewTypeId, t.Id
 FROM            [ConfigurationPropertyPresentation] CROSS JOIN
                          (SELECT        EntityTypeAttributes.Id
@@ -33,9 +31,16 @@ WHERE        (Attributes.Name = 'Id')) t
 where [ConfigurationPropertyPresentation].Id = 2
 
 
+insert into PropertyValueOption(Id, ValueOptionId)
+SELECT        EntityTypePresentationProperty.Id, ConfigurationPropertyPresentation.ValueOptionId
+FROM            EntityTypePresentationProperty INNER JOIN
+                         ConfigurationPropertyPresentation ON EntityTypePresentationProperty.ViewPropertyPresentationPropertyTypeId = ConfigurationPropertyPresentation.ViewPropertyPresentationPropertyTypeId AND 
+                         EntityTypePresentationProperty.ViewTypeId = ConfigurationPropertyPresentation.ViewTypeId
+WHERE        (ConfigurationPropertyPresentation.Id = 2)
+
 ------- set ID Label invisible
-insert into EntityTypePresentationProperty(ViewPropertyPresentationPropertyTypeId, PresentationThemeId,ValueOptionId,ViewTypeId,EntityTypeAttributeId)
-SELECT        [ConfigurationPropertyPresentation].ViewPropertyPresentationPropertyTypeId, [ConfigurationPropertyPresentation].PresentationThemeId, [ConfigurationPropertyPresentation].ValueOptionId, 
+insert into EntityTypePresentationProperty(ViewPropertyPresentationPropertyTypeId, PresentationThemeId,ViewTypeId,EntityTypeAttributeId)
+SELECT        [ConfigurationPropertyPresentation].ViewPropertyPresentationPropertyTypeId, [ConfigurationPropertyPresentation].PresentationThemeId, 
                          [ConfigurationPropertyPresentation].ViewTypeId, t.Id
 FROM            [ConfigurationPropertyPresentation] CROSS JOIN
                          (SELECT        EntityTypeAttributes.Id
@@ -44,9 +49,16 @@ FROM            EntityTypeAttributes INNER JOIN
 WHERE        (Attributes.Name = 'Id')) t
 where [ConfigurationPropertyPresentation].Id = 3
 
+insert into PropertyValueOption(Id, ValueOptionId)
+SELECT        EntityTypePresentationProperty.Id, ConfigurationPropertyPresentation.ValueOptionId
+FROM            EntityTypePresentationProperty INNER JOIN
+                         ConfigurationPropertyPresentation ON EntityTypePresentationProperty.ViewPropertyPresentationPropertyTypeId = ConfigurationPropertyPresentation.ViewPropertyPresentationPropertyTypeId AND 
+                         EntityTypePresentationProperty.ViewTypeId = ConfigurationPropertyPresentation.ViewTypeId
+WHERE        (ConfigurationPropertyPresentation.Id = 3)
+
 ------- set ID Label invisible
-insert into EntityTypePresentationProperty(ViewPropertyPresentationPropertyTypeId, PresentationThemeId,ValueOptionId,ViewTypeId,EntityTypeAttributeId)
-SELECT        [ConfigurationPropertyPresentation].ViewPropertyPresentationPropertyTypeId, [ConfigurationPropertyPresentation].PresentationThemeId, [ConfigurationPropertyPresentation].ValueOptionId, 
+insert into EntityTypePresentationProperty(ViewPropertyPresentationPropertyTypeId, PresentationThemeId,ViewTypeId,EntityTypeAttributeId)
+SELECT        [ConfigurationPropertyPresentation].ViewPropertyPresentationPropertyTypeId, [ConfigurationPropertyPresentation].PresentationThemeId, 
                          [ConfigurationPropertyPresentation].ViewTypeId, t.Id
 FROM            [ConfigurationPropertyPresentation] CROSS JOIN
                          (SELECT        EntityTypeAttributes.Id
@@ -55,10 +67,16 @@ FROM            EntityTypeAttributes INNER JOIN
 WHERE        (Attributes.Name = 'Id')) t
 where [ConfigurationPropertyPresentation].Id = 4
 
+insert into PropertyValueOption(Id, ValueOptionId)
+SELECT        EntityTypePresentationProperty.Id, ConfigurationPropertyPresentation.ValueOptionId
+FROM            EntityTypePresentationProperty INNER JOIN
+                         ConfigurationPropertyPresentation ON EntityTypePresentationProperty.ViewPropertyPresentationPropertyTypeId = ConfigurationPropertyPresentation.ViewPropertyPresentationPropertyTypeId AND 
+                         EntityTypePresentationProperty.ViewTypeId = ConfigurationPropertyPresentation.ViewTypeId
+WHERE        (ConfigurationPropertyPresentation.Id = 4)
 
 ------- set ID Label invisible
-insert into EntityTypePresentationProperty(ViewPropertyPresentationPropertyTypeId, PresentationThemeId,ValueOptionId,ViewTypeId,EntityTypeAttributeId)
-SELECT        [ConfigurationPropertyPresentation].ViewPropertyPresentationPropertyTypeId, [ConfigurationPropertyPresentation].PresentationThemeId, [ConfigurationPropertyPresentation].ValueOptionId, 
+insert into EntityTypePresentationProperty(ViewPropertyPresentationPropertyTypeId, PresentationThemeId,ViewTypeId,EntityTypeAttributeId)
+SELECT        [ConfigurationPropertyPresentation].ViewPropertyPresentationPropertyTypeId, [ConfigurationPropertyPresentation].PresentationThemeId,
                          [ConfigurationPropertyPresentation].ViewTypeId, t.Id
 FROM            [ConfigurationPropertyPresentation] CROSS JOIN
                          (SELECT        EntityTypeAttributes.Id
@@ -66,6 +84,13 @@ FROM            EntityTypeAttributes INNER JOIN
                          Attributes ON EntityTypeAttributes.AttributeId = Attributes.Id
 WHERE        (Attributes.Name = 'Id')) t
 where [ConfigurationPropertyPresentation].Id = 5
+
+insert into PropertyValueOption(Id, ValueOptionId)
+SELECT        EntityTypePresentationProperty.Id, ConfigurationPropertyPresentation.ValueOptionId
+FROM            EntityTypePresentationProperty INNER JOIN
+                         ConfigurationPropertyPresentation ON EntityTypePresentationProperty.ViewPropertyPresentationPropertyTypeId = ConfigurationPropertyPresentation.ViewPropertyPresentationPropertyTypeId AND 
+                         EntityTypePresentationProperty.ViewTypeId = ConfigurationPropertyPresentation.ViewTypeId
+WHERE        (ConfigurationPropertyPresentation.Id = 5)
 
 insert into EntityTypeAttributeCache(Id)
 SELECT        EntityTypeAttributes.Id

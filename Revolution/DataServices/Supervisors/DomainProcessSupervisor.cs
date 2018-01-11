@@ -35,12 +35,13 @@ using IUser = SystemInterfaces.IUser;
 using ProcessAction = GenSoft.Entities.ProcessAction;
 using SystemProcess = RevolutionEntities.Process.SystemProcess;
 using DomainUtilities;
+using Application = GenSoft.Entities.Application;
 
 namespace DataServices.Actors
 {
     public class DomainProcessSupervisor : BaseSupervisor<DomainProcessSupervisor>
     {
-        private IUntypedActorContext ctx = null;
+        private IUntypedActorContext actorCtx = null;
        
 
         public static Dictionary<string, ComplexEventAction> ComplexEventActions { get; } = new Dictionary<string, ComplexEventAction>();
@@ -59,46 +60,113 @@ namespace DataServices.Actors
 
         static int maxProcessId = 0;
 
-        public DomainProcessSupervisor(bool autoRun, ISystemProcess process) : base(process)
+        
+         private static Application CurrentApplication { get; set; }  
+        
+
+        private void OnCurrentApplicationChanged(ICurrentEntityChanged currentEntityChanged)
         {
-            
-            
-            BuildExpressions();
-            List<EntityType> mainEntities;
-            
+            if (currentEntityChanged.Entity == null) return;
+            if (CurrentApplication?.Id == currentEntityChanged.Entity.Id) return;
             using (var ctx = new GenSoftDBContext())
             {
-                maxProcessId = ctx.SystemProcess.Max(x => x.Id);
+                CurrentApplication = ctx.Application.Include(x => x.DatabaseInfo)
+                    .First(x => x.Id == currentEntityChanged.Entity.Id);
+            }
+            LoadProcesses();
+        }
 
-               _domainProcessLst = ctx.DomainProcess
-                        .Include(x => x.SystemProcess)
-                        .Include(x => x.ProcessStep).ThenInclude(x => x.MainEntity.EntityType.Type)
-                        .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ActionTrigger)
-                        .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents).ThenInclude(x => x.ExpectedEvents.EventType.Type)
-                        .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents).ThenInclude(x => x.StateEventInfo.StateInfo)
-                        .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents).ThenInclude(x => x.ExpectedEvents.ExpectedEventPredicateParameters).ThenInclude(x => x.EventPredicates)
-                        .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents).ThenInclude(x => x.ExpectedEvents.ExpectedEventPredicateParameters).ThenInclude(x => x.ExpectedEventConstants)
-                        .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents).ThenInclude(x => x.ExpectedEvents.EventType.EventPredicates).ThenInclude(x => x.Predicates.PredicateParameters).ThenInclude(x => x.ExpectedEventPredicateParameters)
-                        .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents).ThenInclude(x => x.ExpectedEvents.EventType.EventPredicates).ThenInclude(x => x.Predicates.PredicateParameters).ThenInclude(x => x.Parameters).ThenInclude(x => x.DataType.Type)
-                        .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.EventType.Type)
-                    .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ComplexEventAction).ThenInclude(x => x.ProcessStepComplexActions)
-                    .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ProcessAction.Action.ActionParameters)
-                   .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ProcessAction.Action.ActionParameters).ThenInclude(x => x.Parameters).ThenInclude(x => x.DataType.Type)
-                   .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ProcessAction.Action.ActionReferenceTypes)
-                   .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ProcessAction.Action.ActionReferenceTypes).ThenInclude(x => x.ReferenceTypes.DataType.Type)
-                   .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ProcessAction.Action.ActionReferenceTypes).ThenInclude(x => x.ReferenceTypes.ReferenceTypeName)
-                   .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ProcessAction.ProcessActionStateCommandInfo.StateCommandInfo.StateInfo)
-                        .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
-                        .Where(x => x.ProcessStep.Any()).ToList();
+        public DomainProcessSupervisor(bool autoRun, ISystemProcess process) : base(process)
+        {
+            EventMessageBus.Current.GetEvent<ICurrentEntityChanged>(Source).Where(x => x.EntityType.Name == "Application").Subscribe(OnCurrentApplicationChanged);
+
+            BuildExpressions();
+            
+            EventMessageBus.Current.GetEvent<IStartSystemProcess>(Source).Where(x => autoRun && x.ProcessToBeStartedId == RevolutionData.ProcessActions.NullProcess).Subscribe(x => StartParentProcess(x.Process.Id, x.User));
+            EventMessageBus.Current.GetEvent<IStartSystemProcess>(Source).Where(x => !autoRun && x.ProcessToBeStartedId != RevolutionData.ProcessActions.NullProcess).Subscribe(x => StartProcess(x.ProcessToBeStartedId, x.User));
+
+            EventMessageBus.Current.GetEvent<IMainEntityChanged>(Source).Subscribe(OnMainEntityChanged);
+           
+
+            actorCtx = Context;
+        }
+
+        private void LoadProcesses()
+        {
+            List<EntityType> mainEntities;
+            ProcessComplexEvents.Clear();
+            ProcessViewModelInfos.Clear();
+
+            using (var ctx = new GenSoftDBContext())
+            {
+                if(maxProcessId == 0) maxProcessId = ctx.SystemProcess.Max(x => x.Id);
+
+                _domainProcessLst = ctx.DomainProcess
+                    .Include(x => x.SystemProcess)
+                    .Include(x => x.ProcessStep).ThenInclude(x => x.MainEntity.EntityType.Type)
+                    .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions)
+                    .ThenInclude(x => x.ComplexEventAction.ActionTrigger)
+                    .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions)
+                    .ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents)
+                    .ThenInclude(x => x.ExpectedEvents.EventType.Type)
+                    .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions)
+                    .ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents)
+                    .ThenInclude(x => x.StateEventInfo.StateInfo)
+                    .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions)
+                    .ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents)
+                    .ThenInclude(x => x.ExpectedEvents.ExpectedEventPredicateParameters).ThenInclude(x => x.EventPredicates)
+                    .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions)
+                    .ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents)
+                    .ThenInclude(x => x.ExpectedEvents.ExpectedEventPredicateParameters)
+                    .ThenInclude(x => x.ExpectedEventConstants)
+                    .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions)
+                    .ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents)
+                    .ThenInclude(x => x.ExpectedEvents.EventType.EventPredicates)
+                    .ThenInclude(x => x.Predicates.PredicateParameters).ThenInclude(x => x.ExpectedEventPredicateParameters)
+                    .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions)
+                    .ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents)
+                    .ThenInclude(x => x.ExpectedEvents.EventType.EventPredicates)
+                    .ThenInclude(x => x.Predicates.PredicateParameters).ThenInclude(x => x.Parameters)
+                    .ThenInclude(x => x.DataType.Type)
+                    .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions)
+                    .ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.EventType.Type)
+                    .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions)
+                    .ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions)
+                    .ThenInclude(x => x.ComplexEventAction).ThenInclude(x => x.ProcessStepComplexActions)
+                    .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions)
+                    .ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions)
+                    .ThenInclude(x => x.ProcessAction.Action.ActionParameters)
+                    .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions)
+                    .ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions)
+                    .ThenInclude(x => x.ProcessAction.Action.ActionParameters).ThenInclude(x => x.Parameters)
+                    .ThenInclude(x => x.DataType.Type)
+                    .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions)
+                    .ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions)
+                    .ThenInclude(x => x.ProcessAction.Action.ActionReferenceTypes)
+                    .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions)
+                    .ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions)
+                    .ThenInclude(x => x.ProcessAction.Action.ActionReferenceTypes)
+                    .ThenInclude(x => x.ReferenceTypes.DataType.Type)
+                    .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions)
+                    .ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions)
+                    .ThenInclude(x => x.ProcessAction.Action.ActionReferenceTypes)
+                    .ThenInclude(x => x.ReferenceTypes.ReferenceTypeName)
+                    .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions)
+                    .ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x =>
+                        x.ProcessAction.ProcessActionStateCommandInfo.StateCommandInfo.StateInfo)
+                    .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
+                    .Where(x => x.ProcessStep.Any(z => z.MainEntity != null))
+                    .Where(x => x.ApplicationId == CurrentApplication.Id)
+                    .ToList();
                 if (!_domainProcessLst.Any())
                 {
                     DomainProcess domainProcess;
                     SystemProcess systemProcess;
                     maxProcessId += 1;
-                    
+
                     systemProcess = new SystemProcess(
-                        new SystemProcessInfo(maxProcessId, process.Id, "AutoSystemProcess",
-                            "AutoSystemProcess", "Auto", process.User.UserId), process.User, process.MachineInfo);
+                        new SystemProcessInfo(maxProcessId, Process.Id, "AutoSystemProcess",
+                            "AutoSystemProcess", "Auto", Process.User.UserId), Process.User, Process.MachineInfo);
                     SystemProcess.Add(
                         systemProcess);
 
@@ -110,38 +178,27 @@ namespace DataServices.Actors
                     };
                     DomainProcess.Add(domainProcess);
 
-                    
-                    var parentEntityTypes = ctx.EntityRelationship.Select(x => x.ParentEntity.EntityTypeAttributes.EntityType).Distinct().ToList();
-                    var childEntityTypes = ctx.EntityRelationship.Select(x => x.EntityTypeAttributes.EntityType).Distinct().ToList();
+
+                    var parentEntityTypes = ctx.EntityRelationship.Where(x => x.EntityTypeAttributes.EntityType.ApplicationId == CurrentApplication.Id).Select(x => x.ParentEntity.EntityTypeAttributes.EntityType)
+                        .Distinct().ToList();
+                    var childEntityTypes = ctx.EntityRelationship.Where(x => x.EntityTypeAttributes.EntityType.ApplicationId == CurrentApplication.Id).Select(x => x.EntityTypeAttributes.EntityType).Distinct()
+                        .ToList();
                     mainEntities = parentEntityTypes.Where(z => !childEntityTypes.Contains(z)).ToList();
 
-                    
 
                     foreach (var mainEntity in mainEntities)
                     {
-
                         ProcessComplexEvents.AddRange(GetDBComplexActions(mainEntity.Id, domainProcess.Id));
                         ProcessViewModelInfos.AddRange(GetDBViewInfos(mainEntity.Id, true, domainProcess.Id));
-
                     }
 
                     IntializeProcess(domainProcess, systemProcess);
                 }
                 else
                 {
-                   LoadDomainProcess(_domainProcessLst.FirstOrDefault(), process.User);
-                    
+                    LoadDomainProcess(_domainProcessLst.FirstOrDefault(), Process.User);
                 }
-
             }
-
-            EventMessageBus.Current.GetEvent<IStartSystemProcess>(Source).Where(x => autoRun && x.ProcessToBeStartedId == RevolutionData.ProcessActions.NullProcess).Subscribe(x => StartParentProcess(x.Process.Id, x.User));
-            EventMessageBus.Current.GetEvent<IStartSystemProcess>(Source).Where(x => !autoRun && x.ProcessToBeStartedId != RevolutionData.ProcessActions.NullProcess).Subscribe(x => StartProcess(x.ProcessToBeStartedId, x.User));
-
-            EventMessageBus.Current.GetEvent<IMainEntityChanged>(Source).Subscribe(x => OnMainEntityChanged(x));
-           
-
-            ctx = Context;
         }
 
         private List<DomainProcess> _domainProcessLst;
@@ -160,6 +217,7 @@ namespace DataServices.Actors
 
         private void LoadDomainProcess(DomainProcess domainProcess, IUser user)
         {
+           
             DomainProcess.Add(domainProcess);
 
             var systemProcess = new SystemProcess(
@@ -170,6 +228,7 @@ namespace DataServices.Actors
             SystemProcess.Add(systemProcess);
             foreach (var processStep in domainProcess.ProcessStep)
             {
+                if (processStep.MainEntity == null) continue;
                 foreach (var pcp in processStep.ProcessStepComplexActions)
                 {
                     var cpEvents = new List<IProcessExpectedEvent>();

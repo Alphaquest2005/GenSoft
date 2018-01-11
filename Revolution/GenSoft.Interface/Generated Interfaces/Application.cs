@@ -14,7 +14,6 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IApplication:SystemInterfaces.IEntity  
 	{
-		string DBName { get;}
 		string Name { get;}
 
 

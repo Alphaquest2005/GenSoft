@@ -620,3 +620,5 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\obj\Debug\ActorSystem.csp
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\obj\Debug\ActorSystem.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\obj\Debug\ActorSystem.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\obj\Debug\ActorSystem.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\Debug\System.Linq.Dynamic.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\Debug\System.Linq.Dynamic.pdb

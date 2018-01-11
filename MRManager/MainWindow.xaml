@@ -50,7 +50,7 @@
                     FontFamily="Segoe UI Light"
                     FontSize="48"
                     Style="{DynamicResource TextButtonStyle}"
-                    Text="SAMS MR Manager"
+                    Text="{Binding CurrentApplication.Properties[Name] , Source={StaticResource MainWindowViewModelDataSource}}"
                     TextWrapping="Wrap" />
             <Border
                     Height="1"

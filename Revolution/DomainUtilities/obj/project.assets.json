@@ -4858,47 +4858,47 @@
         "dependencies": {
           "DynamicExpresso.Core": {
             "target": "Package",
-            "version": "1.3.4.7"
+            "version": "[1.3.4.7, )"
           },
           "JB.Common": {
             "target": "Package",
-            "version": "0.8.107-pre"
+            "version": "[0.8.107-pre, )"
           },
           "JB.Common.Collections": {
             "target": "Package",
-            "version": "0.8.107-pre"
+            "version": "[0.8.107-pre, )"
           },
           "JB.Common.Collections.Reactive": {
             "target": "Package",
-            "version": "0.8.107-pre"
+            "version": "[0.8.107-pre, )"
           },
           "JB.Common.Reactive": {
             "target": "Package",
-            "version": "0.8.107-pre"
+            "version": "[0.8.107-pre, )"
           },
           "Rx-Core": {
             "target": "Package",
-            "version": "2.2.5"
+            "version": "[2.2.5, )"
           },
           "Rx-Interfaces": {
             "target": "Package",
-            "version": "2.2.5"
+            "version": "[2.2.5, )"
           },
           "Rx-Linq": {
             "target": "Package",
-            "version": "2.2.5"
+            "version": "[2.2.5, )"
           },
           "Rx-Main": {
             "target": "Package",
-            "version": "2.2.5"
+            "version": "[2.2.5, )"
           },
           "Rx-PlatformServices": {
             "target": "Package",
-            "version": "2.2.5"
+            "version": "[2.2.5, )"
           },
           "System.Reactive": {
             "target": "Package",
-            "version": "3.1.1"
+            "version": "[3.1.1, )"
           }
         }
       }

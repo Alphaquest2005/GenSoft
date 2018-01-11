@@ -12,6 +12,7 @@ using Reactive.Bindings;
 
 using RevolutionEntities.Process;
 using Utilities;
+using ViewMessages;
 using ViewModel.Interfaces;
 using ViewModelInterfaces;
 
@@ -49,10 +50,13 @@ namespace Core.Common.UI
                 NotifyPropertyChanged(nameof(ExtensionViewModels));
                 
             });
-            
+
+           
+
         }
 
         
+
 
         public List<IEntityViewModel> ExtensionViewModels => ViewModels.Cast<IEntityViewModel>().Where(x => x.ViewInfo.Ordinality == EntityRelationshipOrdinality.One).ToList();
         public List<IEntityViewModel> ChildEntityViewModels => ViewModels.Cast<IEntityViewModel>().Where(x => x.ViewInfo.Ordinality == EntityRelationshipOrdinality.Many).ToList();

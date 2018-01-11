@@ -6,6 +6,7 @@
 
 using System;
 using System.Linq;
+using System.Reactive.Linq;
 using SystemInterfaces;
 using Core.Common.UI;
 using EventAggregator;
@@ -44,6 +45,27 @@ namespace ViewModels
         {
             this.WireEvents();
             EventMessageBus.Current.GetEvent<IProcessEventFailure>(Source).Subscribe(x => { });
+            EventMessageBus.Current.GetEvent<ICurrentEntityChanged>(Source).Where(x => x.EntityType.Name == "Application").Subscribe(x => OnCurrentApplicationChanged(x));
+        }
+
+        private void OnCurrentApplicationChanged(ICurrentEntityChanged currentEntityChanged)
+        {
+            if (currentEntityChanged.Entity == null) return;
+            if (CurrentApplication?.Id == currentEntityChanged.Entity.Id) return;
+            CurrentApplication = currentEntityChanged.Entity;
+        }
+
+        private IDynamicEntity _currentApplication;
+
+        public IDynamicEntity CurrentApplication
+        {
+            get { return _currentApplication; }
+            set
+            {
+                if (Equals(value, _currentApplication)) return;
+                _currentApplication = value;
+                OnPropertyChanged();
+            }
         }
 
 

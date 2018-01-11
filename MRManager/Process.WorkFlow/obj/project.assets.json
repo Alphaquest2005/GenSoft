@@ -6026,7 +6026,7 @@
         "dependencies": {
           "System.Collections.Immutable": {
             "target": "Package",
-            "version": "1.4.0"
+            "version": "[1.4.0, )"
           }
         }
       }

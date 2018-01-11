@@ -1262,8 +1262,10 @@
           "Actor.Interfaces": "1.0.0",
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
+          "CommonMessages": "1.0.0",
           "Core.Common.UI": "1.0.0",
           "DomainUtilities": "1.0.0",
+          "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
           "GenSoft.DBContext": "1.0.0",
           "GenSoft.Entities": "1.0.0",
@@ -2582,8 +2584,10 @@
           "Actor.Interfaces": "1.0.0",
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
+          "CommonMessages": "1.0.0",
           "Core.Common.UI": "1.0.0",
           "DomainUtilities": "1.0.0",
+          "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
           "GenSoft.DBContext": "1.0.0",
           "GenSoft.Entities": "1.0.0",
@@ -3902,8 +3906,10 @@
           "Actor.Interfaces": "1.0.0",
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
+          "CommonMessages": "1.0.0",
           "Core.Common.UI": "1.0.0",
           "DomainUtilities": "1.0.0",
+          "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
           "GenSoft.DBContext": "1.0.0",
           "GenSoft.Entities": "1.0.0",
@@ -5222,8 +5228,10 @@
           "Actor.Interfaces": "1.0.0",
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
+          "CommonMessages": "1.0.0",
           "Core.Common.UI": "1.0.0",
           "DomainUtilities": "1.0.0",
+          "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
           "GenSoft.DBContext": "1.0.0",
           "GenSoft.Entities": "1.0.0",
@@ -6686,11 +6694,11 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
-            "version": "2.0.1"
+            "version": "[2.0.1, )"
           },
           "Remotion.Linq": {
             "target": "Package",
-            "version": "2.2.0-alpha-004"
+            "version": "[2.2.0-alpha-004, )"
           }
         }
       }

@@ -9,6 +9,7 @@ namespace DataServices.Actors
         public static void CreateEntity(this ICreateEntity msg) 
         {
             DynamicDataContext.Create(msg);
+            DataContext.Create(msg);
         }
 
     }

@@ -10,6 +10,7 @@ using EventAggregator;
 using EventMessages.Commands;
 using EventMessages.Events;
 using JB.Collections.Reactive;
+using RevolutionData;
 using RevolutionEntities.Process;
 
 namespace DataServices.Actors
@@ -24,15 +25,18 @@ namespace DataServices.Actors
             EventMessageBus.Current.GetEvent<IEntityRequest>(Source).Subscribe(handleEntityRequest);
             EventMessageBus.Current.Publish(new ServiceStarted<IEntityDataServiceManager>(this, new StateEventInfo(process.Id, RevolutionData.Context.Actor.Events.ActorStarted), process, Source), Source);
 
+
             EventMessageBus.Current.Publish(
                 new LoadEntitySet(
-                    new DynamicEntityType("Test Entity", "Test Entities", new List<IEntityKeyValuePair>(),
+                    new DynamicEntityType("TestEntities", "Test Entities", new List<IEntityKeyValuePair>(),
                         new Dictionary<string, List<dynamic>>(),
                         new ObservableDictionary<string, Dictionary<int, dynamic>>(),
                         new ObservableDictionary<string, string>()),
                     new StateCommandInfo(process.Id,
                         RevolutionData.Context.Entity.Commands.LoadEntitySetWithChanges), process,
                     Source), Source);
+
+
         }
 
         private void handleEntityRequest(IEntityRequest entityRequest)

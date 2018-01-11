@@ -94,6 +94,7 @@
     <Compile Include="Generated Entities\ComplexEventActionExpectedEvents.cs" />
     <Compile Include="Generated Entities\ComplexEventActionProcessActions.cs" />
     <Compile Include="Generated Entities\ConfigurationPropertyPresentation.cs" />
+    <Compile Include="Generated Entities\DatabaseInfo.cs" />
     <Compile Include="Generated Entities\DataType.cs" />
     <Compile Include="Generated Entities\DBType.cs" />
     <Compile Include="Generated Entities\DefaultApplication.cs" />

@@ -26,7 +26,15 @@ namespace DomainUtilities
         {
             return new DynamicEntity(dt, 0, dt.Properties.ToDictionary(x => x.Key, x => x.Value));
         }
-        public static void AddDynamicEntityTypes(string entityType)
+
+        public static IDynamicEntityType NullEntityType(this IDynamicEntityType dt)
+        {
+            return new DynamicEntityType("NullEntity", "NullEntitySet", new List<IEntityKeyValuePair>(),
+                new Dictionary<string, List<dynamic>>(), new ObservableDictionary<string, Dictionary<int, dynamic>>(),
+                new ObservableDictionary<string, string>());
+        }
+            
+        public static IDynamicEntityType AddDynamicEntityTypes(string entityType)
         {
 
             using (var ctx = new GenSoftDBContext())
@@ -53,14 +61,14 @@ namespace DomainUtilities
                         .ThenInclude(x => x.CalculatedPropertyParameterEntityTypes)
                         .Include(x => x.EntityTypeAttributes).ThenInclude(x => x.EntityTypeAttributeCache)
                         .FirstOrDefault(x => x.Type.Name == entityType);
-                    if (viewType == null) return;
+                    if (viewType == null) return DynamicEntityType.NullEntityType();
 
                     var viewset = ctx.EntityTypeAttributes
                         .Where(x => x.EntityTypeId == viewType.Id)
                         .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
                         .Select(x => x.AttributeId).ToList();
 
-                    if (!viewset.Any()) return;
+                    if (!viewset.Any()) return DynamicEntityType.NullEntityType();
                     var tes =
 
                         ctx.Entity
@@ -95,6 +103,7 @@ namespace DomainUtilities
 
 
                     DynamicEntityType.DynamicEntityTypes.AddOrSet(entityType, dynamicEntityType);
+                    return DynamicEntityType.DynamicEntityTypes[entityType];
                 }
                 catch (Exception)
                 {

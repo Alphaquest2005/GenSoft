@@ -14,9 +14,9 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IRelationshipType:SystemInterfaces.IEntity  
 	{
-		int ChildOrdinalityId { get;}
-		int ParentOrdinalityId { get;}
 		string Name { get;}
+		int ParentOrdinalityId { get;}
+		int ChildOrdinalityId { get;}
 
 
 

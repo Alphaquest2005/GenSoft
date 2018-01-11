@@ -674,7 +674,7 @@
         "dependencies": {
           "JB.Common.Collections.Reactive": {
             "target": "Package",
-            "version": "0.8.107-pre"
+            "version": "[0.8.107-pre, )"
           }
         }
       }

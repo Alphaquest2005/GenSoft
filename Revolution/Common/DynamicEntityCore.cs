@@ -9,16 +9,22 @@ namespace Common.DataEntites
         public DynamicEntityCore(IDynamicEntityType entityType, int id)
         {
             Contract.Requires(entityType != null, "EntityType is Null");
-            EntityType = entityType;
+            _entityType = entityType;
             Id = id;
 
         }
         public int Id { get; }
        
         public virtual RowState RowState { get; set; } = RowState.Loaded;
-        public IDynamicEntityType EntityType { get; }
+        internal  IDynamicEntityType _entityType;
 
-       //private readonly Guid _entityGuid = Guid.NewGuid();
+        public IDynamicEntityType EntityType
+        {
+            get { return _entityType; }
+            
+        }
+
+        //private readonly Guid _entityGuid = Guid.NewGuid();
 
         //public override bool Equals(object obj)
         //{

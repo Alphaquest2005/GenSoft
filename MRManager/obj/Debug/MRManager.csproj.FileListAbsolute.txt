@@ -577,7 +577,6 @@ C:\Prism\GitRepositiory\GenSoft\MRManager\bin\Debug\ru\System.Windows.Interactiv
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\obj\Debug\MRManager.csprojResolveAssemblyReference.cache
-C:\Prism\GitRepositiory\GenSoft\MRManager\obj\Debug\MRManager.csproj.MRManager.exe.config
 C:\Prism\GitRepositiory\GenSoft\MRManager\obj\Debug\MainWindow.baml
 C:\Prism\GitRepositiory\GenSoft\MRManager\obj\Debug\App.baml
 C:\Prism\GitRepositiory\GenSoft\MRManager\obj\Debug\MainWindow.g.cs
@@ -589,3 +588,4 @@ C:\Prism\GitRepositiory\GenSoft\MRManager\obj\Debug\MRManager.csproj.GenerateRes
 C:\Prism\GitRepositiory\GenSoft\MRManager\obj\Debug\MRManager.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\MRManager\obj\Debug\MRManager.exe
 C:\Prism\GitRepositiory\GenSoft\MRManager\obj\Debug\MRManager.pdb
+C:\Prism\GitRepositiory\GenSoft\MRManager\obj\Debug\MRManager.exe.config

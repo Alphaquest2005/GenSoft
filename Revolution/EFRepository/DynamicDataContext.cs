@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reactive.Linq;
 using SystemInterfaces;
 using Common.DataEntites;
 using DomainUtilities;
@@ -17,7 +18,25 @@ namespace EFRepository
 {
     public class DynamicDataContext:BaseRepository
     {
-       
+        private static bool IsRealDatabase = false;
+
+        static DynamicDataContext()
+        {
+            EventMessageBus.Current.GetEvent<ICurrentEntityChanged>(Source).Where(x => x.EntityType.Name == "Application").Subscribe(OnCurrentApplicationChanged);
+        }
+
+        private static Application CurrentApplication { get;  set; }
+        private static void OnCurrentApplicationChanged(ICurrentEntityChanged currentEntityChanged)
+        {
+            if(currentEntityChanged.Entity != null)
+            if (CurrentApplication?.Id == currentEntityChanged.Entity.Id) return;
+            using (var ctx = new GenSoftDBContext())
+            {
+                CurrentApplication = ctx.Application.Include(x => x.DatabaseInfo)
+                    .First(x => x.Id == currentEntityChanged.Entity.Id);
+            }
+        }
+
         public static void Create(ICreateEntity msg)
         {
             throw new NotImplementedException();
@@ -27,7 +46,7 @@ namespace EFRepository
         {
             try
             {
-
+                if (CurrentApplication?.DatabaseInfo.IsRealDatabase != IsRealDatabase) return;
 
                 using (var ctx = new GenSoftDBContext())
                 {
@@ -131,6 +150,7 @@ namespace EFRepository
 
         public static void LoadEntitySetWithChanges(IGetEntitySetWithChanges msg)
         {
+            if (CurrentApplication?.DatabaseInfo.IsRealDatabase != IsRealDatabase) return;
             using (var ctx = new GenSoftDBContext())
             {
                 var entityType = msg.EntityType;
@@ -158,6 +178,7 @@ namespace EFRepository
 
         public static void LoadEntitySet(ILoadEntitySet msg)
         {
+            if (CurrentApplication?.DatabaseInfo.IsRealDatabase != IsRealDatabase) return;
             using (var ctx = new GenSoftDBContext())
             {
                var entityTypeId = ctx.EntityType
@@ -182,13 +203,16 @@ namespace EFRepository
 
         private static IQueryable<Entity> GetEntities(GenSoftDBContext ctx, int? viewId)
         {
+            if (CurrentApplication?.DatabaseInfo.IsRealDatabase != IsRealDatabase) return new List<Entity>().AsQueryable();
             var entities = ctx.Entity.Include(x => x.EntityAttribute)
                 .ThenInclude(x => x.Attributes).ThenInclude(x => x.EntityId)
                 .ThenInclude(x => x.Attributes).ThenInclude(x => x.EntityName);
-            
-            return entities
+            var res1 = entities
+                .Where(x => x.EntityTypeId == viewId);
+            var res = entities
                     .Where(x => x.EntityTypeId == viewId)
                     .Where(x => x.EntityAttribute.Any(z => z.Attributes.EntityId != null));
+            return res;
         }
 
         public static void LoadEntitySetWithFilter(ILoadEntitySetWithFilter msg)
@@ -213,6 +237,7 @@ namespace EFRepository
 
         public static void GetEntityWithChanges(IGetEntityWithChanges msg)
         {
+            if (CurrentApplication?.DatabaseInfo.IsRealDatabase != IsRealDatabase) return;
             using (var ctx = new GenSoftDBContext())
             {
                 var entityType = msg.EntityType;
@@ -242,6 +267,7 @@ namespace EFRepository
         {
             try
             {
+                
                 var entityTypeId = ctx.EntityType
                     .FirstOrDefault(x => x.Type.Name == entityType.Name)?.Id;
 

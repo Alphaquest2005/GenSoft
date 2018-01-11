@@ -5,6 +5,7 @@ using SystemInterfaces;
 using JB.Collections.Reactive;
 
 
+
 namespace Common.DataEntites
 {
     public class DynamicEntity:DynamicEntityCore, IDynamicEntity
@@ -44,11 +45,10 @@ namespace Common.DataEntites
                 else Properties[_entityName] = value;
             }
         }
-
-        public static IDynamicEntity NullEntity => new DynamicEntity(
-            new DynamicEntityType("NullEntity", "NullEntitySet", new List<IEntityKeyValuePair>(),
-                new Dictionary<string, List<dynamic>>(), new ObservableDictionary<string, Dictionary<int, dynamic>>(),
-                new ObservableDictionary<string, string>()), 0, new Dictionary<string, object>());
+        // todo: dual implementation of DynamicEntityType
+        public static IDynamicEntity NullEntity => new DynamicEntity(new DynamicEntityType("NullEntity", "NullEntitySet", new List<IEntityKeyValuePair>(),
+        new Dictionary<string, List<dynamic>>(), new ObservableDictionary<string, Dictionary<int, dynamic>>(),
+        new ObservableDictionary<string, string>()), 0, new Dictionary<string, object>());
 
 
         private void SetCalculatedProperties()
@@ -125,5 +125,19 @@ namespace Common.DataEntites
 
         public string Type { get; }
         public Dictionary<string, IDynamicValue> Properties { get; }
+    }
+
+    public static class IEntityExtensions
+    {
+        public static IDynamicEntity ToDynamicEntity(this IEntity entity, IDynamicEntityType entityType)
+        {
+            var props = entity.GetType().GetProperties().Where(x => entityType.Properties.Any(z => z.Key == x.Name))
+                .ToList();
+            var vals = entityType.Properties
+                .Select(x => new {x.Key, Value = props.First(z => z.Name == x.Key).GetValue(entity)})
+                .ToDictionary(k => k.Key, v => v.Value);
+            var res = new DynamicEntity(entityType, entity.Id, vals);
+            return res;
+        }
     }
 }

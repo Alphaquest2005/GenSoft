@@ -80,16 +80,7 @@ namespace Process.WorkFlow
                 processInfo:new StateCommandInfo(1,RevolutionData.Context.Process.Commands.CleanUpProcess ),
                 action: ProcessActions.Actions["CleanUpProcess"]),
 
-            new ComplexEventAction(
-                "105",
-                4, new List<IProcessExpectedEvent>
-                {
-                    new ProcessExpectedEvent<IViewModelIntialized> ("ViewModelIntialized", 4, e => e != null  && e.Process.Id == 1, new StateEventInfo(4, RevolutionData.Context.Process.Events.ProcessCompleted), new SourceType(typeof(IComplexEventService))),
-
-                },
-                typeof(ISystemProcessStarted),
-                processInfo:new StateCommandInfo(4,RevolutionData.Context.Entity.Commands.LoadEntitySet),
-                action: ProcessActions.IntializeProcessStateList("Application")),
+         
 
 
         };

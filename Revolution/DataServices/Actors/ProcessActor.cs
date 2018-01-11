@@ -57,7 +57,7 @@ namespace DataServices.Actors
                 .Where(x => x.Process.Id == msg.Process.Id)
                 .Where(x => x.ActorName == this.ActorName).Subscribe(UpdateActor);
 
-            //EventMessageBus.Current.GetEvent<ICleanUpSystemProcess>(Source).Where(x => x.ProcessToBeCleanedUpId == Process.Id).Subscribe(x => Self.GracefulStop(TimeSpan.FromSeconds((double)EventTimeOut.ShortWait)));
+            EventMessageBus.Current.GetEvent<ICleanUpSystemProcess>(Source).Where(x => x.ProcessToBeCleanedUpId > 1 && x.ProcessToBeCleanedUpId == Process.Id).Subscribe(x => CleanUpActor(x));
 
             EventMessageBus.Current.GetEvent<IServiceStarted<IProcessService>>(Source)
                 .Where(x => x.Process.Id == msg.Process.Id)
@@ -76,6 +76,11 @@ namespace DataServices.Actors
             EventMessageBus.Current.GetEvent<ILoadDomainProcess>(Source).Where(x => $"{x.Name}-{x.DomainProcess.Id}".GetSafeActorName() == ActorName).Subscribe(x => HandleDomainProcess(x));
 
         }
+        private void CleanUpActor(ICleanUpSystemProcess cleanUpSystemProcess)
+        {
+            _complexEvents = new ReadOnlyCollection<IComplexEventAction>(new List<IComplexEventAction>());
+        }
+
 
         private void UpdateActor(ICreateProcessActor createProcessActor)
         {

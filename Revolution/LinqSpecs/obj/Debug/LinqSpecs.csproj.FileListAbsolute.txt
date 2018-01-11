@@ -10,3 +10,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\LinqSpecs\bin\Debug\LinqSpecs.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\LinqSpecs\obj\Debug\LinqSpecs.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\LinqSpecs\obj\Debug\LinqSpecs.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\LinqSpecs\obj\Debug\LinqSpecs.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\LinqSpecs\obj\Debug\LinqSpecs.csprojResolveAssemblyReference.cache

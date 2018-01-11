@@ -1287,8 +1287,10 @@
           "Actor.Interfaces": "1.0.0",
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
+          "CommonMessages": "1.0.0",
           "Core.Common.UI": "1.0.0",
           "DomainUtilities": "1.0.0",
+          "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
           "GenSoft.DBContext": "1.0.0",
           "GenSoft.Entities": "1.0.0",
@@ -2593,8 +2595,10 @@
           "Actor.Interfaces": "1.0.0",
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
+          "CommonMessages": "1.0.0",
           "Core.Common.UI": "1.0.0",
           "DomainUtilities": "1.0.0",
+          "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
           "GenSoft.DBContext": "1.0.0",
           "GenSoft.Entities": "1.0.0",
@@ -3899,8 +3903,10 @@
           "Actor.Interfaces": "1.0.0",
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
+          "CommonMessages": "1.0.0",
           "Core.Common.UI": "1.0.0",
           "DomainUtilities": "1.0.0",
+          "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
           "GenSoft.DBContext": "1.0.0",
           "GenSoft.Entities": "1.0.0",
@@ -5205,8 +5211,10 @@
           "Actor.Interfaces": "1.0.0",
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
+          "CommonMessages": "1.0.0",
           "Core.Common.UI": "1.0.0",
           "DomainUtilities": "1.0.0",
+          "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
           "GenSoft.DBContext": "1.0.0",
           "GenSoft.Entities": "1.0.0",
@@ -7305,11 +7313,11 @@
         "dependencies": {
           "Akka": {
             "target": "Package",
-            "version": "1.3.2"
+            "version": "[1.3.2, )"
           },
           "DynamicExpresso.Core": {
             "target": "Package",
-            "version": "1.3.4.7"
+            "version": "[1.3.4.7, )"
           }
         }
       }

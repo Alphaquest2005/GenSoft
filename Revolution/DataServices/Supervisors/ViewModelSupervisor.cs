@@ -72,7 +72,7 @@ namespace DataServices.Actors
             {
                 //Parallel.ForEach(ProcessViewModelInfos.Where(x => x.ProcessId == pe.Process.Id),new ParallelOptions() {MaxDegreeOfParallelism = Environment.ProcessorCount},
                 //    (v) =>
-                foreach (var v in ProcessViewModelInfos.Where(x => x.ProcessId == pe.Process.Id))
+                foreach (var v in ProcessViewModelInfos.Where(x => x.ProcessId == pe.Process.Id).ToList())
                
                 {
                     var msg = new LoadViewModel(v,

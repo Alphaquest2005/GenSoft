@@ -15,8 +15,8 @@ namespace GenSoft.Interfaces
 	public partial interface ISystemProcessState:SystemInterfaces.IEntity  
 	{
 		int StateId { get;}
-		int ProcessId { get;}
 		string Name { get;}
+		int ProcessId { get;}
 
 
 

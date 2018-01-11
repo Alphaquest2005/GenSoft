@@ -35,6 +35,7 @@ namespace Core.Common.UI
             ViewModelType = typeof(TViewModel);
             
             RowState = new ReactiveProperty<RowState>(SystemInterfaces.RowState.Loaded);
+
         }
 
         

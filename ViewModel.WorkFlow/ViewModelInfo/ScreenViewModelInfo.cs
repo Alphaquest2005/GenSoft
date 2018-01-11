@@ -204,6 +204,8 @@ namespace RevolutionData
                                 }));
                             }
                         }),
+
+                    
                 },
                 new List<IViewModelEventPublication<IViewModel, IEvent>>
                 {
@@ -289,6 +291,19 @@ namespace RevolutionData
         {
            s.BodyViewModels.Clear();
            s.BodyViewModels.Reset();
+
+            //s.FooterViewModels.Clear();
+            //s.FooterViewModels.Reset();
+
+            //s.HeaderViewModels.Clear();
+            //s.HeaderViewModels.Reset();
+
+            //s.LeftViewModels.Clear();
+            //s.LeftViewModels.Reset();
+
+            //s.RightViewModels.Clear();
+            //s.RightViewModels.Reset();
+
         }
     }
 }

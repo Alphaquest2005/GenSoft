@@ -14,16 +14,16 @@ namespace GenSoft.Entities
 	public partial class ComplexEventActionProcessActions: BaseEntity, IComplexEventActionProcessActions
 	{
 		public virtual int ComplexEventActionId { get; set; }
-		public virtual int ExpectedEventTypeId { get; set; }
 		public virtual int ProcessActionId { get; set; }
+		public virtual int ExpectedEventTypeId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 		
 			// ---------Parent Relationships
 				public virtual ComplexEventAction ComplexEventAction {get; set;}
-				public virtual EventType EventType {get; set;}
 				public virtual ProcessAction ProcessAction {get; set;}
+				public virtual EventType EventType {get; set;}
 	
 
 	}

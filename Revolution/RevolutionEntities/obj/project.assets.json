@@ -2168,13 +2168,13 @@
     "frameworks": {
       "net47": {
         "dependencies": {
-          "morelinq": {
-            "target": "Package",
-            "version": "2.8.0"
-          },
           "System.Collections.Immutable": {
             "target": "Package",
-            "version": "1.4.0"
+            "version": "[1.4.0, )"
+          },
+          "morelinq": {
+            "target": "Package",
+            "version": "[2.8.0, )"
           }
         }
       }

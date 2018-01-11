@@ -15,11 +15,11 @@ namespace GenSoft.Interfaces
 	public partial interface IProcessStep:SystemInterfaces.IEntity  
 	{
 		int DomainProcessId { get;}
-		string Descripton { get;}
-		string Entity { get;}
 		string Name { get;}
+		string Descripton { get;}
 		string Notes { get;}
 		string Symbol { get;}
+		string Entity { get;}
 
 
 

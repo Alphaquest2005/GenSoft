@@ -10,6 +10,7 @@ namespace DataServices.Actors
         {
 
             DynamicDataContext.LoadEntitySet(msg);
+            DataContext.LoadEntitySet(msg);
 
         }
 
@@ -17,20 +18,21 @@ namespace DataServices.Actors
         {
 
             DynamicDataContext.LoadEntitySetWithChanges(msg);
-
+            DataContext.LoadEntitySetWithChanges(msg);
         }
 
         public static void LoadEntitySet(this ILoadEntitySetWithFilter msg)
         {
 
             DynamicDataContext.LoadEntitySetWithFilter(msg);
-
+            DataContext.LoadEntitySetWithFilter(msg);
         }
 
         public static void LoadEntitySet(this ILoadEntitySetWithFilterWithIncludes msg) 
         {
 
             DynamicDataContext.LoadEntitySetWithFilterWithIncludes(msg);
+            DataContext.LoadEntitySetWithFilterWithIncludes(msg);
 
         }
     }

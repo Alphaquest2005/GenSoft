@@ -37,6 +37,7 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.ComplexEventActionExpectedEvents> ComplexEventActionExpectedEvents { get; set; }
 		public DbSet<Entities.ComplexEventActionProcessActions> ComplexEventActionProcessActions { get; set; }
 		public DbSet<Entities.ConfigurationPropertyPresentation> ConfigurationPropertyPresentation { get; set; }
+		public DbSet<Entities.DatabaseInfo> DatabaseInfo { get; set; }
 		public DbSet<Entities.DataType> DataType { get; set; }
 		public DbSet<Entities.DBType> DBType { get; set; }
 		public DbSet<Entities.DefaultApplication> DefaultApplication { get; set; }
@@ -138,6 +139,7 @@ namespace GenSoft.DBContexts
 				ComplexEventActionExpectedEventsMap.Map(modelBuilder.Entity<Entities.ComplexEventActionExpectedEvents>());
 				ComplexEventActionProcessActionsMap.Map(modelBuilder.Entity<Entities.ComplexEventActionProcessActions>());
 				ConfigurationPropertyPresentationMap.Map(modelBuilder.Entity<Entities.ConfigurationPropertyPresentation>());
+				DatabaseInfoMap.Map(modelBuilder.Entity<Entities.DatabaseInfo>());
 				DataTypeMap.Map(modelBuilder.Entity<Entities.DataType>());
 				DBTypeMap.Map(modelBuilder.Entity<Entities.DBType>());
 				DefaultApplicationMap.Map(modelBuilder.Entity<Entities.DefaultApplication>());

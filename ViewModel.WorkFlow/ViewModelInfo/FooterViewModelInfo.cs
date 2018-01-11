@@ -55,6 +55,28 @@ namespace RevolutionData
 
                         }),
 
+                    new ViewEventSubscription<IFooterViewModel, ICleanUpSystemProcess>(
+                        "Footer-ICleanUpSystemProcess",
+                        processId,
+                        e => e != null,
+                        new List<Func<IFooterViewModel, ICleanUpSystemProcess, bool>> { },
+                        (s, e) =>
+                        {
+                            if (Application.Current == null)
+                            {
+                                s.Entities.Value.Clear();
+                                s.Entities.Value.Reset();
+                            }
+                            else
+                            {
+                                Application.Current.Dispatcher.BeginInvoke(new Action(() =>
+                                {
+                                    s.Entities.Value.Clear();
+                                    s.Entities.Value.Reset();
+                                }));
+                            }
+                        }),
+
 
                 },
                 new List<IViewModelEventPublication<IViewModel, IEvent>> { },

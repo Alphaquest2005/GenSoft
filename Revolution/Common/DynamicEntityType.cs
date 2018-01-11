@@ -10,8 +10,13 @@ namespace Common.DataEntites
     {
         public static ConcurrentDictionary<string,IDynamicEntityType> DynamicEntityTypes { get; } = new ConcurrentDictionary<string, IDynamicEntityType>();
 
-        
-        
+        public static IDynamicEntityType NullEntityType()
+        {
+            return new DynamicEntityType("NullEntity", "NullEntitySet", new List<IEntityKeyValuePair>(),
+                new Dictionary<string, List<dynamic>>(), new ObservableDictionary<string, Dictionary<int, dynamic>>(),
+                new ObservableDictionary<string, string>());
+        }
+
 
         public DynamicEntityType(string name, string entitySetName, List<IEntityKeyValuePair> properties, Dictionary<string, List<dynamic>> calculatedProperties, ObservableDictionary<string, Dictionary<int, dynamic>> cachedProperties, ObservableDictionary<string, string> propertyParentEntityType)
         {
@@ -33,6 +38,10 @@ namespace Common.DataEntites
         public ObservableDictionary<string, string> PropertyParentEntityType { get; }
         public IIntelliList<IDynamicEntityType> ChildEntities { get; } = new InteliList<IDynamicEntityType>();
         public IIntelliList<IDynamicEntityType> ParentEntities { get; } = new InteliList<IDynamicEntityType>();
+        IDynamicEntityType IDynamicEntityType.NullEntityType()
+        {
+            return NullEntityType();
+        }
     }
 
 }

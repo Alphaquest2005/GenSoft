@@ -13,9 +13,9 @@ namespace GenSoft.Entities
 {
 	public partial class Command: BaseEntity, ICommand
 	{
-		public virtual int CommandTypeId { get; set; }
-		public virtual int EntityId { get; set; }
 		public virtual int StateActionId { get; set; }
+		public virtual int EntityId { get; set; }
+		public virtual int CommandTypeId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships

@@ -43,7 +43,9 @@ BEGIN
 
 --------------------------For Each Data Row	
 	DECLARE @rowId int
-	Exec('DECLARE Data_CURSOR CURSOR 
+	Exec('
+	
+	DECLARE Data_CURSOR CURSOR 
 	Global STATIC READ_ONLY FORWARD_ONLY
 	FOR 
 	SELECT Id  
@@ -110,6 +112,7 @@ BEGIN
 				END
 				CLOSE EntityProperty_CURSOR
 				DEALLOCATE EntityProperty_CURSOR
+
 
 
 			FETCH NEXT FROM Data_CURSOR INTO @rowId

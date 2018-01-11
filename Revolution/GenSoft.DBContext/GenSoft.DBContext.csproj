@@ -95,6 +95,7 @@
     <Compile Include="Generated Mappings\ComplexEventActionExpectedEvents.cs" />
     <Compile Include="Generated Mappings\ComplexEventActionProcessActions.cs" />
     <Compile Include="Generated Mappings\ConfigurationPropertyPresentation.cs" />
+    <Compile Include="Generated Mappings\DatabaseInfo.cs" />
     <Compile Include="Generated Mappings\DataType.cs" />
     <Compile Include="Generated Mappings\DBType.cs" />
     <Compile Include="Generated Mappings\DefaultApplication.cs" />

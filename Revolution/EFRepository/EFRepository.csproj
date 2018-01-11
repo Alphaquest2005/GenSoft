@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseRepository.cs" />
+    <Compile Include="DataContext.cs" />
     <Compile Include="DynamicDataContext.cs" />
     <Compile Include="EntityRepository.cs" />
     <Compile Include="MyLoggingProvider.cs" />

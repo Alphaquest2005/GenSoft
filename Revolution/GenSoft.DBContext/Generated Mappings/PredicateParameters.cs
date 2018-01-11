@@ -18,14 +18,14 @@ namespace GenSoft.Mappings
 			entityBuilder.ToTable("PredicateParameters", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
-			entityBuilder.Property(t => t.ParameterId).HasColumnName("ParameterId").IsRequired();
 			entityBuilder.Property(t => t.PredicateId).HasColumnName("PredicateId").IsRequired();
+			entityBuilder.Property(t => t.ParameterId).HasColumnName("ParameterId").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
 				entityBuilder.HasMany(x => x.ExpectedEventPredicateParameters).WithOne(p => p.PredicateParameters).HasForeignKey(c => c.PredicateParameterId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties
-				//entityBuilder.HasOne(p => p.Parameters Parameters).WithMany(p => p.PredicateParameters).HasForeignKey(c => c.ParameterId).OnDelete(DeleteBehavior.Restrict);
 				//entityBuilder.HasOne(p => p.Predicates Predicates).WithMany(p => p.PredicateParameters).HasForeignKey(c => c.PredicateId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.Parameters Parameters).WithMany(p => p.PredicateParameters).HasForeignKey(c => c.ParameterId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

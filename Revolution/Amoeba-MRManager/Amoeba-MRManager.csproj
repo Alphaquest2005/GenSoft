@@ -365,6 +365,7 @@
 ..\GenSoft.DBContext\Generated Mappings\ComplexEventActionExpectedEvents.cs
 ..\GenSoft.DBContext\Generated Mappings\ComplexEventActionProcessActions.cs
 ..\GenSoft.DBContext\Generated Mappings\ConfigurationPropertyPresentation.cs
+..\GenSoft.DBContext\Generated Mappings\DatabaseInfo.cs
 ..\GenSoft.DBContext\Generated Mappings\DataType.cs
 ..\GenSoft.DBContext\Generated Mappings\DBType.cs
 ..\GenSoft.DBContext\Generated Mappings\DefaultApplication.cs
@@ -459,6 +460,7 @@
 ..\GenSoft.Entities\Generated Entities\ComplexEventActionExpectedEvents.cs
 ..\GenSoft.Entities\Generated Entities\ComplexEventActionProcessActions.cs
 ..\GenSoft.Entities\Generated Entities\ConfigurationPropertyPresentation.cs
+..\GenSoft.Entities\Generated Entities\DatabaseInfo.cs
 ..\GenSoft.Entities\Generated Entities\DataType.cs
 ..\GenSoft.Entities\Generated Entities\DBType.cs
 ..\GenSoft.Entities\Generated Entities\DefaultApplication.cs
@@ -558,6 +560,7 @@
 ..\GenSoft.Interface\Generated Interfaces\ComplexEventActionExpectedEvents.cs
 ..\GenSoft.Interface\Generated Interfaces\ComplexEventActionProcessActions.cs
 ..\GenSoft.Interface\Generated Interfaces\ConfigurationPropertyPresentation.cs
+..\GenSoft.Interface\Generated Interfaces\DatabaseInfo.cs
 ..\GenSoft.Interface\Generated Interfaces\DataType.cs
 ..\GenSoft.Interface\Generated Interfaces\DBType.cs
 ..\GenSoft.Interface\Generated Interfaces\DefaultApplication.cs

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Linq;
+using System.Reactive.Linq;
 using SystemInterfaces;
 using Akka.Actor;
 using BootStrapper;
@@ -20,13 +21,14 @@ namespace DataServices.Actors
         {
             ctx = Context;
             Command<LoadViewModel>(x => HandleProcessViews(x));
-
+            
             EventMessageBus.Current.GetEvent<ILoadViewModel>(Source).Subscribe(x => HandleProcessViews(x));
             EventMessageBus.Current.Publish(
                 new ServiceStarted<IViewModelService>(this,
                     new StateEventInfo(process.Id, RevolutionData.Context.Actor.Events.ActorStarted), process, Source),
                 Source);
         }
+        
 
         private void HandleProcessViews(ILoadViewModel pe)
         {

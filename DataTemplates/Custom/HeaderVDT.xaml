@@ -127,7 +127,7 @@
 
         <Grid>
 
-            <TabControl Margin="100,72,0,0" Background="Transparent"
+            <!--<TabControl Margin="100,72,0,0" Background="Transparent"
                         ItemsSource="{Binding Entities.Value, Mode=OneWay}"
                         SelectedItem="{Binding CurrentEntity.Value}"
                         >
@@ -188,7 +188,7 @@
                     </DataTemplate>
                 </TabControl.ContentTemplate>
 
-            </TabControl>
+            </TabControl>-->
             <ComboBox Width="200" Height="30" 
                       DisplayMemberPath="Name"
                       SelectedValuePath="Id"

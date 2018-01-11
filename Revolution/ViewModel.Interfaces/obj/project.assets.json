@@ -1075,19 +1075,19 @@
         "dependencies": {
           "FluentValidation.Net35": {
             "target": "Package",
-            "version": "1.0.1"
+            "version": "[1.0.1, )"
           },
           "JB.Common.Collections.Reactive": {
             "target": "Package",
-            "version": "0.8.107-pre"
+            "version": "[0.8.107-pre, )"
           },
           "JB.Common.Reactive": {
             "target": "Package",
-            "version": "0.8.107-pre"
+            "version": "[0.8.107-pre, )"
           },
           "ReactiveProperty": {
             "target": "Package",
-            "version": "3.6.0"
+            "version": "[3.6.0, )"
           }
         }
       }

@@ -18,8 +18,8 @@ namespace GenSoft.Mappings
 			entityBuilder.ToTable("ViewPropertyPresentationPropertyType", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
-			entityBuilder.Property(t => t.PresentationPropertyTypeId).HasColumnName("PresentationPropertyTypeId").IsRequired();
 			entityBuilder.Property(t => t.ViewPropertyId).HasColumnName("ViewPropertyId").IsRequired();
+			entityBuilder.Property(t => t.PresentationPropertyTypeId).HasColumnName("PresentationPropertyTypeId").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
 				entityBuilder.HasMany(x => x.ConfigurationPropertyPresentation).WithOne(p => p.ViewPropertyPresentationPropertyType).HasForeignKey(c => c.ViewPropertyPresentationPropertyTypeId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.EntityTypePresentationProperty).WithOne(p => p.ViewPropertyPresentationPropertyType).HasForeignKey(c => c.ViewPropertyPresentationPropertyTypeId).OnDelete(DeleteBehavior.Restrict);
@@ -27,8 +27,8 @@ namespace GenSoft.Mappings
 				entityBuilder.HasMany(x => x.ViewPropertyTheme).WithOne(p => p.ViewPropertyPresentationPropertyType).HasForeignKey(c => c.ViewPropertyPresentationPropertyTypeId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties
-				//entityBuilder.HasOne(p => p.PresentationPropertyType PresentationPropertyType).WithMany(p => p.ViewPropertyPresentationPropertyType).HasForeignKey(c => c.PresentationPropertyTypeId).OnDelete(DeleteBehavior.Restrict);
 				//entityBuilder.HasOne(p => p.ViewProperty ViewProperty).WithMany(p => p.ViewPropertyPresentationPropertyType).HasForeignKey(c => c.ViewPropertyId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.PresentationPropertyType PresentationPropertyType).WithMany(p => p.ViewPropertyPresentationPropertyType).HasForeignKey(c => c.PresentationPropertyTypeId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

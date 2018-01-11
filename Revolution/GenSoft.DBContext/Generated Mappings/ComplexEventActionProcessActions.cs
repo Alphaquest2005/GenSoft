@@ -19,14 +19,14 @@ namespace GenSoft.Mappings
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.ComplexEventActionId).HasColumnName("ComplexEventActionId").IsRequired();
-			entityBuilder.Property(t => t.ExpectedEventTypeId).HasColumnName("ExpectedEventTypeId").IsRequired();
 			entityBuilder.Property(t => t.ProcessActionId).HasColumnName("ProcessActionId").IsRequired();
+			entityBuilder.Property(t => t.ExpectedEventTypeId).HasColumnName("ExpectedEventTypeId").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
 	
 				//----------------Parent Properties
 				//entityBuilder.HasOne(p => p.ComplexEventAction ComplexEventAction).WithMany(p => p.ComplexEventActionProcessActions).HasForeignKey(c => c.ComplexEventActionId).OnDelete(DeleteBehavior.Restrict);
-				//entityBuilder.HasOne(p => p.EventType EventType).WithMany(p => p.ComplexEventActionProcessActions).HasForeignKey(c => c.ExpectedEventTypeId).OnDelete(DeleteBehavior.Restrict);
 				//entityBuilder.HasOne(p => p.ProcessAction ProcessAction).WithMany(p => p.ComplexEventActionProcessActions).HasForeignKey(c => c.ProcessActionId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.EventType EventType).WithMany(p => p.ComplexEventActionProcessActions).HasForeignKey(c => c.ExpectedEventTypeId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

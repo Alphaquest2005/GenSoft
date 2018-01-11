@@ -86,8 +86,7 @@ namespace RevolutionData
         public static IProcessAction IntializeProcessStateList(string entityType)
         {
             DynamicEntityTypeExtensions.AddDynamicEntityTypes(entityType);
-            var res = DynamicEntityType.DynamicEntityTypes[entityType];
-            return IntializeProcessStateList(res);
+            return IntializeProcessStateList(DynamicEntityType.DynamicEntityTypes[entityType]);
         }
 
         public static IProcessAction IntializeProcessStateList(IDynamicEntityType entityType)

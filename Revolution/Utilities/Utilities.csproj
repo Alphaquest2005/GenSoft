@@ -82,6 +82,7 @@
   <ItemGroup>
     <Compile Include="BoxingSafeConverter.cs" />
     <Compile Include="ActorExtensions.cs" />
+    <Compile Include="IEntityExtensions.cs" />
     <Compile Include="ListExtentions.cs" />
     <Compile Include="NullableExtensions.cs" />
     <Compile Include="OpenGenericExtensions.cs" />

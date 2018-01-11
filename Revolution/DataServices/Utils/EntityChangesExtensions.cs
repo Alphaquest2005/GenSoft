@@ -9,12 +9,14 @@ namespace DataServices.Actors
         {
 
             DynamicDataContext.UpdateEntityWithChanges(msg);
+            DataContext.UpdateEntityWithChanges(msg);
         }
 
         public static void AddEntity(this IAddOrGetEntityWithChanges msg)
         {
 
             DynamicDataContext.AddEntity(msg);
+            DataContext.AddEntity(msg);
         }
     }
 }

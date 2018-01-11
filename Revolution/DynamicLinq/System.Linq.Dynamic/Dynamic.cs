@@ -18,7 +18,7 @@ namespace System.Linq.Dynamic
         {
             //Type type = typeof(T);
             //Type selectorResultType;
-
+            if (string.IsNullOrEmpty(predicate)) return (IQueryable<T>) (IQueryable) source;
             //LambdaExpression selector = GenerateSelector<T>(predicate, out selectorResultType);
             return (IQueryable<T>)Where((IQueryable)source, predicate, values);
         }

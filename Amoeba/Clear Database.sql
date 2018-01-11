@@ -1,0 +1,2 @@
+delete from entityrelationship
+delete from entitytype

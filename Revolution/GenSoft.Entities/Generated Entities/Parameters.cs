@@ -13,9 +13,9 @@ namespace GenSoft.Entities
 {
 	public partial class Parameters: BaseEntity, IParameters
 	{
-		public virtual int DataTypeId { get; set; }
-		public virtual string Description { get; set; }
 		public virtual string Name { get; set; }
+		public virtual string Description { get; set; }
+		public virtual int DataTypeId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships

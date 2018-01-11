@@ -31,10 +31,16 @@ namespace DataServices.Actors
             }
             //Todo: make time out configurable
 
-
+            EventMessageBus.Current.GetEvent<ICleanUpSystemProcess>(Source).Where(x => x.ProcessToBeCleanedUpId > 1 && x.ProcessToBeCleanedUpId == Process.Id).Subscribe(x => CleanUpActor(x));
             EventMessageBus.Current.GetEvent<IRequestComplexEventLog>(Source).Subscribe(x => handleComplexEventLogRequest());
             
             Publish(new ServiceStarted<IComplexEventService>(this, new StateEventInfo(Process.Id, RevolutionData.Context.Actor.Events.ActorStarted), Process, Source));
+        }
+
+        private void CleanUpActor(ICleanUpSystemProcess cleanUpSystemProcess)
+        {
+            ComplexEventAction = new ComplexEventAction();
+            InMessages.Clear();
         }
 
         private void handleComplexEventLogRequest()
@@ -93,15 +99,13 @@ namespace DataServices.Actors
         private async Task ExecuteAction(ImmutableDictionary<string, IDynamicObject> msgs)
         {
             // if (!ComplexEventAction.Events.All(z => z.Raised())) return;
-
+            if (ComplexEventAction.Action == null) return;
             var inMsg = new ExecuteComplexEventAction(ComplexEventAction.Action, new DynamicComplexEventParameters(this,  msgs), new StateCommandInfo(Process.Id, RevolutionData.Context.Actor.Commands.CreateAction), Process, Source);
 
             Publish(inMsg);
+            var outMsg = await ComplexEventAction.Action.Action(inMsg.ComplexEventParameters).ConfigureAwait(false);
             try
             {
-
-
-                var outMsg = await ComplexEventAction.Action.Action(inMsg.ComplexEventParameters).ConfigureAwait(false);
                 Publish(outMsg);
 
             }
@@ -114,7 +118,7 @@ namespace DataServices.Actors
 
 
         public string ActorId { get; }
-        public IComplexEventAction ComplexEventAction { get; }
+        public IComplexEventAction ComplexEventAction { get; private set; }
         //public ISystemProcess Process { get; }
         private readonly ConcurrentDictionary<string, IProcessSystemMessage> InMessages = new ConcurrentDictionary<string, IProcessSystemMessage>();
 

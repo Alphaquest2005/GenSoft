@@ -13,9 +13,9 @@ namespace GenSoft.Entities
 {
 	public partial class FunctionParameter: BaseEntity, IFunctionParameter
 	{
-		public virtual int DataTypeId { get; set; }
 		public virtual int FunctionId { get; set; }
 		public virtual string Name { get; set; }
+		public virtual int DataTypeId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
@@ -23,8 +23,8 @@ namespace GenSoft.Entities
 				public virtual ICollection<FunctionParameterConstant> FunctionParameterConstant {get; set;}
 		
 			// ---------Parent Relationships
-				public virtual DataType DataType {get; set;}
 				public virtual Functions Functions {get; set;}
+				public virtual DataType DataType {get; set;}
 	
 
 	}

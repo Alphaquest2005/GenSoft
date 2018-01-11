@@ -51,14 +51,11 @@ namespace DataServices.Actors
                         new StateEventInfo(systemProcess.Id, RevolutionData.Context.Process.Events.ProcessStarted),
                         systemProcess, Source);
 
-
-
+                Task.Run(() => ctx.ActorOf(Props.Create<EntityDataServiceManager>(systemProcess),
+                    "EntityDataServiceManager")).ConfigureAwait(false);
 
                 Task.Run(() => ctx.ActorOf(Props.Create<DomainProcessSupervisor>(autoRun, systemProcess),
                     "DomainProcessSupervisor")).ConfigureAwait(false);
-
-                Task.Run(() => ctx.ActorOf(Props.Create<EntityDataServiceManager>(systemProcess),
-                    "EntityDataServiceManager")).ConfigureAwait(false);
 
                 Task.Run(() => ctx.ActorOf(
                     Props.Create<SystemProcessSupervisor>(autoRun, systemStartedMsg, processInfos,

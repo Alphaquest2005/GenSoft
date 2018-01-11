@@ -6132,8 +6132,10 @@
       "Actor.Interfaces >= 1.0.0",
       "BootStrapper >= 1.0.0",
       "Common >= 1.0.0",
+      "CommonMessages >= 1.0.0",
       "Core.Common.UI >= 1.0.0",
       "DomainUtilities >= 1.0.0",
+      "EventAggregator >= 1.0.0",
       "EventMessages >= 1.0.0",
       "GenSoft.DBContext >= 1.0.0",
       "GenSoft.Entities >= 1.0.0",
@@ -6188,6 +6190,9 @@
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\BootStrapper\\BootStrapper.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\BootStrapper\\BootStrapper.csproj"
             },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\CommonMessages\\CommonMessages.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\CommonMessages\\CommonMessages.csproj"
+            },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Common\\Common.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Common\\Common.csproj"
             },
@@ -6196,6 +6201,9 @@
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\DomainUtilities\\DomainUtilities.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\DomainUtilities\\DomainUtilities.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\EventAggregator\\EventAggregator.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\EventAggregator\\EventAggregator.csproj"
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\EventMessages\\EventMessages.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\EventMessages\\EventMessages.csproj"
@@ -6236,39 +6244,39 @@
         "dependencies": {
           "JB.Common": {
             "target": "Package",
-            "version": "0.8.107-pre"
+            "version": "[0.8.107-pre, )"
           },
           "JB.Common.Collections": {
             "target": "Package",
-            "version": "0.8.107-pre"
+            "version": "[0.8.107-pre, )"
           },
           "JB.Common.Collections.Reactive": {
             "target": "Package",
-            "version": "0.8.107-pre"
+            "version": "[0.8.107-pre, )"
           },
           "JB.Common.Reactive": {
             "target": "Package",
-            "version": "0.8.107-pre"
+            "version": "[0.8.107-pre, )"
           },
           "Rx-Core": {
             "target": "Package",
-            "version": "2.2.5"
+            "version": "[2.2.5, )"
           },
           "Rx-Interfaces": {
             "target": "Package",
-            "version": "2.2.5"
+            "version": "[2.2.5, )"
           },
           "Rx-Linq": {
             "target": "Package",
-            "version": "2.2.5"
+            "version": "[2.2.5, )"
           },
           "Rx-Main": {
             "target": "Package",
-            "version": "2.2.5"
+            "version": "[2.2.5, )"
           },
           "Rx-PlatformServices": {
             "target": "Package",
-            "version": "2.2.5"
+            "version": "[2.2.5, )"
           }
         }
       }

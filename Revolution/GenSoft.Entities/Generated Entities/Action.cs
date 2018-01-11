@@ -13,9 +13,9 @@ namespace GenSoft.Entities
 {
 	public partial class Action: BaseEntity, IAction
 	{
-		public virtual string Body { get; set; }
-		public virtual string Description { get; set; }
 		public virtual string Name { get; set; }
+		public virtual string Description { get; set; }
+		public virtual string Body { get; set; }
 		public virtual string ParameterName { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//

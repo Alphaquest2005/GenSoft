@@ -1232,8 +1232,10 @@
           "Actor.Interfaces": "1.0.0",
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
+          "CommonMessages": "1.0.0",
           "Core.Common.UI": "1.0.0",
           "DomainUtilities": "1.0.0",
+          "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
           "GenSoft.DBContext": "1.0.0",
           "GenSoft.Entities": "1.0.0",
@@ -2483,8 +2485,10 @@
           "Actor.Interfaces": "1.0.0",
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
+          "CommonMessages": "1.0.0",
           "Core.Common.UI": "1.0.0",
           "DomainUtilities": "1.0.0",
+          "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
           "GenSoft.DBContext": "1.0.0",
           "GenSoft.Entities": "1.0.0",
@@ -3734,8 +3738,10 @@
           "Actor.Interfaces": "1.0.0",
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
+          "CommonMessages": "1.0.0",
           "Core.Common.UI": "1.0.0",
           "DomainUtilities": "1.0.0",
+          "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
           "GenSoft.DBContext": "1.0.0",
           "GenSoft.Entities": "1.0.0",
@@ -4985,8 +4991,10 @@
           "Actor.Interfaces": "1.0.0",
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
+          "CommonMessages": "1.0.0",
           "Core.Common.UI": "1.0.0",
           "DomainUtilities": "1.0.0",
+          "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
           "GenSoft.DBContext": "1.0.0",
           "GenSoft.Entities": "1.0.0",
@@ -7100,15 +7108,15 @@
         "dependencies": {
           "Akka.Persistence.SqlServer": {
             "target": "Package",
-            "version": "1.3.2"
+            "version": "[1.3.2, )"
           },
           "JB.Common.Collections": {
             "target": "Package",
-            "version": "0.8.107-pre"
+            "version": "[0.8.107-pre, )"
           },
           "JB.Common.Reactive": {
             "target": "Package",
-            "version": "0.8.107-pre"
+            "version": "[0.8.107-pre, )"
           }
         }
       }

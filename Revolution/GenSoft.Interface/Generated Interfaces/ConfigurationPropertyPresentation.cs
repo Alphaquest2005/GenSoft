@@ -14,9 +14,9 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IConfigurationPropertyPresentation:SystemInterfaces.IEntity  
 	{
+		int ViewPropertyPresentationPropertyTypeId { get;}
 		int PresentationThemeId { get;}
 		int ValueOptionId { get;}
-		int ViewPropertyPresentationPropertyTypeId { get;}
 		int ViewTypeId { get;}
 
 

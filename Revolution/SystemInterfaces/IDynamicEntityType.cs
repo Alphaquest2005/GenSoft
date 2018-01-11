@@ -15,7 +15,10 @@ namespace SystemInterfaces
         ObservableDictionary<string, string> PropertyParentEntityType { get; }
         IIntelliList<IDynamicEntityType> ChildEntities { get;  }
         IIntelliList<IDynamicEntityType> ParentEntities { get;  }
+        IDynamicEntityType NullEntityType();
     }
+
+    
 
     public interface IIntelliList<T>:IList<T>
     {
