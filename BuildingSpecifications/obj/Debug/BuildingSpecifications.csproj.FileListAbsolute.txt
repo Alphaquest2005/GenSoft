@@ -1,7 +1,6 @@
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\BuildingSpecifications.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\BuildingSpecifications.pdb
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\DynamicExpresso.Core.dll
-C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\DynamicExpresso.Core.pdb
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\FluentValidation.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\JB.Common.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\Debug\JB.Common.Collections.dll

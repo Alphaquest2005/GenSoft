@@ -1,7 +1,6 @@
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\GenSoft.Expressions.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\GenSoft.Expressions.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\DynamicExpresso.Core.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\DynamicExpresso.Core.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\FluentValidation.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\JB.Common.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\bin\Debug\JB.Common.Collections.dll

@@ -145,7 +145,6 @@ C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\Debug\DataTemplates.dll
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\Debug\DataTemplates.pdb
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\Debug\Akka.dll
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\Debug\DynamicExpresso.Core.dll
-C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\Debug\DynamicExpresso.Core.pdb
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\Debug\FluentValidation.dll
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\Debug\JB.Common.dll
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\Debug\JB.Common.Collections.dll

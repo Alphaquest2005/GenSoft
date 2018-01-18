@@ -204,11 +204,10 @@ namespace EFRepository
         private static IQueryable<Entity> GetEntities(GenSoftDBContext ctx, int? viewId)
         {
             if (CurrentApplication?.DatabaseInfo.IsRealDatabase != IsRealDatabase) return new List<Entity>().AsQueryable();
-            var entities = ctx.Entity.Include(x => x.EntityAttribute)
+            var entities = ctx.Entity.AsNoTracking().Include(x => x.EntityAttribute)
                 .ThenInclude(x => x.Attributes).ThenInclude(x => x.EntityId)
                 .ThenInclude(x => x.Attributes).ThenInclude(x => x.EntityName);
-            var res1 = entities
-                .Where(x => x.EntityTypeId == viewId);
+           
             var res = entities
                     .Where(x => x.EntityTypeId == viewId)
                     .Where(x => x.EntityAttribute.Any(z => z.Attributes.EntityId != null));
@@ -307,7 +306,7 @@ namespace EFRepository
 
         private static List<int> GetViewEntityAttributes(GenSoftDBContext ctx, int? viewId)
         {
-            return ctx.EntityTypeAttributes
+            return ctx.EntityTypeAttributes.AsNoTracking()
                 .Where(x => x.EntityTypeId == viewId)
                 .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
                 .Select(x => x.AttributeId).ToList();

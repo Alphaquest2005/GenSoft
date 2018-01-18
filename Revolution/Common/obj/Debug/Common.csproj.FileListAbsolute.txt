@@ -71,7 +71,6 @@ C:\Prism\GitRepositiory\MRManager\Revolution\Common\obj\Debug\Common.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\Debug\Common.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\Debug\Common.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\Debug\DynamicExpresso.Core.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\Debug\DynamicExpresso.Core.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\Debug\JB.Common.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\Debug\JB.Common.Collections.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\Debug\JB.Common.Collections.Reactive.dll

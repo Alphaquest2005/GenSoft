@@ -27,7 +27,6 @@ C:\Prism\GitRepositiory\MRManager\Revolution\Converters\bin\Debug\zh-Hant\System
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\Debug\Converters.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\Debug\Converters.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\Debug\DynamicExpresso.Core.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\Debug\DynamicExpresso.Core.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\Debug\FluentValidation.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\Debug\JB.Common.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\Debug\JB.Common.Collections.dll

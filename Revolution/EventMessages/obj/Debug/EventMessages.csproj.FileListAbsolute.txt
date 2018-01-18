@@ -18,7 +18,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\Debug\EventMessages
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\Debug\EventMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\Debug\Akka.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\Debug\DynamicExpresso.Core.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\Debug\DynamicExpresso.Core.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\Debug\FluentValidation.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\Debug\JB.Common.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\Debug\JB.Common.Collections.dll

@@ -175,7 +175,7 @@ namespace EFRepository
                 var viewEntityAttributes = GetViewEntityAttributes(ctx, entityTypeId);
                 var whereStr = GetWhereStr(msg.Changes);
                
-                    var res = GetEntities<IEntity>(ctx, msg.EntityType.Name).Where(whereStr);
+                    var res = GetEntities<IEntity>(ctx, msg.EntityType.Name).Where(whereStr).AsNoTracking();
 
 
                     var entities = GetViewEntities(entityType, res, viewEntityAttributes).ToList();
@@ -204,7 +204,7 @@ namespace EFRepository
 
             using (var ctx = new GenSoftDBContext())
             {
-                var viewset = GetEntities<IEntity>(ctx, msg.EntityType.Name).ToList()
+                var viewset = GetEntities<IEntity>(ctx, msg.EntityType.Name).AsNoTracking().ToList()
                     .Select(x => x.ToDynamicEntity(msg.EntityType)).ToList();
             
             EventMessageBus.Current.Publish(
@@ -322,7 +322,7 @@ namespace EFRepository
 
         private static List<int> GetViewEntityAttributes(GenSoftDBContext ctx, int? viewId)
         {
-            return ctx.EntityTypeAttributes
+            return ctx.EntityTypeAttributes.AsNoTracking()
                 .Where(x => x.EntityTypeId == viewId)
                 .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
                 .Select(x => x.AttributeId).ToList();

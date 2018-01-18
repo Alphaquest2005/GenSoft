@@ -108,7 +108,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\Debug\ViewMessages.d
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\Debug\ViewMessages.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\Debug\ViewMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\Debug\DynamicExpresso.Core.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\Debug\DynamicExpresso.Core.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\Debug\FluentValidation.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\Debug\JB.Common.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\Debug\JB.Common.Collections.dll

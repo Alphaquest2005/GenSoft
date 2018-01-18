@@ -3,7 +3,10 @@ declare @AppId int, @appName varchar(50)
 
 set @appName = (SELECT DB_NAME())
 
-set @AppId = (select Id from [GenSoft-Creator].dbo.Application where [DBName] = @appName )
+set @AppId = (SELECT        Application.Id
+				FROM            [GenSoft-Creator].dbo.Application INNER JOIN
+											[GenSoft-Creator].dbo.DatabaseInfo ON Application.Id = DatabaseInfo.Id
+				WHERE        (DatabaseInfo.DBName = @appName) )
 
 select @AppId
 if(@AppId is null)

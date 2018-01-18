@@ -1,7 +1,6 @@
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\Debug\GenSoft.Entities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\Debug\GenSoft.Entities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\Debug\DynamicExpresso.Core.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\Debug\DynamicExpresso.Core.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\Debug\JB.Common.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\Debug\JB.Common.Collections.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\Debug\JB.Common.Collections.Reactive.dll

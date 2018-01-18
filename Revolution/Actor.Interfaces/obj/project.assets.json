@@ -60,7 +60,7 @@
           "lib/net46/JB.Common.Reactive.dll": {}
         }
       },
-      "ReactiveProperty/3.6.0": {
+      "ReactiveProperty/4.1.0": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -71,7 +71,6 @@
           "System",
           "System.ComponentModel.DataAnnotations",
           "System.Core",
-          "System.Runtime.Serialization",
           "System.Xaml",
           "WindowsBase"
         ],
@@ -200,7 +199,7 @@
           "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "3.6.0",
+          "ReactiveProperty": "4.1.0",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -270,7 +269,7 @@
           "lib/net46/JB.Common.Reactive.dll": {}
         }
       },
-      "ReactiveProperty/3.6.0": {
+      "ReactiveProperty/4.1.0": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -281,7 +280,6 @@
           "System",
           "System.ComponentModel.DataAnnotations",
           "System.Core",
-          "System.Runtime.Serialization",
           "System.Xaml",
           "WindowsBase"
         ],
@@ -410,7 +408,7 @@
           "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "3.6.0",
+          "ReactiveProperty": "4.1.0",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -480,7 +478,7 @@
           "lib/net46/JB.Common.Reactive.dll": {}
         }
       },
-      "ReactiveProperty/3.6.0": {
+      "ReactiveProperty/4.1.0": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -491,7 +489,6 @@
           "System",
           "System.ComponentModel.DataAnnotations",
           "System.Core",
-          "System.Runtime.Serialization",
           "System.Xaml",
           "WindowsBase"
         ],
@@ -620,7 +617,7 @@
           "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "3.6.0",
+          "ReactiveProperty": "4.1.0",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -690,7 +687,7 @@
           "lib/net46/JB.Common.Reactive.dll": {}
         }
       },
-      "ReactiveProperty/3.6.0": {
+      "ReactiveProperty/4.1.0": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -701,7 +698,6 @@
           "System",
           "System.ComponentModel.DataAnnotations",
           "System.Core",
-          "System.Runtime.Serialization",
           "System.Xaml",
           "WindowsBase"
         ],
@@ -830,7 +826,7 @@
           "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "3.6.0",
+          "ReactiveProperty": "4.1.0",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -897,15 +893,12 @@
         "lib/net46/JB.Common.Reactive.dll"
       ]
     },
-    "ReactiveProperty/3.6.0": {
-      "sha512": "5WCPLBSvEMmiRBc+DRT1wXKMfmiaVi8FNghJdb6LfFjZxuNsPb98WpVn+IrgHwd+ve1KMPrkTTPA8+edumhEHw==",
+    "ReactiveProperty/4.1.0": {
+      "sha512": "u05HsuDr1visUEEkImr8Ha4phyHIKj8I2aw7UMwy5mJO1lpdceBz0s8AjVMIYc4Qfh4iSZirBDQH9uZxEoAqEA==",
       "type": "package",
-      "path": "reactiveproperty/3.6.0",
+      "path": "reactiveproperty/4.1.0",
       "files": [
-        "Docs/ReadMe.txt",
         "LICENSE.txt",
-        "ReactiveProperty.3.6.0.nupkg.sha512",
-        "ReactiveProperty.nuspec",
         "Snippet/csharp5/AsyncReactiveCommand.snippet",
         "Snippet/csharp5/AsyncReactiveCommandGeneric.snippet",
         "Snippet/csharp5/ReactiveCollection.snippet",
@@ -925,48 +918,44 @@
         "lib/MonoAndroid/ReactiveProperty.Android.XML",
         "lib/MonoAndroid/ReactiveProperty.Android.dll",
         "lib/MonoAndroid/ReactiveProperty.Android.pdb",
-        "lib/MonoAndroid/ReactiveProperty.XML",
         "lib/MonoAndroid/ReactiveProperty.dll",
         "lib/MonoAndroid/ReactiveProperty.pdb",
-        "lib/MonoTouch/ReactiveProperty.XML",
+        "lib/MonoAndroid/ReactiveProperty.xml",
         "lib/MonoTouch/ReactiveProperty.dll",
         "lib/MonoTouch/ReactiveProperty.iOS.XML",
         "lib/MonoTouch/ReactiveProperty.iOS.dll",
         "lib/MonoTouch/ReactiveProperty.iOS.pdb",
         "lib/MonoTouch/ReactiveProperty.pdb",
-        "lib/Xamarin.Mac20/ReactiveProperty.XML",
+        "lib/MonoTouch/ReactiveProperty.xml",
         "lib/Xamarin.Mac20/ReactiveProperty.dll",
         "lib/Xamarin.Mac20/ReactiveProperty.pdb",
-        "lib/Xamarin.iOS10/ReactiveProperty.XML",
+        "lib/Xamarin.Mac20/ReactiveProperty.xml",
         "lib/Xamarin.iOS10/ReactiveProperty.dll",
         "lib/Xamarin.iOS10/ReactiveProperty.iOS.XML",
         "lib/Xamarin.iOS10/ReactiveProperty.iOS.dll",
         "lib/Xamarin.iOS10/ReactiveProperty.iOS.pdb",
         "lib/Xamarin.iOS10/ReactiveProperty.pdb",
-        "lib/net45/ReactiveProperty.NET45.XML",
-        "lib/net45/ReactiveProperty.NET45.dll",
-        "lib/net45/ReactiveProperty.NET45.pdb",
-        "lib/net45/ReactiveProperty.XML",
-        "lib/net45/ReactiveProperty.dll",
-        "lib/net45/ReactiveProperty.pdb",
+        "lib/Xamarin.iOS10/ReactiveProperty.xml",
         "lib/net46/ReactiveProperty.NET46.XML",
         "lib/net46/ReactiveProperty.NET46.dll",
         "lib/net46/ReactiveProperty.NET46.pdb",
-        "lib/net46/ReactiveProperty.XML",
         "lib/net46/ReactiveProperty.dll",
         "lib/net46/ReactiveProperty.pdb",
-        "lib/netstandard1.1/ReactiveProperty.XML",
-        "lib/netstandard1.1/ReactiveProperty.dll",
-        "lib/netstandard1.1/ReactiveProperty.pdb",
-        "lib/portable-net45+win81+MonoTouch+MonoAndroid/ReactiveProperty.XML",
-        "lib/portable-net45+win81+MonoTouch+MonoAndroid/ReactiveProperty.dll",
-        "lib/portable-net45+win81+MonoTouch+MonoAndroid/ReactiveProperty.pdb",
+        "lib/net46/ReactiveProperty.xml",
+        "lib/netstandard1.3/ReactiveProperty.dll",
+        "lib/netstandard1.3/ReactiveProperty.pdb",
+        "lib/netstandard1.3/ReactiveProperty.xml",
+        "lib/portable-net46+uap+MonoTouch+MonoAndroid/ReactiveProperty.dll",
+        "lib/portable-net46+uap+MonoTouch+MonoAndroid/ReactiveProperty.pdb",
+        "lib/portable-net46+uap+MonoTouch+MonoAndroid/ReactiveProperty.xml",
         "lib/uap10.0/ReactiveProperty.UWP.XML",
         "lib/uap10.0/ReactiveProperty.UWP.dll",
         "lib/uap10.0/ReactiveProperty.UWP.pdb",
-        "lib/uap10.0/ReactiveProperty.XML",
         "lib/uap10.0/ReactiveProperty.dll",
-        "lib/uap10.0/ReactiveProperty.pdb"
+        "lib/uap10.0/ReactiveProperty.pdb",
+        "lib/uap10.0/ReactiveProperty.xml",
+        "reactiveproperty.4.1.0.nupkg.sha512",
+        "reactiveproperty.nuspec"
       ]
     },
     "System.Reactive/3.1.1": {

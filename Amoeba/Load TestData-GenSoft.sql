@@ -9,6 +9,7 @@ PRINT @appId
 
 
 
+
 DECLARE @entityId int
 
 delete from AmoebaDB.dbo.TestValues

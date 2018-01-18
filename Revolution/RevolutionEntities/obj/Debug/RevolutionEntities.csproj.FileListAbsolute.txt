@@ -118,7 +118,6 @@ C:\Prism\GitRepositiory\MRManager\Revolution\RevolutionEntities\obj\Debug\Revolu
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\RevolutionEntities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\RevolutionEntities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\DynamicExpresso.Core.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\DynamicExpresso.Core.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\FluentValidation.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\JB.Common.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\Debug\JB.Common.Collections.dll

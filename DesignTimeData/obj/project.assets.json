@@ -2,13 +2,16 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.7": {
-      "DynamicExpresso.Core/1.3.4.7": {
+      "DynamicExpresso.Core/2.0.0": {
         "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp"
+        ],
         "compile": {
-          "lib/net40/DynamicExpresso.Core.dll": {}
+          "lib/net461/DynamicExpresso.Core.dll": {}
         },
         "runtime": {
-          "lib/net40/DynamicExpresso.Core.dll": {}
+          "lib/net461/DynamicExpresso.Core.dll": {}
         }
       },
       "JB.Common/0.8.107-pre": {
@@ -132,7 +135,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
-          "DynamicExpresso.Core": "1.3.4.7",
+          "DynamicExpresso.Core": "2.0.0",
           "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
@@ -187,13 +190,16 @@
       }
     },
     ".NETFramework,Version=v4.7/win": {
-      "DynamicExpresso.Core/1.3.4.7": {
+      "DynamicExpresso.Core/2.0.0": {
         "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp"
+        ],
         "compile": {
-          "lib/net40/DynamicExpresso.Core.dll": {}
+          "lib/net461/DynamicExpresso.Core.dll": {}
         },
         "runtime": {
-          "lib/net40/DynamicExpresso.Core.dll": {}
+          "lib/net461/DynamicExpresso.Core.dll": {}
         }
       },
       "JB.Common/0.8.107-pre": {
@@ -317,7 +323,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
-          "DynamicExpresso.Core": "1.3.4.7",
+          "DynamicExpresso.Core": "2.0.0",
           "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
@@ -372,13 +378,16 @@
       }
     },
     ".NETFramework,Version=v4.7/win-x64": {
-      "DynamicExpresso.Core/1.3.4.7": {
+      "DynamicExpresso.Core/2.0.0": {
         "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp"
+        ],
         "compile": {
-          "lib/net40/DynamicExpresso.Core.dll": {}
+          "lib/net461/DynamicExpresso.Core.dll": {}
         },
         "runtime": {
-          "lib/net40/DynamicExpresso.Core.dll": {}
+          "lib/net461/DynamicExpresso.Core.dll": {}
         }
       },
       "JB.Common/0.8.107-pre": {
@@ -502,7 +511,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
-          "DynamicExpresso.Core": "1.3.4.7",
+          "DynamicExpresso.Core": "2.0.0",
           "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
@@ -557,13 +566,16 @@
       }
     },
     ".NETFramework,Version=v4.7/win-x86": {
-      "DynamicExpresso.Core/1.3.4.7": {
+      "DynamicExpresso.Core/2.0.0": {
         "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp"
+        ],
         "compile": {
-          "lib/net40/DynamicExpresso.Core.dll": {}
+          "lib/net461/DynamicExpresso.Core.dll": {}
         },
         "runtime": {
-          "lib/net40/DynamicExpresso.Core.dll": {}
+          "lib/net461/DynamicExpresso.Core.dll": {}
         }
       },
       "JB.Common/0.8.107-pre": {
@@ -687,7 +699,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
-          "DynamicExpresso.Core": "1.3.4.7",
+          "DynamicExpresso.Core": "2.0.0",
           "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
@@ -743,16 +755,15 @@
     }
   },
   "libraries": {
-    "DynamicExpresso.Core/1.3.4.7": {
-      "sha512": "2o6UcIFlnJQ4KgyMETFsFPSDav9FA1v57WQ4Mtyfnoj+1Y6+TeuwYYxuxvxbI2AINNjEyd5U2/KW5NYt2eFztA==",
+    "DynamicExpresso.Core/2.0.0": {
+      "sha512": "TZSJWrKQbD/XrEFK+GAGJxIJKzckAqXOlos9LuONDNTtDy4C2xSBVdaZLbf5O0HmvK77ecmw901JQzoKz9ed0w==",
       "type": "package",
-      "path": "dynamicexpresso.core/1.3.4.7",
+      "path": "dynamicexpresso.core/2.0.0",
       "files": [
-        "dynamicexpresso.core.1.3.4.7.nupkg.sha512",
+        "dynamicexpresso.core.2.0.0.nupkg.sha512",
         "dynamicexpresso.core.nuspec",
-        "lib/net40/DynamicExpresso.Core.XML",
-        "lib/net40/DynamicExpresso.Core.dll",
-        "lib/net40/DynamicExpresso.Core.pdb"
+        "lib/net461/DynamicExpresso.Core.dll",
+        "lib/netstandard2.0/DynamicExpresso.Core.dll"
       ]
     },
     "JB.Common/0.8.107-pre": {

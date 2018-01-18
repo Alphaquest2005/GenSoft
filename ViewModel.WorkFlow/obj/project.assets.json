@@ -18,13 +18,16 @@
           "lib/net45/Akka.dll": {}
         }
       },
-      "DynamicExpresso.Core/1.3.4.7": {
+      "DynamicExpresso.Core/2.0.0": {
         "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp"
+        ],
         "compile": {
-          "lib/net40/DynamicExpresso.Core.dll": {}
+          "lib/net461/DynamicExpresso.Core.dll": {}
         },
         "runtime": {
-          "lib/net40/DynamicExpresso.Core.dll": {}
+          "lib/net461/DynamicExpresso.Core.dll": {}
         }
       },
       "FluentValidation.Net35/1.0.1": {
@@ -271,7 +274,7 @@
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "morelinq/2.8.0": {
+      "morelinq/2.9.0": {
         "type": "package",
         "dependencies": {
           "System.ValueTuple": "4.4.0"
@@ -310,7 +313,7 @@
           "lib/net45/Reactive.EventAggregator.dll": {}
         }
       },
-      "ReactiveProperty/3.6.0": {
+      "ReactiveProperty/4.1.0": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -321,7 +324,6 @@
           "System",
           "System.ComponentModel.DataAnnotations",
           "System.Core",
-          "System.Runtime.Serialization",
           "System.Xaml",
           "WindowsBase"
         ],
@@ -743,7 +745,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
-          "DynamicExpresso.Core": "1.3.4.7",
+          "DynamicExpresso.Core": "2.0.0",
           "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
@@ -794,7 +796,7 @@
           "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "3.6.0",
+          "ReactiveProperty": "4.1.0",
           "RevolutionData": "1.0.0",
           "RevolutionEntities": "1.0.0",
           "RevolutionLogger": "1.0.0",
@@ -816,7 +818,7 @@
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Common": "1.0.0",
-          "DynamicExpresso.Core": "1.3.4.7",
+          "DynamicExpresso.Core": "2.0.0",
           "GenSoft.DBContext": "1.0.0",
           "GenSoft.Entities": "1.0.0",
           "GenSoft.Interface": "1.0.0",
@@ -890,7 +892,7 @@
           "RevolutionLogger": "1.0.0",
           "System.Linq.Dynamic": "1.0.0",
           "SystemInterfaces": "1.0.0",
-          "morelinq": "2.8.0"
+          "morelinq": "2.9.0"
         },
         "compile": {
           "bin/placeholder/GenSoft.DBContext.dll": {}
@@ -965,7 +967,7 @@
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0",
-          "morelinq": "2.8.0"
+          "morelinq": "2.9.0"
         },
         "compile": {
           "bin/placeholder/RevolutionEntities.dll": {}
@@ -1064,7 +1066,7 @@
           "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "3.6.0",
+          "ReactiveProperty": "4.1.0",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -1092,13 +1094,16 @@
           "lib/net45/Akka.dll": {}
         }
       },
-      "DynamicExpresso.Core/1.3.4.7": {
+      "DynamicExpresso.Core/2.0.0": {
         "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp"
+        ],
         "compile": {
-          "lib/net40/DynamicExpresso.Core.dll": {}
+          "lib/net461/DynamicExpresso.Core.dll": {}
         },
         "runtime": {
-          "lib/net40/DynamicExpresso.Core.dll": {}
+          "lib/net461/DynamicExpresso.Core.dll": {}
         }
       },
       "FluentValidation.Net35/1.0.1": {
@@ -1345,7 +1350,7 @@
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "morelinq/2.8.0": {
+      "morelinq/2.9.0": {
         "type": "package",
         "dependencies": {
           "System.ValueTuple": "4.4.0"
@@ -1384,7 +1389,7 @@
           "lib/net45/Reactive.EventAggregator.dll": {}
         }
       },
-      "ReactiveProperty/3.6.0": {
+      "ReactiveProperty/4.1.0": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -1395,7 +1400,6 @@
           "System",
           "System.ComponentModel.DataAnnotations",
           "System.Core",
-          "System.Runtime.Serialization",
           "System.Xaml",
           "WindowsBase"
         ],
@@ -1807,7 +1811,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
-          "DynamicExpresso.Core": "1.3.4.7",
+          "DynamicExpresso.Core": "2.0.0",
           "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
@@ -1858,7 +1862,7 @@
           "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "3.6.0",
+          "ReactiveProperty": "4.1.0",
           "RevolutionData": "1.0.0",
           "RevolutionEntities": "1.0.0",
           "RevolutionLogger": "1.0.0",
@@ -1880,7 +1884,7 @@
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Common": "1.0.0",
-          "DynamicExpresso.Core": "1.3.4.7",
+          "DynamicExpresso.Core": "2.0.0",
           "GenSoft.DBContext": "1.0.0",
           "GenSoft.Entities": "1.0.0",
           "GenSoft.Interface": "1.0.0",
@@ -1954,7 +1958,7 @@
           "RevolutionLogger": "1.0.0",
           "System.Linq.Dynamic": "1.0.0",
           "SystemInterfaces": "1.0.0",
-          "morelinq": "2.8.0"
+          "morelinq": "2.9.0"
         },
         "compile": {
           "bin/placeholder/GenSoft.DBContext.dll": {}
@@ -2029,7 +2033,7 @@
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0",
-          "morelinq": "2.8.0"
+          "morelinq": "2.9.0"
         },
         "compile": {
           "bin/placeholder/RevolutionEntities.dll": {}
@@ -2128,7 +2132,7 @@
           "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "3.6.0",
+          "ReactiveProperty": "4.1.0",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -2156,13 +2160,16 @@
           "lib/net45/Akka.dll": {}
         }
       },
-      "DynamicExpresso.Core/1.3.4.7": {
+      "DynamicExpresso.Core/2.0.0": {
         "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp"
+        ],
         "compile": {
-          "lib/net40/DynamicExpresso.Core.dll": {}
+          "lib/net461/DynamicExpresso.Core.dll": {}
         },
         "runtime": {
-          "lib/net40/DynamicExpresso.Core.dll": {}
+          "lib/net461/DynamicExpresso.Core.dll": {}
         }
       },
       "FluentValidation.Net35/1.0.1": {
@@ -2409,7 +2416,7 @@
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "morelinq/2.8.0": {
+      "morelinq/2.9.0": {
         "type": "package",
         "dependencies": {
           "System.ValueTuple": "4.4.0"
@@ -2448,7 +2455,7 @@
           "lib/net45/Reactive.EventAggregator.dll": {}
         }
       },
-      "ReactiveProperty/3.6.0": {
+      "ReactiveProperty/4.1.0": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -2459,7 +2466,6 @@
           "System",
           "System.ComponentModel.DataAnnotations",
           "System.Core",
-          "System.Runtime.Serialization",
           "System.Xaml",
           "WindowsBase"
         ],
@@ -2871,7 +2877,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
-          "DynamicExpresso.Core": "1.3.4.7",
+          "DynamicExpresso.Core": "2.0.0",
           "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
@@ -2922,7 +2928,7 @@
           "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "3.6.0",
+          "ReactiveProperty": "4.1.0",
           "RevolutionData": "1.0.0",
           "RevolutionEntities": "1.0.0",
           "RevolutionLogger": "1.0.0",
@@ -2944,7 +2950,7 @@
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Common": "1.0.0",
-          "DynamicExpresso.Core": "1.3.4.7",
+          "DynamicExpresso.Core": "2.0.0",
           "GenSoft.DBContext": "1.0.0",
           "GenSoft.Entities": "1.0.0",
           "GenSoft.Interface": "1.0.0",
@@ -3018,7 +3024,7 @@
           "RevolutionLogger": "1.0.0",
           "System.Linq.Dynamic": "1.0.0",
           "SystemInterfaces": "1.0.0",
-          "morelinq": "2.8.0"
+          "morelinq": "2.9.0"
         },
         "compile": {
           "bin/placeholder/GenSoft.DBContext.dll": {}
@@ -3093,7 +3099,7 @@
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0",
-          "morelinq": "2.8.0"
+          "morelinq": "2.9.0"
         },
         "compile": {
           "bin/placeholder/RevolutionEntities.dll": {}
@@ -3192,7 +3198,7 @@
           "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "3.6.0",
+          "ReactiveProperty": "4.1.0",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -3220,13 +3226,16 @@
           "lib/net45/Akka.dll": {}
         }
       },
-      "DynamicExpresso.Core/1.3.4.7": {
+      "DynamicExpresso.Core/2.0.0": {
         "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp"
+        ],
         "compile": {
-          "lib/net40/DynamicExpresso.Core.dll": {}
+          "lib/net461/DynamicExpresso.Core.dll": {}
         },
         "runtime": {
-          "lib/net40/DynamicExpresso.Core.dll": {}
+          "lib/net461/DynamicExpresso.Core.dll": {}
         }
       },
       "FluentValidation.Net35/1.0.1": {
@@ -3473,7 +3482,7 @@
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "morelinq/2.8.0": {
+      "morelinq/2.9.0": {
         "type": "package",
         "dependencies": {
           "System.ValueTuple": "4.4.0"
@@ -3512,7 +3521,7 @@
           "lib/net45/Reactive.EventAggregator.dll": {}
         }
       },
-      "ReactiveProperty/3.6.0": {
+      "ReactiveProperty/4.1.0": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -3523,7 +3532,6 @@
           "System",
           "System.ComponentModel.DataAnnotations",
           "System.Core",
-          "System.Runtime.Serialization",
           "System.Xaml",
           "WindowsBase"
         ],
@@ -3935,7 +3943,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
-          "DynamicExpresso.Core": "1.3.4.7",
+          "DynamicExpresso.Core": "2.0.0",
           "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
@@ -3986,7 +3994,7 @@
           "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "3.6.0",
+          "ReactiveProperty": "4.1.0",
           "RevolutionData": "1.0.0",
           "RevolutionEntities": "1.0.0",
           "RevolutionLogger": "1.0.0",
@@ -4008,7 +4016,7 @@
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Common": "1.0.0",
-          "DynamicExpresso.Core": "1.3.4.7",
+          "DynamicExpresso.Core": "2.0.0",
           "GenSoft.DBContext": "1.0.0",
           "GenSoft.Entities": "1.0.0",
           "GenSoft.Interface": "1.0.0",
@@ -4082,7 +4090,7 @@
           "RevolutionLogger": "1.0.0",
           "System.Linq.Dynamic": "1.0.0",
           "SystemInterfaces": "1.0.0",
-          "morelinq": "2.8.0"
+          "morelinq": "2.9.0"
         },
         "compile": {
           "bin/placeholder/GenSoft.DBContext.dll": {}
@@ -4157,7 +4165,7 @@
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0",
-          "morelinq": "2.8.0"
+          "morelinq": "2.9.0"
         },
         "compile": {
           "bin/placeholder/RevolutionEntities.dll": {}
@@ -4256,7 +4264,7 @@
           "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "3.6.0",
+          "ReactiveProperty": "4.1.0",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -4282,16 +4290,15 @@
         "lib/netstandard1.6/Akka.xml"
       ]
     },
-    "DynamicExpresso.Core/1.3.4.7": {
-      "sha512": "2o6UcIFlnJQ4KgyMETFsFPSDav9FA1v57WQ4Mtyfnoj+1Y6+TeuwYYxuxvxbI2AINNjEyd5U2/KW5NYt2eFztA==",
+    "DynamicExpresso.Core/2.0.0": {
+      "sha512": "TZSJWrKQbD/XrEFK+GAGJxIJKzckAqXOlos9LuONDNTtDy4C2xSBVdaZLbf5O0HmvK77ecmw901JQzoKz9ed0w==",
       "type": "package",
-      "path": "dynamicexpresso.core/1.3.4.7",
+      "path": "dynamicexpresso.core/2.0.0",
       "files": [
-        "dynamicexpresso.core.1.3.4.7.nupkg.sha512",
+        "dynamicexpresso.core.2.0.0.nupkg.sha512",
         "dynamicexpresso.core.nuspec",
-        "lib/net40/DynamicExpresso.Core.XML",
-        "lib/net40/DynamicExpresso.Core.dll",
-        "lib/net40/DynamicExpresso.Core.pdb"
+        "lib/net461/DynamicExpresso.Core.dll",
+        "lib/netstandard2.0/DynamicExpresso.Core.dll"
       ]
     },
     "FluentValidation.Net35/1.0.1": {
@@ -4580,10 +4587,10 @@
         "microsoft.extensions.primitives.nuspec"
       ]
     },
-    "morelinq/2.8.0": {
-      "sha512": "E91pRvNIaAkcAHEvOkn//LYz3E/b3xyQZCYYBvYygNsL4dPzY1XN0AsWRNezs351HMa2vIuw6FsLYMkbzcKFIw==",
+    "morelinq/2.9.0": {
+      "sha512": "bn/bQ6a+DBFF3LhDHKv7oNyCeFGKxNPXV4+b81+phYLyPD/cxVbW1phx/KpLxCvqHn2fE7E8UNCWsxQHXMScig==",
       "type": "package",
-      "path": "morelinq/2.8.0",
+      "path": "morelinq/2.9.0",
       "files": [
         "lib/net35/MoreLinq.dll",
         "lib/net35/MoreLinq.xml",
@@ -4593,7 +4600,7 @@
         "lib/netstandard1.0/MoreLinq.xml",
         "lib/netstandard2.0/MoreLinq.dll",
         "lib/netstandard2.0/MoreLinq.xml",
-        "morelinq.2.8.0.nupkg.sha512",
+        "morelinq.2.9.0.nupkg.sha512",
         "morelinq.nuspec"
       ]
     },
@@ -4636,15 +4643,12 @@
         "lib/windowsphone8/Reactive.EventAggregator.dll"
       ]
     },
-    "ReactiveProperty/3.6.0": {
-      "sha512": "5WCPLBSvEMmiRBc+DRT1wXKMfmiaVi8FNghJdb6LfFjZxuNsPb98WpVn+IrgHwd+ve1KMPrkTTPA8+edumhEHw==",
+    "ReactiveProperty/4.1.0": {
+      "sha512": "u05HsuDr1visUEEkImr8Ha4phyHIKj8I2aw7UMwy5mJO1lpdceBz0s8AjVMIYc4Qfh4iSZirBDQH9uZxEoAqEA==",
       "type": "package",
-      "path": "reactiveproperty/3.6.0",
+      "path": "reactiveproperty/4.1.0",
       "files": [
-        "Docs/ReadMe.txt",
         "LICENSE.txt",
-        "ReactiveProperty.3.6.0.nupkg.sha512",
-        "ReactiveProperty.nuspec",
         "Snippet/csharp5/AsyncReactiveCommand.snippet",
         "Snippet/csharp5/AsyncReactiveCommandGeneric.snippet",
         "Snippet/csharp5/ReactiveCollection.snippet",
@@ -4664,48 +4668,44 @@
         "lib/MonoAndroid/ReactiveProperty.Android.XML",
         "lib/MonoAndroid/ReactiveProperty.Android.dll",
         "lib/MonoAndroid/ReactiveProperty.Android.pdb",
-        "lib/MonoAndroid/ReactiveProperty.XML",
         "lib/MonoAndroid/ReactiveProperty.dll",
         "lib/MonoAndroid/ReactiveProperty.pdb",
-        "lib/MonoTouch/ReactiveProperty.XML",
+        "lib/MonoAndroid/ReactiveProperty.xml",
         "lib/MonoTouch/ReactiveProperty.dll",
         "lib/MonoTouch/ReactiveProperty.iOS.XML",
         "lib/MonoTouch/ReactiveProperty.iOS.dll",
         "lib/MonoTouch/ReactiveProperty.iOS.pdb",
         "lib/MonoTouch/ReactiveProperty.pdb",
-        "lib/Xamarin.Mac20/ReactiveProperty.XML",
+        "lib/MonoTouch/ReactiveProperty.xml",
         "lib/Xamarin.Mac20/ReactiveProperty.dll",
         "lib/Xamarin.Mac20/ReactiveProperty.pdb",
-        "lib/Xamarin.iOS10/ReactiveProperty.XML",
+        "lib/Xamarin.Mac20/ReactiveProperty.xml",
         "lib/Xamarin.iOS10/ReactiveProperty.dll",
         "lib/Xamarin.iOS10/ReactiveProperty.iOS.XML",
         "lib/Xamarin.iOS10/ReactiveProperty.iOS.dll",
         "lib/Xamarin.iOS10/ReactiveProperty.iOS.pdb",
         "lib/Xamarin.iOS10/ReactiveProperty.pdb",
-        "lib/net45/ReactiveProperty.NET45.XML",
-        "lib/net45/ReactiveProperty.NET45.dll",
-        "lib/net45/ReactiveProperty.NET45.pdb",
-        "lib/net45/ReactiveProperty.XML",
-        "lib/net45/ReactiveProperty.dll",
-        "lib/net45/ReactiveProperty.pdb",
+        "lib/Xamarin.iOS10/ReactiveProperty.xml",
         "lib/net46/ReactiveProperty.NET46.XML",
         "lib/net46/ReactiveProperty.NET46.dll",
         "lib/net46/ReactiveProperty.NET46.pdb",
-        "lib/net46/ReactiveProperty.XML",
         "lib/net46/ReactiveProperty.dll",
         "lib/net46/ReactiveProperty.pdb",
-        "lib/netstandard1.1/ReactiveProperty.XML",
-        "lib/netstandard1.1/ReactiveProperty.dll",
-        "lib/netstandard1.1/ReactiveProperty.pdb",
-        "lib/portable-net45+win81+MonoTouch+MonoAndroid/ReactiveProperty.XML",
-        "lib/portable-net45+win81+MonoTouch+MonoAndroid/ReactiveProperty.dll",
-        "lib/portable-net45+win81+MonoTouch+MonoAndroid/ReactiveProperty.pdb",
+        "lib/net46/ReactiveProperty.xml",
+        "lib/netstandard1.3/ReactiveProperty.dll",
+        "lib/netstandard1.3/ReactiveProperty.pdb",
+        "lib/netstandard1.3/ReactiveProperty.xml",
+        "lib/portable-net46+uap+MonoTouch+MonoAndroid/ReactiveProperty.dll",
+        "lib/portable-net46+uap+MonoTouch+MonoAndroid/ReactiveProperty.pdb",
+        "lib/portable-net46+uap+MonoTouch+MonoAndroid/ReactiveProperty.xml",
         "lib/uap10.0/ReactiveProperty.UWP.XML",
         "lib/uap10.0/ReactiveProperty.UWP.dll",
         "lib/uap10.0/ReactiveProperty.UWP.pdb",
-        "lib/uap10.0/ReactiveProperty.XML",
         "lib/uap10.0/ReactiveProperty.dll",
-        "lib/uap10.0/ReactiveProperty.pdb"
+        "lib/uap10.0/ReactiveProperty.pdb",
+        "lib/uap10.0/ReactiveProperty.xml",
+        "reactiveproperty.4.1.0.nupkg.sha512",
+        "reactiveproperty.nuspec"
       ]
     },
     "Remotion.Linq/2.1.1": {

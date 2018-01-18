@@ -1,7 +1,5 @@
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Debug\DomainUtilities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Debug\DomainUtilities.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Debug\DynamicExpresso.Core.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Debug\DynamicExpresso.Core.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Debug\JB.Common.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Debug\JB.Common.Collections.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Debug\JB.Common.Collections.Reactive.dll
@@ -147,3 +145,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\obj\Debug\DomainUtili
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\obj\Debug\DomainUtilities.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\obj\Debug\DomainUtilities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\obj\Debug\DomainUtilities.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Debug\DynamicExpresso.Core.dll

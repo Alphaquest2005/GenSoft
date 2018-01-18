@@ -377,7 +377,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\Debug\Core.Common.
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\Debug\Core.Common.UI.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\Debug\Akka.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\Debug\DynamicExpresso.Core.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\Debug\DynamicExpresso.Core.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\Debug\FluentValidation.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\Debug\JB.Common.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\Debug\JB.Common.Collections.dll

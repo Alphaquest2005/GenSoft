@@ -83,7 +83,6 @@ C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\Debug\ViewModels.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\Debug\ViewModels.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\Debug\Akka.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\Debug\DynamicExpresso.Core.dll
-C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\Debug\DynamicExpresso.Core.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\Debug\FluentValidation.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\Debug\JB.Common.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\Debug\JB.Common.Collections.dll

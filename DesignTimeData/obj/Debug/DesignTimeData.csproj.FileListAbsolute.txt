@@ -38,7 +38,6 @@ C:\Prism\GitRepositiory\MRManager\DesignTimeData\obj\Debug\DesignTimeData.pdb
 C:\Prism\GitRepositiory\GenSoft\DesignTimeData\bin\Debug\DesignTimeData.dll
 C:\Prism\GitRepositiory\GenSoft\DesignTimeData\bin\Debug\DesignTimeData.pdb
 C:\Prism\GitRepositiory\GenSoft\DesignTimeData\bin\Debug\DynamicExpresso.Core.dll
-C:\Prism\GitRepositiory\GenSoft\DesignTimeData\bin\Debug\DynamicExpresso.Core.pdb
 C:\Prism\GitRepositiory\GenSoft\DesignTimeData\bin\Debug\JB.Common.dll
 C:\Prism\GitRepositiory\GenSoft\DesignTimeData\bin\Debug\JB.Common.Collections.dll
 C:\Prism\GitRepositiory\GenSoft\DesignTimeData\bin\Debug\JB.Common.Collections.Reactive.dll

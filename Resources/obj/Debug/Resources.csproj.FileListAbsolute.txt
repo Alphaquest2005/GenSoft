@@ -228,7 +228,6 @@ C:\Prism\GitRepositiory\GenSoft\Resources\bin\Debug\Resources.dll
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\Debug\Resources.pdb
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\Debug\Akka.dll
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\Debug\DynamicExpresso.Core.dll
-C:\Prism\GitRepositiory\GenSoft\Resources\bin\Debug\DynamicExpresso.Core.pdb
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\Debug\FluentValidation.dll
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\Debug\JB.Common.dll
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\Debug\JB.Common.Collections.dll

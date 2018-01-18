@@ -16,7 +16,7 @@
           "lib/net45/EntityFramework.dll": {}
         }
       },
-      "morelinq/2.8.0": {
+      "morelinq/2.9.0": {
         "type": "package",
         "dependencies": {
           "System.ValueTuple": "4.4.0"
@@ -91,7 +91,7 @@
           "LinqSpecs": "1.0.0",
           "Specifications": "1.0.0",
           "T4 Entities": "1.0.0",
-          "morelinq": "2.8.0"
+          "morelinq": "2.9.0"
         },
         "compile": {
           "bin/placeholder/T4 Repository.dll": {}
@@ -116,7 +116,7 @@
           "lib/net45/EntityFramework.dll": {}
         }
       },
-      "morelinq/2.8.0": {
+      "morelinq/2.9.0": {
         "type": "package",
         "dependencies": {
           "System.ValueTuple": "4.4.0"
@@ -191,7 +191,7 @@
           "LinqSpecs": "1.0.0",
           "Specifications": "1.0.0",
           "T4 Entities": "1.0.0",
-          "morelinq": "2.8.0"
+          "morelinq": "2.9.0"
         },
         "compile": {
           "bin/placeholder/T4 Repository.dll": {}
@@ -216,7 +216,7 @@
           "lib/net45/EntityFramework.dll": {}
         }
       },
-      "morelinq/2.8.0": {
+      "morelinq/2.9.0": {
         "type": "package",
         "dependencies": {
           "System.ValueTuple": "4.4.0"
@@ -291,7 +291,7 @@
           "LinqSpecs": "1.0.0",
           "Specifications": "1.0.0",
           "T4 Entities": "1.0.0",
-          "morelinq": "2.8.0"
+          "morelinq": "2.9.0"
         },
         "compile": {
           "bin/placeholder/T4 Repository.dll": {}
@@ -316,7 +316,7 @@
           "lib/net45/EntityFramework.dll": {}
         }
       },
-      "morelinq/2.8.0": {
+      "morelinq/2.9.0": {
         "type": "package",
         "dependencies": {
           "System.ValueTuple": "4.4.0"
@@ -391,7 +391,7 @@
           "LinqSpecs": "1.0.0",
           "Specifications": "1.0.0",
           "T4 Entities": "1.0.0",
-          "morelinq": "2.8.0"
+          "morelinq": "2.9.0"
         },
         "compile": {
           "bin/placeholder/T4 Repository.dll": {}
@@ -430,10 +430,10 @@
         "tools/migrate.exe"
       ]
     },
-    "morelinq/2.8.0": {
-      "sha512": "E91pRvNIaAkcAHEvOkn//LYz3E/b3xyQZCYYBvYygNsL4dPzY1XN0AsWRNezs351HMa2vIuw6FsLYMkbzcKFIw==",
+    "morelinq/2.9.0": {
+      "sha512": "bn/bQ6a+DBFF3LhDHKv7oNyCeFGKxNPXV4+b81+phYLyPD/cxVbW1phx/KpLxCvqHn2fE7E8UNCWsxQHXMScig==",
       "type": "package",
-      "path": "morelinq/2.8.0",
+      "path": "morelinq/2.9.0",
       "files": [
         "lib/net35/MoreLinq.dll",
         "lib/net35/MoreLinq.xml",
@@ -443,7 +443,7 @@
         "lib/netstandard1.0/MoreLinq.xml",
         "lib/netstandard2.0/MoreLinq.dll",
         "lib/netstandard2.0/MoreLinq.xml",
-        "morelinq.2.8.0.nupkg.sha512",
+        "morelinq.2.9.0.nupkg.sha512",
         "morelinq.nuspec"
       ]
     },

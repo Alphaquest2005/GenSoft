@@ -425,7 +425,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\Debug\Akka.Persistenc
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\Debug\Akka.Persistence.SqlServer.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\Debug\Akka.TestKit.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\Debug\DynamicExpresso.Core.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\Debug\DynamicExpresso.Core.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\Debug\FluentValidation.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\Debug\Google.Protobuf.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\Debug\JB.Common.dll
