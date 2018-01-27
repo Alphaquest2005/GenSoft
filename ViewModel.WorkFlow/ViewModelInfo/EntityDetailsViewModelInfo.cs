@@ -58,16 +58,7 @@ namespace RevolutionData
                     },
                     publications: new List<IViewModelEventPublication<IViewModel, IEvent>>
                     {
-                        //new ViewEventPublication<IEntityViewModel, ICurrentEntityChanged>(
-                        //    key:$"{entityType.Name}-CurrentEntityChanged",
-                        //    subject:v =>  (IObservable<dynamic>)v.CurrentEntity,//.WhenAnyValue(x => x.Value),
-                        //    subjectPredicate:new List<Func<IEntityViewModel, bool>>{},
-                        //    messageData:s => new ViewEventPublicationParameter(new object[] {s.CurrentEntity.Value},new RevolutionEntities.Process.StateEventInfo(s.Process.Id, Context.View.Events.CurrentEntityChanged),s.Process,s.Source)),
-                        new ViewEventPublication<IEntityViewModel, ILoadEntitySet>(
-                            $"{entityType.Name}-IViewModelIntialized",
-                            subject:v => v.ViewModelState as dynamic,
-                            subjectPredicate:new List<Func<IEntityViewModel, bool>>{ v => v.ViewModelState.Value == ViewModelState.Intialized},
-                            messageData:v => new ViewEventPublicationParameter(new object[] {v.ViewInfo.EntityType},new RevolutionEntities.Process.StateEventInfo(v.Process.Id, Context.View.Events.Intitalized),v.Process,v.Source)),
+                       
                     },
                     commands: new List<IViewModelEventCommand<IViewModel, IEvent>>
                     {
@@ -81,7 +72,7 @@ namespace RevolutionData
 
                             messageData: s =>
                             {
-                                s.RowState.Value = s.RowState.Value != RowState.Modified?RowState.Modified: RowState.Unchanged;//new ReactiveProperty<RowState>(rowstate != RowState.Modified?RowState.Modified: RowState.Unchanged);
+                                s.RowState.Value = s.RowState.Value != RowState.Modified?RowState.Modified: RowState.Unchanged;
 
                                 return new ViewEventCommandParameter(
                                     new object[] {s,s.RowState.Value},
@@ -193,7 +184,7 @@ namespace RevolutionData
                     Application.Current.Dispatcher.Invoke(() =>
                     {
                         v.ParentEntities.AddOrUpdate(e.Entity);
-                        //v.NotifyPropertyChanged(parentProperty);
+                        
                     });
                 });
         }
@@ -232,18 +223,6 @@ namespace RevolutionData
                 });
         }
 
-        //public static IViewModelEventSubscription<IViewModel, IEvent> EntityWithChangesFound(int processId, string pEntity, string viewChildProperty)
-        //{
-        //    return new ViewEventSubscription<IEntityViewModel, IEntityWithChangesFound>(
-        //        processId,
-        //        e => e != null && e.EntityType.Name == pEntity,
-        //        new List<Func<IEntityViewModel, IEntityWithChangesFound, bool>>(),
-        //        (v, e) =>
-        //        {
-        //            v.State.Value.Entity = e.Entity;
-        //            v.NotifyPropertyChanged("State");
-        //        });
-        //}
 
         public static IViewModelEventSubscription<IViewModel, IEvent> EntityWithChangesUpdated(int processId, string pEntity, string viewChildProperty)
         {

@@ -26,17 +26,17 @@ namespace EFRepository
 
         static DataContext()
         {
-            EventMessageBus.Current.GetEvent<ICurrentEntityChanged>(Source).Where(x => x.EntityType.Name == "Application").Subscribe(OnCurrentApplicationChanged);
+            EventMessageBus.Current.GetEvent<ICurrentApplicationChanged>(Source).Subscribe(OnCurrentApplicationChanged);
             //GenSoft-Creator is the default database and because its real data i need not do this any where else
             SetCurrentApplication(1);
         }
 
         private static Application CurrentApplication { get;  set; }
-        private static void OnCurrentApplicationChanged(ICurrentEntityChanged currentEntityChanged)
+        private static void OnCurrentApplicationChanged(ICurrentApplicationChanged currentEntityChanged)
         {
-            if(currentEntityChanged.Entity == null) return;
-            if (CurrentApplication?.Id == currentEntityChanged.Entity.Id) return;
-            SetCurrentApplication(currentEntityChanged.Entity.Id);
+            if(currentEntityChanged.Application == null) return;
+            if (CurrentApplication?.Id == currentEntityChanged.Application.Id) return;
+            SetCurrentApplication(currentEntityChanged.Application.Id);
         }
 
         private static void SetCurrentApplication(int appId)

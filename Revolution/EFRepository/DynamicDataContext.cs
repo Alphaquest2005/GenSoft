@@ -22,18 +22,18 @@ namespace EFRepository
 
         static DynamicDataContext()
         {
-            EventMessageBus.Current.GetEvent<ICurrentEntityChanged>(Source).Where(x => x.EntityType.Name == "Application").Subscribe(OnCurrentApplicationChanged);
+            EventMessageBus.Current.GetEvent<ICurrentApplicationChanged>(Source).Subscribe(OnCurrentApplicationChanged);
         }
 
         private static Application CurrentApplication { get;  set; }
-        private static void OnCurrentApplicationChanged(ICurrentEntityChanged currentEntityChanged)
+        private static void OnCurrentApplicationChanged(ICurrentApplicationChanged currentEntityChanged)
         {
-            if(currentEntityChanged.Entity != null)
-            if (CurrentApplication?.Id == currentEntityChanged.Entity.Id) return;
+            if (currentEntityChanged.Application == null) return;
+            if (CurrentApplication?.Id == currentEntityChanged.Application?.Id) return;
             using (var ctx = new GenSoftDBContext())
             {
                 CurrentApplication = ctx.Application.Include(x => x.DatabaseInfo)
-                    .First(x => x.Id == currentEntityChanged.Entity.Id);
+                    .First(x => x.Id == currentEntityChanged.Application.Id);
             }
         }
 

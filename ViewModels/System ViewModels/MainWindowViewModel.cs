@@ -45,14 +45,14 @@ namespace ViewModels
         {
             this.WireEvents();
             EventMessageBus.Current.GetEvent<IProcessEventFailure>(Source).Subscribe(x => { });
-            EventMessageBus.Current.GetEvent<ICurrentEntityChanged>(Source).Where(x => x.EntityType.Name == "Application").Subscribe(x => OnCurrentApplicationChanged(x));
+            EventMessageBus.Current.GetEvent<ICurrentApplicationChanged>(Source).Subscribe(x => OnCurrentApplicationChanged(x));
         }
 
-        private void OnCurrentApplicationChanged(ICurrentEntityChanged currentEntityChanged)
+        private void OnCurrentApplicationChanged(ICurrentApplicationChanged currentEntityChanged)
         {
-            if (currentEntityChanged.Entity == null) return;
-            if (CurrentApplication?.Id == currentEntityChanged.Entity.Id) return;
-            CurrentApplication = currentEntityChanged.Entity;
+            if (currentEntityChanged.Application == null) return;
+            if (CurrentApplication?.Id == currentEntityChanged.Application.Id) return;
+            CurrentApplication = currentEntityChanged.Application;
         }
 
         private IDynamicEntity _currentApplication;

@@ -11,3 +11,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionLogger\bin\Debug\log4net.dl
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionLogger\obj\Debug\RevolutionLogger.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionLogger\obj\Debug\RevolutionLogger.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionLogger\obj\Debug\RevolutionLogger.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionLogger\obj\Debug\RevolutionLogger.csprojResolveAssemblyReference.cache

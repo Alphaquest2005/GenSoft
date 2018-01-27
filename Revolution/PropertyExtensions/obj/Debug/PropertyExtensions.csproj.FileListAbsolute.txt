@@ -12,3 +12,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\PropertyExtensions\bin\Debug\Property
 C:\Prism\GitRepositiory\GenSoft\Revolution\PropertyExtensions\obj\Debug\PropertyExtensions.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\PropertyExtensions\obj\Debug\PropertyExtensions.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\PropertyExtensions\obj\Debug\PropertyExtensions.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\PropertyExtensions\obj\Debug\PropertyExtensions.csprojResolveAssemblyReference.cache

@@ -6,9 +6,7 @@ using CommonMessages;
 
 namespace EventMessages.Commands
 {
-    [Export(typeof(IGetEntitySetWithChanges))]
-
-
+    
     public class LoadEntitySet : ProcessSystemMessage, ILoadEntitySet
     { 
         public LoadEntitySet() { }

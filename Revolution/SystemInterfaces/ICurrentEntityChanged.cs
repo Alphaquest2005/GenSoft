@@ -6,6 +6,11 @@
         IDynamicEntity Entity { get; }
     }
 
+    public interface ICurrentApplicationChanged : IEntityRequest
+    {
+        IDynamicEntity Application { get; }
+    }
+
     public interface IMainEntityChanged : IEntityRequest
     {
         IDynamicEntity Entity { get; }

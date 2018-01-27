@@ -64,21 +64,21 @@ namespace DataServices.Actors
          private static Application CurrentApplication { get; set; }  
         
 
-        private void OnCurrentApplicationChanged(ICurrentEntityChanged currentEntityChanged)
+        private void OnCurrentApplicationChanged(ICurrentApplicationChanged currentEntityChanged)
         {
-            if (currentEntityChanged.Entity == null) return;
-            if (CurrentApplication?.Id == currentEntityChanged.Entity.Id) return;
+            if (currentEntityChanged.Application == null) return;
+            if (CurrentApplication?.Id == currentEntityChanged.Application.Id) return;
             using (var ctx = new GenSoftDBContext())
             {
                 CurrentApplication = ctx.Application.Include(x => x.DatabaseInfo)
-                    .First(x => x.Id == currentEntityChanged.Entity.Id);
+                    .First(x => x.Id == currentEntityChanged.Application.Id);
             }
             LoadProcesses();
         }
 
         public DomainProcessSupervisor(bool autoRun, ISystemProcess process) : base(process)
         {
-            EventMessageBus.Current.GetEvent<ICurrentEntityChanged>(Source).Where(x => x.EntityType.Name == "Application").Subscribe(OnCurrentApplicationChanged);
+            EventMessageBus.Current.GetEvent<ICurrentApplicationChanged>(Source).Subscribe(OnCurrentApplicationChanged);
 
             BuildExpressions();
             
@@ -201,7 +201,7 @@ namespace DataServices.Actors
             }
         }
 
-        private List<DomainProcess> _domainProcessLst;
+        private List<DomainProcess> _domainProcessLst= new List<DomainProcess>();
 
         private void StartProcess(int objProcessToBeStartedId, IUser user)
         {
