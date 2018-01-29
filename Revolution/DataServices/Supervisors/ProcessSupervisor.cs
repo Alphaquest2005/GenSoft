@@ -59,7 +59,8 @@ namespace DataServices.Actors
 
         //static ConcurrentDictionary<string,string> existingProcessActors = new ConcurrentDictionary<string, string>();
 
-        private void CreateProcesses(IUser user, IEnumerable<ISystemProcessInfo> processSteps, int processId)
+        private void 
+            CreateProcesses(IUser user, IEnumerable<ISystemProcessInfo> processSteps, int processId)
         {
            
             if (ProcessComplexEvents.All(x => x.ProcessId != processId)) return;
