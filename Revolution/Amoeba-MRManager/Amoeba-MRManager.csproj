@@ -398,6 +398,7 @@
 ..\GenSoft.DBContext\Generated Mappings\Ordinality.cs
 ..\GenSoft.DBContext\Generated Mappings\Parameters.cs
 ..\GenSoft.DBContext\Generated Mappings\ParentEntity.cs
+..\GenSoft.DBContext\Generated Mappings\ParentSystemProcess.cs
 ..\GenSoft.DBContext\Generated Mappings\PredicateParameters.cs
 ..\GenSoft.DBContext\Generated Mappings\Predicates.cs
 ..\GenSoft.DBContext\Generated Mappings\PresentationPropertyType.cs
@@ -493,6 +494,7 @@
 ..\GenSoft.Entities\Generated Entities\Ordinality.cs
 ..\GenSoft.Entities\Generated Entities\Parameters.cs
 ..\GenSoft.Entities\Generated Entities\ParentEntity.cs
+..\GenSoft.Entities\Generated Entities\ParentSystemProcess.cs
 ..\GenSoft.Entities\Generated Entities\PredicateParameters.cs
 ..\GenSoft.Entities\Generated Entities\Predicates.cs
 ..\GenSoft.Entities\Generated Entities\PresentationPropertyType.cs
@@ -593,6 +595,7 @@
 ..\GenSoft.Interface\Generated Interfaces\Ordinality.cs
 ..\GenSoft.Interface\Generated Interfaces\Parameters.cs
 ..\GenSoft.Interface\Generated Interfaces\ParentEntity.cs
+..\GenSoft.Interface\Generated Interfaces\ParentSystemProcess.cs
 ..\GenSoft.Interface\Generated Interfaces\PredicateParameters.cs
 ..\GenSoft.Interface\Generated Interfaces\Predicates.cs
 ..\GenSoft.Interface\Generated Interfaces\PresentationPropertyType.cs

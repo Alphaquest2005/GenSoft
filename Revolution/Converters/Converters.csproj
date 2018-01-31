@@ -101,6 +101,10 @@
       <Project>{CB6D5FBC-0C13-437D-B4F3-A0EC4D5673B3}</Project>
       <Name>Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DomainUtilities\DomainUtilities.csproj">
+      <Project>{4FAC145F-FB23-4F9D-9A8B-0BA4BF41D89E}</Project>
+      <Name>DomainUtilities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SystemInterfaces\SystemInterfaces.csproj">
       <Project>{e3842263-e081-49ba-a1b4-bbe82b24e2db}</Project>
       <Name>SystemInterfaces</Name>

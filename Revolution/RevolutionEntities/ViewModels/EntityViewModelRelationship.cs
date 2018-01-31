@@ -16,7 +16,7 @@ namespace RevolutionEntities.ViewModels
 
     public class EntityTypeViewModel
     {
-        public int SystemProcessId { get; set; }
+        public ISystemProcess SystemProcess { get; set; }
         public string EntityTypeName { get; set; }
         public string Symbol { get; set; }
         public string Description { get; set; }

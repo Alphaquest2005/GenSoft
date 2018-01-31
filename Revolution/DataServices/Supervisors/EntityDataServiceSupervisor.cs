@@ -57,7 +57,7 @@ namespace DataServices.Actors
                         .MakeGenericMethod(itm.Key)
                         .Invoke(this, new object[] {itm.Value, process, msg});
             }
-            EventMessageBus.Current.Publish(new ServiceStarted<IEntityDataServiceSupervisor>(this, new StateEventInfo(process.Id, RevolutionData.Context.Actor.Events.ActorStarted), process, Source), Source);
+            EventMessageBus.Current.Publish(new ServiceStarted<IEntityDataServiceSupervisor>(this, new StateEventInfo(process, RevolutionData.Context.Actor.Events.ActorStarted), process, Source), Source);
 
             
         }
@@ -66,7 +66,7 @@ namespace DataServices.Actors
         {
             /// Create Actor Per Event
             Type actorType = typeof(EntityDataServiceActor<>).MakeGenericType(typeof(TEvent));
-            var inMsg = new CreateEntityService(actorType,action, new StateCommandInfo(process.Id, RevolutionData.Context.Actor.Commands.StartActor),process,Source );
+            var inMsg = new CreateEntityService(actorType,action, new StateCommandInfo(process, RevolutionData.Context.Actor.Commands.StartActor),process,Source );
             try
             {
                 

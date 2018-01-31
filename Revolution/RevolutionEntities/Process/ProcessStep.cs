@@ -4,10 +4,10 @@ namespace RevolutionEntities.Process
 {
     public class Process : IProcess
     {
-        public Process(int id,int parentProcessId, string name, string description, string symbol, IUser user)
+        public Process(int id, ISystemProcess parentProcess, string name, string description, string symbol, IUser user)
         {
             Id = id;
-            ParentProcessId = parentProcessId;
+            ParentProcess = parentProcess;
             Name = name;
             Description = description;
             Symbol = symbol;
@@ -17,7 +17,7 @@ namespace RevolutionEntities.Process
         public Process(ISystemProcessInfo systemProcessInfo, IUser user)
         {
             Id = systemProcessInfo.Id;
-            ParentProcessId = systemProcessInfo.ParentProcessId;
+            ParentProcess = systemProcessInfo.ParentProcess;
             Name = systemProcessInfo.Name;
             Description = systemProcessInfo.Description;
             Symbol = systemProcessInfo.Symbol;
@@ -28,7 +28,7 @@ namespace RevolutionEntities.Process
  
 
         public int Id { get; }
-        public int ParentProcessId { get; set; }
+        public ISystemProcess ParentProcess { get; set; }
         public string Name { get; }
         public string Description { get; }
         public string Symbol { get; }

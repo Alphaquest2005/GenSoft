@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -33,14 +34,17 @@ namespace DomainUtilities
                 new Dictionary<string, List<dynamic>>(), new ObservableDictionary<string, Dictionary<int, dynamic>>(),
                 new ObservableDictionary<string, string>());
         }
-            
-        public static IDynamicEntityType AddDynamicEntityTypes(string entityType)
+
+        private static ConcurrentDictionary<string, IDynamicEntityType> DynamicEntityTypes { get; } = new ConcurrentDictionary<string, IDynamicEntityType>();
+        public static IDynamicEntityType GetOrAddDynamicEntityType(string entityType)
         {
 
+            if (DynamicEntityTypes.ContainsKey(entityType)) return DynamicEntityTypes[entityType];
             using (var ctx = new GenSoftDBContext())
             {
                 try
                 {
+
                     var viewType = ctx.EntityType
                         .Include(x => x.Type)
                         .Include(x => x.EntityTypeAttributes).ThenInclude(x => x.Attributes)
@@ -102,8 +106,8 @@ namespace DomainUtilities
 
 
 
-                    DynamicEntityType.DynamicEntityTypes.AddOrSet(entityType, dynamicEntityType);
-                    return DynamicEntityType.DynamicEntityTypes[entityType];
+                    DynamicEntityTypes.AddOrSet(entityType, dynamicEntityType);
+                    return DynamicEntityTypes[entityType];
                 }
                 catch (Exception)
                 {
@@ -203,7 +207,7 @@ namespace DomainUtilities
                 foreach (var p in lst.Where(x => x.ParentEntities.Any()))
                 {
                     var t = p.ParentEntities.FirstOrDefault();
-                    if(!DynamicEntityType.DynamicEntityTypes.ContainsKey(t)) AddDynamicEntityTypes(t);
+                    if(!DynamicEntityTypes.ContainsKey(t)) GetOrAddDynamicEntityType(t);
                     res.Add(p.Attribute, t);
                 }
 

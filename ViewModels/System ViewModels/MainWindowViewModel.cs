@@ -12,6 +12,7 @@ using Core.Common.UI;
 using EventAggregator;
 using Process.WorkFlow;
 using Reactive.Bindings;
+using RevolutionData;
 using RevolutionEntities.Process;
 using RevolutionEntities.ViewModels;
 using ViewModel.Interfaces;
@@ -35,17 +36,17 @@ namespace ViewModels
         }
 
         public MainWindowViewModel()
-            : base(new SystemProcess(Processes.ProcessInfos.FirstOrDefault(), new Agent("System"), new MachineInfo(Environment.MachineName, Environment.ProcessorCount)),
-                  new ViewInfo("MainWindowViewModel", "", ""),
-                  ProcessViewModels.ProcessViewModelInfos.FirstOrDefault()?.Subscriptions,
-                  ProcessViewModels.ProcessViewModelInfos.FirstOrDefault()?.Publications,
-                  ProcessViewModels.ProcessViewModelInfos.FirstOrDefault()?.Commands,
-                  ProcessViewModels.ProcessViewModelInfos.FirstOrDefault()?.Orientation,
-                  ProcessViewModels.ProcessViewModelInfos.First().Priority)
+            : base(Processes.IntialSystemProcess,
+                new ViewInfo("MainWindowViewModel", "", ""),
+                MainWindowViewModelInfo.MainWindowViewModel.Subscriptions,
+                MainWindowViewModelInfo.MainWindowViewModel.Publications,
+                MainWindowViewModelInfo.MainWindowViewModel.Commands,
+                MainWindowViewModelInfo.MainWindowViewModel.Orientation,
+                MainWindowViewModelInfo.MainWindowViewModel.Priority)
         {
             this.WireEvents();
-            EventMessageBus.Current.GetEvent<IProcessEventFailure>(Source).Subscribe(x => { });
-            EventMessageBus.Current.GetEvent<ICurrentApplicationChanged>(Source).Subscribe(x => OnCurrentApplicationChanged(x));
+
+            EventMessageBus.Current.GetEvent<ICurrentApplicationChanged>(Source).Subscribe(OnCurrentApplicationChanged);
         }
 
         private void OnCurrentApplicationChanged(ICurrentApplicationChanged currentEntityChanged)

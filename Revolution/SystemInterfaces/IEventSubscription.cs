@@ -5,7 +5,7 @@ namespace SystemInterfaces
     
     public interface IEventSubscription<in TEvent> where TEvent : IEvent
     {
-        int ProcessId { get; }
+        ISystemProcess Process { get; }
         Type EventType { get; }
         Func<TEvent, bool> EventPredicate { get; }
     }

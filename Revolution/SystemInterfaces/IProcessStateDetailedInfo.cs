@@ -3,7 +3,7 @@
     
     public interface IProcessStateInfo
     {
-        int ProcessId { get; }
+        ISystemProcess Process { get; }
         IState State { get; }
 
         IStateInfo ToStateInfo();

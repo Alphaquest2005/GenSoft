@@ -23,34 +23,34 @@ namespace RevolutionData
         {
             {"ProcessStarted",  new ProcessAction(
                         action: async cp => await Task.Run(() => new SystemProcessStarted(
-                            new StateEventInfo(cp.Actor.Process.Id, Context.Process.Events.ProcessStarted),
+                            new StateEventInfo(cp.Actor.Process, Context.Process.Events.ProcessStarted),
                             cp.Actor.Process, cp.Actor.Source)),
-                        processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.StartProcess),
+                        processInfo: cp => new StateCommandInfo(cp.Actor.Process, Context.Process.Commands.StartProcess),
                         expectedSourceType: new SourceType(typeof(IComplexEventService)))},
             {"StartProcess", new ProcessAction(
                 action: async cp => await Task.Run(() => new StartSystemProcess(RevolutionData.ProcessActions.NullProcess,
-                    new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.StartProcess),
+                    new StateCommandInfo(cp.Actor.Process, Context.Process.Commands.StartProcess),
                     cp.Actor.Process, cp.Actor.Source)),
-                processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.StartProcess),
+                processInfo: cp => new StateCommandInfo(cp.Actor.Process, Context.Process.Commands.StartProcess),
                 expectedSourceType: new SourceType(typeof(IComplexEventService))) },
             {"StartProcessWithValidatedUser",  new ProcessAction(
                        action: async cp =>  await Task.Run(() => new StartSystemProcess(NullProcess,
-                           new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.StartProcess), new SystemProcess( new SystemProcessInfo( cp.Actor.Process.Id, cp.Actor.Process.ParentProcessId,  cp.Actor.Process.Name,  cp.Actor.Process.Description,  cp.Actor.Process.Symbol, (cp.Messages["UserValidated"].Properties["Entity"].Value as IDynamicEntity).Properties["UserName"].ToString()),new User((cp.Messages["UserValidated"].Properties["Entity"].Value as IDynamicEntity).Properties["UserName"].ToString()), cp.Actor.Process.MachineInfo), cp.Actor.Source)),
-                       processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.StartProcess),
+                           new StateCommandInfo(cp.Actor.Process, Context.Process.Commands.StartProcess), new SystemProcess( new SystemProcessInfo( cp.Actor.Process.Id, cp.Actor.Process.ParentProcess,  cp.Actor.Process.Name,  cp.Actor.Process.Description,  cp.Actor.Process.Symbol, (cp.Messages["UserValidated"].Properties["Entity"].Value as IDynamicEntity).Properties["UserName"].ToString()),new User((cp.Messages["UserValidated"].Properties["Entity"].Value as IDynamicEntity).Properties["UserName"].ToString()), cp.Actor.Process.MachineInfo), cp.Actor.Source)),
+                       processInfo: cp => new StateCommandInfo(cp.Actor.Process, Context.Process.Commands.StartProcess),
                        expectedSourceType: new SourceType(typeof(IComplexEventService)))},
             {"CompleteProcess",  new ProcessAction(
-                action: async cp => await Task.Run(() => new SystemProcessCompleted(new StateEventInfo(cp.Actor.Process.Id, Context.Process.Events.ProcessCompleted),cp.Actor.Process, cp.Actor.Source)),
-                processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.CompleteProcess),
+                action: async cp => await Task.Run(() => new SystemProcessCompleted(new StateEventInfo(cp.Actor.Process, Context.Process.Events.ProcessCompleted),cp.Actor.Process, cp.Actor.Source)),
+                processInfo: cp => new StateCommandInfo(cp.Actor.Process, Context.Process.Commands.CompleteProcess),
                 expectedSourceType: new SourceType(typeof(IComplexEventService)))},
 
             {"CleanUpProcess",   new ProcessAction(
-                action: async cp =>  await Task.Run(() => new CleanUpSystemProcess(cp.Actor.Process.Id,new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.CleanUpProcess), cp.Actor.Process, cp.Actor.Source)),
-                processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.CleanUpProcess),
+                action: async cp =>  await Task.Run(() => new CleanUpSystemProcess(cp.Actor.Process,new StateCommandInfo(cp.Actor.Process, Context.Process.Commands.CleanUpProcess), cp.Actor.Process, cp.Actor.Source)),
+                processInfo: cp => new StateCommandInfo(cp.Actor.Process, Context.Process.Commands.CleanUpProcess),
                 expectedSourceType: new SourceType(typeof(IComplexEventService)))},
 
             {"CleanUpParentProcess",   new ProcessAction(
-                action: async cp =>  await Task.Run(() => new CleanUpSystemProcess(cp.Actor.Process.ParentProcessId,new StateCommandInfo(cp.Actor.Process.ParentProcessId, Context.Process.Commands.CleanUpProcess), cp.Actor.Process, cp.Actor.Source)),
-                processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id -1, Context.Process.Commands.CleanUpProcess),
+                action: async cp =>  await Task.Run(() => new CleanUpSystemProcess(cp.Actor.Process.ParentProcess,new StateCommandInfo(cp.Actor.Process.ParentProcess, Context.Process.Commands.CleanUpProcess), cp.Actor.Process, cp.Actor.Source)),
+                processInfo: cp => new StateCommandInfo(cp.Actor.Process.ParentProcess, Context.Process.Commands.CleanUpProcess),
                 expectedSourceType: new SourceType(typeof(IComplexEventService)))},
 
         };
@@ -64,9 +64,9 @@ namespace RevolutionData
                             MessageBox.Show(cp.Messages["ProcessEventError"].Properties["Exception"].GetValue<Exception>().Message + "-----" +
                                             cp.Messages["ProcessEventError"].Properties["Exception"].GetValue<Exception>().StackTrace);
                             
-                            return await Task.Run(() => new FailedMessageData(cp, new StateEventInfo(cp.Actor.Process.Id,Context.Process.Events.Error), cp.Actor.Process,cp.Actor.Source));
+                            return await Task.Run(() => new FailedMessageData(cp, new StateEventInfo(cp.Actor.Process,Context.Process.Events.Error), cp.Actor.Process,cp.Actor.Source));
                         }, 
-                        processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.Error),
+                        processInfo: cp => new StateCommandInfo(cp.Actor.Process, Context.Process.Commands.Error),
                         expectedSourceType: new SourceType(typeof(IComplexEventService)));
         public static IProcessAction ShutDownApplication => new ProcessAction(
                         action: cp =>
@@ -80,13 +80,13 @@ namespace RevolutionData
                             });
                             return null;
                         },
-                        processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.Error),
+                        processInfo: cp => new StateCommandInfo(cp.Actor.Process, Context.Process.Commands.Error),
                         expectedSourceType: new SourceType(typeof(IComplexEventService)));
 
         public static IProcessAction IntializeProcessStateList(string entityType)
         {
-            DynamicEntityTypeExtensions.AddDynamicEntityTypes(entityType);
-            return IntializeProcessStateList(DynamicEntityType.DynamicEntityTypes[entityType]);
+            DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(entityType);
+            return IntializeProcessStateList(DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(entityType));
         }
 
         public static IProcessAction IntializeProcessStateList(IDynamicEntityType entityType)
@@ -94,12 +94,12 @@ namespace RevolutionData
             return new ProcessAction(
                 action: async cp =>
                          await Task.Run(() => new LoadEntitySet(entityType,
-                            new StateCommandInfo(cp.Actor.Process.Id,
+                            new StateCommandInfo(cp.Actor.Process,
                                 Context.Entity.Commands.LoadEntitySetWithChanges),
                             cp.Actor.Process, cp.Actor.Source)),
                 processInfo:
                     cp =>
-                        new StateCommandInfo(cp.Actor.Process.Id,
+                        new StateCommandInfo(cp.Actor.Process,
                             Context.Entity.Commands.LoadEntitySetWithChanges),
                 // take shortcut cud be IntialState
                 expectedSourceType: new SourceType(typeof (IComplexEventService)));
@@ -113,15 +113,15 @@ namespace RevolutionData
                     var ps = new ProcessStateEntity(
                         process: cp.Actor.Process,
                         entity: entityType.DefaultEntity(),
-                        info: new StateInfo(cp.Actor.Process.Id,
+                        info: new StateInfo(cp.Actor.Process,
                         new State(name: cp.Actor.Process.Name, status: cp.Actor.Process.Description,
                             notes: cp.Actor.Process.Description))); ;
                     return await Task.Run(() => new UpdateProcessStateEntity(ps,
-                        new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),
+                        new StateCommandInfo(cp.Actor.Process, Context.Process.Commands.UpdateState),
                         cp.Actor.Process, cp.Actor.Source));
 
                 },
-                processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.CreateState),
+                processInfo: cp => new StateCommandInfo(cp.Actor.Process, Context.Process.Commands.CreateState),
                 // take shortcut cud be IntialState
                 expectedSourceType: new SourceType(typeof(IComplexEventService)));
         }
@@ -134,16 +134,16 @@ namespace RevolutionData
                         var ps = new ProcessStateEntity(
                              process: cp.Actor.Process,
                              entity: cp.Messages["Entity"].Properties["Entity"].GetValue<IDynamicEntity>(),
-                             info: new StateInfo(cp.Actor.Process.Id, new State($"Loaded {cp.Messages["Entity"].Properties["Entity"].GetValue<IDynamicEntity>().EntityType} Data", $"Loaded{cp.Messages["Entity"].Properties["Entity"].GetValue<IDynamicEntity>().EntityType}", "")));
+                             info: new StateInfo(cp.Actor.Process, new State($"Loaded {cp.Messages["Entity"].Properties["Entity"].GetValue<IDynamicEntity>().EntityType} Data", $"Loaded{cp.Messages["Entity"].Properties["Entity"].GetValue<IDynamicEntity>().EntityType}", "")));
                         return await Task.Run(() => new UpdateProcessStateEntity(
                                     state: ps,
                                     process: cp.Actor.Process,
-                                    processInfo: new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),
+                                    processInfo: new StateCommandInfo(cp.Actor.Process, Context.Process.Commands.UpdateState),
                                     source: cp.Actor.Source));
                     },
                 processInfo:
                     cp =>
-                        new StateCommandInfo(cp.Actor.Process.Id,
+                        new StateCommandInfo(cp.Actor.Process,
                             Context.Process.Commands.UpdateState),
                 // take shortcut cud be IntialState
                 expectedSourceType: new SourceType(typeof(IComplexEventService)));
@@ -161,17 +161,17 @@ namespace RevolutionData
                              entity: ((List<IDynamicEntity>)cp.Messages["EntityViewSet"].Properties["EntitySet"].GetValue<List<IDynamicEntity>>()).FirstOrDefault(),
                              entitySet: cp.Messages["EntityViewSet"].Properties["EntitySet"].GetValue<List<IDynamicEntity>>(),
                              selectedEntities: new List<IDynamicEntity>(),
-                             stateInfo: new StateInfo(cp.Actor.Process.Id, new State($"Loaded {cp.Messages["EntityViewSet"].Properties["EntityType"].GetValue<IDynamicEntityType>()} Data", $"Loaded{cp.Messages["EntityViewSet"].Properties["EntityType"].GetValue<IDynamicEntityType>()}", "")));
+                             stateInfo: new StateInfo(cp.Actor.Process, new State($"Loaded {cp.Messages["EntityViewSet"].Properties["EntityType"].GetValue<IDynamicEntityType>()} Data", $"Loaded{cp.Messages["EntityViewSet"].Properties["EntityType"].GetValue<IDynamicEntityType>()}", "")));
                         return await Task.Run(() => new UpdateProcessStateList(
                                     entityType: cp.Messages["EntityViewSet"].Properties["EntityType"].GetValue<IDynamicEntityType>(),
                                     state: ps,
                                     process: cp.Actor.Process,
-                                    processInfo: new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),
+                                    processInfo: new StateCommandInfo(cp.Actor.Process, Context.Process.Commands.UpdateState),
                                     source: cp.Actor.Source));
                     },
                 processInfo:
                     cp =>
-                        new StateCommandInfo(cp.Actor.Process.Id,
+                        new StateCommandInfo(cp.Actor.Process,
                             Context.Process.Commands.UpdateState),
                 // take shortcut cud be IntialState
                 expectedSourceType: new SourceType(typeof(IComplexEventService)));
@@ -187,11 +187,11 @@ namespace RevolutionData
                     var value = cp.Messages["CurrentEntity"].Properties["Entity"].GetValue<IDynamicEntity>().Properties["Id"];
                     var changes = new Dictionary<string, dynamic>() { { key, value } };
                     return await Task.Run(() => new GetEntityWithChanges(entityType.DefaultEntity(),changes,
-                         new StateCommandInfo(cp.Actor.Process.Id, Context.Entity.Commands.GetEntity),
+                         new StateCommandInfo(cp.Actor.Process, Context.Entity.Commands.GetEntity),
                          cp.Actor.Process, cp.Actor.Source));
                 },
                 processInfo: cp =>
-                    new StateCommandInfo(cp.Actor.Process.Id,
+                    new StateCommandInfo(cp.Actor.Process,
                         Context.Entity.Commands.GetEntity),
                 // take shortcut cud be IntialState
                 expectedSourceType: new SourceType(typeof(IComplexEventService))
@@ -211,11 +211,11 @@ namespace RevolutionData
                     var value = cp.Messages["CurrentEntity"].Properties["Entity"].GetValue<IDynamicEntity>().Properties[currentProperty];
                     var changes = new Dictionary<string, dynamic>() { {key,value} };
                     return await Task.Run(() => new GetEntitySetWithChanges("ExactMatch", entityType,changes,
-                        new StateCommandInfo(cp.Actor.Process.Id, Context.Entity.Commands.GetEntity),
+                        new StateCommandInfo(cp.Actor.Process, Context.Entity.Commands.GetEntity),
                         cp.Actor.Process, cp.Actor.Source));
                 },
                 processInfo: cp =>
-                    new StateCommandInfo(cp.Actor.Process.Id,
+                    new StateCommandInfo(cp.Actor.Process,
                         Context.Entity.Commands.GetEntity),
                 // take shortcut cud be IntialState
                 expectedSourceType: new SourceType(typeof (IComplexEventService))
@@ -245,11 +245,11 @@ namespace RevolutionData
                     
                     
                     return await Task.Run(() => new GetEntitySetWithChanges("ExactMatch",entityType,changes,
-                        new StateCommandInfo(cp.Actor.Process.Id, Context.Entity.Commands.GetEntity),
+                        new StateCommandInfo(cp.Actor.Process, Context.Entity.Commands.GetEntity),
                         cp.Actor.Process, cp.Actor.Source));
                 },
                 processInfo: cp =>
-                    new StateCommandInfo(cp.Actor.Process.Id,
+                    new StateCommandInfo(cp.Actor.Process,
                         Context.Entity.Commands.GetEntity),
                 // take shortcut cud be IntialState
                 expectedSourceType: new SourceType(typeof(IComplexEventService))
@@ -265,17 +265,17 @@ namespace RevolutionData
                     var ps = new ProcessStateEntity(
                         process: cp.Actor.Process,
                         //Todo: get rid of this type name
-                        entity: new DynamicEntity(DynamicEntityType.DynamicEntityTypes["SignIn"], -1, new Dictionary<string, object>() { }),
-                        info: new StateInfo(cp.Actor.Process.Id,
+                        entity: new DynamicEntity(DynamicEntityTypeExtensions.GetOrAddDynamicEntityType("SignIn"), -1, new Dictionary<string, object>() { }),
+                        info: new StateInfo(cp.Actor.Process,
                             new State(name: "AwaitUserName", status: "Waiting for User Name",
                                 notes:
                                     "Please Enter your User Name. If this is your First Time Login In please Contact the Receptionist for your user info.")));
                     return await Task.Run(() => new UpdateProcessStateEntity(ps,
-                        new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),
+                        new StateCommandInfo(cp.Actor.Process, Context.Process.Commands.UpdateState),
                         cp.Actor.Process, cp.Actor.Source));
 
                 },
-                processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.CreateState),
+                processInfo: cp => new StateCommandInfo(cp.Actor.Process, Context.Process.Commands.CreateState),
                 // take shortcut cud be IntialState
                 expectedSourceType: new SourceType(typeof(IComplexEventService)));
 
@@ -283,27 +283,27 @@ namespace RevolutionData
                 action: async cp =>
                 {
                     var ps = new ProcessStateEntity(cp.Actor.Process, cp.Messages["UserNameFound"].Properties["Entity"].GetValue<IDynamicEntity>(),
-                        new StateInfo(cp.Actor.Process.Id, "WelcomeUser",
+                        new StateInfo(cp.Actor.Process, "WelcomeUser",
                             $"Welcome {cp.Messages["UserNameFound"].Properties["Entity"].GetValue<IDynamicEntity>().Properties["UserName"]}", "Please Enter your Password"));
                     return await Task.Run(() => new UpdateProcessStateEntity(ps,
-                        new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),
+                        new StateCommandInfo(cp.Actor.Process, Context.Process.Commands.UpdateState),
                         cp.Actor.Process, cp.Actor.Source));
                 },
-                processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),
+                processInfo: cp => new StateCommandInfo(cp.Actor.Process, Context.Process.Commands.UpdateState),
                 expectedSourceType: new SourceType(typeof(IComplexEventService))
                 );
 
             public static IProcessAction SetProcessStatetoValidatedUser => new ProcessAction(
                 action: async cp => await Task.Run(() => UpdateProcessStateEntity(cp)),
-                processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),
+                processInfo: cp => new StateCommandInfo(cp.Actor.Process, Context.Process.Commands.UpdateState),
                 expectedSourceType: new SourceType(typeof(IComplexEventService)));
 
             private static UpdateProcessStateEntity UpdateProcessStateEntity(IDynamicComplexEventParameters cp)
             {
                 return new UpdateProcessStateEntity(new ProcessStateEntity(cp.Actor.Process, cp.Messages["ValidatedUser"].Properties["Entity"].GetValue<IDynamicEntity>(), 
-                        new StateInfo(cp.Actor.Process.Id, "UserValidated",
+                        new StateInfo(cp.Actor.Process, "UserValidated",
                             $"User: {cp.Messages["ValidatedUser"].Properties["Entity"].GetValue<IDynamicEntity>().Properties["UserName"]} Validated", "User Validated")),
-                    new StateCommandInfo(cp.Actor.Process.Id, Context.Process.Commands.UpdateState),
+                    new StateCommandInfo(cp.Actor.Process, Context.Process.Commands.UpdateState),
                     cp.Actor.Process, cp.Actor.Source);
             }
 
@@ -311,9 +311,9 @@ namespace RevolutionData
             public static IProcessAction UserValidated => new ProcessAction(
                 action: async cp =>
                          await Task.Run(() => new DomainMessage("UserValidated",cp.Messages["ValidatedUser"].Properties["Entity"].GetValue<IDynamicEntity>(),
-                            new StateEventInfo(cp.Actor.Process.Id, Context.Domain.Events.DomainEventPublished),
+                            new StateEventInfo(cp.Actor.Process, Context.Domain.Events.DomainEventPublished),
                             cp.Actor.Process, cp.Actor.Source)),
-                processInfo: cp => new StateCommandInfo(cp.Actor.Process.Id, Context.Domain.Commands.PublishDomainEvent),
+                processInfo: cp => new StateCommandInfo(cp.Actor.Process, Context.Domain.Commands.PublishDomainEvent),
                 expectedSourceType: new SourceType(typeof(IComplexEventService))
                 );
 
@@ -351,7 +351,7 @@ namespace RevolutionData
     //                        cp.Actor.Process, cp.Actor.Source)),
     //                processInfo:
     //                cp =>
-    //                    new StateCommandInfo(cp.Actor.Process.Id,
+    //                    new StateCommandInfo(cp.Actor.Process,
     //                        Context.Entity.Commands.LoadEntitySetWithChanges),
     //                // take shortcut cud be IntialState
     //                expectedSourceType: new SourceType(typeof(IComplexEventService))),

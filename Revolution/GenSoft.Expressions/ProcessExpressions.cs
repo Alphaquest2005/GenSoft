@@ -4,7 +4,9 @@ using System.Threading.Tasks;
 using SystemInterfaces;
 using Actor.Interfaces;
 using GenSoft.Entities;
+using Process.WorkFlow;
 using RevolutionEntities.Process;
+using Agent = RevolutionEntities.Process.Agent;
 using ComplexEventAction = RevolutionEntities.Process.ComplexEventAction;
 using IProcessStateInfo = SystemInterfaces.IProcessStateInfo;
 using ISourceType = SystemInterfaces.ISourceType;
@@ -57,13 +59,13 @@ namespace GenSoft.Expressions
 
     public class ProcessExpressions
     {
-        public static Func<ComplexEventActionData, ComplexEventAction> CreateComplexEventAction =
-    (cd) => new ComplexEventAction(cd.Name,
-                                   cd.ProcessId,
-                                   new List<IProcessExpectedEvent>(),
-                                   Type.GetType(cd.ExpectedMessageType),
-                                   CreateProcessAction.Invoke(cd.ProcessAction),
-                                   cd.ActionTrigger);
+    //    public static Func<ComplexEventActionData, ComplexEventAction> CreateComplexEventAction =
+    //(cd) => new ComplexEventAction(cd.Name,
+    //    new RevolutionEntities.Process.SystemProcess(new RevolutionEntities.Process.Process(cd..Id, Processes.NullSystemProcess, p.ParentSystemProcess.SystemProcess.Name, p.ParentSystemProcess.SystemProcess.Description, p.ParentSystemProcess.SystemProcess.Symbol, new Agent(p.ParentSystemProcess.SystemProcess.Agent.UserName)), Processes.ThisMachineInfo),
+    //                               new List<IProcessExpectedEvent>(),
+    //                               Type.GetType(cd.ExpectedMessageType),
+    //                               CreateProcessAction.Invoke(cd.ProcessAction),
+    //                               cd.ActionTrigger);
 
         public static Func<ProcessActionData, ProcessAction> CreateProcessAction
             = (pd) => new ProcessAction(CreateActionFromComplexEvent.Invoke(pd.MessageData),
@@ -78,13 +80,13 @@ namespace GenSoft.Expressions
             = (md, cp) =>
             {
                 var type = Type.GetType(md.MessageType);
-                return (IProcessSystemMessage)Activator.CreateInstance(type, new object[] {new RevolutionEntities.Process.StateEventInfo(cp.Actor.Process.Id, new StateEvent(md.Event.Name, md.Event.Status, md.Event.Notes, CreateStateCommand.Invoke(md.Event.ExpectedEventCommand))),
+                return (IProcessSystemMessage)Activator.CreateInstance(type, new object[] {new RevolutionEntities.Process.StateEventInfo(cp.Actor.Process, new StateEvent(md.Event.Name, md.Event.Status, md.Event.Notes, CreateStateCommand.Invoke(md.Event.ExpectedEventCommand))),
                        cp.Actor.Process, cp.Actor.Source});
 
             };
 
         public static Func<MessageData, IDynamicComplexEventParameters, IStateCommandInfo> CreateCommand
-            = (md, cp) => new StateCommandInfo(cp.Actor.Process.Id, new StateCommand(md.Event.Name, md.Event.Status, CreateStateEvent(md.Event)));
+            = (md, cp) => new StateCommandInfo(cp.Actor.Process, new StateCommand(md.Event.Name, md.Event.Status, CreateStateEvent(md.Event)));
 
         public static Func<EventData, IStateEvent> CreateStateEvent = (ed) => new StateEvent(ed.Name, ed.Status, ed.Notes, CreateStateCommand(ed.ExpectedEventCommand));
 
@@ -95,7 +97,7 @@ namespace GenSoft.Expressions
 
         public static Func<TypeData, ISourceType> CreateSourceType = (td) => new SourceType(Type.GetType(td.TypeString));
 
-        public static Func<SystemProcess, SystemInterfaces.ISystemProcessInfo> CreateProcessInfo = (p) => new SystemProcessInfo(p.Id, p.ParentProcessId, p.Name, p.Description, p.Symbol, p.UserId.ToString()) as SystemInterfaces.ISystemProcessInfo;
+       // public static Func<SystemProcess, SystemInterfaces.ISystemProcessInfo> CreateProcessInfo = (p) => new SystemProcessInfo(p.Id, new RevolutionEntities.Process.SystemProcess(new RevolutionEntities.Process.Process(p.ParentSystemProcess.Id, Processes.NullSystemProcess,p.ParentSystemProcess.SystemProcess.Name,p.ParentSystemProcess.SystemProcess.Description,p.ParentSystemProcess.SystemProcess.Symbol, new Agent(p.ParentSystemProcess.SystemProcess.Agent.UserName)),Processes.ThisMachineInfo), p.Name, p.Description, p.Symbol, p.UserId.ToString()) as SystemInterfaces.ISystemProcessInfo;
 
         public static Func<Machine, IMachineInfo> CreateMachineInfo = (m) => new MachineInfo(m.MachineName, m.Processors);
     }

@@ -31,10 +31,10 @@ namespace DataServices.Actors
             }
             //Todo: make time out configurable
 
-            EventMessageBus.Current.GetEvent<ICleanUpSystemProcess>(Source).Where(x => x.ProcessToBeCleanedUpId > 1 && x.ProcessToBeCleanedUpId == Process.Id).Subscribe(x => CleanUpActor(x));
+            EventMessageBus.Current.GetEvent<ICleanUpSystemProcess>(Source).Where(x => x.ProcessToBeCleanedUp.Id > 1 && x.ProcessToBeCleanedUp.Id == Process.Id).Subscribe(x => CleanUpActor(x));
             EventMessageBus.Current.GetEvent<IRequestComplexEventLog>(Source).Subscribe(x => handleComplexEventLogRequest());
             
-            Publish(new ServiceStarted<IComplexEventService>(this, new StateEventInfo(Process.Id, RevolutionData.Context.Actor.Events.ActorStarted), Process, Source));
+            Publish(new ServiceStarted<IComplexEventService>(this, new StateEventInfo(Process, RevolutionData.Context.Actor.Events.ActorStarted), Process, Source));
         }
 
         private void CleanUpActor(ICleanUpSystemProcess cleanUpSystemProcess)
@@ -51,7 +51,7 @@ namespace DataServices.Actors
             res.AddRange(xlogs);
             res.AddRange(ologs);
 
-            var msg = new ComplexEventLogCreated(res, new StateEventInfo(Process.Id, RevolutionData.Context.Process.Events.ComplexEventLogCreated), Process, Source);
+            var msg = new ComplexEventLogCreated(res, new StateEventInfo(Process, RevolutionData.Context.Process.Events.ComplexEventLogCreated), Process, Source);
             Publish(msg);
 
         }
@@ -61,7 +61,7 @@ namespace DataServices.Actors
             //if (ComplexEventAction.Events.All(z => z.Raised())) return;
             if (InMessages.Count == ComplexEventAction.Events.Count) return;
             //Create Timeout Message
-            var timeoutMsg = new ComplexEventActionTimedOut(ComplexEventAction, new StateEventInfo(Process.Id, RevolutionData.Context.Process.Events.ProcessTimeOut), Process, Source);
+            var timeoutMsg = new ComplexEventActionTimedOut(ComplexEventAction, new StateEventInfo(Process, RevolutionData.Context.Process.Events.ProcessTimeOut), Process, Source);
             PublishProcesError(timeoutMsg, new ApplicationException($"ComplexEventActionTimedOut:<{ComplexEventAction.ProcessInfo.State.Name}>"), ComplexEventAction.ExpectedMessageType);
 
         }
@@ -100,7 +100,7 @@ namespace DataServices.Actors
         {
             // if (!ComplexEventAction.Events.All(z => z.Raised())) return;
             if (ComplexEventAction.Action == null) return;
-            var inMsg = new ExecuteComplexEventAction(ComplexEventAction.Action, new DynamicComplexEventParameters(this,  msgs), new StateCommandInfo(Process.Id, RevolutionData.Context.Actor.Commands.CreateAction), Process, Source);
+            var inMsg = new ExecuteComplexEventAction(ComplexEventAction.Action, new DynamicComplexEventParameters(this,  msgs), new StateCommandInfo(Process, RevolutionData.Context.Actor.Commands.CreateAction), Process, Source);
 
             Publish(inMsg);
             var outMsg = await ComplexEventAction.Action.Action(inMsg.ComplexEventParameters).ConfigureAwait(false);

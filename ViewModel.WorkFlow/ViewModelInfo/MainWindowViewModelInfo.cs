@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows;
 using SystemInterfaces;
 using Common;
+using Process.WorkFlow;
 using RevolutionEntities.Process;
 using RevolutionEntities.ViewModels;
 using ViewModel.Interfaces;
@@ -13,10 +14,10 @@ namespace RevolutionData
     {
         public static readonly ViewModelInfo MainWindowViewModel = new ViewModelInfo
             (
-            0,// set to zero to prevent ViewActorInializing this view
+                Processes.IntialSystemProcess,// set to zero to prevent ViewActorInializing this view
             new ViewInfo("MainWindowViewModel", "", ""),
             new List<IViewModelEventSubscription<IViewModel, IEvent>>
-            {   new ViewEventSubscription<IMainWindowViewModel, IViewModelCreated<IScreenModel>>("MainWindowViewModel-ICurrentEntityChanged",1, e => e != null, new List<Func<IMainWindowViewModel, IViewModelCreated<IScreenModel>, bool>>
+            {   new ViewEventSubscription<IMainWindowViewModel, IViewModelCreated<IScreenModel>>("MainWindowViewModel-ICurrentEntityChanged",Processes.IntialSystemProcess, e => e != null, new List<Func<IMainWindowViewModel, IViewModelCreated<IScreenModel>, bool>>
             {
                 (s, e) => s.Process.Id == e.ViewModel.Process.Id 
             }, (s, e) =>
@@ -43,7 +44,7 @@ namespace RevolutionData
                     {
                         v => v.ScreenModel.Value != null
                     },
-                    messageData: s => new ViewEventPublicationParameter(new object[] {s, s.ScreenModel.Value},new StateEventInfo(s.Process.Id, Context.ViewModel.Events.ViewModelLoaded), s.Process, s.Source ))
+                    messageData: s => new ViewEventPublicationParameter(new object[] {s, s.ScreenModel.Value},new StateEventInfo(s.Process, Context.ViewModel.Events.ViewModelLoaded), s.Process, s.Source ))
             }, 
             new List<IViewModelEventCommand<IViewModel, IEvent>>(),
             typeof(IMainWindowViewModel),

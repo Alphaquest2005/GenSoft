@@ -37,10 +37,10 @@ namespace DataServices.Actors
                 failedEventMessage: msg,
                 expectedEventType: expectedMessageType,
                 exception: ex,
-                source: Source, processInfo: new StateEventInfo(msg.Process.Id, RevolutionData.Context.Process.Events.Error));
-            Logger.Log(LoggingLevel.Error, $"Error:ProcessId:{msg.ProcessInfo.ProcessId}, ProcessStatus:{msg.ProcessInfo.State.Status}, ExceptionMessage: {ex.Message}|||| {ex.StackTrace}");
+                source: Source, processInfo: new StateEventInfo(msg.Process, RevolutionData.Context.Process.Events.Error));
+            Logger.Log(LoggingLevel.Error, $"Error:ProcessId:{msg.ProcessInfo.Process}, ProcessStatus:{msg.ProcessInfo.State.Status}, ExceptionMessage: {ex.Message}|||| {ex.StackTrace}");
             EventMessageBus.Current.Publish(outMsg, Source);
-            EventMessageBus.Current.Publish(new RequestProcessLog(new StateCommandInfo(msg.Process.Id, RevolutionData.Context.Process.Commands.CreateLog), msg.Process,Source), Source);
+            EventMessageBus.Current.Publish(new RequestProcessLog(new StateCommandInfo(msg.Process, RevolutionData.Context.Process.Commands.CreateLog), msg.Process,Source), Source);
             OutMessages = OutMessages.Add(outMsg);
         }
 

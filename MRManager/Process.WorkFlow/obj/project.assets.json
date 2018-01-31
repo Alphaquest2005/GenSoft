@@ -5943,6 +5943,7 @@
       "BootStrapper >= 1.0.0",
       "Common >= 1.0.0",
       "CommonMessages >= 1.0.0",
+      "DomainUtilities >= 1.0.0",
       "EventMessages >= 1.0.0",
       "GenSoft.Entities >= 1.0.0",
       "GenSoft.Interface >= 1.0.0",
@@ -6016,6 +6017,9 @@
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\DomainUtilities\\DomainUtilities.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\DomainUtilities\\DomainUtilities.csproj"
             }
           }
         }

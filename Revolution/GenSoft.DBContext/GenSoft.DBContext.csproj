@@ -128,6 +128,7 @@
     <Compile Include="Generated Mappings\Ordinality.cs" />
     <Compile Include="Generated Mappings\Parameters.cs" />
     <Compile Include="Generated Mappings\ParentEntity.cs" />
+    <Compile Include="Generated Mappings\ParentSystemProcess.cs" />
     <Compile Include="Generated Mappings\PredicateParameters.cs" />
     <Compile Include="Generated Mappings\Predicates.cs" />
     <Compile Include="Generated Mappings\PresentationPropertyType.cs" />

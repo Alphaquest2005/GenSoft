@@ -114,7 +114,7 @@ namespace EFRepository
 
                     //    foreach (var et in entityTypes)
                     //    {
-                    //        var newEntity = GetDynamicEntityWithChanges(ctx, DynamicEntityType.DynamicEntityTypes[et.Type.Name], new Dictionary<string, object>(){{change.Key, change.Value},{nameof(IDynamicEntity.Id), entity.Id}});
+                    //        var newEntity = GetDynamicEntityWithChanges(ctx, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(et.Type.Name], new Dictionary<string, object>(){{change.Key, change.Value},{nameof(IDynamicEntity.Id), entity.Id}});
 
                     //        EventMessageBus.Current.Publish(
                     //            new EntityWithChangesUpdated(newEntity, msg.Changes,
@@ -125,11 +125,11 @@ namespace EFRepository
                     //}
                     //}
                     var newEntity = GetDynamicEntityWithChanges(ctx,
-                        DynamicEntityType.DynamicEntityTypes[entityType.Type.Name], msg.Changes);
+                        DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(entityType.Type.Name), msg.Changes);
 
                     EventMessageBus.Current.Publish(
                         new EntityWithChangesUpdated(newEntity, msg.Changes,
-                            new RevolutionEntities.Process.StateEventInfo(msg.Process.Id,
+                            new RevolutionEntities.Process.StateEventInfo(msg.Process,
                                 EntityEvents.Events.EntityUpdated), msg.Process,
                             Source), Source);
 
@@ -170,7 +170,7 @@ namespace EFRepository
                 
                     EventMessageBus.Current.Publish(
                         new EntitySetWithChangesLoaded(msg.EntityType,entities, msg.Changes,
-                            new RevolutionEntities.Process.StateEventInfo(msg.Process.Id, EntityEvents.Events.EntityFound), msg.Process,
+                            new RevolutionEntities.Process.StateEventInfo(msg.Process, EntityEvents.Events.EntityFound), msg.Process,
                             Source), Source);
                
             }
@@ -195,7 +195,7 @@ namespace EFRepository
 
                 EventMessageBus.Current.Publish(
                         new EntitySetLoaded(msg.EntityType, viewset, 
-                            new RevolutionEntities.Process.StateEventInfo(msg.Process.Id, EntityEvents.Events.EntityFound), msg.Process,
+                            new RevolutionEntities.Process.StateEventInfo(msg.Process, EntityEvents.Events.EntityFound), msg.Process,
                             Source), Source);
                 
             }
@@ -248,14 +248,14 @@ namespace EFRepository
                 {
                     EventMessageBus.Current.Publish(
                         new EntityWithChangesFound(entity, msg.Changes,
-                            new RevolutionEntities.Process.StateEventInfo(msg.Process.Id, EntityEvents.Events.EntityFound), msg.Process,
+                            new RevolutionEntities.Process.StateEventInfo(msg.Process, EntityEvents.Events.EntityFound), msg.Process,
                             Source), Source);
                 }
                 else
                 {
                     EventMessageBus.Current.Publish(
-                        new EntityWithChangesFound(DynamicEntityType.DynamicEntityTypes[msg.EntityType.Name].DefaultEntity(), msg.Changes,
-                            new RevolutionEntities.Process.StateEventInfo(msg.Process.Id, EntityEvents.Events.EntityFound), msg.Process,
+                        new EntityWithChangesFound(DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(msg.EntityType.Name).DefaultEntity(), msg.Changes,
+                            new RevolutionEntities.Process.StateEventInfo(msg.Process, EntityEvents.Events.EntityFound), msg.Process,
                             Source), Source);
                 }
             }

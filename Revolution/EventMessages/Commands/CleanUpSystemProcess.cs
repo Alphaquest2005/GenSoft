@@ -10,12 +10,12 @@ namespace EventMessages.Commands
     public class CleanUpSystemProcess : ProcessSystemMessage, ICleanUpSystemProcess
     {
         public CleanUpSystemProcess() { }
-        public int ProcessToBeCleanedUpId { get; }
+        public ISystemProcess ProcessToBeCleanedUp { get; }
 
-        public CleanUpSystemProcess(int processId, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) 
-            : base(new DynamicObject("CleanUpSystemProcess", new Dictionary<string, object>() { { "ProcessToBeCleanedUpId", processId }}), processInfo, process, source)
+        public CleanUpSystemProcess(ISystemProcess processToBeCleanedUp, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) 
+            : base(new DynamicObject("CleanUpSystemProcess", new Dictionary<string, object>() { { "ProcessToBeCleanedUpId", processToBeCleanedUp } }), processInfo, process, source)
         {
-            ProcessToBeCleanedUpId = processId;
+            ProcessToBeCleanedUp = processToBeCleanedUp;
         }
     }
 }

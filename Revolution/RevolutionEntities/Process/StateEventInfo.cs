@@ -6,12 +6,12 @@ namespace RevolutionEntities.Process
     {
         public new IStateEvent State { get; }
         
-        public StateEventInfo(int processId, string name, string status, string notes, IStateCommand expectedCommand) : base(processId, new StateEvent(name,status, notes,expectedCommand))
+        public StateEventInfo(ISystemProcess process, string name, string status, string notes, IStateCommand expectedCommand) : base(process, new StateEvent(name,status, notes,expectedCommand))
         {
             State = new StateEvent(name, status, notes, expectedCommand);
         }
 
-        public StateEventInfo(int processId, IStateEvent state):base(processId, state)
+        public StateEventInfo(ISystemProcess process, IStateEvent state):base(process, state)
         {
             State = state;
            

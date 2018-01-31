@@ -14,7 +14,6 @@ namespace GenSoft.Entities
 	public partial class SystemProcess: BaseEntity, ISystemProcess
 	{
 		public virtual int UserId { get; set; }
-		public virtual int ParentProcessId { get; set; }
 		public virtual string Symbol { get; set; }
 		public virtual string Name { get; set; }
 		public virtual string Description { get; set; }
@@ -22,6 +21,8 @@ namespace GenSoft.Entities
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 				public virtual DomainProcess DomainProcess {get; set;}
+				public virtual ParentSystemProcess ParentSystemProcess {get; set;}
+				public virtual ICollection<ParentSystemProcess> ParentProcesss {get; set;}
 				public virtual ICollection<SystemProcessState> SystemProcessState {get; set;}
 		
 			// ---------Parent Relationships

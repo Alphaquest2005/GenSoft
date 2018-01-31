@@ -12,7 +12,7 @@ namespace CommonMessages
         {
             Process = process;
             ProcessInfo = processInfo;
-            ParentProcessId = Process.ParentProcessId;
+            ParentProcess = Process.ParentProcess;
             Name = process.Name;
             Description = process.Description;
             Symbol = process.Symbol;
@@ -21,7 +21,7 @@ namespace CommonMessages
         }
 
         public int Id { get; }
-        public int ParentProcessId { get; } 
+        public ISystemProcess ParentProcess { get; } 
         public string Name { get; }
         public string Description { get; }
         public string Symbol { get; }

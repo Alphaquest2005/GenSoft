@@ -787,6 +787,7 @@
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Common": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
@@ -990,6 +991,7 @@
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "EventMessages": "1.0.0",
           "GenSoft.Entities": "1.0.0",
           "GenSoft.Interface": "1.0.0",
@@ -1172,6 +1174,7 @@
           "JB.Common.Collections": "0.8.107-pre",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
+          "Process.WorkFlow": "1.0.0",
           "RevolutionData": "1.0.0",
           "RevolutionEntities": "1.0.0",
           "Rx-Core": "2.2.5",
@@ -2007,6 +2010,7 @@
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Common": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
@@ -2210,6 +2214,7 @@
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "EventMessages": "1.0.0",
           "GenSoft.Entities": "1.0.0",
           "GenSoft.Interface": "1.0.0",
@@ -2392,6 +2397,7 @@
           "JB.Common.Collections": "0.8.107-pre",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
+          "Process.WorkFlow": "1.0.0",
           "RevolutionData": "1.0.0",
           "RevolutionEntities": "1.0.0",
           "Rx-Core": "2.2.5",
@@ -3227,6 +3233,7 @@
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Common": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
@@ -3430,6 +3437,7 @@
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "EventMessages": "1.0.0",
           "GenSoft.Entities": "1.0.0",
           "GenSoft.Interface": "1.0.0",
@@ -3612,6 +3620,7 @@
           "JB.Common.Collections": "0.8.107-pre",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
+          "Process.WorkFlow": "1.0.0",
           "RevolutionData": "1.0.0",
           "RevolutionEntities": "1.0.0",
           "Rx-Core": "2.2.5",
@@ -4447,6 +4456,7 @@
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Common": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
@@ -4650,6 +4660,7 @@
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
           "EventMessages": "1.0.0",
           "GenSoft.Entities": "1.0.0",
           "GenSoft.Interface": "1.0.0",
@@ -4832,6 +4843,7 @@
           "JB.Common.Collections": "0.8.107-pre",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
+          "Process.WorkFlow": "1.0.0",
           "RevolutionData": "1.0.0",
           "RevolutionEntities": "1.0.0",
           "Rx-Core": "2.2.5",

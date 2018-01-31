@@ -8,7 +8,7 @@ namespace Actor.Interfaces
     {
         string Key { get; }
         IList<IProcessExpectedEvent> Events { get; }
-        int ProcessId { get; }
+        ISystemProcess Process { get; }
        
 
     }

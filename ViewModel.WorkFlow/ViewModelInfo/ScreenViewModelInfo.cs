@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows;
 using SystemInterfaces;
 using Common;
+using Process.WorkFlow;
 using RevolutionEntities.Process;
 using RevolutionEntities.ViewModels;
 using ViewModel.Interfaces;
@@ -12,18 +13,18 @@ namespace RevolutionData
 {
     public class ScreenViewModelInfo
     {
-        public static ViewModelInfo ScreenViewModel(int processId)
+        public static ViewModelInfo ScreenViewModel()
         {
             return new ViewModelInfo
             (
-                processId,
+                Processes.IntialSystemProcess,
                 new ViewInfo("ScreenViewModel", "", ""),
 
                 new List<IViewModelEventSubscription<IViewModel, IEvent>>
                 {
                     new ViewEventSubscription<IScreenModel, IViewModelVisibilityChanged>(
-                        "ScreenViewModel-ICurrentEntityChanged",
-                        processId,
+                        "ScreenViewModel-IViewModelVisibilityChanged",
+                        Processes.IntialSystemProcess,
                         e => e != null,
                         new List<Func<IScreenModel, IViewModelVisibilityChanged, bool>> { },
                         (s, e) =>
@@ -34,8 +35,8 @@ namespace RevolutionData
                             }
                         }),
                     new ViewEventSubscription<IScreenModel, INavigateToView>(
-                        "ScreenViewModel-ICurrentEntityChanged",
-                        processId,
+                        "ScreenViewModel-INavigateToView",
+                        Processes.IntialSystemProcess,
                         e => e != null,
                         new List<Func<IScreenModel, INavigateToView, bool>> { },
                         (s, e) =>
@@ -44,7 +45,7 @@ namespace RevolutionData
                         }),
 
                     new ViewEventSubscription<IScreenModel, IViewModelCreated<IViewModel>>(
-                        "ScreenViewModel-ICurrentEntityChanged", processId, e => e != null,
+                        "ScreenViewModel-IViewModelCreated<IHeaderViewModel>", Processes.IntialSystemProcess, e => e != null,
                         new List<Func<IScreenModel, IViewModelCreated<IViewModel>, bool>>
                         {
                             (s, e) => e.ViewModel.Orientation == typeof(IHeaderViewModel)
@@ -71,8 +72,8 @@ namespace RevolutionData
                             }
                         }),
                     new ViewEventSubscription<IScreenModel, IViewModelCreated<IViewModel>>(
-                        "ScreenViewModel-ICurrentEntityChanged",
-                        processId,
+                        "ScreenViewModel-IViewModelCreated<ILeftViewModel>",
+                        Processes.IntialSystemProcess,
                         e => e != null,
                         new List<Func<IScreenModel, IViewModelCreated<IViewModel>, bool>>
                         {
@@ -101,7 +102,7 @@ namespace RevolutionData
                             }
                         }),
                     new ViewEventSubscription<IScreenModel, IViewModelCreated<IViewModel>>(
-                        "ScreenViewModel-ICurrentEntityChanged", processId, e => e != null,
+                        "ScreenViewModel-IViewModelCreated<IRightViewModel>", Processes.IntialSystemProcess, e => e != null,
                         new List<Func<IScreenModel, IViewModelCreated<IViewModel>, bool>>
                         {
                             (s, e) => e.ViewModel.Orientation == typeof(IRightViewModel)
@@ -128,8 +129,8 @@ namespace RevolutionData
                             }
                         }),
                     new ViewEventSubscription<IScreenModel, IViewModelCreated<IViewModel>>(
-                        "ScreenViewModel-ICurrentEntityChanged",
-                        processId, e => e != null, new List<Func<IScreenModel, IViewModelCreated<IViewModel>, bool>>
+                        "ScreenViewModel-IViewModelCreated<IFooterViewModel>",
+                        Processes.IntialSystemProcess, e => e != null, new List<Func<IScreenModel, IViewModelCreated<IViewModel>, bool>>
                         {
                             (s, e) => e.ViewModel.Orientation == typeof(IFooterViewModel)
                         }, (s, e) =>
@@ -155,7 +156,7 @@ namespace RevolutionData
                             }
                         }),
                     new ViewEventSubscription<IScreenModel, IViewModelCreated<IViewModel>>(
-                        "ScreenViewModel-ICurrentEntityChanged", processId, e => e != null,
+                        "ScreenViewModel-IViewModelCreated<IBodyViewModel>", Processes.IntialSystemProcess, e => e != null,
                         new List<Func<IScreenModel, IViewModelCreated<IViewModel>, bool>>
                         {
                             (s, e) => e.Process.Id != s.Process.Id &&
@@ -187,11 +188,12 @@ namespace RevolutionData
 
                     new ViewEventSubscription<IScreenModel, ICleanUpSystemProcess>(
                         "ScreenViewModel-ICleanUpSystemProcess",
-                        processId,
+                        Processes.IntialSystemProcess,
                         e => e != null,
                         new List<Func<IScreenModel, ICleanUpSystemProcess, bool>> { },
                         (s, e) =>
                         {
+
                             if (Application.Current == null)
                             {
                                 ClearScreenModels(s, e);
@@ -217,7 +219,7 @@ namespace RevolutionData
                             v => v.BodyViewModels.LastOrDefault() != null
                         },
                         messageData: s => new ViewEventPublicationParameter(new object[] {s, s.BodyViewModels.Last()},
-                            new StateEventInfo(s.Process.Id, Context.ViewModel.Events.ViewModelLoaded),
+                            new StateEventInfo(s.Process, Context.ViewModel.Events.ViewModelLoaded),
                             s.BodyViewModels.Last().Process, s.Source)),
 
                     new ViewEventPublication<IScreenModel, IViewModelLoaded<IScreenModel, IViewModel>>(
@@ -228,7 +230,7 @@ namespace RevolutionData
                             v => v.LeftViewModels.LastOrDefault() != null
                         },
                         messageData: s => new ViewEventPublicationParameter(new object[] {s, s.LeftViewModels.Last()},
-                            new StateEventInfo(s.Process.Id, Context.ViewModel.Events.ViewModelLoaded),
+                            new StateEventInfo(s.Process, Context.ViewModel.Events.ViewModelLoaded),
                             s.LeftViewModels.Last().Process, s.Source)),
 
                     new ViewEventPublication<IScreenModel, IViewModelLoaded<IScreenModel, IViewModel>>(
@@ -239,7 +241,7 @@ namespace RevolutionData
                             v => v.HeaderViewModels.LastOrDefault() != null
                         },
                         messageData: s => new ViewEventPublicationParameter(new object[] {s, s.HeaderViewModels.Last()},
-                            new StateEventInfo(s.Process.Id, Context.ViewModel.Events.ViewModelLoaded),
+                            new StateEventInfo(s.Process, Context.ViewModel.Events.ViewModelLoaded),
                             s.HeaderViewModels.Last().Process, s.Source)),
 
                     new ViewEventPublication<IScreenModel, IViewModelLoaded<IScreenModel, IViewModel>>(
@@ -250,7 +252,7 @@ namespace RevolutionData
                             v => v.RightViewModels.LastOrDefault() != null
                         },
                         messageData: s => new ViewEventPublicationParameter(new object[] {s, s.RightViewModels.Last()},
-                            new StateEventInfo(s.Process.Id, Context.ViewModel.Events.ViewModelLoaded),
+                            new StateEventInfo(s.Process, Context.ViewModel.Events.ViewModelLoaded),
                             s.RightViewModels.Last().Process, s.Source)),
 
                     new ViewEventPublication<IScreenModel, IViewModelLoaded<IScreenModel, IViewModel>>(
@@ -261,7 +263,7 @@ namespace RevolutionData
                             v => v.FooterViewModels.LastOrDefault() != null
                         },
                         messageData: s => new ViewEventPublicationParameter(new object[] {s, s.FooterViewModels.Last()},
-                            new StateEventInfo(s.Process.Id, Context.ViewModel.Events.ViewModelLoaded),
+                            new StateEventInfo(s.Process, Context.ViewModel.Events.ViewModelLoaded),
                             s.FooterViewModels.Last().Process, s.Source)),
 
                     //new ViewEventPublication<IScreenModel, IViewModelLoaded<IScreenModel, IViewModel>>(
@@ -289,20 +291,11 @@ namespace RevolutionData
 
         private static void ClearScreenModels(IScreenModel s, ICleanUpSystemProcess e)
         {
-           s.BodyViewModels.Clear();
+            foreach (var vm in s.BodyViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUp.Id).ToList())
+            {
+                s.BodyViewModels.Remove(vm);
+            }
            s.BodyViewModels.Reset();
-
-            //s.FooterViewModels.Clear();
-            //s.FooterViewModels.Reset();
-
-            //s.HeaderViewModels.Clear();
-            //s.HeaderViewModels.Reset();
-
-            //s.LeftViewModels.Clear();
-            //s.LeftViewModels.Reset();
-
-            //s.RightViewModels.Clear();
-            //s.RightViewModels.Reset();
 
         }
     }

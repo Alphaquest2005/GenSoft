@@ -8,14 +8,14 @@ namespace Common.DataEntites
 {
     public class DynamicEntityType : IDynamicEntityType
     {
-        public static ConcurrentDictionary<string,IDynamicEntityType> DynamicEntityTypes { get; } = new ConcurrentDictionary<string, IDynamicEntityType>();
-
+      
         public static IDynamicEntityType NullEntityType()
         {
             return new DynamicEntityType("NullEntity", "NullEntitySet", new List<IEntityKeyValuePair>(),
                 new Dictionary<string, List<dynamic>>(), new ObservableDictionary<string, Dictionary<int, dynamic>>(),
                 new ObservableDictionary<string, string>());
         }
+
 
 
         public DynamicEntityType(string name, string entitySetName, List<IEntityKeyValuePair> properties, Dictionary<string, List<dynamic>> calculatedProperties, ObservableDictionary<string, Dictionary<int, dynamic>> cachedProperties, ObservableDictionary<string, string> propertyParentEntityType)

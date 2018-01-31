@@ -124,7 +124,7 @@ namespace Core.Common.UI
                 {
                     msg = new ProcessEventFailure(itm.EventType,
                             new FailedCommandData(itm, param.ProcessInfo, param.Process, param.Source), itm.EventType,
-                            new InvalidOperationException("Type not found in MEF - consider adding export to type."), new StateEventInfo(param.ProcessInfo.ProcessId,"Error","Error occured getting type","",param.ProcessInfo.State)
+                            new InvalidOperationException("Type not found in MEF - consider adding export to type."), new StateEventInfo(param.ProcessInfo.Process,"Error","Error occured getting type","",param.ProcessInfo.State)
                             , viewModel.Source);
                 }
                 else

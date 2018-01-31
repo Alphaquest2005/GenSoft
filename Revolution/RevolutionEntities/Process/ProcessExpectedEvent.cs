@@ -6,7 +6,7 @@ namespace RevolutionEntities.Process
 {
     public class ProcessExpectedEvent : IProcessExpectedEvent
     {
-        public int ProcessId { get; }
+        public ISystemProcess Process { get; }
         public IProcessStateInfo ProcessInfo { get; }
         public ISourceType ExpectedSourceType { get; }
 
@@ -14,9 +14,9 @@ namespace RevolutionEntities.Process
         public string Key { get; }
         public Func<IProcessSystemMessage, bool> EventPredicate { get; }
 
-        public ProcessExpectedEvent(string key,int processId, Type eventType, Func<IProcessSystemMessage, bool> eventPredicate, IProcessStateInfo processInfo, ISourceType expectedSourceType)
+        public ProcessExpectedEvent(string key, ISystemProcess process, Type eventType, Func<IProcessSystemMessage, bool> eventPredicate, IProcessStateInfo processInfo, ISourceType expectedSourceType)
         {
-            ProcessId = processId;
+            Process = process;
             EventType = eventType;
             EventPredicate = eventPredicate;
             ProcessInfo = processInfo;
@@ -24,9 +24,9 @@ namespace RevolutionEntities.Process
             Key = key;
         }
 
-        public ProcessExpectedEvent(string key,int processId, Func<IProcessSystemMessage, bool> eventPredicate, ProcessExpectedEventInfo eventInfo)
+        public ProcessExpectedEvent(string key, ISystemProcess process, Func<IProcessSystemMessage, bool> eventPredicate, ProcessExpectedEventInfo eventInfo)
         {
-            ProcessId = processId;
+            Process = process;
             EventPredicate = eventPredicate;
             Key = key;
             EventType = eventInfo.EventType;
@@ -40,8 +40,8 @@ namespace RevolutionEntities.Process
 
     public class ProcessExpectedEvent<TEvent>: ProcessExpectedEvent where TEvent:IProcessSystemMessage
     {
-        public ProcessExpectedEvent(string key, int processId, Func<TEvent, bool> eventPredicate, IProcessStateInfo processInfo, ISourceType expectedSourceType) 
-            : base(key,processId,
+        public ProcessExpectedEvent(string key, ISystemProcess process, Func<TEvent, bool> eventPredicate, IProcessStateInfo processInfo, ISourceType expectedSourceType) 
+            : base(key,process,
             typeof(TEvent),
             (Func<IProcessSystemMessage,bool>) eventPredicate.Convert(typeof(IProcessSystemMessage)),processInfo, expectedSourceType)
         {

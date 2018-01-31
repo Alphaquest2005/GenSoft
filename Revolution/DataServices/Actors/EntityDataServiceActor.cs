@@ -20,7 +20,7 @@ namespace DataServices.Actors
             // Command<TService>(m => HandledEvent(m));
             if(firstMessage is TService) HandledEvent((TService)firstMessage);
             EventMessageBus.Current.GetEvent<TService>(Source).Subscribe(x => HandledEvent(x));
-            EventMessageBus.Current.Publish(new ServiceStarted<IEntityDataServiceActor<TService>>(this,new StateEventInfo(msg.Process.Id, RevolutionData.Context.Actor.Events.ActorStarted), msg.Process,Source), Source);
+            EventMessageBus.Current.Publish(new ServiceStarted<IEntityDataServiceActor<TService>>(this,new StateEventInfo(msg.Process, RevolutionData.Context.Actor.Events.ActorStarted), msg.Process,Source), Source);
         }
 
 

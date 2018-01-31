@@ -17,82 +17,38 @@ namespace DataServices.Actors
   
     public class ViewModelSupervisor : BaseSupervisor<ViewModelSupervisor>, IViewModelSupervisor
     {
-
-        
-        private IUntypedActorContext ctx = null;
+        private IActorRef _viewActor;
+       
 
         public ViewModelSupervisor(List<IViewModelInfo> processViewModelInfos, ISystemProcess process) : base(process)
         {
-            ProcessViewModelInfos = processViewModelInfos;
-            ctx = Context;
-            Task.Run(() =>
-            {
-                ctx.ActorOf(
+            _viewActor = Context.ActorOf(
                     Props.Create<ViewModelActor>(process)
-                        .WithRouter(new RoundRobinPool(1,
-                            new DefaultResizer(1, Environment.ProcessorCount, 1, .2, .3, .1, Environment.ProcessorCount))),"ViewModelActorEntityActor");
-            });
+                        .WithRouter(new RoundRobinPool(1,new DefaultResizer(1, Environment.ProcessorCount, 1, .2, .3, .1, Environment.ProcessorCount)))
+                        ,"ViewModelActorEntityActor");
+          
+
+            HandleProcessViews(processViewModelInfos);
+            EventMessageBus.Current.GetEvent<ILoadDomainProcessViewModels>(Source).Subscribe(x => HandleProcessViews(x.ViewModelInfos));
             
-
-            EventMessageBus.Current.GetEvent<ISystemProcessStarted>(Source).Subscribe(x => HandleProcessViews(x));
-            EventMessageBus.Current.GetEvent<ILoadDomainProcess>(Source).Subscribe(x => HandleDomainViews(x));
-
-
-            EventMessageBus.Current.GetEvent<IServiceStarted<IViewModelService>>(Source).Subscribe(x =>
-            {
-                EventMessageBus.Current.Publish(new ServiceStarted<IViewModelSupervisor>(this,new StateEventInfo(process.Id, RevolutionData.Context.Actor.Events.ActorStarted), process, Source), Source);
-            });
-
-            
+            EventMessageBus.Current.Publish(new ServiceStarted<IViewModelSupervisor>(this,new StateEventInfo(process, RevolutionData.Context.Actor.Events.ActorStarted), process, Source), Source);
         }
 
-        private void HandleDomainViews(ILoadDomainProcess loadDomainProcess)
+        private void HandleProcessViews(List<IViewModelInfo> processViewModelInfos)
         {
-            try
-            {
-                foreach (var itm in ProcessViewModelInfos.Where(x => x.ProcessId == loadDomainProcess.Process.Id).ToList())
-                {
-                    ProcessViewModelInfos.Remove(itm);
-                }
-                
-                ProcessViewModelInfos.AddRange(loadDomainProcess.ViewModelInfos);
-
-            }
-            catch (Exception ex)
-            {
-                //todo: need  to fix this
-                PublishProcesError(loadDomainProcess, ex, loadDomainProcess.GetType());
-            }
-        }
-
-
-        private void HandleProcessViews(ISystemProcessStarted pe)
-        {
-            try
-            {
-                //Parallel.ForEach(ProcessViewModelInfos.Where(x => x.ProcessId == pe.Process.Id),new ParallelOptions() {MaxDegreeOfParallelism = Environment.ProcessorCount},
-                //    (v) =>
-                foreach (var v in ProcessViewModelInfos.Where(x => x.ProcessId == pe.Process.Id).ToList())
-               
+            Parallel.ForEach(processViewModelInfos,
+                new ParallelOptions() {MaxDegreeOfParallelism = Environment.ProcessorCount},
+                (v) =>
                 {
                     var msg = new LoadViewModel(v,
-                        new StateCommandInfo(pe.Process.Id, RevolutionData.Context.ViewModel.Commands.LoadViewModel),
-                        pe.Process, Source);
-
-                    EventMessageBus.Current.Publish(msg, Source);
-                }
-
-                //});
-            }
-            catch (Exception ex)
-            {
-                //todo: need  to fix this
-                PublishProcesError(pe, ex, pe.GetType());
-            }
-
+                        new StateCommandInfo(v.Process, RevolutionData.Context.ViewModel.Commands.LoadViewModel),
+                        v.Process, Source);
+                    _viewActor.Tell(msg);
+                   // EventMessageBus.Current.Publish(msg, Source);
+                });
         }
 
-        public List<IViewModelInfo> ProcessViewModelInfos { get;  }
+
     }
 
 }

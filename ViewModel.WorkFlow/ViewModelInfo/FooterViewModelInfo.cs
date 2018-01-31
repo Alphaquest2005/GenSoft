@@ -6,6 +6,7 @@ using System.Windows;
 using SystemInterfaces;
 using Common;
 using JB.Collections.Reactive;
+using Process.WorkFlow;
 using Reactive.Bindings;
 using RevolutionEntities.Process;
 using RevolutionEntities.ViewModels;
@@ -19,17 +20,17 @@ namespace RevolutionData
 {
     public class FooterViewModelInfo
     {
-        public static ViewModelInfo FooterViewModel(int processId)
+        public static ViewModelInfo FooterViewModel()
         {
             return new ViewModelInfo
             (
-                processId,
+                Processes.IntialSystemProcess,
                 new ViewInfo("Footer", "", ""),
                 new List<IViewModelEventSubscription<IViewModel, IEvent>>
                 {
                     new ViewEventSubscription<IFooterViewModel, ICurrentEntityChanged>(
                         "Footer-ICurrentEntityChanged",
-                        processId,
+                        Processes.IntialSystemProcess,
                         e => e.Entity != null  && e.Entity.Id > 0,
                         new List<Func<IFooterViewModel, ICurrentEntityChanged, bool>>(),
                         (v, e) =>
@@ -57,7 +58,7 @@ namespace RevolutionData
 
                     new ViewEventSubscription<IFooterViewModel, ICleanUpSystemProcess>(
                         "Footer-ICleanUpSystemProcess",
-                        processId,
+                        Processes.IntialSystemProcess,
                         e => e != null,
                         new List<Func<IFooterViewModel, ICleanUpSystemProcess, bool>> { },
                         (s, e) =>
@@ -91,7 +92,7 @@ namespace RevolutionData
 
                         messageData: s => new ViewEventCommandParameter(
                             new object[] {$"{s.CurrentEntity.Value.EntityType.Name}-SummaryListViewModel"},
-                            new StateCommandInfo(s.Process.Id,
+                            new StateCommandInfo(s.Process,
                                 Context.View.Commands.NavigateToView), s.Process,
                             s.Source)),
 

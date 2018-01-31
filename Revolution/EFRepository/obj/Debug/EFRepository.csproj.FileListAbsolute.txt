@@ -468,3 +468,5 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\obj\Debug\EFRepository.c
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\obj\Debug\EFRepository.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\obj\Debug\EFRepository.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\obj\Debug\EFRepository.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\Process.WorkFlow.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\Process.WorkFlow.pdb

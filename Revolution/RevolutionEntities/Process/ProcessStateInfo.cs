@@ -4,15 +4,15 @@ namespace RevolutionEntities.Process
 {
     public abstract class ProcessStateInfo: IProcessStateInfo
     {
-        protected ProcessStateInfo(int processId, IState state)
+        protected ProcessStateInfo(ISystemProcess process, IState state)
         {
-            ProcessId = processId;
+            Process = process;
             State = state;
         }
 
-        public int ProcessId { get; }
+        public ISystemProcess Process { get; }
         public IState State { get; }
-        public IStateInfo ToStateInfo() => new StateInfo(ProcessId, State);
+        public IStateInfo ToStateInfo() => new StateInfo(Process, State);
     }
 
 

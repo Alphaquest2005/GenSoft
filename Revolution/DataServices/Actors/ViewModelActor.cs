@@ -21,12 +21,12 @@ namespace DataServices.Actors
         {
             ctx = Context;
             Command<LoadViewModel>(x => HandleProcessViews(x));
+
             
-            EventMessageBus.Current.GetEvent<ILoadViewModel>(Source).Subscribe(x => HandleProcessViews(x));
-            EventMessageBus.Current.Publish(
-                new ServiceStarted<IViewModelService>(this,
-                    new StateEventInfo(process.Id, RevolutionData.Context.Actor.Events.ActorStarted), process, Source),
-                Source);
+            //EventMessageBus.Current.Publish(
+            //    new ServiceStarted<IViewModelService>(this,
+            //        new StateEventInfo(process, RevolutionData.Context.Actor.Events.ActorStarted), process, Source),
+            //    Source);
         }
         
 
@@ -36,8 +36,7 @@ namespace DataServices.Actors
                 .GetMethod("LoadEntityViewModel")
                 .MakeGenericMethod(pe.ViewModelInfo.ViewModelType)
                 .Invoke(this, new object[] {pe});
-            //LoadEntityViewModel(pe.ViewModelInfo.ViewModelType, pe.ViewModelInfo);
-
+            
         }
 
         public void LoadEntityViewModel<TViewModel>(LoadViewModel vmInfo) where TViewModel : IViewModel
@@ -49,14 +48,12 @@ namespace DataServices.Actors
                 var vm = CreateViewModel<TViewModel>(process, viewInfo);
                 EventMessageBus.Current.Publish(
                     new ViewModelCreated<TViewModel>(vm,
-                        new StateEventInfo(vmInfo.Process.Id, RevolutionData.Context.ViewModel.Events.ViewModelCreated),
+                        new StateEventInfo(vmInfo.Process, RevolutionData.Context.ViewModel.Events.ViewModelCreated),
                         vmInfo.Process, Source), Source);
                 EventMessageBus.Current.Publish(
                     new ViewModelCreated<IViewModel>(vm,
-                        new StateEventInfo(vmInfo.Process.Id, RevolutionData.Context.ViewModel.Events.ViewModelCreated),
+                        new StateEventInfo(vmInfo.Process, RevolutionData.Context.ViewModel.Events.ViewModelCreated),
                         vmInfo.Process, Source), Source);
-                //dynamic dvm = new DynamicViewModel<TViewModel>(vm);
-                // EventMessageBus.Current.Publish(new ViewModelCreated<DynamicViewModel<TViewModel>>(dvm,vmInfo.Process, source), source);
             }
             catch (Exception ex)
             {
@@ -66,7 +63,7 @@ namespace DataServices.Actors
                         expectedEventType: typeof(IViewModelCreated<IDynamicViewModel<TViewModel>>),
                         exception: ex,
                         source: Source,
-                        processInfo: new StateEventInfo(vmInfo.Process.Id,
+                        processInfo: new StateEventInfo(vmInfo.Process,
                             RevolutionData.Context.Process.Events.Error)),
                     Source);
             }

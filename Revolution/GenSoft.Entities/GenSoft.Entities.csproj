@@ -127,6 +127,7 @@
     <Compile Include="Generated Entities\Ordinality.cs" />
     <Compile Include="Generated Entities\Parameters.cs" />
     <Compile Include="Generated Entities\ParentEntity.cs" />
+    <Compile Include="Generated Entities\ParentSystemProcess.cs" />
     <Compile Include="Generated Entities\PredicateParameters.cs" />
     <Compile Include="Generated Entities\Predicates.cs" />
     <Compile Include="Generated Entities\PresentationPropertyType.cs" />

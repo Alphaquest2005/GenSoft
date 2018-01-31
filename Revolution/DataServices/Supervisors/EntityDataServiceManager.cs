@@ -23,7 +23,7 @@ namespace DataServices.Actors
         {
             ctx = Context;
             EventMessageBus.Current.GetEvent<IEntityRequest>(Source).Subscribe(handleEntityRequest);
-            EventMessageBus.Current.Publish(new ServiceStarted<IEntityDataServiceManager>(this, new StateEventInfo(process.Id, RevolutionData.Context.Actor.Events.ActorStarted), process, Source), Source);
+            EventMessageBus.Current.Publish(new ServiceStarted<IEntityDataServiceManager>(this, new StateEventInfo(process, RevolutionData.Context.Actor.Events.ActorStarted), process, Source), Source);
 
 
             EventMessageBus.Current.Publish(
@@ -32,7 +32,7 @@ namespace DataServices.Actors
                         new Dictionary<string, List<dynamic>>(),
                         new ObservableDictionary<string, Dictionary<int, dynamic>>(),
                         new ObservableDictionary<string, string>()),
-                    new StateCommandInfo(process.Id,
+                    new StateCommandInfo(process,
                         RevolutionData.Context.Entity.Commands.LoadEntitySetWithChanges), process,
                     Source), Source);
 
@@ -77,7 +77,7 @@ namespace DataServices.Actors
                     failedEventMessage: msg,
                     expectedEventType: typeof(IServiceStarted<EntityDataServiceSupervisor>),
                     exception: ex,
-                    source: Source, processInfo: new StateEventInfo(msg.Process.Id, RevolutionData.Context.Process.Events.Error)), Source);
+                    source: Source, processInfo: new StateEventInfo(msg.Process, RevolutionData.Context.Process.Events.Error)), Source);
             }
 
         }

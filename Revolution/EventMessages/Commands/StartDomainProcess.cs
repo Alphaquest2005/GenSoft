@@ -12,28 +12,44 @@ using ISystemProcess = SystemInterfaces.ISystemProcess;
 
 namespace EventMessages.Commands
 {
-    [Export(typeof(ILoadDomainProcess))]
+    [Export(typeof(ILoadProcessComplexEvents))]
 
-    public class LoadDomainProcess : ProcessSystemMessage, ILoadDomainProcess
+    public class LoadProcessComplexEvents : ProcessSystemMessage, ILoadProcessComplexEvents
     {
-        public LoadDomainProcess(IDomainProcess domainProcess, List<IComplexEventAction> complexEvents, List<IViewModelInfo> viewModelInfos)
+        public LoadProcessComplexEvents(List<IComplexEventAction> complexEvents)
         {
-            DomainProcess = domainProcess;
+            
             ComplexEvents = complexEvents;
-            ViewModelInfos = viewModelInfos;
+            
         }
        
 
-        public LoadDomainProcess(IDomainProcess domainProcess, List<IComplexEventAction> complexEvents, List<IViewModelInfo> viewModelInfos, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) 
-            : base(new DynamicObject("LoadDomainProcess", new Dictionary<string, object>() { { "DomainProcess", domainProcess }, { "ComplexEvents", complexEvents }, { "ViewModelInfos", viewModelInfos } }), processInfo, process, source)
+        public LoadProcessComplexEvents(List<IComplexEventAction> complexEvents, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) 
+            : base(new DynamicObject("LoadDomainProcessComplexEvents", new Dictionary<string, object>() { { "ComplexEvents", complexEvents }}), processInfo, process, source)
         {
-            DomainProcess = domainProcess;
             ComplexEvents = complexEvents;
+        }
+
+        
+        public List<IComplexEventAction> ComplexEvents { get; }
+        
+    }
+
+    [Export(typeof(ILoadDomainProcessViewModels))]
+
+    public class LoadDomainProcessViewModels : ProcessSystemMessage, ILoadDomainProcessViewModels
+    {
+        public LoadDomainProcessViewModels( List<IViewModelInfo> viewModelInfos)
+        {
             ViewModelInfos = viewModelInfos;
         }
 
-        public IDomainProcess DomainProcess { get; }
-        public List<IComplexEventAction> ComplexEvents { get; }
+
+        public LoadDomainProcessViewModels(List<IViewModelInfo> viewModelInfos, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source)
+            : base(new DynamicObject("LoadDomainProcessViewModels", new Dictionary<string, object>() { { "ViewModelInfos", viewModelInfos } }), processInfo, process, source)
+        {
+            ViewModelInfos = viewModelInfos;
+        }
         public List<IViewModelInfo> ViewModelInfos { get; }
     }
 }

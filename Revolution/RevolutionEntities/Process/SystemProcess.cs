@@ -5,12 +5,12 @@ namespace RevolutionEntities.Process
 {
     public class SystemProcess : Process, ISystemProcess
     {
-        public SystemProcess(IProcess process, IMachineInfo machineInfo) : base(process.Id,process.ParentProcessId,process.Name,process.Description, process.Symbol, process.User)
+        public SystemProcess(IProcess process, IMachineInfo machineInfo) : base(process.Id,process.ParentProcess,process.Name,process.Description, process.Symbol, process.User)
         {
             MachineInfo = machineInfo;
         }
 
-        public SystemProcess(ISystemProcessInfo systemProcessInfo, IUser user, IMachineInfo machineInfo) : base(systemProcessInfo.Id, systemProcessInfo.ParentProcessId, systemProcessInfo.Name, systemProcessInfo.Description, systemProcessInfo.Symbol, user)
+        public SystemProcess(ISystemProcessInfo systemProcessInfo, IUser user, IMachineInfo machineInfo) : base(systemProcessInfo.Id, systemProcessInfo.ParentProcess, systemProcessInfo.Name, systemProcessInfo.Description, systemProcessInfo.Symbol, user)
         {
             MachineInfo = machineInfo;
         }

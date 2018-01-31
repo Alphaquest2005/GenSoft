@@ -5,10 +5,13 @@ using ViewModel.Interfaces;
 
 namespace Actor.Interfaces
 {
-    public interface ILoadDomainProcess : IProcessSystemMessage
+    public interface ILoadProcessComplexEvents : IProcessSystemMessage
     {
-        IDomainProcess DomainProcess { get; }
         List<IComplexEventAction> ComplexEvents { get; }
+    }
+
+    public interface ILoadDomainProcessViewModels : IProcessSystemMessage
+    {
         List<IViewModelInfo> ViewModelInfos { get; }
     }
 }

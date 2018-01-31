@@ -38,41 +38,7 @@ namespace BootStrapper
 
         }
 
-        public void StartUp(bool autoContinue, Assembly dbContextAssembly, Assembly entitiesAssembly, List<IComplexEventAction> complexEventActions, List<IViewModelInfo> viewModelInfos)
-        {
-            try
-            {
-                var x = Container.GetExport<IActorBackBone>().Value;
-                x.Intialize(autoContinue,  viewModelInfos);
-   
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
-
         public static BootStrapper Instance { get; }
-
-
-        public void StartUp(bool autoRun, List<IMachineInfo> machineInfo, List<ISystemProcessInfo> processInfos, List<IComplexEventAction> complexEventActions, List<IViewModelInfo> viewModelInfos)
-        {
-            try
-            {
-                var x = Container.GetExport<IActorBackBone>().Value;
-                x.Intialize(autoRun,machineInfo, processInfos,complexEventActions, viewModelInfos);
-               
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
-
-        }
-
         public static CompositionContainer Container { get;  }
 
         public void StartUp(bool autoContinue, List<IComplexEventAction> processComplexEvents, List<IViewModelInfo> processViewModelInfos)

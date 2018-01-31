@@ -9,6 +9,7 @@ namespace EventAggregator
     public class EventMessageBus//: Reactive.EventAggregator.EventAggregator
     {
         static Reactive.EventAggregator.EventAggregator ea = new Reactive.EventAggregator.EventAggregator();
+
         static EventMessageBus()
         {
             Current = new EventMessageBus();

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Common;
 using Common.DataEntites;
+using DomainUtilities;
 using RevolutionData;
 using ViewModel.Interfaces;
 using RevolutionEntities.ViewModels;
@@ -18,9 +19,9 @@ namespace ViewModel.WorkFlow
                                             {
                                                 try
                                                 {
-                                                    
-                                                return SummaryListViewModelInfo.SummaryListViewModel(v.SystemProcessId,
-                                                        DynamicEntityType.DynamicEntityTypes[v.EntityTypeName],v.RelationshipOrdinality, v.Symbol, v.Description, v.Priority,
+                                                    DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(v.EntityTypeName);
+                                                return SummaryListViewModelInfo.SummaryListViewModel(v.SystemProcess,
+                                                        DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(v.EntityTypeName),v.RelationshipOrdinality, v.Symbol, v.Description, v.Priority,
                                                         v.EntityViewModelRelationships,
                                                         v.EntityTypeViewModelCommands,
                                                         vp);
@@ -32,19 +33,17 @@ namespace ViewModel.WorkFlow
                                                 }
                                                 
                                             }},
-                {
-                    "EntityViewModel",
-                    (v, vp) =>
+                { "EntityViewModel",(v, vp) =>
                     {
                         try
                         {
+                            DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(v.EntityTypeName);
                             return EntityDetailsViewModelInfo.EntityDetailsViewModel
                                                     (
-                                                        v.SystemProcessId,
-                                                        DynamicEntityType.DynamicEntityTypes[v.EntityTypeName],v.RelationshipOrdinality, v.Symbol,
+                                                        v.SystemProcess,
+                                                        DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(v.EntityTypeName),v.RelationshipOrdinality, v.Symbol,
                                                         v.Description, v.Priority,
                                                         viewRelationships: v.EntityViewModelRelationships,
-                                                       
                                                         viewCommands: v.EntityTypeViewModelCommands,
                                                         displayProperties: vp);
                         }
@@ -59,22 +58,17 @@ namespace ViewModel.WorkFlow
                
             };
 
+        
 
-       
+
         public static readonly List<IViewModelInfo> ProcessViewModelInfos = new List<IViewModelInfo>
         {
-            MainWindowViewModelInfo.MainWindowViewModel,
-            ScreenViewModelInfo.ScreenViewModel(1),
-            HeaderViewModelInfo.HeaderViewModel(1),
-            FooterViewModelInfo.FooterViewModel(1)
+            ScreenViewModelInfo.ScreenViewModel(),
+            HeaderViewModelInfo.HeaderViewModel(),
+            FooterViewModelInfo.FooterViewModel()
         };
 
-        public static readonly List<IViewModelInfo> ProcessCache = new List<IViewModelInfo>
-        {
-            
-
-
-        };
+        
     }
 
 

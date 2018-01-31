@@ -930,6 +930,32 @@
           "bin/placeholder/GenSoft.Interface.dll": {}
         }
       },
+      "Process.WorkFlow/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "Actor.Interfaces": "1.0.0",
+          "BootStrapper": "1.0.0",
+          "Common": "1.0.0",
+          "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
+          "EventMessages": "1.0.0",
+          "GenSoft.Entities": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
+          "RevolutionData": "1.0.0",
+          "RevolutionEntities": "1.0.0",
+          "System.Collections.Immutable": "1.4.0",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0",
+          "ViewModel.Interfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Process.WorkFlow.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Process.WorkFlow.dll": {}
+        }
+      },
       "RevolutionData/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -1994,6 +2020,32 @@
         },
         "runtime": {
           "bin/placeholder/GenSoft.Interface.dll": {}
+        }
+      },
+      "Process.WorkFlow/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "Actor.Interfaces": "1.0.0",
+          "BootStrapper": "1.0.0",
+          "Common": "1.0.0",
+          "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
+          "EventMessages": "1.0.0",
+          "GenSoft.Entities": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
+          "RevolutionData": "1.0.0",
+          "RevolutionEntities": "1.0.0",
+          "System.Collections.Immutable": "1.4.0",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0",
+          "ViewModel.Interfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Process.WorkFlow.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Process.WorkFlow.dll": {}
         }
       },
       "RevolutionData/1.0.0": {
@@ -3062,6 +3114,32 @@
           "bin/placeholder/GenSoft.Interface.dll": {}
         }
       },
+      "Process.WorkFlow/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "Actor.Interfaces": "1.0.0",
+          "BootStrapper": "1.0.0",
+          "Common": "1.0.0",
+          "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
+          "EventMessages": "1.0.0",
+          "GenSoft.Entities": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
+          "RevolutionData": "1.0.0",
+          "RevolutionEntities": "1.0.0",
+          "System.Collections.Immutable": "1.4.0",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0",
+          "ViewModel.Interfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Process.WorkFlow.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Process.WorkFlow.dll": {}
+        }
+      },
       "RevolutionData/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -4126,6 +4204,32 @@
         },
         "runtime": {
           "bin/placeholder/GenSoft.Interface.dll": {}
+        }
+      },
+      "Process.WorkFlow/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "Actor.Interfaces": "1.0.0",
+          "BootStrapper": "1.0.0",
+          "Common": "1.0.0",
+          "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
+          "EventMessages": "1.0.0",
+          "GenSoft.Entities": "1.0.0",
+          "GenSoft.Interface": "1.0.0",
+          "RevolutionData": "1.0.0",
+          "RevolutionEntities": "1.0.0",
+          "System.Collections.Immutable": "1.4.0",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0",
+          "ViewModel.Interfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Process.WorkFlow.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Process.WorkFlow.dll": {}
         }
       },
       "RevolutionData/1.0.0": {
@@ -6081,6 +6185,11 @@
       "path": "../Revolution/GenSoft.Interface/GenSoft.Interface.csproj",
       "msbuildProject": "../Revolution/GenSoft.Interface/GenSoft.Interface.csproj"
     },
+    "Process.WorkFlow/1.0.0": {
+      "type": "project",
+      "path": "../MRManager/Process.WorkFlow/Process.WorkFlow.csproj",
+      "msbuildProject": "../MRManager/Process.WorkFlow/Process.WorkFlow.csproj"
+    },
     "RevolutionData/1.0.0": {
       "type": "project",
       "path": "../Revolution/RevolutionData/RevolutionData.csproj",
@@ -6144,6 +6253,7 @@
       "JB.Common.Collections >= 0.8.107-pre",
       "JB.Common.Collections.Reactive >= 0.8.107-pre",
       "JB.Common.Reactive >= 0.8.107-pre",
+      "Process.WorkFlow >= 1.0.0",
       "RevolutionData >= 1.0.0",
       "RevolutionEntities >= 1.0.0",
       "Rx-Core >= 2.2.5",
@@ -6234,6 +6344,9 @@
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\MRManager\\Process.WorkFlow\\Process.WorkFlow.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\MRManager\\Process.WorkFlow\\Process.WorkFlow.csproj"
             }
           }
         }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Data;
 using Common.DataEntites;
+using DomainUtilities;
 using JB.Collections.Reactive;
 
 namespace Converters
@@ -92,8 +93,8 @@ namespace Converters
                 || !propertyParentEntityTypes.ContainsKey(prop) ) return null;
 
 
-            return DynamicEntityType.DynamicEntityTypes[propertyParentEntityTypes[prop]].CachedProperties.ContainsKey("Name")
-                ? DynamicEntityType.DynamicEntityTypes[propertyParentEntityTypes[prop]].CachedProperties["Name"]
+            return DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(propertyParentEntityTypes[prop]).CachedProperties.ContainsKey("Name")
+                ? DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(propertyParentEntityTypes[prop]).CachedProperties["Name"]
                 : null;
 
         }
@@ -133,9 +134,9 @@ namespace Converters
                 val == 0) return null;
 
             
-            return DynamicEntityType.DynamicEntityTypes[propertyParentEntityTypes[prop]].CachedProperties.ContainsKey("Name")
-                   && DynamicEntityType.DynamicEntityTypes[propertyParentEntityTypes[prop]].CachedProperties["Name"].ContainsKey(val)
-                ? DynamicEntityType.DynamicEntityTypes[propertyParentEntityTypes[prop]].CachedProperties["Name"][val]
+            return DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(propertyParentEntityTypes[prop]).CachedProperties.ContainsKey("Name")
+                   && DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(propertyParentEntityTypes[prop]).CachedProperties["Name"].ContainsKey(val)
+                ? DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(propertyParentEntityTypes[prop]).CachedProperties["Name"][val]
                 : val;
         }
 

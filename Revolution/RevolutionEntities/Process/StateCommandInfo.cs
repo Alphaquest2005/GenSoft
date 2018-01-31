@@ -4,7 +4,7 @@ namespace RevolutionEntities.Process
 {
     public class StateCommandInfo : ProcessStateInfo, IStateCommandInfo
     {
-        public StateCommandInfo(int processId, IStateCommand state):base(processId, state)
+        public StateCommandInfo(ISystemProcess process, IStateCommand state):base(process, state)
         {
             State = state;
            

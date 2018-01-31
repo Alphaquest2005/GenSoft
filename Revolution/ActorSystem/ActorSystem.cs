@@ -22,14 +22,14 @@ namespace ActorBackBone
         public static ActorSystem System { get; private set; }
 
 
-        public void Intialize(bool autoRun, List<IMachineInfo> machineInfo, List<ISystemProcessInfo> processInfos,
+        public void Intialize(bool autoRun, List<IMachineInfo> machineInfo, 
             List<IComplexEventAction> complexEventActions, List<IViewModelInfo> viewInfos)
         {
             try
             {
                 System = ActorSystem.Create("System");
 
-                System.ActorOf(Props.Create<ServiceManager>(autoRun, machineInfo, processInfos, complexEventActions, viewInfos),
+                System.ActorOf(Props.Create<ServiceManager>(autoRun, machineInfo, complexEventActions, viewInfos),
                     "ServiceManager");
                 Instance = this;
             }
@@ -46,10 +46,10 @@ namespace ActorBackBone
             {
                 var machineInfo = ctx.Machine.Select(x => ProcessExpressions.CreateMachineInfo(x)).ToList();
 
-                var processInfos = ctx.SystemProcess.Select(x => ProcessExpressions.CreateProcessInfo(x)).ToList();
+                
                 List<IComplexEventAction> dbComplexAction = new List<IComplexEventAction>(); 
 
-                Intialize(autoContinue, machineInfo, processInfos, dbComplexAction, viewInfos);
+                Intialize(autoContinue, machineInfo, dbComplexAction, viewInfos);
             }
 
             
@@ -61,12 +61,7 @@ namespace ActorBackBone
             {
                 var machineInfo = ctx.Machine.Select(x => ProcessExpressions.CreateMachineInfo(x)).ToList();
 
-                var processInfos = ctx.SystemProcess
-                                .Include(x => x.DomainProcess).ToList()
-                                .Select(x => ProcessExpressions.CreateProcessInfo(x)).ToList();
-                
-
-                Intialize(autoContinue, machineInfo, processInfos, processComplexEvents, processViewModelInfos);
+                Intialize(autoContinue, machineInfo, processComplexEvents, processViewModelInfos);
             }
         }
 

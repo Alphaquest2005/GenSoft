@@ -8,9 +8,9 @@ namespace RevolutionEntities.Process
     public class ComplexEventAction: IComplexEventAction
     {
         public ComplexEventAction() { }
-        public ComplexEventAction(string key, int processId, IList<IProcessExpectedEvent> events, Type expectedMessageType, IProcessAction action, IProcessStateInfo processInfo, ActionTrigger actionTrigger = ActionTrigger.All)//Todo:get rid of optional parameters
+        public ComplexEventAction(string key, ISystemProcess process, IList<IProcessExpectedEvent> events, Type expectedMessageType, IProcessAction action, IProcessStateInfo processInfo, ActionTrigger actionTrigger = ActionTrigger.All)//Todo:get rid of optional parameters
         {
-            ProcessId = processId;
+            Process = process;
             Events = events;
             ExpectedMessageType = expectedMessageType;
             ProcessInfo = processInfo;
@@ -21,7 +21,7 @@ namespace RevolutionEntities.Process
 
         public string Key { get; }
         public IList<IProcessExpectedEvent> Events { get; }
-        public int ProcessId { get; }
+        public ISystemProcess Process { get; }
         public Type ExpectedMessageType { get; }
         public IProcessStateInfo ProcessInfo { get; }
         public IProcessAction Action { get; }
