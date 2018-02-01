@@ -2,7 +2,6 @@
 using System.ComponentModel.Composition;
 using SystemInterfaces;
 using Core.Common.UI;
-using GenSoft.Entities;
 using JB.Collections.Reactive;
 using Reactive.Bindings;
 

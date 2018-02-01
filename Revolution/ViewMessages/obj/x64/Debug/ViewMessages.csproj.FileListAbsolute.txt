@@ -63,11 +63,11 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\obj\x64\Debug\ViewMessag
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\obj\x64\Debug\ViewMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\obj\x64\Debug\ViewMessages.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\DynamicExpresso.Core.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\DynamicExpresso.Core.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\Common.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\Common.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\System.Reactive.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\System.Reactive.Interfaces.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\JB.Common.Collections.Reactive.xml
-C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\JB.Common.Collections.xml
-C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\JB.Common.Reactive.xml
+C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\JB.Common.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\System.Reactive.Core.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\System.Reactive.Linq.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\System.Reactive.PlatformServices.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\System.Reactive.Windows.Threading.dll

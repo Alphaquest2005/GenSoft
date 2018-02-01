@@ -383,7 +383,7 @@ namespace DomainUtilities
                 var parameters = FunctionParameter;
                 var argType = parameters.Select(x => CreateTypesFromDbType(x.DataTypeId)).ToList();
                 argType.Add(returnType);
-                var funcType = TypeNameExtensions.GetTypeByName($"Func`{argType.Count}")
+                var funcType = TypeNameExtensions.GetTypeByName($"System.Func`{argType.Count}")
                     .First(x => x.IsGenericTypeDefinition == true);
                 var expType = funcType.MakeGenericType(argType.ToArray());
                 var exp = typeof(Interpreter).GetMethod("ParseAsDelegate").MakeGenericMethod(expType)

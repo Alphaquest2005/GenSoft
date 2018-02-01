@@ -10,7 +10,6 @@ using Actor.Interfaces;
 using Akka.Actor;
 using Akka.Util.Internal;
 using Common;
-using Common.DataEntites;
 using DynamicExpresso;
 using EventAggregator;
 using EventMessages.Commands;
@@ -60,12 +59,12 @@ namespace DataServices.Actors
 
         private void OnCurrentApplicationChanged(ICurrentApplicationChanged currentEntityChanged)
         {
-            if (currentEntityChanged.Application == null) return;
-            if (CurrentApplication?.Id == currentEntityChanged.Application.Id) return;
+            if (currentEntityChanged.Entity == null) return;
+            if (CurrentApplication?.Id == currentEntityChanged.Entity.Id) return;
             using (var ctx = new GenSoftDBContext())
             {
                 CurrentApplication = ctx.Application.Include(x => x.DatabaseInfo)
-                    .First(x => x.Id == currentEntityChanged.Application.Id);
+                    .First(x => x.Id == currentEntityChanged.Entity.Id);
             }
             LoadProcesses();
         }
@@ -212,13 +211,15 @@ namespace DataServices.Actors
                     domainProcess.SystemProcess.Description, domainProcess.SystemProcess.Symbol,
                     user.UserId), user, Process.MachineInfo);
 
-            // Do not intitalize domain specified processes IntializeProcess(domainProcess, systemProcess);
-            List<IComplexEventAction> processComplexEvents = new List<IComplexEventAction>
-            {
-                Processes.ComplexActions.GetComplexAction("ProcessStarted", new object[] {systemProcess}),
-                Processes.ComplexActions.GetComplexAction("CleanUpProcess", new object[] {systemProcess})
-            };
-            PublishComplexEvents(systemProcess, processComplexEvents);
+            //// Do not intitalize domain specified processes IntializeProcess(domainProcess, systemProcess);
+            //List<IComplexEventAction> processComplexEvents = new List<IComplexEventAction>
+            //{
+            //    Processes.ComplexActions.GetComplexAction("ProcessStarted", new object[] {systemProcess}),
+            //    Processes.ComplexActions.GetComplexAction("CleanUpProcess", new object[] {systemProcess})
+            //};
+            //PublishComplexEvents(systemProcess, processComplexEvents);
+
+            Task.Run(() => { IntializeProcess(systemProcess); });
 
             Parallel.ForEach(domainProcess.ProcessStep,
                 new ParallelOptions() {MaxDegreeOfParallelism = Processes.ThisMachineInfo.Processors},

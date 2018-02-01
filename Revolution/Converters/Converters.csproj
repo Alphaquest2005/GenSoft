@@ -74,15 +74,8 @@
       <HintPath>..\..\..\..\..\Users\Alpha\.nuget\packages\ReactiveProperty\2.9.0\lib\net46\ReactiveProperty.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Collections" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xaml" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -97,10 +90,6 @@
     <Compile Include="HasValueTypeVisiblityConverter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common\Common.csproj">
-      <Project>{CB6D5FBC-0C13-437D-B4F3-A0EC4D5673B3}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DomainUtilities\DomainUtilities.csproj">
       <Project>{4FAC145F-FB23-4F9D-9A8B-0BA4BF41D89E}</Project>
       <Name>DomainUtilities</Name>
@@ -108,14 +97,6 @@
     <ProjectReference Include="..\SystemInterfaces\SystemInterfaces.csproj">
       <Project>{e3842263-e081-49ba-a1b4-bbe82b24e2db}</Project>
       <Name>SystemInterfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Utilities\Utilities.csproj">
-      <Project>{0F9427B1-792E-4C35-97D8-22A9494CE28F}</Project>
-      <Name>Utilities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ViewModel.Interfaces\ViewModel.Interfaces.csproj">
-      <Project>{2F936E24-723E-4E7A-B21C-D6F618C74651}</Project>
-      <Name>ViewModel.Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

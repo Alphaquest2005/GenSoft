@@ -22,3 +22,5 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\Specifications\bin\x64\Debug\T
 C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\Specifications\bin\x64\Debug\LinqSpecs.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\Specifications\bin\x64\Debug\LinqSpecs.xml
 C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\Specifications\obj\x64\Debug\Specifications.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\Specifications\obj\x64\Debug\Specifications.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\Specifications\bin\x64\Debug\T4Entities.dll.config

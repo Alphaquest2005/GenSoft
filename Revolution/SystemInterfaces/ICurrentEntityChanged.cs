@@ -8,7 +8,7 @@
 
     public interface ICurrentApplicationChanged : IEntityRequest
     {
-        IDynamicEntity Application { get; }
+        IDynamicEntity Entity { get; }
     }
 
     public interface IMainEntityChanged : IEntityRequest

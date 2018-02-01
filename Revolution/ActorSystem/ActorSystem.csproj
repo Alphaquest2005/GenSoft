@@ -75,11 +75,6 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActorSystem.cs" />
@@ -89,25 +84,9 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\BuildingSpecifications\BuildingSpecifications.csproj">
-      <Project>{E307C55E-A215-45E5-B3F2-C23EC3396DE0}</Project>
-      <Name>BuildingSpecifications</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\MRManager\Process.WorkFlow\Process.WorkFlow.csproj">
-      <Project>{4F0BAA58-3B45-4136-8095-445D406B4D23}</Project>
-      <Name>Process.WorkFlow</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\ViewModel.WorkFlow\ViewModel.WorkFlow.csproj">
-      <Project>{EE2FD2EF-1F6D-4AE6-B768-B788CDCFC250}</Project>
-      <Name>ViewModel.WorkFlow</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Actor.Interfaces\Actor.Interfaces.csproj">
       <Project>{8b10c72d-9f33-4290-b562-44cf1f718fa5}</Project>
       <Name>Actor.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BootStrapper\BootStrapper.csproj">
-      <Project>{5DFEEA8B-BABA-4544-BF36-0A76A0D10C1B}</Project>
-      <Name>BootStrapper</Name>
     </ProjectReference>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{cb6d5fbc-0c13-437d-b4f3-a0ec4d5673b3}</Project>
@@ -116,10 +95,6 @@
     <ProjectReference Include="..\DataServices\DataServices.csproj">
       <Project>{320107b2-d414-434b-ae0d-4d9f18ff49b8}</Project>
       <Name>DataServices</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EventAggregator\EventAggregator.csproj">
-      <Project>{31E6B370-01F0-4489-832F-436CB97A6718}</Project>
-      <Name>EventAggregator</Name>
     </ProjectReference>
     <ProjectReference Include="..\GenSoft.DBContext\GenSoft.DBContext.csproj">
       <Project>{ae0f4302-d3df-4561-96a0-0b093f988c03}</Project>
@@ -137,21 +112,9 @@
       <Project>{f90cc1c1-1f4e-4719-817b-9a14ce56a5ce}</Project>
       <Name>GenSoft.Interface</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RevolutionData\RevolutionData.csproj">
-      <Project>{959D7F6B-0426-452C-8962-C0F4DADBE3B4}</Project>
-      <Name>RevolutionData</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RevolutionEntities\RevolutionEntities.csproj">
-      <Project>{c827930a-0d05-4ee2-b9ac-db1cf5144e16}</Project>
-      <Name>RevolutionEntities</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SystemInterfaces\SystemInterfaces.csproj">
-      <Project>{5058D323-23EF-4EE9-9E33-9C1FFF3AE524}</Project>
+      <Project>{e3842263-e081-49ba-a1b4-bbe82b24e2db}</Project>
       <Name>SystemInterfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Utilities\Utilities.csproj">
-      <Project>{0f9427b1-792e-4c35-97d8-22a9494ce28f}</Project>
-      <Name>Utilities</Name>
     </ProjectReference>
     <ProjectReference Include="..\ViewModel.Interfaces\ViewModel.Interfaces.csproj">
       <Project>{2f936e24-723e-4e7a-b21c-d6f618c74651}</Project>

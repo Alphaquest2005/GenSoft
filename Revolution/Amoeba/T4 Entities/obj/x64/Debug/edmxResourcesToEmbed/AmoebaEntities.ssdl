@@ -256,6 +256,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ChildEntities">
+    <End Role="EntityProperties" Type="Self.EntityProperties" Multiplicity="1" />
+    <End Role="EntityRelationships" Type="Self.EntityRelationships" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntityProperties">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EntityRelationships">
+        <PropertyRef Name="ChildEntityPropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_DataProperties_DataTypes">
     <End Role="DataTypes" Type="Self.DataTypes" Multiplicity="1" />
     <End Role="DataProperties" Type="Self.DataProperties" Multiplicity="*" />
@@ -532,6 +544,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ParentEntities">
+    <End Role="EntityProperties" Type="Self.EntityProperties" Multiplicity="1" />
+    <End Role="EntityRelationships" Type="Self.EntityRelationships" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntityProperties">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EntityRelationships">
+        <PropertyRef Name="ParentEntityPropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_PresentationProperties_EntityProperties">
     <End Role="EntityProperties" Type="Self.EntityProperties" Multiplicity="1" />
     <End Role="PresentationProperties" Type="Self.PresentationProperties" Multiplicity="*" />
@@ -646,6 +670,10 @@
       <End Role="Entities" EntitySet="Entities" />
       <End Role="ApplicationEntities" EntitySet="ApplicationEntities" />
     </AssociationSet>
+    <AssociationSet Name="FK_ChildEntities" Association="Self.FK_ChildEntities">
+      <End Role="EntityProperties" EntitySet="EntityProperties" />
+      <End Role="EntityRelationships" EntitySet="EntityRelationships" />
+    </AssociationSet>
     <AssociationSet Name="FK_DataProperties_DataTypes" Association="Self.FK_DataProperties_DataTypes">
       <End Role="DataTypes" EntitySet="DataTypes" />
       <End Role="DataProperties" EntitySet="DataProperties" />
@@ -729,6 +757,10 @@
     <AssociationSet Name="FK_Parameters_DataTypes" Association="Self.FK_Parameters_DataTypes">
       <End Role="DataTypes" EntitySet="DataTypes" />
       <End Role="Parameters" EntitySet="Parameters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ParentEntities" Association="Self.FK_ParentEntities">
+      <End Role="EntityProperties" EntitySet="EntityProperties" />
+      <End Role="EntityRelationships" EntitySet="EntityRelationships" />
     </AssociationSet>
     <AssociationSet Name="FK_PresentationProperties_EntityProperties" Association="Self.FK_PresentationProperties_EntityProperties">
       <End Role="EntityProperties" EntitySet="EntityProperties" />

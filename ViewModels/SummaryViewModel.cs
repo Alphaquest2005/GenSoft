@@ -2,13 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
-using System.Linq;
 using SystemInterfaces;
 using Core.Common.UI;
 using JB.Collections.Reactive;
 using Reactive.Bindings;
-
-using RevolutionEntities.Process;
 using ViewModel.Interfaces;
 using ViewModelInterfaces;
 using ISystemProcess = SystemInterfaces.ISystemProcess;

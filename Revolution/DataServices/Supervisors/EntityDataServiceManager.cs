@@ -10,7 +10,6 @@ using EventAggregator;
 using EventMessages.Commands;
 using EventMessages.Events;
 using JB.Collections.Reactive;
-using RevolutionData;
 using RevolutionEntities.Process;
 
 namespace DataServices.Actors

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Reactive.Linq;
 using System.Threading.Tasks;
 using SystemInterfaces;
 using Actor.Interfaces;
@@ -10,7 +9,6 @@ using Akka.Actor;
 using EventAggregator;
 using EventMessages.Commands;
 using EventMessages.Events;
-using RevolutionData;
 using RevolutionEntities.Process;
 using Utilities;
 
@@ -23,11 +21,12 @@ namespace DataServices.Actors
 
         //TODO: Track Actor Shutdown instead of just broadcast
 
-        public SystemProcessSupervisor(ISystemStarted firstMsg, List<IComplexEventAction> processComplexEvents) : base(firstMsg.Process)
+        public SystemProcessSupervisor(ISystemStarted firstMsg, List<IComplexEventAction> processComplexEvents) : base(
+            firstMsg.Process)
         {
 
             ctx = Context;
-            
+
             EventMessageBus.Current.GetEvent<ILoadProcessComplexEvents>(Source).Subscribe(HandleDomainProcess);
             StartProcess(processComplexEvents, firstMsg.User);
         }
@@ -36,41 +35,48 @@ namespace DataServices.Actors
         {
             StartProcess(loadProcessComplexEvents.ComplexEvents, loadProcessComplexEvents.User);
         }
-        
+
         private void StartProcess(List<IComplexEventAction> complexEventActions, IUser user)
         {
             CreateProcesses(user, complexEventActions);
         }
 
-        
+
 
         private void CreateProcesses(IUser user, List<IComplexEventAction> complexEventActions)
         {
-            var c = new CreateProcessActor($"{complexEventActions.First().Process.Name.GetSafeActorName()}:{complexEventActions.First().Process.Id}",
-                                        complexEventActions,
-                                        new StateCommandInfo(complexEventActions.First().Process, RevolutionData.Context.Actor.Commands.CreateActor),
-                                        complexEventActions.First().Process,Source);
-                PublishActor(c);
+            var c = new CreateProcessActor(
+                $"{complexEventActions.First().Process.Name.GetSafeActorName()}:{complexEventActions.First().Process.Id}",
+                complexEventActions,
+                new StateCommandInfo(complexEventActions.First().Process,
+                    RevolutionData.Context.Actor.Commands.CreateActor),
+                complexEventActions.First().Process, Source);
+            PublishActor(c);
         }
 
         private void PublishActor(CreateProcessActor inMsg)
         {
             try
             {
-               // var actorName = "ProcessActor-" + inMsg.Process.Name.GetSafeActorName();
+                // var actorName = "ProcessActor-" + inMsg.Process.Name.GetSafeActorName();
 
 
-                var child = ctx.Child(inMsg.ActorName);
-                if (Equals(child, ActorRefs.Nobody))
-                {
-                     Task.Run(() => { ctx.ActorOf(Props.Create<ProcessActor>(inMsg), inMsg.ActorName); })
+
+                Task.Run(() =>
+                    {
+                        var child = ctx.Child(inMsg.ActorName);
+                        if (Equals(child, ActorRefs.Nobody))
+                        {
+                            ctx.ActorOf(Props.Create<ProcessActor>(inMsg), inMsg.ActorName);
+                        }
+                    })
                     .ConfigureAwait(false);
-                }
+
 
 
                 EventMessageBus.Current.Publish(inMsg, Source);
-                
-               
+
+
             }
             catch (Exception ex)
             {
@@ -86,7 +92,7 @@ namespace DataServices.Actors
             }
         }
 
-        
+
     }
 
 

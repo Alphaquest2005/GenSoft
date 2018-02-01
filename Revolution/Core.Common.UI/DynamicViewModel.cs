@@ -12,7 +12,6 @@ using Reactive.Bindings;
 
 using RevolutionEntities.Process;
 using Utilities;
-using ViewMessages;
 using ViewModel.Interfaces;
 using ViewModelInterfaces;
 

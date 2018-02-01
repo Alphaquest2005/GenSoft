@@ -37,14 +37,12 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\Debug\System.Reacti
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\Debug\Actor.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\Debug\Common.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\Debug\CommonMessages.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\Debug\GenSoft.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\Debug\SystemInterfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\Debug\ViewModel.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\Debug\Utilities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\Debug\Actor.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\Debug\CommonMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\Debug\Common.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\Debug\GenSoft.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\Debug\SystemInterfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\Debug\ViewModel.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\Debug\Utilities.pdb

@@ -290,7 +290,6 @@ C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\Debug\Utilities.dll
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\Debug\ViewModel.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\Debug\ViewModel.WorkFlow.dll
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\Debug\ViewModels.dll
-C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\Debug\XamlGenericTypeExtension.dll
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\Debug\CommonMessages.dll
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\Debug\RevolutionEntities.dll
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\Debug\DomainUtilities.dll
@@ -312,7 +311,6 @@ C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\Debug\GenSoft.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\Debug\SystemInterfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\Debug\Utilities.pdb
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\Debug\ViewModel.Interfaces.pdb
-C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\Debug\XamlGenericTypeExtension.pdb
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\Debug\ViewModel.WorkFlow.pdb
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\Debug\ViewModels.pdb
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\Debug\ViewModels.dll.config

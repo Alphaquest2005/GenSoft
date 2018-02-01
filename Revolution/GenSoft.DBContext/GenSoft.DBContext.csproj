@@ -192,25 +192,12 @@
       <Project>{cb6d5fbc-0c13-437d-b4f3-a0ec4d5673b3}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DynamicLinq\System.Linq.Dynamic\System.Linq.Dynamic.csproj">
-      <Project>{17C0D5DE-C72D-4A06-A12C-445EBCF3B9EA}</Project>
-      <Name>System.Linq.Dynamic</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EventAggregator\EventAggregator.csproj">
-      <Project>{31e6b370-01f0-4489-832f-436cb97a6718}</Project>
-      <Name>EventAggregator</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RevolutionLogger\RevolutionLogger.csproj">
-      <Project>{c868cd42-b7d3-4c2d-b4a8-6bf0e94bd620}</Project>
-      <Name>RevolutionLogger</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SystemInterfaces\SystemInterfaces.csproj">
       <Project>{e3842263-e081-49ba-a1b4-bbe82b24e2db}</Project>
       <Name>SystemInterfaces</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>

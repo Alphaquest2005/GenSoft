@@ -88,8 +88,9 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\obj\x64\Debug\GenSof
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\obj\x64\Debug\GenSoft.Entities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\obj\x64\Debug\GenSoft.Entities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\DynamicExpresso.Core.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\DynamicExpresso.Core.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\obj\x64\Debug\GenSoft.Entities.csproj.CoreCompileInputs.cache
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\JB.Common.Collections.Reactive.xml
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\JB.Common.Collections.xml
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\JB.Common.Reactive.xml
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\JB.Common.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\System.Reactive.Core.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\System.Reactive.Linq.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\System.Reactive.PlatformServices.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\System.Reactive.Windows.Threading.dll

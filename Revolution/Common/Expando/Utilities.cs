@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Reflection;
 
 namespace Common.Dynamic
 {
@@ -12,21 +11,21 @@ namespace Common.Dynamic
         /// </summary>
         /// <param name="typeName"></param>
         /// <returns></returns>
-        public static Type GetTypeFromName(string typeName)
-        {
-            Type type = null;
+        //public static Type GetTypeFromName(string typeName)
+        //{
+        //    Type type = null;
 
-            // try to find manually
-            foreach (Assembly ass in AppDomain.CurrentDomain.GetAssemblies())
-            {
-                type = ass.GetType(typeName, false);
+        //    // try to find manually
+        //    foreach (Assembly ass in AppDomain.CurrentDomain.GetAssemblies())
+        //    {
+        //        type = ass.GetType(typeName, false);
 
-                if (type != null)
-                    break;
+        //        if (type != null)
+        //            break;
 
-            }
-            return type;
-        }
+        //    }
+        //    return type;
+        //}
 
         /// <summary>
         /// Converts a .NET type into an XML compatible type - roughly

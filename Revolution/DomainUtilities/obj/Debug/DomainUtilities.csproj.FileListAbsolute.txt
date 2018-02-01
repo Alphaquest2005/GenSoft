@@ -4,7 +4,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Debug\JB.Common.d
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Debug\JB.Common.Collections.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Debug\JB.Common.Collections.Reactive.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Debug\JB.Common.Reactive.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Debug\log4net.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Debug\Microsoft.EntityFrameworkCore.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.dll
@@ -18,7 +17,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Debug\Microsoft.E
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Debug\Microsoft.Extensions.Options.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Debug\Microsoft.Extensions.Primitives.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Debug\MoreLinq.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Debug\Reactive.EventAggregator.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Debug\Remotion.Linq.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Debug\System.Reactive.Core.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Debug\System.Reactive.Interfaces.dll

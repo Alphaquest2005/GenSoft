@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -6,6 +7,21 @@ namespace Utilities
 {
     public static class TypeNameExtensions
     {
+        static TypeNameExtensions()
+        {
+            foreach (var a in AppDomain.CurrentDomain.GetAssemblies())
+            
+            {
+                foreach (var t in a.GetTypes())
+                {
+                    AllTypesLkp.AddOrUpdate(new Tuple<string, string>(t.FullName, t.Name), t);
+                }
+                ;
+            }
+           
+        }
+        public static ConcurrentDictionary<string, Type> EntityTypesLkp = new ConcurrentDictionary<string, Type>(AppDomain.CurrentDomain.GetAssemblies().First(x => x.FullName.Contains("GenSoft.Entities")).GetTypes().ToDictionary(x => x.FullName));
+        private static ConcurrentDictionary<Tuple<string, string>, Type> AllTypesLkp = new ConcurrentDictionary<Tuple<string, string>, Type>();
         public static string GetFriendlyName(this Type type)
         {
             string friendlyName = type.Name;
@@ -82,14 +98,17 @@ namespace Utilities
             }
             else
             {
-                foreach (var a in AppDomain.CurrentDomain.GetAssemblies())
-                {
-                    var assemblyTypes = a.GetTypes();
-                    returnVal.AddRange(assemblyTypes.Where(t =>
-                        t.Name.ToLower() == className.ToLower() ||
-                        t.FullName.ToLower() ==
-                        className.ToLower())); //|| t.FullName.ToLower().Contains(className.ToLower()) 
-                }
+                returnVal.AddRange(AllTypesLkp.Where(t =>
+                    t.Key.Item1.ToLower() == className.ToLower() || t.Key.Item2.ToLower() == className.ToLower()).Select(x => x.Value).ToList());
+
+                //foreach (var a in AppDomain.CurrentDomain.GetAssemblies())
+                //{
+                //    var assemblyTypes = a.GetTypes();
+                //    returnVal.AddRange(assemblyTypes.Where(t =>
+                //        t.Name.ToLower() == className.ToLower() ||
+                //        t.FullName.ToLower() ==
+                //        className.ToLower())); //|| t.FullName.ToLower().Contains(className.ToLower()) 
+                //}
             }
 
 

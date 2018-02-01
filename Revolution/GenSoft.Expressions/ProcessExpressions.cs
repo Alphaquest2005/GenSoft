@@ -1,20 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using SystemInterfaces;
 using Actor.Interfaces;
 using GenSoft.Entities;
-using Process.WorkFlow;
 using RevolutionEntities.Process;
-using Agent = RevolutionEntities.Process.Agent;
-using ComplexEventAction = RevolutionEntities.Process.ComplexEventAction;
 using IProcessStateInfo = SystemInterfaces.IProcessStateInfo;
 using ISourceType = SystemInterfaces.ISourceType;
 using IStateCommandInfo = SystemInterfaces.IStateCommandInfo;
 using ProcessAction = RevolutionEntities.Process.ProcessAction;
 using SourceType = RevolutionEntities.Process.SourceType;
 using StateCommandInfo = RevolutionEntities.Process.StateCommandInfo;
-using SystemProcess = GenSoft.Entities.SystemProcess;
 using Type = System.Type;
 
 namespace GenSoft.Expressions

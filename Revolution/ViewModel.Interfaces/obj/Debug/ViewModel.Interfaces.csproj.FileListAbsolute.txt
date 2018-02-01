@@ -97,11 +97,7 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\System
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\System.Reactive.Linq.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\System.Reactive.PlatformServices.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\System.Reactive.Windows.Threading.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\CommonMessages.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\GenSoft.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\SystemInterfaces.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\CommonMessages.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\GenSoft.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\bin\Debug\SystemInterfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\obj\Debug\ViewModel.Interfaces.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\obj\Debug\ViewModel.Interfaces.csproj.CoreCompileInputs.cache

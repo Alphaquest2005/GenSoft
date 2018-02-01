@@ -4,7 +4,6 @@ using System.ComponentModel.Composition.Hosting;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using SystemInterfaces;
 using Actor.Interfaces;
 using ViewModel.Interfaces;
 

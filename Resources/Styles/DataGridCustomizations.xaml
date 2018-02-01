@@ -3,7 +3,7 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
    
     xmlns:d="http://schemas.microsoft.com/Expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:dataVirtualization="clr-namespace:Core.Common.UI.DataVirtualization;assembly=Core.Common.UI"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
     mc:Ignorable="d">
 
     <!-- Resource dictionary entries should be defined here. -->

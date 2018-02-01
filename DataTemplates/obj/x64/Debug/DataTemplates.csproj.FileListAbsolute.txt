@@ -169,7 +169,6 @@ C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\Utilities.dll
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\ViewModel.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\ViewModel.WorkFlow.dll
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\ViewModels.dll
-C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\XamlGenericTypeExtension.dll
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\CommonMessages.dll
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\RevolutionEntities.dll
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\EventAggregator.dll
@@ -187,7 +186,6 @@ C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\Core.Common.UI.dll.c
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\SystemInterfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\Utilities.pdb
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\ViewModel.Interfaces.pdb
-C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\XamlGenericTypeExtension.pdb
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\ViewModel.WorkFlow.pdb
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\ViewModels.pdb
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\ViewModels.dll.config
@@ -243,7 +241,6 @@ C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\GenSoft.Entities.pdb
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\GenSoft.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\obj\x64\Debug\Custom\FooterInfoRDT.baml
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\DynamicExpresso.Core.dll
-C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\DynamicExpresso.Core.pdb
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\obj\x64\Debug\DataTemplates.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\Microsoft.EntityFrameworkCore.dll
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\Microsoft.EntityFrameworkCore.Relational.dll
@@ -362,7 +359,7 @@ C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\DomainUtilities.dll
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\GenSoft.DBContext.dll
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\DomainUtilities.pdb
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\GenSoft.DBContext.pdb
-C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\System.Reactive.dll
-C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\DomainUtilities.dll.config
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\System.Reactive.Core.dll
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\System.Reactive.Linq.dll
+C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\System.Reactive.PlatformServices.dll
+C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\System.Reactive.Windows.Threading.dll

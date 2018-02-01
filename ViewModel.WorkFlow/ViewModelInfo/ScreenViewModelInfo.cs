@@ -44,9 +44,9 @@ namespace RevolutionData
                             s.Slider.BringIntoView(e.View);
                         }),
 
-                    new ViewEventSubscription<IScreenModel, IViewModelCreated<IViewModel>>(
+                    new ViewEventSubscription<IScreenModel, IViewModelCreated<IHeaderViewModel>>(
                         "ScreenViewModel-IViewModelCreated<IHeaderViewModel>", Processes.IntialSystemProcess, e => e != null,
-                        new List<Func<IScreenModel, IViewModelCreated<IViewModel>, bool>>
+                        new List<Func<IScreenModel, IViewModelCreated<IHeaderViewModel>, bool>>
                         {
                             (s, e) => e.ViewModel.Orientation == typeof(IHeaderViewModel)
                         }, (s, e) =>
@@ -291,10 +291,11 @@ namespace RevolutionData
 
         private static void ClearScreenModels(IScreenModel s, ICleanUpSystemProcess e)
         {
-            foreach (var vm in s.BodyViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUp.Id).ToList())
-            {
-                s.BodyViewModels.Remove(vm);
-            }
+            //foreach (var vm in s.BodyViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUp.Id).ToList())
+            //{
+            //    s.BodyViewModels.Remove(vm);
+            //}
+            s.BodyViewModels.Clear();
            s.BodyViewModels.Reset();
 
         }

@@ -70,11 +70,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NullEntity.cs" />
@@ -117,21 +112,9 @@
       <Project>{8b10c72d-9f33-4290-b562-44cf1f718fa5}</Project>
       <Name>Actor.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BootStrapper\BootStrapper.csproj">
-      <Project>{5dfeea8b-baba-4544-bf36-0a76a0d10c1b}</Project>
-      <Name>BootStrapper</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CommonMessages\CommonMessages.csproj">
-      <Project>{77007560-89dc-4e1f-9313-ae064a048ad4}</Project>
-      <Name>CommonMessages</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{cb6d5fbc-0c13-437d-b4f3-a0ec4d5673b3}</Project>
       <Name>Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EventAggregator\EventAggregator.csproj">
-      <Project>{31e6b370-01f0-4489-832f-436cb97a6718}</Project>
-      <Name>EventAggregator</Name>
     </ProjectReference>
     <ProjectReference Include="..\GenSoft.Entities\GenSoft.Entities.csproj">
       <Project>{8ED4D838-4075-41B4-88A4-731FF303FB54}</Project>

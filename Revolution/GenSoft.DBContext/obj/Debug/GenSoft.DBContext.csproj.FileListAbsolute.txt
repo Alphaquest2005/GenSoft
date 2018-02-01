@@ -5,7 +5,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\JB.Common
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\JB.Common.Collections.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\JB.Common.Collections.Reactive.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\JB.Common.Reactive.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\log4net.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\Microsoft.EntityFrameworkCore.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.dll
@@ -19,7 +18,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\Microsoft
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\Microsoft.Extensions.Options.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\Microsoft.Extensions.Primitives.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\MoreLinq.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\Reactive.EventAggregator.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\Remotion.Linq.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\System.Collections.Immutable.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\System.ComponentModel.Annotations.dll
@@ -129,20 +127,13 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\System.Xm
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\System.Xml.XPath.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\System.Xml.XPath.XDocument.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\Common.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\EventAggregator.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\GenSoft.Entities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\GenSoft.Interfaces.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\RevolutionLogger.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\System.Linq.Dynamic.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\SystemInterfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\Utilities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\GenSoft.Entities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\GenSoft.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\Common.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\System.Linq.Dynamic.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\EventAggregator.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\EventAggregator.dll.config
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\RevolutionLogger.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\SystemInterfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\Debug\Utilities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\obj\Debug\GenSoft.DBContext.csprojResolveAssemblyReference.cache

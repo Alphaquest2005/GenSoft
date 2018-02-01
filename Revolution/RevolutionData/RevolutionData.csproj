@@ -68,7 +68,6 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="StartUpProcess.cs" />
     <Compile Include="Context\Entity.cs" />
     <Compile Include="Context\View.cs" />
     <Compile Include="Context\ViewModel.cs" />
@@ -113,23 +112,9 @@
       <Project>{e3842263-e081-49ba-a1b4-bbe82b24e2db}</Project>
       <Name>SystemInterfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Utilities\Utilities.csproj">
-      <Project>{0f9427b1-792e-4c35-97d8-22a9494ce28f}</Project>
-      <Name>Utilities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ViewMessages\ViewMessages.csproj">
-      <Project>{eb1e2e94-d6fb-49df-8036-9bf910e3b7aa}</Project>
-      <Name>ViewMessages</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ViewModel.Interfaces\ViewModel.Interfaces.csproj">
-      <Project>{2f936e24-723e-4e7a-b21c-d6f618c74651}</Project>
-      <Name>ViewModel.Interfaces</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

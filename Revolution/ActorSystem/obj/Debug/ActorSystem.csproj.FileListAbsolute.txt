@@ -563,7 +563,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\Debug\System.Xml.XPat
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\Debug\System.Xml.XPath.XDocument.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\Debug\Actor.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\Debug\BootStrapper.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\Debug\BuildingSpecifications.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\Debug\Common.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\Debug\DataServices.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\Debug\EventAggregator.dll
@@ -585,7 +584,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\Debug\ViewMessages.dl
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\Debug\RevolutionLogger.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\Debug\CommonMessages.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\Debug\EFRepository.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\Debug\BuildingSpecifications.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\Debug\Process.WorkFlow.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\Debug\ViewModel.WorkFlow.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\Debug\Actor.Interfaces.pdb

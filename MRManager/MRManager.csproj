@@ -78,17 +78,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.Composition" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Transactions" />
-    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
@@ -156,10 +147,6 @@
       <Project>{77007560-89dc-4e1f-9313-ae064a048ad4}</Project>
       <Name>CommonMessages</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Revolution\Common\Common.csproj">
-      <Project>{cb6d5fbc-0c13-437d-b4f3-a0ec4d5673b3}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Revolution\Converters\Converters.csproj">
       <Project>{b7f58070-3c58-46af-95d1-6fc0d99d48ee}</Project>
       <Name>Converters</Name>
@@ -171,6 +158,10 @@
     <ProjectReference Include="..\Revolution\DataServices\DataServices.csproj">
       <Project>{320107b2-d414-434b-ae0d-4d9f18ff49b8}</Project>
       <Name>DataServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Revolution\DomainUtilities\DomainUtilities.csproj">
+      <Project>{4fac145f-fb23-4f9d-9a8b-0ba4bf41d89e}</Project>
+      <Name>DomainUtilities</Name>
     </ProjectReference>
     <ProjectReference Include="..\Revolution\DynamicLinq\System.Linq.Dynamic\System.Linq.Dynamic.csproj">
       <Project>{17c0d5de-c72d-4a06-a12c-445ebcf3b9ea}</Project>
@@ -191,6 +182,22 @@
     <ProjectReference Include="..\Revolution\ExpressionComputations\ExpressionComputations.csproj">
       <Project>{d4455c5b-2921-4122-a32d-b19380a11ca5}</Project>
       <Name>ExpressionComputations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Revolution\GenSoft.DBContext\GenSoft.DBContext.csproj">
+      <Project>{ae0f4302-d3df-4561-96a0-0b093f988c03}</Project>
+      <Name>GenSoft.DBContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Revolution\GenSoft.Entities\GenSoft.Entities.csproj">
+      <Project>{8ed4d838-4075-41b4-88a4-731ff303fb54}</Project>
+      <Name>GenSoft.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Revolution\GenSoft.Expressions\GenSoft.Expressions.csproj">
+      <Project>{a73dfc98-2f9f-460a-9449-3624a666be07}</Project>
+      <Name>GenSoft.Expressions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Revolution\GenSoft.Interface\GenSoft.Interface.csproj">
+      <Project>{f90cc1c1-1f4e-4719-817b-9a14ce56a5ce}</Project>
+      <Name>GenSoft.Interface</Name>
     </ProjectReference>
     <ProjectReference Include="..\Revolution\LinqSpecs\LinqSpecs.csproj">
       <Project>{d60875a3-0de2-409d-86a0-f540224d054c}</Project>
@@ -235,6 +242,10 @@
     <ProjectReference Include="..\Revolution\ViewModel.Interfaces\ViewModel.Interfaces.csproj">
       <Project>{2f936e24-723e-4e7a-b21c-d6f618c74651}</Project>
       <Name>ViewModel.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Revolution\XamlGenericTypeExtension\XamlGenericTypeExtension.csproj">
+      <Project>{dc325a78-b3ca-4717-89c6-28fc15a385d7}</Project>
+      <Name>XamlGenericTypeExtension</Name>
     </ProjectReference>
     <ProjectReference Include="..\ValidationSets\ValidationSets.csproj">
       <Project>{6a9c99e7-2552-4a6c-b26e-2d727c5d85ce}</Project>

@@ -68,18 +68,8 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="JB.Common.Collections.Reactive, Version=0.8.107.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\MRManager\packages\JB.Common.Collections.Reactive.0.8.107-pre\lib\net46\JB.Common.Collections.Reactive.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ICacheViewModel.cs" />
@@ -116,14 +106,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CommonMessages\CommonMessages.csproj">
-      <Project>{77007560-89dc-4e1f-9313-ae064a048ad4}</Project>
-      <Name>CommonMessages</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GenSoft.Interface\GenSoft.Interface.csproj">
-      <Project>{F90CC1C1-1F4E-4719-817B-9A14CE56A5CE}</Project>
-      <Name>GenSoft.Interface</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SystemInterfaces\SystemInterfaces.csproj">
       <Project>{e3842263-e081-49ba-a1b4-bbe82b24e2db}</Project>
       <Name>SystemInterfaces</Name>

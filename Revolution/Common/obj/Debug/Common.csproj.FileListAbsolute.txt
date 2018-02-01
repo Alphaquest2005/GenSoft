@@ -80,10 +80,8 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\Debug\System.Reactive.Inte
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\Debug\System.Reactive.Linq.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\Debug\System.Reactive.PlatformServices.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\Debug\System.Reactive.Windows.Threading.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\Debug\GenSoft.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\Debug\SystemInterfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\Debug\Utilities.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\Debug\GenSoft.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\Debug\SystemInterfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\Debug\Utilities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache

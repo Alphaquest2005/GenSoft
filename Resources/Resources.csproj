@@ -96,31 +96,16 @@
     <Resource Include="Backgrounds\blue_aurora_by_iphone360.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataTemplates\DataTemplates.csproj">
-      <Project>{2f8bef84-3c02-48a4-a576-fbf41e3fffdd}</Project>
-      <Name>DataTemplates</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Revolution\Converters\Converters.csproj">
-      <Project>{b7f58070-3c58-46af-95d1-6fc0d99d48ee}</Project>
-      <Name>Converters</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Revolution\Core.Common.UI\Core.Common.UI.csproj">
-      <Project>{5dd82ad7-f344-45e3-92cc-96f8d07700af}</Project>
-      <Name>Core.Common.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ViewModels\ViewModels.csproj">
-      <Project>{DB1E7BD6-7FE0-4CDD-8B6D-EDBB0D156B41}</Project>
-      <Name>ViewModels</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Icons\" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

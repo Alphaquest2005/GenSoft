@@ -26,14 +26,14 @@ namespace EventMessages.Events
     public class CurrentApplicationChanged : ProcessSystemMessage, ICurrentApplicationChanged
     {
         public CurrentApplicationChanged() { }
-        public IDynamicEntity Application { get; }
+        public IDynamicEntity Entity { get; }
         public CurrentApplicationChanged(IDynamicEntity application, IProcessStateInfo processInfo, ISystemProcess process, ISystemSource source)
             : base(new DynamicObject("CurrentApplicationChanged", new Dictionary<string, object>() { { "Application", application }, { "EntityType", application?.EntityType ?? DynamicEntity.NullEntity.EntityType } }), processInfo, process, source)
         {
             Contract.Requires(application != null);
-            Application = application;
+            Entity = application;
         }
 
-        public IDynamicEntityType EntityType => Application?.EntityType ?? DynamicEntity.NullEntity.EntityType;
+        public IDynamicEntityType EntityType => Entity?.EntityType ?? DynamicEntity.NullEntity.EntityType;
     }
 }

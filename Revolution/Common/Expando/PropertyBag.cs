@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Linq;
 using System.Xml.Serialization;
 using System.Xml;
+using Utilities;
 
 namespace Common.Dynamic
 {
@@ -165,7 +166,7 @@ namespace Common.Dynamic
                         while (reader.Read() && reader.NodeType != XmlNodeType.Element)
                         { }
 
-                        Type type = Utilities.GetTypeFromName(xmlType.Substring(3));
+                        Type type = TypeNameExtensions.GetTypeByName(xmlType.Substring(3)).FirstOrDefault();
                         XmlSerializer ser = new XmlSerializer(type);
                         value = (TValue)ser.Deserialize(reader);
                     }

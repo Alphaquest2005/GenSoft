@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace T4Entities
+﻿namespace T4Entities
 {
     public abstract class BaseEntity 
     {

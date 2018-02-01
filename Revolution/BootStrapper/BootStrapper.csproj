@@ -71,11 +71,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MEFExtensions.cs" />
@@ -93,14 +89,6 @@
     <ProjectReference Include="..\MefGeneric-master\MEFGeneric Preview 9\src\ComponentModel.Composition.Hosting.Extension\ComponentModel.Composition.Hosting.Extension.csproj">
       <Project>{0cc9e320-7e0a-4d77-adbd-021ff590bd06}</Project>
       <Name>ComponentModel.Composition.Hosting.Extension</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SystemInterfaces\SystemInterfaces.csproj">
-      <Project>{e3842263-e081-49ba-a1b4-bbe82b24e2db}</Project>
-      <Name>SystemInterfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Utilities\Utilities.csproj">
-      <Project>{0f9427b1-792e-4c35-97d8-22a9494ce28f}</Project>
-      <Name>Utilities</Name>
     </ProjectReference>
     <ProjectReference Include="..\ViewModel.Interfaces\ViewModel.Interfaces.csproj">
       <Project>{2F936E24-723E-4E7A-B21C-D6F618C74651}</Project>

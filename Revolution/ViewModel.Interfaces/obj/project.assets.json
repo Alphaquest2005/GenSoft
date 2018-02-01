@@ -151,32 +151,6 @@
           "lib/net45/System.Reactive.Windows.Threading.dll": {}
         }
       },
-      "CommonMessages/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/CommonMessages.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CommonMessages.dll": {}
-        }
-      },
-      "GenSoft.Interface/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/GenSoft.Interface.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/GenSoft.Interface.dll": {}
-        }
-      },
       "SystemInterfaces/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -339,32 +313,6 @@
         },
         "runtime": {
           "lib/net45/System.Reactive.Windows.Threading.dll": {}
-        }
-      },
-      "CommonMessages/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/CommonMessages.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CommonMessages.dll": {}
-        }
-      },
-      "GenSoft.Interface/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/GenSoft.Interface.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/GenSoft.Interface.dll": {}
         }
       },
       "SystemInterfaces/1.0.0": {
@@ -531,32 +479,6 @@
           "lib/net45/System.Reactive.Windows.Threading.dll": {}
         }
       },
-      "CommonMessages/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/CommonMessages.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CommonMessages.dll": {}
-        }
-      },
-      "GenSoft.Interface/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/GenSoft.Interface.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/GenSoft.Interface.dll": {}
-        }
-      },
       "SystemInterfaces/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -719,32 +641,6 @@
         },
         "runtime": {
           "lib/net45/System.Reactive.Windows.Threading.dll": {}
-        }
-      },
-      "CommonMessages/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/CommonMessages.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CommonMessages.dll": {}
-        }
-      },
-      "GenSoft.Interface/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/GenSoft.Interface.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/GenSoft.Interface.dll": {}
         }
       },
       "SystemInterfaces/1.0.0": {
@@ -992,16 +888,6 @@
         "lib/wpa81/System.Reactive.Windows.Threading.xml"
       ]
     },
-    "CommonMessages/1.0.0": {
-      "type": "project",
-      "path": "../CommonMessages/CommonMessages.csproj",
-      "msbuildProject": "../CommonMessages/CommonMessages.csproj"
-    },
-    "GenSoft.Interface/1.0.0": {
-      "type": "project",
-      "path": "../GenSoft.Interface/GenSoft.Interface.csproj",
-      "msbuildProject": "../GenSoft.Interface/GenSoft.Interface.csproj"
-    },
     "SystemInterfaces/1.0.0": {
       "type": "project",
       "path": "../SystemInterfaces/SystemInterfaces.csproj",
@@ -1010,9 +896,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7": [
-      "CommonMessages >= 1.0.0",
       "FluentValidation.Net35 >= 1.0.1",
-      "GenSoft.Interface >= 1.0.0",
       "JB.Common.Collections.Reactive >= 0.8.107-pre",
       "JB.Common.Reactive >= 0.8.107-pre",
       "ReactiveProperty >= 4.1.0",
@@ -1046,12 +930,6 @@
       "frameworks": {
         "net47": {
           "projectReferences": {
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\CommonMessages\\CommonMessages.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\CommonMessages\\CommonMessages.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Interface\\GenSoft.Interface.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Interface\\GenSoft.Interface.csproj"
-            },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj"
             }

@@ -13,7 +13,6 @@ using EventMessages.Events;
 using Process.WorkFlow;
 using RevolutionEntities.Process;
 using ViewModel.Interfaces;
-using Process = RevolutionEntities.Process.Process;
 
 
 namespace DataServices.Actors

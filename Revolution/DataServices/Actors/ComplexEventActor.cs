@@ -7,6 +7,7 @@ using System.Reactive.Linq;
 using System.Threading.Tasks;
 using SystemInterfaces;
 using Actor.Interfaces;
+using Akka.Actor;
 using EventAggregator;
 using RevolutionEntities.Process;
 using DataServices.Utils;
@@ -39,8 +40,10 @@ namespace DataServices.Actors
 
         private void CleanUpActor(ICleanUpSystemProcess cleanUpSystemProcess)
         {
+            
             ComplexEventAction = new ComplexEventAction();
             InMessages.Clear();
+            Self.Tell(PoisonPill.Instance);
         }
 
         private void handleComplexEventLogRequest()

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Common;
-using Common.DataEntites;
 using DomainUtilities;
 using RevolutionData;
 using ViewModel.Interfaces;

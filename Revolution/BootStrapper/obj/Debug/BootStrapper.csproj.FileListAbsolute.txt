@@ -200,14 +200,12 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\System.Reactiv
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\Actor.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\ComponentModel.Composition.Hosting.Extension.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\SystemInterfaces.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\Utilities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\ViewModel.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\System.Collections.Immutable.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\Akka.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\Actor.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\ComponentModel.Composition.Hosting.Extension.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\SystemInterfaces.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\Utilities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\ViewModel.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\System.Collections.Immutable.xml
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\Debug\Akka.xml

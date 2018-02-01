@@ -167,7 +167,6 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
-          "GenSoft.Interface": "1.0.0",
           "SystemInterfaces": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
         },
@@ -178,19 +177,6 @@
           "bin/placeholder/Actor.Interfaces.dll": {}
         }
       },
-      "CommonMessages/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/CommonMessages.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CommonMessages.dll": {}
-        }
-      },
       "ComponentModel.Composition.Hosting.Extension/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -199,19 +185,6 @@
         },
         "runtime": {
           "bin/placeholder/ComponentModel.Composition.Hosting.Extension.dll": {}
-        }
-      },
-      "GenSoft.Interface/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/GenSoft.Interface.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/GenSoft.Interface.dll": {}
         }
       },
       "SystemInterfaces/1.0.0": {
@@ -227,26 +200,11 @@
           "bin/placeholder/SystemInterfaces.dll": {}
         }
       },
-      "Utilities/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Utilities.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Utilities.dll": {}
-        }
-      },
       "ViewModel.Interfaces/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
-          "CommonMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
-          "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
           "ReactiveProperty": "4.1.0",
@@ -426,7 +384,6 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
-          "GenSoft.Interface": "1.0.0",
           "SystemInterfaces": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
         },
@@ -437,19 +394,6 @@
           "bin/placeholder/Actor.Interfaces.dll": {}
         }
       },
-      "CommonMessages/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/CommonMessages.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CommonMessages.dll": {}
-        }
-      },
       "ComponentModel.Composition.Hosting.Extension/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -458,19 +402,6 @@
         },
         "runtime": {
           "bin/placeholder/ComponentModel.Composition.Hosting.Extension.dll": {}
-        }
-      },
-      "GenSoft.Interface/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/GenSoft.Interface.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/GenSoft.Interface.dll": {}
         }
       },
       "SystemInterfaces/1.0.0": {
@@ -486,26 +417,11 @@
           "bin/placeholder/SystemInterfaces.dll": {}
         }
       },
-      "Utilities/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Utilities.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Utilities.dll": {}
-        }
-      },
       "ViewModel.Interfaces/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
-          "CommonMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
-          "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
           "ReactiveProperty": "4.1.0",
@@ -685,7 +601,6 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
-          "GenSoft.Interface": "1.0.0",
           "SystemInterfaces": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
         },
@@ -696,19 +611,6 @@
           "bin/placeholder/Actor.Interfaces.dll": {}
         }
       },
-      "CommonMessages/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/CommonMessages.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CommonMessages.dll": {}
-        }
-      },
       "ComponentModel.Composition.Hosting.Extension/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -717,19 +619,6 @@
         },
         "runtime": {
           "bin/placeholder/ComponentModel.Composition.Hosting.Extension.dll": {}
-        }
-      },
-      "GenSoft.Interface/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/GenSoft.Interface.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/GenSoft.Interface.dll": {}
         }
       },
       "SystemInterfaces/1.0.0": {
@@ -745,26 +634,11 @@
           "bin/placeholder/SystemInterfaces.dll": {}
         }
       },
-      "Utilities/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Utilities.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Utilities.dll": {}
-        }
-      },
       "ViewModel.Interfaces/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
-          "CommonMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
-          "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
           "ReactiveProperty": "4.1.0",
@@ -944,7 +818,6 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
-          "GenSoft.Interface": "1.0.0",
           "SystemInterfaces": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
         },
@@ -955,19 +828,6 @@
           "bin/placeholder/Actor.Interfaces.dll": {}
         }
       },
-      "CommonMessages/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/CommonMessages.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CommonMessages.dll": {}
-        }
-      },
       "ComponentModel.Composition.Hosting.Extension/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -976,19 +836,6 @@
         },
         "runtime": {
           "bin/placeholder/ComponentModel.Composition.Hosting.Extension.dll": {}
-        }
-      },
-      "GenSoft.Interface/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/GenSoft.Interface.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/GenSoft.Interface.dll": {}
         }
       },
       "SystemInterfaces/1.0.0": {
@@ -1004,26 +851,11 @@
           "bin/placeholder/SystemInterfaces.dll": {}
         }
       },
-      "Utilities/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Utilities.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Utilities.dll": {}
-        }
-      },
       "ViewModel.Interfaces/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
-          "CommonMessages": "1.0.0",
           "FluentValidation.Net35": "1.0.1",
-          "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
           "ReactiveProperty": "4.1.0",
@@ -1287,30 +1119,15 @@
       "path": "../Actor.Interfaces/Actor.Interfaces.csproj",
       "msbuildProject": "../Actor.Interfaces/Actor.Interfaces.csproj"
     },
-    "CommonMessages/1.0.0": {
-      "type": "project",
-      "path": "../CommonMessages/CommonMessages.csproj",
-      "msbuildProject": "../CommonMessages/CommonMessages.csproj"
-    },
     "ComponentModel.Composition.Hosting.Extension/1.0.0": {
       "type": "project",
       "path": "../MefGeneric-master/MEFGeneric Preview 9/src/ComponentModel.Composition.Hosting.Extension/ComponentModel.Composition.Hosting.Extension.csproj",
       "msbuildProject": "../MefGeneric-master/MEFGeneric Preview 9/src/ComponentModel.Composition.Hosting.Extension/ComponentModel.Composition.Hosting.Extension.csproj"
     },
-    "GenSoft.Interface/1.0.0": {
-      "type": "project",
-      "path": "../GenSoft.Interface/GenSoft.Interface.csproj",
-      "msbuildProject": "../GenSoft.Interface/GenSoft.Interface.csproj"
-    },
     "SystemInterfaces/1.0.0": {
       "type": "project",
       "path": "../SystemInterfaces/SystemInterfaces.csproj",
       "msbuildProject": "../SystemInterfaces/SystemInterfaces.csproj"
-    },
-    "Utilities/1.0.0": {
-      "type": "project",
-      "path": "../Utilities/Utilities.csproj",
-      "msbuildProject": "../Utilities/Utilities.csproj"
     },
     "ViewModel.Interfaces/1.0.0": {
       "type": "project",
@@ -1323,8 +1140,6 @@
       "Actor.Interfaces >= 1.0.0",
       "ComponentModel.Composition.Hosting.Extension >= 1.0.0",
       "MefContrib >= 1.2.2.1",
-      "SystemInterfaces >= 1.0.0",
-      "Utilities >= 1.0.0",
       "ViewModel.Interfaces >= 1.0.0"
     ]
   },
@@ -1360,12 +1175,6 @@
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\MefGeneric-master\\MEFGeneric Preview 9\\src\\ComponentModel.Composition.Hosting.Extension\\ComponentModel.Composition.Hosting.Extension.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\MefGeneric-master\\MEFGeneric Preview 9\\src\\ComponentModel.Composition.Hosting.Extension\\ComponentModel.Composition.Hosting.Extension.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Utilities\\Utilities.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Utilities\\Utilities.csproj"
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj"

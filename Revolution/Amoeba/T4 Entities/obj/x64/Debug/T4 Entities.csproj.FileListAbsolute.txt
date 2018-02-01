@@ -13,5 +13,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Entities\bin\x64\Debug\T4En
 C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Entities\bin\x64\Debug\T4Entities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Entities\bin\x64\Debug\EntityFramework.SqlServer.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Entities\bin\x64\Debug\EntityFramework.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Entities\obj\x64\Debug\T4 Entities.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Entities\obj\x64\Debug\T4 Entities.csproj.CoreCompileInputs.cache

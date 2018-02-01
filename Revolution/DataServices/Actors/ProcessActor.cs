@@ -2,7 +2,6 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Collections.ObjectModel;
 using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Reactive.Linq;
@@ -14,7 +13,6 @@ using DataServices.Utils;
 using EventAggregator;
 using EventMessages.Commands;
 using EventMessages.Events;
-using RevolutionData;
 using RevolutionEntities.Process;
 using Utilities;
 using IProcessService = Actor.Interfaces.IProcessService;
@@ -87,7 +85,8 @@ namespace DataServices.Actors
 
         private void CleanUpActor(ICleanUpSystemProcess cleanUpSystemProcess)
         {
-            _complexEvents = new ConcurrentQueue<IComplexEventAction>();
+           _complexEvents = new ConcurrentQueue<IComplexEventAction>();
+            Self.Tell(PoisonPill.Instance);
         }
 
 
@@ -213,10 +212,16 @@ namespace DataServices.Actors
         {
             try
             {
+
                 Task.Run(() =>
                 {
-                   ctx.ActorOf(Props.Create<ComplexEventActor>(inMsg),
+                    var child = ctx.Child(
                         $"ComplexEventActor:-{inMsg.ComplexEventService.ActorId.GetSafeActorName()}-{inMsg.Process.Id}");
+                    if (Equals(child, ActorRefs.Nobody))
+                    {
+                        ctx.ActorOf(Props.Create<ComplexEventActor>(inMsg),
+                            $"ComplexEventActor:-{inMsg.ComplexEventService.ActorId.GetSafeActorName()}-{inMsg.Process.Id}");
+                    }
                 }).ConfigureAwait(false);
 
             }

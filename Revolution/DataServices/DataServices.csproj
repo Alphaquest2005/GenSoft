@@ -74,12 +74,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -106,10 +102,6 @@
     <Compile Include="Utils\LoadEntitySetExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\DesignTimeData\DesignTimeData.csproj">
-      <Project>{e7ec52dc-8650-4cf0-bcab-ed8a9473d2cf}</Project>
-      <Name>DesignTimeData</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\MRManager\Process.WorkFlow\Process.WorkFlow.csproj">
       <Project>{4f0baa58-3b45-4136-8095-445d406b4d23}</Project>
       <Name>Process.WorkFlow</Name>
@@ -134,17 +126,9 @@
       <Project>{cb6d5fbc-0c13-437d-b4f3-a0ec4d5673b3}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Core.Common.UI\Core.Common.UI.csproj">
-      <Project>{5dd82ad7-f344-45e3-92cc-96f8d07700af}</Project>
-      <Name>Core.Common.UI</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DomainUtilities\DomainUtilities.csproj">
       <Project>{4FAC145F-FB23-4F9D-9A8B-0BA4BF41D89E}</Project>
       <Name>DomainUtilities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DynamicLinq\System.Linq.Dynamic\System.Linq.Dynamic.csproj">
-      <Project>{17c0d5de-c72d-4a06-a12c-445ebcf3b9ea}</Project>
-      <Name>System.Linq.Dynamic</Name>
     </ProjectReference>
     <ProjectReference Include="..\EFRepository\EFRepository.csproj">
       <Project>{415DDC8A-A74D-4AFA-8FCB-2706A062A4FD}</Project>

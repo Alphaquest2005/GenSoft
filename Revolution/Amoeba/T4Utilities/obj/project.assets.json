@@ -16,60 +16,6 @@
           "lib/net45/EntityFramework.dll": {}
         }
       },
-      "morelinq/2.9.0": {
-        "type": "package",
-        "dependencies": {
-          "System.ValueTuple": "4.4.0"
-        },
-        "frameworkAssemblies": [
-          "System",
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.Xml"
-        ],
-        "compile": {
-          "lib/net40/MoreLinq.dll": {}
-        },
-        "runtime": {
-          "lib/net40/MoreLinq.dll": {}
-        }
-      },
-      "System.ValueTuple/4.4.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "mscorlib"
-        ],
-        "compile": {
-          "ref/net47/System.ValueTuple.dll": {}
-        },
-        "runtime": {
-          "lib/net47/System.ValueTuple.dll": {}
-        }
-      },
-      "LinqSpecs/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "compile": {
-          "bin/placeholder/LinqSpecs.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/LinqSpecs.dll": {}
-        }
-      },
-      "Specifications/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "LinqSpecs": "1.0.0",
-          "T4 Entities": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Specifications.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Specifications.dll": {}
-        }
-      },
       "T4 Entities/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -81,23 +27,6 @@
         },
         "runtime": {
           "bin/placeholder/T4 Entities.dll": {}
-        }
-      },
-      "T4 Repository/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "EntityFramework": "6.2.0",
-          "LinqSpecs": "1.0.0",
-          "Specifications": "1.0.0",
-          "T4 Entities": "1.0.0",
-          "morelinq": "2.9.0"
-        },
-        "compile": {
-          "bin/placeholder/T4 Repository.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/T4 Repository.dll": {}
         }
       }
     },
@@ -116,60 +45,6 @@
           "lib/net45/EntityFramework.dll": {}
         }
       },
-      "morelinq/2.9.0": {
-        "type": "package",
-        "dependencies": {
-          "System.ValueTuple": "4.4.0"
-        },
-        "frameworkAssemblies": [
-          "System",
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.Xml"
-        ],
-        "compile": {
-          "lib/net40/MoreLinq.dll": {}
-        },
-        "runtime": {
-          "lib/net40/MoreLinq.dll": {}
-        }
-      },
-      "System.ValueTuple/4.4.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "mscorlib"
-        ],
-        "compile": {
-          "ref/net47/System.ValueTuple.dll": {}
-        },
-        "runtime": {
-          "lib/net47/System.ValueTuple.dll": {}
-        }
-      },
-      "LinqSpecs/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "compile": {
-          "bin/placeholder/LinqSpecs.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/LinqSpecs.dll": {}
-        }
-      },
-      "Specifications/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "LinqSpecs": "1.0.0",
-          "T4 Entities": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Specifications.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Specifications.dll": {}
-        }
-      },
       "T4 Entities/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -181,23 +56,6 @@
         },
         "runtime": {
           "bin/placeholder/T4 Entities.dll": {}
-        }
-      },
-      "T4 Repository/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "EntityFramework": "6.2.0",
-          "LinqSpecs": "1.0.0",
-          "Specifications": "1.0.0",
-          "T4 Entities": "1.0.0",
-          "morelinq": "2.9.0"
-        },
-        "compile": {
-          "bin/placeholder/T4 Repository.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/T4 Repository.dll": {}
         }
       }
     },
@@ -216,60 +74,6 @@
           "lib/net45/EntityFramework.dll": {}
         }
       },
-      "morelinq/2.9.0": {
-        "type": "package",
-        "dependencies": {
-          "System.ValueTuple": "4.4.0"
-        },
-        "frameworkAssemblies": [
-          "System",
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.Xml"
-        ],
-        "compile": {
-          "lib/net40/MoreLinq.dll": {}
-        },
-        "runtime": {
-          "lib/net40/MoreLinq.dll": {}
-        }
-      },
-      "System.ValueTuple/4.4.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "mscorlib"
-        ],
-        "compile": {
-          "ref/net47/System.ValueTuple.dll": {}
-        },
-        "runtime": {
-          "lib/net47/System.ValueTuple.dll": {}
-        }
-      },
-      "LinqSpecs/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "compile": {
-          "bin/placeholder/LinqSpecs.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/LinqSpecs.dll": {}
-        }
-      },
-      "Specifications/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "LinqSpecs": "1.0.0",
-          "T4 Entities": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Specifications.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Specifications.dll": {}
-        }
-      },
       "T4 Entities/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -281,23 +85,6 @@
         },
         "runtime": {
           "bin/placeholder/T4 Entities.dll": {}
-        }
-      },
-      "T4 Repository/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "EntityFramework": "6.2.0",
-          "LinqSpecs": "1.0.0",
-          "Specifications": "1.0.0",
-          "T4 Entities": "1.0.0",
-          "morelinq": "2.9.0"
-        },
-        "compile": {
-          "bin/placeholder/T4 Repository.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/T4 Repository.dll": {}
         }
       }
     },
@@ -316,60 +103,6 @@
           "lib/net45/EntityFramework.dll": {}
         }
       },
-      "morelinq/2.9.0": {
-        "type": "package",
-        "dependencies": {
-          "System.ValueTuple": "4.4.0"
-        },
-        "frameworkAssemblies": [
-          "System",
-          "System.Data",
-          "System.Data.DataSetExtensions",
-          "System.Xml"
-        ],
-        "compile": {
-          "lib/net40/MoreLinq.dll": {}
-        },
-        "runtime": {
-          "lib/net40/MoreLinq.dll": {}
-        }
-      },
-      "System.ValueTuple/4.4.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "mscorlib"
-        ],
-        "compile": {
-          "ref/net47/System.ValueTuple.dll": {}
-        },
-        "runtime": {
-          "lib/net47/System.ValueTuple.dll": {}
-        }
-      },
-      "LinqSpecs/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "compile": {
-          "bin/placeholder/LinqSpecs.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/LinqSpecs.dll": {}
-        }
-      },
-      "Specifications/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "LinqSpecs": "1.0.0",
-          "T4 Entities": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Specifications.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Specifications.dll": {}
-        }
-      },
       "T4 Entities/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -381,23 +114,6 @@
         },
         "runtime": {
           "bin/placeholder/T4 Entities.dll": {}
-        }
-      },
-      "T4 Repository/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "EntityFramework": "6.2.0",
-          "LinqSpecs": "1.0.0",
-          "Specifications": "1.0.0",
-          "T4 Entities": "1.0.0",
-          "morelinq": "2.9.0"
-        },
-        "compile": {
-          "bin/placeholder/T4 Repository.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/T4 Repository.dll": {}
         }
       }
     }
@@ -430,91 +146,15 @@
         "tools/migrate.exe"
       ]
     },
-    "morelinq/2.9.0": {
-      "sha512": "bn/bQ6a+DBFF3LhDHKv7oNyCeFGKxNPXV4+b81+phYLyPD/cxVbW1phx/KpLxCvqHn2fE7E8UNCWsxQHXMScig==",
-      "type": "package",
-      "path": "morelinq/2.9.0",
-      "files": [
-        "lib/net35/MoreLinq.dll",
-        "lib/net35/MoreLinq.xml",
-        "lib/net40/MoreLinq.dll",
-        "lib/net40/MoreLinq.xml",
-        "lib/netstandard1.0/MoreLinq.dll",
-        "lib/netstandard1.0/MoreLinq.xml",
-        "lib/netstandard2.0/MoreLinq.dll",
-        "lib/netstandard2.0/MoreLinq.xml",
-        "morelinq.2.9.0.nupkg.sha512",
-        "morelinq.nuspec"
-      ]
-    },
-    "System.ValueTuple/4.4.0": {
-      "sha512": "BahUww/+mdP4ARCAh2RQhQTg13wYLVrBb9SYVgW8ZlrwjraGCXHGjo0oIiUfZ34LUZkMMR+RAzR7dEY4S1HeQQ==",
-      "type": "package",
-      "path": "system.valuetuple/4.4.0",
-      "files": [
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net461/System.ValueTuple.dll",
-        "lib/net461/System.ValueTuple.xml",
-        "lib/net47/System.ValueTuple.dll",
-        "lib/net47/System.ValueTuple.xml",
-        "lib/netcoreapp2.0/_._",
-        "lib/netstandard1.0/System.ValueTuple.dll",
-        "lib/netstandard1.0/System.ValueTuple.xml",
-        "lib/netstandard2.0/_._",
-        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
-        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.xml",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net461/System.ValueTuple.dll",
-        "ref/net461/System.ValueTuple.xml",
-        "ref/net47/System.ValueTuple.dll",
-        "ref/net47/System.ValueTuple.xml",
-        "ref/netcoreapp2.0/_._",
-        "ref/netstandard2.0/_._",
-        "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
-        "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.xml",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.valuetuple.4.4.0.nupkg.sha512",
-        "system.valuetuple.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "LinqSpecs/1.0.0": {
-      "type": "project",
-      "path": "../../LinqSpecs/LinqSpecs.csproj",
-      "msbuildProject": "../../LinqSpecs/LinqSpecs.csproj"
-    },
-    "Specifications/1.0.0": {
-      "type": "project",
-      "path": "../Specifications/Specifications.csproj",
-      "msbuildProject": "../Specifications/Specifications.csproj"
-    },
     "T4 Entities/1.0.0": {
       "type": "project",
       "path": "../T4 Entities/T4 Entities.csproj",
       "msbuildProject": "../T4 Entities/T4 Entities.csproj"
-    },
-    "T4 Repository/1.0.0": {
-      "type": "project",
-      "path": "../T4 Repository/T4 Repository.csproj",
-      "msbuildProject": "../T4 Repository/T4 Repository.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7": [
-      "T4 Entities >= 1.0.0",
-      "T4 Repository >= 1.0.0"
+      "T4 Entities >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -546,9 +186,6 @@
           "projectReferences": {
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Amoeba\\T4 Entities\\T4 Entities.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Amoeba\\T4 Entities\\T4 Entities.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Amoeba\\T4 Repository\\T4 Repository.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Amoeba\\T4 Repository\\T4 Repository.csproj"
             }
           }
         }

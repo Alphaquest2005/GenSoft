@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reactive.Linq;
 using SystemInterfaces;
 using Common.DataEntites;
 using DomainUtilities;
@@ -13,7 +12,6 @@ using Microsoft.EntityFrameworkCore;
 using Utilities;
 using Entity = GenSoft.Entities.Entity;
 using EntityEvents = RevolutionData.Context.Entity;
-using Type = System.Type;
 using System.Linq.Dynamic;
 
 
@@ -34,9 +32,9 @@ namespace EFRepository
         private static Application CurrentApplication { get;  set; }
         private static void OnCurrentApplicationChanged(ICurrentApplicationChanged currentEntityChanged)
         {
-            if(currentEntityChanged.Application == null) return;
-            if (CurrentApplication?.Id == currentEntityChanged.Application.Id) return;
-            SetCurrentApplication(currentEntityChanged.Application.Id);
+            if(currentEntityChanged.Entity == null) return;
+            if (CurrentApplication?.Id == currentEntityChanged.Entity.Id) return;
+            SetCurrentApplication(currentEntityChanged.Entity.Id);
         }
 
         private static void SetCurrentApplication(int appId)
@@ -58,7 +56,7 @@ namespace EFRepository
             try
             {
                 if (CurrentApplication?.DatabaseInfo.IsRealDatabase != IsRealDatabase) return;
-                if (TypeNameExtensions.GetTypeByName(entityNamespace + msg.EntityType.Name).FirstOrDefault() == null) return;
+                if (TypeNameExtensions.EntityTypesLkp.TryGetValue(entityNamespace + msg.EntityType.Name,out var _) == false) return;
                 using (var ctx = new GenSoftDBContext())
                 {
                     var entityType = ctx.EntityType.Include(x => x.Type).First(x => x.Type.Name == msg.EntityType.Name);
@@ -163,7 +161,7 @@ namespace EFRepository
         {
             
             if (CurrentApplication?.DatabaseInfo.IsRealDatabase != IsRealDatabase) return;
-            if(TypeNameExtensions.GetTypeByName(entityNamespace + msg.EntityType.Name).FirstOrDefault() == null) return;
+            if(TypeNameExtensions.EntityTypesLkp.TryGetValue(entityNamespace + msg.EntityType.Name, out var _) == false) return;
             using (var ctx = new GenSoftDBContext())
             {
                 var entityType = msg.EntityType;
@@ -200,7 +198,7 @@ namespace EFRepository
         public static void LoadEntitySet(ILoadEntitySet msg)
         {
             if (CurrentApplication?.DatabaseInfo.IsRealDatabase != IsRealDatabase) return;
-            if (TypeNameExtensions.GetTypeByName(entityNamespace + msg.EntityType.Name).FirstOrDefault() == null) return;
+            if (TypeNameExtensions.EntityTypesLkp.TryGetValue(entityNamespace + msg.EntityType.Name, out var _) == false) return;
 
             using (var ctx = new GenSoftDBContext())
             {
@@ -256,7 +254,7 @@ namespace EFRepository
         public static void GetEntityWithChanges(IGetEntityWithChanges msg)
         {
             if (CurrentApplication?.DatabaseInfo.IsRealDatabase != IsRealDatabase) return;
-            if (TypeNameExtensions.GetTypeByName(entityNamespace + msg.EntityType.Name).FirstOrDefault() == null) return;
+            if (TypeNameExtensions.EntityTypesLkp.TryGetValue(entityNamespace + msg.EntityType.Name, out var _) == false) return;
             using (var ctx = new GenSoftDBContext())
             {
                 var entityType = msg.EntityType;

@@ -294,8 +294,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\JB.Common.Coll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\JB.Common.Collections.Reactive.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\JB.Common.Reactive.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\log4net.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\MefContrib.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\MefContrib.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\Microsoft.EntityFrameworkCore.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.dll
@@ -423,7 +421,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\System.Xml.Xml
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\System.Xml.XmlSerializer.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\System.Xml.XPath.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\System.Xml.XPath.XDocument.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\BootStrapper.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\Common.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\CommonMessages.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\DomainUtilities.dll
@@ -431,7 +428,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\EventAggregato
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\EventMessages.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\GenSoft.DBContext.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\GenSoft.Entities.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\GenSoft.Expressions.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\GenSoft.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\RevolutionData.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\RevolutionEntities.dll
@@ -439,11 +435,8 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\RevolutionLogg
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\System.Linq.Dynamic.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\SystemInterfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\Utilities.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\ComponentModel.Composition.Hosting.Extension.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\Actor.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\ViewModel.Interfaces.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\BootStrapper.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\BootStrapper.dll.config
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\CommonMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\Common.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\DomainUtilities.pdb
@@ -453,7 +446,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\EventAggregato
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\EventMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\GenSoft.DBContext.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\GenSoft.Entities.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\GenSoft.Expressions.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\GenSoft.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\RevolutionData.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\RevolutionData.dll.config
@@ -461,7 +453,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\RevolutionEnti
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\RevolutionLogger.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\SystemInterfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\Utilities.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\ComponentModel.Composition.Hosting.Extension.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\Actor.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\Debug\ViewModel.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\obj\Debug\EFRepository.csprojResolveAssemblyReference.cache

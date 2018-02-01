@@ -610,8 +610,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\Debug\Actor.Interfac
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\Debug\BootStrapper.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\Debug\Common.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\Debug\CommonMessages.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\Debug\Core.Common.UI.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\Debug\DesignTimeData.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\Debug\DomainUtilities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\Debug\EFRepository.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\Debug\EventAggregator.dll
@@ -630,7 +628,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\Debug\ViewMessages.d
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\Debug\ViewModel.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\Debug\ViewModel.WorkFlow.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\Debug\ComponentModel.Composition.Hosting.Extension.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\Debug\DesignTimeData.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\Debug\Process.WorkFlow.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\Debug\ViewModel.WorkFlow.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\Debug\Actor.Interfaces.pdb
@@ -638,8 +635,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\Debug\BootStrapper.p
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\Debug\BootStrapper.dll.config
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\Debug\CommonMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\Debug\Common.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\Debug\Core.Common.UI.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\Debug\Core.Common.UI.dll.config
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\Debug\DomainUtilities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\Debug\System.Linq.Dynamic.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\Debug\EFRepository.pdb

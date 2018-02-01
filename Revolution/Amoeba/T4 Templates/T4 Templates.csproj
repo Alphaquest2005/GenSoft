@@ -70,20 +70,10 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="envdte, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Collections" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Dynamic.Runtime" />
-    <Reference Include="System.Linq" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataLayer\DataLayer1.cs">
@@ -319,16 +309,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\LinqSpecs\LinqSpecs.csproj">
-      <Project>{d60875a3-0de2-409d-86a0-f540224d054c}</Project>
-      <Name>LinqSpecs</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\T4 Repository\T4 Repository.csproj">
-      <Project>{288d0e9b-0371-486c-8933-1bf893be86ec}</Project>
-      <Name>T4 Repository</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Master.ttinclude">

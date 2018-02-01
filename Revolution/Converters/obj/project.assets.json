@@ -14,15 +14,6 @@
           "lib/net461/DynamicExpresso.Core.dll": {}
         }
       },
-      "FluentValidation.Net35/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/net35/FluentValidation.dll": {}
-        },
-        "runtime": {
-          "lib/net35/FluentValidation.dll": {}
-        }
-      },
       "JB.Common/0.8.107-pre": {
         "type": "package",
         "compile": {
@@ -70,15 +61,6 @@
         },
         "runtime": {
           "lib/net46/JB.Common.Reactive.dll": {}
-        }
-      },
-      "log4net/2.0.8": {
-        "type": "package",
-        "compile": {
-          "lib/net45-full/log4net.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/log4net.dll": {}
         }
       },
       "Microsoft.CSharp/4.4.0": {
@@ -262,41 +244,6 @@
         },
         "runtime": {
           "lib/net40/MoreLinq.dll": {}
-        }
-      },
-      "Reactive.EventAggregator/3.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Reactive.Linq": "[3.0.0, 4.0.0)"
-        },
-        "compile": {
-          "lib/net45/Reactive.EventAggregator.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Reactive.EventAggregator.dll": {}
-        }
-      },
-      "ReactiveProperty/4.1.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Reactive": "3.1.1"
-        },
-        "frameworkAssemblies": [
-          "PresentationCore",
-          "PresentationFramework",
-          "System",
-          "System.ComponentModel.DataAnnotations",
-          "System.Core",
-          "System.Xaml",
-          "WindowsBase"
-        ],
-        "compile": {
-          "lib/net46/ReactiveProperty.NET46.dll": {},
-          "lib/net46/ReactiveProperty.dll": {}
-        },
-        "runtime": {
-          "lib/net46/ReactiveProperty.NET46.dll": {},
-          "lib/net46/ReactiveProperty.dll": {}
         }
       },
       "Remotion.Linq/2.1.1": {
@@ -676,7 +623,6 @@
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "DynamicExpresso.Core": "2.0.0",
-          "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
           "SystemInterfaces": "1.0.0",
@@ -687,19 +633,6 @@
         },
         "runtime": {
           "bin/placeholder/Common.dll": {}
-        }
-      },
-      "CommonMessages/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/CommonMessages.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CommonMessages.dll": {}
         }
       },
       "DomainUtilities/1.0.0": {
@@ -731,36 +664,16 @@
           "bin/placeholder/DomainUtilities.dll": {}
         }
       },
-      "EventAggregator/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "CommonMessages": "1.0.0",
-          "Reactive.EventAggregator": "3.0.0",
-          "RevolutionLogger": "1.0.0",
-          "SystemInterfaces": "1.0.0",
-          "Utilities": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/EventAggregator.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/EventAggregator.dll": {}
-        }
-      },
       "GenSoft.DBContext/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Common": "1.0.0",
-          "EventAggregator": "1.0.0",
           "GenSoft.Entities": "1.0.0",
           "GenSoft.Interface": "1.0.0",
           "Microsoft.EntityFrameworkCore": "2.0.1",
           "Microsoft.EntityFrameworkCore.Relational": "2.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.0.1",
-          "RevolutionLogger": "1.0.0",
-          "System.Linq.Dynamic": "1.0.0",
           "SystemInterfaces": "1.0.0",
           "morelinq": "2.9.0"
         },
@@ -777,8 +690,7 @@
         "dependencies": {
           "Common": "1.0.0",
           "GenSoft.Interface": "1.0.0",
-          "SystemInterfaces": "1.0.0",
-          "Utilities": "1.0.0"
+          "SystemInterfaces": "1.0.0"
         },
         "compile": {
           "bin/placeholder/GenSoft.Entities.dll": {}
@@ -798,29 +710,6 @@
         },
         "runtime": {
           "bin/placeholder/GenSoft.Interface.dll": {}
-        }
-      },
-      "RevolutionLogger/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "log4net": "2.0.8"
-        },
-        "compile": {
-          "bin/placeholder/RevolutionLogger.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/RevolutionLogger.dll": {}
-        }
-      },
-      "System.Linq.Dynamic/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "compile": {
-          "bin/placeholder/System.Linq.Dynamic.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/System.Linq.Dynamic.dll": {}
         }
       },
       "SystemInterfaces/1.0.0": {
@@ -848,25 +737,6 @@
         "runtime": {
           "bin/placeholder/Utilities.dll": {}
         }
-      },
-      "ViewModel.Interfaces/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "CommonMessages": "1.0.0",
-          "FluentValidation.Net35": "1.0.1",
-          "GenSoft.Interface": "1.0.0",
-          "JB.Common.Collections.Reactive": "0.8.107-pre",
-          "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "4.1.0",
-          "SystemInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/ViewModel.Interfaces.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/ViewModel.Interfaces.dll": {}
-        }
       }
     },
     ".NETFramework,Version=v4.7/win": {
@@ -880,15 +750,6 @@
         },
         "runtime": {
           "lib/net461/DynamicExpresso.Core.dll": {}
-        }
-      },
-      "FluentValidation.Net35/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/net35/FluentValidation.dll": {}
-        },
-        "runtime": {
-          "lib/net35/FluentValidation.dll": {}
         }
       },
       "JB.Common/0.8.107-pre": {
@@ -938,15 +799,6 @@
         },
         "runtime": {
           "lib/net46/JB.Common.Reactive.dll": {}
-        }
-      },
-      "log4net/2.0.8": {
-        "type": "package",
-        "compile": {
-          "lib/net45-full/log4net.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/log4net.dll": {}
         }
       },
       "Microsoft.CSharp/4.4.0": {
@@ -1130,41 +982,6 @@
         },
         "runtime": {
           "lib/net40/MoreLinq.dll": {}
-        }
-      },
-      "Reactive.EventAggregator/3.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Reactive.Linq": "[3.0.0, 4.0.0)"
-        },
-        "compile": {
-          "lib/net45/Reactive.EventAggregator.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Reactive.EventAggregator.dll": {}
-        }
-      },
-      "ReactiveProperty/4.1.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Reactive": "3.1.1"
-        },
-        "frameworkAssemblies": [
-          "PresentationCore",
-          "PresentationFramework",
-          "System",
-          "System.ComponentModel.DataAnnotations",
-          "System.Core",
-          "System.Xaml",
-          "WindowsBase"
-        ],
-        "compile": {
-          "lib/net46/ReactiveProperty.NET46.dll": {},
-          "lib/net46/ReactiveProperty.dll": {}
-        },
-        "runtime": {
-          "lib/net46/ReactiveProperty.NET46.dll": {},
-          "lib/net46/ReactiveProperty.dll": {}
         }
       },
       "Remotion.Linq/2.1.1": {
@@ -1534,7 +1351,6 @@
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "DynamicExpresso.Core": "2.0.0",
-          "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
           "SystemInterfaces": "1.0.0",
@@ -1545,19 +1361,6 @@
         },
         "runtime": {
           "bin/placeholder/Common.dll": {}
-        }
-      },
-      "CommonMessages/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/CommonMessages.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CommonMessages.dll": {}
         }
       },
       "DomainUtilities/1.0.0": {
@@ -1589,36 +1392,16 @@
           "bin/placeholder/DomainUtilities.dll": {}
         }
       },
-      "EventAggregator/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "CommonMessages": "1.0.0",
-          "Reactive.EventAggregator": "3.0.0",
-          "RevolutionLogger": "1.0.0",
-          "SystemInterfaces": "1.0.0",
-          "Utilities": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/EventAggregator.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/EventAggregator.dll": {}
-        }
-      },
       "GenSoft.DBContext/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Common": "1.0.0",
-          "EventAggregator": "1.0.0",
           "GenSoft.Entities": "1.0.0",
           "GenSoft.Interface": "1.0.0",
           "Microsoft.EntityFrameworkCore": "2.0.1",
           "Microsoft.EntityFrameworkCore.Relational": "2.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.0.1",
-          "RevolutionLogger": "1.0.0",
-          "System.Linq.Dynamic": "1.0.0",
           "SystemInterfaces": "1.0.0",
           "morelinq": "2.9.0"
         },
@@ -1635,8 +1418,7 @@
         "dependencies": {
           "Common": "1.0.0",
           "GenSoft.Interface": "1.0.0",
-          "SystemInterfaces": "1.0.0",
-          "Utilities": "1.0.0"
+          "SystemInterfaces": "1.0.0"
         },
         "compile": {
           "bin/placeholder/GenSoft.Entities.dll": {}
@@ -1656,29 +1438,6 @@
         },
         "runtime": {
           "bin/placeholder/GenSoft.Interface.dll": {}
-        }
-      },
-      "RevolutionLogger/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "log4net": "2.0.8"
-        },
-        "compile": {
-          "bin/placeholder/RevolutionLogger.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/RevolutionLogger.dll": {}
-        }
-      },
-      "System.Linq.Dynamic/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "compile": {
-          "bin/placeholder/System.Linq.Dynamic.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/System.Linq.Dynamic.dll": {}
         }
       },
       "SystemInterfaces/1.0.0": {
@@ -1705,25 +1464,6 @@
         },
         "runtime": {
           "bin/placeholder/Utilities.dll": {}
-        }
-      },
-      "ViewModel.Interfaces/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "CommonMessages": "1.0.0",
-          "FluentValidation.Net35": "1.0.1",
-          "GenSoft.Interface": "1.0.0",
-          "JB.Common.Collections.Reactive": "0.8.107-pre",
-          "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "4.1.0",
-          "SystemInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/ViewModel.Interfaces.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/ViewModel.Interfaces.dll": {}
         }
       }
     },
@@ -1740,15 +1480,6 @@
           "lib/net461/DynamicExpresso.Core.dll": {}
         }
       },
-      "FluentValidation.Net35/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/net35/FluentValidation.dll": {}
-        },
-        "runtime": {
-          "lib/net35/FluentValidation.dll": {}
-        }
-      },
       "JB.Common/0.8.107-pre": {
         "type": "package",
         "compile": {
@@ -1796,15 +1527,6 @@
         },
         "runtime": {
           "lib/net46/JB.Common.Reactive.dll": {}
-        }
-      },
-      "log4net/2.0.8": {
-        "type": "package",
-        "compile": {
-          "lib/net45-full/log4net.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/log4net.dll": {}
         }
       },
       "Microsoft.CSharp/4.4.0": {
@@ -1988,41 +1710,6 @@
         },
         "runtime": {
           "lib/net40/MoreLinq.dll": {}
-        }
-      },
-      "Reactive.EventAggregator/3.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Reactive.Linq": "[3.0.0, 4.0.0)"
-        },
-        "compile": {
-          "lib/net45/Reactive.EventAggregator.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Reactive.EventAggregator.dll": {}
-        }
-      },
-      "ReactiveProperty/4.1.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Reactive": "3.1.1"
-        },
-        "frameworkAssemblies": [
-          "PresentationCore",
-          "PresentationFramework",
-          "System",
-          "System.ComponentModel.DataAnnotations",
-          "System.Core",
-          "System.Xaml",
-          "WindowsBase"
-        ],
-        "compile": {
-          "lib/net46/ReactiveProperty.NET46.dll": {},
-          "lib/net46/ReactiveProperty.dll": {}
-        },
-        "runtime": {
-          "lib/net46/ReactiveProperty.NET46.dll": {},
-          "lib/net46/ReactiveProperty.dll": {}
         }
       },
       "Remotion.Linq/2.1.1": {
@@ -2392,7 +2079,6 @@
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "DynamicExpresso.Core": "2.0.0",
-          "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
           "SystemInterfaces": "1.0.0",
@@ -2403,19 +2089,6 @@
         },
         "runtime": {
           "bin/placeholder/Common.dll": {}
-        }
-      },
-      "CommonMessages/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/CommonMessages.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CommonMessages.dll": {}
         }
       },
       "DomainUtilities/1.0.0": {
@@ -2447,36 +2120,16 @@
           "bin/placeholder/DomainUtilities.dll": {}
         }
       },
-      "EventAggregator/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "CommonMessages": "1.0.0",
-          "Reactive.EventAggregator": "3.0.0",
-          "RevolutionLogger": "1.0.0",
-          "SystemInterfaces": "1.0.0",
-          "Utilities": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/EventAggregator.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/EventAggregator.dll": {}
-        }
-      },
       "GenSoft.DBContext/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Common": "1.0.0",
-          "EventAggregator": "1.0.0",
           "GenSoft.Entities": "1.0.0",
           "GenSoft.Interface": "1.0.0",
           "Microsoft.EntityFrameworkCore": "2.0.1",
           "Microsoft.EntityFrameworkCore.Relational": "2.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.0.1",
-          "RevolutionLogger": "1.0.0",
-          "System.Linq.Dynamic": "1.0.0",
           "SystemInterfaces": "1.0.0",
           "morelinq": "2.9.0"
         },
@@ -2493,8 +2146,7 @@
         "dependencies": {
           "Common": "1.0.0",
           "GenSoft.Interface": "1.0.0",
-          "SystemInterfaces": "1.0.0",
-          "Utilities": "1.0.0"
+          "SystemInterfaces": "1.0.0"
         },
         "compile": {
           "bin/placeholder/GenSoft.Entities.dll": {}
@@ -2514,29 +2166,6 @@
         },
         "runtime": {
           "bin/placeholder/GenSoft.Interface.dll": {}
-        }
-      },
-      "RevolutionLogger/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "log4net": "2.0.8"
-        },
-        "compile": {
-          "bin/placeholder/RevolutionLogger.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/RevolutionLogger.dll": {}
-        }
-      },
-      "System.Linq.Dynamic/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "compile": {
-          "bin/placeholder/System.Linq.Dynamic.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/System.Linq.Dynamic.dll": {}
         }
       },
       "SystemInterfaces/1.0.0": {
@@ -2563,25 +2192,6 @@
         },
         "runtime": {
           "bin/placeholder/Utilities.dll": {}
-        }
-      },
-      "ViewModel.Interfaces/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "CommonMessages": "1.0.0",
-          "FluentValidation.Net35": "1.0.1",
-          "GenSoft.Interface": "1.0.0",
-          "JB.Common.Collections.Reactive": "0.8.107-pre",
-          "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "4.1.0",
-          "SystemInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/ViewModel.Interfaces.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/ViewModel.Interfaces.dll": {}
         }
       }
     },
@@ -2598,15 +2208,6 @@
           "lib/net461/DynamicExpresso.Core.dll": {}
         }
       },
-      "FluentValidation.Net35/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/net35/FluentValidation.dll": {}
-        },
-        "runtime": {
-          "lib/net35/FluentValidation.dll": {}
-        }
-      },
       "JB.Common/0.8.107-pre": {
         "type": "package",
         "compile": {
@@ -2654,15 +2255,6 @@
         },
         "runtime": {
           "lib/net46/JB.Common.Reactive.dll": {}
-        }
-      },
-      "log4net/2.0.8": {
-        "type": "package",
-        "compile": {
-          "lib/net45-full/log4net.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/log4net.dll": {}
         }
       },
       "Microsoft.CSharp/4.4.0": {
@@ -2846,41 +2438,6 @@
         },
         "runtime": {
           "lib/net40/MoreLinq.dll": {}
-        }
-      },
-      "Reactive.EventAggregator/3.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Reactive.Linq": "[3.0.0, 4.0.0)"
-        },
-        "compile": {
-          "lib/net45/Reactive.EventAggregator.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Reactive.EventAggregator.dll": {}
-        }
-      },
-      "ReactiveProperty/4.1.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Reactive": "3.1.1"
-        },
-        "frameworkAssemblies": [
-          "PresentationCore",
-          "PresentationFramework",
-          "System",
-          "System.ComponentModel.DataAnnotations",
-          "System.Core",
-          "System.Xaml",
-          "WindowsBase"
-        ],
-        "compile": {
-          "lib/net46/ReactiveProperty.NET46.dll": {},
-          "lib/net46/ReactiveProperty.dll": {}
-        },
-        "runtime": {
-          "lib/net46/ReactiveProperty.NET46.dll": {},
-          "lib/net46/ReactiveProperty.dll": {}
         }
       },
       "Remotion.Linq/2.1.1": {
@@ -3250,7 +2807,6 @@
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "DynamicExpresso.Core": "2.0.0",
-          "GenSoft.Interface": "1.0.0",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
           "SystemInterfaces": "1.0.0",
@@ -3261,19 +2817,6 @@
         },
         "runtime": {
           "bin/placeholder/Common.dll": {}
-        }
-      },
-      "CommonMessages/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "SystemInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/CommonMessages.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CommonMessages.dll": {}
         }
       },
       "DomainUtilities/1.0.0": {
@@ -3305,36 +2848,16 @@
           "bin/placeholder/DomainUtilities.dll": {}
         }
       },
-      "EventAggregator/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "CommonMessages": "1.0.0",
-          "Reactive.EventAggregator": "3.0.0",
-          "RevolutionLogger": "1.0.0",
-          "SystemInterfaces": "1.0.0",
-          "Utilities": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/EventAggregator.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/EventAggregator.dll": {}
-        }
-      },
       "GenSoft.DBContext/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Common": "1.0.0",
-          "EventAggregator": "1.0.0",
           "GenSoft.Entities": "1.0.0",
           "GenSoft.Interface": "1.0.0",
           "Microsoft.EntityFrameworkCore": "2.0.1",
           "Microsoft.EntityFrameworkCore.Relational": "2.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.0.1",
-          "RevolutionLogger": "1.0.0",
-          "System.Linq.Dynamic": "1.0.0",
           "SystemInterfaces": "1.0.0",
           "morelinq": "2.9.0"
         },
@@ -3351,8 +2874,7 @@
         "dependencies": {
           "Common": "1.0.0",
           "GenSoft.Interface": "1.0.0",
-          "SystemInterfaces": "1.0.0",
-          "Utilities": "1.0.0"
+          "SystemInterfaces": "1.0.0"
         },
         "compile": {
           "bin/placeholder/GenSoft.Entities.dll": {}
@@ -3372,29 +2894,6 @@
         },
         "runtime": {
           "bin/placeholder/GenSoft.Interface.dll": {}
-        }
-      },
-      "RevolutionLogger/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "log4net": "2.0.8"
-        },
-        "compile": {
-          "bin/placeholder/RevolutionLogger.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/RevolutionLogger.dll": {}
-        }
-      },
-      "System.Linq.Dynamic/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "compile": {
-          "bin/placeholder/System.Linq.Dynamic.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/System.Linq.Dynamic.dll": {}
         }
       },
       "SystemInterfaces/1.0.0": {
@@ -3422,25 +2921,6 @@
         "runtime": {
           "bin/placeholder/Utilities.dll": {}
         }
-      },
-      "ViewModel.Interfaces/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.7",
-        "dependencies": {
-          "CommonMessages": "1.0.0",
-          "FluentValidation.Net35": "1.0.1",
-          "GenSoft.Interface": "1.0.0",
-          "JB.Common.Collections.Reactive": "0.8.107-pre",
-          "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "4.1.0",
-          "SystemInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/ViewModel.Interfaces.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/ViewModel.Interfaces.dll": {}
-        }
       }
     }
   },
@@ -3454,16 +2934,6 @@
         "dynamicexpresso.core.nuspec",
         "lib/net461/DynamicExpresso.Core.dll",
         "lib/netstandard2.0/DynamicExpresso.Core.dll"
-      ]
-    },
-    "FluentValidation.Net35/1.0.1": {
-      "sha512": "fNgG7n+vDG55/pGcQtyKQWBhlBGWUavN7YfQwUjytGazAQftHzc1soUtKufcY6TXREBwNm/VOVN/w9u5ndjOeA==",
-      "type": "package",
-      "path": "fluentvalidation.net35/1.0.1",
-      "files": [
-        "FluentValidation.Net35.1.0.1.nupkg.sha512",
-        "FluentValidation.Net35.nuspec",
-        "lib/net35/FluentValidation.dll"
       ]
     },
     "JB.Common/0.8.107-pre": {
@@ -3508,28 +2978,6 @@
         "JB.Common.Reactive.nuspec",
         "lib/net46/JB.Common.Reactive.XML",
         "lib/net46/JB.Common.Reactive.dll"
-      ]
-    },
-    "log4net/2.0.8": {
-      "sha512": "N41MQGHZImiCfn0cUuSBjZxrcNfIQCuCgQP0rpgB3J/NWponEh3lc1LxJEuIsPAR9Oc1jVvfkNNFCY1C5hf9LA==",
-      "type": "package",
-      "path": "log4net/2.0.8",
-      "files": [
-        "lib/net20-full/log4net.dll",
-        "lib/net20-full/log4net.xml",
-        "lib/net35-client/log4net.dll",
-        "lib/net35-client/log4net.xml",
-        "lib/net35-full/log4net.dll",
-        "lib/net35-full/log4net.xml",
-        "lib/net40-client/log4net.dll",
-        "lib/net40-client/log4net.xml",
-        "lib/net40-full/log4net.dll",
-        "lib/net40-full/log4net.xml",
-        "lib/net45-full/log4net.dll",
-        "lib/net45-full/log4net.xml",
-        "lib/netstandard1.3/log4net.dll",
-        "log4net.2.0.8.nupkg.sha512",
-        "log4net.nuspec"
       ]
     },
     "Microsoft.CSharp/4.4.0": {
@@ -3743,86 +3191,6 @@
         "lib/netstandard2.0/MoreLinq.xml",
         "morelinq.2.9.0.nupkg.sha512",
         "morelinq.nuspec"
-      ]
-    },
-    "Reactive.EventAggregator/3.0.0": {
-      "sha512": "HREeSgRPnjt3XBk7DgvZTHPa5cnLModSEJuiJGRm9B/JvaGaug+EMm1wSHqUWm8+nmWC7br6YmCL9aA9DdA1Cw==",
-      "type": "package",
-      "path": "reactive.eventaggregator/3.0.0",
-      "files": [
-        "lib/net45/Reactive.EventAggregator.dll",
-        "lib/portable-Net45+winrt45+wp8+wpa81/Reactive.EventAggregator.dll",
-        "lib/portable-win81+wpa81/Reactive.EventAggregator.dll",
-        "lib/portable-windows8+net45+wp8/Reactive.EventAggregator.dll",
-        "lib/windows8/Reactive.EventAggregator.dll",
-        "lib/windowsphone8/Reactive.EventAggregator.dll",
-        "reactive.eventaggregator.3.0.0.nupkg.sha512",
-        "reactive.eventaggregator.nuspec"
-      ]
-    },
-    "ReactiveProperty/4.1.0": {
-      "sha512": "u05HsuDr1visUEEkImr8Ha4phyHIKj8I2aw7UMwy5mJO1lpdceBz0s8AjVMIYc4Qfh4iSZirBDQH9uZxEoAqEA==",
-      "type": "package",
-      "path": "reactiveproperty/4.1.0",
-      "files": [
-        "LICENSE.txt",
-        "Snippet/csharp5/AsyncReactiveCommand.snippet",
-        "Snippet/csharp5/AsyncReactiveCommandGeneric.snippet",
-        "Snippet/csharp5/ReactiveCollection.snippet",
-        "Snippet/csharp5/ReactiveCommand.snippet",
-        "Snippet/csharp5/ReactiveCommandGeneric.snippet",
-        "Snippet/csharp5/ReactiveProperty.snippet",
-        "Snippet/csharp5/ReadOnlyReactiveCollection.snippet",
-        "Snippet/csharp5/ReadOnlyReactiveProperty.snippet",
-        "Snippet/csharp6/AsyncReactiveCommand.snippet",
-        "Snippet/csharp6/AsyncReactiveCommandGeneric.snippet",
-        "Snippet/csharp6/ReactiveCollection.snippet",
-        "Snippet/csharp6/ReactiveCommand.snippet",
-        "Snippet/csharp6/ReactiveCommandGeneric.snippet",
-        "Snippet/csharp6/ReactiveProperty.snippet",
-        "Snippet/csharp6/ReadOnlyReactiveCollection.snippet",
-        "Snippet/csharp6/ReadOnlyReactiveProperty.snippet",
-        "lib/MonoAndroid/ReactiveProperty.Android.XML",
-        "lib/MonoAndroid/ReactiveProperty.Android.dll",
-        "lib/MonoAndroid/ReactiveProperty.Android.pdb",
-        "lib/MonoAndroid/ReactiveProperty.dll",
-        "lib/MonoAndroid/ReactiveProperty.pdb",
-        "lib/MonoAndroid/ReactiveProperty.xml",
-        "lib/MonoTouch/ReactiveProperty.dll",
-        "lib/MonoTouch/ReactiveProperty.iOS.XML",
-        "lib/MonoTouch/ReactiveProperty.iOS.dll",
-        "lib/MonoTouch/ReactiveProperty.iOS.pdb",
-        "lib/MonoTouch/ReactiveProperty.pdb",
-        "lib/MonoTouch/ReactiveProperty.xml",
-        "lib/Xamarin.Mac20/ReactiveProperty.dll",
-        "lib/Xamarin.Mac20/ReactiveProperty.pdb",
-        "lib/Xamarin.Mac20/ReactiveProperty.xml",
-        "lib/Xamarin.iOS10/ReactiveProperty.dll",
-        "lib/Xamarin.iOS10/ReactiveProperty.iOS.XML",
-        "lib/Xamarin.iOS10/ReactiveProperty.iOS.dll",
-        "lib/Xamarin.iOS10/ReactiveProperty.iOS.pdb",
-        "lib/Xamarin.iOS10/ReactiveProperty.pdb",
-        "lib/Xamarin.iOS10/ReactiveProperty.xml",
-        "lib/net46/ReactiveProperty.NET46.XML",
-        "lib/net46/ReactiveProperty.NET46.dll",
-        "lib/net46/ReactiveProperty.NET46.pdb",
-        "lib/net46/ReactiveProperty.dll",
-        "lib/net46/ReactiveProperty.pdb",
-        "lib/net46/ReactiveProperty.xml",
-        "lib/netstandard1.3/ReactiveProperty.dll",
-        "lib/netstandard1.3/ReactiveProperty.pdb",
-        "lib/netstandard1.3/ReactiveProperty.xml",
-        "lib/portable-net46+uap+MonoTouch+MonoAndroid/ReactiveProperty.dll",
-        "lib/portable-net46+uap+MonoTouch+MonoAndroid/ReactiveProperty.pdb",
-        "lib/portable-net46+uap+MonoTouch+MonoAndroid/ReactiveProperty.xml",
-        "lib/uap10.0/ReactiveProperty.UWP.XML",
-        "lib/uap10.0/ReactiveProperty.UWP.dll",
-        "lib/uap10.0/ReactiveProperty.UWP.pdb",
-        "lib/uap10.0/ReactiveProperty.dll",
-        "lib/uap10.0/ReactiveProperty.pdb",
-        "lib/uap10.0/ReactiveProperty.xml",
-        "reactiveproperty.4.1.0.nupkg.sha512",
-        "reactiveproperty.nuspec"
       ]
     },
     "Remotion.Linq/2.1.1": {
@@ -5143,20 +4511,10 @@
       "path": "../Common/Common.csproj",
       "msbuildProject": "../Common/Common.csproj"
     },
-    "CommonMessages/1.0.0": {
-      "type": "project",
-      "path": "../CommonMessages/CommonMessages.csproj",
-      "msbuildProject": "../CommonMessages/CommonMessages.csproj"
-    },
     "DomainUtilities/1.0.0": {
       "type": "project",
       "path": "../DomainUtilities/DomainUtilities.csproj",
       "msbuildProject": "../DomainUtilities/DomainUtilities.csproj"
-    },
-    "EventAggregator/1.0.0": {
-      "type": "project",
-      "path": "../EventAggregator/EventAggregator.csproj",
-      "msbuildProject": "../EventAggregator/EventAggregator.csproj"
     },
     "GenSoft.DBContext/1.0.0": {
       "type": "project",
@@ -5173,16 +4531,6 @@
       "path": "../GenSoft.Interface/GenSoft.Interface.csproj",
       "msbuildProject": "../GenSoft.Interface/GenSoft.Interface.csproj"
     },
-    "RevolutionLogger/1.0.0": {
-      "type": "project",
-      "path": "../RevolutionLogger/RevolutionLogger.csproj",
-      "msbuildProject": "../RevolutionLogger/RevolutionLogger.csproj"
-    },
-    "System.Linq.Dynamic/1.0.0": {
-      "type": "project",
-      "path": "../DynamicLinq/System.Linq.Dynamic/System.Linq.Dynamic.csproj",
-      "msbuildProject": "../DynamicLinq/System.Linq.Dynamic/System.Linq.Dynamic.csproj"
-    },
     "SystemInterfaces/1.0.0": {
       "type": "project",
       "path": "../SystemInterfaces/SystemInterfaces.csproj",
@@ -5192,20 +4540,12 @@
       "type": "project",
       "path": "../Utilities/Utilities.csproj",
       "msbuildProject": "../Utilities/Utilities.csproj"
-    },
-    "ViewModel.Interfaces/1.0.0": {
-      "type": "project",
-      "path": "../ViewModel.Interfaces/ViewModel.Interfaces.csproj",
-      "msbuildProject": "../ViewModel.Interfaces/ViewModel.Interfaces.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7": [
-      "Common >= 1.0.0",
       "DomainUtilities >= 1.0.0",
-      "SystemInterfaces >= 1.0.0",
-      "Utilities >= 1.0.0",
-      "ViewModel.Interfaces >= 1.0.0"
+      "SystemInterfaces >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5235,20 +4575,11 @@
       "frameworks": {
         "net47": {
           "projectReferences": {
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Common\\Common.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Common\\Common.csproj"
-            },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\DomainUtilities\\DomainUtilities.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\DomainUtilities\\DomainUtilities.csproj"
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Utilities\\Utilities.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Utilities\\Utilities.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj"
             }
           }
         }

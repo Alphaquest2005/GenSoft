@@ -91,7 +91,7 @@ namespace RevolutionData
                         subject: s => Observable.Empty<ReactiveCommand<IViewModel>>(),
 
                         messageData: s => new ViewEventCommandParameter(
-                            new object[] {$"{s.CurrentEntity.Value.EntityType.Name}-SummaryListViewModel"},
+                            new object[] {$"{s.CurrentEntity.Value?.EntityType.Name}-SummaryListViewModel"},
                             new StateCommandInfo(s.Process,
                                 Context.View.Commands.NavigateToView), s.Process,
                             s.Source)),

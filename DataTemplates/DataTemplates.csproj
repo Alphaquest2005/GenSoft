@@ -73,11 +73,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -169,29 +165,13 @@
       <Project>{5dd82ad7-f344-45e3-92cc-96f8d07700af}</Project>
       <Name>Core.Common.UI</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Revolution\GenSoft.Interface\GenSoft.Interface.csproj">
-      <Project>{f90cc1c1-1f4e-4719-817b-9a14ce56a5ce}</Project>
-      <Name>GenSoft.Interface</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Revolution\SystemInterfaces\SystemInterfaces.csproj">
       <Project>{e3842263-e081-49ba-a1b4-bbe82b24e2db}</Project>
       <Name>SystemInterfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Revolution\Utilities\Utilities.csproj">
-      <Project>{0f9427b1-792e-4c35-97d8-22a9494ce28f}</Project>
-      <Name>Utilities</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Revolution\ViewModel.Interfaces\ViewModel.Interfaces.csproj">
       <Project>{2f936e24-723e-4e7a-b21c-d6f618c74651}</Project>
       <Name>ViewModel.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Revolution\XamlGenericTypeExtension\XamlGenericTypeExtension.csproj">
-      <Project>{dc325a78-b3ca-4717-89c6-28fc15a385d7}</Project>
-      <Name>XamlGenericTypeExtension</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ViewModel.WorkFlow\ViewModel.WorkFlow.csproj">
-      <Project>{ee2fd2ef-1f6d-4ae6-b768-b788cdcfc250}</Project>
-      <Name>ViewModel.WorkFlow</Name>
     </ProjectReference>
     <ProjectReference Include="..\ViewModels\ViewModels.csproj">
       <Project>{db1e7bd6-7fe0-4cdd-8b6d-edbb0d156b41}</Project>

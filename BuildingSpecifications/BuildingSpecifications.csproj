@@ -70,32 +70,15 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BuildingSpecification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Revolution\Actor.Interfaces\Actor.Interfaces.csproj">
-      <Project>{8b10c72d-9f33-4290-b562-44cf1f718fa5}</Project>
-      <Name>Actor.Interfaces</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Revolution\Common\Common.csproj">
       <Project>{CB6D5FBC-0C13-437D-B4F3-A0EC4D5673B3}</Project>
       <Name>Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Revolution\GenSoft.Entities\GenSoft.Entities.csproj">
-      <Project>{8ed4d838-4075-41b4-88a4-731ff303fb54}</Project>
-      <Name>GenSoft.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Revolution\RevolutionEntities\RevolutionEntities.csproj">
-      <Project>{C827930A-0D05-4EE2-B9AC-DB1CF5144E16}</Project>
-      <Name>RevolutionEntities</Name>
     </ProjectReference>
     <ProjectReference Include="..\Revolution\SystemInterfaces\SystemInterfaces.csproj">
       <Project>{e3842263-e081-49ba-a1b4-bbe82b24e2db}</Project>

@@ -1,17 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reactive.Linq;
-using System.Windows;
 using SystemInterfaces;
-using Actor.Interfaces;
 using Common;
 using DomainUtilities;
 using EventMessages.Commands;
 using JB.Collections.Reactive;
 using Process.WorkFlow;
-using Reactive.Bindings;
-using Reactive.EventAggregator;
 using RevolutionEntities.Process;
 using RevolutionEntities.ViewModels;
 using ViewModel.Interfaces;

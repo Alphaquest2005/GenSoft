@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using SystemInterfaces;
 using Actor.Interfaces;
-using Common.DataEntites;
 using DomainUtilities;
 using EventMessages.Commands;
 using RevolutionData;
@@ -119,15 +118,16 @@ namespace Process.WorkFlow
                    
                     process, new List<IProcessExpectedEvent>
                     {
+                        new ProcessExpectedEvent("CurrentApplicationChanged", process, typeof(ICurrentApplicationChanged),
+                            e => e != null , new StateEventInfo(process, RevolutionData.Context.Actor.Events.ActorStarted),
+                            new SourceType(typeof(IProcessService))),
                         new ProcessExpectedEvent("ProcessServiceStarted", process, typeof(IStartSystemProcess),
                             e => e != null && e.Process == process , new StateEventInfo(process, RevolutionData.Context.Actor.Events.ActorStarted),
                             new SourceType(typeof(IProcessService))),
                         new ProcessExpectedEvent("MainEntityChanged", process, typeof(IMainEntityChanged),
                             e => e != null , new StateEventInfo(process, RevolutionData.Context.Actor.Events.ActorStarted),
                             new SourceType(typeof(IProcessService))),
-                        new ProcessExpectedEvent("CurrentApplicationChanged", process, typeof(ICurrentApplicationChanged),
-                            e => e != null , new StateEventInfo(process, RevolutionData.Context.Actor.Events.ActorStarted),
-                            new SourceType(typeof(IProcessService))),
+                        
 
                     },
                     typeof(ICleanUpSystemProcess),

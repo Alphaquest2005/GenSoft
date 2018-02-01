@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using SystemInterfaces;
-using GenSoft.Interfaces;
 using ViewModel.Interfaces;
 
 namespace Actor.Interfaces

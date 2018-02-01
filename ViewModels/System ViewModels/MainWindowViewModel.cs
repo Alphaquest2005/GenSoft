@@ -5,18 +5,14 @@
 
 
 using System;
-using System.Linq;
-using System.Reactive.Linq;
 using SystemInterfaces;
 using Core.Common.UI;
 using EventAggregator;
 using Process.WorkFlow;
 using Reactive.Bindings;
 using RevolutionData;
-using RevolutionEntities.Process;
 using RevolutionEntities.ViewModels;
 using ViewModel.Interfaces;
-using ViewModel.WorkFlow;
 
 namespace ViewModels
 {
@@ -51,9 +47,9 @@ namespace ViewModels
 
         private void OnCurrentApplicationChanged(ICurrentApplicationChanged currentEntityChanged)
         {
-            if (currentEntityChanged.Application == null) return;
-            if (CurrentApplication?.Id == currentEntityChanged.Application.Id) return;
-            CurrentApplication = currentEntityChanged.Application;
+            if (currentEntityChanged.Entity == null) return;
+            if (CurrentApplication?.Id == currentEntityChanged.Entity.Id) return;
+            CurrentApplication = currentEntityChanged.Entity;
         }
 
         private IDynamicEntity _currentApplication;

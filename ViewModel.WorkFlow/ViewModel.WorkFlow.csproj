@@ -72,10 +72,7 @@
       <HintPath>..\Revolution\Amoeba\T4 Repository\bin\Debug\MoreLinq.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -97,14 +94,6 @@
       <Project>{4F0BAA58-3B45-4136-8095-445D406B4D23}</Project>
       <Name>Process.WorkFlow</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Revolution\Actor.Interfaces\Actor.Interfaces.csproj">
-      <Project>{8b10c72d-9f33-4290-b562-44cf1f718fa5}</Project>
-      <Name>Actor.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Revolution\BootStrapper\BootStrapper.csproj">
-      <Project>{5DFEEA8B-BABA-4544-BF36-0A76A0D10C1B}</Project>
-      <Name>BootStrapper</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Revolution\CommonMessages\CommonMessages.csproj">
       <Project>{77007560-89DC-4E1F-9313-AE064A048AD4}</Project>
       <Name>CommonMessages</Name>
@@ -112,10 +101,6 @@
     <ProjectReference Include="..\Revolution\Common\Common.csproj">
       <Project>{cb6d5fbc-0c13-437d-b4f3-a0ec4d5673b3}</Project>
       <Name>Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Revolution\Core.Common.UI\Core.Common.UI.csproj">
-      <Project>{5DD82AD7-F344-45E3-92CC-96F8D07700AF}</Project>
-      <Name>Core.Common.UI</Name>
     </ProjectReference>
     <ProjectReference Include="..\Revolution\DomainUtilities\DomainUtilities.csproj">
       <Project>{4FAC145F-FB23-4F9D-9A8B-0BA4BF41D89E}</Project>
@@ -128,10 +113,6 @@
     <ProjectReference Include="..\Revolution\EventMessages\EventMessages.csproj">
       <Project>{e3d04176-3758-4c9d-84f3-7a4d3859eae5}</Project>
       <Name>EventMessages</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Revolution\GenSoft.DBContext\GenSoft.DBContext.csproj">
-      <Project>{AE0F4302-D3DF-4561-96A0-0B093F988C03}</Project>
-      <Name>GenSoft.DBContext</Name>
     </ProjectReference>
     <ProjectReference Include="..\Revolution\GenSoft.Entities\GenSoft.Entities.csproj">
       <Project>{8ED4D838-4075-41B4-88A4-731FF303FB54}</Project>
@@ -156,10 +137,6 @@
     <ProjectReference Include="..\Revolution\Utilities\Utilities.csproj">
       <Project>{0f9427b1-792e-4c35-97d8-22a9494ce28f}</Project>
       <Name>Utilities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Revolution\ViewMessages\ViewMessages.csproj">
-      <Project>{eb1e2e94-d6fb-49df-8036-9bf910e3b7aa}</Project>
-      <Name>ViewMessages</Name>
     </ProjectReference>
     <ProjectReference Include="..\Revolution\ViewModel.Interfaces\ViewModel.Interfaces.csproj">
       <Project>{2f936e24-723e-4e7a-b21c-d6f618c74651}</Project>

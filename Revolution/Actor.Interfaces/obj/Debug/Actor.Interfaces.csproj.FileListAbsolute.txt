@@ -28,11 +28,9 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\System.Rea
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\System.Reactive.PlatformServices.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\System.Reactive.Windows.Threading.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\Akka.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\GenSoft.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\System.Collections.Immutable.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\SystemInterfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\ViewModel.Interfaces.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\GenSoft.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\SystemInterfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\ViewModel.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\Debug\Akka.xml

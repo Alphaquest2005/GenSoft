@@ -181,10 +181,6 @@
       <Project>{cb6d5fbc-0c13-437d-b4f3-a0ec4d5673b3}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GenSoft.Interface\GenSoft.Interface.csproj">
-      <Project>{F90CC1C1-1F4E-4719-817B-9A14CE56A5CE}</Project>
-      <Name>GenSoft.Interface</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SystemInterfaces\SystemInterfaces.csproj">
       <Project>{e3842263-e081-49ba-a1b4-bbe82b24e2db}</Project>
       <Name>SystemInterfaces</Name>
