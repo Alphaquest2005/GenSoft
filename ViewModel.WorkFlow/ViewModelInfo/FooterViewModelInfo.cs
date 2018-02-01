@@ -87,7 +87,7 @@ namespace RevolutionData
 
                     new ViewEventCommand<IFooterViewModel, INavigateToView>(
                         key: "NavigateToView",
-                        commandPredicate: new List<Func<IFooterViewModel, bool>> {s => s.CurrentEntity.Value != null},
+                        commandPredicate: new List<Func<IFooterViewModel, bool>> {s => s.CurrentEntity?.Value != null},
                         subject: s => Observable.Empty<ReactiveCommand<IViewModel>>(),
 
                         messageData: s => new ViewEventCommandParameter(

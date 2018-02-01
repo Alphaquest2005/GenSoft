@@ -20,7 +20,8 @@ namespace EventAggregator
         public IObservable<TEvent> GetEvent<TEvent>(ISource caller) where TEvent : IProcessSystemMessage
         {
             Contract.Requires(caller != null);
-            Logger.Log( LoggingLevel.Info ,$"Caller:{caller.SourceName} | GetEvent : {typeof(TEvent).GetFriendlyName()}|| ProcessId-{caller.Process?.Id}");
+            var er = typeof(TEvent) as IEntityRequest;
+            Logger.Log( LoggingLevel.Info ,$"Caller:{caller.SourceName} | GetEvent : {typeof(TEvent).GetFriendlyName()}|| ProcessId-{caller.Process?.Id} || EntityType-{(er != null ? er.EntityType.Name : "")}");
             return ea.GetEvent<TEvent>();
         }
 
@@ -31,7 +32,7 @@ namespace EventAggregator
             {
                 Contract.Requires(sender != null || sampleEvent != null);
                 Logger.Log(LoggingLevel.Info,
-                    $"Sender:{sender.SourceName} | PublishEvent : {typeof(TEvent).GetFriendlyName()}| ProcessInfo:Status-{sampleEvent?.ProcessInfo?.State?.Status}|| ProcessId-{sampleEvent?.Process.Id}");
+                    $"Sender:{sender.SourceName} | PublishEvent : {typeof(TEvent).GetFriendlyName()}| ProcessInfo:Status-{sampleEvent?.ProcessInfo?.State?.Status}|| ProcessId-{sampleEvent?.Process.Id} || EntityType-{(sampleEvent is IEntityRequest er?er.EntityType.Name:"")}");
                 ea.Publish(sampleEvent);
 
             }

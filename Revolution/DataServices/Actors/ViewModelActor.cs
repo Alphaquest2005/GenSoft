@@ -21,12 +21,7 @@ namespace DataServices.Actors
         {
             ctx = Context;
             Command<LoadViewModel>(x => HandleProcessViews(x));
-
             
-            //EventMessageBus.Current.Publish(
-            //    new ServiceStarted<IViewModelService>(this,
-            //        new StateEventInfo(process, RevolutionData.Context.Actor.Events.ActorStarted), process, Source),
-            //    Source);
         }
         
 
@@ -72,7 +67,7 @@ namespace DataServices.Actors
 
 
 
-        public static TViewModel CreateViewModel<TViewModel>(ISystemProcess vmInfoProcess, IViewModelInfo vmInfo)
+        public TViewModel CreateViewModel<TViewModel>(ISystemProcess vmInfoProcess, IViewModelInfo vmInfo)
             where TViewModel : IViewModel
         {
             try
@@ -111,7 +106,7 @@ namespace DataServices.Actors
                 {
                     var cvm = (IViewModel) typeof(ViewModelActor).GetMethod("CreateViewModel")
                         .MakeGenericMethod(v.ViewModelType)
-                        .Invoke(null, new object[] {vmInfoProcess, v});
+                        .Invoke(this, new object[] {vmInfoProcess, v});
                     cvm.Visibility.Value = v.Visibility;
                     vm.ViewModels.Add(cvm);
                 }

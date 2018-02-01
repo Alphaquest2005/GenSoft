@@ -27,7 +27,7 @@ namespace DataServices.Actors
     {
 
         private ConcurrentQueue<IProcessSystemMessage> msgQue = new ConcurrentQueue<IProcessSystemMessage>();
-        private ReadOnlyCollection<IComplexEventAction> _complexEvents = new ReadOnlyCollection<IComplexEventAction>(new List<IComplexEventAction>());
+        private ConcurrentQueue<IComplexEventAction> _complexEvents = new ConcurrentQueue<IComplexEventAction>();
 
         public ConcurrentDictionary<Type, IProcessStateMessage> ProcessStateMessages { get; } =
             new ConcurrentDictionary<Type, IProcessStateMessage>();
@@ -78,7 +78,7 @@ namespace DataServices.Actors
 
                 });
 
-            _complexEvents = new ReadOnlyCollection<IComplexEventAction>(msg.ComplexEvents);
+            Parallel.ForEach(msg.ComplexEvents, itm => { _complexEvents.Enqueue(itm); });
             StartActors(_complexEvents);
             EventMessageBus.Current.GetEvent<ILoadProcessComplexEvents>(Source)
                 .Where(x => $"{x.Name}".GetSafeActorName() == ActorName).Subscribe(x => HandleDomainProcess(x));
@@ -87,7 +87,7 @@ namespace DataServices.Actors
 
         private void CleanUpActor(ICleanUpSystemProcess cleanUpSystemProcess)
         {
-            _complexEvents = new ReadOnlyCollection<IComplexEventAction>(new List<IComplexEventAction>());
+            _complexEvents = new ConcurrentQueue<IComplexEventAction>();
         }
 
 
@@ -96,7 +96,7 @@ namespace DataServices.Actors
             var lst = new List<IComplexEventAction>(_complexEvents);
             var newLst = complexEvents.Where(x => _complexEvents.All(z => z.Key != x.Key)).ToList();
             lst.AddRange(newLst);
-            _complexEvents = new ReadOnlyCollection<IComplexEventAction>(lst);
+            Parallel.ForEach(lst, itm => { _complexEvents.Enqueue(itm); });
             StartActors(newLst);
         }
 
@@ -171,25 +171,27 @@ namespace DataServices.Actors
         private void StartActors(IEnumerable<IComplexEventAction> complexEvents)
         {
             Contract.Requires(complexEvents.Any() && complexEvents != null);
-            //Parallel.ForEach(complexEvents, new ParallelOptions() { MaxDegreeOfParallelism = Environment.ProcessorCount },(cp) =>
-            //{
-            foreach (var cp in complexEvents)
-            {
-                var inMsg = new CreateComplexEventService(new ComplexEventService(cp.Key, cp, Process, Source),
-                    new StateCommandInfo(Process, RevolutionData.Context.Actor.Commands.StartActor), Process, Source);
+            Parallel.ForEach(complexEvents, new ParallelOptions() { MaxDegreeOfParallelism = Environment.ProcessorCount },
+                (cp) =>
+                {
+                    //foreach (var cp in complexEvents)
+                    //{
+                    var inMsg = new CreateComplexEventService(new ComplexEventService(cp.Key, cp, Process, Source),
+                        new StateCommandInfo(Process, RevolutionData.Context.Actor.Commands.StartActor), Process,
+                        Source);
 
 
-                Publish(inMsg);
-                try
-                {
-                    CreateComplexEventService.Invoke(inMsg);
-                }
-                catch (Exception ex)
-                {
-                    PublishProcesError(inMsg, ex, typeof(IServiceStarted<IComplexEventService>));
-                }
-            }
-            //);
+                    Publish(inMsg);
+                    try
+                    {
+                        CreateComplexEventService.Invoke(inMsg);
+                    }
+                    catch (Exception ex)
+                    {
+                        PublishProcesError(inMsg, ex, typeof(IServiceStarted<IComplexEventService>));
+                    }
+                    // }
+                });
         }
 
         private void HandleProcessEvents(IProcessSystemMessage pe)
