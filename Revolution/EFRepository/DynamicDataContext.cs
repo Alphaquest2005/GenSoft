@@ -27,12 +27,12 @@ namespace EFRepository
         private static Application CurrentApplication { get;  set; }
         private static void OnCurrentApplicationChanged(ICurrentApplicationChanged currentEntityChanged)
         {
-            if (currentEntityChanged.Entity == null) return;
-            if (CurrentApplication?.Id == currentEntityChanged.Entity?.Id) return;
+            if (currentEntityChanged.Application == null) return;
+            if (CurrentApplication?.Id == currentEntityChanged.Application?.Id) return;
             using (var ctx = new GenSoftDBContext())
             {
                 CurrentApplication = ctx.Application.Include(x => x.DatabaseInfo)
-                    .First(x => x.Id == currentEntityChanged.Entity.Id);
+                    .First(x => x.Id == currentEntityChanged.Application.Id);
             }
         }
 

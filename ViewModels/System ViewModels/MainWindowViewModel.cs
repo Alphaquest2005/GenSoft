@@ -47,9 +47,9 @@ namespace ViewModels
 
         private void OnCurrentApplicationChanged(ICurrentApplicationChanged currentEntityChanged)
         {
-            if (currentEntityChanged.Entity == null) return;
-            if (CurrentApplication?.Id == currentEntityChanged.Entity.Id) return;
-            CurrentApplication = currentEntityChanged.Entity;
+            if (currentEntityChanged.Application == null) return;
+            if (CurrentApplication?.Id == currentEntityChanged.Application.Id) return;
+            CurrentApplication = currentEntityChanged.Application;
         }
 
         private IDynamicEntity _currentApplication;

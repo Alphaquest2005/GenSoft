@@ -32,9 +32,9 @@ namespace EFRepository
         private static Application CurrentApplication { get;  set; }
         private static void OnCurrentApplicationChanged(ICurrentApplicationChanged currentEntityChanged)
         {
-            if(currentEntityChanged.Entity == null) return;
-            if (CurrentApplication?.Id == currentEntityChanged.Entity.Id) return;
-            SetCurrentApplication(currentEntityChanged.Entity.Id);
+            if(currentEntityChanged.Application == null) return;
+            if (CurrentApplication?.Id == currentEntityChanged.Application.Id) return;
+            SetCurrentApplication(currentEntityChanged.Application.Id);
         }
 
         private static void SetCurrentApplication(int appId)
