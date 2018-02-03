@@ -215,13 +215,21 @@ namespace DataServices.Actors
 
                 Task.Run(() =>
                 {
-                    var child = ctx.Child(
-                        $"ComplexEventActor:-{inMsg.ComplexEventService.ActorId.GetSafeActorName()}-{inMsg.Process.Id}");
-                    if (Equals(child, ActorRefs.Nobody))
-                    {
-                        ctx.ActorOf(Props.Create<ComplexEventActor>(inMsg),
-                            $"ComplexEventActor:-{inMsg.ComplexEventService.ActorId.GetSafeActorName()}-{inMsg.Process.Id}");
-                    }
+                var child = ctx.Child(
+                    $"ComplexEventActor:-{inMsg.ComplexEventService.ActorId.GetSafeActorName()}-{inMsg.Process.Id}");
+                if (Equals(child, ActorRefs.Nobody))
+                {
+                    try
+                        {
+                            ctx.ActorOf(Props.Create<ComplexEventActor>(inMsg),
+                                $"ComplexEventActor:-{inMsg.ComplexEventService.ActorId.GetSafeActorName()}-{inMsg.Process.Id}");
+                        }
+                        catch (Exception ex)
+                        {
+                            if (!ex.Message.Contains("Active Context")) throw;
+                        }
+
+                   }
                 }).ConfigureAwait(false);
 
             }

@@ -11,7 +11,7 @@
             <converters:NullVisibilityConverter x:Key="NullVisibilityConverter" />
         </DataTemplate.Resources>
         <Grid>
-            <Button Content="{Binding Key}" Command="{Binding Value}" Margin="10" Width="100" Height="50"/>
+            <Button Content="{Binding Key, IsAsync=True}" Command="{Binding Value, IsAsync=True}" Margin="10" Width="100" Height="50"/>
         </Grid>
 
     </DataTemplate>

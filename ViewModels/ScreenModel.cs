@@ -7,6 +7,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.Threading;
 using SystemInterfaces;
 using Core.Common.UI;
 using JB.Collections.Reactive;

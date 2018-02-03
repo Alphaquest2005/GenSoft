@@ -192,8 +192,8 @@
             <ComboBox Width="200" Height="30" 
                       DisplayMemberPath="Name"
                       SelectedValuePath="Id"
-                      SelectedItem="{Binding CurrentEntity.Value}"
-                      ItemsSource="{Binding Entities.Value, Mode=OneWay }" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,21,10,0"/>
+                      SelectedItem="{Binding CurrentEntity.Value, IsAsync=True}"
+                      ItemsSource="{Binding Entities.Value, IsAsync=True, Mode=OneWay }" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,21,10,0"/>
 
         </Grid>
     </DataTemplate>

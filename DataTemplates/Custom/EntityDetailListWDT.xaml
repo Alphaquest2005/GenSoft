@@ -18,7 +18,7 @@
                        VerticalAlignment="Top"
                        FontSize="18"
                        FontWeight="Bold"
-                       Text="{Binding State.Value.StateInfo.State.Status}" />
+                       Text="{Binding State.Value.StateInfo.State.Status, IsAsync=True}" />
 
             <ListBox Width="Auto"
                      Height="Auto"
@@ -29,7 +29,7 @@
                      Background="#33FFFFFF"
                      IsSynchronizedWithCurrentItem="True"
                      ItemTemplate="{DynamicResource EntityDetailWDT}"
-                     ItemsSource="{Binding State.Value.Entity.PropertyList}"
+                     ItemsSource="{Binding State.Value.Entity.PropertyList, IsAsync=True}"
                      SelectedItem="{Binding CurrentProperty.Value,  Mode=TwoWay, IsAsync=True}"/>
             
         </Grid>

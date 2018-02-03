@@ -41,7 +41,7 @@
                           MaxHeight="125"
                           DockPanel.Dock="Top"
                           Focusable="True"
-                          ItemsSource="{Binding HeaderViewModels}">
+                          ItemsSource="{Binding HeaderViewModels, IsAsync=True}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <Grid />
@@ -59,7 +59,7 @@
                           MinHeight="0"
                           DockPanel.Dock="Bottom"
                           Focusable="True"
-                          ItemsSource="{Binding FooterViewModels}">
+                          ItemsSource="{Binding FooterViewModels, IsAsync=True}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <Grid />
@@ -76,7 +76,7 @@
             <ItemsControl Margin="5"
                           DockPanel.Dock="Left"
                           Focusable="True"
-                          ItemsSource="{Binding LeftViewModels}">
+                          ItemsSource="{Binding LeftViewModels, IsAsync=True}">
 
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -96,7 +96,7 @@
                           Margin="5"
                           DockPanel.Dock="Right"
                           Focusable="True"
-                          ItemsSource="{Binding RightViewModels}">
+                          ItemsSource="{Binding RightViewModels, IsAsync=True}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <Grid />
@@ -120,7 +120,7 @@
                                 Focusable="True"
                                 Orientation="Horizontal">
 
-                    <ItemsControl Margin="0" ItemsSource="{Binding BodyViewModels}">
+                    <ItemsControl Margin="0" ItemsSource="{Binding BodyViewModels, IsAsync=True}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
@@ -151,7 +151,7 @@
                                                        FontFamily="Segoe UI Symbol"
                                                        FontSize="28"
                                                        Style="{DynamicResource ExpHeadStyle}"
-                                                       Text="{Binding ViewInfo.Symbol}" />
+                                                       Text="{Binding ViewInfo.Symbol, IsAsync=True}" />
                                             <TextBlock Width="77"
                                                        Height="72"
                                                        Margin="0,0,12.6,417"
@@ -161,7 +161,7 @@
                                                        FontWeight="Bold"
                                                        RenderTransformOrigin="0.535,1.32"
                                                        Style="{DynamicResource ExpHeadStyle}"
-                                                       Text="{Binding ViewInfo.Description}"
+                                                       Text="{Binding ViewInfo.Description, IsAsync=True}"
                                                        TextAlignment="Center"
                                                        TextWrapping="Wrap" />
 
@@ -175,7 +175,7 @@
                                                    VerticalAlignment="Top"
                                                    FontSize="20"
                                                    Style="{DynamicResource TextButtonStyle}"
-                                                   Text="{Binding ViewInfo.Description}"
+                                                   Text="{Binding ViewInfo.Description, IsAsync=True}"
                                                    TextWrapping="Wrap" />
                                         <ContentPresenter Margin="0,38,0,0"
                                                           Content="{TemplateBinding Content}"

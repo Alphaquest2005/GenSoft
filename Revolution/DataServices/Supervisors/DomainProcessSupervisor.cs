@@ -192,14 +192,14 @@ namespace DataServices.Actors
 
         private void StartProcess(int objProcessToBeStartedId, IUser user)
         {
-            var dp = _domainProcessLst.First(x => x.Id == objProcessToBeStartedId);
-            LoadDomainProcess(dp,user);
+            var dp = _domainProcessLst.FirstOrDefault(x => x.Id == objProcessToBeStartedId);
+            if (dp != null) LoadDomainProcess(dp,user);
         }
 
         private void StartParentProcess(int processId, IUser user)
         {
-            var dp = _domainProcessLst.First(x => x.SystemProcess.ParentSystemProcess.ParentProcessId == processId);
-            LoadDomainProcess(dp, user);
+            var dp = _domainProcessLst.FirstOrDefault(x => x.SystemProcess.ParentSystemProcess.ParentProcessId == processId);
+            if(dp != null) LoadDomainProcess(dp, user);
         }
 
         private void LoadDomainProcess(DomainProcess domainProcess, IUser user)

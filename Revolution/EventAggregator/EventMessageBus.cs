@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Diagnostics.Contracts;
+using System.Threading;
 using System.Threading.Tasks;
 using SystemInterfaces;
 using Common;
@@ -27,7 +28,6 @@ namespace EventAggregator
         {
             Contract.Requires(caller != null);
             var er = typeof(TEvent) as IEntityRequest;
-            
             Logger.Log( LoggingLevel.Info ,$"Caller:{caller.SourceName} | GetEvent : {typeof(TEvent).GetFriendlyName()}|| ProcessId-{caller.Process?.Id} || EntityType-{(er != null ? er.EntityType.Name : "")}");
             Task.Run(() =>
             {
@@ -51,7 +51,7 @@ namespace EventAggregator
                 
                 Task.Run(() =>
                 {
-                    var key = $"{typeof(TEvent).GetFriendlyName()}-{sampleEvent.Process.Id}";
+                    var key = $"I{typeof(TEvent).GetFriendlyName()}-{sampleEvent.Process.Id}";
                     eventStore.AddOrUpdate(key, sampleEvent);
                 });
                 Task.Run(() => { ea.Publish(sampleEvent);});

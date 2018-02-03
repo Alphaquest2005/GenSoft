@@ -62,9 +62,9 @@ namespace ViewModel.WorkFlow
 
         public static readonly List<IViewModelInfo> ProcessViewModelInfos = new List<IViewModelInfo>
         {
-            ScreenViewModelInfo.ScreenViewModel(),
             HeaderViewModelInfo.HeaderViewModel(),
-            FooterViewModelInfo.FooterViewModel()
+            FooterViewModelInfo.FooterViewModel(),
+            ScreenViewModelInfo.ScreenViewModel(),
         };
 
         

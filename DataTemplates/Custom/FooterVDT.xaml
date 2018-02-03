@@ -13,8 +13,8 @@
             <ListBox Width="Auto"
                         HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent"
                      ItemTemplate="{DynamicResource FooterInfoRDT}"
-                     ItemsSource="{Binding Entities.Value, Mode=OneWay}"
-                     SelectedItem="{Binding CurrentEntity.Value}"
+                     ItemsSource="{Binding Entities.Value, IsAsync=True, Mode=OneWay}"
+                     SelectedItem="{Binding CurrentEntity.Value, IsAsync=True}"
                      VerticalContentAlignment="Stretch">
 
                 <ListBox.ItemsPanel>
@@ -24,7 +24,7 @@
                 </ListBox.ItemsPanel>
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="MouseLeftButtonUp">
-                        <i:InvokeCommandAction Command="{Binding Commands[NavigateToView]}" />
+                        <i:InvokeCommandAction Command="{Binding Commands[NavigateToView], IsAsync=True}" />
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </ListBox>
