@@ -350,9 +350,14 @@ namespace Core.Common.UI
             DependencyObject slidcontents;
             try
             {
-                slidcontents = Common.FindChild(slid, ctl);
+                Application.Current.Dispatcher.BeginInvoke(new Action<object>((x) =>
+                {
+                    slidcontents = Common.FindChild(slid, ctl);
+                    BringIntoView(slidcontents as FrameworkElement);
+                }));
 
-                BringIntoView(slidcontents as FrameworkElement);
+
+
             }
             catch (Exception)
             {

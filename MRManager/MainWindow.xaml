@@ -25,8 +25,8 @@
         <Grid x:Name="LayoutRoot" Background="#4C0E0475">
             <Viewbox Margin="0,125,0,0"
                     Stretch="Uniform"  StretchDirection="Both">
-                
-                <ContentControl  Content="{Binding ScreenModel.Value, Source={StaticResource MainWindowViewModelDataSource}, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <ContentControl  Content="{Binding ScreenModel.Value, IsAsync=True, PresentationTraceSources.TraceLevel=High, Source={StaticResource MainWindowViewModelDataSource}, UpdateSourceTrigger=PropertyChanged}"/>
             </Viewbox>
             <TextBlock x:Name="BackBtn"
                     Width="70"
@@ -50,7 +50,7 @@
                     FontFamily="Segoe UI Light"
                     FontSize="48"
                     Style="{DynamicResource TextButtonStyle}"
-                    Text="{Binding CurrentApplication.Properties[Name] , Source={StaticResource MainWindowViewModelDataSource}}"
+                    Text="{Binding CurrentApplication.Properties[Name], IsAsync=True, PresentationTraceSources.TraceLevel=High , Source={StaticResource MainWindowViewModelDataSource}}"
                     TextWrapping="Wrap" />
             <Border
                     Height="1"

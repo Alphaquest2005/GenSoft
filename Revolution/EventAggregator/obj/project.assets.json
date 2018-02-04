@@ -5627,14 +5627,8 @@
       "frameworks": {
         "net47": {
           "projectReferences": {
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionLogger\\RevolutionLogger.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionLogger\\RevolutionLogger.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Utilities\\Utilities.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Utilities\\Utilities.csproj"
+            "C:\\Prism\\GitRepositiory\\GenSoft\\MRManager\\Process.WorkFlow\\Process.WorkFlow.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\MRManager\\Process.WorkFlow\\Process.WorkFlow.csproj"
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Common\\Common.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Common\\Common.csproj"
@@ -5645,11 +5639,17 @@
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Interface\\GenSoft.Interface.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Interface\\GenSoft.Interface.csproj"
             },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\MRManager\\Process.WorkFlow\\Process.WorkFlow.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\MRManager\\Process.WorkFlow\\Process.WorkFlow.csproj"
-            },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionEntities\\RevolutionEntities.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionEntities\\RevolutionEntities.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionLogger\\RevolutionLogger.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionLogger\\RevolutionLogger.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Utilities\\Utilities.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Utilities\\Utilities.csproj"
             }
           }
         }

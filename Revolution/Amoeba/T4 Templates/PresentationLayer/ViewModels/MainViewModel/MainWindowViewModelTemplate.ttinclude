@@ -1,5 +1,5 @@
 ﻿<#@ include file="T4Toolbox.tt" #>
-<#@ assembly name="C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Templates\bin\Debug\T4Entities.dll" #>
+<#@ assembly name="C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Templates\bin\x86\Debug\T4Entities.dll" #>
 <#+
 // <copyright file="EFEntityTemplate.tt" company="">
 //  Copyright © . All Rights Reserved.

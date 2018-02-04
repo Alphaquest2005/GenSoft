@@ -6268,41 +6268,23 @@
       "frameworks": {
         "net47": {
           "projectReferences": {
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Actor.Interfaces\\Actor.Interfaces.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Actor.Interfaces\\Actor.Interfaces.csproj"
+            "C:\\Prism\\GitRepositiory\\GenSoft\\DataTemplates\\DataTemplates.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\DataTemplates\\DataTemplates.csproj"
             },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\BootStrapper\\BootStrapper.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\BootStrapper\\BootStrapper.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Core.Common.UI\\Core.Common.UI.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Core.Common.UI\\Core.Common.UI.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionLogger\\RevolutionLogger.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionLogger\\RevolutionLogger.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\ViewModel.WorkFlow\\ViewModel.WorkFlow.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\ViewModel.WorkFlow\\ViewModel.WorkFlow.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\ViewModels\\ViewModels.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\ViewModels\\ViewModels.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\MRManager\\Process.WorkFlow\\Process.WorkFlow.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\MRManager\\Process.WorkFlow\\Process.WorkFlow.csproj"
+            "C:\\Prism\\GitRepositiory\\GenSoft\\DesignTimeData\\DesignTimeData.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\DesignTimeData\\DesignTimeData.csproj"
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Resources\\Resources.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Resources\\Resources.csproj"
             },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Actor.Interfaces\\Actor.Interfaces.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Actor.Interfaces\\Actor.Interfaces.csproj"
+            },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ActorSystem\\ActorSystem.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ActorSystem\\ActorSystem.csproj"
             },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\MefGeneric-master\\MEFGeneric Preview 9\\src\\ComponentModel.Composition.Hosting.Extension\\ComponentModel.Composition.Hosting.Extension.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\MefGeneric-master\\MEFGeneric Preview 9\\src\\ComponentModel.Composition.Hosting.Extension\\ComponentModel.Composition.Hosting.Extension.csproj"
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\BootStrapper\\BootStrapper.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\BootStrapper\\BootStrapper.csproj"
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\CommonMessages\\CommonMessages.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\CommonMessages\\CommonMessages.csproj"
@@ -6310,17 +6292,17 @@
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Converters\\Converters.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Converters\\Converters.csproj"
             },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Core.Common.UI\\Core.Common.UI.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Core.Common.UI\\Core.Common.UI.csproj"
+            },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\DataServices\\DataServices.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\DataServices\\DataServices.csproj"
             },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\DataTemplates\\DataTemplates.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\DataTemplates\\DataTemplates.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\DesignTimeData\\DesignTimeData.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\DesignTimeData\\DesignTimeData.csproj"
-            },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\DomainUtilities\\DomainUtilities.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\DomainUtilities\\DomainUtilities.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\DynamicLinq\\System.Linq.Dynamic\\System.Linq.Dynamic.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\DynamicLinq\\System.Linq.Dynamic\\System.Linq.Dynamic.csproj"
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\EFRepository\\EFRepository.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\EFRepository\\EFRepository.csproj"
@@ -6349,6 +6331,9 @@
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\LinqSpecs\\LinqSpecs.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\LinqSpecs\\LinqSpecs.csproj"
             },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\MefGeneric-master\\MEFGeneric Preview 9\\src\\ComponentModel.Composition.Hosting.Extension\\ComponentModel.Composition.Hosting.Extension.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\MefGeneric-master\\MEFGeneric Preview 9\\src\\ComponentModel.Composition.Hosting.Extension\\ComponentModel.Composition.Hosting.Extension.csproj"
+            },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\PropertyExtensions\\PropertyExtensions.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\PropertyExtensions\\PropertyExtensions.csproj"
             },
@@ -6358,8 +6343,11 @@
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionEntities\\RevolutionEntities.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionEntities\\RevolutionEntities.csproj"
             },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\DynamicLinq\\System.Linq.Dynamic\\System.Linq.Dynamic.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\DynamicLinq\\System.Linq.Dynamic\\System.Linq.Dynamic.csproj"
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionLogger\\RevolutionLogger.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionLogger\\RevolutionLogger.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj"
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\UserControls\\UserControls.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\UserControls\\UserControls.csproj"
@@ -6367,14 +6355,26 @@
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Utilities\\Utilities.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Utilities\\Utilities.csproj"
             },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\ValidationSets\\ValidationSets.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\ValidationSets\\ValidationSets.csproj"
-            },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewMessages\\ViewMessages.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewMessages\\ViewMessages.csproj"
             },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj"
+            },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\XamlGenericTypeExtension\\XamlGenericTypeExtension.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\XamlGenericTypeExtension\\XamlGenericTypeExtension.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\ValidationSets\\ValidationSets.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\ValidationSets\\ValidationSets.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\ViewModel.WorkFlow\\ViewModel.WorkFlow.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\ViewModel.WorkFlow\\ViewModel.WorkFlow.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\ViewModels\\ViewModels.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\ViewModels\\ViewModels.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\MRManager\\Process.WorkFlow\\Process.WorkFlow.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\MRManager\\Process.WorkFlow\\Process.WorkFlow.csproj"
             }
           }
         }

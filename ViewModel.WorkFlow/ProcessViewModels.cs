@@ -64,7 +64,7 @@ namespace ViewModel.WorkFlow
         {
             HeaderViewModelInfo.HeaderViewModel(),
             FooterViewModelInfo.FooterViewModel(),
-            ScreenViewModelInfo.ScreenViewModel(),
+            new ScreenViewModelInfo().ScreenViewModel(),
         };
 
         

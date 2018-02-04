@@ -316,7 +316,20 @@
       <LastGenOutput>Master1.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\T4 Entities\T4 Entities.csproj">
+      <Project>{dbf39844-950f-48a8-a777-a294bd3fc91a}</Project>
+      <Name>T4 Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\T4 Repository\T4 Repository.csproj">
+      <Project>{288d0e9b-0371-486c-8933-1bf893be86ec}</Project>
+      <Name>T4 Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\T4Utilities\T4Utilities.csproj">
+      <Project>{77b6d3c0-c7bd-4b1b-91c6-257410033bad}</Project>
+      <Name>T4Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

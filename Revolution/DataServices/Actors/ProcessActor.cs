@@ -226,7 +226,7 @@ namespace DataServices.Actors
                         }
                         catch (Exception ex)
                         {
-                            if (!ex.Message.Contains("Active Context")) throw;
+                            if (!ex.Message.Contains("is not unique!")) throw;
                         }
 
                    }

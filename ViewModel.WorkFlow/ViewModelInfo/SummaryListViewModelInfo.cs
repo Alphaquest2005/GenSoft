@@ -67,14 +67,14 @@ namespace RevolutionData
                             actionPredicate: new List<Func<ISummaryListViewModel, IEntityWithChangesUpdated, bool>>(),
                             action: (v, e) =>
                             {
-                                if (Application.Current == null)
-                                {
+                                //if (Application.Current == null)
+                                //{
                                     UpdateEntitySet(v, e);
-                                }
-                                else
-                                {
-                                    Application.Current.Dispatcher.BeginInvoke(new Action(() => UpdateEntitySet(v, e)));
-                                }
+                                //}
+                                //else
+                                //{
+                                //    Application.Current.Dispatcher.BeginInvoke(new Action(() => UpdateEntitySet(v, e)));
+                                //}
                             }),
 
                         new ViewEventSubscription<ISummaryListViewModel, ICurrentEntityChanged>(
@@ -101,12 +101,6 @@ namespace RevolutionData
                             },
                             messageData:s =>
                             {
-
-                                Application.Current.Dispatcher.BeginInvoke(new Action(() =>
-                                {
-                                    //s.EntitySet.Value.Add(BootStrapper.BootStrapper.Container.GetConcreteInstance(typeof(TView)));
-                                   //s.NotifyPropertyChanged(nameof(s.EntitySet));
-                                }));
 
                                 return new ViewEventPublicationParameter(new object[] {s, s.State.Value},
                                     new RevolutionEntities.Process.StateEventInfo(s.Process, Context.View.Events.ProcessStateLoaded), s.Process,
@@ -284,6 +278,7 @@ namespace RevolutionData
 
 
             res.Insert(0, newEntity);
+
             summaryListViewModel.EntitySet.Value = new ObservableList<IDynamicEntity>(res);
             summaryListViewModel.EntitySet.Value.Reset();
 

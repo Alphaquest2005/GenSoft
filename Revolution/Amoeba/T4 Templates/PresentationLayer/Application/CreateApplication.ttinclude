@@ -5,7 +5,7 @@
 <#@ include file="AppXamlTemplate.ttinclude" #>
 <#@ include file="MainWindowTemplate.ttinclude" #>
 <#@ include file="MainWindowCSTemplate.ttinclude" #>
-<#@ assembly name="C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Templates\bin\Debug\T4Entities.dll" #>
+<#@ assembly name="C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Templates\bin\x86\Debug\T4Entities.dll" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="System.IO" #>
 <#+

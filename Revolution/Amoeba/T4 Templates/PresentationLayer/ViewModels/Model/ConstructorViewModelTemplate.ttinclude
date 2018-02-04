@@ -1,5 +1,5 @@
 ﻿<#@ include file="T4Toolbox.tt" #>
-<#@ assembly name="C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Templates\bin\Debug\T4Entities.dll" #>
+<#@ assembly name="C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Templates\bin\x86\Debug\T4Entities.dll" #>
 <#@ import namespace="T4Entities" #>
 <#@ assembly name="System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" #>
 <#@ assembly name="C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\Amoeba\Amoeba\packages\morelinq.1.4.0\lib\net35\MoreLinq.dll" #>

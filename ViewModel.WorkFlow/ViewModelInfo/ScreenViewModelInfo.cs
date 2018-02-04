@@ -14,7 +14,7 @@ namespace RevolutionData
 {
     public class ScreenViewModelInfo
     {
-        public static ViewModelInfo ScreenViewModel()
+        public ViewModelInfo ScreenViewModel()
         {
             
             return new ViewModelInfo
@@ -198,18 +198,39 @@ namespace RevolutionData
 
                             if (Application.Current == null)
                             {
-                                ClearScreenModels(s, e);
+                                ClearScreenModels(s);
                             }
                             else
                             {
                                 Application.Current.Dispatcher.BeginInvoke(new Action(() =>
                                 {
-                                    ClearScreenModels(s, e);
+                                    ClearScreenModels(s);
                                 }));
                             }
                         }),
 
-                    
+                    new ViewEventSubscription<IScreenModel, ICurrentApplicationChanged>(
+                        "ScreenViewModel-ICleanUpSystemProcess",
+                        Processes.IntialSystemProcess,
+                        e => e != null,
+                        new List<Func<IScreenModel, ICurrentApplicationChanged, bool>> { },
+                        (s, e) =>
+                        {
+
+                            if (Application.Current == null)
+                            {
+                                ClearScreenModels(s);
+                            }
+                            else
+                            {
+                                Application.Current.Dispatcher.BeginInvoke(new Action(() =>
+                                {
+                                    ClearScreenModels(s);
+                                }));
+                            }
+                        }),
+
+
                 },
                 new List<IViewModelEventPublication<IViewModel, IEvent>>
                 {
@@ -291,7 +312,7 @@ namespace RevolutionData
                 ));
         }
 
-        private static void ClearScreenModels(IScreenModel s, ICleanUpSystemProcess e)
+        private void ClearScreenModels(IScreenModel s)//, ICleanUpSystemProcess e
         {
             //foreach (var vm in s.BodyViewModels.Where(x => x.Process.Id == e.ProcessToBeCleanedUp.Id).ToList())
             //{

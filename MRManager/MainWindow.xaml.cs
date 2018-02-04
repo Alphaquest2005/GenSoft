@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using Core.Common.UI;
@@ -22,15 +23,13 @@ namespace MRManager
 
             Logger.Log(LoggingLevel.Info, $"The UI Thread is:{Application.Current.Dispatcher.Thread.ManagedThreadId}");
 
-      //      Task.Run(() =>
-		    //{
+            Task.Run(() =>
+            {
 
-		    //    var interfacesAssembly = AppDomain.CurrentDomain.GetAssemblies()
-		    //        .FirstOrDefault(x => x.FullName.StartsWith("Interfaces"));
-                BootStrapper.BootStrapper.Instance.StartUp( true, Process.WorkFlow.Processes.ProcessComplexEvents, ProcessViewModels.ProcessViewModelInfos);
-		    //}).ConfigureAwait(false);
+                BootStrapper.BootStrapper.Instance.StartUp(true, Process.WorkFlow.Processes.ProcessComplexEvents, ProcessViewModels.ProcessViewModelInfos);
+            }).ConfigureAwait(false);
 
-		    InitializeComponent();
+            InitializeComponent();
 
 
         }
