@@ -27,16 +27,22 @@ namespace EventAggregator
         public IObservable<TEvent> GetEvent<TEvent>(ISource caller) where TEvent : IProcessSystemMessage
         {
             Contract.Requires(caller != null);
-            var er = typeof(TEvent) as IEntityRequest;
-            Logger.Log( LoggingLevel.Info ,$"Caller:{caller.SourceName} | GetEvent : {typeof(TEvent).GetFriendlyName()}|| ProcessId-{caller.Process?.Id} || EntityType-{(er != null ? er.EntityType.Name : "")}");
+            var ge = ea.GetEvent<TEvent>();
+            Task.Run(() =>
+            {
+                var er = typeof(TEvent) as IEntityRequest;
+                Logger.Log(LoggingLevel.Info,
+                    $"Caller:{caller.SourceName} | GetEvent : {typeof(TEvent).GetFriendlyName()}|| ProcessId-{caller.Process?.Id} || EntityType-{(er != null ? er.EntityType.Name : "")}");
+            });
             Task.Run(() =>
             {
                 var key = $"{typeof(TEvent).GetFriendlyName()}-{caller.Process.Id}";
                 eventStore.TryGetValue(key, out dynamic sampleEvent);
                 if(sampleEvent != null)
                     Publish(sampleEvent, Source);
+                return ea.GetEvent<TEvent>();
             });
-            return ea.GetEvent<TEvent>();
+            return ge;
         }
 
 
@@ -45,10 +51,11 @@ namespace EventAggregator
             try
             {
                 Contract.Requires(sender != null || sampleEvent != null);
-
-                Logger.Log(LoggingLevel.Info,
-                    $"Sender:{sender.SourceName} | PublishEvent : {typeof(TEvent).GetFriendlyName()}| ProcessInfo:Status-{sampleEvent?.ProcessInfo?.State?.Status}|| ProcessId-{sampleEvent.Process.Id} || EntityType-{(sampleEvent is IEntityRequest er?er.EntityType.Name:"")}");
-                
+                Task.Run(() =>
+                {
+                    Logger.Log(LoggingLevel.Info,
+                        $"Sender:{sender.SourceName} | PublishEvent : {typeof(TEvent).GetFriendlyName()}| ProcessInfo:Status-{sampleEvent?.ProcessInfo?.State?.Status}|| ProcessId-{sampleEvent.Process.Id} || EntityType-{(sampleEvent is IEntityRequest er ? er.EntityType.Name : "")}");
+                });
                 Task.Run(() =>
                 {
                     var key = $"I{typeof(TEvent).GetFriendlyName()}-{sampleEvent.Process.Id}";

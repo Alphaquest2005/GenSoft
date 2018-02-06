@@ -111,11 +111,13 @@ namespace GenSoft.DBContexts
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
 			optionsBuilder.UseSqlServer(DBContext.Properties.Settings.Default.DbConnectionString);
+		    optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 		}
 	
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
-				ActionMap.Map(modelBuilder.Entity<Entities.Action>());
+		   
+            ActionMap.Map(modelBuilder.Entity<Entities.Action>());
 				ActionParameterConstantsMap.Map(modelBuilder.Entity<Entities.ActionParameterConstants>());
 				ActionParameterEntityTypeAttributesMap.Map(modelBuilder.Entity<Entities.ActionParameterEntityTypeAttributes>());
 				ActionParametersMap.Map(modelBuilder.Entity<Entities.ActionParameters>());

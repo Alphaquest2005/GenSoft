@@ -17,3 +17,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\SystemInterfaces\bin\x64\Debug\System
 C:\Prism\GitRepositiory\GenSoft\Revolution\SystemInterfaces\bin\x64\Debug\System.Reactive.Linq.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\SystemInterfaces\bin\x64\Debug\System.Reactive.PlatformServices.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\SystemInterfaces\bin\x64\Debug\System.Reactive.Windows.Threading.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\SystemInterfaces\obj\x64\Debug\SystemInterfaces.csprojResolveAssemblyReference.cache

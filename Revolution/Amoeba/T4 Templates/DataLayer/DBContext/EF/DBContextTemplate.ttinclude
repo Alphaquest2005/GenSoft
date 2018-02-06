@@ -42,6 +42,7 @@ namespace <#=AppName#>.DBContexts
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
 			optionsBuilder.UseSqlServer(DBContext.Properties.Settings.Default.DbConnectionString);
+            optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 		}
 	
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
