@@ -1,0 +1,17 @@
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\bin\Release\GenSoft.Interfaces.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\bin\Release\GenSoft.Interfaces.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\bin\Release\JB.Common.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\bin\Release\JB.Common.Collections.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\bin\Release\JB.Common.Collections.Reactive.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\bin\Release\JB.Common.Reactive.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\bin\Release\System.Reactive.Core.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\bin\Release\System.Reactive.Interfaces.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\bin\Release\System.Reactive.Linq.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\bin\Release\System.Reactive.PlatformServices.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\bin\Release\System.Reactive.Windows.Threading.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\bin\Release\SystemInterfaces.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\bin\Release\SystemInterfaces.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\obj\Release\GenSoft.Interface.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\obj\Release\GenSoft.Interface.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\obj\Release\GenSoft.Interfaces.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\obj\Release\GenSoft.Interfaces.pdb

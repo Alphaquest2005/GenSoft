@@ -1,0 +1,5 @@
+C:\Prism\GitRepositiory\GenSoft\Revolution\DynamicLinq\System.Linq.Dynamic\bin\x64\Release\System.Linq.Dynamic.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\DynamicLinq\System.Linq.Dynamic\bin\x64\Release\System.Linq.Dynamic.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\DynamicLinq\System.Linq.Dynamic\obj\x64\Release\System.Linq.Dynamic.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\DynamicLinq\System.Linq.Dynamic\obj\x64\Release\System.Linq.Dynamic.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\DynamicLinq\System.Linq.Dynamic\obj\x64\Release\System.Linq.Dynamic.pdb

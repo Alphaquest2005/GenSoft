@@ -1,0 +1,10 @@
+C:\Prism\GitRepositiory\GenSoft\Revolution\UserControls\bin\x64\Release\UserControls.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\UserControls\bin\x64\Release\UserControls.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\UserControls\obj\x64\Release\ImageViewer.g.cs
+C:\Prism\GitRepositiory\GenSoft\Revolution\UserControls\obj\x64\Release\UserControls_MarkupCompile.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\UserControls\obj\x64\Release\UserControls_MarkupCompile.lref
+C:\Prism\GitRepositiory\GenSoft\Revolution\UserControls\obj\x64\Release\ImageViewer.baml
+C:\Prism\GitRepositiory\GenSoft\Revolution\UserControls\obj\x64\Release\UserControls.g.resources
+C:\Prism\GitRepositiory\GenSoft\Revolution\UserControls\obj\x64\Release\UserControls.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\UserControls\obj\x64\Release\UserControls.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\UserControls\obj\x64\Release\UserControls.pdb

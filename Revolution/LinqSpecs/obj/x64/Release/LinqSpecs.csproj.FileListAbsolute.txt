@@ -1,0 +1,6 @@
+C:\Prism\GitRepositiory\GenSoft\Revolution\LinqSpecs\bin\x64\Release\LinqSpecs.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\LinqSpecs\bin\x64\Release\LinqSpecs.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\LinqSpecs\bin\x64\Release\LinqSpecs.XML
+C:\Prism\GitRepositiory\GenSoft\Revolution\LinqSpecs\obj\x64\Release\LinqSpecs.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\LinqSpecs\obj\x64\Release\LinqSpecs.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\LinqSpecs\obj\x64\Release\LinqSpecs.pdb

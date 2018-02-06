@@ -1,0 +1,5 @@
+C:\Prism\GitRepositiory\GenSoft\Revolution\PropertyExtensions\bin\x64\Release\PropertyExtensions.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\PropertyExtensions\bin\x64\Release\PropertyExtensions.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\PropertyExtensions\obj\x64\Release\PropertyExtensions.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\PropertyExtensions\obj\x64\Release\PropertyExtensions.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\PropertyExtensions\obj\x64\Release\PropertyExtensions.pdb
