@@ -24,72 +24,152 @@ namespace RevolutionData
     
     public class SummaryListViewModelInfo
     {
-        public static ViewModelInfo SummaryListViewModel(ISystemProcess process, IDynamicEntityType entityType, EntityRelationshipOrdinality ordinality, string symbol, string description, int priority, List<EntityViewModelRelationship> viewRelationships, List<EntityTypeViewModelCommand> viewCommands, IViewAttributeDisplayProperties displayProperties)
+        public static ViewModelInfo SummaryListViewModel(ISystemProcess process, IDynamicEntityType entityType, EntityRelationshipOrdinality ordinality, string symbol, string description, int priority,List<IViewModelInfo> childViews, List<EntityViewModelRelationship> viewRelationships, List<EntityTypeViewModelCommand> viewCommands, IViewAttributeDisplayProperties displayProperties)
         {
             try
             {
+                var sublst = new List<IViewModelEventSubscription<IViewModel, IEvent>>
+                {
+                    //new ViewEventSubscription<ISummaryListViewModel, IViewModelIntialized>(
+                    //    $"{entityType.Name}-IViewModelIntialized",
+                    //    processId,
+                    //    e => e.ViewModel != null,
+                    //    new List<Func<ISummaryListViewModel, IViewModelIntialized, bool>>(),
+                    //    (v,e) =>
+                    //    {
+                    //        if (e.ViewModel.ViewInfo.Name != v.ViewInfo.Name) return;
+                    //        v.EntitySet.Value.Add(new DynamicEntity(entityType,0,new Dictionary<string, object>(){{ "EntityName", "Create New..." } }));
+                    //        v.EntitySet.Value.Reset();
+                    //    }),
+
+                    new ViewEventSubscription<ISummaryListViewModel, IUpdateProcessStateList>(
+                        $"{entityType.Name}-IUpdateProcessStateList",
+                        process,
+                        e => e.EntityType == entityType,
+                        new List<Func<ISummaryListViewModel, IUpdateProcessStateList, bool>>(),
+                        (v, e) =>
+                        {
+                            if (e.State != null && v.State.Value != null &&
+                                v.State.Value.EntitySet.SequenceEqual(e.State.EntitySet)) return;
+                            v.State.Value = e.State;
+                            if (v.EntitySet.Value.Any()) v.CurrentEntity.Value = v.EntitySet.Value.First();
+
+                        }),
+
+
+                    new ViewEventSubscription<ISummaryListViewModel, IEntityWithChangesUpdated>(
+                        key: $"{entityType.Name}-IEntityWithChangesUpdated",
+                        process: process,
+                        eventPredicate: e => e.Changes.Count > 0 && e.EntityType == entityType,
+                        actionPredicate: new List<Func<ISummaryListViewModel, IEntityWithChangesUpdated, bool>>(),
+                        action: (v, e) =>
+                        {
+                            //if (Application.Current == null)
+                            //{
+                            UpdateEntitySet(v, e);
+                            //}
+                            //else
+                            //{
+                            //    Application.Current.Dispatcher.BeginInvoke(new Action(() => UpdateEntitySet(v, e)));
+                            //}
+                        }),
+
+                    new ViewEventSubscription<ISummaryListViewModel, ICurrentEntityChanged>(
+                        $"{entityType.Name}-ICurrentEntityChanged",
+                        process,
+                        e => e.EntityType == entityType,
+                        new List<Func<ISummaryListViewModel, ICurrentEntityChanged, bool>>(),
+                        (v, e) =>
+                        {
+                            if (Equals(v.CurrentEntity.Value?.Id, e.Entity?.Id)) return;
+                            v.CurrentEntity.Value = e.Entity;
+                        }),
+
+                };
+
+               var cmdLst = new List<IViewModelEventCommand<IViewModel, IEvent>>
+                {
+                    new ViewEventCommand<ISummaryListViewModel, IMainEntityChanged>(
+                        key: "ChangeMainEntity",
+                        commandPredicate: new List<Func<ISummaryListViewModel, bool>>
+                        {
+                            //  v => v.CurrentEntity.Value != null
+                        },
+                        subject: s => Observable.Empty<ReactiveCommand<IViewModel>>(),
+
+                        messageData: s =>
+                        {
+
+                            return new ViewEventCommandParameter(
+                                new object[] {s.CurrentEntity.Value ?? s.ViewInfo.EntityType.DefaultEntity()},
+                                new RevolutionEntities.Process.StateCommandInfo(s.Process,
+                                    Context.Process.Commands.CurrentEntityChanged), s.Process,
+                                s.Source);
+                        }),
+
+                    new ViewEventCommand<ISummaryListViewModel, IViewModelVisibilityChanged>(
+                        key: "ChangeViewModelVisibility",
+                        commandPredicate: new List<Func<ISummaryListViewModel, bool>>
+                        {
+                            //  v => v.CurrentEntity.Value != null
+                        },
+                        subject: v => Observable.Empty<ReactiveCommand<IViewModel>>(),
+
+                        messageData: v =>
+                        {
+                            v.SelectedViewModel.Value.Visibility.Value =
+                                v.SelectedViewModel.Value.Visibility.Value == Visibility.Visible
+                                    ? Visibility.Collapsed
+                                    : Visibility.Visible;
+
+                            return new ViewEventCommandParameter(
+                                new object[] {v.SelectedViewModel.Value, v.SelectedViewModel.Value.Visibility.Value},
+                                new RevolutionEntities.Process.StateCommandInfo(v.Process,
+                                    Context.ViewModel.Commands.ChangeVisibility), v.Process,
+                                v.Source);
+                        }),
+
+                    //Todo: supposed to be create from database
+                    new ViewEventCommand<ISummaryListViewModel, IViewRowStateChanged>(
+                        key: "EditEntity",
+                        commandPredicate: new List<Func<ISummaryListViewModel, bool>>
+                        {
+                            //  v => v.CurrentEntity.Value != null
+                        },
+                        subject: s => Observable.Empty<ReactiveCommand<IViewModel>>(),
+
+                        messageData: s =>
+                        {
+                            s.RowState.Value = s.RowState.Value != RowState.Modified
+                                ? RowState.Modified
+                                : RowState.Loaded;
+
+
+                            return new ViewEventCommandParameter(
+                                new object[] {s, s.RowState.Value},
+                                new RevolutionEntities.Process.StateCommandInfo(s.Process,
+                                    Context.Process.Commands.CurrentEntityChanged), s.Process,
+                                s.Source);
+                        }),
+                };
+                var parentSubscriptions = new List<IViewModelEventSubscription<IViewModel, IEvent>>();
+                var parentCommands = new List<IViewModelEventCommand<IViewModel, IEvent>>();
+                foreach (var p in viewRelationships.Select(x => x.ParentType).Distinct())
+                {
+                    parentSubscriptions.AddRange(CreateParentEntitySubscibtion(process, p, p));
+                }
+                sublst.AddRange(parentSubscriptions);
+
+                parentCommands.AddRange(CreateParentEntityCommands(viewRelationships.Select(x => x.ChildProperty).Distinct().ToList()));
+                parentCommands.AddRange(CreateCustomCommands(viewCommands, viewRelationships));
+
+                cmdLst.AddRange(parentCommands);
+
                 var viewInfo = new ViewModelInfo
                 (
                     process: process,
                     viewInfo: new EntityViewInfo($"{entityType.Name}-SummaryListViewModel", symbol, description,entityType, ordinality),
-                    subscriptions: new List<IViewModelEventSubscription<IViewModel, IEvent>>
-                    {
-                        //new ViewEventSubscription<ISummaryListViewModel, IViewModelIntialized>(
-                        //    $"{entityType.Name}-IViewModelIntialized",
-                        //    processId,
-                        //    e => e.ViewModel != null,
-                        //    new List<Func<ISummaryListViewModel, IViewModelIntialized, bool>>(),
-                        //    (v,e) =>
-                        //    {
-                        //        if (e.ViewModel.ViewInfo.Name != v.ViewInfo.Name) return;
-                        //        v.EntitySet.Value.Add(new DynamicEntity(entityType,0,new Dictionary<string, object>(){{ "EntityName", "Create New..." } }));
-                        //        v.EntitySet.Value.Reset();
-                        //    }),
-
-                        new ViewEventSubscription<ISummaryListViewModel, IUpdateProcessStateList>(
-                            $"{entityType.Name}-IUpdateProcessStateList",
-                            process,
-                            e => e.EntityType == entityType,
-                            new List<Func<ISummaryListViewModel, IUpdateProcessStateList, bool>>(),
-                            (v,e) =>
-                            {
-                                if (e.State != null && v.State.Value != null && v.State.Value.EntitySet.SequenceEqual(e.State.EntitySet)) return;
-                                v.State.Value = e.State;
-                                if(v.EntitySet.Value.Any()) v.CurrentEntity.Value = v.EntitySet.Value.First();
-
-                            }),
-
-
-                        new ViewEventSubscription<ISummaryListViewModel, IEntityWithChangesUpdated>(
-                            key:$"{entityType.Name}-IEntityWithChangesUpdated",
-                            process: process,
-                            eventPredicate: e => e.Changes.Count > 0 && e.EntityType == entityType,
-                            actionPredicate: new List<Func<ISummaryListViewModel, IEntityWithChangesUpdated, bool>>(),
-                            action: (v, e) =>
-                            {
-                                //if (Application.Current == null)
-                                //{
-                                    UpdateEntitySet(v, e);
-                                //}
-                                //else
-                                //{
-                                //    Application.Current.Dispatcher.BeginInvoke(new Action(() => UpdateEntitySet(v, e)));
-                                //}
-                            }),
-
-                        new ViewEventSubscription<ISummaryListViewModel, ICurrentEntityChanged>(
-                            $"{entityType.Name}-ICurrentEntityChanged",
-                            process,
-                            e => e.EntityType == entityType,
-                            new List<Func<ISummaryListViewModel, ICurrentEntityChanged, bool>>(),
-                            (v, e) =>
-                            {
-                                if (Equals(v.CurrentEntity.Value, e.Entity)) return;
-                                v.CurrentEntity.Value = e.Entity;
-                            }),
-
-
-                    },
+                    subscriptions: sublst ,
                     publications: new List<IViewModelEventPublication<IViewModel, IEvent>>
                     {
                         new ViewEventPublication<ISummaryListViewModel, IViewStateLoaded<ISummaryListViewModel,IProcessStateList>>(
@@ -120,90 +200,14 @@ namespace RevolutionData
                             messageData:v => new ViewEventPublicationParameter(new object[] {v},new RevolutionEntities.Process.StateEventInfo(v.Process, Context.View.Events.Intitalized),v.Process,v.Source)),
 
                     },
-                    commands: new List<IViewModelEventCommand<IViewModel, IEvent>>
-                    {
-                        new ViewEventCommand<ISummaryListViewModel, IMainEntityChanged>(
-                            key:"ChangeMainEntity",
-                            commandPredicate:new List<Func<ISummaryListViewModel, bool>>
-                            {
-                              //  v => v.CurrentEntity.Value != null
-                            },
-                            subject:s => Observable.Empty<ReactiveCommand<IViewModel>>(),
-
-                            messageData: s =>
-                            {
-                               
-                                return new ViewEventCommandParameter(
-                                    new object[] {s.CurrentEntity.Value ?? s.ViewInfo.EntityType.DefaultEntity()},
-                                    new RevolutionEntities.Process.StateCommandInfo(s.Process,
-                                        Context.Process.Commands.CurrentEntityChanged), s.Process,
-                                    s.Source);
-                            }),
-
-                        new ViewEventCommand<ISummaryListViewModel, IViewModelVisibilityChanged>(
-                            key:"ChangeViewModelVisibility",
-                            commandPredicate:new List<Func<ISummaryListViewModel, bool>>
-                            {
-                                //  v => v.CurrentEntity.Value != null
-                            },
-                            subject:v => Observable.Empty<ReactiveCommand<IViewModel>>(),
-
-                            messageData: v =>
-                            {
-                                v.SelectedViewModel.Value.Visibility.Value =  v.SelectedViewModel.Value.Visibility.Value == Visibility.Visible
-                                    ? Visibility.Collapsed
-                                    : Visibility.Visible;
-
-                                return new ViewEventCommandParameter(
-                                    new object[] {v.SelectedViewModel.Value, v.SelectedViewModel.Value.Visibility.Value},
-                                    new RevolutionEntities.Process.StateCommandInfo(v.Process,
-                                        Context.ViewModel.Commands.ChangeVisibility), v.Process,
-                                    v.Source);
-                            }),
-
-                        //Todo: supposed to be create from database
-                        new ViewEventCommand<ISummaryListViewModel, IViewRowStateChanged>(
-                            key:"EditEntity",
-                            commandPredicate:new List<Func<ISummaryListViewModel, bool>>
-                            {
-                              //  v => v.CurrentEntity.Value != null
-                            },
-                            subject:s => Observable.Empty<ReactiveCommand<IViewModel>>(),
-
-                            messageData: s =>
-                            {
-                                s.RowState.Value = s.RowState.Value != RowState.Modified?RowState.Modified: RowState.Loaded;
-
-
-                                return new ViewEventCommandParameter(
-                                    new object[] {s,s.RowState.Value},
-                                    new RevolutionEntities.Process.StateCommandInfo(s.Process,
-                                        Context.Process.Commands.CurrentEntityChanged), s.Process,
-                                    s.Source);
-                            }),
-
-
-
-
-                    },
+                    commands: cmdLst ,
+                    viewModelInfos: childViews,
                     viewModelType: typeof(ISummaryListViewModel),
                     orientation: typeof(IBodyViewModel),
                     priority: priority,
                     displayProperties: displayProperties);
 
-                var parentSubscriptions = new List<IViewModelEventSubscription<IViewModel, IEvent>>();
-                var parentCommands = new List<IViewModelEventCommand<IViewModel, IEvent>>();
-                foreach (var p in viewRelationships.Select(x => x.ParentType).Distinct())
-                {
-                    parentSubscriptions.AddRange(CreateParentEntitySubscibtion(process, p, p));
 
-                }
-                viewInfo.Subscriptions.AddRange(parentSubscriptions);
-
-                parentCommands.AddRange(CreateParentEntityCommands(viewRelationships.Select(x => x.ChildProperty).Distinct().ToList()));
-                parentCommands.AddRange(CreateCustomCommands(viewCommands, viewRelationships));
-
-                viewInfo.Commands.AddRange(parentCommands);
 
                 return viewInfo;
             }

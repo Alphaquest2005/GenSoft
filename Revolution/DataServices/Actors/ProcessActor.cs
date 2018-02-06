@@ -38,9 +38,9 @@ namespace DataServices.Actors
         {
             ActorName = msg.ActorName;
             ctx = Context;
-            EventMessageBus.Current.GetEvent<IProcessStateMessage>(Source)
-                .Where(x => x.Process.Id == msg.Process.Id)
-                .Subscribe(x => SaveStateMessages(x));
+            //EventMessageBus.Current.GetEvent<IProcessStateMessage>(Source)
+            //    .Where(x => x.Process.Id == msg.Process.Id)
+            //    .Subscribe(x => SaveStateMessages(x));
             EventMessageBus.Current.GetEvent<IRequestProcessState>(Source)
                 .Where(x => x.Process.Id == msg.Process.Id)
                 .Subscribe(x => HandleRequestState(x));
@@ -159,14 +159,14 @@ namespace DataServices.Actors
             }
         }
 
-        private void SaveStateMessages(IProcessStateMessage pe)
-        {
+        //private void SaveStateMessages(IProcessStateMessage pe)
+        //{
 
-            ProcessStateMessages.AddOrUpdate(pe.GetType(), pe, (k, v) => pe);
-            var msg = new ProcessStateUpdated(pe.EntityType, pe,
-                new StateEventInfo(Process, RevolutionData.Context.Process.Events.StateUpdated), Process, Source);
-            Publish(msg);
-        }
+        //    ProcessStateMessages.AddOrUpdate(pe.GetType(), pe, (k, v) => pe);
+        //    var msg = new ProcessStateUpdated(pe.EntityType, pe,
+        //        new StateEventInfo(Process, RevolutionData.Context.Process.Events.StateUpdated), Process, Source);
+        //   // Publish(msg);
+        //}
 
         private void StartActors(IEnumerable<IComplexEventAction> complexEvents)
         {

@@ -68,6 +68,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Context\CommandFunctions.cs" />
     <Compile Include="Context\Entity.cs" />
     <Compile Include="Context\View.cs" />
     <Compile Include="Context\ViewModel.cs" />

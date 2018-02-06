@@ -11,16 +11,17 @@ namespace ViewModel.WorkFlow
     public class ProcessViewModels
     {
 
-        public static Dictionary<string, Func<EntityTypeViewModel, ViewAttributeDisplayProperties, IViewModelInfo>> ProcessViewModelFactory =
-            new Dictionary<string, Func<EntityTypeViewModel, ViewAttributeDisplayProperties, IViewModelInfo>>()
+        public static Dictionary<string, Func<EntityTypeViewModel, List<IViewModelInfo>, ViewAttributeDisplayProperties, IViewModelInfo>> ProcessViewModelFactory =
+            new Dictionary<string, Func<EntityTypeViewModel, List<IViewModelInfo>, ViewAttributeDisplayProperties, IViewModelInfo>>()
             {
-                { "SummaryListViewModel", (v, vp) =>
+                { "SummaryListViewModel", (v, cv, vp) =>
                                             {
                                                 try
                                                 {
                                                     DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(v.EntityTypeName);
                                                 return SummaryListViewModelInfo.SummaryListViewModel(v.SystemProcess,
                                                         DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(v.EntityTypeName),v.RelationshipOrdinality, v.Symbol, v.Description, v.Priority,
+                                                        cv,
                                                         v.EntityViewModelRelationships,
                                                         v.EntityTypeViewModelCommands,
                                                         vp);
@@ -32,7 +33,7 @@ namespace ViewModel.WorkFlow
                                                 }
                                                 
                                             }},
-                { "EntityViewModel",(v, vp) =>
+                { "EntityViewModel",(v,cv, vp) =>
                     {
                         try
                         {
@@ -42,6 +43,7 @@ namespace ViewModel.WorkFlow
                                                         v.SystemProcess,
                                                         DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(v.EntityTypeName),v.RelationshipOrdinality, v.Symbol,
                                                         v.Description, v.Priority,
+                                                        childViews: cv,
                                                         viewRelationships: v.EntityViewModelRelationships,
                                                         viewCommands: v.EntityTypeViewModelCommands,
                                                         displayProperties: vp);

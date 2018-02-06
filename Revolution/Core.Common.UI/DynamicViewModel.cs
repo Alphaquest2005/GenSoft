@@ -98,10 +98,10 @@ namespace Core.Common.UI
         public string ViewDescription { get; }
         public IViewInfo ViewInfo { get; }
         public ISystemProcess Process { get; }
-        public List<IViewModelEventSubscription<IViewModel, IEvent>> EventSubscriptions { get; }
-        public List<IViewModelEventPublication<IViewModel, IEvent>> EventPublications { get; }
+        public IReadOnlyList<IViewModelEventSubscription<IViewModel, IEvent>> EventSubscriptions { get; }
+        public IReadOnlyList<IViewModelEventPublication<IViewModel, IEvent>> EventPublications { get; }
         public Dictionary<string, ReactiveCommand<IViewModel>> Commands { get; }
-        public List<IViewModelEventCommand<IViewModel, IEvent>> CommandInfo { get; }
+        public IReadOnlyList<IViewModelEventCommand<IViewModel, IEvent>> CommandInfo { get; }
         public Type Orientation { get; }
         public Type ViewModelType { get; }
         public int Priority { get; }

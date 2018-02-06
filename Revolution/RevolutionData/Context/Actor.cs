@@ -11,6 +11,7 @@ namespace RevolutionData.Context
             public static IStateCommand StartActor => new StateCommand("CreateService", "Create Actor Service",Events.ActorStarted);
             public static IStateCommand StopActor => new StateCommand("ShutActorDown", "Shut Actor Down",Events.ActorStopped);
             public static IStateCommand CreateActor { get; set; }
+            
         }
         public class Events
         {
@@ -20,4 +21,5 @@ namespace RevolutionData.Context
         }
 
     }
+    
 }

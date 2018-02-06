@@ -66,7 +66,7 @@ namespace DataServices.Actors
         {
             /// Create Actor Per Event
             Type actorType = typeof(EntityDataServiceActor<>).MakeGenericType(typeof(TEvent));
-            var inMsg = new CreateEntityService(actorType,action, new StateCommandInfo(process, RevolutionData.Context.Actor.Commands.StartActor),process,Source );
+            var inMsg = new CreateEntityService(actorType,action, new StateCommandInfo(process, RevolutionData.Context.CommandFunctions.UpdateCommandStatus(typeof(TEvent).GetFriendlyName(), RevolutionData.Context.Actor.Commands.StartActor)),process,Source );
             try
             {
                 

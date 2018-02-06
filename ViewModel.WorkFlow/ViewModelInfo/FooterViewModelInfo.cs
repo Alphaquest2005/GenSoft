@@ -35,24 +35,15 @@ namespace RevolutionData
                         new List<Func<IFooterViewModel, ICurrentEntityChanged, bool>>(),
                         (v, e) =>
                         {
-                            Application.Current.Dispatcher.Invoke(() =>
+                            if (Application.Current == null)
                             {
-                                var res = v.Entities.Value.ToList();
-                                var existingEntity = res.FirstOrDefault(x => x.EntityType.Name == e.EntityType.Name);
-                                if (existingEntity == null)
-                                {
-                                    v.Entities.Value.Add(e.Entity);
-                                    v.Entities.Value.Reset();
-                                }
-                                else
-                                {
-                                    var idx = res.IndexOf(existingEntity);
-                                    res[idx] = e.Entity;
-                                    v.Entities.Value = new ObservableList<IDynamicEntity>(res);
-                                }
-                            });
+                                OnCurrentEntityChanged(v, e);
+                            }
+                            else
+                            {
+                                Application.Current.Dispatcher.Invoke(() => { OnCurrentEntityChanged(v, e); });
 
-
+                            }
 
                         }),
 
@@ -125,7 +116,26 @@ namespace RevolutionData
                 new ViewAttributeDisplayProperties(
                     new AttributeDisplayProperties(new Dictionary<string, Dictionary<string, string>>()),
                     new AttributeDisplayProperties(new Dictionary<string, Dictionary<string, string>>())
-                ));
+                ),
+                new List<IViewModelInfo>());
+        }
+
+        private static void OnCurrentEntityChanged(IFooterViewModel v, ICurrentEntityChanged e)
+        {
+            var res = v.Entities.Value.ToList();
+            var existingEntity =
+                res.FirstOrDefault(x => x.EntityType.Name == e.EntityType.Name);
+            if (existingEntity == null)
+            {
+                v.Entities.Value.Add(e.Entity);
+                v.Entities.Value.Reset();
+            }
+            else
+            {
+                var idx = res.IndexOf(existingEntity);
+                res[idx] = e.Entity;
+                v.Entities.Value = new ObservableList<IDynamicEntity>(res);
+            }
         }
     }
 }

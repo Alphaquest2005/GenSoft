@@ -8,7 +8,7 @@ namespace RevolutionEntities.ViewModels
 {
     public class ViewModelInfo : IViewModelInfo
     {
-        public ViewModelInfo(ISystemProcess process, IViewInfo viewInfo, List<IViewModelEventSubscription<IViewModel, IEvent>> subscriptions, List<IViewModelEventPublication<IViewModel, IEvent>> publications, List<IViewModelEventCommand<IViewModel, IEvent>> commands, Type viewModelType, Type orientation, int priority, IViewAttributeDisplayProperties displayProperties)
+        public ViewModelInfo(ISystemProcess process, IViewInfo viewInfo, List<IViewModelEventSubscription<IViewModel, IEvent>> subscriptions, List<IViewModelEventPublication<IViewModel, IEvent>> publications, List<IViewModelEventCommand<IViewModel, IEvent>> commands, Type viewModelType, Type orientation, int priority, IViewAttributeDisplayProperties displayProperties, IReadOnlyList<IViewModelInfo> viewModelInfos)
         {
             Process = process;
             Subscriptions = subscriptions;
@@ -16,6 +16,7 @@ namespace RevolutionEntities.ViewModels
             Orientation = orientation;
             Priority = priority;
             DisplayProperties = displayProperties;
+            ViewModelInfos = viewModelInfos;
             ViewInfo = viewInfo;
             Commands = commands;
             Publications = publications;
@@ -24,13 +25,13 @@ namespace RevolutionEntities.ViewModels
         public ISystemProcess Process { get; }
         public string Key => ViewInfo.Name;
         public IViewInfo ViewInfo { get; }
-        public List<IViewModelEventSubscription<IViewModel, IEvent>> Subscriptions { get; }
-        public List<IViewModelEventPublication<IViewModel, IEvent>> Publications { get; }
-        public List<IViewModelEventCommand<IViewModel, IEvent>> Commands { get; }
+        public IReadOnlyList<IViewModelEventSubscription<IViewModel, IEvent>> Subscriptions { get; }
+        public IReadOnlyList<IViewModelEventPublication<IViewModel, IEvent>> Publications { get; }
+        public IReadOnlyList<IViewModelEventCommand<IViewModel, IEvent>> Commands { get; }
         public Type ViewModelType { get; }
         public Type Orientation { get; }
         public int Priority { get; }
-        public List<IViewModelInfo> ViewModelInfos { get; } = new List<IViewModelInfo>();
+        public IReadOnlyList<IViewModelInfo> ViewModelInfos { get; }
         public IViewAttributeDisplayProperties DisplayProperties { get; }
         public ViewModelState ViewModelState { get; set; }
         public Visibility Visibility { get; set; }

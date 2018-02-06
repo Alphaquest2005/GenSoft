@@ -688,37 +688,35 @@ namespace DataServices.Actors
                 foreach (var g in list)
                 {
                     var pm = CreateEntityTypeViewModel(g.Key, new List<EntityRelationship>(), true, ctx, process, EntityRelationshipOrdinality.One);
-                    var pv = CreateEntityViewModel(pm);
-                    if (pv == null) continue;
-
-                    yield return pv;
-
+                    if (pm == null) continue;
+                    
                     var ppm = CreateEntityTypeViewModel(g.Key, new List<EntityRelationship>(), false, ctx, process, EntityRelationshipOrdinality.One);
-                    var ppv = CreateEntityViewModel(ppm);
-                    pv.ViewModelInfos.Add(ppv);
+                    var ppv = CreateEntityViewModel(ppm, new List<IViewModelInfo>());
+                    var childviews = new List<IViewModelInfo>(){ppv};
                     foreach (var rel in g)
                     {
                         var cm = CreateEntityTypeViewModel(rel.EntityTypeAttributes.EntityType, new List<EntityRelationship>() { rel }, rel.RelationshipType.ChildOrdinalityId == 2, ctx, process, rel.RelationshipType.ChildOrdinalitys.Name == "One" ? EntityRelationshipOrdinality.One : EntityRelationshipOrdinality.Many);
-                        var cv = CreateEntityViewModel(cm);
+                        var cv = CreateEntityViewModel(cm, new List<IViewModelInfo>());
                         if (cv != null)
                         {
                             if (rel.RelationshipType.ChildOrdinalitys.Name == "One" || condensed)
                             {
                                 cv.Visibility = Visibility.Visible;
-                                pv.ViewModelInfos.Add(cv);
+                                childviews.Add(cv);
                             }
                             else
                             {
-                                yield return cv;
                                 cv.Visibility = Visibility.Collapsed;
-                                pv.ViewModelInfos.Add(cv);
+                                childviews.Add(cv);
+                                yield return cv;
                             }
 
 
                         }
 
                     }
-                   
+                    var pv = CreateEntityViewModel(pm, childviews);
+                    yield return pv;
                 }
                 if (list.Any()) yield break;
                 {
@@ -728,7 +726,7 @@ namespace DataServices.Actors
                         .Include(x => x.EntityTypeViewModelCommand).ThenInclude(x => x.ViewModelCommands.CommandType)
                         .First(x => x.Id == mainEntityId);
                     var ppm = CreateEntityTypeViewModel(mainEntity, new List<EntityRelationship>(), false, ctx, process, EntityRelationshipOrdinality.One);
-                    var ppv = CreateEntityViewModel(ppm);
+                    var ppv = CreateEntityViewModel(ppm, new List<IViewModelInfo>());
                     yield return ppv;
                 }
             }
@@ -757,11 +755,11 @@ namespace DataServices.Actors
 
         
 
-        private static IViewModelInfo CreateEntityViewModel(EntityTypeViewModel vm)
+        private static IViewModelInfo CreateEntityViewModel(EntityTypeViewModel vm, List<IViewModelInfo> childviews)
         {
            
             var vp = CreateViewAttributeDisplayProperties(vm);
-            var res = ProcessViewModels.ProcessViewModelFactory[vm.ViewModelTypeName].Invoke(vm, vp);
+            var res = ProcessViewModels.ProcessViewModelFactory[vm.ViewModelTypeName].Invoke(vm,childviews, vp);
             return res;
 
         }

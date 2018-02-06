@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Concurrent;
+using System.Diagnostics;
 using System.Diagnostics.Contracts;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using SystemInterfaces;
@@ -58,7 +60,9 @@ namespace EventAggregator
                 });
                 Task.Run(() =>
                 {
+
                     var key = $"I{typeof(TEvent).GetFriendlyName()}-{sampleEvent.Process.Id}";
+                    if(eventStore.Keys.LastOrDefault() == key) Debugger.Break();
                     eventStore.AddOrUpdate(key, sampleEvent);
                 });
                 Task.Run(() => { ea.Publish(sampleEvent);});

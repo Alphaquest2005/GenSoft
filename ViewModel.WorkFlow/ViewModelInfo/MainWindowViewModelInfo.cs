@@ -53,7 +53,8 @@ namespace RevolutionData
             new ViewAttributeDisplayProperties(
                 new AttributeDisplayProperties(new Dictionary<string, Dictionary<string, string>>()),
                 new AttributeDisplayProperties(new Dictionary<string, Dictionary<string, string>>())
-            )
+            ),
+                new List<IViewModelInfo>()
             )
             ;
     }

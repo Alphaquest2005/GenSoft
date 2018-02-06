@@ -13,6 +13,7 @@ using RevolutionEntities.Process;
 using DataServices.Utils;
 using EventMessages.Commands;
 using EventMessages.Events;
+using Utilities;
 
 
 namespace DataServices.Actors
@@ -35,7 +36,7 @@ namespace DataServices.Actors
             EventMessageBus.Current.GetEvent<ICleanUpSystemProcess>(Source).Where(x => x.ProcessToBeCleanedUp.Id > 1 && x.ProcessToBeCleanedUp.Id == Process.Id).Subscribe(x => CleanUpActor(x));
             EventMessageBus.Current.GetEvent<IRequestComplexEventLog>(Source).Subscribe(x => handleComplexEventLogRequest());
             
-            Publish(new ServiceStarted<IComplexEventService>(this, new StateEventInfo(Process, RevolutionData.Context.Actor.Events.ActorStarted), Process, Source));
+            Publish(new ServiceStarted<IComplexEventService>(this, new StateEventInfo(Process, RevolutionData.Context.EventFunctions.UpdateEventStatus(msg.ComplexEventService.ComplexEventAction.ExpectedMessageType.GetFriendlyName(), RevolutionData.Context.Actor.Events.ActorStarted)), Process, Source));
         }
 
         private void CleanUpActor(ICleanUpSystemProcess cleanUpSystemProcess)

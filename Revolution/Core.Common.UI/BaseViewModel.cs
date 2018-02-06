@@ -21,7 +21,7 @@ namespace Core.Common.UI
 
         public BaseViewModel(){}
 
-        protected BaseViewModel(ISystemProcess process, IViewInfo viewInfo, List<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions, List<IViewModelEventPublication<IViewModel, IEvent>> eventPublications, List<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, Type orientation, int priority)
+        protected BaseViewModel(ISystemProcess process, IViewInfo viewInfo, IReadOnlyList<IViewModelEventSubscription<IViewModel, IEvent>> eventSubscriptions, IReadOnlyList<IViewModelEventPublication<IViewModel, IEvent>> eventPublications, IReadOnlyList<IViewModelEventCommand<IViewModel, IEvent>> commandInfo, Type orientation, int priority)
         {
             if (LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
             Source = new Source(Guid.NewGuid(), "ViewModel:" + typeof(TViewModel).GetFriendlyName(), new SourceType(typeof(BaseViewModel<TViewModel>)),process,process.MachineInfo);
@@ -39,9 +39,9 @@ namespace Core.Common.UI
         }
 
         
-        public List<IViewModelEventSubscription<IViewModel, IEvent>> EventSubscriptions { get;}
-        public List<IViewModelEventPublication<IViewModel, IEvent>> EventPublications { get; }
-        public List<IViewModelEventCommand<IViewModel, IEvent>> CommandInfo { get; }
+        public IReadOnlyList<IViewModelEventSubscription<IViewModel, IEvent>> EventSubscriptions { get;}
+        public IReadOnlyList<IViewModelEventPublication<IViewModel, IEvent>> EventPublications { get; }
+        public IReadOnlyList<IViewModelEventCommand<IViewModel, IEvent>> CommandInfo { get; }
         public ReactiveProperty<RowState> RowState { get; }
         public Type Orientation { get; }
         public Type ViewModelType { get; }

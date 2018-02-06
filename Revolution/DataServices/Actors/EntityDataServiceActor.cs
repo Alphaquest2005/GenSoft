@@ -4,6 +4,7 @@ using Actor.Interfaces;
 using EventAggregator;
 using EventMessages.Events;
 using RevolutionEntities.Process;
+using Utilities;
 
 namespace DataServices.Actors
 {
@@ -20,7 +21,7 @@ namespace DataServices.Actors
             // Command<TService>(m => HandledEvent(m));
             if(firstMessage is TService) HandledEvent((TService)firstMessage);
             EventMessageBus.Current.GetEvent<TService>(Source).Subscribe(x => HandledEvent(x));
-            EventMessageBus.Current.Publish(new ServiceStarted<IEntityDataServiceActor<TService>>(this,new StateEventInfo(msg.Process, RevolutionData.Context.Actor.Events.ActorStarted), msg.Process,Source), Source);
+            EventMessageBus.Current.Publish(new ServiceStarted<IEntityDataServiceActor<TService>>(this,new StateEventInfo(msg.Process, RevolutionData.Context.EventFunctions.UpdateEventStatus(msg.ActorType.GetFriendlyName(),RevolutionData.Context.Actor.Events.ActorStarted)), msg.Process,Source), Source);
         }
 
 

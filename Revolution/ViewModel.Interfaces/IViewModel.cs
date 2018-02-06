@@ -13,10 +13,10 @@ namespace ViewModel.Interfaces
         IViewInfo ViewInfo { get; }
         ISystemProcess Process { get; }
         
-        List<IViewModelEventSubscription<IViewModel, IEvent>> EventSubscriptions { get; }
-        List<IViewModelEventPublication<IViewModel, IEvent>> EventPublications { get; }
+        IReadOnlyList<IViewModelEventSubscription<IViewModel, IEvent>> EventSubscriptions { get; }
+        IReadOnlyList<IViewModelEventPublication<IViewModel, IEvent>> EventPublications { get; }
         Dictionary<string, ReactiveCommand<IViewModel>> Commands { get; }
-        List<IViewModelEventCommand<IViewModel, IEvent>> CommandInfo { get; }
+        IReadOnlyList<IViewModelEventCommand<IViewModel, IEvent>> CommandInfo { get; }
 
         
 
