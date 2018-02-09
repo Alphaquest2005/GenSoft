@@ -41,7 +41,7 @@ namespace EventAggregator
             {
                 var key = $"{typeof(TEvent).GetFriendlyName()}-{caller.Process.Id}";
                 eventStore.TryGetValue(key, out dynamic sampleEvent);
-                if(sampleEvent != null)
+                if (sampleEvent != null)
                     Publish(sampleEvent, Source);
                 return ea.GetEvent<TEvent>();
             });

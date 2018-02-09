@@ -35,6 +35,7 @@ namespace RevolutionData
                         new List<Func<IFooterViewModel, ICurrentEntityChanged, bool>>(),
                         (v, e) =>
                         {
+                            
                             if (Application.Current == null)
                             {
                                 OnCurrentEntityChanged(v, e);

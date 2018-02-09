@@ -105,7 +105,9 @@ namespace DataServices.Actors
                    
                     var parentEntityTypes = ctx.EntityRelationship.Where(x => x.EntityTypeAttributes.EntityType.ApplicationId == CurrentApplication.Id).Select(x => x.ParentEntity.EntityTypeAttributes.EntityType).Distinct();
                     var childEntityTypes = ctx.EntityRelationship.Where(x => x.EntityTypeAttributes.EntityType.ApplicationId == CurrentApplication.Id).Select(x => x.EntityTypeAttributes.EntityType).Distinct();
-                    var mainEntities = parentEntityTypes.Where(z => !childEntityTypes.Any(q => q.Id == z.Id));
+                    var mainEntities = parentEntityTypes.Where(z => !childEntityTypes.Any(q => q.Id == z.Id)).ToList();
+                    var tttt = ctx.EntityType.Include(x => x.EntityTypeAttributes).Where(x => x.ApplicationId == CurrentApplication.Id);
+                    mainEntities.AddRange(ctx.EntityType.Where(x => x.ApplicationId == CurrentApplication.Id && x.EntityTypeAttributes.All(z => !z.EntityRelationship.Any())));
                     Task.Run(() =>
                     {
                         IntializeProcess(systemProcess);
@@ -726,11 +728,35 @@ namespace DataServices.Actors
                         .Include(x => x.Type)
                         .Include(x => x.EntityTypeAttributes).ThenInclude(x => x.Attributes)
                         .Include(x => x.EntityTypeViewModelCommand).ThenInclude(x => x.ViewModelCommands.CommandType)
-                        .First(x => x.Id == mainEntityId);
-                    var ppm = CreateEntityTypeViewModel(mainEntity, new List<EntityRelationship>(), false, ctx, process, EntityRelationshipOrdinality.One);
-                    var ppv = CreateEntityViewModel(ppm, new List<IViewModelInfo>());
-                    yield return ppv;
+                        .FirstOrDefault(x => x.Id == mainEntityId && x.EntityTypeAttributes.Any(z => z.EntityRelationship.Any()));
+                    if (mainEntity != null)
+                    {
+                        var mppm = CreateEntityTypeViewModel(mainEntity, new List<EntityRelationship>(), false, ctx,
+                            process, EntityRelationshipOrdinality.One);
+                        var mppv = CreateEntityViewModel(mppm, new List<IViewModelInfo>());
+                        yield return mppv;
+                    }
                 }
+
+                
+                    var soleEntity = ctx.EntityType
+                        .Include(x => x.Type)
+                        .Include(x => x.EntityTypeAttributes).ThenInclude(x => x.Attributes)
+                        .Include(x => x.EntityTypeViewModelCommand).ThenInclude(x => x.ViewModelCommands.CommandType)
+                        .FirstOrDefault(x => x.Id == mainEntityId && x.EntityTypeAttributes.All(z => !z.EntityRelationship.Any()));
+                if (soleEntity != null)
+                {
+                    var sppm1 = CreateEntityTypeViewModel(soleEntity, new List<EntityRelationship>(), false, ctx,
+                        process, EntityRelationshipOrdinality.One);
+                    var sppv1 = CreateEntityViewModel(sppm1, new List<IViewModelInfo>());
+                    var sppm = CreateEntityTypeViewModel(soleEntity, new List<EntityRelationship>(), true, ctx,
+                        process, EntityRelationshipOrdinality.One);
+                    var sppv = CreateEntityViewModel(sppm, new List<IViewModelInfo>(){sppv1});
+                    
+                    
+                    yield return sppv;
+                }
+
             }
         }
 
@@ -933,16 +959,48 @@ namespace DataServices.Actors
                         var mainEntity = ctx.EntityType
                             .Include(x => x.Type)
                             .Include(x => x.EntityTypeAttributes).ThenInclude(x => x.Attributes)
-                            .First(x => x.Id == mainEntityId);
+                            .FirstOrDefault(x => x.Id == mainEntityId && x.EntityTypeAttributes.Any(z => z.EntityRelationship.Any()));// just for signin
+                    if (mainEntity != null)
+                    {
                         var mainEntityType = mainEntity.Type.Name;
                         DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(mainEntityType);
 
-                    yield return Processes.ComplexActions.GetComplexAction("IntializeProcessState", new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(mainEntityType) });
-                    yield return Processes.ComplexActions.GetComplexAction("UpdateState", new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(mainEntityType) });
-                    yield return Processes.ComplexActions.GetComplexAction("RequestState", new object[] { process, mainEntityType, mainEntityType, "Id" });
-                    
+                        yield return Processes.ComplexActions.GetComplexAction("IntializeProcessState",
+                            new object[]
+                                {process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(mainEntityType)});
+                        yield return Processes.ComplexActions.GetComplexAction("UpdateState",
+                            new object[]
+                                {process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(mainEntityType)});
+                        yield return Processes.ComplexActions.GetComplexAction("RequestState",
+                            new object[] {process, mainEntityType, mainEntityType, "Id"});
+                        yield break;
+                    }
+
+                    var soleEntity = ctx.EntityType
+                        .Include(x => x.Type)
+                        .Include(x => x.EntityTypeAttributes).ThenInclude(x => x.Attributes)
+                        .FirstOrDefault(x => x.Id == mainEntityId && x.EntityTypeAttributes.All(z => !z.EntityRelationship.Any()));
+                    if (soleEntity != null)
+                    {
+                    yield return Processes.ComplexActions.GetComplexAction("UpdateStateList",
+                            new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(soleEntity.Type.Name) });
+
+                   yield return Processes.ComplexActions.GetComplexAction("IntializeProcessStateList", new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(soleEntity.Type.Name) });
+                        yield return Processes.ComplexActions.GetComplexAction("UpdateStateList", new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(soleEntity.Type.Name) });
+
+                    yield return Processes.ComplexActions.GetComplexAction("UpdateState",
+                            new object[]
+                                {process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(soleEntity.Type.Name)});
+                        yield return Processes.ComplexActions.GetComplexAction("RequestState",
+                            new object[] { process, soleEntity.Type.Name, soleEntity.Type.Name, "Id" });
+
+                       
                 }
+
+            }
         }
+
+
 
     }
 

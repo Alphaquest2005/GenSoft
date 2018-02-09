@@ -66,10 +66,11 @@ namespace RevolutionData
                     new ViewEventSubscription<ISummaryListViewModel, ICurrentEntityChanged>(
                         $"{entityType.Name}-ICurrentEntityChanged",
                         process,
-                        e => e.EntityType == entityType,
+                        e => e.EntityType == entityType &&  e.Entity.Id > 0,
                         new List<Func<ISummaryListViewModel, ICurrentEntityChanged, bool>>(),
                         (v, e) =>
                         {
+                            //if (e.Source.SourceName == v.Source.SourceName) return;
                             if (Equals(v.CurrentEntity.Value?.Id, e.Entity?.Id)) return;
                             v.CurrentEntity.Value = e.Entity;
                         }),
