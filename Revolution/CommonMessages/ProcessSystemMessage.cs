@@ -4,11 +4,11 @@ using SystemInterfaces;
 namespace CommonMessages
 {
     [Export(typeof(IProcessSystemMessage))]
-    public class ProcessSystemMessage : SystemMessage, IProcessSystemMessage
+    public abstract class ProcessSystemMessage : SystemMessage, IProcessSystemMessage
     {
-        public ProcessSystemMessage() {}
+        protected ProcessSystemMessage() {}
 
-        public ProcessSystemMessage(IDynamicObject message, IProcessStateInfo processInfo, ISystemProcess process, ISystemSource source) : base(message, source.MachineInfo,source)
+        protected ProcessSystemMessage(IDynamicObject message, IProcessStateInfo processInfo, ISystemProcess process, ISystemSource source) : base(message, source.MachineInfo,source)
         {
             Process = process;
             ProcessInfo = processInfo;

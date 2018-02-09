@@ -11,13 +11,14 @@ using GenSoft.Entities;
 using Process.WorkFlow;
 using RevolutionLogger;
 using Utilities;
+using Type = System.Type;
 
 namespace EventAggregator
 {
     public class EventMessageBus//: Reactive.EventAggregator.EventAggregator
     {
         static Reactive.EventAggregator.EventAggregator ea = new Reactive.EventAggregator.EventAggregator();
-        static ConcurrentDictionary<string, dynamic> eventStore = new ConcurrentDictionary<string, dynamic>();
+        static ConcurrentDictionary<dynamic, dynamic> eventStore = new ConcurrentDictionary<dynamic, dynamic>();
         public static ISystemSource Source => new Source(Guid.NewGuid(), $"EventMessageBus", new RevolutionEntities.Process.SourceType(typeof(EventMessageBus)), Processes.IntialSystemProcess, Processes.IntialSystemProcess.MachineInfo);
         static EventMessageBus()
         {
@@ -46,6 +47,7 @@ namespace EventAggregator
             });
             return ge;
         }
+        
 
 
         public void Publish<TEvent>(TEvent sampleEvent, ISource sender) where TEvent : IProcessSystemMessage
@@ -62,7 +64,6 @@ namespace EventAggregator
                 {
 
                     var key = $"I{typeof(TEvent).GetFriendlyName()}-{sampleEvent.Process.Id}";
-                    if(eventStore.Keys.LastOrDefault() == key) Debugger.Break();
                     eventStore.AddOrUpdate(key, sampleEvent);
                 });
                 Task.Run(() => { ea.Publish(sampleEvent);});
@@ -74,5 +75,7 @@ namespace EventAggregator
             }
 
         }
+
+        
     }
 }

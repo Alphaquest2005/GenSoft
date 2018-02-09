@@ -9,5 +9,6 @@ namespace ViewModel.Interfaces
 
     public interface IEntityDataServiceSupervisor : IService<IEntityDataServiceSupervisor>
     {
+        IDynamicEntityType EntityType { get; }
     }
 }

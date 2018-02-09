@@ -24,11 +24,9 @@ namespace DataServices.Actors
     public class ProcessActor : BaseActor<ProcessActor>, IProcessService
     {
 
-        private ConcurrentQueue<IProcessSystemMessage> msgQue = new ConcurrentQueue<IProcessSystemMessage>();
-        //private ConcurrentQueue<IComplexEventAction> _complexEvents = new ConcurrentQueue<IComplexEventAction>();
-
-        public ConcurrentDictionary<Type, IProcessStateMessage> ProcessStateMessages { get; } =
-            new ConcurrentDictionary<Type, IProcessStateMessage>();
+        //private ConcurrentQueue<IProcessSystemMessage> msgQue = new ConcurrentQueue<IProcessSystemMessage>();
+        
+        //public ConcurrentDictionary<Type, IProcessStateMessage> ProcessStateMessages { get; } = new ConcurrentDictionary<Type, IProcessStateMessage>();
 
         private static IUntypedActorContext ctx = null;
 
@@ -38,22 +36,15 @@ namespace DataServices.Actors
         {
             ActorName = msg.ActorName;
             ctx = Context;
-            //EventMessageBus.Current.GetEvent<IProcessStateMessage>(Source)
+          
+            //EventMessageBus.Current.GetEvent<IRequestProcessLog>(Source)
             //    .Where(x => x.Process.Id == msg.Process.Id)
-            //    .Subscribe(x => SaveStateMessages(x));
-            EventMessageBus.Current.GetEvent<IRequestProcessState>(Source)
-                .Where(x => x.Process.Id == msg.Process.Id)
-                .Subscribe(x => HandleRequestState(x));
-            EventMessageBus.Current.GetEvent<IRequestProcessLog>(Source)
-                .Where(x => x.Process.Id == msg.Process.Id)
-                .Subscribe(x => HandleProcessLogRequest(x));
-            EventMessageBus.Current.GetEvent<IComplexEventLogCreated>(Source)
-                .Where(x => x.Process.Id == msg.Process.Id)
-                .Subscribe(x => HandleComplexEventLog(x));
+            //    .Subscribe(x => HandleProcessLogRequest(x));
 
-            //EventMessageBus.Current.GetEvent<IServiceStarted<IComplexEventService>>(Source)
+            //EventMessageBus.Current.GetEvent<IComplexEventLogCreated>(Source)
             //    .Where(x => x.Process.Id == msg.Process.Id)
-            //    .Subscribe(x => NotifyServiceStarted(x));
+            //    .Subscribe(x => HandleComplexEventLog(x));
+
             Publish(new ServiceStarted<IProcessService>(this,
                 new StateEventInfo(Process, RevolutionData.Context.Actor.Events.ActorStarted), Process, Source));
 
@@ -65,18 +56,18 @@ namespace DataServices.Actors
                 .Where(x => x.ProcessToBeCleanedUp.Id > 1 && x.ProcessToBeCleanedUp.Id == Process.Id)
                 .Subscribe(x => CleanUpActor(x));
 
-            EventMessageBus.Current.GetEvent<IServiceStarted<IProcessService>>(Source)
-                .Where(x => x.Process.Id == msg.Process.Id)
-                .Subscribe(q =>
-                {
-                    EventMessageBus.Current.GetEvent<IProcessSystemMessage>(Source)
-                        .Where(
-                            x =>
-                                x.Process.Id == Process.Id &&
-                                x.MachineInfo.MachineName == Process.MachineInfo.MachineName)
-                        .Subscribe(z => HandleProcessEvents(z));
+            //EventMessageBus.Current.GetEvent<IServiceStarted<IProcessService>>(Source)
+            //    .Where(x => x.Process.Id == msg.Process.Id)
+            //    .Subscribe(q =>
+            //    {
+            //        EventMessageBus.Current.GetEvent<IProcessSystemMessage>(Source)
+            //            .Where(
+            //                x =>
+            //                    x.Process.Id == Process.Id &&
+            //                    x.MachineInfo.MachineName == Process.MachineInfo.MachineName)
+            //            .Subscribe(z => HandleProcessEvents(z));
 
-                });
+            //    });
 
             
             StartActors(msg.ComplexEvents);
@@ -93,81 +84,42 @@ namespace DataServices.Actors
 
         private void UpdateActor(IList<IComplexEventAction> complexEvents)
         {
-            //var lst = new List<IComplexEventAction>(_complexEvents);
-            //var newLst = complexEvents.Where(x => _complexEvents.All(z => z.Key != x.Key)).ToList();
-            //lst.AddRange(newLst);
-            //Parallel.ForEach(lst, itm => { _complexEvents.Enqueue(itm); });
             StartActors(complexEvents);
         }
 
         private void HandleDomainProcess(ILoadProcessComplexEvents loadProcessComplexEvents)
         {
-
             UpdateActor(loadProcessComplexEvents.ComplexEvents);
             Publish(new ServiceStarted<IProcessService>(this,
                 new StateEventInfo(Process, RevolutionData.Context.Actor.Events.ActorStarted), Process, Source));
-            
         }
 
-        ConcurrentQueue<IServiceStarted<IComplexEventService>> startedComplexEventServices =
-            new ConcurrentQueue<IServiceStarted<IComplexEventService>>();
+        //ConcurrentQueue<IServiceStarted<IComplexEventService>> startedComplexEventServices =
+        //    new ConcurrentQueue<IServiceStarted<IComplexEventService>>();
 
-        //private void NotifyServiceStarted(IServiceStarted<IComplexEventService> service)
+       
+
+        //ConcurrentQueue<IComplexEventLogCreated> complexEventLogs = new ConcurrentQueue<IComplexEventLogCreated>();
+
+        //private void HandleComplexEventLog(IComplexEventLogCreated complexEventLog)
         //{
-        //    startedComplexEventServices.Enqueue(service);
-        //    if (startedComplexEventServices.Count != _complexEvents.Count()) return;
-        //    Publish(new ServiceStarted<IProcessService>(this,
-        //        new StateEventInfo(Process, RevolutionData.Context.Actor.Events.ActorStarted), Process, Source));
-
+        //    complexEventLogs.Enqueue(complexEventLog);
+           
+        //    var msg = CreateProcessLog();
+        //    Publish(msg);
+        //    complexEventLogs = new ConcurrentQueue<IComplexEventLogCreated>();
         //}
 
 
-        ConcurrentQueue<IComplexEventLogCreated> complexEventLogs = new ConcurrentQueue<IComplexEventLogCreated>();
-
-        private void HandleComplexEventLog(IComplexEventLogCreated complexEventLog)
-        {
-            complexEventLogs.Enqueue(complexEventLog);
-           // if (complexEventLogs.Count != _complexEvents.Count()) return;
-
-            var msg = CreateProcessLog();
-            Publish(msg);
-            complexEventLogs = new ConcurrentQueue<IComplexEventLogCreated>();
-        }
-
-        private ProcessLogCreated CreateProcessLog()
-        {
-            var logs = new List<IComplexEventLog>(msgQue.ToImmutableList().CreatEventLogs(Source));
-
-            var msg = new ProcessLogCreated(logs.OrderBy(x => x.Time),
-                new StateEventInfo(Process, RevolutionData.Context.Process.Events.LogCreated), Process, Source);
-            return msg;
-        }
-
-        private void HandleProcessLogRequest(IRequestProcessLog requestProcessLog)
-        {
-            //Request logs from ComplexEventActors
-
-            var msg = CreateProcessLog();
-            Publish(msg);
-        }
-
-        private void HandleRequestState(IRequestProcessState requestProcessState)
-        {
-            foreach (var ps in ProcessStateMessages)
-            {
-                Publish(ps.Value);
-            }
-        }
-
-        //private void SaveStateMessages(IProcessStateMessage pe)
+        //private void HandleProcessLogRequest(IRequestProcessLog requestProcessLog)
         //{
+        //    //Request logs from ComplexEventActors
 
-        //    ProcessStateMessages.AddOrUpdate(pe.GetType(), pe, (k, v) => pe);
-        //    var msg = new ProcessStateUpdated(pe.EntityType, pe,
-        //        new StateEventInfo(Process, RevolutionData.Context.Process.Events.StateUpdated), Process, Source);
-        //   // Publish(msg);
+        //    var msg = CreateProcessLog();
+        //    Publish(msg);
         //}
 
+     
         private void StartActors(IEnumerable<IComplexEventAction> complexEvents)
         {
             Contract.Requires(complexEvents.Any() && complexEvents != null);
@@ -192,18 +144,6 @@ namespace DataServices.Actors
                     }
                     // }
                 });
-        }
-
-        private void HandleProcessEvents(IProcessSystemMessage pe)
-        {
-            // Log the message 
-            //TODO: Reenable event log
-            //Persist(pe, x => { });//(x) => msgQue.Add(x)
-
-            // send out Process State Events
-
-            msgQue.Enqueue(pe);
-
         }
 
 

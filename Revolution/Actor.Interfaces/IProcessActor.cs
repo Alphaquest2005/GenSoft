@@ -9,7 +9,7 @@ namespace Actor.Interfaces
     public interface IProcessService:IAgent, IService<IProcessService>
     {
         ISystemProcess Process { get; }
-        ConcurrentDictionary<Type, IProcessStateMessage> ProcessStateMessages { get; }
+        //ConcurrentDictionary<Type, IProcessStateMessage> ProcessStateMessages { get; }
         IActorRef ActorRef { get; }
         
     }

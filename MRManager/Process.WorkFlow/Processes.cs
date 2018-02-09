@@ -395,7 +395,7 @@ namespace Process.WorkFlow
             public static IProcessExpectedEvent CreateProcessCurrentEntityChangedExpectedEvent(ISystemProcess process, IDynamicEntityType entityType)
             {
                return new ProcessExpectedEvent<ICurrentEntityChanged>(process: process,
-                            eventPredicate: e => e.Entity != null && e.EntityType == entityType,
+                            eventPredicate: e => e.Entity != null && e.Entity.Id > 0 &&  e.EntityType == entityType,
                             processInfo: new StateEventInfo(process, RevolutionData.Context.Process.Events.CurrentEntityChanged),
                             expectedSourceType: new SourceType(typeof(IComplexEventService)),
                             key: $"CurrentEntity-{entityType.Name}");

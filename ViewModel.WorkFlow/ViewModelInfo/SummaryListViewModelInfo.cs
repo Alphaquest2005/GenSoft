@@ -30,18 +30,7 @@ namespace RevolutionData
             {
                 var sublst = new List<IViewModelEventSubscription<IViewModel, IEvent>>
                 {
-                    //new ViewEventSubscription<ISummaryListViewModel, IViewModelIntialized>(
-                    //    $"{entityType.Name}-IViewModelIntialized",
-                    //    processId,
-                    //    e => e.ViewModel != null,
-                    //    new List<Func<ISummaryListViewModel, IViewModelIntialized, bool>>(),
-                    //    (v,e) =>
-                    //    {
-                    //        if (e.ViewModel.ViewInfo.Name != v.ViewInfo.Name) return;
-                    //        v.EntitySet.Value.Add(new DynamicEntity(entityType,0,new Dictionary<string, object>(){{ "EntityName", "Create New..." } }));
-                    //        v.EntitySet.Value.Reset();
-                    //    }),
-
+                    
                     new ViewEventSubscription<ISummaryListViewModel, IUpdateProcessStateList>(
                         $"{entityType.Name}-IUpdateProcessStateList",
                         process,
@@ -52,7 +41,7 @@ namespace RevolutionData
                             if (e.State != null && v.State.Value != null &&
                                 v.State.Value.EntitySet.SequenceEqual(e.State.EntitySet)) return;
                             v.State.Value = e.State;
-                            if (v.EntitySet.Value.Any()) v.CurrentEntity.Value = v.EntitySet.Value.First();
+                            if (v.EntitySet.Value.Any() && v.CurrentEntity.Value?.Id  != v.EntitySet.Value.First().Id) v.CurrentEntity.Value = v.EntitySet.Value.First();
 
                         }),
 
@@ -90,7 +79,7 @@ namespace RevolutionData
                var cmdLst = new List<IViewModelEventCommand<IViewModel, IEvent>>
                 {
                     new ViewEventCommand<ISummaryListViewModel, IMainEntityChanged>(
-                        key: "ChangeMainEntity",
+                        key: $"ChangeMainEntity",
                         commandPredicate: new List<Func<ISummaryListViewModel, bool>>
                         {
                             //  v => v.CurrentEntity.Value != null
@@ -108,7 +97,7 @@ namespace RevolutionData
                         }),
 
                     new ViewEventCommand<ISummaryListViewModel, IViewModelVisibilityChanged>(
-                        key: "ChangeViewModelVisibility",
+                        key: $"ChangeViewModelVisibility",
                         commandPredicate: new List<Func<ISummaryListViewModel, bool>>
                         {
                             //  v => v.CurrentEntity.Value != null
@@ -131,7 +120,7 @@ namespace RevolutionData
 
                     //Todo: supposed to be create from database
                     new ViewEventCommand<ISummaryListViewModel, IViewRowStateChanged>(
-                        key: "EditEntity",
+                        key: $"EditEntity",
                         commandPredicate: new List<Func<ISummaryListViewModel, bool>>
                         {
                             //  v => v.CurrentEntity.Value != null
@@ -173,7 +162,7 @@ namespace RevolutionData
                     publications: new List<IViewModelEventPublication<IViewModel, IEvent>>
                     {
                         new ViewEventPublication<ISummaryListViewModel, IViewStateLoaded<ISummaryListViewModel,IProcessStateList>>(
-                            key:"ViewStateLoaded",
+                            key:$"{entityType.Name}-ViewStateLoaded",
                             subject:v => v.State,
                             subjectPredicate:new List<Func<ISummaryListViewModel, bool>>
                             {
@@ -183,21 +172,21 @@ namespace RevolutionData
                             {
 
                                 return new ViewEventPublicationParameter(new object[] {s, s.State.Value},
-                                    new RevolutionEntities.Process.StateEventInfo(s.Process, Context.View.Events.ProcessStateLoaded), s.Process,
+                                    new RevolutionEntities.Process.StateEventInfo(s.Process, Context.EventFunctions.UpdateEventStatus(s.ViewInfo.EntityType.Name, Context.View.Events.ProcessStateLoaded)), s.Process,
                                     s.Source);
                             }),
 
                         new ViewEventPublication<ISummaryListViewModel, ICurrentEntityChanged>(
-                            key:"CurrentEntityChanged",
+                            key:$"{entityType.Name}-CurrentEntityChanged",
                             subject:v =>  v.CurrentEntity,//.WhenAnyValue(x => x.Value),
                             subjectPredicate:new List<Func<ISummaryListViewModel, bool>>{},
-                            messageData:s => new ViewEventPublicationParameter(new object[] {s.CurrentEntity.Value ?? DynamicEntity.NullEntity},new RevolutionEntities.Process.StateEventInfo(s.Process, Context.View.Events.CurrentEntityChanged),s.Process,s.Source)),
+                            messageData:s => new ViewEventPublicationParameter(new object[] {s.CurrentEntity.Value ?? DynamicEntity.NullEntity},new RevolutionEntities.Process.StateEventInfo(s.Process, Context.EventFunctions.UpdateEventStatus(s.ViewInfo.EntityType.Name,Context.View.Events.CurrentEntityChanged)),s.Process,s.Source)),
 
                         new ViewEventPublication<ISummaryListViewModel, IViewModelIntialized>(
                             key:$"{entityType.Name}-IViewModelIntialized",
                             subject:v => v.ViewModelState,
                             subjectPredicate:new List<Func<ISummaryListViewModel, bool>>{ v => v.ViewModelState.Value == ViewModelState.Intialized},
-                            messageData:v => new ViewEventPublicationParameter(new object[] {v},new RevolutionEntities.Process.StateEventInfo(v.Process, Context.View.Events.Intitalized),v.Process,v.Source)),
+                            messageData:v => new ViewEventPublicationParameter(new object[] {v},new RevolutionEntities.Process.StateEventInfo(v.Process, Context.EventFunctions.UpdateEventStatus(v.ViewInfo.EntityType.Name,Context.View.Events.Initialized)),v.Process,v.Source)),
 
                     },
                     commands: cmdLst ,

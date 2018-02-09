@@ -8,6 +8,7 @@ using Akka.Util.Internal;
 using Common;
 using Common.DataEntites;
 using DynamicExpresso;
+
 using GenSoft.DBContexts;
 using GenSoft.Entities;
 using JB.Collections.Reactive;
@@ -66,6 +67,9 @@ namespace DomainUtilities
                         .Include(x => x.EntityTypeAttributes).ThenInclude(x => x.EntityTypeAttributeCache)
                         .FirstOrDefault(x => x.Type.Name == entityType);
                     if (viewType == null) return DynamicEntityType.NullEntityType();
+
+                    
+
 
                     var viewset = ctx.EntityTypeAttributes
                         .Where(x => x.EntityTypeId == viewType.Id)

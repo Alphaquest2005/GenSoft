@@ -72,8 +72,9 @@ namespace DataServices.Actors
 
 
 
-        public void WireEvents<TEvent>(IProcessExpectedEvent expectedEvent) where TEvent : IProcessSystemMessage
+        public void WireEvents<TEvent>(IProcessExpectedEvent expectedEvent) where TEvent :class, IProcessSystemMessage
         {
+            
             EventMessageBus.Current.GetEvent<TEvent>(Source)
                 .Where(x => x.Process.Id == Process.Id)
                 .Where(x => x.GetType().GetInterfaces().Any(z => z == expectedEvent.EventType)).Subscribe(async x => await CheckEvent(expectedEvent, x).ConfigureAwait(false));
@@ -104,7 +105,7 @@ namespace DataServices.Actors
         {
             // if (!ComplexEventAction.Events.All(z => z.Raised())) return;
             if (ComplexEventAction.Action == null) return;
-            var inMsg = new ExecuteComplexEventAction(ComplexEventAction.Action, new DynamicComplexEventParameters(this,  msgs), new StateCommandInfo(Process, RevolutionData.Context.Actor.Commands.CreateAction), Process, Source);
+            var inMsg = new ExecuteComplexEventAction(ComplexEventAction.Action, new DynamicComplexEventParameters(this,  msgs), new StateCommandInfo(Process, RevolutionData.Context.CommandFunctions.UpdateCommandStatus(ComplexEventAction.Key, RevolutionData.Context.Actor.Commands.CreateAction)), Process, Source);
 
             Publish(inMsg);
             var outMsg = await ComplexEventAction.Action.Action(inMsg.ComplexEventParameters).ConfigureAwait(false);

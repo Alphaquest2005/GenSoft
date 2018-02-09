@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reactive.Linq;
 using System.Threading.Tasks;
 using SystemInterfaces;
 using Akka.Actor;
@@ -47,54 +48,56 @@ namespace DataServices.Actors
                 
             };
         private IUntypedActorContext ctx = null;
-        public EntityDataServiceSupervisor(ISystemProcess process, IProcessSystemMessage msg) : base(process)
+        public EntityDataServiceSupervisor(IDynamicEntityType entityType, ISystemProcess process, IProcessSystemMessage msg) : base(process)
         {
             ctx = Context;
+            EntityType = entityType;
+
             foreach (var itm in entityEvents)
             {
-              this.GetType()
+                Task.Run(() => {this.GetType()
                         .GetMethod("CreateEntityActor")
                         .MakeGenericMethod(itm.Key)
-                        .Invoke(this, new object[] {itm.Value, process, msg});
+                        .Invoke(this, new object[] {itm.Value,entityType, process, msg}); }); 
             }
-            EventMessageBus.Current.Publish(new ServiceStarted<IEntityDataServiceSupervisor>(this, new StateEventInfo(process, RevolutionData.Context.Actor.Events.ActorStarted), process, Source), Source);
+            EventMessageBus.Current.Publish(new ServiceStarted<IEntityDataServiceSupervisor>(this, new StateEventInfo(process, RevolutionData.Context.EventFunctions.UpdateEventStatus(entityType.Name, RevolutionData.Context.Actor.Events.ActorStarted)), process, Source), Source);
 
             
         }
 
-        public void CreateEntityActor<TEvent>(object action, ISystemProcess process, IProcessSystemMessage msg) where TEvent : IMessage
+        public void CreateEntityActor<TEvent>(object action,IDynamicEntityType entityType, ISystemProcess process, IProcessSystemMessage msg) where TEvent : class, IEntityRequest
         {
             /// Create Actor Per Event
-            Type actorType = typeof(EntityDataServiceActor<>).MakeGenericType(typeof(TEvent));
-            var inMsg = new CreateEntityService(actorType,action, new StateCommandInfo(process, RevolutionData.Context.CommandFunctions.UpdateCommandStatus(typeof(TEvent).GetFriendlyName(), RevolutionData.Context.Actor.Commands.StartActor)),process,Source );
-            try
-            {
+            
+           
                 
-                Task.Run(() =>
-                {
-                    ctx.ActorOf(
-                        Props.Create(actorType, inMsg, msg)
-                            .WithRouter(new RoundRobinPool(1,
-                                new DefaultResizer(1, Environment.ProcessorCount, 1, .2, .3, .1,
-                                    Environment.ProcessorCount))),
-                        "EntityDataServiceActor-" +
-                        typeof (TEvent).GetFriendlyName().Replace("<", "'").Replace(">", "'"));
-                });
-                
+                    Type actorType = typeof(EntityDataServiceActor<>).MakeGenericType(typeof(TEvent));
+                    var inMsg = new CreateEntityService(actorType, action, new StateCommandInfo(process, RevolutionData.Context.CommandFunctions.UpdateCommandStatus(typeof(TEvent).GetFriendlyName(), RevolutionData.Context.Actor.Commands.StartActor)), process, Source);
+                    try
+                    {
+                        
+                     var child = ctx.ActorOf(
+                            Props.Create(actorType, inMsg, msg)
+                                .WithRouter(new RoundRobinPool(1,
+                                    new DefaultResizer(1, Environment.ProcessorCount, 1, .2, .3, .1,
+                                        Environment.ProcessorCount))),
+                            "EntityDataServiceActor-" +
+                            typeof(TEvent).GetFriendlyName().Replace("<", "'").Replace(">", "'"));
 
-            }
-            catch (Exception ex)
-            {
-                //ToDo: This seems like a good way... getting the expected event type 
-                PublishProcesError(inMsg, ex, inMsg.ProcessInfo.State.ExpectedEvent.GetType());
-            }
+                     EventMessageBus.Current.GetEvent<TEvent>(Source).Where(x => x.EntityType == entityType ).Subscribe(x => child.Tell(x));
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //ToDo: This seems like a good way... getting the expected event type 
+                        PublishProcesError(inMsg, ex, inMsg.ProcessInfo.State.ExpectedEvent.GetType());
+                    }
+
+                
             
         }
 
-       
-
-      
-
+        public IDynamicEntityType EntityType { get; }
     }
 
 }

@@ -436,24 +436,26 @@ namespace DataServices.Actors
         private void PublishComplexEvent(SystemProcess systemProcess, IComplexEventAction processComplexEvent)
         {
             var inMsg = new LoadProcessComplexEvents(new List<IComplexEventAction>(){processComplexEvent},
-                new RevolutionEntities.Process.StateCommandInfo(systemProcess, RevolutionData.Context.Process.Commands.StartProcess),
+                new RevolutionEntities.Process.StateCommandInfo(systemProcess, RevolutionData.Context.CommandFunctions.UpdateCommandStatus(processComplexEvent.Key, RevolutionData.Context.Process.Commands.StartProcess)),
                 systemProcess, Source);
 
             EventMessageBus.Current.Publish(inMsg, Source);
         }
 
-        private void PublishViewModels(SystemProcess systemProcess, List<IViewModelInfo> viewModelInfos)
-        {
-            var inMsg = new LoadDomainProcessViewModels(viewModelInfos,
-                new RevolutionEntities.Process.StateCommandInfo(systemProcess, RevolutionData.Context.Process.Commands.StartProcess),
-                systemProcess, Source);
+        //private void PublishViewModels(SystemProcess systemProcess, List<IViewModelInfo> viewModelInfos)
+        //{
+        //    var inMsg = new LoadDomainProcessViewModels(viewModelInfos,
+        //        new RevolutionEntities.Process.StateCommandInfo(systemProcess, RevolutionData.Context.Process.Commands.StartProcess),
+        //        systemProcess, Source);
 
-            EventMessageBus.Current.Publish(inMsg, Source);
-        }
+        //    EventMessageBus.Current.Publish(inMsg, Source);
+        //}
         private void PublishViewModel(SystemProcess systemProcess, IViewModelInfo viewModelInfo)
         {
+            var entityViewInfo = viewModelInfo.ViewInfo as IEntityViewInfo;
+
             var inMsg = new LoadDomainProcessViewModels(new List<IViewModelInfo>(){viewModelInfo},
-                new RevolutionEntities.Process.StateCommandInfo(systemProcess, RevolutionData.Context.Process.Commands.StartProcess),
+                new RevolutionEntities.Process.StateCommandInfo(systemProcess, RevolutionData.Context.CommandFunctions.UpdateCommandStatus(entityViewInfo.EntityType.Name, RevolutionData.Context.Process.Commands.StartProcess)),
                 systemProcess, Source);
 
             EventMessageBus.Current.Publish(inMsg, Source);
@@ -872,9 +874,9 @@ namespace DataServices.Actors
                     {
                         var parentType = r.Key.Type.Name;
                         DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType);
+                        
 
-
-                        yield return Processes.ComplexActions.GetComplexAction("IntializeProcessStateList",new object[]{ process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType)});
+                    yield return Processes.ComplexActions.GetComplexAction("IntializeProcessStateList",new object[]{ process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType)});
                         yield return Processes.ComplexActions.GetComplexAction("UpdateStateList",new object[] {process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType)});
                         yield return Processes.ComplexActions.GetComplexAction("UpdateState",new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType) });
                         yield return Processes.ComplexActions.GetComplexAction("RequestState",new object[] { process, parentType, parentType, "Id" });

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Threading.Tasks;
 using SystemInterfaces;
 using Actor.Interfaces;
 using EventAggregator;
@@ -18,9 +20,9 @@ namespace DataServices.Actors
         public EntityDataServiceActor(ICreateEntityService msg, IProcessSystemMessage firstMessage) : base(msg.Process)
         {
             Action = (Action<ISystemSource,TService>)msg.Action;
-            // Command<TService>(m => HandledEvent(m));
-            if(firstMessage is TService) HandledEvent((TService)firstMessage);
-            EventMessageBus.Current.GetEvent<TService>(Source).Subscribe(x => HandledEvent(x));
+            if(firstMessage is TService service) HandledEvent(service);
+            //EventMessageBus.Current.GetEvent<TService>(Source).Subscribe(x => HandledEvent(x));
+            Command(x => HandledEvent((TService)x));
             EventMessageBus.Current.Publish(new ServiceStarted<IEntityDataServiceActor<TService>>(this,new StateEventInfo(msg.Process, RevolutionData.Context.EventFunctions.UpdateEventStatus(msg.ActorType.GetFriendlyName(),RevolutionData.Context.Actor.Events.ActorStarted)), msg.Process,Source), Source);
         }
 
@@ -31,7 +33,7 @@ namespace DataServices.Actors
             // Persist(msg, x => { });//x => Action.Invoke(DbContext, Source, x)
             try
             {
-                Action.Invoke(Source,msg);
+                Task.Run(() => { Action.Invoke(Source,msg);});  
             }
             catch (Exception ex)
             {

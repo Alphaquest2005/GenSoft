@@ -49,7 +49,7 @@ namespace DataServices.Actors
                 $"{complexEventActions.First().Process.Name.GetSafeActorName()}:{complexEventActions.First().Process.Id}",
                 complexEventActions,
                 new StateCommandInfo(complexEventActions.First().Process,
-                    RevolutionData.Context.Actor.Commands.CreateActor),
+                    RevolutionData.Context.CommandFunctions.UpdateCommandStatus(complexEventActions.First().Key, RevolutionData.Context.Actor.Commands.CreateActor)),
                 complexEventActions.First().Process, Source);
             PublishActor(c);
         }
@@ -69,8 +69,7 @@ namespace DataServices.Actors
                         {
                             ctx.ActorOf(Props.Create<ProcessActor>(inMsg), inMsg.ActorName);
                         }
-                    })
-                    .ConfigureAwait(false);
+                    }).ConfigureAwait(false);
 
 
 

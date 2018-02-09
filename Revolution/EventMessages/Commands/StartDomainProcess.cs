@@ -38,10 +38,7 @@ namespace EventMessages.Commands
 
     public class LoadDomainProcessViewModels : ProcessSystemMessage, ILoadDomainProcessViewModels
     {
-        public LoadDomainProcessViewModels( List<IViewModelInfo> viewModelInfos)
-        {
-            ViewModelInfos = viewModelInfos;
-        }
+        public LoadDomainProcessViewModels(){}
 
 
         public LoadDomainProcessViewModels(List<IViewModelInfo> viewModelInfos, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source)
@@ -50,5 +47,19 @@ namespace EventMessages.Commands
             ViewModelInfos = viewModelInfos;
         }
         public List<IViewModelInfo> ViewModelInfos { get; }
+    }
+
+    [Export(typeof(ILoadDataService))]
+
+    public class LoadDataService : ProcessSystemMessage, ILoadDataService
+    {
+        public LoadDataService(){}
+
+        public LoadDataService(string entityTypeName, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source)
+            : base(new DynamicObject("LoadDataService", new Dictionary<string, object>() { { "EntityTypeName", entityTypeName } }), processInfo, process, source)
+        {
+            EntityTypeName = entityTypeName;
+        }
+        public string EntityTypeName { get; }
     }
 }

@@ -86,31 +86,32 @@ namespace Core.Common.UI
 
         private static Action<dynamic> CreatePublishMessageAction(IViewModel viewModel, IViewModelEventPublication<IViewModel, IEvent> itm)
         {
-            Action<dynamic> publishMessage = x =>
+            void PublishMessage(dynamic x)
             {
                 var param = itm.MessageData.Invoke(viewModel);
                 var paramArray = param.Params.ToList();
                 paramArray.Add(param.ProcessInfo);
                 paramArray.Add(param.Process);
                 paramArray.Add(param.Source);
-                var concreteEvent = BootStrapper.BootStrapper.Container.GetConcreteType(itm.EventType) ;
-                ProcessSystemMessage msg;
+                var concreteEvent = BootStrapper.BootStrapper.Container.GetConcreteType(itm.EventType);
+                dynamic msg;
                 if (concreteEvent == null)
                 {
                     msg = new ProcessEventFailure(itm.EventType, new FailedMessageData(itm, param.ProcessInfo, param.Process, param.Source), itm.EventType, new InvalidOperationException($"Type:{itm.EventType.Name} not found in MEF - consider adding export to type."), param.ProcessInfo, viewModel.Source);
                 }
                 else
                 {
-                    msg = (ProcessSystemMessage) Activator.CreateInstance(concreteEvent, paramArray.ToArray());
+                    msg = Activator.CreateInstance(concreteEvent, paramArray.ToArray());
                 }
                 EventMessageBus.Current.Publish(msg, viewModel.Source);
-            };
-            return publishMessage;
+            }
+
+            return PublishMessage;
         }
 
         private static Action<TResult> CreateCommandMessageAction<TResult>(IViewModel viewModel, IViewModelEventCommand<IViewModel, IEvent> itm)
         {
-            Action<TResult> publishMessage = x =>
+            void PublishMessage(TResult x)
             {
                 var param = itm.MessageData.Invoke(viewModel);
                 var paramArray = param.Params.ToList();
@@ -122,23 +123,21 @@ namespace Core.Common.UI
                 ProcessSystemMessage msg;
                 if (concreteEvent == null)
                 {
-                    msg = new ProcessEventFailure(itm.EventType,
-                            new FailedCommandData(itm, param.ProcessInfo, param.Process, param.Source), itm.EventType,
-                            new InvalidOperationException("Type not found in MEF - consider adding export to type."), new StateEventInfo(param.ProcessInfo.Process,"Error","Error occured getting type","",param.ProcessInfo.State)
-                            , viewModel.Source);
+                    msg = new ProcessEventFailure(itm.EventType, new FailedCommandData(itm, param.ProcessInfo, param.Process, param.Source), itm.EventType, new InvalidOperationException("Type not found in MEF - consider adding export to type."), new StateEventInfo(param.ProcessInfo.Process, "Error", "Error occured getting type", "", param.ProcessInfo.State), viewModel.Source);
                 }
                 else
                 {
-                    msg = (ProcessSystemMessage)Activator.CreateInstance(concreteEvent, paramArray.ToArray());
+                    msg = (ProcessSystemMessage) Activator.CreateInstance(concreteEvent, paramArray.ToArray());
                 }
-                
+
                 EventMessageBus.Current.Publish(msg, viewModel.Source);
-            };
-            return publishMessage;
+            }
+
+            return PublishMessage;
         }
 
         public static void Subscribe<TEvent, TViewModel>(TViewModel viewModel, Func<TEvent, bool> eventPredicate,
-            IEnumerable<Func<TViewModel, TEvent, bool>> predicate, Action<TViewModel, TEvent> action) where TEvent : IProcessSystemMessage
+            IEnumerable<Func<TViewModel, TEvent, bool>> predicate, Action<TViewModel, TEvent> action) where TEvent : class, IProcessSystemMessage
         {
             EventMessageBus.Current.GetEvent<TEvent>(((IViewModel)viewModel).Source).Where(eventPredicate).Where(x => predicate.All(z => z.Invoke(viewModel, x))).Subscribe(x => action.Invoke(viewModel, x));
         }

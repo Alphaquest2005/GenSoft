@@ -132,8 +132,12 @@ namespace RevolutionData
 
         private static List<IViewModelEventSubscription<IViewModel, IEvent>> CreateParentSubscibtions(ISystemProcess processId, ViewModelEntity relationship)
         {
-            var res = new List<IViewModelEventSubscription<IViewModel, IEvent>>();
-            res.Add((IViewModelEventSubscription<IViewModel, IEvent>)typeof(EntityDetailsViewModelInfo).GetMethod("ParentCurrentEntityChanged").Invoke(null, new object[] { processId, relationship.EntityType.Name, relationship.ViewProperty }));
+            var res = new List<IViewModelEventSubscription<IViewModel, IEvent>>
+            {
+                (IViewModelEventSubscription<IViewModel, IEvent>) typeof(EntityDetailsViewModelInfo)
+                    .GetMethod("ParentCurrentEntityChanged").Invoke(null,
+                        new object[] {processId, relationship.EntityType.Name, relationship.ViewProperty})
+            };
             return res;
         }
 

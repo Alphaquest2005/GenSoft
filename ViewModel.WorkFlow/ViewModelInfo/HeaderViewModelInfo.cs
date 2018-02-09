@@ -61,7 +61,7 @@ namespace RevolutionData
                         key:$"HeaderViewModel-IViewModelIntialized",
                         subject:v => v.ViewModelState,
                         subjectPredicate:new List<Func<IHeaderViewModel, bool>>{ v => v.ViewModelState.Value == ViewModelState.Intialized},
-                        messageData:v => new ViewEventPublicationParameter(new object[] {v},new RevolutionEntities.Process.StateEventInfo(v.Process, Context.View.Events.Intitalized),v.Process,v.Source)),
+                        messageData:v => new ViewEventPublicationParameter(new object[] {v},new RevolutionEntities.Process.StateEventInfo(v.Process, Context.View.Events.Initialized),v.Process,v.Source)),
 
                     new ViewEventPublication<IHeaderViewModel, ICurrentApplicationChanged>(
                         key:$"HeaderViewModel-CurrentEntityChanged",

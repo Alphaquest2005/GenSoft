@@ -13,4 +13,8 @@ namespace Actor.Interfaces
     {
         List<IViewModelInfo> ViewModelInfos { get; }
     }
+    public interface ILoadDataService : IProcessSystemMessage
+    {
+        string EntityTypeName { get; }
+    }
 }

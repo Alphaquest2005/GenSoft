@@ -10,11 +10,11 @@ namespace RevolutionEntities.Process
     public class ProcessAction : IProcessAction
     {
         public ProcessAction() { }
-        public Func<IDynamicComplexEventParameters, Task<IProcessSystemMessage>> Action { get; set; }
+        public Func<IDynamicComplexEventParameters, Task<dynamic>> Action { get; set; }
         public Func<IDynamicComplexEventParameters, IProcessStateInfo> ProcessInfo { get; set; }
         public ISourceType ExpectedSourceType { get; set; }
 
-        public ProcessAction(Func<IDynamicComplexEventParameters, Task<IProcessSystemMessage>> action, Func<IDynamicComplexEventParameters, IStateCommandInfo> processInfo, ISourceType expectedSourceType)
+        public ProcessAction(Func<IDynamicComplexEventParameters, Task<dynamic>> action, Func<IDynamicComplexEventParameters, IStateCommandInfo> processInfo, ISourceType expectedSourceType)
         {
             Contract.Requires(action != null);
             Action = action;
