@@ -13,6 +13,9 @@ using Utilities;
 using Entity = GenSoft.Entities.Entity;
 using EntityEvents = RevolutionData.Context.Entity;
 using System.Linq.Dynamic;
+using Process.WorkFlow;
+using RevolutionEntities.Process;
+using StateEventInfo = RevolutionEntities.Process.StateEventInfo;
 
 
 namespace EFRepository
@@ -24,7 +27,7 @@ namespace EFRepository
 
         static DataContext()
         {
-            EventMessageBus.Current.GetEvent<ICurrentApplicationChanged>(Source).Subscribe(OnCurrentApplicationChanged);
+            EventMessageBus.Current.GetEvent<ICurrentApplicationChanged>( new StateEventInfo(Processes.IntialSystemProcess, RevolutionData.Context.Process.Events.CurrentApplicationChanged ),Source).Subscribe(OnCurrentApplicationChanged);
             //GenSoft-Creator is the default database and because its real data i need not do this any where else
             SetCurrentApplication(1);
         }

@@ -16,7 +16,7 @@ namespace RevolutionData.Context
             public static IStateCommand CreateComplexEventLog => new StateCommand("CreateComplexEventLog", "Create ComplexEvent Log", Events.ComplexEventLogCreated);
             public static IStateCommand PublishState => new StateCommand("RequestState", "Request Process State", Events.StatePublished);
             public static IStateCommand CleanUpProcess => new StateCommand("Cleanup Process", "Clean up Process", Events.ProcessCleanedUp);
-            public static IStateCommand CurrentEntityChanged => new StateCommand("CurrentEntityChanged", "Process Current Entity Changed");
+            public static IStateCommand ChangeMainEntity => new StateCommand("ChangeMainEntity", "Change MainEntity");
             public static IStateCommand ChangeCurrentEntity => new StateCommand("ChangeCurrentEntity", "Change Process CurrentEntity", Events.CurrentEntityChanged);
         }
 
@@ -32,6 +32,9 @@ namespace RevolutionData.Context
             public static IStateEvent StatePublished => new StateEvent("StatePublished", "Process State Published", "");
             public static IStateEvent ProcessCleanedUp => new StateEvent("ProcessCleanUp", "Process CleanUp", "", new StateCommand("CleanupProcess", "Cleanup Process"));
             public static IStateEvent CurrentEntityChanged => new StateEvent("CurrentEntityChanged", "Process Current Entity Changed", "");
+
+            public static IStateEvent CurrentApplicationChanged => new StateEvent("CurrentApplicationChanged", "Current Application Changed", "Current Application Changed");
+            public static IStateEvent MainEntityChanged => new StateEvent("MainEntityChanged", "Process Main Entity Changed", "");
             //closed Loop
         }
 

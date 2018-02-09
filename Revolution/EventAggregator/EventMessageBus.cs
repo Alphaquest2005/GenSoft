@@ -27,7 +27,7 @@ namespace EventAggregator
 
         public static EventMessageBus Current { get; }
 
-        public IObservable<TEvent> GetEvent<TEvent>(ISource caller) where TEvent : IProcessSystemMessage
+        public IObservable<TEvent> GetEvent<TEvent>(IProcessStateInfo procesInfo, ISource caller) where TEvent : IProcessSystemMessage
         {
             Contract.Requires(caller != null);
             var ge = ea.GetEvent<TEvent>();
@@ -40,9 +40,14 @@ namespace EventAggregator
             Task.Run(() =>
             {
                 var key = $"{typeof(TEvent).GetFriendlyName()}-{caller.Process.Id}";
-                eventStore.TryGetValue(key, out dynamic sampleEvent);
-                if (sampleEvent != null)
-                    Publish(sampleEvent, Source);
+                
+                eventStore.TryGetValue("Pub-" + key, out dynamic actualEvent);
+                if (actualEvent != null)
+                {
+                    Publish(actualEvent, Source);
+                    eventStore.TryRemove("Pub-" + key, out actualEvent);
+                }
+                eventStore.AddOrUpdate("Get-" + key, null);
                 return ea.GetEvent<TEvent>();
             });
             return ge;
@@ -64,7 +69,7 @@ namespace EventAggregator
                 {
 
                     var key = $"I{typeof(TEvent).GetFriendlyName()}-{sampleEvent.Process.Id}";
-                    eventStore.AddOrUpdate(key, sampleEvent);
+                    if(!eventStore.ContainsKey("Get-"+key)) eventStore.AddOrUpdate("Pub-"+key, sampleEvent);
                 });
                 Task.Run(() => { ea.Publish(sampleEvent);});
             }

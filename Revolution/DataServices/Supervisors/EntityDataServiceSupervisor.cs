@@ -58,7 +58,7 @@ namespace DataServices.Actors
                 Task.Run(() => {this.GetType()
                         .GetMethod("CreateEntityActor")
                         .MakeGenericMethod(itm.Key)
-                        .Invoke(this, new object[] {itm.Value,entityType, process, msg}); }); 
+                        .Invoke(this, new object[] {itm.Value,entityType, process, msg}); }).ConfigureAwait(false); 
             }
             EventMessageBus.Current.Publish(new ServiceStarted<IEntityDataServiceSupervisor>(this, new StateEventInfo(process, RevolutionData.Context.EventFunctions.UpdateEventStatus(entityType.Name, RevolutionData.Context.Actor.Events.ActorStarted)), process, Source), Source);
 
@@ -84,7 +84,7 @@ namespace DataServices.Actors
                             "EntityDataServiceActor-" +
                             typeof(TEvent).GetFriendlyName().Replace("<", "'").Replace(">", "'"));
 
-                     EventMessageBus.Current.GetEvent<TEvent>(Source).Where(x => x.EntityType == entityType ).Subscribe(x => child.Tell(x));
+                     EventMessageBus.Current.GetEvent<TEvent>(inMsg.ProcessInfo,Source).Where(x => x.EntityType == entityType ).Subscribe(x => child.Tell(x));
 
                     }
                     catch (Exception ex)

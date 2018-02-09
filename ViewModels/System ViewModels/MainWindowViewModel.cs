@@ -11,6 +11,7 @@ using EventAggregator;
 using Process.WorkFlow;
 using Reactive.Bindings;
 using RevolutionData;
+using RevolutionEntities.Process;
 using RevolutionEntities.ViewModels;
 using ViewModel.Interfaces;
 
@@ -42,7 +43,7 @@ namespace ViewModels
         {
             this.WireEvents();
 
-            EventMessageBus.Current.GetEvent<ICurrentApplicationChanged>(Source).Subscribe(OnCurrentApplicationChanged);
+            EventMessageBus.Current.GetEvent<ICurrentApplicationChanged>(new StateEventInfo(Process, new StateEvent("CurrentApplicationChanged","MainWindowApplication","notes")), Source).Subscribe(OnCurrentApplicationChanged);
         }
 
         private void OnCurrentApplicationChanged(ICurrentApplicationChanged currentEntityChanged)

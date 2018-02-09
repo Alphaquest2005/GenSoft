@@ -19,7 +19,7 @@ namespace DataServices.Actors
         public ViewModelActor(ISystemProcess process) : base(process)
         {
             ctx = Context;
-            Command<LoadViewModel>(x => HandleProcessViews(x));
+            Receive<LoadViewModel>(x => HandleProcessViews(x));
             
         }
         

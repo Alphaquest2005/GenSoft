@@ -15,12 +15,7 @@ namespace EventMessages.Commands
 
     public class LoadProcessComplexEvents : ProcessSystemMessage, ILoadProcessComplexEvents
     {
-        public LoadProcessComplexEvents(List<IComplexEventAction> complexEvents)
-        {
-            
-            ComplexEvents = complexEvents;
-            
-        }
+        public LoadProcessComplexEvents(){}
        
 
         public LoadProcessComplexEvents(List<IComplexEventAction> complexEvents, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) 

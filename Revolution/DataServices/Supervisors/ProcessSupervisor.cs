@@ -27,7 +27,7 @@ namespace DataServices.Actors
 
             ctx = Context;
 
-            EventMessageBus.Current.GetEvent<ILoadProcessComplexEvents>(Source).Subscribe(HandleDomainProcess);
+            EventMessageBus.Current.GetEvent<ILoadProcessComplexEvents>(new StateEventInfo(firstMsg.Process, RevolutionData.Context.Process.Events.ProcessStarted), Source).Subscribe(HandleDomainProcess);
             StartProcess(processComplexEvents, firstMsg.User);
         }
 
@@ -64,11 +64,19 @@ namespace DataServices.Actors
 
                 Task.Run(() =>
                     {
-                        var child = ctx.Child(inMsg.ActorName);
-                        if (Equals(child, ActorRefs.Nobody))
+                        //var child = ctx.Child(inMsg.ActorName);
+                        //if (Equals(child, ActorRefs.Nobody))
+                        //{
+                        try
                         {
                             ctx.ActorOf(Props.Create<ProcessActor>(inMsg), inMsg.ActorName);
                         }
+                        catch (Exception e)
+                        {
+                          
+                        }
+                            
+                        //}
                     }).ConfigureAwait(false);
 
 

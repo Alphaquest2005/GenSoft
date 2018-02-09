@@ -9,8 +9,11 @@ using EventMessages.Events;
 using GenSoft.DBContexts;
 using GenSoft.Entities;
 using Microsoft.EntityFrameworkCore;
+using Process.WorkFlow;
+using RevolutionEntities.Process;
 using Entity = GenSoft.Entities.Entity;
 using EntityEvents = RevolutionData.Context.Entity;
+using StateEventInfo = GenSoft.Entities.StateEventInfo;
 
 
 namespace EFRepository
@@ -21,7 +24,7 @@ namespace EFRepository
 
         static DynamicDataContext()
         {
-            EventMessageBus.Current.GetEvent<ICurrentApplicationChanged>(Source).Subscribe(OnCurrentApplicationChanged);
+            EventMessageBus.Current.GetEvent<ICurrentApplicationChanged>(new RevolutionEntities.Process.StateEventInfo(Processes.IntialSystemProcess, new StateEvent("CurrentApplicationChanged", "DataContext", "notes")),Source).Subscribe(OnCurrentApplicationChanged);
         }
 
         private static Application CurrentApplication { get;  set; }

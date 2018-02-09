@@ -46,13 +46,13 @@ namespace DataServices.Actors
             //    .Subscribe(x => HandleComplexEventLog(x));
 
             Publish(new ServiceStarted<IProcessService>(this,
-                new StateEventInfo(Process, RevolutionData.Context.Actor.Events.ActorStarted), Process, Source));
+                new StateEventInfo(Process,RevolutionData.Context.EventFunctions.UpdateEventStatus(ActorName,RevolutionData.Context.Actor.Events.ActorStarted)), Process, Source));
 
-            EventMessageBus.Current.GetEvent<ICreateProcessActor>(Source)
+            EventMessageBus.Current.GetEvent<ICreateProcessActor>(msg.ProcessInfo,Source)
                 .Where(x => x.Process.Id == msg.Process.Id)
                 .Where(x => x.ActorName == this.ActorName).Subscribe(x => UpdateActor(x.ComplexEvents));
 
-            EventMessageBus.Current.GetEvent<ICleanUpSystemProcess>(Source)
+            EventMessageBus.Current.GetEvent<ICleanUpSystemProcess>( new StateCommandInfo(msg.Process, RevolutionData.Context.Process.Commands.CleanUpProcess), Source)
                 .Where(x => x.ProcessToBeCleanedUp.Id > 1 && x.ProcessToBeCleanedUp.Id == Process.Id)
                 .Subscribe(x => CleanUpActor(x));
 
@@ -71,7 +71,7 @@ namespace DataServices.Actors
 
             
             StartActors(msg.ComplexEvents);
-            EventMessageBus.Current.GetEvent<ILoadProcessComplexEvents>(Source)
+            EventMessageBus.Current.GetEvent<ILoadProcessComplexEvents>(new StateCommandInfo(msg.Process, RevolutionData.Context.CommandFunctions.UpdateCommandStatus(ActorName, RevolutionData.Context.Process.Commands.StartProcess)), Source)
                 .Where(x => $"{x.Name}".GetSafeActorName() == ActorName).Subscribe(x => HandleDomainProcess(x));
 
         }
@@ -156,10 +156,10 @@ namespace DataServices.Actors
 
                 Task.Run(() =>
                 {
-                var child = ctx.Child(
-                    $"ComplexEventActor:-{inMsg.ComplexEventService.ActorId.GetSafeActorName()}-{inMsg.Process.Id}");
-                if (Equals(child, ActorRefs.Nobody))
-                {
+                //var child = ctx.Child(
+                //    $"ComplexEventActor:-{inMsg.ComplexEventService.ActorId.GetSafeActorName()}-{inMsg.Process.Id}");
+                //if (Equals(child, ActorRefs.Nobody))
+                //{
                     try
                         {
                             ctx.ActorOf(Props.Create<ComplexEventActor>(inMsg),
@@ -167,10 +167,10 @@ namespace DataServices.Actors
                         }
                         catch (Exception ex)
                         {
-                            if (!ex.Message.Contains("is not unique!")) throw;
+                           // if (!ex.Message.Contains("is not unique!")) throw;
                         }
 
-                   }
+                   //}
                 }).ConfigureAwait(false);
 
             }

@@ -28,7 +28,7 @@ namespace DataServices.Actors
           
 
             HandleProcessViews(processViewModelInfos);
-            EventMessageBus.Current.GetEvent<ILoadDomainProcessViewModels>(Source).Subscribe(x => HandleProcessViews(x.ViewModelInfos));
+            EventMessageBus.Current.GetEvent<ILoadDomainProcessViewModels>(new RevolutionEntities.Process.StateCommandInfo(process, RevolutionData.Context.CommandFunctions.UpdateCommandStatus("shit can't think", RevolutionData.Context.Process.Commands.StartProcess)), Source).Subscribe(x => HandleProcessViews(x.ViewModelInfos));
             
             EventMessageBus.Current.Publish(new ServiceStarted<IViewModelSupervisor>(this,new StateEventInfo(process, RevolutionData.Context.Actor.Events.ActorStarted), process, Source), Source);
         }

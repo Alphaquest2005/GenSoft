@@ -3,6 +3,7 @@ using System.Collections.Immutable;
 using System.Diagnostics;
 using SystemInterfaces;
 using Actor.Interfaces;
+using Akka.Actor;
 using Akka.Persistence;
 using Common;
 using EventAggregator;
@@ -14,7 +15,7 @@ using Utilities;
 
 namespace DataServices.Actors
 {
-    public class BaseActor<T>: ReceivePersistentActor, IAgent, IProcessSource
+    public class BaseActor<T>: ReceiveActor, IAgent, IProcessSource
     {
         public ISystemSource Source { get; }
         public ImmutableList<IProcessSystemMessage> OutMessages = ImmutableList<IProcessSystemMessage>.Empty;
@@ -47,27 +48,27 @@ namespace DataServices.Actors
             EventMessageBus.Current.Publish(msg, Source);
             OutMessages = OutMessages.Add(msg);
         }
-        public override string PersistenceId
-        {
-            get
-            {
+        //public override string PersistenceId
+        //{
+        //    get
+        //    {
 
-                var path = Context.Self.Path.ToStringWithUid();
-                var res =  path.Substring(path.LastIndexOf("#") + 1);
-                return "Actor-" + typeof (T).GetFriendlyName() + "-" + res;
-            }
-        }
-        protected override void OnPersistRejected(Exception cause, object @event, long sequenceNr)
-        {
-            base.OnPersistRejected(cause, @event, sequenceNr);
-            Debugger.Break();
-        }
+        //        var path = Context.Self.Path.ToStringWithUid();
+        //        var res =  path.Substring(path.LastIndexOf("#") + 1);
+        //        return "Actor-" + typeof (T).GetFriendlyName() + "-" + res;
+        //    }
+        //}
+        //protected override void OnPersistRejected(Exception cause, object @event, long sequenceNr)
+        //{
+        //    base.OnPersistRejected(cause, @event, sequenceNr);
+        //    Debugger.Break();
+        //}
 
-        protected override void OnPersistFailure(Exception cause, object @event, long sequenceNr)
-        {
-            base.OnPersistFailure(cause, @event, sequenceNr);
-            Debugger.Break();
-        }
+        //protected override void OnPersistFailure(Exception cause, object @event, long sequenceNr)
+        //{
+        //    base.OnPersistFailure(cause, @event, sequenceNr);
+        //    Debugger.Break();
+        //}
 
         public string UserId => this.Source.SourceName;
         

@@ -19,6 +19,8 @@ namespace RevolutionData.Context
             public static IStateEvent NavigatedToView => new StateEvent("NavigatedToView", "Navigated To View", "Navigated To View");
             public static IStateEvent Initialized  => new StateEvent("Initialized", "View Initialized", "View Initialized");
             public static IStateEvent CurrentEntityChanged => new StateEvent("CurrentEntityChanged", "View Current Entity Changed", "View Current Entity Changed");
+
+            
         }
     }
 

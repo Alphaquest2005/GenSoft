@@ -22,7 +22,7 @@ namespace DataServices.Actors
             Action = (Action<ISystemSource,TService>)msg.Action;
             if(firstMessage is TService service) HandledEvent(service);
             //EventMessageBus.Current.GetEvent<TService>(Source).Subscribe(x => HandledEvent(x));
-            Command(x => HandledEvent((TService)x));
+            Receive<TService>(x => HandledEvent(x));
             EventMessageBus.Current.Publish(new ServiceStarted<IEntityDataServiceActor<TService>>(this,new StateEventInfo(msg.Process, RevolutionData.Context.EventFunctions.UpdateEventStatus(msg.ActorType.GetFriendlyName(),RevolutionData.Context.Actor.Events.ActorStarted)), msg.Process,Source), Source);
         }
 
@@ -33,7 +33,7 @@ namespace DataServices.Actors
             // Persist(msg, x => { });//x => Action.Invoke(DbContext, Source, x)
             try
             {
-                Task.Run(() => { Action.Invoke(Source,msg);});  
+                Task.Run(() => { Action.Invoke(Source,msg);}).ConfigureAwait(false);  
             }
             catch (Exception ex)
             {

@@ -56,7 +56,7 @@ namespace RevolutionData
                             return new ViewEventCommandParameter(
                                 new object[] {s, s.RowState.Value},
                                 new RevolutionEntities.Process.StateCommandInfo(s.Process,
-                                    Context.Process.Commands.CurrentEntityChanged), s.Process,
+                                    Context.Process.Commands.ChangeCurrentEntity), s.Process,
                                 s.Source);
                         }),
 

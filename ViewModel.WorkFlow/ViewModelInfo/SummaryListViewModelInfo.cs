@@ -93,7 +93,7 @@ namespace RevolutionData
                             return new ViewEventCommandParameter(
                                 new object[] {s.CurrentEntity.Value ?? s.ViewInfo.EntityType.DefaultEntity()},
                                 new RevolutionEntities.Process.StateCommandInfo(s.Process,
-                                    Context.Process.Commands.CurrentEntityChanged), s.Process,
+                                    Context.Process.Commands.ChangeMainEntity), s.Process,
                                 s.Source);
                         }),
 
@@ -138,7 +138,7 @@ namespace RevolutionData
                             return new ViewEventCommandParameter(
                                 new object[] {s, s.RowState.Value},
                                 new RevolutionEntities.Process.StateCommandInfo(s.Process,
-                                    Context.Process.Commands.CurrentEntityChanged), s.Process,
+                                    Context.Process.Commands.ChangeCurrentEntity), s.Process,
                                 s.Source);
                         }),
                 };

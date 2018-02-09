@@ -67,7 +67,7 @@ namespace RevolutionData
                         key:$"HeaderViewModel-CurrentEntityChanged",
                         subject:v =>  (IObservable<dynamic>)v.CurrentEntity,//.WhenAnyValue(x => x.Value),
                         subjectPredicate:new List<Func<IHeaderViewModel, bool>>{},
-                        messageData:s => new ViewEventPublicationParameter(new object[] {s.CurrentEntity.Value},new RevolutionEntities.Process.StateEventInfo(s.Process, Context.View.Events.CurrentEntityChanged),s.Process,s.Source)),
+                        messageData:s => new ViewEventPublicationParameter(new object[] {s.CurrentEntity.Value},new RevolutionEntities.Process.StateEventInfo(s.Process, Context.Process.Events.CurrentApplicationChanged),s.Process,s.Source)),
                 },
                 new List<IViewModelEventCommand<IViewModel, IEvent>> {},
                 typeof(IHeaderViewModel),

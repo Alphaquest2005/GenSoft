@@ -10,6 +10,7 @@ using Actor.Interfaces;
 using Akka.Actor;
 using Akka.Util.Internal;
 using Common;
+using Common.DataEntites;
 using DynamicExpresso;
 using EventAggregator;
 using EventMessages.Commands;
@@ -34,6 +35,7 @@ using IUser = SystemInterfaces.IUser;
 using ProcessAction = GenSoft.Entities.ProcessAction;
 using SystemProcess = RevolutionEntities.Process.SystemProcess;
 using DomainUtilities;
+using EventMessages.Events;
 using Application = GenSoft.Entities.Application;
 
 namespace DataServices.Actors
@@ -71,14 +73,14 @@ namespace DataServices.Actors
 
         public DomainProcessSupervisor(bool autoRun, ISystemProcess process) : base(process)
         {
-            EventMessageBus.Current.GetEvent<ICurrentApplicationChanged>(Source).Subscribe(OnCurrentApplicationChanged);
+            EventMessageBus.Current.GetEvent<ICurrentApplicationChanged>(new RevolutionEntities.Process.StateEventInfo(process,RevolutionData.Context.Process.Events.CurrentApplicationChanged), Source).Subscribe(OnCurrentApplicationChanged);
 
-            Task.Run(() => { BuildExpressions();});
+            Task.Run(() => { BuildExpressions();}).ConfigureAwait(false);
 
-            EventMessageBus.Current.GetEvent<IStartSystemProcess>(Source).Where(x => autoRun && x.ProcessToBeStartedId == RevolutionData.ProcessActions.NullProcess).Subscribe(x => StartParentProcess(x.Process.Id, x.User));
-            EventMessageBus.Current.GetEvent<IStartSystemProcess>(Source).Where(x => !autoRun && x.ProcessToBeStartedId != RevolutionData.ProcessActions.NullProcess).Subscribe(x => StartProcess(x.ProcessToBeStartedId, x.User));
+            EventMessageBus.Current.GetEvent<IStartSystemProcess>( new RevolutionEntities.Process.StateCommandInfo(process, RevolutionData.Context.Process.Commands.StartProcess), Source).Where(x => autoRun && x.ProcessToBeStartedId == RevolutionData.ProcessActions.NullProcess).Subscribe(x => StartParentProcess(x.Process.Id, x.User));
+            EventMessageBus.Current.GetEvent<IStartSystemProcess>(new RevolutionEntities.Process.StateCommandInfo(process, RevolutionData.Context.Process.Commands.StartProcess), Source).Where(x => !autoRun && x.ProcessToBeStartedId != RevolutionData.ProcessActions.NullProcess).Subscribe(x => StartProcess(x.ProcessToBeStartedId, x.User));
 
-            EventMessageBus.Current.GetEvent<IMainEntityChanged>(Source).Subscribe(OnMainEntityChanged);
+            EventMessageBus.Current.GetEvent<IMainEntityChanged>( new RevolutionEntities.Process.StateCommandInfo(process, RevolutionData.Context.Process.Commands.ChangeMainEntity), Source).Subscribe(OnMainEntityChanged);
            
 
             actorCtx = Context;
@@ -106,13 +108,13 @@ namespace DataServices.Actors
                     var parentEntityTypes = ctx.EntityRelationship.Where(x => x.EntityTypeAttributes.EntityType.ApplicationId == CurrentApplication.Id).Select(x => x.ParentEntity.EntityTypeAttributes.EntityType).Distinct();
                     var childEntityTypes = ctx.EntityRelationship.Where(x => x.EntityTypeAttributes.EntityType.ApplicationId == CurrentApplication.Id).Select(x => x.EntityTypeAttributes.EntityType).Distinct();
                     var mainEntities = parentEntityTypes.Where(z => !childEntityTypes.Any(q => q.Id == z.Id)).ToList();
-                    var tttt = ctx.EntityType.Include(x => x.EntityTypeAttributes).Where(x => x.ApplicationId == CurrentApplication.Id);
+                    var tttt = ctx.EntityType.Where(x => x.ApplicationId == CurrentApplication.Id && x.EntityTypeAttributes.All(z => !z.EntityRelationship.Any()));
                     mainEntities.AddRange(ctx.EntityType.Where(x => x.ApplicationId == CurrentApplication.Id && x.EntityTypeAttributes.All(z => !z.EntityRelationship.Any())));
                     Task.Run(() =>
                     {
                         IntializeProcess(systemProcess);
-                    });
-                    foreach (var mainEntity in mainEntities)
+                    }).ConfigureAwait(false);
+                    foreach (var mainEntity in mainEntities.DistinctBy(x => x.Id))
                     {
                         Task.Run(() =>
                         {
@@ -121,7 +123,7 @@ namespace DataServices.Actors
                                 PublishViewModel(systemProcess, viewInfo);
                             }
 
-                        });
+                        }).ConfigureAwait(false);
                         Task.Run(() =>
                         {
                             foreach (var complexEvent in GetDBComplexActions(mainEntity.Id, systemProcess))
@@ -129,7 +131,7 @@ namespace DataServices.Actors
                                 PublishComplexEvent(systemProcess, complexEvent);
                             }
 
-                        });
+                        }).ConfigureAwait(false);
                     }
 
                     
@@ -232,7 +234,7 @@ namespace DataServices.Actors
             var systemProcess = GetSystemProcess(domainProcess, user);
 
            
-            Task.Run(() => { IntializeProcess(systemProcess); });
+            Task.Run(() => { IntializeProcess(systemProcess); }).ConfigureAwait(false);
 
             Parallel.ForEach(domainProcess.ProcessStep,
                 new ParallelOptions() {MaxDegreeOfParallelism = Processes.ThisMachineInfo.Processors},
@@ -268,7 +270,7 @@ namespace DataServices.Actors
                             PublishViewModel(systemProcess, viewInfo);
                         }
                         
-                    });
+                    }).ConfigureAwait(false);
                     Task.Run(() =>
                     {
                         foreach (var complexEvent in GetDBComplexActions(processStep.MainEntity.EntityType.Id, systemProcess))
@@ -276,7 +278,7 @@ namespace DataServices.Actors
                             PublishComplexEvent(systemProcess, complexEvent);
                         }
                         
-                    });
+                    }).ConfigureAwait(false);
                     //}
                 });
 
@@ -403,7 +405,7 @@ namespace DataServices.Actors
                     new SystemProcessInfo(maxProcessId, mainEntityChanged.Process, domainProcess.SystemProcess.Name,
                         domainProcess.SystemProcess.Description, domainProcess.SystemProcess.Symbol, mainEntityChanged.User.UserId), mainEntityChanged.User, mainEntityChanged.MachineInfo);
                 }
-                Task.Run(() => { IntializeProcess(systemProcess);});
+                Task.Run(() => { IntializeProcess(systemProcess);}).ConfigureAwait(false);
                 Task.Run(() =>
                 {
                     foreach (var viewModel in GetDBViewInfos(entityType.Id, false, systemProcess))
@@ -411,14 +413,14 @@ namespace DataServices.Actors
                         PublishViewModel(systemProcess,viewModel);
                     }
                     
-                });
+                }).ConfigureAwait(false);
                 Task.Run(() =>
                 {
                     foreach (var complexEvent in GetDBComplexActions(entityType.Id, systemProcess))
                     {
                         PublishComplexEvent(systemProcess, complexEvent);
                     }
-                });
+                }).ConfigureAwait(false);
             }
         }
 
@@ -712,7 +714,7 @@ namespace DataServices.Actors
                             {
                                 cv.Visibility = Visibility.Collapsed;
                                 childviews.Add(cv);
-                                yield return cv;
+                               // yield return cv;
                             }
 
 

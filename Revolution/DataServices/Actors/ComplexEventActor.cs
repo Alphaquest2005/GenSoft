@@ -33,8 +33,8 @@ namespace DataServices.Actors
             }
             //Todo: make time out configurable
 
-            EventMessageBus.Current.GetEvent<ICleanUpSystemProcess>(Source).Where(x => x.ProcessToBeCleanedUp.Id > 1 && x.ProcessToBeCleanedUp.Id == Process.Id).Subscribe(x => CleanUpActor(x));
-            EventMessageBus.Current.GetEvent<IRequestComplexEventLog>(Source).Subscribe(x => handleComplexEventLogRequest());
+            EventMessageBus.Current.GetEvent<ICleanUpSystemProcess>(new StateCommandInfo(msg.Process, RevolutionData.Context.Process.Commands.CleanUpProcess), Source).Where(x => x.ProcessToBeCleanedUp.Id > 1 && x.ProcessToBeCleanedUp.Id == Process.Id).Subscribe(x => CleanUpActor(x));
+            EventMessageBus.Current.GetEvent<IRequestComplexEventLog>(new StateCommandInfo(msg.Process, RevolutionData.Context.Process.Commands.CreateComplexEventLog), Source).Subscribe(x => handleComplexEventLogRequest());
             
             Publish(new ServiceStarted<IComplexEventService>(this, new StateEventInfo(Process, RevolutionData.Context.EventFunctions.UpdateEventStatus(msg.ComplexEventService.ComplexEventAction.ExpectedMessageType.GetFriendlyName(), RevolutionData.Context.Actor.Events.ActorStarted)), Process, Source));
         }
@@ -75,7 +75,7 @@ namespace DataServices.Actors
         public void WireEvents<TEvent>(IProcessExpectedEvent expectedEvent) where TEvent :class, IProcessSystemMessage
         {
             
-            EventMessageBus.Current.GetEvent<TEvent>(Source)
+            EventMessageBus.Current.GetEvent<TEvent>(expectedEvent.ProcessInfo, Source)
                 .Where(x => x.Process.Id == Process.Id)
                 .Where(x => x.GetType().GetInterfaces().Any(z => z == expectedEvent.EventType)).Subscribe(async x => await CheckEvent(expectedEvent, x).ConfigureAwait(false));
         }

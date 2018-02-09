@@ -15,7 +15,7 @@ namespace RevolutionData.Context
         }
         public class Events
         {
-            public static IStateEvent ActorStarted => new StateEvent("ServiceCreated", "Service Created", "");
+            public static IStateEvent ActorStarted => new StateEvent("ServiceStarted", "Service Started", "");
             public static IStateEvent ActorStopped => new StateEvent("ActorShutDown", "Actor Terminated", "");
             public static IStateEvent ActionCreated => new StateEvent("ActionCreated", "Action Created", "");
         }

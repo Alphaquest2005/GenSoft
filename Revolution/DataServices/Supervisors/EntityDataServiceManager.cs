@@ -5,7 +5,9 @@ using SystemInterfaces;
 using Actor.Interfaces;
 using Akka.Actor;
 using EventAggregator;
+using EventMessages.Commands;
 using EventMessages.Events;
+using RevolutionEntities.Process;
 using StateEventInfo = RevolutionEntities.Process.StateEventInfo;
 
 namespace DataServices.Actors
@@ -18,7 +20,7 @@ namespace DataServices.Actors
         public EntityDataServiceManager(ISystemProcess process) : base(process)
         {
             ctx = Context;
-            EventMessageBus.Current.GetEvent<IEntityRequest>(Source).Subscribe(handleEntityRequest);
+            EventMessageBus.Current.GetEvent<IEntityRequest>(new StateCommandInfo(process, RevolutionData.Context.Entity.Commands.EntityRequest), Source).Subscribe(handleEntityRequest);
             EventMessageBus.Current.Publish(
                 new ServiceStarted<IEntityDataServiceManager>(this,
                     new StateEventInfo(process, RevolutionData.Context.Actor.Events.ActorStarted), process, Source),
@@ -61,7 +63,7 @@ namespace DataServices.Actors
                     Task.Run(() =>
                     {
                         ctx.ActorOf(Props.Create<EntityDataServiceSupervisor>(entityType, process, msg),string.Format(actorName, entityType.Name));
-                    });
+                    }).ConfigureAwait(false);
                 }
                 catch (Exception ex)
                 {
