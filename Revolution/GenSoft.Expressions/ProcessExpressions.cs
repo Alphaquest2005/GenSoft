@@ -67,9 +67,9 @@ namespace GenSoft.Expressions
                                         CreateProcessInfoFromComplexEventData.Invoke(pd.CommandData),
                                         CreateSourceType.Invoke(pd.ExpectedSourceType));
 
-        public static Func<MessageData, Func<IDynamicComplexEventParameters, Task<IProcessSystemMessage>>>
+        public static Func<MessageData, Func<IDynamicComplexEventParameters, Task<dynamic>>>
             CreateActionFromComplexEvent =
-                (cpd) => async cp => await Task.Run(() => CreateEvent.Invoke(cpd, cp));
+                (cpd) => async cp => await Task.Run(() => CreateEvent.Invoke(cpd, cp)).ConfigureAwait(false);
 
         public static Func<MessageData, IDynamicComplexEventParameters, IProcessSystemMessage> CreateEvent
             = (md, cp) =>

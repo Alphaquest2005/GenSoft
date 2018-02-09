@@ -498,12 +498,12 @@ namespace DataServices.Actors
             throw new NotImplementedException();
         }
 
-        private Func<IDynamicComplexEventParameters, Task<IProcessSystemMessage>> CreateComplexEventParametersAction(
+        private Func<IDynamicComplexEventParameters, Task<dynamic>> CreateComplexEventParametersAction(
             Action action)
         {
             try
             {
-                var actions = new List<Func<IDynamicComplexEventParameters, IProcessSystemMessage>>();
+                var actions = new List<Func<IDynamicComplexEventParameters, dynamic>>();
 
                 
                     var interpreter = new Interpreter();
@@ -526,7 +526,7 @@ namespace DataServices.Actors
                 var res = interpreter.ParseAsDelegate<Func<IDynamicComplexEventParameters, IProcessSystemMessage>>(body, action.ParameterName);
                var restuple = new Tuple<Action, Func<IDynamicComplexEventParameters, IProcessSystemMessage>>(action, res);
              
-                return async cp => await Task.Run(() => restuple.Item2(cp));
+                return async cp => await Task.Run(() => restuple.Item2(cp)).ConfigureAwait(false);
             }
             catch (Exception e)
             {

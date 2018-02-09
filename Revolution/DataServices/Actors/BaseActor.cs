@@ -41,7 +41,7 @@ namespace DataServices.Actors
             OutMessages = OutMessages.Add(outMsg);
         }
 
-        internal void Publish(IProcessSystemMessage msg)
+        internal void Publish(dynamic msg)
         {
            
             EventMessageBus.Current.Publish(msg, Source);

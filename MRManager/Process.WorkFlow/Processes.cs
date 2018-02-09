@@ -366,7 +366,7 @@ namespace Process.WorkFlow
 
                             return await Task.Run(() => new GetEntitySetWithChanges("ExactMatch",entityType,changes,
                                 new StateCommandInfo(cp.Actor.Process, Entity.Commands.GetEntity),
-                                cp.Actor.Process, cp.Actor.Source));
+                                cp.Actor.Process, cp.Actor.Source)).ConfigureAwait(false);
                         },
                     processInfo: cp =>
                         new StateCommandInfo(cp.Actor.Process,
