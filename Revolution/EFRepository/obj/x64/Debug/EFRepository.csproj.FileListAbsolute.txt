@@ -122,7 +122,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\Microsoft.
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\Microsoft.Extensions.Options.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\Microsoft.Extensions.Primitives.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\Microsoft.Win32.Primitives.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\Newtonsoft.Json.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\Reactive.EventAggregator.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\ReactiveProperty.NET46.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\ReactiveProperty.NET46.pdb

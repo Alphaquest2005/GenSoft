@@ -136,7 +136,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Microsoft.E
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Microsoft.Extensions.Primitives.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Microsoft.Win32.Primitives.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\MoreLinq.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Newtonsoft.Json.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Reactive.EventAggregator.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\ReactiveProperty.NET46.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\ReactiveProperty.NET46.pdb

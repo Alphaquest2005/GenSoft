@@ -14,7 +14,6 @@ namespace RevolutionEntities.Process
         public StateEventInfo(ISystemProcess process, IStateEvent state):base(process, state)
         {
             State = state;
-           
         }
     }
 }

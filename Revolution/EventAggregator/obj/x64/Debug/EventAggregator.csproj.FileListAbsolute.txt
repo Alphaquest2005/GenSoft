@@ -57,7 +57,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\Microso
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\Microsoft.Extensions.Options.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\Microsoft.Extensions.Primitives.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\MoreLinq.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\Newtonsoft.Json.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\ReactiveProperty.NET46.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\ReactiveProperty.NET46.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\ReactiveProperty.dll

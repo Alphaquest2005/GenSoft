@@ -11,12 +11,14 @@ namespace RevolutionData.Context
             public static IStateCommand LoadViewModel => new StateCommand("LoadViewModel", "Load View Model", Events.ViewModelLoaded);
             public static IStateCommand UnloadViewModel => new StateCommand("UnloadViewModel", "Unload View Model", Events.ViewModelLoaded);
             public static IStateCommand ChangeVisibility => new StateCommand("ChangeVisibility", "Change View Model Visibility");
+            public static IStateCommand Initialized => new StateCommand("InitializedViewModel", "Initialized View Model", Events.Initialized);
         }
         public class Events
         {
             public static IStateEvent ViewModelCreated => new StateEvent("ViewModelCreated","View Model Created", "");
             public static IStateEvent ViewModelLoaded => new StateEvent("ViewModelLoaded", "View Model Loaded", "");
             public static IStateEvent ViewModelStateChanged => new StateEvent("ViewModelStateChanged", "View Model State Changed", "");
+            public static IStateEvent Initialized => new StateEvent("ViewModelInitialized", "View Model Initialized", "");
         }
     }
 

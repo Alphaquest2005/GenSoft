@@ -8,7 +8,6 @@ C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\x64\Debug\JB.Comm
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\x64\Debug\JB.Common.Collections.Reactive.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\x64\Debug\JB.Common.Reactive.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\x64\Debug\MoreLinq.dll
-C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\x64\Debug\Newtonsoft.Json.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\x64\Debug\ReactiveProperty.NET46.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\x64\Debug\ReactiveProperty.NET46.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\x64\Debug\ReactiveProperty.dll

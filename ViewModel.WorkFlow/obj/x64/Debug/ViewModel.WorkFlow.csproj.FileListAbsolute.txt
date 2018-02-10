@@ -7,7 +7,6 @@ C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\JB.Common.Colle
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\JB.Common.Reactive.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\log4net.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\MoreLinq.dll
-C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\Newtonsoft.Json.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\Reactive.EventAggregator.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\ReactiveProperty.NET46.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\ReactiveProperty.NET46.pdb
