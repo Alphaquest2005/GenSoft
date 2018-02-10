@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reactive.Linq;
 using System.Threading.Tasks;
 using SystemInterfaces;
 using Actor.Interfaces;
@@ -21,7 +22,11 @@ namespace DataServices.Actors
         public ViewModelSupervisor(List<IViewModelInfo> processViewModelInfos, ISystemProcess process) : base(process)
         {
            HandleProcessViews(processViewModelInfos);
-            EventMessageBus.Current.GetEvent<ILoadDomainProcessViewModels>(new RevolutionEntities.Process.StateCommandInfo(process, RevolutionData.Context.CommandFunctions.UpdateCommandStatus("shit can't think", RevolutionData.Context.Process.Commands.StartProcess)), Source).Subscribe(x => HandleProcessViews(x.ViewModelInfos));
+
+            var stateCommandInfo = new RevolutionEntities.Process.StateCommandInfo(process, RevolutionData.Context.CommandFunctions.UpdateCommandStatus("shit can't think", RevolutionData.Context.Process.Commands.StartProcess), Guid.NewGuid());
+            EventMessageBus.Current.GetEvent<ILoadDomainProcessViewModels>(stateCommandInfo, Source)
+                .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == stateCommandInfo.EventKey)
+                .Subscribe(x => HandleProcessViews(x.ViewModelInfos));
             
             EventMessageBus.Current.Publish(new ServiceStarted<IViewModelSupervisor>(this,new StateEventInfo(process, RevolutionData.Context.Actor.Events.ActorStarted), process, Source), Source);
         }

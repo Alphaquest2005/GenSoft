@@ -37,22 +37,21 @@ namespace DataServices.Actors
                 }
                 //Todo: make time out configurable
 
+                var cleanUpSystemProcessCommandInfo = new StateCommandInfo(msg.Process, RevolutionData.Context.Process.Commands.CleanUpProcess, Guid.NewGuid());
                 EventMessageBus.Current
-                    .GetEvent<ICleanUpSystemProcess>(
-                        new StateCommandInfo(msg.Process, RevolutionData.Context.Process.Commands.CleanUpProcess),
-                        Source).Where(x => x.ProcessToBeCleanedUp.Id > 1 && x.ProcessToBeCleanedUp.Id == Process.Id)
+                    .GetEvent<ICleanUpSystemProcess>(cleanUpSystemProcessCommandInfo,Source)
+                    .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == cleanUpSystemProcessCommandInfo.EventKey)
+                    .Where(x => x.ProcessToBeCleanedUp.Id > 1 && x.ProcessToBeCleanedUp.Id == Process.Id)
                     .Subscribe(x => CleanUpActor(x));
-                EventMessageBus.Current
-                    .GetEvent<IRequestComplexEventLog>(
-                        new StateCommandInfo(msg.Process,
-                            RevolutionData.Context.Process.Commands.CreateComplexEventLog), Source)
+
+                var requestComplexEventLogCommandInfo = new StateCommandInfo(msg.Process,
+                    RevolutionData.Context.Process.Commands.CreateComplexEventLog, Guid.NewGuid());
+                EventMessageBus.Current.GetEvent<IRequestComplexEventLog>(requestComplexEventLogCommandInfo, Source)
+                    .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == requestComplexEventLogCommandInfo.EventKey)
                     .Subscribe(x => handleComplexEventLogRequest());
 
                 Publish(new ServiceStarted<IComplexEventService>(this,
-                    new StateEventInfo(Process,
-                        RevolutionData.Context.EventFunctions.UpdateEventStatus(
-                            msg.ComplexEventService.ComplexEventAction.Key,
-                            RevolutionData.Context.Actor.Events.ActorStarted)), Process, Source));
+                    new StateEventInfo(Process,RevolutionData.Context.EventFunctions.UpdateEventStatus(msg.ComplexEventService.ComplexEventAction.Key,RevolutionData.Context.Actor.Events.ActorStarted)), Process, Source));
             }
             catch (Exception ex)
             {
@@ -97,6 +96,7 @@ namespace DataServices.Actors
         {
             
             EventMessageBus.Current.GetEvent<TEvent>(expectedEvent.ProcessInfo, Source)
+                .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == expectedEvent.ProcessInfo.EventKey)
                 .Where(x => x.Process.Id == Process.Id)
                 .Where(x => x.GetType().GetInterfaces().Any(z => z == expectedEvent.EventType)).Subscribe(async x => await CheckEvent(expectedEvent, x).ConfigureAwait(false));
         }

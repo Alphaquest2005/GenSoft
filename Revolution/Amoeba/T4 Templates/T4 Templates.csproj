@@ -141,11 +141,6 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Include="PresentationLayer\PresentationLayer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PresentationLayer.ttinclude</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTests\UnitTestsLayer.cs">
       <DependentUpon>UnitTestsLayer.ttinclude</DependentUpon>
@@ -227,62 +222,6 @@
       <LastGenOutput>DesignTimeLayer.cs</LastGenOutput>
       <LastOutputs>.\DesignTimeLayer.cs</LastOutputs>
     </None>
-    <None Include="PresentationLayer\Application\CreateApplication.ttinclude" />
-    <None Include="PresentationLayer\Application\AppXamlCSTemplate.ttinclude" />
-    <None Include="PresentationLayer\Application\AppXamlTemplate.ttinclude" />
-    <None Include="PresentationLayer\Application\MainWindowCSTemplate.ttinclude" />
-    <None Include="PresentationLayer\Application\MainWindowTemplate.ttinclude" />
-    <None Include="PresentationLayer\DataTemplates\EntityViewDataTemplateResource.ttinclude" />
-    <None Include="PresentationLayer\DataTemplates\EntityViewDataTemplate.ttinclude" />
-    <None Include="PresentationLayer\DataTemplates\DataTemplateResource.ttinclude" />
-    <None Include="PresentationLayer\DataTemplates\DataTemplate.ttinclude" />
-    <None Include="PresentationLayer\DataTemplates\AutoEntityViewReadDataTemplate.ttinclude" />
-    <None Include="PresentationLayer\DataTemplates\EntityViewReadDataTemplate.ttinclude" />
-    <None Include="PresentationLayer\DataTemplates\EntityViewWriteDataTemplate.ttinclude" />
-    <None Include="PresentationLayer\DataTemplates\WriteDataTemplate.ttinclude" />
-    <None Include="PresentationLayer\ViewModels\BaseViewModel\Navigation.ttinclude" />
-    <None Include="PresentationLayer\ViewModels\BaseViewModel\Cache.ttinclude" />
-    <None Include="PresentationLayer\ViewModels\BaseViewModel\Instance.ttinclude" />
-    <None Include="PresentationLayer\ViewModels\EntityView\ConstructorViewModelTemplate.ttinclude" />
-    <None Include="PresentationLayer\ViewModels\EntityView\CreateEntityViewModels.ttinclude" />
-    <None Include="PresentationLayer\ViewModels\EntityView\EntityViewModelTemplate.ttinclude" />
-    <None Include="PresentationLayer\ViewModels\EntityView\InstanceViewModelTemplate.ttinclude" />
-    <None Include="PresentationLayer\ViewModels\EntityView\NavigationViewModelTemplate.ttinclude" />
-    <None Include="PresentationLayer\ViewModels\MainViewModel\MainViewModelTemplate.ttinclude" />
-    <None Include="PresentationLayer\Views\CreateViews.ttinclude" />
-    <None Include="PresentationLayer\Views\AutoEntityViewTemplate.ttinclude" />
-    <None Include="PresentationLayer\Views\AutoEntityViewCSTemplate.ttinclude" />
-    <None Include="PresentationLayer\Views\MainViewCSTemplate.ttinclude" />
-    <None Include="PresentationLayer\Views\MainWindowCSTemplate.ttinclude" />
-    <None Include="PresentationLayer\Views\SummaryListViewCSTemplate.ttinclude" />
-    <None Include="PresentationLayer\Views\SummaryViewDetailsCSTemplate.ttinclude" />
-    <None Include="PresentationLayer\Views\SummaryViewDetailsTemplate.ttinclude" />
-    <None Include="PresentationLayer\Views\SummaryViewCSTemplate.ttinclude" />
-    <None Include="PresentationLayer\Views\SummaryListViewTemplate.ttinclude" />
-    <None Include="PresentationLayer\Views\SummaryViewTemplate.ttinclude" />
-    <None Include="PresentationLayer\Views\MainViewTemplate.ttinclude" />
-    <None Include="PresentationLayer\Views\MainWindowTemplate.ttinclude" />
-    <None Include="PresentationLayer\Views\EntityViewCSTemplate.ttinclude" />
-    <None Include="PresentationLayer\Views\ViewCSTemplate.ttinclude" />
-    <None Include="PresentationLayer\Views\EntityViewTemplate.ttinclude" />
-    <None Include="PresentationLayer\Views\ViewTemplate.ttinclude" />
-    <None Include="PresentationLayer\DataTemplates\CreateDataTemplates.ttinclude" />
-    <None Include="PresentationLayer\DataTemplates\ReadDataTemplate.ttinclude" />
-    <None Include="PresentationLayer\PresentationLayer.ttinclude">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PresentationLayer.cs</LastGenOutput>
-      <LastOutputs>.\PresentationLayer.cs</LastOutputs>
-    </None>
-    <None Include="PresentationLayer\ViewModels\BaseViewModel\Constructor.ttinclude" />
-    <None Include="PresentationLayer\ViewModels\BaseViewModel\CreateBaseViewModels.ttinclude" />
-    <None Include="PresentationLayer\ViewModels\CreateViewModels.ttinclude" />
-    <None Include="PresentationLayer\ViewModels\MainViewModel\CreateMainViewModels.ttinclude" />
-    <None Include="PresentationLayer\ViewModels\MainViewModel\MainWindowViewModelTemplate.ttinclude" />
-    <None Include="PresentationLayer\ViewModels\Model\CreateEntityViewModels.ttinclude" />
-    <None Include="PresentationLayer\ViewModels\Model\ConstructorViewModelTemplate.ttinclude" />
-    <None Include="PresentationLayer\ViewModels\Model\NavigationViewModelTemplate.ttinclude" />
-    <None Include="PresentationLayer\ViewModels\Model\InstanceViewModelTemplate.ttinclude" />
-    <None Include="PresentationLayer\ViewModels\Model\EntityViewModelTemplate.ttinclude" />
     <None Include="UnitTests\ExpressionUnitTests\CreateExpressionUnitTests.ttinclude" />
     <None Include="UnitTests\ExpressionUnitTests\EntityViewExpressionUnitTestTemplate.ttinclude" />
     <None Include="UnitTests\ExpressionUnitTests\AutoExpressionUnitTestTemplate.ttinclude" />

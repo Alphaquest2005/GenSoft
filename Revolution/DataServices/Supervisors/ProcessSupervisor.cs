@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Reactive.Linq;
 using System.Threading.Tasks;
 using SystemInterfaces;
 using Actor.Interfaces;
@@ -23,8 +24,10 @@ namespace DataServices.Actors
         public SystemProcessSupervisor(ISystemStarted firstMsg, List<IComplexEventAction> processComplexEvents) : base(
             firstMsg.Process)
         {
-
-            EventMessageBus.Current.GetEvent<ILoadProcessComplexEvents>(new StateEventInfo(firstMsg.Process, RevolutionData.Context.Process.Events.ProcessStarted), Source).Subscribe(HandleDomainProcess);
+            var processStateInfo = new StateEventInfo(firstMsg.Process, RevolutionData.Context.Process.Events.ProcessStarted, Guid.NewGuid());
+            EventMessageBus.Current.GetEvent<ILoadProcessComplexEvents>(processStateInfo, Source)
+                .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == processStateInfo.EventKey)
+                .Subscribe(HandleDomainProcess);
             StartProcess(processComplexEvents, firstMsg.User);
         }
 
@@ -46,7 +49,7 @@ namespace DataServices.Actors
                 $"{complexEventActions.First().Key.GetSafeActorName()}:{complexEventActions.First().Process.Id}",
                 complexEventActions.ToList(),
                 new StateCommandInfo(complexEventActions.First().Process,
-                    RevolutionData.Context.CommandFunctions.UpdateCommandStatus(complexEventActions.First().Key, RevolutionData.Context.Actor.Commands.CreateActor)),
+                    RevolutionData.Context.CommandFunctions.UpdateCommandStatus(complexEventActions.First().Key, RevolutionData.Context.Actor.Commands.CreateActor), Guid.NewGuid()),
                 complexEventActions.First().Process, Source);
             PublishActor(c);
         }
@@ -78,7 +81,7 @@ namespace DataServices.Actors
 
 
 
-                EventMessageBus.Current.Publish(inMsg, Source);
+              //  EventMessageBus.Current.Publish(inMsg, Source);
 
 
             }

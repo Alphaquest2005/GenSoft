@@ -27,15 +27,16 @@ namespace EventAggregator
 
         public static EventMessageBus Current { get; }
 
-        public IObservable<TEvent> GetEvent<TEvent>(IProcessStateInfo procesInfo, ISource caller) where TEvent : IProcessSystemMessage
+        public IObservable<TEvent> GetEvent<TEvent>(IProcessStateInfo processInfo, ISource caller) where TEvent : IProcessSystemMessage
         {
-            Contract.Requires(caller != null);
+            Contract.Requires(caller != null && processInfo != null);
+            if(processInfo.EventKey == Guid.Empty) Debugger.Break();
             var ge = ea.GetEvent<TEvent>();
             Task.Run(() =>
             {
                 var er = typeof(TEvent) as IEntityRequest;
                 Logger.Log(LoggingLevel.Info,
-                    $"Caller:{caller.SourceName} | GetEvent : {typeof(TEvent).GetFriendlyName()}|| ProcessId-{caller.Process?.Id} || EntityType-{(er != null ? er.EntityType.Name : "")}");
+                    $"Caller:{caller.SourceName} | GetEvent : {typeof(TEvent).GetFriendlyName()}|ProcessInfo:Status-{processInfo.State.Status}| ProcessId-{caller.Process?.Id} || EntityType-{(er != null ? er.EntityType.Name : "")}");
             });
             Task.Run(() =>
             {
@@ -60,6 +61,7 @@ namespace EventAggregator
             try
             {
                 Contract.Requires(sender != null || sampleEvent != null);
+                if (sampleEvent.ProcessInfo.EventKey != Guid.Empty) Debugger.Break();
                 Task.Run(() =>
                 {
                     Logger.Log(LoggingLevel.Info,

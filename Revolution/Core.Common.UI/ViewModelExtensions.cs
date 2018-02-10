@@ -139,7 +139,12 @@ namespace Core.Common.UI
         public static void Subscribe<TEvent, TViewModel>(TViewModel viewModel, Func<TEvent, bool> eventPredicate,
             IEnumerable<Func<TViewModel, TEvent, bool>> predicate, Action<TViewModel, TEvent> action) where TEvent : class, IProcessSystemMessage
         {
-            EventMessageBus.Current.GetEvent<TEvent>(new StateEventInfo(((IViewModel)viewModel).Process, new StateEvent("View Model Subscribtion", "some shit", "more shit")), ((IViewModel)viewModel).Source).Where(eventPredicate).Where(x => predicate.All(z => z.Invoke(viewModel, x))).Subscribe(x => action.Invoke(viewModel, x));
+            var processStateInfo = new StateEventInfo(((IViewModel)viewModel).Process, new StateEvent("View Model Subscribtion", "some shit", "more shit"),Guid.NewGuid());
+            EventMessageBus.Current.GetEvent<TEvent>(processStateInfo, ((IViewModel)viewModel).Source)
+                .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == processStateInfo.EventKey)
+                .Where(eventPredicate)
+                .Where(x => predicate.All(z => z.Invoke(viewModel, x)))
+                .Subscribe(x => action.Invoke(viewModel, x));
         }
 
 

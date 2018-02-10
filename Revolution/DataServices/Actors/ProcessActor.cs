@@ -50,10 +50,13 @@ namespace DataServices.Actors
                 new StateEventInfo(Process,RevolutionData.Context.EventFunctions.UpdateEventStatus(ActorName,RevolutionData.Context.Actor.Events.ActorStarted)), Process, Source));
 
             EventMessageBus.Current.GetEvent<ICreateProcessActor>(msg.ProcessInfo,Source)
+                .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == msg.ProcessInfo.EventKey)
                 .Where(x => x.Process.Id == msg.Process.Id)
                 .Where(x => x.ActorName == this.ActorName).Subscribe(x => UpdateActor(x));
 
-            EventMessageBus.Current.GetEvent<ICleanUpSystemProcess>( new StateCommandInfo(msg.Process, RevolutionData.Context.Process.Commands.CleanUpProcess), Source)
+            var stateCommandInfo = new StateCommandInfo(msg.Process, RevolutionData.Context.Process.Commands.CleanUpProcess, Guid.NewGuid());
+            EventMessageBus.Current.GetEvent<ICleanUpSystemProcess>( stateCommandInfo, Source)
+                .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == stateCommandInfo.EventKey)
                 .Where(x => x.ProcessToBeCleanedUp.Id > 1 && x.ProcessToBeCleanedUp.Id == Process.Id)
                 .Subscribe(x => CleanUpActor(x));
 
@@ -72,8 +75,12 @@ namespace DataServices.Actors
 
             
             StartActors(msg);
-            EventMessageBus.Current.GetEvent<ILoadProcessComplexEvents>(new StateCommandInfo(msg.Process, RevolutionData.Context.CommandFunctions.UpdateCommandStatus(ActorName, RevolutionData.Context.Process.Commands.StartProcess)), Source)
-                .Where(x => $"{x.Name}".GetSafeActorName() == ActorName).Subscribe(x => HandleDomainProcess(x));
+
+            var processStateInfo = new StateCommandInfo(msg.Process, RevolutionData.Context.CommandFunctions.UpdateCommandStatus(ActorName, RevolutionData.Context.Process.Commands.StartProcess), Guid.NewGuid());
+            EventMessageBus.Current.GetEvent<ILoadProcessComplexEvents>(processStateInfo, Source)
+                .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == processStateInfo.EventKey)
+                .Where(x => $"{x.Name}".GetSafeActorName() == ActorName)
+                .Subscribe(x => HandleDomainProcess(x));
 
         }
 
@@ -154,7 +161,7 @@ namespace DataServices.Actors
                 var inMsg = new CreateComplexEventService(new ComplexEventService(cp.Key, cp, Process, Source),
                     new StateCommandInfo(Process,
                         RevolutionData.Context.CommandFunctions.UpdateCommandStatus(cp.Key,
-                            RevolutionData.Context.Actor.Commands.StartActor)), Process,
+                            RevolutionData.Context.Actor.Commands.StartActor), Guid.NewGuid()), Process,
                     Source);
                 
                 try
@@ -166,7 +173,7 @@ namespace DataServices.Actors
                     PublishProcesError(inMsg, ex, typeof(IServiceStarted<IComplexEventService>));
                 }
 
-                Publish(inMsg);
+                //Publish(inMsg);
             }
         }
 

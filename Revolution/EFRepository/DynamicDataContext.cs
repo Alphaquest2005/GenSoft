@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reactive.Linq;
 using SystemInterfaces;
 using Common.DataEntites;
 using DomainUtilities;
@@ -24,7 +25,10 @@ namespace EFRepository
 
         static DynamicDataContext()
         {
-            EventMessageBus.Current.GetEvent<ICurrentApplicationChanged>(new RevolutionEntities.Process.StateEventInfo(Processes.IntialSystemProcess, new StateEvent("CurrentApplicationChanged", "DataContext", "notes")),Source).Subscribe(OnCurrentApplicationChanged);
+            var processStateInfo = new RevolutionEntities.Process.StateEventInfo(Processes.IntialSystemProcess, new StateEvent("CurrentApplicationChanged", "DataContext", "notes"), Guid.NewGuid());
+            EventMessageBus.Current.GetEvent<ICurrentApplicationChanged>(processStateInfo,Source)
+                .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == processStateInfo.EventKey)
+                .Subscribe(OnCurrentApplicationChanged);
         }
 
         private static Application CurrentApplication { get;  set; }

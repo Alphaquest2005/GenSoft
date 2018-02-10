@@ -5,6 +5,7 @@
 
 
 using System;
+using System.Reactive.Linq;
 using SystemInterfaces;
 using Core.Common.UI;
 using EventAggregator;
@@ -43,7 +44,10 @@ namespace ViewModels
         {
             this.WireEvents();
 
-            EventMessageBus.Current.GetEvent<ICurrentApplicationChanged>(new StateEventInfo(Process, new StateEvent("CurrentApplicationChanged","MainWindowApplication","notes")), Source).Subscribe(OnCurrentApplicationChanged);
+            var processStateInfo = new StateEventInfo(Process, new StateEvent("CurrentApplicationChanged","MainWindowApplication","notes"),Guid.NewGuid());
+            EventMessageBus.Current.GetEvent<ICurrentApplicationChanged>(processStateInfo, Source)
+                .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == processStateInfo.EventKey)
+                .Subscribe(OnCurrentApplicationChanged);
         }
 
         private void OnCurrentApplicationChanged(ICurrentApplicationChanged currentEntityChanged)

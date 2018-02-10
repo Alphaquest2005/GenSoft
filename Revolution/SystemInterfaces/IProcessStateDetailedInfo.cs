@@ -7,7 +7,7 @@ namespace SystemInterfaces
     {
         ISystemProcess Process { get; }
         IState State { get; }
-        
+        Guid EventKey { get; }
 
         IStateInfo ToStateInfo();
     }

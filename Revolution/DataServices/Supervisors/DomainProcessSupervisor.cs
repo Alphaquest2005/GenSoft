@@ -73,17 +73,32 @@ namespace DataServices.Actors
 
         public DomainProcessSupervisor(bool autoRun, ISystemProcess process) : base(process)
         {
-            EventMessageBus.Current.GetEvent<ICurrentApplicationChanged>(new RevolutionEntities.Process.StateEventInfo(process,RevolutionData.Context.Process.Events.CurrentApplicationChanged), Source).Subscribe(OnCurrentApplicationChanged);
+            var currentApplicationChangedProcessStateInfo = new RevolutionEntities.Process.StateEventInfo(process,RevolutionData.Context.Process.Events.CurrentApplicationChanged, Guid.NewGuid());
+            EventMessageBus.Current.GetEvent<ICurrentApplicationChanged>(currentApplicationChangedProcessStateInfo, Source)
+                .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == currentApplicationChangedProcessStateInfo.EventKey)
+                .Subscribe(OnCurrentApplicationChanged);
 
             Task.Run(() => { BuildExpressions();}).ConfigureAwait(false);
 
-            EventMessageBus.Current.GetEvent<IStartSystemProcess>( new RevolutionEntities.Process.StateCommandInfo(process, RevolutionData.Context.Process.Commands.StartProcess), Source).Where(x => autoRun && x.ProcessToBeStartedId == RevolutionData.ProcessActions.NullProcess).Subscribe(x => StartParentProcess(x.Process.Id, x.User));
-            EventMessageBus.Current.GetEvent<IStartSystemProcess>(new RevolutionEntities.Process.StateCommandInfo(process, RevolutionData.Context.Process.Commands.StartProcess), Source).Where(x => !autoRun && x.ProcessToBeStartedId != RevolutionData.ProcessActions.NullProcess).Subscribe(x => StartProcess(x.ProcessToBeStartedId, x.User));
+            var startSystemProcessCommandInfo = new RevolutionEntities.Process.StateCommandInfo(process, RevolutionData.Context.Process.Commands.StartProcess, Guid.NewGuid());
+            EventMessageBus.Current.GetEvent<IStartSystemProcess>(startSystemProcessCommandInfo, Source)
+                .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == startSystemProcessCommandInfo.EventKey)
+                .Where(x => autoRun && x.ProcessToBeStartedId == RevolutionData.ProcessActions.NullProcess)
+                .Subscribe(x => StartParentProcess(x.Process.Id, x.User));
 
-            EventMessageBus.Current.GetEvent<IMainEntityChanged>( new RevolutionEntities.Process.StateCommandInfo(process, RevolutionData.Context.Process.Commands.ChangeMainEntity), Source).Subscribe(OnMainEntityChanged);
-           
 
-            
+            var startParentSystemProcessCommandInfo = new RevolutionEntities.Process.StateCommandInfo(process, RevolutionData.Context.Process.Commands.StartProcess, Guid.NewGuid());
+            EventMessageBus.Current.GetEvent<IStartSystemProcess>(startParentSystemProcessCommandInfo, Source)
+                .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == startParentSystemProcessCommandInfo.EventKey)
+                .Where(x => !autoRun && x.ProcessToBeStartedId != RevolutionData.ProcessActions.NullProcess)
+                .Subscribe(x => StartProcess(x.ProcessToBeStartedId, x.User));
+
+
+            var mainEntityChangedCommandInfo = new RevolutionEntities.Process.StateCommandInfo(process, RevolutionData.Context.Process.Commands.ChangeMainEntity, Guid.NewGuid());
+            EventMessageBus.Current.GetEvent<IMainEntityChanged>(mainEntityChangedCommandInfo, Source)
+                .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == mainEntityChangedCommandInfo.EventKey)
+                .Subscribe(OnMainEntityChanged);
+
         }
 
         private void LoadProcesses()

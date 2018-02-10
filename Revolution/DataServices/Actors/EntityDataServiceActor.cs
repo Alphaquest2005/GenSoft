@@ -22,7 +22,13 @@ namespace DataServices.Actors
         {
             Action = (Action<ISystemSource,TService>)msg.Action;
             if(firstMessage is TService service) HandledEvent(service);
-            EventMessageBus.Current.GetEvent<TService>(new StateEventInfo(Process,new StateEvent("EntityDataServiceActor","Get service events", "")), Source).Where(x => x.EntityType == entityType).Subscribe(x => HandledEvent(x));
+
+
+            var processStateInfo = new StateEventInfo(Process,new StateEvent("EntityDataServiceActor","Get service events", ""), Guid.NewGuid());
+            EventMessageBus.Current.GetEvent<TService>(processStateInfo, Source)
+                .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == processStateInfo.EventKey)
+                .Where(x => x.EntityType == entityType)
+                .Subscribe(x => HandledEvent(x));
             
             EventMessageBus.Current.Publish(new ServiceStarted<IEntityDataServiceActor<TService>>(this,new StateEventInfo(msg.Process, RevolutionData.Context.EventFunctions.UpdateEventStatus(msg.ActorType.GetFriendlyName(),RevolutionData.Context.Actor.Events.ActorStarted)), msg.Process,Source), Source);
         }

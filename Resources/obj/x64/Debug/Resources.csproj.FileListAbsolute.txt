@@ -97,3 +97,4 @@ C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Resources.csproj.CoreCom
 C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Styles\DataGridCustomizations.baml
 C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Styles\Non-Theme.baml
 C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Styles\Theme.baml
+C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Resources.csprojResolveAssemblyReference.cache

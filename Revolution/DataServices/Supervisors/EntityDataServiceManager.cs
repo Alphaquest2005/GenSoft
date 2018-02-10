@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Diagnostics;
+using System.Reactive.Linq;
 using System.Threading.Tasks;
 using SystemInterfaces;
 using Actor.Interfaces;
@@ -20,8 +21,12 @@ namespace DataServices.Actors
 
         public EntityDataServiceManager(ISystemProcess process) : base(process)
         {
-           
-            EventMessageBus.Current.GetEvent<IEntityRequest>(new StateCommandInfo(process, RevolutionData.Context.Entity.Commands.EntityRequest), Source).Subscribe(handleEntityRequest);
+            var stateCommandInfo = new StateCommandInfo(process, RevolutionData.Context.Entity.Commands.EntityRequest, Guid.NewGuid());
+            EventMessageBus.Current.GetEvent<IEntityRequest>(stateCommandInfo, Source)
+                .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == stateCommandInfo.EventKey)
+                .Subscribe(handleEntityRequest);
+
+
             EventMessageBus.Current.Publish(
                 new ServiceStarted<IEntityDataServiceManager>(this,
                     new StateEventInfo(process, RevolutionData.Context.Actor.Events.ActorStarted), process, Source),
