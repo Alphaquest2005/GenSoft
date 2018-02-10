@@ -13,7 +13,7 @@ namespace EventMessages.Commands
     {
         public CreateProcessActor(){}
 
-        public CreateProcessActor(string actorName, IList<IComplexEventAction> complexEvents, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source)
+        public CreateProcessActor(string actorName, List<IComplexEventAction> complexEvents, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source)
             :base(new DynamicObject("CreateProcessActor", new Dictionary<string, object>() { { "ActorName", actorName }, { "ComplexEvents", complexEvents } }), processInfo,process, source)
         {
             ComplexEvents = complexEvents;
@@ -21,6 +21,6 @@ namespace EventMessages.Commands
         }
 
         public string ActorName { get; }
-        public IList<IComplexEventAction> ComplexEvents { get; }
+        public IReadOnlyList<IComplexEventAction> ComplexEvents { get; }
     }
 }

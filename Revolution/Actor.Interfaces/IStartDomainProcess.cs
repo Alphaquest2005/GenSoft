@@ -6,7 +6,7 @@ namespace Actor.Interfaces
 {
     public interface ILoadProcessComplexEvents : IProcessSystemMessage
     {
-        List<IComplexEventAction> ComplexEvents { get; }
+        IReadOnlyList<IComplexEventAction> ComplexEvents { get; }
     }
 
     public interface ILoadDomainProcessViewModels : IProcessSystemMessage

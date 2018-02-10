@@ -2,6 +2,7 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Diagnostics;
 using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Reactive.Linq;
@@ -50,7 +51,7 @@ namespace DataServices.Actors
 
             EventMessageBus.Current.GetEvent<ICreateProcessActor>(msg.ProcessInfo,Source)
                 .Where(x => x.Process.Id == msg.Process.Id)
-                .Where(x => x.ActorName == this.ActorName).Subscribe(x => UpdateActor(x.ComplexEvents));
+                .Where(x => x.ActorName == this.ActorName).Subscribe(x => UpdateActor(x));
 
             EventMessageBus.Current.GetEvent<ICleanUpSystemProcess>( new StateCommandInfo(msg.Process, RevolutionData.Context.Process.Commands.CleanUpProcess), Source)
                 .Where(x => x.ProcessToBeCleanedUp.Id > 1 && x.ProcessToBeCleanedUp.Id == Process.Id)
@@ -70,7 +71,7 @@ namespace DataServices.Actors
             //    });
 
             
-            StartActors(msg.ComplexEvents);
+            StartActors(msg);
             EventMessageBus.Current.GetEvent<ILoadProcessComplexEvents>(new StateCommandInfo(msg.Process, RevolutionData.Context.CommandFunctions.UpdateCommandStatus(ActorName, RevolutionData.Context.Process.Commands.StartProcess)), Source)
                 .Where(x => $"{x.Name}".GetSafeActorName() == ActorName).Subscribe(x => HandleDomainProcess(x));
 
@@ -82,14 +83,22 @@ namespace DataServices.Actors
         }
 
 
-        private void UpdateActor(IList<IComplexEventAction> complexEvents)
+        private void UpdateActor(ICreateProcessActor complexEvents)
         {
             StartActors(complexEvents);
         }
 
         private void HandleDomainProcess(ILoadProcessComplexEvents loadProcessComplexEvents)
         {
-            UpdateActor(loadProcessComplexEvents.ComplexEvents);
+            try
+            {
+                CreateComplexEventActors(loadProcessComplexEvents.ComplexEvents);
+            }
+            catch (Exception ex)
+            {
+                PublishProcesError(loadProcessComplexEvents, ex, loadProcessComplexEvents.GetType());
+            }
+            
             Publish(new ServiceStarted<IProcessService>(this,
                 new StateEventInfo(Process, RevolutionData.Context.Actor.Events.ActorStarted), Process, Source));
         }
@@ -119,58 +128,74 @@ namespace DataServices.Actors
         //    Publish(msg);
         //}
 
-     
-        private void StartActors(IEnumerable<IComplexEventAction> complexEvents)
+
+        private void StartActors(ICreateProcessActor msg)
         {
-            Contract.Requires(complexEvents.Any() && complexEvents != null);
-            Parallel.ForEach(complexEvents, new ParallelOptions() { MaxDegreeOfParallelism = Environment.ProcessorCount },
-                (cp) =>
+            Contract.Requires(msg.ComplexEvents.Any() && msg.ComplexEvents != null);
+            //Parallel.ForEach(complexEvents, new ParallelOptions() { MaxDegreeOfParallelism = Environment.ProcessorCount },
+            //    (cp) =>
+            //    {
+            try
+            {
+                CreateComplexEventActors(msg.ComplexEvents);
+            }
+            catch (Exception ex)
+            {
+                PublishProcesError(msg, ex, msg.GetType());
+            }
+
+            //});
+        }
+
+        private void CreateComplexEventActors(IReadOnlyList<IComplexEventAction> complexEvents)
+        {
+            foreach (var cp in complexEvents)
+            {
+                var inMsg = new CreateComplexEventService(new ComplexEventService(cp.Key, cp, Process, Source),
+                    new StateCommandInfo(Process,
+                        RevolutionData.Context.CommandFunctions.UpdateCommandStatus(cp.Key,
+                            RevolutionData.Context.Actor.Commands.StartActor)), Process,
+                    Source);
+
+
+                Publish(inMsg);
+                try
                 {
-                    //foreach (var cp in complexEvents)
-                    //{
-                    var inMsg = new CreateComplexEventService(new ComplexEventService(cp.Key, cp, Process, Source),
-                        new StateCommandInfo(Process, RevolutionData.Context.Actor.Commands.StartActor), Process,
-                        Source);
-
-
-                    Publish(inMsg);
-                    try
-                    {
-                        CreateComplexEventService.Invoke(inMsg);
-                    }
-                    catch (Exception ex)
-                    {
-                        PublishProcesError(inMsg, ex, typeof(IServiceStarted<IComplexEventService>));
-                    }
-                    // }
-                });
+                    CreateComplexEventService.Invoke(inMsg, this);
+                }
+                catch (Exception ex)
+                {
+                    PublishProcesError(inMsg, ex, typeof(IServiceStarted<IComplexEventService>));
+                }
+            }
         }
 
 
         public IActorRef ActorRef => this.Self;
 
-        private Action<ICreateComplexEventService> CreateComplexEventService = inMsg =>
+        private Action<ICreateComplexEventService, ProcessActor> CreateComplexEventService = (inMsg, p) =>
         {
             try
             {
 
                 Task.Run(() =>
                 {
-                //var child = ctx.Child(
-                //    $"ComplexEventActor:-{inMsg.ComplexEventService.ActorId.GetSafeActorName()}-{inMsg.Process.Id}");
-                //if (Equals(child, ActorRefs.Nobody))
-                //{
+                    //var child = ctx.Child(
+                    //    $"ComplexEventActor:-{inMsg.ComplexEventService.ActorId.GetSafeActorName()}-{inMsg.Process.Id}");
+                    //if (Equals(child, ActorRefs.Nobody))
+                    //{
                     try
-                        {
-                            ctx.ActorOf(Props.Create<ComplexEventActor>(inMsg),
+                    {
+                       var child = ctx.ActorOf(Props.Create<ComplexEventActor>(inMsg),
                                 $"ComplexEventActor:-{inMsg.ComplexEventService.ActorId.GetSafeActorName()}-{inMsg.Process.Id}");
+                            Console.WriteLine(child.Path);
                         }
                         catch (Exception ex)
                         {
-                           // if (!ex.Message.Contains("is not unique!")) throw;
+                           p.PublishProcesError(inMsg, ex, inMsg.GetType());
                         }
 
-                   //}
+                    //}
                 }).ConfigureAwait(false);
 
             }

@@ -7,6 +7,6 @@ namespace Actor.Interfaces
     public interface ICreateProcessActor : IProcessSystemMessage
     {
         string ActorName { get; }
-        IList<IComplexEventAction> ComplexEvents { get; }
+        IReadOnlyList<IComplexEventAction> ComplexEvents { get; }
     }
 }

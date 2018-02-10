@@ -25,7 +25,7 @@ namespace EventMessages.Commands
         }
 
         
-        public List<IComplexEventAction> ComplexEvents { get; }
+        public IReadOnlyList<IComplexEventAction> ComplexEvents { get; }
         
     }
 

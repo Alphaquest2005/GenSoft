@@ -36,18 +36,18 @@ namespace DataServices.Actors
             StartProcess(loadProcessComplexEvents.ComplexEvents, loadProcessComplexEvents.User);
         }
 
-        private void StartProcess(List<IComplexEventAction> complexEventActions, IUser user)
+        private void StartProcess(IReadOnlyList<IComplexEventAction> complexEventActions, IUser user)
         {
             CreateProcesses(user, complexEventActions);
         }
 
 
 
-        private void CreateProcesses(IUser user, List<IComplexEventAction> complexEventActions)
+        private void CreateProcesses(IUser user, IReadOnlyList<IComplexEventAction> complexEventActions)
         {
             var c = new CreateProcessActor(
-                $"{complexEventActions.First().Process.Name.GetSafeActorName()}:{complexEventActions.First().Process.Id}",
-                complexEventActions,
+                $"{complexEventActions.First().Key.GetSafeActorName()}:{complexEventActions.First().Process.Id}",
+                complexEventActions.ToList(),
                 new StateCommandInfo(complexEventActions.First().Process,
                     RevolutionData.Context.CommandFunctions.UpdateCommandStatus(complexEventActions.First().Key, RevolutionData.Context.Actor.Commands.CreateActor)),
                 complexEventActions.First().Process, Source);
@@ -71,9 +71,9 @@ namespace DataServices.Actors
                         {
                             ctx.ActorOf(Props.Create<ProcessActor>(inMsg), inMsg.ActorName);
                         }
-                        catch (Exception e)
+                        catch (Exception ex)
                         {
-                          
+                            PublishProcesError(inMsg, ex, inMsg.GetType());
                         }
                             
                         //}

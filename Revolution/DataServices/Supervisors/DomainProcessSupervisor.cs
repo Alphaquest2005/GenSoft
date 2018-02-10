@@ -3,6 +3,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using SystemInterfaces;
@@ -108,12 +109,10 @@ namespace DataServices.Actors
                     var parentEntityTypes = ctx.EntityRelationship.Where(x => x.EntityTypeAttributes.EntityType.ApplicationId == CurrentApplication.Id).Select(x => x.ParentEntity.EntityTypeAttributes.EntityType).Distinct();
                     var childEntityTypes = ctx.EntityRelationship.Where(x => x.EntityTypeAttributes.EntityType.ApplicationId == CurrentApplication.Id).Select(x => x.EntityTypeAttributes.EntityType).Distinct();
                     var mainEntities = parentEntityTypes.Where(z => !childEntityTypes.Any(q => q.Id == z.Id)).ToList();
-                    var tttt = ctx.EntityType.Where(x => x.ApplicationId == CurrentApplication.Id && x.EntityTypeAttributes.All(z => !z.EntityRelationship.Any()));
                     mainEntities.AddRange(ctx.EntityType.Where(x => x.ApplicationId == CurrentApplication.Id && x.EntityTypeAttributes.All(z => !z.EntityRelationship.Any())));
-                    Task.Run(() =>
-                    {
-                        IntializeProcess(systemProcess);
-                    }).ConfigureAwait(false);
+
+                    Task.Run(() => { IntializeProcess(systemProcess);}).ConfigureAwait(false);
+
                     foreach (var mainEntity in mainEntities.DistinctBy(x => x.Id))
                     {
                         Task.Run(() =>
@@ -302,14 +301,9 @@ namespace DataServices.Actors
 
         private void IntializeProcess(SystemProcess systemProcess)
         {
-            var processComplexEvents = new List<IComplexEventAction>
-            {
-                Processes.ComplexActions.GetComplexAction("StartNextProcess", new object[] {systemProcess}),
-                Processes.ComplexActions.GetComplexAction("ProcessStarted", new object[] {systemProcess}),
-                Processes.ComplexActions.GetComplexAction("CleanUpProcess",new object[] {systemProcess})
-               // Processes.ComplexActions.GetComplexAction("CleanUpParentProcess",new object[] {systemProcess.ParentProcess, systemProcess})
-            };
-            PublishComplexEvents(systemProcess, processComplexEvents);
+            PublishComplexEvent(systemProcess,Processes.ComplexActions.GetComplexAction("StartNextProcess", new object[] {systemProcess}));
+            PublishComplexEvent(systemProcess,Processes.ComplexActions.GetComplexAction("ProcessStarted", new object[] {systemProcess}));
+            PublishComplexEvent(systemProcess,Processes.ComplexActions.GetComplexAction("CleanUpProcess", new object[] {systemProcess}));
         }
 
         private IProcessExpectedEvent CreateProcessExpectedEvent(int processId, ComplexEventActionExpectedEvents ce, EntityType entityType)
@@ -425,20 +419,9 @@ namespace DataServices.Actors
         }
 
       
-
-        
-        
-        private void PublishComplexEvents(SystemProcess systemProcess, List<IComplexEventAction> processComplexEvents)
-        {
-            var inMsg = new LoadProcessComplexEvents(processComplexEvents,
-                new RevolutionEntities.Process.StateCommandInfo(systemProcess, RevolutionData.Context.Process.Commands.StartProcess),
-                systemProcess, Source);
-
-            EventMessageBus.Current.Publish(inMsg, Source);
-        }
-
         private void PublishComplexEvent(SystemProcess systemProcess, IComplexEventAction processComplexEvent)
         {
+            
             var inMsg = new LoadProcessComplexEvents(new List<IComplexEventAction>(){processComplexEvent},
                 new RevolutionEntities.Process.StateCommandInfo(systemProcess, RevolutionData.Context.CommandFunctions.UpdateCommandStatus(processComplexEvent.Key, RevolutionData.Context.Process.Commands.StartProcess)),
                 systemProcess, Source);

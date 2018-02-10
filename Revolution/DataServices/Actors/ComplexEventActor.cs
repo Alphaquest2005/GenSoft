@@ -24,19 +24,41 @@ namespace DataServices.Actors
     {
         public ComplexEventActor(ICreateComplexEventService msg) : base(msg.Process)
         {
-            ComplexEventAction = msg.ComplexEventService.ComplexEventAction;
-            //Process = msg.ComplexEventService.Process;
-            ActorId = msg.ComplexEventService.ActorId;
-            foreach (var e in msg.ComplexEventService.ComplexEventAction.Events)
+            try
             {
-                this.GetType().GetMethod("WireEvents").MakeGenericMethod(e.EventType).Invoke(this, new object[] { e });
-            }
-            //Todo: make time out configurable
 
-            EventMessageBus.Current.GetEvent<ICleanUpSystemProcess>(new StateCommandInfo(msg.Process, RevolutionData.Context.Process.Commands.CleanUpProcess), Source).Where(x => x.ProcessToBeCleanedUp.Id > 1 && x.ProcessToBeCleanedUp.Id == Process.Id).Subscribe(x => CleanUpActor(x));
-            EventMessageBus.Current.GetEvent<IRequestComplexEventLog>(new StateCommandInfo(msg.Process, RevolutionData.Context.Process.Commands.CreateComplexEventLog), Source).Subscribe(x => handleComplexEventLogRequest());
-            
-            Publish(new ServiceStarted<IComplexEventService>(this, new StateEventInfo(Process, RevolutionData.Context.EventFunctions.UpdateEventStatus(msg.ComplexEventService.ComplexEventAction.ExpectedMessageType.GetFriendlyName(), RevolutionData.Context.Actor.Events.ActorStarted)), Process, Source));
+
+                ComplexEventAction = msg.ComplexEventService.ComplexEventAction;
+                //Process = msg.ComplexEventService.Process;
+                ActorId = msg.ComplexEventService.ActorId;
+                foreach (var e in msg.ComplexEventService.ComplexEventAction.Events)
+                {
+                    this.GetType().GetMethod("WireEvents").MakeGenericMethod(e.EventType)
+                        .Invoke(this, new object[] {e});
+                }
+                //Todo: make time out configurable
+
+                EventMessageBus.Current
+                    .GetEvent<ICleanUpSystemProcess>(
+                        new StateCommandInfo(msg.Process, RevolutionData.Context.Process.Commands.CleanUpProcess),
+                        Source).Where(x => x.ProcessToBeCleanedUp.Id > 1 && x.ProcessToBeCleanedUp.Id == Process.Id)
+                    .Subscribe(x => CleanUpActor(x));
+                EventMessageBus.Current
+                    .GetEvent<IRequestComplexEventLog>(
+                        new StateCommandInfo(msg.Process,
+                            RevolutionData.Context.Process.Commands.CreateComplexEventLog), Source)
+                    .Subscribe(x => handleComplexEventLogRequest());
+
+                Publish(new ServiceStarted<IComplexEventService>(this,
+                    new StateEventInfo(Process,
+                        RevolutionData.Context.EventFunctions.UpdateEventStatus(
+                            msg.ComplexEventService.ComplexEventAction.ExpectedMessageType.GetFriendlyName(),
+                            RevolutionData.Context.Actor.Events.ActorStarted)), Process, Source));
+            }
+            catch (Exception ex)
+            {
+                PublishProcesError(msg, ex, msg.GetType());
+            }
         }
 
         private void CleanUpActor(ICleanUpSystemProcess cleanUpSystemProcess)

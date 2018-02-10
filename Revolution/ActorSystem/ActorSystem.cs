@@ -5,6 +5,7 @@ using System.Linq;
 using SystemInterfaces;
 using Actor.Interfaces;
 using Akka.Actor;
+using Akka.Configuration;
 using DataServices.Actors;
 using GenSoft.DBContexts;
 using GenSoft.Expressions;
@@ -27,7 +28,6 @@ namespace ActorBackBone
             try
             {
                 System = ActorSystem.Create("System");
-
                 System.ActorOf(Props.Create<ServiceManager>(autoRun, machineInfo, complexEventActions, viewInfos),
                     "ServiceManager");
                 Instance = this;
