@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using SystemInterfaces;
 using Actor.Interfaces;
-using Akka.Actor;
-using Akka.Util.Internal;
+
 using Common;
 using Common.DataEntites;
 using DynamicExpresso;
@@ -43,7 +42,7 @@ namespace DataServices.Actors
 {
     public class DomainProcessSupervisor : BaseSupervisor<DomainProcessSupervisor>
     {
-        private IUntypedActorContext actorCtx = null;
+        
        
 
         
@@ -84,7 +83,7 @@ namespace DataServices.Actors
             EventMessageBus.Current.GetEvent<IMainEntityChanged>( new RevolutionEntities.Process.StateCommandInfo(process, RevolutionData.Context.Process.Commands.ChangeMainEntity), Source).Subscribe(OnMainEntityChanged);
            
 
-            actorCtx = Context;
+            
         }
 
         private void LoadProcesses()
@@ -351,7 +350,7 @@ namespace DataServices.Actors
                 if (p.ExpectedEventConstants != null)
                 {
                     var c = p.ExpectedEventConstants.Value;
-                    paramlst.AddOrSet(p.PredicateParameters.Parameters.Name, $"\"{c}\"");
+                    paramlst.AddOrUpdate(p.PredicateParameters.Parameters.Name, $"\"{c}\"");
                 }
 
                 //var pEntityParameters =
@@ -559,7 +558,7 @@ namespace DataServices.Actors
             if (StateEvents.ContainsKey(f.StateInfo.Name))return StateEvents[f.StateInfo.Name];
 
             var stateEvent = new StateEvent(f.StateInfo.Name, f.StateInfo.Status, f.StateInfo.StateInfoNotes?.Notes, command);
-            StateEvents.AddOrSet(f.StateInfo.Name, stateEvent);
+            StateEvents.AddOrUpdate(f.StateInfo.Name, stateEvent);
             return stateEvent;
         }
 
@@ -583,7 +582,7 @@ namespace DataServices.Actors
                             var se = CreateStateEvent(f.ExpectedStateEventInfo.StateEventInfo, res);
                             res.ExpectedEvent = se;
                         }
-                        StateCommands.AddOrSet(f.StateInfo.Name, res);
+                        StateCommands.AddOrUpdate(f.StateInfo.Name, res);
                     }
                 }
             }
@@ -967,9 +966,7 @@ namespace DataServices.Actors
                         .FirstOrDefault(x => x.Id == mainEntityId && x.EntityTypeAttributes.All(z => !z.EntityRelationship.Any()));
                     if (soleEntity != null)
                     {
-                    yield return Processes.ComplexActions.GetComplexAction("UpdateStateList",
-                            new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(soleEntity.Type.Name) });
-
+                  
                    yield return Processes.ComplexActions.GetComplexAction("IntializeProcessStateList", new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(soleEntity.Type.Name) });
                         yield return Processes.ComplexActions.GetComplexAction("UpdateStateList", new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(soleEntity.Type.Name) });
 

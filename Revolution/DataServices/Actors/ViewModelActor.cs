@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Linq;
 using SystemInterfaces;
-using Akka.Actor;
+
 using BootStrapper;
 using EventAggregator;
 using EventMessages.Events;
@@ -14,13 +14,11 @@ namespace DataServices.Actors
 {
     public class ViewModelActor : BaseActor<ViewModelActor>, IViewModelService
     {
-        private IUntypedActorContext ctx = null;
+        
 
-        public ViewModelActor(ISystemProcess process) : base(process)
+        public ViewModelActor(ILoadViewModel msg,ISystemProcess process) : base(process)
         {
-            ctx = Context;
-            Receive<LoadViewModel>(x => HandleProcessViews(x));
-            
+            HandleProcessViews(msg);
         }
         
 

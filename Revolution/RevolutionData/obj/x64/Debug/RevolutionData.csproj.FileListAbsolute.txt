@@ -223,3 +223,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\System.R
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\JB.Common.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\System.Reactive.PlatformServices.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\System.Reactive.Windows.Threading.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\Akka.xml

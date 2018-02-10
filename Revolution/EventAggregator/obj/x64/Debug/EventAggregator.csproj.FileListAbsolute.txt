@@ -188,3 +188,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\Revolut
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\ViewModel.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\DomainUtilities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\GenSoft.DBContext.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\Akka.xml

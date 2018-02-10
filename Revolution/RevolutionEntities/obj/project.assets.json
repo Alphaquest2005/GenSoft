@@ -72,7 +72,7 @@
           "lib/net46/JB.Common.Reactive.dll": {}
         }
       },
-      "morelinq/2.9.0": {
+      "morelinq/2.10.0": {
         "type": "package",
         "dependencies": {
           "System.ValueTuple": "4.4.0"
@@ -90,7 +90,7 @@
           "lib/net40/MoreLinq.dll": {}
         }
       },
-      "ReactiveProperty/4.1.0": {
+      "ReactiveProperty/4.2.0": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -294,7 +294,7 @@
           "FluentValidation.Net35": "1.0.1",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "4.1.0",
+          "ReactiveProperty": "4.2.0",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -376,7 +376,7 @@
           "lib/net46/JB.Common.Reactive.dll": {}
         }
       },
-      "morelinq/2.9.0": {
+      "morelinq/2.10.0": {
         "type": "package",
         "dependencies": {
           "System.ValueTuple": "4.4.0"
@@ -394,7 +394,7 @@
           "lib/net40/MoreLinq.dll": {}
         }
       },
-      "ReactiveProperty/4.1.0": {
+      "ReactiveProperty/4.2.0": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -598,7 +598,7 @@
           "FluentValidation.Net35": "1.0.1",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "4.1.0",
+          "ReactiveProperty": "4.2.0",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -680,7 +680,7 @@
           "lib/net46/JB.Common.Reactive.dll": {}
         }
       },
-      "morelinq/2.9.0": {
+      "morelinq/2.10.0": {
         "type": "package",
         "dependencies": {
           "System.ValueTuple": "4.4.0"
@@ -698,7 +698,7 @@
           "lib/net40/MoreLinq.dll": {}
         }
       },
-      "ReactiveProperty/4.1.0": {
+      "ReactiveProperty/4.2.0": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -902,7 +902,7 @@
           "FluentValidation.Net35": "1.0.1",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "4.1.0",
+          "ReactiveProperty": "4.2.0",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -984,7 +984,7 @@
           "lib/net46/JB.Common.Reactive.dll": {}
         }
       },
-      "morelinq/2.9.0": {
+      "morelinq/2.10.0": {
         "type": "package",
         "dependencies": {
           "System.ValueTuple": "4.4.0"
@@ -1002,7 +1002,7 @@
           "lib/net40/MoreLinq.dll": {}
         }
       },
-      "ReactiveProperty/4.1.0": {
+      "ReactiveProperty/4.2.0": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -1206,7 +1206,7 @@
           "FluentValidation.Net35": "1.0.1",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "4.1.0",
+          "ReactiveProperty": "4.2.0",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -1284,10 +1284,10 @@
         "lib/net46/JB.Common.Reactive.dll"
       ]
     },
-    "morelinq/2.9.0": {
-      "sha512": "bn/bQ6a+DBFF3LhDHKv7oNyCeFGKxNPXV4+b81+phYLyPD/cxVbW1phx/KpLxCvqHn2fE7E8UNCWsxQHXMScig==",
+    "morelinq/2.10.0": {
+      "sha512": "OP4PtbVOg1pkUgUsCIHXKbT+BsiNJkKD00wRv7Td1d4cmt3QE/ZAvIPTR5FXIaLqlYMwRFGqRMCnevM5LOixbg==",
       "type": "package",
-      "path": "morelinq/2.9.0",
+      "path": "morelinq/2.10.0",
       "files": [
         "lib/net35/MoreLinq.dll",
         "lib/net35/MoreLinq.xml",
@@ -1297,14 +1297,14 @@
         "lib/netstandard1.0/MoreLinq.xml",
         "lib/netstandard2.0/MoreLinq.dll",
         "lib/netstandard2.0/MoreLinq.xml",
-        "morelinq.2.9.0.nupkg.sha512",
+        "morelinq.2.10.0.nupkg.sha512",
         "morelinq.nuspec"
       ]
     },
-    "ReactiveProperty/4.1.0": {
-      "sha512": "u05HsuDr1visUEEkImr8Ha4phyHIKj8I2aw7UMwy5mJO1lpdceBz0s8AjVMIYc4Qfh4iSZirBDQH9uZxEoAqEA==",
+    "ReactiveProperty/4.2.0": {
+      "sha512": "v1dxPk0HKvheDCLmTXVHqC8bXU8h8bX0OiNQH1GOU6dePt903OSQSAkHYG0kjfy89npIY/8n9/KlfQaYiqXwcw==",
       "type": "package",
-      "path": "reactiveproperty/4.1.0",
+      "path": "reactiveproperty/4.2.0",
       "files": [
         "LICENSE.txt",
         "Snippet/csharp5/AsyncReactiveCommand.snippet",
@@ -1362,7 +1362,7 @@
         "lib/uap10.0/ReactiveProperty.dll",
         "lib/uap10.0/ReactiveProperty.pdb",
         "lib/uap10.0/ReactiveProperty.xml",
-        "reactiveproperty.4.1.0.nupkg.sha512",
+        "reactiveproperty.4.2.0.nupkg.sha512",
         "reactiveproperty.nuspec"
       ]
     },
@@ -1586,7 +1586,7 @@
       "SystemInterfaces >= 1.0.0",
       "Utilities >= 1.0.0",
       "ViewModel.Interfaces >= 1.0.0",
-      "morelinq >= 2.9.0"
+      "morelinq >= 2.10.0"
     ]
   },
   "packageFolders": {
@@ -1650,7 +1650,7 @@
           },
           "morelinq": {
             "target": "Package",
-            "version": "[2.9.0, )"
+            "version": "[2.10.0, )"
           }
         }
       }

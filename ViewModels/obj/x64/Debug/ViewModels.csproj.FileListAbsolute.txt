@@ -267,3 +267,4 @@ C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\System.Reactive.Interfa
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\System.Reactive.Linq.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\System.Reactive.PlatformServices.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\System.Reactive.Windows.Threading.dll
+C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\Akka.xml

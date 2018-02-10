@@ -40,13 +40,11 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\x64\Debug\Reacti
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\x64\Debug\ReactiveProperty.NET46.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\x64\Debug\ReactiveProperty.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\x64\Debug\ReactiveProperty.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\x64\Debug\Akka.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\x64\Debug\System.Collections.Immutable.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\x64\Debug\SystemInterfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\x64\Debug\ViewModel.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\x64\Debug\SystemInterfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\x64\Debug\ViewModel.Interfaces.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\x64\Debug\Akka.xml
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\bin\x64\Debug\System.Collections.Immutable.xml
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\obj\x64\Debug\Actor.Interfaces.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\obj\x64\Debug\Actor.Interfaces.dll

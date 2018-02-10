@@ -72,7 +72,7 @@
           "lib/net40-Client/MefContrib.dll": {}
         }
       },
-      "ReactiveProperty/4.1.0": {
+      "ReactiveProperty/4.2.0": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -207,7 +207,7 @@
           "FluentValidation.Net35": "1.0.1",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "4.1.0",
+          "ReactiveProperty": "4.2.0",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -289,7 +289,7 @@
           "lib/net40-Client/MefContrib.dll": {}
         }
       },
-      "ReactiveProperty/4.1.0": {
+      "ReactiveProperty/4.2.0": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -424,7 +424,7 @@
           "FluentValidation.Net35": "1.0.1",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "4.1.0",
+          "ReactiveProperty": "4.2.0",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -506,7 +506,7 @@
           "lib/net40-Client/MefContrib.dll": {}
         }
       },
-      "ReactiveProperty/4.1.0": {
+      "ReactiveProperty/4.2.0": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -641,7 +641,7 @@
           "FluentValidation.Net35": "1.0.1",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "4.1.0",
+          "ReactiveProperty": "4.2.0",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -723,7 +723,7 @@
           "lib/net40-Client/MefContrib.dll": {}
         }
       },
-      "ReactiveProperty/4.1.0": {
+      "ReactiveProperty/4.2.0": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -858,7 +858,7 @@
           "FluentValidation.Net35": "1.0.1",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "4.1.0",
+          "ReactiveProperty": "4.2.0",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -939,10 +939,10 @@
         "lib/sl/MefContrib.Silverlight.pdb"
       ]
     },
-    "ReactiveProperty/4.1.0": {
-      "sha512": "u05HsuDr1visUEEkImr8Ha4phyHIKj8I2aw7UMwy5mJO1lpdceBz0s8AjVMIYc4Qfh4iSZirBDQH9uZxEoAqEA==",
+    "ReactiveProperty/4.2.0": {
+      "sha512": "v1dxPk0HKvheDCLmTXVHqC8bXU8h8bX0OiNQH1GOU6dePt903OSQSAkHYG0kjfy89npIY/8n9/KlfQaYiqXwcw==",
       "type": "package",
-      "path": "reactiveproperty/4.1.0",
+      "path": "reactiveproperty/4.2.0",
       "files": [
         "LICENSE.txt",
         "Snippet/csharp5/AsyncReactiveCommand.snippet",
@@ -1000,7 +1000,7 @@
         "lib/uap10.0/ReactiveProperty.dll",
         "lib/uap10.0/ReactiveProperty.pdb",
         "lib/uap10.0/ReactiveProperty.xml",
-        "reactiveproperty.4.1.0.nupkg.sha512",
+        "reactiveproperty.4.2.0.nupkg.sha512",
         "reactiveproperty.nuspec"
       ]
     },

@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.Windows;
 using SystemInterfaces;
 using Actor.Interfaces;
-using Akka.Actor;
 using Common;
 using EventAggregator;
 using EventMessages.Events;
@@ -19,7 +18,7 @@ namespace DataServices.Actors
 {
 
 
-    public class ServiceManager : ReceiveActor, IServiceManager
+    public class ServiceManager : IServiceManager
     {
 
         public ISystemSource Source { get; private set; }
@@ -34,7 +33,7 @@ namespace DataServices.Actors
             {
 
                 
-                var ctx = Context;
+                
 
                 if (machineInfos.FirstOrDefault(x => x.MachineName == Processes.ThisMachineInfo.MachineName) == null)
                 {
@@ -48,16 +47,13 @@ namespace DataServices.Actors
                         new StateEventInfo(Processes.IntialSystemProcess, RevolutionData.Context.Process.Events.ProcessStarted),
                         Processes.IntialSystemProcess, Source);
 
-                Task.Run(() => ctx.ActorOf(Props.Create<EntityDataServiceManager>(Processes.IntialSystemProcess),
-                    "EntityDataServiceManager")).ConfigureAwait(false);
+                Task.Run(() => new EntityDataServiceManager(Processes.IntialSystemProcess)).ConfigureAwait(false);
 
-                Task.Run(() => ctx.ActorOf(Props.Create<DomainProcessSupervisor>(autoRun, Processes.IntialSystemProcess),
-                    "DomainProcessSupervisor")).ConfigureAwait(false);
+                Task.Run(() => new DomainProcessSupervisor(autoRun, Processes.IntialSystemProcess)).ConfigureAwait(false);
 
-                Task.Run(() => ctx.ActorOf(Props.Create<SystemProcessSupervisor>(systemStartedMsg, complexEventActions), "ProcessSupervisor")).ConfigureAwait(false);
+                Task.Run(() => new SystemProcessSupervisor(systemStartedMsg, complexEventActions)).ConfigureAwait(false);
 
-                Task.Run(() => ctx.ActorOf(Props.Create<ViewModelSupervisor>(viewModelInfos, Processes.IntialSystemProcess),
-                    "ViewModelSupervisor")).ConfigureAwait(false);
+                Task.Run(() => new ViewModelSupervisor(viewModelInfos, Processes.IntialSystemProcess)).ConfigureAwait(false);
 
 
                 EventMessageBus.Current.Publish(

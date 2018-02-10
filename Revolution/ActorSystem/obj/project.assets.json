@@ -2,78 +2,6 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.7": {
-      "Akka/1.3.2": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "9.0.1",
-          "System.Collections.Immutable": "1.3.1"
-        },
-        "frameworkAssemblies": [
-          "System.Configuration"
-        ],
-        "compile": {
-          "lib/net45/Akka.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Akka.dll": {}
-        }
-      },
-      "Akka.Persistence/1.3.2": {
-        "type": "package",
-        "dependencies": {
-          "Akka": "1.3.2",
-          "Google.Protobuf": "3.3.0"
-        },
-        "compile": {
-          "lib/net45/Akka.Persistence.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Akka.Persistence.dll": {}
-        }
-      },
-      "Akka.Persistence.Sql.Common/1.3.2": {
-        "type": "package",
-        "dependencies": {
-          "Akka.Persistence": "1.3.2"
-        },
-        "frameworkAssemblies": [
-          "System.Configuration",
-          "System.Data"
-        ],
-        "compile": {
-          "lib/net45/Akka.Persistence.Sql.Common.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Akka.Persistence.Sql.Common.dll": {}
-        }
-      },
-      "Akka.Persistence.SqlServer/1.3.2": {
-        "type": "package",
-        "dependencies": {
-          "Akka": "1.3.2",
-          "Akka.Persistence": "1.3.2",
-          "Akka.Persistence.Sql.Common": "1.3.2",
-          "Akka.TestKit": "1.3.2"
-        },
-        "compile": {
-          "lib/net45/Akka.Persistence.SqlServer.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Akka.Persistence.SqlServer.dll": {}
-        }
-      },
-      "Akka.TestKit/1.3.2": {
-        "type": "package",
-        "dependencies": {
-          "Akka": "1.3.2"
-        },
-        "compile": {
-          "lib/net45/Akka.TestKit.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Akka.TestKit.dll": {}
-        }
-      },
       "DynamicExpresso.Core/2.0.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -93,15 +21,6 @@
         },
         "runtime": {
           "lib/net35/FluentValidation.dll": {}
-        }
-      },
-      "Google.Protobuf/3.3.0": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Google.Protobuf.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Google.Protobuf.dll": {}
         }
       },
       "JB.Common/0.8.107-pre": {
@@ -339,7 +258,7 @@
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "morelinq/2.9.0": {
+      "morelinq/2.10.0": {
         "type": "package",
         "dependencies": {
           "System.ValueTuple": "4.4.0"
@@ -357,15 +276,6 @@
           "lib/net40/MoreLinq.dll": {}
         }
       },
-      "Newtonsoft.Json/9.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {}
-        }
-      },
       "Reactive.EventAggregator/3.0.0": {
         "type": "package",
         "dependencies": {
@@ -378,7 +288,7 @@
           "lib/net45/Reactive.EventAggregator.dll": {}
         }
       },
-      "ReactiveProperty/4.1.0": {
+      "ReactiveProperty/4.2.0": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -848,7 +758,6 @@
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Actor.Interfaces": "1.0.0",
-          "Akka.Persistence.SqlServer": "1.3.2",
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
@@ -961,7 +870,6 @@
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Actor.Interfaces": "1.0.0",
-          "Akka": "1.3.2",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
           "SystemInterfaces": "1.0.0",
@@ -985,7 +893,7 @@
           "Microsoft.EntityFrameworkCore.Relational": "2.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.0.1",
           "SystemInterfaces": "1.0.0",
-          "morelinq": "2.9.0"
+          "morelinq": "2.10.0"
         },
         "compile": {
           "bin/placeholder/GenSoft.DBContext.dll": {}
@@ -1092,7 +1000,7 @@
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0",
-          "morelinq": "2.9.0"
+          "morelinq": "2.10.0"
         },
         "compile": {
           "bin/placeholder/RevolutionEntities.dll": {}
@@ -1174,7 +1082,7 @@
           "FluentValidation.Net35": "1.0.1",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "4.1.0",
+          "ReactiveProperty": "4.2.0",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -1220,78 +1128,6 @@
       }
     },
     ".NETFramework,Version=v4.7/win": {
-      "Akka/1.3.2": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "9.0.1",
-          "System.Collections.Immutable": "1.3.1"
-        },
-        "frameworkAssemblies": [
-          "System.Configuration"
-        ],
-        "compile": {
-          "lib/net45/Akka.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Akka.dll": {}
-        }
-      },
-      "Akka.Persistence/1.3.2": {
-        "type": "package",
-        "dependencies": {
-          "Akka": "1.3.2",
-          "Google.Protobuf": "3.3.0"
-        },
-        "compile": {
-          "lib/net45/Akka.Persistence.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Akka.Persistence.dll": {}
-        }
-      },
-      "Akka.Persistence.Sql.Common/1.3.2": {
-        "type": "package",
-        "dependencies": {
-          "Akka.Persistence": "1.3.2"
-        },
-        "frameworkAssemblies": [
-          "System.Configuration",
-          "System.Data"
-        ],
-        "compile": {
-          "lib/net45/Akka.Persistence.Sql.Common.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Akka.Persistence.Sql.Common.dll": {}
-        }
-      },
-      "Akka.Persistence.SqlServer/1.3.2": {
-        "type": "package",
-        "dependencies": {
-          "Akka": "1.3.2",
-          "Akka.Persistence": "1.3.2",
-          "Akka.Persistence.Sql.Common": "1.3.2",
-          "Akka.TestKit": "1.3.2"
-        },
-        "compile": {
-          "lib/net45/Akka.Persistence.SqlServer.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Akka.Persistence.SqlServer.dll": {}
-        }
-      },
-      "Akka.TestKit/1.3.2": {
-        "type": "package",
-        "dependencies": {
-          "Akka": "1.3.2"
-        },
-        "compile": {
-          "lib/net45/Akka.TestKit.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Akka.TestKit.dll": {}
-        }
-      },
       "DynamicExpresso.Core/2.0.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -1311,15 +1147,6 @@
         },
         "runtime": {
           "lib/net35/FluentValidation.dll": {}
-        }
-      },
-      "Google.Protobuf/3.3.0": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Google.Protobuf.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Google.Protobuf.dll": {}
         }
       },
       "JB.Common/0.8.107-pre": {
@@ -1557,7 +1384,7 @@
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "morelinq/2.9.0": {
+      "morelinq/2.10.0": {
         "type": "package",
         "dependencies": {
           "System.ValueTuple": "4.4.0"
@@ -1575,15 +1402,6 @@
           "lib/net40/MoreLinq.dll": {}
         }
       },
-      "Newtonsoft.Json/9.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {}
-        }
-      },
       "Reactive.EventAggregator/3.0.0": {
         "type": "package",
         "dependencies": {
@@ -1596,7 +1414,7 @@
           "lib/net45/Reactive.EventAggregator.dll": {}
         }
       },
-      "ReactiveProperty/4.1.0": {
+      "ReactiveProperty/4.2.0": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -2056,7 +1874,6 @@
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Actor.Interfaces": "1.0.0",
-          "Akka.Persistence.SqlServer": "1.3.2",
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
@@ -2169,7 +1986,6 @@
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Actor.Interfaces": "1.0.0",
-          "Akka": "1.3.2",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
           "SystemInterfaces": "1.0.0",
@@ -2193,7 +2009,7 @@
           "Microsoft.EntityFrameworkCore.Relational": "2.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.0.1",
           "SystemInterfaces": "1.0.0",
-          "morelinq": "2.9.0"
+          "morelinq": "2.10.0"
         },
         "compile": {
           "bin/placeholder/GenSoft.DBContext.dll": {}
@@ -2300,7 +2116,7 @@
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0",
-          "morelinq": "2.9.0"
+          "morelinq": "2.10.0"
         },
         "compile": {
           "bin/placeholder/RevolutionEntities.dll": {}
@@ -2382,7 +2198,7 @@
           "FluentValidation.Net35": "1.0.1",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "4.1.0",
+          "ReactiveProperty": "4.2.0",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -2428,78 +2244,6 @@
       }
     },
     ".NETFramework,Version=v4.7/win-x64": {
-      "Akka/1.3.2": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "9.0.1",
-          "System.Collections.Immutable": "1.3.1"
-        },
-        "frameworkAssemblies": [
-          "System.Configuration"
-        ],
-        "compile": {
-          "lib/net45/Akka.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Akka.dll": {}
-        }
-      },
-      "Akka.Persistence/1.3.2": {
-        "type": "package",
-        "dependencies": {
-          "Akka": "1.3.2",
-          "Google.Protobuf": "3.3.0"
-        },
-        "compile": {
-          "lib/net45/Akka.Persistence.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Akka.Persistence.dll": {}
-        }
-      },
-      "Akka.Persistence.Sql.Common/1.3.2": {
-        "type": "package",
-        "dependencies": {
-          "Akka.Persistence": "1.3.2"
-        },
-        "frameworkAssemblies": [
-          "System.Configuration",
-          "System.Data"
-        ],
-        "compile": {
-          "lib/net45/Akka.Persistence.Sql.Common.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Akka.Persistence.Sql.Common.dll": {}
-        }
-      },
-      "Akka.Persistence.SqlServer/1.3.2": {
-        "type": "package",
-        "dependencies": {
-          "Akka": "1.3.2",
-          "Akka.Persistence": "1.3.2",
-          "Akka.Persistence.Sql.Common": "1.3.2",
-          "Akka.TestKit": "1.3.2"
-        },
-        "compile": {
-          "lib/net45/Akka.Persistence.SqlServer.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Akka.Persistence.SqlServer.dll": {}
-        }
-      },
-      "Akka.TestKit/1.3.2": {
-        "type": "package",
-        "dependencies": {
-          "Akka": "1.3.2"
-        },
-        "compile": {
-          "lib/net45/Akka.TestKit.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Akka.TestKit.dll": {}
-        }
-      },
       "DynamicExpresso.Core/2.0.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -2519,15 +2263,6 @@
         },
         "runtime": {
           "lib/net35/FluentValidation.dll": {}
-        }
-      },
-      "Google.Protobuf/3.3.0": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Google.Protobuf.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Google.Protobuf.dll": {}
         }
       },
       "JB.Common/0.8.107-pre": {
@@ -2765,7 +2500,7 @@
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "morelinq/2.9.0": {
+      "morelinq/2.10.0": {
         "type": "package",
         "dependencies": {
           "System.ValueTuple": "4.4.0"
@@ -2783,15 +2518,6 @@
           "lib/net40/MoreLinq.dll": {}
         }
       },
-      "Newtonsoft.Json/9.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {}
-        }
-      },
       "Reactive.EventAggregator/3.0.0": {
         "type": "package",
         "dependencies": {
@@ -2804,7 +2530,7 @@
           "lib/net45/Reactive.EventAggregator.dll": {}
         }
       },
-      "ReactiveProperty/4.1.0": {
+      "ReactiveProperty/4.2.0": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -3264,7 +2990,6 @@
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Actor.Interfaces": "1.0.0",
-          "Akka.Persistence.SqlServer": "1.3.2",
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
@@ -3377,7 +3102,6 @@
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Actor.Interfaces": "1.0.0",
-          "Akka": "1.3.2",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
           "SystemInterfaces": "1.0.0",
@@ -3401,7 +3125,7 @@
           "Microsoft.EntityFrameworkCore.Relational": "2.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.0.1",
           "SystemInterfaces": "1.0.0",
-          "morelinq": "2.9.0"
+          "morelinq": "2.10.0"
         },
         "compile": {
           "bin/placeholder/GenSoft.DBContext.dll": {}
@@ -3508,7 +3232,7 @@
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0",
-          "morelinq": "2.9.0"
+          "morelinq": "2.10.0"
         },
         "compile": {
           "bin/placeholder/RevolutionEntities.dll": {}
@@ -3590,7 +3314,7 @@
           "FluentValidation.Net35": "1.0.1",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "4.1.0",
+          "ReactiveProperty": "4.2.0",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -3636,78 +3360,6 @@
       }
     },
     ".NETFramework,Version=v4.7/win-x86": {
-      "Akka/1.3.2": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "9.0.1",
-          "System.Collections.Immutable": "1.3.1"
-        },
-        "frameworkAssemblies": [
-          "System.Configuration"
-        ],
-        "compile": {
-          "lib/net45/Akka.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Akka.dll": {}
-        }
-      },
-      "Akka.Persistence/1.3.2": {
-        "type": "package",
-        "dependencies": {
-          "Akka": "1.3.2",
-          "Google.Protobuf": "3.3.0"
-        },
-        "compile": {
-          "lib/net45/Akka.Persistence.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Akka.Persistence.dll": {}
-        }
-      },
-      "Akka.Persistence.Sql.Common/1.3.2": {
-        "type": "package",
-        "dependencies": {
-          "Akka.Persistence": "1.3.2"
-        },
-        "frameworkAssemblies": [
-          "System.Configuration",
-          "System.Data"
-        ],
-        "compile": {
-          "lib/net45/Akka.Persistence.Sql.Common.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Akka.Persistence.Sql.Common.dll": {}
-        }
-      },
-      "Akka.Persistence.SqlServer/1.3.2": {
-        "type": "package",
-        "dependencies": {
-          "Akka": "1.3.2",
-          "Akka.Persistence": "1.3.2",
-          "Akka.Persistence.Sql.Common": "1.3.2",
-          "Akka.TestKit": "1.3.2"
-        },
-        "compile": {
-          "lib/net45/Akka.Persistence.SqlServer.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Akka.Persistence.SqlServer.dll": {}
-        }
-      },
-      "Akka.TestKit/1.3.2": {
-        "type": "package",
-        "dependencies": {
-          "Akka": "1.3.2"
-        },
-        "compile": {
-          "lib/net45/Akka.TestKit.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Akka.TestKit.dll": {}
-        }
-      },
       "DynamicExpresso.Core/2.0.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -3727,15 +3379,6 @@
         },
         "runtime": {
           "lib/net35/FluentValidation.dll": {}
-        }
-      },
-      "Google.Protobuf/3.3.0": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Google.Protobuf.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Google.Protobuf.dll": {}
         }
       },
       "JB.Common/0.8.107-pre": {
@@ -3973,7 +3616,7 @@
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "morelinq/2.9.0": {
+      "morelinq/2.10.0": {
         "type": "package",
         "dependencies": {
           "System.ValueTuple": "4.4.0"
@@ -3991,15 +3634,6 @@
           "lib/net40/MoreLinq.dll": {}
         }
       },
-      "Newtonsoft.Json/9.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {}
-        }
-      },
       "Reactive.EventAggregator/3.0.0": {
         "type": "package",
         "dependencies": {
@@ -4012,7 +3646,7 @@
           "lib/net45/Reactive.EventAggregator.dll": {}
         }
       },
-      "ReactiveProperty/4.1.0": {
+      "ReactiveProperty/4.2.0": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -4472,7 +4106,6 @@
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Actor.Interfaces": "1.0.0",
-          "Akka.Persistence.SqlServer": "1.3.2",
           "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
@@ -4585,7 +4218,6 @@
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Actor.Interfaces": "1.0.0",
-          "Akka": "1.3.2",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
           "SystemInterfaces": "1.0.0",
@@ -4609,7 +4241,7 @@
           "Microsoft.EntityFrameworkCore.Relational": "2.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.0.1",
           "SystemInterfaces": "1.0.0",
-          "morelinq": "2.9.0"
+          "morelinq": "2.10.0"
         },
         "compile": {
           "bin/placeholder/GenSoft.DBContext.dll": {}
@@ -4716,7 +4348,7 @@
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0",
-          "morelinq": "2.9.0"
+          "morelinq": "2.10.0"
         },
         "compile": {
           "bin/placeholder/RevolutionEntities.dll": {}
@@ -4798,7 +4430,7 @@
           "FluentValidation.Net35": "1.0.1",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "4.1.0",
+          "ReactiveProperty": "4.2.0",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -4845,71 +4477,6 @@
     }
   },
   "libraries": {
-    "Akka/1.3.2": {
-      "sha512": "z1KvY0y6N9jcnfVd1IxBCgnuGG4zNxKHLU5uD0yce5Y74Cx4JV3lAkOG+F+5VRnHBqnK/9Z3MBYmHpPVVFBzoA==",
-      "type": "package",
-      "path": "akka/1.3.2",
-      "files": [
-        "akka.1.3.2.nupkg.sha512",
-        "akka.nuspec",
-        "lib/net45/Akka.dll",
-        "lib/net45/Akka.xml",
-        "lib/netstandard1.6/Akka.dll",
-        "lib/netstandard1.6/Akka.xml"
-      ]
-    },
-    "Akka.Persistence/1.3.2": {
-      "sha512": "Y7Cwo1FOyDAXHw3lw9vGg/8okXbESQ+5bC9/5qWQ+IYLNcBzVq7FG7StC47w5rbobrhFMdrxT5Z2/t9biRqmIA==",
-      "type": "package",
-      "path": "akka.persistence/1.3.2",
-      "files": [
-        "akka.persistence.1.3.2.nupkg.sha512",
-        "akka.persistence.nuspec",
-        "lib/net45/Akka.Persistence.dll",
-        "lib/net45/Akka.Persistence.xml",
-        "lib/netstandard1.6/Akka.Persistence.dll",
-        "lib/netstandard1.6/Akka.Persistence.xml"
-      ]
-    },
-    "Akka.Persistence.Sql.Common/1.3.2": {
-      "sha512": "Llf7dUd9xLjrOAGMIdhaSPM4mgvn8sGP4vOhkWM3hb4yVRzKyuwx/4d+InuqJ9RPL56pVQFClsd5bmyzDChkwg==",
-      "type": "package",
-      "path": "akka.persistence.sql.common/1.3.2",
-      "files": [
-        "akka.persistence.sql.common.1.3.2.nupkg.sha512",
-        "akka.persistence.sql.common.nuspec",
-        "lib/net45/Akka.Persistence.Sql.Common.dll",
-        "lib/net45/Akka.Persistence.Sql.Common.xml",
-        "lib/netstandard1.6/Akka.Persistence.Sql.Common.dll",
-        "lib/netstandard1.6/Akka.Persistence.Sql.Common.xml"
-      ]
-    },
-    "Akka.Persistence.SqlServer/1.3.2": {
-      "sha512": "oZW+rC0/3PDZ6glRQTAox7htG6Q1YxRGZfj2NEa0z3aZXgAfbZVAI8TiVmM9Oaw8i2q64ETWa1/8S2jEsnBTsg==",
-      "type": "package",
-      "path": "akka.persistence.sqlserver/1.3.2",
-      "files": [
-        "akka.persistence.sqlserver.1.3.2.nupkg.sha512",
-        "akka.persistence.sqlserver.nuspec",
-        "lib/net45/Akka.Persistence.SqlServer.dll",
-        "lib/net45/Akka.Persistence.SqlServer.xml",
-        "lib/netstandard1.6/Akka.Persistence.SqlServer.dll",
-        "lib/netstandard1.6/Akka.Persistence.SqlServer.xml"
-      ]
-    },
-    "Akka.TestKit/1.3.2": {
-      "sha512": "snxF5ZgUJvgaXsqbiZqT5zXK5nGw9zVBXoR60NrVvJ4otTLdJIiFjFHCth3wS6JMjx0zzavYrnVl9D7Ygg60Ww==",
-      "type": "package",
-      "path": "akka.testkit/1.3.2",
-      "files": [
-        "akka.testkit.1.3.2.nupkg.sha512",
-        "akka.testkit.nuspec",
-        "lib/net45/Akka.TestKit.dll",
-        "lib/net45/Akka.TestKit.xml",
-        "lib/netstandard1.6/Akka.TestKit.dll",
-        "lib/netstandard1.6/Akka.TestKit.xml"
-      ]
-    },
     "DynamicExpresso.Core/2.0.0": {
       "sha512": "TZSJWrKQbD/XrEFK+GAGJxIJKzckAqXOlos9LuONDNTtDy4C2xSBVdaZLbf5O0HmvK77ecmw901JQzoKz9ed0w==",
       "type": "package",
@@ -4929,19 +4496,6 @@
         "FluentValidation.Net35.1.0.1.nupkg.sha512",
         "FluentValidation.Net35.nuspec",
         "lib/net35/FluentValidation.dll"
-      ]
-    },
-    "Google.Protobuf/3.3.0": {
-      "sha512": "W0TsIYM2ED9dc/FgdbdtP68vUP1JdbwaFscG3DeVtJNlfm8A/ozjAT0H3dWIk0jJd9Zcx6B7XZ1LYERF8PqqJA==",
-      "type": "package",
-      "path": "google.protobuf/3.3.0",
-      "files": [
-        "google.protobuf.3.3.0.nupkg.sha512",
-        "google.protobuf.nuspec",
-        "lib/net45/Google.Protobuf.dll",
-        "lib/net45/Google.Protobuf.xml",
-        "lib/netstandard1.0/Google.Protobuf.dll",
-        "lib/netstandard1.0/Google.Protobuf.xml"
       ]
     },
     "JB.Common/0.8.107-pre": {
@@ -5220,10 +4774,10 @@
         "microsoft.extensions.primitives.nuspec"
       ]
     },
-    "morelinq/2.9.0": {
-      "sha512": "bn/bQ6a+DBFF3LhDHKv7oNyCeFGKxNPXV4+b81+phYLyPD/cxVbW1phx/KpLxCvqHn2fE7E8UNCWsxQHXMScig==",
+    "morelinq/2.10.0": {
+      "sha512": "OP4PtbVOg1pkUgUsCIHXKbT+BsiNJkKD00wRv7Td1d4cmt3QE/ZAvIPTR5FXIaLqlYMwRFGqRMCnevM5LOixbg==",
       "type": "package",
-      "path": "morelinq/2.9.0",
+      "path": "morelinq/2.10.0",
       "files": [
         "lib/net35/MoreLinq.dll",
         "lib/net35/MoreLinq.xml",
@@ -5233,32 +4787,8 @@
         "lib/netstandard1.0/MoreLinq.xml",
         "lib/netstandard2.0/MoreLinq.dll",
         "lib/netstandard2.0/MoreLinq.xml",
-        "morelinq.2.9.0.nupkg.sha512",
+        "morelinq.2.10.0.nupkg.sha512",
         "morelinq.nuspec"
-      ]
-    },
-    "Newtonsoft.Json/9.0.1": {
-      "sha512": "U82mHQSKaIk+lpSVCbWYKNavmNH1i5xrExDEquU1i6I5pV6UMOqRnJRSlKO3cMPfcpp0RgDY+8jUXHdQ4IfXvw==",
-      "type": "package",
-      "path": "newtonsoft.json/9.0.1",
-      "files": [
-        "Newtonsoft.Json.9.0.1.nupkg.sha512",
-        "Newtonsoft.Json.nuspec",
-        "lib/net20/Newtonsoft.Json.dll",
-        "lib/net20/Newtonsoft.Json.xml",
-        "lib/net35/Newtonsoft.Json.dll",
-        "lib/net35/Newtonsoft.Json.xml",
-        "lib/net40/Newtonsoft.Json.dll",
-        "lib/net40/Newtonsoft.Json.xml",
-        "lib/net45/Newtonsoft.Json.dll",
-        "lib/net45/Newtonsoft.Json.xml",
-        "lib/netstandard1.0/Newtonsoft.Json.dll",
-        "lib/netstandard1.0/Newtonsoft.Json.xml",
-        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.xml",
-        "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.xml",
-        "tools/install.ps1"
       ]
     },
     "Reactive.EventAggregator/3.0.0": {
@@ -5276,10 +4806,10 @@
         "lib/windowsphone8/Reactive.EventAggregator.dll"
       ]
     },
-    "ReactiveProperty/4.1.0": {
-      "sha512": "u05HsuDr1visUEEkImr8Ha4phyHIKj8I2aw7UMwy5mJO1lpdceBz0s8AjVMIYc4Qfh4iSZirBDQH9uZxEoAqEA==",
+    "ReactiveProperty/4.2.0": {
+      "sha512": "v1dxPk0HKvheDCLmTXVHqC8bXU8h8bX0OiNQH1GOU6dePt903OSQSAkHYG0kjfy89npIY/8n9/KlfQaYiqXwcw==",
       "type": "package",
-      "path": "reactiveproperty/4.1.0",
+      "path": "reactiveproperty/4.2.0",
       "files": [
         "LICENSE.txt",
         "Snippet/csharp5/AsyncReactiveCommand.snippet",
@@ -5337,7 +4867,7 @@
         "lib/uap10.0/ReactiveProperty.dll",
         "lib/uap10.0/ReactiveProperty.pdb",
         "lib/uap10.0/ReactiveProperty.xml",
-        "reactiveproperty.4.1.0.nupkg.sha512",
+        "reactiveproperty.4.2.0.nupkg.sha512",
         "reactiveproperty.nuspec"
       ]
     },
@@ -6778,7 +6308,6 @@
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7": [
       "Actor.Interfaces >= 1.0.0",
-      "Akka >= 1.3.2",
       "Common >= 1.0.0",
       "DataServices >= 1.0.0",
       "DynamicExpresso.Core >= 2.0.0",
@@ -6851,10 +6380,6 @@
     "frameworks": {
       "net47": {
         "dependencies": {
-          "Akka": {
-            "target": "Package",
-            "version": "[1.3.2, )"
-          },
           "DynamicExpresso.Core": {
             "target": "Package",
             "version": "[2.0.0, )"

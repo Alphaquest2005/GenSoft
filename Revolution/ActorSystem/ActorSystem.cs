@@ -4,8 +4,6 @@ using System.ComponentModel.Composition;
 using System.Linq;
 using SystemInterfaces;
 using Actor.Interfaces;
-using Akka.Actor;
-using Akka.Configuration;
 using DataServices.Actors;
 using GenSoft.DBContexts;
 using GenSoft.Expressions;
@@ -19,7 +17,7 @@ namespace ActorBackBone
         //ToDo:Get rid of private setter
         public static ActorBackBone Instance { get; private set; }
        
-        public static ActorSystem System { get; private set; }
+        
 
 
         public void Intialize(bool autoRun, List<IMachineInfo> machineInfo, 
@@ -27,10 +25,7 @@ namespace ActorBackBone
         {
             try
             {
-                System = ActorSystem.Create("System");
-                System.ActorOf(Props.Create<ServiceManager>(autoRun, machineInfo, complexEventActions, viewInfos),
-                    "ServiceManager");
-                Instance = this;
+               var sm = new ServiceManager(autoRun, machineInfo, complexEventActions, viewInfos);
             }
             catch (Exception)
             {

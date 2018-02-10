@@ -37,12 +37,10 @@ C:\Prism\GitRepositiory\MRManager\Revolution\EventMessages\bin\x64\Debug\Splat.d
 C:\Prism\GitRepositiory\MRManager\Revolution\EventMessages\bin\x64\Debug\Splat.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\x64\Debug\EventMessages.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\x64\Debug\EventMessages.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\x64\Debug\Akka.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\x64\Debug\FluentValidation.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\x64\Debug\JB.Common.Collections.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\x64\Debug\JB.Common.Collections.Reactive.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\x64\Debug\JB.Common.Reactive.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\x64\Debug\Newtonsoft.Json.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\x64\Debug\ReactiveProperty.NET46.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\x64\Debug\ReactiveProperty.NET46.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\x64\Debug\ReactiveProperty.dll
@@ -71,3 +69,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\x64\Debug\System.Re
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\x64\Debug\System.Reactive.Linq.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\x64\Debug\System.Reactive.PlatformServices.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\x64\Debug\System.Reactive.Windows.Threading.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\x64\Debug\System.Collections.Immutable.xml

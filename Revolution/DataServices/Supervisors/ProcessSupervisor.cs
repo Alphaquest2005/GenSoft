@@ -5,7 +5,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using SystemInterfaces;
 using Actor.Interfaces;
-using Akka.Actor;
 using EventAggregator;
 using EventMessages.Commands;
 using EventMessages.Events;
@@ -17,15 +16,13 @@ namespace DataServices.Actors
 {
     public class SystemProcessSupervisor : BaseSupervisor<SystemProcessSupervisor>
     {
-        private IUntypedActorContext ctx = null;
+        
 
         //TODO: Track Actor Shutdown instead of just broadcast
 
         public SystemProcessSupervisor(ISystemStarted firstMsg, List<IComplexEventAction> processComplexEvents) : base(
             firstMsg.Process)
         {
-
-            ctx = Context;
 
             EventMessageBus.Current.GetEvent<ILoadProcessComplexEvents>(new StateEventInfo(firstMsg.Process, RevolutionData.Context.Process.Events.ProcessStarted), Source).Subscribe(HandleDomainProcess);
             StartProcess(processComplexEvents, firstMsg.User);
@@ -69,7 +66,7 @@ namespace DataServices.Actors
                         //{
                         try
                         {
-                            ctx.ActorOf(Props.Create<ProcessActor>(inMsg), inMsg.ActorName);
+                            var t = new ProcessActor(inMsg);
                         }
                         catch (Exception ex)
                         {

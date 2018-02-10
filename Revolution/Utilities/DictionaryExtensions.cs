@@ -33,6 +33,20 @@ namespace Utilities
                 //if (dictionary == null) dictionary = new ConcurrentDictionary<K, V>();
                 dictionary.AddOrUpdate(key, value, (oldkey, oldvalue) => value);
             }
-        
+
+        public static void AddOrUpdate<K, V>(this Dictionary<K, V> dictionary, K key, V value)
+        {
+            //if (dictionary == null) dictionary = new ConcurrentDictionary<K, V>();
+            if (dictionary.ContainsKey(key))
+            {
+                dictionary[key] = value;
+            }
+            else
+            {
+                dictionary.Add(key, value);
+            }
+            
+        }
+
     }
 }

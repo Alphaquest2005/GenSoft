@@ -9,7 +9,7 @@ using System.Reactive.Linq;
 using System.Threading.Tasks;
 using SystemInterfaces;
 using Actor.Interfaces;
-using Akka.Actor;
+
 using DataServices.Utils;
 using EventAggregator;
 using EventMessages.Commands;
@@ -29,14 +29,14 @@ namespace DataServices.Actors
         
         //public ConcurrentDictionary<Type, IProcessStateMessage> ProcessStateMessages { get; } = new ConcurrentDictionary<Type, IProcessStateMessage>();
 
-        private static IUntypedActorContext ctx = null;
+       
 
         private string ActorName = null;
 
         public ProcessActor(ICreateProcessActor msg) : base(msg.Process)
         {
             ActorName = msg.ActorName;
-            ctx = Context;
+            
           
             //EventMessageBus.Current.GetEvent<IRequestProcessLog>(Source)
             //    .Where(x => x.Process.Id == msg.Process.Id)
@@ -79,7 +79,7 @@ namespace DataServices.Actors
 
         private void CleanUpActor(ICleanUpSystemProcess cleanUpSystemProcess)
         {
-           Self.Tell(PoisonPill.Instance);
+            //Self.Tell(PoisonPill.Instance);
         }
 
 
@@ -156,48 +156,39 @@ namespace DataServices.Actors
                         RevolutionData.Context.CommandFunctions.UpdateCommandStatus(cp.Key,
                             RevolutionData.Context.Actor.Commands.StartActor)), Process,
                     Source);
-
-
-                Publish(inMsg);
+                
                 try
                 {
-                    CreateComplexEventService.Invoke(inMsg, this);
+                    CreateComplexEventService(inMsg);
                 }
                 catch (Exception ex)
                 {
                     PublishProcesError(inMsg, ex, typeof(IServiceStarted<IComplexEventService>));
                 }
+
+                Publish(inMsg);
             }
         }
 
 
-        public IActorRef ActorRef => this.Self;
 
-        private Action<ICreateComplexEventService, ProcessActor> CreateComplexEventService = (inMsg, p) =>
+
+        private void CreateComplexEventService(ICreateComplexEventService inMsg)
         {
             try
             {
 
-                Task.Run(() =>
-                {
-                    //var child = ctx.Child(
-                    //    $"ComplexEventActor:-{inMsg.ComplexEventService.ActorId.GetSafeActorName()}-{inMsg.Process.Id}");
-                    //if (Equals(child, ActorRefs.Nobody))
-                    //{
+                
+
                     try
                     {
-                       var child = ctx.ActorOf(Props.Create<ComplexEventActor>(inMsg),
-                                $"ComplexEventActor:-{inMsg.ComplexEventService.ActorId.GetSafeActorName()}-{inMsg.Process.Id}");
-                            Console.WriteLine(child.Path);
-                        }
-                        catch (Exception ex)
-                        {
-                           p.PublishProcesError(inMsg, ex, inMsg.GetType());
-                        }
-
-                    //}
-                }).ConfigureAwait(false);
-
+                        var cp = new ComplexEventActor(inMsg);
+                    }
+                    catch (Exception ex)
+                    {
+                        PublishProcesError(inMsg, ex, inMsg.GetType());
+                    }
+                
             }
             catch (Exception)
             {
@@ -206,7 +197,7 @@ namespace DataServices.Actors
             }
 
 
-        };
+        }
     }
 
 

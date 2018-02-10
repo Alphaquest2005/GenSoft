@@ -1,25 +1,26 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using SystemInterfaces;
 using Actor.Interfaces;
-using Akka.Actor;
 using EventAggregator;
 using EventMessages.Commands;
 using EventMessages.Events;
 using RevolutionEntities.Process;
 using StateEventInfo = RevolutionEntities.Process.StateEventInfo;
+using Utilities;
 
 namespace DataServices.Actors
 {
     public class EntityDataServiceManager : BaseSupervisor<EntityDataServiceManager>, IEntityDataServiceManager
     {
 
-        private IUntypedActorContext ctx = null;
+        private static ConcurrentDictionary<IDynamicEntityType, EntityDataServiceSupervisor> existingSupervisors = new ConcurrentDictionary<IDynamicEntityType, EntityDataServiceSupervisor>();
 
         public EntityDataServiceManager(ISystemProcess process) : base(process)
         {
-            ctx = Context;
+           
             EventMessageBus.Current.GetEvent<IEntityRequest>(new StateCommandInfo(process, RevolutionData.Context.Entity.Commands.EntityRequest), Source).Subscribe(handleEntityRequest);
             EventMessageBus.Current.Publish(
                 new ServiceStarted<IEntityDataServiceManager>(this,
@@ -51,18 +52,12 @@ namespace DataServices.Actors
         private void CreateEntityActors(string classType, string actorName,IDynamicEntityType entityType , ISystemProcess process,
             IProcessSystemMessage msg)
         {
-            var child = ctx.Child(string.Format(actorName, entityType.Name));
-            if (!Equals(child, ActorRefs.Nobody))
-            {
-                child.Tell(msg);
-            }
-            else
-            { 
+           
                 try
                 {
                     Task.Run(() =>
                     {
-                        ctx.ActorOf(Props.Create<EntityDataServiceSupervisor>(entityType, process, msg),string.Format(actorName, entityType.Name));
+                        if(!existingSupervisors.ContainsKey(entityType)) existingSupervisors.AddOrUpdate(entityType, new EntityDataServiceSupervisor(entityType, process, msg));
                     }).ConfigureAwait(false);
                 }
                 catch (Exception ex)
@@ -78,7 +73,7 @@ namespace DataServices.Actors
                 }
 
 
-            }
+            
 
         }
     }

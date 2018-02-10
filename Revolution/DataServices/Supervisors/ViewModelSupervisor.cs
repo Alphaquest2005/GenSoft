@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using SystemInterfaces;
 using Actor.Interfaces;
-using Akka.Actor;
-using Akka.Routing;
+
 using EventAggregator;
 using EventMessages.Events;
 using RevolutionEntities.Process;
@@ -16,18 +15,12 @@ namespace DataServices.Actors
   
     public class ViewModelSupervisor : BaseSupervisor<ViewModelSupervisor>, IViewModelSupervisor
     {
-        private IActorRef _viewActor;
+        
        
 
         public ViewModelSupervisor(List<IViewModelInfo> processViewModelInfos, ISystemProcess process) : base(process)
         {
-            _viewActor = Context.ActorOf(
-                    Props.Create<ViewModelActor>(process)
-                        .WithRouter(new RoundRobinPool(1,new DefaultResizer(1, Environment.ProcessorCount, 1, .2, .3, .1, Environment.ProcessorCount)))
-                        ,"ViewModelActorEntityActor");
-          
-
-            HandleProcessViews(processViewModelInfos);
+           HandleProcessViews(processViewModelInfos);
             EventMessageBus.Current.GetEvent<ILoadDomainProcessViewModels>(new RevolutionEntities.Process.StateCommandInfo(process, RevolutionData.Context.CommandFunctions.UpdateCommandStatus("shit can't think", RevolutionData.Context.Process.Commands.StartProcess)), Source).Subscribe(x => HandleProcessViews(x.ViewModelInfos));
             
             EventMessageBus.Current.Publish(new ServiceStarted<IViewModelSupervisor>(this,new StateEventInfo(process, RevolutionData.Context.Actor.Events.ActorStarted), process, Source), Source);
@@ -42,7 +35,7 @@ namespace DataServices.Actors
                     var msg = new LoadViewModel(v,
                         new StateCommandInfo(v.Process, RevolutionData.Context.ViewModel.Commands.LoadViewModel),
                         v.Process, Source);
-                    _viewActor.Tell(msg);
+                    var t = new ViewModelActor(msg, v.Process);
                    // EventMessageBus.Current.Publish(msg, Source);
                 });
         }

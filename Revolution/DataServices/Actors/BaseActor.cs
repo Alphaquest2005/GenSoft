@@ -3,8 +3,7 @@ using System.Collections.Immutable;
 using System.Diagnostics;
 using SystemInterfaces;
 using Actor.Interfaces;
-using Akka.Actor;
-using Akka.Persistence;
+
 using Common;
 using EventAggregator;
 using EventMessages.Commands;
@@ -15,7 +14,7 @@ using Utilities;
 
 namespace DataServices.Actors
 {
-    public class BaseActor<T>: ReceiveActor, IAgent, IProcessSource
+    public class BaseActor<T>: IAgent, IProcessSource
     {
         public ISystemSource Source { get; }
         public ImmutableList<IProcessSystemMessage> OutMessages = ImmutableList<IProcessSystemMessage>.Empty;

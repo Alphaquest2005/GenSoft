@@ -363,3 +363,4 @@ C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\System.Reactive.Core
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\System.Reactive.Linq.dll
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\System.Reactive.PlatformServices.dll
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\System.Reactive.Windows.Threading.dll
+C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\Akka.xml

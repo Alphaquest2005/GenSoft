@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
 using SystemInterfaces;
-using Akka.Actor;
-using Akka.Routing;
 using EventAggregator;
 using EventMessages.Commands;
 using EventMessages.Events;
@@ -47,10 +45,9 @@ namespace DataServices.Actors
                 {typeof (ILoadEntitySetWithFilterWithIncludes), LoadEntitySetWithFilterWithIncludes},
                 
             };
-        private IUntypedActorContext ctx = null;
+        
         public EntityDataServiceSupervisor(IDynamicEntityType entityType, ISystemProcess process, IProcessSystemMessage msg) : base(process)
         {
-            ctx = Context;
             EntityType = entityType;
 
             foreach (var itm in entityEvents)
@@ -75,16 +72,8 @@ namespace DataServices.Actors
                     var inMsg = new CreateEntityService(actorType, action, new StateCommandInfo(process, RevolutionData.Context.CommandFunctions.UpdateCommandStatus(typeof(TEvent).GetFriendlyName(), RevolutionData.Context.Actor.Commands.StartActor)), process, Source);
                     try
                     {
-                        
-                     var child = ctx.ActorOf(
-                            Props.Create(actorType, inMsg, msg)
-                                .WithRouter(new RoundRobinPool(1,
-                                    new DefaultResizer(1, Environment.ProcessorCount, 1, .2, .3, .1,
-                                        Environment.ProcessorCount))),
-                            "EntityDataServiceActor-" +
-                            typeof(TEvent).GetFriendlyName().Replace("<", "'").Replace(">", "'"));
 
-                     EventMessageBus.Current.GetEvent<TEvent>(inMsg.ProcessInfo,Source).Where(x => x.EntityType == entityType ).Subscribe(x => child.Tell(x));
+                        var child = Activator.CreateInstance(actorType, inMsg, entityType, msg);
 
                     }
                     catch (Exception ex)

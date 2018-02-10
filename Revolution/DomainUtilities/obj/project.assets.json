@@ -228,7 +228,7 @@
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "morelinq/2.9.0": {
+      "morelinq/2.10.0": {
         "type": "package",
         "dependencies": {
           "System.ValueTuple": "4.4.0"
@@ -646,7 +646,7 @@
           "Microsoft.EntityFrameworkCore.Relational": "2.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.0.1",
           "SystemInterfaces": "1.0.0",
-          "morelinq": "2.9.0"
+          "morelinq": "2.10.0"
         },
         "compile": {
           "bin/placeholder/GenSoft.DBContext.dll": {}
@@ -937,7 +937,7 @@
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "morelinq/2.9.0": {
+      "morelinq/2.10.0": {
         "type": "package",
         "dependencies": {
           "System.ValueTuple": "4.4.0"
@@ -1345,7 +1345,7 @@
           "Microsoft.EntityFrameworkCore.Relational": "2.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.0.1",
           "SystemInterfaces": "1.0.0",
-          "morelinq": "2.9.0"
+          "morelinq": "2.10.0"
         },
         "compile": {
           "bin/placeholder/GenSoft.DBContext.dll": {}
@@ -1636,7 +1636,7 @@
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "morelinq/2.9.0": {
+      "morelinq/2.10.0": {
         "type": "package",
         "dependencies": {
           "System.ValueTuple": "4.4.0"
@@ -2044,7 +2044,7 @@
           "Microsoft.EntityFrameworkCore.Relational": "2.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.0.1",
           "SystemInterfaces": "1.0.0",
-          "morelinq": "2.9.0"
+          "morelinq": "2.10.0"
         },
         "compile": {
           "bin/placeholder/GenSoft.DBContext.dll": {}
@@ -2335,7 +2335,7 @@
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "morelinq/2.9.0": {
+      "morelinq/2.10.0": {
         "type": "package",
         "dependencies": {
           "System.ValueTuple": "4.4.0"
@@ -2743,7 +2743,7 @@
           "Microsoft.EntityFrameworkCore.Relational": "2.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.0.1",
           "SystemInterfaces": "1.0.0",
-          "morelinq": "2.9.0"
+          "morelinq": "2.10.0"
         },
         "compile": {
           "bin/placeholder/GenSoft.DBContext.dll": {}
@@ -3060,10 +3060,10 @@
         "microsoft.extensions.primitives.nuspec"
       ]
     },
-    "morelinq/2.9.0": {
-      "sha512": "bn/bQ6a+DBFF3LhDHKv7oNyCeFGKxNPXV4+b81+phYLyPD/cxVbW1phx/KpLxCvqHn2fE7E8UNCWsxQHXMScig==",
+    "morelinq/2.10.0": {
+      "sha512": "OP4PtbVOg1pkUgUsCIHXKbT+BsiNJkKD00wRv7Td1d4cmt3QE/ZAvIPTR5FXIaLqlYMwRFGqRMCnevM5LOixbg==",
       "type": "package",
-      "path": "morelinq/2.9.0",
+      "path": "morelinq/2.10.0",
       "files": [
         "lib/net35/MoreLinq.dll",
         "lib/net35/MoreLinq.xml",
@@ -3073,7 +3073,7 @@
         "lib/netstandard1.0/MoreLinq.xml",
         "lib/netstandard2.0/MoreLinq.dll",
         "lib/netstandard2.0/MoreLinq.xml",
-        "morelinq.2.9.0.nupkg.sha512",
+        "morelinq.2.10.0.nupkg.sha512",
         "morelinq.nuspec"
       ]
     },

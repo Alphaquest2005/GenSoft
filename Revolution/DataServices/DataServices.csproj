@@ -184,9 +184,6 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Akka.Persistence.SqlServer">
-      <Version>1.3.2</Version>
-    </PackageReference>
     <PackageReference Include="JB.Common.Collections">
       <Version>0.8.107-pre</Version>
     </PackageReference>

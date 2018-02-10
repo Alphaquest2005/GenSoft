@@ -7,7 +7,6 @@ using System.Reactive.Linq;
 using System.Threading.Tasks;
 using SystemInterfaces;
 using Actor.Interfaces;
-using Akka.Actor;
 using EventAggregator;
 using RevolutionEntities.Process;
 using DataServices.Utils;
@@ -52,7 +51,7 @@ namespace DataServices.Actors
                 Publish(new ServiceStarted<IComplexEventService>(this,
                     new StateEventInfo(Process,
                         RevolutionData.Context.EventFunctions.UpdateEventStatus(
-                            msg.ComplexEventService.ComplexEventAction.ExpectedMessageType.GetFriendlyName(),
+                            msg.ComplexEventService.ComplexEventAction.Key,
                             RevolutionData.Context.Actor.Events.ActorStarted)), Process, Source));
             }
             catch (Exception ex)
@@ -66,7 +65,7 @@ namespace DataServices.Actors
             
             ComplexEventAction = new ComplexEventAction();
             InMessages.Clear();
-            Self.Tell(PoisonPill.Instance);
+            
         }
 
         private void handleComplexEventLogRequest()

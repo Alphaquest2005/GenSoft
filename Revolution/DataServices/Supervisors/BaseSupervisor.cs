@@ -1,6 +1,6 @@
 using System;
 using SystemInterfaces;
-using Akka.Actor;
+
 using Common;
 using EventAggregator;
 using EventMessages.Events;
@@ -10,7 +10,7 @@ using Utilities;
 
 namespace DataServices.Actors
 {
-    public class BaseSupervisor<T> : ReceiveActor, IProcessSource 
+    public class BaseSupervisor<T> :  IProcessSource 
     {
         public BaseSupervisor(ISystemProcess process)
         {

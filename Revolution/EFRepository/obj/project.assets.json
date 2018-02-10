@@ -2,22 +2,6 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.7": {
-      "Akka/1.3.2": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "9.0.1",
-          "System.Collections.Immutable": "1.3.1"
-        },
-        "frameworkAssemblies": [
-          "System.Configuration"
-        ],
-        "compile": {
-          "lib/net45/Akka.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Akka.dll": {}
-        }
-      },
       "DynamicExpresso.Core/2.0.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -262,7 +246,7 @@
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "morelinq/2.9.0": {
+      "morelinq/2.10.0": {
         "type": "package",
         "dependencies": {
           "System.ValueTuple": "4.4.0"
@@ -280,15 +264,6 @@
           "lib/net40/MoreLinq.dll": {}
         }
       },
-      "Newtonsoft.Json/9.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {}
-        }
-      },
       "Reactive.EventAggregator/3.0.0": {
         "type": "package",
         "dependencies": {
@@ -301,7 +276,7 @@
           "lib/net45/Reactive.EventAggregator.dll": {}
         }
       },
-      "ReactiveProperty/4.1.0": {
+      "ReactiveProperty/4.2.0": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -795,7 +770,6 @@
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Actor.Interfaces": "1.0.0",
-          "Akka": "1.3.2",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
           "SystemInterfaces": "1.0.0",
@@ -819,7 +793,7 @@
           "Microsoft.EntityFrameworkCore.Relational": "2.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.0.1",
           "SystemInterfaces": "1.0.0",
-          "morelinq": "2.9.0"
+          "morelinq": "2.10.0"
         },
         "compile": {
           "bin/placeholder/GenSoft.DBContext.dll": {}
@@ -908,7 +882,7 @@
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0",
-          "morelinq": "2.9.0"
+          "morelinq": "2.10.0"
         },
         "compile": {
           "bin/placeholder/RevolutionEntities.dll": {}
@@ -973,7 +947,7 @@
           "FluentValidation.Net35": "1.0.1",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "4.1.0",
+          "ReactiveProperty": "4.2.0",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -985,22 +959,6 @@
       }
     },
     ".NETFramework,Version=v4.7/win": {
-      "Akka/1.3.2": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "9.0.1",
-          "System.Collections.Immutable": "1.3.1"
-        },
-        "frameworkAssemblies": [
-          "System.Configuration"
-        ],
-        "compile": {
-          "lib/net45/Akka.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Akka.dll": {}
-        }
-      },
       "DynamicExpresso.Core/2.0.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -1245,7 +1203,7 @@
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "morelinq/2.9.0": {
+      "morelinq/2.10.0": {
         "type": "package",
         "dependencies": {
           "System.ValueTuple": "4.4.0"
@@ -1263,15 +1221,6 @@
           "lib/net40/MoreLinq.dll": {}
         }
       },
-      "Newtonsoft.Json/9.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {}
-        }
-      },
       "Reactive.EventAggregator/3.0.0": {
         "type": "package",
         "dependencies": {
@@ -1284,7 +1233,7 @@
           "lib/net45/Reactive.EventAggregator.dll": {}
         }
       },
-      "ReactiveProperty/4.1.0": {
+      "ReactiveProperty/4.2.0": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -1768,7 +1717,6 @@
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Actor.Interfaces": "1.0.0",
-          "Akka": "1.3.2",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
           "SystemInterfaces": "1.0.0",
@@ -1792,7 +1740,7 @@
           "Microsoft.EntityFrameworkCore.Relational": "2.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.0.1",
           "SystemInterfaces": "1.0.0",
-          "morelinq": "2.9.0"
+          "morelinq": "2.10.0"
         },
         "compile": {
           "bin/placeholder/GenSoft.DBContext.dll": {}
@@ -1881,7 +1829,7 @@
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0",
-          "morelinq": "2.9.0"
+          "morelinq": "2.10.0"
         },
         "compile": {
           "bin/placeholder/RevolutionEntities.dll": {}
@@ -1946,7 +1894,7 @@
           "FluentValidation.Net35": "1.0.1",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "4.1.0",
+          "ReactiveProperty": "4.2.0",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -1958,22 +1906,6 @@
       }
     },
     ".NETFramework,Version=v4.7/win-x64": {
-      "Akka/1.3.2": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "9.0.1",
-          "System.Collections.Immutable": "1.3.1"
-        },
-        "frameworkAssemblies": [
-          "System.Configuration"
-        ],
-        "compile": {
-          "lib/net45/Akka.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Akka.dll": {}
-        }
-      },
       "DynamicExpresso.Core/2.0.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -2218,7 +2150,7 @@
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "morelinq/2.9.0": {
+      "morelinq/2.10.0": {
         "type": "package",
         "dependencies": {
           "System.ValueTuple": "4.4.0"
@@ -2236,15 +2168,6 @@
           "lib/net40/MoreLinq.dll": {}
         }
       },
-      "Newtonsoft.Json/9.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {}
-        }
-      },
       "Reactive.EventAggregator/3.0.0": {
         "type": "package",
         "dependencies": {
@@ -2257,7 +2180,7 @@
           "lib/net45/Reactive.EventAggregator.dll": {}
         }
       },
-      "ReactiveProperty/4.1.0": {
+      "ReactiveProperty/4.2.0": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -2741,7 +2664,6 @@
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Actor.Interfaces": "1.0.0",
-          "Akka": "1.3.2",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
           "SystemInterfaces": "1.0.0",
@@ -2765,7 +2687,7 @@
           "Microsoft.EntityFrameworkCore.Relational": "2.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.0.1",
           "SystemInterfaces": "1.0.0",
-          "morelinq": "2.9.0"
+          "morelinq": "2.10.0"
         },
         "compile": {
           "bin/placeholder/GenSoft.DBContext.dll": {}
@@ -2854,7 +2776,7 @@
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0",
-          "morelinq": "2.9.0"
+          "morelinq": "2.10.0"
         },
         "compile": {
           "bin/placeholder/RevolutionEntities.dll": {}
@@ -2919,7 +2841,7 @@
           "FluentValidation.Net35": "1.0.1",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "4.1.0",
+          "ReactiveProperty": "4.2.0",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -2931,22 +2853,6 @@
       }
     },
     ".NETFramework,Version=v4.7/win-x86": {
-      "Akka/1.3.2": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "9.0.1",
-          "System.Collections.Immutable": "1.3.1"
-        },
-        "frameworkAssemblies": [
-          "System.Configuration"
-        ],
-        "compile": {
-          "lib/net45/Akka.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Akka.dll": {}
-        }
-      },
       "DynamicExpresso.Core/2.0.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -3191,7 +3097,7 @@
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "morelinq/2.9.0": {
+      "morelinq/2.10.0": {
         "type": "package",
         "dependencies": {
           "System.ValueTuple": "4.4.0"
@@ -3209,15 +3115,6 @@
           "lib/net40/MoreLinq.dll": {}
         }
       },
-      "Newtonsoft.Json/9.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {}
-        }
-      },
       "Reactive.EventAggregator/3.0.0": {
         "type": "package",
         "dependencies": {
@@ -3230,7 +3127,7 @@
           "lib/net45/Reactive.EventAggregator.dll": {}
         }
       },
-      "ReactiveProperty/4.1.0": {
+      "ReactiveProperty/4.2.0": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -3714,7 +3611,6 @@
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
           "Actor.Interfaces": "1.0.0",
-          "Akka": "1.3.2",
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
           "SystemInterfaces": "1.0.0",
@@ -3738,7 +3634,7 @@
           "Microsoft.EntityFrameworkCore.Relational": "2.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.0.1",
           "SystemInterfaces": "1.0.0",
-          "morelinq": "2.9.0"
+          "morelinq": "2.10.0"
         },
         "compile": {
           "bin/placeholder/GenSoft.DBContext.dll": {}
@@ -3827,7 +3723,7 @@
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
           "ViewModel.Interfaces": "1.0.0",
-          "morelinq": "2.9.0"
+          "morelinq": "2.10.0"
         },
         "compile": {
           "bin/placeholder/RevolutionEntities.dll": {}
@@ -3892,7 +3788,7 @@
           "FluentValidation.Net35": "1.0.1",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "4.1.0",
+          "ReactiveProperty": "4.2.0",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -3905,19 +3801,6 @@
     }
   },
   "libraries": {
-    "Akka/1.3.2": {
-      "sha512": "z1KvY0y6N9jcnfVd1IxBCgnuGG4zNxKHLU5uD0yce5Y74Cx4JV3lAkOG+F+5VRnHBqnK/9Z3MBYmHpPVVFBzoA==",
-      "type": "package",
-      "path": "akka/1.3.2",
-      "files": [
-        "akka.1.3.2.nupkg.sha512",
-        "akka.nuspec",
-        "lib/net45/Akka.dll",
-        "lib/net45/Akka.xml",
-        "lib/netstandard1.6/Akka.dll",
-        "lib/netstandard1.6/Akka.xml"
-      ]
-    },
     "DynamicExpresso.Core/2.0.0": {
       "sha512": "TZSJWrKQbD/XrEFK+GAGJxIJKzckAqXOlos9LuONDNTtDy4C2xSBVdaZLbf5O0HmvK77ecmw901JQzoKz9ed0w==",
       "type": "package",
@@ -4201,10 +4084,10 @@
         "microsoft.extensions.primitives.nuspec"
       ]
     },
-    "morelinq/2.9.0": {
-      "sha512": "bn/bQ6a+DBFF3LhDHKv7oNyCeFGKxNPXV4+b81+phYLyPD/cxVbW1phx/KpLxCvqHn2fE7E8UNCWsxQHXMScig==",
+    "morelinq/2.10.0": {
+      "sha512": "OP4PtbVOg1pkUgUsCIHXKbT+BsiNJkKD00wRv7Td1d4cmt3QE/ZAvIPTR5FXIaLqlYMwRFGqRMCnevM5LOixbg==",
       "type": "package",
-      "path": "morelinq/2.9.0",
+      "path": "morelinq/2.10.0",
       "files": [
         "lib/net35/MoreLinq.dll",
         "lib/net35/MoreLinq.xml",
@@ -4214,32 +4097,8 @@
         "lib/netstandard1.0/MoreLinq.xml",
         "lib/netstandard2.0/MoreLinq.dll",
         "lib/netstandard2.0/MoreLinq.xml",
-        "morelinq.2.9.0.nupkg.sha512",
+        "morelinq.2.10.0.nupkg.sha512",
         "morelinq.nuspec"
-      ]
-    },
-    "Newtonsoft.Json/9.0.1": {
-      "sha512": "U82mHQSKaIk+lpSVCbWYKNavmNH1i5xrExDEquU1i6I5pV6UMOqRnJRSlKO3cMPfcpp0RgDY+8jUXHdQ4IfXvw==",
-      "type": "package",
-      "path": "newtonsoft.json/9.0.1",
-      "files": [
-        "Newtonsoft.Json.9.0.1.nupkg.sha512",
-        "Newtonsoft.Json.nuspec",
-        "lib/net20/Newtonsoft.Json.dll",
-        "lib/net20/Newtonsoft.Json.xml",
-        "lib/net35/Newtonsoft.Json.dll",
-        "lib/net35/Newtonsoft.Json.xml",
-        "lib/net40/Newtonsoft.Json.dll",
-        "lib/net40/Newtonsoft.Json.xml",
-        "lib/net45/Newtonsoft.Json.dll",
-        "lib/net45/Newtonsoft.Json.xml",
-        "lib/netstandard1.0/Newtonsoft.Json.dll",
-        "lib/netstandard1.0/Newtonsoft.Json.xml",
-        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.xml",
-        "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.xml",
-        "tools/install.ps1"
       ]
     },
     "Reactive.EventAggregator/3.0.0": {
@@ -4257,10 +4116,10 @@
         "lib/windowsphone8/Reactive.EventAggregator.dll"
       ]
     },
-    "ReactiveProperty/4.1.0": {
-      "sha512": "u05HsuDr1visUEEkImr8Ha4phyHIKj8I2aw7UMwy5mJO1lpdceBz0s8AjVMIYc4Qfh4iSZirBDQH9uZxEoAqEA==",
+    "ReactiveProperty/4.2.0": {
+      "sha512": "v1dxPk0HKvheDCLmTXVHqC8bXU8h8bX0OiNQH1GOU6dePt903OSQSAkHYG0kjfy89npIY/8n9/KlfQaYiqXwcw==",
       "type": "package",
-      "path": "reactiveproperty/4.1.0",
+      "path": "reactiveproperty/4.2.0",
       "files": [
         "LICENSE.txt",
         "Snippet/csharp5/AsyncReactiveCommand.snippet",
@@ -4318,7 +4177,7 @@
         "lib/uap10.0/ReactiveProperty.dll",
         "lib/uap10.0/ReactiveProperty.pdb",
         "lib/uap10.0/ReactiveProperty.xml",
-        "reactiveproperty.4.1.0.nupkg.sha512",
+        "reactiveproperty.4.2.0.nupkg.sha512",
         "reactiveproperty.nuspec"
       ]
     },

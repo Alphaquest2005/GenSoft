@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using SystemInterfaces;
-using Akka.Actor;
+
 
 namespace Actor.Interfaces
 {
@@ -10,7 +10,7 @@ namespace Actor.Interfaces
     {
         ISystemProcess Process { get; }
         //ConcurrentDictionary<Type, IProcessStateMessage> ProcessStateMessages { get; }
-        IActorRef ActorRef { get; }
+        
         
     }
 

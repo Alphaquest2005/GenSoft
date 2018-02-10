@@ -115,9 +115,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\ActorSystem
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\ActorSystem.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\ActorSystem.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Akka.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Akka.Persistence.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Akka.Persistence.Sql.Common.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Akka.Persistence.SqlServer.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\DynamicExpresso.Core.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\FluentValidation.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\JB.Common.Collections.dll
@@ -302,10 +299,8 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\System.Xml.
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\System.Xml.XPath.XDocument.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\ViewModel.WorkFlow.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\ViewModel.WorkFlow.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Google.Protobuf.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\DomainUtilities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\DomainUtilities.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Akka.TestKit.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\System.Reactive.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\System.Reactive.Core.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\System.Reactive.Linq.dll
@@ -314,3 +309,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\System.Reac
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\System.Reactive.Windows.Threading.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\System.Linq.Dynamic.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\System.Linq.Dynamic.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Akka.xml

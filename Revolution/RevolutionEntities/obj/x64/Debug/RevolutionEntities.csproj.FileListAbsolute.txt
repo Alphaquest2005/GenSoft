@@ -68,13 +68,11 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Debug\Comm
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Debug\SystemInterfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Debug\Utilities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Debug\ViewModel.Interfaces.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Debug\Akka.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Debug\Actor.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Debug\Common.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Debug\SystemInterfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Debug\Utilities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Debug\ViewModel.Interfaces.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Debug\Akka.xml
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\obj\x64\Debug\RevolutionEntities.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\obj\x64\Debug\RevolutionEntities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\obj\x64\Debug\RevolutionEntities.pdb
