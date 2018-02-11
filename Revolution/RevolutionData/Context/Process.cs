@@ -7,34 +7,33 @@ namespace RevolutionData.Context
     {
         public class Commands
         {
-            public static IStateCommand CompleteProcess => new StateCommand(name: "CompleteProcess", status: "Create Process Completed Message", expectedEvent: Events.ProcessCompleted);
-            public static IStateCommand StartProcess => new StateCommand("StartProcess", "Start Process", Events.ProcessStarted);
-            public static IStateCommand CreateState => new StateCommand("CreateIntialState", "Create Intial State", Events.StateUpdated);
-            public static IStateCommand UpdateState => new StateCommand("UpdateState", "Update State", Events.StateUpdated);
-            public static IStateCommand Error => new StateCommand("UpdateState", "Update State", Events.Error);
-            public static IStateCommand CreateLog => new StateCommand("CreateLog", "Create Process Log", Events.LogCreated);
-            public static IStateCommand CreateComplexEventLog => new StateCommand("CreateComplexEventLog", "Create ComplexEvent Log", Events.ComplexEventLogCreated);
-            public static IStateCommand PublishState => new StateCommand("RequestState", "Request Process State", Events.StatePublished);
-            public static IStateCommand CleanUpProcess => new StateCommand("Cleanup Process", "Clean up Process", Events.ProcessCleanedUp);
-            public static IStateCommand ChangeMainEntity => new StateCommand("ChangeMainEntity", "Change MainEntity");
-            public static IStateCommand ChangeCurrentEntity => new StateCommand("ChangeCurrentEntity", "Change Process CurrentEntity", Events.CurrentEntityChanged);
+            public static IStateCommand CompleteProcess => new StateCommand( "CompleteProcess", "Create Process Completed Message", "Process", "Unknown",  Events.ProcessCompleted);
+            public static IStateCommand StartProcess => new StateCommand("StartProcess", "Start Process", "Process", "Unknown", Events.ProcessStarted);
+            public static IStateCommand CreateState => new StateCommand("CreateIntialState", "Create Intial State", "Process", "Unknown", Events.StateUpdated);
+            public static IStateCommand UpdateState => new StateCommand("UpdateState", "Update State", "Process", "Unknown", Events.StateUpdated);
+            public static IStateCommand Error => new StateCommand("UpdateState", "Update State", "Process", "Unknown", Events.Error);
+            public static IStateCommand CreateLog => new StateCommand("CreateLog", "Create Process Log", "Process", "Unknown", Events.LogCreated);
+            public static IStateCommand CreateComplexEventLog => new StateCommand("CreateComplexEventLog", "Create ComplexEvent Log", "Process", "Unknown", Events.ComplexEventLogCreated);
+            public static IStateCommand PublishState => new StateCommand("RequestState", "Request Process State", "Process", "Unknown", Events.StatePublished);
+            public static IStateCommand CleanUpProcess => new StateCommand("Cleanup Process", "Clean up Process", "Process", "Unknown", Events.ProcessCleanedUp);
+            public static IStateCommand ChangeMainEntity => new StateCommand("ChangeMainEntity", "Change MainEntity", "Process", "Unknown");
+            
         }
 
         public class Events
         {
-            public static IStateEvent ProcessStarted => new StateEvent("ProcessStarted", "Process Started","", new StateCommand("StartProcess", "Start Process"));
-            public static IStateEvent ProcessTimeOut => new StateEvent("TimeOut", "Process Timed Out", "");
-            public static IStateEvent ProcessCompleted => new StateEvent("ProcessCompleted", "Process Completed", "");
-            public static IStateEvent StateUpdated => new StateEvent("StateUpdated", "StateUpdated", "");
-            public static IStateEvent LogCreated => new StateEvent("LogCreated", "Log Created", "");
-            public static IStateEvent Error => new StateEvent("Error", "Log Created", "");
-            public static IStateEvent ComplexEventLogCreated => new StateEvent("ComplexEventLogCreated", "ComplexEvent Log Created", "");
-            public static IStateEvent StatePublished => new StateEvent("StatePublished", "Process State Published", "");
-            public static IStateEvent ProcessCleanedUp => new StateEvent("ProcessCleanUp", "Process CleanUp", "", new StateCommand("CleanupProcess", "Cleanup Process"));
-            public static IStateEvent CurrentEntityChanged => new StateEvent("CurrentEntityChanged", "Process Current Entity Changed", "");
-
-            public static IStateEvent CurrentApplicationChanged => new StateEvent("CurrentApplicationChanged", "Current Application Changed", "Current Application Changed");
-            public static IStateEvent MainEntityChanged => new StateEvent("MainEntityChanged", "Process Main Entity Changed", "");
+            public static IStateEvent ProcessStarted => new StateEvent("ProcessStarted", "Process Started","", "Process", "Unknown", new StateCommand("StartProcess", "Start Process", "Process", "Unknown"));
+            public static IStateEvent ProcessTimeOut => new StateEvent("TimeOut", "Process Timed Out", "", "Process", "Unknown");
+            public static IStateEvent ProcessCompleted => new StateEvent("ProcessCompleted", "Process Completed", "", "Process", "Unknown");
+            public static IStateEvent StateUpdated => new StateEvent("StateUpdated", "StateUpdated", "", "Process", "Unknown");
+            public static IStateEvent LogCreated => new StateEvent("LogCreated", "Log Created", "", "Process", "Unknown");
+            public static IStateEvent Error => new StateEvent("Error", "Log Created", "", "Process", "Unknown");
+            public static IStateEvent ComplexEventLogCreated => new StateEvent("ComplexEventLogCreated", "ComplexEvent Log Created", "", "Process", "Unknown");
+            public static IStateEvent StatePublished => new StateEvent("StatePublished", "Process State Published", "", "Process", "Unknown");
+            public static IStateEvent ProcessCleanedUp => new StateEvent("ProcessCleanUp", "Process CleanUp", "", "Process", "Unknown", new StateCommand("CleanupProcess", "Cleanup Process", "Process", "Unknown"));
+            
+            public static IStateEvent CurrentApplicationChanged => new StateEvent("CurrentApplicationChanged", "Current Application Changed", "Current Application Changed", "Process", "Unknown");
+            public static IStateEvent MainEntityChanged => new StateEvent("MainEntityChanged", "Process Main Entity Changed", "", "Process", "Unknown");
             //closed Loop
         }
 

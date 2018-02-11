@@ -14,7 +14,7 @@ namespace RevolutionEntities.Process
 
         public ISystemProcess Process { get; }
         public IState State { get; }
-        public Guid EventKey { get; } 
+        public Guid EventKey { get; set; } 
         public IStateInfo ToStateInfo() => new StateInfo(Process, State);
     }
 

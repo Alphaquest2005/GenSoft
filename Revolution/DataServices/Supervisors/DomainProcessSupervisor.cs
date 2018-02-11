@@ -437,7 +437,7 @@ namespace DataServices.Actors
         {
             
             var inMsg = new LoadProcessComplexEvents(new List<IComplexEventAction>(){processComplexEvent},
-                new RevolutionEntities.Process.StateCommandInfo(systemProcess, RevolutionData.Context.CommandFunctions.UpdateCommandStatus(processComplexEvent.Key, RevolutionData.Context.Process.Commands.StartProcess)),
+                new RevolutionEntities.Process.StateCommandInfo(systemProcess, RevolutionData.Context.CommandFunctions.UpdateCommandData(processComplexEvent.Key, RevolutionData.Context.Process.Commands.StartProcess)),
                 systemProcess, Source);
 
             EventMessageBus.Current.Publish(inMsg, Source);
@@ -456,7 +456,7 @@ namespace DataServices.Actors
             var entityViewInfo = viewModelInfo.ViewInfo as IEntityViewInfo;
 
             var inMsg = new LoadDomainProcessViewModels(new List<IViewModelInfo>(){viewModelInfo},
-                new RevolutionEntities.Process.StateCommandInfo(systemProcess, RevolutionData.Context.CommandFunctions.UpdateCommandStatus(entityViewInfo.EntityType.Name, RevolutionData.Context.Process.Commands.StartProcess)),
+                new RevolutionEntities.Process.StateCommandInfo(systemProcess, RevolutionData.Context.CommandFunctions.UpdateCommandData(entityViewInfo.EntityType.Name, RevolutionData.Context.Process.Commands.StartProcess)),
                 systemProcess, Source);
 
             EventMessageBus.Current.Publish(inMsg, Source);
@@ -572,7 +572,7 @@ namespace DataServices.Actors
         {
             if (StateEvents.ContainsKey(f.StateInfo.Name))return StateEvents[f.StateInfo.Name];
 
-            var stateEvent = new StateEvent(f.StateInfo.Name, f.StateInfo.Status, f.StateInfo.StateInfoNotes?.Notes, command);
+            var stateEvent = new StateEvent(f.StateInfo.Name, f.StateInfo.Status, f.StateInfo.StateInfoNotes?.Notes,f.StateInfo.Subject,"Unknown", command);
             StateEvents.AddOrUpdate(f.StateInfo.Name, stateEvent);
             return stateEvent;
         }
@@ -591,7 +591,7 @@ namespace DataServices.Actors
                     foreach (var f in lst)
                     {
 
-                        var res = new StateCommand(f.StateInfo.Name, f.StateInfo.Status);
+                        var res = new StateCommand(f.StateInfo.Name, f.StateInfo.Status,f.StateInfo.Subject, "Unknown");
                         if (f.ExpectedStateEventInfo?.StateEventInfo != null)
                         {
                             var se = CreateStateEvent(f.ExpectedStateEventInfo.StateEventInfo, res);

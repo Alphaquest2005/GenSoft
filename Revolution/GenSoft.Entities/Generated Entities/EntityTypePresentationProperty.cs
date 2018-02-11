@@ -14,20 +14,20 @@ namespace GenSoft.Entities
 	public partial class EntityTypePresentationProperty: BaseEntity, IEntityTypePresentationProperty
 	{
 		public virtual int EntityTypeAttributeId { get; set; }
-		public virtual int ViewPropertyPresentationPropertyTypeId { get; set; }
 		public virtual int PresentationThemeId { get; set; }
+		public virtual int ViewPropertyPresentationPropertyTypeId { get; set; }
 		public virtual int ViewTypeId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
-				public virtual ICollection<EntityView> EntityView {get; set;}
 				public virtual PropertyValue PropertyValue {get; set;}
+				public virtual ICollection<EntityView> EntityView {get; set;}
 				public virtual PropertyValueOption PropertyValueOption {get; set;}
 		
 			// ---------Parent Relationships
 				public virtual EntityTypeAttributes EntityTypeAttributes {get; set;}
-				public virtual ViewPropertyPresentationPropertyType ViewPropertyPresentationPropertyType {get; set;}
 				public virtual PresentationTheme PresentationTheme {get; set;}
+				public virtual ViewPropertyPresentationPropertyType ViewPropertyPresentationPropertyType {get; set;}
 				public virtual ViewType ViewType {get; set;}
 	
 

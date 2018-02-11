@@ -35,11 +35,11 @@ namespace RevolutionData
                         (v,e) =>
                         {
                             var entityType = DynamicEntityTypeExtensions.GetOrAddDynamicEntityType("Application");
-                           EventAggregator.EventMessageBus.Current.Publish( new LoadEntitySet(entityType,
+                            EventAggregator.EventMessageBus.Current.Publish( new LoadEntitySet(entityType,
                                 new StateCommandInfo(v.Process,
                                     Context.Entity.Commands.LoadEntitySetWithChanges),
                                 v.Process, v.Source), v.Source);
-                        }),
+                        }, new StateEventInfo(Processes.IntialSystemProcess, Context.EventFunctions.UpdateEventData("IHeaderViewModel" ,RevolutionData.Context.ViewModel.Events.Initialized), Guid.NewGuid())),
 
                     new ViewEventSubscription<IHeaderViewModel, IEntitySetLoaded>(
                         $"HeaderViewModel-IUpdateProcessStateList",
@@ -52,8 +52,8 @@ namespace RevolutionData
                             if (e.EntitySet != null && v.Entities.Value != null &&
                                 v.Entities.Value.SequenceEqual(e.EntitySet)) return;
                             v.Entities.Value = new ObservableList<IDynamicEntity>(e.EntitySet.ToList());
-                        }),
-                    
+                        }, new StateEventInfo(Processes.IntialSystemProcess, Context.EventFunctions.UpdateEventData("Application" ,RevolutionData.Context.Entity.Events.EntitySetLoaded), Guid.NewGuid())),
+
                 },
                 new List<IViewModelEventPublication<IViewModel, IEvent>>
                 {
@@ -61,7 +61,7 @@ namespace RevolutionData
                         key:$"HeaderViewModel-IViewModelIntialized",
                         subject:v => v.ViewModelState,
                         subjectPredicate:new List<Func<IHeaderViewModel, bool>>{ v => v.ViewModelState.Value == ViewModelState.Intialized},
-                        messageData:v => new ViewEventPublicationParameter(new object[] {v},new RevolutionEntities.Process.StateEventInfo(v.Process, Context.View.Events.Initialized),v.Process,v.Source)),
+                        messageData:v => new ViewEventPublicationParameter(new object[] {v},new RevolutionEntities.Process.StateEventInfo(v.Process, Context.EventFunctions.UpdateEventData("HeaderViewModel", Context.ViewModel.Events.Initialized)),v.Process,v.Source)),
 
                     new ViewEventPublication<IHeaderViewModel, ICurrentApplicationChanged>(
                         key:$"HeaderViewModel-CurrentEntityChanged",

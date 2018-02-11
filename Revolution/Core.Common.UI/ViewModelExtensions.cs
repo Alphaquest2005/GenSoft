@@ -13,6 +13,7 @@ using EventMessages.Events;
 using Reactive.Bindings;
 
 using RevolutionEntities.Process;
+using Utilities;
 using ViewModel.Interfaces;
 
 
@@ -59,7 +60,7 @@ namespace Core.Common.UI
                         .GetMethod("Subscribe")
                         .MakeGenericMethod(itm.EventType, viewModel.GetType())
                         .Invoke(viewModel,
-                            new object[] {viewModel, itm.EventPredicate, itm.ActionPredicate, itm.Action});
+                            new object[] {viewModel, itm.EventPredicate, itm.ActionPredicate, itm.Action, itm.ProcessInfo});
                 });
             
 
@@ -123,7 +124,7 @@ namespace Core.Common.UI
                 ProcessSystemMessage msg;
                 if (concreteEvent == null)
                 {
-                    msg = new ProcessEventFailure(itm.EventType, new FailedCommandData(itm, param.ProcessInfo, param.Process, param.Source), itm.EventType, new InvalidOperationException("Type not found in MEF - consider adding export to type."), new StateEventInfo(param.ProcessInfo.Process, "Error", "Error occured getting type", "", param.ProcessInfo.State), viewModel.Source);
+                    msg = new ProcessEventFailure(itm.EventType, new FailedCommandData(itm, param.ProcessInfo, param.Process, param.Source), itm.EventType, new InvalidOperationException("Type not found in MEF - consider adding export to type."), new StateEventInfo(param.ProcessInfo.Process, "Error", "Error occured getting type", "", "Process", param.Process.Name, param.ProcessInfo.State), viewModel.Source);
                 }
                 else
                 {
@@ -137,11 +138,11 @@ namespace Core.Common.UI
         }
 
         public static void Subscribe<TEvent, TViewModel>(TViewModel viewModel, Func<TEvent, bool> eventPredicate,
-            IEnumerable<Func<TViewModel, TEvent, bool>> predicate, Action<TViewModel, TEvent> action) where TEvent : class, IProcessSystemMessage
+            IEnumerable<Func<TViewModel, TEvent, bool>> predicate, Action<TViewModel, TEvent> action, IProcessStateInfo processInfo) where TEvent : class, IProcessSystemMessage where TViewModel:IViewModel
         {
-            var processStateInfo = new StateEventInfo(((IViewModel)viewModel).Process, new StateEvent("View Model Subscribtion", "some shit", "more shit"),Guid.NewGuid());
-            EventMessageBus.Current.GetEvent<TEvent>(processStateInfo, ((IViewModel)viewModel).Source)
-                .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == processStateInfo.EventKey)
+           // var processStateInfo = new StateEventInfo(viewModel.Process, new StateEvent("ViewModelSubscription", "View Model Subscription", "","ViewModel-Event",$"{viewModel.ViewInfo.Name}-{typeof(TEvent).GetFriendlyName()}"),Guid.NewGuid());
+            EventMessageBus.Current.GetEvent<TEvent>(processInfo, ((IViewModel)viewModel).Source)
+                .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == processInfo.EventKey)
                 .Where(eventPredicate)
                 .Where(x => predicate.All(z => z.Invoke(viewModel, x)))
                 .Subscribe(x => action.Invoke(viewModel, x));

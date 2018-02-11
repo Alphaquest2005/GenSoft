@@ -13,16 +13,16 @@ namespace GenSoft.Entities
 {
 	public partial class PredicateParameters: BaseEntity, IPredicateParameters
 	{
-		public virtual int PredicateId { get; set; }
 		public virtual int ParameterId { get; set; }
+		public virtual int PredicateId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 				public virtual ICollection<ExpectedEventPredicateParameters> ExpectedEventPredicateParameters {get; set;}
 		
 			// ---------Parent Relationships
-				public virtual Predicates Predicates {get; set;}
 				public virtual Parameters Parameters {get; set;}
+				public virtual Predicates Predicates {get; set;}
 	
 
 	}

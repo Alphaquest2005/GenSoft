@@ -70,3 +70,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\x64\Debug\System.Re
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\x64\Debug\System.Reactive.PlatformServices.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\x64\Debug\System.Reactive.Windows.Threading.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\x64\Debug\System.Collections.Immutable.xml
+C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\bin\x64\Debug\Newtonsoft.Json.dll

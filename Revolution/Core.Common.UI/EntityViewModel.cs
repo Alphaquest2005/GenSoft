@@ -25,7 +25,7 @@ namespace Core.Common.UI
         {
             ViewInfo = viewInfo;
             DisplayProperties = displayProperties;
-            State.Value = new ProcessStateEntity(process, viewInfo.EntityType.DefaultEntity(), new StateInfo(process, "IntialState", "Inital","first op"));
+            State.Value = new ProcessStateEntity(process, viewInfo.EntityType.DefaultEntity(), new StateInfo(process, "InitialState", "Initial","first op", "ViewModel", viewInfo.Name));
         }
 
 

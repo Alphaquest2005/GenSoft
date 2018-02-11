@@ -21,8 +21,8 @@ namespace GenSoft.Mappings
 			entityBuilder.Property(t => t.ActionTriggerId).HasColumnName("ActionTriggerId").IsRequired();
 			entityBuilder.Property(t => t.Name).HasColumnName("Name").IsRequired().HasMaxLength(50);
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasMany(x => x.ComplexEventActionExpectedEvents).WithOne(p => p.ComplexEventAction).HasForeignKey(c => c.ComplexEventActionId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.ComplexEventActionProcessActions).WithOne(p => p.ComplexEventAction).HasForeignKey(c => c.ComplexEventActionId).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasMany(x => x.ComplexEventActionExpectedEvents).WithOne(p => p.ComplexEventAction).HasForeignKey(c => c.ComplexEventActionId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.ProcessStepComplexActions).WithOne(p => p.ComplexEventAction).HasForeignKey(c => c.ComplexEventActionId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties

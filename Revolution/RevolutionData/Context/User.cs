@@ -7,14 +7,14 @@ namespace RevolutionData.Context
     {
         public class Commands
         {
-            public static IStateCommand FindUserName => new StateCommand("FindUserName", "Find User Name", Events.UserNameFound);
-            public static IStateCommand FindUser => new StateCommand("FindUser", "Find User", Events.UserFound);
+            public static IStateCommand FindUserName => new StateCommand("FindUserName", "Find User Name", "User", "Unknown", Events.UserNameFound);
+            public static IStateCommand FindUser => new StateCommand("FindUser", "Find User", "User", "Unknown", Events.UserFound);
         }
 
         public class Events
         {
-           public static IStateEvent UserNameFound => new StateEvent("UserNameFound", "User Name Found", "Just UserName found");
-           public static IStateEvent UserFound => new StateEvent("UserFound", "User Name & Password Found", "Both UserName and PassWord"); 
+           public static IStateEvent UserNameFound => new StateEvent("UserNameFound", "User Name Found", "Just UserName found", "User", "Unknown");
+           public static IStateEvent UserFound => new StateEvent("UserFound", "User Name & Password Found", "Both UserName and PassWord", "User", "Unknown"); 
         }
         
         

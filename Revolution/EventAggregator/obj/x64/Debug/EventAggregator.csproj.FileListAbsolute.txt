@@ -188,3 +188,11 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\ViewMod
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\DomainUtilities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\GenSoft.DBContext.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\Akka.xml
+C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\Newtonsoft.Json.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\MefContrib.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\MefContrib.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\BootStrapper.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\ComponentModel.Composition.Hosting.Extension.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\BootStrapper.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\BootStrapper.dll.config
+C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\ComponentModel.Composition.Hosting.Extension.pdb

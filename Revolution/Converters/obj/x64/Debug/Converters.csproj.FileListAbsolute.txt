@@ -165,3 +165,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\GenSoft.DBCo
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\GenSoft.Entities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\Akka.xml
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\GenSoft.Interfaces.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\Newtonsoft.Json.dll

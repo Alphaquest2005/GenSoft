@@ -46,10 +46,10 @@ namespace DataServices.Actors
         private void CreateProcesses(IUser user, IReadOnlyList<IComplexEventAction> complexEventActions)
         {
             var c = new CreateProcessActor(
-                $"{complexEventActions.First().Key.GetSafeActorName()}:{complexEventActions.First().Process.Id}",
+                $"{complexEventActions.First().Key.GetSafeActorName()}",
                 complexEventActions.ToList(),
                 new StateCommandInfo(complexEventActions.First().Process,
-                    RevolutionData.Context.CommandFunctions.UpdateCommandStatus(complexEventActions.First().Key, RevolutionData.Context.Actor.Commands.CreateActor), Guid.NewGuid()),
+                    RevolutionData.Context.CommandFunctions.UpdateCommandData(complexEventActions.First().Key, RevolutionData.Context.Actor.Commands.CreateActor), Guid.NewGuid()),
                 complexEventActions.First().Process, Source);
             PublishActor(c);
         }

@@ -62,35 +62,35 @@ namespace GenSoft.Expressions
     //                               CreateProcessAction.Invoke(cd.ProcessAction),
     //                               cd.ActionTrigger);
 
-        public static Func<ProcessActionData, ProcessAction> CreateProcessAction
-            = (pd) => new ProcessAction(CreateActionFromComplexEvent.Invoke(pd.MessageData),
-                                        CreateProcessInfoFromComplexEventData.Invoke(pd.CommandData),
-                                        CreateSourceType.Invoke(pd.ExpectedSourceType));
+        //public static Func<ProcessActionData, ProcessAction> CreateProcessAction
+        //    = (pd) => new ProcessAction(CreateActionFromComplexEvent.Invoke(pd.MessageData),
+        //                                CreateProcessInfoFromComplexEventData.Invoke(pd.CommandData),
+        //                                CreateSourceType.Invoke(pd.ExpectedSourceType));
 
-        public static Func<MessageData, Func<IDynamicComplexEventParameters, Task<dynamic>>>
-            CreateActionFromComplexEvent =
-                (cpd) => async cp => await Task.Run(() => CreateEvent.Invoke(cpd, cp)).ConfigureAwait(false);
+        //public static Func<MessageData, Func<IDynamicComplexEventParameters, Task<dynamic>>>
+        //    CreateActionFromComplexEvent =
+        //        (cpd) => async cp => await Task.Run(() => CreateEvent.Invoke(cpd, cp)).ConfigureAwait(false);
 
-        public static Func<MessageData, IDynamicComplexEventParameters, IProcessSystemMessage> CreateEvent
-            = (md, cp) =>
-            {
-                var type = Type.GetType(md.MessageType);
-                return (IProcessSystemMessage)Activator.CreateInstance(type, new object[] {new RevolutionEntities.Process.StateEventInfo(cp.Actor.Process, new StateEvent(md.Event.Name, md.Event.Status, md.Event.Notes, CreateStateCommand.Invoke(md.Event.ExpectedEventCommand))),
-                       cp.Actor.Process, cp.Actor.Source});
+        //public static Func<MessageData, IDynamicComplexEventParameters, IProcessSystemMessage> CreateEvent
+        //    = (md, cp) =>
+        //    {
+        //        var type = Type.GetType(md.MessageType);
+        //        return (IProcessSystemMessage)Activator.CreateInstance(type, new object[] {new RevolutionEntities.Process.StateEventInfo(cp.Actor.Process, new StateEvent(md.Event.Name, md.Event.Status, md.Event.Notes, CreateStateCommand.Invoke(md.Event.ExpectedEventCommand))),
+        //               cp.Actor.Process, cp.Actor.Source});
 
-            };
+        //    };
 
-        public static Func<MessageData, IDynamicComplexEventParameters, IStateCommandInfo> CreateCommand
-            = (md, cp) => new StateCommandInfo(cp.Actor.Process, new StateCommand(md.Event.Name, md.Event.Status, CreateStateEvent(md.Event)));
+        //public static Func<MessageData, IDynamicComplexEventParameters, IStateCommandInfo> CreateCommand
+        //    = (md, cp) => new StateCommandInfo(cp.Actor.Process, new StateCommand(md.Event.Name, md.Event.Status,md.Event., CreateStateEvent(md.Event)));
 
-        public static Func<EventData, IStateEvent> CreateStateEvent = (ed) => new StateEvent(ed.Name, ed.Status, ed.Notes, CreateStateCommand(ed.ExpectedEventCommand));
+        //public static Func<EventData, IStateEvent> CreateStateEvent = (ed) => new StateEvent(ed.Name, ed.Status, ed.Notes, CreateStateCommand(ed.ExpectedEventCommand));
 
-        public static Func<EventData, IStateCommand> CreateStateCommand = (ed) => new StateCommand(ed.Name, ed.Status, CreateStateEvent.Invoke(ed.ExpectedEventCommand));
+        //public static Func<EventData, IStateCommand> CreateStateCommand = (ed) => new StateCommand(ed.Name, ed.Status, CreateStateEvent.Invoke(ed.ExpectedEventCommand));
 
-        public static Func<MessageData, Func<IDynamicComplexEventParameters, IStateCommandInfo>>
-            CreateProcessInfoFromComplexEventData = (md) => cp => CreateCommand.Invoke(md, cp);
+        //public static Func<MessageData, Func<IDynamicComplexEventParameters, IStateCommandInfo>>
+        //    CreateProcessInfoFromComplexEventData = (md) => cp => CreateCommand.Invoke(md, cp);
 
-        public static Func<TypeData, ISourceType> CreateSourceType = (td) => new SourceType(Type.GetType(td.TypeString));
+        //public static Func<TypeData, ISourceType> CreateSourceType = (td) => new SourceType(Type.GetType(td.TypeString));
 
        // public static Func<SystemProcess, SystemInterfaces.ISystemProcessInfo> CreateProcessInfo = (p) => new SystemProcessInfo(p.Id, new RevolutionEntities.Process.SystemProcess(new RevolutionEntities.Process.Process(p.ParentSystemProcess.Id, Processes.NullSystemProcess,p.ParentSystemProcess.SystemProcess.Name,p.ParentSystemProcess.SystemProcess.Description,p.ParentSystemProcess.SystemProcess.Symbol, new Agent(p.ParentSystemProcess.SystemProcess.Agent.UserName)),Processes.ThisMachineInfo), p.Name, p.Description, p.Symbol, p.UserId.ToString()) as SystemInterfaces.ISystemProcessInfo;
 

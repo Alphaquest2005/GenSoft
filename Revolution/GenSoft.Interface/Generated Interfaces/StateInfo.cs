@@ -16,6 +16,7 @@ namespace GenSoft.Interfaces
 	{
 		string Name { get;}
 		string Status { get;}
+		string Subject { get;}
 
 
 

@@ -10,8 +10,8 @@ namespace RevolutionEntities.ViewModels
     
     public class ViewEventSubscription<TViewModel, TEvent>: ViewModelEventSubscription<TViewModel, TEvent>, IViewModelEventSubscription<IViewModel, IEvent> where TViewModel : IViewModel where TEvent : IEvent
     {
-        public ViewEventSubscription(string key, ISystemProcess process, Func<TEvent, bool> eventPredicate, IEnumerable<Func<TViewModel, TEvent, bool>> actionPredicate, Action<TViewModel, TEvent> action)
-           : base(key,process,eventPredicate,actionPredicate,action)
+        public ViewEventSubscription(string key, ISystemProcess process, Func<TEvent, bool> eventPredicate, IEnumerable<Func<TViewModel, TEvent, bool>> actionPredicate, Action<TViewModel, TEvent> action, IProcessStateInfo processInfo)
+           : base(key,process,eventPredicate,actionPredicate,action, processInfo)
         {
             
             Action = (Action<IViewModel, IEvent>)base.Action.Convert(typeof(IViewModel), typeof(IEvent));

@@ -6,8 +6,11 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using SystemInterfaces;
+using BootStrapper;
 using Common;
 using GenSoft.Entities;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Process.WorkFlow;
 using RevolutionLogger;
 using Utilities;
@@ -18,7 +21,8 @@ namespace EventAggregator
     public class EventMessageBus//: Reactive.EventAggregator.EventAggregator
     {
         static Reactive.EventAggregator.EventAggregator ea = new Reactive.EventAggregator.EventAggregator();
-        static ConcurrentDictionary<dynamic, dynamic> eventStore = new ConcurrentDictionary<dynamic, dynamic>();
+        static ConcurrentDictionary<dynamic, dynamic> _getEventStore = new ConcurrentDictionary<dynamic, dynamic>();
+        static ConcurrentDictionary<dynamic, dynamic> _publishEventStore = new ConcurrentDictionary<dynamic, dynamic>();
         public static ISystemSource Source => new Source(Guid.NewGuid(), $"EventMessageBus", new RevolutionEntities.Process.SourceType(typeof(EventMessageBus)), Processes.IntialSystemProcess, Processes.IntialSystemProcess.MachineInfo);
         static EventMessageBus()
         {
@@ -30,27 +34,45 @@ namespace EventAggregator
         public IObservable<TEvent> GetEvent<TEvent>(IProcessStateInfo processInfo, ISource caller) where TEvent : IProcessSystemMessage
         {
             Contract.Requires(caller != null && processInfo != null);
-            if(processInfo.EventKey == Guid.Empty) Debugger.Break();
+            
             var ge = ea.GetEvent<TEvent>();
+
             Task.Run(() =>
             {
                 var er = typeof(TEvent) as IEntityRequest;
                 Logger.Log(LoggingLevel.Info,
-                    $"Caller:{caller.SourceName} | GetEvent : {typeof(TEvent).GetFriendlyName()}|ProcessInfo:Status-{processInfo.State.Status}| ProcessId-{caller.Process?.Id} || EntityType-{(er != null ? er.EntityType.Name : "")}");
-            });
+                    $"Caller:{caller.SourceName} | GetEvent : {typeof(TEvent).GetFriendlyName()}|ProcessInfo:Status-{processInfo.State.Status}|ProcessInfo:SubjectData{processInfo.State.Subject}-{processInfo.State.Data}| ProcessId-{caller.Process?.Id} || EntityType-{(er != null ? er.EntityType.Name : "")}");
+            }).ConfigureAwait(false);
+            
+            var key = $"{typeof(TEvent).GetFriendlyName()}-{processInfo.State.Subject}-{processInfo.State.Data}-{caller.Process.Id}";
+
+             Task.Run(() =>
+             {
+                 if (processInfo.EventKey == Guid.Empty) Debugger.Break();
+                 Task.Delay(500);
+                _publishEventStore.TryGetValue("Pub-" + key, out dynamic actualEvent);
+
+                 if (actualEvent != null)
+                 {
+                     //ToDo:need to change processinfo key
+                     //var type = BootStrapper.BootStrapper.Container.GetConcreteType(typeof(TEvent));
+                     // var newEvent =(TEvent) typeof(JsonUtilities).GetMethod("CloneJson").MakeGenericMethod(type).Invoke(null, new object[] { actualEvent });
+                     // var newEvent = JsonUtilities.CloneJson<TEvent>(actualEvent);
+                     
+
+                     actualEvent.ProcessInfo.EventKey = processInfo.EventKey;
+                     Publish(actualEvent, Source);
+
+                 }
+
+             }).ConfigureAwait(false);
+
             Task.Run(() =>
             {
-                var key = $"{typeof(TEvent).GetFriendlyName()}-{caller.Process.Id}";
-                
-                eventStore.TryGetValue("Pub-" + key, out dynamic actualEvent);
-                if (actualEvent != null)
-                {
-                    Publish(actualEvent, Source);
-                    eventStore.TryRemove("Pub-" + key, out actualEvent);
-                }
-                eventStore.AddOrUpdate("Get-" + key, null);
-                return ea.GetEvent<TEvent>();
-            });
+                _getEventStore.AddOrUpdate("Get-" + key, null);
+            }).ConfigureAwait(false);
+            
+            
             return ge;
         }
         
@@ -61,17 +83,16 @@ namespace EventAggregator
             try
             {
                 Contract.Requires(sender != null || sampleEvent != null);
-                if (sampleEvent.ProcessInfo.EventKey != Guid.Empty) Debugger.Break();
+                
                 Task.Run(() =>
                 {
                     Logger.Log(LoggingLevel.Info,
-                        $"Sender:{sender.SourceName} | PublishEvent : {typeof(TEvent).GetFriendlyName()}| ProcessInfo:Status-{sampleEvent?.ProcessInfo?.State?.Status}|| ProcessId-{sampleEvent.Process.Id} || EntityType-{(sampleEvent is IEntityRequest er ? er.EntityType.Name : "")}");
+                        $"Sender:{sender.SourceName} | PublishEvent : {typeof(TEvent).GetFriendlyName()}| ProcessInfo:Status-{sampleEvent?.ProcessInfo?.State?.Status}|ProcessInfo:SubjectData{sampleEvent?.ProcessInfo?.State.Subject}-{sampleEvent?.ProcessInfo?.State.Data}| ProcessId-{sampleEvent.Process.Id} || EntityType-{(sampleEvent is IEntityRequest er ? er.EntityType.Name : "")}");
                 });
                 Task.Run(() =>
                 {
-
-                    var key = $"I{typeof(TEvent).GetFriendlyName()}-{sampleEvent.Process.Id}";
-                    if(!eventStore.ContainsKey("Get-"+key)) eventStore.AddOrUpdate("Pub-"+key, sampleEvent);
+                    var key = $"I{typeof(TEvent).GetFriendlyName()}-{sampleEvent?.ProcessInfo?.State.Subject}-{sampleEvent?.ProcessInfo?.State.Data}-{sampleEvent.Process.Id}";
+                    _publishEventStore.AddOrUpdate("Pub-"+key, sampleEvent);
                 });
                 Task.Run(() => { ea.Publish(sampleEvent);});
             }

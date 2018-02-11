@@ -276,6 +276,15 @@
           "lib/net40/MoreLinq.dll": {}
         }
       },
+      "Newtonsoft.Json/10.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
       "Reactive.EventAggregator/3.0.0": {
         "type": "package",
         "dependencies": {
@@ -814,6 +823,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "GenSoft.Entities": "1.0.0",
           "GenSoft.Interface": "1.0.0",
@@ -997,6 +1007,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "Newtonsoft.Json": "10.0.3",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -1348,6 +1359,15 @@
         },
         "runtime": {
           "lib/net40/MoreLinq.dll": {}
+        }
+      },
+      "Newtonsoft.Json/10.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
       "Reactive.EventAggregator/3.0.0": {
@@ -1878,6 +1898,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "GenSoft.Entities": "1.0.0",
           "GenSoft.Interface": "1.0.0",
@@ -2061,6 +2082,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "Newtonsoft.Json": "10.0.3",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -2414,6 +2436,15 @@
           "lib/net40/MoreLinq.dll": {}
         }
       },
+      "Newtonsoft.Json/10.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
       "Reactive.EventAggregator/3.0.0": {
         "type": "package",
         "dependencies": {
@@ -2942,6 +2973,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "GenSoft.Entities": "1.0.0",
           "GenSoft.Interface": "1.0.0",
@@ -3125,6 +3157,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "Newtonsoft.Json": "10.0.3",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -3478,6 +3511,15 @@
           "lib/net40/MoreLinq.dll": {}
         }
       },
+      "Newtonsoft.Json/10.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
       "Reactive.EventAggregator/3.0.0": {
         "type": "package",
         "dependencies": {
@@ -4006,6 +4048,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "GenSoft.Entities": "1.0.0",
           "GenSoft.Interface": "1.0.0",
@@ -4189,6 +4232,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "Newtonsoft.Json": "10.0.3",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -4581,6 +4625,33 @@
         "lib/netstandard2.0/MoreLinq.xml",
         "morelinq.2.10.0.nupkg.sha512",
         "morelinq.nuspec"
+      ]
+    },
+    "Newtonsoft.Json/10.0.3": {
+      "sha512": "hSXaFmh7hNCuEoC4XNY5DrRkLDzYHqPx/Ik23R4J86Z7PE/Y6YidhG602dFVdLBRSdG6xp9NabH3dXpcoxWvww==",
+      "type": "package",
+      "path": "newtonsoft.json/10.0.3",
+      "files": [
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.10.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "tools/install.ps1"
       ]
     },
     "Reactive.EventAggregator/3.0.0": {

@@ -13,17 +13,17 @@ namespace GenSoft.Entities
 {
 	public partial class Action: BaseEntity, IAction
 	{
-		public virtual string Name { get; set; }
-		public virtual string Description { get; set; }
 		public virtual string Body { get; set; }
+		public virtual string Description { get; set; }
+		public virtual string Name { get; set; }
 		public virtual string ParameterName { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
+				public virtual ICollection<ProcessAction> ProcessAction {get; set;}
+				public virtual ICollection<ActionSetActions> ActionSetActions {get; set;}
 				public virtual ICollection<ActionParameters> ActionParameters {get; set;}
 				public virtual ICollection<ActionReferenceTypes> ActionReferenceTypes {get; set;}
-				public virtual ICollection<ActionSetActions> ActionSetActions {get; set;}
-				public virtual ICollection<ProcessAction> ProcessAction {get; set;}
 		
 			// ---------Parent Relationships
 	

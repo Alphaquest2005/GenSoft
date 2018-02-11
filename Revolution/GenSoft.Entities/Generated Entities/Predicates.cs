@@ -13,9 +13,9 @@ namespace GenSoft.Entities
 {
 	public partial class Predicates: BaseEntity, IPredicates
 	{
-		public virtual string Name { get; set; }
-		public virtual string Description { get; set; }
 		public virtual string Body { get; set; }
+		public virtual string Description { get; set; }
+		public virtual string Name { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships

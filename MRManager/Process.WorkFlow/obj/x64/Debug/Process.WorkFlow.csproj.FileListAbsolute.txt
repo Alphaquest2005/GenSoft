@@ -164,3 +164,4 @@ C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\x64\Debug\GenSoft
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\x64\Debug\DomainUtilities.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\x64\Debug\GenSoft.DBContext.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\x64\Debug\Akka.xml
+C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\x64\Debug\Newtonsoft.Json.dll

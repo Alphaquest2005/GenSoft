@@ -35,7 +35,7 @@ namespace RevolutionData
                             {
                                 itm.Visibility.Value = e.Visibility;
                             }
-                        }),
+                        }, new StateEventInfo(Processes.IntialSystemProcess, RevolutionData.Context.View.Events.VisibilityChanged, Guid.NewGuid())),
                     new ViewEventSubscription<IScreenModel, INavigateToView>(
                         "ScreenViewModel-INavigateToView",
                         Processes.IntialSystemProcess,
@@ -44,7 +44,7 @@ namespace RevolutionData
                         (s, e) =>
                         {
                             s.Slider.BringIntoView(e.View);
-                        }),
+                        }, new StateEventInfo(Processes.IntialSystemProcess, RevolutionData.Context.View.Events.NavigatedToView, Guid.NewGuid())),
 
                     new ViewEventSubscription<IScreenModel, IViewModelCreated<IHeaderViewModel>>(
                         "ScreenViewModel-IViewModelCreated<IHeaderViewModel>", Processes.IntialSystemProcess, e => e != null,
@@ -72,7 +72,7 @@ namespace RevolutionData
                                     }
                                 }));
                             }
-                        }),
+                        }, new StateEventInfo(Processes.IntialSystemProcess, RevolutionData.Context.ViewModel.Events.ViewModelCreated, Guid.NewGuid())),
                     new ViewEventSubscription<IScreenModel, IViewModelCreated<IViewModel>>(
                         "ScreenViewModel-IViewModelCreated<ILeftViewModel>",
                         Processes.IntialSystemProcess,
@@ -102,7 +102,7 @@ namespace RevolutionData
                                     }
                                 }));
                             }
-                        }),
+                        },  new StateEventInfo(Processes.IntialSystemProcess, RevolutionData.Context.ViewModel.Events.ViewModelCreated, Guid.NewGuid())),
                     new ViewEventSubscription<IScreenModel, IViewModelCreated<IViewModel>>(
                         "ScreenViewModel-IViewModelCreated<IRightViewModel>", Processes.IntialSystemProcess, e => e != null,
                         new List<Func<IScreenModel, IViewModelCreated<IViewModel>, bool>>
@@ -129,7 +129,7 @@ namespace RevolutionData
                                     }
                                 }));
                             }
-                        }),
+                        },  new StateEventInfo(Processes.IntialSystemProcess, RevolutionData.Context.ViewModel.Events.ViewModelCreated, Guid.NewGuid())),
                     new ViewEventSubscription<IScreenModel, IViewModelCreated<IViewModel>>(
                         "ScreenViewModel-IViewModelCreated<IFooterViewModel>",
                         Processes.IntialSystemProcess, e => e != null, new List<Func<IScreenModel, IViewModelCreated<IViewModel>, bool>>
@@ -156,13 +156,13 @@ namespace RevolutionData
                                     }
                                 }));
                             }
-                        }),
+                        },  new StateEventInfo(Processes.IntialSystemProcess, RevolutionData.Context.ViewModel.Events.ViewModelCreated, Guid.NewGuid())),
                     new ViewEventSubscription<IScreenModel, IViewModelCreated<IViewModel>>(
                         "ScreenViewModel-IViewModelCreated<IBodyViewModel>", Processes.IntialSystemProcess, e => e != null,
                         new List<Func<IScreenModel, IViewModelCreated<IViewModel>, bool>>
                         {
                             (s, e) => e.Process.Id != s.Process.Id &&
-                                    e.ViewModel.Orientation == typeof(IBodyViewModel)
+                                      e.ViewModel.Orientation == typeof(IBodyViewModel)
                         }, (s, e) =>
                         {
                             if (Application.Current == null)
@@ -184,7 +184,7 @@ namespace RevolutionData
                                     }
                                 }));
                             }
-                        }),
+                        },  new StateEventInfo(Processes.IntialSystemProcess, RevolutionData.Context.ViewModel.Events.ViewModelCreated, Guid.NewGuid())),
 
                     
 
@@ -207,7 +207,7 @@ namespace RevolutionData
                                     ClearScreenModels(s);
                                 }));
                             }
-                        }),
+                        },  new StateEventInfo(Processes.IntialSystemProcess, RevolutionData.Context.Process.Events.ProcessCleanedUp, Guid.NewGuid())),
 
                     new ViewEventSubscription<IScreenModel, ICurrentApplicationChanged>(
                         "ScreenViewModel-ICleanUpSystemProcess",
@@ -228,7 +228,7 @@ namespace RevolutionData
                                     ClearScreenModels(s);
                                 }));
                             }
-                        }),
+                        }, new StateEventInfo(Processes.IntialSystemProcess, RevolutionData.Context.Process.Events.CurrentApplicationChanged, Guid.NewGuid())),
 
 
                 },

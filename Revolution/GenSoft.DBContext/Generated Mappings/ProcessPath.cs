@@ -18,13 +18,13 @@ namespace GenSoft.Mappings
 			entityBuilder.ToTable("ProcessPath", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
-			entityBuilder.Property(t => t.ProcessStepId).HasColumnName("ProcessStepId").IsRequired();
 			entityBuilder.Property(t => t.NextProcessStepId).HasColumnName("NextProcessStepId").IsRequired();
+			entityBuilder.Property(t => t.ProcessStepId).HasColumnName("ProcessStepId").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
 	
 				//----------------Parent Properties
-				//entityBuilder.HasOne(p => p.ProcessStep ProcessStep).WithMany(p => p.ProcessPath).HasForeignKey(c => c.ProcessStepId).OnDelete(DeleteBehavior.Restrict);
 				//entityBuilder.HasOne(p => p.ProcessStep NextProcessStep).WithMany(p => p.ProcessPath).HasForeignKey(c => c.NextProcessStepId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.ProcessStep ProcessStep).WithMany(p => p.ProcessPath).HasForeignKey(c => c.ProcessStepId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

@@ -13,8 +13,8 @@ namespace GenSoft.Entities
 {
 	public partial class DBType: BaseEntity, IDBType
 	{
-		public virtual string TableName { get; set; }
 		public virtual string SchemaName { get; set; }
+		public virtual string TableName { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships

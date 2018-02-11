@@ -44,7 +44,7 @@ namespace ViewModels
         {
             this.WireEvents();
 
-            var processStateInfo = new StateEventInfo(Process, new StateEvent("CurrentApplicationChanged","MainWindowApplication","notes"),Guid.NewGuid());
+            var processStateInfo = new StateEventInfo(Process, new StateEvent("CurrentApplicationChanged","Current Application Changed","notes", "Process", "MainWindowViewModel"),Guid.NewGuid());
             EventMessageBus.Current.GetEvent<ICurrentApplicationChanged>(processStateInfo, Source)
                 .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == processStateInfo.EventKey)
                 .Subscribe(OnCurrentApplicationChanged);

@@ -18,15 +18,15 @@ namespace GenSoft.Mappings
 			entityBuilder.ToTable("TypeArguement", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
-			entityBuilder.Property(t => t.TypeId).HasColumnName("TypeId").IsRequired();
-			entityBuilder.Property(t => t.ParentTypeId).HasColumnName("ParentTypeId").IsRequired();
 			entityBuilder.Property(t => t.ChildTypeId).HasColumnName("ChildTypeId").IsRequired();
+			entityBuilder.Property(t => t.ParentTypeId).HasColumnName("ParentTypeId").IsRequired();
+			entityBuilder.Property(t => t.TypeId).HasColumnName("TypeId").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
 	
 				//----------------Parent Properties
-				//entityBuilder.HasOne(p => p.Type Type).WithMany(p => p.TypeArguement).HasForeignKey(c => c.TypeId).OnDelete(DeleteBehavior.Restrict);
-				//entityBuilder.HasOne(p => p.Type ParentType).WithMany(p => p.TypeArguement).HasForeignKey(c => c.ParentTypeId).OnDelete(DeleteBehavior.Restrict);
 				//entityBuilder.HasOne(p => p.Type ChildType).WithMany(p => p.TypeArguement).HasForeignKey(c => c.ChildTypeId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.Type ParentType).WithMany(p => p.TypeArguement).HasForeignKey(c => c.ParentTypeId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.Type Type).WithMany(p => p.TypeArguement).HasForeignKey(c => c.TypeId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

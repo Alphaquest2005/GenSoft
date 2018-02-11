@@ -25,7 +25,7 @@ namespace EFRepository
 
         static DynamicDataContext()
         {
-            var processStateInfo = new RevolutionEntities.Process.StateEventInfo(Processes.IntialSystemProcess, new StateEvent("CurrentApplicationChanged", "DataContext", "notes"), Guid.NewGuid());
+            var processStateInfo = new RevolutionEntities.Process.StateEventInfo(Processes.IntialSystemProcess, new StateEvent("CurrentApplicationChanged", "Current Application Changed", "notes","Process","DataContext"), Guid.NewGuid());
             EventMessageBus.Current.GetEvent<ICurrentApplicationChanged>(processStateInfo,Source)
                 .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == processStateInfo.EventKey)
                 .Subscribe(OnCurrentApplicationChanged);
@@ -136,7 +136,7 @@ namespace EFRepository
                     EventMessageBus.Current.Publish(
                         new EntityWithChangesUpdated(newEntity, msg.Changes,
                             new RevolutionEntities.Process.StateEventInfo(msg.Process,
-                                EntityEvents.Events.EntityUpdated), msg.Process,
+                                RevolutionData.Context.EventFunctions.UpdateEventData(msg.EntityType.Name, EntityEvents.Events.EntityUpdated)), msg.Process,
                             Source), Source);
 
 
@@ -176,7 +176,7 @@ namespace EFRepository
                 
                     EventMessageBus.Current.Publish(
                         new EntitySetWithChangesLoaded(msg.EntityType,entities, msg.Changes,
-                            new RevolutionEntities.Process.StateEventInfo(msg.Process, EntityEvents.Events.EntityFound), msg.Process,
+                            new RevolutionEntities.Process.StateEventInfo(msg.Process, RevolutionData.Context.EventFunctions.UpdateEventData(msg.EntityType.Name, EntityEvents.Events.EntityFound)), msg.Process,
                             Source), Source);
                
             }
@@ -201,7 +201,7 @@ namespace EFRepository
 
                 EventMessageBus.Current.Publish(
                         new EntitySetLoaded(msg.EntityType, viewset, 
-                            new RevolutionEntities.Process.StateEventInfo(msg.Process, EntityEvents.Events.EntityFound), msg.Process,
+                            new RevolutionEntities.Process.StateEventInfo(msg.Process, RevolutionData.Context.EventFunctions.UpdateEventData(msg.EntityType.Name, EntityEvents.Events.EntityFound)), msg.Process,
                             Source), Source);
                 
             }
@@ -254,14 +254,14 @@ namespace EFRepository
                 {
                     EventMessageBus.Current.Publish(
                         new EntityWithChangesFound(entity, msg.Changes,
-                            new RevolutionEntities.Process.StateEventInfo(msg.Process, EntityEvents.Events.EntityFound), msg.Process,
+                            new RevolutionEntities.Process.StateEventInfo(msg.Process, RevolutionData.Context.EventFunctions.UpdateEventData(msg.EntityType.Name, EntityEvents.Events.EntityFound)), msg.Process,
                             Source), Source);
                 }
                 else
                 {
                     EventMessageBus.Current.Publish(
                         new EntityWithChangesFound(DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(msg.EntityType.Name).DefaultEntity(), msg.Changes,
-                            new RevolutionEntities.Process.StateEventInfo(msg.Process, EntityEvents.Events.EntityFound), msg.Process,
+                            new RevolutionEntities.Process.StateEventInfo(msg.Process, RevolutionData.Context.EventFunctions.UpdateEventData(msg.EntityType.Name, EntityEvents.Events.EntityFound)), msg.Process,
                             Source), Source);
                 }
             }

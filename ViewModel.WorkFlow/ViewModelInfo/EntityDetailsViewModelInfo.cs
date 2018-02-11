@@ -8,6 +8,7 @@ using DomainUtilities;
 using GenSoft.Entities;
 using MoreLinq;
 using Reactive.Bindings;
+using RevolutionEntities.Process;
 using RevolutionEntities.ViewModels;
 using Utilities;
 using ViewModel.Interfaces;
@@ -56,7 +57,7 @@ namespace RevolutionData
                             return new ViewEventCommandParameter(
                                 new object[] {s, s.RowState.Value},
                                 new RevolutionEntities.Process.StateCommandInfo(s.Process,
-                                    Context.Process.Commands.ChangeCurrentEntity), s.Process,
+                                    Context.ViewModel.Commands.ChangeCurrentEntity), s.Process,
                                 s.Source);
                         }),
 
@@ -79,7 +80,7 @@ namespace RevolutionData
                             //});
 
 
-                        })
+                        }, new RevolutionEntities.Process.StateCommandInfo(process,Context.CommandFunctions.UpdateCommandData(entityType.Name, Context.Process.Commands.UpdateState), Guid.NewGuid()))
                 };
                 foreach (var p in childEntities)
                 {
@@ -178,10 +179,9 @@ namespace RevolutionData
         }
 
 
-        public static IDynamicEntityType entityType { get; set; }
-
         
-        public static IViewModelEventSubscription<IViewModel, IEvent> ParentCurrentEntityChanged(ISystemProcess process,string pentity,string parentProperty)
+
+        public static IViewModelEventSubscription<IViewModel, IEvent> ParentCurrentEntityChanged(ISystemProcess process, string pentity, string parentProperty)
         {
             return new ViewEventSubscription<IEntityViewModel, ICurrentEntityChanged>(
                 $"{pentity}-CurrentEntityChanged",
@@ -193,59 +193,58 @@ namespace RevolutionData
                     Application.Current.Dispatcher.Invoke(() =>
                     {
                         v.ParentEntities.AddOrUpdate(e.Entity);
-                        
                     });
-                });
+                }, new RevolutionEntities.Process.StateEventInfo(process, Context.EventFunctions.UpdateEventData(pentity, Context.ViewModel.Events.CurrentEntityChanged), Guid.NewGuid()));
         }
 
-        public static IViewModelEventSubscription<IViewModel, IEvent> RecieveProcessStateMessage(ISystemProcess process,string pEntity,  string viewChildProperty) 
-        {
-            return new ViewEventSubscription<IEntityViewModel, IProcessStateMessage>(
-                $"{pEntity}-ProcessStateMessage",
-                process,
-                e => e != null  && e.EntityType.Name == pEntity,
-                new List<Func<IEntityViewModel, IProcessStateMessage, bool>>(),
-                (v, e) =>
-                {
-                    //Application.Current.Dispatcher.Invoke(() =>
-                    //{
-                       if (Equals(v.State.Value.Entity, e.State.Entity)) return;
-                        v.State.Value = e.State;
-                       
-                    //});
-                    
-                    
-                });
-        }
+        //public static IViewModelEventSubscription<IViewModel, IEvent> RecieveProcessStateMessage(ISystemProcess process,string pEntity,  string viewChildProperty) 
+        //{
+        //    return new ViewEventSubscription<IEntityViewModel, IProcessStateMessage>(
+        //        $"{pEntity}-ProcessStateMessage",
+        //        process,
+        //        e => e != null  && e.EntityType.Name == pEntity,
+        //        new List<Func<IEntityViewModel, IProcessStateMessage, bool>>(),
+        //        (v, e) =>
+        //        {
+        //            //Application.Current.Dispatcher.Invoke(() =>
+        //            //{
+        //            if (Equals(v.State.Value.Entity, e.State.Entity)) return;
+        //            v.State.Value = e.State;
 
-        public static IViewModelEventSubscription<IViewModel, IEvent> EntityFound(ISystemProcess process, string pEntity, string viewChildProperty)
-        {
-            return new ViewEventSubscription<IEntityViewModel, IEntityFound>(
-                $"{pEntity}-IEntityFound",
-                process,
-                e => e != null && e.EntityType.Name == pEntity,
-                new List<Func<IEntityViewModel, IEntityFound, bool>>(),
-                (v, e) =>
-                {
-                    v.State.Value.Entity = e.Entity;
-                    v.NotifyPropertyChanged("State");
-                });
-        }
+        //            //});
 
 
-        public static IViewModelEventSubscription<IViewModel, IEvent> EntityWithChangesUpdated(ISystemProcess process, string pEntity, string viewChildProperty)
-        {
-            return new ViewEventSubscription<IEntityViewModel, IEntityWithChangesUpdated>(
-                $"{pEntity}-IEntityWithChangesUpdated",
-                process,
-                e => e != null && e.EntityType.Name == pEntity,
-                new List<Func<IEntityViewModel, IEntityWithChangesUpdated, bool>>(),
-                (v, e) =>
-                {
-                    v.State.Value.Entity = v.State.Value.Entity.ApplyChanges(e.Changes);
-                    v.NotifyPropertyChanged("State");
-                });
-        }
+        //        }, TODO);
+        //}
+
+        //public static IViewModelEventSubscription<IViewModel, IEvent> EntityFound(ISystemProcess process, string pEntity, string viewChildProperty)
+        //{
+        //    return new ViewEventSubscription<IEntityViewModel, IEntityFound>(
+        //        $"{pEntity}-IEntityFound",
+        //        process,
+        //        e => e != null && e.EntityType.Name == pEntity,
+        //        new List<Func<IEntityViewModel, IEntityFound, bool>>(),
+        //        (v, e) =>
+        //        {
+        //            v.State.Value.Entity = e.Entity;
+        //            v.NotifyPropertyChanged("State");
+        //        }, TODO);
+        //}
+
+
+        //public static IViewModelEventSubscription<IViewModel, IEvent> EntityWithChangesUpdated(ISystemProcess process, string pEntity, string viewChildProperty)
+        //{
+        //    return new ViewEventSubscription<IEntityViewModel, IEntityWithChangesUpdated>(
+        //        $"{pEntity}-IEntityWithChangesUpdated",
+        //        process,
+        //        e => e != null && e.EntityType.Name == pEntity,
+        //        new List<Func<IEntityViewModel, IEntityWithChangesUpdated, bool>>(),
+        //        (v, e) =>
+        //        {
+        //            v.State.Value.Entity = v.State.Value.Entity.ApplyChanges(e.Changes);
+        //            v.NotifyPropertyChanged("State");
+        //        }, TODO);
+        //}
 
     }
 

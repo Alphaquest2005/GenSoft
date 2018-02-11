@@ -81,6 +81,18 @@
           "lib/net45-full/log4net.dll": {}
         }
       },
+      "MefContrib/1.2.2.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.Composition"
+        ],
+        "compile": {
+          "lib/net40-Client/MefContrib.dll": {}
+        },
+        "runtime": {
+          "lib/net40-Client/MefContrib.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.4.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -262,6 +274,15 @@
         },
         "runtime": {
           "lib/net40/MoreLinq.dll": {}
+        }
+      },
+      "Newtonsoft.Json/10.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
       "Reactive.EventAggregator/3.0.0": {
@@ -685,6 +706,22 @@
           "bin/placeholder/Actor.Interfaces.dll": {}
         }
       },
+      "BootStrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "Actor.Interfaces": "1.0.0",
+          "ComponentModel.Composition.Hosting.Extension": "1.0.0",
+          "MefContrib": "1.2.2.1",
+          "ViewModel.Interfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BootStrapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BootStrapper.dll": {}
+        }
+      },
       "Common/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -713,6 +750,16 @@
         },
         "runtime": {
           "bin/placeholder/CommonMessages.dll": {}
+        }
+      },
+      "ComponentModel.Composition.Hosting.Extension/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "compile": {
+          "bin/placeholder/ComponentModel.Composition.Hosting.Extension.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ComponentModel.Composition.Hosting.Extension.dll": {}
         }
       },
       "DomainUtilities/1.0.0": {
@@ -748,6 +795,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "GenSoft.Entities": "1.0.0",
           "GenSoft.Interface": "1.0.0",
@@ -921,6 +969,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "Newtonsoft.Json": "10.0.3",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -1026,6 +1075,18 @@
         },
         "runtime": {
           "lib/net45-full/log4net.dll": {}
+        }
+      },
+      "MefContrib/1.2.2.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.Composition"
+        ],
+        "compile": {
+          "lib/net40-Client/MefContrib.dll": {}
+        },
+        "runtime": {
+          "lib/net40-Client/MefContrib.dll": {}
         }
       },
       "Microsoft.CSharp/4.4.0": {
@@ -1209,6 +1270,15 @@
         },
         "runtime": {
           "lib/net40/MoreLinq.dll": {}
+        }
+      },
+      "Newtonsoft.Json/10.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
       "Reactive.EventAggregator/3.0.0": {
@@ -1622,6 +1692,22 @@
           "bin/placeholder/Actor.Interfaces.dll": {}
         }
       },
+      "BootStrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "Actor.Interfaces": "1.0.0",
+          "ComponentModel.Composition.Hosting.Extension": "1.0.0",
+          "MefContrib": "1.2.2.1",
+          "ViewModel.Interfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BootStrapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BootStrapper.dll": {}
+        }
+      },
       "Common/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -1650,6 +1736,16 @@
         },
         "runtime": {
           "bin/placeholder/CommonMessages.dll": {}
+        }
+      },
+      "ComponentModel.Composition.Hosting.Extension/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "compile": {
+          "bin/placeholder/ComponentModel.Composition.Hosting.Extension.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ComponentModel.Composition.Hosting.Extension.dll": {}
         }
       },
       "DomainUtilities/1.0.0": {
@@ -1685,6 +1781,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "GenSoft.Entities": "1.0.0",
           "GenSoft.Interface": "1.0.0",
@@ -1858,6 +1955,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "Newtonsoft.Json": "10.0.3",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -1965,6 +2063,18 @@
           "lib/net45-full/log4net.dll": {}
         }
       },
+      "MefContrib/1.2.2.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.Composition"
+        ],
+        "compile": {
+          "lib/net40-Client/MefContrib.dll": {}
+        },
+        "runtime": {
+          "lib/net40-Client/MefContrib.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.4.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -2146,6 +2256,15 @@
         },
         "runtime": {
           "lib/net40/MoreLinq.dll": {}
+        }
+      },
+      "Newtonsoft.Json/10.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
       "Reactive.EventAggregator/3.0.0": {
@@ -2559,6 +2678,22 @@
           "bin/placeholder/Actor.Interfaces.dll": {}
         }
       },
+      "BootStrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "Actor.Interfaces": "1.0.0",
+          "ComponentModel.Composition.Hosting.Extension": "1.0.0",
+          "MefContrib": "1.2.2.1",
+          "ViewModel.Interfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BootStrapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BootStrapper.dll": {}
+        }
+      },
       "Common/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -2587,6 +2722,16 @@
         },
         "runtime": {
           "bin/placeholder/CommonMessages.dll": {}
+        }
+      },
+      "ComponentModel.Composition.Hosting.Extension/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "compile": {
+          "bin/placeholder/ComponentModel.Composition.Hosting.Extension.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ComponentModel.Composition.Hosting.Extension.dll": {}
         }
       },
       "DomainUtilities/1.0.0": {
@@ -2622,6 +2767,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "GenSoft.Entities": "1.0.0",
           "GenSoft.Interface": "1.0.0",
@@ -2795,6 +2941,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "Newtonsoft.Json": "10.0.3",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -2902,6 +3049,18 @@
           "lib/net45-full/log4net.dll": {}
         }
       },
+      "MefContrib/1.2.2.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.Composition"
+        ],
+        "compile": {
+          "lib/net40-Client/MefContrib.dll": {}
+        },
+        "runtime": {
+          "lib/net40-Client/MefContrib.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.4.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -3083,6 +3242,15 @@
         },
         "runtime": {
           "lib/net40/MoreLinq.dll": {}
+        }
+      },
+      "Newtonsoft.Json/10.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
       "Reactive.EventAggregator/3.0.0": {
@@ -3496,6 +3664,22 @@
           "bin/placeholder/Actor.Interfaces.dll": {}
         }
       },
+      "BootStrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "Actor.Interfaces": "1.0.0",
+          "ComponentModel.Composition.Hosting.Extension": "1.0.0",
+          "MefContrib": "1.2.2.1",
+          "ViewModel.Interfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BootStrapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BootStrapper.dll": {}
+        }
+      },
       "Common/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -3524,6 +3708,16 @@
         },
         "runtime": {
           "bin/placeholder/CommonMessages.dll": {}
+        }
+      },
+      "ComponentModel.Composition.Hosting.Extension/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "compile": {
+          "bin/placeholder/ComponentModel.Composition.Hosting.Extension.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ComponentModel.Composition.Hosting.Extension.dll": {}
         }
       },
       "DomainUtilities/1.0.0": {
@@ -3559,6 +3753,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "GenSoft.Entities": "1.0.0",
           "GenSoft.Interface": "1.0.0",
@@ -3732,6 +3927,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "Newtonsoft.Json": "10.0.3",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -3846,6 +4042,20 @@
         "lib/netstandard1.3/log4net.dll",
         "log4net.2.0.8.nupkg.sha512",
         "log4net.nuspec"
+      ]
+    },
+    "MefContrib/1.2.2.1": {
+      "sha512": "hDgllEVu5FmcIgyphSxnKjQu4N1a8eGj+DzlxoBcgASFBDuyvdBGokEPC8GNUMbcnxUkT1vy0fxbhacV/t3RFQ==",
+      "type": "package",
+      "path": "mefcontrib/1.2.2.1",
+      "files": [
+        "lib/net40-Client/MefContrib.dll",
+        "lib/net40-Client/MefContrib.pdb",
+        "lib/net40-Client/MefContrib.xml",
+        "lib/sl/MefContrib.Silverlight.dll",
+        "lib/sl/MefContrib.Silverlight.pdb",
+        "mefcontrib.1.2.2.1.nupkg.sha512",
+        "mefcontrib.nuspec"
       ]
     },
     "Microsoft.CSharp/4.4.0": {
@@ -4059,6 +4269,33 @@
         "lib/netstandard2.0/MoreLinq.xml",
         "morelinq.2.10.0.nupkg.sha512",
         "morelinq.nuspec"
+      ]
+    },
+    "Newtonsoft.Json/10.0.3": {
+      "sha512": "hSXaFmh7hNCuEoC4XNY5DrRkLDzYHqPx/Ik23R4J86Z7PE/Y6YidhG602dFVdLBRSdG6xp9NabH3dXpcoxWvww==",
+      "type": "package",
+      "path": "newtonsoft.json/10.0.3",
+      "files": [
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.10.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "tools/install.ps1"
       ]
     },
     "Reactive.EventAggregator/3.0.0": {
@@ -5459,6 +5696,11 @@
       "path": "../Revolution/Actor.Interfaces/Actor.Interfaces.csproj",
       "msbuildProject": "../Revolution/Actor.Interfaces/Actor.Interfaces.csproj"
     },
+    "BootStrapper/1.0.0": {
+      "type": "project",
+      "path": "../Revolution/BootStrapper/BootStrapper.csproj",
+      "msbuildProject": "../Revolution/BootStrapper/BootStrapper.csproj"
+    },
     "Common/1.0.0": {
       "type": "project",
       "path": "../Revolution/Common/Common.csproj",
@@ -5468,6 +5710,11 @@
       "type": "project",
       "path": "../Revolution/CommonMessages/CommonMessages.csproj",
       "msbuildProject": "../Revolution/CommonMessages/CommonMessages.csproj"
+    },
+    "ComponentModel.Composition.Hosting.Extension/1.0.0": {
+      "type": "project",
+      "path": "../Revolution/MefGeneric-master/MEFGeneric Preview 9/src/ComponentModel.Composition.Hosting.Extension/ComponentModel.Composition.Hosting.Extension.csproj",
+      "msbuildProject": "../Revolution/MefGeneric-master/MEFGeneric Preview 9/src/ComponentModel.Composition.Hosting.Extension/ComponentModel.Composition.Hosting.Extension.csproj"
     },
     "DomainUtilities/1.0.0": {
       "type": "project",

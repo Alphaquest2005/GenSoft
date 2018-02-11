@@ -268,3 +268,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\System.R
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\Process.WorkFlow.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\Process.WorkFlow.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\Akka.xml
+C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Debug\Newtonsoft.Json.dll

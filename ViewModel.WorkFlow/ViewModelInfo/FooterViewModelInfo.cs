@@ -46,7 +46,7 @@ namespace RevolutionData
 
                             }
 
-                        }),
+                        }, new RevolutionEntities.Process.StateEventInfo( Processes.IntialSystemProcess,  Context.ViewModel.Events.CurrentEntityChanged, Guid.NewGuid())),
 
                     new ViewEventSubscription<IFooterViewModel, ICleanUpSystemProcess>(
                         "Footer-ICleanUpSystemProcess",
@@ -68,7 +68,7 @@ namespace RevolutionData
                                     s.Entities.Value.Reset();
                                 }));
                             }
-                        }),
+                        }, new StateCommandInfo(Processes.IntialSystemProcess, RevolutionData.Context.Process.Commands.CleanUpProcess, Guid.NewGuid())),
 
                     new ViewEventSubscription<IFooterViewModel, ICurrentApplicationChanged>(
                         "ScreenViewModel-ICleanUpSystemProcess",
@@ -91,7 +91,7 @@ namespace RevolutionData
                                     s.Entities.Value.Reset();
                                 }));
                             }
-                        }),
+                        }, new StateEventInfo(Processes.IntialSystemProcess, RevolutionData.Context.Process.Events.CurrentApplicationChanged, Guid.NewGuid())),
                 },
                 new List<IViewModelEventPublication<IViewModel, IEvent>> { },
                 new List<IViewModelEventCommand<IViewModel, IEvent>>

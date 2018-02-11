@@ -20,3 +20,4 @@ C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\x64\Debug\System.Reac
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\x64\Debug\JB.Common.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\x64\Debug\System.Reactive.PlatformServices.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\x64\Debug\System.Reactive.Windows.Threading.dll
+C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\x64\Debug\Newtonsoft.Json.dll

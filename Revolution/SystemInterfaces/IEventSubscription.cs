@@ -8,6 +8,7 @@ namespace SystemInterfaces
         ISystemProcess Process { get; }
         Type EventType { get; }
         Func<TEvent, bool> EventPredicate { get; }
+        IProcessStateInfo ProcessInfo { get; }
     }
 
 

@@ -798,6 +798,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "GenSoft.Entities": "1.0.0",
           "GenSoft.Interface": "1.0.0",
@@ -1049,6 +1050,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "Newtonsoft.Json": "10.0.3",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -1957,6 +1959,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "GenSoft.Entities": "1.0.0",
           "GenSoft.Interface": "1.0.0",
@@ -2208,6 +2211,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "Newtonsoft.Json": "10.0.3",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -3116,6 +3120,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "GenSoft.Entities": "1.0.0",
           "GenSoft.Interface": "1.0.0",
@@ -3367,6 +3372,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "Newtonsoft.Json": "10.0.3",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -4275,6 +4281,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "GenSoft.Entities": "1.0.0",
           "GenSoft.Interface": "1.0.0",
@@ -4526,6 +4533,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "Newtonsoft.Json": "10.0.3",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {

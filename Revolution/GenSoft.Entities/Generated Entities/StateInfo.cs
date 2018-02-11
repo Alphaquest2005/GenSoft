@@ -15,6 +15,7 @@ namespace GenSoft.Entities
 	{
 		public virtual string Name { get; set; }
 		public virtual string Status { get; set; }
+		public virtual string Subject { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships

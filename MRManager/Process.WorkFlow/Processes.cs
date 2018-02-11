@@ -47,8 +47,8 @@ namespace Process.WorkFlow
                 IntialSystemProcess, new List<IProcessExpectedEvent>
                 {
                     new ProcessExpectedEvent ("ProcessStarted", IntialSystemProcess, typeof (ISystemProcessStarted), e => e != null  && e.Process.Id == 1, new StateEventInfo(IntialSystemProcess, RevolutionData.Context.Process.Events.ProcessStarted, Guid.NewGuid()), new SourceType(typeof(IProcessService))),
-                    new ProcessExpectedEvent ("ViewCreated", IntialSystemProcess, typeof (IViewModelCreated<IScreenModel>), e => e != null  && e.Process.Id == 1, new StateEventInfo(IntialSystemProcess,"ScreenViewCreated", "ScreenView Created","This view contains all views", RevolutionData.Context.ViewModel.Commands.CreateViewModel, Guid.NewGuid()), new SourceType(typeof(IViewModelService) )),
-                    new ProcessExpectedEvent ("ViewLoaded", IntialSystemProcess, typeof (IViewModelLoaded<IMainWindowViewModel,IScreenModel>), e => e != null  && e.Process.Id == 1, new StateEventInfo(IntialSystemProcess,"ScreenViewLoaded","ScreenView Model loaded in MainWindowViewModel","Only ViewModel in Body", RevolutionData.Context.ViewModel.Commands.LoadViewModel, Guid.NewGuid()), new SourceType(typeof(IViewModelService) ))
+                    new ProcessExpectedEvent ("ViewCreated", IntialSystemProcess, typeof (IViewModelCreated<IScreenModel>), e => e != null  && e.Process.Id == 1, new StateEventInfo(IntialSystemProcess,"ScreenViewCreated", "ScreenView Created","This view contains all views", "ViewModel", "IScreenModel", RevolutionData.Context.ViewModel.Commands.CreateViewModel, Guid.NewGuid()), new SourceType(typeof(IViewModelService) )),
+                    new ProcessExpectedEvent ("ViewLoaded", IntialSystemProcess, typeof (IViewModelLoaded<IMainWindowViewModel,IScreenModel>), e => e != null  && e.Process.Id == 1, new StateEventInfo(IntialSystemProcess,"ScreenViewLoaded","ScreenView Model loaded in MainWindowViewModel","Only ViewModel in Body", "ViewModel", "IMainWindowViewModel,IScreenModel", RevolutionData.Context.ViewModel.Commands.LoadViewModel, Guid.NewGuid()), new SourceType(typeof(IViewModelService) ))
                 },
                 typeof(ISystemProcessCompleted),
                 processInfo:new StateCommandInfo(IntialSystemProcess,RevolutionData.Context.Process.Commands.CompleteProcess ),
@@ -176,7 +176,7 @@ namespace Process.WorkFlow
                             process: process,
                             eventPredicate: e => e != null && e.Process == process && ((IEntityViewInfo)((IViewModelIntialized)e)?.ViewModel.ViewInfo)?.EntityType == entityType  ,
                             eventType: typeof (IViewModelIntialized),
-                            processInfo: new StateCommandInfo(process,RevolutionData.Context.CommandFunctions.UpdateCommandStatus(entityType.Name, RevolutionData.Context.ViewModel.Commands.Initialized), Guid.NewGuid()),
+                            processInfo: new StateCommandInfo(process,RevolutionData.Context.CommandFunctions.UpdateCommandData(entityType.Name, RevolutionData.Context.ViewModel.Commands.Initialized), Guid.NewGuid()),
                             expectedSourceType: new SourceType(typeof (IComplexEventService))),
                         
                     },
@@ -250,7 +250,7 @@ namespace Process.WorkFlow
                             "CurrentEntity", process, e => e.Entity != null && e.Process == process && e.Entity.Id > 0 && e.Entity.EntityType.Name == currentEntityType,
                             expectedSourceType: new SourceType(typeof (IViewModel)),
                             //todo: check this cuz it comes from viewmodel
-                            processInfo: new StateEventInfo(process, RevolutionData.Context.Process.Events.CurrentEntityChanged, Guid.NewGuid())),
+                            processInfo: new StateEventInfo(process, RevolutionData.Context.ViewModel.Events.CurrentEntityChanged, Guid.NewGuid())),
 
                         new ProcessExpectedEvent<IEntityFound>(
                             "CurrentEntity", process, e => e.Entity != null && e.Process == process && e.Entity.Id > 0 && e.Entity.EntityType.Name == currentEntityType,
@@ -320,7 +320,7 @@ namespace Process.WorkFlow
                             "CurrentEntity", process, e => e.Entity != null && e.Process == process && e.Entity.Id > 0 && e.EntityType.Name == currentEntityType,
                             expectedSourceType: new SourceType(typeof (IViewModel)),
                             //todo: check this cuz it comes from viewmodel
-                            processInfo: new StateEventInfo(process, RevolutionData.Context.Process.Events.CurrentEntityChanged, Guid.NewGuid())),
+                            processInfo: new StateEventInfo(process, RevolutionData.Context.ViewModel.Events.CurrentEntityChanged, Guid.NewGuid())),
                         
                     },
                     expectedMessageType: typeof(IProcessStateMessage),
@@ -396,7 +396,7 @@ namespace Process.WorkFlow
             {
                return new ProcessExpectedEvent<ICurrentEntityChanged>(process: process,
                             eventPredicate: e => e.Entity != null && e.Entity.Id > 0 &&  e.EntityType == entityType,
-                            processInfo: new StateEventInfo(process, RevolutionData.Context.Process.Events.CurrentEntityChanged, Guid.NewGuid()),
+                            processInfo: new StateEventInfo(process, RevolutionData.Context.ViewModel.Events.CurrentEntityChanged, Guid.NewGuid()),
                             expectedSourceType: new SourceType(typeof(IComplexEventService)),
                             key: $"CurrentEntity-{entityType.Name}");
             }

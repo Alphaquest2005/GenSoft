@@ -51,7 +51,7 @@ namespace DataServices.Actors
                     .Subscribe(x => handleComplexEventLogRequest());
 
                 Publish(new ServiceStarted<IComplexEventService>(this,
-                    new StateEventInfo(Process,RevolutionData.Context.EventFunctions.UpdateEventStatus(msg.ComplexEventService.ComplexEventAction.Key,RevolutionData.Context.Actor.Events.ActorStarted)), Process, Source));
+                    new StateEventInfo(Process,RevolutionData.Context.EventFunctions.UpdateEventData(msg.ComplexEventService.ComplexEventAction.Key,RevolutionData.Context.Actor.Events.ActorStarted)), Process, Source));
             }
             catch (Exception ex)
             {
@@ -126,7 +126,7 @@ namespace DataServices.Actors
         {
             // if (!ComplexEventAction.Events.All(z => z.Raised())) return;
             if (ComplexEventAction.Action == null) return;
-            var inMsg = new ExecuteComplexEventAction(ComplexEventAction.Action, new DynamicComplexEventParameters(this,  msgs), new StateCommandInfo(Process, RevolutionData.Context.CommandFunctions.UpdateCommandStatus(ComplexEventAction.Key, RevolutionData.Context.Actor.Commands.CreateAction)), Process, Source);
+            var inMsg = new ExecuteComplexEventAction(ComplexEventAction.Action, new DynamicComplexEventParameters(this,  msgs), new StateCommandInfo(Process, RevolutionData.Context.CommandFunctions.UpdateCommandData(ComplexEventAction.Key, RevolutionData.Context.Actor.Commands.CreateAction)), Process, Source);
 
             Publish(inMsg);
             var outMsg = await ComplexEventAction.Action.Action(inMsg.ComplexEventParameters).ConfigureAwait(false);

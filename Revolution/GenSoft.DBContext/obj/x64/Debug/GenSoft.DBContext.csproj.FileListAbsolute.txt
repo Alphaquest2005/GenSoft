@@ -242,3 +242,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\Utili
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\MoreLinq.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\System.Reactive.Windows.Threading.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\JB.Common.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\Newtonsoft.Json.dll

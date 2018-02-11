@@ -10,6 +10,7 @@ using DomainUtilities;
 using GenSoft.Entities;
 using JB.Collections.Reactive;
 using Reactive.Bindings;
+using RevolutionEntities.Process;
 using RevolutionEntities.ViewModels;
 using Utilities;
 using ViewModel.Interfaces;
@@ -43,7 +44,7 @@ namespace RevolutionData
                             v.State.Value = e.State;
                             if (v.EntitySet.Value.Any() && v.CurrentEntity.Value?.Id  != v.EntitySet.Value.First().Id) v.CurrentEntity.Value = v.EntitySet.Value.First();
 
-                        }),
+                        }, new RevolutionEntities.Process.StateCommandInfo(process, RevolutionData.Context.CommandFunctions.UpdateCommandData(entityType.Name, Context.Process.Commands.UpdateState), Guid.NewGuid())),
 
 
                     new ViewEventSubscription<ISummaryListViewModel, IEntityWithChangesUpdated>(
@@ -61,7 +62,7 @@ namespace RevolutionData
                             //{
                             //    Application.Current.Dispatcher.BeginInvoke(new Action(() => UpdateEntitySet(v, e)));
                             //}
-                        }),
+                        }, processInfo: new RevolutionEntities.Process.StateEventInfo(process, RevolutionData.Context.EventFunctions.UpdateEventData(entityType.Name, Context.Entity.Events.EntityUpdated), Guid.NewGuid())),
 
                     new ViewEventSubscription<ISummaryListViewModel, ICurrentEntityChanged>(
                         $"{entityType.Name}-ICurrentEntityChanged",
@@ -73,7 +74,7 @@ namespace RevolutionData
                             //if (e.Source.SourceName == v.Source.SourceName) return;
                             if (Equals(v.CurrentEntity.Value?.Id, e.Entity?.Id)) return;
                             v.CurrentEntity.Value = e.Entity;
-                        }),
+                        }, new RevolutionEntities.Process.StateEventInfo(process, RevolutionData.Context.EventFunctions.UpdateEventData(entityType.Name, Context.ViewModel.Events.CurrentEntityChanged), Guid.NewGuid())),
 
                 };
 
@@ -115,7 +116,7 @@ namespace RevolutionData
                             return new ViewEventCommandParameter(
                                 new object[] {v.SelectedViewModel.Value, v.SelectedViewModel.Value.Visibility.Value},
                                 new RevolutionEntities.Process.StateCommandInfo(v.Process,
-                                    Context.ViewModel.Commands.ChangeVisibility), v.Process,
+                                    Context.View.Commands.ChangeVisibility), v.Process,
                                 v.Source);
                         }),
 
@@ -138,7 +139,7 @@ namespace RevolutionData
                             return new ViewEventCommandParameter(
                                 new object[] {s, s.RowState.Value},
                                 new RevolutionEntities.Process.StateCommandInfo(s.Process,
-                                    Context.Process.Commands.ChangeCurrentEntity), s.Process,
+                                    Context.ViewModel.Commands.ChangeCurrentEntity), s.Process,
                                 s.Source);
                         }),
                 };
@@ -173,7 +174,7 @@ namespace RevolutionData
                             {
 
                                 return new ViewEventPublicationParameter(new object[] {s, s.State.Value},
-                                    new RevolutionEntities.Process.StateEventInfo(s.Process, Context.EventFunctions.UpdateEventStatus(s.ViewInfo.EntityType.Name, Context.View.Events.ProcessStateLoaded)), s.Process,
+                                    new RevolutionEntities.Process.StateEventInfo(s.Process, Context.EventFunctions.UpdateEventData(s.ViewInfo.EntityType.Name, Context.View.Events.ProcessStateLoaded)), s.Process,
                                     s.Source);
                             }),
 
@@ -181,13 +182,13 @@ namespace RevolutionData
                             key:$"{entityType.Name}-CurrentEntityChanged",
                             subject:v =>  v.CurrentEntity,//.WhenAnyValue(x => x.Value),
                             subjectPredicate:new List<Func<ISummaryListViewModel, bool>>{},
-                            messageData:s => new ViewEventPublicationParameter(new object[] {s.CurrentEntity.Value ?? DynamicEntity.NullEntity},new RevolutionEntities.Process.StateEventInfo(s.Process, Context.EventFunctions.UpdateEventStatus(s.ViewInfo.EntityType.Name,Context.View.Events.CurrentEntityChanged)),s.Process,s.Source)),
+                            messageData:s => new ViewEventPublicationParameter(new object[] {s.CurrentEntity.Value ?? DynamicEntity.NullEntity},new RevolutionEntities.Process.StateEventInfo(s.Process, Context.EventFunctions.UpdateEventData(s.ViewInfo.EntityType.Name,Context.ViewModel.Events.CurrentEntityChanged)),s.Process,s.Source)),
 
                         new ViewEventPublication<ISummaryListViewModel, IViewModelIntialized>(
                             key:$"{entityType.Name}-IViewModelIntialized",
                             subject:v => v.ViewModelState,
                             subjectPredicate:new List<Func<ISummaryListViewModel, bool>>{ v => v.ViewModelState.Value == ViewModelState.Intialized},
-                            messageData:v => new ViewEventPublicationParameter(new object[] {v},new RevolutionEntities.Process.StateEventInfo(v.Process, Context.EventFunctions.UpdateEventStatus(v.ViewInfo.EntityType.Name,Context.View.Events.Initialized)),v.Process,v.Source)),
+                            messageData:v => new ViewEventPublicationParameter(new object[] {v},new RevolutionEntities.Process.StateEventInfo(v.Process, Context.EventFunctions.UpdateEventData(v.ViewInfo.EntityType.Name,Context.ViewModel.Events.Initialized)),v.Process,v.Source)),
 
                     },
                     commands: cmdLst ,
@@ -231,7 +232,7 @@ namespace RevolutionData
                 (v, e) =>
                 {
                     v.ParentEntities.AddOrUpdate(e.Entity);
-                });
+                }, new RevolutionEntities.Process.StateEventInfo(process, RevolutionData.Context.EventFunctions.UpdateEventData(pEntity.Name, Context.ViewModel.Events.CurrentEntityChanged), Guid.NewGuid()));
         }
         private static List<IViewModelEventCommand<IViewModel, IEvent>> CreateParentEntityCommands(List<string> childProperty)
         {
@@ -281,13 +282,13 @@ namespace RevolutionData
 
         }
 
-        private static void ReloadEntitySet(ISummaryListViewModel v, IList<IDynamicEntity> e, IDynamicEntityType entityType)
-        {
-            v.EntitySet.Value.Clear();
-            v.EntitySet.Value.AddRange(e);
-            v.EntitySet.Value.Add(entityType.DefaultEntity());
-            v.EntitySet.Value.Reset();
-        }
+        //private static void ReloadEntitySet(ISummaryListViewModel v, IList<IDynamicEntity> e, IDynamicEntityType entityType)
+        //{
+        //    v.EntitySet.Value.Clear();
+        //    v.EntitySet.Value.AddRange(e);
+        //    v.EntitySet.Value.Add(entityType.DefaultEntity());
+        //    v.EntitySet.Value.Reset();
+        //}
 
        
     }

@@ -14,9 +14,9 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IAction:SystemInterfaces.IEntity  
 	{
-		string Name { get;}
-		string Description { get;}
 		string Body { get;}
+		string Description { get;}
+		string Name { get;}
 		string ParameterName { get;}
 
 

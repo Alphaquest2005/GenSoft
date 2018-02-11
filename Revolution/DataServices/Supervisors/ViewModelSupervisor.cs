@@ -23,7 +23,7 @@ namespace DataServices.Actors
         {
            HandleProcessViews(processViewModelInfos);
 
-            var stateCommandInfo = new RevolutionEntities.Process.StateCommandInfo(process, RevolutionData.Context.CommandFunctions.UpdateCommandStatus("shit can't think", RevolutionData.Context.Process.Commands.StartProcess), Guid.NewGuid());
+            var stateCommandInfo = new RevolutionEntities.Process.StateCommandInfo(process, RevolutionData.Context.CommandFunctions.UpdateCommandData("shit can't think", RevolutionData.Context.Process.Commands.StartProcess), Guid.NewGuid());
             EventMessageBus.Current.GetEvent<ILoadDomainProcessViewModels>(stateCommandInfo, Source)
                 .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == stateCommandInfo.EventKey)
                 .Subscribe(x => HandleProcessViews(x.ViewModelInfos));

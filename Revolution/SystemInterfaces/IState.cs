@@ -6,6 +6,9 @@
         string Name { get; }
         string Status { get; }
         string Notes { get; }
+
+        string Subject { get; }
+        string Data { get; }
     }
 
     

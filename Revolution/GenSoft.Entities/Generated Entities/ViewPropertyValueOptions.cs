@@ -13,8 +13,8 @@ namespace GenSoft.Entities
 {
 	public partial class ViewPropertyValueOptions: BaseEntity, IViewPropertyValueOptions
 	{
-		public virtual int ViewPropertyId { get; set; }
 		public virtual string Value { get; set; }
+		public virtual int ViewPropertyId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships

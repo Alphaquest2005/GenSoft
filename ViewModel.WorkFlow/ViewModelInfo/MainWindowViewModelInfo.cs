@@ -18,22 +18,22 @@ namespace RevolutionData
             new ViewInfo("MainWindowViewModel", "", ""),
             new List<IViewModelEventSubscription<IViewModel, IEvent>>
             {   new ViewEventSubscription<IMainWindowViewModel, IViewModelCreated<IScreenModel>>("MainWindowViewModel-ICurrentEntityChanged",Processes.IntialSystemProcess, e => e != null, new List<Func<IMainWindowViewModel, IViewModelCreated<IScreenModel>, bool>>
-            {
-                (s, e) => s.Process.Id == e.ViewModel.Process.Id 
-            }, (s, e) =>
-            {
-                if (Application.Current == null)
                 {
-                    s.ScreenModel.Value = e.ViewModel;
-                }
-                else
+                    (s, e) => s.Process.Id == e.ViewModel.Process.Id 
+                }, (s, e) =>
                 {
-                    Application.Current.Dispatcher.BeginInvoke(new Action(() =>
+                    if (Application.Current == null)
                     {
                         s.ScreenModel.Value = e.ViewModel;
-                    }));
-                }
-            })
+                    }
+                    else
+                    {
+                        Application.Current.Dispatcher.BeginInvoke(new Action(() =>
+                        {
+                            s.ScreenModel.Value = e.ViewModel;
+                        }));
+                    }
+                }, new StateEventInfo(Processes.IntialSystemProcess, Context.ViewModel.Events.ViewModelCreated, Guid.NewGuid()))
             },
             new List<IViewModelEventPublication<IViewModel, IEvent>>
             {

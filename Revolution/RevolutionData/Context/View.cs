@@ -9,18 +9,17 @@ namespace RevolutionData.Context
         {
            // public static IStateCommand CreateViewModel => new StateCommand("CreateViewModel","Create View Model", Events.ViewModelCreated);
 
-            public static IStateCommand ChangeEntity => new StateCommand("ChangeEntity", "Change Entity");
-            public static IStateCommand NavigateToView => new StateCommand("NavigateToView", "Navigate To View");
+            public static IStateCommand NavigateToView => new StateCommand("NavigateToView", "Navigate To View", "View", "Unknown");
+            public static IStateCommand ChangeVisibility => new StateCommand("ChangeVisibility", "Change View Visibility", "View", "Unknown");
         }
         public class Events
         {
-            public static IStateEvent ProcessStateLoaded => new StateEvent("ProcessStateLoaded", "Process State Loaded", "");
-            public static IStateEvent EntityChanged => new StateEvent("EntityChanged", "Entity Changed", "Changes from User Interface");
-            public static IStateEvent NavigatedToView => new StateEvent("NavigatedToView", "Navigated To View", "Navigated To View");
-            public static IStateEvent Initialized  => new StateEvent("Initialized", "View Initialized", "View Initialized");
-            public static IStateEvent CurrentEntityChanged => new StateEvent("CurrentEntityChanged", "View Current Entity Changed", "View Current Entity Changed");
+            public static IStateEvent ProcessStateLoaded => new StateEvent("ProcessStateLoaded", "Process State Loaded", "", "View", "Unknown");
+            public static IStateEvent NavigatedToView => new StateEvent("NavigatedToView", "Navigated To View", "Navigated To View", "View", "Unknown");
+            public static IStateEvent VisibilityChanged => new StateEvent("VisibilityChanged", "View Visibility Changed","", "View", "Unknown");
 
-            
+
+
         }
     }
 

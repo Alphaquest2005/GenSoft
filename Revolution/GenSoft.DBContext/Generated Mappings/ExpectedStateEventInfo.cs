@@ -18,13 +18,13 @@ namespace GenSoft.Mappings
 			entityBuilder.ToTable("ExpectedStateEventInfo", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").ValueGeneratedNever();	
-			entityBuilder.Property(t => t.Id).HasColumnName("Id").IsRequired();
 			entityBuilder.Property(t => t.ExpectedStateEventInfoId).HasColumnName("ExpectedStateEventInfoId").IsRequired();
+			entityBuilder.Property(t => t.Id).HasColumnName("Id").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
 	
 				//----------------Parent Properties
-				//entityBuilder.HasOne(p => p.StateCommandInfo StateCommandInfo).WithOne(p => p.ExpectedStateEventInfo).HasForeignKey<StateCommandInfo>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 				//entityBuilder.HasOne(p => p.StateEventInfo StateEventInfo).WithMany(p => p.ExpectedStateEventInfo).HasForeignKey(c => c.ExpectedStateEventInfoId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.StateCommandInfo StateCommandInfo).WithOne(p => p.ExpectedStateEventInfo).HasForeignKey<StateCommandInfo>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

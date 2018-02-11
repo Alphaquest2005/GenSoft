@@ -13,8 +13,8 @@ namespace GenSoft.Entities
 {
 	public partial class ActionPropertyParameter: BaseEntity, IActionPropertyParameter
 	{
-		public virtual int ActionPropertyId { get; set; }
 		public virtual int ActionParameterId { get; set; }
+		public virtual int ActionPropertyId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
@@ -22,8 +22,8 @@ namespace GenSoft.Entities
 				public virtual ICollection<ActionParameterEntityTypeAttributes> ActionParameterEntityTypeAttributes {get; set;}
 		
 			// ---------Parent Relationships
-				public virtual ActionProperties ActionProperties {get; set;}
 				public virtual ActionParameters ActionParameters {get; set;}
+				public virtual ActionProperties ActionProperties {get; set;}
 	
 
 	}

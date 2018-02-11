@@ -47,3 +47,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\bin\x64\Debug\System.Reacti
 C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\bin\x64\Debug\System.Reactive.Linq.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\bin\x64\Debug\System.Reactive.PlatformServices.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\bin\x64\Debug\System.Reactive.Windows.Threading.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\bin\x64\Debug\Newtonsoft.Json.dll

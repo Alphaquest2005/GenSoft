@@ -47,7 +47,7 @@ namespace DataServices.Actors
             //    .Subscribe(x => HandleComplexEventLog(x));
 
             Publish(new ServiceStarted<IProcessService>(this,
-                new StateEventInfo(Process,RevolutionData.Context.EventFunctions.UpdateEventStatus(ActorName,RevolutionData.Context.Actor.Events.ActorStarted)), Process, Source));
+                new StateEventInfo(Process,RevolutionData.Context.EventFunctions.UpdateEventData(ActorName,RevolutionData.Context.Actor.Events.ActorStarted)), Process, Source));
 
             EventMessageBus.Current.GetEvent<ICreateProcessActor>(msg.ProcessInfo,Source)
                 .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == msg.ProcessInfo.EventKey)
@@ -76,7 +76,7 @@ namespace DataServices.Actors
             
             StartActors(msg);
 
-            var processStateInfo = new StateCommandInfo(msg.Process, RevolutionData.Context.CommandFunctions.UpdateCommandStatus(ActorName, RevolutionData.Context.Process.Commands.StartProcess), Guid.NewGuid());
+            var processStateInfo = new StateCommandInfo(msg.Process, RevolutionData.Context.CommandFunctions.UpdateCommandData(ActorName, RevolutionData.Context.Process.Commands.StartProcess), Guid.NewGuid());
             EventMessageBus.Current.GetEvent<ILoadProcessComplexEvents>(processStateInfo, Source)
                 .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == processStateInfo.EventKey)
                 .Where(x => $"{x.Name}".GetSafeActorName() == ActorName)
@@ -160,7 +160,7 @@ namespace DataServices.Actors
             {
                 var inMsg = new CreateComplexEventService(new ComplexEventService(cp.Key, cp, Process, Source),
                     new StateCommandInfo(Process,
-                        RevolutionData.Context.CommandFunctions.UpdateCommandStatus(cp.Key,
+                        RevolutionData.Context.CommandFunctions.UpdateCommandData(cp.Key,
                             RevolutionData.Context.Actor.Commands.StartActor), Guid.NewGuid()), Process,
                     Source);
                 

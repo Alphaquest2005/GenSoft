@@ -309,3 +309,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\System.Reac
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\System.Linq.Dynamic.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\System.Linq.Dynamic.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Akka.xml
+C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Newtonsoft.Json.dll

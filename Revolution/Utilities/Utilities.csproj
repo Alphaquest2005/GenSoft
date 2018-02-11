@@ -78,6 +78,7 @@
   <ItemGroup>
     <Compile Include="BoxingSafeConverter.cs" />
     <Compile Include="ActorExtensions.cs" />
+    <Compile Include="JsonUtilities.cs" />
     <Compile Include="IEntityExtensions.cs" />
     <Compile Include="ListExtentions.cs" />
     <Compile Include="NullableExtensions.cs" />
@@ -105,6 +106,11 @@
       <Project>{e3842263-e081-49ba-a1b4-bbe82b24e2db}</Project>
       <Name>SystemInterfaces</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>10.0.3</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
