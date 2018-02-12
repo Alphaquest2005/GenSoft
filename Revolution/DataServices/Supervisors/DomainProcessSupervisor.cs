@@ -125,7 +125,7 @@ namespace DataServices.Actors
                     var mainEntities = parentEntityTypes.Where(z => !childEntityTypes.Any(q => q.Id == z.Id)).ToList();
                     mainEntities.AddRange(ctx.EntityType.Where(x => x.ApplicationId == CurrentApplication.Id && x.EntityTypeAttributes.All(z => !z.EntityRelationship.Any())));
 
-                    Task.Run(() => { IntializeProcess(systemProcess);}).ConfigureAwait(false);
+                    Task.Run(() => { InitializeProcess(systemProcess);}).ConfigureAwait(false);
 
                     foreach (var mainEntity in mainEntities.DistinctBy(x => x.Id))
                     {
@@ -247,7 +247,7 @@ namespace DataServices.Actors
             var systemProcess = GetSystemProcess(domainProcess, user);
 
            
-            Task.Run(() => { IntializeProcess(systemProcess); }).ConfigureAwait(false);
+            Task.Run(() => { InitializeProcess(systemProcess); }).ConfigureAwait(false);
 
             Parallel.ForEach(domainProcess.ProcessStep,
                 new ParallelOptions() {MaxDegreeOfParallelism = Processes.ThisMachineInfo.Processors},
@@ -313,7 +313,7 @@ namespace DataServices.Actors
                 
         }
 
-        private void IntializeProcess(SystemProcess systemProcess)
+        private void InitializeProcess(SystemProcess systemProcess)
         {
             PublishComplexEvent(systemProcess,Processes.ComplexActions.GetComplexAction("StartNextProcess", new object[] {systemProcess}));
             PublishComplexEvent(systemProcess,Processes.ComplexActions.GetComplexAction("ProcessStarted", new object[] {systemProcess}));
@@ -413,7 +413,7 @@ namespace DataServices.Actors
                     new SystemProcessInfo(maxProcessId, mainEntityChanged.Process, domainProcess.SystemProcess.Name,
                         domainProcess.SystemProcess.Description, domainProcess.SystemProcess.Symbol, mainEntityChanged.User.UserId), mainEntityChanged.User, mainEntityChanged.MachineInfo);
                 }
-                Task.Run(() => { IntializeProcess(systemProcess);}).ConfigureAwait(false);
+                Task.Run(() => { InitializeProcess(systemProcess);}).ConfigureAwait(false);
                 Task.Run(() =>
                 {
                     foreach (var viewModel in GetDBViewInfos(entityType.Id, false, systemProcess))
@@ -901,10 +901,10 @@ namespace DataServices.Actors
                         DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType);
                         
 
-                    yield return Processes.ComplexActions.GetComplexAction("IntializeProcessStateList",new object[]{ process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType)});
+                    yield return Processes.ComplexActions.GetComplexAction("InitializeProcessStateList",new object[]{ process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType)});
                         yield return Processes.ComplexActions.GetComplexAction("UpdateStateList",new object[] {process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType)});
-                        yield return Processes.ComplexActions.GetComplexAction("UpdateState",new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType) });
-                        yield return Processes.ComplexActions.GetComplexAction("RequestState",new object[] { process, parentType, parentType, "Id" });
+                        //yield return Processes.ComplexActions.GetComplexAction("UpdateState",new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType) });
+                        //yield return Processes.ComplexActions.GetComplexAction("RequestState",new object[] { process, parentType, parentType, "Id" });
 
                         var entityRelationships = r.DistinctBy(x => x.Id);
                         foreach (var rel in entityRelationships)
@@ -931,20 +931,17 @@ namespace DataServices.Actors
 
                             if (rel.RelationshipType.ChildOrdinalitys.Name == "One")
                             {
-                                yield return Processes.ComplexActions.GetComplexAction("UpdateState",
-                                    new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(childType) });
+                                //yield return Processes.ComplexActions.GetComplexAction("UpdateState",
+                                //    new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(childType) });
 
-                                yield return Processes.ComplexActions.GetComplexAction("RequestState",
-                                    new object[] { process, parentType, childType, childExpression });
+                                //yield return Processes.ComplexActions.GetComplexAction("RequestState",
+                                //    new object[] { process, parentType, childType, childExpression });
                             }
                             else
                             {
 
-                            //res.Add(Processes.ComplexActions.GetComplexAction("IntializeProcessState",
-                            //    new object[]
-                            //        {processId, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(childType]}));
-                                yield return Processes.ComplexActions.GetComplexAction("UpdateStateList",
-                                    new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(childType) });
+                            
+                                yield return Processes.ComplexActions.GetComplexAction("UpdateStateList",new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(childType) });
 
                                 yield return Processes.ComplexActions.GetComplexAction("RequestStateList",new object[]{process, parentType, childType, parentExpression, childExpression});
                             }
@@ -964,14 +961,14 @@ namespace DataServices.Actors
                         var mainEntityType = mainEntity.Type.Name;
                         DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(mainEntityType);
 
-                        yield return Processes.ComplexActions.GetComplexAction("IntializeProcessState",
-                            new object[]
-                                {process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(mainEntityType)});
-                        yield return Processes.ComplexActions.GetComplexAction("UpdateState",
-                            new object[]
-                                {process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(mainEntityType)});
-                        yield return Processes.ComplexActions.GetComplexAction("RequestState",
-                            new object[] {process, mainEntityType, mainEntityType, "Id"});
+                        //yield return Processes.ComplexActions.GetComplexAction("InitializeProcessState",
+                        //    new object[]
+                        //        {process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(mainEntityType)});
+                        //yield return Processes.ComplexActions.GetComplexAction("UpdateState",
+                        //    new object[]
+                        //        {process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(mainEntityType)});
+                        //yield return Processes.ComplexActions.GetComplexAction("RequestState",
+                        //    new object[] {process, mainEntityType, mainEntityType, "Id"});
                         yield break;
                     }
 
@@ -982,14 +979,11 @@ namespace DataServices.Actors
                     if (soleEntity != null)
                     {
                   
-                   yield return Processes.ComplexActions.GetComplexAction("IntializeProcessStateList", new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(soleEntity.Type.Name) });
+                   yield return Processes.ComplexActions.GetComplexAction("InitializeProcessStateList", new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(soleEntity.Type.Name) });
                         yield return Processes.ComplexActions.GetComplexAction("UpdateStateList", new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(soleEntity.Type.Name) });
 
-                    yield return Processes.ComplexActions.GetComplexAction("UpdateState",
-                            new object[]
-                                {process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(soleEntity.Type.Name)});
-                        yield return Processes.ComplexActions.GetComplexAction("RequestState",
-                            new object[] { process, soleEntity.Type.Name, soleEntity.Type.Name, "Id" });
+                    //yield return Processes.ComplexActions.GetComplexAction("UpdateState",new object[]{process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(soleEntity.Type.Name)});
+                    //    yield return Processes.ComplexActions.GetComplexAction("RequestState",new object[] { process, soleEntity.Type.Name, soleEntity.Type.Name, "Id" });
 
                        
                 }

@@ -160,51 +160,52 @@ namespace Process.WorkFlow
                     actionTrigger: ActionTrigger.Any);
             }
 
-            //public static ComplexEventAction IntializePulledProcessState(ISystemProcess process, string entityName,Type type)
+            //public static ComplexEventAction InitializePulledProcessState(ISystemProcess process, string entityName,Type type)
             //{
-            //    return (ComplexEventAction)typeof(ComplexActions).GetMethod("IntializePulledProcessState").MakeGenericMethod(type).Invoke(null, new object[] {process, entityName});
+            //    return (ComplexEventAction)typeof(ComplexActions).GetMethod("InitializePulledProcessState").MakeGenericMethod(type).Invoke(null, new object[] {process, entityName});
             //}
-            public static ComplexEventAction IntializeProcessStateList(ISystemProcess process, IDynamicEntityType entityType)
+            public static ComplexEventAction InitializeProcessStateList(ISystemProcess process, IDynamicEntityType entityType)
             {
                 return new ComplexEventAction(
 
-                    key: $"InitalizeProcessState-{entityType.Name}",
+                    key: $"InitializeProcessStateList-{entityType.Name}",
                     process: process,
                     actionTrigger: ActionTrigger.Any,
                     events: new List<IProcessExpectedEvent>
                     {
-                        new ProcessExpectedEvent(key: "ViewModelIntialized",
+                        new ProcessExpectedEvent(key: "ViewModelInitialized",
                             process: process,
-                            eventPredicate: e => e != null && e.Process == process && ((IEntityViewInfo)((IViewModelIntialized)e)?.ViewModel.ViewInfo)?.EntityType == entityType  ,
-                            eventType: typeof (IViewModelIntialized),
+                            eventPredicate: e => e != null && e.Process == process && ((IEntityViewInfo)((IViewModelInitialized)e)?.ViewModel.ViewInfo)?.EntityType == entityType  ,
+                            eventType: typeof (IViewModelInitialized),
                             processInfo: new StateEventInfo(process, EventFunctions.UpdateEventData(entityType.Name, RevolutionData.Context.ViewModel.Events.Initialized), Guid.NewGuid()),
                             expectedSourceType: new SourceType(typeof (IComplexEventService))),
                         
                     },
                     expectedMessageType: typeof (IProcessStateMessage),
-                    action: ProcessActions.IntializeProcessStateList(entityType),
+                    action: ProcessActions.InitializeProcessStateList(entityType),
                     processInfo: new StateCommandInfo(process, CommandFunctions.UpdateCommandData(entityType.Name, RevolutionData.Context.Entity.Commands.InitializeState)));
             }
 
-            public static ComplexEventAction IntializeProcessState(ISystemProcess process, IDynamicEntityType entityType)
+            public static ComplexEventAction InitializeProcessState(ISystemProcess process, IDynamicEntityType entityType)
             {
+                return new ComplexEventAction();
                 return new ComplexEventAction(
 
-                    key: $"InitalizeProcessState-{entityType.Name}",
+                    key: $"InitializeProcessState-{entityType.Name}",
                     process: process,
                     actionTrigger: ActionTrigger.Any,
                     events: new List<IProcessExpectedEvent>
                     {
-                        new ProcessExpectedEvent(key: "ViewModelIntialized",
+                        new ProcessExpectedEvent(key: "ViewModelInitialized-ps",
                             process: process,
-                            eventPredicate: e => e != null && e.Process == process && ((IEntityViewInfo)((IViewModelIntialized)e)?.ViewModel.ViewInfo)?.EntityType == entityType  ,
-                            eventType: typeof (IViewModelIntialized),
+                            eventPredicate: e => e != null && e.Process == process && ((IEntityViewInfo)((IViewModelInitialized)e)?.ViewModel.ViewInfo)?.EntityType == entityType  ,
+                            eventType: typeof (IViewModelInitialized),
                             processInfo: new StateEventInfo(process, EventFunctions.UpdateEventData(entityType.Name, RevolutionData.Context.ViewModel.Events.Initialized), Guid.NewGuid()),
                             expectedSourceType: new SourceType(typeof (IComplexEventService))),
 
                     },
                     expectedMessageType: typeof(IProcessStateMessage),
-                    action: ProcessActions.IntializeProcessState(entityType),
+                    action: ProcessActions.InitializeProcessState(entityType),
                     processInfo: new StateCommandInfo(process, CommandFunctions.UpdateCommandData(entityType.Name,RevolutionData.Context.Entity.Commands.InitializeState)));
             }
 

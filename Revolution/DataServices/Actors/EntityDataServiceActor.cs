@@ -18,7 +18,7 @@ namespace DataServices.Actors
        
       
         
-        public EntityDataServiceActor(ICreateEntityService msg, IDynamicEntityType entityType, IProcessSystemMessage firstMessage) : base(msg.Process)
+        public EntityDataServiceActor(ICreateEntityService msg, IDynamicEntityType entityType, IProcessSystemMessage firstMessage) : base(msg.ActorId,msg.Process)
         {
             Action = (Action<ISystemSource,TService>)msg.Action;
             if(firstMessage is TService service) HandledEvent(service);

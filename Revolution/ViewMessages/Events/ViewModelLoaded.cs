@@ -24,13 +24,13 @@ namespace ViewMessages
 
     }
 
-    [Export(typeof(IViewModelIntialized))]
-    public class ViewModelIntialized : ProcessSystemMessage, IViewModelIntialized
+    [Export(typeof(IViewModelInitialized))]
+    public class ViewModelInitialized : ProcessSystemMessage, IViewModelInitialized
     {
         //occurs when viewmodel loaded in View
-        public ViewModelIntialized() { }
-        public ViewModelIntialized(IViewModel viewModel, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) 
-            : base(new DynamicObject("ViewModelIntialized", new Dictionary<string, object>() { { "ViewModel", viewModel } }), processInfo, process, source)
+        public ViewModelInitialized() { }
+        public ViewModelInitialized(IViewModel viewModel, IStateEventInfo processInfo, ISystemProcess process, ISystemSource source) 
+            : base(new DynamicObject("ViewModelInitialized", new Dictionary<string, object>() { { "ViewModel", viewModel } }), processInfo, process, source)
         {
             ViewModel = viewModel;
         }

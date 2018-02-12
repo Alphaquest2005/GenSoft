@@ -38,7 +38,6 @@ C:\Prism\GitRepositiory\MRManager\DesignTimeData\obj\x64\Debug\DesignTimeData.dl
 C:\Prism\GitRepositiory\MRManager\DesignTimeData\obj\x64\Debug\DesignTimeData.pdb
 C:\Prism\GitRepositiory\GenSoft\DesignTimeData\bin\x64\Debug\DesignTimeData.dll
 C:\Prism\GitRepositiory\GenSoft\DesignTimeData\bin\x64\Debug\DesignTimeData.pdb
+C:\Prism\GitRepositiory\GenSoft\DesignTimeData\obj\x64\Debug\DesignTimeData.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\DesignTimeData\obj\x64\Debug\DesignTimeData.dll
 C:\Prism\GitRepositiory\GenSoft\DesignTimeData\obj\x64\Debug\DesignTimeData.pdb
-C:\Prism\GitRepositiory\GenSoft\DesignTimeData\obj\x64\Debug\DesignTimeData.csproj.CoreCompileInputs.cache
-C:\Prism\GitRepositiory\GenSoft\DesignTimeData\obj\x64\Debug\DesignTimeData.csprojResolveAssemblyReference.cache

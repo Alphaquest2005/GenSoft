@@ -184,10 +184,10 @@ namespace RevolutionData
                             subjectPredicate:new List<Func<ISummaryListViewModel, bool>>{},
                             messageData:s => new ViewEventPublicationParameter(new object[] {s.CurrentEntity.Value ?? DynamicEntity.NullEntity},new RevolutionEntities.Process.StateEventInfo(s.Process, Context.EventFunctions.UpdateEventData(s.ViewInfo.EntityType.Name,Context.ViewModel.Events.CurrentEntityChanged)),s.Process,s.Source)),
 
-                        new ViewEventPublication<ISummaryListViewModel, IViewModelIntialized>(
-                            key:$"{entityType.Name}-IViewModelIntialized",
+                        new ViewEventPublication<ISummaryListViewModel, IViewModelInitialized>(
+                            key:$"{entityType.Name}-IViewModelInitialized",
                             subject:v => v.ViewModelState,
-                            subjectPredicate:new List<Func<ISummaryListViewModel, bool>>{ v => v.ViewModelState.Value == ViewModelState.Intialized},
+                            subjectPredicate:new List<Func<ISummaryListViewModel, bool>>{ v => v.ViewModelState.Value == ViewModelState.Initialized},
                             messageData:v => new ViewEventPublicationParameter(new object[] {v},new RevolutionEntities.Process.StateEventInfo(v.Process, Context.EventFunctions.UpdateEventData(v.ViewInfo.EntityType.Name,Context.ViewModel.Events.Initialized)),v.Process,v.Source)),
 
                     },

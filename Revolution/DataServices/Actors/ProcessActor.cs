@@ -30,12 +30,9 @@ namespace DataServices.Actors
         //public ConcurrentDictionary<Type, IProcessStateMessage> ProcessStateMessages { get; } = new ConcurrentDictionary<Type, IProcessStateMessage>();
 
        
-
-        private string ActorName = null;
-
-        public ProcessActor(ICreateProcessActor msg) : base(msg.Process)
+        public ProcessActor(ICreateProcessActor msg) : base(msg.ActorId, msg.Process)
         {
-            ActorName = msg.ActorName;
+            
             
           
             //EventMessageBus.Current.GetEvent<IRequestProcessLog>(Source)
@@ -47,12 +44,12 @@ namespace DataServices.Actors
             //    .Subscribe(x => HandleComplexEventLog(x));
 
             Publish(new ServiceStarted<IProcessService>(this,
-                new StateEventInfo(Process,RevolutionData.Context.EventFunctions.UpdateEventData(ActorName,RevolutionData.Context.Actor.Events.ActorStarted)), Process, Source));
+                new StateEventInfo(Process,RevolutionData.Context.EventFunctions.UpdateEventData(ActorId,RevolutionData.Context.Actor.Events.ActorStarted)), Process, Source));
 
             EventMessageBus.Current.GetEvent<ICreateProcessActor>(msg.ProcessInfo,Source)
                 .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == msg.ProcessInfo.EventKey)
                 .Where(x => x.Process.Id == msg.Process.Id)
-                .Where(x => x.ActorName == this.ActorName).Subscribe(x => UpdateActor(x));
+                .Where(x => x.ActorId == this.ActorId).Subscribe(x => UpdateActor(x));
 
             var stateCommandInfo = new StateCommandInfo(msg.Process, RevolutionData.Context.Process.Commands.CleanUpProcess, Guid.NewGuid());
             EventMessageBus.Current.GetEvent<ICleanUpSystemProcess>( stateCommandInfo, Source)
@@ -76,10 +73,10 @@ namespace DataServices.Actors
             
             StartActors(msg);
 
-            var processStateInfo = new StateCommandInfo(msg.Process, RevolutionData.Context.CommandFunctions.UpdateCommandData(ActorName, RevolutionData.Context.Process.Commands.StartProcess), Guid.NewGuid());
+            var processStateInfo = new StateCommandInfo(msg.Process, RevolutionData.Context.CommandFunctions.UpdateCommandData(ActorId, RevolutionData.Context.Process.Commands.StartProcess), Guid.NewGuid());
             EventMessageBus.Current.GetEvent<ILoadProcessComplexEvents>(processStateInfo, Source)
                 .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == processStateInfo.EventKey)
-                .Where(x => $"{x.Name}".GetSafeActorName() == ActorName)
+                .Where(x => $"{x.Name}".GetSafeActorName() == ActorId)
                 .Subscribe(x => HandleDomainProcess(x));
 
         }

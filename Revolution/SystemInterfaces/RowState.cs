@@ -8,7 +8,7 @@
 
     public enum ViewModelState
     {
-       Intialized, NotIntialized
+       Initialized, NotInitialized
     }
 
     

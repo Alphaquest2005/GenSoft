@@ -20,7 +20,7 @@ namespace ActorBackBone
         
 
 
-        public void Intialize(bool autoRun, List<IMachineInfo> machineInfo, 
+        public void Initialize(bool autoRun, List<IMachineInfo> machineInfo, 
             List<IComplexEventAction> complexEventActions, List<IViewModelInfo> viewInfos)
         {
             try
@@ -34,7 +34,7 @@ namespace ActorBackBone
         }
 
       
-        public void Intialize(bool autoContinue, List<IViewModelInfo> viewInfos)
+        public void Initialize(bool autoContinue, List<IViewModelInfo> viewInfos)
         {
             using (var ctx = new GenSoftDBContext())
             {
@@ -43,19 +43,19 @@ namespace ActorBackBone
                 
                 List<IComplexEventAction> dbComplexAction = new List<IComplexEventAction>(); 
 
-                Intialize(autoContinue, machineInfo, dbComplexAction, viewInfos);
+                Initialize(autoContinue, machineInfo, dbComplexAction, viewInfos);
             }
 
             
         }
 
-        public void Intialize(bool autoContinue, List<IComplexEventAction> processComplexEvents, List<IViewModelInfo> processViewModelInfos)
+        public void Initialize(bool autoContinue, List<IComplexEventAction> processComplexEvents, List<IViewModelInfo> processViewModelInfos)
         {
             using (var ctx = new GenSoftDBContext())
             {
                 var machineInfo = ctx.Machine.Select(x => ProcessExpressions.CreateMachineInfo(x)).ToList();
 
-                Intialize(autoContinue, machineInfo, processComplexEvents, processViewModelInfos);
+                Initialize(autoContinue, machineInfo, processComplexEvents, processViewModelInfos);
             }
         }
 

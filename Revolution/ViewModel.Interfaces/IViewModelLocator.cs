@@ -3,7 +3,7 @@
     
     public interface IViewModelLocator
     {
-        void Intialize();
+        void Initialize();
 
     }
 }

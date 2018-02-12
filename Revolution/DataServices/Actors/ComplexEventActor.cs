@@ -21,7 +21,7 @@ namespace DataServices.Actors
 
     public class ComplexEventActor : BaseActor<ComplexEventActor>, IComplexEventService
     {
-        public ComplexEventActor(ICreateComplexEventService msg) : base(msg.Process)
+        public ComplexEventActor(ICreateComplexEventService msg) : base(msg.ComplexEventService.ActorId,msg.Process)
         {
             try
             {
@@ -29,7 +29,7 @@ namespace DataServices.Actors
 
                 ComplexEventAction = msg.ComplexEventService.ComplexEventAction;
                 //Process = msg.ComplexEventService.Process;
-                ActorId = msg.ComplexEventService.ActorId;
+                
                 foreach (var e in msg.ComplexEventService.ComplexEventAction.Events)
                 {
                     this.GetType().GetMethod("WireEvents").MakeGenericMethod(e.EventType)
@@ -98,38 +98,45 @@ namespace DataServices.Actors
             EventMessageBus.Current.GetEvent<TEvent>(expectedEvent.ProcessInfo, Source)
                 .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == expectedEvent.ProcessInfo.EventKey)
                 .Where(x => x.Process.Id == Process.Id)
-                .Where(x => x.GetType().GetInterfaces().Any(z => z == expectedEvent.EventType)).Subscribe(async x => await CheckEvent(expectedEvent, x).ConfigureAwait(false));
+                //.Where(x => x.GetType().GetInterfaces().Any(z => z == expectedEvent.EventType))
+                .Subscribe( x => CheckEvent(expectedEvent, x));
         }
 
-        private async Task CheckEvent(IProcessExpectedEvent expectedEvent, IProcessSystemMessage message)
+        private void CheckEvent(IProcessExpectedEvent expectedEvent, IProcessSystemMessage message)
         {
             //todo: good implimentation of Railway pattern chain execution with error handling
             if (!expectedEvent.EventPredicate.Invoke(message)) return;
             expectedEvent.Validate(message);
             InMessages.AddOrUpdate(expectedEvent.Key, message, (k, v) => message);
             if (ComplexEventAction.ActionTrigger != ActionTrigger.Any && InMessages.Count() != ComplexEventAction.Events?.Count) return;
-            await ExecuteAction(InMessages.ToImmutableDictionary(x => x.Key, x => x.Value.Message)).ConfigureAwait(false);
 
-            if (ComplexEventAction.ActionTrigger == ActionTrigger.All)
-            {
+           
+                ExecuteAction(InMessages.ToImmutableDictionary(x => x.Key, x => x.Value.Message));
+           
+
+            //if (ComplexEventAction.ActionTrigger == ActionTrigger.All)
+            //{
                 InMessages.Clear();
-            }
-            else
-            {
-                IProcessSystemMessage msg;
-                InMessages.TryRemove(expectedEvent.Key, out msg);
-            }
+            //}
+            //else
+            //{
+            //    IProcessSystemMessage msg;
+            //    InMessages.TryRemove(expectedEvent.Key, out msg);
+            //}
 
         }
 
-        private async Task ExecuteAction(ImmutableDictionary<string, IDynamicObject> msgs)
+        private void ExecuteAction(ImmutableDictionary<string, IDynamicObject> msgs)
         {
             // if (!ComplexEventAction.Events.All(z => z.Raised())) return;
-            if (ComplexEventAction.Action == null) return;
-            var inMsg = new ExecuteComplexEventAction(ComplexEventAction.Action, new DynamicComplexEventParameters(this,  msgs), new StateCommandInfo(Process, RevolutionData.Context.CommandFunctions.UpdateCommandData(ComplexEventAction.Key, RevolutionData.Context.Actor.Commands.CreateAction)), Process, Source);
-
-            Publish(inMsg);
-            var outMsg = await ComplexEventAction.Action.Action(inMsg.ComplexEventParameters).ConfigureAwait(false);
+            
+            var inMsg = new ExecuteComplexEventAction(ComplexEventAction.Action,
+                new DynamicComplexEventParameters(this, msgs),
+                new StateCommandInfo(Process,
+                    RevolutionData.Context.CommandFunctions.UpdateCommandData(ComplexEventAction.Key,
+                        RevolutionData.Context.Actor.Commands.CreateAction)), Process, Source);
+            
+            var outMsg = ComplexEventAction.Action.Action(inMsg.ComplexEventParameters).Result;
             try
             {
                 Publish(outMsg);
@@ -140,10 +147,12 @@ namespace DataServices.Actors
                 PublishProcesError(inMsg, ex, ComplexEventAction.ExpectedMessageType);
             }
 
+            Publish(inMsg);
+
         }
 
 
-        public string ActorId { get; }
+
         public IComplexEventAction ComplexEventAction { get; private set; }
         //public ISystemProcess Process { get; }
         private readonly ConcurrentDictionary<string, IProcessSystemMessage> InMessages = new ConcurrentDictionary<string, IProcessSystemMessage>();

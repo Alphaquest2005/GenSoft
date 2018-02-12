@@ -9,6 +9,7 @@ using EventMessages.Events;
 using RevolutionEntities.Process;
 using ViewMessages;
 using ViewModel.Interfaces;
+using ViewModelInterfaces;
 
 namespace DataServices.Actors
 {
@@ -16,7 +17,7 @@ namespace DataServices.Actors
     {
         
 
-        public ViewModelActor(ILoadViewModel msg,ISystemProcess process) : base(process)
+        public ViewModelActor(ILoadViewModel msg,ISystemProcess process) : base(msg.ViewModelInfo.Key,process)
         {
             HandleProcessViews(msg);
         }
@@ -38,14 +39,26 @@ namespace DataServices.Actors
                 var process = vmInfo.Process;
                 var viewInfo = vmInfo.ViewModelInfo;
                 var vm = CreateViewModel<TViewModel>(process, viewInfo);
-                EventMessageBus.Current.Publish(
-                    new ViewModelCreated<TViewModel>(vm,
-                        new StateEventInfo(vmInfo.Process, RevolutionData.Context.EventFunctions.UpdateEventData( vm.ViewInfo.Name, RevolutionData.Context.ViewModel.Events.ViewModelCreated)),
-                        vmInfo.Process, Source), Source);
+
+                if (vm is IEntityViewModel)
+                {
+                    // this is not the same event THIS IS IVIEWMODEL
                 EventMessageBus.Current.Publish(
                     new ViewModelCreated<IViewModel>(vm,
                         new StateEventInfo(vmInfo.Process, RevolutionData.Context.EventFunctions.UpdateEventData(vm.ViewInfo.Name, RevolutionData.Context.ViewModel.Events.ViewModelCreated)),
                         vmInfo.Process, Source), Source);
+                }
+                else
+                {
+                    // this is not the same event THIS IS TVIEWMODEL
+                    EventMessageBus.Current.Publish(
+                        new ViewModelCreated<TViewModel>(vm,
+                            new StateEventInfo(vmInfo.Process, RevolutionData.Context.EventFunctions.UpdateEventData(vm.ViewInfo.Name, RevolutionData.Context.ViewModel.Events.ViewModelCreated)),
+                            vmInfo.Process, Source), Source);
+                }
+               
+
+                
             }
             catch (Exception ex)
             {

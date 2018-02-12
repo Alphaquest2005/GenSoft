@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using SystemInterfaces;
-using Akka.Util.Internal;
 using Common;
 using Common.DataEntites;
 using DynamicExpresso;
@@ -110,7 +109,7 @@ namespace DomainUtilities
 
 
 
-                    DynamicEntityTypes.AddOrSet(entityType, dynamicEntityType);
+                    DynamicEntityTypes.AddOrUpdate(entityType, dynamicEntityType);
                     return DynamicEntityTypes[entityType];
                 }
                 catch (Exception)
@@ -418,7 +417,7 @@ namespace DomainUtilities
                     for (int j = 0; j < pconst.Count(); j++)
                     {
                         var c = pconst[j];
-                        paramlst.AddOrSet($"const{j}", $"\"{c.Value}\"");
+                        paramlst.AddOrUpdate($"const{j}", $"\"{c.Value}\"");
                     }
 
                     var pEntityParameters =
@@ -431,7 +430,7 @@ namespace DomainUtilities
                             .FirstOrDefault(x => x.CalculatedPropertyParameterId == param.Id)
                             ?.EntityTypeAttributes.Attributes.Name;
 
-                        if (cparameter != null) paramlst.AddOrSet($"param{j}", $"\"{cparameter}\"");
+                        if (cparameter != null) paramlst.AddOrUpdate($"param{j}", $"\"{cparameter}\"");
                     }
                 }
             }

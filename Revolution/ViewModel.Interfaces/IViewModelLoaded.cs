@@ -9,7 +9,7 @@ namespace ViewModel.Interfaces
         TViewModel ViewModel { get; }
     }
 
-    public interface IViewModelIntialized : IProcessSystemMessage, IViewModelEvent<IViewModel>
+    public interface IViewModelInitialized : IProcessSystemMessage, IViewModelEvent<IViewModel>
     {
         IViewModel ViewModel { get; }
     }

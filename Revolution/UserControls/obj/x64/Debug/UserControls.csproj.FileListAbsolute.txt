@@ -15,7 +15,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\UserControls\obj\x64\Debug\UserContro
 C:\Prism\GitRepositiory\GenSoft\Revolution\UserControls\obj\x64\Debug\UserControls_MarkupCompile.lref
 C:\Prism\GitRepositiory\GenSoft\Revolution\UserControls\obj\x64\Debug\ImageViewer.baml
 C:\Prism\GitRepositiory\GenSoft\Revolution\UserControls\obj\x64\Debug\UserControls.g.resources
+C:\Prism\GitRepositiory\GenSoft\Revolution\UserControls\obj\x64\Debug\UserControls.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\UserControls\obj\x64\Debug\UserControls.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\UserControls\obj\x64\Debug\UserControls.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\UserControls\obj\x64\Debug\UserControls.csproj.CoreCompileInputs.cache
-C:\Prism\GitRepositiory\GenSoft\Revolution\UserControls\obj\x64\Debug\UserControls.csprojResolveAssemblyReference.cache

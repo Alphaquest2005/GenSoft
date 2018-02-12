@@ -24,7 +24,7 @@ namespace Core.Common.UI
         public static void WireEvents(this IViewModel viewModel)
         {
             if (LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
-            viewModel.ViewModelState.Value = ViewModelState.NotIntialized;
+            viewModel.ViewModelState.Value = ViewModelState.NotInitialized;
 
 
             foreach (var itm in viewModel.CommandInfo)
@@ -76,7 +76,7 @@ namespace Core.Common.UI
                     .Subscribe<dynamic>(publishMessage);
             }
 
-            viewModel.ViewModelState.Value = ViewModelState.Intialized;
+            viewModel.ViewModelState.Value = ViewModelState.Initialized;
            
 
 

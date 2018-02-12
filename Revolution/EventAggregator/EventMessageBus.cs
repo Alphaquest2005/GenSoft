@@ -3,6 +3,7 @@ using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Diagnostics.Contracts;
 using System.Linq;
+using System.Reactive.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using SystemInterfaces;
@@ -35,13 +36,13 @@ namespace EventAggregator
         {
             Contract.Requires(caller != null && processInfo != null);
             
-            var ge = ea.GetEvent<TEvent>();
+             var ge = ea.GetEvent<TEvent>();
 
             Task.Run(() =>
             {
                 var er = typeof(TEvent) as IEntityRequest;
                 Logger.Log(LoggingLevel.Info,
-                    $"Caller:{caller.SourceName} | GetEvent : {typeof(TEvent).GetFriendlyName()}|ProcessInfo:Status-{processInfo.State.Status}|ProcessInfo:SubjectData{processInfo.State.Subject}-{processInfo.State.Data}| ProcessId-{caller.Process?.Id} || EntityType-{(er != null ? er.EntityType.Name : "")}");
+                    $"Caller:{caller.SourceName} | GetEvent : {typeof(TEvent).GetFriendlyName()}|ProcessInfo:Status-{processInfo.State.Status}|ProcessInfo:SubjectData{processInfo.State.Subject}-{processInfo.State.Data}| ProcessId-{caller.Process?.Id} ||Key: {processInfo.EventKey}");
             }).ConfigureAwait(false);
             
             var key = $"{typeof(TEvent).GetFriendlyName()}-{processInfo.State.Subject}-{processInfo.State.Data}-{caller.Process.Id}";
@@ -49,8 +50,7 @@ namespace EventAggregator
              Task.Run(() =>
              {
                  if (processInfo.EventKey == Guid.Empty) Debugger.Break();
-                 Task.Delay(500);
-                _publishEventStore.TryGetValue("Pub-" + key, out dynamic actualEvent);
+                 _publishEventStore.TryGetValue("Pub-" + key, out dynamic actualEvent);
 
                  if (actualEvent != null)
                  {
@@ -61,8 +61,9 @@ namespace EventAggregator
                      
 
                      actualEvent.ProcessInfo.EventKey = processInfo.EventKey;
-                     Publish(actualEvent, Source);
-
+                     Task.Delay(1000).ContinueWith((t) => { EventMessageBus.Current.Publish(actualEvent, Source); }).ConfigureAwait(false);  
+                    
+                    
                  }
 
              }).ConfigureAwait(false);
@@ -71,9 +72,9 @@ namespace EventAggregator
             {
                 _getEventStore.AddOrUpdate("Get-" + key, null);
             }).ConfigureAwait(false);
-            
-            
+
             return ge;
+
         }
         
 
@@ -87,7 +88,7 @@ namespace EventAggregator
                 Task.Run(() =>
                 {
                     Logger.Log(LoggingLevel.Info,
-                        $"Sender:{sender.SourceName} | PublishEvent : {typeof(TEvent).GetFriendlyName()}| ProcessInfo:Status-{sampleEvent?.ProcessInfo?.State?.Status}|ProcessInfo:SubjectData{sampleEvent?.ProcessInfo?.State.Subject}-{sampleEvent?.ProcessInfo?.State.Data}| ProcessId-{sampleEvent.Process.Id} || EntityType-{(sampleEvent is IEntityRequest er ? er.EntityType.Name : "")}");
+                        $"Sender:{sender.SourceName} | PublishEvent : {typeof(TEvent).GetFriendlyName()}| ProcessInfo:Status-{sampleEvent?.ProcessInfo?.State?.Status}|ProcessInfo:SubjectData{sampleEvent?.ProcessInfo?.State.Subject}-{sampleEvent?.ProcessInfo?.State.Data}| ProcessId-{sampleEvent.Process.Id} ||Key:{sampleEvent.ProcessInfo.EventKey}");
                 });
                 Task.Run(() =>
                 {

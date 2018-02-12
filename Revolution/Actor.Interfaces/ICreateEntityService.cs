@@ -8,5 +8,7 @@ namespace Actor.Interfaces
     {
         Type ActorType { get; }
         object Action { get; }
+
+        string ActorId { get; }
     }
 }

@@ -17,10 +17,10 @@ namespace EventMessages.Commands
             :base(new DynamicObject("CreateProcessActor", new Dictionary<string, object>() { { "ActorName", actorName }, { "ComplexEvents", complexEvents } }), processInfo,process, source)
         {
             ComplexEvents = complexEvents;
-            ActorName = actorName;
+            ActorId = actorName;
         }
 
-        public string ActorName { get; }
+        public string ActorId { get; }
         public IReadOnlyList<IComplexEventAction> ComplexEvents { get; }
     }
 }

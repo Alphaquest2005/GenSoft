@@ -47,7 +47,7 @@ namespace BootStrapper
 
 
                 var x = Container.GetExport<IActorBackBone>().Value;
-                x.Intialize(autoContinue, processComplexEvents, processViewModelInfos);
+                x.Initialize(autoContinue, processComplexEvents, processViewModelInfos);
 
             }
             catch (Exception)

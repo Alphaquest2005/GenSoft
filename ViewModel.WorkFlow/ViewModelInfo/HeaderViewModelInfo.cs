@@ -27,11 +27,11 @@ namespace RevolutionData
                 new ViewInfo("HeaderViewModel", "", ""),
                 new List<IViewModelEventSubscription<IViewModel, IEvent>>
                 {
-                    new ViewEventSubscription<IHeaderViewModel, IViewModelIntialized>(
-                        $"HeaderViewModel-IViewModelIntialized",
+                    new ViewEventSubscription<IHeaderViewModel, IViewModelInitialized>(
+                        $"HeaderViewModel-IViewModelInitialized",
                         Processes.IntialSystemProcess,
                         e => e != null && e.ViewModel.ViewInfo.Name == "HeaderViewModel",
-                        new List<Func<IHeaderViewModel, IViewModelIntialized, bool>>(),
+                        new List<Func<IHeaderViewModel, IViewModelInitialized, bool>>(),
                         (v,e) =>
                         {
                             var entityType = DynamicEntityTypeExtensions.GetOrAddDynamicEntityType("Application");
@@ -57,10 +57,10 @@ namespace RevolutionData
                 },
                 new List<IViewModelEventPublication<IViewModel, IEvent>>
                 {
-                    new ViewEventPublication<IHeaderViewModel, IViewModelIntialized>(
-                        key:$"HeaderViewModel-IViewModelIntialized",
+                    new ViewEventPublication<IHeaderViewModel, IViewModelInitialized>(
+                        key:$"HeaderViewModel-IViewModelInitialized",
                         subject:v => v.ViewModelState,
-                        subjectPredicate:new List<Func<IHeaderViewModel, bool>>{ v => v.ViewModelState.Value == ViewModelState.Intialized},
+                        subjectPredicate:new List<Func<IHeaderViewModel, bool>>{ v => v.ViewModelState.Value == ViewModelState.Initialized},
                         messageData:v => new ViewEventPublicationParameter(new object[] {v},new RevolutionEntities.Process.StateEventInfo(v.Process, Context.EventFunctions.UpdateEventData("HeaderViewModel", Context.ViewModel.Events.Initialized)),v.Process,v.Source)),
 
                     new ViewEventPublication<IHeaderViewModel, ICurrentApplicationChanged>(

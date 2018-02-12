@@ -14,13 +14,15 @@ namespace EventMessages.Commands
         public CreateEntityService() { }
         public Type ActorType { get; }
         public object Action { get; }
+        public string ActorId { get; }
 
-        public CreateEntityService(Type actorType, object action, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) 
+        public CreateEntityService(string actorId,Type actorType, object action, IStateCommandInfo processInfo, ISystemProcess process, ISystemSource source) 
             : base(new DynamicObject("CreateEntityService", new Dictionary<string, object>() { { "ActorType", actorType }, { "Action", action }, { "ProcessInfo", processInfo } }), processInfo, process, source)
         {
             ActorType = actorType;
             Action = action;
             ProcessInfo = processInfo;
+            ActorId = ActorId;
         }
 
         public new IStateCommandInfo ProcessInfo { get; }

@@ -19,14 +19,15 @@ namespace DataServices.Actors
         public ISystemSource Source { get; }
         public ImmutableList<IProcessSystemMessage> OutMessages = ImmutableList<IProcessSystemMessage>.Empty;
         public ISystemProcess Process { get; }
-        public BaseActor(ISystemProcess process)
+        public BaseActor(string actorId,ISystemProcess process)
         {
             Process = process;
-            Source = new Source(Guid.NewGuid(), "PersistentActor" + typeof(T).GetFriendlyName(), new SourceType(typeof(BaseActor<T>)),process, process.MachineInfo);
+            ActorId = actorId;
+            Source = new Source(Guid.NewGuid(), $"PersistentActor:{typeof(T).GetFriendlyName()}-{ActorId}" , new SourceType(typeof(BaseActor<T>)),process, process.MachineInfo);
             
         }
 
-       
+        public string ActorId { get; }
 
         internal void PublishProcesError(IProcessSystemMessage msg, Exception ex, Type expectedMessageType)
         {

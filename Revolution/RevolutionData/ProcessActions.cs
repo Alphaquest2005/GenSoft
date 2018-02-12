@@ -86,13 +86,13 @@ namespace RevolutionData
                         processInfo: cp => new StateCommandInfo(cp.Actor.Process, Context.Process.Commands.Error),
                         expectedSourceType: new SourceType(typeof(IComplexEventService)));
 
-        public static IProcessAction IntializeProcessStateList(string entityType)
+        public static IProcessAction InitializeProcessStateList(string entityType)
         {
             DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(entityType);
-            return IntializeProcessStateList(DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(entityType));
+            return InitializeProcessStateList(DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(entityType));
         }
 
-        public static IProcessAction IntializeProcessStateList(IDynamicEntityType entityType)
+        public static IProcessAction InitializeProcessStateList(IDynamicEntityType entityType)
         {
             return new ProcessAction(
                 action: async cp =>
@@ -108,7 +108,7 @@ namespace RevolutionData
                 expectedSourceType: new SourceType(typeof (IComplexEventService)));
         }
 
-        public static IProcessAction IntializeProcessState(IDynamicEntityType entityType)
+        public static IProcessAction InitializeProcessState(IDynamicEntityType entityType)
         {
             return new ProcessAction(
                 action: async cp =>
@@ -262,7 +262,7 @@ namespace RevolutionData
 
         public class SignIn
         {
-            public static IProcessAction IntializeSigninProcessState => new ProcessAction(
+            public static IProcessAction InitializeSigninProcessState => new ProcessAction(
                 action: async cp =>
                 {
                     var ps = new ProcessStateEntity(
