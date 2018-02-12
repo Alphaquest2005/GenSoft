@@ -6,6 +6,7 @@ using System.Windows;
 using SystemInterfaces;
 using Common;
 using Process.WorkFlow;
+using RevolutionData.Context;
 using RevolutionEntities.Process;
 using RevolutionEntities.ViewModels;
 using ViewModel.Interfaces;
@@ -207,7 +208,7 @@ namespace RevolutionData
                                     ClearScreenModels(s);
                                 }));
                             }
-                        },  new StateEventInfo(Processes.IntialSystemProcess, RevolutionData.Context.Process.Events.ProcessCleanedUp, Guid.NewGuid())),
+                        },  new StateEventInfo(Processes.IntialSystemProcess, EventFunctions.UpdateEventData(Processes.IntialSystemProcess.Name,RevolutionData.Context.Process.Events.ProcessCleanedUp), Guid.NewGuid())),
 
                     new ViewEventSubscription<IScreenModel, ICurrentApplicationChanged>(
                         "ScreenViewModel-ICleanUpSystemProcess",

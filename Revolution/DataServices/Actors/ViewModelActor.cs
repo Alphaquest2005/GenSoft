@@ -40,11 +40,11 @@ namespace DataServices.Actors
                 var vm = CreateViewModel<TViewModel>(process, viewInfo);
                 EventMessageBus.Current.Publish(
                     new ViewModelCreated<TViewModel>(vm,
-                        new StateEventInfo(vmInfo.Process, RevolutionData.Context.ViewModel.Events.ViewModelCreated),
+                        new StateEventInfo(vmInfo.Process, RevolutionData.Context.EventFunctions.UpdateEventData( vm.ViewInfo.Name, RevolutionData.Context.ViewModel.Events.ViewModelCreated)),
                         vmInfo.Process, Source), Source);
                 EventMessageBus.Current.Publish(
                     new ViewModelCreated<IViewModel>(vm,
-                        new StateEventInfo(vmInfo.Process, RevolutionData.Context.ViewModel.Events.ViewModelCreated),
+                        new StateEventInfo(vmInfo.Process, RevolutionData.Context.EventFunctions.UpdateEventData(vm.ViewInfo.Name, RevolutionData.Context.ViewModel.Events.ViewModelCreated)),
                         vmInfo.Process, Source), Source);
             }
             catch (Exception ex)

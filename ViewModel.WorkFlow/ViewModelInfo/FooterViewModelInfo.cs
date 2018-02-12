@@ -8,6 +8,7 @@ using Common;
 using JB.Collections.Reactive;
 using Process.WorkFlow;
 using Reactive.Bindings;
+using RevolutionData.Context;
 using RevolutionEntities.Process;
 using RevolutionEntities.ViewModels;
 using ViewModel.Interfaces;
@@ -68,7 +69,7 @@ namespace RevolutionData
                                     s.Entities.Value.Reset();
                                 }));
                             }
-                        }, new StateCommandInfo(Processes.IntialSystemProcess, RevolutionData.Context.Process.Commands.CleanUpProcess, Guid.NewGuid())),
+                        }, new StateCommandInfo(Processes.IntialSystemProcess, CommandFunctions.UpdateCommandData(Processes.IntialSystemProcess.Name,RevolutionData.Context.Process.Commands.CleanUpProcess), Guid.NewGuid())),
 
                     new ViewEventSubscription<IFooterViewModel, ICurrentApplicationChanged>(
                         "ScreenViewModel-ICleanUpSystemProcess",

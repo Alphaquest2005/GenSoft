@@ -189,7 +189,7 @@ namespace EFRepository
                     EventMessageBus.Current.Publish(
                         new EntitySetWithChangesLoaded(msg.EntityType, entities, msg.Changes,
                             new RevolutionEntities.Process.StateEventInfo(msg.Process,
-                                RevolutionData.Context.EventFunctions.UpdateEventData(msg.EntityType.Name, EntityEvents.Events.EntityFound)), msg.Process,
+                                RevolutionData.Context.EventFunctions.UpdateEventData(msg.EntityType.Name, EntityEvents.Events.EntitySetLoaded)), msg.Process,
                             Source), Source);
                 
             }
@@ -214,7 +214,7 @@ namespace EFRepository
             
             EventMessageBus.Current.Publish(
                         new EntitySetLoaded(msg.EntityType, viewset, 
-                            new RevolutionEntities.Process.StateEventInfo(msg.Process, RevolutionData.Context.EventFunctions.UpdateEventData(msg.EntityType.Name, EntityEvents.Events.EntityFound)), msg.Process,
+                            new RevolutionEntities.Process.StateEventInfo(msg.Process, RevolutionData.Context.EventFunctions.UpdateEventData(msg.EntityType.Name, EntityEvents.Events.EntitySetLoaded)), msg.Process,
                             Source), Source);
              }   
             

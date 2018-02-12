@@ -80,7 +80,7 @@ namespace RevolutionData
                             //});
 
 
-                        }, new RevolutionEntities.Process.StateCommandInfo(process,Context.CommandFunctions.UpdateCommandData(entityType.Name, Context.Process.Commands.UpdateState), Guid.NewGuid()))
+                        }, new RevolutionEntities.Process.StateCommandInfo(process,Context.CommandFunctions.UpdateCommandData(entityType.Name, Context.Entity.Commands.UpdateState), Guid.NewGuid()))
                 };
                 foreach (var p in childEntities)
                 {

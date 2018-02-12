@@ -5256,6 +5256,7 @@
       "RevolutionEntities >= 1.0.0",
       "System.Collections.Immutable >= 1.4.0",
       "SystemInterfaces >= 1.0.0",
+      "Utilities >= 1.0.0",
       "ViewModel.Interfaces >= 1.0.0"
     ]
   },
@@ -5309,6 +5310,9 @@
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Utilities\\Utilities.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Utilities\\Utilities.csproj"
             }
           }
         }

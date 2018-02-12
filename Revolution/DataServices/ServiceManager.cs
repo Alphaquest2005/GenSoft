@@ -59,7 +59,7 @@ namespace DataServices.Actors
                 EventMessageBus.Current.Publish(
                     new ServiceStarted<IServiceManager>(this,
                         new StateEventInfo(Processes.IntialSystemProcess,
-                            RevolutionData.Context.Actor.Events.ActorStarted),
+                            RevolutionData.Context.EventFunctions.UpdateEventData(Source.SourceName, RevolutionData.Context.Actor.Events.ActorStarted)),
                         Processes.IntialSystemProcess, Source), Source);
 
 

@@ -39,7 +39,7 @@ namespace RevolutionData
                                 new StateCommandInfo(v.Process,
                                     Context.Entity.Commands.LoadEntitySetWithChanges),
                                 v.Process, v.Source), v.Source);
-                        }, new StateEventInfo(Processes.IntialSystemProcess, Context.EventFunctions.UpdateEventData("IHeaderViewModel" ,RevolutionData.Context.ViewModel.Events.Initialized), Guid.NewGuid())),
+                        }, new StateEventInfo(Processes.IntialSystemProcess, Context.EventFunctions.UpdateEventData("HeaderViewModel" ,RevolutionData.Context.ViewModel.Events.Initialized), Guid.NewGuid())),
 
                     new ViewEventSubscription<IHeaderViewModel, IEntitySetLoaded>(
                         $"HeaderViewModel-IUpdateProcessStateList",
@@ -64,10 +64,10 @@ namespace RevolutionData
                         messageData:v => new ViewEventPublicationParameter(new object[] {v},new RevolutionEntities.Process.StateEventInfo(v.Process, Context.EventFunctions.UpdateEventData("HeaderViewModel", Context.ViewModel.Events.Initialized)),v.Process,v.Source)),
 
                     new ViewEventPublication<IHeaderViewModel, ICurrentApplicationChanged>(
-                        key:$"HeaderViewModel-CurrentEntityChanged",
+                        key:$"HeaderViewModel-CurrentApplicationChanged",
                         subject:v =>  (IObservable<dynamic>)v.CurrentEntity,//.WhenAnyValue(x => x.Value),
                         subjectPredicate:new List<Func<IHeaderViewModel, bool>>{},
-                        messageData:s => new ViewEventPublicationParameter(new object[] {s.CurrentEntity.Value},new RevolutionEntities.Process.StateEventInfo(s.Process, Context.Process.Events.CurrentApplicationChanged),s.Process,s.Source)),
+                        messageData:s => new ViewEventPublicationParameter(new object[] {s.CurrentEntity.Value},new RevolutionEntities.Process.StateEventInfo(s.Process, Context.EventFunctions.UpdateEventData(s.Process.Name, Context.Process.Events.CurrentApplicationChanged)),s.Process,s.Source)),
                 },
                 new List<IViewModelEventCommand<IViewModel, IEvent>> {},
                 typeof(IHeaderViewModel),

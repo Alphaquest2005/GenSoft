@@ -44,7 +44,7 @@ namespace RevolutionData
                             v.State.Value = e.State;
                             if (v.EntitySet.Value.Any() && v.CurrentEntity.Value?.Id  != v.EntitySet.Value.First().Id) v.CurrentEntity.Value = v.EntitySet.Value.First();
 
-                        }, new RevolutionEntities.Process.StateCommandInfo(process, RevolutionData.Context.CommandFunctions.UpdateCommandData(entityType.Name, Context.Process.Commands.UpdateState), Guid.NewGuid())),
+                        }, new RevolutionEntities.Process.StateCommandInfo(process, RevolutionData.Context.CommandFunctions.UpdateCommandData(entityType.Name, Context.Entity.Commands.UpdateState), Guid.NewGuid())),
 
 
                     new ViewEventSubscription<ISummaryListViewModel, IEntityWithChangesUpdated>(
