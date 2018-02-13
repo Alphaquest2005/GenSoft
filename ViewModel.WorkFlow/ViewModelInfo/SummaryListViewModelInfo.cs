@@ -35,7 +35,7 @@ namespace RevolutionData
                     new ViewEventSubscription<ISummaryListViewModel, IUpdateProcessStateList>(
                         $"{entityType.Name}-IUpdateProcessStateList",
                         process,
-                        e => e.EntityType == entityType,
+                        e => e.EntityType.Name == entityType.Name,
                         new List<Func<ISummaryListViewModel, IUpdateProcessStateList, bool>>(),
                         (v, e) =>
                         {
@@ -50,7 +50,7 @@ namespace RevolutionData
                     new ViewEventSubscription<ISummaryListViewModel, IEntityWithChangesUpdated>(
                         key: $"{entityType.Name}-IEntityWithChangesUpdated",
                         process: process,
-                        eventPredicate: e => e.Changes.Count > 0 && e.EntityType == entityType,
+                        eventPredicate: e => e.Changes.Count > 0 && e.EntityType.Name == entityType.Name,
                         actionPredicate: new List<Func<ISummaryListViewModel, IEntityWithChangesUpdated, bool>>(),
                         action: (v, e) =>
                         {
@@ -67,7 +67,7 @@ namespace RevolutionData
                     new ViewEventSubscription<ISummaryListViewModel, ICurrentEntityChanged>(
                         $"{entityType.Name}-ICurrentEntityChanged",
                         process,
-                        e => e.EntityType == entityType &&  e.Entity.Id > 0,
+                        e => e.EntityType.Name == entityType.Name &&  e.Entity.Id > 0,
                         new List<Func<ISummaryListViewModel, ICurrentEntityChanged, bool>>(),
                         (v, e) =>
                         {

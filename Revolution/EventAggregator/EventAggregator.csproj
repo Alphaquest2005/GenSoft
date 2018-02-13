@@ -74,6 +74,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventStore.cs" />
+    <Compile Include="EventLogger.cs" />
     <Compile Include="EventMessageBus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

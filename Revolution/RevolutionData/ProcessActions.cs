@@ -12,6 +12,7 @@ using EventMessages.Events;
 using RevolutionData.Context;
 using RevolutionEntities.Process;
 using RevolutionEntities.ViewModels;
+using Application = System.Windows.Application;
 using Process = RevolutionData.Context.Process;
 using User = RevolutionEntities.Process.User;
 
@@ -38,7 +39,7 @@ namespace RevolutionData
                 expectedSourceType: new SourceType(typeof(IComplexEventService))) },
             {"StartProcessWithValidatedUser",  new ProcessAction(
                        action: async cp =>  await Task.Run(() => new StartSystemProcess(NullProcess,
-                           new StateCommandInfo(cp.Actor.Process, Process.Commands.StartProcess), new SystemProcess( new SystemProcessInfo( cp.Actor.Process.Id, cp.Actor.Process.ParentProcess,  cp.Actor.Process.Name,  cp.Actor.Process.Description,  cp.Actor.Process.Symbol, (cp.Messages["UserValidated"].Properties["Entity"].Value as IDynamicEntity).Properties["UserName"].ToString()),new User((cp.Messages["UserValidated"].Properties["Entity"].Value as IDynamicEntity).Properties["UserName"].ToString()), cp.Actor.Process.MachineInfo), cp.Actor.Source)).ConfigureAwait(false),
+                           new StateCommandInfo(cp.Actor.Process, Process.Commands.StartProcess), new SystemProcess( new SystemProcessInfo( cp.Actor.Process.Id, cp.Actor.Process.ParentProcess,  cp.Actor.Process.Name,  cp.Actor.Process.Description,  cp.Actor.Process.Symbol, (cp.Messages["UserValidated"].Properties["Entity"].Value as IDynamicEntity).Properties["UserName"].ToString(), cp.Actor.Process.Applet),new User((cp.Messages["UserValidated"].Properties["Entity"].Value as IDynamicEntity).Properties["UserName"].ToString()), cp.Actor.Process.MachineInfo), cp.Actor.Source)).ConfigureAwait(false),
                        processInfo: cp => new StateCommandInfo(cp.Actor.Process, Context.Process.Commands.StartProcess),
                        expectedSourceType: new SourceType(typeof(IComplexEventService)))},
             {"CompleteProcess",  new ProcessAction(

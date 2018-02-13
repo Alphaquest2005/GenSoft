@@ -6,11 +6,12 @@ namespace CommonMessages
     [Export(typeof(IProcessSystemMessage))]
     public abstract class ProcessSystemMessage : SystemMessage, IProcessSystemMessage
     {
-        protected ProcessSystemMessage() {}
+        protected ProcessSystemMessage(){}
 
         protected ProcessSystemMessage(IDynamicObject message, IProcessStateInfo processInfo, ISystemProcess process, ISystemSource source) : base(message, source.MachineInfo,source)
         {
             Process = process;
+            Applet = process.Applet;
             ProcessInfo = processInfo;
             ParentProcess = Process.ParentProcess;
             Name = process.Name;
@@ -26,6 +27,7 @@ namespace CommonMessages
         public string Description { get; }
         public string Symbol { get; }
         public IUser User { get; }
+        public IApplet Applet { get; }
         public ISystemProcess Process { get; }
         public IProcessStateInfo ProcessInfo { get; }
     }

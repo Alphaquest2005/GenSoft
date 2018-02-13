@@ -20,11 +20,12 @@ namespace Process.WorkFlow
 
     public static class Processes
     {
-        public static readonly ISystemProcess NullSystemProcess = new SystemProcess(new SystemProcessInfo(0, NullSystemProcess, "Null System Process", "Null System Process", "NullSystemProcess", "NulSystemProcess"), new Agent("System"), ThisMachineInfo);
-        public static readonly ISystemProcess IntialSystemProcess = new SystemProcess(new SystemProcessInfo(1, NullSystemProcess, "Starting System", "Prepare system for Intial Use", "Start","System"),new Agent("System"), ThisMachineInfo);
+        public static readonly ISystemProcess NullSystemProcess = new SystemProcess(new SystemProcessInfo(0, NullSystemProcess, "Null System Process", "Null System Process", "NullSystemProcess", "NulSystemProcess", SystemApplet), new Agent("System"), ThisMachineInfo);
+        public static readonly ISystemProcess IntialSystemProcess = new SystemProcess(new SystemProcessInfo(1, NullSystemProcess, "Starting System", "Prepare system for Intial Use", "Start","System", SystemApplet),new Agent("System"), ThisMachineInfo);
 
         public static IMachineInfo ThisMachineInfo => new MachineInfo(Environment.MachineName, Environment.ProcessorCount);
 
+        public static IDbApplet SystemApplet => new DbApplet("GenSoft-Creator", "GenSoft-Creator");
 
         public static List<IComplexEventAction> ProcessComplexEvents = new List<IComplexEventAction>
         {
@@ -89,7 +90,7 @@ namespace Process.WorkFlow
                     process, new List<IProcessExpectedEvent>
                     {
                         new ProcessExpectedEvent("ProcessServiceStarted", process, typeof(IServiceStarted<IProcessService>),
-                            e => e != null && e.Process == process, new StateEventInfo(process, EventFunctions.UpdateEventData(  $"ProcessStarted-{process.Name}".GetSafeActorName(),RevolutionData.Context.Actor.Events.ActorStarted), Guid.NewGuid()),
+                            e => e != null && e.Process.Id == process.Id, new StateEventInfo(process, EventFunctions.UpdateEventData(  $"ProcessStarted-{process.Name}".GetSafeActorName(),RevolutionData.Context.Actor.Events.ActorStarted), Guid.NewGuid()),
                             new SourceType(typeof(IProcessService))),
                        
                     },
@@ -104,7 +105,7 @@ namespace Process.WorkFlow
                     $"StartProcess-{process.Name}",
                     process, new List<IProcessExpectedEvent>
                     {
-                        new ProcessExpectedEvent ("ProcessCompleted", process, typeof (ISystemProcessCompleted), e => e != null && e.Process == process, new StateEventInfo(process, EventFunctions.UpdateEventData( process.Name,RevolutionData.Context.Process.Events.ProcessCompleted), Guid.NewGuid()), new SourceType(typeof(IComplexEventService))),
+                        new ProcessExpectedEvent ("ProcessCompleted", process, typeof (ISystemProcessCompleted), e => e != null  && e.Process.Id == process.Id, new StateEventInfo(process, EventFunctions.UpdateEventData( process.Name,RevolutionData.Context.Process.Events.ProcessCompleted), Guid.NewGuid()), new SourceType(typeof(IComplexEventService))),
                     },
                     typeof(ISystemProcessStarted),
                     processInfo: new StateCommandInfo(process, CommandFunctions.UpdateCommandData(process.Name, RevolutionData.Context.Process.Commands.StartProcess)),
@@ -120,13 +121,13 @@ namespace Process.WorkFlow
                     process, new List<IProcessExpectedEvent>
                     {
                         new ProcessExpectedEvent("CurrentApplicationChanged", process, typeof(ICurrentApplicationChanged),
-                            e => e != null , new StateEventInfo(process, EventFunctions.UpdateEventData(process.Name,RevolutionData.Context.Process.Events.CurrentApplicationChanged), Guid.NewGuid()),
+                            e => e != null && e.Process.Id == process.Id, new StateEventInfo(process, EventFunctions.UpdateEventData(process.Name,RevolutionData.Context.Process.Events.CurrentApplicationChanged), Guid.NewGuid()),
                             new SourceType(typeof(IProcessService))),
                         new ProcessExpectedEvent("ProcessServiceStarted", process, typeof(IStartSystemProcess),
-                            e => e != null && e.Process == process , new StateEventInfo(process, EventFunctions.UpdateEventData($"CleanUpProcess-{process.Name}".GetSafeActorName(),RevolutionData.Context.Actor.Events.ActorStarted), Guid.NewGuid()),
+                            e => e != null && e.Process.Id == process.Id , new StateEventInfo(process, EventFunctions.UpdateEventData($"CleanUpProcess-{process.Name}".GetSafeActorName(),RevolutionData.Context.Actor.Events.ActorStarted), Guid.NewGuid()),
                             new SourceType(typeof(IProcessService))),
                         new ProcessExpectedEvent("MainEntityChanged", process, typeof(IMainEntityChanged),
-                            e => e != null , new StateEventInfo(process, EventFunctions.UpdateEventData(process.Name,RevolutionData.Context.Process.Events.MainEntityChanged), Guid.NewGuid()),
+                            e => e != null && e.Process.Id == process.Id, new StateEventInfo(process, EventFunctions.UpdateEventData(process.Name,RevolutionData.Context.Process.Events.MainEntityChanged), Guid.NewGuid()),
                             new SourceType(typeof(IProcessService))),
                         
 
@@ -144,13 +145,13 @@ namespace Process.WorkFlow
                     process.ParentProcess, new List<IProcessExpectedEvent>
                     {
                         new ProcessExpectedEvent("StartSystemProcess", process.ParentProcess, typeof(IStartSystemProcess),
-                            e => e != null , new StateEventInfo(process.ParentProcess, EventFunctions.UpdateEventData(process.Name,RevolutionData.Context.Process.Events.ProcessStarted), Guid.NewGuid()),
+                            e => e != null && e.Process.Id == process.Id, new StateEventInfo(process.ParentProcess, EventFunctions.UpdateEventData(process.Name,RevolutionData.Context.Process.Events.ProcessStarted), Guid.NewGuid()),
                             new SourceType(typeof(IProcessService))),
                         new ProcessExpectedEvent("MainEntityChanged", process.ParentProcess, typeof(IMainEntityChanged),
-                            e => e != null , new StateEventInfo(process.ParentProcess, EventFunctions.UpdateEventData(process.Name,RevolutionData.Context.Process.Events.MainEntityChanged), Guid.NewGuid()),
+                            e => e != null && e.Process.Id == process.Id, new StateEventInfo(process.ParentProcess, EventFunctions.UpdateEventData(process.Name,RevolutionData.Context.Process.Events.MainEntityChanged), Guid.NewGuid()),
                             new SourceType(typeof(IProcessService))),
                         new ProcessExpectedEvent("CurrentApplicationChanged", process.ParentProcess, typeof(ICurrentApplicationChanged),
-                            e => e != null , new StateEventInfo(process.ParentProcess, EventFunctions.UpdateEventData(process.Name,RevolutionData.Context.Process.Events.CurrentApplicationChanged), Guid.NewGuid()),
+                            e => e != null && e.Process.Id == process.Id, new StateEventInfo(process.ParentProcess, EventFunctions.UpdateEventData(process.Name,RevolutionData.Context.Process.Events.CurrentApplicationChanged), Guid.NewGuid()),
                             new SourceType(typeof(IProcessService))),
 
                     },
@@ -175,7 +176,7 @@ namespace Process.WorkFlow
                     {
                         new ProcessExpectedEvent(key: "ViewModelInitialized",
                             process: process,
-                            eventPredicate: e => e != null && e.Process == process && ((IEntityViewInfo)((IViewModelInitialized)e)?.ViewModel.ViewInfo)?.EntityType == entityType  ,
+                            eventPredicate: e => e != null && e.Process.Id == process.Id && ((IEntityViewInfo)((IViewModelInitialized)e).ViewModel.ViewInfo).EntityType.Name == entityType.Name  ,
                             eventType: typeof (IViewModelInitialized),
                             processInfo: new StateEventInfo(process, EventFunctions.UpdateEventData(entityType.Name, RevolutionData.Context.ViewModel.Events.Initialized), Guid.NewGuid()),
                             expectedSourceType: new SourceType(typeof (IComplexEventService))),
@@ -198,7 +199,7 @@ namespace Process.WorkFlow
                     {
                         new ProcessExpectedEvent(key: "ViewModelInitialized-ps",
                             process: process,
-                            eventPredicate: e => e != null && e.Process == process && ((IEntityViewInfo)((IViewModelInitialized)e)?.ViewModel.ViewInfo)?.EntityType == entityType  ,
+                            eventPredicate: e => e != null && e.Process.Id == process.Id && ((IEntityViewInfo)((IViewModelInitialized)e)?.ViewModel.ViewInfo)?.EntityType.Name == entityType.Name  ,
                             eventType: typeof (IViewModelInitialized),
                             processInfo: new StateEventInfo(process, EventFunctions.UpdateEventData(entityType.Name, RevolutionData.Context.ViewModel.Events.Initialized), Guid.NewGuid()),
                             expectedSourceType: new SourceType(typeof (IComplexEventService))),
@@ -219,17 +220,17 @@ namespace Process.WorkFlow
                     events: new List<IProcessExpectedEvent>
                     {
                                 new ProcessExpectedEvent<IEntityWithChangesUpdated>(process: process,
-                            eventPredicate: e => e.Entity != null && e.Process == process && e.EntityType == entityType,
+                            eventPredicate: e => e.Entity != null && e.Process.Id == process.Id && e.EntityType.Name == entityType.Name,
                             processInfo: new StateEventInfo(process, EventFunctions.UpdateEventData(entityType.Name, Entity.Events.EntityUpdated), Guid.NewGuid()),
                             expectedSourceType: new SourceType(typeof(IEntityRepository)),
                             key: "Entity"),
                                    new ProcessExpectedEvent<IEntityWithChangesFound>(process: process,
-                            eventPredicate: e => e.Entity != null && e.Process == process && e.EntityType == entityType,
+                            eventPredicate: e => e.Entity != null && e.Process.Id == process.Id && e.EntityType.Name == entityType.Name,
                             processInfo: new StateEventInfo(process, EventFunctions.UpdateEventData(entityType.Name, Entity.Events.EntityFound), Guid.NewGuid()),
                             expectedSourceType: new SourceType(typeof(IEntityRepository)),
                             key: "Entity"),
                                    new ProcessExpectedEvent<IEntityFound>(process: process,
-                            eventPredicate: e => e.Entity != null && e.Process == process && e.EntityType == entityType,
+                            eventPredicate: e => e.Entity != null && e.Process.Id == process.Id && e.EntityType.Name == entityType.Name,
                             processInfo: new StateEventInfo(process, EventFunctions.UpdateEventData(entityType.Name, Entity.Events.EntityFound), Guid.NewGuid()),
                             expectedSourceType: new SourceType(typeof(IEntityRepository)),
                             key: "Entity")
@@ -249,18 +250,18 @@ namespace Process.WorkFlow
                     events: new List<IProcessExpectedEvent>
                     {
                         new ProcessExpectedEvent<ICurrentEntityChanged>(
-                            "CurrentEntity", process, e => e.Entity != null && e.Process == process && e.Entity.Id > 0 && e.Entity.EntityType.Name == currentEntityType,
+                            "CurrentEntity", process, e => e.Entity != null && e.Process.Id == process.Id && e.Entity.Id > 0 && e.Entity.EntityType.Name == currentEntityType,
                             expectedSourceType: new SourceType(typeof (IViewModel)),
                             //todo: check this cuz it comes from viewmodel
                             processInfo: new StateEventInfo(process, EventFunctions.UpdateEventData(currentEntityType,RevolutionData.Context.ViewModel.Events.CurrentEntityChanged), Guid.NewGuid())),
 
                         new ProcessExpectedEvent<IEntityFound>(
-                            "CurrentEntity", process, e => e.Entity != null && e.Process == process && e.Entity.Id > 0 && e.Entity.EntityType.Name == currentEntityType,
+                            "CurrentEntity", process, e => e.Entity != null && e.Process.Id == process.Id && e.Entity.Id > 0 && e.Entity.EntityType.Name == currentEntityType,
                             expectedSourceType: new SourceType(typeof (IViewModel)),
                             //todo: check this cuz it comes from viewmodel
                             processInfo: new StateEventInfo(process, EventFunctions.UpdateEventData(currentEntityType,Entity.Events.EntityFound), Guid.NewGuid())),
                         new ProcessExpectedEvent<IEntityUpdated>(
-                            "CurrentEntity", process, e => e.Entity != null && e.Process == process && e.Entity.Id > 0  && e.Entity.EntityType.Name == currentEntityType,
+                            "CurrentEntity", process, e => e.Entity != null && e.Process.Id == process.Id && e.Entity.Id > 0  && e.Entity.EntityType.Name == currentEntityType,
                             expectedSourceType: new SourceType(typeof (IViewModel)),
                             //todo: check this cuz it comes from viewmodel
                             processInfo: new StateEventInfo(process, EventFunctions.UpdateEventData(currentEntityType,Entity.Events.EntityUpdated), Guid.NewGuid())),
@@ -299,11 +300,11 @@ namespace Process.WorkFlow
                     events: new List<IProcessExpectedEvent>
                     {
                             new ProcessExpectedEvent<IEntitySetWithChangesLoaded>(
-                        "EntityViewSet",process, e => e.EntitySet != null && e.Process == process && e.EntityType == entityType, expectedSourceType: new SourceType(typeof(IEntityViewRepository)),
+                        "EntityViewSet",process, e => e.EntitySet != null && e.Process.Id == process.Id && e.EntityType.Name == entityType.Name, expectedSourceType: new SourceType(typeof(IEntityViewRepository)),
                         processInfo: new StateEventInfo(process, EventFunctions.UpdateEventData(entityType.Name, Entity.Events.EntitySetLoaded), Guid.NewGuid())),
 
                         new ProcessExpectedEvent<IEntitySetLoaded>(
-                            "EntityViewSet",process, e => e.EntitySet != null && e.Process == process && e.EntityType == entityType, expectedSourceType: new SourceType(typeof(IEntityViewRepository)),
+                            "EntityViewSet",process, e => e.EntitySet != null && e.Process.Id == process.Id && e.EntityType.Name == entityType.Name, expectedSourceType: new SourceType(typeof(IEntityViewRepository)),
                             processInfo: new StateEventInfo(process, EventFunctions.UpdateEventData(entityType.Name, Entity.Events.EntitySetLoaded), Guid.NewGuid()))
                     },
                     expectedMessageType: typeof(IProcessStateList),
@@ -319,7 +320,7 @@ namespace Process.WorkFlow
                     events: new List<IProcessExpectedEvent>
                     {
                         new ProcessExpectedEvent<ICurrentEntityChanged>(
-                            "CurrentEntity", process, e => e.Entity != null && e.Process == process && e.Entity.Id > 0 && e.EntityType.Name == currentEntityType,
+                            "CurrentEntity", process, e => e.Entity != null && e.Process.Id == process.Id && e.Entity.Id > 0 && e.EntityType.Name == currentEntityType,
                             expectedSourceType: new SourceType(typeof (IViewModel)),
                             //todo: check this cuz it comes from viewmodel
                             processInfo: new StateEventInfo(process, EventFunctions.UpdateEventData(currentEntityType, RevolutionData.Context.ViewModel.Events.CurrentEntityChanged), Guid.NewGuid())),
@@ -339,12 +340,12 @@ namespace Process.WorkFlow
                     events: new List<IProcessExpectedEvent>
                     {
                         new ProcessExpectedEvent<IEntityUpdated>(process: process,
-                            eventPredicate: e => e.Entity != null && e.Process == process && e.EntityType.Name == currentEntityType,
+                            eventPredicate: e => e.Entity != null && e.Process.Id == process.Id && e.EntityType.Name == currentEntityType,
                             processInfo: new StateEventInfo(process, EventFunctions.UpdateEventData(currentEntityType, Entity.Events.EntityUpdated), Guid.NewGuid()),
                             expectedSourceType: new SourceType(typeof (IEntityRepository)),
                             key: "UpdatedEntity"),
                         new ProcessExpectedEvent<IEntityWithChangesUpdated>(process: process,
-                            eventPredicate: e => e.Entity != null && e.Process == process && e.EntityType.Name == currentEntityType,
+                            eventPredicate: e => e.Entity != null && e.Process.Id == process.Id && e.EntityType.Name == currentEntityType,
                             processInfo: new StateEventInfo(process, EventFunctions.UpdateEventData(currentEntityType, Entity.Events.EntityUpdated), Guid.NewGuid()),
                             expectedSourceType: new SourceType(typeof (IEntityRepository)),
                             key: "UpdatedEntity"),
@@ -397,7 +398,7 @@ namespace Process.WorkFlow
             public static IProcessExpectedEvent CreateProcessCurrentEntityChangedExpectedEvent(ISystemProcess process, IDynamicEntityType entityType)
             {
                return new ProcessExpectedEvent<ICurrentEntityChanged>(process: process,
-                            eventPredicate: e => e.Entity != null && e.Entity.Id > 0 &&  e.EntityType == entityType,
+                            eventPredicate: e => e.Entity != null && e.Entity.Id > 0 &&  e.EntityType.Name == entityType.Name,
                             processInfo: new StateEventInfo(process, RevolutionData.Context.ViewModel.Events.CurrentEntityChanged, Guid.NewGuid()),
                             expectedSourceType: new SourceType(typeof(IComplexEventService)),
                             key: $"CurrentEntity-{entityType.Name}");

@@ -4,8 +4,8 @@ namespace RevolutionEntities.Process
 {
     public class SystemProcessInfo : ISystemProcessInfo
     {
-        public SystemProcessInfo() { }
-        public SystemProcessInfo(int id, ISystemProcess parentProcess, string name, string description, string symbol, string userId)
+        public SystemProcessInfo(){}
+        public SystemProcessInfo(int id, ISystemProcess parentProcess, string name, string description, string symbol, string userId, IApplet applet)
         {
             Id = id;
             ParentProcess = parentProcess;
@@ -13,6 +13,7 @@ namespace RevolutionEntities.Process
             Description = description;
             Symbol = symbol;
             UserId = userId;
+            Applet = applet;
         }
 
         public int Id { get; }
@@ -21,6 +22,7 @@ namespace RevolutionEntities.Process
         public string Description { get; }
         public string Symbol { get; }
         public string UserId { get; }
+        public IApplet Applet { get; }
     }
 
   

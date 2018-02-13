@@ -11,6 +11,7 @@ namespace SystemInterfaces
         string Description { get; }
         string Symbol { get; }
         string UserId { get; }
+        IApplet Applet { get; }
     }
 
     public interface ISystemProcessInfo<TEntity>:ISystemProcessInfo where TEntity:IEntityId

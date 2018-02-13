@@ -28,7 +28,7 @@ namespace DataServices.Actors
                 .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == stateCommandInfo.EventKey)
                 .Subscribe(x => HandleProcessViews(x.ViewModelInfos));
             
-            EventMessageBus.Current.Publish(new ServiceStarted<IViewModelSupervisor>(this,new StateEventInfo(process, RevolutionData.Context.Actor.Events.ActorStarted), process, Source), Source);
+            EventMessageBus.Current.Publish(new ServiceStarted<IViewModelSupervisor>(this,new StateEventInfo(process, RevolutionData.Context.Actor.Events.ActorStarted), process, Source));
         }
 
         private void HandleProcessViews(List<IViewModelInfo> processViewModelInfos)

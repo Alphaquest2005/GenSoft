@@ -17,4 +17,24 @@ namespace RevolutionEntities.Process
         public string UserId { get; }
 
     }
+
+    public class Applet : IApplet
+    {
+        public Applet(string name)
+        {
+            Name = name;
+        }
+
+        public string Name { get; }
+    }
+
+    public class DbApplet : Applet,IDbApplet
+    {
+        public DbApplet(string name, string dbName) : base(name)
+        {
+            DbName = dbName;
+        }
+
+        public string DbName { get; }
+    }
 }

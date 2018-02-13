@@ -11,7 +11,7 @@ using CommonMessages;
 using EventAggregator;
 using EventMessages.Events;
 using Reactive.Bindings;
-
+using RevolutionData.Context;
 using RevolutionEntities.Process;
 using Utilities;
 using ViewModel.Interfaces;
@@ -98,13 +98,14 @@ namespace Core.Common.UI
                 dynamic msg;
                 if (concreteEvent == null)
                 {
-                    msg = new ProcessEventFailure(itm.EventType, new FailedMessageData(itm, param.ProcessInfo, param.Process, param.Source), itm.EventType, new InvalidOperationException($"Type:{itm.EventType.Name} not found in MEF - consider adding export to type."), param.ProcessInfo, viewModel.Source);
+                    var invalidOperationException = new InvalidOperationException($"Type:{itm.EventType.Name} not found in MEF - consider adding export to type.");
+                    msg = new ProcessEventFailure(itm.EventType, new FailedMessageData(itm, param.ProcessInfo, param.Process, param.Source), itm.EventType, invalidOperationException,new StateEventInfo(param.Process, EventFunctions.UpdateEventData(invalidOperationException.Message, RevolutionData.Context.Process.Events.Error)), viewModel.Source);
                 }
                 else
                 {
                     msg = Activator.CreateInstance(concreteEvent, paramArray.ToArray());
                 }
-                EventMessageBus.Current.Publish(msg, viewModel.Source);
+                EventMessageBus.Current.Publish(msg);
             }
 
             return PublishMessage;
@@ -124,14 +125,15 @@ namespace Core.Common.UI
                 ProcessSystemMessage msg;
                 if (concreteEvent == null)
                 {
-                    msg = new ProcessEventFailure(itm.EventType, new FailedCommandData(itm, param.ProcessInfo, param.Process, param.Source), itm.EventType, new InvalidOperationException("Type not found in MEF - consider adding export to type."), new StateEventInfo(param.ProcessInfo.Process, "Error", "Error occured getting type", "", "Process", param.Process.Name, param.ProcessInfo.State), viewModel.Source);
+                     var invalidOperationException = new InvalidOperationException($"Type:{itm.EventType.Name} not found in MEF - consider adding export to type.");
+                    msg = new ProcessEventFailure(itm.EventType, new FailedCommandData(itm, param.ProcessInfo, param.Process, param.Source), itm.EventType, invalidOperationException,new StateEventInfo(param.Process, EventFunctions.UpdateEventData(invalidOperationException.Message, RevolutionData.Context.Process.Events.Error)), viewModel.Source);
                 }
                 else
                 {
                     msg = (ProcessSystemMessage) Activator.CreateInstance(concreteEvent, paramArray.ToArray());
                 }
 
-                EventMessageBus.Current.Publish(msg, viewModel.Source);
+                EventMessageBus.Current.Publish(msg);
             }
 
             return PublishMessage;

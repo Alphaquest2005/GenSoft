@@ -3,7 +3,7 @@ namespace SystemInterfaces
     
     public interface IEvent
     {
-        //ToDo:Check to remove this
-        ISystemSource Source { get; }
+        //ToDo:implement visitor for this
+        ISystemSource Source { get; set; }
     }
 }

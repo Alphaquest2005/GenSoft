@@ -57,7 +57,7 @@ namespace DataServices.Actors
                         .MakeGenericMethod(itm.Key)
                         .Invoke(this, new object[] {itm.Value,entityType, process, msg}); }).ConfigureAwait(false); 
             }
-            EventMessageBus.Current.Publish(new ServiceStarted<IEntityDataServiceSupervisor>(this, new StateEventInfo(process, RevolutionData.Context.EventFunctions.UpdateEventData(entityType.Name, RevolutionData.Context.Actor.Events.ActorStarted)), process, Source), Source);
+            EventMessageBus.Current.Publish(new ServiceStarted<IEntityDataServiceSupervisor>(this, new StateEventInfo(process, RevolutionData.Context.EventFunctions.UpdateEventData(entityType.Name, RevolutionData.Context.Actor.Events.ActorStarted)), process, Source));
 
             
         }

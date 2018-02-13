@@ -8,6 +8,7 @@ using Actor.Interfaces;
 using EventAggregator;
 using EventMessages.Commands;
 using EventMessages.Events;
+using RevolutionData.Context;
 using RevolutionEntities.Process;
 using StateEventInfo = RevolutionEntities.Process.StateEventInfo;
 using Utilities;
@@ -29,8 +30,7 @@ namespace DataServices.Actors
 
             EventMessageBus.Current.Publish(
                 new ServiceStarted<IEntityDataServiceManager>(this,
-                    new StateEventInfo(process, RevolutionData.Context.Actor.Events.ActorStarted), process, Source),
-                Source);
+                    new StateEventInfo(process, RevolutionData.Context.Actor.Events.ActorStarted), process, Source));
 
 
         }
@@ -73,8 +73,7 @@ namespace DataServices.Actors
                             expectedEventType: typeof(IServiceStarted<EntityDataServiceSupervisor>),
                             exception: ex,
                             source: Source,
-                            processInfo: new StateEventInfo(msg.Process, RevolutionData.Context.Process.Events.Error)),
-                        Source);
+                            processInfo: new StateEventInfo(msg.Process, EventFunctions.UpdateEventData(ex.Message, RevolutionData.Context.Process.Events.Error))));
                 }
 
 

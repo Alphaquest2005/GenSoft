@@ -38,7 +38,7 @@ namespace RevolutionData
                             EventAggregator.EventMessageBus.Current.Publish( new LoadEntitySet(entityType,
                                 new StateCommandInfo(v.Process,
                                     Context.CommandFunctions.UpdateCommandData("Application",Context.Entity.Commands.LoadEntitySetWithChanges)),
-                                v.Process, v.Source), v.Source);
+                                v.Process, v.Source));
                         }, new StateEventInfo(Processes.IntialSystemProcess, Context.EventFunctions.UpdateEventData("HeaderViewModel" ,RevolutionData.Context.ViewModel.Events.Initialized), Guid.NewGuid())),
 
                     new ViewEventSubscription<IHeaderViewModel, IEntitySetLoaded>(

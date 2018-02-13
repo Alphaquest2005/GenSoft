@@ -37,15 +37,15 @@ namespace DataServices.Actors
                 exception: ex,
                 source: Source, processInfo: new StateEventInfo(msg.Process, RevolutionData.Context.Process.Events.Error));
             Logger.Log(LoggingLevel.Error, $"Error:ProcessId:{msg.ProcessInfo.Process}, ProcessStatus:{msg.ProcessInfo.State.Status}, ExceptionMessage: {ex.Message}|||| {ex.StackTrace}");
-            EventMessageBus.Current.Publish(outMsg, Source);
-            EventMessageBus.Current.Publish(new RequestProcessLog(new StateCommandInfo(msg.Process, RevolutionData.Context.Process.Commands.CreateLog), msg.Process,Source), Source);
+            EventMessageBus.Current.Publish(outMsg);
+            EventMessageBus.Current.Publish(new RequestProcessLog(new StateCommandInfo(msg.Process, RevolutionData.Context.Process.Commands.CreateLog), msg.Process,Source));
             OutMessages = OutMessages.Add(outMsg);
         }
 
         internal void Publish(dynamic msg)
         {
            
-            EventMessageBus.Current.Publish(msg, Source);
+            EventMessageBus.Current.Publish(msg);
             OutMessages = OutMessages.Add(msg);
         }
         //public override string PersistenceId

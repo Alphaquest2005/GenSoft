@@ -30,25 +30,12 @@ namespace EFRepository
          {
              
             var processStateInfo = new RevolutionEntities.Process.StateEventInfo(Processes.IntialSystemProcess, new StateEvent("CurrentApplicationChanged", "Current Application Changed", "notes","Process","DataContext"), Guid.NewGuid());
-            EventMessageBus.Current.GetEvent<ICurrentApplicationChanged>(processStateInfo,Source)
-                .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == processStateInfo.EventKey)
-                .Subscribe(OnCurrentApplicationChanged);
 
         }
 
         
 
-        private  Application CurrentApplication { get;  set; }
-        private  void OnCurrentApplicationChanged(ICurrentApplicationChanged currentEntityChanged)
-        {
-            if (currentEntityChanged.Application == null) return;
-            if (CurrentApplication?.Id == currentEntityChanged.Application?.Id) return;
-            using (var ctx = new GenSoftDBContext())
-            {
-                CurrentApplication = ctx.Application.Include(x => x.DatabaseInfo)
-                    .First(x => x.Id == currentEntityChanged.Application.Id);
-            }
-        }
+      
 
         public  void Create(ICreateEntity msg)
         {
@@ -59,8 +46,7 @@ namespace EFRepository
         {
             try
             {
-                if (CurrentApplication == null) return;
-                if (CurrentApplication?.DatabaseInfo.IsRealDatabase == IsRealDatabase) return;
+                if (msg.ProcessInfo.Process.Applet is IDbApplet) return;
 
                 using (var ctx = new GenSoftDBContext())
                 {
@@ -145,7 +131,7 @@ namespace EFRepository
                         new EntityWithChangesUpdated(newEntity, msg.Changes,
                             new RevolutionEntities.Process.StateEventInfo(msg.Process,
                                 RevolutionData.Context.EventFunctions.UpdateEventData(msg.EntityType.Name, EntityEvents.Events.EntityUpdated)), msg.Process,
-                            Source), Source);
+                            Source));
 
 
                 }
@@ -164,8 +150,7 @@ namespace EFRepository
 
         public  void LoadEntitySetWithChanges(IGetEntitySetWithChanges msg)
         {
-            if (CurrentApplication == null) return;
-            if (CurrentApplication?.DatabaseInfo.IsRealDatabase == IsRealDatabase) return;
+            if (msg.ProcessInfo.Process.Applet is IDbApplet) return;
             using (var ctx = new GenSoftDBContext())
             {
                 var entityType = msg.EntityType;
@@ -186,15 +171,14 @@ namespace EFRepository
                     EventMessageBus.Current.Publish(
                         new EntitySetWithChangesLoaded(msg.EntityType,entities, msg.Changes,
                             new RevolutionEntities.Process.StateEventInfo(msg.Process, RevolutionData.Context.EventFunctions.UpdateEventData(msg.EntityType.Name, EntityEvents.Events.EntitySetLoaded)), msg.Process,
-                            Source), Source);
+                            Source));
                
             }
         }
 
         public  void LoadEntitySet(ILoadEntitySet msg)
         {
-            if (CurrentApplication == null) return;
-            if (CurrentApplication?.DatabaseInfo.IsRealDatabase == IsRealDatabase) return;
+            if (msg.ProcessInfo.Process.Applet is IDbApplet) return;
             using (var ctx = new GenSoftDBContext())
             {
                var entityTypeId = ctx.EntityType
@@ -212,15 +196,14 @@ namespace EFRepository
                 EventMessageBus.Current.Publish(
                         new EntitySetLoaded(msg.EntityType, viewset, 
                             new RevolutionEntities.Process.StateEventInfo(msg.Process, RevolutionData.Context.EventFunctions.UpdateEventData(msg.EntityType.Name, EntityEvents.Events.EntitySetLoaded)), msg.Process,
-                            Source), Source);
+                            Source));
                 
             }
         }
 
         private  IQueryable<Entity> GetEntities(GenSoftDBContext ctx, int? viewId)
         {
-            if (CurrentApplication == null) return new List<Entity>().AsQueryable();
-            if (CurrentApplication?.DatabaseInfo.IsRealDatabase == IsRealDatabase) return new List<Entity>().AsQueryable();
+            
             var entities = ctx.Entity.AsNoTracking().Include(x => x.EntityAttribute)
                 .ThenInclude(x => x.Attributes).ThenInclude(x => x.EntityId)
                 .ThenInclude(x => x.Attributes).ThenInclude(x => x.EntityName);
@@ -253,8 +236,7 @@ namespace EFRepository
 
         public  void GetEntityWithChanges(IGetEntityWithChanges msg)
         {
-            if (CurrentApplication == null) return;
-            if (CurrentApplication?.DatabaseInfo.IsRealDatabase == IsRealDatabase) return;
+            if (msg.ProcessInfo.Process.Applet is IDbApplet) return;
             using (var ctx = new GenSoftDBContext())
             {
                 var entityType = msg.EntityType;
@@ -267,14 +249,14 @@ namespace EFRepository
                     EventMessageBus.Current.Publish(
                         new EntityWithChangesFound(entity, msg.Changes,
                             new RevolutionEntities.Process.StateEventInfo(msg.Process, RevolutionData.Context.EventFunctions.UpdateEventData(msg.EntityType.Name, EntityEvents.Events.EntityFound)), msg.Process,
-                            Source), Source);
+                            Source));
                 }
                 else
                 {
                     EventMessageBus.Current.Publish(
                         new EntityWithChangesFound(DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(msg.EntityType.Name).DefaultEntity(), msg.Changes,
                             new RevolutionEntities.Process.StateEventInfo(msg.Process, RevolutionData.Context.EventFunctions.UpdateEventData(msg.EntityType.Name, EntityEvents.Events.EntityFound)), msg.Process,
-                            Source), Source);
+                            Source));
                 }
             }
         }

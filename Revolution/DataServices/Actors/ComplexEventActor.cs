@@ -13,7 +13,9 @@ using RevolutionEntities.Process;
 using DataServices.Utils;
 using EventMessages.Commands;
 using EventMessages.Events;
+using RevolutionData.Context;
 using Utilities;
+using ViewModel.Interfaces;
 
 
 namespace DataServices.Actors
@@ -65,7 +67,7 @@ namespace DataServices.Actors
 
             ComplexEventAction = new ComplexEventAction();
             InMessages.Clear();
-
+           
         }
 
         private void handleComplexEventLogRequest()
@@ -110,12 +112,14 @@ namespace DataServices.Actors
             //todo: good implimentation of Railway pattern chain execution with error handling
             if (!expectedEvent.EventPredicate.Invoke(message))
             {
+                if (message is IViewModelInitialized) {}
+                var applicationException = new ApplicationException($"Predicate failure on Message. Predicate:{expectedEvent.ProcessInfo.State.Subject}-{expectedEvent.ProcessInfo.State.Data}--- Message:{message.ProcessInfo.State.Name}:{message.ProcessInfo.State.Subject}:{message.ProcessInfo.State.Data}");
                 var outMsg = new ProcessEventFailure(failedEventType: message.GetType(),
                     failedEventMessage: message,
                     expectedEventType: ComplexEventAction.ExpectedMessageType,
-                    exception: new ApplicationException($"Predicate failure on Message. Predicate:{expectedEvent.EventPredicate}| Message:{message.ProcessInfo.State.Name}:{message.ProcessInfo.State.Subject}:{message.ProcessInfo.State.Data}"), 
-                    source: Source, processInfo: new StateEventInfo(message.Process, RevolutionData.Context.Process.Events.Error));
-                EventMessageBus.Current.Publish(outMsg, Source);
+                    exception: applicationException, 
+                    source: Source, processInfo: new StateEventInfo(message.Process, EventFunctions.UpdateEventData(applicationException.Message,RevolutionData.Context.Process.Events.Error)));
+                EventMessageBus.Current.Publish(outMsg);
                 return;
             }
 

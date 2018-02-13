@@ -32,29 +32,12 @@ namespace EFRepository
         private DataContext()
         {
             var processStateInfo = new StateEventInfo(Processes.IntialSystemProcess, RevolutionData.Context.Process.Events.CurrentApplicationChanged, Guid.NewGuid());
-            EventMessageBus.Current.GetEvent<ICurrentApplicationChanged>( processStateInfo,Source)
-                .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == processStateInfo.EventKey)
-                .Subscribe(OnCurrentApplicationChanged);
-            //GenSoft-Creator is the default database and because its real data i need not do this any where else
-            SetCurrentApplication(1);
+          
         }
 
-        private  Application CurrentApplication { get;  set; }
-        private  void OnCurrentApplicationChanged(ICurrentApplicationChanged currentEntityChanged)
-        {
-            if(currentEntityChanged.Application == null) return;
-            if (CurrentApplication?.Id == currentEntityChanged.Application.Id) return;
-            SetCurrentApplication(currentEntityChanged.Application.Id);
-        }
 
-        private  void SetCurrentApplication(int appId)
-        {
-            using (var ctx = new GenSoftDBContext())
-            {
-                CurrentApplication = ctx.Application.Include(x => x.DatabaseInfo)
-                    .First(x => x.Id == appId);
-            }
-        }
+
+
 
         public  void Create(ICreateEntity msg)
         {
@@ -65,8 +48,8 @@ namespace EFRepository
         {
             try
             {
-                if (CurrentApplication == null) return;
-                if (CurrentApplication?.DatabaseInfo.IsRealDatabase == IsRealDatabase) return;
+                if (!(msg.ProcessInfo.Process.Applet is IDbApplet)) return;
+                
                 if (TypeNameExtensions.EntityTypesLkp.TryGetValue(entityNamespace + msg.EntityType.Name,out var _) == false) return;
                 using (var ctx = new GenSoftDBContext())
                 {
@@ -151,7 +134,7 @@ namespace EFRepository
                         new EntityWithChangesUpdated(newEntity, msg.Changes,
                             new RevolutionEntities.Process.StateEventInfo(msg.Process,
                                 RevolutionData.Context.EventFunctions.UpdateEventData(msg.EntityType.Name, EntityEvents.Events.EntityUpdated)), msg.Process,
-                            Source), Source);
+                            Source));
 
 
                 }
@@ -170,9 +153,8 @@ namespace EFRepository
 
         public  void LoadEntitySetWithChanges(IGetEntitySetWithChanges msg)
         {
-            if (CurrentApplication == null) return;
-            if (CurrentApplication?.DatabaseInfo.IsRealDatabase == IsRealDatabase) return;
-            if(TypeNameExtensions.EntityTypesLkp.TryGetValue(entityNamespace + msg.EntityType.Name, out var _) == false) return;
+            if (!(msg.ProcessInfo.Process.Applet is IDbApplet)) return;
+            if (TypeNameExtensions.EntityTypesLkp.TryGetValue(entityNamespace + msg.EntityType.Name, out var _) == false) return;
             using (var ctx = new GenSoftDBContext())
             {
                 var entityType = msg.EntityType;
@@ -194,7 +176,7 @@ namespace EFRepository
                         new EntitySetWithChangesLoaded(msg.EntityType, entities, msg.Changes,
                             new RevolutionEntities.Process.StateEventInfo(msg.Process,
                                 RevolutionData.Context.EventFunctions.UpdateEventData(msg.EntityType.Name, EntityEvents.Events.EntitySetLoaded)), msg.Process,
-                            Source), Source);
+                            Source));
                 
             }
         }
@@ -208,8 +190,7 @@ namespace EFRepository
 
         public  void LoadEntitySet(ILoadEntitySet msg)
         {
-            if (CurrentApplication == null) return;
-            if (CurrentApplication?.DatabaseInfo.IsRealDatabase == IsRealDatabase) return;
+            if (!(msg.ProcessInfo.Process.Applet is IDbApplet)) return;
             if (TypeNameExtensions.EntityTypesLkp.TryGetValue(entityNamespace + msg.EntityType.Name, out var _) == false) return;
 
             using (var ctx = new GenSoftDBContext())
@@ -220,7 +201,7 @@ namespace EFRepository
             EventMessageBus.Current.Publish(
                         new EntitySetLoaded(msg.EntityType, viewset, 
                             new RevolutionEntities.Process.StateEventInfo(msg.Process, RevolutionData.Context.EventFunctions.UpdateEventData(msg.EntityType.Name, EntityEvents.Events.EntitySetLoaded)), msg.Process,
-                            Source), Source);
+                            Source));
              }   
             
         }
@@ -265,8 +246,7 @@ namespace EFRepository
 
         public  void GetEntityWithChanges(IGetEntityWithChanges msg)
         {
-            if (CurrentApplication == null) return;
-            if (CurrentApplication?.DatabaseInfo.IsRealDatabase == IsRealDatabase) return;
+            if (!(msg.ProcessInfo.Process.Applet is IDbApplet)) return;
             if (TypeNameExtensions.EntityTypesLkp.TryGetValue(entityNamespace + msg.EntityType.Name, out var _) == false) return;
             using (var ctx = new GenSoftDBContext())
             {
@@ -280,14 +260,14 @@ namespace EFRepository
                     EventMessageBus.Current.Publish(
                         new EntityWithChangesFound(entity, msg.Changes,
                             new RevolutionEntities.Process.StateEventInfo(msg.Process, RevolutionData.Context.EventFunctions.UpdateEventData(msg.EntityType.Name, EntityEvents.Events.EntityFound)), msg.Process,
-                            Source), Source);
+                            Source));
                 }
                 else
                 {
                     EventMessageBus.Current.Publish(
                         new EntityWithChangesFound(DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(msg.EntityType.Name).DefaultEntity(), msg.Changes,
                             new RevolutionEntities.Process.StateEventInfo(msg.Process, RevolutionData.Context.EventFunctions.UpdateEventData(msg.EntityType.Name, EntityEvents.Events.EntityFound)), msg.Process,
-                            Source), Source);
+                            Source));
                 }
             }
         }

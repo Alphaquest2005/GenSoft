@@ -19,7 +19,7 @@ namespace CommonMessages
             Message = message;
         }
 
-        public ISystemSource Source { get; }
+        public ISystemSource Source { get; set; }
         public IDynamicObject Message { get; }
         public DateTime MessageDateTime { get; }
         public IMachineInfo MachineInfo { get; }

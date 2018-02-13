@@ -60,7 +60,7 @@ namespace DataServices.Actors
                     new ServiceStarted<IServiceManager>(this,
                         new StateEventInfo(Processes.IntialSystemProcess,
                             RevolutionData.Context.EventFunctions.UpdateEventData(Source.SourceName, RevolutionData.Context.Actor.Events.ActorStarted)),
-                        Processes.IntialSystemProcess, Source), Source);
+                        Processes.IntialSystemProcess, Source));
 
 
 
@@ -76,8 +76,7 @@ namespace DataServices.Actors
                         expectedEventType: typeof(ServiceStarted<IServiceManager>),
                         exception: ex,
                         source: Source,
-                        processInfo: new StateEventInfo(Processes.IntialSystemProcess, RevolutionData.Context.Process.Events.Error)),
-                    Source);
+                        processInfo: new StateEventInfo(Processes.IntialSystemProcess, RevolutionData.Context.Process.Events.Error)));
 
             }
         }

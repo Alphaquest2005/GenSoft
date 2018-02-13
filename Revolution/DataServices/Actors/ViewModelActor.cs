@@ -6,6 +6,7 @@ using SystemInterfaces;
 using BootStrapper;
 using EventAggregator;
 using EventMessages.Events;
+using RevolutionData.Context;
 using RevolutionEntities.Process;
 using ViewMessages;
 using ViewModel.Interfaces;
@@ -46,7 +47,7 @@ namespace DataServices.Actors
                 EventMessageBus.Current.Publish(
                     new ViewModelCreated<IViewModel>(vm,
                         new StateEventInfo(vmInfo.Process, RevolutionData.Context.EventFunctions.UpdateEventData(vm.ViewInfo.Name, RevolutionData.Context.ViewModel.Events.ViewModelCreated)),
-                        vmInfo.Process, Source), Source);
+                        vmInfo.Process, Source));
                 }
                 else
                 {
@@ -54,7 +55,7 @@ namespace DataServices.Actors
                     EventMessageBus.Current.Publish(
                         new ViewModelCreated<TViewModel>(vm,
                             new StateEventInfo(vmInfo.Process, RevolutionData.Context.EventFunctions.UpdateEventData(vm.ViewInfo.Name, RevolutionData.Context.ViewModel.Events.ViewModelCreated)),
-                            vmInfo.Process, Source), Source);
+                            vmInfo.Process, Source));
                 }
                
 
@@ -69,8 +70,7 @@ namespace DataServices.Actors
                         exception: ex,
                         source: Source,
                         processInfo: new StateEventInfo(vmInfo.Process,
-                            RevolutionData.Context.Process.Events.Error)),
-                    Source);
+                           EventFunctions.UpdateEventData(ex.Message, RevolutionData.Context.Process.Events.Error))));
             }
 
         }

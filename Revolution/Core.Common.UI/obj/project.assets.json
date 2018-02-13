@@ -5799,6 +5799,7 @@
       "JB.Common.Collections.Reactive >= 0.8.107-pre",
       "JB.Common.Reactive >= 0.8.107-pre",
       "ReactiveProperty >= 4.2.0",
+      "RevolutionData >= 1.0.0",
       "RevolutionEntities >= 1.0.0",
       "SystemInterfaces >= 1.0.0",
       "Utilities >= 1.0.0",
@@ -5864,6 +5865,9 @@
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionData\\RevolutionData.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionData\\RevolutionData.csproj"
             }
           }
         }

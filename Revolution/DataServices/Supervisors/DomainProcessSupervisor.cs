@@ -115,10 +115,17 @@ namespace DataServices.Actors
                 {
                     SystemProcess systemProcess;
                     maxProcessId += 1;
+                    var rapp = ctx.Application
+                        .Include(x => x.DatabaseInfo)
+                        .First(x => x.Id == CurrentApplication.Id);
+                    var dbapp = rapp.DatabaseInfo.IsRealDatabase == true
+                        ? new DbApplet(rapp.Name,
+                            rapp.DatabaseInfo.DBName)
+                        : new Applet(rapp.Name);
 
                     systemProcess = new SystemProcess(
                         new SystemProcessInfo(maxProcessId, Process, "AutoSystemProcess",
-                            "AutoSystemProcess", "Auto", Process.User.UserId), Process.User, Process.MachineInfo);
+                            "AutoSystemProcess", "Auto", Process.User.UserId,dbapp), Process.User, Process.MachineInfo);
                    
                     var parentEntityTypes = ctx.EntityRelationship.Where(x => x.EntityTypeAttributes.EntityType.ApplicationId == CurrentApplication.Id).Select(x => x.ParentEntity.EntityTypeAttributes.EntityType).Distinct();
                     var childEntityTypes = ctx.EntityRelationship.Where(x => x.EntityTypeAttributes.EntityType.ApplicationId == CurrentApplication.Id).Select(x => x.EntityTypeAttributes.EntityType).Distinct();
@@ -302,13 +309,29 @@ namespace DataServices.Actors
             using (var ctx = new GenSoftDBContext())
             {
                 domainProcess.SystemProcess = ctx.SystemProcess
+                    .Include(x => x.DomainProcess.Application.DatabaseInfo)
                     .Include(x => x.ParentSystemProcess.SystemProcess.Agent)
                     .First(x => x.Id == domainProcess.Id);
+
+                var dbapp = domainProcess.SystemProcess.DomainProcess.Application.DatabaseInfo.IsRealDatabase == true
+                    ? new DbApplet(domainProcess.SystemProcess.DomainProcess.Application.Name,
+                        domainProcess.SystemProcess.DomainProcess.Application.DatabaseInfo.DBName)
+                    : new Applet(domainProcess.SystemProcess.DomainProcess.Application.Name);
+
                 return new SystemProcess(
-                    new SystemProcessInfo(domainProcess.Id, new RevolutionEntities.Process.SystemProcess(new RevolutionEntities.Process.Process(domainProcess.SystemProcess.ParentSystemProcess.Id, Processes.NullSystemProcess, domainProcess.SystemProcess.ParentSystemProcess.SystemProcess.Name, domainProcess.SystemProcess.ParentSystemProcess.SystemProcess.Description, domainProcess.SystemProcess.ParentSystemProcess.SystemProcess.Symbol, new RevolutionEntities.Process.Agent(domainProcess.SystemProcess.ParentSystemProcess.SystemProcess.Agent.UserName)), Processes.ThisMachineInfo),
+                    new SystemProcessInfo(domainProcess.Id,
+                    new SystemProcess(
+                            new RevolutionEntities.Process.Process(
+                                                                    domainProcess.SystemProcess.ParentSystemProcess.Id,
+                                                                    Processes.NullSystemProcess,
+                                                                    domainProcess.SystemProcess.ParentSystemProcess.SystemProcess.Name,
+                                                                    domainProcess.SystemProcess.ParentSystemProcess.SystemProcess.Description,
+                                                                    domainProcess.SystemProcess.ParentSystemProcess.SystemProcess.Symbol,
+                                                                    new RevolutionEntities.Process.Agent(domainProcess.SystemProcess.ParentSystemProcess.SystemProcess.Agent.UserName),
+                                                                    dbapp), Processes.ThisMachineInfo),
                         domainProcess.SystemProcess.Name,
                         domainProcess.SystemProcess.Description, domainProcess.SystemProcess.Symbol,
-                        user.UserId), user, Process.MachineInfo);
+                        user.UserId, dbapp), user, Process.MachineInfo);
             }
                 
         }
@@ -395,23 +418,36 @@ namespace DataServices.Actors
                  var entityType = ctx.EntityType.First(x => x.Type.Name == mainEntityChanged.EntityType.Name);
                  var domainProcess = ctx.DomainProcess
                     .Include(x => x.SystemProcess)
+                    .Include(x => x.Application.DatabaseInfo)
                     .Include(x => x.ProcessStep).ThenInclude(x => x.MainEntity.EntityType)
                     .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
-                    .FirstOrDefault(x => x.ProcessStep.Any(z => z.MainEntity.EntityType == entityType));
+                    .FirstOrDefault(x => x.ProcessStep.Any(z => z.MainEntity.EntityType.Id == entityType.Id));
                 SystemProcess systemProcess;
                 
                 maxProcessId += 1;
                 if (domainProcess == null)
                 {
+                    var rapp = ctx.Application
+                        .Include(x => x.DatabaseInfo)
+                        .First(x => x.Id == CurrentApplication.Id);
+                    var dbapp = rapp.DatabaseInfo.IsRealDatabase == true
+                        ? new DbApplet(rapp.Name,
+                            rapp.DatabaseInfo.DBName)
+                        : new Applet(rapp.Name);
+
                     systemProcess = new SystemProcess(
                         new SystemProcessInfo(maxProcessId, mainEntityChanged.Process, $"AutoProcess-{entityType.EntitySetName}",
-                            $"AutoProcess-{entityType.EntitySetName}", "Auto", mainEntityChanged.User.UserId), mainEntityChanged.User, mainEntityChanged.MachineInfo);
+                            $"AutoProcess-{entityType.EntitySetName}", "Auto", mainEntityChanged.User.UserId, dbapp), mainEntityChanged.User, mainEntityChanged.MachineInfo);
                 }
                 else
                 {
+                    var dbapp = domainProcess.SystemProcess.DomainProcess.Application.DatabaseInfo.IsRealDatabase == true
+                        ? new DbApplet(domainProcess.SystemProcess.DomainProcess.Application.Name,
+                            domainProcess.SystemProcess.DomainProcess.Application.DatabaseInfo.DBName)
+                        : new Applet(domainProcess.SystemProcess.DomainProcess.Application.Name);
                     systemProcess = new SystemProcess(
                     new SystemProcessInfo(maxProcessId, mainEntityChanged.Process, domainProcess.SystemProcess.Name,
-                        domainProcess.SystemProcess.Description, domainProcess.SystemProcess.Symbol, mainEntityChanged.User.UserId), mainEntityChanged.User, mainEntityChanged.MachineInfo);
+                        domainProcess.SystemProcess.Description, domainProcess.SystemProcess.Symbol, mainEntityChanged.User.UserId,dbapp), mainEntityChanged.User, mainEntityChanged.MachineInfo);
                 }
                 Task.Run(() => { InitializeProcess(systemProcess);}).ConfigureAwait(false);
                 Task.Run(() =>
@@ -440,7 +476,7 @@ namespace DataServices.Actors
                 new RevolutionEntities.Process.StateCommandInfo(systemProcess, RevolutionData.Context.CommandFunctions.UpdateCommandData(processComplexEvent.Key, RevolutionData.Context.Process.Commands.StartProcess)),
                 systemProcess, Source);
 
-            EventMessageBus.Current.Publish(inMsg, Source);
+            EventMessageBus.Current.Publish(inMsg);
         }
 
         //private void PublishViewModels(SystemProcess systemProcess, List<IViewModelInfo> viewModelInfos)
@@ -459,7 +495,7 @@ namespace DataServices.Actors
                 new RevolutionEntities.Process.StateCommandInfo(systemProcess, RevolutionData.Context.CommandFunctions.UpdateCommandData(entityViewInfo.EntityType.Name, RevolutionData.Context.Process.Commands.StartProcess)),
                 systemProcess, Source);
 
-            EventMessageBus.Current.Publish(inMsg, Source);
+            EventMessageBus.Current.Publish(inMsg);
         }
 
         private void BuildExpressions()

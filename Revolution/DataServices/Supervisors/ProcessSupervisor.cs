@@ -9,6 +9,7 @@ using Actor.Interfaces;
 using EventAggregator;
 using EventMessages.Commands;
 using EventMessages.Events;
+using RevolutionData.Context;
 using RevolutionEntities.Process;
 using Utilities;
 
@@ -94,8 +95,7 @@ namespace DataServices.Actors
                         exception: ex,
                         source: Source,
                         processInfo:
-                        new StateEventInfo(inMsg.Process, RevolutionData.Context.Process.Events.Error)),
-                    Source);
+                        new StateEventInfo(inMsg.Process, EventFunctions.UpdateEventData(ex.Message, RevolutionData.Context.Process.Events.Error))));
             }
         }
 
