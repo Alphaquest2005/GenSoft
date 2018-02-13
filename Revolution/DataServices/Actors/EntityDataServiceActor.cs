@@ -18,12 +18,10 @@ namespace DataServices.Actors
        
       
         
-        public EntityDataServiceActor(ICreateEntityService msg, IDynamicEntityType entityType, IProcessSystemMessage firstMessage) : base(msg.ActorId,msg.Process)
+        public EntityDataServiceActor(ICreateEntityService msg, IDynamicEntityType entityType) : base(msg.ActorId,msg.Process)
         {
             Action = (Action<ISystemSource,TService>)msg.Action;
-            if(firstMessage is TService service) HandledEvent(service);
-
-
+           
             var processStateInfo = new StateEventInfo(Process,RevolutionData.Context.EventFunctions.UpdateEventData(entityType.Name, RevolutionData.Context.Entity.Events.EntityRequested), Guid.NewGuid());
             EventMessageBus.Current.GetEvent<TService>(processStateInfo, Source)
                 .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == processStateInfo.EventKey)

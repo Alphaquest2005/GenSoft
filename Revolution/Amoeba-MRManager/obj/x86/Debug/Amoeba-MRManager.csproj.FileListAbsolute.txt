@@ -1,0 +1,6 @@
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba-MRManager\bin\x86\Debug\Amoeba-MRManager.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba-MRManager\bin\x86\Debug\Amoeba-MRManager.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba-MRManager\obj\x86\Debug\Amoeba-MRManager.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba-MRManager\obj\x86\Debug\Amoeba-MRManager.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba-MRManager\obj\x86\Debug\Amoeba-MRManager.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba-MRManager\obj\x86\Debug\Amoeba-MRManager.pdb

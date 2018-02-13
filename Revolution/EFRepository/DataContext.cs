@@ -21,12 +21,15 @@ using StateEventInfo = RevolutionEntities.Process.StateEventInfo;
 
 namespace EFRepository
 {
-    public class DataContext:BaseRepository
+    public class DataContext:BaseRepository<DataContext>
     {
-        private static bool IsRealDatabase = true;
-        private static string entityNamespace = "GenSoft.Entities.";
+        private  bool IsRealDatabase = false;
+        private  string entityNamespace = "GenSoft.Entities.";
+        private static readonly DataContext instance = new DataContext();
+        public static DataContext Instance => instance;
+        static DataContext() { }
 
-        static DataContext()
+        private DataContext()
         {
             var processStateInfo = new StateEventInfo(Processes.IntialSystemProcess, RevolutionData.Context.Process.Events.CurrentApplicationChanged, Guid.NewGuid());
             EventMessageBus.Current.GetEvent<ICurrentApplicationChanged>( processStateInfo,Source)
@@ -36,15 +39,15 @@ namespace EFRepository
             SetCurrentApplication(1);
         }
 
-        private static Application CurrentApplication { get;  set; }
-        private static void OnCurrentApplicationChanged(ICurrentApplicationChanged currentEntityChanged)
+        private  Application CurrentApplication { get;  set; }
+        private  void OnCurrentApplicationChanged(ICurrentApplicationChanged currentEntityChanged)
         {
             if(currentEntityChanged.Application == null) return;
             if (CurrentApplication?.Id == currentEntityChanged.Application.Id) return;
             SetCurrentApplication(currentEntityChanged.Application.Id);
         }
 
-        private static void SetCurrentApplication(int appId)
+        private  void SetCurrentApplication(int appId)
         {
             using (var ctx = new GenSoftDBContext())
             {
@@ -53,16 +56,17 @@ namespace EFRepository
             }
         }
 
-        public static void Create(ICreateEntity msg)
+        public  void Create(ICreateEntity msg)
         {
             throw new NotImplementedException();
         }
 
-        public static void UpdateEntityWithChanges(IUpdateEntityWithChanges msg)
+        public void UpdateEntityWithChanges(IUpdateEntityWithChanges msg)
         {
             try
             {
-                if (CurrentApplication?.DatabaseInfo.IsRealDatabase != IsRealDatabase) return;
+                if (CurrentApplication == null) return;
+                if (CurrentApplication?.DatabaseInfo.IsRealDatabase == IsRealDatabase) return;
                 if (TypeNameExtensions.EntityTypesLkp.TryGetValue(entityNamespace + msg.EntityType.Name,out var _) == false) return;
                 using (var ctx = new GenSoftDBContext())
                 {
@@ -78,7 +82,7 @@ namespace EFRepository
                         : ctx.Entity.FirstOrDefault(x => x.Id == msg.Entity.Id && x.EntityTypeId == entityType.Id);
                     if (entity == null)
                     {
-                        PublishProcesError(msg,
+                        base.PublishProcesError(msg,
                             new ApplicationException(
                                 $"Entity with Type - '{msg.Entity.EntityType.Name}' & Id:{msg.Entity.Id} not Found."),
                             typeof(EntityWithChangesUpdated));
@@ -159,15 +163,15 @@ namespace EFRepository
             }
         }
 
-        public static void AddEntity(IAddOrGetEntityWithChanges msg)
+        public  void AddEntity(IAddOrGetEntityWithChanges msg)
         {
             throw new NotImplementedException();
         }
 
-        public static void LoadEntitySetWithChanges(IGetEntitySetWithChanges msg)
+        public  void LoadEntitySetWithChanges(IGetEntitySetWithChanges msg)
         {
-            
-            if (CurrentApplication?.DatabaseInfo.IsRealDatabase != IsRealDatabase) return;
+            if (CurrentApplication == null) return;
+            if (CurrentApplication?.DatabaseInfo.IsRealDatabase == IsRealDatabase) return;
             if(TypeNameExtensions.EntityTypesLkp.TryGetValue(entityNamespace + msg.EntityType.Name, out var _) == false) return;
             using (var ctx = new GenSoftDBContext())
             {
@@ -195,16 +199,17 @@ namespace EFRepository
             }
         }
 
-        private static string GetWhereStr(Dictionary<string, object> changes)
+        private  string GetWhereStr(Dictionary<string, object> changes)
         {
             var whereStr = changes.Aggregate("", (str, itm) => str + ($"{itm.Key} == \"{itm.Value}\" &&"));
             whereStr = whereStr.TrimEnd('&');
             return whereStr;
         }
 
-        public static void LoadEntitySet(ILoadEntitySet msg)
+        public  void LoadEntitySet(ILoadEntitySet msg)
         {
-            if (CurrentApplication?.DatabaseInfo.IsRealDatabase != IsRealDatabase) return;
+            if (CurrentApplication == null) return;
+            if (CurrentApplication?.DatabaseInfo.IsRealDatabase == IsRealDatabase) return;
             if (TypeNameExtensions.EntityTypesLkp.TryGetValue(entityNamespace + msg.EntityType.Name, out var _) == false) return;
 
             using (var ctx = new GenSoftDBContext())
@@ -220,7 +225,7 @@ namespace EFRepository
             
         }
 
-        private static IQueryable<TEntity> GetEntities<TEntity>(DbContext ctx,string type) where TEntity : class, IEntity
+        private  IQueryable<TEntity> GetEntities<TEntity>(DbContext ctx,string type) where TEntity : class, IEntity
         {
             try
             {
@@ -238,29 +243,30 @@ namespace EFRepository
 
         }
 
-        public static void LoadEntitySetWithFilter(ILoadEntitySetWithFilter msg)
+        public  void LoadEntitySetWithFilter(ILoadEntitySetWithFilter msg)
         {
             throw new NotImplementedException();
         }
 
-        public static void LoadEntitySetWithFilterWithIncludes(ILoadEntitySetWithFilterWithIncludes msg)
+        public  void LoadEntitySetWithFilterWithIncludes(ILoadEntitySetWithFilterWithIncludes msg)
         {
             throw new NotImplementedException();
         }
 
-        public static void DeleteEntity(IDeleteEntity msg)
+        public  void DeleteEntity(IDeleteEntity msg)
         {
             throw new NotImplementedException();
         }
 
-        public static void GetEntityById(IGetEntityById msg)
+        public  void GetEntityById(IGetEntityById msg)
         {
             throw new NotImplementedException();
         }
 
-        public static void GetEntityWithChanges(IGetEntityWithChanges msg)
+        public  void GetEntityWithChanges(IGetEntityWithChanges msg)
         {
-            if (CurrentApplication?.DatabaseInfo.IsRealDatabase != IsRealDatabase) return;
+            if (CurrentApplication == null) return;
+            if (CurrentApplication?.DatabaseInfo.IsRealDatabase == IsRealDatabase) return;
             if (TypeNameExtensions.EntityTypesLkp.TryGetValue(entityNamespace + msg.EntityType.Name, out var _) == false) return;
             using (var ctx = new GenSoftDBContext())
             {
@@ -286,7 +292,7 @@ namespace EFRepository
             }
         }
 
-        private static IDynamicEntity GetDynamicEntityWithChanges(GenSoftDBContext ctx, IDynamicEntityType entityType,
+        private  IDynamicEntity GetDynamicEntityWithChanges(GenSoftDBContext ctx, IDynamicEntityType entityType,
             Dictionary<string, object> changes)
         {
             try
@@ -317,7 +323,7 @@ namespace EFRepository
 
         }
 
-        private static IQueryable<IDynamicEntity> GetViewEntities(IDynamicEntityType entityType, IQueryable<IEntity> res, List<int> viewEntityAttributes)
+        private  IQueryable<IDynamicEntity> GetViewEntities(IDynamicEntityType entityType, IQueryable<IEntity> res, List<int> viewEntityAttributes)
         {
             return res.Select(x => new DynamicEntity(entityType, x.Id,
                 entityType.Properties
@@ -325,7 +331,7 @@ namespace EFRepository
                     .ToDictionary(q => q.Name, q => q.Value as object)) as IDynamicEntity);
         }
 
-        private static List<int> GetViewEntityAttributes(GenSoftDBContext ctx, int? viewId)
+        private  List<int> GetViewEntityAttributes(GenSoftDBContext ctx, int? viewId)
         {
             return ctx.EntityTypeAttributes.AsNoTracking()
                 .Where(x => x.EntityTypeId == viewId)

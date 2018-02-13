@@ -8,8 +8,8 @@ namespace DataServices.Actors
         
         public static void DeleteEntity(this IDeleteEntity msg) 
         {
-            DynamicDataContext.DeleteEntity(msg);
-            DataContext.DeleteEntity(msg);
+            DynamicDataContext.Instance.DeleteEntity(msg);
+            DataContext.Instance.DeleteEntity(msg);
         }
 
     }

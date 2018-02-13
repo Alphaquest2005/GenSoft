@@ -2,6 +2,7 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Diagnostics;
 using System.Linq;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
@@ -61,10 +62,10 @@ namespace DataServices.Actors
 
         private void CleanUpActor(ICleanUpSystemProcess cleanUpSystemProcess)
         {
-            
+
             ComplexEventAction = new ComplexEventAction();
             InMessages.Clear();
-            
+
         }
 
         private void handleComplexEventLogRequest()
@@ -100,12 +101,29 @@ namespace DataServices.Actors
                 .Where(x => x.Process.Id == Process.Id)
                 //.Where(x => x.GetType().GetInterfaces().Any(z => z == expectedEvent.EventType))
                 .Subscribe( x => CheckEvent(expectedEvent, x));
+
+           
         }
 
         private void CheckEvent(IProcessExpectedEvent expectedEvent, IProcessSystemMessage message)
         {
             //todo: good implimentation of Railway pattern chain execution with error handling
-            if (!expectedEvent.EventPredicate.Invoke(message)) return;
+            if (!expectedEvent.EventPredicate.Invoke(message))
+            {
+                var outMsg = new ProcessEventFailure(failedEventType: message.GetType(),
+                    failedEventMessage: message,
+                    expectedEventType: ComplexEventAction.ExpectedMessageType,
+                    exception: new ApplicationException($"Predicate failure on Message. Predicate:{expectedEvent.EventPredicate}| Message:{message.ProcessInfo.State.Name}:{message.ProcessInfo.State.Subject}:{message.ProcessInfo.State.Data}"), 
+                    source: Source, processInfo: new StateEventInfo(message.Process, RevolutionData.Context.Process.Events.Error));
+                EventMessageBus.Current.Publish(outMsg, Source);
+                return;
+            }
+
+            if (message.ProcessInfo.EventKey == expectedEvent.ProcessInfo.EventKey)
+            {
+                //Debugger.Break();
+            }
+
             expectedEvent.Validate(message);
             InMessages.AddOrUpdate(expectedEvent.Key, message, (k, v) => message);
             if (ComplexEventAction.ActionTrigger != ActionTrigger.Any && InMessages.Count() != ComplexEventAction.Events?.Count) return;

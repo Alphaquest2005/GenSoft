@@ -73,7 +73,7 @@ namespace DataServices.Actors
                     try
                     {
 
-                        var child = Activator.CreateInstance(actorType, inMsg, entityType, msg);
+                        var child = Activator.CreateInstance(actorType, inMsg, entityType);
 
                     }
                     catch (Exception ex)

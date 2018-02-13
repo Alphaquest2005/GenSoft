@@ -8,15 +8,15 @@ namespace DataServices.Actors
         public static void UpdateEntity(this IUpdateEntityWithChanges msg)
         {
 
-            DynamicDataContext.UpdateEntityWithChanges(msg);
-            DataContext.UpdateEntityWithChanges(msg);
+            DynamicDataContext.Instance.UpdateEntityWithChanges(msg);
+            DataContext.Instance.UpdateEntityWithChanges(msg);
         }
 
         public static void AddEntity(this IAddOrGetEntityWithChanges msg)
         {
 
-            DynamicDataContext.AddEntity(msg);
-            DataContext.AddEntity(msg);
+            DynamicDataContext.Instance.AddEntity(msg);
+            DataContext.Instance.AddEntity(msg);
         }
     }
 }

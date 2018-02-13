@@ -10,15 +10,15 @@ namespace DataServices.Actors
         public static void GetEntity(this IGetEntityById msg) 
         {
 
-            DynamicDataContext.GetEntityById(msg);
-            DataContext.GetEntityById(msg);
+            DynamicDataContext.Instance.GetEntityById(msg);
+            DataContext.Instance.GetEntityById(msg);
         }
 
         public static void GetEntity(this IGetEntityWithChanges msg) 
         {
 
-            DynamicDataContext.GetEntityWithChanges(msg);
-            DataContext.GetEntityWithChanges(msg);
+            DynamicDataContext.Instance.GetEntityWithChanges(msg);
+            DataContext.Instance.GetEntityWithChanges(msg);
         }
 
 

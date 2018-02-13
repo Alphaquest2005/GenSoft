@@ -6,14 +6,15 @@ using EventMessages.Events;
 using Process.WorkFlow;
 using RevolutionEntities.Process;
 using RevolutionLogger;
+using Utilities;
 
 namespace EFRepository
 {
-    public class BaseRepository:IProcessSource
+    public class BaseRepository<TRepository>:IProcessSource
     {
-
-        public static ISystemSource Source => new Source(Guid.NewGuid(), $"EntityRepository:<>", new SourceType(typeof(BaseRepository)),Processes.IntialSystemProcess, Processes.IntialSystemProcess.MachineInfo);
-        internal static void PublishProcesError(IProcessSystemMessage msg, Exception ex, Type expectedMessageType)
+     
+        public ISystemSource Source => new Source(Guid.NewGuid(), $"EntityRepository:<{typeof(TRepository).GetFriendlyName()}>", new SourceType(typeof(BaseRepository<>)),Processes.IntialSystemProcess, Processes.IntialSystemProcess.MachineInfo);
+        internal void PublishProcesError(IProcessSystemMessage msg, Exception ex, Type expectedMessageType)
         {
             var outMsg = new ProcessEventFailure(failedEventType: msg.GetType(),
                 failedEventMessage: msg,
@@ -24,6 +25,6 @@ namespace EFRepository
             EventMessageBus.Current.Publish(outMsg, Source);
         }
 
-        ISystemSource IProcessSource.Source => BaseRepository.Source;
+        ISystemSource IProcessSource.Source { get; } = null;
     }
 }

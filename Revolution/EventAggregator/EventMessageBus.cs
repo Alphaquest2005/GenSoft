@@ -38,17 +38,17 @@ namespace EventAggregator
             
              var ge = ea.GetEvent<TEvent>();
 
-            Task.Run(() =>
-            {
+            //Task.Run(() =>
+            //{
                 var er = typeof(TEvent) as IEntityRequest;
                 Logger.Log(LoggingLevel.Info,
-                    $"Caller:{caller.SourceName} | GetEvent : {typeof(TEvent).GetFriendlyName()}|ProcessInfo:Status-{processInfo.State.Status}|ProcessInfo:SubjectData{processInfo.State.Subject}-{processInfo.State.Data}| ProcessId-{caller.Process?.Id} ||Key: {processInfo.EventKey}");
-            }).ConfigureAwait(false);
+                    $"Caller:{caller.SourceName} | GetEvent : {typeof(TEvent).GetFriendlyName()}|ProcessInfo:Status-{processInfo.State.Status}|ProcessInfo:SubjectData{processInfo.State.Subject}-{processInfo.State.Data}| ProcessId-{caller.Process?.Id} |Source:{caller.SourceName}-{caller.SourceId}|Key: {processInfo.EventKey}");
+            //}).ConfigureAwait(false);
             
             var key = $"{typeof(TEvent).GetFriendlyName()}-{processInfo.State.Subject}-{processInfo.State.Data}-{caller.Process.Id}";
 
-             Task.Run(() =>
-             {
+             //Task.Run(() =>
+             //{
                  if (processInfo.EventKey == Guid.Empty) Debugger.Break();
                  _publishEventStore.TryGetValue("Pub-" + key, out dynamic actualEvent);
 
@@ -66,12 +66,12 @@ namespace EventAggregator
                     
                  }
 
-             }).ConfigureAwait(false);
+             //}).ConfigureAwait(false);
 
-            Task.Run(() =>
-            {
+            //Task.Run(() =>
+            //{
                 _getEventStore.AddOrUpdate("Get-" + key, null);
-            }).ConfigureAwait(false);
+            //}).ConfigureAwait(false);
 
             return ge;
 
@@ -85,17 +85,20 @@ namespace EventAggregator
             {
                 Contract.Requires(sender != null || sampleEvent != null);
                 
-                Task.Run(() =>
-                {
+                //Task.Run(() =>
+                //{
                     Logger.Log(LoggingLevel.Info,
-                        $"Sender:{sender.SourceName} | PublishEvent : {typeof(TEvent).GetFriendlyName()}| ProcessInfo:Status-{sampleEvent?.ProcessInfo?.State?.Status}|ProcessInfo:SubjectData{sampleEvent?.ProcessInfo?.State.Subject}-{sampleEvent?.ProcessInfo?.State.Data}| ProcessId-{sampleEvent.Process.Id} ||Key:{sampleEvent.ProcessInfo.EventKey}");
-                });
-                Task.Run(() =>
-                {
+                        $"Sender:{sender.SourceName} | PublishEvent : {typeof(TEvent).GetFriendlyName()}| ProcessInfo:Status-{sampleEvent?.ProcessInfo?.State?.Status}|ProcessInfo:SubjectData{sampleEvent?.ProcessInfo?.State.Subject}-{sampleEvent?.ProcessInfo?.State.Data}| ProcessId-{sampleEvent.Process.Id} |Source:{sender.SourceName}-{sender.SourceId}|Key:{sampleEvent.ProcessInfo.EventKey}");
+                //}).ConfigureAwait(false);
+                //Task.Run(() =>
+                //{
                     var key = $"I{typeof(TEvent).GetFriendlyName()}-{sampleEvent?.ProcessInfo?.State.Subject}-{sampleEvent?.ProcessInfo?.State.Data}-{sampleEvent.Process.Id}";
                     _publishEventStore.AddOrUpdate("Pub-"+key, sampleEvent);
-                });
-                Task.Run(() => { ea.Publish(sampleEvent);});
+                //}).ConfigureAwait(false);
+                //Task.Run(() =>
+                //{
+                    ea.Publish(sampleEvent);
+                //}).ConfigureAwait(false);
             }
             catch (Exception e)
             {
