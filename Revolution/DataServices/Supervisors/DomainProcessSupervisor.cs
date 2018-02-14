@@ -939,10 +939,10 @@ namespace DataServices.Actors
 
                     yield return Processes.ComplexActions.GetComplexAction("InitializeProcessStateList",new object[]{ process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType)});
                         yield return Processes.ComplexActions.GetComplexAction("UpdateStateList",new object[] {process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType)});
-                        //yield return Processes.ComplexActions.GetComplexAction("UpdateState",new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType) });
-                        //yield return Processes.ComplexActions.GetComplexAction("RequestState",new object[] { process, parentType, parentType, "Id" });
+                    yield return Processes.ComplexActions.GetComplexAction("UpdateState", new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType) });
+                    yield return Processes.ComplexActions.GetComplexAction("RequestState", new object[] { process, parentType, parentType, "Id" });
 
-                        var entityRelationships = r.DistinctBy(x => x.Id);
+                    var entityRelationships = r.DistinctBy(x => x.Id);
                         foreach (var rel in entityRelationships)
                         {
                             var parentExpression = rel.ParentEntity.EntityTypeAttributes.Attributes.Name;
@@ -967,12 +967,12 @@ namespace DataServices.Actors
 
                             if (rel.RelationshipType.ChildOrdinalitys.Name == "One")
                             {
-                                //yield return Processes.ComplexActions.GetComplexAction("UpdateState",
-                                //    new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(childType) });
+                            yield return Processes.ComplexActions.GetComplexAction("UpdateState",
+                                new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(childType) });
 
-                                //yield return Processes.ComplexActions.GetComplexAction("RequestState",
-                                //    new object[] { process, parentType, childType, childExpression });
-                            }
+                            yield return Processes.ComplexActions.GetComplexAction("RequestState",
+                                new object[] { process, parentType, childType, childExpression });
+                        }
                             else
                             {
 
@@ -997,15 +997,15 @@ namespace DataServices.Actors
                         var mainEntityType = mainEntity.Type.Name;
                         DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(mainEntityType);
 
-                        //yield return Processes.ComplexActions.GetComplexAction("InitializeProcessState",
-                        //    new object[]
-                        //        {process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(mainEntityType)});
-                        //yield return Processes.ComplexActions.GetComplexAction("UpdateState",
-                        //    new object[]
-                        //        {process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(mainEntityType)});
-                        //yield return Processes.ComplexActions.GetComplexAction("RequestState",
-                        //    new object[] {process, mainEntityType, mainEntityType, "Id"});
-                        yield break;
+                    yield return Processes.ComplexActions.GetComplexAction("InitializeProcessState",
+                        new object[]
+                            {process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(mainEntityType)});
+                    yield return Processes.ComplexActions.GetComplexAction("UpdateState",
+                        new object[]
+                            {process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(mainEntityType)});
+                    yield return Processes.ComplexActions.GetComplexAction("RequestState",
+                        new object[] { process, mainEntityType, mainEntityType, "Id" });
+                    yield break;
                     }
 
                     var soleEntity = ctx.EntityType
@@ -1018,10 +1018,10 @@ namespace DataServices.Actors
                    yield return Processes.ComplexActions.GetComplexAction("InitializeProcessStateList", new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(soleEntity.Type.Name) });
                         yield return Processes.ComplexActions.GetComplexAction("UpdateStateList", new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(soleEntity.Type.Name) });
 
-                    //yield return Processes.ComplexActions.GetComplexAction("UpdateState",new object[]{process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(soleEntity.Type.Name)});
-                    //    yield return Processes.ComplexActions.GetComplexAction("RequestState",new object[] { process, soleEntity.Type.Name, soleEntity.Type.Name, "Id" });
+                    yield return Processes.ComplexActions.GetComplexAction("UpdateState", new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(soleEntity.Type.Name) });
+                    yield return Processes.ComplexActions.GetComplexAction("RequestState", new object[] { process, soleEntity.Type.Name, soleEntity.Type.Name, "Id" });
 
-                       
+
                 }
 
             }

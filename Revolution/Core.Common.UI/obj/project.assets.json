@@ -5854,6 +5854,9 @@
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Interface\\GenSoft.Interface.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\GenSoft.Interface\\GenSoft.Interface.csproj"
             },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionData\\RevolutionData.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionData\\RevolutionData.csproj"
+            },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionEntities\\RevolutionEntities.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionEntities\\RevolutionEntities.csproj"
             },
@@ -5865,9 +5868,6 @@
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\ViewModel.Interfaces\\ViewModel.Interfaces.csproj"
-            },
-            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionData\\RevolutionData.csproj": {
-              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\RevolutionData\\RevolutionData.csproj"
             }
           }
         }

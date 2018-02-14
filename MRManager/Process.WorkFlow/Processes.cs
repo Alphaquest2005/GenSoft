@@ -189,7 +189,6 @@ namespace Process.WorkFlow
 
             public static ComplexEventAction InitializeProcessState(ISystemProcess process, IDynamicEntityType entityType)
             {
-                return new ComplexEventAction();
                 return new ComplexEventAction(
 
                     key: $"InitializeProcessState-{entityType.Name}",
