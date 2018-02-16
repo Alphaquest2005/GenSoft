@@ -19,7 +19,7 @@ namespace GenSoft.Mappings
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").ValueGeneratedNever();	
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").IsRequired();
-			entityBuilder.Property(t => t.Notes).HasColumnName("Notes").IsRequired().HasMaxLength(Int32.MaxValue);
+			entityBuilder.Property(t => t.Notes).HasColumnName("Notes").IsRequired().HasMaxLength(255);
 		//-------------------Navigation Properties -------------------------------//
 	
 				//----------------Parent Properties

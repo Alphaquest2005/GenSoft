@@ -18,8 +18,8 @@ namespace GenSoft.Mappings
 			entityBuilder.ToTable("Action", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
-			entityBuilder.Property(t => t.Body).HasColumnName("Body").IsRequired().HasMaxLength(Int32.MaxValue);
-			entityBuilder.Property(t => t.Description).HasColumnName("Description").IsRequired().HasMaxLength(Int32.MaxValue);
+			entityBuilder.Property(t => t.Body).HasColumnName("Body").IsRequired().HasMaxLength(255);
+			entityBuilder.Property(t => t.Description).HasColumnName("Description").IsRequired().HasMaxLength(50);
 			entityBuilder.Property(t => t.Name).HasColumnName("Name").IsRequired().HasMaxLength(50);
 			entityBuilder.Property(t => t.ParameterName).HasColumnName("ParameterName").IsRequired().HasMaxLength(50);
 		//-------------------Navigation Properties -------------------------------//

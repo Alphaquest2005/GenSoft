@@ -138,17 +138,18 @@ namespace DataServices.Actors
                     {
                         Task.Run(() =>
                         {
-                            foreach (var viewInfo in GetDBViewInfos(mainEntity.Id, false, systemProcess))
-                            {
-                                PublishViewModel(systemProcess, viewInfo);
-                            }
-
-                        }).ConfigureAwait(false);
-                        Task.Run(() =>
-                        {
                             foreach (var complexEvent in GetDBComplexActions(mainEntity.Id, systemProcess))
                             {
                                 PublishComplexEvent(systemProcess, complexEvent);
+                            }
+
+                        }).ConfigureAwait(false);
+
+                        Task.Run(() =>
+                        {
+                            foreach (var viewInfo in GetDBViewInfos(mainEntity.Id, false, systemProcess))
+                            {
+                                PublishViewModel(systemProcess, viewInfo);
                             }
 
                         }).ConfigureAwait(false);
@@ -283,14 +284,7 @@ namespace DataServices.Actors
                             }
                             //}
                         });
-                    Task.Run(() =>
-                    {
-                        foreach (var viewInfo in GetDBViewInfos(processStep.MainEntity.EntityType.Id, false, systemProcess))
-                        {
-                            PublishViewModel(systemProcess, viewInfo);
-                        }
-                        
-                    }).ConfigureAwait(false);
+                    
                     Task.Run(() =>
                     {
                         foreach (var complexEvent in GetDBComplexActions(processStep.MainEntity.EntityType.Id, systemProcess))
@@ -299,7 +293,15 @@ namespace DataServices.Actors
                         }
                         
                     }).ConfigureAwait(false);
-                    //}
+
+                    Task.Run(() =>
+                    {
+                        foreach (var viewInfo in GetDBViewInfos(processStep.MainEntity.EntityType.Id, false, systemProcess))
+                        {
+                            PublishViewModel(systemProcess, viewInfo);
+                        }
+
+                    }).ConfigureAwait(false);
                 });
 
         }
@@ -450,20 +452,22 @@ namespace DataServices.Actors
                         domainProcess.SystemProcess.Description, domainProcess.SystemProcess.Symbol, mainEntityChanged.User.UserId,dbapp), mainEntityChanged.User, mainEntityChanged.MachineInfo);
                 }
                 Task.Run(() => { InitializeProcess(systemProcess);}).ConfigureAwait(false);
-                Task.Run(() =>
-                {
-                    foreach (var viewModel in GetDBViewInfos(entityType.Id, false, systemProcess))
-                    {
-                        PublishViewModel(systemProcess,viewModel);
-                    }
-                    
-                }).ConfigureAwait(false);
+                
                 Task.Run(() =>
                 {
                     foreach (var complexEvent in GetDBComplexActions(entityType.Id, systemProcess))
                     {
                         PublishComplexEvent(systemProcess, complexEvent);
                     }
+                }).ConfigureAwait(false);
+
+                Task.Run(() =>
+                {
+                    foreach (var viewModel in GetDBViewInfos(entityType.Id, false, systemProcess))
+                    {
+                        PublishViewModel(systemProcess, viewModel);
+                    }
+
                 }).ConfigureAwait(false);
             }
         }

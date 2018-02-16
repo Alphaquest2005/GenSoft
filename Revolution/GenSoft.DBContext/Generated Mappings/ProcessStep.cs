@@ -22,7 +22,7 @@ namespace GenSoft.Mappings
 			entityBuilder.Property(t => t.Descripton).HasColumnName("Descripton").IsRequired().HasMaxLength(255);
 			entityBuilder.Property(t => t.Entity).HasColumnName("Entity").IsRequired().HasMaxLength(50);
 			entityBuilder.Property(t => t.Name).HasColumnName("Name").IsRequired().HasMaxLength(50);
-			entityBuilder.Property(t => t.Notes).HasColumnName("Notes").IsRequired().HasMaxLength(Int32.MaxValue);
+			entityBuilder.Property(t => t.Notes).HasColumnName("Notes").IsRequired().HasMaxLength(255);
 			entityBuilder.Property(t => t.Symbol).HasColumnName("Symbol").IsRequired().HasMaxLength(10);
 		//-------------------Navigation Properties -------------------------------//
 				entityBuilder.HasMany(x => x.EntityView).WithOne(p => p.ProcessStep).HasForeignKey(c => c.ProcessStepId).OnDelete(DeleteBehavior.Restrict);

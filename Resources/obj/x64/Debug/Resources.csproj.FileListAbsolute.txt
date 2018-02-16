@@ -97,3 +97,4 @@ C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Resources.g.resources
 C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Resources.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Resources.dll
 C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Resources.pdb
+C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Resources.csprojResolveAssemblyReference.cache

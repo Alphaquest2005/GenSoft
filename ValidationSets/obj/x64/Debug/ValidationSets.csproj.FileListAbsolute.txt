@@ -14,3 +14,4 @@ C:\Prism\GitRepositiory\GenSoft\ValidationSets\bin\x64\Debug\FluentValidation.dl
 C:\Prism\GitRepositiory\GenSoft\ValidationSets\obj\x64\Debug\ValidationSets.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\ValidationSets\obj\x64\Debug\ValidationSets.dll
 C:\Prism\GitRepositiory\GenSoft\ValidationSets\obj\x64\Debug\ValidationSets.pdb
+C:\Prism\GitRepositiory\GenSoft\ValidationSets\obj\x64\Debug\ValidationSets.csprojResolveAssemblyReference.cache
