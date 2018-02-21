@@ -21,8 +21,7 @@ namespace EFRepository
 {
     public class DynamicDataContext:BaseRepository<DynamicDataContext>
     {
-        private  bool IsRealDatabase = true;
-
+        
         private static readonly DynamicDataContext instance = new DynamicDataContext();
         public static DynamicDataContext Instance => instance;
         static DynamicDataContext() { }

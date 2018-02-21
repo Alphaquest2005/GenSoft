@@ -22,13 +22,11 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Release\Componen
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Release\ViewModel.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Release\SystemInterfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Release\System.Collections.Immutable.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Release\Akka.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Release\Actor.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Release\ComponentModel.Composition.Hosting.Extension.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Release\ViewModel.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Release\SystemInterfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Release\System.Collections.Immutable.xml
-C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\bin\x64\Release\Akka.xml
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\obj\x64\Release\BootStrapper.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\obj\x64\Release\BootStrapper.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\obj\x64\Release\BootStrapper.dll

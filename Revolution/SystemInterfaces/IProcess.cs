@@ -21,7 +21,7 @@ namespace SystemInterfaces
 
     public interface IDbApplet:IApplet
     {
-        string DbName { get; }
+        string DbConnectionString { get; }
     }
 
     public static class IProcessExtentions

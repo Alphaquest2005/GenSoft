@@ -1,7 +1,6 @@
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Release\EFRepository.dll.config
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Release\EFRepository.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Release\EFRepository.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Release\Akka.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Release\DynamicExpresso.Core.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Release\FluentValidation.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Release\JB.Common.dll
@@ -176,3 +175,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\obj\x64\Release\EFReposi
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\obj\x64\Release\EFRepository.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\obj\x64\Release\EFRepository.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\obj\x64\Release\EFRepository.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Release\MefContrib.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Release\MefContrib.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Release\Process.WorkFlow.dll.config

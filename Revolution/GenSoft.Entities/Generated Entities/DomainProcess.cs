@@ -15,6 +15,7 @@ namespace GenSoft.Entities
 	{
 		public virtual int ApplicationId { get; set; }
 		public virtual int Priority { get; set; }
+		public virtual int SystemProcessId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships

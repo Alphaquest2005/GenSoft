@@ -8,6 +8,14 @@ set @AppId = (SELECT        Application.Id
 											[GenSoft-Creator].dbo.DatabaseInfo ON Application.Id = DatabaseInfo.Id
 				WHERE        (DatabaseInfo.DBName = @appName) )
 
+if(@AppId is null)
+begin
+	
+	set @AppId = (SELECT        [GenSoft-Creator].dbo.Application.Id
+					FROM            [GenSoft-Creator].dbo.Application 
+					WHERE        ([GenSoft-Creator].dbo.Application.Name =  @appName))
+end
+
 select @AppId
 if(@AppId is null)
 begin

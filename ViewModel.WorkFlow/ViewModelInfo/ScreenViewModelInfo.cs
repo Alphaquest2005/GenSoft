@@ -5,6 +5,7 @@ using System.Threading;
 using System.Windows;
 using SystemInterfaces;
 using Common;
+using Core.Common.UI;
 using Process.WorkFlow;
 using RevolutionData.Context;
 using RevolutionEntities.Process;
@@ -185,6 +186,8 @@ namespace RevolutionData
                                     }
                                 }));
                             }
+                            
+
                         },  new StateEventInfo(Processes.IntialSystemProcess, RevolutionData.Context.ViewModel.Events.ViewModelCreated, Guid.NewGuid())),
 
                     
@@ -229,6 +232,7 @@ namespace RevolutionData
                                     ClearScreenModels(s);
                                 }));
                             }
+                            
                         }, new StateEventInfo(Processes.IntialSystemProcess, RevolutionData.Context.Process.Events.CurrentApplicationChanged, Guid.NewGuid())),
 
 
@@ -323,7 +327,7 @@ namespace RevolutionData
             //}
             s.BodyViewModels.Clear();
            s.BodyViewModels.Reset();
-
+            s.Slider?.Reset();
         }
     }
 }

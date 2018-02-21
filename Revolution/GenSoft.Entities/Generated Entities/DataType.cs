@@ -18,9 +18,9 @@ namespace GenSoft.Entities
 			// ---------Child Relationships
 				public virtual ICollection<Attributes> Attributes {get; set;}
 				public virtual ICollection<Functions> Functions {get; set;}
+				public virtual ICollection<Parameters> Parameters {get; set;}
 				public virtual ICollection<ReferenceTypes> ReferenceTypes {get; set;}
 				public virtual ICollection<FunctionParameter> FunctionParameter {get; set;}
-				public virtual ICollection<Parameters> Parameters {get; set;}
 		
 			// ---------Parent Relationships
 				public virtual Type Type {get; set;}

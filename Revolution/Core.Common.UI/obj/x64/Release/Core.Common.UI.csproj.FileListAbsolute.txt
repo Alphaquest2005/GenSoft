@@ -1,7 +1,6 @@
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Release\Core.Common.UI.dll.config
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Release\Core.Common.UI.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Release\Core.Common.UI.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Release\Akka.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Release\DynamicExpresso.Core.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Release\FluentValidation.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Release\JB.Common.dll
@@ -191,3 +190,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\obj\x64\Release\Core.C
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\obj\x64\Release\Core.Common.UI.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\obj\x64\Release\Core.Common.UI.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\obj\x64\Release\Core.Common.UI.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Core.Common.UI\bin\x64\Release\Process.WorkFlow.dll.config

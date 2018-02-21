@@ -762,6 +762,34 @@
           "bin/placeholder/ComponentModel.Composition.Hosting.Extension.dll": {}
         }
       },
+      "Core.Common.UI/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "BootStrapper": "1.0.0",
+          "Common": "1.0.0",
+          "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
+          "EventAggregator": "1.0.0",
+          "EventMessages": "1.0.0",
+          "FluentValidation.Net35": "1.0.1",
+          "GenSoft.Interface": "1.0.0",
+          "JB.Common.Collections.Reactive": "0.8.107-pre",
+          "JB.Common.Reactive": "0.8.107-pre",
+          "ReactiveProperty": "4.2.0",
+          "RevolutionData": "1.0.0",
+          "RevolutionEntities": "1.0.0",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0",
+          "ViewModel.Interfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Core.Common.UI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Core.Common.UI.dll": {}
+        }
+      },
       "DomainUtilities/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -1058,6 +1086,7 @@
         "dependencies": {
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "Core.Common.UI": "1.0.0",
           "DomainUtilities": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
@@ -1077,6 +1106,7 @@
           "Rx-PlatformServices": "2.2.5",
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
+          "ViewMessages": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
         },
         "compile": {
@@ -1838,6 +1868,34 @@
           "bin/placeholder/ComponentModel.Composition.Hosting.Extension.dll": {}
         }
       },
+      "Core.Common.UI/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "BootStrapper": "1.0.0",
+          "Common": "1.0.0",
+          "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
+          "EventAggregator": "1.0.0",
+          "EventMessages": "1.0.0",
+          "FluentValidation.Net35": "1.0.1",
+          "GenSoft.Interface": "1.0.0",
+          "JB.Common.Collections.Reactive": "0.8.107-pre",
+          "JB.Common.Reactive": "0.8.107-pre",
+          "ReactiveProperty": "4.2.0",
+          "RevolutionData": "1.0.0",
+          "RevolutionEntities": "1.0.0",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0",
+          "ViewModel.Interfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Core.Common.UI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Core.Common.UI.dll": {}
+        }
+      },
       "DomainUtilities/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -2134,6 +2192,7 @@
         "dependencies": {
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "Core.Common.UI": "1.0.0",
           "DomainUtilities": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
@@ -2153,6 +2212,7 @@
           "Rx-PlatformServices": "2.2.5",
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
+          "ViewMessages": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
         },
         "compile": {
@@ -2914,6 +2974,34 @@
           "bin/placeholder/ComponentModel.Composition.Hosting.Extension.dll": {}
         }
       },
+      "Core.Common.UI/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "BootStrapper": "1.0.0",
+          "Common": "1.0.0",
+          "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
+          "EventAggregator": "1.0.0",
+          "EventMessages": "1.0.0",
+          "FluentValidation.Net35": "1.0.1",
+          "GenSoft.Interface": "1.0.0",
+          "JB.Common.Collections.Reactive": "0.8.107-pre",
+          "JB.Common.Reactive": "0.8.107-pre",
+          "ReactiveProperty": "4.2.0",
+          "RevolutionData": "1.0.0",
+          "RevolutionEntities": "1.0.0",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0",
+          "ViewModel.Interfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Core.Common.UI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Core.Common.UI.dll": {}
+        }
+      },
       "DomainUtilities/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -3210,6 +3298,7 @@
         "dependencies": {
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "Core.Common.UI": "1.0.0",
           "DomainUtilities": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
@@ -3229,6 +3318,7 @@
           "Rx-PlatformServices": "2.2.5",
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
+          "ViewMessages": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
         },
         "compile": {
@@ -3990,6 +4080,34 @@
           "bin/placeholder/ComponentModel.Composition.Hosting.Extension.dll": {}
         }
       },
+      "Core.Common.UI/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "BootStrapper": "1.0.0",
+          "Common": "1.0.0",
+          "CommonMessages": "1.0.0",
+          "DomainUtilities": "1.0.0",
+          "EventAggregator": "1.0.0",
+          "EventMessages": "1.0.0",
+          "FluentValidation.Net35": "1.0.1",
+          "GenSoft.Interface": "1.0.0",
+          "JB.Common.Collections.Reactive": "0.8.107-pre",
+          "JB.Common.Reactive": "0.8.107-pre",
+          "ReactiveProperty": "4.2.0",
+          "RevolutionData": "1.0.0",
+          "RevolutionEntities": "1.0.0",
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0",
+          "ViewModel.Interfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Core.Common.UI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Core.Common.UI.dll": {}
+        }
+      },
       "DomainUtilities/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -4286,6 +4404,7 @@
         "dependencies": {
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "Core.Common.UI": "1.0.0",
           "DomainUtilities": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
@@ -4305,6 +4424,7 @@
           "Rx-PlatformServices": "2.2.5",
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
+          "ViewMessages": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
         },
         "compile": {
@@ -6075,6 +6195,11 @@
       "type": "project",
       "path": "../MefGeneric-master/MEFGeneric Preview 9/src/ComponentModel.Composition.Hosting.Extension/ComponentModel.Composition.Hosting.Extension.csproj",
       "msbuildProject": "../MefGeneric-master/MEFGeneric Preview 9/src/ComponentModel.Composition.Hosting.Extension/ComponentModel.Composition.Hosting.Extension.csproj"
+    },
+    "Core.Common.UI/1.0.0": {
+      "type": "project",
+      "path": "../Core.Common.UI/Core.Common.UI.csproj",
+      "msbuildProject": "../Core.Common.UI/Core.Common.UI.csproj"
     },
     "DomainUtilities/1.0.0": {
       "type": "project",

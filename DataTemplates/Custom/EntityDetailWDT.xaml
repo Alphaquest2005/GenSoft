@@ -98,9 +98,8 @@
                       HorizontalAlignment="Right"
                       VerticalAlignment="Top"
                       DisplayMemberPath="Value"
-                      SelectedValue="{Binding Value,UpdateSourceTrigger=PropertyChanged, IsAsync=True}"
-                      SelectedValuePath="Key"
-            >
+                      SelectedValue="{Binding Value,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay , IsAsync=True}"
+                      SelectedValuePath="Key">
                 <!--Text="{Binding Value, Mode=TwoWay , IsAsync=True,
                 UpdateSourceTrigger=LostFocus,  
                 ValidatesOnDataErrors=True}"-->

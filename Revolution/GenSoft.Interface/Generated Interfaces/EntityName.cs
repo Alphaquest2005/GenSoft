@@ -14,6 +14,7 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IEntityName:SystemInterfaces.IEntity  
 	{
+		bool IsEntityName { get;}
 
 
 

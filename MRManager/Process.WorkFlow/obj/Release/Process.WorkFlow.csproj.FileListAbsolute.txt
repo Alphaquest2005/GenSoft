@@ -1,6 +1,5 @@
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Release\Process.WorkFlow.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Release\Process.WorkFlow.pdb
-C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Release\Akka.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Release\DynamicExpresso.Core.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Release\FluentValidation.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Release\JB.Common.dll
@@ -164,3 +163,4 @@ C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\obj\Release\Process.W
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\obj\Release\Process.WorkFlow.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\obj\Release\Process.WorkFlow.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\obj\Release\Process.WorkFlow.pdb
+C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\Release\Process.WorkFlow.dll.config

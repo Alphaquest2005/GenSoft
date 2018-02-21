@@ -15,7 +15,6 @@ namespace GenSoft.Interfaces
 	public partial interface IEntityAttributeChange:SystemInterfaces.IEntity  
 	{
 		int PredecessorId { get;}
-		DateTime EntryDateTime { get;}
 		int SuccessorId { get;}
 
 

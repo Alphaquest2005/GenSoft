@@ -99,6 +99,10 @@
       <Project>{cb6d5fbc-0c13-437d-b4f3-a0ec4d5673b3}</Project>
       <Name>Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Revolution\Core.Common.UI\Core.Common.UI.csproj">
+      <Project>{5DD82AD7-F344-45E3-92CC-96F8D07700AF}</Project>
+      <Name>Core.Common.UI</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Revolution\DomainUtilities\DomainUtilities.csproj">
       <Project>{4FAC145F-FB23-4F9D-9A8B-0BA4BF41D89E}</Project>
       <Name>DomainUtilities</Name>
@@ -134,6 +138,10 @@
     <ProjectReference Include="..\Revolution\Utilities\Utilities.csproj">
       <Project>{0f9427b1-792e-4c35-97d8-22a9494ce28f}</Project>
       <Name>Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Revolution\ViewMessages\ViewMessages.csproj">
+      <Project>{EB1E2E94-D6FB-49DF-8036-9BF910E3B7AA}</Project>
+      <Name>ViewMessages</Name>
     </ProjectReference>
     <ProjectReference Include="..\Revolution\ViewModel.Interfaces\ViewModel.Interfaces.csproj">
       <Project>{2f936e24-723e-4e7a-b21c-d6f618c74651}</Project>

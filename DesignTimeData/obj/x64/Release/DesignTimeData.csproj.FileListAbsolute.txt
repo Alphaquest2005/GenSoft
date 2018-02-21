@@ -3,3 +3,4 @@ C:\Prism\GitRepositiory\GenSoft\DesignTimeData\bin\x64\Release\DesignTimeData.pd
 C:\Prism\GitRepositiory\GenSoft\DesignTimeData\obj\x64\Release\DesignTimeData.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\DesignTimeData\obj\x64\Release\DesignTimeData.dll
 C:\Prism\GitRepositiory\GenSoft\DesignTimeData\obj\x64\Release\DesignTimeData.pdb
+C:\Prism\GitRepositiory\GenSoft\DesignTimeData\obj\x64\Release\DesignTimeData.csprojResolveAssemblyReference.cache

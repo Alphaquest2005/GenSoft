@@ -55,7 +55,7 @@ namespace Common
 
             foreach (var prop in changedEntity.GetType().GetProperties())
             {
-                entity.GetType().GetProperty(prop.Name).SetValue(entity, prop.GetValue(changedEntity));
+                entity.GetType().GetProperty(prop.Name)?.SetValue(entity, prop.GetValue(changedEntity));
             }
             return entity;
         }

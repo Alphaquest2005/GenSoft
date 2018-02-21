@@ -120,7 +120,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Release\Ge
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Release\SystemInterfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Release\Utilities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Release\ViewModel.Interfaces.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Release\Akka.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Release\Actor.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Release\Common.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Release\GenSoft.Entities.pdb
@@ -128,8 +127,8 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Release\Sy
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Release\Utilities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Release\ViewModel.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Release\GenSoft.Interfaces.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Release\Akka.xml
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\obj\x64\Release\RevolutionEntities.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\obj\x64\Release\RevolutionEntities.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\obj\x64\Release\RevolutionEntities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\obj\x64\Release\RevolutionEntities.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Release\Newtonsoft.Json.dll

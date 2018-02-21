@@ -10,3 +10,4 @@ C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Release\Resources.g.resources
 C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Release\Resources.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Release\Resources.dll
 C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Release\Resources.pdb
+C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Release\Resources.csprojResolveAssemblyReference.cache

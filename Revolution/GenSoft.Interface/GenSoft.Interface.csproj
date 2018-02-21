@@ -134,6 +134,7 @@
     <Compile Include="Generated Interfaces\Ordinality.cs" />
     <Compile Include="Generated Interfaces\Parameters.cs" />
     <Compile Include="Generated Interfaces\ParentEntity.cs" />
+    <Compile Include="Generated Interfaces\ParentEntityType.cs" />
     <Compile Include="Generated Interfaces\ParentSystemProcess.cs" />
     <Compile Include="Generated Interfaces\PredicateParameters.cs" />
     <Compile Include="Generated Interfaces\Predicates.cs" />

@@ -13,8 +13,8 @@ namespace GenSoft.Entities
 {
 	public partial class DatabaseInfo: BaseEntity, IDatabaseInfo
 	{
+		public virtual string DBConnectionString { get; set; }
 		public virtual string DBName { get; set; }
-		public virtual bool IsRealDatabase { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships

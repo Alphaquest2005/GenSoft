@@ -393,6 +393,7 @@
 ..\GenSoft.DBContext\Generated Mappings\Ordinality.cs
 ..\GenSoft.DBContext\Generated Mappings\Parameters.cs
 ..\GenSoft.DBContext\Generated Mappings\ParentEntity.cs
+..\GenSoft.DBContext\Generated Mappings\ParentEntityType.cs
 ..\GenSoft.DBContext\Generated Mappings\ParentSystemProcess.cs
 ..\GenSoft.DBContext\Generated Mappings\PredicateParameters.cs
 ..\GenSoft.DBContext\Generated Mappings\Predicates.cs
@@ -489,6 +490,7 @@
 ..\GenSoft.Entities\Generated Entities\Ordinality.cs
 ..\GenSoft.Entities\Generated Entities\Parameters.cs
 ..\GenSoft.Entities\Generated Entities\ParentEntity.cs
+..\GenSoft.Entities\Generated Entities\ParentEntityType.cs
 ..\GenSoft.Entities\Generated Entities\ParentSystemProcess.cs
 ..\GenSoft.Entities\Generated Entities\PredicateParameters.cs
 ..\GenSoft.Entities\Generated Entities\Predicates.cs
@@ -590,6 +592,7 @@
 ..\GenSoft.Interface\Generated Interfaces\Ordinality.cs
 ..\GenSoft.Interface\Generated Interfaces\Parameters.cs
 ..\GenSoft.Interface\Generated Interfaces\ParentEntity.cs
+..\GenSoft.Interface\Generated Interfaces\ParentEntityType.cs
 ..\GenSoft.Interface\Generated Interfaces\ParentSystemProcess.cs
 ..\GenSoft.Interface\Generated Interfaces\PredicateParameters.cs
 ..\GenSoft.Interface\Generated Interfaces\Predicates.cs
@@ -1231,10 +1234,7 @@
     <Content Include="MRManger-DBContext.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>MRManger-DBContext.cs</LastGenOutput>
-      <LastOutputs>
-..\GenSoft.DBContext\Generated DBContexts\GenSoftDBContext.cs
-..\GenSoft.DBContext\Generated DBContexts\GenSoftDBContext-Intialization.cs
-</LastOutputs>
+      <LastOutputs>..\GenSoft.DBContext\Generated DBContexts\GenSoftDBContext.cs</LastOutputs>
     </Content>
     <Content Include="MRManger-Master.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

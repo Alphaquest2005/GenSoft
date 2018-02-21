@@ -18,10 +18,10 @@
 			tpl.Output.File = settings["Folder"] + @"\" + app.Name + "DBContext.cs";
 			tpl.Render(); 
 
-			var ipl = new DBContextIntializationTemplate(app.Name,settings["MigrationStratergy"], entities);
-			ipl.Output.Project = Path.Combine(appFolder, settings["Project"]) ;
-			ipl.Output.File = settings["Folder"] + @"\" + app.Name + "DBContext-Intialization.cs";
-			ipl.Render(); 
+			//var ipl = new DBContextIntializationTemplate(app.Name,settings["MigrationStratergy"], entities);
+			//ipl.Output.Project = Path.Combine(appFolder, settings["Project"]) ;
+			//ipl.Output.File = settings["Folder"] + @"\" + app.Name + "DBContext-Intialization.cs";
+			//ipl.Render(); 
 		
 	}
 

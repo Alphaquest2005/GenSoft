@@ -8,3 +8,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\UserControls\obj\x64\Release\UserCont
 C:\Prism\GitRepositiory\GenSoft\Revolution\UserControls\obj\x64\Release\UserControls.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\UserControls\obj\x64\Release\UserControls.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\UserControls\obj\x64\Release\UserControls.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\UserControls\obj\x64\Release\UserControls.csprojResolveAssemblyReference.cache

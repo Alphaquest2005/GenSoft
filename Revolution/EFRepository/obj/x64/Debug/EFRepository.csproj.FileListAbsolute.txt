@@ -279,3 +279,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\obj\x64\Debug\EFReposito
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\obj\x64\Debug\EFRepository.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\obj\x64\Debug\EFRepository.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\obj\x64\Debug\EFRepository.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\Process.WorkFlow.dll.config

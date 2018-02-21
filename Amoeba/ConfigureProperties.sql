@@ -5,10 +5,10 @@ delete from EntityTypePresentationProperty
 
 insert into EntityTypePresentationProperty(ViewPropertyPresentationPropertyTypeId, PresentationThemeId,ViewTypeId,EntityTypeAttributeId)
 SELECT        [ConfigurationPropertyPresentation].ViewPropertyPresentationPropertyTypeId, [ConfigurationPropertyPresentation].PresentationThemeId,  
-                         [ConfigurationPropertyPresentation].ViewTypeId, t.ChildEntityId
+                         [ConfigurationPropertyPresentation].ViewTypeId, t.ChildAttributeId
 FROM            [ConfigurationPropertyPresentation] CROSS JOIN
-                         (SELECT        ChildEntityId
-FROM            EntityRelationsView
+                         (SELECT        ChildAttributeId
+FROM          EntityRelationsView
 WHERE        (Relationship = 'One-Many')) t
 where [ConfigurationPropertyPresentation].Id = 1
 

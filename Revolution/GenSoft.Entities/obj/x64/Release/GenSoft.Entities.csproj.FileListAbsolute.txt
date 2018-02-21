@@ -22,3 +22,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\obj\x64\Release\GenS
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\obj\x64\Release\GenSoft.Entities.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\obj\x64\Release\GenSoft.Entities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\obj\x64\Release\GenSoft.Entities.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Release\Newtonsoft.Json.dll

@@ -34,7 +34,7 @@ namespace EventMessages.Commands
             : base(new DynamicObject("CreateEntity", new Dictionary<string, object>() { }), processInfo, process, source)
         {
             Contract.Requires(processInfo != null);
-            Entity = new DynamicEntity(new DynamicEntityType("NullEntity", "NullEntities",new List<IEntityKeyValuePair>(),new Dictionary<string, List<dynamic>>(),new ObservableDictionary<string, Dictionary<int, dynamic>>(), new ObservableDictionary<string, string>()),0,new Dictionary<string, object>());
+            Entity = new DynamicEntity(DynamicEntityType.NullEntityType(),0,new Dictionary<string, object>());
         }
         public IDynamicEntityType EntityType => Entity.EntityType;
     }

@@ -25,7 +25,7 @@ namespace Process.WorkFlow
 
         public static IMachineInfo ThisMachineInfo => new MachineInfo(Environment.MachineName, Environment.ProcessorCount);
 
-        public static IDbApplet SystemApplet => new DbApplet("GenSoft-Creator", "GenSoft-Creator");
+        public static IApplet SystemApplet => new DbApplet(Properties.Settings.Default.AppName, Properties.Settings.Default.DBConnectionString);
 
         public static List<IComplexEventAction> ProcessComplexEvents = new List<IComplexEventAction>
         {

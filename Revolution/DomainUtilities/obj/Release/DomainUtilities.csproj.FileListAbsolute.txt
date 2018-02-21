@@ -126,7 +126,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Release\System.Xm
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Release\System.Xml.XmlSerializer.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Release\System.Xml.XPath.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Release\System.Xml.XPath.XDocument.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Release\Akka.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Release\Common.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Release\GenSoft.DBContext.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Release\GenSoft.Entities.dll
@@ -139,8 +138,8 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Release\GenSoft.E
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Release\SystemInterfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Release\Utilities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Release\GenSoft.Interfaces.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Release\Akka.xml
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\obj\Release\DomainUtilities.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\obj\Release\DomainUtilities.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\obj\Release\DomainUtilities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\obj\Release\DomainUtilities.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\Release\Newtonsoft.Json.dll

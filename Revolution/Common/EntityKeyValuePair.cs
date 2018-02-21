@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows;
 using SystemInterfaces;
 
 namespace Common
@@ -31,10 +32,10 @@ namespace Common
             set
             {
                 _value = value;
-                //Application.Current.Dispatcher.Invoke(() =>
-                //{
+                Application.Current.Dispatcher.Invoke(() =>
+                {
                     this.OnPropertyChanged();
-                //});
+                });
 
             }
         }

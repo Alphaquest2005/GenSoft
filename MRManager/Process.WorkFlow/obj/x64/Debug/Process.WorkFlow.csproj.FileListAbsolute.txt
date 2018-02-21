@@ -163,3 +163,4 @@ C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\obj\x64\Debug\Process
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\obj\x64\Debug\Process.WorkFlow.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\obj\x64\Debug\Process.WorkFlow.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\obj\x64\Debug\Process.WorkFlow.pdb
+C:\Prism\GitRepositiory\GenSoft\MRManager\Process.WorkFlow\bin\x64\Debug\Process.WorkFlow.dll.config

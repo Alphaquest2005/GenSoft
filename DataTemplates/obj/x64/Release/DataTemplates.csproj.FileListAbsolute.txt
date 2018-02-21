@@ -1,6 +1,5 @@
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Release\DataTemplates.dll
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Release\DataTemplates.pdb
-C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Release\Akka.dll
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Release\DynamicExpresso.Core.dll
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Release\FluentValidation.dll
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Release\JB.Common.dll
@@ -222,3 +221,4 @@ C:\Prism\GitRepositiory\GenSoft\DataTemplates\obj\x64\Release\DataTemplates.g.re
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\obj\x64\Release\DataTemplates.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\obj\x64\Release\DataTemplates.dll
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\obj\x64\Release\DataTemplates.pdb
+C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Release\Process.WorkFlow.dll.config

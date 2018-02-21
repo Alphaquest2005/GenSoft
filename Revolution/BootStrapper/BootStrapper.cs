@@ -81,6 +81,7 @@ namespace BootStrapper
         }
         public static dynamic GetExportedType(this CompositionContainer container, Type type)
         {
+            //Todo: add retry logic
             try
             {
                 if (type.IsGenericType)

@@ -18,3 +18,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Common\obj\x64\Release\Common.csprojR
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\obj\x64\Release\Common.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\obj\x64\Release\Common.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\obj\x64\Release\Common.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\x64\Release\Newtonsoft.Json.dll

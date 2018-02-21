@@ -3,3 +3,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\XamlGenericTypeExtension\bin\x64\Rele
 C:\Prism\GitRepositiory\GenSoft\Revolution\XamlGenericTypeExtension\obj\x64\Release\XamlGenericTypeExtension.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\XamlGenericTypeExtension\obj\x64\Release\XamlGenericTypeExtension.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\XamlGenericTypeExtension\obj\x64\Release\XamlGenericTypeExtension.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\XamlGenericTypeExtension\obj\x64\Release\XamlGenericTypeExtension.csprojResolveAssemblyReference.cache

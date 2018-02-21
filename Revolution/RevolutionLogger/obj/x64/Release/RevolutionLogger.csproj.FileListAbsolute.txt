@@ -4,3 +4,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionLogger\bin\x64\Release\log4
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionLogger\obj\x64\Release\RevolutionLogger.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionLogger\obj\x64\Release\RevolutionLogger.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionLogger\obj\x64\Release\RevolutionLogger.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionLogger\obj\x64\Release\RevolutionLogger.csprojResolveAssemblyReference.cache

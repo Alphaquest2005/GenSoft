@@ -68,7 +68,6 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Generated DBContexts\GenSoftDBContext-Intialization.cs" />
     <Compile Include="Generated DBContexts\GenSoftDBContext.cs" />
     <Compile Include="Generated Mappings\Action.cs" />
     <Compile Include="Generated Mappings\ActionParameterConstants.cs" />
@@ -128,6 +127,7 @@
     <Compile Include="Generated Mappings\Ordinality.cs" />
     <Compile Include="Generated Mappings\Parameters.cs" />
     <Compile Include="Generated Mappings\ParentEntity.cs" />
+    <Compile Include="Generated Mappings\ParentEntityType.cs" />
     <Compile Include="Generated Mappings\ParentSystemProcess.cs" />
     <Compile Include="Generated Mappings\PredicateParameters.cs" />
     <Compile Include="Generated Mappings\Predicates.cs" />

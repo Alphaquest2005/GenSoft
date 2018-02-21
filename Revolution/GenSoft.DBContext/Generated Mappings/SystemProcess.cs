@@ -23,7 +23,7 @@ namespace GenSoft.Mappings
 			entityBuilder.Property(t => t.Name).HasColumnName("Name").IsRequired().HasMaxLength(50);
 			entityBuilder.Property(t => t.Symbol).HasColumnName("Symbol").IsRequired().HasMaxLength(3);
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasOne(p => p.DomainProcess).WithOne(p => p.SystemProcess).HasForeignKey<DomainProcess>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasMany(x => x.DomainProcess).WithOne(p => p.SystemProcess).HasForeignKey(c => c.SystemProcessId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasOne(p => p.ParentSystemProcess).WithOne(p => p.SystemProcess).HasForeignKey<ParentSystemProcess>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.ParentProcesss).WithOne(p => p.ParentProcesss).HasForeignKey(c => c.ParentProcessId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.SystemProcessState).WithOne(p => p.SystemProcess).HasForeignKey(c => c.ProcessId).OnDelete(DeleteBehavior.Restrict);

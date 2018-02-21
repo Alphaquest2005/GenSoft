@@ -141,3 +141,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\obj\x64\Release\Gen
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\obj\x64\Release\GenSoft.DBContext.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\obj\x64\Release\GenSoft.DBContext.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\obj\x64\Release\GenSoft.DBContext.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Release\Newtonsoft.Json.dll

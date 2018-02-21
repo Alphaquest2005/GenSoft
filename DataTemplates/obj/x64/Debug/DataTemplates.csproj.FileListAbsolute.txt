@@ -362,3 +362,4 @@ C:\Prism\GitRepositiory\GenSoft\DataTemplates\obj\x64\Debug\DataTemplates.g.reso
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\obj\x64\Debug\DataTemplates.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\obj\x64\Debug\DataTemplates.dll
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\obj\x64\Debug\DataTemplates.pdb
+C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\Process.WorkFlow.dll.config

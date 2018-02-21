@@ -14,7 +14,6 @@ namespace GenSoft.Entities
 	public partial class EntityAttributeChange: BaseEntity, IEntityAttributeChange
 	{
 		public virtual int PredecessorId { get; set; }
-		public virtual DateTime EntryDateTime { get; set; }
 		public virtual int SuccessorId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//

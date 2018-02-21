@@ -14,8 +14,8 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IDatabaseInfo:SystemInterfaces.IEntity  
 	{
+		string DBConnectionString { get;}
 		string DBName { get;}
-		bool IsRealDatabase { get;}
 
 
 

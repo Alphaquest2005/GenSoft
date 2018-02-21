@@ -23,8 +23,8 @@ namespace GenSoft.Mappings
 			entityBuilder.Property(t => t.ViewPropertyPresentationPropertyTypeId).HasColumnName("ViewPropertyPresentationPropertyTypeId").IsRequired();
 			entityBuilder.Property(t => t.ViewTypeId).HasColumnName("ViewTypeId").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasOne(p => p.PropertyValue).WithOne(p => p.EntityTypePresentationProperty).HasForeignKey<PropertyValue>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.EntityView).WithOne(p => p.EntityTypePresentationProperty).HasForeignKey(c => c.EntityTypePresentationPropertyId).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasOne(p => p.PropertyValue).WithOne(p => p.EntityTypePresentationProperty).HasForeignKey<PropertyValue>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasOne(p => p.PropertyValueOption).WithOne(p => p.EntityTypePresentationProperty).HasForeignKey<PropertyValueOption>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties

@@ -32,3 +32,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\obj\x64\Release\ViewMess
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\obj\x64\Release\ViewMessages.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\obj\x64\Release\ViewMessages.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\obj\x64\Release\ViewMessages.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Release\Newtonsoft.Json.dll

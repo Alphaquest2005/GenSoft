@@ -20,8 +20,8 @@ namespace GenSoft.Entities
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
-				public virtual PropertyValue PropertyValue {get; set;}
 				public virtual ICollection<EntityView> EntityView {get; set;}
+				public virtual PropertyValue PropertyValue {get; set;}
 				public virtual PropertyValueOption PropertyValueOption {get; set;}
 		
 			// ---------Parent Relationships

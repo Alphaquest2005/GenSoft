@@ -14,6 +14,7 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IUser:SystemInterfaces.IEntity  
 	{
+		int UserId { get;}
 		string Password { get;}
 
 

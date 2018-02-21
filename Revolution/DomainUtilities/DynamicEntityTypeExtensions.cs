@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+    using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using SystemInterfaces;
@@ -14,6 +16,7 @@ using JB.Collections.Reactive;
 using Microsoft.EntityFrameworkCore;
 using MoreLinq;
 using Utilities;
+using CommandType = System.Data.CommandType;
 using Type = System.Type;
 
 namespace DomainUtilities
@@ -28,12 +31,7 @@ namespace DomainUtilities
             return new DynamicEntity(dt, 0, dt.Properties.ToDictionary(x => x.Key, x => x.Value));
         }
 
-        public static IDynamicEntityType NullEntityType(this IDynamicEntityType dt)
-        {
-            return new DynamicEntityType("NullEntity", "NullEntitySet", new List<IEntityKeyValuePair>(),
-                new Dictionary<string, List<dynamic>>(), new ObservableDictionary<string, Dictionary<int, dynamic>>(),
-                new ObservableDictionary<string, string>());
-        }
+ 
 
         private static ConcurrentDictionary<string, IDynamicEntityType> DynamicEntityTypes { get; } = new ConcurrentDictionary<string, IDynamicEntityType>();
         public static IDynamicEntityType GetOrAddDynamicEntityType(string entityType)
@@ -46,7 +44,9 @@ namespace DomainUtilities
                 {
 
                     var viewType = ctx.EntityType
+                        .Include(x => x.Application.DatabaseInfo)
                         .Include(x => x.Type)
+                        .Include(x => x.ParentEntityType.EntityType.Type)
                         .Include(x => x.EntityTypeAttributes).ThenInclude(x => x.Attributes)
                         .Include(x => x.EntityTypeAttributes)
                         .Include(x => x.EntityTypeAttributes)
@@ -75,6 +75,8 @@ namespace DomainUtilities
                         .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
                         .Select(x => x.AttributeId).ToList();
 
+                   
+
                     if (!viewset.Any()) return DynamicEntityType.NullEntityType();
                     var tes =
 
@@ -98,6 +100,21 @@ namespace DomainUtilities
                                     z.Attributes.EntityId != null,
                                     z.Attributes.EntityName != null) as IEntityKeyValuePair).ToList();
 
+                    if (tes.All(x => x.Key == "Id"))
+                    {
+                        var tes2 = ctx.EntityTypeAttributes
+                            .Where(x => x.Attributes.DataType.Type.Name == "bool")
+                            .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
+                            .Select(z =>
+                                new EntityKeyValuePair($"Is{viewType.Type.Name}",
+                                    null,
+                                    (ViewAttributeDisplayProperties) CreateEntityAttributeViewProperties(z.Id),
+                                    z.Attributes.EntityId != null,
+                                    z.Attributes.EntityName != null) as IEntityKeyValuePair).FirstOrDefault();
+                        
+                        tes.Add(tes2);
+                    }
+
                     var calPropDef = CreateCalculatedProperties(viewType);
 
                     var cachedProperties = CreateCachedProperties(viewType);
@@ -105,7 +122,7 @@ namespace DomainUtilities
 
 
                     var dynamicEntityType = new DynamicEntityType(viewType.Type.Name,
-                        viewType.EntitySetName, tes, calPropDef, cachedProperties, propertyParentEntityTypes);
+                        viewType.EntitySetName, tes, calPropDef, cachedProperties, propertyParentEntityTypes, viewType.ParentEntityType== null?DynamicEntityType.NullEntityType():GetOrAddDynamicEntityType(viewType.ParentEntityType.EntityType.Type.Name));
 
 
 
@@ -127,36 +144,73 @@ namespace DomainUtilities
 
             var lst = viewType.EntityTypeAttributes
                 .Where(x => x.EntityTypeAttributeCache != null).DistinctBy(x => x.Id).ToList();
-
-
-            using (var ctx = new GenSoftDBContext())
+            if (viewType.Application.DatabaseInfo == null)
             {
-                foreach (var cp in lst)
-                {
-                    var elst = ctx.EntityAttribute
-                        .Where(x => (x.AttributeId == cp.AttributeId || x.Attributes.Name == "Id") && x.Entity.EntityTypeId == viewType.Id)
-                        .Select(x => new { Key = x.Attributes.Name, Value = x.Value, EntityId = x.EntityId })
-                        .GroupBy(x => x.EntityId).ToList();
 
-                    foreach (var g in elst)
+
+                using (var ctx = new GenSoftDBContext())
+                {
+                    foreach (var cp in lst)
                     {
-                        var id = Convert.ToInt32(g.FirstOrDefault(x => x.Key == "Id").Value);
-                        var att = g.FirstOrDefault(x => x.Key != "Id");
-                        if (att == null) continue;
-                        if (res.ContainsKey(att.Key))
+                        var elst = ctx.EntityAttribute
+                            .Where(x => (x.AttributeId == cp.AttributeId || x.Attributes.Name == "Id") &&
+                                        x.Entity.EntityTypeId == viewType.Id)
+                            .Select(x => new {Key = x.Attributes.Name, Value = x.Value, EntityId = x.EntityId})
+                            .GroupBy(x => x.EntityId).ToList();
+
+                        foreach (var g in elst)
                         {
-                            res[att.Key].Add(id, att.Value);
-                        }
-                        else
-                        {
-                            res.Add(att.Key, new Dictionary<int, dynamic>() { { id, att.Value } });
+                            var id = Convert.ToInt32(g.FirstOrDefault(x => x.Key == "Id").Value);
+                            var att = g.FirstOrDefault(x => x.Key != "Id");
+                            if (att == null) continue;
+                            if (res.ContainsKey(att.Key))
+                            {
+                                res[att.Key].Add(id, att.Value);
+                            }
+                            else
+                            {
+                                res.Add(att.Key, new Dictionary<int, dynamic>() {{id, att.Value}});
+                            }
+
                         }
 
                     }
-
                 }
             }
-
+            else
+            {
+                
+                using (var conn = new SqlConnection(viewType.Application.DatabaseInfo.DBConnectionString))
+                {
+                    var cmd = conn.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    conn.Open();
+                    foreach (var cp in lst)
+                    {
+                        cmd.CommandText = $"Select Id, {cp.Attributes.Name} From {viewType.Type.Name}";
+                        var reader = cmd.ExecuteReader();
+                        
+                        while (reader.Read())
+                        {
+                            var aDict = Enumerable.Range(0, reader.FieldCount)
+                                .ToDictionary(reader.GetName, reader.GetValue);
+                            var id = Convert.ToInt32(aDict.FirstOrDefault(x => x.Key == "Id").Value);
+                            KeyValuePair<string,object>? att = aDict.FirstOrDefault(x => x.Key != "Id");
+                            if (att == null) continue;
+                            if (res.ContainsKey(cp.Attributes.Name))
+                            {
+                                res[cp.Attributes.Name].Add(id, att.Value.Value);
+                            }
+                            else
+                            {
+                                res.Add(att.Value.Key, new Dictionary<int, dynamic>() { { id, att.Value.Value } });
+                            }
+                        }
+                        reader.Close();
+                    }
+                    
+                }
+            }
 
             return res;
         }
@@ -471,6 +525,11 @@ namespace DomainUtilities
 
 
             return calprops;
+        }
+
+        public static void ResetDynamicTypes()
+        {
+            DynamicEntityTypes.Clear();
         }
     }
 }

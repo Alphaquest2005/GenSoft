@@ -413,6 +413,16 @@ namespace Core.Common.UI
             
         }
 
+
+
         public string Orientation { get; set; }
+
+        public void Reset()
+        {
+            MouseNow = new Point(0,0);
+            MouseFinal = new Point(0, 0);
+            MouseFirst = new Point(0, 0);
+            MouseStart = new Point(0, 0);
+        }
     }
 }

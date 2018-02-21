@@ -66,8 +66,9 @@ namespace DataServices.Actors
             using (var ctx = new GenSoftDBContext())
             {
                 CurrentApplication = ctx.Application.Include(x => x.DatabaseInfo)
-                    .First(x => x.Id == currentEntityChanged.Application.Id);
+                    .First(x => x.Id == Convert.ToInt32(currentEntityChanged.Application.Properties["Id"]));
             }
+            DynamicEntityTypeExtensions.ResetDynamicTypes();
             LoadProcesses();
         }
 
@@ -107,7 +108,12 @@ namespace DataServices.Actors
             {
                 if(maxProcessId == 0) maxProcessId = ctx.SystemProcess.Max(x => x.Id);
 
-                var dp = ctx.DomainProcess.OrderBy(x => x.Priority == 0)
+                var dp = ctx.DomainProcess
+                    .Include(x => x.Application.DatabaseInfo)
+                    .Include(x => x.ProcessStep).ThenInclude(x => x.MainEntity.EntityType.Type)
+                    .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents).ThenInclude(x => x.ExpectedEvents.EventType.Type)
+                    .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ComplexEventAction.ActionTrigger)
+                    .OrderBy(x => x.Priority == 0)
                     .ThenBy(x => x.Priority)
                     .Where(x => x.ProcessStep.Any(z => z.MainEntity != null))
                     .FirstOrDefault(x => x.ApplicationId == CurrentApplication.Id);
@@ -118,9 +124,9 @@ namespace DataServices.Actors
                     var rapp = ctx.Application
                         .Include(x => x.DatabaseInfo)
                         .First(x => x.Id == CurrentApplication.Id);
-                    var dbapp = rapp.DatabaseInfo.IsRealDatabase == true
+                    var dbapp = rapp.DatabaseInfo != null
                         ? new DbApplet(rapp.Name,
-                            rapp.DatabaseInfo.DBName)
+                            rapp.DatabaseInfo.DBConnectionString)
                         : new Applet(rapp.Name);
 
                     systemProcess = new SystemProcess(
@@ -163,60 +169,7 @@ namespace DataServices.Actors
                 }
             }
         }
-        //.Include(x => x.SystemProcess)
-        //.Include(x => x.ProcessStep).ThenInclude(x => x.MainEntity.EntityType.Type)
-        //.Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions)
-        //.ThenInclude(x => x.ComplexEventAction.ActionTrigger)
-        //.Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions)
-        //.ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents)
-        //.ThenInclude(x => x.ExpectedEvents.EventType.Type)
-        //.Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions)
-        //.ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents)
-        //.ThenInclude(x => x.StateEventInfo.StateInfo)
-        //.Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions)
-        //.ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents)
-        //.ThenInclude(x => x.ExpectedEvents.ExpectedEventPredicateParameters).ThenInclude(x => x.EventPredicates)
-        //.Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions)
-        //.ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents)
-        //.ThenInclude(x => x.ExpectedEvents.ExpectedEventPredicateParameters)
-        //.ThenInclude(x => x.ExpectedEventConstants)
-        //.Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions)
-        //.ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents)
-        //.ThenInclude(x => x.ExpectedEvents.EventType.EventPredicates)
-        //.ThenInclude(x => x.Predicates.PredicateParameters).ThenInclude(x => x.ExpectedEventPredicateParameters)
-        //.Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions)
-        //.ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents)
-        //.ThenInclude(x => x.ExpectedEvents.EventType.EventPredicates)
-        //.ThenInclude(x => x.Predicates.PredicateParameters).ThenInclude(x => x.Parameters)
-        //.ThenInclude(x => x.DataType.Type)
-        //.Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions)
-        //.ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.EventType.Type)
-        //.Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions)
-        //.ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions)
-        //.ThenInclude(x => x.ComplexEventAction).ThenInclude(x => x.ProcessStepComplexActions)
-        //.Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions)
-        //.ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions)
-        //.ThenInclude(x => x.ProcessAction.Action.ActionParameters)
-        //.Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions)
-        //.ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions)
-        //.ThenInclude(x => x.ProcessAction.Action.ActionParameters).ThenInclude(x => x.Parameters)
-        //.ThenInclude(x => x.DataType.Type)
-        //.Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions)
-        //.ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions)
-        //.ThenInclude(x => x.ProcessAction.Action.ActionReferenceTypes)
-        //.Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions)
-        //.ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions)
-        //.ThenInclude(x => x.ProcessAction.Action.ActionReferenceTypes)
-        //.ThenInclude(x => x.ReferenceTypes.DataType.Type)
-        //.Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions)
-        //.ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions)
-        //.ThenInclude(x => x.ProcessAction.Action.ActionReferenceTypes)
-        //.ThenInclude(x => x.ReferenceTypes.ReferenceTypeName)
-        //.Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions)
-        //.ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x =>
-        //    x.ProcessAction.ProcessActionStateCommandInfo.StateCommandInfo.StateInfo)
-        // private List<DomainProcess> _domainProcessLst= new List<DomainProcess>();
-
+       
         private void StartProcess(int objProcessToBeStartedId, IUser user)
         {
             if (CurrentApplication == null) return;
@@ -240,7 +193,9 @@ namespace DataServices.Actors
             {
                 if (maxProcessId == 0) maxProcessId = ctx.SystemProcess.Max(x => x.Id);
 
-                var dp = ctx.DomainProcess.OrderBy(x => x.Priority == 0)
+                var dp = ctx.DomainProcess
+                    .Include(x => x.Application.DatabaseInfo)
+                    .OrderBy(x => x.Priority == 0)
                     .ThenBy(x => x.Priority)
                     .Where(x => x.ProcessStep.Any(z => z.MainEntity != null))
                     .First(x => x.ApplicationId == CurrentApplication.Id && x.SystemProcess.ParentSystemProcess.ParentProcessId == processId);
@@ -251,59 +206,69 @@ namespace DataServices.Actors
 
         private void LoadDomainProcess(DomainProcess domainProcess, IUser user)
         {
-            
+            try
+            {
+
+           
             var systemProcess = GetSystemProcess(domainProcess, user);
 
            
             Task.Run(() => { InitializeProcess(systemProcess); }).ConfigureAwait(false);
 
-            Parallel.ForEach(domainProcess.ProcessStep,
-                new ParallelOptions() {MaxDegreeOfParallelism = Processes.ThisMachineInfo.Processors},
-                (processStep) =>
+            //Parallel.ForEach(domainProcess.ProcessStep,
+            //    new ParallelOptions() {MaxDegreeOfParallelism = Processes.ThisMachineInfo.Processors},
+            //    (processStep) =>
+            //    {
+            foreach (var processStep in domainProcess.ProcessStep)
+            {
+                if (processStep.MainEntity == null) return;
+
+                    //Parallel.ForEach(processStep.ProcessStepComplexActions,
+                    //    new ParallelOptions() {MaxDegreeOfParallelism = Processes.ThisMachineInfo.Processors},
+                    //    (pcp) =>
+                    //    {
+                    foreach (var pcp in processStep.ProcessStepComplexActions)
+                    {
+                        var cpEvents = new List<IProcessExpectedEvent>();
+                        foreach (var ce in pcp.ComplexEventAction.ComplexEventActionExpectedEvents)
+                        {
+                            cpEvents.Add(CreateProcessExpectedEvent(pcp.ProcessStep.DomainProcessId, ce,
+                                processStep.MainEntity.EntityType));
+                        }
+                        foreach (var cp in pcp.ComplexEventAction.ComplexEventActionProcessActions)
+                        {
+                            var complexEventAction = CreateComplexEventAction(systemProcess, cp, cpEvents);
+                            PublishComplexEvent(systemProcess, complexEventAction);
+                        }
+                    }
+                    //});
+
+                    Task.Run(() =>
                 {
-                    //            foreach (var processStep in domainProcess.ProcessStep)
-                    //{
-                    if (processStep.MainEntity == null) return;
-
-                    Parallel.ForEach(processStep.ProcessStepComplexActions,
-                        new ParallelOptions() {MaxDegreeOfParallelism = Processes.ThisMachineInfo.Processors},
-                        (pcp) =>
-                        {
-                            //foreach (var pcp in processStep.ProcessStepComplexActions)
-                            //{
-                            var cpEvents = new List<IProcessExpectedEvent>();
-                            foreach (var ce in pcp.ComplexEventAction.ComplexEventActionExpectedEvents)
-                            {
-                                cpEvents.Add(CreateProcessExpectedEvent(pcp.ProcessStep.DomainProcessId, ce,
-                                    processStep.MainEntity.EntityType));
-                            }
-                            foreach (var cp in pcp.ComplexEventAction.ComplexEventActionProcessActions)
-                            {
-                                var complexEventAction = CreateComplexEventAction(systemProcess, cp, cpEvents);
-                                PublishComplexEvent(systemProcess, complexEventAction);
-                            }
-                            //}
-                        });
-                    
-                    Task.Run(() =>
+                    foreach (var complexEvent in GetDBComplexActions(processStep.MainEntity.EntityType.Id,
+                        systemProcess))
                     {
-                        foreach (var complexEvent in GetDBComplexActions(processStep.MainEntity.EntityType.Id, systemProcess))
-                        {
-                            PublishComplexEvent(systemProcess, complexEvent);
-                        }
-                        
-                    }).ConfigureAwait(false);
+                        PublishComplexEvent(systemProcess, complexEvent);
+                    }
 
-                    Task.Run(() =>
+                }).ConfigureAwait(false);
+
+                Task.Run(() =>
+                {
+                    foreach (var viewInfo in GetDBViewInfos(processStep.MainEntity.EntityType.Id, false, systemProcess))
                     {
-                        foreach (var viewInfo in GetDBViewInfos(processStep.MainEntity.EntityType.Id, false, systemProcess))
-                        {
-                            PublishViewModel(systemProcess, viewInfo);
-                        }
+                        PublishViewModel(systemProcess, viewInfo);
+                    }
 
-                    }).ConfigureAwait(false);
-                });
-
+                }).ConfigureAwait(false);
+            }
+                // });
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
 
         private SystemProcess GetSystemProcess(DomainProcess domainProcess, IUser user)
@@ -311,21 +276,20 @@ namespace DataServices.Actors
             using (var ctx = new GenSoftDBContext())
             {
                 domainProcess.SystemProcess = ctx.SystemProcess
-                    .Include(x => x.DomainProcess.Application.DatabaseInfo)
                     .Include(x => x.ParentSystemProcess.SystemProcess.Agent)
-                    .First(x => x.Id == domainProcess.Id);
+                    .First(x => x.Id == domainProcess.SystemProcessId);
 
-                var dbapp = domainProcess.SystemProcess.DomainProcess.Application.DatabaseInfo.IsRealDatabase == true
-                    ? new DbApplet(domainProcess.SystemProcess.DomainProcess.Application.Name,
-                        domainProcess.SystemProcess.DomainProcess.Application.DatabaseInfo.DBName)
-                    : new Applet(domainProcess.SystemProcess.DomainProcess.Application.Name);
+                var dbapp = domainProcess.Application.DatabaseInfo != null
+                    ? new DbApplet(domainProcess.Application.Name,
+                        domainProcess.Application.DatabaseInfo.DBConnectionString)
+                    : new Applet(domainProcess.Application.Name);
 
                 return new SystemProcess(
                     new SystemProcessInfo(domainProcess.Id,
                     new SystemProcess(
                             new RevolutionEntities.Process.Process(
                                                                     domainProcess.SystemProcess.ParentSystemProcess.Id,
-                                                                    Processes.NullSystemProcess,
+                                                                    Process,
                                                                     domainProcess.SystemProcess.ParentSystemProcess.SystemProcess.Name,
                                                                     domainProcess.SystemProcess.ParentSystemProcess.SystemProcess.Description,
                                                                     domainProcess.SystemProcess.ParentSystemProcess.SystemProcess.Symbol,
@@ -340,9 +304,21 @@ namespace DataServices.Actors
 
         private void InitializeProcess(SystemProcess systemProcess)
         {
-            PublishComplexEvent(systemProcess,Processes.ComplexActions.GetComplexAction("StartNextProcess", new object[] {systemProcess}));
-            PublishComplexEvent(systemProcess,Processes.ComplexActions.GetComplexAction("ProcessStarted", new object[] {systemProcess}));
-            PublishComplexEvent(systemProcess,Processes.ComplexActions.GetComplexAction("CleanUpProcess", new object[] {systemProcess}));
+            try
+            {
+                PublishComplexEvent(systemProcess,
+                    Processes.ComplexActions.GetComplexAction("StartNextProcess", new object[] {systemProcess}));
+                PublishComplexEvent(systemProcess,
+                    Processes.ComplexActions.GetComplexAction("ProcessStarted", new object[] {systemProcess}));
+                PublishComplexEvent(systemProcess,
+                    Processes.ComplexActions.GetComplexAction("CleanUpProcess", new object[] {systemProcess}));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+
         }
 
         private IProcessExpectedEvent CreateProcessExpectedEvent(int processId, ComplexEventActionExpectedEvents ce, EntityType entityType)
@@ -432,9 +408,9 @@ namespace DataServices.Actors
                     var rapp = ctx.Application
                         .Include(x => x.DatabaseInfo)
                         .First(x => x.Id == CurrentApplication.Id);
-                    var dbapp = rapp.DatabaseInfo.IsRealDatabase == true
+                    var dbapp = rapp.DatabaseInfo != null
                         ? new DbApplet(rapp.Name,
-                            rapp.DatabaseInfo.DBName)
+                            rapp.DatabaseInfo.DBConnectionString)
                         : new Applet(rapp.Name);
 
                     systemProcess = new SystemProcess(
@@ -443,10 +419,10 @@ namespace DataServices.Actors
                 }
                 else
                 {
-                    var dbapp = domainProcess.SystemProcess.DomainProcess.Application.DatabaseInfo.IsRealDatabase == true
-                        ? new DbApplet(domainProcess.SystemProcess.DomainProcess.Application.Name,
-                            domainProcess.SystemProcess.DomainProcess.Application.DatabaseInfo.DBName)
-                        : new Applet(domainProcess.SystemProcess.DomainProcess.Application.Name);
+                    var dbapp = domainProcess.Application.DatabaseInfo != null
+                        ? new DbApplet(domainProcess.Application.Name,
+                            domainProcess.Application.DatabaseInfo.DBConnectionString)
+                        : new Applet(domainProcess.Application.Name);
                     systemProcess = new SystemProcess(
                     new SystemProcessInfo(maxProcessId, mainEntityChanged.Process, domainProcess.SystemProcess.Name,
                         domainProcess.SystemProcess.Description, domainProcess.SystemProcess.Symbol, mainEntityChanged.User.UserId,dbapp), mainEntityChanged.User, mainEntityChanged.MachineInfo);
@@ -472,15 +448,25 @@ namespace DataServices.Actors
             }
         }
 
-      
+
         private void PublishComplexEvent(SystemProcess systemProcess, IComplexEventAction processComplexEvent)
         {
-            
-            var inMsg = new LoadProcessComplexEvents(new List<IComplexEventAction>(){processComplexEvent},
-                new RevolutionEntities.Process.StateCommandInfo(systemProcess, RevolutionData.Context.CommandFunctions.UpdateCommandData(processComplexEvent.Key, RevolutionData.Context.Process.Commands.StartProcess)),
-                systemProcess, Source);
+            try
+            {
+                var inMsg = new LoadProcessComplexEvents(new List<IComplexEventAction>() {processComplexEvent},
+                    new RevolutionEntities.Process.StateCommandInfo(systemProcess,
+                        RevolutionData.Context.CommandFunctions.UpdateCommandData(processComplexEvent.Key,
+                            RevolutionData.Context.Process.Commands.StartProcess)),
+                    systemProcess, Source);
 
-            EventMessageBus.Current.Publish(inMsg);
+                EventMessageBus.Current.Publish(inMsg);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+
         }
 
         //private void PublishViewModels(SystemProcess systemProcess, List<IViewModelInfo> viewModelInfos)
@@ -751,7 +737,7 @@ namespace DataServices.Actors
                             {
                                 cv.Visibility = Visibility.Collapsed;
                                 childviews.Add(cv);
-                               // yield return cv;
+                                yield return cv;
                             }
 
 
@@ -952,7 +938,7 @@ namespace DataServices.Actors
                             var parentExpression = rel.ParentEntity.EntityTypeAttributes.Attributes.Name;
                             var childType = rel.EntityTypeAttributes.EntityType.Type.Name;
 
-                            if (DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(childType) != null) 
+                            if (DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(childType) != null)
                             {
                                 DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(childType);
                                 if (rel.RelationshipType.ChildOrdinalitys.Name != "One")
@@ -963,7 +949,7 @@ namespace DataServices.Actors
                                         .Add(DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType));
                                 }
                             }
-                            
+
 
 
                             var childExpression = rel.EntityTypeAttributes.Attributes.Name;
@@ -971,8 +957,9 @@ namespace DataServices.Actors
 
                             if (rel.RelationshipType.ChildOrdinalitys.Name == "One")
                             {
-                            yield return Processes.ComplexActions.GetComplexAction("UpdateState",
-                                new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(childType) });
+                                yield return Processes.ComplexActions.GetComplexAction("UpdateState",
+                                    new object[]
+                                        {process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(childType)});
 
                             yield return Processes.ComplexActions.GetComplexAction("RequestState",
                                 new object[] { process, parentType, childType, childExpression });
@@ -980,12 +967,16 @@ namespace DataServices.Actors
                             else
                             {
 
-                            
-                                yield return Processes.ComplexActions.GetComplexAction("UpdateStateList",new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(childType) });
 
-                                yield return Processes.ComplexActions.GetComplexAction("RequestStateList",new object[]{process, parentType, childType, parentExpression, childExpression});
-                            }
-                            yield return Processes.ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",new object[]{process, parentType, childType, parentExpression, childExpression});
+                                yield return Processes.ComplexActions.GetComplexAction("UpdateStateList",
+                                    new object[]
+                                        {process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(childType)});
+
+                            yield return Processes.ComplexActions.GetComplexAction("RequestStateList",
+                                new object[] { process, parentType, childType, parentExpression, childExpression });
+                        }
+                            yield return Processes.ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",
+                                new object[] {process, parentType, childType, parentExpression, childExpression});
 
                         }
 

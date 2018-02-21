@@ -1,7 +1,6 @@
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Release\EventAggregator.dll.config
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Release\EventAggregator.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Release\EventAggregator.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Release\Akka.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Release\DynamicExpresso.Core.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Release\FluentValidation.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Release\JB.Common.dll
@@ -171,3 +170,11 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\obj\x64\Release\Event
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\obj\x64\Release\EventAggregator.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\obj\x64\Release\EventAggregator.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\obj\x64\Release\EventAggregator.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Release\MefContrib.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Release\MefContrib.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Release\BootStrapper.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Release\ComponentModel.Composition.Hosting.Extension.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Release\Process.WorkFlow.dll.config
+C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Release\BootStrapper.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Release\BootStrapper.dll.config
+C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Release\ComponentModel.Composition.Hosting.Extension.pdb

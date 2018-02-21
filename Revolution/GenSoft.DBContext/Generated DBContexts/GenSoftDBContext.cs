@@ -70,6 +70,7 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.Ordinality> Ordinality { get; set; }
 		public DbSet<Entities.Parameters> Parameters { get; set; }
 		public DbSet<Entities.ParentEntity> ParentEntity { get; set; }
+		public DbSet<Entities.ParentEntityType> ParentEntityType { get; set; }
 		public DbSet<Entities.ParentSystemProcess> ParentSystemProcess { get; set; }
 		public DbSet<Entities.PredicateParameters> PredicateParameters { get; set; }
 		public DbSet<Entities.Predicates> Predicates { get; set; }
@@ -174,6 +175,7 @@ namespace GenSoft.DBContexts
 				OrdinalityMap.Map(modelBuilder.Entity<Entities.Ordinality>());
 				ParametersMap.Map(modelBuilder.Entity<Entities.Parameters>());
 				ParentEntityMap.Map(modelBuilder.Entity<Entities.ParentEntity>());
+				ParentEntityTypeMap.Map(modelBuilder.Entity<Entities.ParentEntityType>());
 				ParentSystemProcessMap.Map(modelBuilder.Entity<Entities.ParentSystemProcess>());
 				PredicateParametersMap.Map(modelBuilder.Entity<Entities.PredicateParameters>());
 				PredicatesMap.Map(modelBuilder.Entity<Entities.Predicates>());

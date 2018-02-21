@@ -40,7 +40,7 @@ namespace RevolutionData
                         (v, e) =>
                         {
                             if (e.State != null && v.State.Value != null &&
-                                v.State.Value.EntitySet.SequenceEqual(e.State.EntitySet)) return;
+                                v.State.Value.EntitySet.Select(x => x.Id).SequenceEqual(e.State.EntitySet.Select(x => x.Id))) return;
                             v.State.Value = e.State;
                             if (v.EntitySet.Value.Any() && v.CurrentEntity.Value?.Id  != v.EntitySet.Value.First().Id) v.CurrentEntity.Value = v.EntitySet.Value.First();
 
@@ -102,12 +102,13 @@ namespace RevolutionData
                         key: $"ChangeViewModelVisibility",
                         commandPredicate: new List<Func<ISummaryListViewModel, bool>>
                         {
-                            //  v => v.CurrentEntity.Value != null
+                              v => v.SelectedViewModel.Value != null
                         },
                         subject: v => Observable.Empty<ReactiveCommand<IViewModel>>(),
 
                         messageData: v =>
                         {
+                            
                             v.SelectedViewModel.Value.Visibility.Value =
                                 v.SelectedViewModel.Value.Visibility.Value == Visibility.Visible
                                     ? Visibility.Collapsed
@@ -227,7 +228,7 @@ namespace RevolutionData
             return new ViewEventSubscription<ISummaryListViewModel, ICurrentEntityChanged>(
                 $"{pEntity.Name}-ICurrentEntityChanged",
                 process,
-                e => e != null && e.Entity?.EntityType == pEntity,
+                e => e != null && e.Process.Id == process.Id && e.Entity?.EntityType == pEntity,
                 new List<Func<ISummaryListViewModel, ICurrentEntityChanged, bool>>(),
                 (v, e) =>
                 {

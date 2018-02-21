@@ -32,9 +32,9 @@ namespace RevolutionEntities.Process
     {
         public DbApplet(string name, string dbName) : base(name)
         {
-            DbName = dbName;
+            DbConnectionString = dbName;
         }
 
-        public string DbName { get; }
+        public string DbConnectionString { get; }
     }
 }

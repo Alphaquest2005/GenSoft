@@ -1115,6 +1115,7 @@
         "dependencies": {
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "Core.Common.UI": "1.0.0",
           "DomainUtilities": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
@@ -1134,6 +1135,7 @@
           "Rx-PlatformServices": "2.2.5",
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
+          "ViewMessages": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
         },
         "compile": {
@@ -2278,6 +2280,7 @@
         "dependencies": {
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "Core.Common.UI": "1.0.0",
           "DomainUtilities": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
@@ -2297,6 +2300,7 @@
           "Rx-PlatformServices": "2.2.5",
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
+          "ViewMessages": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
         },
         "compile": {
@@ -3441,6 +3445,7 @@
         "dependencies": {
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "Core.Common.UI": "1.0.0",
           "DomainUtilities": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
@@ -3460,6 +3465,7 @@
           "Rx-PlatformServices": "2.2.5",
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
+          "ViewMessages": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
         },
         "compile": {
@@ -4604,6 +4610,7 @@
         "dependencies": {
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "Core.Common.UI": "1.0.0",
           "DomainUtilities": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
@@ -4623,6 +4630,7 @@
           "Rx-PlatformServices": "2.2.5",
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
+          "ViewMessages": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
         },
         "compile": {

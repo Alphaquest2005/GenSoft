@@ -17,13 +17,13 @@ namespace GenSoft.Mappings
 		{
 			entityBuilder.ToTable("User", "dbo");
 			entityBuilder.HasKey(t => t.Id);
-			entityBuilder.Property(t => t.Id).HasColumnName("Id").ValueGeneratedNever();	
-			entityBuilder.Property(t => t.Id).HasColumnName("Id").IsRequired();
+			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
+			entityBuilder.Property(t => t.UserId).HasColumnName("UserId").IsRequired();
 			entityBuilder.Property(t => t.Password).HasColumnName("Password").IsRequired().HasMaxLength(50);
 		//-------------------Navigation Properties -------------------------------//
 	
 				//----------------Parent Properties
-				//entityBuilder.HasOne(p => p.Agent Agent).WithOne(p => p.User).HasForeignKey<Agent>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.Agent Agent).WithMany(p => p.User).HasForeignKey(c => c.UserId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

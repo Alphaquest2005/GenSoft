@@ -46,9 +46,7 @@ namespace Common.DataEntites
             }
         }
         // todo: dual implementation of DynamicEntityType
-        public static IDynamicEntity NullEntity => new DynamicEntity(new DynamicEntityType("NullEntity", "NullEntitySet", new List<IEntityKeyValuePair>(),
-        new Dictionary<string, List<dynamic>>(), new ObservableDictionary<string, Dictionary<int, dynamic>>(),
-        new ObservableDictionary<string, string>()), 0, new Dictionary<string, object>());
+        public static IDynamicEntity NullEntity => new DynamicEntity(DynamicEntityType.NullEntityType(), 0, new Dictionary<string, object>());
 
 
         private void SetCalculatedProperties()

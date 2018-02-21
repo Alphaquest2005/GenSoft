@@ -13,6 +13,7 @@ namespace GenSoft.Entities
 {
 	public partial class User: BaseEntity, IUser
 	{
+		public virtual int UserId { get; set; }
 		public virtual string Password { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//

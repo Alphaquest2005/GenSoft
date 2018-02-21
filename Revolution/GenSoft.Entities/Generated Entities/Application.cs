@@ -18,10 +18,10 @@ namespace GenSoft.Entities
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 				public virtual ICollection<DomainProcess> DomainProcess {get; set;}
-				public virtual DefaultApplication DefaultApplication {get; set;}
 				public virtual ICollection<ApplicationSetting> ApplicationSetting {get; set;}
-				public virtual ICollection<EntityType> EntityType {get; set;}
 				public virtual DatabaseInfo DatabaseInfo {get; set;}
+				public virtual DefaultApplication DefaultApplication {get; set;}
+				public virtual ICollection<EntityType> EntityType {get; set;}
 		
 			// ---------Parent Relationships
 	

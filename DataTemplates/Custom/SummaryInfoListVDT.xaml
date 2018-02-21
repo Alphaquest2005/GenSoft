@@ -201,7 +201,7 @@
                 <Grid DockPanel.Dock="Top" Height="75" VerticalAlignment="Top" Margin="5">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                         <TextBlock Text="Next Steps:" FontSize="20" Margin="5"/>
-                        <ListBox ItemsSource="{Binding ChildEntityViewModels, IsAsync=True}" SelectedItem="{Binding SelectedViewModel.Value, IsAsync=True}">
+                        <ListBox ItemsSource="{Binding ChildEntityViewModels, IsAsync=True}" SelectedItem="{Binding SelectedViewModel.Value}">
                             <ListBox.ItemContainerStyle>
                                 <Style TargetType="{x:Type ListBoxItem}">
                                     <Style.Triggers>
@@ -215,7 +215,9 @@
                                 
                                 <DataTemplate>
                                     <Grid>
-                                        <ToggleButton Content="{Binding Path=ViewInfo.EntityType.EntitySetName, IsAsync=True}" Command="{Binding DataContext.Commands[ChangeViewModelVisibility], IsAsync=True, ElementName=SummaryListViewModel}" Margin="10" Width="100" Height="50">
+                                        <ToggleButton Content="{Binding Path=ViewInfo.EntityType.EntitySetName, IsAsync=True}"
+                                                      Command="{Binding DataContext.Commands[ChangeViewModelVisibility], IsAsync=True, ElementName=SummaryListViewModel}"
+                                                      Margin="10" Width="100" Height="50">
                                            
                                         </ToggleButton>
                                     </Grid>

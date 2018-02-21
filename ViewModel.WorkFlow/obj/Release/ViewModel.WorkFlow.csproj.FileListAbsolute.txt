@@ -1,6 +1,5 @@
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Release\ViewModel.WorkFlow.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Release\ViewModel.WorkFlow.pdb
-C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Release\Akka.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Release\DynamicExpresso.Core.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Release\FluentValidation.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Release\JB.Common.dll
@@ -173,3 +172,17 @@ C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\obj\Release\ViewModel.WorkFlo
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\obj\Release\ViewModel.WorkFlow.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\obj\Release\ViewModel.WorkFlow.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\obj\Release\ViewModel.WorkFlow.pdb
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Release\MefContrib.dll
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Release\MefContrib.pdb
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Release\Core.Common.UI.dll
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Release\ViewMessages.dll
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Release\BootStrapper.dll
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Release\ComponentModel.Composition.Hosting.Extension.dll
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Release\Process.WorkFlow.dll.config
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Release\Core.Common.UI.pdb
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Release\Core.Common.UI.dll.config
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Release\ViewMessages.pdb
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Release\ViewMessages.dll.config
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Release\BootStrapper.pdb
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Release\BootStrapper.dll.config
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\Release\ComponentModel.Composition.Hosting.Extension.pdb

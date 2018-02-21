@@ -1,14 +1,8 @@
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Release\ActorSystem.dll.config
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Release\ActorSystem.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Release\ActorSystem.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Release\Akka.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Release\Akka.Persistence.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Release\Akka.Persistence.Sql.Common.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Release\Akka.Persistence.SqlServer.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Release\Akka.TestKit.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Release\DynamicExpresso.Core.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Release\FluentValidation.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Release\Google.Protobuf.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Release\JB.Common.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Release\JB.Common.Collections.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Release\JB.Common.Collections.Reactive.dll
@@ -166,7 +160,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Release\DomainUti
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Release\ViewModel.WorkFlow.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Release\EFRepository.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Release\ComponentModel.Composition.Hosting.Extension.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Release\System.Linq.Dynamic.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Release\Actor.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Release\Common.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Release\DataServices.pdb
@@ -196,8 +189,8 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Release\ViewModel
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Release\EFRepository.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Release\EFRepository.dll.config
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Release\ComponentModel.Composition.Hosting.Extension.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Release\System.Linq.Dynamic.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\obj\x64\Release\ActorSystem.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\obj\x64\Release\ActorSystem.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\obj\x64\Release\ActorSystem.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\obj\x64\Release\ActorSystem.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Release\Process.WorkFlow.dll.config

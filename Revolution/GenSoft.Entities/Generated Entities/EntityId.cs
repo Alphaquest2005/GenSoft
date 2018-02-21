@@ -13,6 +13,7 @@ namespace GenSoft.Entities
 {
 	public partial class EntityId: BaseEntity, IEntityId
 	{
+		public virtual bool IsEntityId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships

@@ -1,7 +1,6 @@
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Release\ViewModels.dll.config
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Release\ViewModels.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Release\ViewModels.pdb
-C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Release\Akka.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Release\DynamicExpresso.Core.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Release\FluentValidation.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Release\JB.Common.dll
@@ -186,3 +185,4 @@ C:\Prism\GitRepositiory\GenSoft\ViewModels\obj\x64\Release\ViewModels.csprojReso
 C:\Prism\GitRepositiory\GenSoft\ViewModels\obj\x64\Release\ViewModels.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\ViewModels\obj\x64\Release\ViewModels.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\obj\x64\Release\ViewModels.pdb
+C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Release\Process.WorkFlow.dll.config

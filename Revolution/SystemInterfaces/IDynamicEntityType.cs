@@ -16,6 +16,7 @@ namespace SystemInterfaces
         IIntelliList<IDynamicEntityType> ChildEntities { get;  }
         IIntelliList<IDynamicEntityType> ParentEntities { get;  }
         IDynamicEntityType NullEntityType();
+        IDynamicEntityType ParentEntityType { get; }
     }
 
     

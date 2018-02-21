@@ -1022,6 +1022,23 @@
           "bin/placeholder/Utilities.dll": {}
         }
       },
+      "ViewMessages/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "Common": "1.0.0",
+          "CommonMessages": "1.0.0",
+          "MefContrib": "1.2.2.1",
+          "SystemInterfaces": "1.0.0",
+          "ViewModel.Interfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ViewMessages.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViewMessages.dll": {}
+        }
+      },
       "ViewModel.Interfaces/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -1045,6 +1062,7 @@
         "dependencies": {
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "Core.Common.UI": "1.0.0",
           "DomainUtilities": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
@@ -1064,6 +1082,7 @@
           "Rx-PlatformServices": "2.2.5",
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
+          "ViewMessages": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
         },
         "compile": {
@@ -2105,6 +2124,23 @@
           "bin/placeholder/Utilities.dll": {}
         }
       },
+      "ViewMessages/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "Common": "1.0.0",
+          "CommonMessages": "1.0.0",
+          "MefContrib": "1.2.2.1",
+          "SystemInterfaces": "1.0.0",
+          "ViewModel.Interfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ViewMessages.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViewMessages.dll": {}
+        }
+      },
       "ViewModel.Interfaces/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -2128,6 +2164,7 @@
         "dependencies": {
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "Core.Common.UI": "1.0.0",
           "DomainUtilities": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
@@ -2147,6 +2184,7 @@
           "Rx-PlatformServices": "2.2.5",
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
+          "ViewMessages": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
         },
         "compile": {
@@ -3188,6 +3226,23 @@
           "bin/placeholder/Utilities.dll": {}
         }
       },
+      "ViewMessages/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "Common": "1.0.0",
+          "CommonMessages": "1.0.0",
+          "MefContrib": "1.2.2.1",
+          "SystemInterfaces": "1.0.0",
+          "ViewModel.Interfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ViewMessages.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViewMessages.dll": {}
+        }
+      },
       "ViewModel.Interfaces/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -3211,6 +3266,7 @@
         "dependencies": {
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "Core.Common.UI": "1.0.0",
           "DomainUtilities": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
@@ -3230,6 +3286,7 @@
           "Rx-PlatformServices": "2.2.5",
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
+          "ViewMessages": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
         },
         "compile": {
@@ -4271,6 +4328,23 @@
           "bin/placeholder/Utilities.dll": {}
         }
       },
+      "ViewMessages/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "Common": "1.0.0",
+          "CommonMessages": "1.0.0",
+          "MefContrib": "1.2.2.1",
+          "SystemInterfaces": "1.0.0",
+          "ViewModel.Interfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ViewMessages.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViewMessages.dll": {}
+        }
+      },
       "ViewModel.Interfaces/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -4294,6 +4368,7 @@
         "dependencies": {
           "Common": "1.0.0",
           "CommonMessages": "1.0.0",
+          "Core.Common.UI": "1.0.0",
           "DomainUtilities": "1.0.0",
           "EventAggregator": "1.0.0",
           "EventMessages": "1.0.0",
@@ -4313,6 +4388,7 @@
           "Rx-PlatformServices": "2.2.5",
           "SystemInterfaces": "1.0.0",
           "Utilities": "1.0.0",
+          "ViewMessages": "1.0.0",
           "ViewModel.Interfaces": "1.0.0"
         },
         "compile": {
@@ -6173,6 +6249,11 @@
       "type": "project",
       "path": "../Revolution/Utilities/Utilities.csproj",
       "msbuildProject": "../Revolution/Utilities/Utilities.csproj"
+    },
+    "ViewMessages/1.0.0": {
+      "type": "project",
+      "path": "../Revolution/ViewMessages/ViewMessages.csproj",
+      "msbuildProject": "../Revolution/ViewMessages/ViewMessages.csproj"
     },
     "ViewModel.Interfaces/1.0.0": {
       "type": "project",

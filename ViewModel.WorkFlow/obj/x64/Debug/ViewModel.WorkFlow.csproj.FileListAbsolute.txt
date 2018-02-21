@@ -174,3 +174,15 @@ C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\obj\x64\Debug\ViewModel.WorkF
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\obj\x64\Debug\ViewModel.WorkFlow.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\obj\x64\Debug\ViewModel.WorkFlow.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\obj\x64\Debug\ViewModel.WorkFlow.pdb
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\Core.Common.UI.dll
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\BootStrapper.dll
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\ComponentModel.Composition.Hosting.Extension.dll
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\Core.Common.UI.pdb
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\Core.Common.UI.dll.config
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\BootStrapper.pdb
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\BootStrapper.dll.config
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\ComponentModel.Composition.Hosting.Extension.pdb
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\ViewMessages.dll
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\ViewMessages.pdb
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\ViewMessages.dll.config
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\Process.WorkFlow.dll.config

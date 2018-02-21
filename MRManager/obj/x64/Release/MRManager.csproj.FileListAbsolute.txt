@@ -1,14 +1,8 @@
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Release\MRManager.exe.config
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Release\MRManager.exe
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Release\MRManager.pdb
-C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Release\Akka.dll
-C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Release\Akka.Persistence.dll
-C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Release\Akka.Persistence.Sql.Common.dll
-C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Release\Akka.Persistence.SqlServer.dll
-C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Release\Akka.TestKit.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Release\DynamicExpresso.Core.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Release\FluentValidation.dll
-C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Release\Google.Protobuf.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Release\JB.Common.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Release\JB.Common.Collections.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Release\JB.Common.Collections.Reactive.dll
@@ -252,3 +246,4 @@ C:\Prism\GitRepositiory\GenSoft\MRManager\obj\x64\Release\MRManager.csproj.Gener
 C:\Prism\GitRepositiory\GenSoft\MRManager\obj\x64\Release\MRManager.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\MRManager\obj\x64\Release\MRManager.exe
 C:\Prism\GitRepositiory\GenSoft\MRManager\obj\x64\Release\MRManager.pdb
+C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Release\Process.WorkFlow.dll.config

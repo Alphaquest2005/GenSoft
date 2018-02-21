@@ -15,3 +15,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\obj\x64\Release\Utilities.c
 C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\obj\x64\Release\Utilities.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\obj\x64\Release\Utilities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\obj\x64\Release\Utilities.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\bin\x64\Release\Newtonsoft.Json.dll

@@ -68,13 +68,13 @@ namespace RevolutionData
                     new ViewEventSubscription<IEntityViewModel, IProcessStateMessage>(
                         $"{entityType.Name}-ProcessStateMessage",
                         process,
-                        e => e != null && e.EntityType.Name == entityType.Name,
+                        e => e != null&& e.Process.Id == process.Id  && e.EntityType.Name == entityType.Name,
                         new List<Func<IEntityViewModel, IProcessStateMessage, bool>>(),
                         (v, e) =>
                         {
                             //Application.Current.Dispatcher.Invoke(() =>
                             //{
-                            if (Equals(v.State.Value.Entity, e.State.Entity)) return;
+                            if (e.State.Entity != null && v.State.Value.Entity != null && v.State.Value.Entity.Id == e.State.Entity.Id) return;
                             v.State.Value = e.State;
 
                             //});
@@ -186,7 +186,7 @@ namespace RevolutionData
             return new ViewEventSubscription<IEntityViewModel, ICurrentEntityChanged>(
                 $"{pentity}-CurrentEntityChanged",
                 process,
-                e => e != null && e.EntityType?.Name == pentity,
+                e => e != null && e.Process.Id == process.Id && e.EntityType?.Name == pentity,
                 new List<Func<IEntityViewModel, ICurrentEntityChanged, bool>>(),
                 (v, e) =>
                 {

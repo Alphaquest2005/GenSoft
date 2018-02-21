@@ -311,4 +311,4 @@ WHERE        (source.TABLE_TYPE = 'View') AND (AmoebaDB.dbo.EntityViewsInfo.Appl
 GROUP BY views.[View], views.[Table], views.[Column], AmoebaDB.dbo.EntityViewsInfo.EntityViewId) AS V INNER JOIN
                          AmoebaDB.dbo.EntityViewProperties ON V.RequestingEntityViewId = AmoebaDB.dbo.EntityViewProperties.EntityViewId AND V.[Column] = AmoebaDB.dbo.EntityViewProperties.Name
 
-exec [GenSoft-Creator].dbo.CreateUpdateTriggers
+--exec [GenSoft-Creator].dbo.CreateUpdateTriggers

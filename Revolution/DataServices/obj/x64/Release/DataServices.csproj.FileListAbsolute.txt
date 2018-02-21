@@ -1,14 +1,8 @@
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Release\DataServices.dll.config
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Release\DataServices.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Release\DataServices.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Release\Akka.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Release\Akka.Persistence.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Release\Akka.Persistence.Sql.Common.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Release\Akka.Persistence.SqlServer.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Release\Akka.TestKit.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Release\DynamicExpresso.Core.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Release\FluentValidation.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Release\Google.Protobuf.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Release\JB.Common.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Release\JB.Common.Collections.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Release\JB.Common.Collections.Reactive.dll
@@ -164,7 +158,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Release\ViewMess
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Release\ViewModel.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Release\ViewModel.WorkFlow.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Release\ComponentModel.Composition.Hosting.Extension.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Release\System.Linq.Dynamic.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Release\Process.WorkFlow.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Release\ViewModel.WorkFlow.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Release\DomainUtilities.pdb
@@ -191,8 +184,8 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Release\ViewMess
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Release\ViewMessages.dll.config
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Release\ViewModel.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Release\ComponentModel.Composition.Hosting.Extension.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Release\System.Linq.Dynamic.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\obj\x64\Release\DataServices.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\obj\x64\Release\DataServices.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\obj\x64\Release\DataServices.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\obj\x64\Release\DataServices.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Release\Process.WorkFlow.dll.config

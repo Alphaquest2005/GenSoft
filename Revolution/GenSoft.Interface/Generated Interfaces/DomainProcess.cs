@@ -16,6 +16,7 @@ namespace GenSoft.Interfaces
 	{
 		int ApplicationId { get;}
 		int Priority { get;}
+		int SystemProcessId { get;}
 
 
 

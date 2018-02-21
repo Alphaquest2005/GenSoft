@@ -412,3 +412,4 @@ C:\Prism\GitRepositiory\GenSoft\MRManager\obj\x64\Debug\MRManager.csproj.Generat
 C:\Prism\GitRepositiory\GenSoft\MRManager\obj\x64\Debug\MRManager.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\MRManager\obj\x64\Debug\MRManager.exe
 C:\Prism\GitRepositiory\GenSoft\MRManager\obj\x64\Debug\MRManager.pdb
+C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\Process.WorkFlow.dll.config

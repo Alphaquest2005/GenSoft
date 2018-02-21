@@ -19,9 +19,9 @@ namespace GenSoft.Mappings
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").ValueGeneratedNever();	
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").IsRequired();
+			entityBuilder.Property(t => t.DBConnectionString).HasColumnName("DBConnectionString").IsRequired().HasMaxLength(255);
 			entityBuilder.Property(t => t.DBName).HasColumnName("DBName").IsRequired().HasMaxLength(50);
 			entityBuilder.Property(t => t.DBName).HasColumnName("DBName").IsRequired().HasMaxLength(50);
-			entityBuilder.Property(t => t.IsRealDatabase).HasColumnName("IsRealDatabase").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
 	
 				//----------------Parent Properties
