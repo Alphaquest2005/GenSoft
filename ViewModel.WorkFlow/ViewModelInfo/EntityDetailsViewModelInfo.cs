@@ -68,7 +68,7 @@ namespace RevolutionData
                     new ViewEventSubscription<IEntityViewModel, IProcessStateMessage>(
                         $"{entityType.Name}-ProcessStateMessage",
                         process,
-                        e => e != null&& e.Process.Id == process.Id  && e.EntityType.Name == entityType.Name,
+                        e => e != null && e.Process.Id == process.Id  && e.EntityType.Name == entityType.Name,
                         new List<Func<IEntityViewModel, IProcessStateMessage, bool>>(),
                         (v, e) =>
                         {

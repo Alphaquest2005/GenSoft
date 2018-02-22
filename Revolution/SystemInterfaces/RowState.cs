@@ -8,7 +8,8 @@
 
     public enum ViewModelState
     {
-       Initialized, NotInitialized
+       Initialized, NotInitialized,LoadingData,StopLoadingData
+       
     }
 
     

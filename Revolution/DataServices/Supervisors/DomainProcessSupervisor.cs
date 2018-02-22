@@ -68,6 +68,7 @@ namespace DataServices.Actors
                 CurrentApplication = ctx.Application.Include(x => x.DatabaseInfo)
                     .First(x => x.Id == Convert.ToInt32(currentEntityChanged.Application.Properties["Id"]));
             }
+            _processComplexEvents.Clear();
             DynamicEntityTypeExtensions.ResetDynamicTypes();
             LoadProcesses();
         }
@@ -401,7 +402,7 @@ namespace DataServices.Actors
                     .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
                     .FirstOrDefault(x => x.ProcessStep.Any(z => z.MainEntity.EntityType.Id == entityType.Id));
                 SystemProcess systemProcess;
-                
+                _processComplexEvents.Clear();
                 maxProcessId += 1;
                 if (domainProcess == null)
                 {
@@ -448,9 +449,11 @@ namespace DataServices.Actors
             }
         }
 
+        private ConcurrentDictionary<string,string> _processComplexEvents = new ConcurrentDictionary<string, string>();
 
         private void PublishComplexEvent(SystemProcess systemProcess, IComplexEventAction processComplexEvent)
         {
+            if (_processComplexEvents.TryAdd(processComplexEvent.Key, processComplexEvent.Key) == false) return;
             try
             {
                 var inMsg = new LoadProcessComplexEvents(new List<IComplexEventAction>() {processComplexEvent},

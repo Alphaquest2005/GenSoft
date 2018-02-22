@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Diagnostics.Contracts;
 using System.Dynamic;
 using System.Linq;
+using System.Reactive.Linq;
 using SystemInterfaces;
 using Common;
 using Common.Dynamic;
@@ -23,14 +24,14 @@ namespace Core.Common.UI
     {
         public DynamicViewModel(){}
 
-        public ISystemSource Source { get; }
-        public TViewModel ViewModel { get; }
+        public ISystemSource Source { get; private set; }
+        public TViewModel ViewModel { get; private set; }
 
    
         public DynamicViewModel(TViewModel viewModel) : base(viewModel)
         {
-            ViewInfo = viewModel.ViewInfo;
             Contract.Requires(viewModel != null);
+            ViewInfo = viewModel.ViewInfo;
             if (LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
             Source = new Source(Guid.NewGuid(), "DynamicViewModel:" + typeof(TViewModel).GetFriendlyName(), new SourceType(typeof(DynamicViewModel<TViewModel>)),viewModel.Process,viewModel.Process.MachineInfo);
             CommandInfo = viewModel.CommandInfo;
@@ -50,21 +51,42 @@ namespace Core.Common.UI
                 
             });
 
-           
+            EventAggregator.EventMessageBus.Current.GetEvent<ICleanUpSystemProcess>(
+                new StateEventInfo(Process,
+                    RevolutionData.Context.EventFunctions.UpdateEventData(Process.Name,
+                        RevolutionData.Context.Process.Events.ProcessCleanedUp), Guid.NewGuid()), Source)
+                        .Where(x => x.ProcessToBeCleanedUp.Id == Process.Id).Subscribe(x => CleanUpView());
 
         }
 
-        
+        private void CleanUpView()
+        {
+            ViewInfo = null;
+            CommandInfo = null;
+            Commands = null;
+            EventPublications = null;
+            EventSubscriptions = null;
+            
+            ViewModel = default(TViewModel);
+            Orientation = null;
+            ViewModelType = null;
+            RowState = null;
+            SelectedViewModel = null;
+            ViewModelState = null;
+            Visibility = null;
+            ViewModels = null;
+            
+        }
 
 
         public List<IEntityViewModel> ExtensionViewModels => ViewModels.Cast<IEntityViewModel>().Where(x => x.ViewInfo.Ordinality == EntityRelationshipOrdinality.One).ToList();
         public List<IEntityViewModel> ChildEntityViewModels => ViewModels.Cast<IEntityViewModel>().Where(x => x.ViewInfo.Ordinality == EntityRelationshipOrdinality.Many).ToList();
 
-        public ReactiveProperty<RowState> RowState { get; } = new ReactiveProperty<RowState>(SystemInterfaces.RowState.Loaded);
-        public ObservableList<IViewModel> ViewModels { get; } = new ObservableBindingList<IViewModel>();
-        public ReactiveProperty<dynamic> SelectedViewModel { get; } = new ReactiveProperty<dynamic>();
-        public ReactiveProperty<dynamic> ViewModelState { get; } = new ReactiveProperty<dynamic>(SystemInterfaces.ViewModelState.NotInitialized);
-        public ReactiveProperty<dynamic> Visibility { get; } = new ReactiveProperty<dynamic>(System.Windows.Visibility.Collapsed);
+        public ReactiveProperty<RowState> RowState { get; private set; } = new ReactiveProperty<RowState>(SystemInterfaces.RowState.Loaded);
+        public ObservableList<IViewModel> ViewModels { get; private set; } = new ObservableBindingList<IViewModel>();
+        public ReactiveProperty<dynamic> SelectedViewModel { get; private set; } = new ReactiveProperty<dynamic>();
+        public ReactiveProperty<dynamic> ViewModelState { get; private set; } = new ReactiveProperty<dynamic>(SystemInterfaces.ViewModelState.NotInitialized);
+        public ReactiveProperty<dynamic> Visibility { get; private set; } = new ReactiveProperty<dynamic>(System.Windows.Visibility.Collapsed);
 
        
 
@@ -93,17 +115,17 @@ namespace Core.Common.UI
             this.OnPropertyChanged(property);
         }
 
-        public string ViewName { get; } 
-        public string ViewSymbol { get; }
-        public string ViewDescription { get; }
-        public IViewInfo ViewInfo { get; }
-        public ISystemProcess Process { get; }
-        public IReadOnlyList<IViewModelEventSubscription<IViewModel, IEvent>> EventSubscriptions { get; }
-        public IReadOnlyList<IViewModelEventPublication<IViewModel, IEvent>> EventPublications { get; }
-        public Dictionary<string, ReactiveCommand<IViewModel>> Commands { get; }
-        public IReadOnlyList<IViewModelEventCommand<IViewModel, IEvent>> CommandInfo { get; }
-        public Type Orientation { get; }
-        public Type ViewModelType { get; }
-        public int Priority { get; }
+        public string ViewName { get; private set; } 
+        public string ViewSymbol { get; private set; }
+        public string ViewDescription { get; private set; }
+        public IViewInfo ViewInfo { get; private set; }
+        public ISystemProcess Process { get; private set; }
+        public IReadOnlyList<IViewModelEventSubscription<IViewModel, IEvent>> EventSubscriptions { get; private set; }
+        public IReadOnlyList<IViewModelEventPublication<IViewModel, IEvent>> EventPublications { get; private set; }
+        public Dictionary<string, ReactiveCommand<IViewModel>> Commands { get; private set; }
+        public IReadOnlyList<IViewModelEventCommand<IViewModel, IEvent>> CommandInfo { get; private set; }
+        public Type Orientation { get; private set; }
+        public Type ViewModelType { get; private set; }
+        public int Priority { get;  }
     }
 }
