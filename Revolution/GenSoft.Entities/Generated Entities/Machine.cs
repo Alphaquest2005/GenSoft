@@ -13,7 +13,7 @@ namespace GenSoft.Entities
 {
 	public partial class Machine: BaseEntity, IMachine
 	{
-		public virtual string MachineName { get; set; }
+		public virtual string Name { get; set; }
 		public virtual int Processors { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//

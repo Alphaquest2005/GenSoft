@@ -14,7 +14,7 @@ namespace GenSoft.Entities
 	public partial class EntityType: BaseEntity, IEntityType
 	{
 		public virtual int ApplicationId { get; set; }
-		public virtual string EntitySetName { get; set; }
+		public virtual string EntitySet { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships

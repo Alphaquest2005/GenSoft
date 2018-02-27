@@ -89,9 +89,9 @@ namespace DataServices.Actors
                 .Subscribe(x => StartParentProcess(x.Process.Id, x.User));
 
 
-            var startParentSystemProcessCommandInfo = new RevolutionEntities.Process.StateCommandInfo(process, RevolutionData.Context.Process.Commands.StartProcess, Guid.NewGuid());
-            EventMessageBus.Current.GetEvent<IStartSystemProcess>(startParentSystemProcessCommandInfo, Source)
-                .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == startParentSystemProcessCommandInfo.EventKey)
+            var startParentProcessCommandInfo = new RevolutionEntities.Process.StateCommandInfo(process, RevolutionData.Context.Process.Commands.StartProcess, Guid.NewGuid());
+            EventMessageBus.Current.GetEvent<IStartSystemProcess>(startParentProcessCommandInfo, Source)
+                .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == startParentProcessCommandInfo.EventKey)
                 .Where(x => !autoRun && x.ProcessToBeStartedId != RevolutionData.ProcessActions.NullProcess)
                 .Subscribe(x => StartProcess(x.ProcessToBeStartedId, x.User));
 
@@ -107,10 +107,11 @@ namespace DataServices.Actors
         {
             using (var ctx = new GenSoftDBContext())
             {
-                if(maxProcessId == 0) maxProcessId = ctx.SystemProcess.Max(x => x.Id);
+                if(maxProcessId == 0) maxProcessId = ctx.DomainProcess.Max(x => x.Id);
 
                 var dp = ctx.DomainProcess
                     .Include(x => x.Application.DatabaseInfo)
+                    .Include(x => x.ParentProcess.DomainProcess.Agent)
                     .Include(x => x.ProcessStep).ThenInclude(x => x.MainEntity.EntityType.Type)
                     .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionExpectedEvents).ThenInclude(x => x.ExpectedEvents.EventType.Type)
                     .Include(x => x.ProcessStep).ThenInclude(x => x.ProcessStepComplexActions).ThenInclude(x => x.ComplexEventAction.ComplexEventActionProcessActions).ThenInclude(x => x.ComplexEventAction.ActionTrigger)
@@ -127,7 +128,7 @@ namespace DataServices.Actors
                         .First(x => x.Id == CurrentApplication.Id);
                     var dbapp = rapp.DatabaseInfo != null
                         ? new DbApplet(rapp.Name,
-                            rapp.DatabaseInfo.DBConnectionString)
+                            rapp.DatabaseInfo.ConnectionString)
                         : new Applet(rapp.Name);
 
                     systemProcess = new SystemProcess(
@@ -176,7 +177,7 @@ namespace DataServices.Actors
             if (CurrentApplication == null) return;
             using (var ctx = new GenSoftDBContext())
             {
-                if (maxProcessId == 0) maxProcessId = ctx.SystemProcess.Max(x => x.Id);
+                if (maxProcessId == 0) maxProcessId = ctx.DomainProcess.Max(x => x.Id);
 
                 var dp = ctx.DomainProcess.OrderBy(x => x.Priority == 0)
                     .ThenBy(x => x.Priority)
@@ -192,14 +193,14 @@ namespace DataServices.Actors
             if (CurrentApplication == null) return;
             using (var ctx = new GenSoftDBContext())
             {
-                if (maxProcessId == 0) maxProcessId = ctx.SystemProcess.Max(x => x.Id);
+                if (maxProcessId == 0) maxProcessId = ctx.DomainProcess.Max(x => x.Id);
 
                 var dp = ctx.DomainProcess
                     .Include(x => x.Application.DatabaseInfo)
                     .OrderBy(x => x.Priority == 0)
                     .ThenBy(x => x.Priority)
                     .Where(x => x.ProcessStep.Any(z => z.MainEntity != null))
-                    .First(x => x.ApplicationId == CurrentApplication.Id && x.SystemProcess.ParentSystemProcess.ParentProcessId == processId);
+                    .First(x => x.ApplicationId == CurrentApplication.Id && x.ParentProcess.ParentProcessId == processId);
                
                 LoadDomainProcess(dp, user);
             }
@@ -274,33 +275,27 @@ namespace DataServices.Actors
 
         private SystemProcess GetSystemProcess(DomainProcess domainProcess, IUser user)
         {
-            using (var ctx = new GenSoftDBContext())
-            {
-                domainProcess.SystemProcess = ctx.SystemProcess
-                    .Include(x => x.ParentSystemProcess.SystemProcess.Agent)
-                    .First(x => x.Id == domainProcess.SystemProcessId);
-
+           
                 var dbapp = domainProcess.Application.DatabaseInfo != null
                     ? new DbApplet(domainProcess.Application.Name,
-                        domainProcess.Application.DatabaseInfo.DBConnectionString)
+                        domainProcess.Application.DatabaseInfo.ConnectionString)
                     : new Applet(domainProcess.Application.Name);
 
                 return new SystemProcess(
                     new SystemProcessInfo(domainProcess.Id,
                     new SystemProcess(
                             new RevolutionEntities.Process.Process(
-                                                                    domainProcess.SystemProcess.ParentSystemProcess.Id,
+                                                                    domainProcess.ParentProcess.Id,
                                                                     Process,
-                                                                    domainProcess.SystemProcess.ParentSystemProcess.SystemProcess.Name,
-                                                                    domainProcess.SystemProcess.ParentSystemProcess.SystemProcess.Description,
-                                                                    domainProcess.SystemProcess.ParentSystemProcess.SystemProcess.Symbol,
-                                                                    new RevolutionEntities.Process.Agent(domainProcess.SystemProcess.ParentSystemProcess.SystemProcess.Agent.UserName),
+                                                                    domainProcess.ParentProcess.DomainProcess.Name,
+                                                                    domainProcess.ParentProcess.DomainProcess.Description,
+                                                                    domainProcess.ParentProcess.DomainProcess.Symbol,
+                                                                    new RevolutionEntities.Process.Agent(domainProcess.ParentProcess.DomainProcess.Agent.Name),
                                                                     dbapp), Processes.ThisMachineInfo),
-                        domainProcess.SystemProcess.Name,
-                        domainProcess.SystemProcess.Description, domainProcess.SystemProcess.Symbol,
+                        domainProcess.Name,
+                        domainProcess.Description, domainProcess.Symbol,
                         user.UserId, dbapp), user, Process.MachineInfo);
-            }
-                
+            
         }
 
         private void InitializeProcess(SystemProcess systemProcess)
@@ -396,8 +391,8 @@ namespace DataServices.Actors
             {
                  var entityType = ctx.EntityType.First(x => x.Type.Name == mainEntityChanged.EntityType.Name);
                  var domainProcess = ctx.DomainProcess
-                    .Include(x => x.SystemProcess)
                     .Include(x => x.Application.DatabaseInfo)
+                    .Include(x => x.ParentProcess.DomainProcess.Agent)
                     .Include(x => x.ProcessStep).ThenInclude(x => x.MainEntity.EntityType)
                     .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
                     .FirstOrDefault(x => x.ProcessStep.Any(z => z.MainEntity.EntityType.Id == entityType.Id));
@@ -411,22 +406,22 @@ namespace DataServices.Actors
                         .First(x => x.Id == CurrentApplication.Id);
                     var dbapp = rapp.DatabaseInfo != null
                         ? new DbApplet(rapp.Name,
-                            rapp.DatabaseInfo.DBConnectionString)
+                            rapp.DatabaseInfo.ConnectionString)
                         : new Applet(rapp.Name);
 
                     systemProcess = new SystemProcess(
-                        new SystemProcessInfo(maxProcessId, mainEntityChanged.Process, $"AutoProcess-{entityType.EntitySetName}",
-                            $"AutoProcess-{entityType.EntitySetName}", "Auto", mainEntityChanged.User.UserId, dbapp), mainEntityChanged.User, mainEntityChanged.MachineInfo);
+                        new SystemProcessInfo(maxProcessId, mainEntityChanged.Process, $"AutoProcess-{entityType.EntitySet}",
+                            $"AutoProcess-{entityType.EntitySet}", "Auto", mainEntityChanged.User.UserId, dbapp), mainEntityChanged.User, mainEntityChanged.MachineInfo);
                 }
                 else
                 {
                     var dbapp = domainProcess.Application.DatabaseInfo != null
                         ? new DbApplet(domainProcess.Application.Name,
-                            domainProcess.Application.DatabaseInfo.DBConnectionString)
+                            domainProcess.Application.DatabaseInfo.ConnectionString)
                         : new Applet(domainProcess.Application.Name);
                     systemProcess = new SystemProcess(
-                    new SystemProcessInfo(maxProcessId, mainEntityChanged.Process, domainProcess.SystemProcess.Name,
-                        domainProcess.SystemProcess.Description, domainProcess.SystemProcess.Symbol, mainEntityChanged.User.UserId,dbapp), mainEntityChanged.User, mainEntityChanged.MachineInfo);
+                    new SystemProcessInfo(maxProcessId, mainEntityChanged.Process, domainProcess.Name,
+                        domainProcess.Description, domainProcess.Symbol, mainEntityChanged.User.UserId,dbapp), mainEntityChanged.User, mainEntityChanged.MachineInfo);
                 }
                 Task.Run(() => { InitializeProcess(systemProcess);}).ConfigureAwait(false);
                 
@@ -553,7 +548,7 @@ namespace DataServices.Actors
                 interpreter.Reference(typeof(SystemProcess));
                 
                 var body = action.Body;
-                var res = interpreter.ParseAsDelegate<Func<IDynamicComplexEventParameters, IProcessSystemMessage>>(body, action.ParameterName);
+                var res = interpreter.ParseAsDelegate<Func<IDynamicComplexEventParameters, IProcessSystemMessage>>(body, action.Parameter);
                var restuple = new Tuple<Action, Func<IDynamicComplexEventParameters, IProcessSystemMessage>>(action, res);
              
                 return async cp => await Task.Run(() => restuple.Item2(cp)).ConfigureAwait(false);
@@ -792,7 +787,7 @@ namespace DataServices.Actors
         {
             return new EntityTypeViewModel()
             {
-                Description = entityType.EntitySetName,
+                Description = entityType.EntitySet,
                 SystemProcess = process,
                 EntityTypeName = entityType.Type.Name,
                 RelationshipOrdinality = ordinality,

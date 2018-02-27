@@ -14,9 +14,12 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IDomainProcess:SystemInterfaces.IEntity  
 	{
+		int UserId { get;}
 		int ApplicationId { get;}
+		string Description { get;}
+		string Name { get;}
 		int Priority { get;}
-		int SystemProcessId { get;}
+		string Symbol { get;}
 
 
 

@@ -96,7 +96,7 @@ insert into EntityTypeAttributeCache(Id)
 SELECT        EntityTypeAttributes.Id
 FROM            EntityTypeAttributes INNER JOIN
                          Attributes ON EntityTypeAttributes.AttributeId = Attributes.Id
-WHERE        (Attributes.Name like '%Name%')
+WHERE        (Attributes.Name = 'Name')
 
 
 ------- set ID Label DisplayText
@@ -181,6 +181,19 @@ FROM            EntityTypeAttributes INNER JOIN
                          Attributes ON EntityTypeAttributes.AttributeId = Attributes.Id
 WHERE        (Attributes.Name LIKE '%Id') AND (Attributes.Name <> 'Id')) t
 where [ConfigurationPropertyPresentation].Id = 8
+
+
+---------------- do checkboxes
+insert into EntityTypePresentationProperty(ViewPropertyPresentationPropertyTypeId, PresentationThemeId,ViewTypeId,EntityTypeAttributeId)
+SELECT        [ConfigurationPropertyPresentation].ViewPropertyPresentationPropertyTypeId, [ConfigurationPropertyPresentation].PresentationThemeId, 
+                         [ConfigurationPropertyPresentation].ViewTypeId, t.Id
+FROM            [ConfigurationPropertyPresentation] CROSS JOIN
+                         (SELECT        EntityTypeAttributes.Id, Attributes.Name
+FROM            EntityTypeAttributes INNER JOIN
+                         Attributes ON EntityTypeAttributes.AttributeId = Attributes.Id INNER JOIN
+                         Type ON Attributes.DataTypeId = Type.Id
+WHERE        (Type.Name = N'bool')) t
+where [ConfigurationPropertyPresentation].Id = 9
 
 
 insert into PropertyValueOption(Id, ValueOptionId)

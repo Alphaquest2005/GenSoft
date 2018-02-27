@@ -13,17 +13,23 @@ namespace GenSoft.Entities
 {
 	public partial class DomainProcess: BaseEntity, IDomainProcess
 	{
+		public virtual int UserId { get; set; }
 		public virtual int ApplicationId { get; set; }
+		public virtual string Description { get; set; }
+		public virtual string Name { get; set; }
 		public virtual int Priority { get; set; }
-		public virtual int SystemProcessId { get; set; }
+		public virtual string Symbol { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
+				public virtual ParentProcess ParentProcess {get; set;}
+				public virtual ICollection<ParentProcess> ParentProcesss {get; set;}
+				public virtual ICollection<ProcessState> ProcessState {get; set;}
 				public virtual ICollection<ProcessStep> ProcessStep {get; set;}
 		
 			// ---------Parent Relationships
+				public virtual Agent Agent {get; set;}
 				public virtual Application Application {get; set;}
-				public virtual SystemProcess SystemProcess {get; set;}
 	
 
 	}

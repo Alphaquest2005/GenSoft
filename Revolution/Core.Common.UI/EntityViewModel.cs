@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using SystemInterfaces;
 using DomainUtilities;
 using JB.Collections.Reactive;
@@ -41,7 +42,7 @@ namespace Core.Common.UI
 
         public ReactiveProperty<IProcessStateEntity> State { get; } = new ReactiveProperty<IProcessStateEntity>();
 
-
+        public string SuggestedName => ParentEntities.Select(x => x.Properties["Name"].ToString()).Aggregate((c, n) => $"{c}-{n}") ?? CurrentEntity.Value.Properties["Name"].ToString();
         public void NotifyPropertyChanged(string propertyName)
         {
             this.OnPropertyChanged(propertyName);

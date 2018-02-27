@@ -5798,6 +5798,7 @@
       "GenSoft.Interface >= 1.0.0",
       "JB.Common.Collections.Reactive >= 0.8.107-pre",
       "JB.Common.Reactive >= 0.8.107-pre",
+      "Process.WorkFlow >= 1.0.0",
       "ReactiveProperty >= 4.2.0",
       "RevolutionData >= 1.0.0",
       "RevolutionEntities >= 1.0.0",
@@ -5833,6 +5834,9 @@
       "frameworks": {
         "net47": {
           "projectReferences": {
+            "C:\\Prism\\GitRepositiory\\GenSoft\\MRManager\\Process.WorkFlow\\Process.WorkFlow.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\MRManager\\Process.WorkFlow\\Process.WorkFlow.csproj"
+            },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\BootStrapper\\BootStrapper.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\BootStrapper\\BootStrapper.csproj"
             },

@@ -56,7 +56,7 @@ namespace GenSoft.Expressions
     {
     //    public static Func<ComplexEventActionData, ComplexEventAction> CreateComplexEventAction =
     //(cd) => new ComplexEventAction(cd.Name,
-    //    new RevolutionEntities.Process.SystemProcess(new RevolutionEntities.Process.Process(cd..Id, Processes.NullSystemProcess, p.ParentSystemProcess.SystemProcess.Name, p.ParentSystemProcess.SystemProcess.Description, p.ParentSystemProcess.SystemProcess.Symbol, new Agent(p.ParentSystemProcess.SystemProcess.Agent.UserName)), Processes.ThisMachineInfo),
+    //    new RevolutionEntities.Process.SystemProcess(new RevolutionEntities.Process.Process(cd..Id, Processes.NullSystemProcess, p.ParentProcess.SystemProcess.Name, p.ParentProcess.SystemProcess.Description, p.ParentProcess.SystemProcess.Symbol, new Agent(p.ParentProcess.SystemProcess.Agent.UserName)), Processes.ThisMachineInfo),
     //                               new List<IProcessExpectedEvent>(),
     //                               Type.GetType(cd.ExpectedMessageType),
     //                               CreateProcessAction.Invoke(cd.ProcessAction),
@@ -92,8 +92,8 @@ namespace GenSoft.Expressions
 
         //public static Func<TypeData, ISourceType> CreateSourceType = (td) => new SourceType(Type.GetType(td.TypeString));
 
-       // public static Func<SystemProcess, SystemInterfaces.ISystemProcessInfo> CreateProcessInfo = (p) => new SystemProcessInfo(p.Id, new RevolutionEntities.Process.SystemProcess(new RevolutionEntities.Process.Process(p.ParentSystemProcess.Id, Processes.NullSystemProcess,p.ParentSystemProcess.SystemProcess.Name,p.ParentSystemProcess.SystemProcess.Description,p.ParentSystemProcess.SystemProcess.Symbol, new Agent(p.ParentSystemProcess.SystemProcess.Agent.UserName)),Processes.ThisMachineInfo), p.Name, p.Description, p.Symbol, p.UserId.ToString()) as SystemInterfaces.ISystemProcessInfo;
+       // public static Func<SystemProcess, SystemInterfaces.ISystemProcessInfo> CreateProcessInfo = (p) => new SystemProcessInfo(p.Id, new RevolutionEntities.Process.SystemProcess(new RevolutionEntities.Process.Process(p.ParentProcess.Id, Processes.NullSystemProcess,p.ParentProcess.SystemProcess.Name,p.ParentProcess.SystemProcess.Description,p.ParentProcess.SystemProcess.Symbol, new Agent(p.ParentProcess.SystemProcess.Agent.UserName)),Processes.ThisMachineInfo), p.Name, p.Description, p.Symbol, p.UserId.ToString()) as SystemInterfaces.ISystemProcessInfo;
 
-        public static Func<Machine, IMachineInfo> CreateMachineInfo = (m) => new MachineInfo(m.MachineName, m.Processors);
+        public static Func<Machine, IMachineInfo> CreateMachineInfo = (m) => new MachineInfo(m.Name, m.Processors);
     }
 }

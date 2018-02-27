@@ -20,7 +20,7 @@ namespace GenSoft.Entities
 			// ---------Child Relationships
 		
 			// ---------Parent Relationships
-				public virtual SystemProcessState SystemProcessState {get; set;}
+				public virtual ProcessState ProcessState {get; set;}
 	
 
 	}

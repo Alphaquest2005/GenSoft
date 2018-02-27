@@ -84,7 +84,7 @@ namespace Core.Common.UI
 
         public ReactiveProperty<IProcessStateList> State { get; } = new ReactiveProperty<IProcessStateList>();
 
-        
+        public string SuggestedName => ParentEntities.Select(x => x.Properties["Name"].ToString()).Aggregate((c, n) => $"{c}-{n}") ?? CurrentEntity.Value.Properties["Name"].ToString();
 
         ReactiveProperty<IProcessStateEntity> IEntityViewModel.State { get; } = new ReactiveProperty<IProcessStateEntity>();
 

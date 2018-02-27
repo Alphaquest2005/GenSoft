@@ -22,7 +22,6 @@ namespace GenSoft.Mappings
 			entityBuilder.Property(t => t.RelationshipTypeId).HasColumnName("RelationshipTypeId").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
 				entityBuilder.HasOne(p => p.ParentEntity).WithOne(p => p.EntityRelationship).HasForeignKey<ParentEntity>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.ProcessStepRelationship).WithOne(p => p.EntityRelationship).HasForeignKey(c => c.EntityRelationshipId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties
 				//entityBuilder.HasOne(p => p.EntityTypeAttributes EntityTypeAttributes).WithMany(p => p.EntityRelationship).HasForeignKey(c => c.ChildEntityId).OnDelete(DeleteBehavior.Restrict);

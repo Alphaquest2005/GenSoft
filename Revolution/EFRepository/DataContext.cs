@@ -74,7 +74,7 @@ namespace EFRepository
                     {
                         entityId = msg.Entity.Id;
                         sql = $"Update {msg.EntityType.Name} Set {msg.Changes.Where(x => x.Value != null).Select(x => $"{x.Key}={x.Value.ToString()}").Aggregate((current, next) => current + "," + next)}" +
-                              $"Where Id = {entityId}";
+                              $" Where Id = {entityId}";
                         using (var conn = new SqlConnection(dbInfo.DbConnectionString))
                         {
                             var cmd = conn.CreateCommand();
@@ -129,9 +129,18 @@ namespace EFRepository
             if (!(msg.ProcessInfo.Process.Applet is IDbApplet dbInfo)) return;
 
 
-            var selectSql =
-                $"Select * From {msg.EntityType.Name} " +
-                $"Where {GetWhereStr(msg.Changes)}";
+            string selectSql;
+            if (msg.EntityType.ParentEntityType != null && msg.EntityType.ParentEntityType.Properties.Any(x => x.Key == "Name"))
+            {
+                selectSql = $"Select {msg.EntityType.Name}.*, parent.Name From {msg.EntityType.Name} inner join {msg.EntityType.ParentEntityType.Name} parent on {msg.EntityType.Name}.Id = parent.Id" +
+                            $" Where {GetWhereStr(msg.EntityType.Name,msg.Changes)}";
+            }
+            else
+            {
+                selectSql = $"Select * From {msg.EntityType.Name} " +
+                        $"Where {GetWhereStr(msg.EntityType.Name, msg.Changes)}";
+            }
+            
             using (var conn = new SqlConnection(dbInfo.DbConnectionString))
             {
                 var cmd = conn.CreateCommand();
@@ -140,12 +149,15 @@ namespace EFRepository
 
                 conn.Open();
 
-                var reader = cmd.ExecuteReader();
+                
+
+            var reader = cmd.ExecuteReader();
                 var entities = new List<IDynamicEntity>();
                 while (reader.Read())
                 {
                     var aDict = Enumerable.Range(0, reader.FieldCount)
                         .ToDictionary(reader.GetName, reader.GetValue);
+
                     entities.Add(new DynamicEntity(msg.EntityType, Convert.ToInt32(aDict["Id"]), aDict));
                 }
 
@@ -160,9 +172,9 @@ namespace EFRepository
 
         }
 
-        private  string GetWhereStr(Dictionary<string, object> changes)
+        private  string GetWhereStr(string entityTypeName, Dictionary<string, object> changes)
         {
-            var whereStr = changes.Aggregate("", (str, itm) => str + ($"{itm.Key} = '{itm.Value}' and"));
+            var whereStr = changes.Aggregate("", (str, itm) => str + ($"{entityTypeName}.{itm.Key} = '{itm.Value}' and"));
             whereStr = whereStr.TrimEnd(" and");
             return whereStr;
         }
@@ -171,8 +183,18 @@ namespace EFRepository
         {
             if (!(msg.ProcessInfo.Process.Applet is IDbApplet dbInfo)) return;
             
-                var selectSql = $"Select * From {msg.EntityType.Name}";
-                using (var conn = new SqlConnection(dbInfo.DbConnectionString))
+                
+
+            string selectSql;
+            if (msg.EntityType.ParentEntityType != null && msg.EntityType.ParentEntityType.Properties.Any(x => x.Key == "Name"))
+            {
+                selectSql = $"Select {msg.EntityType.Name}.*, parent.Name From {msg.EntityType.Name} inner join {msg.EntityType.ParentEntityType.Name} parent on {msg.EntityType.Name}.Id = parent.Id" ;
+            }
+            else
+            {
+                selectSql = $"Select * From {msg.EntityType.Name} ";
+            }
+            using (var conn = new SqlConnection(dbInfo.DbConnectionString))
                 {
                     var cmd = conn.CreateCommand();
                     cmd.CommandText = selectSql;
@@ -225,9 +247,19 @@ namespace EFRepository
             if (!(msg.ProcessInfo.Process.Applet is IDbApplet dbInfo)) return;
 
 
-            var selectSql =
-                $"Select * From {msg.EntityType.Name} " +
-                $"Where {GetWhereStr(msg.Changes)}";
+            
+            string selectSql;
+            if (msg.EntityType.ParentEntityType != null && msg.EntityType.ParentEntityType.Properties.Any(x => x.Key == "Name"))
+            {
+                selectSql = $"Select {msg.EntityType.Name}.*, parent.Name From {msg.EntityType.Name} inner join {msg.EntityType.ParentEntityType.Name} parent on {msg.EntityType.Name}.Id = parent.Id" +
+                            $" Where {GetWhereStr(msg.EntityType.Name, msg.Changes)}";
+            }
+            else
+            {
+                selectSql = $"Select * From {msg.EntityType.Name} " +
+                            $"Where {GetWhereStr(msg.EntityType.Name, msg.Changes)}";
+            }
+
             using (var conn = new SqlConnection(dbInfo.DbConnectionString))
             {
                 var cmd = conn.CreateCommand();

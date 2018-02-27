@@ -25,6 +25,7 @@ namespace GenSoft.Entities
 				public virtual BaseEntityTypeAttribute BaseEntityTypeAttribute {get; set;}
 				public virtual CalculatedProperties CalculatedProperties {get; set;}
 				public virtual ICollection<CalculatedPropertyParameterEntityTypes> CalculatedPropertyParameterEntityTypes {get; set;}
+				public virtual EntityName EntityName {get; set;}
 				public virtual ICollection<EntityRelationship> EntityRelationship {get; set;}
 				public virtual EntityTypeAttributeCache EntityTypeAttributeCache {get; set;}
 				public virtual ICollection<EntityTypePresentationProperty> EntityTypePresentationProperty {get; set;}

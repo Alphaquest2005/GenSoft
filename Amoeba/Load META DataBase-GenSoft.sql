@@ -133,14 +133,14 @@ declare @attributeId int, @datatypeId int, @Counter int = 0
 			
 
 
-			insert into [GenSoft-Creator].dbo.EntityType(ID, ApplicationId, EntitySetName) values (@entityId, @AppId, @EntitySet)
+			insert into [GenSoft-Creator].dbo.EntityType(ID, ApplicationId, EntitySet) values (@entityId, @AppId, @EntitySet)
 			
 
 			--insert into [GenSoft-Creator].dbo.EntityType(ID, EntitySetName) values (@rEntityId, 'r'+@EntitySet)
 			--insert into [GenSoft-Creator].dbo.DomainEntityType(ID) values (@rEntityId)
 
-			insert into [GenSoft-Creator].dbo.DBType (ID,TableName, SchemaName) values (@EntityId,@TableName, @schema)
-			insert into [GenSoft-Creator].dbo.EntityId(ID) values (@attributeId)
+			insert into [GenSoft-Creator].dbo.DBType (ID,[Table], [Schema]) values (@EntityId,@TableName, @schema)
+			insert into [GenSoft-Creator].dbo.EntityId(ID,IsEntityId) values (@attributeId,1)
 
 			insert into [GenSoft-Creator].dbo.EntityTypeAttributes(EntityTypeId,AttributeId) values (@entityId, @attributeId)
 		end

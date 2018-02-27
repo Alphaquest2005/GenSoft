@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
+using System.Linq;
 using SystemInterfaces;
 using Core.Common.UI;
 using JB.Collections.Reactive;
@@ -47,7 +48,7 @@ namespace ViewModels
 
 
 
-        public new IEntityViewInfo ViewInfo => this.ViewModel.ViewInfo;
+        public new IEntityViewInfo ViewInfo => this.ViewModel?.ViewInfo;
         public ReactiveProperty<IProcessStateList> State { get;  }
 
         public ReactiveProperty<IEntityKeyValuePair> CurrentProperty { get; } = new ReactiveProperty<IEntityKeyValuePair>();
@@ -71,6 +72,7 @@ namespace ViewModels
 
         public ObservableDictionary<string, dynamic> ChangeTracking { get; } 
         public ObservableList<IDynamicEntity> ParentEntities { get; }
+        public string SuggestedName => ParentEntities.Select(x => x.Properties["Name"].ToString()).Aggregate((c, n) => $"{c}-{n}")??CurrentEntity.Value.Properties["Name"].ToString();
         public IViewAttributeDisplayProperties DisplayProperties { get; }
         
         public ReactiveProperty<ObservableList<IDynamicEntity>> EntitySet { get; }

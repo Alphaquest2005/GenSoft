@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
 using System.Diagnostics;
+using System.Linq;
 using SystemInterfaces;
 using Core.Common.UI;
 using JB.Collections.Reactive;
@@ -60,9 +61,9 @@ namespace ViewModels
         public ReactiveProperty<IProcessStateEntity> State { get; } 
 
         //potential problem state different from current entity!
-        public ReactiveProperty<IDynamicEntity> CurrentEntity { get; } 
+        public ReactiveProperty<IDynamicEntity> CurrentEntity { get; }
 
-      
+        public string SuggestedName => ParentEntities.Select(x => x.Properties["Name"].ToString()).Aggregate((c, n) => $"{c}-{n}") ?? CurrentEntity.Value.Properties["Name"].ToString();
 
         public ReactiveProperty<IEntityKeyValuePair> CurrentProperty { get; } = new ReactiveProperty<IEntityKeyValuePair>();
 

@@ -14,7 +14,7 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IAgent:SystemInterfaces.IEntity  
 	{
-		string UserName { get;}
+		string Name { get;}
 
 
 

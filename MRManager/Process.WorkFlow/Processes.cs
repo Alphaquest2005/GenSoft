@@ -176,7 +176,7 @@ namespace Process.WorkFlow
                     {
                         new ProcessExpectedEvent(key: "ViewModelInitialized",
                             process: process,
-                            eventPredicate: e => e != null && e.Process.Id == process.Id && ((IEntityViewInfo)((IViewModelInitialized)e).ViewModel.ViewInfo).EntityType.Name == entityType.Name  ,
+                            eventPredicate: e => e != null && e.Process.Id == process.Id && ((IEntityViewInfo)((IViewModelInitialized)e).ViewModel.ViewInfo)?.EntityType.Name == entityType.Name  ,
                             eventType: typeof (IViewModelInitialized),
                             processInfo: new StateEventInfo(process, EventFunctions.UpdateEventData(entityType.Name, RevolutionData.Context.ViewModel.Events.Initialized), Guid.NewGuid()),
                             expectedSourceType: new SourceType(typeof (IComplexEventService))),

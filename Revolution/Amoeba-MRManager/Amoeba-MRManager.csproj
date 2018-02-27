@@ -394,7 +394,7 @@
 ..\GenSoft.DBContext\Generated Mappings\Parameters.cs
 ..\GenSoft.DBContext\Generated Mappings\ParentEntity.cs
 ..\GenSoft.DBContext\Generated Mappings\ParentEntityType.cs
-..\GenSoft.DBContext\Generated Mappings\ParentSystemProcess.cs
+..\GenSoft.DBContext\Generated Mappings\ParentProcess.cs
 ..\GenSoft.DBContext\Generated Mappings\PredicateParameters.cs
 ..\GenSoft.DBContext\Generated Mappings\Predicates.cs
 ..\GenSoft.DBContext\Generated Mappings\PresentationPropertyType.cs
@@ -402,10 +402,10 @@
 ..\GenSoft.DBContext\Generated Mappings\ProcessAction.cs
 ..\GenSoft.DBContext\Generated Mappings\ProcessActionStateCommandInfo.cs
 ..\GenSoft.DBContext\Generated Mappings\ProcessPath.cs
+..\GenSoft.DBContext\Generated Mappings\ProcessState.cs
 ..\GenSoft.DBContext\Generated Mappings\ProcessStep.cs
 ..\GenSoft.DBContext\Generated Mappings\ProcessStepComplexActions.cs
 ..\GenSoft.DBContext\Generated Mappings\ProcessStepParentEntity.cs
-..\GenSoft.DBContext\Generated Mappings\ProcessStepRelationship.cs
 ..\GenSoft.DBContext\Generated Mappings\PropertyValue.cs
 ..\GenSoft.DBContext\Generated Mappings\PropertyValueOption.cs
 ..\GenSoft.DBContext\Generated Mappings\ReferenceTypeName.cs
@@ -417,8 +417,6 @@
 ..\GenSoft.DBContext\Generated Mappings\StateEventInfo.cs
 ..\GenSoft.DBContext\Generated Mappings\StateInfo.cs
 ..\GenSoft.DBContext\Generated Mappings\StateInfoNotes.cs
-..\GenSoft.DBContext\Generated Mappings\SystemProcess.cs
-..\GenSoft.DBContext\Generated Mappings\SystemProcessState.cs
 ..\GenSoft.DBContext\Generated Mappings\SystemProcessStateInfo.cs
 ..\GenSoft.DBContext\Generated Mappings\Type.cs
 ..\GenSoft.DBContext\Generated Mappings\TypeArguement.cs
@@ -491,7 +489,7 @@
 ..\GenSoft.Entities\Generated Entities\Parameters.cs
 ..\GenSoft.Entities\Generated Entities\ParentEntity.cs
 ..\GenSoft.Entities\Generated Entities\ParentEntityType.cs
-..\GenSoft.Entities\Generated Entities\ParentSystemProcess.cs
+..\GenSoft.Entities\Generated Entities\ParentProcess.cs
 ..\GenSoft.Entities\Generated Entities\PredicateParameters.cs
 ..\GenSoft.Entities\Generated Entities\Predicates.cs
 ..\GenSoft.Entities\Generated Entities\PresentationPropertyType.cs
@@ -499,10 +497,10 @@
 ..\GenSoft.Entities\Generated Entities\ProcessAction.cs
 ..\GenSoft.Entities\Generated Entities\ProcessActionStateCommandInfo.cs
 ..\GenSoft.Entities\Generated Entities\ProcessPath.cs
+..\GenSoft.Entities\Generated Entities\ProcessState.cs
 ..\GenSoft.Entities\Generated Entities\ProcessStep.cs
 ..\GenSoft.Entities\Generated Entities\ProcessStepComplexActions.cs
 ..\GenSoft.Entities\Generated Entities\ProcessStepParentEntity.cs
-..\GenSoft.Entities\Generated Entities\ProcessStepRelationship.cs
 ..\GenSoft.Entities\Generated Entities\PropertyValue.cs
 ..\GenSoft.Entities\Generated Entities\PropertyValueOption.cs
 ..\GenSoft.Entities\Generated Entities\ReferenceTypeName.cs
@@ -514,8 +512,6 @@
 ..\GenSoft.Entities\Generated Entities\StateEventInfo.cs
 ..\GenSoft.Entities\Generated Entities\StateInfo.cs
 ..\GenSoft.Entities\Generated Entities\StateInfoNotes.cs
-..\GenSoft.Entities\Generated Entities\SystemProcess.cs
-..\GenSoft.Entities\Generated Entities\SystemProcessState.cs
 ..\GenSoft.Entities\Generated Entities\SystemProcessStateInfo.cs
 ..\GenSoft.Entities\Generated Entities\Type.cs
 ..\GenSoft.Entities\Generated Entities\TypeArguement.cs
@@ -593,7 +589,7 @@
 ..\GenSoft.Interface\Generated Interfaces\Parameters.cs
 ..\GenSoft.Interface\Generated Interfaces\ParentEntity.cs
 ..\GenSoft.Interface\Generated Interfaces\ParentEntityType.cs
-..\GenSoft.Interface\Generated Interfaces\ParentSystemProcess.cs
+..\GenSoft.Interface\Generated Interfaces\ParentProcess.cs
 ..\GenSoft.Interface\Generated Interfaces\PredicateParameters.cs
 ..\GenSoft.Interface\Generated Interfaces\Predicates.cs
 ..\GenSoft.Interface\Generated Interfaces\PresentationPropertyType.cs
@@ -601,10 +597,10 @@
 ..\GenSoft.Interface\Generated Interfaces\ProcessAction.cs
 ..\GenSoft.Interface\Generated Interfaces\ProcessActionStateCommandInfo.cs
 ..\GenSoft.Interface\Generated Interfaces\ProcessPath.cs
+..\GenSoft.Interface\Generated Interfaces\ProcessState.cs
 ..\GenSoft.Interface\Generated Interfaces\ProcessStep.cs
 ..\GenSoft.Interface\Generated Interfaces\ProcessStepComplexActions.cs
 ..\GenSoft.Interface\Generated Interfaces\ProcessStepParentEntity.cs
-..\GenSoft.Interface\Generated Interfaces\ProcessStepRelationship.cs
 ..\GenSoft.Interface\Generated Interfaces\PropertyValue.cs
 ..\GenSoft.Interface\Generated Interfaces\PropertyValueOption.cs
 ..\GenSoft.Interface\Generated Interfaces\ReferenceTypeName.cs
@@ -616,8 +612,6 @@
 ..\GenSoft.Interface\Generated Interfaces\StateEventInfo.cs
 ..\GenSoft.Interface\Generated Interfaces\StateInfo.cs
 ..\GenSoft.Interface\Generated Interfaces\StateInfoNotes.cs
-..\GenSoft.Interface\Generated Interfaces\SystemProcess.cs
-..\GenSoft.Interface\Generated Interfaces\SystemProcessState.cs
 ..\GenSoft.Interface\Generated Interfaces\SystemProcessStateInfo.cs
 ..\GenSoft.Interface\Generated Interfaces\Type.cs
 ..\GenSoft.Interface\Generated Interfaces\TypeArguement.cs

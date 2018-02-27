@@ -14,7 +14,7 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IMachine:SystemInterfaces.IEntity  
 	{
-		string MachineName { get;}
+		string Name { get;}
 		int Processors { get;}
 
 

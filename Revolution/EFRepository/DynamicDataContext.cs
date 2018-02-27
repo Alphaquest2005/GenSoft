@@ -205,7 +205,7 @@ namespace EFRepository
             
             var entities = ctx.Entity.AsNoTracking().Include(x => x.EntityAttribute)
                 .ThenInclude(x => x.Attributes).ThenInclude(x => x.EntityId)
-                .ThenInclude(x => x.Attributes).ThenInclude(x => x.EntityName);
+                .ThenInclude(x => x.Attributes);
            
             var res = entities
                     .Where(x => x.EntityTypeId == viewId)

@@ -128,7 +128,7 @@
     <Compile Include="Generated Entities\Parameters.cs" />
     <Compile Include="Generated Entities\ParentEntity.cs" />
     <Compile Include="Generated Entities\ParentEntityType.cs" />
-    <Compile Include="Generated Entities\ParentSystemProcess.cs" />
+    <Compile Include="Generated Entities\ParentProcess.cs" />
     <Compile Include="Generated Entities\PredicateParameters.cs" />
     <Compile Include="Generated Entities\Predicates.cs" />
     <Compile Include="Generated Entities\PresentationPropertyType.cs" />
@@ -136,10 +136,10 @@
     <Compile Include="Generated Entities\ProcessAction.cs" />
     <Compile Include="Generated Entities\ProcessActionStateCommandInfo.cs" />
     <Compile Include="Generated Entities\ProcessPath.cs" />
+    <Compile Include="Generated Entities\ProcessState.cs" />
     <Compile Include="Generated Entities\ProcessStep.cs" />
     <Compile Include="Generated Entities\ProcessStepComplexActions.cs" />
     <Compile Include="Generated Entities\ProcessStepParentEntity.cs" />
-    <Compile Include="Generated Entities\ProcessStepRelationship.cs" />
     <Compile Include="Generated Entities\PropertyValue.cs" />
     <Compile Include="Generated Entities\PropertyValueOption.cs" />
     <Compile Include="Generated Entities\ReferenceTypeName.cs" />
@@ -151,8 +151,6 @@
     <Compile Include="Generated Entities\StateEventInfo.cs" />
     <Compile Include="Generated Entities\StateInfo.cs" />
     <Compile Include="Generated Entities\StateInfoNotes.cs" />
-    <Compile Include="Generated Entities\SystemProcess.cs" />
-    <Compile Include="Generated Entities\SystemProcessState.cs" />
     <Compile Include="Generated Entities\SystemProcessStateInfo.cs" />
     <Compile Include="Generated Entities\Type.cs" />
     <Compile Include="Generated Entities\TypeArguement.cs" />

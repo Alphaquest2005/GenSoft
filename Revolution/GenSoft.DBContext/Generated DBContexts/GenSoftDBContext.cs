@@ -71,7 +71,7 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.Parameters> Parameters { get; set; }
 		public DbSet<Entities.ParentEntity> ParentEntity { get; set; }
 		public DbSet<Entities.ParentEntityType> ParentEntityType { get; set; }
-		public DbSet<Entities.ParentSystemProcess> ParentSystemProcess { get; set; }
+		public DbSet<Entities.ParentProcess> ParentProcess { get; set; }
 		public DbSet<Entities.PredicateParameters> PredicateParameters { get; set; }
 		public DbSet<Entities.Predicates> Predicates { get; set; }
 		public DbSet<Entities.PresentationPropertyType> PresentationPropertyType { get; set; }
@@ -79,10 +79,10 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.ProcessAction> ProcessAction { get; set; }
 		public DbSet<Entities.ProcessActionStateCommandInfo> ProcessActionStateCommandInfo { get; set; }
 		public DbSet<Entities.ProcessPath> ProcessPath { get; set; }
+		public DbSet<Entities.ProcessState> ProcessState { get; set; }
 		public DbSet<Entities.ProcessStep> ProcessStep { get; set; }
 		public DbSet<Entities.ProcessStepComplexActions> ProcessStepComplexActions { get; set; }
 		public DbSet<Entities.ProcessStepParentEntity> ProcessStepParentEntity { get; set; }
-		public DbSet<Entities.ProcessStepRelationship> ProcessStepRelationship { get; set; }
 		public DbSet<Entities.PropertyValue> PropertyValue { get; set; }
 		public DbSet<Entities.PropertyValueOption> PropertyValueOption { get; set; }
 		public DbSet<Entities.ReferenceTypeName> ReferenceTypeName { get; set; }
@@ -94,8 +94,6 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.StateEventInfo> StateEventInfo { get; set; }
 		public DbSet<Entities.StateInfo> StateInfo { get; set; }
 		public DbSet<Entities.StateInfoNotes> StateInfoNotes { get; set; }
-		public DbSet<Entities.SystemProcess> SystemProcess { get; set; }
-		public DbSet<Entities.SystemProcessState> SystemProcessState { get; set; }
 		public DbSet<Entities.SystemProcessStateInfo> SystemProcessStateInfo { get; set; }
 		public DbSet<Entities.Type> Type { get; set; }
 		public DbSet<Entities.TypeArguement> TypeArguement { get; set; }
@@ -176,7 +174,7 @@ namespace GenSoft.DBContexts
 				ParametersMap.Map(modelBuilder.Entity<Entities.Parameters>());
 				ParentEntityMap.Map(modelBuilder.Entity<Entities.ParentEntity>());
 				ParentEntityTypeMap.Map(modelBuilder.Entity<Entities.ParentEntityType>());
-				ParentSystemProcessMap.Map(modelBuilder.Entity<Entities.ParentSystemProcess>());
+				ParentProcessMap.Map(modelBuilder.Entity<Entities.ParentProcess>());
 				PredicateParametersMap.Map(modelBuilder.Entity<Entities.PredicateParameters>());
 				PredicatesMap.Map(modelBuilder.Entity<Entities.Predicates>());
 				PresentationPropertyTypeMap.Map(modelBuilder.Entity<Entities.PresentationPropertyType>());
@@ -184,10 +182,10 @@ namespace GenSoft.DBContexts
 				ProcessActionMap.Map(modelBuilder.Entity<Entities.ProcessAction>());
 				ProcessActionStateCommandInfoMap.Map(modelBuilder.Entity<Entities.ProcessActionStateCommandInfo>());
 				ProcessPathMap.Map(modelBuilder.Entity<Entities.ProcessPath>());
+				ProcessStateMap.Map(modelBuilder.Entity<Entities.ProcessState>());
 				ProcessStepMap.Map(modelBuilder.Entity<Entities.ProcessStep>());
 				ProcessStepComplexActionsMap.Map(modelBuilder.Entity<Entities.ProcessStepComplexActions>());
 				ProcessStepParentEntityMap.Map(modelBuilder.Entity<Entities.ProcessStepParentEntity>());
-				ProcessStepRelationshipMap.Map(modelBuilder.Entity<Entities.ProcessStepRelationship>());
 				PropertyValueMap.Map(modelBuilder.Entity<Entities.PropertyValue>());
 				PropertyValueOptionMap.Map(modelBuilder.Entity<Entities.PropertyValueOption>());
 				ReferenceTypeNameMap.Map(modelBuilder.Entity<Entities.ReferenceTypeName>());
@@ -199,8 +197,6 @@ namespace GenSoft.DBContexts
 				StateEventInfoMap.Map(modelBuilder.Entity<Entities.StateEventInfo>());
 				StateInfoMap.Map(modelBuilder.Entity<Entities.StateInfo>());
 				StateInfoNotesMap.Map(modelBuilder.Entity<Entities.StateInfoNotes>());
-				SystemProcessMap.Map(modelBuilder.Entity<Entities.SystemProcess>());
-				SystemProcessStateMap.Map(modelBuilder.Entity<Entities.SystemProcessState>());
 				SystemProcessStateInfoMap.Map(modelBuilder.Entity<Entities.SystemProcessStateInfo>());
 				TypeMap.Map(modelBuilder.Entity<Entities.Type>());
 				TypeArguementMap.Map(modelBuilder.Entity<Entities.TypeArguement>());

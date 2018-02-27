@@ -19,7 +19,6 @@ namespace GenSoft.Entities
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 				public virtual ParentEntity ParentEntity {get; set;}
-				public virtual ICollection<ProcessStepRelationship> ProcessStepRelationship {get; set;}
 		
 			// ---------Parent Relationships
 				public virtual EntityTypeAttributes EntityTypeAttributes {get; set;}

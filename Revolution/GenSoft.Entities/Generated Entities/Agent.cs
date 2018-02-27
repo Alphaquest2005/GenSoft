@@ -13,12 +13,12 @@ namespace GenSoft.Entities
 {
 	public partial class Agent: BaseEntity, IAgent
 	{
-		public virtual string UserName { get; set; }
+		public virtual string Name { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 				public virtual ICollection<User> User {get; set;}
-				public virtual ICollection<SystemProcess> SystemProcess {get; set;}
+				public virtual ICollection<DomainProcess> DomainProcess {get; set;}
 		
 			// ---------Parent Relationships
 	

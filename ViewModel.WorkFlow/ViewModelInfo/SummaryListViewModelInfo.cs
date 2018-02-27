@@ -188,7 +188,7 @@ namespace RevolutionData
                             subject:v =>  v.CurrentEntity,//.WhenAnyValue(x => x.Value),
                             subjectPredicate:new List<Func<ISummaryListViewModel, bool>>
                             {
-                                v => v.ViewModelState.Value != ViewModelState.LoadingData
+                                v => v.ViewModelState != null && v.ViewModelState?.Value != ViewModelState.LoadingData
                             },
                             messageData:s => new ViewEventPublicationParameter(new object[] {s.CurrentEntity.Value ?? DynamicEntity.NullEntity},new RevolutionEntities.Process.StateEventInfo(s.Process, Context.EventFunctions.UpdateEventData(s.ViewInfo.EntityType.Name,Context.ViewModel.Events.CurrentEntityChanged)),s.Process,s.Source)),
 

@@ -16,7 +16,7 @@ namespace GenSoft.Entities
 		public virtual string Body { get; set; }
 		public virtual string Description { get; set; }
 		public virtual string Name { get; set; }
-		public virtual string ParameterName { get; set; }
+		public virtual string Parameter { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships

@@ -9,6 +9,7 @@ using SystemInterfaces;
 using Common;
 using Common.Dynamic;
 using JB.Collections.Reactive;
+using Process.WorkFlow;
 using Reactive.Bindings;
 
 using RevolutionEntities.Process;
@@ -55,7 +56,7 @@ namespace Core.Common.UI
                 new StateEventInfo(Process,
                     RevolutionData.Context.EventFunctions.UpdateEventData(Process.Name,
                         RevolutionData.Context.Process.Events.ProcessCleanedUp), Guid.NewGuid()), Source)
-                        .Where(x => x.ProcessToBeCleanedUp.Id == Process.Id).Subscribe(x => CleanUpView());
+                        .Where(x => x.ProcessToBeCleanedUp.Id == Process.Id && Process.Id > Processes.IntialSystemProcess.Id).Subscribe(x => CleanUpView());
 
         }
 
@@ -79,8 +80,8 @@ namespace Core.Common.UI
         }
 
 
-        public List<IEntityViewModel> ExtensionViewModels => ViewModels.Cast<IEntityViewModel>().Where(x => x.ViewInfo.Ordinality == EntityRelationshipOrdinality.One).ToList();
-        public List<IEntityViewModel> ChildEntityViewModels => ViewModels.Cast<IEntityViewModel>().Where(x => x.ViewInfo.Ordinality == EntityRelationshipOrdinality.Many).ToList();
+        public List<IEntityViewModel> ExtensionViewModels => ViewModels?.Cast<IEntityViewModel>().Where(x => x.ViewInfo?.Ordinality == EntityRelationshipOrdinality.One).ToList();
+        public List<IEntityViewModel> ChildEntityViewModels => ViewModels?.Cast<IEntityViewModel>().Where(x => x.ViewInfo?.Ordinality == EntityRelationshipOrdinality.Many).ToList();
 
         public ReactiveProperty<RowState> RowState { get; private set; } = new ReactiveProperty<RowState>(SystemInterfaces.RowState.Loaded);
         public ObservableList<IViewModel> ViewModels { get; private set; } = new ObservableBindingList<IViewModel>();

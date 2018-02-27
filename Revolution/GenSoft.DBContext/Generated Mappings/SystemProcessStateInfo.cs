@@ -24,7 +24,7 @@ namespace GenSoft.Mappings
 		//-------------------Navigation Properties -------------------------------//
 	
 				//----------------Parent Properties
-				//entityBuilder.HasOne(p => p.SystemProcessState SystemProcessState).WithOne(p => p.SystemProcessStateInfo).HasForeignKey<SystemProcessState>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.ProcessState ProcessState).WithOne(p => p.SystemProcessStateInfo).HasForeignKey<ProcessState>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

@@ -129,8 +129,9 @@ namespace Converters
             var cachedProperties = value[1] as ObservableDictionary<string, Dictionary<int, dynamic>>;
             var propertyParentEntityTypes = value[2] as ObservableDictionary<string, string>;
             Int32.TryParse(value[3]?.ToString(), out var val);
-            if (prop == null ||  cachedProperties == null|| propertyParentEntityTypes == null || !propertyParentEntityTypes.ContainsKey(prop) ||
-                val == 0) return null;
+            if (prop == null ||  cachedProperties == null|| propertyParentEntityTypes == null || !propertyParentEntityTypes.ContainsKey(prop) 
+               // || val == 0
+                ) return null;
 
             
             return DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(propertyParentEntityTypes[prop]).CachedProperties.ContainsKey("Name")

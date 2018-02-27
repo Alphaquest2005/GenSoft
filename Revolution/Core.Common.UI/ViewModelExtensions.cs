@@ -70,13 +70,13 @@ namespace Core.Common.UI
             foreach (var itm in viewModel.EventPublications)
             {
                 var subject = itm.Subject.Invoke(viewModel);
-
+                if (subject == null) continue;
                 var publishMessage = CreatePublishMessageAction(viewModel, itm);
                 subject.Where(x => itm.SubjectPredicate.All(z => z.Invoke(viewModel)))
                     .Subscribe<dynamic>(publishMessage);
             }
 
-            viewModel.ViewModelState.Value = ViewModelState.Initialized;
+            if(viewModel.ViewModelState != null) viewModel.ViewModelState.Value = ViewModelState.Initialized;
            
 
 

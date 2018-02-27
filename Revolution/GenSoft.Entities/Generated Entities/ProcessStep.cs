@@ -27,7 +27,6 @@ namespace GenSoft.Entities
 				public virtual ICollection<ProcessPath> NextProcessSteps {get; set;}
 				public virtual ICollection<ProcessPath> ProcessSteps {get; set;}
 				public virtual ICollection<ProcessStepComplexActions> ProcessStepComplexActions {get; set;}
-				public virtual ICollection<ProcessStepRelationship> ProcessStepRelationship {get; set;}
 		
 			// ---------Parent Relationships
 				public virtual DomainProcess DomainProcess {get; set;}
