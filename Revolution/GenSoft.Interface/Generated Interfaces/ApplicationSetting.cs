@@ -15,7 +15,8 @@ namespace GenSoft.Interfaces
 	public partial interface IApplicationSetting:SystemInterfaces.IEntity  
 	{
 		int ApplicationId { get;}
-		bool AutoRun { get;}
+		string Name { get;}
+		string Value { get;}
 
 
 

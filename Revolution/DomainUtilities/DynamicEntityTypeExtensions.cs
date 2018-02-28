@@ -87,7 +87,7 @@ namespace DomainUtilities
                             .Where(z => viewset.Contains(z.AttributeId))
                             .OrderBy(d => viewset.IndexOf(d.AttributeId))
                             .Select(z => new EntityKeyValuePair(z.Attributes.Name, z.Value,
-                                (ViewAttributeDisplayProperties)CreateEntityAttributeViewProperties(z.Id),
+                                (ViewAttributeDisplayProperties)CreateEntityAttributeViewProperties(z.Id), false,
                                 z.Attributes.EntityId != null, false) as IEntityKeyValuePair) // z.Entity.EntityType.EntityTypeAttributes.EntityName != null%/
                             .ToList()
                         ??
@@ -97,7 +97,7 @@ namespace DomainUtilities
                             .Select(z =>
                                 new EntityKeyValuePair(z.Attributes.Name,
                                     null,
-                                    (ViewAttributeDisplayProperties)CreateEntityAttributeViewProperties(z.Id),
+                                    (ViewAttributeDisplayProperties)CreateEntityAttributeViewProperties(z.Id), false,
                                     z.Attributes.EntityId != null,
                                     z.EntityName != null) as IEntityKeyValuePair).ToList();
 
@@ -125,6 +125,16 @@ namespace DomainUtilities
                         var pp = GetOrAddDynamicEntityType(p.Value);
                         CreateParentPropertyCache(tes, pp, viewType, cachedProperties);
                     }
+                    //Inherited Name
+                    if (!cachedProperties.ContainsKey("Name") && viewType.ParentEntityType != null)
+                    {
+                        CreateInheritedEntityNamePropertyCache(tes, parentEntityType, viewType, cachedProperties);
+                    }
+                    //ComposedName
+                    if (!cachedProperties.ContainsKey("Name") && propertyParentEntityTypes.Count()>1)
+                    {
+                        CreateComposedEntityNamePropertyCache(tes, propertyParentEntityTypes, viewType, cachedProperties);
+                    }
 
                     var dynamicEntityType = new DynamicEntityType(viewType.Type.Name,
                         viewType.EntitySet, tes, calPropDef, cachedProperties, propertyParentEntityTypes, parentEntityType);
@@ -143,8 +153,9 @@ namespace DomainUtilities
         }
 
         private static void CreateParentPropertyCache(List<IEntityKeyValuePair> tes, IDynamicEntityType parentEntityType,
-            EntityType viewType, ObservableDictionary<string, Dictionary<int, dynamic>> cachedProperties)
+           EntityType viewType, ObservableDictionary<string, Dictionary<int, dynamic>> cachedProperties)
         {
+
             if (parentEntityType.Properties.Any(x => x.Key == "Name"))
             {
                 using (var ctx = new GenSoftDBContext())
@@ -161,36 +172,124 @@ namespace DomainUtilities
                                     x.Attributes.Name == "Name")
                         .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
                         .FirstOrDefault();
+                    if (pAtt == null) return;
+                    
+                        if (tes.All(x => x.Key != pAtt.Attributes.Name))
+                            tes.Add(new EntityKeyValuePair(pAtt.Attributes.Name,
+                                null,
+                                (ViewAttributeDisplayProperties)CreateEntityAttributeViewProperties(pAtt.Id), true,
+                                pAtt.Attributes.EntityId != null,
+                                pAtt.EntityName != null) as IEntityKeyValuePair);
+                        CreateCacheProperty(parentEntityType, viewType, cachedProperties, pEntityType, pAtt);
+                    
+                }
+            }
+        }
+
+        private static void CreateComposedEntityNamePropertyCache(List<IEntityKeyValuePair> tes,
+            ObservableDictionary<string, string> propertyParentEntityTypes,
+            EntityType viewType, ObservableDictionary<string, Dictionary<int, dynamic>> cachedProperties)
+        {
+            //get list of items
+            if (viewType.Application.DatabaseInfo == null)
+            {
+                //CreateCachePropertyForAttributeFromDynamicContext(pEntityType, pAtt,
+                //    cachedProperties, propertyName ?? parentEntityType.Name);
+            }
+            else
+            {
+                var propertyKey = "Name";
+                using (var conn = new SqlConnection(viewType.Application.DatabaseInfo.ConnectionString))
+                {
+                    var cmd = conn.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    conn.Open();
+                    
+                    cmd.CommandText = $"Select Id, {propertyParentEntityTypes.Select(x => x.Key).Aggregate((c,n) => $"{c},{n}")} From {viewType.Type.Name}";
+                    var reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        var aDict = Enumerable.Range(0, reader.FieldCount)
+                            .ToDictionary(reader.GetName, reader.GetValue);
+                        var id = Convert.ToInt32(aDict.FirstOrDefault(x => x.Key == "Id").Value);
+                        var value = propertyParentEntityTypes.Select(x => GetOrAddDynamicEntityType(x.Value).CachedProperties["Name"][(int)aDict[x.Key]]).Aggregate((c, n) => $"{c}-{n}");
+                        
+                        if (string.IsNullOrEmpty(value)) continue;
+                        if (cachedProperties.ContainsKey(propertyKey))
+                        {
+                            if (cachedProperties[propertyKey].ContainsKey(id)) return; // probly done already
+                            cachedProperties[propertyKey].Add(id, value);
+                        }
+                        else
+                        {
+                            cachedProperties.Add(propertyKey, new Dictionary<int, dynamic>() { { id, value } });
+                        }
+                    }
+                    reader.Close();
+                }
+            }
+            // Calculate the Name Property
+        }
+
+        private static void CreateInheritedEntityNamePropertyCache(List<IEntityKeyValuePair> tes, IDynamicEntityType parentEntityType,
+            EntityType viewType, ObservableDictionary<string, Dictionary<int, dynamic>> cachedProperties)
+        {
+            
+          
+                using (var ctx = new GenSoftDBContext())
+                {
+                    var pEntityType = ctx.EntityType
+                        .Include(x => x.Application.DatabaseInfo)
+                        .Include(x => x.ParentEntityType.EntityType.Type)
+                        .Include(x => x.Type)
+                        .First(x => x.Type.Name == parentEntityType.Name);
+
+                    var pAtt = ctx.EntityTypeAttributes
+                        .Include(x => x.Attributes)
+                        .Where(x => x.EntityTypeId == pEntityType.Id &&
+                                    x.Attributes.Name == "Name")
+                        .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
+                        .FirstOrDefault();
                     if (pAtt == null)
                     {
-                        //CreateCacheProperty(parentEntityType, viewType, cachedProperties, pEntityType, pAtt);
+                        if (GetOrAddDynamicEntityType(pEntityType.ParentEntityType.EntityType.Type.Name)
+                            .CachedProperties.ContainsKey("Name"))
+                        {
+                            cachedProperties.Add("Name", GetOrAddDynamicEntityType(pEntityType.ParentEntityType.EntityType.Type.Name).CachedProperties["Name"]);
+                        }
+                        else
+                        {
+                            
+                        }
+                        
                     }
                     else
                     {
                         if (tes.All(x => x.Key != pAtt.Attributes.Name))
                             tes.Add(new EntityKeyValuePair(pAtt.Attributes.Name,
                                 null,
-                                (ViewAttributeDisplayProperties) CreateEntityAttributeViewProperties(pAtt.Id),
+                                (ViewAttributeDisplayProperties) CreateEntityAttributeViewProperties(pAtt.Id),true,
                                 pAtt.Attributes.EntityId != null,
                                 pAtt.EntityName != null) as IEntityKeyValuePair);
-                        CreateCacheProperty(parentEntityType, viewType, cachedProperties, pEntityType, pAtt);
+                        CreateCacheProperty(parentEntityType, viewType, cachedProperties, pEntityType, pAtt, "Name");
                    }
                 }
-            }
+           
         }
 
         private static void CreateCacheProperty(IDynamicEntityType parentEntityType, EntityType viewType,
-            ObservableDictionary<string, Dictionary<int, dynamic>> cachedProperties, EntityType pEntityType, EntityTypeAttributes pAtt)
+            ObservableDictionary<string, Dictionary<int, dynamic>> cachedProperties, EntityType pEntityType, EntityTypeAttributes pAtt, string propertyName = null)
         {
             if (viewType.Application.DatabaseInfo == null)
             {
                 CreateCachePropertyForAttributeFromDynamicContext(pEntityType, pAtt,
-                    cachedProperties, parentEntityType.Name);
+                    cachedProperties, propertyName ?? parentEntityType.Name);
             }
             else
             {
                 CreateCachePropertyForAttributeFromRealDataBase(pEntityType, pAtt,
-                    cachedProperties, parentEntityType.Name);
+                    cachedProperties, propertyName ?? parentEntityType.Name);
             }
         }
 
@@ -200,7 +299,7 @@ namespace DomainUtilities
 
 
             var lst = viewType.EntityTypeAttributes
-                .Where(x => x.EntityTypeAttributeCache != null).DistinctBy(x => x.Id).ToList();
+                .Where(x => x.EntityTypeAttributeCache != null || x.Attributes.Name == "Name").DistinctBy(x => x.Id).ToList();
             if (viewType.Application.DatabaseInfo == null)
             {
                 foreach (var cp in lst)

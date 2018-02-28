@@ -9,10 +9,11 @@ namespace Common
 
     public class EntityKeyValuePair : IEntityKeyValuePair
     {
-        public EntityKeyValuePair(string key, dynamic value, ViewAttributeDisplayProperties displayProperties, bool isEntityId = false, bool isEntityName = false ) 
+        public EntityKeyValuePair(string key, dynamic value, ViewAttributeDisplayProperties displayProperties, bool isComputed, bool isEntityId = false, bool isEntityName = false ) 
         {
             Value = value;
             DisplayProperties = displayProperties;
+            IsComputed = isComputed;
             Key = key;
             if (isEntityId) IsEntityId = true;
             if (isEntityName) IsEntityId = true;
@@ -41,8 +42,8 @@ namespace Common
         }
 
         public ViewAttributeDisplayProperties DisplayProperties { get; }
-        public string Type { get; }
-
+        public bool IsComputed { get; }
+        
         IViewAttributeDisplayProperties IEntityKeyValuePair.DisplayProperties => DisplayProperties;
 
         
@@ -51,7 +52,7 @@ namespace Common
         [Annotations.NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChanged?.Invoke(new EntityKeyValuePair(this.Key, this.Value, DisplayProperties), new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(new EntityKeyValuePair(this.Key, this.Value, DisplayProperties, this.IsComputed), new PropertyChangedEventArgs(propertyName));
         }
     }
 

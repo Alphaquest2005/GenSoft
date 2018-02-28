@@ -19,7 +19,8 @@ namespace GenSoft.Mappings
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.ApplicationId).HasColumnName("ApplicationId").IsRequired();
-			entityBuilder.Property(t => t.AutoRun).HasColumnName("AutoRun").IsRequired();
+			entityBuilder.Property(t => t.Name).HasColumnName("Name").IsRequired().HasMaxLength(50);
+			entityBuilder.Property(t => t.Value).HasColumnName("Value").IsRequired().HasMaxLength(50);
 		//-------------------Navigation Properties -------------------------------//
 	
 				//----------------Parent Properties

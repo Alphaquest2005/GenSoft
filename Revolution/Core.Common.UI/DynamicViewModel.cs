@@ -74,7 +74,7 @@ namespace Core.Common.UI
             RowState = null;
             SelectedViewModel = null;
             ViewModelState = null;
-            Visibility = null;
+           // Visibility = null;
             ViewModels = null;
             
         }

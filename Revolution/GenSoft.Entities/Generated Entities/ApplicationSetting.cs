@@ -14,7 +14,8 @@ namespace GenSoft.Entities
 	public partial class ApplicationSetting: BaseEntity, IApplicationSetting
 	{
 		public virtual int ApplicationId { get; set; }
-		public virtual bool AutoRun { get; set; }
+		public virtual string Name { get; set; }
+		public virtual string Value { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships

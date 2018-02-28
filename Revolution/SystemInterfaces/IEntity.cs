@@ -38,6 +38,7 @@ namespace SystemInterfaces
         bool IsEntityName { get; }
         dynamic Value { get; }
         IViewAttributeDisplayProperties DisplayProperties { get; }
+        bool IsComputed { get; }
     }
     public interface IViewAttributeDisplayProperties
     {

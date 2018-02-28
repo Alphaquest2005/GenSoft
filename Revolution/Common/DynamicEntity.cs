@@ -24,7 +24,7 @@ namespace Common.DataEntites
         
         public ObservableList<IEntityKeyValuePair> PropertyList => new ObservableList<IEntityKeyValuePair>(EntityType.Properties
             .Select(x => new EntityKeyValuePair(x.Key,Properties[x.Key],
-                        (ViewAttributeDisplayProperties) EntityType.Properties.FirstOrDefault(z => z.Key == x.Key)?.DisplayProperties,
+                        (ViewAttributeDisplayProperties) EntityType.Properties.FirstOrDefault(z => z.Key == x.Key)?.DisplayProperties,false,
                         x.IsEntityId,
                         x.IsEntityName)as IEntityKeyValuePair).ToList());
 
