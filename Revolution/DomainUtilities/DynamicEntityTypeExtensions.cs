@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
     using System.Data;
 using System.Diagnostics;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using SystemInterfaces;
 using Common;
@@ -36,7 +37,7 @@ namespace DomainUtilities
         private static ConcurrentDictionary<string, IDynamicEntityType> DynamicEntityTypes { get; } = new ConcurrentDictionary<string, IDynamicEntityType>();
         public static IDynamicEntityType GetOrAddDynamicEntityType(string entityType)
         {
-
+            Contract.Requires( !string.IsNullOrEmpty(entityType));
             if (DynamicEntityTypes.ContainsKey(entityType)) return DynamicEntityTypes[entityType];
             using (var ctx = new GenSoftDBContext())
             {
@@ -134,6 +135,9 @@ namespace DomainUtilities
                     if (!cachedProperties.ContainsKey("Name") && propertyParentEntityTypes.Count()>1)
                     {
                         CreateComposedEntityNamePropertyCache(tes, propertyParentEntityTypes, viewType, cachedProperties);
+                        // remove name in properties
+                        var name = tes.FirstOrDefault(x => x.Key == "Name");
+                        if(name != null)tes.Remove(name);
                     }
 
                     var dynamicEntityType = new DynamicEntityType(viewType.Type.Name,
@@ -205,7 +209,7 @@ namespace DomainUtilities
                     cmd.CommandType = CommandType.Text;
                     conn.Open();
                     
-                    cmd.CommandText = $"Select Id, {propertyParentEntityTypes.Select(x => x.Key).Aggregate((c,n) => $"{c},{n}")} From {viewType.Type.Name}";
+                    cmd.CommandText = $"Select Id, {propertyParentEntityTypes.Where(x => x.Key != "Id").Select(x => x.Key).Aggregate((c,n) => $"{c},{n}")} From {viewType.Type.Name}";
                     var reader = cmd.ExecuteReader();
 
                     while (reader.Read())
@@ -253,7 +257,7 @@ namespace DomainUtilities
                         .FirstOrDefault();
                     if (pAtt == null)
                     {
-                        if (GetOrAddDynamicEntityType(pEntityType.ParentEntityType.EntityType.Type.Name)
+                        if (pEntityType.ParentEntityType != null && GetOrAddDynamicEntityType(pEntityType.ParentEntityType.EntityType.Type.Name)
                             .CachedProperties.ContainsKey("Name"))
                         {
                             cachedProperties.Add("Name", GetOrAddDynamicEntityType(pEntityType.ParentEntityType.EntityType.Type.Name).CachedProperties["Name"]);
