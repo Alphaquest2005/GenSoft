@@ -18,8 +18,8 @@ namespace ViewModel.WorkFlow
             if (cmd.ExistingEntities) cmdPredicates.Add(v => v.CurrentEntity.Value?.Id != 0);
             else cmdPredicates.Add(v => v.CurrentEntity.Value?.Id <= 0);
 
-            if (cmd.RequireAllFields) cmdPredicates.Add(v => v.ChangeTracking.Count == v.CurrentEntity.Value.PropertyList.Count(x => x.Key != nameof(IDynamicEntity.Id)));
-            else cmdPredicates.Add(v => v.ChangeTracking.Any(z => v.CurrentEntity.Value.PropertyList.FirstOrDefault(x => x.Key == z.Key)?.Value != z.Value));
+            if (cmd.RequireAllFields) cmdPredicates.Add(v => v.ChangeTracking.Count == v.CurrentEntity.Value.PropertyList.Where(x => x.IsComputed == false).Count(x => x.Key != nameof(IDynamicEntity.Id)));
+            else cmdPredicates.Add(v => v.ChangeTracking.Any(z => v.CurrentEntity.Value.PropertyList.FirstOrDefault(x => x.Key == z.Key)?.Value != z.Value.Value));
 
             var commandType = typeof(SystemInterfaces.IEntity).Assembly.GetType($"SystemInterfaces.{cmd.CommandType.Name}");
             var vcmdType = typeof(ViewEventCommand<,>).MakeGenericType(typeof(TViewModel), commandType);
@@ -42,7 +42,7 @@ namespace ViewModel.WorkFlow
                         new object[]
                         {
                             v.CurrentEntity.Value,
-                            v.ChangeTracking.Where(z => v.CurrentEntity.Value.PropertyList.FirstOrDefault(x => x.Key == z.Key)?.Value != z.Value).ToDictionary(x => x.Key, x => (x.Value is IEntityKeyValuePair? ((IEntityKeyValuePair)x.Value).Value : x.Value))
+                            v.ChangeTracking.Where(z => v.CurrentEntity.Value.PropertyList.FirstOrDefault(x => x.Key == z.Key)?.Value != z.Value.Value).ToDictionary(x => x.Key, x => (x.Value is IEntityKeyValuePair? ((IEntityKeyValuePair)x.Value).Value : x.Value))
                         },
                         new RevolutionEntities.Process.StateCommandInfo(v.Process, RevolutionData.Context.Entity.Commands.GetEntity), v.Process,
                         v.Source);

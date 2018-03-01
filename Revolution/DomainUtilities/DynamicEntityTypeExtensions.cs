@@ -139,6 +139,15 @@ namespace DomainUtilities
                         var name = tes.FirstOrDefault(x => x.Key == "Name");
                         if(name != null)tes.Remove(name);
                     }
+                    // hide computed fields in write view
+                    foreach (var field in tes.Where(x => x.IsComputed))
+                    {
+                        field.DisplayProperties.WriteProperties.Properties["AttributeLabel"]["Visibility"] =
+                            "Collapsed";
+                        field.DisplayProperties.WriteProperties.Properties["AttributeValue"]["Visibility"] =
+                            "Collapsed";
+                    }
+
 
                     var dynamicEntityType = new DynamicEntityType(viewType.Type.Name,
                         viewType.EntitySet, tes, calPropDef, cachedProperties, propertyParentEntityTypes, parentEntityType);
@@ -217,7 +226,7 @@ namespace DomainUtilities
                         var aDict = Enumerable.Range(0, reader.FieldCount)
                             .ToDictionary(reader.GetName, reader.GetValue);
                         var id = Convert.ToInt32(aDict.FirstOrDefault(x => x.Key == "Id").Value);
-                        var value = propertyParentEntityTypes.Select(x => GetOrAddDynamicEntityType(x.Value).CachedProperties["Name"][(int)aDict[x.Key]]).Aggregate((c, n) => $"{c}-{n}");
+                        var value = propertyParentEntityTypes.OrderByDescending(x => x.Key).Select(x => GetOrAddDynamicEntityType(x.Value).CachedProperties["Name"][(int)aDict[x.Key]]).Aggregate((c, n) => $"{c}-{n}");
                         
                         if (string.IsNullOrEmpty(value)) continue;
                         if (cachedProperties.ContainsKey(propertyKey))
@@ -271,11 +280,15 @@ namespace DomainUtilities
                     else
                     {
                         if (tes.All(x => x.Key != pAtt.Attributes.Name))
-                            tes.Add(new EntityKeyValuePair(pAtt.Attributes.Name,
+                        {
+                            var name = new EntityKeyValuePair(pAtt.Attributes.Name,
                                 null,
-                                (ViewAttributeDisplayProperties) CreateEntityAttributeViewProperties(pAtt.Id),true,
+                                (ViewAttributeDisplayProperties) CreateEntityAttributeViewProperties(pAtt.Id), true,
                                 pAtt.Attributes.EntityId != null,
-                                pAtt.EntityName != null) as IEntityKeyValuePair);
+                                pAtt.EntityName != null);
+                        
+                        tes.Add(name);
+                        }
                         CreateCacheProperty(parentEntityType, viewType, cachedProperties, pEntityType, pAtt, "Name");
                    }
                 }

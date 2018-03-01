@@ -47,8 +47,9 @@ namespace EventAggregator
             if (processInfo.EventKey == Guid.Empty) Debugger.Break();
             _publishEventStore.TryGetValue("Pub-" + key, out dynamic actualEvent);
 
-            if (actualEvent != null)
+            if (actualEvent != null && actualEvent.Process.Id == caller.Process.Id)
             {
+                
                 //ToDo:need to change processinfo key
                 //var type = BootStrapper.BootStrapper.Container.GetConcreteType(typeof(TEvent));
                 // var newEvent =(TEvent) typeof(JsonUtilities).GetMethod("CloneJson").MakeGenericMethod(type).Invoke(null, new object[] { actualEvent });

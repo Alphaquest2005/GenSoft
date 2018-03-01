@@ -108,7 +108,7 @@ namespace DataServices.Actors
             using (var ctx = new GenSoftDBContext())
             {
                 if(maxProcessId == 0) maxProcessId = ctx.DomainProcess.Max(x => x.Id);
-
+                maxProcessId += 1;
                 var dp = ctx.DomainProcess
                     .Include(x => x.Application.DatabaseInfo)
                     .Include(x => x.ParentProcess.DomainProcess.Agent)
@@ -122,7 +122,7 @@ namespace DataServices.Actors
                 if (dp == null)
                 {
                     SystemProcess systemProcess;
-                    maxProcessId += 1;
+                    
                     var rapp = ctx.Application
                         .Include(x => x.DatabaseInfo)
                         .First(x => x.Id == CurrentApplication.Id);
@@ -282,7 +282,7 @@ namespace DataServices.Actors
                     : new Applet(domainProcess.Application.Name);
 
                 return new SystemProcess(
-                    new SystemProcessInfo(domainProcess.Id,
+                    new SystemProcessInfo(maxProcessId,
                     new SystemProcess(
                             new RevolutionEntities.Process.Process(
                                                                     domainProcess.ParentProcess.Id,

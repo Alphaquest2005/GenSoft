@@ -133,11 +133,12 @@ namespace Converters
                // || val == 0
                 ) return null;
 
-            
-            return DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(propertyParentEntityTypes[prop]).CachedProperties.ContainsKey("Name")
-                   && DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(propertyParentEntityTypes[prop]).CachedProperties["Name"].ContainsKey(val)
+
+            var convert = DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(propertyParentEntityTypes[prop]).CachedProperties.ContainsKey("Name")
+                          && DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(propertyParentEntityTypes[prop]).CachedProperties["Name"].ContainsKey(val)
                 ? DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(propertyParentEntityTypes[prop]).CachedProperties["Name"][val]
                 : val;
+            return convert;
         }
 
 

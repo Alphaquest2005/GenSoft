@@ -73,13 +73,14 @@ namespace EFRepository
                     else
                     {
                         entityId = msg.Entity.Id;
-                        sql = $"Update {msg.EntityType.Name} Set {msg.Changes.Where(x => x.Value != null).Select(x => $"{x.Key}={x.Value.ToString()}").Aggregate((current, next) => current + "," + next)}" +
+                        sql = $"Update {msg.EntityType.Name} Set {msg.Changes.Where(x => x.Value != null).Select(x => $"{x.Key}='{x.Value.ToString()}'").Aggregate((current, next) => current + "," + next)}" +
                               $" Where Id = {entityId}";
                         using (var conn = new SqlConnection(dbInfo.DbConnectionString))
                         {
                             var cmd = conn.CreateCommand();
                             cmd.CommandText = sql;
                             cmd.CommandType = CommandType.Text;
+                            conn.Open();
                             cmd.ExecuteNonQuery();
                         }
                     }
