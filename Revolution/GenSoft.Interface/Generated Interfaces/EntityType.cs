@@ -16,6 +16,7 @@ namespace GenSoft.Interfaces
 	{
 		int ApplicationId { get;}
 		string EntitySet { get;}
+		int TypeId { get;}
 
 
 

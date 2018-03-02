@@ -39,6 +39,7 @@ namespace RevolutionData
                         new List<Func<ISummaryListViewModel, IUpdateProcessStateList, bool>>(),
                         (v, e) =>
                         {
+                            if (v.ViewModelState == null) return;
                             if (e.State != null && v.State.Value != null &&
                                 v.State.Value.EntitySet.Select(x => x.Id).SequenceEqual(e.State.EntitySet.Select(x => x.Id))) return;
                             v.ViewModelState.Value = ViewModelState.LoadingData;

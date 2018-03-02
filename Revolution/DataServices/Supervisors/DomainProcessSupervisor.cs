@@ -710,7 +710,7 @@ namespace DataServices.Actors
                     .Include(x => x.ParentEntity.EntityTypeAttributes.EntityType).ThenInclude(x => x.EntityTypeViewModelCommand).ThenInclude(x => x.ViewModelCommands.CommandType)
                     .Include(x => x.ParentEntity.EntityTypeAttributes.Attributes)
                     .Where(x => x.ParentEntity.EntityTypeAttributes.EntityType.Id == mainEntityId || x.EntityTypeAttributes.EntityType.Id == mainEntityId)
-                    .GroupBy(x => x.ParentEntity.EntityTypeAttributes.EntityType);
+                    .GroupBy(x => x.ParentEntity.EntityTypeAttributes.EntityType).ToList();
 
                 foreach (var g in list)
                 {
@@ -722,7 +722,16 @@ namespace DataServices.Actors
                     var childviews = new List<IViewModelInfo>(){ppv};
                     foreach (var rel in g)
                     {
-                        var cm = CreateEntityTypeViewModel(rel.EntityTypeAttributes.EntityType, new List<EntityRelationship>() { rel }, rel.RelationshipType.ChildOrdinalityId == 2, ctx, process, rel.RelationshipType.ChildOrdinalitys.Name == "One" ? EntityRelationshipOrdinality.One : EntityRelationshipOrdinality.Many);
+                        ///////////////////////////////////////////////// EF No loading the includes for EntityTypeAttributes.EntityType ///////////////////////
+                        var relEntity = ctx.EntityType
+                            .Include(x => x.Type)
+                            .Include(x => x.EntityTypeAttributes).ThenInclude(x => x.Attributes)
+                            .Include(x => x.EntityTypeViewModelCommand)
+                            .ThenInclude(x => x.ViewModelCommands.CommandType)
+                            .First(x => x.Id == rel.EntityTypeAttributes.EntityType.Id);
+
+
+                        var cm = CreateEntityTypeViewModel(relEntity, new List<EntityRelationship>() { rel }, rel.RelationshipType.ChildOrdinalityId == 2, ctx, process, rel.RelationshipType.ChildOrdinalitys.Name == "One" ? EntityRelationshipOrdinality.One : EntityRelationshipOrdinality.Many);
                         var cv = CreateEntityViewModel(cm, new List<IViewModelInfo>());
                         if (cv != null)
                         {
@@ -923,14 +932,18 @@ namespace DataServices.Actors
                     {
                         var parentType = r.Key.Type.Name;
                         DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType);
-                        
 
-                    yield return Processes.ComplexActions.GetComplexAction("InitializeProcessStateList",new object[]{ process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType)});
-                        yield return Processes.ComplexActions.GetComplexAction("UpdateStateList",new object[] {process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType)});
-                    yield return Processes.ComplexActions.GetComplexAction("UpdateState", new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType) });
-                    yield return Processes.ComplexActions.GetComplexAction("RequestState", new object[] { process, parentType, parentType, "Id" });
 
-                    var entityRelationships = r.DistinctBy(x => x.Id);
+                        yield return Processes.ComplexActions.GetComplexAction("InitializeProcessStateList",
+                            new object[] {process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType)});
+                        yield return Processes.ComplexActions.GetComplexAction("UpdateStateList",
+                            new object[] {process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType)});
+                        yield return Processes.ComplexActions.GetComplexAction("UpdateState",
+                            new object[] {process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType)});
+                        yield return Processes.ComplexActions.GetComplexAction("RequestState",
+                            new object[] {process, parentType, parentType, "Id"});
+
+                        var entityRelationships = r.DistinctBy(x => x.Id);
                         foreach (var rel in entityRelationships)
                         {
                             var parentExpression = rel.ParentEntity.EntityTypeAttributes.Attributes.Name;
@@ -959,20 +972,18 @@ namespace DataServices.Actors
                                     new object[]
                                         {process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(childType)});
 
-                            yield return Processes.ComplexActions.GetComplexAction("RequestState",
-                                new object[] { process, parentType, childType, childExpression });
-                        }
+                                yield return Processes.ComplexActions.GetComplexAction("RequestState",
+                                    new object[] {process, parentType, childType, childExpression});
+                            }
                             else
                             {
-
-
                                 yield return Processes.ComplexActions.GetComplexAction("UpdateStateList",
                                     new object[]
                                         {process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(childType)});
 
-                            yield return Processes.ComplexActions.GetComplexAction("RequestStateList",
-                                new object[] { process, parentType, childType, parentExpression, childExpression });
-                        }
+                                yield return Processes.ComplexActions.GetComplexAction("RequestStateList",
+                                    new object[] {process, parentType, childType, parentExpression, childExpression});
+                            }
                             yield return Processes.ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",
                                 new object[] {process, parentType, childType, parentExpression, childExpression});
 

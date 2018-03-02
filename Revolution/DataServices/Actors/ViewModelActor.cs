@@ -118,7 +118,7 @@ namespace DataServices.Actors
                         .MakeGenericMethod(v.ViewModelType)
                         .Invoke(this, new object[] {vmInfoProcess, v});
                     cvm.Visibility.Value = v.Visibility;
-                    vm.ViewModels.Add(cvm);
+                    vm.ViewModels?.Add(cvm);
                 }
                 return vm;
             }

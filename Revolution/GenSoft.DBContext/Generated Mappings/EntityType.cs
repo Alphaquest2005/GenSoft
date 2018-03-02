@@ -17,10 +17,10 @@ namespace GenSoft.Mappings
 		{
 			entityBuilder.ToTable("EntityType", "dbo");
 			entityBuilder.HasKey(t => t.Id);
-			entityBuilder.Property(t => t.Id).HasColumnName("Id").ValueGeneratedNever();	
+			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.ApplicationId).HasColumnName("ApplicationId").IsRequired();
 			entityBuilder.Property(t => t.EntitySet).HasColumnName("EntitySet").IsRequired().HasMaxLength(50);
-			entityBuilder.Property(t => t.Id).HasColumnName("Id").IsRequired();
+			entityBuilder.Property(t => t.TypeId).HasColumnName("TypeId").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
 				entityBuilder.HasOne(p => p.DBType).WithOne(p => p.EntityType).HasForeignKey<DBType>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.Entity).WithOne(p => p.EntityType).HasForeignKey(c => c.EntityTypeId).OnDelete(DeleteBehavior.Restrict);
@@ -32,7 +32,7 @@ namespace GenSoft.Mappings
 	
 				//----------------Parent Properties
 				//entityBuilder.HasOne(p => p.Application Application).WithMany(p => p.EntityType).HasForeignKey(c => c.ApplicationId).OnDelete(DeleteBehavior.Restrict);
-				//entityBuilder.HasOne(p => p.Type Type).WithOne(p => p.EntityType).HasForeignKey<Type>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.Type Type).WithMany(p => p.EntityType).HasForeignKey(c => c.TypeId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

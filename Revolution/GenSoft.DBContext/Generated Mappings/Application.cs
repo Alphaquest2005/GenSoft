@@ -22,9 +22,9 @@ namespace GenSoft.Mappings
 		//-------------------Navigation Properties -------------------------------//
 				entityBuilder.HasMany(x => x.DomainProcess).WithOne(p => p.Application).HasForeignKey(c => c.ApplicationId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.ApplicationSetting).WithOne(p => p.Application).HasForeignKey(c => c.ApplicationId).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasMany(x => x.EntityType).WithOne(p => p.Application).HasForeignKey(c => c.ApplicationId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasOne(p => p.DatabaseInfo).WithOne(p => p.Application).HasForeignKey<DatabaseInfo>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasOne(p => p.DefaultApplication).WithOne(p => p.Application).HasForeignKey<DefaultApplication>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.EntityType).WithOne(p => p.Application).HasForeignKey(c => c.ApplicationId).OnDelete(DeleteBehavior.Restrict);
 	
 				//----------------Parent Properties
 	

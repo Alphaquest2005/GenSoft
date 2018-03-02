@@ -18,7 +18,7 @@ namespace GenSoft.Entities
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 				public virtual DataType DataType {get; set;}
-				public virtual EntityType EntityType {get; set;}
+				public virtual ICollection<EntityType> EntityType {get; set;}
 				public virtual EventType EventType {get; set;}
 				public virtual SourceType SourceType {get; set;}
 				public virtual ICollection<TypeArguement> ChildTypes {get; set;}

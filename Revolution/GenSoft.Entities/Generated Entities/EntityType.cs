@@ -15,6 +15,7 @@ namespace GenSoft.Entities
 	{
 		public virtual int ApplicationId { get; set; }
 		public virtual string EntitySet { get; set; }
+		public virtual int TypeId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships

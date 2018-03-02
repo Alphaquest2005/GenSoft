@@ -10,7 +10,6 @@ using SystemInterfaces;
 using Common;
 using Common.DataEntites;
 using DynamicExpresso;
-
 using GenSoft.DBContexts;
 using GenSoft.Entities;
 using JB.Collections.Reactive;
@@ -24,6 +23,7 @@ namespace DomainUtilities
 {
     public static class DynamicEntityTypeExtensions
     {
+
         public static Dictionary<string, dynamic> Functions { get; } = new Dictionary<string, dynamic>();
         public static Dictionary<string, dynamic> Actions { get; } = new Dictionary<string, dynamic>();
 
@@ -70,7 +70,7 @@ namespace DomainUtilities
                     if (viewType == null) return DynamicEntityType.NullEntityType();
 
                     
-
+                    
 
                     var viewset = ctx.EntityTypeAttributes
                         .Where(x => x.EntityTypeId == viewType.Id)

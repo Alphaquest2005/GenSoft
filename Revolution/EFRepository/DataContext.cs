@@ -17,6 +17,7 @@ using EntityEvents = RevolutionData.Context.Entity;
 using System.Linq.Dynamic;
 using System.Reactive.Linq;
 using Common;
+using MoreLinq;
 using Process.WorkFlow;
 using RevolutionEntities.Process;
 using CommandType = System.Data.CommandType;
@@ -54,38 +55,53 @@ namespace EFRepository
                     Func<int, string> selectSql = id =>
                         $"Select * From {msg.EntityType.Name} Where Id = {id}";
                     int entityId = 0;
-                    if (msg.Entity.Id == 0)
+                if (msg.Entity.Id == 0)
+                {
+                    if (msg.EntityType.ParentEntityType.Name != DynamicEntityType.NullEntityType().Name)
                     {
-                        
+                        var changes = msg.Changes;
+                        if(!changes.ContainsKey("Id")) changes.Add("Id", 0);
                         sql =
-                            $"Insert Into {msg.EntityType.Name}({msg.Changes.Where(x => x.Value != null).Select(x => x.Key).Aggregate((current, next) => current + "," + next)})" +
+                            $"Insert Into {msg.EntityType.Name}({changes.Where(x => x.Value != null).Select(x => x.Key).Aggregate((current, next) => current + "," + next)})" +
                             $"  OUTPUT Inserted.Id " +
-                            $" Values ({msg.Changes.Where(x => x.Value != null).Select(x => x.Value).Aggregate((current, next) => $"'{current}','{next}'")})";
-                        using (var conn = new SqlConnection(dbInfo.DbConnectionString))
-                        {
-                            var cmd = conn.CreateCommand();
-                            cmd.CommandText = sql;
-                            cmd.CommandType = CommandType.Text;
-                        conn.Open();
-                            entityId = Convert.ToInt32(cmd.ExecuteScalar());
-                        }
+                            $" Values ({changes.Where(x => x.Value != null).Select(x => $"'{x.Value}'").Aggregate((current, next) => $"{current},{next}")})";
                     }
                     else
                     {
-                        entityId = msg.Entity.Id;
-                        sql = $"Update {msg.EntityType.Name} Set {msg.Changes.Where(x => x.Value != null).Select(x => $"{x.Key}='{x.Value.ToString()}'").Aggregate((current, next) => current + "," + next)}" +
-                              $" Where Id = {entityId}";
-                        using (var conn = new SqlConnection(dbInfo.DbConnectionString))
-                        {
-                            var cmd = conn.CreateCommand();
-                            cmd.CommandText = sql;
-                            cmd.CommandType = CommandType.Text;
-                            conn.Open();
-                            cmd.ExecuteNonQuery();
-                        }
+                        var changes = msg.Changes;
+                        if(changes.ContainsKey("Id"))changes.Remove("Id");
+                        sql =
+                            $"Insert Into {msg.EntityType.Name}({changes.Where(x => x.Value != null).Select(x => x.Key).Aggregate((current, next) => current + "," + next)})" +
+                            $"  OUTPUT Inserted.Id " +
+                            $" Values ({changes.Where(x => x.Value != null).Select(x => $"'{x.Value}'").Aggregate((current, next) => $"{current},{next}")})";
                     }
 
                     using (var conn = new SqlConnection(dbInfo.DbConnectionString))
+                    {
+                        var cmd = conn.CreateCommand();
+                        cmd.CommandText = Sql.CleanSql(sql);
+                        cmd.CommandType = CommandType.Text;
+                        conn.Open();
+                        entityId = Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                }
+                else
+                {
+                    entityId = msg.Entity.Id;
+                    sql =
+                        $"Update {msg.EntityType.Name} Set {msg.Changes.Where(x => x.Value != null).Select(x => $"{x.Key}='{x.Value.ToString()}'").Aggregate((current, next) => current + "," + next)}" +
+                        $" Where Id = {entityId}";
+                    using (var conn = new SqlConnection(dbInfo.DbConnectionString))
+                    {
+                        var cmd = conn.CreateCommand();
+                        cmd.CommandText = sql;
+                        cmd.CommandType = CommandType.Text;
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                using (var conn = new SqlConnection(dbInfo.DbConnectionString))
                     {
                         var cmd = conn.CreateCommand();
                         cmd.CommandText = selectSql.Invoke(entityId);
@@ -100,6 +116,10 @@ namespace EFRepository
                                 .ToDictionary(reader.GetName, reader.GetValue);
                             newEntity = new DynamicEntity(msg.EntityType, entityId,aDict);
                         }
+
+                        if(newEntity != null)
+                        msg.Changes.Where(x => msg.EntityType.CachedProperties.ContainsKey(x.Key)).ForEach(change => msg.EntityType.CachedProperties[change.Key].AddOrUpdate((int)newEntity.Properties["Id"], change.Value));
+                        
                         
                         EventMessageBus.Current.Publish(
                             new EntityWithChangesUpdated(newEntity, msg.Changes,
