@@ -14,11 +14,12 @@ namespace GenSoft.Entities
 	public partial class Entity: BaseEntity, IEntity
 	{
 		public virtual int EntityTypeId { get; set; }
-		public virtual Byte[] EntryDateTimeStamp { get; set; }
+		public virtual DateTime DateTimeCreated { get; set; } = DateTime.Now;
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 				public virtual ICollection<Command> Command {get; set;}
+				public virtual Deleted Deleted {get; set;}
 				public virtual ICollection<EntityAttribute> EntityAttribute {get; set;}
 		
 			// ---------Parent Relationships

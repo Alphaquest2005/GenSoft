@@ -21,11 +21,11 @@ namespace GenSoft.Entities
 			// ---------Child Relationships
 				public virtual DBType DBType {get; set;}
 				public virtual ICollection<Entity> Entity {get; set;}
-				public virtual ICollection<MainEntity> MainEntity {get; set;}
+				public virtual ICollection<EntityTypeAttributes> EntityTypeAttributes {get; set;}
 				public virtual ICollection<EntityTypeViewModelCommand> EntityTypeViewModelCommand {get; set;}
+				public virtual ICollection<MainEntity> MainEntity {get; set;}
 				public virtual ParentEntityType ParentEntityType {get; set;}
 				public virtual ICollection<ParentEntityType> ParentEntityTypes {get; set;}
-				public virtual ICollection<EntityTypeAttributes> EntityTypeAttributes {get; set;}
 		
 			// ---------Parent Relationships
 				public virtual Application Application {get; set;}

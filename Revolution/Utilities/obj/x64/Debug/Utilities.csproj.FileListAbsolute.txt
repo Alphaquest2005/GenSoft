@@ -48,3 +48,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\obj\x64\Debug\Utilities.csp
 C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\obj\x64\Debug\Utilities.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\obj\x64\Debug\Utilities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\obj\x64\Debug\Utilities.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Utilities\obj\x64\Debug\Utilities.csproj.CopyComplete

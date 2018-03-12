@@ -14,11 +14,11 @@ namespace GenSoft.Entities
 	public partial class DomainProcess: BaseEntity, IDomainProcess
 	{
 		public virtual int UserId { get; set; }
-		public virtual int ApplicationId { get; set; }
 		public virtual string Description { get; set; }
 		public virtual string Name { get; set; }
-		public virtual int Priority { get; set; }
 		public virtual string Symbol { get; set; }
+		public virtual int Priority { get; set; }
+		public virtual int ApplicationId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships

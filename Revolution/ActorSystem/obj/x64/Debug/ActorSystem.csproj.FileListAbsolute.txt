@@ -307,3 +307,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\obj\x64\Debug\ActorSystem
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\obj\x64\Debug\ActorSystem.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\obj\x64\Debug\ActorSystem.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\bin\x64\Debug\Process.WorkFlow.dll.config
+C:\Prism\GitRepositiory\GenSoft\Revolution\ActorSystem\obj\x64\Debug\ActorSystem.csproj.CopyComplete

@@ -12,16 +12,16 @@ namespace Common.DataEntites
         {
             return new DynamicEntityType("NullEntity", "NullEntitySet", new List<IEntityKeyValuePair>(),
                 new Dictionary<string, List<dynamic>>(), new ObservableDictionary<string, Dictionary<int, dynamic>>(),
-                new ObservableDictionary<string, string>(), null);
+                new Dictionary<string, string>(), null);
         }
 
 
 
-        public DynamicEntityType(string name, string entitySetName, List<IEntityKeyValuePair> properties, Dictionary<string, List<dynamic>> calculatedProperties, ObservableDictionary<string, Dictionary<int, dynamic>> cachedProperties, ObservableDictionary<string, string> propertyParentEntityType, IDynamicEntityType parentEntityType)
+        public DynamicEntityType(string name, string entitySetName, List<IEntityKeyValuePair> properties, Dictionary<string, List<dynamic>> calculatedProperties, ObservableDictionary<string, Dictionary<int, dynamic>> cachedProperties, Dictionary<string, string> propertyParentEntityType, IDynamicEntityType parentEntityType)
         {
             Name = name;
             Properties = properties;
-            PropertyParentEntityType = propertyParentEntityType;
+            PropertyParentEntityType = new ObservableDictionary<string, string>(propertyParentEntityType);
             ParentEntityType = parentEntityType;
             CachedProperties = cachedProperties;
             CalculatedProperties = calculatedProperties;

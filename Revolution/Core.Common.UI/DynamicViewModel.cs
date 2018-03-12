@@ -57,6 +57,8 @@ namespace Core.Common.UI
                     RevolutionData.Context.EventFunctions.UpdateEventData(Process.Name,
                         RevolutionData.Context.Process.Events.ProcessCleanedUp), Guid.NewGuid()), Source)
                         .Where(x => x.ProcessToBeCleanedUp.Id == Process.Id && Process.Id > Processes.IntialSystemProcess.Id).Subscribe(x => CleanUpView());
+            
+            
 
         }
 

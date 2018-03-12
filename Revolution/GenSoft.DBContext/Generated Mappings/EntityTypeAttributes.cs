@@ -24,8 +24,8 @@ namespace GenSoft.Mappings
 		//-------------------Navigation Properties -------------------------------//
 				entityBuilder.HasMany(x => x.ActionParameterEntityTypeAttributes).WithOne(p => p.EntityTypeAttributes).HasForeignKey(c => c.EntityTypeAttributeId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasOne(p => p.ActionProperties).WithOne(p => p.EntityTypeAttributes).HasForeignKey<ActionProperties>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.BaseEntityTypeAttributes).WithOne(p => p.BaseEntityTypeAttributes).HasForeignKey(c => c.BaseEntityTypeAttributeId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasOne(p => p.BaseEntityTypeAttribute).WithOne(p => p.EntityTypeAttributes).HasForeignKey<BaseEntityTypeAttribute>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasMany(x => x.BaseEntityTypeAttributes).WithOne(p => p.BaseEntityTypeAttributes).HasForeignKey(c => c.BaseEntityTypeAttributeId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasOne(p => p.CalculatedProperties).WithOne(p => p.EntityTypeAttributes).HasForeignKey<CalculatedProperties>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.CalculatedPropertyParameterEntityTypes).WithOne(p => p.EntityTypeAttributes).HasForeignKey(c => c.EntityTypeAttributeId).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasOne(p => p.EntityName).WithOne(p => p.EntityTypeAttributes).HasForeignKey<EntityName>(c => c.Id).OnDelete(DeleteBehavior.Restrict);

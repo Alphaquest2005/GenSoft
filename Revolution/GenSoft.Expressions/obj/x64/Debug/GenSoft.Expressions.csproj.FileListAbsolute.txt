@@ -134,3 +134,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\obj\x64\Debug\Gen
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\obj\x64\Debug\GenSoft.Expressions.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\obj\x64\Debug\GenSoft.Expressions.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\obj\x64\Debug\GenSoft.Expressions.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Expressions\obj\x64\Debug\GenSoft.Expressions.csproj.CopyComplete

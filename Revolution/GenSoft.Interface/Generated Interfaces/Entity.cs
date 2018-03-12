@@ -15,7 +15,7 @@ namespace GenSoft.Interfaces
 	public partial interface IEntity:SystemInterfaces.IEntity  
 	{
 		int EntityTypeId { get;}
-		Byte[] EntryDateTimeStamp { get;}
+		DateTime DateTimeCreated { get;}
 
 
 

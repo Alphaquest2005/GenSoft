@@ -364,6 +364,7 @@
 ..\GenSoft.DBContext\Generated Mappings\DataType.cs
 ..\GenSoft.DBContext\Generated Mappings\DBType.cs
 ..\GenSoft.DBContext\Generated Mappings\DefaultApplication.cs
+..\GenSoft.DBContext\Generated Mappings\Deleted.cs
 ..\GenSoft.DBContext\Generated Mappings\DomainProcess.cs
 ..\GenSoft.DBContext\Generated Mappings\Entity.cs
 ..\GenSoft.DBContext\Generated Mappings\EntityAttribute.cs
@@ -459,6 +460,7 @@
 ..\GenSoft.Entities\Generated Entities\DataType.cs
 ..\GenSoft.Entities\Generated Entities\DBType.cs
 ..\GenSoft.Entities\Generated Entities\DefaultApplication.cs
+..\GenSoft.Entities\Generated Entities\Deleted.cs
 ..\GenSoft.Entities\Generated Entities\DomainProcess.cs
 ..\GenSoft.Entities\Generated Entities\Entity.cs
 ..\GenSoft.Entities\Generated Entities\EntityAttribute.cs
@@ -559,6 +561,7 @@
 ..\GenSoft.Interface\Generated Interfaces\DataType.cs
 ..\GenSoft.Interface\Generated Interfaces\DBType.cs
 ..\GenSoft.Interface\Generated Interfaces\DefaultApplication.cs
+..\GenSoft.Interface\Generated Interfaces\Deleted.cs
 ..\GenSoft.Interface\Generated Interfaces\DomainProcess.cs
 ..\GenSoft.Interface\Generated Interfaces\Entity.cs
 ..\GenSoft.Interface\Generated Interfaces\EntityAttribute.cs

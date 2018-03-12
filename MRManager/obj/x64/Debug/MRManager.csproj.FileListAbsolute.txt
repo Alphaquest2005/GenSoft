@@ -413,3 +413,4 @@ C:\Prism\GitRepositiory\GenSoft\MRManager\obj\x64\Debug\MRManager.csproj.CoreCom
 C:\Prism\GitRepositiory\GenSoft\MRManager\obj\x64\Debug\MRManager.exe
 C:\Prism\GitRepositiory\GenSoft\MRManager\obj\x64\Debug\MRManager.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\Process.WorkFlow.dll.config
+C:\Prism\GitRepositiory\GenSoft\MRManager\obj\x64\Debug\MRManager.csproj.CopyComplete

@@ -19,11 +19,11 @@ namespace GenSoft.Mappings
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.UserId).HasColumnName("UserId").IsRequired();
-			entityBuilder.Property(t => t.ApplicationId).HasColumnName("ApplicationId").IsRequired();
 			entityBuilder.Property(t => t.Description).HasColumnName("Description").IsRequired().HasMaxLength(255);
 			entityBuilder.Property(t => t.Name).HasColumnName("Name").IsRequired().HasMaxLength(50);
-			entityBuilder.Property(t => t.Priority).HasColumnName("Priority").IsRequired();
 			entityBuilder.Property(t => t.Symbol).HasColumnName("Symbol").IsRequired().HasMaxLength(3);
+			entityBuilder.Property(t => t.Priority).HasColumnName("Priority").IsRequired();
+			entityBuilder.Property(t => t.ApplicationId).HasColumnName("ApplicationId").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
 				entityBuilder.HasOne(p => p.ParentProcess).WithOne(p => p.DomainProcess).HasForeignKey<ParentProcess>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 				entityBuilder.HasMany(x => x.ParentProcesss).WithOne(p => p.ParentProcesss).HasForeignKey(c => c.ParentProcessId).OnDelete(DeleteBehavior.Restrict);

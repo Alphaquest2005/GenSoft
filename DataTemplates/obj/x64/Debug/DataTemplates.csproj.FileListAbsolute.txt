@@ -363,3 +363,4 @@ C:\Prism\GitRepositiory\GenSoft\DataTemplates\obj\x64\Debug\DataTemplates.csproj
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\obj\x64\Debug\DataTemplates.dll
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\obj\x64\Debug\DataTemplates.pdb
 C:\Prism\GitRepositiory\GenSoft\DataTemplates\bin\x64\Debug\Process.WorkFlow.dll.config
+C:\Prism\GitRepositiory\GenSoft\DataTemplates\obj\x64\Debug\DataTemplates.csproj.CopyComplete

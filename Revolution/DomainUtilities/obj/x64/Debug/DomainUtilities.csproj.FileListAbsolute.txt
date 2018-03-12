@@ -143,3 +143,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\obj\x64\Debug\DomainU
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\obj\x64\Debug\DomainUtilities.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\obj\x64\Debug\DomainUtilities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\obj\x64\Debug\DomainUtilities.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\obj\x64\Debug\DomainUtilities.csproj.CopyComplete

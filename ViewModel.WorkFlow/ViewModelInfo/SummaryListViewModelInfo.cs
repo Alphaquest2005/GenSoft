@@ -46,6 +46,7 @@ namespace RevolutionData
                             v.State.Value = e.State;
                             if (v.EntitySet.Value.Any() && v.CurrentEntity.Value?.Id  != v.EntitySet.Value.First().Id) v.CurrentEntity.Value = v.EntitySet.Value.First();
                             v.ViewModelState.Value = ViewModelState.StopLoadingData;
+                            
 
                         }, new RevolutionEntities.Process.StateCommandInfo(process, RevolutionData.Context.CommandFunctions.UpdateCommandData(entityType.Name, Context.Entity.Commands.UpdateState), Guid.NewGuid())),
 
@@ -77,6 +78,7 @@ namespace RevolutionData
                             //if (e.Source.SourceName == v.Source.SourceName) return;
                             if (Equals(v.CurrentEntity.Value?.Id, e.Entity?.Id)) return;
                             v.CurrentEntity.Value = e.Entity;
+                            
                         }, new RevolutionEntities.Process.StateEventInfo(process, RevolutionData.Context.EventFunctions.UpdateEventData(entityType.Name, Context.ViewModel.Events.CurrentEntityChanged), Guid.NewGuid())),
 
                     
@@ -140,7 +142,7 @@ namespace RevolutionData
                             s.RowState.Value = s.RowState.Value != RowState.Modified
                                 ? RowState.Modified
                                 : RowState.Loaded;
-
+                            
 
                             return new ViewEventCommandParameter(
                                 new object[] {s, s.RowState.Value},

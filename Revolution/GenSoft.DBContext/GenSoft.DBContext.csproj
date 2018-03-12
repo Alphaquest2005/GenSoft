@@ -98,6 +98,7 @@
     <Compile Include="Generated Mappings\DataType.cs" />
     <Compile Include="Generated Mappings\DBType.cs" />
     <Compile Include="Generated Mappings\DefaultApplication.cs" />
+    <Compile Include="Generated Mappings\Deleted.cs" />
     <Compile Include="Generated Mappings\DomainProcess.cs" />
     <Compile Include="Generated Mappings\Entity.cs" />
     <Compile Include="Generated Mappings\EntityAttribute.cs" />

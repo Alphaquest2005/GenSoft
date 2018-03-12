@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics.Contracts;
 using System.Runtime.CompilerServices;
+using System.Runtime.Serialization.Json;
 using System.Windows;
 using SystemInterfaces;
 
@@ -11,6 +13,7 @@ namespace Common
     {
         public EntityKeyValuePair(string key, dynamic value, ViewAttributeDisplayProperties displayProperties, bool isComputed, bool isEntityId = false, bool isEntityName = false ) 
         {
+            Contract.Requires(key != null);
             Value = value;
             DisplayProperties = displayProperties;
             IsComputed = isComputed;
@@ -37,7 +40,6 @@ namespace Common
                 {
                     this.OnPropertyChanged();
                 });
-
             }
         }
 
@@ -52,7 +54,8 @@ namespace Common
         [Annotations.NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChanged?.Invoke(new EntityKeyValuePair(this.Key, this.Value, DisplayProperties, this.IsComputed), new PropertyChangedEventArgs(propertyName));
+           
+            PropertyChanged?.Invoke(new EntityKeyValuePair(this.Key??"UnknownKey", this.Value ?? "Unknown Value", DisplayProperties, this.IsComputed), new PropertyChangedEventArgs(propertyName));
         }
     }
 

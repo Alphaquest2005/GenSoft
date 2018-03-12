@@ -21,3 +21,4 @@ C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\obj\x64\Debug\BuildingSpe
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\obj\x64\Debug\BuildingSpecifications.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\obj\x64\Debug\BuildingSpecifications.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\obj\x64\Debug\BuildingSpecifications.pdb
+C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\obj\x64\Debug\BuildingSpecifications.csproj.CopyComplete

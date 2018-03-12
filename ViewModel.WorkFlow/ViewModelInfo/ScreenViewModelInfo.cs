@@ -1,15 +1,19 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reactive.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using SystemInterfaces;
 using Common;
 using Core.Common.UI;
+using EventAggregator;
 using Process.WorkFlow;
 using RevolutionData.Context;
 using RevolutionEntities.Process;
 using RevolutionEntities.ViewModels;
+using ViewMessages;
 using ViewModel.Interfaces;
 
 namespace RevolutionData
@@ -184,6 +188,10 @@ namespace RevolutionData
                                     {
                                         s.BodyViewModels.Insert(s.BodyViewModels.IndexOf(last), e.ViewModel);
                                     }
+                                    //if (s.BodyViewModels.Count == 1)
+                                    //{
+                                    //    s.Slider.BringIntoView(e.ViewModel.ViewInfo.Name);
+                                    //}
                                 }));
                             }
                             
@@ -318,6 +326,8 @@ namespace RevolutionData
                 ),
                 new List<IViewModelInfo>());
         }
+
+
 
         private void ClearScreenModels(IScreenModel s)//, ICleanUpSystemProcess e
         {

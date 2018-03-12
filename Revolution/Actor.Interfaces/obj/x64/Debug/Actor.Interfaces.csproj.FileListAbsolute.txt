@@ -58,3 +58,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\obj\x64\Debug\Actor.
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\obj\x64\Debug\Actor.Interfaces.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\obj\x64\Debug\Actor.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\obj\x64\Debug\Actor.Interfaces.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Actor.Interfaces\obj\x64\Debug\Actor.Interfaces.csproj.CopyComplete

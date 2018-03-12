@@ -45,9 +45,6 @@ namespace ViewModels
 
 
 
-
-
-
         public new IEntityViewInfo ViewInfo => this.ViewModel?.ViewInfo;
         public ReactiveProperty<IProcessStateList> State { get;  }
 
@@ -58,9 +55,13 @@ namespace ViewModels
 
         private void OnValueChanged(object entityKeyValuePair)
         {
+           
             if (entityKeyValuePair == null) return;
             if (RowState.Value == SystemInterfaces.RowState.Modified)
+            {
                 ChangeTracking.AddOrUpdate(CurrentProperty.Value.Key, CurrentProperty.Value);
+            }
+                
         }
 
 

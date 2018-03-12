@@ -46,7 +46,7 @@ namespace EFRepository
             try
             {
                 if (!(msg.ProcessInfo.Process.Applet is IDbApplet dbInfo)) return;
-
+                if (msg.Changes.Count == 0) return;
                 
                     var entity = msg.Entity;
                     

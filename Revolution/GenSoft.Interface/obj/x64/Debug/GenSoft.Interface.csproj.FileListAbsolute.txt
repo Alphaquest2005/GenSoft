@@ -15,3 +15,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\obj\x64\Debug\GenSo
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\obj\x64\Debug\GenSoft.Interface.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\obj\x64\Debug\GenSoft.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\obj\x64\Debug\GenSoft.Interfaces.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Interface\obj\x64\Debug\GenSoft.Interface.csproj.CopyComplete

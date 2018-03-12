@@ -19,8 +19,8 @@ namespace Core.Common.UI
         {
             MouseLeftButtonDown += new MouseButtonEventHandler(SliderPanel_MouseLeftButtonDown);
             MouseLeftButtonUp += new MouseButtonEventHandler(SliderPanel_MouseLeftButtonUp);
-
         }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected void SendPropertyChanged(String propertyName)

@@ -83,7 +83,7 @@ declare @attributeId int, @datatypeId int, @Counter int = 0
 		WHERE        (Id IN
 									 (SELECT        Type.Id
 		FROM            [GenSoft-Creator].dbo.Type INNER JOIN
-								 [GenSoft-Creator].dbo.EntityType ON Type.Id = EntityType.Id INNER JOIN
+								 [GenSoft-Creator].dbo.EntityType ON Type.Id = EntityType.TypeId INNER JOIN
 								 [GenSoft-Creator].dbo.DBType AS DBType_1 ON EntityType.Id = DBType_1.Id
 		WHERE        (EntityType.ApplicationId = @AppId) AND (NOT (Type.Name IN (select TableName from @entity)))))
 
@@ -91,7 +91,7 @@ declare @attributeId int, @datatypeId int, @Counter int = 0
 		WHERE        (Id IN
 									 (SELECT        Type.Id
 		FROM            [GenSoft-Creator].dbo.Type INNER JOIN
-								 [GenSoft-Creator].dbo.EntityType ON Type.Id = EntityType.Id 
+								 [GenSoft-Creator].dbo.EntityType ON Type.Id = EntityType.TypeId 
 		WHERE        (EntityType.ApplicationId = @AppId) AND (NOT (Type.Name IN (select TableName from @entity)))))
 
 	WHILE (1=1)
@@ -112,7 +112,7 @@ declare @attributeId int, @datatypeId int, @Counter int = 0
 
 		set @entityId = (SELECT        EntityType.Id
 							FROM            [GenSoft-Creator].dbo.EntityType INNER JOIN
-													 [GenSoft-Creator].dbo.Type ON EntityType.Id = Type.Id
+													 [GenSoft-Creator].dbo.Type ON EntityType.TypeId = Type.Id
 							WHERE        (EntityType.ApplicationId = @AppId) AND (Type.Name = @TableName))
 
 		if (@entityId is null)
@@ -131,13 +131,13 @@ declare @attributeId int, @datatypeId int, @Counter int = 0
 
 			Insert into [GenSoft-Creator].dbo.EntityType(TypeId, ApplicationId, EntitySet)
 			OutPut INSERTED.Id into @entitytypeIdTable 
-			values (@entityId, @AppId, @EntitySet)	
+			values (@typeId, @AppId, @EntitySet)	
 			
 			select @entityId = id from @entitytypeIdTable	
 
 
-			insert into [GenSoft-Creator].dbo.DBType (ID,[Table], [Schema]) values (@typeId,@TableName, @schema)
-			insert into [GenSoft-Creator].dbo.EntityId(ID,IsEntityId) values (@attributeId,1)
+			insert into [GenSoft-Creator].dbo.DBType (ID,[Table], [Schema]) values (@entityId,@TableName, @schema)
+			--insert into [GenSoft-Creator].dbo.EntityId(ID,IsEntityId) values (@attributeId,1)
 
 			insert into [GenSoft-Creator].dbo.EntityTypeAttributes(EntityTypeId,AttributeId) values (@entityId, @attributeId)
 		end
@@ -172,12 +172,7 @@ declare @attributeId int, @datatypeId int, @Counter int = 0
 								 [GenSoft-Creator].dbo.Attributes AS Attributes_1 ON INFORMATION_SCHEMA.COLUMNS.COLUMN_NAME = Attributes_1.Name
 		WHERE        (INFORMATION_SCHEMA.COLUMNS.TABLE_NAME = @TableName and Attributes_1.Id <> @attributeId)
 
-			
-		--insert into ProcessStateDomainEntityTypes(ProcessStateId, DomainEntityTypeId) Values (6, @entityId)
 		
-		--declare @processDomainEntityId int
-		--set @processDomainEntityId = (select Id from ProcessStateDomainEntityTypes where ProcessStateId = 6 and DomainEntityTypeId = @entityId)
-
 	    declare @nameCount int = 0
 
 		set @nameCount = (SELECT        COUNT(Attributes.Name) AS Expr1
@@ -202,9 +197,7 @@ into #Relationships
 from
 (
 SELECT DISTINCT ParentEntityTypeAttributes.Id AS ParentAttributeId, ChildEntityTypeAttributes.Id AS ChildAttributeId, RelationshipTypes.Id AS RelationshipTypeId
-FROM            [GenSoft-Creator].dbo.Attributes AS ChildAttributes INNER JOIN
-                         [GenSoft-Creator].dbo.EntityTypeAttributes AS ChildEntityTypeAttributes ON ChildAttributes.Id = ChildEntityTypeAttributes.AttributeId INNER JOIN
-                         [GenSoft-Creator].dbo.Type AS ChildType INNER JOIN
+FROM            [GenSoft-Creator].dbo.Type AS ChildType INNER JOIN
                              (SELECT        KEY_COLUMN_USAGE_1.TABLE_NAME AS ParentTable, KEY_COLUMN_USAGE_1.COLUMN_NAME AS ParentColumn, INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE.TABLE_NAME AS ChildTable, 
                                                          INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE.COLUMN_NAME AS ChildColumn
                                FROM            INFORMATION_SCHEMA.CONSTRAINT_TABLE_USAGE INNER JOIN
@@ -215,42 +208,44 @@ FROM            [GenSoft-Creator].dbo.Attributes AS ChildAttributes INNER JOIN
                                                          INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE ON 
                                                          INFORMATION_SCHEMA.CONSTRAINT_TABLE_USAGE.CONSTRAINT_NAME = INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE.CONSTRAINT_NAME) AS RelView ON 
                          ChildType.Name = RelView.ChildTable INNER JOIN
-                         [GenSoft-Creator].dbo.EntityType AS ChildEntityType ON ChildType.Id = ChildEntityType.Id ON ChildEntityTypeAttributes.EntityTypeId = ChildEntityType.Id AND ChildAttributes.Name = RelView.ChildColumn LEFT OUTER JOIN
+                         [GenSoft-Creator].dbo.Attributes AS ChildAttributes INNER JOIN
+                         [GenSoft-Creator].dbo.EntityTypeAttributes AS ChildEntityTypeAttributes ON ChildAttributes.Id = ChildEntityTypeAttributes.AttributeId INNER JOIN
+                         [GenSoft-Creator].dbo.EntityType AS ChildEntityType ON ChildEntityTypeAttributes.EntityTypeId = ChildEntityType.Id ON RelView.ChildColumn = ChildAttributes.Name AND ChildType.Id = ChildEntityType.TypeId LEFT OUTER JOIN
                          [GenSoft-Creator].dbo.EntityTypeAttributes AS ParentEntityTypeAttributes INNER JOIN
                          [GenSoft-Creator].dbo.EntityType AS ParentEntityType ON ParentEntityTypeAttributes.EntityTypeId = ParentEntityType.Id INNER JOIN
-                         [GenSoft-Creator].dbo.Type AS ParentType ON ParentEntityType.Id = ParentType.Id INNER JOIN
-                         [GenSoft-Creator].dbo.Attributes AS ParentAttributes ON ParentEntityTypeAttributes.AttributeId = ParentAttributes.Id ON RelView.ParentTable = ParentType.Name AND RelView.ParentColumn = ParentAttributes.Name LEFT OUTER JOIN
+                         [GenSoft-Creator].dbo.Attributes AS ParentAttributes ON ParentEntityTypeAttributes.AttributeId = ParentAttributes.Id INNER JOIN
+                         [GenSoft-Creator].dbo.Type AS ParentType ON ParentEntityType.TypeId = ParentType.Id ON RelView.ParentTable = ParentType.Name AND RelView.ParentColumn = ParentAttributes.Name LEFT OUTER JOIN
                              (SELECT        MaxLength, TABLE_NAME, COLUMN_NAME, isIdentity, isPrimaryKey
-                               FROM            (SELECT        ISNULL(INFORMATION_SCHEMA.COLUMNS.CHARACTER_MAXIMUM_LENGTH, 0) AS MaxLength, INFORMATION_SCHEMA.COLUMNS.TABLE_NAME, INFORMATION_SCHEMA.COLUMNS.COLUMN_NAME, 
-																		 ISNULL(PrimaryKeys.is_identity, 0) AS isIdentity, ISNULL(PrimaryKeys.is_primary_key, 0) AS isPrimaryKey
-												FROM            INFORMATION_SCHEMA.KEY_COLUMN_USAGE INNER JOIN
-																		 INFORMATION_SCHEMA.COLUMNS ON INFORMATION_SCHEMA.KEY_COLUMN_USAGE.COLUMN_NAME = INFORMATION_SCHEMA.COLUMNS.COLUMN_NAME AND 
-																		 INFORMATION_SCHEMA.KEY_COLUMN_USAGE.TABLE_NAME = INFORMATION_SCHEMA.COLUMNS.TABLE_NAME LEFT OUTER JOIN
-																			 (SELECT        OBJECT_NAME(i.object_id) AS tableName, i.name AS indexName, c.name AS columnName, c.is_identity, idc.seed_value, idc.increment_value, idc.last_value, idc.is_computed, i.is_primary_key, 
-																										 i.is_unique_constraint
-																			   FROM            sys.indexes AS i LEFT OUTER JOIN
-																										 sys.index_columns AS ic ON ic.object_id = i.object_id AND ic.index_id = i.index_id LEFT OUTER JOIN
-																										 sys.columns AS c ON c.object_id = ic.object_id AND c.column_id = ic.column_id LEFT OUTER JOIN
-																										 sys.identity_columns AS idc ON idc.object_id = c.object_id AND idc.column_id = c.column_id) AS PrimaryKeys ON INFORMATION_SCHEMA.COLUMNS.TABLE_NAME = PrimaryKeys.tableName AND 
-																		 INFORMATION_SCHEMA.COLUMNS.COLUMN_NAME = PrimaryKeys.columnName) as t) AS ChildKeyData ON ChildAttributes.Name = ChildKeyData.COLUMN_NAME AND ChildType.Name = ChildKeyData.TABLE_NAME LEFT OUTER JOIN
+                               FROM            (SELECT        ISNULL(INFORMATION_SCHEMA.COLUMNS.CHARACTER_MAXIMUM_LENGTH, 0) AS MaxLength, INFORMATION_SCHEMA.COLUMNS.TABLE_NAME, 
+                                                                                   INFORMATION_SCHEMA.COLUMNS.COLUMN_NAME, ISNULL(PrimaryKeys.is_identity, 0) AS isIdentity, ISNULL(PrimaryKeys.is_primary_key, 0) AS isPrimaryKey
+                                                         FROM            INFORMATION_SCHEMA.KEY_COLUMN_USAGE INNER JOIN
+                                                                                   INFORMATION_SCHEMA.COLUMNS ON INFORMATION_SCHEMA.KEY_COLUMN_USAGE.COLUMN_NAME = INFORMATION_SCHEMA.COLUMNS.COLUMN_NAME AND 
+                                                                                   INFORMATION_SCHEMA.KEY_COLUMN_USAGE.TABLE_NAME = INFORMATION_SCHEMA.COLUMNS.TABLE_NAME LEFT OUTER JOIN
+                                                                                       (SELECT        OBJECT_NAME(i.object_id) AS tableName, i.name AS indexName, c.name AS columnName, c.is_identity, idc.seed_value, idc.increment_value, idc.last_value, idc.is_computed, 
+                                                                                                                   i.is_primary_key, i.is_unique_constraint
+                                                                                         FROM            sys.indexes AS i LEFT OUTER JOIN
+                                                                                                                   sys.index_columns AS ic ON ic.object_id = i.object_id AND ic.index_id = i.index_id LEFT OUTER JOIN
+                                                                                                                   sys.columns AS c ON c.object_id = ic.object_id AND c.column_id = ic.column_id LEFT OUTER JOIN
+                                                                                                                   sys.identity_columns AS idc ON idc.object_id = c.object_id AND idc.column_id = c.column_id) AS PrimaryKeys ON 
+                                                                                   INFORMATION_SCHEMA.COLUMNS.TABLE_NAME = PrimaryKeys.tableName AND INFORMATION_SCHEMA.COLUMNS.COLUMN_NAME = PrimaryKeys.columnName) AS t) AS ChildKeyData ON 
+                         ChildAttributes.Name = ChildKeyData.COLUMN_NAME AND ChildType.Name = ChildKeyData.TABLE_NAME LEFT OUTER JOIN
                              (SELECT        MaxLength, TABLE_NAME, COLUMN_NAME, isIdentity, isPrimaryKey
-                               FROM            (SELECT        ISNULL(INFORMATION_SCHEMA.COLUMNS.CHARACTER_MAXIMUM_LENGTH, 0) AS MaxLength, INFORMATION_SCHEMA.COLUMNS.TABLE_NAME, INFORMATION_SCHEMA.COLUMNS.COLUMN_NAME, 
-																		 ISNULL(PrimaryKeys.is_identity, 0) AS isIdentity, ISNULL(PrimaryKeys.is_primary_key, 0) AS isPrimaryKey
-												FROM            INFORMATION_SCHEMA.KEY_COLUMN_USAGE INNER JOIN
-																		 INFORMATION_SCHEMA.COLUMNS ON INFORMATION_SCHEMA.KEY_COLUMN_USAGE.COLUMN_NAME = INFORMATION_SCHEMA.COLUMNS.COLUMN_NAME AND 
-																		 INFORMATION_SCHEMA.KEY_COLUMN_USAGE.TABLE_NAME = INFORMATION_SCHEMA.COLUMNS.TABLE_NAME LEFT OUTER JOIN
-																			 (SELECT        OBJECT_NAME(i.object_id) AS tableName, i.name AS indexName, c.name AS columnName, c.is_identity, idc.seed_value, idc.increment_value, idc.last_value, idc.is_computed, i.is_primary_key, 
-																										 i.is_unique_constraint
-																			   FROM            sys.indexes AS i LEFT OUTER JOIN
-																										 sys.index_columns AS ic ON ic.object_id = i.object_id AND ic.index_id = i.index_id LEFT OUTER JOIN
-																										 sys.columns AS c ON c.object_id = ic.object_id AND c.column_id = ic.column_id LEFT OUTER JOIN
-																										 sys.identity_columns AS idc ON idc.object_id = c.object_id AND idc.column_id = c.column_id) AS PrimaryKeys ON INFORMATION_SCHEMA.COLUMNS.TABLE_NAME = PrimaryKeys.tableName AND 
-																		 INFORMATION_SCHEMA.COLUMNS.COLUMN_NAME = PrimaryKeys.columnName) as t) AS ParentKeyData ON ParentType.Name = ParentKeyData.TABLE_NAME AND 
+                               FROM            (SELECT        ISNULL(COLUMNS_1.CHARACTER_MAXIMUM_LENGTH, 0) AS MaxLength, COLUMNS_1.TABLE_NAME, COLUMNS_1.COLUMN_NAME, ISNULL(PrimaryKeys_1.is_identity, 0) AS isIdentity, 
+                                                                                   ISNULL(PrimaryKeys_1.is_primary_key, 0) AS isPrimaryKey
+                                                         FROM            INFORMATION_SCHEMA.KEY_COLUMN_USAGE AS KEY_COLUMN_USAGE_2 INNER JOIN
+                                                                                   INFORMATION_SCHEMA.COLUMNS AS COLUMNS_1 ON KEY_COLUMN_USAGE_2.COLUMN_NAME = COLUMNS_1.COLUMN_NAME AND 
+                                                                                   KEY_COLUMN_USAGE_2.TABLE_NAME = COLUMNS_1.TABLE_NAME LEFT OUTER JOIN
+                                                                                       (SELECT        OBJECT_NAME(i.object_id) AS tableName, i.name AS indexName, c.name AS columnName, c.is_identity, idc.seed_value, idc.increment_value, idc.last_value, idc.is_computed, 
+                                                                                                                   i.is_primary_key, i.is_unique_constraint
+                                                                                         FROM            sys.indexes AS i LEFT OUTER JOIN
+                                                                                                                   sys.index_columns AS ic ON ic.object_id = i.object_id AND ic.index_id = i.index_id LEFT OUTER JOIN
+                                                                                                                   sys.columns AS c ON c.object_id = ic.object_id AND c.column_id = ic.column_id LEFT OUTER JOIN
+                                                                                                                   sys.identity_columns AS idc ON idc.object_id = c.object_id AND idc.column_id = c.column_id) AS PrimaryKeys_1 ON COLUMNS_1.TABLE_NAME = PrimaryKeys_1.tableName AND 
+                                                                                   COLUMNS_1.COLUMN_NAME = PrimaryKeys_1.columnName) AS t_1) AS ParentKeyData ON ParentType.Name = ParentKeyData.TABLE_NAME AND 
                          ParentAttributes.Name = ParentKeyData.COLUMN_NAME LEFT OUTER JOIN
-                         [GenSoft-Creator].dbo.RelationshipType as RelationshipTypes ON CASE WHEN ParentKeyData.isidentity = 1 THEN 1 ELSE 2 END = RelationshipTypes.ParentOrdinalityId AND 
+                         [GenSoft-Creator].dbo.RelationshipType AS RelationshipTypes ON CASE WHEN ParentKeyData.isPrimaryKey = 1 THEN 1 ELSE 2 END = RelationshipTypes.ParentOrdinalityId AND 
                          CASE WHEN ChildKeyData.isPrimaryKey = 1 THEN 1 ELSE 2 END = RelationshipTypes.ChildOrdinalityId
-						 
-						 ) as relsource
+WHERE        (ChildEntityType.ApplicationId = @AppId) AND (ParentEntityType.ApplicationId = @AppId)) as relsource
 
 select * from #Relationships
 
@@ -292,9 +287,7 @@ from
 SELECT DISTINCT 
                          ParentEntityTypeAttributes.Id AS ParentAttributeId, ChildEntityTypeAttributes.Id AS ChildAttributeId, RelationshipTypes.Id AS RelationshipTypeId, ParentEntityType.Id AS ParentEntityTypeId, 
                          ChildEntityType.Id AS ChildEntityTypeId
-FROM            [GenSoft-Creator].dbo.Attributes AS ChildAttributes INNER JOIN
-                         [GenSoft-Creator].dbo.EntityTypeAttributes AS ChildEntityTypeAttributes ON ChildAttributes.Id = ChildEntityTypeAttributes.AttributeId INNER JOIN
-                         [GenSoft-Creator].dbo.Type AS ChildType INNER JOIN
+FROM            [GenSoft-Creator].dbo.Type AS ChildType INNER JOIN
                              (SELECT        KEY_COLUMN_USAGE_1.TABLE_NAME AS ParentTable, KEY_COLUMN_USAGE_1.COLUMN_NAME AS ParentColumn, INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE.TABLE_NAME AS ChildTable, 
                                                          INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE.COLUMN_NAME AS ChildColumn
                                FROM            INFORMATION_SCHEMA.CONSTRAINT_TABLE_USAGE INNER JOIN
@@ -305,11 +298,13 @@ FROM            [GenSoft-Creator].dbo.Attributes AS ChildAttributes INNER JOIN
                                                          INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE ON 
                                                          INFORMATION_SCHEMA.CONSTRAINT_TABLE_USAGE.CONSTRAINT_NAME = INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE.CONSTRAINT_NAME
                                WHERE        (KEY_COLUMN_USAGE_1.COLUMN_NAME = N'Id') AND (INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE.COLUMN_NAME = N'Id')) AS RelView ON ChildType.Name = RelView.ChildTable INNER JOIN
-                         [GenSoft-Creator].dbo.EntityType AS ChildEntityType ON ChildType.Id = ChildEntityType.Id ON ChildEntityTypeAttributes.EntityTypeId = ChildEntityType.Id AND ChildAttributes.Name = RelView.ChildColumn LEFT OUTER JOIN
+                         [GenSoft-Creator].dbo.Attributes AS ChildAttributes INNER JOIN
+                         [GenSoft-Creator].dbo.EntityTypeAttributes AS ChildEntityTypeAttributes ON ChildAttributes.Id = ChildEntityTypeAttributes.AttributeId INNER JOIN
+                         [GenSoft-Creator].dbo.EntityType AS ChildEntityType ON ChildEntityTypeAttributes.EntityTypeId = ChildEntityType.Id ON RelView.ChildColumn = ChildAttributes.Name AND ChildType.Id = ChildEntityType.TypeId LEFT OUTER JOIN
                          [GenSoft-Creator].dbo.EntityTypeAttributes AS ParentEntityTypeAttributes INNER JOIN
                          [GenSoft-Creator].dbo.EntityType AS ParentEntityType ON ParentEntityTypeAttributes.EntityTypeId = ParentEntityType.Id INNER JOIN
-                         [GenSoft-Creator].dbo.Type AS ParentType ON ParentEntityType.Id = ParentType.Id INNER JOIN
-                         [GenSoft-Creator].dbo.Attributes AS ParentAttributes ON ParentEntityTypeAttributes.AttributeId = ParentAttributes.Id ON RelView.ParentTable = ParentType.Name AND RelView.ParentColumn = ParentAttributes.Name LEFT OUTER JOIN
+                         [GenSoft-Creator].dbo.Attributes AS ParentAttributes ON ParentEntityTypeAttributes.AttributeId = ParentAttributes.Id INNER JOIN
+                         [GenSoft-Creator].dbo.Type AS ParentType ON ParentEntityType.TypeId = ParentType.Id ON RelView.ParentTable = ParentType.Name AND RelView.ParentColumn = ParentAttributes.Name LEFT OUTER JOIN
                              (SELECT        MaxLength, TABLE_NAME, COLUMN_NAME, isIdentity, isPrimaryKey
                                FROM            (SELECT        ISNULL(INFORMATION_SCHEMA.COLUMNS.CHARACTER_MAXIMUM_LENGTH, 0) AS MaxLength, INFORMATION_SCHEMA.COLUMNS.TABLE_NAME, 
                                                                                    INFORMATION_SCHEMA.COLUMNS.COLUMN_NAME, ISNULL(PrimaryKeys.is_identity, 0) AS isIdentity, ISNULL(PrimaryKeys.is_primary_key, 0) AS isPrimaryKey
@@ -339,7 +334,8 @@ FROM            [GenSoft-Creator].dbo.Attributes AS ChildAttributes INNER JOIN
                                                                                    COLUMNS_1.COLUMN_NAME = PrimaryKeys_1.columnName) AS t_1) AS ParentKeyData ON ParentType.Name = ParentKeyData.TABLE_NAME AND 
                          ParentAttributes.Name = ParentKeyData.COLUMN_NAME LEFT OUTER JOIN
                          [GenSoft-Creator].dbo.RelationshipType AS RelationshipTypes ON CASE WHEN ParentKeyData.isidentity = 1 THEN 1 ELSE 2 END = RelationshipTypes.ParentOrdinalityId AND 
-                         CASE WHEN ChildKeyData.isPrimaryKey = 1 THEN 1 ELSE 2 END = RelationshipTypes.ChildOrdinalityId) as relsource
+                         CASE WHEN ChildKeyData.isPrimaryKey = 1 THEN 1 ELSE 2 END = RelationshipTypes.ChildOrdinalityId
+WHERE        (ChildEntityType.ApplicationId = @AppId) AND (ParentEntityType.ApplicationId = @AppId)) as relsource
 
 select * from #ParentClass
 
@@ -362,3 +358,11 @@ set @Counter = 0
 			INSERT INTO [GenSoft-Creator].dbo.ParentEntityType
                          (Id,ParentEntityTypeId) Values (@ChildEntityTypeId, @ParentEntityTypeId)	 
    End
+
+INSERT INTO [GenSoft-Creator].dbo.MainEntity
+                         (Id, EntityTypeId)
+SELECT        ProcessStep.Id AS Expr2, EntityType.Id AS Expr1
+FROM            [GenSoft-Creator].dbo.EntityType INNER JOIN
+                         [GenSoft-Creator].dbo.Type ON EntityType.TypeId = Type.Id INNER JOIN
+                         [GenSoft-Creator].dbo.ProcessStep ON Type.Name = ProcessStep.Entity
+WHERE        (EntityType.ApplicationId = @AppId)

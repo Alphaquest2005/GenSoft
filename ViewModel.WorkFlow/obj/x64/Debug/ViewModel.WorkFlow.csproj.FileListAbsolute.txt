@@ -186,3 +186,4 @@ C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\ViewMessages.dl
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\ViewMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\ViewMessages.dll.config
 C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\bin\x64\Debug\Process.WorkFlow.dll.config
+C:\Prism\GitRepositiory\GenSoft\ViewModel.WorkFlow\obj\x64\Debug\ViewModel.WorkFlow.csproj.CopyComplete

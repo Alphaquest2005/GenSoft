@@ -4,7 +4,7 @@ delete from Type
 where id > 62
 
 
-DBCC CHECKIDENT (ProcessStepRelationship, RESEED, 0)
+--DBCC CHECKIDENT (ProcessStepRelationship, RESEED, 0)
 DBCC CHECKIDENT (EntityRelationship, RESEED, 0)
 DBCC CHECKIDENT (EntityTypeViewModelCommand, RESEED, 1)
 

@@ -22,3 +22,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\CommonMessages\obj\x64\Debug\CommonMe
 C:\Prism\GitRepositiory\GenSoft\Revolution\CommonMessages\obj\x64\Debug\CommonMessages.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\CommonMessages\obj\x64\Debug\CommonMessages.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\CommonMessages\obj\x64\Debug\CommonMessages.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\CommonMessages\obj\x64\Debug\CommonMessages.csproj.CopyComplete

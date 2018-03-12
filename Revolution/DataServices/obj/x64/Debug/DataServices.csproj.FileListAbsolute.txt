@@ -308,3 +308,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\obj\x64\Debug\DataServic
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\obj\x64\Debug\DataServices.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\obj\x64\Debug\DataServices.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\bin\x64\Debug\Process.WorkFlow.dll.config
+C:\Prism\GitRepositiory\GenSoft\Revolution\DataServices\obj\x64\Debug\DataServices.csproj.CopyComplete

@@ -22,3 +22,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Templates\obj\x86\Debug\T4 
 C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Templates\obj\x86\Debug\T4 Templates.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Templates\obj\x86\Debug\T4Templates.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Templates\obj\x86\Debug\T4Templates.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Templates\obj\x86\Debug\T4 Templates.csproj.CopyComplete

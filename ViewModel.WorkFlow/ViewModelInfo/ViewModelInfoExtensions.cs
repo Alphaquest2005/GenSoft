@@ -19,7 +19,7 @@ namespace ViewModel.WorkFlow
             else cmdPredicates.Add(v => v.CurrentEntity.Value?.Id <= 0);
 
             if (cmd.RequireAllFields) cmdPredicates.Add(v => v.ChangeTracking.Count == v.CurrentEntity.Value.PropertyList.Where(x => x.IsComputed == false).Count(x => x.Key != nameof(IDynamicEntity.Id)));
-            else cmdPredicates.Add(v => v.ChangeTracking.Any(z => v.CurrentEntity.Value.PropertyList.FirstOrDefault(x => x.Key == z.Key)?.Value != (z.Value is IEntityKeyValuePair ? ((IEntityKeyValuePair)z.Value).Value : z.Value)));
+            else cmdPredicates.Add(v => v.ChangeTracking.Any(z => v.CurrentEntity.Value.PropertyList.FirstOrDefault(x => x.Key == z.Key)?.Value.ToString() != (z.Value is IEntityKeyValuePair ? ((IEntityKeyValuePair)z.Value).Value.ToString() : z.Value.ToString())));
 
             var commandType = typeof(SystemInterfaces.IEntity).Assembly.GetType($"SystemInterfaces.{cmd.CommandType.Name}");
             var vcmdType = typeof(ViewEventCommand<,>).MakeGenericType(typeof(TViewModel), commandType);
@@ -31,18 +31,19 @@ namespace ViewModel.WorkFlow
                 (Func<TViewModel, IObservable<dynamic>>) (v => v.ChangeTracking.DictionaryChanges),
                 (Func<TViewModel, IViewEventCommandParameter>) (v =>
                 {
-                    foreach (var p in parentEntites.Where(x => x.ParentType != null))
-                    {
-                        var parentEntity = v.ParentEntities.FirstOrDefault(x => x.EntityType.Name == p.ParentType);
-                        if (parentEntity == null) continue;
-                        v.ChangeTracking.AddOrUpdate(p.ChildProperty, parentEntity.Id);
-                    }
+
+                    //foreach (var p in parentEntites.Where(x => x.ParentType != null))
+                    //{
+                    //    var parentEntity = v.ParentEntities.FirstOrDefault(x => x.EntityType.Name == p.ParentType);
+                    //    if (parentEntity == null) continue;
+                    //    v.ChangeTracking.AddOrUpdate(p.ChildProperty, parentEntity.Id);
+                    //}
 
                     var msg = new ViewEventCommandParameter(
                         new object[]
                         {
                             v.CurrentEntity.Value,
-                            v.ChangeTracking.Where(z => v.CurrentEntity.Value.PropertyList.FirstOrDefault(x => x.Key == z.Key)?.Value != (z.Value is IEntityKeyValuePair ? ((IEntityKeyValuePair)z.Value).Value : z.Value)).ToDictionary(x => x.Key, x => (x.Value is IEntityKeyValuePair? ((IEntityKeyValuePair)x.Value).Value : x.Value))
+                            v.ChangeTracking.Where(z => v.CurrentEntity.Value.PropertyList.FirstOrDefault(x => x.Key == z.Key)?.Value.ToString() != (z.Value is IEntityKeyValuePair ? ((IEntityKeyValuePair)z.Value).Value.ToString() : z.Value.ToString())).ToDictionary(x => x.Key, x => (x.Value is IEntityKeyValuePair? ((IEntityKeyValuePair)x.Value).Value.ToString() : x.Value.ToString()))
                         },
                         new RevolutionEntities.Process.StateCommandInfo(v.Process, RevolutionData.Context.Entity.Commands.GetEntity), v.Process,
                         v.Source);

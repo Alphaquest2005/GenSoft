@@ -56,7 +56,8 @@ namespace EFRepository
                         ? ctx.Entity.Add(new Entity()
                         {
                             EntityTypeId = entityType.Id,
-                            EntityAttribute = new List<EntityAttribute>()
+                            EntityAttribute = new List<EntityAttribute>(),
+                            DateTimeCreated = DateTime.Now
                         }).Entity
                         : ctx.Entity.FirstOrDefault(x => x.Id == msg.Entity.Id && x.EntityTypeId == entityType.Id);
                     if (entity == null)
@@ -92,7 +93,8 @@ namespace EFRepository
                                 {
                                     AttributeId = attibute.Id,
                                     EntityId = entity.Id,
-                                    Value = change.Value is IEntityKeyValuePair?((IEntityKeyValuePair)change.Value).Value.ToString():change.Value.ToString()
+                                    Value = change.Value is IEntityKeyValuePair?((IEntityKeyValuePair)change.Value).Value.ToString():change.Value.ToString(),
+                                    DateTime = DateTime.Now
                                 }).Entity;
                             entity.EntityAttribute.Add(entityAttribute);
                         }

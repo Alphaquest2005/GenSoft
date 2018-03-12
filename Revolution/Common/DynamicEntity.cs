@@ -22,7 +22,7 @@ namespace Common.DataEntites
         }
 
         
-        public ObservableList<IEntityKeyValuePair> PropertyList => new ObservableList<IEntityKeyValuePair>(EntityType.Properties
+        public ObservableList<IEntityKeyValuePair> PropertyList => new ObservableList<IEntityKeyValuePair>(EntityType.Properties.Where(x => x.Key != null)
             .Select(x => new EntityKeyValuePair(x.Key,Properties[x.Key],
                         (ViewAttributeDisplayProperties) EntityType.Properties.FirstOrDefault(z => z.Key == x.Key)?.DisplayProperties,x.IsComputed,
                         x.IsEntityId,

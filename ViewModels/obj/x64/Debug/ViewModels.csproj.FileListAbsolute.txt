@@ -267,3 +267,4 @@ C:\Prism\GitRepositiory\GenSoft\ViewModels\obj\x64\Debug\ViewModels.csproj.CoreC
 C:\Prism\GitRepositiory\GenSoft\ViewModels\obj\x64\Debug\ViewModels.dll
 C:\Prism\GitRepositiory\GenSoft\ViewModels\obj\x64\Debug\ViewModels.pdb
 C:\Prism\GitRepositiory\GenSoft\ViewModels\bin\x64\Debug\Process.WorkFlow.dll.config
+C:\Prism\GitRepositiory\GenSoft\ViewModels\obj\x64\Debug\ViewModels.csproj.CopyComplete

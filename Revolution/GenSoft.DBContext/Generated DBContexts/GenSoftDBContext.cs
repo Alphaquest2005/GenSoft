@@ -41,6 +41,7 @@ namespace GenSoft.DBContexts
 		public DbSet<Entities.DataType> DataType { get; set; }
 		public DbSet<Entities.DBType> DBType { get; set; }
 		public DbSet<Entities.DefaultApplication> DefaultApplication { get; set; }
+		public DbSet<Entities.Deleted> Deleted { get; set; }
 		public DbSet<Entities.DomainProcess> DomainProcess { get; set; }
 		public DbSet<Entities.Entity> Entity { get; set; }
 		public DbSet<Entities.EntityAttribute> EntityAttribute { get; set; }
@@ -144,6 +145,7 @@ namespace GenSoft.DBContexts
 				DataTypeMap.Map(modelBuilder.Entity<Entities.DataType>());
 				DBTypeMap.Map(modelBuilder.Entity<Entities.DBType>());
 				DefaultApplicationMap.Map(modelBuilder.Entity<Entities.DefaultApplication>());
+				DeletedMap.Map(modelBuilder.Entity<Entities.Deleted>());
 				DomainProcessMap.Map(modelBuilder.Entity<Entities.DomainProcess>());
 				EntityMap.Map(modelBuilder.Entity<Entities.Entity>());
 				EntityAttributeMap.Map(modelBuilder.Entity<Entities.EntityAttribute>());

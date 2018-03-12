@@ -80,3 +80,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\obj\x64\Debug\BootStrapp
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\obj\x64\Debug\BootStrapper.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\obj\x64\Debug\BootStrapper.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\obj\x64\Debug\BootStrapper.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\BootStrapper\obj\x64\Debug\BootStrapper.csproj.CopyComplete

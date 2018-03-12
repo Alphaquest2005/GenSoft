@@ -222,3 +222,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\obj\x64\Debug\Revoluti
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\obj\x64\Debug\RevolutionData.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\obj\x64\Debug\RevolutionData.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\obj\x64\Debug\RevolutionData.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\obj\x64\Debug\RevolutionData.csproj.CopyComplete

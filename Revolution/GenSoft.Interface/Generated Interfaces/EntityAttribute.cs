@@ -17,6 +17,7 @@ namespace GenSoft.Interfaces
 		int AttributeId { get;}
 		int EntityId { get;}
 		string Value { get;}
+		DateTime DateTime { get;}
 
 
 

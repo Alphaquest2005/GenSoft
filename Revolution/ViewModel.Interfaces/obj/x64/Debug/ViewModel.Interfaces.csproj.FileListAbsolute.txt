@@ -50,3 +50,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\obj\x64\Debug\Vi
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\obj\x64\Debug\ViewModel.Interfaces.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\obj\x64\Debug\ViewModel.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\obj\x64\Debug\ViewModel.Interfaces.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\ViewModel.Interfaces\obj\x64\Debug\ViewModel.Interfaces.csproj.CopyComplete

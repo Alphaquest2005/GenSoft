@@ -55,7 +55,11 @@ namespace ViewModels
         }
     }
 
-   
+    //private void NavFirstView(dynamic v, string viewName, ISystemProcess process, ISystemSource source)
+    //{
+    //    if(v == SystemInterfaces.ViewModelState.Initialized)
+    //    EventMessageBus.Current.Publish(new NavigateToView(viewName, new StateCommandInfo(process, Context.CommandFunctions.UpdateCommandData(viewName, RevolutionData.Context.View.Commands.NavigateToView)), process, source));
+    //}
 
 
 }

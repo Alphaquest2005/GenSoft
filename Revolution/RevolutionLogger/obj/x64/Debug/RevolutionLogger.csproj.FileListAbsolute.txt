@@ -11,3 +11,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionLogger\obj\x64\Debug\Revolu
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionLogger\obj\x64\Debug\RevolutionLogger.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionLogger\obj\x64\Debug\RevolutionLogger.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionLogger\obj\x64\Debug\RevolutionLogger.csprojResolveAssemblyReference.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionLogger\obj\x64\Debug\RevolutionLogger.csproj.CopyComplete

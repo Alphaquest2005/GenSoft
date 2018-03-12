@@ -71,3 +71,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\obj\x64\Debug\EventMess
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\obj\x64\Debug\EventMessages.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\obj\x64\Debug\EventMessages.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\obj\x64\Debug\EventMessages.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\EventMessages\obj\x64\Debug\EventMessages.csproj.CopyComplete

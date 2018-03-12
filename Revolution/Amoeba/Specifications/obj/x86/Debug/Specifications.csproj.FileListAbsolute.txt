@@ -12,3 +12,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\Specifications\obj\x86\Debug\S
 C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\Specifications\obj\x86\Debug\Specifications.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\Specifications\obj\x86\Debug\Specifications.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\Specifications\obj\x86\Debug\Specifications.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\Specifications\obj\x86\Debug\Specifications.csproj.CopyComplete

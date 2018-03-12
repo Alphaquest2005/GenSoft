@@ -98,6 +98,7 @@
     <Compile Include="Generated Entities\DataType.cs" />
     <Compile Include="Generated Entities\DBType.cs" />
     <Compile Include="Generated Entities\DefaultApplication.cs" />
+    <Compile Include="Generated Entities\Deleted.cs" />
     <Compile Include="Generated Entities\DomainProcess.cs" />
     <Compile Include="Generated Entities\Entity.cs" />
     <Compile Include="Generated Entities\EntityAttribute.cs" />
