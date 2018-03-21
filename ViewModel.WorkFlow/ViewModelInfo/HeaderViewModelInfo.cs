@@ -19,6 +19,8 @@ namespace RevolutionData
 {
     public class HeaderViewModelInfo
     {
+        private static string _applications = "Applications";
+
         public static ViewModelInfo HeaderViewModel()
         {
             return new ViewModelInfo
@@ -34,17 +36,17 @@ namespace RevolutionData
                         new List<Func<IHeaderViewModel, IViewModelInitialized, bool>>(),
                         (v,e) =>
                         {
-                            var entityType = DynamicEntityTypeExtensions.GetOrAddDynamicEntityType("Application");
+                            var entityType = DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(_applications);
                             EventAggregator.EventMessageBus.Current.Publish( new LoadEntitySet(entityType,
                                 new StateCommandInfo(v.Process,
-                                    Context.CommandFunctions.UpdateCommandData("Application",Context.Entity.Commands.LoadEntitySetWithChanges)),
+                                    Context.CommandFunctions.UpdateCommandData(_applications,Context.Entity.Commands.LoadEntitySetWithChanges)),
                                 v.Process, v.Source));
                         }, new StateEventInfo(Processes.IntialSystemProcess, Context.EventFunctions.UpdateEventData("HeaderViewModel" ,RevolutionData.Context.ViewModel.Events.Initialized), Guid.NewGuid())),
 
                     new ViewEventSubscription<IHeaderViewModel, IEntitySetLoaded>(
                         $"HeaderViewModel-IUpdateProcessStateList",
                         Processes.IntialSystemProcess,
-                        e => e != null  && e.EntityType.Name == "Application",
+                        e => e != null  && e.EntityType.Name == _applications,
                         new List<Func<IHeaderViewModel, IEntitySetLoaded, bool>>(),
                         (v,e) =>
                         {
@@ -52,7 +54,7 @@ namespace RevolutionData
                             if (e.EntitySet != null && v.Entities.Value != null &&
                                 v.Entities.Value.SequenceEqual(e.EntitySet)) return;
                             v.Entities.Value = new ObservableList<IDynamicEntity>(e.EntitySet.ToList());
-                        }, new StateEventInfo(Processes.IntialSystemProcess, Context.EventFunctions.UpdateEventData("Application" ,RevolutionData.Context.Entity.Events.EntitySetLoaded), Guid.NewGuid())),
+                        }, new StateEventInfo(Processes.IntialSystemProcess, Context.EventFunctions.UpdateEventData(_applications ,RevolutionData.Context.Entity.Events.EntitySetLoaded), Guid.NewGuid())),
 
                 },
                 new List<IViewModelEventPublication<IViewModel, IEvent>>

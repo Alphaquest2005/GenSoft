@@ -19,11 +19,11 @@ namespace GenSoft.Entities
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
-				public virtual ICollection<EntityRelationship> EntityRelationship {get; set;}
+				public virtual ICollection<EntityRelationship> EntityRelationships {get; set;}
 		
 			// ---------Parent Relationships
-				public virtual Ordinality ChildOrdinalitys {get; set;}
-				public virtual Ordinality ParentOrdinalitys {get; set;}
+				public virtual Ordinality ChildOrdinality {get; set;}
+				public virtual Ordinality ParentOrdinality {get; set;}
 	
 
 	}

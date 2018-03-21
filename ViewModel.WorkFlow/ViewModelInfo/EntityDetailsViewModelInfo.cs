@@ -173,7 +173,7 @@ namespace RevolutionData
             List<IViewModelEventCommand<IViewModel, IEvent>> res = new List<IViewModelEventCommand<IViewModel, IEvent>>();
             foreach (var cmd in viewCommands)
             {
-                res.Add(ViewModelInfoExtensions.CreateCustomCommand<IEntityViewModel>(cmd.ViewModelCommands, parentEntities));
+                res.Add(ViewModelInfoExtensions.CreateCustomCommand<IEntityViewModel>(cmd.ViewModelCommand, parentEntities));
             }
             return res;
         }

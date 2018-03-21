@@ -15,7 +15,7 @@ namespace GenSoft.Mappings
 	{
 		public static void Map(EntityTypeBuilder<Entities.User> entityBuilder)
 		{
-			entityBuilder.ToTable("User", "dbo");
+			entityBuilder.ToTable("Users", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.UserId).HasColumnName("UserId").IsRequired();
@@ -23,7 +23,7 @@ namespace GenSoft.Mappings
 		//-------------------Navigation Properties -------------------------------//
 	
 				//----------------Parent Properties
-				//entityBuilder.HasOne(p => p.Agent Agent).WithMany(p => p.User).HasForeignKey(c => c.UserId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.Agent Agent).WithMany(p => p.Users).HasForeignKey(c => c.UserId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

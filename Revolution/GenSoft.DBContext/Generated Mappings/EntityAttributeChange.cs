@@ -15,7 +15,7 @@ namespace GenSoft.Mappings
 	{
 		public static void Map(EntityTypeBuilder<Entities.EntityAttributeChange> entityBuilder)
 		{
-			entityBuilder.ToTable("EntityAttributeChange", "dbo");
+			entityBuilder.ToTable("EntityAttributeChanges", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.PredecessorId).HasColumnName("PredecessorId").IsRequired();
@@ -23,8 +23,8 @@ namespace GenSoft.Mappings
 		//-------------------Navigation Properties -------------------------------//
 	
 				//----------------Parent Properties
-				//entityBuilder.HasOne(p => p.EntityAttribute Predecessor).WithMany(p => p.EntityAttributeChange).HasForeignKey(c => c.PredecessorId).OnDelete(DeleteBehavior.Restrict);
-				//entityBuilder.HasOne(p => p.EntityAttribute Successor).WithMany(p => p.EntityAttributeChange).HasForeignKey(c => c.SuccessorId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.EntityAttribute Predecessor).WithMany(p => p.EntityAttributeChanges).HasForeignKey(c => c.PredecessorId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.EntityAttribute Successor).WithMany(p => p.EntityAttributeChanges).HasForeignKey(c => c.SuccessorId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

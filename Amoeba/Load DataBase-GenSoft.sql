@@ -27,7 +27,7 @@ delete from AmoebaDB.dbo.ApplicationEntities where ApplicationId = @appId
 
 INSERT INTO AmoebaDB.dbo.Entities
                          (Name, EntitySetName, schemaname)
-SELECT    TABLE_NAME, TABLE_NAME AS Expr1, TABLE_SCHEMA --top 60
+SELECT    AmoebaDB.dbo.Singularize(TABLE_NAME), TABLE_NAME AS Expr1, TABLE_SCHEMA --top 60
 FROM            INFORMATION_SCHEMA.TABLES
 WHERE        (TABLE_Type = N'BASE TABLE' and TABLE_NAME not in (/*'ApplicationSettings',*/'sysdiagrams', '__EFMigrationsHistory'))
 order by TABLE_NAME
@@ -172,7 +172,7 @@ FROM            AmoebaDB.dbo.DataTypes INNER JOIN
                                WHERE        (Name = 'EntityName')) AS ModelType
 WHERE        (INFORMATION_SCHEMA.KEY_COLUMN_USAGE.CONSTRAINT_NAME IS NULL) AND (AmoebaDB.dbo.ApplicationEntities.ApplicationId = @appId) AND 
                          (INFORMATION_SCHEMA.COLUMNS.COLUMN_NAME <> N'Name' and INFORMATION_SCHEMA.COLUMNS.COLUMN_NAME like N'%Name')
-						 and AmoebaDB.dbo.EntityProperties.entityId not in (SELECT        Entities.Id
+						 and AmoebaDB.dbo.EntityProperties.EntityId not in (SELECT        Entities.Id
 																				FROM            AmoebaDB.dbo.Entities INNER JOIN
 																										 AmoebaDB.dbo.EntityProperties ON Entities.Id = EntityProperties.EntityId INNER JOIN
 																										 AmoebaDB.dbo.DataProperties ON EntityProperties.Id = DataProperties.EntityPropertyId

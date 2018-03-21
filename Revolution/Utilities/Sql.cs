@@ -17,6 +17,8 @@ namespace Utilities
                     .Replace(",True,", ",1,")
                     .Replace(",''", ",NULL")
                     .Replace("(''", "('")
+                    .Replace(",  From", " From")
+                    .Replace(", ,", ",")
                 ;
         }
     }

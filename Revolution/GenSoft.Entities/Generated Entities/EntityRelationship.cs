@@ -21,7 +21,7 @@ namespace GenSoft.Entities
 				public virtual ParentEntity ParentEntity {get; set;}
 		
 			// ---------Parent Relationships
-				public virtual EntityTypeAttributes EntityTypeAttributes {get; set;}
+				public virtual EntityTypeAttribute EntityTypeAttribute {get; set;}
 				public virtual RelationshipType RelationshipType {get; set;}
 	
 

@@ -19,7 +19,7 @@ namespace GenSoft.Entities
 			// ---------Child Relationships
 		
 			// ---------Parent Relationships
-				public virtual Attributes Attributes {get; set;}
+				public virtual Attribute Attribute {get; set;}
 	
 
 	}

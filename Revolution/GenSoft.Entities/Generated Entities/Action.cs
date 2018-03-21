@@ -20,10 +20,10 @@ namespace GenSoft.Entities
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
-				public virtual ICollection<ActionParameters> ActionParameters {get; set;}
-				public virtual ICollection<ActionReferenceTypes> ActionReferenceTypes {get; set;}
-				public virtual ICollection<ActionSetActions> ActionSetActions {get; set;}
-				public virtual ICollection<ProcessAction> ProcessAction {get; set;}
+				public virtual ICollection<ActionParameter> ActionParameters {get; set;}
+				public virtual ICollection<ActionReferenceType> ActionReferenceTypes {get; set;}
+				public virtual ICollection<ActionSetAction> ActionSetActions {get; set;}
+				public virtual ICollection<ProcessAction> ProcessActions {get; set;}
 		
 			// ---------Parent Relationships
 	

@@ -150,6 +150,25 @@ namespace RevolutionData
                                     Context.ViewModel.Commands.ChangeCurrentEntity), s.Process,
                                 s.Source);
                         }),
+
+                    new ViewEventCommand<ISummaryListViewModel, IStartAddin>(
+                        key: $"AddinAction",
+                        commandPredicate: new List<Func<ISummaryListViewModel, bool>>
+                        {
+                              v => v.SelectedAddinAction.Value != null
+                        },
+                        subject: s => Observable.Empty<ReactiveCommand<IViewModel>>(),
+
+                        messageData: s =>
+                        {
+                            
+
+                            return new ViewEventCommandParameter(
+                                new object[] {s, s.RowState.Value},
+                                new RevolutionEntities.Process.StateCommandInfo(s.Process,
+                                    Context.ViewModel.Commands.ChangeCurrentEntity), s.Process,
+                                s.Source);
+                        }),
                 };
                 var parentSubscriptions = new List<IViewModelEventSubscription<IViewModel, IEvent>>();
                 var parentCommands = new List<IViewModelEventCommand<IViewModel, IEvent>>();
@@ -259,7 +278,7 @@ namespace RevolutionData
             
             foreach (var cmd in viewCommands)
             {
-                 res.Add(ViewModelInfoExtensions.CreateCustomCommand<ISummaryListViewModel>(cmd.ViewModelCommands, parentEntites));
+                 res.Add(ViewModelInfoExtensions.CreateCustomCommand<ISummaryListViewModel>(cmd.ViewModelCommand, parentEntites));
             }
             return res;
         }

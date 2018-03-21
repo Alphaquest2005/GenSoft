@@ -144,3 +144,14 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\obj\x64\Debug\DomainU
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\obj\x64\Debug\DomainUtilities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\obj\x64\Debug\DomainUtilities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\obj\x64\Debug\DomainUtilities.csproj.CopyComplete
+C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\x64\Debug\FluentValidation.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\x64\Debug\ReactiveProperty.NET46.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\x64\Debug\ReactiveProperty.NET46.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\x64\Debug\ReactiveProperty.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\x64\Debug\ReactiveProperty.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\x64\Debug\RevolutionEntities.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\x64\Debug\ViewModel.Interfaces.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\x64\Debug\Actor.Interfaces.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\x64\Debug\RevolutionEntities.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\x64\Debug\ViewModel.Interfaces.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\DomainUtilities\bin\x64\Debug\Actor.Interfaces.pdb

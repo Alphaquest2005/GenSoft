@@ -15,13 +15,13 @@ namespace GenSoft.Mappings
 	{
 		public static void Map(EntityTypeBuilder<Entities.Agent> entityBuilder)
 		{
-			entityBuilder.ToTable("Agent", "dbo");
+			entityBuilder.ToTable("Agents", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.Name).HasColumnName("Name").IsRequired().HasMaxLength(50);
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasMany(x => x.DomainProcess).WithOne(p => p.Agent).HasForeignKey(c => c.UserId).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.User).WithOne(p => p.Agent).HasForeignKey(c => c.UserId).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasMany(x => x.DomainProcesses).WithOne(p => p.Agent).HasForeignKey(c => c.UserId).OnDelete(DeleteBehavior.Restrict);//UserId//Id//
+				entityBuilder.HasMany(x => x.Users).WithOne(p => p.Agent).HasForeignKey(c => c.UserId).OnDelete(DeleteBehavior.Restrict);//UserId//Id//
 	
 				//----------------Parent Properties
 	

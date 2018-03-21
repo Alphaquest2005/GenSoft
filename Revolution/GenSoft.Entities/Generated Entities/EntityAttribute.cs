@@ -14,9 +14,9 @@ namespace GenSoft.Entities
 	public partial class EntityAttribute: BaseEntity, IEntityAttribute
 	{
 		public virtual int AttributeId { get; set; }
+		public virtual DateTime DateTime { get; set; }
 		public virtual int EntityId { get; set; }
 		public virtual string Value { get; set; }
-		public virtual DateTime DateTime { get; set; } = DateTime.Now;
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
@@ -24,7 +24,7 @@ namespace GenSoft.Entities
 				public virtual ICollection<EntityAttributeChange> Successors {get; set;}
 		
 			// ---------Parent Relationships
-				public virtual Attributes Attributes {get; set;}
+				public virtual Attribute Attribute {get; set;}
 				public virtual Entity Entity {get; set;}
 	
 

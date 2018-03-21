@@ -21,7 +21,7 @@ namespace GenSoft.Entities
 			// ---------Child Relationships
 				public virtual StateCommandInfo StateCommandInfo {get; set;}
 				public virtual StateEventInfo StateEventInfo {get; set;}
-				public virtual StateInfoNotes StateInfoNotes {get; set;}
+				public virtual StateInfoNote StateInfoNote {get; set;}
 		
 			// ---------Parent Relationships
 	

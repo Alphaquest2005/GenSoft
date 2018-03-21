@@ -125,7 +125,7 @@
       <Version>0.8.107-pre</Version>
     </PackageReference>
     <PackageReference Include="ReactiveProperty">
-      <Version>4.2.0</Version>
+      <Version>4.2.1</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

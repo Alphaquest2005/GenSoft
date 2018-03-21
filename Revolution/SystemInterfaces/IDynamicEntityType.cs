@@ -17,6 +17,8 @@ namespace SystemInterfaces
         IIntelliList<IDynamicEntityType> ParentEntities { get;  }
         IDynamicEntityType NullEntityType();
         IDynamicEntityType ParentEntityType { get; }
+
+        ObservableList<IAddinAction>Actions { get; }
     }
 
     

@@ -15,7 +15,7 @@ namespace GenSoft.Mappings
 	{
 		public static void Map(EntityTypeBuilder<Entities.ComplexEventActionConstant> entityBuilder)
 		{
-			entityBuilder.ToTable("ComplexEventActionConstant", "dbo");
+			entityBuilder.ToTable("ComplexEventActionConstants", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").ValueGeneratedNever();	
 			entityBuilder.Property(t => t.Value).HasColumnName("Value").IsRequired().HasMaxLength(50);

@@ -17,10 +17,10 @@ namespace GenSoft.Entities
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
-				public virtual ICollection<ConfigurationPropertyPresentation> ConfigurationPropertyPresentation {get; set;}
-				public virtual ICollection<EntityTypePresentationProperty> EntityTypePresentationProperty {get; set;}
-				public virtual ICollection<ViewModelPropertyPresentationType> ViewModelPropertyPresentationType {get; set;}
-				public virtual ICollection<ViewPropertyTheme> ViewPropertyTheme {get; set;}
+				public virtual ICollection<ConfigurationPropertyPresentation> ConfigurationPropertyPresentations {get; set;}
+				public virtual ICollection<EntityTypePresentationProperty> EntityTypePresentationProperties {get; set;}
+				public virtual ICollection<ViewModelPropertyPresentationType> ViewModelPropertyPresentationTypes {get; set;}
+				public virtual ICollection<ViewPropertyTheme> ViewPropertyThemes {get; set;}
 		
 			// ---------Parent Relationships
 	

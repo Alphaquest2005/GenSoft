@@ -78,12 +78,12 @@ namespace <#=AppName#>.Entities
 	        {
 					// do single property types
 #>
-				public virtual <#=cr.ParentProperty.Entity.Name #> <#=parentRelationships.Count(x => x.ParentProperty.Entity.Name == cr.ParentProperty.Entity.Name) > 1 && cr.ChildProperty.PropertyName != "Id"?  cr.ChildProperty.PropertyName.Replace("Id","s") :cr.ParentProperty.Entity.Name #> {get; set;}
+				public virtual <#=cr.ParentProperty.Entity.Name #> <#=parentRelationships.Count(x => x.ParentProperty.Entity.Name == cr.ParentProperty.Entity.Name) > 1 && cr.ChildProperty.PropertyName != "Id"?  cr.ChildProperty.PropertyName.Replace("Id","") :cr.ParentProperty.Entity.Name #> {get; set;}
 <#+			}
 			else
 	        { /// do collection types
 #>
-				public virtual ICollection<<#=cr.ParentProperty.Entity.Name #>> <#=parentRelationships.Count(x => x.ParentProperty.Entity.EntitySetName == cr.ParentProperty.Entity.EntitySetName) > 1 ?  cr.ParentProperty.PropertyName.Replace("Id","s") :cr.ParentProperty.Entity.EntitySetName #> {get; set;}
+				public virtual ICollection<<#=cr.ParentProperty.Entity.Name #>> <#=parentRelationships.Count(x => x.ParentProperty.Entity.EntitySetName == cr.ParentProperty.Entity.EntitySetName) > 1 ?  cr.ParentProperty.PropertyName.Replace("Id","") :cr.ParentProperty.Entity.EntitySetName #> {get; set;}
 <#+ 
 			} 
 	    }

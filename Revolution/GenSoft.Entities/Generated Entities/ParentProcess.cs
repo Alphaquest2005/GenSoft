@@ -13,14 +13,14 @@ namespace GenSoft.Entities
 {
 	public partial class ParentProcess: BaseEntity, IParentProcess
 	{
-		public virtual int ParentProcessId { get; set; }
+		public virtual int Parent_ProcessId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 		
 			// ---------Parent Relationships
 				public virtual DomainProcess DomainProcess {get; set;}
-				public virtual DomainProcess ParentProcesss {get; set;}
+				public virtual DomainProcess Parent_Process {get; set;}
 	
 
 	}

@@ -15,7 +15,7 @@ namespace GenSoft.Mappings
 	{
 		public static void Map(EntityTypeBuilder<Entities.ReferenceTypeName> entityBuilder)
 		{
-			entityBuilder.ToTable("ReferenceTypeName", "dbo");
+			entityBuilder.ToTable("ReferenceTypeNames", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").ValueGeneratedNever();	
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").IsRequired();
@@ -23,7 +23,7 @@ namespace GenSoft.Mappings
 		//-------------------Navigation Properties -------------------------------//
 	
 				//----------------Parent Properties
-				//entityBuilder.HasOne(p => p.ReferenceTypes ReferenceTypes).WithOne(p => p.ReferenceTypeName).HasForeignKey<ReferenceTypes>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.ReferenceType ReferenceType).WithOne(p => p.ReferenceTypeName).HasForeignKey<ReferenceType>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

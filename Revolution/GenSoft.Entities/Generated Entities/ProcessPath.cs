@@ -20,8 +20,8 @@ namespace GenSoft.Entities
 			// ---------Child Relationships
 		
 			// ---------Parent Relationships
-				public virtual ProcessStep NextProcessSteps {get; set;}
-				public virtual ProcessStep ProcessSteps {get; set;}
+				public virtual ProcessStep NextProcessStep {get; set;}
+				public virtual ProcessStep ProcessStep {get; set;}
 	
 
 	}

@@ -20,7 +20,7 @@ namespace GenSoft.Entities
 		
 			// ---------Parent Relationships
 				public virtual EntityTypePresentationProperty EntityTypePresentationProperty {get; set;}
-				public virtual ViewPropertyValueOptions ViewPropertyValueOptions {get; set;}
+				public virtual ViewPropertyValueOption ViewPropertyValueOption {get; set;}
 	
 
 	}

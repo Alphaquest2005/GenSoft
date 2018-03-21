@@ -15,7 +15,7 @@ namespace GenSoft.Mappings
 	{
 		public static void Map(EntityTypeBuilder<Entities.ParentEntity> entityBuilder)
 		{
-			entityBuilder.ToTable("ParentEntity", "dbo");
+			entityBuilder.ToTable("ParentEntities", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").ValueGeneratedNever();	
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").IsRequired();
@@ -24,7 +24,7 @@ namespace GenSoft.Mappings
 	
 				//----------------Parent Properties
 				//entityBuilder.HasOne(p => p.EntityRelationship EntityRelationship).WithOne(p => p.ParentEntity).HasForeignKey<EntityRelationship>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
-				//entityBuilder.HasOne(p => p.EntityTypeAttributes EntityTypeAttributes).WithMany(p => p.ParentEntity).HasForeignKey(c => c.ParentEntityId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.EntityTypeAttribute EntityTypeAttribute).WithMany(p => p.ParentEntities).HasForeignKey(c => c.ParentEntityId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

@@ -15,7 +15,9 @@ using GenSoft.Entities;
 using JB.Collections.Reactive;
 using Microsoft.EntityFrameworkCore;
 using MoreLinq;
+using RevolutionEntities;
 using Utilities;
+using AddinAction = RevolutionEntities.AddinAction;
 using CommandType = System.Data.CommandType;
 using Type = System.Type;
 
@@ -44,28 +46,29 @@ namespace DomainUtilities
                 try
                 {
 
-                    var viewType = ctx.EntityType
+                    var viewType = ctx.EntityTypes
                         .Include(x => x.Application.DatabaseInfo)
                         .Include(x => x.Type)
                         .Include(x => x.ParentEntityType.EntityType.Type)
                         .Include(x => x.ParentEntityType.EntityType.Application.DatabaseInfo)
-                        .Include(x => x.EntityTypeAttributes).ThenInclude(x => x.Attributes)
+                        .Include(x => x.EntityTypeAttributes).ThenInclude(x => x.Attribute)
                         .Include(x => x.EntityTypeAttributes)
                         .Include(x => x.EntityTypeAttributes)
-                        .ThenInclude(x => x.CalculatedProperties.CalculatedPropertyParameters)
+                        .ThenInclude(x => x.CalculatedProperty.CalculatedPropertyParameters)
                         .ThenInclude(x => x.FunctionParameter)
                         .Include(x => x.EntityTypeAttributes)
-                        .ThenInclude(x => x.CalculatedProperties.CalculatedPropertyParameters)
+                        .ThenInclude(x => x.CalculatedProperty.CalculatedPropertyParameters)
                         .ThenInclude(x => x.CalculatedPropertyParameterEntityTypes)
-                        .ThenInclude(x => x.EntityTypeAttributes.Attributes)
+                        .ThenInclude(x => x.EntityTypeAttribute.Attribute)
                         .Include(x => x.EntityTypeAttributes)
-                        .ThenInclude(x => x.CalculatedProperties.FunctionParameterConstant)
+                        .ThenInclude(x => x.CalculatedProperty.FunctionParameterConstants)
                         .Include(x => x.EntityTypeAttributes)
-                        .ThenInclude(x => x.CalculatedProperties.FunctionSets.FunctionSetFunctions)
-                        .ThenInclude(x => x.Functions)
+                        .ThenInclude(x => x.CalculatedProperty.FunctionSet.FunctionSetFunctions)
+                        .ThenInclude(x => x.Function)
                         .Include(x => x.EntityTypeAttributes)
                         .ThenInclude(x => x.CalculatedPropertyParameterEntityTypes)
-                        .Include(x => x.EntityTypeAttributes).ThenInclude(x => x.EntityTypeAttributeCache)
+                        .Include(x => x.EntityTypeAttributes).ThenInclude(x => x.EntityTypeAttributeCach)
+                        .Include(x => x.EntityTypeAddinActions).ThenInclude(x => x.AddinAction.Addin)
                         .FirstOrDefault(x => x.Type.Name == entityType);
                     if (viewType == null) return DynamicEntityType.NullEntityType();
 
@@ -82,24 +85,24 @@ namespace DomainUtilities
                     if (!viewset.Any()) return DynamicEntityType.NullEntityType();
                     var tes =
 
-                        ctx.Entity
+                        ctx.Entities
                             .FirstOrDefault(x => x.Id == 0)
-                            ?.EntityAttribute
+                            ?.EntityAttributes
                             .Where(z => viewset.Contains(z.AttributeId))
                             .OrderBy(d => viewset.IndexOf(d.AttributeId))
-                            .Select(z => new EntityKeyValuePair(z.Attributes.Name, z.Value,
+                            .Select(z => new EntityKeyValuePair(z.Attribute.Name, z.Value,
                                 (ViewAttributeDisplayProperties)CreateEntityAttributeViewProperties(z.Id), false,
-                                z.Attributes.EntityId != null, false) as IEntityKeyValuePair) // z.Entity.EntityType.EntityTypeAttributes.EntityName != null%/
+                                z.Attribute.EntityId != null, false) as IEntityKeyValuePair) // z.Entity.EntityType.EntityTypeAttributes.EntityName != null%/
                             .ToList()
                         ??
                         ctx.EntityTypeAttributes
                             .Where(x => x.EntityTypeId == viewType.Id)
                             .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
                             .Select(z =>
-                                new EntityKeyValuePair(z.Attributes.Name,
+                                new EntityKeyValuePair(z.Attribute.Name,
                                     null,
                                     (ViewAttributeDisplayProperties)CreateEntityAttributeViewProperties(z.Id), false,
-                                    z.Attributes.EntityId != null,
+                                    z.Attribute.EntityId != null,
                                     z.EntityName != null) as IEntityKeyValuePair).ToList();
 
                     
@@ -107,7 +110,7 @@ namespace DomainUtilities
 
                     var cachedProperties = CreateCachedProperties(viewType);
                     var propertyParentEntityTypes = CreatePropertyParentEntityTypes(viewType);
-
+                    var actions = CreateAddinActions(viewType);
 
                     IDynamicEntityType parentEntityType;
                     if (viewType.ParentEntityType == null)
@@ -132,7 +135,7 @@ namespace DomainUtilities
                         CreateInheritedEntityNamePropertyCache(tes, parentEntityType, viewType, cachedProperties);
                     }
                     //ComposedName
-                    if (!cachedProperties.ContainsKey("Name") && propertyParentEntityTypes.Count()>1)
+                    if (!cachedProperties.ContainsKey("Name") && propertyParentEntityTypes.Any())
                     {
                         CreateComposedEntityNamePropertyCache(tes, propertyParentEntityTypes, viewType, cachedProperties);
                         // remove name in properties
@@ -148,7 +151,7 @@ namespace DomainUtilities
 
 
                     var dynamicEntityType = new DynamicEntityType(viewType.Type.Name,
-                        viewType.EntitySet, tes, calPropDef, cachedProperties, propertyParentEntityTypes, parentEntityType);
+                        viewType.EntitySet, tes, calPropDef, cachedProperties, propertyParentEntityTypes, parentEntityType, actions);
 
 
 
@@ -163,6 +166,13 @@ namespace DomainUtilities
             }
         }
 
+        private static ObservableList<IAddinAction> CreateAddinActions(EntityType viewType)
+        {
+            var res = new List<IAddinAction>();
+            res.AddRange(viewType.EntityTypeAddinActions.Select(x => new AddinAction(x.AddinAction.Name,x.AddinAction.Addin.Name)));
+           return new ObservableList<IAddinAction>(res);
+        }
+
         private static void CreateParentPropertyCache(List<IEntityKeyValuePair> tes, IDynamicEntityType parentEntityType,
            EntityType viewType, ObservableDictionary<string, Dictionary<int, dynamic>> cachedProperties)
         {
@@ -171,25 +181,25 @@ namespace DomainUtilities
             {
                 using (var ctx = new GenSoftDBContext())
                 {
-                    var pEntityType = ctx.EntityType
+                    var pEntityType = ctx.EntityTypes
                         .Include(x => x.Application.DatabaseInfo)
                         .Include(x => x.ParentEntityType.EntityType.Type)
                         .Include(x => x.Type)
                         .First(x => x.Type.Name == parentEntityType.Name);
 
                     var pAtt = ctx.EntityTypeAttributes
-                        .Include(x => x.Attributes)
+                        .Include(x => x.Attribute)
                         .Where(x => x.EntityTypeId == pEntityType.Id &&
-                                    x.Attributes.Name == "Name")
+                                    x.Attribute.Name == "Name")
                         .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
                         .FirstOrDefault();
                     if (pAtt == null) return;
                     
-                        if (tes.All(x => x.Key != pAtt.Attributes.Name))
-                            tes.Add(new EntityKeyValuePair(pAtt.Attributes.Name,
+                        if (tes.All(x => x.Key != pAtt.Attribute.Name))
+                            tes.Add(new EntityKeyValuePair(pAtt.Attribute.Name,
                                 null,
                                 (ViewAttributeDisplayProperties)CreateEntityAttributeViewProperties(pAtt.Id), true,
-                                pAtt.Attributes.EntityId != null,
+                                pAtt.Attribute.EntityId != null,
                                 pAtt.EntityName != null) as IEntityKeyValuePair);
                         CreateCacheProperty(parentEntityType, viewType, cachedProperties, pEntityType, pAtt);
                     
@@ -218,7 +228,7 @@ namespace DomainUtilities
             var propertyKey = "Name";
             using (var ctx = new GenSoftDBContext())
             {
-                var entityTypeId = ctx.EntityType
+                var entityTypeId = ctx.EntityTypes
                     .FirstOrDefault(x => x.Type.Name == viewType.Type.Name)?.Id;
 
 
@@ -228,17 +238,17 @@ namespace DomainUtilities
                     .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
                     .Select(x => x.AttributeId).ToList(); 
 
-                var res =  ctx.Entity.AsNoTracking().Include(x => x.EntityAttribute)
-                    .ThenInclude(x => x.Attributes).ThenInclude(x => x.EntityId)
-                    .ThenInclude(x => x.Attributes)
+                var res =  ctx.Entities.AsNoTracking().Include(x => x.EntityAttributes)
+                    .ThenInclude(x => x.Attribute).ThenInclude(x => x.EntityId)
+                    .ThenInclude(x => x.Attribute)
                     .Where(x => x.EntityTypeId == entityTypeId)
-                    .Where(x => x.EntityAttribute.Any(z => z.Attributes.EntityId != null));
+                    .Where(x => x.EntityAttributes.Any(z => z.Attribute.EntityId != null));
 
                 var viewset = res.Select(x => new {x.Id, Properties = 
-                        x.EntityAttribute
+                        x.EntityAttributes
                             .Where(z => viewEntityAttributes.Contains(z.AttributeId))
                             .OrderBy(d => viewEntityAttributes.IndexOf(d.AttributeId))
-                            .Select(z => new { z.Attributes.Name, z.Value })
+                            .Select(z => new { z.Attribute.Name, z.Value })
                             .ToDictionary(q => q.Name, q => q.Value as object)}).ToList();
 
                 foreach (var itm in viewset)
@@ -273,9 +283,9 @@ namespace DomainUtilities
                 var cmd = conn.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 conn.Open();
-
-                cmd.CommandText =
-                    $"Select Id, {propertyParentEntityTypes.Where(x => x.Key != "Id").Select(x => x.Key).Aggregate((c, n) => $"{c},{n}")} From {viewType.Type.Name}";
+                var sql = $"Select Id, {propertyParentEntityTypes.Where(x => x.Key != "Id").Select(x => x.Key).Aggregate("", (c, n) => $"{c},{n}")} From {viewType.Type.Name}";
+                cmd.CommandText = Sql.CleanSql(sql);
+                    
                 var reader = cmd.ExecuteReader();
 
                 while (reader.Read())
@@ -309,16 +319,16 @@ namespace DomainUtilities
           
                 using (var ctx = new GenSoftDBContext())
                 {
-                    var pEntityType = ctx.EntityType
+                    var pEntityType = ctx.EntityTypes
                         .Include(x => x.Application.DatabaseInfo)
                         .Include(x => x.ParentEntityType.EntityType.Type)
                         .Include(x => x.Type)
                         .First(x => x.Type.Name == parentEntityType.Name);
 
                     var pAtt = ctx.EntityTypeAttributes
-                        .Include(x => x.Attributes)
+                        .Include(x => x.Attribute)
                         .Where(x => x.EntityTypeId == pEntityType.Id &&
-                                    x.Attributes.Name == "Name")
+                                    x.Attribute.Name == "Name")
                         .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
                         .FirstOrDefault();
                     if (pAtt == null)
@@ -336,12 +346,12 @@ namespace DomainUtilities
                     }
                     else
                     {
-                        if (tes.All(x => x.Key != pAtt.Attributes.Name))
+                        if (tes.All(x => x.Key != pAtt.Attribute.Name))
                         {
-                            var name = new EntityKeyValuePair(pAtt.Attributes.Name,
+                            var name = new EntityKeyValuePair(pAtt.Attribute.Name,
                                 null,
                                 (ViewAttributeDisplayProperties) CreateEntityAttributeViewProperties(pAtt.Id), true,
-                                pAtt.Attributes.EntityId != null,
+                                pAtt.Attribute.EntityId != null,
                                 pAtt.EntityName != null);
                         
                         tes.Add(name);
@@ -353,7 +363,7 @@ namespace DomainUtilities
         }
 
         private static void CreateCacheProperty(IDynamicEntityType parentEntityType, EntityType viewType,
-            ObservableDictionary<string, Dictionary<int, dynamic>> cachedProperties, EntityType pEntityType, EntityTypeAttributes pAtt, string propertyName = null)
+            ObservableDictionary<string, Dictionary<int, dynamic>> cachedProperties, EntityType pEntityType, EntityTypeAttribute pAtt, string propertyName = null)
         {
             if (viewType.Application.DatabaseInfo == null)
             {
@@ -373,7 +383,7 @@ namespace DomainUtilities
 
 
             var lst = viewType.EntityTypeAttributes
-                .Where(x => x.EntityTypeAttributeCache != null || x.Attributes.Name == "Name").DistinctBy(x => x.Id).ToList();
+                .Where(x => x.EntityTypeAttributeCach != null || x.Attribute.Name == "Name").DistinctBy(x => x.Id).ToList();
             if (viewType.Application.DatabaseInfo == null)
             {
                 foreach (var cp in lst)
@@ -394,15 +404,15 @@ namespace DomainUtilities
             return res;
         }
 
-        private static void DBCreateCachePropertyForAttribute(EntityType viewType, EntityTypeAttributes cp, ObservableDictionary<string, Dictionary<int, dynamic>> res, string propertyKey = null)
+        private static void DBCreateCachePropertyForAttribute(EntityType viewType, EntityTypeAttribute cp, ObservableDictionary<string, Dictionary<int, dynamic>> res, string propertyKey = null)
         {
             using (var conn = new SqlConnection(viewType.Application.DatabaseInfo.ConnectionString))
             {
                 var cmd = conn.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 conn.Open();
-                if (propertyKey == null) propertyKey = cp.Attributes.Name;
-                cmd.CommandText = $"Select Id, {cp.Attributes.Name} From {viewType.Type.Name}";
+                if (propertyKey == null) propertyKey = cp.Attribute.Name;
+                cmd.CommandText = $"Select Id, {cp.Attribute.Name} From {viewType.EntitySet}";
                 var reader = cmd.ExecuteReader();
 
                 while (reader.Read())
@@ -426,17 +436,17 @@ namespace DomainUtilities
             }
         }
 
-        private static void DynamicCachePropertyForAttribute(EntityType viewType, EntityTypeAttributes cp,
+        private static void DynamicCachePropertyForAttribute(EntityType viewType, EntityTypeAttribute cp,
             ObservableDictionary<string, Dictionary<int, dynamic>> res, string propertyKey = null)
         {
             using (var ctx = new GenSoftDBContext())
             {
-                var elst = ctx.EntityAttribute
-                    .Where(x => (x.AttributeId == cp.AttributeId || x.Attributes.Name == "Id") &&
+                var elst = ctx.EntityAttributes
+                    .Where(x => (x.AttributeId == cp.AttributeId || x.Attribute.Name == "Id") &&
                                 x.Entity.EntityTypeId == viewType.Id)
-                    .Select(x => new {Key = x.Attributes.Name, Value = x.Value, EntityId = x.EntityId})
+                    .Select(x => new {Key = x.Attribute.Name, Value = x.Value, EntityId = x.EntityId})
                     .GroupBy(x => x.EntityId).ToList();
-                if (propertyKey == null) propertyKey = cp.Attributes.Name;
+                if (propertyKey == null) propertyKey = cp.Attribute.Name;
                 foreach (var g in elst)
                 {
                     var id = Convert.ToInt32(g.FirstOrDefault(x => x.Key == "Id").Value);
@@ -454,7 +464,7 @@ namespace DomainUtilities
             }
         }
 
-        public static dynamic CreatePredicate(string body, List<PredicateParameters> predicateParameters)
+        public static dynamic CreatePredicate(string body, List<PredicateParameter> predicateParameters)
         {
             try
             {
@@ -466,13 +476,13 @@ namespace DomainUtilities
 
                 }
                 var returnType = typeof(bool);
-                var parameters = predicateParameters.Where(x => !x.Parameters.Name.Contains("Const"));
-                var argType = parameters.Select(x => CreateTypesFromDbType(x.Parameters.DataTypeId)).ToList();
+                var parameters = predicateParameters.Where(x => !x.Parameter.Name.Contains("Const"));
+                var argType = parameters.Select(x => CreateTypesFromDbType(x.Parameter.DataTypeId)).ToList();
                 argType.Add(returnType);
                 var funcType = TypeNameExtensions.GetTypeByName($"Func`{argType.Count}").First(x => x.IsGenericTypeDefinition == true);
                 var expType = funcType.MakeGenericType(argType.ToArray());
                 var exp = typeof(Interpreter).GetMethod("ParseAsDelegate").MakeGenericMethod(expType)
-                    .Invoke(interpreter, new object[] { body, parameters.Select(x => x.Parameters.Name).ToArray() });
+                    .Invoke(interpreter, new object[] { body, parameters.Select(x => x.Parameter.Name).ToArray() });
 
 
                 return exp;
@@ -491,13 +501,13 @@ namespace DomainUtilities
             using (var ctx = new GenSoftDBContext())
             {
                 var lst = ctx.EntityTypeAttributes
-                    .Include(x => x.Attributes)
+                    .Include(x => x.Attribute)
                     .Include(x => x.EntityType.Type)
-                    .Include(x => x.EntityRelationship).ThenInclude(x => x.ParentEntity).ThenInclude(x => x.EntityTypeAttributes.EntityType.Type)
-                    .Include(x => x.EntityRelationship).ThenInclude(x => x.ParentEntity)
-                    .Where(x => x.EntityTypeId == viewType.Id && !x.ParentEntity.Any())
+                    .Include(x => x.EntityRelationships).ThenInclude(x => x.ParentEntity).ThenInclude(x => x.EntityTypeAttribute.EntityType.Type)
+                    .Include(x => x.EntityRelationships).ThenInclude(x => x.ParentEntity)
+                    .Where(x => x.EntityTypeId == viewType.Id && !x.ParentEntities.Any())
                     .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)///////////////////////////// ---- reverse because dictionary act like a stack
-                    .Select(x => new { Attribute = x.Attributes.Name, ParentEntities = x.EntityRelationship.Select(z => z.ParentEntity.EntityTypeAttributes.EntityType.Type.Name).ToList()}).ToList();
+                    .Select(x => new { Attribute = x.Attribute.Name, ParentEntities = x.EntityRelationships.Select(z => z.ParentEntity.EntityTypeAttribute.EntityType.Type.Name).ToList()}).ToList();
 
                 foreach (var p in lst.Where(x => x.ParentEntities.Any()))
                 {
@@ -542,8 +552,8 @@ namespace DomainUtilities
             {
                 using (var ctx = new GenSoftDBContext())
                 {
-                    var basicTheme = ctx.ViewPropertyTheme
-                        .Include(x => x.ViewPropertyValueOptions)
+                    var basicTheme = ctx.ViewPropertyThemes
+                        .Include(x => x.ViewPropertyValueOption)
                         .Include(x => x.ViewPropertyPresentationPropertyType.PresentationPropertyType)
                         .Include(x => x.ViewPropertyPresentationPropertyType.ViewProperty)
                         .Where(x => x.ViewType.Name == viewType)
@@ -556,8 +566,8 @@ namespace DomainUtilities
                         .Select(x => new { x.Key, Value = x.ToDictionary(z => z.ViewPropertyName, z => z.Value) }).ToDictionary(x => x.Key, x => x.Value);
 
                     var entityAttributeTheme =
-                        ctx.EntityTypePresentationProperty
-                            .Include(x => x.PropertyValueOption.ViewPropertyValueOptions)
+                        ctx.EntityTypePresentationProperties
+                            .Include(x => x.PropertyValueOption.ViewPropertyValueOption)
                             .Include(x => x.PropertyValue)
                             .Include(x => x.ViewPropertyPresentationPropertyType.PresentationPropertyType)
                             .Include(x => x.ViewPropertyPresentationPropertyType.ViewProperty)
@@ -567,7 +577,7 @@ namespace DomainUtilities
                                 PresentationPropertyName = x.ViewPropertyPresentationPropertyType.PresentationPropertyType
                                     .Name,
                                 ViewPropertyName = x.ViewPropertyPresentationPropertyType.ViewProperty.Name,
-                                Value = x.PropertyValue == null ? x.PropertyValueOption.ViewPropertyValueOptions.Value : x.PropertyValue.Value
+                                Value = x.PropertyValue == null ? x.PropertyValueOption.ViewPropertyValueOption.Value : x.PropertyValue.Value
                             }).GroupBy(x => x.PresentationPropertyName)
                             .Select(x => new { x.Key, Value = x.ToDictionary(z => z.ViewPropertyName, z => z.Value) })
                             .ToDictionary(x => x.Key, x => x.Value);
@@ -622,9 +632,9 @@ namespace DomainUtilities
 
             using (var ctx = new GenSoftDBContext())
             {
-                var dataType = ctx.DataType
-                    .Include(x => x.Type.Types).ThenInclude(x => x.ChildTypes)
-                    .Include(x => x.Type.Types).ThenInclude(x => x.ParentTypes)
+                var dataType = ctx.DataTypes
+                    .Include(x => x.Type.Types).ThenInclude(x => x.ChildType)
+                    .Include(x => x.Type.Types).ThenInclude(x => x.ParentType)
                     .First(x => x.Id == dataTypeId);
                 if (dataType.Type.Types.Count == 0)
                 {
@@ -705,10 +715,10 @@ namespace DomainUtilities
             foreach (var p in FunctionParameter)
             {
                 var cpList = p.CalculatedPropertyParameters.DistinctBy(x => x.Id)
-                    .Where(x => x.CalculatedPropertyId == calculatedPropertyId).Select(x => x.CalculatedProperties).DistinctBy(x => x.Id).ToList();
+                    .Where(x => x.CalculatedPropertyId == calculatedPropertyId).Select(x => x.CalculatedProperty).DistinctBy(x => x.Id).ToList();
                 foreach (var cp in cpList)
                 {
-                    var pconst = cp.FunctionParameterConstant.DistinctBy(x => x.Id)
+                    var pconst = cp.FunctionParameterConstants.DistinctBy(x => x.Id)
                         .Where(q => q.FunctionParameterId == p.Id).ToList();
                     for (int j = 0; j < pconst.Count(); j++)
                     {
@@ -724,7 +734,7 @@ namespace DomainUtilities
                         var param = pEntityParameters[j];
                         var cparameter = param.CalculatedPropertyParameterEntityTypes.DistinctBy(x => x.Id)
                             .FirstOrDefault(x => x.CalculatedPropertyParameterId == param.Id)
-                            ?.EntityTypeAttributes.Attributes.Name;
+                            ?.EntityTypeAttribute.Attribute.Name;
 
                         if (cparameter != null) paramlst.AddOrUpdate($"param{j}", $"\"{cparameter}\"");
                     }
@@ -743,26 +753,26 @@ namespace DomainUtilities
 
 
             var lst = viewType.EntityTypeAttributes
-                .Where(x => x.CalculatedProperties != null)
-                .Select(x => x.CalculatedProperties).DistinctBy(x => x.Id).ToList();
+                .Where(x => x.CalculatedProperty != null)
+                .Select(x => x.CalculatedProperty).DistinctBy(x => x.Id).ToList();
             foreach (var cp in lst)
             {
                 var flst = cp
-                    .FunctionSets
+                    .FunctionSet
                     .FunctionSetFunctions
                     .DistinctBy(x => x.Id)
                     .Select(f =>
-                        Functions.ContainsKey(f.Functions.Name)
-                            ? Functions[f.Functions.Name]
+                        Functions.ContainsKey(f.Function.Name)
+                            ? Functions[f.Function.Name]
                             : CreateFunction(
                                 CreateCPFunctionBody(
-                                    f.Functions.Body,
-                                    f.Functions.FunctionParameter.ToList(),
+                                    f.Function.Body,
+                                    f.Function.FunctionParameters.ToList(),
                                     cp.Id),
-                                f.Functions.FunctionParameter.ToList(),
-                                f.Functions.ReturnDataTypeId)).ToList();
+                                f.Function.FunctionParameters.ToList(),
+                                f.Function.ReturnDataTypeId)).ToList();
 
-                calprops.Add(cp.EntityTypeAttributes.Attributes.Name, flst);
+                calprops.Add(cp.EntityTypeAttribute.Attribute.Name, flst);
             }
 
 

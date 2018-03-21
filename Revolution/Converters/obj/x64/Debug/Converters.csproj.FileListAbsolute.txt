@@ -154,7 +154,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\GenSoft.Inte
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\DomainUtilities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\SystemInterfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\ReactiveProperty.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\ReactiveProperty.xml
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\GenSoft.DBContext.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\Common.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\GenSoft.Entities.pdb
@@ -165,3 +164,12 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\obj\x64\Debug\Converters.c
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\obj\x64\Debug\Converters.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\obj\x64\Debug\Converters.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\obj\x64\Debug\Converters.csproj.CopyComplete
+C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\FluentValidation.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\ReactiveProperty.NET46.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\ReactiveProperty.NET46.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\RevolutionEntities.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\ViewModel.Interfaces.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\Actor.Interfaces.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\RevolutionEntities.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\ViewModel.Interfaces.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Converters\bin\x64\Debug\Actor.Interfaces.pdb

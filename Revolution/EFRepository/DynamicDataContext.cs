@@ -49,17 +49,17 @@ namespace EFRepository
 
                 using (var ctx = new GenSoftDBContext())
                 {
-                    var entityType = ctx.EntityType.Include(x => x.Type).First(x => x.Type.Name == msg.EntityType.Name);
+                    var entityType = ctx.EntityTypes.Include(x => x.Type).First(x => x.Type.Name == msg.EntityType.Name);
 
 
                     var entity = msg.Entity.Id == 0
-                        ? ctx.Entity.Add(new Entity()
+                        ? ctx.Entities.Add(new Entity()
                         {
                             EntityTypeId = entityType.Id,
-                            EntityAttribute = new List<EntityAttribute>(),
+                            EntityAttributes = new List<EntityAttribute>(),
                             DateTimeCreated = DateTime.Now
                         }).Entity
-                        : ctx.Entity.FirstOrDefault(x => x.Id == msg.Entity.Id && x.EntityTypeId == entityType.Id);
+                        : ctx.Entities.FirstOrDefault(x => x.Id == msg.Entity.Id && x.EntityTypeId == entityType.Id);
                     if (entity == null)
                     {
                         PublishProcesError(msg,
@@ -77,18 +77,18 @@ namespace EFRepository
 
                     foreach (var change in msg.Changes)
                     {
-                        var data = ctx.EntityAttribute.FirstOrDefault(
-                            x => x.EntityId == entity.Id && x.Attributes.Name == change.Key);
+                        var data = ctx.EntityAttributes.FirstOrDefault(
+                            x => x.EntityId == entity.Id && x.Attribute.Name == change.Key);
                         if (data == null)
                         {
                             var attibute = ctx.Attributes.FirstOrDefault(x => x.Name == change.Key);
                             if (attibute == null)
                             {
-                                var dataType = ctx.DataType.First(x => x.Type.Name == "string");
+                                var dataType = ctx.DataTypes.First(x => x.Type.Name == "string");
                                 attibute = ctx.Attributes
-                                    .Add(new Attributes() {DataTypeId = dataType.Id, Name = change.Key}).Entity;
+                                    .Add(new GenSoft.Entities.Attribute() {DataTypeId = dataType.Id, Name = change.Key}).Entity;
                             }
-                            var entityAttribute = ctx.EntityAttribute
+                            var entityAttribute = ctx.EntityAttributes
                                 .Add(new EntityAttribute()
                                 {
                                     AttributeId = attibute.Id,
@@ -96,7 +96,7 @@ namespace EFRepository
                                     Value = change.Value is IEntityKeyValuePair?((IEntityKeyValuePair)change.Value).Value.ToString():change.Value.ToString(),
                                     DateTime = DateTime.Now
                                 }).Entity;
-                            entity.EntityAttribute.Add(entityAttribute);
+                            entity.EntityAttributes.Add(entityAttribute);
                         }
                         else
                         {
@@ -156,15 +156,15 @@ namespace EFRepository
             {
                 var entityType = msg.EntityType;
                 var changes = msg.Changes;
-                var entityTypeId = ctx.EntityType.FirstOrDefault(x => x.Type.Name == entityType.Name)?.Id;
+                var entityTypeId = ctx.EntityTypes.FirstOrDefault(x => x.Type.Name == entityType.Name)?.Id;
 
                 
                 var viewEntityAttributes = GetViewEntityAttributes(ctx, entityTypeId);
 
-                var res = GetEntities(ctx, entityTypeId).Include(x => x.EntityAttribute).ThenInclude(x => x.Attributes).AsQueryable();
+                var res = GetEntities(ctx, entityTypeId).Include(x => x.EntityAttributes).ThenInclude(x => x.Attribute).AsQueryable();
                 res = changes.Aggregate(res,
                     (current, c) => current.Where(
-                        x => x.EntityAttribute.Any(z => z.Attributes.Name == c.Key && z.Value.ToString() == c.Value.ToString())));
+                        x => x.EntityAttributes.Any(z => z.Attribute.Name == c.Key && z.Value.ToString() == c.Value.ToString())));
 
                 var entities = GetViewEntities(entityType, res, viewEntityAttributes).ToList();
                 
@@ -182,7 +182,7 @@ namespace EFRepository
             if (msg.ProcessInfo.Process.Applet is IDbApplet) return;
             using (var ctx = new GenSoftDBContext())
             {
-               var entityTypeId = ctx.EntityType
+               var entityTypeId = ctx.EntityTypes
                     .FirstOrDefault(x => x.Type.Name == msg.EntityType.Name)?.Id;
 
                 
@@ -205,13 +205,13 @@ namespace EFRepository
         private  IQueryable<Entity> GetEntities(GenSoftDBContext ctx, int? viewId)
         {
             
-            var entities = ctx.Entity.AsNoTracking().Include(x => x.EntityAttribute)
-                .ThenInclude(x => x.Attributes).ThenInclude(x => x.EntityId)
-                .ThenInclude(x => x.Attributes);
+            var entities = ctx.Entities.AsNoTracking().Include(x => x.EntityAttributes)
+                .ThenInclude(x => x.Attribute).ThenInclude(x => x.EntityId)
+                .ThenInclude(x => x.Attribute);
            
             var res = entities
                     .Where(x => x.EntityTypeId == viewId)
-                    .Where(x => x.EntityAttribute.Any(z => z.Attributes.EntityId != null));
+                    .Where(x => x.EntityAttributes.Any(z => z.Attribute.EntityId != null));
             return res;
         }
 
@@ -268,7 +268,7 @@ namespace EFRepository
             try
             {
                 
-                var entityTypeId = ctx.EntityType
+                var entityTypeId = ctx.EntityTypes
                     .FirstOrDefault(x => x.Type.Name == entityType.Name)?.Id;
 
                 var viewEntityAttributes = GetViewEntityAttributes(ctx, entityTypeId);
@@ -276,13 +276,13 @@ namespace EFRepository
                 var res = GetEntities(ctx, entityTypeId).AsQueryable();
                 // include entity.Id and Attribute "ID" to avoid confusion
                 var cres = changes.Where(x => x.Key == "Id").Aggregate(res,
-                    (current, c) => current.Where(x => x.Id.ToString() == c.Value.ToString() || (x.EntityAttribute.Any(z =>
-                                                           z.Attributes.Name == c.Key && z.Value.ToString() == c.Value.ToString()))));
+                    (current, c) => current.Where(x => x.Id.ToString() == c.Value.ToString() || (x.EntityAttributes.Any(z =>
+                                                           z.Attribute.Name == c.Key && z.Value.ToString() == c.Value.ToString()))));
 
                 var ccres = changes.Where(x => x.Key != "Id").Aggregate(cres,
                     (current, c) => current.Where(
-                        x => x.EntityAttribute.Any(z =>
-                            z.Attributes.Name == c.Key && z.Value.ToString() == c.Value.ToString())));
+                        x => x.EntityAttributes.Any(z =>
+                            z.Attribute.Name == c.Key && z.Value.ToString() == c.Value.ToString())));
 
                 var entity = GetViewEntities(entityType, ccres, viewEntityAttributes).FirstOrDefault();
                 return entity;
@@ -298,10 +298,10 @@ namespace EFRepository
         private  IQueryable<IDynamicEntity> GetViewEntities(IDynamicEntityType entityType, IQueryable<Entity> res, List<int> viewEntityAttributes)
         {
             return res.Select(x => new DynamicEntity(entityType, x.Id,
-                x.EntityAttribute
+                x.EntityAttributes
                     .Where(z => viewEntityAttributes.Contains(z.AttributeId))
                     .OrderBy(d => viewEntityAttributes.IndexOf(d.AttributeId))
-                    .Select(z => new {z.Attributes.Name, z.Value})
+                    .Select(z => new {z.Attribute.Name, z.Value})
                     .ToDictionary(q => q.Name, q => q.Value as object)) as IDynamicEntity);
         }
 

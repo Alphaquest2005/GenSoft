@@ -15,16 +15,16 @@ namespace GenSoft.Mappings
 	{
 		public static void Map(EntityTypeBuilder<Entities.ParentProcess> entityBuilder)
 		{
-			entityBuilder.ToTable("ParentProcess", "dbo");
+			entityBuilder.ToTable("ParentProcesses", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").ValueGeneratedNever();	
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").IsRequired();
-			entityBuilder.Property(t => t.ParentProcessId).HasColumnName("ParentProcessId").IsRequired();
+			entityBuilder.Property(t => t.Parent_ProcessId).HasColumnName("Parent_ProcessId").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
 	
 				//----------------Parent Properties
 				//entityBuilder.HasOne(p => p.DomainProcess ).WithOne(p => p.ParentProcess).HasForeignKey<DomainProcess>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
-				//entityBuilder.HasOne(p => p.DomainProcess ParentProcess).WithMany(p => p.ParentProcess).HasForeignKey(c => c.ParentProcessId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.DomainProcess Parent_Process).WithMany(p => p.ParentProcesses).HasForeignKey(c => c.Parent_ProcessId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

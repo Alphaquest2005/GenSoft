@@ -38,7 +38,7 @@ namespace ActorBackBone
         {
             using (var ctx = new GenSoftDBContext())
             {
-                var machineInfo = ctx.Machine.Select(x => ProcessExpressions.CreateMachineInfo(x)).ToList();
+                var machineInfo = ctx.Machines.Select(x => ProcessExpressions.CreateMachineInfo(x)).ToList();
 
                 
                 List<IComplexEventAction> dbComplexAction = new List<IComplexEventAction>(); 
@@ -53,7 +53,7 @@ namespace ActorBackBone
         {
             using (var ctx = new GenSoftDBContext())
             {
-                var machineInfo = ctx.Machine.Select(x => ProcessExpressions.CreateMachineInfo(x)).ToList();
+                var machineInfo = ctx.Machines.Select(x => ProcessExpressions.CreateMachineInfo(x)).ToList();
 
                 Initialize(autoContinue, machineInfo, processComplexEvents, processViewModelInfos);
             }

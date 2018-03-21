@@ -15,7 +15,7 @@ namespace GenSoft.Mappings
 	{
 		public static void Map(EntityTypeBuilder<Entities.ApplicationSetting> entityBuilder)
 		{
-			entityBuilder.ToTable("ApplicationSetting", "dbo");
+			entityBuilder.ToTable("ApplicationSettings", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.ApplicationId).HasColumnName("ApplicationId").IsRequired();
@@ -24,7 +24,7 @@ namespace GenSoft.Mappings
 		//-------------------Navigation Properties -------------------------------//
 	
 				//----------------Parent Properties
-				//entityBuilder.HasOne(p => p.Application Application).WithMany(p => p.ApplicationSetting).HasForeignKey(c => c.ApplicationId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.Application Application).WithMany(p => p.ApplicationSettings).HasForeignKey(c => c.ApplicationId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

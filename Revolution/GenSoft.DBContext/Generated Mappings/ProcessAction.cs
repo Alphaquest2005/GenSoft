@@ -15,17 +15,17 @@ namespace GenSoft.Mappings
 	{
 		public static void Map(EntityTypeBuilder<Entities.ProcessAction> entityBuilder)
 		{
-			entityBuilder.ToTable("ProcessAction", "dbo");
+			entityBuilder.ToTable("ProcessActions", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.ActionId).HasColumnName("ActionId").IsRequired();
 			entityBuilder.Property(t => t.Name).HasColumnName("Name").IsRequired().HasMaxLength(50);
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasMany(x => x.ComplexEventActionProcessActions).WithOne(p => p.ProcessAction).HasForeignKey(c => c.ProcessActionId).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasOne(p => p.ProcessActionStateCommandInfo).WithOne(p => p.ProcessAction).HasForeignKey<ProcessActionStateCommandInfo>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasMany(x => x.ComplexEventActionProcessActions).WithOne(p => p.ProcessAction).HasForeignKey(c => c.ProcessActionId).OnDelete(DeleteBehavior.Restrict);//ProcessActionId//Id//
+				entityBuilder.HasOne(p => p.ProcessActionStateCommandInfo).WithOne(p => p.ProcessAction).HasForeignKey<ProcessActionStateCommandInfo>(c => c.Id).OnDelete(DeleteBehavior.Restrict);//Id//Id//
 	
 				//----------------Parent Properties
-				//entityBuilder.HasOne(p => p.Action Action).WithMany(p => p.ProcessAction).HasForeignKey(c => c.ActionId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.Action Action).WithMany(p => p.ProcessActions).HasForeignKey(c => c.ActionId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

@@ -24,8 +24,8 @@ namespace GenSoft.Entities
 		
 			// ---------Parent Relationships
 				public virtual PresentationTheme PresentationTheme {get; set;}
-				public virtual ViewPropertyValueOptions ViewPropertyValueOptions {get; set;}
-				public virtual ViewModelTypes ViewModelTypes {get; set;}
+				public virtual ViewPropertyValueOption ViewPropertyValueOption {get; set;}
+				public virtual ViewModelType ViewModelType {get; set;}
 				public virtual ViewPropertyPresentationPropertyType ViewPropertyPresentationPropertyType {get; set;}
 				public virtual ViewType ViewType {get; set;}
 	

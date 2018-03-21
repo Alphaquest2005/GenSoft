@@ -15,18 +15,18 @@ namespace GenSoft.Mappings
 	{
 		public static void Map(EntityTypeBuilder<Entities.ComplexEventAction> entityBuilder)
 		{
-			entityBuilder.ToTable("ComplexEventAction", "dbo");
+			entityBuilder.ToTable("ComplexEventActions", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.ActionTriggerId).HasColumnName("ActionTriggerId").IsRequired();
 			entityBuilder.Property(t => t.Name).HasColumnName("Name").IsRequired().HasMaxLength(50);
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasMany(x => x.ComplexEventActionExpectedEvents).WithOne(p => p.ComplexEventAction).HasForeignKey(c => c.ComplexEventActionId).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.ComplexEventActionProcessActions).WithOne(p => p.ComplexEventAction).HasForeignKey(c => c.ComplexEventActionId).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.ProcessStepComplexActions).WithOne(p => p.ComplexEventAction).HasForeignKey(c => c.ComplexEventActionId).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasMany(x => x.ComplexEventActionExpectedEvents).WithOne(p => p.ComplexEventAction).HasForeignKey(c => c.ComplexEventActionId).OnDelete(DeleteBehavior.Restrict);//ComplexEventActionId//Id//
+				entityBuilder.HasMany(x => x.ComplexEventActionProcessActions).WithOne(p => p.ComplexEventAction).HasForeignKey(c => c.ComplexEventActionId).OnDelete(DeleteBehavior.Restrict);//ComplexEventActionId//Id//
+				entityBuilder.HasMany(x => x.ProcessStepComplexActions).WithOne(p => p.ComplexEventAction).HasForeignKey(c => c.ComplexEventActionId).OnDelete(DeleteBehavior.Restrict);//ComplexEventActionId//Id//
 	
 				//----------------Parent Properties
-				//entityBuilder.HasOne(p => p.ActionTrigger ActionTrigger).WithMany(p => p.ComplexEventAction).HasForeignKey(c => c.ActionTriggerId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.ActionTrigger ActionTrigger).WithMany(p => p.ComplexEventActions).HasForeignKey(c => c.ActionTriggerId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

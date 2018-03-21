@@ -15,7 +15,7 @@ namespace GenSoft.Mappings
 	{
 		public static void Map(EntityTypeBuilder<Entities.ProcessActionStateCommandInfo> entityBuilder)
 		{
-			entityBuilder.ToTable("ProcessActionStateCommandInfo", "dbo");
+			entityBuilder.ToTable("ProcessActionStateCommandInfos", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").ValueGeneratedNever();	
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").IsRequired();
@@ -24,7 +24,7 @@ namespace GenSoft.Mappings
 	
 				//----------------Parent Properties
 				//entityBuilder.HasOne(p => p.ProcessAction ProcessAction).WithOne(p => p.ProcessActionStateCommandInfo).HasForeignKey<ProcessAction>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
-				//entityBuilder.HasOne(p => p.StateCommandInfo StateCommandInfo).WithMany(p => p.ProcessActionStateCommandInfo).HasForeignKey(c => c.StateComandInfoId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.StateCommandInfo StateCommandInfo).WithMany(p => p.ProcessActionStateCommandInfos).HasForeignKey(c => c.StateComandInfoId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

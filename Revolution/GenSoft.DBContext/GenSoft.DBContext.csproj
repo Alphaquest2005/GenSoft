@@ -70,35 +70,37 @@
   <ItemGroup>
     <Compile Include="Generated DBContexts\GenSoftDBContext.cs" />
     <Compile Include="Generated Mappings\Action.cs" />
-    <Compile Include="Generated Mappings\ActionParameterConstants.cs" />
-    <Compile Include="Generated Mappings\ActionParameterEntityTypeAttributes.cs" />
-    <Compile Include="Generated Mappings\ActionParameters.cs" />
-    <Compile Include="Generated Mappings\ActionProperties.cs" />
+    <Compile Include="Generated Mappings\ActionParameter.cs" />
+    <Compile Include="Generated Mappings\ActionParameterConstant.cs" />
+    <Compile Include="Generated Mappings\ActionParameterEntityTypeAttribute.cs" />
+    <Compile Include="Generated Mappings\ActionProperty.cs" />
     <Compile Include="Generated Mappings\ActionPropertyParameter.cs" />
-    <Compile Include="Generated Mappings\ActionReferenceTypes.cs" />
+    <Compile Include="Generated Mappings\ActionReferenceType.cs" />
     <Compile Include="Generated Mappings\ActionSet.cs" />
-    <Compile Include="Generated Mappings\ActionSetActions.cs" />
+    <Compile Include="Generated Mappings\ActionSetAction.cs" />
     <Compile Include="Generated Mappings\ActionTrigger.cs" />
+    <Compile Include="Generated Mappings\Addin.cs" />
+    <Compile Include="Generated Mappings\AddinAction.cs" />
     <Compile Include="Generated Mappings\Agent.cs" />
     <Compile Include="Generated Mappings\Application.cs" />
     <Compile Include="Generated Mappings\ApplicationSetting.cs" />
-    <Compile Include="Generated Mappings\Attributes.cs" />
+    <Compile Include="Generated Mappings\Attribute.cs" />
     <Compile Include="Generated Mappings\BaseEntityTypeAttribute.cs" />
-    <Compile Include="Generated Mappings\CalculatedProperties.cs" />
-    <Compile Include="Generated Mappings\CalculatedPropertyParameterEntityTypes.cs" />
-    <Compile Include="Generated Mappings\CalculatedPropertyParameters.cs" />
+    <Compile Include="Generated Mappings\CalculatedProperty.cs" />
+    <Compile Include="Generated Mappings\CalculatedPropertyParameter.cs" />
+    <Compile Include="Generated Mappings\CalculatedPropertyParameterEntityType.cs" />
     <Compile Include="Generated Mappings\Command.cs" />
     <Compile Include="Generated Mappings\CommandType.cs" />
     <Compile Include="Generated Mappings\ComplexEventAction.cs" />
     <Compile Include="Generated Mappings\ComplexEventActionConstant.cs" />
-    <Compile Include="Generated Mappings\ComplexEventActionExpectedEvents.cs" />
-    <Compile Include="Generated Mappings\ComplexEventActionProcessActions.cs" />
+    <Compile Include="Generated Mappings\ComplexEventActionExpectedEvent.cs" />
+    <Compile Include="Generated Mappings\ComplexEventActionProcessAction.cs" />
     <Compile Include="Generated Mappings\ConfigurationPropertyPresentation.cs" />
     <Compile Include="Generated Mappings\DatabaseInfo.cs" />
     <Compile Include="Generated Mappings\DataType.cs" />
     <Compile Include="Generated Mappings\DBType.cs" />
     <Compile Include="Generated Mappings\DefaultApplication.cs" />
-    <Compile Include="Generated Mappings\Deleted.cs" />
+    <Compile Include="Generated Mappings\Delete.cs" />
     <Compile Include="Generated Mappings\DomainProcess.cs" />
     <Compile Include="Generated Mappings\Entity.cs" />
     <Compile Include="Generated Mappings\EntityAttribute.cs" />
@@ -107,31 +109,32 @@
     <Compile Include="Generated Mappings\EntityName.cs" />
     <Compile Include="Generated Mappings\EntityRelationship.cs" />
     <Compile Include="Generated Mappings\EntityType.cs" />
-    <Compile Include="Generated Mappings\EntityTypeAttributeCache.cs" />
-    <Compile Include="Generated Mappings\EntityTypeAttributes.cs" />
+    <Compile Include="Generated Mappings\EntityTypeAddinAction.cs" />
+    <Compile Include="Generated Mappings\EntityTypeAttribute.cs" />
+    <Compile Include="Generated Mappings\EntityTypeAttributeCach.cs" />
     <Compile Include="Generated Mappings\EntityTypePresentationProperty.cs" />
     <Compile Include="Generated Mappings\EntityTypeViewModelCommand.cs" />
     <Compile Include="Generated Mappings\EntityView.cs" />
-    <Compile Include="Generated Mappings\EventPredicates.cs" />
+    <Compile Include="Generated Mappings\EventPredicate.cs" />
     <Compile Include="Generated Mappings\EventType.cs" />
-    <Compile Include="Generated Mappings\ExpectedEventConstants.cs" />
-    <Compile Include="Generated Mappings\ExpectedEventPredicateParameters.cs" />
-    <Compile Include="Generated Mappings\ExpectedEvents.cs" />
+    <Compile Include="Generated Mappings\ExpectedEvent.cs" />
+    <Compile Include="Generated Mappings\ExpectedEventConstant.cs" />
+    <Compile Include="Generated Mappings\ExpectedEventPredicateParameter.cs" />
     <Compile Include="Generated Mappings\ExpectedStateEventInfo.cs" />
+    <Compile Include="Generated Mappings\Function.cs" />
     <Compile Include="Generated Mappings\FunctionParameter.cs" />
     <Compile Include="Generated Mappings\FunctionParameterConstant.cs" />
-    <Compile Include="Generated Mappings\Functions.cs" />
-    <Compile Include="Generated Mappings\FunctionSetFunctions.cs" />
-    <Compile Include="Generated Mappings\FunctionSets.cs" />
+    <Compile Include="Generated Mappings\FunctionSet.cs" />
+    <Compile Include="Generated Mappings\FunctionSetFunction.cs" />
     <Compile Include="Generated Mappings\Machine.cs" />
     <Compile Include="Generated Mappings\MainEntity.cs" />
     <Compile Include="Generated Mappings\Ordinality.cs" />
-    <Compile Include="Generated Mappings\Parameters.cs" />
+    <Compile Include="Generated Mappings\Parameter.cs" />
     <Compile Include="Generated Mappings\ParentEntity.cs" />
     <Compile Include="Generated Mappings\ParentEntityType.cs" />
     <Compile Include="Generated Mappings\ParentProcess.cs" />
-    <Compile Include="Generated Mappings\PredicateParameters.cs" />
-    <Compile Include="Generated Mappings\Predicates.cs" />
+    <Compile Include="Generated Mappings\Predicate.cs" />
+    <Compile Include="Generated Mappings\PredicateParameter.cs" />
     <Compile Include="Generated Mappings\PresentationPropertyType.cs" />
     <Compile Include="Generated Mappings\PresentationTheme.cs" />
     <Compile Include="Generated Mappings\ProcessAction.cs" />
@@ -139,30 +142,30 @@
     <Compile Include="Generated Mappings\ProcessPath.cs" />
     <Compile Include="Generated Mappings\ProcessState.cs" />
     <Compile Include="Generated Mappings\ProcessStep.cs" />
-    <Compile Include="Generated Mappings\ProcessStepComplexActions.cs" />
+    <Compile Include="Generated Mappings\ProcessStepComplexAction.cs" />
     <Compile Include="Generated Mappings\ProcessStepParentEntity.cs" />
     <Compile Include="Generated Mappings\PropertyValue.cs" />
     <Compile Include="Generated Mappings\PropertyValueOption.cs" />
+    <Compile Include="Generated Mappings\ReferenceType.cs" />
     <Compile Include="Generated Mappings\ReferenceTypeName.cs" />
-    <Compile Include="Generated Mappings\ReferenceTypes.cs" />
     <Compile Include="Generated Mappings\RelationshipType.cs" />
     <Compile Include="Generated Mappings\SourceType.cs" />
     <Compile Include="Generated Mappings\State.cs" />
     <Compile Include="Generated Mappings\StateCommandInfo.cs" />
     <Compile Include="Generated Mappings\StateEventInfo.cs" />
     <Compile Include="Generated Mappings\StateInfo.cs" />
-    <Compile Include="Generated Mappings\StateInfoNotes.cs" />
+    <Compile Include="Generated Mappings\StateInfoNote.cs" />
     <Compile Include="Generated Mappings\SystemProcessStateInfo.cs" />
     <Compile Include="Generated Mappings\Type.cs" />
     <Compile Include="Generated Mappings\TypeArguement.cs" />
     <Compile Include="Generated Mappings\User.cs" />
-    <Compile Include="Generated Mappings\ViewModelCommands.cs" />
+    <Compile Include="Generated Mappings\ViewModelCommand.cs" />
     <Compile Include="Generated Mappings\ViewModelPropertyPresentationType.cs" />
-    <Compile Include="Generated Mappings\ViewModelTypes.cs" />
+    <Compile Include="Generated Mappings\ViewModelType.cs" />
     <Compile Include="Generated Mappings\ViewProperty.cs" />
     <Compile Include="Generated Mappings\ViewPropertyPresentationPropertyType.cs" />
     <Compile Include="Generated Mappings\ViewPropertyTheme.cs" />
-    <Compile Include="Generated Mappings\ViewPropertyValueOptions.cs" />
+    <Compile Include="Generated Mappings\ViewPropertyValueOption.cs" />
     <Compile Include="Generated Mappings\ViewType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -201,13 +204,13 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore">
-      <Version>2.0.1</Version>
+      <Version>2.0.2</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational">
-      <Version>2.0.1</Version>
+      <Version>2.0.2</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer">
-      <Version>2.0.1</Version>
+      <Version>2.0.2</Version>
     </PackageReference>
     <PackageReference Include="morelinq">
       <Version>2.10.0</Version>

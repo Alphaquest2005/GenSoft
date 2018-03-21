@@ -20,12 +20,13 @@ namespace GenSoft.Entities
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 				public virtual DBType DBType {get; set;}
-				public virtual ICollection<Entity> Entity {get; set;}
-				public virtual ICollection<EntityTypeAttributes> EntityTypeAttributes {get; set;}
-				public virtual ICollection<EntityTypeViewModelCommand> EntityTypeViewModelCommand {get; set;}
-				public virtual ICollection<MainEntity> MainEntity {get; set;}
+				public virtual ICollection<Entity> Entities {get; set;}
+				public virtual ICollection<EntityTypeAddinAction> EntityTypeAddinActions {get; set;}
+				public virtual ICollection<EntityTypeAttribute> EntityTypeAttributes {get; set;}
+				public virtual ICollection<EntityTypeViewModelCommand> EntityTypeViewModelCommands {get; set;}
+				public virtual ICollection<MainEntity> MainEntities {get; set;}
 				public virtual ParentEntityType ParentEntityType {get; set;}
-				public virtual ICollection<ParentEntityType> ParentEntityTypes {get; set;}
+				public virtual ICollection<ParentEntityType> Parent_EntityTypes {get; set;}
 		
 			// ---------Parent Relationships
 				public virtual Application Application {get; set;}

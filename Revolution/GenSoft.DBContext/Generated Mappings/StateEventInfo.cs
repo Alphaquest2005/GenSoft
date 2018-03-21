@@ -15,18 +15,18 @@ namespace GenSoft.Mappings
 	{
 		public static void Map(EntityTypeBuilder<Entities.StateEventInfo> entityBuilder)
 		{
-			entityBuilder.ToTable("StateEventInfo", "dbo");
+			entityBuilder.ToTable("StateEventInfos", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").ValueGeneratedNever();	
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").IsRequired();
 			entityBuilder.Property(t => t.ExpectedStateCommandInfoId).HasColumnName("ExpectedStateCommandInfoId").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasMany(x => x.ComplexEventActionExpectedEvents).WithOne(p => p.StateEventInfo).HasForeignKey(c => c.StateEventInfoId).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.ExpectedStateEventInfo).WithOne(p => p.StateEventInfo).HasForeignKey(c => c.ExpectedStateEventInfoId).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasMany(x => x.ComplexEventActionExpectedEvents).WithOne(p => p.StateEventInfo).HasForeignKey(c => c.StateEventInfoId).OnDelete(DeleteBehavior.Restrict);//StateEventInfoId//Id//
+				entityBuilder.HasMany(x => x.ExpectedStateEventInfos).WithOne(p => p.StateEventInfo).HasForeignKey(c => c.ExpectedStateEventInfoId).OnDelete(DeleteBehavior.Restrict);//ExpectedStateEventInfoId//Id//
 	
 				//----------------Parent Properties
 				//entityBuilder.HasOne(p => p.StateInfo StateInfo).WithOne(p => p.StateEventInfo).HasForeignKey<StateInfo>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
-				//entityBuilder.HasOne(p => p.StateCommandInfo StateCommandInfo).WithMany(p => p.StateEventInfo).HasForeignKey(c => c.ExpectedStateCommandInfoId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.StateCommandInfo StateCommandInfo).WithMany(p => p.StateEventInfos).HasForeignKey(c => c.ExpectedStateCommandInfoId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

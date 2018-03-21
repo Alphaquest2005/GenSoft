@@ -21,9 +21,9 @@ namespace GenSoft.Entities
 			// ---------Child Relationships
 		
 			// ---------Parent Relationships
-				public virtual Type ChildTypes {get; set;}
-				public virtual Type ParentTypes {get; set;}
-				public virtual Type Types {get; set;}
+				public virtual Type ChildType {get; set;}
+				public virtual Type ParentType {get; set;}
+				public virtual Type Type {get; set;}
 	
 
 	}

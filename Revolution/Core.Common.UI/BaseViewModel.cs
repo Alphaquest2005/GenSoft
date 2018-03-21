@@ -51,6 +51,7 @@ namespace Core.Common.UI
         public ReactiveProperty<dynamic> SelectedViewModel { get; } = new ReactiveProperty<dynamic>();
         public ReactiveProperty<dynamic> ViewModelState { get; } = new ReactiveProperty<dynamic>(SystemInterfaces.ViewModelState.NotInitialized);
         public ReactiveProperty<dynamic> Visibility { get; } = new ReactiveProperty<dynamic>(System.Windows.Visibility.Collapsed);
+        public ReactiveProperty<dynamic> SelectedAddinAction { get; } = new ReactiveProperty<dynamic>();
 
         public Dictionary<string, ReactiveCommand<IViewModel>> Commands { get; } = new Dictionary<string, ReactiveCommand<IViewModel>>();
 

@@ -15,18 +15,18 @@ namespace GenSoft.Mappings
 	{
 		public static void Map(EntityTypeBuilder<Entities.Entity> entityBuilder)
 		{
-			entityBuilder.ToTable("Entity", "dbo");
+			entityBuilder.ToTable("Entities", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
-			entityBuilder.Property(t => t.EntityTypeId).HasColumnName("EntityTypeId").IsRequired();
 			entityBuilder.Property(t => t.DateTimeCreated).HasColumnName("DateTimeCreated").IsRequired();
+			entityBuilder.Property(t => t.EntityTypeId).HasColumnName("EntityTypeId").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasMany(x => x.Command).WithOne(p => p.Entity).HasForeignKey(c => c.EntityId).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasOne(p => p.Deleted).WithOne(p => p.Entity).HasForeignKey<Deleted>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.EntityAttribute).WithOne(p => p.Entity).HasForeignKey(c => c.EntityId).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasMany(x => x.Commands).WithOne(p => p.Entity).HasForeignKey(c => c.EntityId).OnDelete(DeleteBehavior.Restrict);//EntityId//Id//
+				entityBuilder.HasOne(p => p.Delete).WithOne(p => p.Entity).HasForeignKey<Delete>(c => c.Id).OnDelete(DeleteBehavior.Restrict);//Id//Id//
+				entityBuilder.HasMany(x => x.EntityAttributes).WithOne(p => p.Entity).HasForeignKey(c => c.EntityId).OnDelete(DeleteBehavior.Restrict);//EntityId//Id//
 	
 				//----------------Parent Properties
-				//entityBuilder.HasOne(p => p.EntityType EntityType).WithMany(p => p.Entity).HasForeignKey(c => c.EntityTypeId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.EntityType EntityType).WithMany(p => p.Entities).HasForeignKey(c => c.EntityTypeId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

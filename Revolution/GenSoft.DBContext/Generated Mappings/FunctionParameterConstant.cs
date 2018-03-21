@@ -15,7 +15,7 @@ namespace GenSoft.Mappings
 	{
 		public static void Map(EntityTypeBuilder<Entities.FunctionParameterConstant> entityBuilder)
 		{
-			entityBuilder.ToTable("FunctionParameterConstant", "dbo");
+			entityBuilder.ToTable("FunctionParameterConstants", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.CalculatedPropertyId).HasColumnName("CalculatedPropertyId").IsRequired();
@@ -24,8 +24,8 @@ namespace GenSoft.Mappings
 		//-------------------Navigation Properties -------------------------------//
 	
 				//----------------Parent Properties
-				//entityBuilder.HasOne(p => p.CalculatedProperties CalculatedProperties).WithMany(p => p.FunctionParameterConstant).HasForeignKey(c => c.CalculatedPropertyId).OnDelete(DeleteBehavior.Restrict);
-				//entityBuilder.HasOne(p => p.FunctionParameter FunctionParameter).WithMany(p => p.FunctionParameterConstant).HasForeignKey(c => c.FunctionParameterId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.CalculatedProperty CalculatedProperty).WithMany(p => p.FunctionParameterConstants).HasForeignKey(c => c.CalculatedPropertyId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.FunctionParameter FunctionParameter).WithMany(p => p.FunctionParameterConstants).HasForeignKey(c => c.FunctionParameterId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

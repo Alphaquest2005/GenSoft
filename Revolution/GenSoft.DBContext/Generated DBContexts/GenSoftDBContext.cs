@@ -12,101 +12,104 @@ namespace GenSoft.DBContexts
 {
 	public partial class GenSoftDBContext:DbContext
 	{
-		public DbSet<Entities.Action> Action { get; set; }
-		public DbSet<Entities.ActionParameterConstants> ActionParameterConstants { get; set; }
-		public DbSet<Entities.ActionParameterEntityTypeAttributes> ActionParameterEntityTypeAttributes { get; set; }
-		public DbSet<Entities.ActionParameters> ActionParameters { get; set; }
-		public DbSet<Entities.ActionProperties> ActionProperties { get; set; }
-		public DbSet<Entities.ActionPropertyParameter> ActionPropertyParameter { get; set; }
-		public DbSet<Entities.ActionReferenceTypes> ActionReferenceTypes { get; set; }
+		public DbSet<Entities.ActionParameterConstant> ActionParameterConstants { get; set; }
+		public DbSet<Entities.ActionParameterEntityTypeAttribute> ActionParameterEntityTypeAttributes { get; set; }
+		public DbSet<Entities.ActionParameter> ActionParameters { get; set; }
+		public DbSet<Entities.ActionProperty> ActionProperties { get; set; }
+		public DbSet<Entities.ActionPropertyParameter> ActionPropertyParameters { get; set; }
+		public DbSet<Entities.ActionReferenceType> ActionReferenceTypes { get; set; }
+		public DbSet<Entities.Action> Actions { get; set; }
 		public DbSet<Entities.ActionSet> ActionSet { get; set; }
-		public DbSet<Entities.ActionSetActions> ActionSetActions { get; set; }
+		public DbSet<Entities.ActionSetAction> ActionSetActions { get; set; }
 		public DbSet<Entities.ActionTrigger> ActionTrigger { get; set; }
-		public DbSet<Entities.Agent> Agent { get; set; }
-		public DbSet<Entities.Application> Application { get; set; }
-		public DbSet<Entities.ApplicationSetting> ApplicationSetting { get; set; }
-		public DbSet<Entities.Attributes> Attributes { get; set; }
-		public DbSet<Entities.BaseEntityTypeAttribute> BaseEntityTypeAttribute { get; set; }
-		public DbSet<Entities.CalculatedProperties> CalculatedProperties { get; set; }
-		public DbSet<Entities.CalculatedPropertyParameterEntityTypes> CalculatedPropertyParameterEntityTypes { get; set; }
-		public DbSet<Entities.CalculatedPropertyParameters> CalculatedPropertyParameters { get; set; }
-		public DbSet<Entities.Command> Command { get; set; }
-		public DbSet<Entities.CommandType> CommandType { get; set; }
-		public DbSet<Entities.ComplexEventAction> ComplexEventAction { get; set; }
-		public DbSet<Entities.ComplexEventActionConstant> ComplexEventActionConstant { get; set; }
-		public DbSet<Entities.ComplexEventActionExpectedEvents> ComplexEventActionExpectedEvents { get; set; }
-		public DbSet<Entities.ComplexEventActionProcessActions> ComplexEventActionProcessActions { get; set; }
-		public DbSet<Entities.ConfigurationPropertyPresentation> ConfigurationPropertyPresentation { get; set; }
-		public DbSet<Entities.DatabaseInfo> DatabaseInfo { get; set; }
-		public DbSet<Entities.DataType> DataType { get; set; }
-		public DbSet<Entities.DBType> DBType { get; set; }
-		public DbSet<Entities.DefaultApplication> DefaultApplication { get; set; }
-		public DbSet<Entities.Deleted> Deleted { get; set; }
-		public DbSet<Entities.DomainProcess> DomainProcess { get; set; }
-		public DbSet<Entities.Entity> Entity { get; set; }
-		public DbSet<Entities.EntityAttribute> EntityAttribute { get; set; }
-		public DbSet<Entities.EntityAttributeChange> EntityAttributeChange { get; set; }
-		public DbSet<Entities.EntityId> EntityId { get; set; }
-		public DbSet<Entities.EntityName> EntityName { get; set; }
-		public DbSet<Entities.EntityRelationship> EntityRelationship { get; set; }
-		public DbSet<Entities.EntityType> EntityType { get; set; }
-		public DbSet<Entities.EntityTypeAttributeCache> EntityTypeAttributeCache { get; set; }
-		public DbSet<Entities.EntityTypeAttributes> EntityTypeAttributes { get; set; }
-		public DbSet<Entities.EntityTypePresentationProperty> EntityTypePresentationProperty { get; set; }
-		public DbSet<Entities.EntityTypeViewModelCommand> EntityTypeViewModelCommand { get; set; }
-		public DbSet<Entities.EntityView> EntityView { get; set; }
-		public DbSet<Entities.EventPredicates> EventPredicates { get; set; }
-		public DbSet<Entities.EventType> EventType { get; set; }
-		public DbSet<Entities.ExpectedEventConstants> ExpectedEventConstants { get; set; }
-		public DbSet<Entities.ExpectedEventPredicateParameters> ExpectedEventPredicateParameters { get; set; }
-		public DbSet<Entities.ExpectedEvents> ExpectedEvents { get; set; }
-		public DbSet<Entities.ExpectedStateEventInfo> ExpectedStateEventInfo { get; set; }
-		public DbSet<Entities.FunctionParameter> FunctionParameter { get; set; }
-		public DbSet<Entities.FunctionParameterConstant> FunctionParameterConstant { get; set; }
-		public DbSet<Entities.Functions> Functions { get; set; }
-		public DbSet<Entities.FunctionSetFunctions> FunctionSetFunctions { get; set; }
-		public DbSet<Entities.FunctionSets> FunctionSets { get; set; }
-		public DbSet<Entities.Machine> Machine { get; set; }
-		public DbSet<Entities.MainEntity> MainEntity { get; set; }
-		public DbSet<Entities.Ordinality> Ordinality { get; set; }
-		public DbSet<Entities.Parameters> Parameters { get; set; }
-		public DbSet<Entities.ParentEntity> ParentEntity { get; set; }
-		public DbSet<Entities.ParentEntityType> ParentEntityType { get; set; }
-		public DbSet<Entities.ParentProcess> ParentProcess { get; set; }
-		public DbSet<Entities.PredicateParameters> PredicateParameters { get; set; }
-		public DbSet<Entities.Predicates> Predicates { get; set; }
-		public DbSet<Entities.PresentationPropertyType> PresentationPropertyType { get; set; }
-		public DbSet<Entities.PresentationTheme> PresentationTheme { get; set; }
-		public DbSet<Entities.ProcessAction> ProcessAction { get; set; }
-		public DbSet<Entities.ProcessActionStateCommandInfo> ProcessActionStateCommandInfo { get; set; }
-		public DbSet<Entities.ProcessPath> ProcessPath { get; set; }
-		public DbSet<Entities.ProcessState> ProcessState { get; set; }
-		public DbSet<Entities.ProcessStep> ProcessStep { get; set; }
-		public DbSet<Entities.ProcessStepComplexActions> ProcessStepComplexActions { get; set; }
-		public DbSet<Entities.ProcessStepParentEntity> ProcessStepParentEntity { get; set; }
-		public DbSet<Entities.PropertyValue> PropertyValue { get; set; }
-		public DbSet<Entities.PropertyValueOption> PropertyValueOption { get; set; }
-		public DbSet<Entities.ReferenceTypeName> ReferenceTypeName { get; set; }
-		public DbSet<Entities.ReferenceTypes> ReferenceTypes { get; set; }
-		public DbSet<Entities.RelationshipType> RelationshipType { get; set; }
-		public DbSet<Entities.SourceType> SourceType { get; set; }
-		public DbSet<Entities.State> State { get; set; }
-		public DbSet<Entities.StateCommandInfo> StateCommandInfo { get; set; }
-		public DbSet<Entities.StateEventInfo> StateEventInfo { get; set; }
-		public DbSet<Entities.StateInfo> StateInfo { get; set; }
-		public DbSet<Entities.StateInfoNotes> StateInfoNotes { get; set; }
-		public DbSet<Entities.SystemProcessStateInfo> SystemProcessStateInfo { get; set; }
-		public DbSet<Entities.Type> Type { get; set; }
-		public DbSet<Entities.TypeArguement> TypeArguement { get; set; }
-		public DbSet<Entities.User> User { get; set; }
-		public DbSet<Entities.ViewModelCommands> ViewModelCommands { get; set; }
-		public DbSet<Entities.ViewModelPropertyPresentationType> ViewModelPropertyPresentationType { get; set; }
-		public DbSet<Entities.ViewModelTypes> ViewModelTypes { get; set; }
-		public DbSet<Entities.ViewProperty> ViewProperty { get; set; }
-		public DbSet<Entities.ViewPropertyPresentationPropertyType> ViewPropertyPresentationPropertyType { get; set; }
-		public DbSet<Entities.ViewPropertyTheme> ViewPropertyTheme { get; set; }
-		public DbSet<Entities.ViewPropertyValueOptions> ViewPropertyValueOptions { get; set; }
-		public DbSet<Entities.ViewType> ViewType { get; set; }
+		public DbSet<Entities.AddinAction> AddinActions { get; set; }
+		public DbSet<Entities.Addin> Addins { get; set; }
+		public DbSet<Entities.Agent> Agents { get; set; }
+		public DbSet<Entities.Application> Applications { get; set; }
+		public DbSet<Entities.ApplicationSetting> ApplicationSettings { get; set; }
+		public DbSet<Entities.Attribute> Attributes { get; set; }
+		public DbSet<Entities.BaseEntityTypeAttribute> BaseEntityTypeAttributes { get; set; }
+		public DbSet<Entities.CalculatedProperty> CalculatedProperties { get; set; }
+		public DbSet<Entities.CalculatedPropertyParameterEntityType> CalculatedPropertyParameterEntityTypes { get; set; }
+		public DbSet<Entities.CalculatedPropertyParameter> CalculatedPropertyParameters { get; set; }
+		public DbSet<Entities.Command> Commands { get; set; }
+		public DbSet<Entities.CommandType> CommandTypes { get; set; }
+		public DbSet<Entities.ComplexEventActionConstant> ComplexEventActionConstants { get; set; }
+		public DbSet<Entities.ComplexEventActionExpectedEvent> ComplexEventActionExpectedEvents { get; set; }
+		public DbSet<Entities.ComplexEventActionProcessAction> ComplexEventActionProcessActions { get; set; }
+		public DbSet<Entities.ComplexEventAction> ComplexEventActions { get; set; }
+		public DbSet<Entities.ConfigurationPropertyPresentation> ConfigurationPropertyPresentations { get; set; }
+		public DbSet<Entities.DatabaseInfo> DatabaseInfos { get; set; }
+		public DbSet<Entities.DataType> DataTypes { get; set; }
+		public DbSet<Entities.DBType> DBTypes { get; set; }
+		public DbSet<Entities.DefaultApplication> DefaultApplications { get; set; }
+		public DbSet<Entities.Delete> Deletes { get; set; }
+		public DbSet<Entities.DomainProcess> DomainProcesses { get; set; }
+		public DbSet<Entities.Entity> Entities { get; set; }
+		public DbSet<Entities.EntityAttributeChange> EntityAttributeChanges { get; set; }
+		public DbSet<Entities.EntityAttribute> EntityAttributes { get; set; }
+		public DbSet<Entities.EntityId> EntityIds { get; set; }
+		public DbSet<Entities.EntityName> EntityNames { get; set; }
+		public DbSet<Entities.EntityRelationship> EntityRelationships { get; set; }
+		public DbSet<Entities.EntityTypeAddinAction> EntityTypeAddinActions { get; set; }
+		public DbSet<Entities.EntityTypeAttributeCach> EntityTypeAttributeCaches { get; set; }
+		public DbSet<Entities.EntityTypeAttribute> EntityTypeAttributes { get; set; }
+		public DbSet<Entities.EntityTypePresentationProperty> EntityTypePresentationProperties { get; set; }
+		public DbSet<Entities.EntityType> EntityTypes { get; set; }
+		public DbSet<Entities.EntityTypeViewModelCommand> EntityTypeViewModelCommands { get; set; }
+		public DbSet<Entities.EntityView> EntityViews { get; set; }
+		public DbSet<Entities.EventPredicate> EventPredicates { get; set; }
+		public DbSet<Entities.EventType> EventTypes { get; set; }
+		public DbSet<Entities.ExpectedEventConstant> ExpectedEventConstants { get; set; }
+		public DbSet<Entities.ExpectedEventPredicateParameter> ExpectedEventPredicateParameters { get; set; }
+		public DbSet<Entities.ExpectedEvent> ExpectedEvents { get; set; }
+		public DbSet<Entities.ExpectedStateEventInfo> ExpectedStateEventInfos { get; set; }
+		public DbSet<Entities.FunctionParameterConstant> FunctionParameterConstants { get; set; }
+		public DbSet<Entities.FunctionParameter> FunctionParameters { get; set; }
+		public DbSet<Entities.Function> Functions { get; set; }
+		public DbSet<Entities.FunctionSetFunction> FunctionSetFunctions { get; set; }
+		public DbSet<Entities.FunctionSet> FunctionSets { get; set; }
+		public DbSet<Entities.Machine> Machines { get; set; }
+		public DbSet<Entities.MainEntity> MainEntities { get; set; }
+		public DbSet<Entities.Ordinality> Ordinalities { get; set; }
+		public DbSet<Entities.Parameter> Parameters { get; set; }
+		public DbSet<Entities.ParentEntity> ParentEntities { get; set; }
+		public DbSet<Entities.ParentEntityType> ParentEntityTypes { get; set; }
+		public DbSet<Entities.ParentProcess> ParentProcesses { get; set; }
+		public DbSet<Entities.PredicateParameter> PredicateParameters { get; set; }
+		public DbSet<Entities.Predicate> Predicates { get; set; }
+		public DbSet<Entities.PresentationPropertyType> PresentationPropertyTypes { get; set; }
+		public DbSet<Entities.PresentationTheme> PresentationThemes { get; set; }
+		public DbSet<Entities.ProcessAction> ProcessActions { get; set; }
+		public DbSet<Entities.ProcessActionStateCommandInfo> ProcessActionStateCommandInfos { get; set; }
+		public DbSet<Entities.ProcessPath> ProcessPaths { get; set; }
+		public DbSet<Entities.ProcessState> ProcessStates { get; set; }
+		public DbSet<Entities.ProcessStepComplexAction> ProcessStepComplexActions { get; set; }
+		public DbSet<Entities.ProcessStepParentEntity> ProcessStepParentEntities { get; set; }
+		public DbSet<Entities.ProcessStep> ProcessSteps { get; set; }
+		public DbSet<Entities.PropertyValueOption> PropertyValueOptions { get; set; }
+		public DbSet<Entities.PropertyValue> PropertyValues { get; set; }
+		public DbSet<Entities.ReferenceTypeName> ReferenceTypeNames { get; set; }
+		public DbSet<Entities.ReferenceType> ReferenceTypes { get; set; }
+		public DbSet<Entities.RelationshipType> RelationshipTypes { get; set; }
+		public DbSet<Entities.SourceType> SourceTypes { get; set; }
+		public DbSet<Entities.StateCommandInfo> StateCommandInfos { get; set; }
+		public DbSet<Entities.StateEventInfo> StateEventInfos { get; set; }
+		public DbSet<Entities.StateInfoNote> StateInfoNotes { get; set; }
+		public DbSet<Entities.StateInfo> StateInfos { get; set; }
+		public DbSet<Entities.State> States { get; set; }
+		public DbSet<Entities.SystemProcessStateInfo> SystemProcessStateInfos { get; set; }
+		public DbSet<Entities.TypeArguement> TypeArguements { get; set; }
+		public DbSet<Entities.Type> Types { get; set; }
+		public DbSet<Entities.User> Users { get; set; }
+		public DbSet<Entities.ViewModelCommand> ViewModelCommands { get; set; }
+		public DbSet<Entities.ViewModelPropertyPresentationType> ViewModelPropertyPresentationTypes { get; set; }
+		public DbSet<Entities.ViewModelType> ViewModelTypes { get; set; }
+		public DbSet<Entities.ViewProperty> ViewProperties { get; set; }
+		public DbSet<Entities.ViewPropertyPresentationPropertyType> ViewPropertyPresentationPropertyTypes { get; set; }
+		public DbSet<Entities.ViewPropertyTheme> ViewPropertyThemes { get; set; }
+		public DbSet<Entities.ViewPropertyValueOption> ViewPropertyValueOptions { get; set; }
+		public DbSet<Entities.ViewType> ViewTypes { get; set; }
 	
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
@@ -116,100 +119,103 @@ namespace GenSoft.DBContexts
 	
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
-				ActionMap.Map(modelBuilder.Entity<Entities.Action>());
-				ActionParameterConstantsMap.Map(modelBuilder.Entity<Entities.ActionParameterConstants>());
-				ActionParameterEntityTypeAttributesMap.Map(modelBuilder.Entity<Entities.ActionParameterEntityTypeAttributes>());
-				ActionParametersMap.Map(modelBuilder.Entity<Entities.ActionParameters>());
-				ActionPropertiesMap.Map(modelBuilder.Entity<Entities.ActionProperties>());
+				ActionParameterConstantMap.Map(modelBuilder.Entity<Entities.ActionParameterConstant>());
+				ActionParameterEntityTypeAttributeMap.Map(modelBuilder.Entity<Entities.ActionParameterEntityTypeAttribute>());
+				ActionParameterMap.Map(modelBuilder.Entity<Entities.ActionParameter>());
+				ActionPropertyMap.Map(modelBuilder.Entity<Entities.ActionProperty>());
 				ActionPropertyParameterMap.Map(modelBuilder.Entity<Entities.ActionPropertyParameter>());
-				ActionReferenceTypesMap.Map(modelBuilder.Entity<Entities.ActionReferenceTypes>());
+				ActionReferenceTypeMap.Map(modelBuilder.Entity<Entities.ActionReferenceType>());
+				ActionMap.Map(modelBuilder.Entity<Entities.Action>());
 				ActionSetMap.Map(modelBuilder.Entity<Entities.ActionSet>());
-				ActionSetActionsMap.Map(modelBuilder.Entity<Entities.ActionSetActions>());
+				ActionSetActionMap.Map(modelBuilder.Entity<Entities.ActionSetAction>());
 				ActionTriggerMap.Map(modelBuilder.Entity<Entities.ActionTrigger>());
+				AddinActionMap.Map(modelBuilder.Entity<Entities.AddinAction>());
+				AddinMap.Map(modelBuilder.Entity<Entities.Addin>());
 				AgentMap.Map(modelBuilder.Entity<Entities.Agent>());
 				ApplicationMap.Map(modelBuilder.Entity<Entities.Application>());
 				ApplicationSettingMap.Map(modelBuilder.Entity<Entities.ApplicationSetting>());
-				AttributesMap.Map(modelBuilder.Entity<Entities.Attributes>());
+				AttributeMap.Map(modelBuilder.Entity<Entities.Attribute>());
 				BaseEntityTypeAttributeMap.Map(modelBuilder.Entity<Entities.BaseEntityTypeAttribute>());
-				CalculatedPropertiesMap.Map(modelBuilder.Entity<Entities.CalculatedProperties>());
-				CalculatedPropertyParameterEntityTypesMap.Map(modelBuilder.Entity<Entities.CalculatedPropertyParameterEntityTypes>());
-				CalculatedPropertyParametersMap.Map(modelBuilder.Entity<Entities.CalculatedPropertyParameters>());
+				CalculatedPropertyMap.Map(modelBuilder.Entity<Entities.CalculatedProperty>());
+				CalculatedPropertyParameterEntityTypeMap.Map(modelBuilder.Entity<Entities.CalculatedPropertyParameterEntityType>());
+				CalculatedPropertyParameterMap.Map(modelBuilder.Entity<Entities.CalculatedPropertyParameter>());
 				CommandMap.Map(modelBuilder.Entity<Entities.Command>());
 				CommandTypeMap.Map(modelBuilder.Entity<Entities.CommandType>());
-				ComplexEventActionMap.Map(modelBuilder.Entity<Entities.ComplexEventAction>());
 				ComplexEventActionConstantMap.Map(modelBuilder.Entity<Entities.ComplexEventActionConstant>());
-				ComplexEventActionExpectedEventsMap.Map(modelBuilder.Entity<Entities.ComplexEventActionExpectedEvents>());
-				ComplexEventActionProcessActionsMap.Map(modelBuilder.Entity<Entities.ComplexEventActionProcessActions>());
+				ComplexEventActionExpectedEventMap.Map(modelBuilder.Entity<Entities.ComplexEventActionExpectedEvent>());
+				ComplexEventActionProcessActionMap.Map(modelBuilder.Entity<Entities.ComplexEventActionProcessAction>());
+				ComplexEventActionMap.Map(modelBuilder.Entity<Entities.ComplexEventAction>());
 				ConfigurationPropertyPresentationMap.Map(modelBuilder.Entity<Entities.ConfigurationPropertyPresentation>());
 				DatabaseInfoMap.Map(modelBuilder.Entity<Entities.DatabaseInfo>());
 				DataTypeMap.Map(modelBuilder.Entity<Entities.DataType>());
 				DBTypeMap.Map(modelBuilder.Entity<Entities.DBType>());
 				DefaultApplicationMap.Map(modelBuilder.Entity<Entities.DefaultApplication>());
-				DeletedMap.Map(modelBuilder.Entity<Entities.Deleted>());
+				DeleteMap.Map(modelBuilder.Entity<Entities.Delete>());
 				DomainProcessMap.Map(modelBuilder.Entity<Entities.DomainProcess>());
 				EntityMap.Map(modelBuilder.Entity<Entities.Entity>());
-				EntityAttributeMap.Map(modelBuilder.Entity<Entities.EntityAttribute>());
 				EntityAttributeChangeMap.Map(modelBuilder.Entity<Entities.EntityAttributeChange>());
+				EntityAttributeMap.Map(modelBuilder.Entity<Entities.EntityAttribute>());
 				EntityIdMap.Map(modelBuilder.Entity<Entities.EntityId>());
 				EntityNameMap.Map(modelBuilder.Entity<Entities.EntityName>());
 				EntityRelationshipMap.Map(modelBuilder.Entity<Entities.EntityRelationship>());
-				EntityTypeMap.Map(modelBuilder.Entity<Entities.EntityType>());
-				EntityTypeAttributeCacheMap.Map(modelBuilder.Entity<Entities.EntityTypeAttributeCache>());
-				EntityTypeAttributesMap.Map(modelBuilder.Entity<Entities.EntityTypeAttributes>());
+				EntityTypeAddinActionMap.Map(modelBuilder.Entity<Entities.EntityTypeAddinAction>());
+				EntityTypeAttributeCachMap.Map(modelBuilder.Entity<Entities.EntityTypeAttributeCach>());
+				EntityTypeAttributeMap.Map(modelBuilder.Entity<Entities.EntityTypeAttribute>());
 				EntityTypePresentationPropertyMap.Map(modelBuilder.Entity<Entities.EntityTypePresentationProperty>());
+				EntityTypeMap.Map(modelBuilder.Entity<Entities.EntityType>());
 				EntityTypeViewModelCommandMap.Map(modelBuilder.Entity<Entities.EntityTypeViewModelCommand>());
 				EntityViewMap.Map(modelBuilder.Entity<Entities.EntityView>());
-				EventPredicatesMap.Map(modelBuilder.Entity<Entities.EventPredicates>());
+				EventPredicateMap.Map(modelBuilder.Entity<Entities.EventPredicate>());
 				EventTypeMap.Map(modelBuilder.Entity<Entities.EventType>());
-				ExpectedEventConstantsMap.Map(modelBuilder.Entity<Entities.ExpectedEventConstants>());
-				ExpectedEventPredicateParametersMap.Map(modelBuilder.Entity<Entities.ExpectedEventPredicateParameters>());
-				ExpectedEventsMap.Map(modelBuilder.Entity<Entities.ExpectedEvents>());
+				ExpectedEventConstantMap.Map(modelBuilder.Entity<Entities.ExpectedEventConstant>());
+				ExpectedEventPredicateParameterMap.Map(modelBuilder.Entity<Entities.ExpectedEventPredicateParameter>());
+				ExpectedEventMap.Map(modelBuilder.Entity<Entities.ExpectedEvent>());
 				ExpectedStateEventInfoMap.Map(modelBuilder.Entity<Entities.ExpectedStateEventInfo>());
-				FunctionParameterMap.Map(modelBuilder.Entity<Entities.FunctionParameter>());
 				FunctionParameterConstantMap.Map(modelBuilder.Entity<Entities.FunctionParameterConstant>());
-				FunctionsMap.Map(modelBuilder.Entity<Entities.Functions>());
-				FunctionSetFunctionsMap.Map(modelBuilder.Entity<Entities.FunctionSetFunctions>());
-				FunctionSetsMap.Map(modelBuilder.Entity<Entities.FunctionSets>());
+				FunctionParameterMap.Map(modelBuilder.Entity<Entities.FunctionParameter>());
+				FunctionMap.Map(modelBuilder.Entity<Entities.Function>());
+				FunctionSetFunctionMap.Map(modelBuilder.Entity<Entities.FunctionSetFunction>());
+				FunctionSetMap.Map(modelBuilder.Entity<Entities.FunctionSet>());
 				MachineMap.Map(modelBuilder.Entity<Entities.Machine>());
 				MainEntityMap.Map(modelBuilder.Entity<Entities.MainEntity>());
 				OrdinalityMap.Map(modelBuilder.Entity<Entities.Ordinality>());
-				ParametersMap.Map(modelBuilder.Entity<Entities.Parameters>());
+				ParameterMap.Map(modelBuilder.Entity<Entities.Parameter>());
 				ParentEntityMap.Map(modelBuilder.Entity<Entities.ParentEntity>());
 				ParentEntityTypeMap.Map(modelBuilder.Entity<Entities.ParentEntityType>());
 				ParentProcessMap.Map(modelBuilder.Entity<Entities.ParentProcess>());
-				PredicateParametersMap.Map(modelBuilder.Entity<Entities.PredicateParameters>());
-				PredicatesMap.Map(modelBuilder.Entity<Entities.Predicates>());
+				PredicateParameterMap.Map(modelBuilder.Entity<Entities.PredicateParameter>());
+				PredicateMap.Map(modelBuilder.Entity<Entities.Predicate>());
 				PresentationPropertyTypeMap.Map(modelBuilder.Entity<Entities.PresentationPropertyType>());
 				PresentationThemeMap.Map(modelBuilder.Entity<Entities.PresentationTheme>());
 				ProcessActionMap.Map(modelBuilder.Entity<Entities.ProcessAction>());
 				ProcessActionStateCommandInfoMap.Map(modelBuilder.Entity<Entities.ProcessActionStateCommandInfo>());
 				ProcessPathMap.Map(modelBuilder.Entity<Entities.ProcessPath>());
 				ProcessStateMap.Map(modelBuilder.Entity<Entities.ProcessState>());
-				ProcessStepMap.Map(modelBuilder.Entity<Entities.ProcessStep>());
-				ProcessStepComplexActionsMap.Map(modelBuilder.Entity<Entities.ProcessStepComplexActions>());
+				ProcessStepComplexActionMap.Map(modelBuilder.Entity<Entities.ProcessStepComplexAction>());
 				ProcessStepParentEntityMap.Map(modelBuilder.Entity<Entities.ProcessStepParentEntity>());
-				PropertyValueMap.Map(modelBuilder.Entity<Entities.PropertyValue>());
+				ProcessStepMap.Map(modelBuilder.Entity<Entities.ProcessStep>());
 				PropertyValueOptionMap.Map(modelBuilder.Entity<Entities.PropertyValueOption>());
+				PropertyValueMap.Map(modelBuilder.Entity<Entities.PropertyValue>());
 				ReferenceTypeNameMap.Map(modelBuilder.Entity<Entities.ReferenceTypeName>());
-				ReferenceTypesMap.Map(modelBuilder.Entity<Entities.ReferenceTypes>());
+				ReferenceTypeMap.Map(modelBuilder.Entity<Entities.ReferenceType>());
 				RelationshipTypeMap.Map(modelBuilder.Entity<Entities.RelationshipType>());
 				SourceTypeMap.Map(modelBuilder.Entity<Entities.SourceType>());
-				StateMap.Map(modelBuilder.Entity<Entities.State>());
 				StateCommandInfoMap.Map(modelBuilder.Entity<Entities.StateCommandInfo>());
 				StateEventInfoMap.Map(modelBuilder.Entity<Entities.StateEventInfo>());
+				StateInfoNoteMap.Map(modelBuilder.Entity<Entities.StateInfoNote>());
 				StateInfoMap.Map(modelBuilder.Entity<Entities.StateInfo>());
-				StateInfoNotesMap.Map(modelBuilder.Entity<Entities.StateInfoNotes>());
+				StateMap.Map(modelBuilder.Entity<Entities.State>());
 				SystemProcessStateInfoMap.Map(modelBuilder.Entity<Entities.SystemProcessStateInfo>());
-				TypeMap.Map(modelBuilder.Entity<Entities.Type>());
 				TypeArguementMap.Map(modelBuilder.Entity<Entities.TypeArguement>());
+				TypeMap.Map(modelBuilder.Entity<Entities.Type>());
 				UserMap.Map(modelBuilder.Entity<Entities.User>());
-				ViewModelCommandsMap.Map(modelBuilder.Entity<Entities.ViewModelCommands>());
+				ViewModelCommandMap.Map(modelBuilder.Entity<Entities.ViewModelCommand>());
 				ViewModelPropertyPresentationTypeMap.Map(modelBuilder.Entity<Entities.ViewModelPropertyPresentationType>());
-				ViewModelTypesMap.Map(modelBuilder.Entity<Entities.ViewModelTypes>());
+				ViewModelTypeMap.Map(modelBuilder.Entity<Entities.ViewModelType>());
 				ViewPropertyMap.Map(modelBuilder.Entity<Entities.ViewProperty>());
 				ViewPropertyPresentationPropertyTypeMap.Map(modelBuilder.Entity<Entities.ViewPropertyPresentationPropertyType>());
 				ViewPropertyThemeMap.Map(modelBuilder.Entity<Entities.ViewPropertyTheme>());
-				ViewPropertyValueOptionsMap.Map(modelBuilder.Entity<Entities.ViewPropertyValueOptions>());
+				ViewPropertyValueOptionMap.Map(modelBuilder.Entity<Entities.ViewPropertyValueOption>());
 				ViewTypeMap.Map(modelBuilder.Entity<Entities.ViewType>());
 			}
 	}

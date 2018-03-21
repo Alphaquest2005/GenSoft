@@ -15,16 +15,16 @@ namespace GenSoft.Mappings
 	{
 		public static void Map(EntityTypeBuilder<Entities.Application> entityBuilder)
 		{
-			entityBuilder.ToTable("Application", "dbo");
+			entityBuilder.ToTable("Applications", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.Name).HasColumnName("Name").IsRequired().HasMaxLength(50);
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasMany(x => x.ApplicationSetting).WithOne(p => p.Application).HasForeignKey(c => c.ApplicationId).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasOne(p => p.DatabaseInfo).WithOne(p => p.Application).HasForeignKey<DatabaseInfo>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasOne(p => p.DefaultApplication).WithOne(p => p.Application).HasForeignKey<DefaultApplication>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.DomainProcess).WithOne(p => p.Application).HasForeignKey(c => c.ApplicationId).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.EntityType).WithOne(p => p.Application).HasForeignKey(c => c.ApplicationId).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasMany(x => x.ApplicationSettings).WithOne(p => p.Application).HasForeignKey(c => c.ApplicationId).OnDelete(DeleteBehavior.Restrict);//ApplicationId//Id//
+				entityBuilder.HasOne(p => p.DatabaseInfo).WithOne(p => p.Application).HasForeignKey<DatabaseInfo>(c => c.Id).OnDelete(DeleteBehavior.Restrict);//Id//Id//
+				entityBuilder.HasOne(p => p.DefaultApplication).WithOne(p => p.Application).HasForeignKey<DefaultApplication>(c => c.Id).OnDelete(DeleteBehavior.Restrict);//Id//Id//
+				entityBuilder.HasMany(x => x.DomainProcesses).WithOne(p => p.Application).HasForeignKey(c => c.ApplicationId).OnDelete(DeleteBehavior.Restrict);//ApplicationId//Id//
+				entityBuilder.HasMany(x => x.EntityTypes).WithOne(p => p.Application).HasForeignKey(c => c.ApplicationId).OnDelete(DeleteBehavior.Restrict);//ApplicationId//Id//
 	
 				//----------------Parent Properties
 	

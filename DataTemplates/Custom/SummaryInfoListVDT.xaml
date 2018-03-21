@@ -17,7 +17,25 @@
             <DockPanel>
                 <ScrollViewer DockPanel.Dock="Left" Margin="0,10">
                 <StackPanel >
-                    <StackPanel Orientation="Vertical" Width="123" Margin="10">
+                    <StackPanel Orientation="Vertical" Width="123">
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Text="Actions" FontSize="16"/>
+                            <ComboBox
+                                ItemsSource="{Binding ViewInfo.EntityType.Actions}"
+                                SelectedItem="{Binding SelectedAddinAction.Value}"
+                                Margin="10,5,5,5" Width="50" />
+                                
+                            
+
+
+                        </StackPanel>
+                        <ListBox>
+                            <ListBoxItem Content=" Previous Selection 1"/>
+                            <ListBoxItem Content=" Previous Selection 2"/>
+                            <ListBoxItem Content=" Previous Selection 3"/>
+                        </ListBox>
+                    </StackPanel>
+                 <!--   <StackPanel Orientation="Vertical" Width="123" Margin="10">
                         <StackPanel Orientation="Horizontal" >
                             <TextBlock Text="Filter By" FontSize="16"/>
                             <ComboBox Margin="10,5,5,5" Width="50" >
@@ -101,25 +119,9 @@
                             <ListBoxItem Content=" Previous Selection 2"/>
                             <ListBoxItem Content=" Previous Selection 3"/>
                         </ListBox>
-                    </StackPanel>
-                    <StackPanel Orientation="Vertical" Width="123">
-                        <StackPanel Orientation="Horizontal" >
-                            <TextBlock Text="Actions" FontSize="16"/>
-                            <ComboBox Margin="10,5,5,5" Width="50" >
-                                <ComboBoxItem Content="Item 1"/>
-                                <ComboBoxItem Content="Item 2"/>
-                                <ComboBoxItem Content="Item 3"/>
-                            </ComboBox>
-
-
-                        </StackPanel>
-                        <ListBox>
-                            <ListBoxItem Content=" Previous Selection 1"/>
-                            <ListBoxItem Content=" Previous Selection 2"/>
-                            <ListBoxItem Content=" Previous Selection 3"/>
-                        </ListBox>
-                    </StackPanel>
-                    <StackPanel Orientation="Vertical" Width="123">
+                    </StackPanel>-->
+                    
+                    <!--<StackPanel Orientation="Vertical" Width="123">
                         <StackPanel Orientation="Horizontal" >
                             <TextBlock Text="Switch View" FontSize="16"/>
                             <ComboBox Margin="10,5,5,5" Width="50" >
@@ -135,7 +137,7 @@
                             <ListBoxItem Content=" Previous Selection 2"/>
                             <ListBoxItem Content=" Previous Selection 3"/>
                         </ListBox>
-                    </StackPanel>
+                    </StackPanel>-->
                 </StackPanel>
                 </ScrollViewer>
                 <Grid DockPanel.Dock="Left" Margin="0,10">

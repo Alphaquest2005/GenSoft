@@ -22,11 +22,11 @@ namespace GenSoft.Entities
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
-				public virtual ICollection<EntityView> EntityView {get; set;}
+				public virtual ICollection<EntityView> EntityViews {get; set;}
 				public virtual MainEntity MainEntity {get; set;}
 				public virtual ICollection<ProcessPath> NextProcessSteps {get; set;}
 				public virtual ICollection<ProcessPath> ProcessSteps {get; set;}
-				public virtual ICollection<ProcessStepComplexActions> ProcessStepComplexActions {get; set;}
+				public virtual ICollection<ProcessStepComplexAction> ProcessStepComplexActions {get; set;}
 		
 			// ---------Parent Relationships
 				public virtual DomainProcess DomainProcess {get; set;}

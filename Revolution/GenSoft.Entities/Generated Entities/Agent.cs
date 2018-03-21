@@ -17,8 +17,8 @@ namespace GenSoft.Entities
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
-				public virtual ICollection<DomainProcess> DomainProcess {get; set;}
-				public virtual ICollection<User> User {get; set;}
+				public virtual ICollection<DomainProcess> DomainProcesses {get; set;}
+				public virtual ICollection<User> Users {get; set;}
 		
 			// ---------Parent Relationships
 	

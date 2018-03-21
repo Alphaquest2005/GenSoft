@@ -17,8 +17,8 @@ namespace GenSoft.Entities
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
-				public virtual ICollection<ActionProperties> ActionProperties {get; set;}
-				public virtual ICollection<ActionSetActions> ActionSetActions {get; set;}
+				public virtual ICollection<ActionProperty> ActionProperties {get; set;}
+				public virtual ICollection<ActionSetAction> ActionSetActions {get; set;}
 		
 			// ---------Parent Relationships
 	

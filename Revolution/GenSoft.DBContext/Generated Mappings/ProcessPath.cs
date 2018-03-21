@@ -15,7 +15,7 @@ namespace GenSoft.Mappings
 	{
 		public static void Map(EntityTypeBuilder<Entities.ProcessPath> entityBuilder)
 		{
-			entityBuilder.ToTable("ProcessPath", "dbo");
+			entityBuilder.ToTable("ProcessPaths", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.NextProcessStepId).HasColumnName("NextProcessStepId").IsRequired();
@@ -23,8 +23,8 @@ namespace GenSoft.Mappings
 		//-------------------Navigation Properties -------------------------------//
 	
 				//----------------Parent Properties
-				//entityBuilder.HasOne(p => p.ProcessStep NextProcessStep).WithMany(p => p.ProcessPath).HasForeignKey(c => c.NextProcessStepId).OnDelete(DeleteBehavior.Restrict);
-				//entityBuilder.HasOne(p => p.ProcessStep ProcessStep).WithMany(p => p.ProcessPath).HasForeignKey(c => c.ProcessStepId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.ProcessStep NextProcessStep).WithMany(p => p.ProcessPaths).HasForeignKey(c => c.NextProcessStepId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.ProcessStep ProcessStep).WithMany(p => p.ProcessPaths).HasForeignKey(c => c.ProcessStepId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

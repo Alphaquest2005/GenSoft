@@ -13,14 +13,14 @@ namespace GenSoft.Entities
 {
 	public partial class ParentEntityType: BaseEntity, IParentEntityType
 	{
-		public virtual int ParentEntityTypeId { get; set; }
+		public virtual int Parent_EntityTypeId { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 		
 			// ---------Parent Relationships
 				public virtual EntityType EntityType {get; set;}
-				public virtual EntityType ParentEntityTypes {get; set;}
+				public virtual EntityType Parent_EntityType {get; set;}
 	
 
 	}

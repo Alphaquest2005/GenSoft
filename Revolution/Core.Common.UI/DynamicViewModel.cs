@@ -87,11 +87,12 @@ namespace Core.Common.UI
 
         public ReactiveProperty<RowState> RowState { get; private set; } = new ReactiveProperty<RowState>(SystemInterfaces.RowState.Loaded);
         public ObservableList<IViewModel> ViewModels { get; private set; } = new ObservableBindingList<IViewModel>();
+        
         public ReactiveProperty<dynamic> SelectedViewModel { get; private set; } = new ReactiveProperty<dynamic>();
         public ReactiveProperty<dynamic> ViewModelState { get; private set; } = new ReactiveProperty<dynamic>(SystemInterfaces.ViewModelState.NotInitialized);
         public ReactiveProperty<dynamic> Visibility { get; private set; } = new ReactiveProperty<dynamic>(System.Windows.Visibility.Collapsed);
+        public ReactiveProperty<dynamic> SelectedAddinAction { get; } = new ReactiveProperty<dynamic>();
 
-       
 
         public override bool TryGetMember(GetMemberBinder binder, out object result)
         {

@@ -77,6 +77,10 @@
       <Project>{f90cc1c1-1f4e-4719-817b-9a14ce56a5ce}</Project>
       <Name>GenSoft.Interface</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RevolutionEntities\RevolutionEntities.csproj">
+      <Project>{C827930A-0D05-4EE2-B9AC-DB1CF5144E16}</Project>
+      <Name>RevolutionEntities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SystemInterfaces\SystemInterfaces.csproj">
       <Project>{e3842263-e081-49ba-a1b4-bbe82b24e2db}</Project>
       <Name>SystemInterfaces</Name>

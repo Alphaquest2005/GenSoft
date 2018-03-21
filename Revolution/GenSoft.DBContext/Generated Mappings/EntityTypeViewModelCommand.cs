@@ -15,7 +15,7 @@ namespace GenSoft.Mappings
 	{
 		public static void Map(EntityTypeBuilder<Entities.EntityTypeViewModelCommand> entityBuilder)
 		{
-			entityBuilder.ToTable("EntityTypeViewModelCommand", "dbo");
+			entityBuilder.ToTable("EntityTypeViewModelCommands", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.EntityTypeId).HasColumnName("EntityTypeId").IsRequired();
@@ -23,8 +23,8 @@ namespace GenSoft.Mappings
 		//-------------------Navigation Properties -------------------------------//
 	
 				//----------------Parent Properties
-				//entityBuilder.HasOne(p => p.EntityType EntityType).WithMany(p => p.EntityTypeViewModelCommand).HasForeignKey(c => c.EntityTypeId).OnDelete(DeleteBehavior.Restrict);
-				//entityBuilder.HasOne(p => p.ViewModelCommands ViewModelCommands).WithMany(p => p.EntityTypeViewModelCommand).HasForeignKey(c => c.ViewModelCommandId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.EntityType EntityType).WithMany(p => p.EntityTypeViewModelCommands).HasForeignKey(c => c.EntityTypeId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.ViewModelCommand ViewModelCommand).WithMany(p => p.EntityTypeViewModelCommands).HasForeignKey(c => c.ViewModelCommandId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

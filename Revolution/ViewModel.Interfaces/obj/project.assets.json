@@ -60,7 +60,7 @@
           "lib/net46/JB.Common.Reactive.dll": {}
         }
       },
-      "ReactiveProperty/4.2.0": {
+      "ReactiveProperty/4.2.1": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -224,7 +224,7 @@
           "lib/net46/JB.Common.Reactive.dll": {}
         }
       },
-      "ReactiveProperty/4.2.0": {
+      "ReactiveProperty/4.2.1": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -388,7 +388,7 @@
           "lib/net46/JB.Common.Reactive.dll": {}
         }
       },
-      "ReactiveProperty/4.2.0": {
+      "ReactiveProperty/4.2.1": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -552,7 +552,7 @@
           "lib/net46/JB.Common.Reactive.dll": {}
         }
       },
-      "ReactiveProperty/4.2.0": {
+      "ReactiveProperty/4.2.1": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -713,10 +713,10 @@
         "lib/net46/JB.Common.Reactive.dll"
       ]
     },
-    "ReactiveProperty/4.2.0": {
-      "sha512": "v1dxPk0HKvheDCLmTXVHqC8bXU8h8bX0OiNQH1GOU6dePt903OSQSAkHYG0kjfy89npIY/8n9/KlfQaYiqXwcw==",
+    "ReactiveProperty/4.2.1": {
+      "sha512": "T5Im1HYo3/g/ohofwLzzQG7MqPxC1eFpQpu4wt70eLltlmXAT19yVx+PViLK61z5akLWdgKcLtLuqCwrvzRZLg==",
       "type": "package",
-      "path": "reactiveproperty/4.2.0",
+      "path": "reactiveproperty/4.2.1",
       "files": [
         "LICENSE.txt",
         "Snippet/csharp5/AsyncReactiveCommand.snippet",
@@ -774,7 +774,7 @@
         "lib/uap10.0/ReactiveProperty.dll",
         "lib/uap10.0/ReactiveProperty.pdb",
         "lib/uap10.0/ReactiveProperty.xml",
-        "reactiveproperty.4.2.0.nupkg.sha512",
+        "reactiveproperty.4.2.1.nupkg.sha512",
         "reactiveproperty.nuspec"
       ]
     },
@@ -899,7 +899,7 @@
       "FluentValidation.Net35 >= 1.0.1",
       "JB.Common.Collections.Reactive >= 0.8.107-pre",
       "JB.Common.Reactive >= 0.8.107-pre",
-      "ReactiveProperty >= 4.2.0",
+      "ReactiveProperty >= 4.2.1",
       "SystemInterfaces >= 1.0.0"
     ]
   },
@@ -954,7 +954,7 @@
           },
           "ReactiveProperty": {
             "target": "Package",
-            "version": "[4.2.0, )"
+            "version": "[4.2.1, )"
           }
         }
       }

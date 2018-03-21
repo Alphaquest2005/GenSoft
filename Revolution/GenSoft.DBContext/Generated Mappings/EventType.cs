@@ -15,14 +15,14 @@ namespace GenSoft.Mappings
 	{
 		public static void Map(EntityTypeBuilder<Entities.EventType> entityBuilder)
 		{
-			entityBuilder.ToTable("EventType", "dbo");
+			entityBuilder.ToTable("EventTypes", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").ValueGeneratedNever();	
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasMany(x => x.ComplexEventActionProcessActions).WithOne(p => p.EventType).HasForeignKey(c => c.ExpectedEventTypeId).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.EventPredicates).WithOne(p => p.EventType).HasForeignKey(c => c.EventTypeId).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.ExpectedEvents).WithOne(p => p.EventType).HasForeignKey(c => c.EventTypeId).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasMany(x => x.ComplexEventActionProcessActions).WithOne(p => p.EventType).HasForeignKey(c => c.ExpectedEventTypeId).OnDelete(DeleteBehavior.Restrict);//ExpectedEventTypeId//Id//
+				entityBuilder.HasMany(x => x.EventPredicates).WithOne(p => p.EventType).HasForeignKey(c => c.EventTypeId).OnDelete(DeleteBehavior.Restrict);//EventTypeId//Id//
+				entityBuilder.HasMany(x => x.ExpectedEvents).WithOne(p => p.EventType).HasForeignKey(c => c.EventTypeId).OnDelete(DeleteBehavior.Restrict);//EventTypeId//Id//
 	
 				//----------------Parent Properties
 				//entityBuilder.HasOne(p => p.Type Type).WithOne(p => p.EventType).HasForeignKey<Type>(c => c.Id).OnDelete(DeleteBehavior.Restrict);

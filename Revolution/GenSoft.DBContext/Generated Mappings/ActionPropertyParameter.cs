@@ -15,18 +15,18 @@ namespace GenSoft.Mappings
 	{
 		public static void Map(EntityTypeBuilder<Entities.ActionPropertyParameter> entityBuilder)
 		{
-			entityBuilder.ToTable("ActionPropertyParameter", "dbo");
+			entityBuilder.ToTable("ActionPropertyParameters", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.ActionParameterId).HasColumnName("ActionParameterId").IsRequired();
 			entityBuilder.Property(t => t.ActionPropertyId).HasColumnName("ActionPropertyId").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasOne(p => p.ActionParameterConstants).WithOne(p => p.ActionPropertyParameter).HasForeignKey<ActionParameterConstants>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.ActionParameterEntityTypeAttributes).WithOne(p => p.ActionPropertyParameter).HasForeignKey(c => c.ActionPropertyParameterId).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasOne(p => p.ActionParameterConstant).WithOne(p => p.ActionPropertyParameter).HasForeignKey<ActionParameterConstant>(c => c.Id).OnDelete(DeleteBehavior.Restrict);//Id//Id//
+				entityBuilder.HasMany(x => x.ActionParameterEntityTypeAttributes).WithOne(p => p.ActionPropertyParameter).HasForeignKey(c => c.ActionPropertyParameterId).OnDelete(DeleteBehavior.Restrict);//ActionPropertyParameterId//Id//
 	
 				//----------------Parent Properties
-				//entityBuilder.HasOne(p => p.ActionParameters ActionParameters).WithMany(p => p.ActionPropertyParameter).HasForeignKey(c => c.ActionParameterId).OnDelete(DeleteBehavior.Restrict);
-				//entityBuilder.HasOne(p => p.ActionProperties ActionProperties).WithMany(p => p.ActionPropertyParameter).HasForeignKey(c => c.ActionPropertyId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.ActionParameter ActionParameter).WithMany(p => p.ActionPropertyParameters).HasForeignKey(c => c.ActionParameterId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.ActionProperty ActionProperty).WithMany(p => p.ActionPropertyParameters).HasForeignKey(c => c.ActionPropertyId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

@@ -15,7 +15,7 @@ namespace GenSoft.Mappings
 	{
 		public static void Map(EntityTypeBuilder<Entities.ProcessStep> entityBuilder)
 		{
-			entityBuilder.ToTable("ProcessStep", "dbo");
+			entityBuilder.ToTable("ProcessSteps", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.DomainProcessId).HasColumnName("DomainProcessId").IsRequired();
@@ -25,14 +25,14 @@ namespace GenSoft.Mappings
 			entityBuilder.Property(t => t.Notes).HasColumnName("Notes").IsRequired().HasMaxLength(255);
 			entityBuilder.Property(t => t.Symbol).HasColumnName("Symbol").IsRequired().HasMaxLength(10);
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasMany(x => x.EntityView).WithOne(p => p.ProcessStep).HasForeignKey(c => c.ProcessStepId).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasOne(p => p.MainEntity).WithOne(p => p.ProcessStep).HasForeignKey<MainEntity>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.NextProcessSteps).WithOne(p => p.NextProcessSteps).HasForeignKey(c => c.NextProcessStepId).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.ProcessSteps).WithOne(p => p.ProcessSteps).HasForeignKey(c => c.ProcessStepId).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.ProcessStepComplexActions).WithOne(p => p.ProcessStep).HasForeignKey(c => c.ProcessStepId).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasMany(x => x.EntityViews).WithOne(p => p.ProcessStep).HasForeignKey(c => c.ProcessStepId).OnDelete(DeleteBehavior.Restrict);//ProcessStepId//Id//
+				entityBuilder.HasOne(p => p.MainEntity).WithOne(p => p.ProcessStep).HasForeignKey<MainEntity>(c => c.Id).OnDelete(DeleteBehavior.Restrict);//Id//Id//
+				entityBuilder.HasMany(x => x.NextProcessSteps).WithOne(p => p.ProcessStep).HasForeignKey(c => c.NextProcessStepId).OnDelete(DeleteBehavior.Restrict);//NextProcessStepId//Id//ProcessStepId
+				entityBuilder.HasMany(x => x.ProcessSteps).WithOne(p => p.NextProcessStep).HasForeignKey(c => c.ProcessStepId).OnDelete(DeleteBehavior.Restrict);//ProcessStepId//Id//NextProcessStepId
+				entityBuilder.HasMany(x => x.ProcessStepComplexActions).WithOne(p => p.ProcessStep).HasForeignKey(c => c.ProcessStepId).OnDelete(DeleteBehavior.Restrict);//ProcessStepId//Id//
 	
 				//----------------Parent Properties
-				//entityBuilder.HasOne(p => p.DomainProcess DomainProcess).WithMany(p => p.ProcessStep).HasForeignKey(c => c.DomainProcessId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.DomainProcess DomainProcess).WithMany(p => p.ProcessSteps).HasForeignKey(c => c.DomainProcessId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

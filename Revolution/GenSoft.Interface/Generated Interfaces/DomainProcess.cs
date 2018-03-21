@@ -15,11 +15,11 @@ namespace GenSoft.Interfaces
 	public partial interface IDomainProcess:SystemInterfaces.IEntity  
 	{
 		int UserId { get;}
+		int ApplicationId { get;}
 		string Description { get;}
 		string Name { get;}
-		string Symbol { get;}
 		int Priority { get;}
-		int ApplicationId { get;}
+		string Symbol { get;}
 
 
 

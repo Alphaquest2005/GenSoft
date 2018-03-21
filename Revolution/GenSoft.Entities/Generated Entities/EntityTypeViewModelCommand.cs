@@ -21,7 +21,7 @@ namespace GenSoft.Entities
 		
 			// ---------Parent Relationships
 				public virtual EntityType EntityType {get; set;}
-				public virtual ViewModelCommands ViewModelCommands {get; set;}
+				public virtual ViewModelCommand ViewModelCommand {get; set;}
 	
 
 	}

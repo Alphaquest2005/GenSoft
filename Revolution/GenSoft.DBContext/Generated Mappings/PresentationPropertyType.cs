@@ -15,12 +15,12 @@ namespace GenSoft.Mappings
 	{
 		public static void Map(EntityTypeBuilder<Entities.PresentationPropertyType> entityBuilder)
 		{
-			entityBuilder.ToTable("PresentationPropertyType", "dbo");
+			entityBuilder.ToTable("PresentationPropertyTypes", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.Name).HasColumnName("Name").IsRequired().HasMaxLength(50);
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasMany(x => x.ViewPropertyPresentationPropertyType).WithOne(p => p.PresentationPropertyType).HasForeignKey(c => c.PresentationPropertyTypeId).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasMany(x => x.ViewPropertyPresentationPropertyTypes).WithOne(p => p.PresentationPropertyType).HasForeignKey(c => c.PresentationPropertyTypeId).OnDelete(DeleteBehavior.Restrict);//PresentationPropertyTypeId//Id//
 	
 				//----------------Parent Properties
 	

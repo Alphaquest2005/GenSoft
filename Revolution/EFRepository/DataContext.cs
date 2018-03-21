@@ -53,7 +53,7 @@ namespace EFRepository
                     entity.ApplyChanges(msg.Changes.Where(x => x.Value != null));
                     var sql = "";
                     Func<int, string> selectSql = id =>
-                        $"Select * From {msg.EntityType.Name} Where Id = {id}";
+                        $"Select * From {msg.EntityType.EntitySetName} Where Id = {id}";
                     int entityId = 0;
                 if (msg.Entity.Id == 0)
                 {
@@ -62,7 +62,7 @@ namespace EFRepository
                         var changes = msg.Changes;
                         if(!changes.ContainsKey("Id")) changes.Add("Id", 0);
                         sql =
-                            $"Insert Into {msg.EntityType.Name}({changes.Where(x => x.Value != null).Select(x => x.Key).Aggregate((current, next) => current + "," + next)})" +
+                            $"Insert Into {msg.EntityType.EntitySetName}({changes.Where(x => x.Value != null).Select(x => x.Key).Aggregate((current, next) => current + "," + next)})" +
                             $"  OUTPUT Inserted.Id " +
                             $" Values ({changes.Where(x => x.Value != null).Select(x => $"'{x.Value}'").Aggregate((current, next) => $"{current},{next}")})";
                     }
@@ -71,7 +71,7 @@ namespace EFRepository
                         var changes = msg.Changes;
                         if(changes.ContainsKey("Id"))changes.Remove("Id");
                         sql =
-                            $"Insert Into {msg.EntityType.Name}({changes.Where(x => x.Value != null).Select(x => x.Key).Aggregate((current, next) => current + "," + next)})" +
+                            $"Insert Into {msg.EntityType.EntitySetName}({changes.Where(x => x.Value != null).Select(x => x.Key).Aggregate((current, next) => current + "," + next)})" +
                             $"  OUTPUT Inserted.Id " +
                             $" Values ({changes.Where(x => x.Value != null).Select(x => $"'{x.Value}'").Aggregate((current, next) => $"{current},{next}")})";
                     }
@@ -153,12 +153,12 @@ namespace EFRepository
             string selectSql;
             if (msg.EntityType.ParentEntityType != null && msg.EntityType.ParentEntityType.Properties.Any(x => x.Key == "Name" && x.IsComputed == false))
             {
-                selectSql = $"Select {msg.EntityType.Name}.*, parent.Name From {msg.EntityType.Name} inner join {msg.EntityType.ParentEntityType.Name} parent on {msg.EntityType.Name}.Id = parent.Id" +
+                selectSql = $"Select {msg.EntityType.Name}.*, parent.Name From {msg.EntityType.EntitySetName} inner join {msg.EntityType.ParentEntityType.EntitySetName} parent on {msg.EntityType.EntitySetName}.Id = parent.Id" +
                             $" Where {GetWhereStr(msg.EntityType.Name,msg.Changes)}";
             }
             else
             {
-                selectSql = $"Select * From {msg.EntityType.Name} " +
+                selectSql = $"Select * From {msg.EntityType.EntitySetName} " +
                         $"Where {GetWhereStr(msg.EntityType.Name, msg.Changes)}";
             }
             
@@ -209,11 +209,11 @@ namespace EFRepository
             string selectSql;
             if (msg.EntityType.ParentEntityType != null && msg.EntityType.ParentEntityType.Properties.Any(x => x.Key == "Name" && x.IsComputed == false))
             {
-                selectSql = $"Select {msg.EntityType.Name}.*, parent.Name From {msg.EntityType.Name} inner join {msg.EntityType.ParentEntityType.Name} parent on {msg.EntityType.Name}.Id = parent.Id" ;
+                selectSql = $"Select {msg.EntityType.EntitySetName}.*, parent.Name From {msg.EntityType.EntitySetName} inner join {msg.EntityType.ParentEntityType.EntitySetName} parent on {msg.EntityType.EntitySetName}.Id = parent.Id" ;
             }
             else
             {
-                selectSql = $"Select * From {msg.EntityType.Name} ";
+                selectSql = $"Select * From {msg.EntityType.EntitySetName} ";
             }
             using (var conn = new SqlConnection(dbInfo.DbConnectionString))
                 {
@@ -272,13 +272,13 @@ namespace EFRepository
             string selectSql;
             if (msg.EntityType.ParentEntityType != null && msg.EntityType.ParentEntityType.Properties.Any(x => x.Key == "Name" && x.IsComputed == false))
             {
-                selectSql = $"Select {msg.EntityType.Name}.*, parent.Name From {msg.EntityType.Name} inner join {msg.EntityType.ParentEntityType.Name} parent on {msg.EntityType.Name}.Id = parent.Id" +
+                selectSql = $"Select {msg.EntityType.EntitySetName}.*, parent.Name From {msg.EntityType.EntitySetName} inner join {msg.EntityType.ParentEntityType.EntitySetName} parent on {msg.EntityType.EntitySetName}.Id = parent.Id" +
                             $" Where {GetWhereStr(msg.EntityType.Name, msg.Changes)}";
             }
             else
             {
-                selectSql = $"Select * From {msg.EntityType.Name} " +
-                            $"Where {GetWhereStr(msg.EntityType.Name, msg.Changes)}";
+                selectSql = $"Select * From {msg.EntityType.EntitySetName} " +
+                            $"Where {GetWhereStr(msg.EntityType.EntitySetName, msg.Changes)}";
             }
 
             using (var conn = new SqlConnection(dbInfo.DbConnectionString))

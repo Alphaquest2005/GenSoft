@@ -14,7 +14,7 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IParentProcess:SystemInterfaces.IEntity  
 	{
-		int ParentProcessId { get;}
+		int Parent_ProcessId { get;}
 
 
 

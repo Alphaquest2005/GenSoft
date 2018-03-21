@@ -20,8 +20,8 @@ namespace GenSoft.Entities
 			// ---------Child Relationships
 		
 			// ---------Parent Relationships
-				public virtual EntityAttribute Predecessors {get; set;}
-				public virtual EntityAttribute Successors {get; set;}
+				public virtual EntityAttribute Predecessor {get; set;}
+				public virtual EntityAttribute Successor {get; set;}
 	
 
 	}

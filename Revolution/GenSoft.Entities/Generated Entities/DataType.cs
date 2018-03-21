@@ -16,11 +16,11 @@ namespace GenSoft.Entities
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
-				public virtual ICollection<Attributes> Attributes {get; set;}
-				public virtual ICollection<FunctionParameter> FunctionParameter {get; set;}
-				public virtual ICollection<Functions> Functions {get; set;}
-				public virtual ICollection<Parameters> Parameters {get; set;}
-				public virtual ICollection<ReferenceTypes> ReferenceTypes {get; set;}
+				public virtual ICollection<Attribute> Attributes {get; set;}
+				public virtual ICollection<FunctionParameter> FunctionParameters {get; set;}
+				public virtual ICollection<Function> Functions {get; set;}
+				public virtual ICollection<Parameter> Parameters {get; set;}
+				public virtual ICollection<ReferenceType> ReferenceTypes {get; set;}
 		
 			// ---------Parent Relationships
 				public virtual Type Type {get; set;}

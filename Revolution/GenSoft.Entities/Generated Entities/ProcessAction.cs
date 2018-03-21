@@ -18,7 +18,7 @@ namespace GenSoft.Entities
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
-				public virtual ICollection<ComplexEventActionProcessActions> ComplexEventActionProcessActions {get; set;}
+				public virtual ICollection<ComplexEventActionProcessAction> ComplexEventActionProcessActions {get; set;}
 				public virtual ProcessActionStateCommandInfo ProcessActionStateCommandInfo {get; set;}
 		
 			// ---------Parent Relationships

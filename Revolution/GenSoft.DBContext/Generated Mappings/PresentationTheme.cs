@@ -15,15 +15,15 @@ namespace GenSoft.Mappings
 	{
 		public static void Map(EntityTypeBuilder<Entities.PresentationTheme> entityBuilder)
 		{
-			entityBuilder.ToTable("PresentationTheme", "dbo");
+			entityBuilder.ToTable("PresentationThemes", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.Name).HasColumnName("Name").IsRequired().HasMaxLength(50);
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasMany(x => x.ConfigurationPropertyPresentation).WithOne(p => p.PresentationTheme).HasForeignKey(c => c.PresentationThemeId).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.EntityTypePresentationProperty).WithOne(p => p.PresentationTheme).HasForeignKey(c => c.PresentationThemeId).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.ViewModelPropertyPresentationType).WithOne(p => p.PresentationTheme).HasForeignKey(c => c.PresentationThemeId).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.ViewPropertyTheme).WithOne(p => p.PresentationTheme).HasForeignKey(c => c.PresentationThemeId).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasMany(x => x.ConfigurationPropertyPresentations).WithOne(p => p.PresentationTheme).HasForeignKey(c => c.PresentationThemeId).OnDelete(DeleteBehavior.Restrict);//PresentationThemeId//Id//
+				entityBuilder.HasMany(x => x.EntityTypePresentationProperties).WithOne(p => p.PresentationTheme).HasForeignKey(c => c.PresentationThemeId).OnDelete(DeleteBehavior.Restrict);//PresentationThemeId//Id//
+				entityBuilder.HasMany(x => x.ViewModelPropertyPresentationTypes).WithOne(p => p.PresentationTheme).HasForeignKey(c => c.PresentationThemeId).OnDelete(DeleteBehavior.Restrict);//PresentationThemeId//Id//
+				entityBuilder.HasMany(x => x.ViewPropertyThemes).WithOne(p => p.PresentationTheme).HasForeignKey(c => c.PresentationThemeId).OnDelete(DeleteBehavior.Restrict);//PresentationThemeId//Id//
 	
 				//----------------Parent Properties
 	

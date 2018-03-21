@@ -15,24 +15,25 @@ namespace GenSoft.Mappings
 	{
 		public static void Map(EntityTypeBuilder<Entities.EntityType> entityBuilder)
 		{
-			entityBuilder.ToTable("EntityType", "dbo");
+			entityBuilder.ToTable("EntityTypes", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.ApplicationId).HasColumnName("ApplicationId").IsRequired();
 			entityBuilder.Property(t => t.EntitySet).HasColumnName("EntitySet").IsRequired().HasMaxLength(50);
 			entityBuilder.Property(t => t.TypeId).HasColumnName("TypeId").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasOne(p => p.DBType).WithOne(p => p.EntityType).HasForeignKey<DBType>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.Entity).WithOne(p => p.EntityType).HasForeignKey(c => c.EntityTypeId).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.EntityTypeAttributes).WithOne(p => p.EntityType).HasForeignKey(c => c.EntityTypeId).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.EntityTypeViewModelCommand).WithOne(p => p.EntityType).HasForeignKey(c => c.EntityTypeId).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.MainEntity).WithOne(p => p.EntityType).HasForeignKey(c => c.EntityTypeId).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasOne(p => p.ParentEntityType).WithOne(p => p.ParentEntityTypes).HasForeignKey<ParentEntityType>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.ParentEntityTypes).WithOne(p => p.EntityType).HasForeignKey(c => c.ParentEntityTypeId).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasOne(p => p.DBType).WithOne(p => p.EntityType).HasForeignKey<DBType>(c => c.Id).OnDelete(DeleteBehavior.Restrict);//Id//Id//
+				entityBuilder.HasMany(x => x.Entities).WithOne(p => p.EntityType).HasForeignKey(c => c.EntityTypeId).OnDelete(DeleteBehavior.Restrict);//EntityTypeId//Id//
+				entityBuilder.HasMany(x => x.EntityTypeAddinActions).WithOne(p => p.EntityType).HasForeignKey(c => c.EntityTypeId).OnDelete(DeleteBehavior.Restrict);//EntityTypeId//Id//
+				entityBuilder.HasMany(x => x.EntityTypeAttributes).WithOne(p => p.EntityType).HasForeignKey(c => c.EntityTypeId).OnDelete(DeleteBehavior.Restrict);//EntityTypeId//Id//
+				entityBuilder.HasMany(x => x.EntityTypeViewModelCommands).WithOne(p => p.EntityType).HasForeignKey(c => c.EntityTypeId).OnDelete(DeleteBehavior.Restrict);//EntityTypeId//Id//
+				entityBuilder.HasMany(x => x.MainEntities).WithOne(p => p.EntityType).HasForeignKey(c => c.EntityTypeId).OnDelete(DeleteBehavior.Restrict);//EntityTypeId//Id//
+				entityBuilder.HasOne(p => p.ParentEntityType).WithOne(p => p.Parent_EntityType).HasForeignKey<ParentEntityType>(c => c.Id).OnDelete(DeleteBehavior.Restrict);//Id//Id//Parent_EntityTypeId
+				entityBuilder.HasMany(x => x.Parent_EntityTypes).WithOne(p => p.EntityType).HasForeignKey(c => c.Parent_EntityTypeId).OnDelete(DeleteBehavior.Restrict);//Parent_EntityTypeId//Id//EntityTypeId
 	
 				//----------------Parent Properties
-				//entityBuilder.HasOne(p => p.Application Application).WithMany(p => p.EntityType).HasForeignKey(c => c.ApplicationId).OnDelete(DeleteBehavior.Restrict);
-				//entityBuilder.HasOne(p => p.Type Type).WithMany(p => p.EntityType).HasForeignKey(c => c.TypeId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.Application Application).WithMany(p => p.EntityTypes).HasForeignKey(c => c.ApplicationId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.Type Type).WithMany(p => p.EntityTypes).HasForeignKey(c => c.TypeId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

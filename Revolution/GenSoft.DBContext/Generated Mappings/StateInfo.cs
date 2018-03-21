@@ -15,16 +15,16 @@ namespace GenSoft.Mappings
 	{
 		public static void Map(EntityTypeBuilder<Entities.StateInfo> entityBuilder)
 		{
-			entityBuilder.ToTable("StateInfo", "dbo");
+			entityBuilder.ToTable("StateInfos", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.Name).HasColumnName("Name").IsRequired().HasMaxLength(50);
 			entityBuilder.Property(t => t.Status).HasColumnName("Status").IsRequired().HasMaxLength(255);
 			entityBuilder.Property(t => t.Subject).HasColumnName("Subject").IsRequired().HasMaxLength(50);
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasOne(p => p.StateCommandInfo).WithOne(p => p.StateInfo).HasForeignKey<StateCommandInfo>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasOne(p => p.StateEventInfo).WithOne(p => p.StateInfo).HasForeignKey<StateEventInfo>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasOne(p => p.StateInfoNotes).WithOne(p => p.StateInfo).HasForeignKey<StateInfoNotes>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasOne(p => p.StateCommandInfo).WithOne(p => p.StateInfo).HasForeignKey<StateCommandInfo>(c => c.Id).OnDelete(DeleteBehavior.Restrict);//Id//Id//
+				entityBuilder.HasOne(p => p.StateEventInfo).WithOne(p => p.StateInfo).HasForeignKey<StateEventInfo>(c => c.Id).OnDelete(DeleteBehavior.Restrict);//Id//Id//
+				entityBuilder.HasOne(p => p.StateInfoNote).WithOne(p => p.StateInfo).HasForeignKey<StateInfoNote>(c => c.Id).OnDelete(DeleteBehavior.Restrict);//Id//Id//
 	
 				//----------------Parent Properties
 	

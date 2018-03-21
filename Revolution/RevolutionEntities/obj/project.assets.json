@@ -90,7 +90,7 @@
           "lib/net40/MoreLinq.dll": {}
         }
       },
-      "Newtonsoft.Json/10.0.3": {
+      "Newtonsoft.Json/11.0.1": {
         "type": "package",
         "compile": {
           "lib/net45/Newtonsoft.Json.dll": {}
@@ -99,7 +99,7 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
-      "ReactiveProperty/4.2.0": {
+      "ReactiveProperty/4.2.1": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -287,7 +287,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
-          "Newtonsoft.Json": "10.0.3",
+          "Newtonsoft.Json": "11.0.1",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -304,7 +304,7 @@
           "FluentValidation.Net35": "1.0.1",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "4.2.0",
+          "ReactiveProperty": "4.2.1",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -404,7 +404,7 @@
           "lib/net40/MoreLinq.dll": {}
         }
       },
-      "Newtonsoft.Json/10.0.3": {
+      "Newtonsoft.Json/11.0.1": {
         "type": "package",
         "compile": {
           "lib/net45/Newtonsoft.Json.dll": {}
@@ -413,7 +413,7 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
-      "ReactiveProperty/4.2.0": {
+      "ReactiveProperty/4.2.1": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -601,7 +601,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
-          "Newtonsoft.Json": "10.0.3",
+          "Newtonsoft.Json": "11.0.1",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -618,7 +618,7 @@
           "FluentValidation.Net35": "1.0.1",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "4.2.0",
+          "ReactiveProperty": "4.2.1",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -718,7 +718,7 @@
           "lib/net40/MoreLinq.dll": {}
         }
       },
-      "Newtonsoft.Json/10.0.3": {
+      "Newtonsoft.Json/11.0.1": {
         "type": "package",
         "compile": {
           "lib/net45/Newtonsoft.Json.dll": {}
@@ -727,7 +727,7 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
-      "ReactiveProperty/4.2.0": {
+      "ReactiveProperty/4.2.1": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -915,7 +915,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
-          "Newtonsoft.Json": "10.0.3",
+          "Newtonsoft.Json": "11.0.1",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -932,7 +932,7 @@
           "FluentValidation.Net35": "1.0.1",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "4.2.0",
+          "ReactiveProperty": "4.2.1",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -1032,7 +1032,7 @@
           "lib/net40/MoreLinq.dll": {}
         }
       },
-      "Newtonsoft.Json/10.0.3": {
+      "Newtonsoft.Json/11.0.1": {
         "type": "package",
         "compile": {
           "lib/net45/Newtonsoft.Json.dll": {}
@@ -1041,7 +1041,7 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
-      "ReactiveProperty/4.2.0": {
+      "ReactiveProperty/4.2.1": {
         "type": "package",
         "dependencies": {
           "System.Reactive": "3.1.1"
@@ -1229,7 +1229,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
-          "Newtonsoft.Json": "10.0.3",
+          "Newtonsoft.Json": "11.0.1",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -1246,7 +1246,7 @@
           "FluentValidation.Net35": "1.0.1",
           "JB.Common.Collections.Reactive": "0.8.107-pre",
           "JB.Common.Reactive": "0.8.107-pre",
-          "ReactiveProperty": "4.2.0",
+          "ReactiveProperty": "4.2.1",
           "SystemInterfaces": "1.0.0"
         },
         "compile": {
@@ -1341,10 +1341,10 @@
         "morelinq.nuspec"
       ]
     },
-    "Newtonsoft.Json/10.0.3": {
-      "sha512": "hSXaFmh7hNCuEoC4XNY5DrRkLDzYHqPx/Ik23R4J86Z7PE/Y6YidhG602dFVdLBRSdG6xp9NabH3dXpcoxWvww==",
+    "Newtonsoft.Json/11.0.1": {
+      "sha512": "pNN4l+J6LlpIvHOeNdXlwxv39NPJ2B5klz+Rd2UQZIx30Squ5oND1Yy3wEAUoKn0GPUj6Yxt9lxlYWQqfZcvKg==",
       "type": "package",
-      "path": "newtonsoft.json/10.0.3",
+      "path": "newtonsoft.json/11.0.1",
       "files": [
         "LICENSE.md",
         "lib/net20/Newtonsoft.Json.dll",
@@ -1359,19 +1359,20 @@
         "lib/netstandard1.0/Newtonsoft.Json.xml",
         "lib/netstandard1.3/Newtonsoft.Json.dll",
         "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
         "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
         "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
-        "newtonsoft.json.10.0.3.nupkg.sha512",
-        "newtonsoft.json.nuspec",
-        "tools/install.ps1"
+        "newtonsoft.json.11.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec"
       ]
     },
-    "ReactiveProperty/4.2.0": {
-      "sha512": "v1dxPk0HKvheDCLmTXVHqC8bXU8h8bX0OiNQH1GOU6dePt903OSQSAkHYG0kjfy89npIY/8n9/KlfQaYiqXwcw==",
+    "ReactiveProperty/4.2.1": {
+      "sha512": "T5Im1HYo3/g/ohofwLzzQG7MqPxC1eFpQpu4wt70eLltlmXAT19yVx+PViLK61z5akLWdgKcLtLuqCwrvzRZLg==",
       "type": "package",
-      "path": "reactiveproperty/4.2.0",
+      "path": "reactiveproperty/4.2.1",
       "files": [
         "LICENSE.txt",
         "Snippet/csharp5/AsyncReactiveCommand.snippet",
@@ -1429,7 +1430,7 @@
         "lib/uap10.0/ReactiveProperty.dll",
         "lib/uap10.0/ReactiveProperty.pdb",
         "lib/uap10.0/ReactiveProperty.xml",
-        "reactiveproperty.4.2.0.nupkg.sha512",
+        "reactiveproperty.4.2.1.nupkg.sha512",
         "reactiveproperty.nuspec"
       ]
     },

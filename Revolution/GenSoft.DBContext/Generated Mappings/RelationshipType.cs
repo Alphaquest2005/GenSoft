@@ -15,18 +15,18 @@ namespace GenSoft.Mappings
 	{
 		public static void Map(EntityTypeBuilder<Entities.RelationshipType> entityBuilder)
 		{
-			entityBuilder.ToTable("RelationshipType", "dbo");
+			entityBuilder.ToTable("RelationshipTypes", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.ChildOrdinalityId).HasColumnName("ChildOrdinalityId").IsRequired();
 			entityBuilder.Property(t => t.Name).HasColumnName("Name").IsRequired().HasMaxLength(50);
 			entityBuilder.Property(t => t.ParentOrdinalityId).HasColumnName("ParentOrdinalityId").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasMany(x => x.EntityRelationship).WithOne(p => p.RelationshipType).HasForeignKey(c => c.RelationshipTypeId).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasMany(x => x.EntityRelationships).WithOne(p => p.RelationshipType).HasForeignKey(c => c.RelationshipTypeId).OnDelete(DeleteBehavior.Restrict);//RelationshipTypeId//Id//
 	
 				//----------------Parent Properties
-				//entityBuilder.HasOne(p => p.Ordinality ChildOrdinality).WithMany(p => p.RelationshipType).HasForeignKey(c => c.ChildOrdinalityId).OnDelete(DeleteBehavior.Restrict);
-				//entityBuilder.HasOne(p => p.Ordinality ParentOrdinality).WithMany(p => p.RelationshipType).HasForeignKey(c => c.ParentOrdinalityId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.Ordinality ChildOrdinality).WithMany(p => p.RelationshipTypes).HasForeignKey(c => c.ChildOrdinalityId).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.Ordinality ParentOrdinality).WithMany(p => p.RelationshipTypes).HasForeignKey(c => c.ParentOrdinalityId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

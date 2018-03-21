@@ -85,6 +85,7 @@
     <Compile Include="ICurrentEntityChanged.cs" />
     <Compile Include="IDataRequest.cs" />
     <Compile Include="IExpando.cs" />
+    <Compile Include="IStartAction.cs" />
     <Compile Include="IStartSystemProcess.cs" />
     <Compile Include="IProcessStateUpddated.cs" />
     <Compile Include="IRequestProcessLog.cs" />

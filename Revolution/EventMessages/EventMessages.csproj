@@ -118,6 +118,7 @@
     <Compile Include="Commands\CleanUpSystemProcess.cs" />
     <Compile Include="Commands\CreateProcessActor.cs" />
     <Compile Include="Commands\LoadEntitySetWithChanges.cs" />
+    <Compile Include="Commands\StartAddin.cs" />
     <Compile Include="Commands\StartDomainProcess.cs" />
     <Compile Include="Commands\StartSystemProcess.cs" />
     <Compile Include="Commands\RequestProcessLog.cs" />

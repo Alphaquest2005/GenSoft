@@ -15,13 +15,13 @@ namespace GenSoft.Mappings
 	{
 		public static void Map(EntityTypeBuilder<Entities.Ordinality> entityBuilder)
 		{
-			entityBuilder.ToTable("Ordinality", "dbo");
+			entityBuilder.ToTable("Ordinalities", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.Name).HasColumnName("Name").IsRequired().HasMaxLength(50);
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasMany(x => x.ChildOrdinalitys).WithOne(p => p.ChildOrdinalitys).HasForeignKey(c => c.ChildOrdinalityId).OnDelete(DeleteBehavior.Restrict);
-				entityBuilder.HasMany(x => x.ParentOrdinalitys).WithOne(p => p.ParentOrdinalitys).HasForeignKey(c => c.ParentOrdinalityId).OnDelete(DeleteBehavior.Restrict);
+				entityBuilder.HasMany(x => x.ChildOrdinalitys).WithOne(p => p.ParentOrdinality).HasForeignKey(c => c.ChildOrdinalityId).OnDelete(DeleteBehavior.Restrict);//ChildOrdinalityId//Id//ParentOrdinalityId
+				entityBuilder.HasMany(x => x.ParentOrdinalitys).WithOne(p => p.ChildOrdinality).HasForeignKey(c => c.ParentOrdinalityId).OnDelete(DeleteBehavior.Restrict);//ParentOrdinalityId//Id//ChildOrdinalityId
 	
 				//----------------Parent Properties
 	
