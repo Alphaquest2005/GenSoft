@@ -27,8 +27,8 @@ namespace GenSoft.Mappings
 		//-------------------Navigation Properties -------------------------------//
 				entityBuilder.HasMany(x => x.EntityViews).WithOne(p => p.ProcessStep).HasForeignKey(c => c.ProcessStepId).OnDelete(DeleteBehavior.Restrict);//ProcessStepId//Id//
 				entityBuilder.HasOne(p => p.MainEntity).WithOne(p => p.ProcessStep).HasForeignKey<MainEntity>(c => c.Id).OnDelete(DeleteBehavior.Restrict);//Id//Id//
-				entityBuilder.HasMany(x => x.NextProcessSteps).WithOne(p => p.ProcessStep).HasForeignKey(c => c.NextProcessStepId).OnDelete(DeleteBehavior.Restrict);//NextProcessStepId//Id//ProcessStepId
-				entityBuilder.HasMany(x => x.ProcessSteps).WithOne(p => p.NextProcessStep).HasForeignKey(c => c.ProcessStepId).OnDelete(DeleteBehavior.Restrict);//ProcessStepId//Id//NextProcessStepId
+				entityBuilder.HasMany(x => x.NextProcessSteps).WithOne(p => p.NextProcessStep).HasForeignKey(c => c.NextProcessStepId).OnDelete(DeleteBehavior.Restrict);//NextProcessStepId//Id//ProcessStepId
+				entityBuilder.HasMany(x => x.ProcessSteps).WithOne(p => p.ProcessStep).HasForeignKey(c => c.ProcessStepId).OnDelete(DeleteBehavior.Restrict);//ProcessStepId//Id//NextProcessStepId
 				entityBuilder.HasMany(x => x.ProcessStepComplexActions).WithOne(p => p.ProcessStep).HasForeignKey(c => c.ProcessStepId).OnDelete(DeleteBehavior.Restrict);//ProcessStepId//Id//
 	
 				//----------------Parent Properties

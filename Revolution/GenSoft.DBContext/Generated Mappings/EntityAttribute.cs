@@ -23,8 +23,8 @@ namespace GenSoft.Mappings
 			entityBuilder.Property(t => t.EntityId).HasColumnName("EntityId").IsRequired();
 			entityBuilder.Property(t => t.Value).HasColumnName("Value").IsRequired().HasMaxLength(255);
 		//-------------------Navigation Properties -------------------------------//
-				entityBuilder.HasMany(x => x.Predecessors).WithOne(p => p.Successor).HasForeignKey(c => c.PredecessorId).OnDelete(DeleteBehavior.Restrict);//PredecessorId//Id//SuccessorId
-				entityBuilder.HasMany(x => x.Successors).WithOne(p => p.Predecessor).HasForeignKey(c => c.SuccessorId).OnDelete(DeleteBehavior.Restrict);//SuccessorId//Id//PredecessorId
+				entityBuilder.HasMany(x => x.Predecessors).WithOne(p => p.Predecessor).HasForeignKey(c => c.PredecessorId).OnDelete(DeleteBehavior.Restrict);//PredecessorId//Id//SuccessorId
+				entityBuilder.HasMany(x => x.Successors).WithOne(p => p.Successor).HasForeignKey(c => c.SuccessorId).OnDelete(DeleteBehavior.Restrict);//SuccessorId//Id//PredecessorId
 	
 				//----------------Parent Properties
 				//entityBuilder.HasOne(p => p.Attribute Attribute).WithMany(p => p.EntityAttributes).HasForeignKey(c => c.AttributeId).OnDelete(DeleteBehavior.Restrict);
