@@ -37,7 +37,7 @@ namespace Common.DataEntites
             get
             {
                 if(_entityName == null) _entityName = EntityType.Properties.FirstOrDefault(x => x.IsEntityName)?.Key;
-                return _entityName == null ? this.Properties["EntityName"] : Properties[_entityName].ToString();
+                return _entityName == null ? this.Properties.ContainsKey("EntityName")?this.Properties["EntityName"]:"" : Properties[_entityName].ToString();
             }
             set
             {

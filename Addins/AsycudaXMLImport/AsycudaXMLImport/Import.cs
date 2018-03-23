@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Linq;
 using System.Windows;
@@ -6,7 +7,10 @@ using SystemInterfaces;
 using Asycuda;
 using Asycuda421;
 using Common;
+using Common.DataEntites;
 using EventAggregator;
+using EventMessages.Commands;
+using JB.Collections.Reactive;
 using Microsoft.Win32;
 using Process.WorkFlow;
 using RevolutionEntities.Process;
@@ -21,14 +25,14 @@ namespace AsycudaXMLImport
             EventMessageBus.Current.GetEvent<IStartAddin>(
                 new StateCommandInfo(Processes.IntialSystemProcess,
                     RevolutionData.Context.CommandFunctions.UpdateCommandData("AsycudaXMLImport",
-                        RevolutionData.Context.Addin.Commands.StartAddin), Guid.NewGuid()), Source).Where(x => x.Action.Action == "Import" && x.Action.Addin == "AsycudaXMLImport").Subscribe(x => OnImport(x.Entity));
+                        RevolutionData.Context.Addin.Commands.StartAddin), Guid.NewGuid()), Source).Where(x => x.Action.Action == "Import" && x.Action.Addin == "AsycudaXMLImport").Subscribe(OnImport);
         }
 
-        private static void OnImport(IDynamicEntity docSet)
+        private static void OnImport(IStartAddin msg)
         {
             //StatusModel.Timer("Importing Documents");
             //import asycuda xml id and details
-            if (docSet.Id == 0)
+            if (msg.Entity.Id == 0)
             {
                 MessageBox.Show("Please Select Asycuda Document Set");
                 return;
@@ -51,7 +55,17 @@ namespace AsycudaXMLImport
                     if (ASYCUDA.CanLoadFromFile(f))
                     {
                         var a = Asycuda421.ASYCUDA.LoadFromFile(f);
-                        AsycudaToDataBase421.Instance.Import(a, docSet);
+                       var res = AsycudaToDataBase421.Instance.Import(a, msg.Entity);
+                        var de = new DynamicEntity(
+                            new DynamicEntityType("xcuda_ASYCUDA", "xcuda_ASYCUDA",
+                                new List<IEntityKeyValuePair>(), new Dictionary<string, List<dynamic>>(),
+                                new ObservableDictionary<string, Dictionary<int, dynamic>>(),
+                                new Dictionary<string, string>(), DynamicEntityType.NullEntityType(),
+                                new ObservableList<IAddinAction>()), 0,
+                            new Dictionary<string, object>());
+
+                        EventMessageBus.Current.Publish(new UpdateEntityWithChanges(de, res.Properties.ToDictionary(x => x.Key, x => x.Value),
+                            new StateCommandInfo(msg.Process, RevolutionData.Context.CommandFunctions.UpdateCommandData(de.EntityType.Name,RevolutionData.Context.Entity.Commands.CreateEntity)), msg.Process, Source));
                     }
                     else
                     {

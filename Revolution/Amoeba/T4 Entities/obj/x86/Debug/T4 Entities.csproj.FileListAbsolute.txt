@@ -7,3 +7,4 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Entities\obj\x86\Debug\T4 E
 C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Entities\obj\x86\Debug\T4 Entities.csproj.CopyComplete
 C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Entities\obj\x86\Debug\T4Entities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Entities\obj\x86\Debug\T4Entities.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Entities\obj\x86\Debug\T4 Entities.csprojResolveAssemblyReference.cache

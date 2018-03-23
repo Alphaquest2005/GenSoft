@@ -32,7 +32,7 @@ namespace Asycuda
         private dynamic da = new Expando();
         private ASYCUDA a;
 
-        public void Import(ASYCUDA adoc, IDynamicEntity docSet)
+        public Expando Import(ASYCUDA adoc, IDynamicEntity docSet)
         {
 
             try
@@ -41,8 +41,10 @@ namespace Asycuda
                 a = adoc;
                 var ads = docSet;
                 
-                da.xcuda_Item = new List<dynamic>();
+                da.xcuda_Item = new List<Expando>();
                 da.ASYCUDA_Id = 0;
+                da.xcuda_ASYCUDA_ExtendedProperties = new Expando();
+                da.xcuda_Suppliers_documents = new List<Expando>();
 
                 SaveGeneralInformation();
                 SaveDeclarant();
@@ -58,9 +60,9 @@ namespace Asycuda
 
                 Save_Items();
 
-                if (!da.xcuda_Item.Any() == true)
+                if (!((List<Expando>)da.xcuda_Item).Any())
                 {
-                    return;
+                    return new Expando();
                 }
 
 
@@ -74,6 +76,8 @@ namespace Asycuda
                     da.xcuda_ASYCUDA_ExtendedProperties.ImportComplete = false;
                     break;
                 }
+                return da;
+
             }
             catch (Exception)
             {
@@ -82,10 +86,7 @@ namespace Asycuda
             
         }
 
-        private static DynamicObject CreateDynamicEntity(string name)
-        {
-            return new DynamicObject(name, new Dictionary<string, object>());
-        }
+       
 
         private void SavePreviousItem(dynamic itm )
         {
@@ -190,8 +191,6 @@ namespace Asycuda
             {
                 var ai = a.Item.ElementAt(i);
                 dynamic di = new Expando();
-
-
                 di.ASYCUDA_Id = da.ASYCUDA_Id;
                 di.ImportComplete = false ;
                 da.xcuda_Item.Add(di);
@@ -338,13 +337,14 @@ namespace Asycuda
 
         private void Save_Item_Taxation(dynamic di, ASYCUDAItem ai)
         {
-            var t = di.xcuda_Taxation.FirstOrDefault();
+            var t = di.xcuda_Taxation;
             if (t == null)
             {
 
                 t = new Expando();
                 t.Item_Id = di.Item_Id;
-                di.xcuda_Taxation.Add(t);
+                t.xcuda_Taxation_line = new List<Expando>();
+                di.xcuda_Taxation = t;
                
             }
 
@@ -370,13 +370,10 @@ namespace Asycuda
 
                 if (au.Duty_tax_code.Text.Count == 0) break;
 
-                var tl = t.xcuda_Taxation_line.ElementAtOrDefault(i);
-                if (tl == null)
-                {
-                    tl = new Expando();
+                dynamic tl = new Expando();
                     t.xcuda_Taxation_line.Add(tl);
                     
-                }
+               
 
                 tl.Duty_tax_amount = Convert.ToDouble(au.Duty_tax_amount);
                 tl.Duty_tax_Base = au.Duty_tax_Base;
@@ -423,11 +420,12 @@ namespace Asycuda
 
         private void Save_Item_Tarification(dynamic di, ASYCUDAItem ai)
         {
-            var t = di.xcuda_Tarification;//.FirstOrDefault();
+            var t = di.xcuda_Tarification;
             if (t == null)
             {
                 t = new Expando();
                 t.Item_Id = di.Item_Id;
+                t.Unordered_xcuda_Supplementary_unit = new List<Expando>();
                 di.xcuda_Tarification = t;
 
             }
@@ -457,13 +455,11 @@ namespace Asycuda
 
                 if (au.Suppplementary_unit_code.Text.Count == 0) continue;
 
-                var su = t.xcuda_Supplementary_unit.ElementAtOrDefault(i);
-                if (su == null)
-                {
-                    su = new Expando();
+               
+                   dynamic su = new Expando();
                     su.Tarification_Id = t.Item_Id;
                     t.Unordered_xcuda_Supplementary_unit.Add(su);
-                }
+               
 
                 su.Suppplementary_unit_quantity = Convert.ToDouble(string.IsNullOrEmpty(au.Suppplementary_unit_quantity)
                     ? "0"
@@ -483,7 +479,7 @@ namespace Asycuda
 
         private void Save_HScode(dynamic t, ASYCUDAItem ai)
         {
-            var h = t.xcuda_HScode;//.FirstOrDefault();
+            var h = t.xcuda_HScode;
             if (h == null)
             {
                 h = new Expando();
@@ -502,12 +498,12 @@ namespace Asycuda
 
         private void Save_Item_Packages(dynamic di, ASYCUDAItem ai)
         {
-            var p = di.xcuda_Packages.FirstOrDefault();
+            var p = di.xcuda_Packages;
             if (p == null)
             {
                 p = new Expando();
                 p.Item_Id = di.Item_Id;
-                di.xcuda_Packages.Add(p);
+                di.xcuda_Packages = p;
             }
             p.Kind_of_packages_code = ai.Packages.Kind_of_packages_code;
             p.Kind_of_packages_name = ai.Packages.Kind_of_packages_name;
@@ -523,12 +519,12 @@ namespace Asycuda
 
         private void Save_Item_Suppliers_link(dynamic di, ASYCUDAItem ai)
         {
-            var sl = di.xcuda_Suppliers_link.FirstOrDefault();
+            var sl = di.xcuda_Suppliers_link;
             if (sl == null)
             {
                 sl = new Expando();
                 sl.Item_Id = di.Item_Id;
-                di.xcuda_Suppliers_link.Add(sl);
+                di.xcuda_Suppliers_link = sl;
             }
 
             sl.Suppliers_link_code = ai.Suppliers_link.Suppliers_link_code;
@@ -541,13 +537,10 @@ namespace Asycuda
             {
                 if (ai.Attached_documents[i].Attached_document_code.Text.Count == 0) break;
 
-                var ad = di.xcuda_Attached_documents.ElementAtOrDefault(i);
-                if (ad == null)
-                {
-                    ad = new Expando();
+                dynamic ad =  new Expando();
                     ad.Item_Id = di.Item_Id;
                     di.xcuda_Attached_documents.Add(ad);
-                }
+                
 
                 ad.Attached_document_date = ai.Attached_documents[i].Attached_document_date;
 
@@ -676,7 +669,7 @@ namespace Asycuda
             {
                 w = new Expando();
                 w.ASYCUDA_Id = da.ASYCUDA_Id;
-                da.xcuda_Warehouse.Add(w);
+                da.xcuda_Warehouse = w;
             }
             w.Identification = a.Warehouse.Identification.Text.FirstOrDefault();
             w.Delay = a.Warehouse.Delay;
@@ -690,6 +683,7 @@ namespace Asycuda
             {
                 f = new Expando();
                     f.ASYCUDA_Id = da.ASYCUDA_Id;
+               
                 da.xcuda_Financial=f;
             }
             if (a.Financial.Deffered_payment_reference.Text.Count != 0)
@@ -709,12 +703,12 @@ namespace Asycuda
 
         private void Save_Guarantee(dynamic f)
         {
-            var g = f.xcuda_Financial_Guarantee.FirstOrDefault();
+            var g = f.xcuda_Financial_Guarantee;
             if (g == null)
             {
                 g = new Expando();
                 g.Financial_Id = f.Financial_Id;
-                f.xcuda_Financial_Guarantee.Add(g);
+                f.xcuda_Financial_Guarantee = g;
             }
             if (a.Financial.Guarantee.Amount != "")
                 g.Amount = Convert.ToDecimal(a.Financial.Guarantee.Amount);
@@ -723,13 +717,11 @@ namespace Asycuda
 
         private void Save_Amounts(dynamic f)
         {
-            var fa = f.xcuda_Financial_Amounts.FirstOrDefault();
-            if (fa == null)
-            {
-                fa = new Expando();
+            
+               dynamic fa = new Expando();
                 fa.Financial_Id = f.Financial_Id;
-                f.xcuda_Financial_Amounts.Add(fa);
-            }
+                f.xcuda_Financial_Amounts = fa;
+           
             if (a.Financial.Amounts.Global_taxes != "")
                 fa.Global_taxes = Convert.ToDecimal(a.Financial.Amounts.Global_taxes);
             // fa.Total_manual_taxes = a.Financial.Amounts.Total_manual_taxes;
@@ -760,12 +752,12 @@ namespace Asycuda
 
         private void Save_Border_office(dynamic t)
         {
-            var bo = t.xcuda_Border_office.FirstOrDefault();
+            var bo = t.xcuda_Border_office;
             if (bo == null)
             {
                 bo = new Expando();
                 bo.Transport_Id = t.Transport_Id;
-                t.xcuda_Border_office.Add(bo);
+                t.xcuda_Border_office = bo;
             }
             if (a.Transport.Border_office.Code.Text.Count != 0)
                 bo.Code = a.Transport.Border_office.Code.Text[0];
@@ -777,12 +769,12 @@ namespace Asycuda
 
         private void Save_Delivery_terms(dynamic t)
         {
-            var d = t.xcuda_Delivery_terms.FirstOrDefault();
+            var d = t.xcuda_Delivery_terms;
             if (d == null)
             {
                 d = new Expando();
                 d.Transport_Id = t.Transport_Id;
-                t.xcuda_Delivery_terms.Add(d);
+                t.xcuda_Delivery_terms = d;
             }
             if (a.Transport.Delivery_terms.Code.Text.Count != 0)
                 d.Code = a.Transport.Delivery_terms.Code.Text[0];
@@ -791,12 +783,12 @@ namespace Asycuda
 
         private void SaveMeansofTransport(dynamic t)
         {
-            var m = t.xcuda_Means_of_transport.FirstOrDefault();
+            var m = t.xcuda_Means_of_transport;
             if (m == null)
             {
                 m = new Expando();
                 m.Transport_Id = t.Transport_Id;
-                t.xcuda_Means_of_transport.Add(m);
+                t.xcuda_Means_of_transport = m;
 
             }
 
@@ -815,7 +807,7 @@ namespace Asycuda
             {
                 d = new Expando();
                 d.Means_of_transport_Id = m.Means_of_transport_Id;
-                m.xcuda_Border_information.Add(d);
+                m.xcuda_Border_information = d;
             }
             //if (a.Transport.Means_of_transport.Border_information.Nationality.ToString() != null)
             //    d.Nationality = a.Transport.Means_of_transport.Departure_arrival_information.Nationality.Text[0];
@@ -828,12 +820,12 @@ namespace Asycuda
 
         private void SaveDepartureArrivalInformation(dynamic m)
         {
-            var d = m.xcuda_Departure_arrival_information.FirstOrDefault();
+            var d = m.xcuda_Departure_arrival_information;
             if (d == null)
             {
                 d = new Expando();
                 d.Means_of_transport_Id = m.Means_of_transport_Id;
-                m.xcuda_Departure_arrival_information.Add(d);
+                m.xcuda_Departure_arrival_information = d;
             }
             if (a.Transport.Means_of_transport.Departure_arrival_information.Nationality.Text.Count != 0)
                 d.Nationality = a.Transport.Means_of_transport.Departure_arrival_information.Nationality.Text[0];
@@ -917,22 +909,22 @@ namespace Asycuda
         {
             try
             {
-                var d = da.xcuda_Declarant;//.FirstOrDefault();
+                var d = da.xcuda_Declarant;
                 if (d == null)
                 {
                     da.xcuda_Declarant = new Expando();
                     da.ASYCUDA_Id = da.ASYCUDA_Id;
                     d = da.xcuda_Declarant;
-                    //da.xcuda_Declarant.Add(d);
+                    
                 }
 
                 d.Declarant_name = a.Declarant.Declarant_name;
                 d.Declarant_representative = a.Declarant.Declarant_representative.Text.FirstOrDefault();
                 d.Declarant_code = a.Declarant.Declarant_code;
 
-                //if(a.Declarant.Reference.Number.Text.Count > 0)
+               
                 d.Number = a.Declarant.Reference.Number.Text.FirstOrDefault();
-                //DBaseDataModel.Instance.Savexcuda_Declarant(d);
+                
             }
             catch (Exception Ex)
             {
@@ -1018,29 +1010,29 @@ namespace Asycuda
 
         private void SaveProperty()
         {
-            var p = da.xcuda_Property;//.FirstOrDefault();
+            var p = da.xcuda_Property;
 
             if (p == null)
             {
                 p = new Expando() {  };
                 da.xcuda_Property = p;
-                // da.xcuda_Property.Add(p);
+                
             }
-            // p.Date_of_declaration = a.Property.Date_of_declaration.ToString();
+            
             SaveNbers(p);
-            //DBaseDataModel.Instance.Savexcuda_Property(p);
+            
         }
 
         private void SaveNbers(dynamic p)
         {
 
-            var n = p.xcuda_Nbers;//.FirstOrDefault();
+            var n = p.xcuda_Nbers;
             if (n == null)
             {
                 n = new Expando();
                 n.ASYCUDA_Id = p.ASYCUDA_Id;
                 p.xcuda_Nbers = n;
-                //  p.xcuda_Nbers.Add(n);
+                
             }
             n.Number_of_loading_lists = a.Property.Nbers.Number_of_loading_lists;
             n.Total_number_of_packages = Convert.ToSingle(string.IsNullOrEmpty(a.Property.Nbers.Total_number_of_packages) ? "0" : a.Property.Nbers.Total_number_of_packages);
@@ -1050,12 +1042,12 @@ namespace Asycuda
 
         private void SaveIdentification()
         {
-            var di = da.xcuda_Identification;//.FirstOrDefault();
+            var di = da.xcuda_Identification;
             if (di == null)
             {
                 di = new Expando() {  };
                 da.xcuda_Identification = di;
-                // da.xcuda_Identification.Add(di);
+                
             }
 
             SaveManifestReferenceNumber(di);
@@ -1063,7 +1055,7 @@ namespace Asycuda
             SaveRegistration(di);
             SaveType(di);
 
-            //DBaseDataModel.Instance.Savexcuda_Identification(di);
+            
 
         }
 
@@ -1122,7 +1114,7 @@ namespace Asycuda
                 r = new Expando();
                 r.ASYCUDA_Id = di.ASYCUDA_Id;
                 di.xcuda_Registration = r;
-                // di.xcuda_Registration.Add(r);
+                
             }
             if (a.Identification.Registration.Date != "1/1/0001")
                 r.Date = a.Identification.Registration.Date;

@@ -91,6 +91,10 @@
       <Project>{4f0baa58-3b45-4136-8095-445d406b4d23}</Project>
       <Name>Process.WorkFlow</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\Revolution\CommonMessages\CommonMessages.csproj">
+      <Project>{77007560-89DC-4E1F-9313-AE064A048AD4}</Project>
+      <Name>CommonMessages</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Revolution\Common\Common.csproj">
       <Project>{cb6d5fbc-0c13-437d-b4f3-a0ec4d5673b3}</Project>
       <Name>Common</Name>
@@ -98,6 +102,10 @@
     <ProjectReference Include="..\..\..\Revolution\EventAggregator\EventAggregator.csproj">
       <Project>{31e6b370-01f0-4489-832f-436cb97a6718}</Project>
       <Name>EventAggregator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Revolution\EventMessages\EventMessages.csproj">
+      <Project>{E3D04176-3758-4C9D-84F3-7A4D3859EAE5}</Project>
+      <Name>EventMessages</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Revolution\RevolutionData\RevolutionData.csproj">
       <Project>{959d7f6b-0426-452c-8962-c0f4dadbe3b4}</Project>

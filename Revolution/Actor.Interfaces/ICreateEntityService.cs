@@ -10,5 +10,6 @@ namespace Actor.Interfaces
         object Action { get; }
 
         string ActorId { get; }
+        IEntityRequest InitialMessage { get; }
     }
 }

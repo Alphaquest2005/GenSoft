@@ -12,23 +12,24 @@ using Utilities;
 namespace DataServices.Actors
 {
   
-    public class EntityDataServiceActor<TService>: BaseActor<EntityDataServiceActor<TService>>, IEntityDataServiceActor<TService> where TService:IEntityRequest
+    public class EntityDataServiceActor<TService>: BaseActor<EntityDataServiceActor<TService>>, IEntityDataServiceActor<TService> where TService:IEntityRequest, IProcessSystemMessage
     {
         private Action<ISystemSource,TService> Action { get; }
        
       
         
-        public EntityDataServiceActor(ICreateEntityService msg, IDynamicEntityType entityType) : base(msg.ActorId,msg.Process)
+        public EntityDataServiceActor(ICreateEntityService cMsg, IDynamicEntityType entityType) : base(cMsg.ActorId,cMsg.Process)
         {
-            Action = (Action<ISystemSource,TService>)msg.Action;
+            Action = (Action<ISystemSource,TService>)cMsg.Action;
            
             var processStateInfo = new StateEventInfo(Process,RevolutionData.Context.EventFunctions.UpdateEventData(entityType.Name, RevolutionData.Context.Entity.Events.EntityRequested), Guid.NewGuid());
             EventMessageBus.Current.GetEvent<TService>(processStateInfo, Source)
                 .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == processStateInfo.EventKey)
                 .Where(x => x.EntityType == entityType)
                 .Subscribe(x => HandledEvent(x));
-            
-            EventMessageBus.Current.Publish(new ServiceStarted<IEntityDataServiceActor<TService>>(this,new StateEventInfo(msg.Process, RevolutionData.Context.EventFunctions.UpdateEventData(msg.ActorType.GetFriendlyName(),RevolutionData.Context.Actor.Events.ActorStarted)), msg.Process,Source));
+            ////////////////////// - no need to do this 
+            //if(cMsg.InitialMessage is TService p) HandledEvent(p);
+            EventMessageBus.Current.Publish(new ServiceStarted<IEntityDataServiceActor<TService>>(this,new StateEventInfo(cMsg.Process, RevolutionData.Context.EventFunctions.UpdateEventData(cMsg.ActorType.GetFriendlyName(),RevolutionData.Context.Actor.Events.ActorStarted)), cMsg.Process,Source));
         }
 
 
