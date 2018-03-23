@@ -388,6 +388,7 @@ C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\ViewModel.WorkFlow.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\ViewModels.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\ViewModels.dll.config
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\Process.WorkFlow.pdb
+C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\Process.WorkFlow.dll.config
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\Common.pdb
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\de\System.Windows.Interactivity.resources.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\en\System.Windows.Interactivity.resources.dll
@@ -408,9 +409,8 @@ C:\Prism\GitRepositiory\GenSoft\MRManager\obj\x64\Debug\App.g.cs
 C:\Prism\GitRepositiory\GenSoft\MRManager\obj\x64\Debug\MRManager_MarkupCompile.cache
 C:\Prism\GitRepositiory\GenSoft\MRManager\obj\x64\Debug\MRManager.g.resources
 C:\Prism\GitRepositiory\GenSoft\MRManager\obj\x64\Debug\MRManager.Properties.Resources.resources
-C:\Prism\GitRepositiory\GenSoft\MRManager\obj\x64\Debug\MRManager.csproj.GenerateResource.Cache
+C:\Prism\GitRepositiory\GenSoft\MRManager\obj\x64\Debug\MRManager.csproj.GenerateResource.cache
 C:\Prism\GitRepositiory\GenSoft\MRManager\obj\x64\Debug\MRManager.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\MRManager\obj\x64\Debug\MRManager.csproj.CopyComplete
 C:\Prism\GitRepositiory\GenSoft\MRManager\obj\x64\Debug\MRManager.exe
 C:\Prism\GitRepositiory\GenSoft\MRManager\obj\x64\Debug\MRManager.pdb
-C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\Process.WorkFlow.dll.config
-C:\Prism\GitRepositiory\GenSoft\MRManager\obj\x64\Debug\MRManager.csproj.CopyComplete

@@ -8,4 +8,3 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\PropertyExtensions\bin\x64\Debug\Prop
 C:\Prism\GitRepositiory\GenSoft\Revolution\PropertyExtensions\obj\x64\Debug\PropertyExtensions.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\PropertyExtensions\obj\x64\Debug\PropertyExtensions.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\PropertyExtensions\obj\x64\Debug\PropertyExtensions.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\PropertyExtensions\obj\x64\Debug\PropertyExtensions.csprojResolveAssemblyReference.cache

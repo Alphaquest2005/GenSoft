@@ -157,16 +157,16 @@ namespace RevolutionData
                         {
                               v => v.SelectedAddinAction.Value != null
                         },
-                        subject: s => Observable.Empty<ReactiveCommand<IViewModel>>(),
+                        subject: s => s.SelectedAddinAction,
 
                         messageData: s =>
                         {
                             
 
                             return new ViewEventCommandParameter(
-                                new object[] {s, s.RowState.Value},
+                                new object[] {s.SelectedAddinAction.Value, s.CurrentEntity.Value},
                                 new RevolutionEntities.Process.StateCommandInfo(s.Process,
-                                    Context.ViewModel.Commands.ChangeCurrentEntity), s.Process,
+                                   Context.CommandFunctions.UpdateCommandData(s.SelectedAddinAction.Value.Name,Context.Addin.Commands.StartAddin)), s.Process,
                                 s.Source);
                         }),
                 };

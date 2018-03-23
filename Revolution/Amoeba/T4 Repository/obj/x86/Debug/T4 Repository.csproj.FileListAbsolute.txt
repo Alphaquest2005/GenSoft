@@ -15,6 +15,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Repository\bin\x86\Debug\T4
 C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Repository\bin\x86\Debug\T4Entities.dll.config
 C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Repository\obj\x86\Debug\T4 Repository.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Repository\obj\x86\Debug\T4 Repository.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Repository\obj\x86\Debug\T4 Repository.csproj.CopyComplete
 C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Repository\obj\x86\Debug\T4Repository.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Repository\obj\x86\Debug\T4Repository.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\T4 Repository\obj\x86\Debug\T4 Repository.csproj.CopyComplete

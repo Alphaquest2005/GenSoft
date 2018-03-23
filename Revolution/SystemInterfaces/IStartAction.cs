@@ -1,4 +1,6 @@
-﻿namespace SystemInterfaces
+﻿using System.Collections.Specialized;
+
+namespace SystemInterfaces
 {
     public interface IStartAddin : IProcessSystemMessage
     {
@@ -10,5 +12,8 @@
     {
         string Action { get; }
         string Addin { get; }
+        string Name { get; }
     }
+
+    
 }

@@ -16,6 +16,7 @@ namespace GenSoft.Interfaces
 	{
 		int AddinActionId { get;}
 		int EntityTypeId { get;}
+		string Name { get;}
 
 
 

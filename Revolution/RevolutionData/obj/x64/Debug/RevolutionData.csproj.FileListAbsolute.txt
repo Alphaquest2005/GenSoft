@@ -68,6 +68,8 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\JB.Commo
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\JB.Common.Collections.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\JB.Common.Collections.Reactive.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\JB.Common.Reactive.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\MefContrib.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\MefContrib.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\Microsoft.EntityFrameworkCore.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\Microsoft.EntityFrameworkCore.SqlServer.dll
@@ -220,6 +222,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\GenSoft.
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\GenSoft.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\obj\x64\Debug\RevolutionData.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\obj\x64\Debug\RevolutionData.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\obj\x64\Debug\RevolutionData.csproj.CopyComplete
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\obj\x64\Debug\RevolutionData.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\obj\x64\Debug\RevolutionData.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\obj\x64\Debug\RevolutionData.csproj.CopyComplete

@@ -61,6 +61,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\x64\Debug\SystemInterfaces
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\bin\x64\Debug\Utilities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\obj\x64\Debug\Common.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\obj\x64\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\Common\obj\x64\Debug\Common.csproj.CopyComplete
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\obj\x64\Debug\Common.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Common\obj\x64\Debug\Common.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\Common\obj\x64\Debug\Common.csproj.CopyComplete

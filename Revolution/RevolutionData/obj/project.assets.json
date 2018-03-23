@@ -72,6 +72,18 @@
           "lib/net46/JB.Common.Reactive.dll": {}
         }
       },
+      "MefContrib/1.2.2.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.Composition"
+        ],
+        "compile": {
+          "lib/net40-Client/MefContrib.dll": {}
+        },
+        "runtime": {
+          "lib/net40-Client/MefContrib.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.4.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -673,6 +685,22 @@
           "bin/placeholder/Actor.Interfaces.dll": {}
         }
       },
+      "BootStrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "Actor.Interfaces": "1.0.0",
+          "ComponentModel.Composition.Hosting.Extension": "1.0.0",
+          "MefContrib": "1.2.2.1",
+          "ViewModel.Interfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BootStrapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BootStrapper.dll": {}
+        }
+      },
       "Common/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -703,10 +731,21 @@
           "bin/placeholder/CommonMessages.dll": {}
         }
       },
+      "ComponentModel.Composition.Hosting.Extension/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "compile": {
+          "bin/placeholder/ComponentModel.Composition.Hosting.Extension.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ComponentModel.Composition.Hosting.Extension.dll": {}
+        }
+      },
       "DomainUtilities/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "DynamicExpresso.Core": "2.0.0",
           "GenSoft.DBContext": "1.0.0",
@@ -933,6 +972,18 @@
         },
         "runtime": {
           "lib/net46/JB.Common.Reactive.dll": {}
+        }
+      },
+      "MefContrib/1.2.2.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.Composition"
+        ],
+        "compile": {
+          "lib/net40-Client/MefContrib.dll": {}
+        },
+        "runtime": {
+          "lib/net40-Client/MefContrib.dll": {}
         }
       },
       "Microsoft.CSharp/4.4.0": {
@@ -1526,6 +1577,22 @@
           "bin/placeholder/Actor.Interfaces.dll": {}
         }
       },
+      "BootStrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "Actor.Interfaces": "1.0.0",
+          "ComponentModel.Composition.Hosting.Extension": "1.0.0",
+          "MefContrib": "1.2.2.1",
+          "ViewModel.Interfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BootStrapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BootStrapper.dll": {}
+        }
+      },
       "Common/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -1556,10 +1623,21 @@
           "bin/placeholder/CommonMessages.dll": {}
         }
       },
+      "ComponentModel.Composition.Hosting.Extension/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "compile": {
+          "bin/placeholder/ComponentModel.Composition.Hosting.Extension.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ComponentModel.Composition.Hosting.Extension.dll": {}
+        }
+      },
       "DomainUtilities/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "DynamicExpresso.Core": "2.0.0",
           "GenSoft.DBContext": "1.0.0",
@@ -1788,6 +1866,18 @@
           "lib/net46/JB.Common.Reactive.dll": {}
         }
       },
+      "MefContrib/1.2.2.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.Composition"
+        ],
+        "compile": {
+          "lib/net40-Client/MefContrib.dll": {}
+        },
+        "runtime": {
+          "lib/net40-Client/MefContrib.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.4.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -2379,6 +2469,22 @@
           "bin/placeholder/Actor.Interfaces.dll": {}
         }
       },
+      "BootStrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "Actor.Interfaces": "1.0.0",
+          "ComponentModel.Composition.Hosting.Extension": "1.0.0",
+          "MefContrib": "1.2.2.1",
+          "ViewModel.Interfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BootStrapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BootStrapper.dll": {}
+        }
+      },
       "Common/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -2409,10 +2515,21 @@
           "bin/placeholder/CommonMessages.dll": {}
         }
       },
+      "ComponentModel.Composition.Hosting.Extension/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "compile": {
+          "bin/placeholder/ComponentModel.Composition.Hosting.Extension.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ComponentModel.Composition.Hosting.Extension.dll": {}
+        }
+      },
       "DomainUtilities/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "DynamicExpresso.Core": "2.0.0",
           "GenSoft.DBContext": "1.0.0",
@@ -2641,6 +2758,18 @@
           "lib/net46/JB.Common.Reactive.dll": {}
         }
       },
+      "MefContrib/1.2.2.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.Composition"
+        ],
+        "compile": {
+          "lib/net40-Client/MefContrib.dll": {}
+        },
+        "runtime": {
+          "lib/net40-Client/MefContrib.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.4.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -3232,6 +3361,22 @@
           "bin/placeholder/Actor.Interfaces.dll": {}
         }
       },
+      "BootStrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "dependencies": {
+          "Actor.Interfaces": "1.0.0",
+          "ComponentModel.Composition.Hosting.Extension": "1.0.0",
+          "MefContrib": "1.2.2.1",
+          "ViewModel.Interfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BootStrapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BootStrapper.dll": {}
+        }
+      },
       "Common/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
@@ -3262,10 +3407,21 @@
           "bin/placeholder/CommonMessages.dll": {}
         }
       },
+      "ComponentModel.Composition.Hosting.Extension/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7",
+        "compile": {
+          "bin/placeholder/ComponentModel.Composition.Hosting.Extension.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ComponentModel.Composition.Hosting.Extension.dll": {}
+        }
+      },
       "DomainUtilities/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "DynamicExpresso.Core": "2.0.0",
           "GenSoft.DBContext": "1.0.0",
@@ -3488,6 +3644,20 @@
         "JB.Common.Reactive.nuspec",
         "lib/net46/JB.Common.Reactive.XML",
         "lib/net46/JB.Common.Reactive.dll"
+      ]
+    },
+    "MefContrib/1.2.2.1": {
+      "sha512": "hDgllEVu5FmcIgyphSxnKjQu4N1a8eGj+DzlxoBcgASFBDuyvdBGokEPC8GNUMbcnxUkT1vy0fxbhacV/t3RFQ==",
+      "type": "package",
+      "path": "mefcontrib/1.2.2.1",
+      "files": [
+        "lib/net40-Client/MefContrib.dll",
+        "lib/net40-Client/MefContrib.pdb",
+        "lib/net40-Client/MefContrib.xml",
+        "lib/sl/MefContrib.Silverlight.dll",
+        "lib/sl/MefContrib.Silverlight.pdb",
+        "mefcontrib.1.2.2.1.nupkg.sha512",
+        "mefcontrib.nuspec"
       ]
     },
     "Microsoft.CSharp/4.4.0": {
@@ -5114,6 +5284,11 @@
       "path": "../Actor.Interfaces/Actor.Interfaces.csproj",
       "msbuildProject": "../Actor.Interfaces/Actor.Interfaces.csproj"
     },
+    "BootStrapper/1.0.0": {
+      "type": "project",
+      "path": "../BootStrapper/BootStrapper.csproj",
+      "msbuildProject": "../BootStrapper/BootStrapper.csproj"
+    },
     "Common/1.0.0": {
       "type": "project",
       "path": "../Common/Common.csproj",
@@ -5123,6 +5298,11 @@
       "type": "project",
       "path": "../CommonMessages/CommonMessages.csproj",
       "msbuildProject": "../CommonMessages/CommonMessages.csproj"
+    },
+    "ComponentModel.Composition.Hosting.Extension/1.0.0": {
+      "type": "project",
+      "path": "../MefGeneric-master/MEFGeneric Preview 9/src/ComponentModel.Composition.Hosting.Extension/ComponentModel.Composition.Hosting.Extension.csproj",
+      "msbuildProject": "../MefGeneric-master/MEFGeneric Preview 9/src/ComponentModel.Composition.Hosting.Extension/ComponentModel.Composition.Hosting.Extension.csproj"
     },
     "DomainUtilities/1.0.0": {
       "type": "project",

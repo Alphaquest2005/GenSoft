@@ -22,6 +22,7 @@
                             <TextBlock Text="Actions" FontSize="16"/>
                             <ComboBox
                                 ItemsSource="{Binding ViewInfo.EntityType.Actions}"
+                                DisplayMemberPath="Name"
                                 SelectedItem="{Binding SelectedAddinAction.Value}"
                                 Margin="10,5,5,5" Width="50" />
                                 

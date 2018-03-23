@@ -70,6 +70,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\ViewModel.
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\bin\x64\Debug\Utilities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\obj\x64\Debug\ViewMessages.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\obj\x64\Debug\ViewMessages.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\obj\x64\Debug\ViewMessages.csproj.CopyComplete
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\obj\x64\Debug\ViewMessages.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\obj\x64\Debug\ViewMessages.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\ViewMessages\obj\x64\Debug\ViewMessages.csproj.CopyComplete

@@ -809,6 +809,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "DynamicExpresso.Core": "2.0.0",
           "GenSoft.DBContext": "1.0.0",
@@ -1913,6 +1914,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "DynamicExpresso.Core": "2.0.0",
           "GenSoft.DBContext": "1.0.0",
@@ -3017,6 +3019,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "DynamicExpresso.Core": "2.0.0",
           "GenSoft.DBContext": "1.0.0",
@@ -4121,6 +4124,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7",
         "dependencies": {
+          "BootStrapper": "1.0.0",
           "Common": "1.0.0",
           "DynamicExpresso.Core": "2.0.0",
           "GenSoft.DBContext": "1.0.0",

@@ -9,13 +9,15 @@ namespace RevolutionEntities
 {
     public class AddinAction:IAddinAction
     {
-        public AddinAction(string action, string addin)
+        public AddinAction(string action, string addin, string name)
         {
             Action = action;
             Addin = addin;
+            Name = name;
         }
 
         public string Action { get; }
         public string Addin { get; }
+        public string Name { get; }
     }
 }

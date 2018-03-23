@@ -241,6 +241,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\bin\x64\Debug\Utili
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\obj\x64\Debug\GenSoft.DBContext.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\obj\x64\Debug\GenSoft.DBContext.g.resources
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\obj\x64\Debug\GenSoft.DBContext.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\obj\x64\Debug\GenSoft.DBContext.csproj.CopyComplete
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\obj\x64\Debug\GenSoft.DBContext.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\obj\x64\Debug\GenSoft.DBContext.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.DBContext\obj\x64\Debug\GenSoft.DBContext.csproj.CopyComplete

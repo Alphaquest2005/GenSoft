@@ -184,6 +184,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Debug\Util
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\bin\x64\Debug\ViewModel.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\obj\x64\Debug\RevolutionEntities.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\obj\x64\Debug\RevolutionEntities.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\obj\x64\Debug\RevolutionEntities.csproj.CopyComplete
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\obj\x64\Debug\RevolutionEntities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\obj\x64\Debug\RevolutionEntities.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionEntities\obj\x64\Debug\RevolutionEntities.csproj.CopyComplete

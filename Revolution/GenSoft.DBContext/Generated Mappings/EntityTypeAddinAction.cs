@@ -20,6 +20,7 @@ namespace GenSoft.Mappings
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.AddinActionId).HasColumnName("AddinActionId").IsRequired();
 			entityBuilder.Property(t => t.EntityTypeId).HasColumnName("EntityTypeId").IsRequired();
+			entityBuilder.Property(t => t.Name).HasColumnName("Name").IsRequired().HasMaxLength(50);
 		//-------------------Navigation Properties -------------------------------//
 	
 				//----------------Parent Properties

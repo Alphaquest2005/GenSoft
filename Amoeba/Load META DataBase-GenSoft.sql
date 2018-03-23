@@ -99,10 +99,10 @@ declare @attributeId int, @dataTypeId int, @Counter int = 0
 		set @Counter +=1; 
 		
 		--Do something with Id here
-		declare @EntityIds int, @TypeId int, @rEntityIds int, @EntitySet varchar(50), @TableName varchar(50), @schema varchar(50)
+		declare @EntityIds int, @TypeId int, @rEntityIds int,  @TableName varchar(50), @schema varchar(50)
 		set @TableName = null; --initialize with null
 
-		select @TableName = TableName, @EntitySet = EntitySetName,@schema = [Schema] 
+		select @TableName = EntitySetName,@schema = [Schema] 
 		from @entity where Id = @Counter
 
 		if @TableName is null
@@ -131,7 +131,7 @@ declare @attributeId int, @dataTypeId int, @Counter int = 0
 
 			Insert into [GenSoft-Creator].dbo.EntityTypes(TypeId, ApplicationId, EntitySet)
 			OutPut INSERTED.Id into @entityTypeIdTable 
-			values (@TypeId, @AppId, @EntitySet)	
+			values (@TypeId, @AppId, @TableName)	
 			
 			select @EntityIds = id from @entityTypeIdTable	
 

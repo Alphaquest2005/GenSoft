@@ -15,6 +15,7 @@ namespace GenSoft.Entities
 	{
 		public virtual int AddinActionId { get; set; }
 		public virtual int EntityTypeId { get; set; }
+		public virtual string Name { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships

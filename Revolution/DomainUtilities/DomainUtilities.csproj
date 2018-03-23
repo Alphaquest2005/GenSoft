@@ -61,6 +61,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BootStrapper\BootStrapper.csproj">
+      <Project>{5DFEEA8B-BABA-4544-BF36-0A76A0D10C1B}</Project>
+      <Name>BootStrapper</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{cb6d5fbc-0c13-437d-b4f3-a0ec4d5673b3}</Project>
       <Name>Common</Name>

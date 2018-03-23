@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Linq;
 using SystemInterfaces;
+using Common;
 using Common.DataEntites;
 using DomainUtilities;
 using EventAggregator;
@@ -49,6 +50,7 @@ namespace EFRepository
 
                 using (var ctx = new GenSoftDBContext())
                 {
+                    
                     var entityType = ctx.EntityTypes.Include(x => x.Type).First(x => x.Type.Name == msg.EntityType.Name);
 
 
@@ -101,6 +103,7 @@ namespace EFRepository
                         else
                         {
                             data.Value = change.Value.ToString();
+                            ctx.Update(data);
                         }
                     }
                     ctx.SaveChanges(true);
@@ -125,6 +128,9 @@ namespace EFRepository
 
                     //}
                     //}
+
+                    if (!msg.Changes.ContainsKey("Id")) msg.Changes.Add("Id", msg.Entity.Properties["Id"]);
+
                     var newEntity = GetDynamicEntityWithChanges(ctx,
                         DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(entityType.Type.Name), msg.Changes);
 

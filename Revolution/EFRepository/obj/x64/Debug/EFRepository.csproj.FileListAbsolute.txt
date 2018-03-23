@@ -257,6 +257,7 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\Utilities.
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\Actor.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\ViewModel.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\Process.WorkFlow.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\Process.WorkFlow.dll.config
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\CommonMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\Common.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\DomainUtilities.pdb
@@ -277,7 +278,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\Actor.Inte
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\ViewModel.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\obj\x64\Debug\EFRepository.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\obj\x64\Debug\EFRepository.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\obj\x64\Debug\EFRepository.csproj.CopyComplete
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\obj\x64\Debug\EFRepository.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\obj\x64\Debug\EFRepository.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\bin\x64\Debug\Process.WorkFlow.dll.config
-C:\Prism\GitRepositiory\GenSoft\Revolution\EFRepository\obj\x64\Debug\EFRepository.csproj.CopyComplete

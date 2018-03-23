@@ -15,7 +15,7 @@ namespace GenSoft.Interfaces
 	public partial interface IAddinAction:SystemInterfaces.IEntity  
 	{
 		int AddinId { get;}
-		string Name { get;}
+		string Class { get;}
 
 
 

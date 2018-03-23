@@ -14,7 +14,7 @@ namespace GenSoft.Entities
 	public partial class AddinAction: BaseEntity, IAddinAction
 	{
 		public virtual int AddinId { get; set; }
-		public virtual string Name { get; set; }
+		public virtual string Class { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships

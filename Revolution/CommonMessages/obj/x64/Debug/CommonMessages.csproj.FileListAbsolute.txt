@@ -20,6 +20,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\CommonMessages\bin\x64\Debug\SystemIn
 C:\Prism\GitRepositiory\GenSoft\Revolution\CommonMessages\bin\x64\Debug\SystemInterfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\CommonMessages\obj\x64\Debug\CommonMessages.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\CommonMessages\obj\x64\Debug\CommonMessages.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\CommonMessages\obj\x64\Debug\CommonMessages.csproj.CopyComplete
 C:\Prism\GitRepositiory\GenSoft\Revolution\CommonMessages\obj\x64\Debug\CommonMessages.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\CommonMessages\obj\x64\Debug\CommonMessages.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\CommonMessages\obj\x64\Debug\CommonMessages.csproj.CopyComplete

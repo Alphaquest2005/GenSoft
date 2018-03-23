@@ -43,7 +43,7 @@ namespace ViewModel.WorkFlow
                         new object[]
                         {
                             v.CurrentEntity.Value,
-                            v.ChangeTracking.Where(z => v.CurrentEntity.Value.PropertyList.FirstOrDefault(x => x.Key == z.Key)?.Value?.ToString() != (z.Value is IEntityKeyValuePair ? ((IEntityKeyValuePair)z.Value).Value.ToString() : z.Value.ToString())).ToDictionary(x => x.Key, x => (x.Value is IEntityKeyValuePair? ((IEntityKeyValuePair)x.Value).Value.ToString() : x.Value.ToString()))
+                            v.ChangeTracking.Where(z => v.CurrentEntity.Value.PropertyList.FirstOrDefault(x => x.Key == z.Key)?.Value?.ToString() != (z.Value is IEntityKeyValuePair ? ((IEntityKeyValuePair)z.Value).Value?.ToString() : z.Value?.ToString())).ToDictionary(x => x.Key, x => (x.Value is IEntityKeyValuePair? ((IEntityKeyValuePair)x.Value).Value.ToString() : x.Value.ToString()))
                         },
                         new RevolutionEntities.Process.StateCommandInfo(v.Process, RevolutionData.Context.Entity.Commands.GetEntity), v.Process,
                         v.Source);

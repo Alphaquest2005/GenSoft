@@ -93,6 +93,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\System
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\bin\x64\Debug\Utilities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\obj\x64\Debug\GenSoft.Entities.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\obj\x64\Debug\GenSoft.Entities.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\obj\x64\Debug\GenSoft.Entities.csproj.CopyComplete
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\obj\x64\Debug\GenSoft.Entities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\obj\x64\Debug\GenSoft.Entities.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\GenSoft.Entities\obj\x64\Debug\GenSoft.Entities.csproj.CopyComplete

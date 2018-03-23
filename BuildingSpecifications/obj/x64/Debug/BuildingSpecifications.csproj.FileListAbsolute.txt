@@ -19,6 +19,6 @@ C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\x64\Debug\SystemInter
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\bin\x64\Debug\Utilities.pdb
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\obj\x64\Debug\BuildingSpecifications.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\obj\x64\Debug\BuildingSpecifications.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\obj\x64\Debug\BuildingSpecifications.csproj.CopyComplete
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\obj\x64\Debug\BuildingSpecifications.dll
 C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\obj\x64\Debug\BuildingSpecifications.pdb
-C:\Prism\GitRepositiory\GenSoft\BuildingSpecifications\obj\x64\Debug\BuildingSpecifications.csproj.CopyComplete

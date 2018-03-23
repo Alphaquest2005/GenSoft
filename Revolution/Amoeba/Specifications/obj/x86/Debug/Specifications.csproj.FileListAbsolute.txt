@@ -10,6 +10,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\Specifications\bin\x86\Debug\T
 C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\Specifications\bin\x86\Debug\T4Entities.dll.config
 C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\Specifications\obj\x86\Debug\Specifications.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\Specifications\obj\x86\Debug\Specifications.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\Specifications\obj\x86\Debug\Specifications.csproj.CopyComplete
 C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\Specifications\obj\x86\Debug\Specifications.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\Specifications\obj\x86\Debug\Specifications.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\Amoeba\Specifications\obj\x86\Debug\Specifications.csproj.CopyComplete

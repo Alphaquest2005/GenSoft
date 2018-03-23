@@ -78,3 +78,5 @@ C:\Prism\GitRepositiory\GenSoft\Addins\AsycudaXMLImport\AsycudaXMLImport\bin\Deb
 C:\Prism\GitRepositiory\GenSoft\Addins\AsycudaXMLImport\AsycudaXMLImport\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Prism\GitRepositiory\GenSoft\Addins\AsycudaXMLImport\AsycudaXMLImport\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Prism\GitRepositiory\GenSoft\Addins\AsycudaXMLImport\AsycudaXMLImport\bin\Debug\System.Data.SqlClient.dll
+C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\AsycudaXMLImport.dll
+C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\AsycudaXMLImport.pdb

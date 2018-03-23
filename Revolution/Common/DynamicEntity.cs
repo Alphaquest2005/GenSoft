@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using SystemInterfaces;
+using Common.Dynamic;
 using JB.Collections.Reactive;
 
 
@@ -124,6 +125,8 @@ namespace Common.DataEntites
         public string Type { get; }
         public Dictionary<string, IDynamicValue> Properties { get; }
     }
+
+
 
     public static class IEntityExtensions
     {

@@ -172,6 +172,7 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\Compone
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\CommonMessages.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\GenSoft.DBContext.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\Process.WorkFlow.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\Process.WorkFlow.dll.config
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\BootStrapper.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\BootStrapper.dll.config
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\Common.pdb
@@ -192,7 +193,6 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\CommonM
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\GenSoft.DBContext.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\obj\x64\Debug\EventAggregator.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\obj\x64\Debug\EventAggregator.csproj.CoreCompileInputs.cache
+C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\obj\x64\Debug\EventAggregator.csproj.CopyComplete
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\obj\x64\Debug\EventAggregator.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\obj\x64\Debug\EventAggregator.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\bin\x64\Debug\Process.WorkFlow.dll.config
-C:\Prism\GitRepositiory\GenSoft\Revolution\EventAggregator\obj\x64\Debug\EventAggregator.csproj.CopyComplete

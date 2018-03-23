@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Diagnostics.Contracts;
 using System.Linq;
 using SystemInterfaces;
+using BootStrapper;
 using Common;
 using Common.DataEntites;
 using DynamicExpresso;
@@ -169,7 +170,14 @@ namespace DomainUtilities
         private static ObservableList<IAddinAction> CreateAddinActions(EntityType viewType)
         {
             var res = new List<IAddinAction>();
-            res.AddRange(viewType.EntityTypeAddinActions.Select(x => new AddinAction(x.AddinAction.Name,x.AddinAction.Addin.Name)));
+            foreach (var eAction in viewType.EntityTypeAddinActions)
+            {
+                var type = Utilities.TypeNameExtensions.GetTypeByName($"{eAction.AddinAction.Addin.Name}.{eAction.AddinAction.Class}").FirstOrDefault();
+                var a = Activator.CreateInstance(type);
+                var aa = new AddinAction(eAction.AddinAction.Class, eAction.AddinAction.Addin.Name, eAction.Name);
+                res.Add(aa);
+            }
+            
            return new ObservableList<IAddinAction>(res);
         }
 
