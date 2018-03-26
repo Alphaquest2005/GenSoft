@@ -24,6 +24,13 @@ namespace SystemInterfaces
         Dictionary<string, IDynamicValue> Properties { get; }
     }
 
+    public interface IDynamicType
+    {
+        string Type { get; }
+        Dictionary<string, object> Properties { get; }
+        int Id { get; }
+    }
+
     public interface IDynamicValue
     {
         string Type { get; }

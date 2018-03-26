@@ -12,9 +12,8 @@ namespace SystemInterfaces
         Dictionary<string, List<dynamic>> CalculatedProperties { get; }
 
         ObservableDictionary<string, Dictionary<int, dynamic>> CachedProperties { get; }
-        ObservableDictionary<string, string> PropertyParentEntityType { get; }
-        IIntelliList<IDynamicEntityType> ChildEntities { get;  }
-        IIntelliList<IDynamicEntityType> ParentEntities { get;  }
+        IIntelliList<IDynamicRelationshipType> ChildEntities { get;  }
+        IIntelliList<IDynamicRelationshipType> ParentEntities { get;  }
         IDynamicEntityType NullEntityType();
         IDynamicEntityType ParentEntityType { get; }
 
@@ -26,5 +25,11 @@ namespace SystemInterfaces
     public interface IIntelliList<T>:IList<T>
     {
         T SelectedItem { get; set; }
+    }
+
+    public interface IDynamicRelationshipType
+    {
+        string Type { get; }
+        string Key { get; }
     }
 }

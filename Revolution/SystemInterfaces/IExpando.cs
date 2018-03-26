@@ -29,7 +29,7 @@ namespace SystemInterfaces
         /// <param name="binder"></param>
         /// <param name="result"></param>
         /// <returns></returns>
-        bool TryGetMember(GetMemberBinder binder, out object result);
+        bool TryGetMember(GetMemberBinder binder, out dynamic result);
 
         /// <summary>
         /// Property setter implementation tries to retrieve value from instance 
@@ -38,7 +38,7 @@ namespace SystemInterfaces
         /// <param name="binder"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        bool TrySetMember(SetMemberBinder binder, object value);
+        bool TrySetMember(SetMemberBinder binder, dynamic value);
 
         /// <summary>
         /// Dynamic invocation method. Currently allows only for Reflection based
@@ -48,7 +48,7 @@ namespace SystemInterfaces
         /// <param name="args"></param>
         /// <param name="result"></param>
         /// <returns></returns>
-        bool TryInvokeMember(InvokeMemberBinder binder, object[] args, out object result);
+        bool TryInvokeMember(InvokeMemberBinder binder, dynamic[] args, out dynamic result);
 
         /// <summary>
         /// Convenience method that provides a string Indexer 
@@ -84,19 +84,19 @@ namespace SystemInterfaces
         /// </summary>
         /// <param name="item"></param>
         /// <returns></returns>
-        bool Contains(KeyValuePair<string, object> item, bool includeInstanceProperties = false);
+        bool Contains(KeyValuePair<string, dynamic> item, bool includeInstanceProperties = false);
 
         event PropertyChangedEventHandler PropertyChanged;
         void OnPropertyChanged([CallerMemberName] string propertyName = null);
         bool TryDeleteMember(DeleteMemberBinder binder);
-        bool TryConvert(ConvertBinder binder, out object result);
-        bool TryCreateInstance(CreateInstanceBinder binder, object[] args, out object result);
-        bool TryInvoke(InvokeBinder binder, object[] args, out object result);
-        bool TryBinaryOperation(BinaryOperationBinder binder, object arg, out object result);
-        bool TryUnaryOperation(UnaryOperationBinder binder, out object result);
-        bool TryGetIndex(GetIndexBinder binder, object[] indexes, out object result);
-        bool TrySetIndex(SetIndexBinder binder, object[] indexes, object value);
-        bool TryDeleteIndex(DeleteIndexBinder binder, object[] indexes);
+        bool TryConvert(ConvertBinder binder, out dynamic result);
+        bool TryCreateInstance(CreateInstanceBinder binder, object[] args, out dynamic result);
+        bool TryInvoke(InvokeBinder binder, object[] args, out dynamic result);
+        bool TryBinaryOperation(BinaryOperationBinder binder, dynamic arg, out dynamic result);
+        bool TryUnaryOperation(UnaryOperationBinder binder, out dynamic result);
+        bool TryGetIndex(GetIndexBinder binder, dynamic[] indexes, out dynamic result);
+        bool TrySetIndex(SetIndexBinder binder, dynamic[] indexes, dynamic value);
+        bool TryDeleteIndex(DeleteIndexBinder binder, dynamic[] indexes);
         DynamicMetaObject GetMetaObject(Expression parameter);
 
         Dictionary<string, IDynamicValue> Properties { get; }

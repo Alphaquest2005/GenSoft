@@ -29,10 +29,10 @@ namespace Asycuda
             get { return instance; }
         }
 
-        private dynamic da = new Expando();
+        private dynamic da = new DynamicType("xcuda_ASYCUDA", 0);
         private ASYCUDA a;
 
-        public Expando Import(ASYCUDA adoc, IDynamicEntity docSet)
+        public DynamicType Import(ASYCUDA adoc, IDynamicEntity docSet)
         {
 
             try
@@ -41,10 +41,10 @@ namespace Asycuda
                 a = adoc;
                 var ads = docSet;
                 
-                da.xcuda_Item = new List<Expando>();
+                da.xcuda_Item = new List<DynamicType>();
                 da.ASYCUDA_Id = 0;
-                da.xcuda_ASYCUDA_ExtendedProperties = new Expando();
-                da.xcuda_Suppliers_documents = new List<Expando>();
+                da.xcuda_ASYCUDA_ExtendedProperties = new DynamicType("xcuda_ASYCUDA_ExtendedProperties", da.ASYCUDA_Id);
+                da.xcuda_Suppliers_documents = new List<DynamicType>();
 
                 SaveGeneralInformation();
                 SaveDeclarant();
@@ -60,11 +60,10 @@ namespace Asycuda
 
                 Save_Items();
 
-                if (!((List<Expando>)da.xcuda_Item).Any())
+                if (!((List<DynamicType>) da.xcuda_Item).Any())
                 {
-                    return new Expando();
+                    return new DynamicType("xcuda_ASYCUDA", 0);
                 }
-
 
 
                 Save_Suppliers_Documents();
@@ -101,7 +100,7 @@ namespace Asycuda
                     var ai = a.Prev_decl.ElementAt(i);
                     if (ai == null) continue;
                     
-                    dynamic pi = new Expando();// CreateDynamicEntity("xcuda_PreviousItem");
+                    dynamic pi = new DynamicType("xcuda_PreviousItem", 0); 
                     
                     itm.xcuda_PreviousItem = pi;
                     pi.xcuda_Item = itm;
@@ -143,7 +142,7 @@ namespace Asycuda
             {
                 var asd = a.Supplier_documents.ElementAt(i);
 
-                dynamic s = new Expando();
+                dynamic s = new DynamicType("xcuda_Suppliers_documents", da.ASYCUDA_Id);
                 s.ASYCUDA_Id = da.ASYCUDA_Id;
 
                 da.xcuda_Suppliers_documents.Add(s);
@@ -190,8 +189,8 @@ namespace Asycuda
            // Parallel.For(0, a.Item.Count, i =>
             {
                 var ai = a.Item.ElementAt(i);
-                dynamic di = new Expando();
-                di.ASYCUDA_Id = da.ASYCUDA_Id;
+                dynamic di  = new DynamicType("xcuda_Item", da.ASYCUDA_Id);
+                    di.ASYCUDA_Id = da.ASYCUDA_Id;
                 di.ImportComplete = false ;
                 da.xcuda_Item.Add(di);
 
@@ -255,7 +254,7 @@ namespace Asycuda
             var vi = di.xcuda_Valuation_item;
             if (vi == null)
             {
-                vi = new Expando();
+                vi = new DynamicType("xcuda_Valuation_item", 0);
                 vi.Item_Id = di.Item_Id;
                 di.xcuda_Valuation_item = vi;
             }
@@ -282,7 +281,7 @@ namespace Asycuda
             var wi = vi.xcuda_Weight_itm;
             if (wi == null)
             {
-                wi = new Expando();
+                wi = new DynamicType("xcuda_Weight_itm",0);
                 wi.Valuation_item_Id = vi.Item_Id;
                 vi.xcuda_Weight_itm = wi;
             }
@@ -299,7 +298,7 @@ namespace Asycuda
             var i = vi.xcuda_item_external_freight;
             if (i == null)
             {
-                i = new Expando();
+                i = new DynamicType("xcuda_item_external_freight", 0);
                 i.Valuation_item_Id = vi.Item_Id;
                 vi.xcuda_item_external_freight = i;
             }
@@ -320,7 +319,7 @@ namespace Asycuda
             var i = vi.xcuda_Item_Invoice;
             if (i == null)
             {
-                i = new Expando();
+                i = new DynamicType("xcuda_Item_Invoice", 0);
                 i.Valuation_item_Id = vi.Item_Id;
                 vi.xcuda_Item_Invoice = i;
             }
@@ -341,9 +340,9 @@ namespace Asycuda
             if (t == null)
             {
 
-                t = new Expando();
+                t = new DynamicType("xcuda_Taxation", 0);
                 t.Item_Id = di.Item_Id;
-                t.xcuda_Taxation_line = new List<Expando>();
+                t.xcuda_Taxation_line = new List<DynamicType>();
                 di.xcuda_Taxation = t;
                
             }
@@ -370,8 +369,8 @@ namespace Asycuda
 
                 if (au.Duty_tax_code.Text.Count == 0) break;
 
-                dynamic tl = new Expando();
-                    t.xcuda_Taxation_line.Add(tl);
+                dynamic tl = new DynamicType("xcuda_Taxation_line", 0);
+                t.xcuda_Taxation_line.Add(tl);
                     
                
 
@@ -392,7 +391,7 @@ namespace Asycuda
             var pd = di.xcuda_Previous_doc;
             if (pd == null)
             {
-                pd = new Expando();
+                pd = new DynamicType("xcuda_Previous_doc", 0);
                 pd.Item_Id = di.Item_Id;
                 di.xcuda_Previous_doc = pd;
             }
@@ -408,7 +407,7 @@ namespace Asycuda
             var g = di.xcuda_Goods_description;
             if (g == null)
             {
-                g = new Expando();
+                g = new DynamicType("xcuda_Goods_description", 0);
                 g.Item_Id = di.Item_Id;
                 di.xcuda_Goods_description = g;
             }
@@ -423,9 +422,9 @@ namespace Asycuda
             var t = di.xcuda_Tarification;
             if (t == null)
             {
-                t = new Expando();
+                t = new DynamicType("xcuda_Tarification", 0);
                 t.Item_Id = di.Item_Id;
-                t.Unordered_xcuda_Supplementary_unit = new List<Expando>();
+                t.xcuda_Supplementary_unit = new List<DynamicType>();
                 di.xcuda_Tarification = t;
 
             }
@@ -456,9 +455,9 @@ namespace Asycuda
                 if (au.Suppplementary_unit_code.Text.Count == 0) continue;
 
                
-                   dynamic su = new Expando();
-                    su.Tarification_Id = t.Item_Id;
-                    t.Unordered_xcuda_Supplementary_unit.Add(su);
+                   dynamic su = new DynamicType("xcuda_Supplementary_unit", 0);
+                su.Tarification_Id = t.Item_Id;
+                    t.xcuda_Supplementary_unit.Add(su);
                
 
                 su.Suppplementary_unit_quantity = Convert.ToDouble(string.IsNullOrEmpty(au.Suppplementary_unit_quantity)
@@ -482,7 +481,7 @@ namespace Asycuda
             var h = t.xcuda_HScode;
             if (h == null)
             {
-                h = new Expando();
+                h = new DynamicType("xcuda_HScode", 0);
                 h.Item_Id = t.Item_Id;
                 t.xcuda_HScode = h;
             }
@@ -501,7 +500,7 @@ namespace Asycuda
             var p = di.xcuda_Packages;
             if (p == null)
             {
-                p = new Expando();
+                p = new DynamicType("xcuda_Packages", 0);
                 p.Item_Id = di.Item_Id;
                 di.xcuda_Packages = p;
             }
@@ -522,7 +521,7 @@ namespace Asycuda
             var sl = di.xcuda_Suppliers_link;
             if (sl == null)
             {
-                sl = new Expando();
+                sl = new DynamicType("xcuda_Suppliers_link", 0);
                 sl.Item_Id = di.Item_Id;
                 di.xcuda_Suppliers_link = sl;
             }
@@ -537,8 +536,8 @@ namespace Asycuda
             {
                 if (ai.Attached_documents[i].Attached_document_code.Text.Count == 0) break;
 
-                dynamic ad =  new Expando();
-                    ad.Item_Id = di.Item_Id;
+                dynamic ad = new DynamicType("xcuda_Attached_documents", 0);
+                ad.Item_Id = di.Item_Id;
                     di.xcuda_Attached_documents.Add(ad);
                 
 
@@ -564,7 +563,7 @@ namespace Asycuda
             foreach (var ac in a.Container)
             {
 
-                dynamic c = new Expando();
+                dynamic c = new DynamicType("xcuda_Container", 0);
                 c.ASYCUDA_Id = da.ASYCUDA_Id;
                 da.xcuda_Container.Add(c);
                 c.Container_identity = ac.Container_identity;
@@ -585,7 +584,7 @@ namespace Asycuda
             var v = da.xcuda_Valuation;
             if (v == null)
             {
-                v = new Expando();
+                v = new DynamicType("xcuda_Valuation", 0);
                 v.ASYCUDA_Id = da.ASYCUDA_Id;
                 da.xcuda_Valuation = v;
             }
@@ -605,7 +604,7 @@ namespace Asycuda
             var t = v.xcuda_Total;
             if (t == null)
             {
-                t = new Expando();
+                t = new DynamicType("xcuda_Total", 0);
                 t.Valuation_Id = v.ASYCUDA_Id;
                 v.xcuda_Total = t;
             }
@@ -618,7 +617,7 @@ namespace Asycuda
             var gf = v.xcuda_Gs_external_freight;
             if (gf == null)
             {
-                gf = new Expando();
+                gf = new DynamicType("xcuda_Gs_external_freight", 0);
                 gf.Valuation_Id = v.ASYCUDA_Id;
                 v.xcuda_Gs_external_freight = gf;
             }
@@ -637,7 +636,7 @@ namespace Asycuda
             var gi = v.xcuda_Gs_Invoice;
             if (gi == null)
             {
-                gi = new Expando();
+                gi = new DynamicType("xcuda_Gs_Invoice", 0);
                 gi.Valuation_Id = v.ASYCUDA_Id;
                 v.xcuda_Gs_Invoice = gi;
             }
@@ -655,7 +654,7 @@ namespace Asycuda
             var w = v.xcuda_Weight;
             if (w == null)
             {
-                w = new Expando();
+                w = new DynamicType("xcuda_Weight", 0);
                 w.Valuation_Id = v.ASYCUDA_Id;
                 v.xcuda_Weight = w;
             }
@@ -667,7 +666,7 @@ namespace Asycuda
             var w = da.xcuda_Warehouse;
             if (w == null)
             {
-                w = new Expando();
+                w = new DynamicType("xcuda_Warehouse", 0);
                 w.ASYCUDA_Id = da.ASYCUDA_Id;
                 da.xcuda_Warehouse = w;
             }
@@ -681,8 +680,8 @@ namespace Asycuda
             var f = da.xcuda_Financial;
             if (f == null)
             {
-                f = new Expando();
-                    f.ASYCUDA_Id = da.ASYCUDA_Id;
+                f = new DynamicType("xcuda_Financial", 0);
+                f.ASYCUDA_Id = da.ASYCUDA_Id;
                
                 da.xcuda_Financial=f;
             }
@@ -706,7 +705,7 @@ namespace Asycuda
             var g = f.xcuda_Financial_Guarantee;
             if (g == null)
             {
-                g = new Expando();
+                g = new DynamicType("xcuda_Financial_Guarantee", 0);
                 g.Financial_Id = f.Financial_Id;
                 f.xcuda_Financial_Guarantee = g;
             }
@@ -718,8 +717,8 @@ namespace Asycuda
         private void Save_Amounts(dynamic f)
         {
             
-               dynamic fa = new Expando();
-                fa.Financial_Id = f.Financial_Id;
+               dynamic fa = new DynamicType("xcuda_Financial_Amounts", 0);
+            fa.Financial_Id = f.Financial_Id;
                 f.xcuda_Financial_Amounts = fa;
            
             if (a.Financial.Amounts.Global_taxes != "")
@@ -734,7 +733,7 @@ namespace Asycuda
             var t = da.xcuda_Transport;
             if (t == null)
             {
-                t = new Expando();
+                t = new DynamicType("xcuda_Transport", 0);
                 t.ASYCUDA_Id = da.ASYCUDA_Id;
                 da.xcuda_Transport = t;
             }
@@ -755,7 +754,7 @@ namespace Asycuda
             var bo = t.xcuda_Border_office;
             if (bo == null)
             {
-                bo = new Expando();
+                bo = new DynamicType("xcuda_Border_office", 0);
                 bo.Transport_Id = t.Transport_Id;
                 t.xcuda_Border_office = bo;
             }
@@ -772,7 +771,7 @@ namespace Asycuda
             var d = t.xcuda_Delivery_terms;
             if (d == null)
             {
-                d = new Expando();
+                d = new DynamicType("xcuda_Delivery_terms", 0);
                 d.Transport_Id = t.Transport_Id;
                 t.xcuda_Delivery_terms = d;
             }
@@ -786,7 +785,7 @@ namespace Asycuda
             var m = t.xcuda_Means_of_transport;
             if (m == null)
             {
-                m = new Expando();
+                m = new DynamicType("xcuda_Means_of_transport", 0);
                 m.Transport_Id = t.Transport_Id;
                 t.xcuda_Means_of_transport = m;
 
@@ -805,7 +804,7 @@ namespace Asycuda
             var d = m.xcuda_Border_information;
             if (d == null)
             {
-                d = new Expando();
+                d = new DynamicType("xcuda_Border_information", 0);
                 d.Means_of_transport_Id = m.Means_of_transport_Id;
                 m.xcuda_Border_information = d;
             }
@@ -823,7 +822,7 @@ namespace Asycuda
             var d = m.xcuda_Departure_arrival_information;
             if (d == null)
             {
-                d = new Expando();
+                d = new DynamicType("xcuda_Departure_arrival_information", 0);
                 d.Means_of_transport_Id = m.Means_of_transport_Id;
                 m.xcuda_Departure_arrival_information = d;
             }
@@ -839,7 +838,7 @@ namespace Asycuda
             var gi = da.xcuda_General_information;
             if (gi == null)
             {
-                gi = new Expando();
+                gi = new DynamicType("xcuda_General_information", 0);
                 gi.ASYCUDA_Id = da.ASYCUDA_Id;
                 da.xcuda_General_information = gi;
             }
@@ -863,7 +862,7 @@ namespace Asycuda
             var c = gi.xcuda_Country;
             if (c == null)
             {
-                c = new Expando();
+                c = new DynamicType("xcuda_Country", 0);
                 c.Country_Id = gi.ASYCUDA_Id;
                 gi.xcuda_Country = c;
             }
@@ -879,7 +878,7 @@ namespace Asycuda
             var des = c.xcuda_Destination;
             if (des == null)
             {
-                des = new Expando();
+                des = new DynamicType("xcuda_Destination", 0);
                 des.Country_Id = c.Country_Id;
                 c.xcuda_Destination = des;
                 des.xcuda_Country = c;
@@ -896,7 +895,7 @@ namespace Asycuda
             var Exp = c.xcuda_Export;
             if (Exp == null)
             {
-                Exp = new Expando();
+                Exp = new DynamicType("xcuda_Export", 0);
                 Exp.Country_Id = c.Country_Id;
                 c.xcuda_Export = Exp;
             }
@@ -912,7 +911,7 @@ namespace Asycuda
                 var d = da.xcuda_Declarant;
                 if (d == null)
                 {
-                    da.xcuda_Declarant = new Expando();
+                    da.xcuda_Declarant = new DynamicType("xcuda_Declarant", 0);
                     da.ASYCUDA_Id = da.ASYCUDA_Id;
                     d = da.xcuda_Declarant;
                     
@@ -938,7 +937,7 @@ namespace Asycuda
             var t = da.xcuda_Traders;
             if (t == null)
             {
-                t = new Expando();
+                t = new DynamicType("xcuda_Traders", 0);
                 t.Traders_Id = da.ASYCUDA_Id;
                 da.xcuda_Traders = t;
             }
@@ -954,7 +953,7 @@ namespace Asycuda
             var f = t.xcuda_Traders_Financial;
             if (f == null)
             {
-                f = new Expando();
+                f = new DynamicType("xcuda_Traders_Financial", 0);
                 f.Traders_Id = t.Traders_Id;
                 t.xcuda_Traders_Financial = f;
             }
@@ -973,7 +972,7 @@ namespace Asycuda
             var c = t.xcuda_Consignee;
             if (c == null)
             {
-                c = new Expando();
+                c = new DynamicType("xcuda_Consignee", 0);
                 c.Traders_Id = t.Traders_Id;
                 t.xcuda_Consignee = c;
             }
@@ -992,7 +991,7 @@ namespace Asycuda
             var e = t.xcuda_Exporter;
             if (e == null)
             {
-                e = new Expando();
+                e = new DynamicType("xcuda_Exporter", 0);
                 e.Traders_Id = t.Traders_Id;
                 t.xcuda_Exporter = e;
             }
@@ -1014,7 +1013,7 @@ namespace Asycuda
 
             if (p == null)
             {
-                p = new Expando() {  };
+                p = new DynamicType("xcuda_Property", 0);
                 da.xcuda_Property = p;
                 
             }
@@ -1029,7 +1028,7 @@ namespace Asycuda
             var n = p.xcuda_Nbers;
             if (n == null)
             {
-                n = new Expando();
+                n = new DynamicType("xcuda_Nbers", 0);
                 n.ASYCUDA_Id = p.ASYCUDA_Id;
                 p.xcuda_Nbers = n;
                 
@@ -1045,7 +1044,7 @@ namespace Asycuda
             var di = da.xcuda_Identification;
             if (di == null)
             {
-                di = new Expando() {  };
+                di = new DynamicType("xcuda_Identification", 0);
                 da.xcuda_Identification = di;
                 
             }
@@ -1064,7 +1063,7 @@ namespace Asycuda
             var t = di.xcuda_Type;
             if (t == null)
             {
-                t = new Expando() {  };
+                t = new DynamicType("xcuda_Type", 0);
                 di.xcuda_Type = t;
             }
 
@@ -1072,7 +1071,7 @@ namespace Asycuda
             t.Type_of_declaration = a.Identification.Type.Type_of_declaration;
 
 
-            dynamic dt = new Expando();
+            dynamic dt = new DynamicType("Document_Types", 0);
             dt.Type_of_declaration = t.Type_of_declaration;
             dt.Declaration_gen_procedure_code = t.Declaration_gen_procedure_code;
                     
@@ -1096,7 +1095,7 @@ namespace Asycuda
             var o = di.xcuda_Office_segment;
             if (o == null)
             {
-                o = new Expando();
+                o = new DynamicType("xcuda_Office_segment", 0);
                 o.ASYCUDA_Id = di.ASYCUDA_Id;
                 di.xcuda_Office_segment = o;
                 
@@ -1111,7 +1110,7 @@ namespace Asycuda
             var r = di.xcuda_Registration;
             if (r == null)
             {
-                r = new Expando();
+                r = new DynamicType("xcuda_Registration", 0);
                 r.ASYCUDA_Id = di.ASYCUDA_Id;
                 di.xcuda_Registration = r;
                 

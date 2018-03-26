@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Reactive.Linq;
 using SystemInterfaces;
 using Common;
 using Common.DataEntites;
+using Common.Dynamic;
 using DomainUtilities;
 using EventAggregator;
 using EventMessages.Events;
@@ -13,6 +15,7 @@ using GenSoft.Entities;
 using Microsoft.EntityFrameworkCore;
 using Process.WorkFlow;
 using RevolutionEntities.Process;
+using Utilities;
 using Entity = GenSoft.Entities.Entity;
 using EntityEvents = RevolutionData.Context.Entity;
 using StateEventInfo = GenSoft.Entities.StateEventInfo;
@@ -47,100 +50,26 @@ namespace EFRepository
             try
             {
                 if (msg.ProcessInfo.Process.Applet is IDbApplet) return;
-
-                using (var ctx = new GenSoftDBContext())
+                var entityTypeName = msg.EntityType.Name;
+                var entityId = (int) (msg.Entity.Properties.ContainsKey("Id")?msg.Entity.Properties["Id"]: msg.Entity.Id);
+                var msgChanges = msg.Changes;
+                var res = UpdateEntityWithChanges(entityTypeName, entityId, msgChanges);
+                if (res == null)
                 {
+                    PublishProcesError(msg,
+                        new ApplicationException(
+                            $"Entity with Type - '{entityTypeName}' & Id:{res.Id} not Found."),
+                        typeof(EntityWithChangesUpdated));
                     
-                    var entityType = ctx.EntityTypes.Include(x => x.Type).First(x => x.Type.Name == msg.EntityType.Name);
-
-
-                    var entity = msg.Entity.Id == 0
-                        ? ctx.Entities.Add(new Entity()
-                        {
-                            EntityTypeId = entityType.Id,
-                            EntityAttributes = new List<EntityAttribute>(),
-                            DateTimeCreated = DateTime.Now
-                        }).Entity
-                        : ctx.Entities.FirstOrDefault(x => x.Id == msg.Entity.Id && x.EntityTypeId == entityType.Id);
-                    if (entity == null)
-                    {
-                        PublishProcesError(msg,
-                            new ApplicationException(
-                                $"Entity with Type - '{msg.Entity.EntityType.Name}' & Id:{msg.Entity.Id} not Found."),
-                            typeof(EntityWithChangesUpdated));
-                        return;
-                    }
-
-                    if (msg.Entity.Id == 0)
-                    {
-                        ctx.SaveChanges(true);
-                        msg.Changes.Add(nameof(IDynamicEntity.Id), entity.Id);
-                    }
-
-                    foreach (var change in msg.Changes)
-                    {
-                        var data = ctx.EntityAttributes.FirstOrDefault(
-                            x => x.EntityId == entity.Id && x.Attribute.Name == change.Key);
-                        if (data == null)
-                        {
-                            var attibute = ctx.Attributes.FirstOrDefault(x => x.Name == change.Key);
-                            if (attibute == null)
-                            {
-                                var dataType = ctx.DataTypes.First(x => x.Type.Name == "string");
-                                attibute = ctx.Attributes
-                                    .Add(new GenSoft.Entities.Attribute() {DataTypeId = dataType.Id, Name = change.Key}).Entity;
-                            }
-                            var entityAttribute = ctx.EntityAttributes
-                                .Add(new EntityAttribute()
-                                {
-                                    AttributeId = attibute.Id,
-                                    EntityId = entity.Id,
-                                    Value = change.Value is IEntityKeyValuePair?((IEntityKeyValuePair)change.Value).Value.ToString():change.Value.ToString(),
-                                    DateTime = DateTime.Now
-                                }).Entity;
-                            entity.EntityAttributes.Add(entityAttribute);
-                        }
-                        else
-                        {
-                            data.Value = change.Value.ToString();
-                            ctx.Update(data);
-                        }
-                    }
-                    ctx.SaveChanges(true);
-
-                    //ToDo: update dependent properties
-                    //foreach (var change in msg.Changes.Where(x => x.Key != nameof(IDynamicEntity.Id)))
-                    //{
-                    //    var entityTypes = ctx.EntityType.Include(x => x.Type)
-                    //        .Where(x => x.EntityTypeAttributes.Any(z => z.Attributes.Name == change.Key));
-                    //       // .Select(x => x.EntityType).ToList();
-
-
-                    //    foreach (var et in entityTypes)
-                    //    {
-                    //        var newEntity = GetDynamicEntityWithChanges(ctx, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(et.Type.Name], new Dictionary<string, object>(){{change.Key, change.Value},{nameof(IDynamicEntity.Id), entity.Id}});
-
-                    //        EventMessageBus.Current.Publish(
-                    //            new EntityWithChangesUpdated(newEntity, msg.Changes,
-                    //                new RevolutionEntities.Process.StateEventInfo(msg.Process.Id, EntityEvents.Events.EntityUpdated), msg.Process,
-                    //                Source), Source);
-                    //    }
-
-                    //}
-                    //}
-
-                    if (!msg.Changes.ContainsKey("Id")) msg.Changes.Add("Id", msg.Entity.Properties["Id"]);
-
-                    var newEntity = GetDynamicEntityWithChanges(ctx,
-                        DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(entityType.Type.Name), msg.Changes);
-
+                }
+                else
+                {
                     EventMessageBus.Current.Publish(
-                        new EntityWithChangesUpdated(newEntity, msg.Changes,
+                        new EntityWithChangesUpdated(res, msgChanges,
                             new RevolutionEntities.Process.StateEventInfo(msg.Process,
-                                RevolutionData.Context.EventFunctions.UpdateEventData(msg.EntityType.Name, EntityEvents.Events.EntityUpdated)), msg.Process,
+                                RevolutionData.Context.EventFunctions.UpdateEventData(entityTypeName,
+                                    EntityEvents.Events.EntityUpdated)), msg.Process,
                             Source));
-
-
                 }
             }
             catch (Exception e)
@@ -148,6 +77,120 @@ namespace EFRepository
                 Console.WriteLine(e);
                 throw;
             }
+        }
+
+        private IDynamicEntity UpdateEntityWithChanges(string entityTypeName, int entityId, Dictionary<string, object> msgChanges)
+        {
+            using (var ctx = new GenSoftDBContext())
+            {
+                var entityType = ctx.EntityTypes.Include(x => x.Type).First(x => x.Type.Name == entityTypeName);
+
+
+                var entity = entityId == 0
+                    ? ctx.Entities.Add(new Entity()
+                    {
+                        EntityTypeId = entityType.Id,
+                        EntityAttributes = new List<EntityAttribute>(),
+                        DateTimeCreated = DateTime.Now
+                    }).Entity
+                    : ctx.Entities.FirstOrDefault(x => x.Id == entityId && x.EntityTypeId == entityType.Id);
+                if (entity == null)
+                {
+                    return null;
+                }
+
+
+                if (entityId == 0)
+                {
+                    ctx.SaveChanges(true);
+                    msgChanges.Add(nameof(IDynamicEntity.Id), entity.Id);
+                }
+
+                foreach (var change in msgChanges.Where(x => x.Value != null))
+                {
+                    if (change.Value is DynamicType d)
+                    {
+                        SaveDynamicType(entityTypeName, d, entity);
+                        continue;
+                    }
+                    if (change.Value is List<DynamicType> dlst)
+                    {
+                        foreach (var itm in dlst)
+                        {
+                            SaveDynamicType(entityTypeName, itm, entity);
+                        }
+                        continue;
+                    }
+                    var data = ctx.EntityAttributes.FirstOrDefault(
+                        x => x.EntityId == entity.Id && x.Attribute.Name == change.Key);
+                    
+                    if (data == null)
+                    {
+                        var attibute = ctx.Attributes.FirstOrDefault(x => x.Name == change.Key);
+                        if (attibute == null)
+                        {
+                            var dataType = ctx.DataTypes.First(x => x.Type.Name == "System.string");
+                            attibute = ctx.Attributes
+                                .Add(new GenSoft.Entities.Attribute() {DataTypeId = dataType.Id, Name = change.Key}).Entity;
+                        }
+                        var entityAttribute = ctx.EntityAttributes
+                            .Add(new EntityAttribute()
+                            {
+                                AttributeId = attibute.Id,
+                                EntityId = entity.Id,
+                                Value = change.Value is IEntityKeyValuePair
+                                    ? ((IEntityKeyValuePair) change.Value).Value.ToString()
+                                    : change.Value.ToString(),
+                                DateTime = DateTime.Now
+                            }).Entity;
+                        entity.EntityAttributes.Add(entityAttribute);
+                    }
+                    else
+                    {
+                        data.Value = change.Value.ToString();
+                        ctx.Update(data);
+                    }
+                }
+                ctx.SaveChanges(true);
+
+                //ToDo: update dependent properties
+                //foreach (var change in msg.Changes.Where(x => x.Key != nameof(IDynamicEntity.Id)))
+                //{
+                //    var entityTypes = ctx.EntityType.Include(x => x.Type)
+                //        .Where(x => x.EntityTypeAttributes.Any(z => z.Attributes.Name == change.Key));
+                //       // .Select(x => x.EntityType).ToList();
+
+
+                //    foreach (var et in entityTypes)
+                //    {
+                //        var newEntity = GetDynamicEntityWithChanges(ctx, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(et.Type.Name], new Dictionary<string, object>(){{change.Key, change.Value},{nameof(IDynamicEntity.Id), entity.Id}});
+
+                //        EventMessageBus.Current.Publish(
+                //            new EntityWithChangesUpdated(newEntity, msg.Changes,
+                //                new RevolutionEntities.Process.StateEventInfo(msg.Process.Id, EntityEvents.Events.EntityUpdated), msg.Process,
+                //                Source), Source);
+                //    }
+
+                //}
+                //}
+
+                if (!msgChanges.ContainsKey("Id") && entity.EntityAttributes.Any(x => x.Attribute.Name == "Id")) msgChanges.Add("Id", entityId);
+
+                return GetDynamicEntityWithChanges(ctx,
+                    DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(entityType.Type.Name), msgChanges);
+
+                
+            }
+            
+        }
+
+        private void SaveDynamicType(string entityTypeName, DynamicType d, Entity entity)
+        {
+            var r = DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(d.Type).ParentEntities
+                .FirstOrDefault(x => DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(x.Type).Name == entityTypeName);
+            if (r == null) return;
+            d.Properties[r.Key] = entity.Id;
+            UpdateEntityWithChanges(d.Type, d.Id, d.Properties);
         }
 
         public  void AddEntity(IAddOrGetEntityWithChanges msg)
@@ -172,7 +215,7 @@ namespace EFRepository
                     (current, c) => current.Where(
                         x => x.EntityAttributes.Any(z => z.Attribute.Name == c.Key && z.Value.ToString() == c.Value.ToString())));
 
-                var entities = GetViewEntities(entityType, res, viewEntityAttributes).ToList();
+                var entities = GetViewEntities(entityType, res, viewEntityAttributes.Keys.ToList()).ToList();
                 
                 
                     EventMessageBus.Current.Publish(
@@ -195,7 +238,7 @@ namespace EFRepository
 
                 var viewEntityAttributes = GetViewEntityAttributes(ctx, entityTypeId);
                 var res = GetEntities(ctx, entityTypeId);
-                var viewset = GetViewEntities(msg.EntityType, res, viewEntityAttributes)
+                var viewset = GetViewEntities(msg.EntityType, res, viewEntityAttributes.Keys.ToList())
                     .ToList();
 
 
@@ -281,16 +324,17 @@ namespace EFRepository
 
                 var res = GetEntities(ctx, entityTypeId).AsQueryable();
                 // include entity.Id and Attribute "ID" to avoid confusion
-                var cres = changes.Where(x => x.Key == "Id").Aggregate(res,
-                    (current, c) => current.Where(x => x.Id.ToString() == c.Value.ToString() || (x.EntityAttributes.Any(z =>
-                                                           z.Attribute.Name == c.Key && z.Value.ToString() == c.Value.ToString()))));
 
-                var ccres = changes.Where(x => x.Key != "Id").Aggregate(cres,
+                var cres = changes.Any(x => x.Key == "Id" && viewEntityAttributes.ContainsValue(x.Key)) ? changes.Where(x => x.Key == "Id" && x.Value != null).Aggregate(res,
+                    (current, c) => current.Where(x => x.Id.ToString() == c.Value.ToString() || (x.EntityAttributes.Any(z =>
+                                                           z.Attribute.Name == c.Key && z.Value.ToString() == c.Value.ToString())))) : res;
+
+                var ccres = changes.Where(x => x.Key != "Id" &&  viewEntityAttributes.ContainsValue(x.Key) && x.Value != null).Aggregate(cres,
                     (current, c) => current.Where(
                         x => x.EntityAttributes.Any(z =>
                             z.Attribute.Name == c.Key && z.Value.ToString() == c.Value.ToString())));
 
-                var entity = GetViewEntities(entityType, ccres, viewEntityAttributes).FirstOrDefault();
+                var entity = GetViewEntities(entityType, ccres, viewEntityAttributes.Keys.ToList()).FirstOrDefault();
                 return entity;
             }
             catch (Exception e)
@@ -303,6 +347,7 @@ namespace EFRepository
 
         private  IQueryable<IDynamicEntity> GetViewEntities(IDynamicEntityType entityType, IQueryable<Entity> res, List<int> viewEntityAttributes)
         {
+            
             return res.Select(x => new DynamicEntity(entityType, x.Id,
                 x.EntityAttributes
                     .Where(z => viewEntityAttributes.Contains(z.AttributeId))
@@ -311,12 +356,12 @@ namespace EFRepository
                     .ToDictionary(q => q.Name, q => q.Value as object)) as IDynamicEntity);
         }
 
-        private  List<int> GetViewEntityAttributes(GenSoftDBContext ctx, int? viewId)
+        private  Dictionary<int, string> GetViewEntityAttributes(GenSoftDBContext ctx, int? viewId)
         {
             return ctx.EntityTypeAttributes.AsNoTracking()
                 .Where(x => x.EntityTypeId == viewId)
                 .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
-                .Select(x => x.AttributeId).ToList();
+                .Select(x => new {x.AttributeId, x.Attribute.Name}).ToDictionary(x => x.AttributeId, x => x.Name);
         }
     }
 }

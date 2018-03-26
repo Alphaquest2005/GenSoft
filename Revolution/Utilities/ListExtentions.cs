@@ -37,6 +37,10 @@ namespace Utilities
 
     public class InteliList<T> : List<T>, IIntelliList<T>
     {
+        public InteliList(List<T> lst) : base(lst)
+        {
+            
+        }
         public T SelectedItem { get; set; }
     }
 }

@@ -53,21 +53,11 @@ namespace DomainUtilities
                         .Include(x => x.ParentEntityType.EntityType.Type)
                         .Include(x => x.ParentEntityType.EntityType.Application.DatabaseInfo)
                         .Include(x => x.EntityTypeAttributes).ThenInclude(x => x.Attribute)
-                        .Include(x => x.EntityTypeAttributes)
-                        .Include(x => x.EntityTypeAttributes)
-                        .ThenInclude(x => x.CalculatedProperty.CalculatedPropertyParameters)
-                        .ThenInclude(x => x.FunctionParameter)
-                        .Include(x => x.EntityTypeAttributes)
-                        .ThenInclude(x => x.CalculatedProperty.CalculatedPropertyParameters)
-                        .ThenInclude(x => x.CalculatedPropertyParameterEntityTypes)
-                        .ThenInclude(x => x.EntityTypeAttribute.Attribute)
-                        .Include(x => x.EntityTypeAttributes)
-                        .ThenInclude(x => x.CalculatedProperty.FunctionParameterConstants)
-                        .Include(x => x.EntityTypeAttributes)
-                        .ThenInclude(x => x.CalculatedProperty.FunctionSet.FunctionSetFunctions)
-                        .ThenInclude(x => x.Function)
-                        .Include(x => x.EntityTypeAttributes)
-                        .ThenInclude(x => x.CalculatedPropertyParameterEntityTypes)
+                        .Include(x => x.EntityTypeAttributes).ThenInclude(x => x.CalculatedProperty.CalculatedPropertyParameters).ThenInclude(x => x.FunctionParameter)
+                        .Include(x => x.EntityTypeAttributes).ThenInclude(x => x.CalculatedProperty.CalculatedPropertyParameters).ThenInclude(x => x.CalculatedPropertyParameterEntityTypes).ThenInclude(x => x.EntityTypeAttribute.Attribute)
+                        .Include(x => x.EntityTypeAttributes).ThenInclude(x => x.CalculatedProperty.FunctionParameterConstants)
+                        .Include(x => x.EntityTypeAttributes).ThenInclude(x => x.CalculatedProperty.FunctionSet.FunctionSetFunctions).ThenInclude(x => x.Function)
+                        .Include(x => x.EntityTypeAttributes).ThenInclude(x => x.CalculatedPropertyParameterEntityTypes)
                         .Include(x => x.EntityTypeAttributes).ThenInclude(x => x.EntityTypeAttributeCach)
                         .Include(x => x.EntityTypeAddinActions).ThenInclude(x => x.AddinAction.Addin)
                         .FirstOrDefault(x => x.Type.Name == entityType);
@@ -110,7 +100,7 @@ namespace DomainUtilities
                     var calPropDef = CreateCalculatedProperties(viewType);
 
                     var cachedProperties = CreateCachedProperties(viewType);
-                    var propertyParentEntityTypes = CreatePropertyParentEntityTypes(viewType);
+                    var relationships = CreatePropertyParentEntityTypes(viewType);
                     var actions = CreateAddinActions(viewType);
 
                     IDynamicEntityType parentEntityType;
@@ -125,10 +115,9 @@ namespace DomainUtilities
                         CreateParentPropertyCache(tes, parentEntityType, viewType, cachedProperties);
                     }
 
-                    foreach (var p in propertyParentEntityTypes)
+                    foreach (var p in relationships.parentTypes)
                     {
-                        var pp = GetOrAddDynamicEntityType(p.Value);
-                        CreateParentPropertyCache(tes, pp, viewType, cachedProperties);
+                        CreateParentPropertyCache(tes, GetOrAddDynamicEntityType(p.Type), viewType, cachedProperties);
                     }
                     //Inherited Name
                     if (!cachedProperties.ContainsKey("Name") && viewType.ParentEntityType != null)
@@ -136,9 +125,9 @@ namespace DomainUtilities
                         CreateInheritedEntityNamePropertyCache(tes, parentEntityType, viewType, cachedProperties);
                     }
                     //ComposedName
-                    if (!cachedProperties.ContainsKey("Name") && propertyParentEntityTypes.Any())
+                    if (!cachedProperties.ContainsKey("Name") && relationships.parentTypes.Any())
                     {
-                        CreateComposedEntityNamePropertyCache(tes, propertyParentEntityTypes, viewType, cachedProperties);
+                        CreateComposedEntityNamePropertyCache(relationships.parentTypes, viewType, cachedProperties);
                         // remove name in properties
                         var name = tes.FirstOrDefault(x => x.Key == "Name");
                         if(name != null)tes.Remove(name);
@@ -150,9 +139,8 @@ namespace DomainUtilities
                         field.DisplayProperties.WriteProperties.Properties["AttributeValue"]["Visibility"] = "Collapsed";
                     }
 
-
                     var dynamicEntityType = new DynamicEntityType(viewType.Type.Name,
-                        viewType.EntitySet, tes, calPropDef, cachedProperties, propertyParentEntityTypes, parentEntityType, actions);
+                        viewType.EntitySet, tes, calPropDef, cachedProperties, relationships.parentTypes, relationships.childTypes, parentEntityType, actions);
 
 
 
@@ -215,8 +203,7 @@ namespace DomainUtilities
             }
         }
 
-        private static void CreateComposedEntityNamePropertyCache(List<IEntityKeyValuePair> tes,
-            Dictionary<string, string> propertyParentEntityTypes,
+        private static void CreateComposedEntityNamePropertyCache(List<IDynamicRelationshipType> propertyParentEntityTypes,
             EntityType viewType, ObservableDictionary<string, Dictionary<int, dynamic>> cachedProperties)
         {
             //get list of items
@@ -231,7 +218,7 @@ namespace DomainUtilities
             // Calculate the Name Property
         }
 
-        private static void DynamicCreateComposedEntityNameCache(Dictionary<string, string> propertyParentEntityTypes, EntityType viewType, ObservableDictionary<string, Dictionary<int, object>> cachedProperties)
+        private static void DynamicCreateComposedEntityNameCache(List<IDynamicRelationshipType> propertyParentEntityTypes, EntityType viewType, ObservableDictionary<string, Dictionary<int, object>> cachedProperties)
         {
             var propertyKey = "Name";
             using (var ctx = new GenSoftDBContext())
@@ -264,9 +251,9 @@ namespace DomainUtilities
                    
                         var id = itm.Id;
                         
-                        var val = propertyParentEntityTypes.Where(x => x.Key != "Id")//.OrderByDescending(x => x.Key)
-                            .Select(x => GetOrAddDynamicEntityType(x.Value).CachedProperties["Name"][Convert.ToInt32(itm.Properties[x.Key])])
-                            .Aggregate((c, n) => $"{c}-{n}");
+                        var val = propertyParentEntityTypes.Where(x => x.Key != "Id" && itm.Properties.ContainsKey(x.Key) && GetOrAddDynamicEntityType(x.Type).CachedProperties.ContainsKey("Name") && GetOrAddDynamicEntityType(x.Type).CachedProperties["Name"].ContainsKey(Convert.ToInt32(itm.Properties[x.Key])))//.OrderByDescending(x => x.Key)
+                            .Select(x =>  GetOrAddDynamicEntityType(x.Type).CachedProperties["Name"][Convert.ToInt32(itm.Properties[x.Key])])
+                            .Aggregate("", (c, n) => $"{c}-{n}");
                         if (cachedProperties.ContainsKey(propertyKey))
                         {
                             if (cachedProperties[propertyKey].ContainsKey(id)) return;
@@ -282,7 +269,7 @@ namespace DomainUtilities
             }
         }
 
-        private static void DBCreateComposedEntityNameCache(Dictionary<string, string> propertyParentEntityTypes, EntityType viewType,
+        private static void DBCreateComposedEntityNameCache(List<IDynamicRelationshipType> propertyParentEntityTypes, EntityType viewType,
             ObservableDictionary<string, Dictionary<int, dynamic>> cachedProperties)
         {
             var propertyKey = "Name";
@@ -302,7 +289,7 @@ namespace DomainUtilities
                         .ToDictionary(reader.GetName, reader.GetValue);
                     var id = Convert.ToInt32(aDict.FirstOrDefault(x => x.Key == "Id").Value);
                     var value = propertyParentEntityTypes//.OrderByDescending(x => x.Key)
-                        .Select(x => GetOrAddDynamicEntityType(x.Value).CachedProperties["Name"][(int) aDict[x.Key]])
+                        .Select(x => GetOrAddDynamicEntityType(x.Type).CachedProperties["Name"][(int) aDict[x.Key]])
                         .Aggregate((c, n) => $"{c}-{n}");
 
                     if (string.IsNullOrEmpty(value)) continue;
@@ -501,37 +488,36 @@ namespace DomainUtilities
             }
         }
 
-        private static Dictionary<string, string> CreatePropertyParentEntityTypes(EntityType viewType)
+        private static (List<IDynamicRelationshipType> parentTypes, List<IDynamicRelationshipType> childTypes) CreatePropertyParentEntityTypes(EntityType viewType)
         {
-            var res = new List<KeyValuePair<string, string>>(); //new ObservableDictionary<string, string>();
-
+            var parentTypes = new List<IDynamicRelationshipType>(); //new ObservableDictionary<string, string>();
+            var childTypes = new List<IDynamicRelationshipType>();
 
             using (var ctx = new GenSoftDBContext())
             {
                 var lst = ctx.EntityTypeAttributes
-                    .Include(x => x.Attribute)
-                    .Include(x => x.EntityType.Type)
-                    .Include(x => x.EntityRelationships).ThenInclude(x => x.ParentEntity).ThenInclude(x => x.EntityTypeAttribute.EntityType.Type)
-                    .Include(x => x.EntityRelationships).ThenInclude(x => x.ParentEntity)
-                    .Where(x => x.EntityTypeId == viewType.Id && !x.ParentEntities.Any())
+                    //.Include(x => x.Attribute)
+                    //.Include(x => x.EntityType.Type)
+                    //.Include(x => x.EntityRelationships).ThenInclude(x => x.ParentEntity).ThenInclude(x => x.EntityTypeAttribute.EntityType.Type)
+                    //.Include(x => x.EntityRelationships).ThenInclude(x => x.ParentEntity)
+                    .Where(x => x.EntityTypeId == viewType.Id )//&& !x.ParentEntities.Any()
                     .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)///////////////////////////// ---- reverse because dictionary act like a stack
-                    .Select(x => new { Attribute = x.Attribute.Name, ParentEntities = x.EntityRelationships.Select(z => z.ParentEntity.EntityTypeAttribute.EntityType.Type.Name).ToList()}).ToList();
+                    .Select(x => new { Attribute = x.Attribute.Name,
+                                       ParentEntities = x.EntityRelationships.Select(z => z.ParentEntity.EntityTypeAttribute.EntityType.Type.Name).ToList(),
+                                       ChildEntities = x.EntityRelationships.Select(z => z.EntityTypeAttribute.EntityType.Type.Name).ToList(),
+                    }).ToList();
 
-                foreach (var p in lst.Where(x => x.ParentEntities.Any()))
+                foreach (var p in lst)
                 {
-                    var t = p.ParentEntities.FirstOrDefault();
-                    if(!DynamicEntityTypes.ContainsKey(t)) GetOrAddDynamicEntityType(t);
-                }
-
-                foreach (var p in lst.Where(x => x.ParentEntities.Any()))
-                {
-                    res.Add(new KeyValuePair<string, string>(p.Attribute, p.ParentEntities.FirstOrDefault()));
+                    var parentType = p.ParentEntities.FirstOrDefault();
+                    var childType = p.ChildEntities.FirstOrDefault();
+                    if (parentType != null) parentTypes.Add(new DynamicRelationshipType(parentType, p.Attribute));
+                    if (childType != null) childTypes.Add(new DynamicRelationshipType(childType, p.Attribute));
                 }
 
             }
 
-            var tes = res.ToDictionary(x => x.Key, x => x.Value);
-            return tes ;
+            return (parentTypes, childTypes) ;
         }
 
         private static IViewAttributeDisplayProperties CreateEntityAttributeViewProperties(int entityTypeAttributeId)

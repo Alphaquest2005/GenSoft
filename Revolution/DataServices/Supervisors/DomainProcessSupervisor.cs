@@ -950,17 +950,17 @@ namespace DataServices.Actors
                             var parentExpression = rel.ParentEntity.EntityTypeAttribute.Attribute.Name;
                             var childType = rel.EntityTypeAttribute.EntityType.Type.Name;
 
-                            if (DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(childType) != null)
-                            {
-                                DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(childType);
-                                if (rel.RelationshipType.ChildOrdinality.Name != "One")
-                                {
-                                    DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType).ChildEntities
-                                        .Add(DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(childType));
-                                    DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(childType).ParentEntities
-                                        .Add(DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType));
-                                }
-                            }
+                            //if (DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(childType) != null)
+                            //{
+                            //    DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(childType);
+                            //    if (rel.RelationshipType.ChildOrdinality.Name != "One")
+                            //    {
+                            //        DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType).ChildEntities
+                            //            .Add(new DynamicRelationshipType(DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(childType),rel.EntityTypeAttribute.Attribute.Name));
+                            //        DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(childType).ParentEntities
+                            //            .Add(new DynamicRelationshipType(DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType), rel.ParentEntity.EntityTypeAttribute.Attribute.Name));
+                            //    }
+                            //}
 
 
 

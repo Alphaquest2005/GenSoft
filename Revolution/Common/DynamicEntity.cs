@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using SystemInterfaces;
 using Common.Dynamic;
@@ -126,7 +127,20 @@ namespace Common.DataEntites
         public Dictionary<string, IDynamicValue> Properties { get; }
     }
 
+    public class DynamicType : Expando,  IDynamicType//, IDynamicMetaObjectProvider
+    {
+        public DynamicType(string type, int id)
+        {
+            Type = type;
+            Id = id;
+            //Properties = values.ToDictionary(x => x.Key, z => z.Value);
+        }
 
+        public string Type { get; }
+
+         Dictionary<string, dynamic>  IDynamicType.Properties => base.Properties.ToDictionary(x => x.Key, x => x.Value);
+        public int Id { get; }
+    }
 
     public static class IEntityExtensions
     {

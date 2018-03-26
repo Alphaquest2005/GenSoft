@@ -60,7 +60,7 @@ namespace AsycudaXMLImport
                             new DynamicEntityType("xcuda_ASYCUDA", "xcuda_ASYCUDA",
                                 new List<IEntityKeyValuePair>(), new Dictionary<string, List<dynamic>>(),
                                 new ObservableDictionary<string, Dictionary<int, dynamic>>(),
-                                new Dictionary<string, string>(), DynamicEntityType.NullEntityType(),
+                                new List<IDynamicRelationshipType>(), new List<IDynamicRelationshipType>(), DynamicEntityType.NullEntityType(),
                                 new ObservableList<IAddinAction>()), 0,
                             new Dictionary<string, object>());
 

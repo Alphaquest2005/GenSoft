@@ -12,22 +12,24 @@ namespace Common.DataEntites
         {
             return new DynamicEntityType("NullEntity", "NullEntitySet", new List<IEntityKeyValuePair>(),
                 new Dictionary<string, List<dynamic>>(), new ObservableDictionary<string, Dictionary<int, dynamic>>(),
-                new Dictionary<string, string>(), null, new ObservableList<IAddinAction>());
+                new List<IDynamicRelationshipType>(), new List<IDynamicRelationshipType>(), null, new ObservableList<IAddinAction>());
         }
 
        
 
 
-        public DynamicEntityType(string name, string entitySetName, List<IEntityKeyValuePair> properties, Dictionary<string, List<dynamic>> calculatedProperties, ObservableDictionary<string, Dictionary<int, dynamic>> cachedProperties, Dictionary<string, string> propertyParentEntityType, IDynamicEntityType parentEntityType, ObservableList<IAddinAction> actions)
+        public DynamicEntityType(string name, string entitySetName, List<IEntityKeyValuePair> properties, Dictionary<string, List<dynamic>> calculatedProperties, ObservableDictionary<string, Dictionary<int, dynamic>> cachedProperties, List<IDynamicRelationshipType> parentTypes, List<IDynamicRelationshipType> childTypes, IDynamicEntityType parentEntityType, ObservableList<IAddinAction> actions)
         {
             Name = name;
             Properties = properties;
-            PropertyParentEntityType = new ObservableDictionary<string, string>(propertyParentEntityType);
             ParentEntityType = parentEntityType;
             Actions = actions;
             CachedProperties = cachedProperties;
             CalculatedProperties = calculatedProperties;
             EntitySetName = entitySetName;
+            ChildEntities = new InteliList<IDynamicRelationshipType>(childTypes);
+            ParentEntities = new InteliList<IDynamicRelationshipType>(parentTypes);
+
 
         }
 
@@ -38,9 +40,8 @@ namespace Common.DataEntites
         public List<IEntityKeyValuePair> Properties { get; }
         public Dictionary<string, List<dynamic>> CalculatedProperties { get; }
         public ObservableDictionary<string, Dictionary<int, dynamic>> CachedProperties { get; }
-        public ObservableDictionary<string, string> PropertyParentEntityType { get; }
-        public IIntelliList<IDynamicEntityType> ChildEntities { get; } = new InteliList<IDynamicEntityType>();
-        public IIntelliList<IDynamicEntityType> ParentEntities { get; } = new InteliList<IDynamicEntityType>();
+        public IIntelliList<IDynamicRelationshipType> ChildEntities { get; } 
+        public IIntelliList<IDynamicRelationshipType> ParentEntities { get; }
 
         public IDynamicEntityType ParentEntityType { get; }
         public ObservableList<IAddinAction> Actions { get; }
@@ -49,6 +50,18 @@ namespace Common.DataEntites
         {
             return NullEntityType();
         }
+    }
+
+    public class DynamicRelationshipType: IDynamicRelationshipType
+    {
+        public DynamicRelationshipType(string type, string key)
+        {
+            Type = type;
+            Key = key;
+        }
+
+        public string Type { get; }
+        public string Key { get; }
     }
 
 }
