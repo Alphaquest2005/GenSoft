@@ -18,8 +18,8 @@ namespace GenSoft.Mappings
 			entityBuilder.ToTable("Deletes", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").ValueGeneratedNever();	
-			entityBuilder.Property(t => t.DateTimeDeleted).HasColumnName("DateTimeDeleted").IsRequired();
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").IsRequired();
+			entityBuilder.Property(t => t.DateTimeDeleted).HasColumnName("DateTimeDeleted").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
 	
 				//----------------Parent Properties

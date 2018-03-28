@@ -21,8 +21,8 @@ namespace GenSoft.Entities
 				public virtual ICollection<FunctionParameterConstant> FunctionParameterConstants {get; set;}
 		
 			// ---------Parent Relationships
-				public virtual FunctionSet FunctionSet {get; set;}
 				public virtual EntityTypeAttribute EntityTypeAttribute {get; set;}
+				public virtual FunctionSet FunctionSet {get; set;}
 	
 
 	}

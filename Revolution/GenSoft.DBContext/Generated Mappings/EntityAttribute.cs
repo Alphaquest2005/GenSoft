@@ -19,9 +19,9 @@ namespace GenSoft.Mappings
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
 			entityBuilder.Property(t => t.AttributeId).HasColumnName("AttributeId").IsRequired();
-			entityBuilder.Property(t => t.DateTime).HasColumnName("DateTime").IsRequired();
 			entityBuilder.Property(t => t.EntityId).HasColumnName("EntityId").IsRequired();
 			entityBuilder.Property(t => t.Value).HasColumnName("Value").IsRequired().HasMaxLength(255);
+			entityBuilder.Property(t => t.DateTime).HasColumnName("DateTime").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
 				entityBuilder.HasMany(x => x.Predecessors).WithOne(p => p.Predecessor).HasForeignKey(c => c.PredecessorId).OnDelete(DeleteBehavior.Restrict);//PredecessorId//Id//SuccessorId
 				entityBuilder.HasMany(x => x.Successors).WithOne(p => p.Successor).HasForeignKey(c => c.SuccessorId).OnDelete(DeleteBehavior.Restrict);//SuccessorId//Id//PredecessorId

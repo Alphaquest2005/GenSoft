@@ -13,6 +13,7 @@ using EventMessages.Events;
 using GenSoft.DBContexts;
 using GenSoft.Entities;
 using Microsoft.EntityFrameworkCore;
+using MoreLinq;
 using Process.WorkFlow;
 using RevolutionEntities.Process;
 using Utilities;
@@ -51,7 +52,7 @@ namespace EFRepository
             {
                 if (msg.ProcessInfo.Process.Applet is IDbApplet) return;
                 var entityTypeName = msg.EntityType.Name;
-                var entityId = (int) (msg.Entity.Properties.ContainsKey("Id")?msg.Entity.Properties["Id"]: msg.Entity.Id);
+                var entityId = msg.Entity.Id;
                 var msgChanges = msg.Changes;
                 var res = UpdateEntityWithChanges(entityTypeName, entityId, msgChanges);
                 if (res == null)
@@ -79,32 +80,41 @@ namespace EFRepository
             }
         }
 
-        private IDynamicEntity UpdateEntityWithChanges(string entityTypeName, int entityId, Dictionary<string, object> msgChanges)
+        private IDynamicEntity UpdateEntityWithChanges(string entityTypeName, int entityIdparam, Dictionary<string, object> msgChanges)
         {
+            int entityId = 0;
             using (var ctx = new GenSoftDBContext())
             {
-                var entityType = ctx.EntityTypes.Include(x => x.Type).First(x => x.Type.Name == entityTypeName);
+                var entityType = ctx.EntityTypes.Include(x => x.Type)
+                    .First(x => x.Type.Name == entityTypeName);
 
-
-                var entity = entityId == 0
+                var entityIdAtt = ctx.EntityTypeAttributes.Where(x => x.EntityTypeId == entityType.Id && x.EntityId != null && x.EntityId.IsEntityId == true).Select(x => new { x.Attribute.Name, x.EntityId.IsComputed }).FirstOrDefault();
+                entityId = entityIdAtt.IsComputed == true ? Convert.ToInt32(msgChanges[entityIdAtt.Name]) : entityIdparam;
+                var entity = entityIdparam == 0 || (entityId != 0 && entityIdAtt.IsComputed)
                     ? ctx.Entities.Add(new Entity()
                     {
                         EntityTypeId = entityType.Id,
                         EntityAttributes = new List<EntityAttribute>(),
                         DateTimeCreated = DateTime.Now
                     }).Entity
-                    : ctx.Entities.FirstOrDefault(x => x.Id == entityId && x.EntityTypeId == entityType.Id);
-                if (entity == null)
+                    : ctx.Entities.Include(x => x.EntityAttributes).FirstOrDefault(x => x.Id == entityId && x.EntityTypeId == entityType.Id );//
+
+               if (entity == null)
                 {
                     return null;
                 }
-
+                 
 
                 if (entityId == 0)
                 {
-                    ctx.SaveChanges(true);
-                    msgChanges.Add(nameof(IDynamicEntity.Id), entity.Id);
+                   ctx.SaveChanges(true);
+                   msgChanges.AddOrUpdate(entityIdAtt.Name??"Id", entity.Id);
                 }
+                if (entityId != 0 && entityIdAtt.IsComputed)
+                {
+                    ctx.SaveChanges(true);
+                }
+
 
                 foreach (var change in msgChanges.Where(x => x.Value != null))
                 {
@@ -143,6 +153,7 @@ namespace EFRepository
                                     : change.Value.ToString(),
                                 DateTime = DateTime.Now
                             }).Entity;
+                        if(entity.EntityAttributes.All(x =>x.AttributeId == entityAttribute.AttributeId &&  x.Value != entityAttribute.Value))
                         entity.EntityAttributes.Add(entityAttribute);
                     }
                     else
@@ -153,28 +164,8 @@ namespace EFRepository
                 }
                 ctx.SaveChanges(true);
 
-                //ToDo: update dependent properties
-                //foreach (var change in msg.Changes.Where(x => x.Key != nameof(IDynamicEntity.Id)))
-                //{
-                //    var entityTypes = ctx.EntityType.Include(x => x.Type)
-                //        .Where(x => x.EntityTypeAttributes.Any(z => z.Attributes.Name == change.Key));
-                //       // .Select(x => x.EntityType).ToList();
-
-
-                //    foreach (var et in entityTypes)
-                //    {
-                //        var newEntity = GetDynamicEntityWithChanges(ctx, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(et.Type.Name], new Dictionary<string, object>(){{change.Key, change.Value},{nameof(IDynamicEntity.Id), entity.Id}});
-
-                //        EventMessageBus.Current.Publish(
-                //            new EntityWithChangesUpdated(newEntity, msg.Changes,
-                //                new RevolutionEntities.Process.StateEventInfo(msg.Process.Id, EntityEvents.Events.EntityUpdated), msg.Process,
-                //                Source), Source);
-                //    }
-
-                //}
-                //}
-
-                if (!msgChanges.ContainsKey("Id") && entity.EntityAttributes.Any(x => x.Attribute.Name == "Id")) msgChanges.Add("Id", entityId);
+                
+                //if (!msgChanges.ContainsKey("Id") && entity.EntityAttributes.Any(x => x.Attribute.Name == "Id")) msgChanges.Add("Id", entityId);
 
                 return GetDynamicEntityWithChanges(ctx,
                     DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(entityType.Type.Name), msgChanges);
@@ -204,7 +195,7 @@ namespace EFRepository
             using (var ctx = new GenSoftDBContext())
             {
                 var entityType = msg.EntityType;
-                var changes = msg.Changes;
+                var changes = msg.Changes.Where(x => x.Value != null);
                 var entityTypeId = ctx.EntityTypes.FirstOrDefault(x => x.Type.Name == entityType.Name)?.Id;
 
                 
@@ -215,7 +206,7 @@ namespace EFRepository
                     (current, c) => current.Where(
                         x => x.EntityAttributes.Any(z => z.Attribute.Name == c.Key && z.Value.ToString() == c.Value.ToString())));
 
-                var entities = GetViewEntities(entityType, res, viewEntityAttributes.Keys.ToList()).ToList();
+                var entities = GetViewEntities(entityType, res, viewEntityAttributes.Select(x => x.Key).ToList()).ToList();
                 
                 
                     EventMessageBus.Current.Publish(
@@ -238,7 +229,7 @@ namespace EFRepository
 
                 var viewEntityAttributes = GetViewEntityAttributes(ctx, entityTypeId);
                 var res = GetEntities(ctx, entityTypeId);
-                var viewset = GetViewEntities(msg.EntityType, res, viewEntityAttributes.Keys.ToList())
+                var viewset = GetViewEntities(msg.EntityType, res, viewEntityAttributes.Select(x => x.Key).ToList())
                     .ToList();
 
 
@@ -254,13 +245,12 @@ namespace EFRepository
         private  IQueryable<Entity> GetEntities(GenSoftDBContext ctx, int? viewId)
         {
             
-            var entities = ctx.Entities.AsNoTracking().Include(x => x.EntityAttributes)
-                .ThenInclude(x => x.Attribute).ThenInclude(x => x.EntityId)
-                .ThenInclude(x => x.Attribute);
+            var entities = ctx.Entities.AsNoTracking().Include(x => x.EntityType.EntityTypeAttributes).ThenInclude(x => x.EntityId)
+                .Include(x => x.EntityAttributes).ThenInclude(x => x.Attribute);
            
             var res = entities
                     .Where(x => x.EntityTypeId == viewId)
-                    .Where(x => x.EntityAttributes.Any(z => z.Attribute.EntityId != null));
+                    .Where(x => x.EntityAttributes.Any(z => z.Entity.EntityType.EntityTypeAttributes.Any(q => q.EntityId != null)));
             return res;
         }
 
@@ -334,7 +324,7 @@ namespace EFRepository
                         x => x.EntityAttributes.Any(z =>
                             z.Attribute.Name == c.Key && z.Value.ToString() == c.Value.ToString())));
 
-                var entity = GetViewEntities(entityType, ccres, viewEntityAttributes.Keys.ToList()).FirstOrDefault();
+                var entity = GetViewEntities(entityType, ccres, viewEntityAttributes.Select(x => x.Key).ToList()).FirstOrDefault();
                 return entity;
             }
             catch (Exception e)
@@ -349,7 +339,7 @@ namespace EFRepository
         {
             
             return res.Select(x => new DynamicEntity(entityType, x.Id,
-                x.EntityAttributes
+                x.EntityAttributes//.Distinct()
                     .Where(z => viewEntityAttributes.Contains(z.AttributeId))
                     .OrderBy(d => viewEntityAttributes.IndexOf(d.AttributeId))
                     .Select(z => new {z.Attribute.Name, z.Value})

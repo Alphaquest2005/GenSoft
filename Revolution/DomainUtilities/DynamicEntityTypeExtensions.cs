@@ -83,7 +83,7 @@ namespace DomainUtilities
                             .OrderBy(d => viewset.IndexOf(d.AttributeId))
                             .Select(z => new EntityKeyValuePair(z.Attribute.Name, z.Value,
                                 (ViewAttributeDisplayProperties)CreateEntityAttributeViewProperties(z.Id), false,
-                                z.Attribute.EntityId != null, false) as IEntityKeyValuePair) // z.Entity.EntityType.EntityTypeAttributes.EntityName != null%/
+                                z.Entity.EntityType.EntityTypeAttributes.Any(q => q.EntityId != null), false) as IEntityKeyValuePair) // z.Entity.EntityType.EntityTypeAttributes.EntityName != null%/
                             .ToList()
                         ??
                         ctx.EntityTypeAttributes
@@ -93,7 +93,7 @@ namespace DomainUtilities
                                 new EntityKeyValuePair(z.Attribute.Name,
                                     null,
                                     (ViewAttributeDisplayProperties)CreateEntityAttributeViewProperties(z.Id), false,
-                                    z.Attribute.EntityId != null,
+                                    z.EntityId != null,
                                     z.EntityName != null) as IEntityKeyValuePair).ToList();
 
                     
@@ -195,7 +195,7 @@ namespace DomainUtilities
                             tes.Add(new EntityKeyValuePair(pAtt.Attribute.Name,
                                 null,
                                 (ViewAttributeDisplayProperties)CreateEntityAttributeViewProperties(pAtt.Id), true,
-                                pAtt.Attribute.EntityId != null,
+                                pAtt.EntityId != null,
                                 pAtt.EntityName != null) as IEntityKeyValuePair);
                         CreateCacheProperty(parentEntityType, viewType, cachedProperties, pEntityType, pAtt);
                     
@@ -233,11 +233,11 @@ namespace DomainUtilities
                     .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)
                     .Select(x => x.AttributeId).ToList(); 
 
-                var res =  ctx.Entities.AsNoTracking().Include(x => x.EntityAttributes)
-                    .ThenInclude(x => x.Attribute).ThenInclude(x => x.EntityId)
-                    .ThenInclude(x => x.Attribute)
+                var res =  ctx.Entities.AsNoTracking()
+                    .Include(x => x.EntityAttributes).ThenInclude(x => x.Attribute)
+                    .Include(x => x.EntityType.EntityTypeAttributes).ThenInclude(x => x.EntityId)
                     .Where(x => x.EntityTypeId == entityTypeId)
-                    .Where(x => x.EntityAttributes.Any(z => z.Attribute.EntityId != null));
+                    .Where(x => x.EntityAttributes.Any(z => z.Entity.EntityType.EntityTypeAttributes.Any(q => q.EntityId != null)));
 
                 var viewset = res.Select(x => new {x.Id, Properties = 
                         x.EntityAttributes
@@ -254,6 +254,7 @@ namespace DomainUtilities
                         var val = propertyParentEntityTypes.Where(x => x.Key != "Id" && itm.Properties.ContainsKey(x.Key) && GetOrAddDynamicEntityType(x.Type).CachedProperties.ContainsKey("Name") && GetOrAddDynamicEntityType(x.Type).CachedProperties["Name"].ContainsKey(Convert.ToInt32(itm.Properties[x.Key])))//.OrderByDescending(x => x.Key)
                             .Select(x =>  GetOrAddDynamicEntityType(x.Type).CachedProperties["Name"][Convert.ToInt32(itm.Properties[x.Key])])
                             .Aggregate("", (c, n) => $"{c}-{n}");
+                    if (val.StartsWith("-")) val = val.Substring(1);
                         if (cachedProperties.ContainsKey(propertyKey))
                         {
                             if (cachedProperties[propertyKey].ContainsKey(id)) return;
@@ -346,7 +347,7 @@ namespace DomainUtilities
                             var name = new EntityKeyValuePair(pAtt.Attribute.Name,
                                 null,
                                 (ViewAttributeDisplayProperties) CreateEntityAttributeViewProperties(pAtt.Id), true,
-                                pAtt.Attribute.EntityId != null,
+                                pAtt.EntityId != null,
                                 pAtt.EntityName != null);
                         
                         tes.Add(name);
@@ -503,16 +504,16 @@ namespace DomainUtilities
                     .Where(x => x.EntityTypeId == viewType.Id )//&& !x.ParentEntities.Any()
                     .OrderBy(x => x.Priority == 0).ThenBy(x => x.Priority)///////////////////////////// ---- reverse because dictionary act like a stack
                     .Select(x => new { Attribute = x.Attribute.Name,
-                                       ParentEntities = x.EntityRelationships.Select(z => z.ParentEntity.EntityTypeAttribute.EntityType.Type.Name).ToList(),
-                                       ChildEntities = x.EntityRelationships.Select(z => z.EntityTypeAttribute.EntityType.Type.Name).ToList(),
+                                       ParentEntities = x.EntityRelationships.Select(z => new { z.ParentEntity.EntityTypeAttribute.EntityType.Type.Name, Ordinality = z.RelationshipType.ParentOrdinality.Name}).ToList(),
+                                       ChildEntities = x.EntityRelationships.Select(z => new { z.EntityTypeAttribute.EntityType.Type.Name, Ordinality = z.RelationshipType.ChildOrdinality.Name}).ToList(),
                     }).ToList();
 
                 foreach (var p in lst)
                 {
                     var parentType = p.ParentEntities.FirstOrDefault();
                     var childType = p.ChildEntities.FirstOrDefault();
-                    if (parentType != null) parentTypes.Add(new DynamicRelationshipType(parentType, p.Attribute));
-                    if (childType != null) childTypes.Add(new DynamicRelationshipType(childType, p.Attribute));
+                    if (parentType != null) parentTypes.Add(new DynamicRelationshipType(parentType.Name, p.Attribute, parentType.Ordinality ));
+                    if (childType != null) childTypes.Add(new DynamicRelationshipType(childType.Name, p.Attribute, childType.Ordinality));
                 }
 
             }

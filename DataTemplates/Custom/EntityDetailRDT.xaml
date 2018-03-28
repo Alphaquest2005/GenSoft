@@ -106,7 +106,7 @@
                 <MultiBinding  Converter="{StaticResource LookUpTextConverter}" Mode="OneWay" UpdateSourceTrigger="PropertyChanged" >
                         <Binding Path="Key"/>
                     <Binding Path="DataContext.ViewInfo.EntityType.CachedProperties" ElementName="EntityDetailListGRD" IsAsync="True"/>
-                    <Binding Path="DataContext.ViewInfo.EntityType.PropertyParentEntityType" ElementName="EntityDetailListGRD" IsAsync="True"/>
+                    <Binding Path="DataContext.ViewInfo.EntityType.ParentEntities" ElementName="EntityDetailListGRD" IsAsync="True"/>
                         <Binding Path="Value"/>
                     </MultiBinding>
                 </TextBlock.Text>

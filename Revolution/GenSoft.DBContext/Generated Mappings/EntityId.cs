@@ -20,10 +20,11 @@ namespace GenSoft.Mappings
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").ValueGeneratedNever();	
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").IsRequired();
 			entityBuilder.Property(t => t.IsEntityId).HasColumnName("IsEntityId").IsRequired();
+			entityBuilder.Property(t => t.IsComputed).HasColumnName("IsComputed").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
 	
 				//----------------Parent Properties
-				//entityBuilder.HasOne(p => p.Attribute Attribute).WithOne(p => p.EntityId).HasForeignKey<Attribute>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.EntityTypeAttribute EntityTypeAttribute).WithOne(p => p.EntityId).HasForeignKey<EntityTypeAttribute>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}

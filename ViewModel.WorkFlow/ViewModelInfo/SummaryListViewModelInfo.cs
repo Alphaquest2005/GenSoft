@@ -161,13 +161,13 @@ namespace RevolutionData
 
                         messageData: s =>
                         {
-                            
-
-                            return new ViewEventCommandParameter(
+                            var viewEventCommandParameter = new ViewEventCommandParameter(
                                 new object[] {s.SelectedAddinAction.Value, s.CurrentEntity.Value},
                                 new RevolutionEntities.Process.StateCommandInfo(s.Process,
-                                   Context.CommandFunctions.UpdateCommandData(s.SelectedAddinAction.Value.Name,Context.Addin.Commands.StartAddin)), s.Process,
+                                    Context.CommandFunctions.UpdateCommandData(s.SelectedAddinAction.Value.Name,Context.Addin.Commands.StartAddin)), s.Process,
                                 s.Source);
+                            s.SelectedAddinAction.Value = null;
+                            return viewEventCommandParameter;
                         }),
                 };
                 var parentSubscriptions = new List<IViewModelEventSubscription<IViewModel, IEvent>>();

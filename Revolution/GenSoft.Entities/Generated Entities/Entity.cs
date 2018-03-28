@@ -13,8 +13,8 @@ namespace GenSoft.Entities
 {
 	public partial class Entity: BaseEntity, IEntity
 	{
-		public virtual DateTime DateTimeCreated { get; set; }
 		public virtual int EntityTypeId { get; set; }
+		public virtual DateTime DateTimeCreated { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships

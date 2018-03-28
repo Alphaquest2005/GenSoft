@@ -14,8 +14,8 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IEntity:SystemInterfaces.IEntity  
 	{
-		DateTime DateTimeCreated { get;}
 		int EntityTypeId { get;}
+		DateTime DateTimeCreated { get;}
 
 
 

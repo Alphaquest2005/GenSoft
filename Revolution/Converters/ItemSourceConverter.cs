@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Windows.Data;
+using SystemInterfaces;
 using DomainUtilities;
 using JB.Collections.Reactive;
 
@@ -13,12 +15,12 @@ namespace Converters
         {
             if (!(value[0] is string prop) 
                 || !(value[1] is ObservableDictionary<string, Dictionary<int, dynamic>> cachedProperties) 
-                || !(value[2] is ObservableDictionary<string, string> propertyParentEntityTypes) 
-                || !propertyParentEntityTypes.ContainsKey(prop) ) return null;
+                || !(value[2] is List<IDynamicRelationshipType> propertyParentEntityTypes) 
+                || propertyParentEntityTypes.FirstOrDefault(x => x.Key == prop) == null)  return null;
 
 
-            return DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(propertyParentEntityTypes[prop]).CachedProperties.ContainsKey("Name")
-                ? DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(propertyParentEntityTypes[prop]).CachedProperties["Name"]
+            return DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(propertyParentEntityTypes.First(x => x.Key == prop).Type).CachedProperties.ContainsKey("Name")
+                ? DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(propertyParentEntityTypes.First(x => x.Key == prop).Type).CachedProperties["Name"]
                 : null;
 
         }

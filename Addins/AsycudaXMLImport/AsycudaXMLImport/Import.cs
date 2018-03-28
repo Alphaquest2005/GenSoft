@@ -32,7 +32,7 @@ namespace AsycudaXMLImport
         {
             //StatusModel.Timer("Importing Documents");
             //import asycuda xml id and details
-            if (msg.Entity.Id == 0)
+            if (msg.Entity ==null || msg.Entity.Id == 0)
             {
                 MessageBox.Show("Please Select Asycuda Document Set");
                 return;

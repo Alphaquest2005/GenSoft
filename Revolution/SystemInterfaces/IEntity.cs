@@ -15,6 +15,7 @@ namespace SystemInterfaces
     {
         ObservableList<IEntityKeyValuePair> PropertyList { get; }
         Dictionary<string, object> Properties { get; }
+        
     }
 
 

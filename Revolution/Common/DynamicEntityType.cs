@@ -54,14 +54,16 @@ namespace Common.DataEntites
 
     public class DynamicRelationshipType: IDynamicRelationshipType
     {
-        public DynamicRelationshipType(string type, string key)
+        public DynamicRelationshipType(string type, string key, string ordinality)
         {
             Type = type;
             Key = key;
+            Ordinality = ordinality;
         }
 
         public string Type { get; }
         public string Key { get; }
+        public string Ordinality { get; }
     }
 
 }

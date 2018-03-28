@@ -31,5 +31,7 @@ namespace SystemInterfaces
     {
         string Type { get; }
         string Key { get; }
+
+        string Ordinality { get; }
     }
 }

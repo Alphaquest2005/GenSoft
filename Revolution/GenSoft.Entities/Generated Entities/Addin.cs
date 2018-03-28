@@ -13,8 +13,8 @@ namespace GenSoft.Entities
 {
 	public partial class Addin: BaseEntity, IAddin
 	{
-		public virtual string AssemblyName { get; set; }
 		public virtual string Name { get; set; }
+		public virtual string AssemblyName { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships

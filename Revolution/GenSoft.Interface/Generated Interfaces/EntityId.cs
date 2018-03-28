@@ -15,6 +15,7 @@ namespace GenSoft.Interfaces
 	public partial interface IEntityId:SystemInterfaces.IEntity  
 	{
 		bool IsEntityId { get;}
+		bool IsComputed { get;}
 
 
 

@@ -14,12 +14,13 @@ namespace GenSoft.Entities
 	public partial class EntityId: BaseEntity, IEntityId
 	{
 		public virtual bool IsEntityId { get; set; }
+		public virtual bool IsComputed { get; set; }
 
 		//-------------------Navigation Properties -------------------------------//
 			// ---------Child Relationships
 		
 			// ---------Parent Relationships
-				public virtual Attribute Attribute {get; set;}
+				public virtual EntityTypeAttribute EntityTypeAttribute {get; set;}
 	
 
 	}

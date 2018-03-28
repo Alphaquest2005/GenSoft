@@ -18,8 +18,8 @@ namespace GenSoft.Mappings
 			entityBuilder.ToTable("Entities", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").UseSqlServerIdentityColumn();	
-			entityBuilder.Property(t => t.DateTimeCreated).HasColumnName("DateTimeCreated").IsRequired();
 			entityBuilder.Property(t => t.EntityTypeId).HasColumnName("EntityTypeId").IsRequired();
+			entityBuilder.Property(t => t.DateTimeCreated).HasColumnName("DateTimeCreated").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
 				entityBuilder.HasMany(x => x.Commands).WithOne(p => p.Entity).HasForeignKey(c => c.EntityId).OnDelete(DeleteBehavior.Restrict);//EntityId//Id//
 				entityBuilder.HasOne(p => p.Delete).WithOne(p => p.Entity).HasForeignKey<Delete>(c => c.Id).OnDelete(DeleteBehavior.Restrict);//Id//Id//

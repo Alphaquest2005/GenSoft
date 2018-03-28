@@ -14,8 +14,8 @@ namespace GenSoft.Interfaces
 	[InheritedExport]
 	public partial interface IAddin:SystemInterfaces.IEntity  
 	{
-		string AssemblyName { get;}
 		string Name { get;}
+		string AssemblyName { get;}
 
 
 

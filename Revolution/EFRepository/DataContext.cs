@@ -118,7 +118,7 @@ namespace EFRepository
                         }
 
                         if(newEntity != null)
-                        msg.Changes.Where(x => msg.EntityType.CachedProperties.ContainsKey(x.Key)).ForEach(change => msg.EntityType.CachedProperties[change.Key].AddOrUpdate((int)newEntity.Properties["Id"], change.Value));
+                        msg.Changes.Where(x => msg.EntityType.CachedProperties.ContainsKey(x.Key)).ForEach(change => msg.EntityType.CachedProperties[change.Key].AddOrUpdate((int)newEntity.Id, change.Value));
                         
                         
                         EventMessageBus.Current.Publish(

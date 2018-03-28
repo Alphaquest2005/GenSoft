@@ -41,7 +41,8 @@ namespace Asycuda
                 a = adoc;
                 var ads = docSet;
                 
-                da.xcuda_Item = new List<DynamicType>();
+                da.xcuda_Item = new List<DynamicType>(){};
+                da.XMLId = a.id;
                 da.ASYCUDA_Id = 0;
                 da.xcuda_ASYCUDA_ExtendedProperties = new DynamicType("xcuda_ASYCUDA_ExtendedProperties", da.ASYCUDA_Id);
                 da.xcuda_Suppliers_documents = new List<DynamicType>();
@@ -68,7 +69,7 @@ namespace Asycuda
 
                 Save_Suppliers_Documents();
                 da.xcuda_ASYCUDA_ExtendedProperties.ImportComplete = true;
-                da.xcuda_ASYCUDA_ExtendedProperties.AsycudaDocumentSetId = docSet.Properties["Id"];
+                da.xcuda_ASYCUDA_ExtendedProperties.AsycudaDocumentSetId = docSet.Id;
                 foreach (var itm in da.xcuda_Item)
                 {
                     if (itm.ImportComplete != false) continue;

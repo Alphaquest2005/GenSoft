@@ -1,4 +1,5 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿
+    <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:converters="clr-namespace:Converters;assembly=Converters"
                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -115,7 +116,7 @@
                     <MultiBinding  Converter="{StaticResource ItemSourceConverter}" >
                         <Binding Path="Key"/>
                     <Binding Path="DataContext.ViewInfo.EntityType.CachedProperties" ElementName="EntityDetailListGRD" IsAsync="True"/>
-                    <Binding Path="DataContext.ViewInfo.EntityType.PropertyParentEntityType" ElementName="EntityDetailListGRD" IsAsync="True"/>
+                    <Binding Path="DataContext.ViewInfo.EntityType.ParentEntities" ElementName="EntityDetailListGRD" IsAsync="True"/>
                 </MultiBinding>
                 </ComboBox.ItemsSource>
 

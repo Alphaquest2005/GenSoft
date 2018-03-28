@@ -67,7 +67,7 @@ namespace DataServices.Actors
             using (var ctx = new GenSoftDBContext())
             {
                 CurrentApplication = ctx.Applications.Include(x => x.DatabaseInfo)
-                    .First(x => x.Id == Convert.ToInt32(currentEntityChanged.Application.Properties["Id"]));
+                    .First(x => x.Id == Convert.ToInt32(currentEntityChanged.Application.Id));
             }
             _processComplexEvents.Clear();
             DynamicEntityTypeExtensions.ResetDynamicTypes();

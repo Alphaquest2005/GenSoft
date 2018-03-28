@@ -115,6 +115,8 @@ namespace GenSoft.DBContexts
 		{
 			optionsBuilder.UseSqlServer(DBContext.Properties.Settings.Default.DbConnectionString);
             optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+		    optionsBuilder.EnableSensitiveDataLogging(true);
+
 		}
 	
 		protected override void OnModelCreating(ModelBuilder modelBuilder)

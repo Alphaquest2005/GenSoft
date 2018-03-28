@@ -18,15 +18,15 @@ namespace GenSoft.Mappings
 			entityBuilder.ToTable("CalculatedProperties", "dbo");
 			entityBuilder.HasKey(t => t.Id);
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").ValueGeneratedNever();	
-			entityBuilder.Property(t => t.FunctionSetId).HasColumnName("FunctionSetId").IsRequired();
 			entityBuilder.Property(t => t.Id).HasColumnName("Id").IsRequired();
+			entityBuilder.Property(t => t.FunctionSetId).HasColumnName("FunctionSetId").IsRequired();
 		//-------------------Navigation Properties -------------------------------//
 				entityBuilder.HasMany(x => x.CalculatedPropertyParameters).WithOne(p => p.CalculatedProperty).HasForeignKey(c => c.CalculatedPropertyId).OnDelete(DeleteBehavior.Restrict);//CalculatedPropertyId//Id//
 				entityBuilder.HasMany(x => x.FunctionParameterConstants).WithOne(p => p.CalculatedProperty).HasForeignKey(c => c.CalculatedPropertyId).OnDelete(DeleteBehavior.Restrict);//CalculatedPropertyId//Id//
 	
 				//----------------Parent Properties
-				//entityBuilder.HasOne(p => p.FunctionSet FunctionSet).WithMany(p => p.CalculatedProperties).HasForeignKey(c => c.FunctionSetId).OnDelete(DeleteBehavior.Restrict);
 				//entityBuilder.HasOne(p => p.EntityTypeAttribute EntityTypeAttribute).WithOne(p => p.CalculatedProperty).HasForeignKey<EntityTypeAttribute>(c => c.Id).OnDelete(DeleteBehavior.Restrict);
+				//entityBuilder.HasOne(p => p.FunctionSet FunctionSet).WithMany(p => p.CalculatedProperties).HasForeignKey(c => c.FunctionSetId).OnDelete(DeleteBehavior.Restrict);
 	
 		}
 	}
