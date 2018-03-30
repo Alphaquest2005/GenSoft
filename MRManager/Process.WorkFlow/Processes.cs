@@ -356,6 +356,32 @@ namespace Process.WorkFlow
                     processInfo: new StateCommandInfo(process, CommandFunctions.UpdateCommandData(viewEntityType,RevolutionData.Context.Entity.Commands.UpdateState)));
             }
 
+            public static IComplexEventAction UpdateCache(ISystemProcess process, IDynamicEntityType viewEntityType)
+            {
+                return new ComplexEventAction(
+                    key: $"UpdateCache-{viewEntityType.Name}",
+                    process: process,
+                    actionTrigger: ActionTrigger.Any,
+                    events: new List<IProcessExpectedEvent>
+                    {
+                        new ProcessExpectedEvent<IEntityUpdated>(process: process,
+                            eventPredicate: e => e.Entity != null && e.Process.Id == process.Id && e.EntityType.Name == viewEntityType.Name,
+                            processInfo: new StateEventInfo(process, EventFunctions.UpdateEventData(viewEntityType.Name, Entity.Events.EntityUpdated), Guid.NewGuid()),
+                            expectedSourceType: new SourceType(typeof (IEntityRepository)),
+                            key: "UpdatedEntity"),
+                        new ProcessExpectedEvent<IEntityWithChangesUpdated>(process: process,
+                            eventPredicate: e => e.Entity != null && e.Process.Id == process.Id && e.EntityType.Name == viewEntityType.Name,
+                            processInfo: new StateEventInfo(process, EventFunctions.UpdateEventData(viewEntityType.Name, Entity.Events.EntityUpdated), Guid.NewGuid()),
+                            expectedSourceType: new SourceType(typeof (IEntityRepository)),
+                            key: "UpdatedEntity"),
+
+
+                    },
+                    expectedMessageType: typeof(IProcessStateMessage),
+                    action: ProcessActions.UpdateCache(viewEntityType),
+                    processInfo: new StateCommandInfo(process, CommandFunctions.UpdateCommandData(viewEntityType.Name, RevolutionData.Context.Entity.Commands.UpdateState)));
+            }
+
             public static IProcessAction GetView(IDynamicEntityType entityType, string currentProperty, string viewProperty) 
             {
                 return new ProcessAction(

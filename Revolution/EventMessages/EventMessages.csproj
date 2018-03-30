@@ -115,6 +115,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Commands\AddOrGetEntityWithChanges.cs" />
+    <Compile Include="Commands\UpdateCache.cs" />
     <Compile Include="Commands\CleanUpSystemProcess.cs" />
     <Compile Include="Commands\CreateProcessActor.cs" />
     <Compile Include="Commands\LoadEntitySetWithChanges.cs" />
@@ -124,6 +125,7 @@
     <Compile Include="Commands\RequestProcessLog.cs" />
     <Compile Include="Commands\CreateEntityService.cs" />
     <Compile Include="Events\ActorTerminated.cs" />
+    <Compile Include="Events\CacheUpdated.cs" />
     <Compile Include="Events\DomainMessage.cs" />
     <Compile Include="Events\EntitySetWithChangesLoaded.cs" />
     <Compile Include="Events\CurrentEntityChanged.cs" />

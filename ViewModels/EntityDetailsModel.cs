@@ -72,7 +72,7 @@ namespace ViewModels
         private void OnValueChanged(object entityKeyValuePair)
         {
             
-            if (entityKeyValuePair == null) return;
+            if (entityKeyValuePair == null || RowState == null) return;
             if(RowState.Value == SystemInterfaces.RowState.Modified)
             ChangeTracking.AddOrUpdate(CurrentProperty.Value.Key, CurrentProperty.Value.Value);
         }

@@ -5358,7 +5358,8 @@
       "DomainUtilities >= 1.0.0",
       "EventMessages >= 1.0.0",
       "RevolutionEntities >= 1.0.0",
-      "SystemInterfaces >= 1.0.0"
+      "SystemInterfaces >= 1.0.0",
+      "Utilities >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5408,6 +5409,9 @@
             },
             "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj": {
               "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\SystemInterfaces\\SystemInterfaces.csproj"
+            },
+            "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Utilities\\Utilities.csproj": {
+              "projectPath": "C:\\Prism\\GitRepositiory\\GenSoft\\Revolution\\Utilities\\Utilities.csproj"
             }
           }
         }

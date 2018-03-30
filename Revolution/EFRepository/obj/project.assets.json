@@ -912,7 +912,8 @@
           "DomainUtilities": "1.0.0",
           "EventMessages": "1.0.0",
           "RevolutionEntities": "1.0.0",
-          "SystemInterfaces": "1.0.0"
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
         },
         "compile": {
           "bin/placeholder/RevolutionData.dll": {}
@@ -1911,7 +1912,8 @@
           "DomainUtilities": "1.0.0",
           "EventMessages": "1.0.0",
           "RevolutionEntities": "1.0.0",
-          "SystemInterfaces": "1.0.0"
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
         },
         "compile": {
           "bin/placeholder/RevolutionData.dll": {}
@@ -2910,7 +2912,8 @@
           "DomainUtilities": "1.0.0",
           "EventMessages": "1.0.0",
           "RevolutionEntities": "1.0.0",
-          "SystemInterfaces": "1.0.0"
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
         },
         "compile": {
           "bin/placeholder/RevolutionData.dll": {}
@@ -3909,7 +3912,8 @@
           "DomainUtilities": "1.0.0",
           "EventMessages": "1.0.0",
           "RevolutionEntities": "1.0.0",
-          "SystemInterfaces": "1.0.0"
+          "SystemInterfaces": "1.0.0",
+          "Utilities": "1.0.0"
         },
         "compile": {
           "bin/placeholder/RevolutionData.dll": {}

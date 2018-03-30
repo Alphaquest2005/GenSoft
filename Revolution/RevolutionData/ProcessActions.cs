@@ -12,6 +12,7 @@ using EventMessages.Events;
 using RevolutionData.Context;
 using RevolutionEntities.Process;
 using RevolutionEntities.ViewModels;
+using Utilities;
 using Application = System.Windows.Application;
 using Process = RevolutionData.Context.Process;
 using User = RevolutionEntities.Process.User;
@@ -149,6 +150,26 @@ namespace RevolutionData
                     cp =>
                         new StateCommandInfo(cp.Actor.Process,
                             Context.Entity.Commands.UpdateState),
+                // take shortcut cud be IntialState
+                expectedSourceType: new SourceType(typeof(IComplexEventService)));
+        }
+
+        public static IProcessAction UpdateCache(IDynamicEntityType entityType)
+        {
+            return new ProcessAction(
+                action: async cp =>
+                {
+                    
+                    return await Task.Run(() => new UpdateCache(
+                        entity: cp.Messages["UpdatedEntity"].Properties["Entity"].GetValue<IDynamicEntity>(),
+                        process: cp.Actor.Process,
+                        processInfo: new StateCommandInfo(cp.Actor.Process, Entity.Commands.UpdateCache),
+                        source: cp.Actor.Source)).ConfigureAwait(false);
+                },
+                processInfo:
+                cp =>
+                    new StateCommandInfo(cp.Actor.Process,
+                        Context.Entity.Commands.UpdateState),
                 // take shortcut cud be IntialState
                 expectedSourceType: new SourceType(typeof(IComplexEventService)));
         }

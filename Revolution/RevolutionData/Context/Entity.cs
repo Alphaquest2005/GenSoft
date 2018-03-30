@@ -16,9 +16,11 @@ namespace RevolutionData.Context
             public static IStateCommand LoadEntitySet => new StateCommand("LoadEntitySet", "Load Entity Set", "Entity", "Unknown", Events.EntityCreated);
             public static IStateCommand LoadEntitySetWithChanges => new StateCommand("LoadEntitySetWithChanges", "Load EntitySet with Changes", "Entity", "Unknown", Events.EntitySetLoaded);
 
-            public static IStateCommand InitializeState => new StateCommand("CreateIntialState", "Create Intial State", "Entity", "Unknown", Events.StateUpdated);
+            public static IStateCommand InitializeState => new StateCommand("CreateInitialState", "Create Initial State", "Entity", "Unknown", Events.StateUpdated);
             public static IStateCommand UpdateState => new StateCommand("UpdateState", "Update State", "Entity", "Unknown", Events.StateUpdated);
             public static IStateCommand PublishState => new StateCommand("RequestState", "Request Process State", "Entity", "Unknown", Events.StatePublished);
+
+            public static IStateCommand UpdateCache => new StateCommand("UpdateCache", "Update Cache", "", "Cache", Events.CacheUpdated);
         }
 
         public class Events
@@ -32,6 +34,7 @@ namespace RevolutionData.Context
 
             public static IStateEvent StateUpdated => new StateEvent("StateUpdated", "StateUpdated", "", "Entity", "Unknown");
             public static IStateEvent StatePublished => new StateEvent("StatePublished", "Process State Published", "", "Entity", "Unknown");
+            public static IStateEvent CacheUpdated => new StateEvent("CacheUpdated", "Cache Updated", "", "Cache", "Unknown");
         }
     }
 }

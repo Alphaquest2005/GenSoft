@@ -941,7 +941,9 @@ namespace DataServices.Actors
                             new object[] {process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType)});
                         yield return Processes.ComplexActions.GetComplexAction("UpdateState",
                             new object[] {process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType)});
-                        yield return Processes.ComplexActions.GetComplexAction("RequestState",
+                        yield return Processes.ComplexActions.GetComplexAction("UpdateCache",
+                            new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType) });
+                    yield return Processes.ComplexActions.GetComplexAction("RequestState",
                             new object[] {process, parentType, parentType, "Id"});
 
                         var entityRelationships = r.DistinctBy(x => x.Id);
@@ -950,20 +952,7 @@ namespace DataServices.Actors
                             var parentExpression = rel.ParentEntity.EntityTypeAttribute.Attribute.Name;
                             var childType = rel.EntityTypeAttribute.EntityType.Type.Name;
 
-                            //if (DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(childType) != null)
-                            //{
-                            //    DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(childType);
-                            //    if (rel.RelationshipType.ChildOrdinality.Name != "One")
-                            //    {
-                            //        DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType).ChildEntities
-                            //            .Add(new DynamicRelationshipType(DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(childType),rel.EntityTypeAttribute.Attribute.Name));
-                            //        DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(childType).ParentEntities
-                            //            .Add(new DynamicRelationshipType(DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(parentType), rel.ParentEntity.EntityTypeAttribute.Attribute.Name));
-                            //    }
-                            //}
-
-
-
+                           
                             var childExpression = rel.EntityTypeAttribute.Attribute.Name;
 
 
@@ -988,7 +977,11 @@ namespace DataServices.Actors
                             yield return Processes.ComplexActions.GetComplexAction("UpdateStateWhenDataChanges",
                                 new object[] {process, parentType, childType, parentExpression, childExpression});
 
-                        }
+                            yield return Processes.ComplexActions.GetComplexAction("UpdateCache",
+                                new object[]
+                                    {process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(childType)});
+
+                    }
 
                     }
                     if (list.Any()) yield break;
@@ -1008,6 +1001,9 @@ namespace DataServices.Actors
                     yield return Processes.ComplexActions.GetComplexAction("UpdateState",
                         new object[]
                             {process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(mainEntityType)});
+                        yield return Processes.ComplexActions.GetComplexAction("UpdateCache",
+                            new object[]
+                                {process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(mainEntityType)});
                     yield return Processes.ComplexActions.GetComplexAction("RequestState",
                         new object[] { process, mainEntityType, mainEntityType, "Id" });
                     yield break;
@@ -1024,6 +1020,7 @@ namespace DataServices.Actors
                         yield return Processes.ComplexActions.GetComplexAction("UpdateStateList", new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(soleEntity.Type.Name) });
 
                     yield return Processes.ComplexActions.GetComplexAction("UpdateState", new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(soleEntity.Type.Name) });
+                        yield return Processes.ComplexActions.GetComplexAction("UpdateCache", new object[] { process, DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(soleEntity.Type.Name) });
                     yield return Processes.ComplexActions.GetComplexAction("RequestState", new object[] { process, soleEntity.Type.Name, soleEntity.Type.Name, "Id" });
 
 

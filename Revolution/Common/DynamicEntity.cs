@@ -33,18 +33,20 @@ namespace Common.DataEntites
         public new Dictionary<string, object> Properties => base.Properties;
 
         private string _entityName;
-        public dynamic EntityName
+        public string EntityName
         {
             get
             {
-                if(_entityName == null) _entityName = EntityType.Properties.FirstOrDefault(x => x.IsEntityName)?.Key;
-                return _entityName == null ? this.Properties.ContainsKey("EntityName")?this.Properties["EntityName"]:"" : Properties[_entityName].ToString();
+                if(_entityName == null) _entityName = EntityType.Properties.FirstOrDefault(x => x.Key == "Name")?.Key ?? EntityType.Properties.FirstOrDefault(x => x.IsEntityName)?.Key ?? EntityType.Properties.FirstOrDefault(x => x.IsEntityId)?.Key;
+                return _entityName != null 
+                        ?this.Properties[_entityName].ToString()
+                        : Properties["Id"].ToString();
             }
             set
             {
-                if (_entityName == null) _entityName = EntityType.Properties.FirstOrDefault(x => x.IsEntityName)?.Key;
-                if (_entityName == null) this.Properties["EntityName"] = value;
-                else Properties[_entityName] = value;
+                if (_entityName == null) _entityName = EntityType.Properties.FirstOrDefault(x => x.Key == "Name")?.Key ?? EntityType.Properties.FirstOrDefault(x => x.IsEntityName)?.Key;
+                if (_entityName != null) Properties[_entityName] = value;
+                else this.Properties.Add("Name",value);
             }
         }
         // todo: dual implementation of DynamicEntityType
