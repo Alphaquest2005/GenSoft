@@ -58,14 +58,7 @@ namespace RevolutionData
                         actionPredicate: new List<Func<ISummaryListViewModel, IEntityWithChangesUpdated, bool>>(),
                         action: (v, e) =>
                         {
-                            //if (Application.Current == null)
-                            //{
                             UpdateEntitySet(v, e);
-                            //}
-                            //else
-                            //{
-                            //    Application.Current.Dispatcher.BeginInvoke(new Action(() => UpdateEntitySet(v, e)));
-                            //}
                         }, processInfo: new RevolutionEntities.Process.StateEventInfo(process, RevolutionData.Context.EventFunctions.UpdateEventData(entityType.Name, Context.Entity.Events.EntityUpdated), Guid.NewGuid())),
 
                     new ViewEventSubscription<ISummaryListViewModel, ICurrentEntityChanged>(
@@ -81,7 +74,16 @@ namespace RevolutionData
                             
                         }, new RevolutionEntities.Process.StateEventInfo(process, RevolutionData.Context.EventFunctions.UpdateEventData(entityType.Name, Context.ViewModel.Events.CurrentEntityChanged), Guid.NewGuid())),
 
-                    
+                    new ViewEventSubscription<ISummaryListViewModel, IEntityDeleted>(
+                        key: $"{entityType.Name}-IEntityDeleted",
+                        process: process,
+                        eventPredicate: e => e.EntityType.Name == entityType.Name && e.Process.Id == process.Id,
+                        actionPredicate: new List<Func<ISummaryListViewModel, IEntityDeleted, bool>>(),
+                        action: (v, e) =>
+                        {
+                           RemoveItemFromEntitySet(v, e);
+                        }, processInfo: new RevolutionEntities.Process.StateEventInfo(process, RevolutionData.Context.EventFunctions.UpdateEventData(entityType.Name, Context.Entity.Events.EntityUpdated), Guid.NewGuid())),
+
 
                 };
 
@@ -169,6 +171,23 @@ namespace RevolutionData
                             s.SelectedAddinAction.Value = null;
                             return viewEventCommandParameter;
                         }),
+
+                    new ViewEventCommand<ISummaryListViewModel, IDeleteEntity>(
+                        key: $"DeleteEntity",
+                        commandPredicate: new List<Func<ISummaryListViewModel, bool>>
+                        {
+                              //v => v.CurrentEntity.Value != null
+                        },
+                        subject: s => Observable.Empty<ReactiveCommand<IViewModel>>(),
+
+                        messageData: s =>
+                        {
+                            return new ViewEventCommandParameter(
+                                new object[] {s.CurrentEntity.Value},
+                                new RevolutionEntities.Process.StateCommandInfo(s.Process,
+                                    Context.CommandFunctions.UpdateCommandData($@"{s.CurrentEntity.Value.EntityType.Name}-{s.CurrentEntity.Value.Id}", Context.Entity.Commands.DeleteEntity)), s.Process,
+                                s.Source);
+                        }),
                 };
                 var parentSubscriptions = new List<IViewModelEventSubscription<IViewModel, IEvent>>();
                 var parentCommands = new List<IViewModelEventCommand<IViewModel, IEvent>>();
@@ -240,9 +259,17 @@ namespace RevolutionData
             
         }
 
+        private static void RemoveItemFromEntitySet(ISummaryListViewModel summaryListViewModel, IEntityDeleted msg)
+        {
+            var res = summaryListViewModel.EntitySet.Value.ToList();
+            var existingEntity = res.FirstOrDefault(x => x.Id == msg.Entity.Id);
 
+            res.Remove(existingEntity);
+            summaryListViewModel.EntitySet.Value = new ObservableList<IDynamicEntity>(res);
+            summaryListViewModel.EntitySet.Value.Reset();
+            summaryListViewModel.RowState.Value = RowState.Unchanged;
+        }
 
-        
 
         private static List<IViewModelEventSubscription<IViewModel, IEvent>> CreateParentEntitySubscibtion(ISystemProcess processId, string parentEntity, string parentProperty)
         {

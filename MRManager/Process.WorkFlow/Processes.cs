@@ -232,7 +232,12 @@ namespace Process.WorkFlow
                             eventPredicate: e => e.Entity != null && e.Process.Id == process.Id && e.EntityType.Name == entityType.Name,
                             processInfo: new StateEventInfo(process, EventFunctions.UpdateEventData(entityType.Name, Entity.Events.EntityFound), Guid.NewGuid()),
                             expectedSourceType: new SourceType(typeof(IEntityRepository)),
-                            key: "Entity")
+                            key: "Entity"),
+                                     new ProcessExpectedEvent<IEntityDeleted>(process: process,
+                            eventPredicate: e => e.Entity != null && e.Process.Id == process.Id && e.EntityType.Name == entityType.Name,
+                            processInfo: new StateEventInfo(process, EventFunctions.UpdateEventData(entityType.Name, Entity.Events.EntityDeleted), Guid.NewGuid()),
+                            expectedSourceType: new SourceType(typeof(IEntityRepository)),
+                            key: "Entity"),
                     },
                     expectedMessageType: typeof(IProcessStateMessage),
                     action: ProcessActions.UpdateEntityViewState(),
@@ -264,11 +269,12 @@ namespace Process.WorkFlow
                             expectedSourceType: new SourceType(typeof (IViewModel)),
                             //todo: check this cuz it comes from viewmodel
                             processInfo: new StateEventInfo(process, EventFunctions.UpdateEventData(currentEntityType,Entity.Events.EntityUpdated), Guid.NewGuid())),
-                        //new ProcessExpectedEvent<IEntityWithChangesFound>(
-                        //    "CurrentEntity", process, e => e.Entity != null && e.Entity.Id > 0 && e.Entity.EntityType.Name == currentEntityType,
-                        //    expectedSourceType: new SourceType(typeof (IViewModel)),
-                        //    //todo: check this cuz it comes from viewmodel
-                        //    processInfo: new StateEventInfo(process, Entity.Events.EntityFound))
+                        new ProcessExpectedEvent<IEntityDeleted>(
+                            "CurrentEntity", process, e => e.Entity != null && e.Process.Id == process.Id && e.Entity.Id > 0  && e.Entity.EntityType.Name == currentEntityType,
+                            expectedSourceType: new SourceType(typeof (IViewModel)),
+                            //todo: check this cuz it comes from viewmodel
+                            processInfo: new StateEventInfo(process, EventFunctions.UpdateEventData(currentEntityType,Entity.Events.EntityDeleted), Guid.NewGuid())),
+
                     },
                     expectedMessageType: typeof(IProcessStateMessage),
                     action: ProcessActions.RequestState(DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(viewEntityType), property),
@@ -323,7 +329,12 @@ namespace Process.WorkFlow
                             expectedSourceType: new SourceType(typeof (IViewModel)),
                             //todo: check this cuz it comes from viewmodel
                             processInfo: new StateEventInfo(process, EventFunctions.UpdateEventData(currentEntityType, RevolutionData.Context.ViewModel.Events.CurrentEntityChanged), Guid.NewGuid())),
-                        
+                        new ProcessExpectedEvent<IEntityDeleted>(
+                            "CurrentEntity", process, e => e.Entity != null && e.Process.Id == process.Id && e.Entity.Id > 0 && e.EntityType.Name == currentEntityType,
+                            expectedSourceType: new SourceType(typeof (IViewModel)),
+                            //todo: check this cuz it comes from viewmodel
+                            processInfo: new StateEventInfo(process, EventFunctions.UpdateEventData(currentEntityType, RevolutionData.Context.Entity.Events.EntityDeleted), Guid.NewGuid())),
+
                     },
                     expectedMessageType: typeof(IProcessStateMessage),
                     action: ProcessActions.RequestStateList(DynamicEntityTypeExtensions.GetOrAddDynamicEntityType(viewEntityType),currentProperty,viewProperty),
@@ -346,6 +357,11 @@ namespace Process.WorkFlow
                         new ProcessExpectedEvent<IEntityWithChangesUpdated>(process: process,
                             eventPredicate: e => e.Entity != null && e.Process.Id == process.Id && e.EntityType.Name == currentEntityType,
                             processInfo: new StateEventInfo(process, EventFunctions.UpdateEventData(currentEntityType, Entity.Events.EntityUpdated), Guid.NewGuid()),
+                            expectedSourceType: new SourceType(typeof (IEntityRepository)),
+                            key: "UpdatedEntity"),
+                        new ProcessExpectedEvent<IEntityDeleted>(process: process,
+                            eventPredicate: e => e.Entity != null && e.Process.Id == process.Id && e.EntityType.Name == currentEntityType,
+                            processInfo: new StateEventInfo(process, EventFunctions.UpdateEventData(currentEntityType, Entity.Events.EntityDeleted), Guid.NewGuid()),
                             expectedSourceType: new SourceType(typeof (IEntityRepository)),
                             key: "UpdatedEntity"),
 
@@ -372,6 +388,11 @@ namespace Process.WorkFlow
                         new ProcessExpectedEvent<IEntityWithChangesUpdated>(process: process,
                             eventPredicate: e => e.Entity != null && e.Process.Id == process.Id && e.EntityType.Name == viewEntityType.Name,
                             processInfo: new StateEventInfo(process, EventFunctions.UpdateEventData(viewEntityType.Name, Entity.Events.EntityUpdated), Guid.NewGuid()),
+                            expectedSourceType: new SourceType(typeof (IEntityRepository)),
+                            key: "UpdatedEntity"),
+                        new ProcessExpectedEvent<IEntityDeleted>(process: process,
+                            eventPredicate: e => e.Entity != null && e.Process.Id == process.Id && e.EntityType.Name == viewEntityType.Name,
+                            processInfo: new StateEventInfo(process, EventFunctions.UpdateEventData(viewEntityType.Name, Entity.Events.EntityDeleted), Guid.NewGuid()),
                             expectedSourceType: new SourceType(typeof (IEntityRepository)),
                             key: "UpdatedEntity"),
 

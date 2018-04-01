@@ -12,11 +12,6 @@ namespace DataServices.Actors
             DataContext.Instance.UpdateEntityWithChanges(msg);
         }
 
-        public static void AddEntity(this IAddOrGetEntityWithChanges msg)
-        {
-
-            DynamicDataContext.Instance.AddEntity(msg);
-            DataContext.Instance.AddEntity(msg);
-        }
+        
     }
 }

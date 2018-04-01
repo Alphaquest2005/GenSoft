@@ -3,6 +3,6 @@
     
     public interface IDeleteEntity : IEntityRequest
     {
-        int EntityId { get; }
+        IDynamicEntity Entity { get; }
     }
 }

@@ -236,6 +236,7 @@ namespace DomainUtilities
                 var res =  ctx.Entities.AsNoTracking()
                     .Include(x => x.EntityAttributes).ThenInclude(x => x.Attribute)
                     .Include(x => x.EntityType.EntityTypeAttributes).ThenInclude(x => x.EntityId)
+                    .Where(x => x.Delete == null)
                     .Where(x => x.EntityTypeId == entityTypeId)
                     .Where(x => x.EntityAttributes.Any(z => z.Entity.EntityType.EntityTypeAttributes.Any(q => q.EntityId != null)));
 
@@ -438,6 +439,7 @@ namespace DomainUtilities
             using (var ctx = new GenSoftDBContext())
             {
                 var elst = ctx.EntityAttributes
+                    .Where(x => x.Entity.Delete == null)
                     .Where(x => (x.AttributeId == cp.AttributeId || x.Attribute.Name == "Id") &&
                                 x.Entity.EntityTypeId == viewType.Id)
                     .Select(x => new {Key = x.Attribute.Name, Value = x.Value, EntityId = x.EntityId})

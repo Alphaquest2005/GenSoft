@@ -5,6 +5,7 @@
                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
                     xmlns:viewModels="clr-namespace:ViewModels;assembly=ViewModels"
+                    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
                     mc:Ignorable="d">
 
     <DataTemplate x:Key="SummaryInfoWDT" >
@@ -32,7 +33,14 @@
                      ItemTemplate="{DynamicResource EntityDetailWDT}"
                      ItemsSource="{Binding PropertyList, IsAsync=True}"
                      SelectedItem="{Binding  DataContext.CurrentProperty.Value, IsAsync=True,  RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}"/>
-            
+
+            <Button 
+                Content=""
+                Command="{Binding DataContext.Commands[DeleteEntity], RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}"
+                HorizontalAlignment="Right" Height="33" Margin="0,10,10,0" VerticalAlignment="Top" Width="36" FontSize="18" FontFamily="Segoe UI Symbol" Foreground="#FFD60000">
+
+            </Button>
+
         </Grid>
 
     </DataTemplate>

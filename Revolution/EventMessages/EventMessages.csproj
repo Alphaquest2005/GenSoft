@@ -127,6 +127,7 @@
     <Compile Include="Events\ActorTerminated.cs" />
     <Compile Include="Events\CacheUpdated.cs" />
     <Compile Include="Events\DomainMessage.cs" />
+    <Compile Include="Events\EntityDeleted.cs" />
     <Compile Include="Events\EntitySetWithChangesLoaded.cs" />
     <Compile Include="Events\CurrentEntityChanged.cs" />
     <Compile Include="Events\EntityWithChangesUpdated.cs" />

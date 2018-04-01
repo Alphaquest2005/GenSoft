@@ -59,7 +59,7 @@ namespace EFRepository
                 {
                     PublishProcesError(msg,
                         new ApplicationException(
-                            $"Entity with Type - '{entityTypeName}' & Id:{res.Id} not Found."),
+                            $"Entity with Type - '{entityTypeName}' & Id:{entityId} not Found."),
                         typeof(EntityWithChangesUpdated));
                     
                 }
@@ -184,10 +184,7 @@ namespace EFRepository
             UpdateEntityWithChanges(d.Type, d.Id, d.Properties);
         }
 
-        public  void AddEntity(IAddOrGetEntityWithChanges msg)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         public  void LoadEntitySetWithChanges(IGetEntitySetWithChanges msg)
         {
@@ -250,6 +247,7 @@ namespace EFRepository
            
             var res = entities
                     .Where(x => x.EntityTypeId == viewId)
+                    .Where(x => x.Delete == null)
                     .Where(x => x.EntityAttributes.Any(z => z.Entity.EntityType.EntityTypeAttributes.Any(q => q.EntityId != null)));
             return res;
         }
@@ -266,7 +264,17 @@ namespace EFRepository
 
         public  void DeleteEntity(IDeleteEntity msg)
         {
-            throw new NotImplementedException();
+            if (msg.ProcessInfo.Process.Applet is IDbApplet) return;
+            using (var ctx = new GenSoftDBContext())
+            {
+
+                var del = new Delete() {Id = msg.Entity.Id, DateTimeDeleted = DateTime.Now};
+                ctx.Add(del);
+                ctx.SaveChanges();
+                EventMessageBus.Current.Publish(new EntityDeleted(msg.Entity, 
+                        new RevolutionEntities.Process.StateEventInfo(msg.Process, RevolutionData.Context.EventFunctions.UpdateEventData($"{msg.EntityType.Name}-{msg.Entity.Id}", EntityEvents.Events.EntityDeleted)), msg.Process,
+                        Source));
+            }
         }
 
         public  void GetEntityById(IGetEntityById msg)

@@ -255,7 +255,8 @@ namespace EFRepository
 
         public  void DeleteEntity(IDeleteEntity msg)
         {
-            throw new NotImplementedException();
+            if (!(msg.ProcessInfo.Process.Applet is IDbApplet dbInfo)) return;
+
         }
 
         public  void GetEntityById(IGetEntityById msg)
