@@ -203,8 +203,8 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\DomainUt
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\EventMessages.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\RevolutionEntities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\SystemInterfaces.dll
-C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\ViewModel.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\Utilities.dll
+C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\ViewModel.Interfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\GenSoft.DBContext.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\GenSoft.Entities.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\GenSoft.Interfaces.dll
@@ -215,8 +215,8 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\DomainUt
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\EventMessages.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\RevolutionEntities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\SystemInterfaces.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\ViewModel.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\Utilities.pdb
+C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\ViewModel.Interfaces.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\GenSoft.DBContext.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\GenSoft.Entities.pdb
 C:\Prism\GitRepositiory\GenSoft\Revolution\RevolutionData\bin\x64\Debug\GenSoft.Interfaces.pdb

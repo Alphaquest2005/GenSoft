@@ -15,16 +15,16 @@ namespace DataServices.Actors
     public class EntityDataServiceSupervisor : BaseSupervisor<EntityDataServiceSupervisor>, IEntityDataServiceSupervisor
     {
 
-        private static readonly Action<ISystemSource, ICreateEntity> CreateAction = (s, x) => x.CreateEntity();
-        private static readonly Action<ISystemSource, IDeleteEntity> DeleteAction = (s, x) => x.DeleteEntity();
-        private static readonly Action<ISystemSource, IUpdateEntityWithChanges> UpdateAction = (s, x) => x.UpdateEntity();
-        private static readonly Action<ISystemSource, IGetEntityById> GetEntityByIdAction = (s, x) => x.GetEntity();
-        private static readonly Action<ISystemSource, IGetEntityWithChanges> GetEntityWithChangesAction = (s, x) => x.GetEntity();
+        private static readonly Action<ICreateEntity> CreateAction = (x) => x.CreateEntity();
+        private static readonly Action<IDeleteEntity> DeleteAction = (x) => x.DeleteEntity();
+        private static readonly Action<IUpdateEntityWithChanges> UpdateAction = (x) => x.UpdateEntity();
+        private static readonly Action<IGetEntityById> GetEntityByIdAction = (x) => x.GetEntity();
+        private static readonly Action<IGetEntityWithChanges> GetEntityWithChangesAction = (x) => x.GetEntity();
 
-        private static readonly Action<ISystemSource, ILoadEntitySet> LoadEntitySet = (s, x) => x.LoadEntitySet();
-        private static readonly Action<ISystemSource, IGetEntitySetWithChanges> LoadEntitySetWithChanges = (s, x) => x.LoadEntitySetWithChanges();
-        private static readonly Action<ISystemSource, ILoadEntitySetWithFilter> LoadEntitySetWithFilter = (s, x) => x.LoadEntitySet();
-        private static readonly Action<ISystemSource, ILoadEntitySetWithFilterWithIncludes> LoadEntitySetWithFilterWithIncludes = (s, x) => x.LoadEntitySet();
+        private static readonly Action<ILoadEntitySet> LoadEntitySet = (x) => x.LoadEntitySet();
+        private static readonly Action<IGetEntitySetWithChanges> LoadEntitySetWithChanges = (x) => x.LoadEntitySetWithChanges();
+        private static readonly Action<ILoadEntitySetWithFilter> LoadEntitySetWithFilter = (x) => x.LoadEntitySet();
+        private static readonly Action<ILoadEntitySetWithFilterWithIncludes> LoadEntitySetWithFilterWithIncludes = (x) => x.LoadEntitySet();
 
         
 

@@ -22,7 +22,7 @@ namespace EventAggregator
 {
     public class EventLogger//: Reactive.EventAggregator.EventAggregator
     {
-        public static ISystemSource Source => new Source(Guid.NewGuid(), $"EventLogger", new RevolutionEntities.Process.SourceType(typeof(EventLogger)), Processes.IntialSystemProcess, Processes.IntialSystemProcess.MachineInfo);
+        public static ISystemSource Source { get; } = new Source(Guid.NewGuid(), $"EventLogger", new RevolutionEntities.Process.SourceType(typeof(EventLogger)), Processes.IntialSystemProcess, Processes.IntialSystemProcess.MachineInfo);
 
         static EventLogger()
         {

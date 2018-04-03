@@ -13,13 +13,14 @@ using EventMessages.Commands;
 using JB.Collections.Reactive;
 using Microsoft.Win32;
 using Process.WorkFlow;
+using RevolutionData.Context;
 using RevolutionEntities.Process;
 
 namespace AsycudaXMLImport
 {
     public class Import
     {
-        public static ISystemSource Source => new Source(Guid.NewGuid(), $"Addin:<AsycudaXMLImport>", new SourceType(typeof(Import)), Processes.IntialSystemProcess, Processes.IntialSystemProcess.MachineInfo);
+        public static ISystemSource Source { get; } = new Source(Guid.NewGuid(), $"Addin:<AsycudaXMLImport>", new SourceType(typeof(Import)), Processes.IntialSystemProcess, Processes.IntialSystemProcess.MachineInfo);
         static Import()
         {
             EventMessageBus.Current.GetEvent<IStartAddin>(
@@ -32,7 +33,7 @@ namespace AsycudaXMLImport
         {
             //StatusModel.Timer("Importing Documents");
             //import asycuda xml id and details
-            if (msg.Entity ==null || msg.Entity.Id == 0)
+            if (msg.Entity == null || msg.Entity.Id == 0)
             {
                 MessageBox.Show("Please Select Asycuda Document Set");
                 return;
@@ -46,7 +47,7 @@ namespace AsycudaXMLImport
             var result = od.ShowDialog();
             if (result == true)
             {
-                
+
                 //StatusModel.Timer(string.Format("Importing {0} files", od.FileNames.Count()));
                 //StatusModel.StartStatusUpdate("Importing files", od.FileNames.Count());
                 //StatusModel.RefreshNow();
@@ -55,17 +56,21 @@ namespace AsycudaXMLImport
                     if (ASYCUDA.CanLoadFromFile(f))
                     {
                         var a = Asycuda421.ASYCUDA.LoadFromFile(f);
-                       var res = AsycudaToDataBase421.Instance.Import(a, msg.Entity);
+                        var res = AsycudaToDataBase421.Instance.Import(a, msg.Entity);
                         var de = new DynamicEntity(
                             new DynamicEntityType("xcuda_ASYCUDA", "xcuda_ASYCUDA",
                                 new List<IEntityKeyValuePair>(), new Dictionary<string, List<dynamic>>(),
                                 new ObservableDictionary<string, Dictionary<int, dynamic>>(),
-                                new List<IDynamicRelationshipType>(), new List<IDynamicRelationshipType>(), DynamicEntityType.NullEntityType(),
+                                new List<IDynamicRelationshipType>(), new List<IDynamicRelationshipType>(),
+                                DynamicEntityType.NullEntityType(),
                                 new ObservableList<IAddinAction>()), 0,
                             new Dictionary<string, object>());
 
-                        EventMessageBus.Current.Publish(new UpdateEntityWithChanges(de, res.Properties.ToDictionary(x => x.Key, x => x.Value),
-                            new StateCommandInfo(msg.Process, RevolutionData.Context.CommandFunctions.UpdateCommandData(de.EntityType.Name,RevolutionData.Context.Entity.Commands.CreateEntity)), msg.Process, Source));
+                        EventMessageBus.Current.Publish(new UpdateEntityWithChanges(de,
+                            res.Properties.ToDictionary(x => x.Key, x => x.Value),
+                            new StateCommandInfo(msg.Process,
+                                RevolutionData.Context.CommandFunctions.UpdateCommandData(de.EntityType.Name,
+                                    RevolutionData.Context.Entity.Commands.CreateEntity)), msg.Process, Source));
                     }
                     else
                     {
@@ -73,14 +78,25 @@ namespace AsycudaXMLImport
                     }
 
                 }
-                     
 
+                var cnt = od.FileNames.Length;
+                var t = 0;
+                EventMessageBus.Current.GetEvent<IEntityWithChangesUpdated>(
+                        new StateEventInfo(msg.Process, Entity.Events.EntityUpdated), Source)
+                    .Where(x => x.EntityType.Name == "xcuda_ASYCUDA" && x.Process.Id == msg.Process.Id)
+                    .Subscribe(x =>
+                    {
+                        t += 1;
+                        if (t == cnt)
+                            MessageBox.Show("Complete");
+                    });
                 
+
                 //StatusModel.StopStatusUpdate();
 
             }
-           // StatusModel.StopStatusUpdate();
-            MessageBox.Show("Complete");
+            // StatusModel.StopStatusUpdate();
+
         }
     }
 }

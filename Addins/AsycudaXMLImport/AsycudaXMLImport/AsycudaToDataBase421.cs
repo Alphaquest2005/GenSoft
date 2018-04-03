@@ -70,6 +70,8 @@ namespace Asycuda
                 Save_Suppliers_Documents();
                 da.xcuda_ASYCUDA_ExtendedProperties.ImportComplete = true;
                 da.xcuda_ASYCUDA_ExtendedProperties.AsycudaDocumentSetId = docSet.Id;
+                da.xcuda_ASYCUDA_ExtendedProperties.Total_CIF = Convert.ToSingle(a.Valuation.Total_CIF);
+
                 foreach (var itm in da.xcuda_Item)
                 {
                     if (itm.ImportComplete != false) continue;

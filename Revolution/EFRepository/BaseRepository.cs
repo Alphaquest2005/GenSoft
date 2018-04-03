@@ -13,7 +13,7 @@ namespace EFRepository
     public class BaseRepository<TRepository>:IProcessSource
     {
      
-        public ISystemSource Source => new Source(Guid.NewGuid(), $"EntityRepository:<{typeof(TRepository).GetFriendlyName()}>", new SourceType(typeof(BaseRepository<>)),Processes.IntialSystemProcess, Processes.IntialSystemProcess.MachineInfo);
+        public ISystemSource Source { get; } = new Source(Guid.NewGuid(), $"EntityRepository:<{typeof(TRepository).GetFriendlyName()}>", new SourceType(typeof(BaseRepository<>)),Processes.IntialSystemProcess, Processes.IntialSystemProcess.MachineInfo);
         internal void PublishProcesError(IProcessSystemMessage msg, Exception ex, Type expectedMessageType)
         {
             var outMsg = new ProcessEventFailure(failedEventType: msg.GetType(),

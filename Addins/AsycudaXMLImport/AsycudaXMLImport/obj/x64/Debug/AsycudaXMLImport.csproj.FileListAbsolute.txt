@@ -71,6 +71,8 @@ C:\Prism\GitRepositiory\GenSoft\Addins\AsycudaXMLImport\AsycudaXMLImport\bin\x64
 C:\Prism\GitRepositiory\GenSoft\Addins\AsycudaXMLImport\AsycudaXMLImport\bin\x64\Debug\ReactiveProperty.pdb
 C:\Prism\GitRepositiory\GenSoft\Addins\AsycudaXMLImport\AsycudaXMLImport\bin\x64\Debug\GenSoft.DBContext.pdb
 C:\Prism\GitRepositiory\GenSoft\Addins\AsycudaXMLImport\AsycudaXMLImport\bin\x64\Debug\GenSoft.Interfaces.pdb
+C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\Asycuda421.xsd
+C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\AsycudaXMLImport.dll.config
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\AsycudaXMLImport.dll
 C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\AsycudaXMLImport.pdb
 C:\Prism\GitRepositiory\GenSoft\Addins\AsycudaXMLImport\AsycudaXMLImport\obj\x64\Debug\AsycudaXMLImport.csprojResolveAssemblyReference.cache
@@ -78,4 +80,3 @@ C:\Prism\GitRepositiory\GenSoft\Addins\AsycudaXMLImport\AsycudaXMLImport\obj\x64
 C:\Prism\GitRepositiory\GenSoft\Addins\AsycudaXMLImport\AsycudaXMLImport\obj\x64\Debug\AsycudaXMLImport.csproj.CopyComplete
 C:\Prism\GitRepositiory\GenSoft\Addins\AsycudaXMLImport\AsycudaXMLImport\obj\x64\Debug\AsycudaXMLImport.dll
 C:\Prism\GitRepositiory\GenSoft\Addins\AsycudaXMLImport\AsycudaXMLImport\obj\x64\Debug\AsycudaXMLImport.pdb
-C:\Prism\GitRepositiory\GenSoft\MRManager\bin\x64\Debug\Asycuda421.xsd

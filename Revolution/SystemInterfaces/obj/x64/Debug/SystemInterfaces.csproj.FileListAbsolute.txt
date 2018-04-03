@@ -18,4 +18,3 @@ C:\Prism\GitRepositiory\GenSoft\Revolution\SystemInterfaces\obj\x64\Debug\System
 C:\Prism\GitRepositiory\GenSoft\Revolution\SystemInterfaces\obj\x64\Debug\SystemInterfaces.csproj.CopyComplete
 C:\Prism\GitRepositiory\GenSoft\Revolution\SystemInterfaces\obj\x64\Debug\SystemInterfaces.dll
 C:\Prism\GitRepositiory\GenSoft\Revolution\SystemInterfaces\obj\x64\Debug\SystemInterfaces.pdb
-C:\Prism\GitRepositiory\GenSoft\Revolution\SystemInterfaces\obj\x64\Debug\SystemInterfaces.csprojResolveAssemblyReference.cache

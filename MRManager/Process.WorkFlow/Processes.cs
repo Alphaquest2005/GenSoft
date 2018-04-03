@@ -412,7 +412,7 @@ namespace Process.WorkFlow
                             var key = viewProperty;
                             var value = cp.Messages["UpdatedEntity"].Properties["Entity"].GetValue<IDynamicEntity>().Properties[currentProperty];
                             var changes = new Dictionary<string, dynamic>() { { key, value } };
-
+                            //ToDo:Get Rid of magic strings eg. "ExactMatch"
                             return await Task.Run(() => new GetEntitySetWithChanges("ExactMatch",entityType,changes,
                                 new StateCommandInfo(cp.Actor.Process, Entity.Commands.GetEntity),
                                 cp.Actor.Process, cp.Actor.Source)).ConfigureAwait(false);

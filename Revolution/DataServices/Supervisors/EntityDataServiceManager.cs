@@ -24,7 +24,7 @@ namespace DataServices.Actors
         {
             var stateCommandInfo = new StateCommandInfo(process, RevolutionData.Context.Entity.Commands.EntityRequest, Guid.NewGuid());
             EventMessageBus.Current.GetEvent<IEntityRequest>(stateCommandInfo, Source)
-                .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == stateCommandInfo.EventKey)
+               // .Where(x => x.ProcessInfo.EventKey == Guid.Empty)//|| x.ProcessInfo.EventKey == stateCommandInfo.EventKey --- open this up
                 .Subscribe(handleEntityRequest);
 
 

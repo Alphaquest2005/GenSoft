@@ -88,6 +88,7 @@ C:\Prism\GitRepositiory\MRManager\Resources\bin\x64\Debug\ViewModel.WorkFlow.pdb
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\Resources.dll.config
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\Resources.dll
 C:\Prism\GitRepositiory\GenSoft\Resources\bin\x64\Debug\Resources.pdb
+C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Resources.csprojResolveAssemblyReference.cache
 C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Styles\DataGridCustomizations.baml
 C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Styles\non-DataGridCustomizations.baml
 C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Styles\Non-Theme.baml
@@ -97,4 +98,3 @@ C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Resources.g.resources
 C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Resources.csproj.CoreCompileInputs.cache
 C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Resources.dll
 C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Resources.pdb
-C:\Prism\GitRepositiory\GenSoft\Resources\obj\x64\Debug\Resources.csprojResolveAssemblyReference.cache

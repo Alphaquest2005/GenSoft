@@ -25,7 +25,7 @@ namespace EventAggregator
         
         static ConcurrentDictionary<dynamic, dynamic> _getEventStore = new ConcurrentDictionary<dynamic, dynamic>();
         static ConcurrentDictionary<dynamic, dynamic> _publishEventStore = new ConcurrentDictionary<dynamic, dynamic>();
-        public static ISystemSource Source => new Source(Guid.NewGuid(), $"EventStore", new RevolutionEntities.Process.SourceType(typeof(EventStore)), Processes.IntialSystemProcess, Processes.IntialSystemProcess.MachineInfo);
+        public static ISystemSource Source { get; } = new Source(Guid.NewGuid(), $"EventStore", new RevolutionEntities.Process.SourceType(typeof(EventStore)), Processes.IntialSystemProcess, Processes.IntialSystemProcess.MachineInfo);
         static EventStore()
         {
            
@@ -44,18 +44,11 @@ namespace EventAggregator
             var key =
                 $"{typeof(TEvent).GetFriendlyName()}-{processInfo.State.Subject}-{processInfo.State.Data}-{caller.Process.Id}";
             _getEventStore.AddOrUpdate("Get-" + key, null);
-            if (processInfo.EventKey == Guid.Empty) Debugger.Break();
+            //if (processInfo.EventKey == Guid.Empty) Debugger.Break();
             _publishEventStore.TryGetValue("Pub-" + key, out dynamic actualEvent);
 
             if (actualEvent != null && actualEvent.Process.Id == caller.Process.Id)
             {
-                
-                //ToDo:need to change processinfo key
-                //var type = BootStrapper.BootStrapper.Container.GetConcreteType(typeof(TEvent));
-                // var newEvent =(TEvent) typeof(JsonUtilities).GetMethod("CloneJson").MakeGenericMethod(type).Invoke(null, new object[] { actualEvent });
-                // var newEvent = JsonUtilities.CloneJson<TEvent>(actualEvent);
-
-
                 actualEvent.ProcessInfo.EventKey = processInfo.EventKey;
                 actualEvent.Source = Source;
                 Task.Run(() => { EventMessageBus.Current.Publish(actualEvent); }).ConfigureAwait(false);

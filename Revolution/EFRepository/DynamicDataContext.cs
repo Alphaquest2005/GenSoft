@@ -83,6 +83,7 @@ namespace EFRepository
         private IDynamicEntity UpdateEntityWithChanges(string entityTypeName, int entityIdparam, Dictionary<string, object> msgChanges)
         {
             int entityId = 0;
+            var changes = msgChanges.ToList();
             using (var ctx = new GenSoftDBContext())
             {
                 var entityType = ctx.EntityTypes.Include(x => x.Type)
@@ -116,7 +117,7 @@ namespace EFRepository
                 }
 
 
-                foreach (var change in msgChanges.Where(x => x.Value != null))
+                foreach (var change in changes.Where(x => x.Value != null))
                 {
                     if (change.Value is DynamicType d)
                     {
@@ -204,12 +205,25 @@ namespace EFRepository
                         x => x.EntityAttributes.Any(z => z.Attribute.Name == c.Key && z.Value.ToString() == c.Value.ToString())));
 
                 var entities = GetViewEntities(entityType, res, viewEntityAttributes.Select(x => x.Key).ToList()).ToList();
-                
-                
+
+                if (res == null)
+                {
+                    PublishProcesError(msg,
+                        new ApplicationException(
+                            $"No Entities of EntitySet with Type - '{entityType.Name}' Found."),
+                        typeof(EntityWithChangesUpdated));
+
+                }
+                else
+                {
                     EventMessageBus.Current.Publish(
-                        new EntitySetWithChangesLoaded(msg.EntityType,entities, msg.Changes,
-                            new RevolutionEntities.Process.StateEventInfo(msg.Process, RevolutionData.Context.EventFunctions.UpdateEventData(msg.EntityType.Name, EntityEvents.Events.EntitySetLoaded)), msg.Process,
+                        new EntitySetWithChangesLoaded(msg.EntityType, entities, msg.Changes,
+                            new RevolutionEntities.Process.StateEventInfo(msg.Process, RevolutionData.Context.EventFunctions.UpdateEventData(msg.EntityType.Name, EntityEvents.Events.EntitySetLoaded), msg.ProcessInfo.EventKey)
+
+                            , msg.Process,
                             Source));
+                }
+               
                
             }
         }

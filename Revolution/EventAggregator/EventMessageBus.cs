@@ -22,7 +22,7 @@ namespace EventAggregator
     public class EventMessageBus//: Reactive.EventAggregator.EventAggregator
     {
         static Reactive.EventAggregator.EventAggregator ea = new Reactive.EventAggregator.EventAggregator();
-        public static ISystemSource Source => new Source(Guid.NewGuid(), $"EventMessageBus", new RevolutionEntities.Process.SourceType(typeof(EventMessageBus)), Processes.IntialSystemProcess, Processes.IntialSystemProcess.MachineInfo);
+        public static ISystemSource Source { get; } = new Source(Guid.NewGuid(), $"EventMessageBus", new RevolutionEntities.Process.SourceType(typeof(EventMessageBus)), Processes.IntialSystemProcess, Processes.IntialSystemProcess.MachineInfo);
         static EventMessageBus()
         {
             Current = new EventMessageBus();

@@ -14,17 +14,17 @@ namespace DataServices.Actors
   
     public class EntityDataServiceActor<TService>: BaseActor<EntityDataServiceActor<TService>>, IEntityDataServiceActor<TService> where TService:IEntityRequest, IProcessSystemMessage
     {
-        private Action<ISystemSource,TService> Action { get; }
+        private Action<TService> Action { get; }
        
       
         
         public EntityDataServiceActor(ICreateEntityService cMsg, IDynamicEntityType entityType) : base(cMsg.ActorId,cMsg.Process)
         {
-            Action = (Action<ISystemSource,TService>)cMsg.Action;
+            Action = (Action<TService>)cMsg.Action;
            
-            var processStateInfo = new StateEventInfo(Process,RevolutionData.Context.EventFunctions.UpdateEventData(entityType.Name, RevolutionData.Context.Entity.Events.EntityRequested), Guid.NewGuid());
+            var processStateInfo = new StateEventInfo(Process,RevolutionData.Context.EventFunctions.UpdateEventData(entityType.Name, RevolutionData.Context.Entity.Events.EntityRequested), cMsg.InitialMessage.ProcessInfo.EventKey);
             EventMessageBus.Current.GetEvent<TService>(processStateInfo, Source)
-                .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == processStateInfo.EventKey)
+               // .Where(x => x.ProcessInfo.EventKey == Guid.Empty || x.ProcessInfo.EventKey == processStateInfo.EventKey)
                 .Where(x => x.EntityType == entityType)
                 .Subscribe(x => HandledEvent(x));
 
@@ -67,7 +67,7 @@ namespace DataServices.Actors
             // Persist(msg, x => { });//x => Action.Invoke(DbContext, Source, x)
             try
             {
-                Task.Run(() => { Action.Invoke(Source,msg);}).ConfigureAwait(false);  
+                Task.Run(() => { Action.Invoke(msg);}).ConfigureAwait(false);  
             }
             catch (Exception ex)
             {
